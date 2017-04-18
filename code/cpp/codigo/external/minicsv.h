@@ -29,6 +29,7 @@
 // version 1.8.2  : Optimize input stream.
 // version 1.8.3  : Add unit test and enable to use 2 quotes to escape 1 quote
 // version 1.8.4  : Add NChar class and fix error of no delimiter written for char type.
+// pablo-cerve    : see lines 94-96
 
 //#define USE_BOOST_LEXICAL_CAST
 
@@ -94,6 +95,7 @@ namespace mini
 			// I had to remove the const because it was raising warning ignored-qualifiers
 			// const char get_delimiter() const { return delimiter; }
 			char get_delimiter() const { return delimiter; }
+
 			const std::string& get_escape() const { return escape; }
 		private:
 			const char delimiter;

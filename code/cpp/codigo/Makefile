@@ -6,7 +6,7 @@ SRCDIR := src
 SRCEXT := cpp
 TARGET := app
 LIB :=
-INC := -I include
+INC := -I include -I external
 
 SOURCES := $(shell find $(SRCDIR) -type f -name *.$(SRCEXT))
 OBJECTS := $(patsubst $(SRCDIR)/%,$(BUILDDIR)/%,$(SOURCES:.$(SRCEXT)=.o))

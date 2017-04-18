@@ -1,5 +1,4 @@
 #include "file_utils.h"
-using namespace std;
 
 int FileUtils::compare(char* file1, char* file2){
 

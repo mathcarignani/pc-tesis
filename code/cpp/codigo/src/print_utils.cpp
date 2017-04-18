@@ -1,5 +1,4 @@
 #include "print_utils.h"
-using namespace std;
 
 int PrintUtils::figure_count(double n){
 
