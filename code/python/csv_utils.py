@@ -4,34 +4,49 @@ from progress import print_progress
 
 def clean_row(row, keep_columns, remove_columns):
 		if len(keep_columns) > 0:
-				return np.keep(row, keep_columns)
+				return np.take(row, keep_columns)
 		elif len(remove_columns) > 0:
 				return np.delete(row,remove_columns)
 		else:
 				return row
 
+class ProcessRow:
+		def __init__(self, total_rows, first_row, last_row):
+				if (last_row is not None) and (last_row < total_rows):
+						self.last_row = last_row
+				else:
+						self.last_row = total_rows
+				if (first_row is not None) and (first_row < self.last_row):
+						self.first_row = first_row
+				else:
+						self.first_row = 0
+
+		def process_row(self, current_row):
+				return (self.first_row <= current_row) and (current_row <= self.last_row)
+
+
 # This method is used for removing columns of a csv file
-def clean_csv(read_filename, write_filename, keep_columns=[], remove_columns=[], number_rows=None):
+def clean_csv(read_filename, write_filename, keep_columns=[], remove_columns=[], first_row=None, last_row=None):
 		with open(write_filename, 'wb') as w:
 		    writer = csv.writer(w)
 
 		    with open(read_filename, 'rb') as r:
-		    	reader = csv.reader(r)
-		    	total_rows = len(list(reader))
-		    	if (number_rows is not None) and (number_rows < total_rows):
-		    			total_rows = number_rows
+						reader = csv.reader(r)
+						total_rows = len(list(reader))
+						pr = ProcessRow(total_rows, first_row, last_row)
 
-		    	r.seek(0)
-		    	current_row = 0
+						r.seek(0)
+						current_row = 0
 
-		    	for row in reader:
-		    		if current_row < total_rows:
-				    		new_row = clean_row(row, keep_columns, remove_columns)
-				    		writer.writerow(new_row)
+						for row in reader:
+								if pr.process_row(current_row):
+										new_row = clean_row(row, keep_columns, remove_columns)
+										writer.writerow(new_row)
 
-				    		current_row += 1
-				    		if (current_row % 1000 == 0) or (current_row == total_rows):
-				    				print_progress(current_row, total_rows)
+								current_row += 1
+								if (current_row % 1000 == 0) or (current_row == total_rows):
+										print_progress(current_row, total_rows)
+
 
 def num_after_point(x):
     s = str(x)
@@ -41,7 +56,7 @@ def num_after_point(x):
 
 def update_res_array(res_array, row):
 		for i in range(len(row)):
-				if row[i] == None:
+				if row[i] in [None, '.']:
 						continue
 				else:
 						row_i = float(row[i])
@@ -73,8 +88,8 @@ def csv_stats(read_filename):
 				res_array = []
 				for row in reader:
 					if current_row == 0:
-							for _ in range(len(row)):
-									res_array.append({'count': 0, 'sum': 0, 'min': None, 'max': None, 'decimals': None})
+							for i in range(len(row)):
+									res_array.append({'column': row[i], 'count': 0, 'sum': 0, 'min': None, 'max': None, 'decimals': None})
 
 					if current_row > 0: # column names
 						update_res_array(res_array, row)
@@ -83,14 +98,20 @@ def csv_stats(read_filename):
 					if (current_row % 1000 == 0) or (current_row == total_rows):
 							print_progress(current_row, total_rows)
 
+				print total_rows - 1
 				for i in range(len(res_array)):
-						print res_array[i]
+						res = res_array[i]
+						print res.pop('column')
+						media = res['sum'] / res['count']
+						media = round(media, res['decimals'])
+						res['media'] = media
+						print res
 
 
 
 
 
 
-clean_csv('../../datasets/el-nino/elnino.csv', 'elnino-clean.csv', remove_columns=[0,4,7,8,9], number_rows=10)
-
-csv_stats('elnino-clean.csv')
+clean_csv('../../datasets/el-nino/elnino.csv', 'elnino-clean.csv', keep_columns=[1,2,3], first_row=1)
+# clean_csv('../../datasets/el-nino/elnino.csv', 'elnino-clean.csv', remove_columns=[0,4,7,8,9])
+# csv_stats('elnino-clean.csv')
