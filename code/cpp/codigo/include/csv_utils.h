@@ -4,17 +4,9 @@
 class CsvUtils {
 
 public:
-
-	// Code first row_count rows from csv file input_file into output_file.
-	// static void code_csv_unary(int row_count, char* input_file, char* output_file);
-	static void code_csv_unary();
-
-	// Decode first row_count rows from input_file into output_file.
-	static void decode_csv_unary(int row_count, char* input_file, char* output_file);
-
 	static void code_csv(std::string filename, std::string coded_filename);
 	static void decode_csv(std::string coded_filename, std::string decoded_filename);
-
+	static int compare_csv(std::string filename1, std::string filename2);
 };
 
 #endif

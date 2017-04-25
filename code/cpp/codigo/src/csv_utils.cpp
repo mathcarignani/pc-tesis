@@ -26,6 +26,10 @@ struct NinoRow
   int year;
   int month;
   int day;
+
+  bool equal(NinoRow nino_row){
+    return (year == nino_row.year and month == nino_row.month and day == nino_row.day);
+  }
   // float lat;
   // float longi;
   // float air_temp;
@@ -80,6 +84,7 @@ void CsvUtils::code_csv(std::string filename, std::string coded_filename)
     {
       is >> r;
 
+      std::cout << r.year;
       int offset_year = r.year - 80;
       coded_file->pushInt(offset_year, 5);
 
@@ -89,6 +94,17 @@ void CsvUtils::code_csv(std::string filename, std::string coded_filename)
       int offset_day = r.day - 1;
       coded_file->pushInt(offset_day, 5);
     }
+    is.close();
+  }
+  delete ->is;
+  mini::csv::ifstream is2(filename);
+  is2.set_delimiter(',', "$$");
+  if(is2.is_open())
+  {
+    std::cout << "a";
+  }
+  else{
+    std::cout << "b";
   }
 }
 
@@ -106,13 +122,15 @@ void CsvUtils::decode_csv(std::string coded_filename, std::string decoded_filena
     {
       int offset_year = coded_file->getInt(5);
       int year = offset_year + 80;
-      std::cout << year;
-      
+      // std::cout << year;
+
       int offset_month = coded_file->getInt(4);
       int month = offset_month + 1;
+      // std::cout << month;
 
       int offset_day = coded_file->getInt(5);
       int day = offset_day + 1;
+      // std::cout << day;
 
       os << year << month << day << NEWLINE;
 
@@ -123,4 +141,45 @@ void CsvUtils::decode_csv(std::string coded_filename, std::string decoded_filena
     }
   }
   os.flush();
+}
+
+
+int CsvUtils::compare_csv(std::string filename1, std::string filename2)
+{
+  mini::csv::ifstream is1(filename1);
+  is1.set_delimiter(',', "$$");
+
+  // mini::csv::ifstream is2(filename2);
+  // is2.set_delimiter(',', "$$");
+
+  if(is1.is_open())
+  {
+    std::cout << "is1";
+  }
+  std::cout << filename2;
+  // if(is2.is_open())
+  // {
+  //   std::cout << "is2";
+  // }
+  // if(is1.is_open() and is2.is_open())
+  // {
+  //   std::cout << "in";
+  //   NinoRow r1, r2;
+  //   int row_count = 0;
+  //   while(is1.read_line() and is2.read_line())
+  //   {
+  //     is1 >> r1;
+  //     is2 >> r2;
+
+  //     if(r1.equal(r2))
+  //     {
+  //       row_count++;
+  //     }
+  //     else
+  //     {
+  //       return row_count;
+  //     }
+  //   }
+  // }
+  return -1;
 }
