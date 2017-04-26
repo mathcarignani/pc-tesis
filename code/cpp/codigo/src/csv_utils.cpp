@@ -48,26 +48,6 @@ inline mini::csv::ostringstream& operator << (mini::csv::ostringstream& ostm, co
     return ostm << val.year; // << val.qty << val.price;
 }
 
-// void CsvUtils::code_csv_unary(){
-//   mini::csv::ifstream is("elnino-clean.csv");
-//   is.set_delimiter(',', "$$");
-//   int line = 0;
-//   if(is.is_open())
-//   {
-//     NinoRow r;
-
-//     while(is.read_line())
-//     {
-//       line++;
-//       if (line == 1) { continue; } // skip column names
-//       is >> r;
-//       // display the read items
-//       std::cout << r.year << "|" << r.month << "|" << r.day << "|" << r.lat << "|" << r.longi << "|" << r.air_temp << "|" << r.sea_temp << std::endl;
-
-//       line++;
-//     }
-//   }
-// }
 
 void CsvUtils::code_csv(std::string filename, std::string coded_filename)
 {
@@ -84,7 +64,6 @@ void CsvUtils::code_csv(std::string filename, std::string coded_filename)
     {
       is >> r;
 
-      std::cout << r.year;
       int offset_year = r.year - 80;
       coded_file->pushInt(offset_year, 5);
 
@@ -95,16 +74,6 @@ void CsvUtils::code_csv(std::string filename, std::string coded_filename)
       coded_file->pushInt(offset_day, 5);
     }
     is.close();
-  }
-  delete ->is;
-  mini::csv::ifstream is2(filename);
-  is2.set_delimiter(',', "$$");
-  if(is2.is_open())
-  {
-    std::cout << "a";
-  }
-  else{
-    std::cout << "b";
   }
 }
 
@@ -133,53 +102,7 @@ void CsvUtils::decode_csv(std::string coded_filename, std::string decoded_filena
       // std::cout << day;
 
       os << year << month << day << NEWLINE;
-
-      // Product product("Shampoo", 200, 15.0f);
-      // os << product.name << product.qty << product.price << NEWLINE;
-      // Product product2("Towel, Soap, Shower Foam", 300, 6.0f);
-      // os << product2.name << product2.qty << product2.price << NEWLINE;
     }
   }
   os.flush();
-}
-
-
-int CsvUtils::compare_csv(std::string filename1, std::string filename2)
-{
-  mini::csv::ifstream is1(filename1);
-  is1.set_delimiter(',', "$$");
-
-  // mini::csv::ifstream is2(filename2);
-  // is2.set_delimiter(',', "$$");
-
-  if(is1.is_open())
-  {
-    std::cout << "is1";
-  }
-  std::cout << filename2;
-  // if(is2.is_open())
-  // {
-  //   std::cout << "is2";
-  // }
-  // if(is1.is_open() and is2.is_open())
-  // {
-  //   std::cout << "in";
-  //   NinoRow r1, r2;
-  //   int row_count = 0;
-  //   while(is1.read_line() and is2.read_line())
-  //   {
-  //     is1 >> r1;
-  //     is2 >> r2;
-
-  //     if(r1.equal(r2))
-  //     {
-  //       row_count++;
-  //     }
-  //     else
-  //     {
-  //       return row_count;
-  //     }
-  //   }
-  // }
-  return -1;
 }

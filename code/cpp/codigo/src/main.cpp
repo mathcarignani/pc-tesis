@@ -25,8 +25,8 @@ int main(int argc, char *argv[]){
 
   std::cout << "Comparing csv...\n";
 	// int res = FileUtils::compare((char*)filename.c_str(), (char*)decoded_filename.c_str());
-	int res = CsvUtils::compare_csv(filename, decoded_filename);
-	std::cout << res << "\n";
+	// int res = CsvUtils::compare_csv(filename, decoded_filename);
+	// std::cout << res << "\n";
 
   return 0;
 }

@@ -47,6 +47,24 @@ def clean_csv(read_filename, write_filename, keep_columns=[], remove_columns=[],
 								if (current_row % 1000 == 0) or (current_row == total_rows):
 										print_progress(current_row, total_rows)
 
+def compare_csv(filename1, filename2):
+	with open(filename1, 'rb') as csvfile1:
+	    with open (filename2, "rb") as csvfile2:
+	        reader1 = csv.reader(csvfile1)
+	        reader2 = csv.reader(csvfile2)
+
+	        row_count = 0
+	        for row1 in reader1:
+	        		row2 = reader2.next()
+
+	        		if row1==row2:
+	        				row_count += 1
+	        		else:
+	        		 		print "diff csv, first diff row:", row_count
+	        		 		return
+	        print "same csv"
+	        		
+
 
 def num_after_point(x):
     s = str(x)
@@ -109,9 +127,9 @@ def csv_stats(read_filename):
 
 
 
-
-
-
-clean_csv('../../datasets/el-nino/elnino.csv', 'elnino-clean.csv', keep_columns=[1,2,3], first_row=1)
+# clean_csv('../../datasets/el-nino/elnino.csv', 'elnino-clean.csv', keep_columns=[1,2,3], first_row=1)
 # clean_csv('../../datasets/el-nino/elnino.csv', 'elnino-clean.csv', remove_columns=[0,4,7,8,9])
 # csv_stats('elnino-clean.csv')
+
+compare_csv('elnino-clean1.csv', 'elnino-clean1.csv.decoded.csv')
+compare_csv('elnino-clean2.csv', 'elnino-clean2.csv.decoded.csv')
