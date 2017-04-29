@@ -128,9 +128,9 @@ def csv_stats(read_filename):
 
 
 
-# clean_csv('../../datasets/el-nino/elnino.csv', 'elnino-clean.csv', keep_columns=[1,2,3], first_row=1)
-clean_csv('../../datasets/el-nino/elnino.csv', 'elnino-clean.csv', remove_columns=[0,4,5,6,7,8,9], first_row=1)
+clean_csv('../../datasets/el-nino/elnino.csv', 'elnino-clean.csv', keep_columns=[1,2,3,5,6], first_row=1)
+# clean_csv('../../datasets/el-nino/elnino.csv', 'elnino-clean.csv', remove_columns=[0,4,5,6,7,8,9], first_row=1)
 # csv_stats('elnino-clean.csv')
 
-# compare_csv('elnino-clean1.csv', 'elnino-clean1.csv.decoded.csv')
+# compare_csv('elnino-clean.csv', 'elnino-clean.csv.decoded.csv')
 # compare_csv('elnino-clean2.csv', 'elnino-clean2.csv.decoded.csv')

@@ -1,6 +1,8 @@
 #ifndef __CSV_UTILS_H__
 #define __CSV_UTILS_H__
 
+#include <string>
+
 class CsvUtils {
 
 public:

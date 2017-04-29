@@ -1,10 +1,10 @@
+#include "csv_utils.h"
+
 #include <iostream>
-#include <math.h>
-#include <string>
 
 #include "bit_stream.h"
-#include "csv_utils.h"
 #include "minicsv.h"
+#include "operation_utils.h"
 
 // Year  Month   Day   Latitude  Longitude   Air Temp  Sea Surface Temp
 //  80    3      7      -0.02     -109.46     26.14       26.24
@@ -65,8 +65,10 @@ void CsvUtils::code_csv(std::string filename, std::string coded_filename)
 
       // std::cout << r.lat;
       float offset_lat = atof(r.lat.c_str()) + 8.81;
-      int offset_lat_left = floor(offset_lat);
-      int offset_lat_right = (offset_lat - offset_lat_left)*100;
+      int offset_lat_left = 0;
+      int offset_lat_right = 0;
+      OperationUtils::set_right_left(offset_lat, &offset_lat_left, &offset_lat_right);
+
       coded_file->pushInt(offset_lat_left, 5);
       coded_file->pushInt(offset_lat_right, 7);
 
@@ -97,23 +99,27 @@ void CsvUtils::decode_csv(std::string coded_filename, std::string decoded_filena
       int offset_year = coded_file->getInt(5);
       int year = offset_year + 80;
       // std::cout << year;
+      // std::cout << " ";
 
       int offset_month = coded_file->getInt(4);
       int month = offset_month + 1;
       // std::cout << month;
+      // std::cout << " ";
 
       int offset_day = coded_file->getInt(5);
       int day = offset_day + 1;
       // std::cout << day;
+      // std::cout << " ";
 
-      int offset_lat_left = coded_file->getInt(5);
-      int offset_lat_right = coded_file->getInt(7);
-      std::cout << offset_lat_left;
-      std::cout << " ";
-      std::cout << offset_lat_right;
-      exit(0);
-      float lat = offset_lat_left + (1/100)*offset_lat_right - 8.81;
-
+      float offset_lat_left = coded_file->getInt(5);
+      float offset_lat_right = coded_file->getInt(7);
+      // std::cout << offset_lat_left;
+      // std::cout << " ";
+      // std::cout << offset_lat_right;
+    
+      float lat = offset_lat_left + offset_lat_right/100 - 8.81;
+      // std::cout << " ";
+      // std::cout << offset_lat_right/100;
       os << year << month << day << lat << NEWLINE;
     }
   }
