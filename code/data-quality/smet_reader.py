@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 from progress import print_progress
 
 class SMETReader:
@@ -8,20 +9,35 @@ class SMETReader:
 		self.total_lines = self.file_length();
 		self.last_line = 0
 		self.df = pd.DataFrame({})
+		self.data = True
 
-	def parse(self):
+	def parse_file(self):
 		print "Parsing " + self.filename
 		print "Total lines: " + str(self.total_lines)
 		with open(self.full_filename, "r") as smet_file:
 			for line in smet_file:
-				self.parse_line()
+				self.parse_line(line)
 				self.last_line += 1
 				print_progress(self.last_line, self.total_lines)
-		print self.last_line
 
-
-	def parse_line(self):
-		pass
+	def parse_line(self, line):
+		s_line = line.split()
+		if self.data:
+			if s_line[0] == 'fields':
+				# fields = timestamp TA RH VW VW_max DW ISWR OSWR HS TSS TS1 TS2 TS3 PSUM Ventilation U_Battery T_logger
+				self.parse_fields(s_line)
+				self.data = False
+				print self.df
+		else:
+			pass
+  
+	def parse_fields(self, s_line):
+		data = {}
+		print s_line[2:]
+		for x in s_line[2:]:
+			data[x] = np.array([])
+		self.df = pd.DataFrame(data=data)
+  
 
 	def file_length(self):
 		with open(self.full_filename) as f:
@@ -35,4 +51,4 @@ class SMETReader:
 folder = "/media/pablo/78FA-ED53/data-quality/datasets/1-davos/IRKISsoilmoisturedata/interpolatedmeteo"
 filename = "interpolatedmeteo_222.smet"
 smet_reader = SMETReader(folder, filename)
-smet_reader.parse()
+smet_reader.parse_file()
