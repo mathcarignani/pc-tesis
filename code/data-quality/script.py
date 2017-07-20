@@ -18,8 +18,10 @@ for folder_name in folder_names:
 		elapsed = end - start
 		print "Time elapsed:", elapsed, "sec"
 		print data.df.describe()
+		print data.df['RH'].head(n=5)
 		data.post_parsing()
-		print "+++++++++++++++++++++++++++++++++++++++++++++++++"
-		print "+++++++++++++++++++++++++++++++++++++++++++++++++"
-		print "+++++++++++++++++++++++++++++++++++++++++++++++++"
-		print data.df.describe()
+		print data.df['RH'].head(n=5)
+		# print data.df.head(n=5)
+		# print "+++++++++++++++++++++++++++++++++++++++++++++++++"
+		# print "+++++++++++++++++++++++++++++++++++++++++++++++++"
+		# print "+++++++++++++++++++++++++++++++++++++++++++++++++"

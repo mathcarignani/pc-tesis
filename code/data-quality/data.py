@@ -3,6 +3,7 @@ import numpy as np
 
 class Data:
 	SUPPORTED_VERSIONS = ['1.0', '1.1']
+	KELVIN_OFFSET = 273.15
 
 	def __init__(self):
 		self.version = None
@@ -46,15 +47,28 @@ class Data:
 		self.df.loc[timestamp] = np.array(s_line[1:]).astype(np.float)
 
 	def post_parsing(self):
+		column_names = self.df.columns.values
 		if self.version == '1.0':
-			self.apply_offset
-			self.apply_multiplier
+			self.apply_offset(column_names)
+			self.apply_multiplier(column_names)
 		else: # self.version == '1.1':
-			self.apply_multiplier
-			self.apply_offset
+			self.apply_multiplier(column_names)
+			self.apply_offset(column_names)
 
-	def apply_offset(self):
-		pass
+	def apply_offset(self, column_names):
+		if len(self.units_offset) == len(column_names):
+			for idx, col_name in enumerate(column_names):
+				col_offset = self.units_offset[idx]
+				if col_offset != 0:
+					if col_offset == self.KELVIN_OFFSET:
+						break # do not convert Celsius to Kelvin
+					else:
+						print col_name, self.units_offset[idx]
+						self.df[col_name] += self.units_offset[idx]
 
-	def apply_multiplier(self):
-		pass
+	def apply_multiplier(self, column_names):
+		if len(self.units_multiplier) == len(column_names):
+			for idx, col_name in enumerate(column_names):
+				col_mult = self.units_multiplier[idx]
+				if col_mult != 1:
+					self.df[col_name] *= col_mult
