@@ -29,4 +29,4 @@ class SMETReader:
 			self.header = self.data.parse_header(s_line)
 		else:
 			self.data.parse_data(s_line)
-			self.file_utils.progress(self.current_line)
+			self.file_utils.print_progress(self.current_line)
