@@ -3,29 +3,24 @@
 import sys
 
 class ProgressBar:
-    def __init__(self, total):
+    def __init__(self, total, mod_range = 100, prefix = 'Progress:', suffix = 'Complete', decimals=1, bar_length = 25):
         self.total = total
         self.total_float = float(total)
+        self.mod_range = mod_range
+        self.prefix = prefix
+        self.suffix = suffix
+        self.str_format = "{0:." + str(decimals) + "f}"
+        self.bar_length = bar_length
 
-    # Print iterations progress
-    def print_progress(self, iteration, prefix = 'Progress:', suffix = 'Complete', decimals=1, bar_length = 25):
-        """
-        Call in a loop to create terminal progress bar
-        @params:
-            iteration   - Required  : current iteration (Int)
-            total       - Required  : total iterations (Int)
-            prefix      - Optional  : prefix string (Str)
-            suffix      - Optional  : suffix string (Str)
-            decimals    - Optional  : positive number of decimals in percent complete (Int)
-            bar_length  - Optional  : character length of bar (Int)
-        """
-        str_format = "{0:." + str(decimals) + "f}"
-        percents = str_format.format(100 * (iteration / self.total_float))
-        filled_length = int(round(bar_length * iteration / self.total_float))
-        bar = '█' * filled_length + '-' * (bar_length - filled_length)
+    def print_progress(self, iteration):
+        if iteration % self.mod_range != 0:
+            return
+        percents = self.str_format.format(100 * (iteration / self.total_float))
+        filled_length = int(round(self.bar_length * iteration / self.total_float))
+        bar = '█' * filled_length + '-' * (self.bar_length - filled_length)
 
-        sys.stdout.write('\r%s |%s| %s%s %s' % (prefix, bar, percents, '%', suffix)),
+        sys.stdout.write('\r%s |%s| %s%s %s' % (self.prefix, bar, percents, '%', self.suffix)),
 
-        if iteration == self.total:
+        if iteration >= self.total:
             sys.stdout.write('\n')
         sys.stdout.flush()

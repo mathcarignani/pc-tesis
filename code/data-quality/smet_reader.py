@@ -14,8 +14,8 @@ class SMETReader:
 			for line in smet_file:
 				self.parse_line(line)
 				self.current_line += 1
-				if self.current_line == 1000:
-					break
+				# if self.current_line == 30:
+				# 	break
 		print
 		return self.data
 
@@ -28,5 +28,5 @@ class SMETReader:
 		elif self.header:
 			self.header = self.data.parse_header(s_line)
 		else:
-			self.data.parse_data(s_line)
+			self.data.parse_data(s_line, line)
 			self.file_utils.print_progress(self.current_line)
