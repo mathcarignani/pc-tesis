@@ -47,19 +47,20 @@ class Data:
 			raise StandardError('The header is missing the nodata attribute.')
 
 	def parse_data(self, s_line, line):
+		# EXAMPLE:
+		# 2009-10-01T01:00  278.92   273.89   273.89    1.4     0    0.0      0      0 263.637  0.000    0.000   0.926
 		try:
-			# EXAMPLE:
-			# 2009-10-01T01:00  278.92   273.89   273.89    1.4     0    0.0      0      0 263.637  0.000    0.000   0.926
 			timestamp = pd.to_datetime(s_line[0])
 
-			if len(s_line[1:]) != len(self.df.columns):
-				# if the line has an inconsistent number of values mark the whole row as invalid
-				s_line = [np.nan for x in s_line]
-				self.fail['missing_values'].append(line)
-			else:
+			if len(s_line[1:]) == len(self.df.columns):
 				s_line = [np.nan if x == self.nodata else x for x in s_line]
+				np_array = np.array(s_line[1:]).astype(np.float)
+			else:
+				# if the line has an inconsistent number of values mark the whole row as invalid
+				self.fail['missing_values'].append(line)
+				np_array = np.array([np.nan] * len(self.df.columns))
 			
-			self.df.loc[timestamp] = np.array(s_line[1:]).astype(np.float)
+			self.df.loc[timestamp] = np_array
 		except:
 			self.fail['errors'].append(line)
 
