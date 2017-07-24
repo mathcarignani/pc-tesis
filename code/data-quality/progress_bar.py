@@ -3,7 +3,7 @@
 import sys
 
 class ProgressBar:
-    def __init__(self, total, mod_range = 100, prefix = 'Progress:', suffix = 'Complete', decimals=1, bar_length = 25):
+    def __init__(self, total, mod_range = 1000, prefix = 'Progress:', suffix = 'Complete', decimals=1, bar_length = 25):
         self.total = total
         self.total_float = float(total)
         self.mod_range = mod_range

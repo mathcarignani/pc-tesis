@@ -4,7 +4,11 @@ import time
 
 parent_folder = "/media/pablo/78FA-ED53/data-quality/datasets/1-davos/IRKISsoilmoisturedata/"
 folder_names = ["station"] # ["interpolatedmeteo", "station"]
-station_ids = ["1202"] # ["222", "333", "1202", "1203", "1204", "1205", "SLF2"]
+# (1) station_ids = ["1202"]
+# (2) station_ids = ["222", "333", "SLF2"]
+# (3) station_ids = ["1203"]
+station_ids = ["1204"]
+# ["1204", "1205"]
 
 for folder_name in folder_names:
 	folder = parent_folder + folder_name

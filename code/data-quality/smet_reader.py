@@ -14,19 +14,17 @@ class SMETReader:
 			for line in smet_file:
 				self.parse_line(line)
 				self.current_line += 1
-				# if self.current_line == 30:
+				# if self.current_line == 1000:
 				# 	break
 		print
 		return self.data
 
 	def parse_line(self, line):
 		s_line = line.split()
-		if self.current_line == 0:
-			# EXAMPLE:
-			# SMET 1.1 ASCII
-			self.data.set_version(s_line[1])
-		elif self.header:
-			self.header = self.data.parse_header(s_line)
-		else:
+		if not(self.header):
 			self.data.parse_data(s_line, line)
 			self.file_utils.print_progress(self.current_line)
+		elif self.current_line == 0:
+			self.data.set_version(s_line)
+		else:
+			self.header = self.data.parse_header(s_line)

@@ -11,9 +11,13 @@ class Data:
 		self.nodata = None
 		self.units_offset = None
 		self.units_multiplier = None
+		self.columns_count = 0
 		self.fail = {'missing_values': [], 'errors': []}
 
-	def set_version(self, version):
+	def set_version(self, s_line):
+		# EXAMPLE:
+		# SMET 1.1 ASCII
+		version = s_line[1]
 		if version not in self.SUPPORTED_VERSIONS:
 			raise StandardError('Version' + version + 'not supported.')
 		self.version = version
@@ -23,6 +27,7 @@ class Data:
 			# EXAMPLE:
 			# fields = timestamp TA RH VW VW_max DW ISWR OSWR HS TSS TS1 TS2 TS3 PSUM Ventilation U_Battery T_logger
 			self.df = pd.DataFrame(columns=s_line[3:])
+			self.columns_count = len(self.df.columns)
 		elif s_line[0] == 'nodata':
 			# EXAMPLE:
 			# nodata = -999
@@ -51,10 +56,10 @@ class Data:
 		# 2009-10-01T01:00  278.92   273.89   273.89    1.4     0    0.0      0      0 263.637  0.000    0.000   0.926
 		try:
 			timestamp = pd.to_datetime(s_line[0])
-
-			if len(s_line[1:]) == len(self.df.columns):
-				s_line = [np.nan if x == self.nodata else x for x in s_line]
-				np_array = np.array(s_line[1:]).astype(np.float)
+			data = s_line[1:]
+			if len(data) == self.columns_count:
+				data = [np.nan if x == self.nodata else x for x in data]
+				np_array = np.array(data).astype(np.float)
 			else:
 				# if the line has an inconsistent number of values mark the whole row as invalid
 				self.fail['missing_values'].append(line)
@@ -74,7 +79,7 @@ class Data:
 			self.apply_offset(column_names)
 		
 	def apply_offset(self, column_names):
-		if self.units_offset and len(self.units_offset) == len(column_names):
+		if (self.units_offset is not None) and len(self.units_offset) == len(column_names):
 			for idx, col_name in enumerate(column_names):
 				col_offset = self.units_offset[idx]
 				if col_offset != 0:
@@ -85,7 +90,7 @@ class Data:
 						self.df[col_name] += self.units_offset[idx]
 
 	def apply_multiplier(self, column_names):
-		if self.units_multiplier and len(self.units_multiplier) == len(column_names):
+		if (self.units_multiplier is not None) and len(self.units_multiplier) == len(column_names):
 			for idx, col_name in enumerate(column_names):
 				col_mult = self.units_multiplier[idx]
 				if col_mult != 1:
