@@ -2,13 +2,14 @@ from smet_reader import *
 from data import *
 import time
 
-parent_folder = "/media/pablo/78FA-ED53/data-quality/datasets/1-davos/IRKISsoilmoisturedata/"
+# parent_folder = "/media/pablo/78FA-ED53/data-quality/datasets/1-davos/IRKISsoilmoisturedata/"
+parent_folder = "/home/pablo/Documents/tesis/pc-tesis/code/data-quality/"
 folder_names = ["station"] # ["interpolatedmeteo", "station"]
 # (1) station_ids = ["1202"]
 # (2) station_ids = ["222", "333", "SLF2"]
 # (3) station_ids = ["1203"]
-station_ids = ["1204"]
-# ["1204", "1205"]
+# (4) station_ids = ["1204"]
+station_ids = ["1205"]
 
 for folder_name in folder_names:
 	folder = parent_folder + folder_name
