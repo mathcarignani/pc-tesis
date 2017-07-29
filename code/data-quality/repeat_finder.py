@@ -1,12 +1,12 @@
-from data import * 
 from file_utils import * 
 
-class SMETReader:
+# This class is used to find different rows with the same date.
+class RepeatFinder:
 	def __init__(self, folder, filename):
 		self.file_utils = FileUtils(folder, filename)
-		self.data = Data()
 		self.current_line = 0
 		self.header = True
+		self.last_date = None
 
 	def parse_file(self):
 		self.file_utils.print_file_data()
@@ -18,13 +18,15 @@ class SMETReader:
 				# if self.current_line == 1000:
 				# 	break
 		print
-		return self.data
 
 	def parse_line(self, line):
 		s_line = line.split()
 		if not(self.header):
-			self.data.parse_data(s_line, line)
-		elif self.current_line == 0:
-			self.data.set_version(s_line)
+			current_date = s_line[0]
+			if current_date == self.last_date:
+				print 'ERROR', current_date
+			self.last_date = current_date
 		else:
-			self.header = self.data.parse_header(s_line)
+			if s_line[0][0] == '2': # first date
+				self.last_date = s_line[0]
+				self.header = False

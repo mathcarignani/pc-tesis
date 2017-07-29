@@ -11,16 +11,14 @@ class ProgressBar:
         self.suffix = suffix
         self.str_format = "{0:." + str(decimals) + "f}"
         self.bar_length = bar_length
+        self.last_iteration = self.total - 1
 
     def print_progress(self, iteration):
-        if iteration % self.mod_range != 0:
+        if (iteration != self.last_iteration) and (iteration % self.mod_range != 0):
             return
         percents = self.str_format.format(100 * (iteration / self.total_float))
         filled_length = int(round(self.bar_length * iteration / self.total_float))
         bar = '█' * filled_length + '-' * (self.bar_length - filled_length)
 
         sys.stdout.write('\r%s |%s| %s%s %s' % (self.prefix, bar, percents, '%', self.suffix)),
-
-        if iteration >= self.total:
-            sys.stdout.write('\n')
         sys.stdout.flush()

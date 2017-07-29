@@ -12,7 +12,11 @@ class Data:
 		self.units_offset = None
 		self.units_multiplier = None
 		self.columns_count = 0
-		self.fail = {'missing_values': [], 'errors': []}
+		self.fail = {'missing_values': [], 'errors': [], 'duplicate_rows': []}
+		self.last_date = None
+
+	def set_nodata(self, nodata="-999.000000"):
+		self.nodata = nodata
 
 	def set_version(self, s_line):
 		# EXAMPLE:
@@ -26,8 +30,7 @@ class Data:
 		if s_line[0] == 'fields':
 			# EXAMPLE:
 			# fields = timestamp TA RH VW VW_max DW ISWR OSWR HS TSS TS1 TS2 TS3 PSUM Ventilation U_Battery T_logger
-			self.df = pd.DataFrame(columns=s_line[3:])
-			self.columns_count = len(self.df.columns)
+			self.parse_fields(s_line[2:])
 		elif s_line[0] == 'nodata':
 			# EXAMPLE:
 			# nodata = -999
@@ -44,8 +47,13 @@ class Data:
 		header_end = s_line[0] == '[DATA]'
 		if header_end:
 			self.check_valid_header()
-			
 		return not(header_end)
+
+	def parse_fields(self, s_line):
+		# EXAMPLE:
+		# timestamp TA RH VW VW_max DW ISWR OSWR HS TSS TS1 TS2 TS3 PSUM Ventilation U_Battery T_logger
+		self.df = pd.DataFrame(columns=s_line[1:])
+		self.columns_count = len(self.df.columns)
 
 	def check_valid_header(self):
 		if not(self.nodata):
@@ -58,8 +66,14 @@ class Data:
 			timestamp = pd.to_datetime(s_line[0])
 			data = s_line[1:]
 			if len(data) == self.columns_count:
-				data = [np.nan if x == self.nodata else x for x in data]
-				np_array = np.array(data).astype(np.float)
+
+				current_date = s_line[0]
+				if current_date == self.last_date:
+					self.fail['duplicate_rows'].append(line)
+				else:
+					data = [np.nan if x == self.nodata else x for x in data]
+					np_array = np.array(data).astype(np.float)
+				self.last_date = current_date
 			else:
 				# if the line has an inconsistent number of values mark the whole row as invalid
 				self.fail['missing_values'].append(line)
@@ -98,11 +112,15 @@ class Data:
 
 	def analize(self):
 		print "Total dataset length:", len(self.df.index)
+		print "Total nan rows:", len(self.df.index[self.df.isnull().all(1)])
 		print "Dataset stats:"
 		print self.df.describe()
 		print
 		print "Null values count:"
 		print self.df.isnull().sum()
+		print
+		print "Duplicate rows:"
+		for p in self.fail['duplicate_rows']: print p
 		print
 		print "Invalid lines (missing values) -", len(self.fail['missing_values'])
 		for p in self.fail['missing_values']: print p
