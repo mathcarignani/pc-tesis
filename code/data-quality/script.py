@@ -1,10 +1,34 @@
-from data import *
-from smet_reader import *
-from vwc_reader import *
-from repeat_finder import *
-import time
+from file_reader import FileReader
+from parser_vwc import ParserVWC
+from parser_smet import ParserSMET
 
-parent_folder = "/media/pablo/78FA-ED53/data-quality/datasets/1-davos/IRKISsoilmoisturedata/"
+def parse_and_process(parser, folder, filename):
+	file_reader = FileReader(folder, filename)
+	file_reader.parse_file(parser)
+	parser.process_data()
+
+def parse_vwc_files():
+	parent_folder = "/media/pablo/78FA-ED53/data-quality/datasets/1-davos/IRKISsoilmoisturedata/"
+
+	filenames = ["vwc_SLF2.smet"] #["vwc_1202.dat", "vwc_1203.dat", "vwc_1204.dat", "vwc_1205.dat", "vwc_222.smet", "vwc_333.smet", "vwc_SLF2.smet"]
+	folder_name = "vwc"
+	folder = parent_folder + folder_name
+	for filename in filenames:
+		parse_and_process(ParserVWC(), folder, filename)
+		print
+
+parse_vwc_files()
+
+
+
+
+
+
+# from data import *
+# from smet_reader import *
+# from vwc_reader import *
+# from repeat_finder import *
+
 # folder_names = ["station", interpolatedmeteo"]
 # station_ids = ["1202", "1203", "1204", "1205", "222","333", "SLF2"]
 
@@ -23,19 +47,19 @@ parent_folder = "/media/pablo/78FA-ED53/data-quality/datasets/1-davos/IRKISsoilm
 # 		data.analize()
 
 
-filenames = ["vwc_1202.dat", "vwc_1203.dat", "vwc_1204.dat", "vwc_1205.dat", "vwc_222.smet", "vwc_333.smet", "vwc_SLF2.smet"]
-folder_name = "vwc"
-folder = parent_folder + folder_name
-for filename in filenames:
-	vwc_reader = VWCReader(folder, filename)
-	start = time.time()
-	data = vwc_reader.parse_file()
-	print
-	end = time.time()	
-	elapsed = end - start
-	print "Time elapsed:", elapsed, "sec"
-	data.post_parsing()
-	data.analize()
+# filenames = ["vwc_1202.dat", "vwc_1203.dat", "vwc_1204.dat", "vwc_1205.dat", "vwc_222.smet", "vwc_333.smet", "vwc_SLF2.smet"]
+# folder_name = "vwc"
+# folder = parent_folder + folder_name
+# for filename in filenames:
+# 	vwc_reader = VWCReader(folder, filename)
+# 	start = time.time()
+# 	data = vwc_reader.parse_file()
+# 	print
+# 	end = time.time()	
+# 	elapsed = end - start
+# 	print "Time elapsed:", elapsed, "sec"
+# 	data.post_parsing()
+# 	data.analize()
 
 # folder_name = "vwc"
 # filenames = ["vwc_1202.dat", "vwc_1203.dat", "vwc_1204.dat", "vwc_1205.dat", "vwc_222.smet", "vwc_333.smet", "vwc_SLF2.smet"]
