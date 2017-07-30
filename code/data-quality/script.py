@@ -20,7 +20,7 @@ def parse_vwc_files(folder):
 		print
 
 def parse_smet_files(key, folder):
-	station_ids = ["1202", "1203", "1204", "1205", "222","333", "SLF2"]
+	station_ids = ["1202", "1203", "1204", "1205", "222", "333", "SLF2"]
 	for station_id in station_ids:
 		filename = key + "_" + station_id + ".smet"
 		parse_and_process(ParserSMET(), folder, filename)
@@ -36,4 +36,4 @@ if len(args) != 2:
 elif args[0] == 'vwc':
 	parse_vwc_files(args[1])
 elif args[0] == 'station' or args[0] == 'interpolatedmeteo':
-	parse_smet_files(args[1], key)
+	parse_smet_files(args[0], args[1])

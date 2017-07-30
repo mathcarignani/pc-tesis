@@ -11,7 +11,7 @@ class ParserSMET(Parser):
 		self.units_offset = None
 		self.units_multiplier = None
 
-	def parse_header(self, line):
+	def _parse_header(self, line):
 		s_line = line.split()
 		parsing_header = True
 		if s_line[0] == 'SMET':
@@ -36,7 +36,7 @@ class ParserSMET(Parser):
 		elif s_line[0] == 'fields':
 			# EXAMPLE:
 			# fields = timestamp TA RH VW VW_max DW ISWR OSWR HS TSS TS1 TS2 TS3 PSUM Ventilation U_Battery T_logger
-			self.parse_fields(s_line[2:])
+			self._parse_columns(s_line[2:])
 		elif s_line[0] == '[DATA]':
 			# EXAMPLE:
 			# [DATA]
@@ -64,7 +64,7 @@ class ParserSMET(Parser):
 					if col_offset == self.KELVIN_OFFSET:
 						break # leave temperature as Celsius, do not convert to Kelvin
 					else:
-						print col_name, self.units_offset[idx]
+						# print col_name, self.units_offset[idx]
 						self.df[col_name] += self.units_offset[idx]
 
 	def _apply_multiplier(self, column_names):
