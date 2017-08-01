@@ -1,9 +1,6 @@
 from parser import Parser
 import numpy as np
 import pandas as pd
-import matplotlib
-import matplotlib.pyplot as plt
-matplotlib.style.use('ggplot')
 
 class ParserVWC(Parser):
 	def __init__(self):
@@ -18,10 +15,14 @@ class ParserVWC(Parser):
 		self._parse_columns(s_line)
 		self.parsing_header = False
 
-	def plot(self):
-		ts = pd.Series(np.random.randn(1000), index=pd.date_range('1/1/2000', periods=1000))
-		ts = ts.cumsum()
-		df = pd.DataFrame(np.random.randn(1000, 4), index=ts.index, columns=list('ABCD'))
-		df = df.cumsum()
-		plt.figure(); df.plot();
-		plt.savefig("1.png")
+  # The filename string is used for the plot legend.
+  # ylim is the y axis range.
+	def plot(self, filename):
+		sensor_labels = ['A', 'B']
+		for label in sensor_labels:
+			columns = [col for col in self.df.columns if label in col]
+			df_label = self.df[columns] # filter columns
+			title = 'Sensors with label ' + label + ' in ' + filename
+			ax = df_label.plot(title=title, ylim=[0,0.6])
+			fig = ax.get_figure()
+			fig.savefig(filename +  '_' + label + '.png')
