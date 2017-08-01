@@ -18,7 +18,7 @@ def parse_vwc_files(folder):
 
 def parse_smet_files(key, folder):
 	# station_ids = ["1202", "1203", "1204", "1205", "222", "333", "SLF2"]
-	station_ids = ["222", "333", "SLF2"]
+	station_ids = ["1203"]
 	for station_id in station_ids:
 		filename = key + "_" + station_id + ".smet"
 		_parse_and_process(ParserSMET(), folder, filename)
