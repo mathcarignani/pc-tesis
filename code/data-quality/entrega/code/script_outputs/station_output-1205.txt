@@ -1,0 +1,43 @@
+pablo@pablo-GE60-0NC-0ND:~/Documents/tesis/pc-tesis/code/data-quality$ python script.py station /media/pablo/78FA-ED53/data-quality/datasets/1-davos/IRKISsoilmoisturedata/station
+Parsing 'station_1205.smet'
+Progress: |█████████████████████████| 100.0% Complete
+Time elapsed: 42261.1974082 seconds
+Total dataset length: 1297671
+Total nan rows: 0
+Total nan columns: 0
+First timestamp: 2011-05-11 00:00:00
+Last timestamp: 2014-05-06 12:23:00
+Dataset stats:
+                 TA            RH            VW            DW          ISWR  \
+count  1.297671e+06  1.297671e+06  1.035297e+06  1.035297e+06  1.102535e+06   
+mean  -5.544293e+02 -8.180636e+00  1.971463e+00  1.540082e+02  9.359716e+01   
+std    3.776768e+02  3.987658e+00  1.644395e+00  9.556127e+01  1.584455e+02   
+min   -7.258500e+02 -9.990000e+00  0.000000e+00  1.790700e+00  0.000000e+00   
+50%   -7.258500e+02 -9.990000e+00  1.823870e+00  1.269050e+02  2.136750e+00   
+max    3.973800e+02  1.483940e+00  1.093940e+02  3.582090e+02  1.250000e+03   
+
+               RSWR        OLWR          PSUM           TSS  
+count  1.081389e+06   17.000000  1.072464e+06  1.297671e+06  
+mean   1.944913e+02   65.557062  2.035147e-03  1.062508e+02  
+std    2.833552e+02   75.513123  2.737816e-02  3.778545e+02  
+min    0.000000e+00    3.052500  0.000000e+00 -7.258500e+02  
+50%    9.768010e+00   22.893800  0.000000e+00  2.748120e+02  
+max    1.250000e+03  224.054000  9.652000e+00  3.899750e+03  
+
+Null values count for each column:
+TA            0
+RH            0
+VW       262374
+DW       262374
+ISWR     195136
+RSWR     216282
+OLWR    1297654
+PSUM     225207
+TSS           0
+dtype: int64
+
+Invalid lines (duplicate rows) - 0
+
+Invalid lines (missing values) - 0
+
+Invalid lines (errors) - 0
