@@ -1,0 +1,36 @@
+640x480+0+0
+
+
+convert vwc_222.smet_A.png -crop 555x440+40+30 +repage AA.png
+convert vwc_222.smet_B.png -crop 545x440+40+30 +repage BB.png
+convert AA.png BB.png +append crop/vwc_222.png
+
+convert vwc_333.smet_A.png -crop 555x440+40+30 +repage AA.png
+convert vwc_333.smet_B.png -crop 545x440+40+30 +repage BB.png
+convert AA.png BB.png +append crop/vwc_333.png
+
+convert vwc_SLF2.smet_A.png -crop 555x440+40+30 +repage AA.png
+convert vwc_SLF2.smet_B.png -crop 545x440+40+30 +repage BB.png
+convert AA.png BB.png +append crop/vwc_SLF2.png
+
+convert vwc_1202.dat_A.png -crop 555x440+40+30 +repage AA.png
+convert vwc_1202.dat_B.png -crop 545x440+40+30 +repage BB.png
+convert AA.png BB.png +append crop/vwc_2102.png
+
+convert vwc_1203.dat_A.png -crop 555x440+40+30 +repage AA.png
+convert vwc_1203.dat_B.png -crop 545x440+40+30 +repage BB.png
+convert AA.png BB.png +append crop/vwc_2103.png
+
+convert vwc_1204.dat_A.png -crop 555x440+40+30 +repage AA.png
+convert vwc_1204.dat_B.png -crop 545x440+40+30 +repage BB.png
+convert AA.png BB.png +append crop/vwc_2104.png
+
+convert vwc_1205.dat_A.png -crop 555x440+40+30 +repage AA.png
+convert vwc_1205.dat_B.png -crop 545x440+40+30 +repage BB.png
+convert AA.png BB.png +append crop/vwc_2105.png
+
+rm AA.png
+rm BB.png
+
+
+
