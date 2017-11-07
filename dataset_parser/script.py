@@ -9,16 +9,16 @@ from script_methods import parse_vwc_files, parse_smet_files, clean_vwc_files
 
 args = sys.argv[1:]
 if len(args) < 2:
-	print "ERROR: Missing script parameter."
-	print "Correct usages:"
-	print "(1) python script.py vwc /folder/path/to/files"
-	print "(2) python script.py vwc /folder/path/to/files clean /output/folder/path"
-	print "(3) python script.py station /folder/path/to/files"
-	print "(4) python script.py interpolatedmeteo /folder/path/to/files"
+    print "ERROR: Missing script parameter."
+    print "Correct usages:"
+    print "(1) python script.py vwc /folder/path/to/files"
+    print "(2) python script.py vwc /folder/path/to/files clean /output/folder/path"
+    print "(3) python script.py station /folder/path/to/files"
+    print "(4) python script.py interpolatedmeteo /folder/path/to/files"
 elif args[0] == 'vwc':
-	if len(args) == 2:
-		parse_vwc_files(args[1])
-	else:
-		clean_vwc_files(args[1], args[3])
+    if len(args) == 2:
+        parse_vwc_files(args[1])
+    else:
+        clean_vwc_files(args[1], args[3])
 elif args[0] == 'station' or args[0] == 'interpolatedmeteo':
-	parse_smet_files(args[0], args[1])
+    parse_smet_files(args[0], args[1])

@@ -1,5 +1,6 @@
 from parser import *
 
+
 # Platform: T0N95W 2017-01-01 to 2017-11-03 (31142 total rows, 2 deployments) File Generated on 2017-11-05
 # Parameter(s): Sea Surface Temperature ("degree celsius"), -9.999 = missing
 # Deployment: DM179A-20160312 2017-01-01 to 2017-03-27 (11995 data rows, 1 depth columns)
