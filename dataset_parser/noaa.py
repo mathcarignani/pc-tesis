@@ -1,9 +1,5 @@
 from file_reader import FileReader
-from parser_noaa import ParserNOAA
-# from file_writer import FileWriter
-# from parser_vwc import ParserVWC
-# from parser_smet import ParserSMET
-# from cleaner_vwc import CleanerVWC
+from parsers.noaa.parser_noaa import ParserNOAA
 
 folder = "/Users/pablocerve/Documents/FING/Proyecto/datasets/noaa/1-d05-527.tar"
 filename = "TAO_T0N95W_R_SST_10min.ascii"

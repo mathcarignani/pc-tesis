@@ -1,9 +1,7 @@
-from parser import Parser
-import numpy as np
-import pandas as pd
+from parser_irkis import ParserIRKIS
 
 
-class ParserVWC(Parser):
+class ParserVWC(ParserIRKIS):
     def __init__(self):
         super(ParserVWC, self).__init__()
         self.nodata = "-999.000000"

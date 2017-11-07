@@ -1,7 +1,7 @@
-from parser import *
+from parser_irkis import ParserIRKIS
 
 
-class ParserSMET(Parser):
+class ParserSMET(ParserIRKIS):
     SUPPORTED_VERSIONS = ['1.0', '1.1']
     KELVIN_OFFSET = 273.15
 

@@ -1,7 +1,7 @@
 from file_reader import FileReader
 from file_writer import FileWriter
-from parser_vwc import ParserVWC
-from parser_smet import ParserSMET
+from parser.parser_vwc import ParserVWC
+from parser.parser_smet import ParserSMET
 from cleaner_vwc import CleanerVWC
 
 VWC_FILES = ["vwc_1202.dat", "vwc_1203.dat", "vwc_1204.dat", "vwc_1205.dat",
