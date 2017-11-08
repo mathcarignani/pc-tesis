@@ -29,8 +29,7 @@ class ParserIRKIS(parser_base.ParserBase):
                 if current_date == self.last_date:
                     self.fail['duplicate_rows'].append(line)
                 else:
-                    data = [np.nan if x == self.nodata else x for x in data]
-                    np_array = np.array(data).astype(np.float)
+                    np_array = self._clean_data(data)
                     self.last_date = current_date
             else:
                 # if the line has an inconsistent number of values mark the whole row as invalid

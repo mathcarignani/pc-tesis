@@ -1,4 +1,5 @@
 from parser_irkis import ParserIRKIS
+import numpy as np
 
 
 class ParserSMET(ParserIRKIS):

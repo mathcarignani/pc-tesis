@@ -57,11 +57,7 @@ class ParserNOAA(parser_base.ParserBase):
             date = s_line[0] + ' ' + s_line[1]
             timestamp = pd.to_datetime(date, format='%Y%m%d %H%M%S')
             data = np.array([s_line[2]])
-            # print data
-            data = [np.nan if x == self.nodata else x for x in data]
-            np_array = np.array(data).astype(np.float)
-            # print timestamp
-            # print np_array
+            np_array = self._clean_data(data)
             self.df.loc[timestamp] = np_array
 
         except:
