@@ -7,7 +7,7 @@ class ParserBase(object):
     def __init__(self):
         self.parsing_header = True
         self.nodata = None
-        self.fail = {'missing_values': [], 'errors': [], 'duplicate_rows': []}
+        self.errors = {'missing_values': [], 'errors': [], 'duplicate_rows': []}
         self.last_date = None  # used to catch duplicate dates
 
     def parse_line(self, line):
@@ -37,20 +37,20 @@ class ParserBase(object):
         Utils.print_number("Total nan rows:", self.nan_rows_count())
 
         columns = self.df.columns
-        self.df = self.df.dropna(axis=1, how='all')  # drop nan columns
+        clean_df = self.df.dropna(axis=1, how='all')  # drop nan columns
 
-        print "Total nan columns:", len(columns) - len(self.df.columns)
-        print "First timestamp:", self.df.index[0]
-        print "Last timestamp:", self.df.index[-1]
+        print "Total nan columns:", len(columns) - len(clean_df.columns)
+        print "First timestamp:", clean_df.index[0]
+        print "Last timestamp:", clean_df.index[-1]
         print "Dataset stats:"
-        print self.df.describe(percentiles=[])
+        print clean_df.describe(percentiles=[])
         print
         print "Null values count for each column:"
-        print self.df.isnull().sum()
+        print clean_df.isnull().sum()
         print
-        for key in self.fail.keys():
-            print "Invalid lines -", key, "-", len(self.fail[key])
-            for p in self.fail[key]: sys.stdout.write(p)
+        for key in self.errors.keys():
+            print "Invalid lines -", key, "-", len(self.errors[key])
+            for p in self.errors[key]: sys.stdout.write(p)
             print
 
     def rows_count(self):

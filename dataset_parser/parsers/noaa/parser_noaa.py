@@ -59,6 +59,21 @@ class ParserNOAA(parser_base.ParserBase):
             data = np.array([s_line[2]])
             np_array = self._clean_data(data)
             self.df.loc[timestamp] = np_array
-
         except:
-            self.fail['errors'].append(line)
+            self.errors['errors'].append(line)
+
+    def plot(self, filename):
+        columns = [col for col in self.df.columns]
+        df_label = self.df[columns]  # filter columns
+        title = filename
+        ax = df_label.plot(title=title) #, ylim=[0, 0.6])
+        fig = ax.get_figure()
+        fig.savefig(filename + '.png')
+
+# columns = [col for col in parser.df.columns]
+# parser.df.fillna()
+# df_label = parser.df[columns]  # filter columns
+# title = filename
+# ax = df_label.plot(title=title) #, ylim=[0, 0.6])
+# fig = ax.get_figure()
+# fig.savefig(filename + '.png')
