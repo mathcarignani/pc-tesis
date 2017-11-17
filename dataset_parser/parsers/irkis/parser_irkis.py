@@ -25,19 +25,7 @@ class ParserIRKIS(parser_base.ParserBase):
             current_date = s_line[0]
             timestamp = pd.to_datetime(current_date)
             data = s_line[1:]
-            if len(data) == self.columns_count:
-                if current_date == self.last_date:
-                    self.errors['duplicate_rows'].append(line)
-                else:
-                    np_array = self._clean_data(data)
-                    self.last_date = current_date
-            else:
-                # if the line has an inconsistent number of values mark the whole row as invalid
-                self.errors['missing_values'].append(line)
-                np_array = np.array([np.nan] * len(self.df.columns))
-
-            if np_array is not None:
-                self.df.loc[timestamp] = np_array
+            self._add_data(data, current_date, line, timestamp, np_array)
 
         except:
             self.errors['errors'].append(line)

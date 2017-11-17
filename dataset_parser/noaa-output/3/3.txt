@@ -1,0 +1,417 @@
+Last login: Sun Nov 12 16:31:03 on ttys004
+Pablos-MacBook-Pro:dataset_parser pablocerve$ python noaa.py 
+Parsing 'TAO_T8N125W_D_SST_10min.ascii'
+Progress: |█████████████████████████| 100.0% Complete - Elapsed: 03:03 - Remaining: 00:00
+Time elapsed: 183.831199884 seconds
+Total rows: 51,693
+Total nan rows: 306
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-12-31 23:50:00
+Dataset stats:
+                SST
+count  51387.000000
+mean      28.240061
+std        0.540924
+min       27.008000
+50%       28.137000
+max       31.359000
+
+Null values count for each column:
+SST    306
+dtype: int64
+
+Invalid lines - duplicate_rows - 0
+
+Invalid lines - errors - 3
+Deployment: DM175A-20160311 2016-03-12 to 2016-12-31 (41519 data rows, 1 depth columns)
+Depth (Meters)       1 Quality Mode
+YYYYMMDD HHMMSS    SST Q M
+
+Invalid lines - missing_values - 0
+
+Parsing 'TAO_T8N155W_R_SST_10min.ascii'
+Progress: |█████████████████████████| 100.0% Complete - Elapsed: 01:15 - Remaining: 00:00
+Time elapsed: 75.8824977875 seconds
+Total rows: 27,268
+Total nan rows: 125
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-10-23 17:00:00
+Dataset stats:
+                SST
+count  27143.000000
+mean      28.251598
+std        0.493476
+min       27.354000
+50%       28.203000
+max       30.053000
+
+Null values count for each column:
+SST    125
+dtype: int64
+
+Invalid lines - duplicate_rows - 0
+
+Invalid lines - errors - 3
+Deployment: DM217A-20161008 2016-10-08 to 2016-10-23 (2070 data rows, 1 depth columns)
+Depth (Meters)       1 Quality Mode
+YYYYMMDD HHMMSS    SST Q M
+
+Invalid lines - missing_values - 0
+
+Parsing 'TAO_T8N165E_R_SST_10min.ascii'
+Progress: |█████████████████████████| 100.0% Complete - Elapsed: 03:10 - Remaining: 00:00
+Time elapsed: 190.043003082 seconds
+Total rows: 51,713
+Total nan rows: 22,761
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-12-31 23:50:00
+Dataset stats:
+                SST
+count  28952.000000
+mean      28.745761
+std        0.499208
+min       26.257000
+50%       28.712000
+max       31.489000
+
+Null values count for each column:
+SST    22761
+dtype: int64
+
+Invalid lines - duplicate_rows - 0
+
+Invalid lines - errors - 3
+Deployment: DM190A-20160708 2016-07-08 to 2016-12-31 (24840 data rows, 1 depth columns)
+Depth (Meters)       1 Quality Mode
+YYYYMMDD HHMMSS    SST Q M
+
+Invalid lines - missing_values - 0
+
+Parsing 'TAO_T8N170W_R_SST_10min.ascii'
+Progress: |█████████████████████████| 100.0% Complete - Elapsed: 00:48 - Remaining: 00:00
+Time elapsed: 48.2128398418 seconds
+Total rows: 17,972
+Total nan rows: 14,044
+Total nan columns: 0
+First timestamp: 2016-08-26 03:40:00
+Last timestamp: 2016-12-31 23:50:00
+Dataset stats:
+               SST
+count  3928.000000
+mean     29.537006
+std       0.251533
+min      28.738000
+50%      29.509000
+max      30.733000
+
+Null values count for each column:
+SST    14044
+dtype: int64
+
+Invalid lines - duplicate_rows - 0
+
+Invalid lines - errors - 0
+
+Invalid lines - missing_values - 0
+
+Parsing 'TAO_T8N180W_D_SST_10min.ascii'
+Progress: |█████████████████████████| 100.0% Complete - Elapsed: 03:10 - Remaining: 00:00
+Time elapsed: 190.968183994 seconds
+Total rows: 52,102
+Total nan rows: 236
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-12-31 23:50:00
+Dataset stats:
+                SST
+count  51866.000000
+mean      28.837403
+std        0.726142
+min       27.333000
+50%       28.891000
+max       31.101000
+
+Null values count for each column:
+SST    236
+dtype: int64
+
+Invalid lines - duplicate_rows - 0
+
+Invalid lines - errors - 3
+Deployment: DM203A-20160727 2016-07-27 to 2016-12-31 (22174 data rows, 1 depth columns)
+Depth (Meters)       1 Quality Mode
+YYYYMMDD HHMMSS    SST Q M
+
+Invalid lines - missing_values - 0
+
+Parsing 'TAO_T8N95W_D_SST_10min.ascii'
+Progress: |█████████████████████████| 100.0% Complete - Elapsed: 03:23 - Remaining: 00:00
+Time elapsed: 203.286105156 seconds
+Total rows: 51,435
+Total nan rows: 9,924
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-12-31 23:50:00
+Dataset stats:
+                SST
+count  41511.000000
+mean      28.661093
+std        1.062975
+min       26.232000
+50%       28.541000
+max       32.050000
+
+Null values count for each column:
+SST    9924
+dtype: int64
+
+Invalid lines - duplicate_rows - 0
+
+Invalid lines - errors - 3
+Deployment: DM176A-20160309 2016-03-09 to 2016-12-31 (41663 data rows, 1 depth columns)
+Depth (Meters)       1 Quality Mode
+YYYYMMDD HHMMSS    SST Q M
+
+Invalid lines - missing_values - 0
+
+Parsing 'TAO_T8S110W_D_SST_10min.ascii'
+Progress: |█████████████████████████| 100.0% Complete - Elapsed: 02:58 - Remaining: 00:00
+Time elapsed: 178.53155899 seconds
+Total rows: 51,751
+Total nan rows: 16,924
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-12-31 23:50:00
+Dataset stats:
+                SST
+count  34827.000000
+mean      27.070787
+std        1.107837
+min       23.796000
+50%       27.298000
+max       28.734000
+
+Null values count for each column:
+SST    16924
+dtype: int64
+
+Invalid lines - duplicate_rows - 0
+
+Invalid lines - errors - 3
+Deployment: DM183A-20160321 2016-03-22 to 2016-12-31 (40138 data rows, 1 depth columns)
+Depth (Meters)       1 Quality Mode
+YYYYMMDD HHMMSS    SST Q M
+
+Invalid lines - missing_values - 0
+
+Parsing 'TAO_T8S125W_D_SST_10min.ascii'
+Progress: |█████████████████████████| 100.0% Complete - Elapsed: 02:50 - Remaining: 00:00
+Time elapsed: 170.624929905 seconds
+Total rows: 51,767
+Total nan rows: 318
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-12-31 23:50:00
+Dataset stats:
+                SST
+count  51449.000000
+mean      27.607650
+std        1.064137
+min       25.135000
+50%       27.838000
+max       29.426000
+
+Null values count for each column:
+SST    318
+dtype: int64
+
+Invalid lines - duplicate_rows - 0
+
+Invalid lines - errors - 3
+Deployment: DM169A-20160304 2016-03-05 to 2016-12-31 (42594 data rows, 1 depth columns)
+Depth (Meters)       1 Quality Mode
+YYYYMMDD HHMMSS    SST Q M
+
+Invalid lines - missing_values - 0
+
+Parsing 'TAO_T8S155W_R_SST_10min.ascii'
+Progress: |█████████████████████████| 100.0% Complete - Elapsed: 02:54 - Remaining: 00:00
+Time elapsed: 174.615849972 seconds
+Total rows: 51,843
+Total nan rows: 247
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-12-31 23:50:00
+Dataset stats:
+                SST
+count  51596.000000
+mean      29.532673
+std        0.980715
+min       27.782000
+50%       29.737000
+max       32.471000
+
+Null values count for each column:
+SST    247
+dtype: int64
+
+Invalid lines - duplicate_rows - 0
+
+Invalid lines - errors - 3
+Deployment: DM211A-20161001 2016-10-01 to 2016-12-31 (12803 data rows, 1 depth columns)
+Depth (Meters)       1 Quality Mode
+YYYYMMDD HHMMSS    SST Q M
+
+Invalid lines - missing_values - 0
+
+Parsing 'TAO_T8S165E_R_SST_10min.ascii'
+Progress: |█████████████████████████| 100.0% Complete - Elapsed: 00:57 - Remaining: 00:00
+Time elapsed: 57.6382341385 seconds
+Total rows: 23,718
+Total nan rows: 88
+Total nan columns: 0
+First timestamp: 2016-07-16 08:00:00
+Last timestamp: 2016-12-31 23:50:00
+Dataset stats:
+                SST
+count  23630.000000
+mean      29.665874
+std        0.532278
+min       28.437000
+50%       29.695500
+max       31.657000
+
+Null values count for each column:
+SST    88
+dtype: int64
+
+Invalid lines - duplicate_rows - 0
+
+Invalid lines - errors - 0
+
+Invalid lines - missing_values - 0
+
+Parsing 'TAO_T8S170W_R_SST_10min.ascii'
+Progress: |█████████████████████████| 100.0% Complete - Elapsed: 03:06 - Remaining: 00:00
+Time elapsed: 186.234832048 seconds
+Total rows: 51,811
+Total nan rows: 191
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-12-31 23:50:00
+Dataset stats:
+                SST
+count  51620.000000
+mean      29.874107
+std        0.521708
+min       28.580000
+50%       29.860000
+max       32.224000
+
+Null values count for each column:
+SST    191
+dtype: int64
+
+Invalid lines - duplicate_rows - 0
+
+Invalid lines - errors - 3
+Deployment: DM210A-20160903 2016-09-03 to 2016-12-31 (16873 data rows, 1 depth columns)
+Depth (Meters)       1 Quality Mode
+YYYYMMDD HHMMSS    SST Q M
+
+Invalid lines - missing_values - 0
+
+Parsing 'TAO_T8S180W_D_SST_10min.ascii'
+Progress: |█████████████████████████| 100.0% Complete - Elapsed: 03:52 - Remaining: 00:00
+Time elapsed: 232.076468945 seconds
+Total rows: 52,105
+Total nan rows: 29,000
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-12-31 23:50:00
+Dataset stats:
+                SST
+count  23105.000000
+mean      29.849286
+std        0.362588
+min       29.117000
+50%       29.844000
+max       32.886000
+
+Null values count for each column:
+SST    29000
+dtype: int64
+
+Invalid lines - duplicate_rows - 0
+
+Invalid lines - errors - 3
+Deployment: DM197A-20160720 2016-07-20 to 2016-12-31 (23194 data rows, 1 depth columns)
+Depth (Meters)       1 Quality Mode
+YYYYMMDD HHMMSS    SST Q M
+
+Invalid lines - missing_values - 0
+
+Parsing 'TAO_T8S95W_D_SST_10min.ascii'
+Progress: |█████████████████████████| 100.0% Complete - Elapsed: 00:58 - Remaining: 00:00
+Time elapsed: 58.9715230465 seconds
+Total rows: 22,424
+Total nan rows: 1,083
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-06-05 21:00:00
+Dataset stats:
+                SST
+count  21341.000000
+mean      27.173275
+std        0.952233
+min       24.614000
+50%       27.490000
+max       28.642000
+
+Null values count for each column:
+SST    1083
+dtype: int64
+
+Invalid lines - duplicate_rows - 0
+
+Invalid lines - errors - 3
+Deployment: DM182A-20160318 2016-03-18 to 2016-06-05 (11321 data rows, 1 depth columns)
+Depth (Meters)       1 Quality Mode
+YYYYMMDD HHMMSS    SST Q M
+
+Invalid lines - missing_values - 0
+
+Parsing 'TAO_T9N140W_D_SST_10min.ascii'
+Progress: |█████████████████████████| 100.0% Complete - Elapsed: 03:00 - Remaining: 00:00
+Time elapsed: 180.695231915 seconds
+Total rows: 51,653
+Total nan rows: 306
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-12-31 23:50:00
+Dataset stats:
+                SST
+count  51347.000000
+mean      28.080774
+std        0.658833
+min       26.443000
+50%       28.136000
+max       30.198000
+
+Null values count for each column:
+SST    306
+dtype: int64
+
+Invalid lines - duplicate_rows - 0
+
+Invalid lines - errors - 3
+Deployment: DM163A-20160222 2016-02-22 to 2016-12-31 (44158 data rows, 1 depth columns)
+Depth (Meters)       1 Quality Mode
+YYYYMMDD HHMMSS    SST Q M
+
+Invalid lines - missing_values - 0
+
+Pablos-MacBook-Pro:dataset_parser pablocerve$ 

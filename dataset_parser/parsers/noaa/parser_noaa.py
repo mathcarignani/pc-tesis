@@ -1,4 +1,5 @@
 from .. import parser_base
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
@@ -32,19 +33,8 @@ class ParserNOAA(parser_base.ParserBase):
             parsing_header = False
         return parsing_header
 
-    def process_data(self):
-        self._post_parsing()
-        super(ParserNOAA, self).process_data()
-
-    def _post_parsing(self):
-        column_names = self.df.columns.values
-
     def _parse_columns(self, s_line):
         # EXAMPLE:
-        # fields       = timestamp TA TSS TSG VW DW VW_MAX ISWR OSWR ILWR PSUM HS RH
-        # self.df = pd.DataFrame(columns=s_line[1:])
-        # self.columns_count = len(self.df.columns)
-
         # YYYYMMDD HHMMSS    SST Q M
         self.df = pd.DataFrame(columns=[s_line[2]])
         self.columns_count = len(self.df.columns)
@@ -63,17 +53,17 @@ class ParserNOAA(parser_base.ParserBase):
             self.errors['errors'].append(line)
 
     def plot(self, filename):
-        columns = [col for col in self.df.columns]
-        df_label = self.df[columns]  # filter columns
         title = filename
-        ax = df_label.plot(title=title) #, ylim=[0, 0.6])
-        fig = ax.get_figure()
-        fig.savefig(filename + '.png')
+        df = self.df.copy(deep=True)
+        min_value = df.loc[df.idxmin()]['SST'][0]
+        max_value = df.loc[df.idxmax()]['SST'][0]
+        df['SSTnan'] = df['SST']
+        nan_value = min_value - (max_value - min_value) / 10
+        df['SSTnan'] = df['SSTnan'].apply(lambda x: nan_value if pd.isnull(x) else np.nan)
 
-# columns = [col for col in parser.df.columns]
-# parser.df.fillna()
-# df_label = parser.df[columns]  # filter columns
-# title = filename
-# ax = df_label.plot(title=title) #, ylim=[0, 0.6])
-# fig = ax.get_figure()
-# fig.savefig(filename + '.png')
+        fig, ax = plt.subplots()
+        df['SST'].plot(ax=ax, linestyle='none', title=title, marker='.', markersize=0.2)
+        df['SSTnan'].plot(ax=ax, linestyle='none', marker='.', markersize=1)
+        ax.legend()
+        fig = ax.get_figure()
+        fig.savefig(title + '.plot.png')
