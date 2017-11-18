@@ -1,4 +1,4 @@
-import struct
+from utils import Utils
 
 
 class BitStreamWriter(object):
@@ -15,7 +15,7 @@ class BitStreamWriter(object):
         if self.offset == 0:
             print 'code'
             print self.current
-            self.file.write(struct.pack('B', self.current))
+            self.file.write(Utils.code_byte(self.current))
             self.current = 0
 
     def close(self):

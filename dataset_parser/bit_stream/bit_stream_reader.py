@@ -1,4 +1,4 @@
-import struct
+from utils import Utils
 
 
 class BitStreamReader(object):
@@ -13,7 +13,7 @@ class BitStreamReader(object):
 
         if self.offset == 0:
             print 'decode'
-            self.current = struct.unpack('B', self.file.read(1))[0]  # read 1 byte
+            self.current = Utils.decode_byte(self.file.read(1))
             print self.current
 
         return ans
