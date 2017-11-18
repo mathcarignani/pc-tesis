@@ -18,5 +18,10 @@ class BitStreamWriter(object):
             self.file.write(Utils.code_byte(self.current))
             self.current = 0
 
+    # x is the integer to be transformed to binary using k figures
+    def write_int(self, x, k):
+        for i in xrange(k-1, -1, -1):
+            self.write_bit(x & (1 << i))
+
     def close(self):
         self.file.close()
