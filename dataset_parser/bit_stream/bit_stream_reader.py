@@ -4,7 +4,7 @@ from utils import Utils
 class BitStreamReader(object):
     def __init__(self, filename):
         self.file = open(filename, 'rb')
-        self.current = 0
+        self.current = self._read_byte()
         self.offset = 0
 
     def read_bit(self):
@@ -12,11 +12,9 @@ class BitStreamReader(object):
         self.offset = (self.offset + 1) & 7
 
         if self.offset == 0:
-            print 'decode'
-            self.current = Utils.decode_byte(self.file.read(1))
-            print self.current
+            self.current = self._read_byte()
 
-        return ans
+        return 0 if ans == 0 else 1
 
     # k is the number of bits we want to read
     def read_int(self, k):
@@ -27,3 +25,10 @@ class BitStreamReader(object):
 
     def close(self):
         self.file.close()
+
+    def _read_byte(self):
+        byte = self.file.read(1)
+        if byte != '':  # EOF
+            return Utils.decode_byte(byte)
+        else:
+            print 'EOF'

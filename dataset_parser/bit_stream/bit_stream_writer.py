@@ -13,9 +13,7 @@ class BitStreamWriter(object):
         self.offset = (self.offset + 1) & 7
 
         if self.offset == 0:
-            print 'code'
-            print self.current
-            self.file.write(Utils.code_byte(self.current))
+            self._write_byte(self.current)
             self.current = 0
 
     # x is the integer to be transformed to binary using k figures
@@ -25,3 +23,7 @@ class BitStreamWriter(object):
 
     def close(self):
         self.file.close()
+
+    def _write_byte(self, byte):
+        self.file.write(Utils.code_byte(byte))
+

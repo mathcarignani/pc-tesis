@@ -1,24 +1,25 @@
 from bit_stream.bit_stream_writer import BitStreamWriter
 from bit_stream.bit_stream_reader import BitStreamReader
 
-bsw = BitStreamWriter('test_file.bin')
-for i in [0,1,0,0,1,1,1,0,1,1,0,1,0,0,1,1]:
-    bsw.write_bit(i)
-bsw.close()
 
-bsr = BitStreamReader('test_file.bin')
-for i in range(16):
-    bit = bsr.read_bit()
-bsr.close()
+def test(integers_array, figures_array):
+    print '###################################################'
+    bsw = BitStreamWriter('test.bin')
+    for idx, val in enumerate(integers_array):
+        bsw.write_int(val, figures_array[idx])
+    bsw.close()
 
-print '###################################################'
+    bsr = BitStreamReader('test.bin')
+    for idx, val in enumerate(integers_array):
+        decoded_val = bsr.read_int(figures_array[idx])
+        if decoded_val != val:
+            print 'decoded_val', decoded_val, 'val', val
+            raise AssertionError('ERROR.')
+    bsr.close()
 
-bsw = BitStreamWriter('test_file2.bin')
-bsw.write_int(114, 8)
-bsw.write_int(203, 8)
-bsw.close()
 
-bsr = BitStreamReader('test_file2.bin')
-bsr.read_int(8)
-bsr.read_int(8)
-bsr.close()
+test([114, 203], [8, 8])
+test([286], [16])
+test([8, 8], [4, 4])
+test([114, 203, 286, 8, 8], [8, 8, 16, 4, 4])
+test([114, 203, 8, 286, 8], [8, 8, 4, 16, 4])
