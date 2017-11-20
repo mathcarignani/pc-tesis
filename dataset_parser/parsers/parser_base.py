@@ -16,7 +16,7 @@ class ParserBase(object):
             if not self.parsing_header and not self.nodata:
                 raise StandardError('Finished parsing header and nodata value is unknown.')
         else:
-            self._parse_data(line)
+            return self._parse_data(line)
 
     def _parse_header(self, line):
         raise NotImplementedError("This method must be implemented.")
@@ -27,7 +27,7 @@ class ParserBase(object):
     def _parse_data(self, line):
         raise NotImplementedError("This method must be implemented.")
 
-    # used by IRKIS and ElNin
+    # used by IRKIS and ElNino
     # TODO: move to another module
     def _add_data(self, data, current_date, line, timestamp, np_array):
         if len(data) == self.columns_count:

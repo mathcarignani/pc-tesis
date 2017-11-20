@@ -1,4 +1,4 @@
-from file_reader import FileReader
+from file_utils.file_reader import FileReader
 from parsers.elnino.parser_elnino import ParserElNino
 
 folder = "/Users/pablocerve/Documents/FING/Proyecto/datasets/el-nino/large"

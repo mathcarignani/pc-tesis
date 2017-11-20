@@ -26,6 +26,7 @@ class ParserIRKIS(parser_base.ParserBase):
             timestamp = pd.to_datetime(current_date)
             data = s_line[1:]
             self._add_data(data, current_date, line, timestamp, np_array)
+            return data
 
         except:
             self.errors['errors'].append(line)

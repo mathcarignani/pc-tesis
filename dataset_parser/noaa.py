@@ -1,6 +1,7 @@
-from file_reader import FileReader
-from parsers.noaa.parser_noaa import ParserNOAA
 import os
+
+from file_utils.file_reader import FileReader
+from parsers.noaa.parser_noaa import ParserNOAA
 
 folder = "/Users/pablocerve/Documents/FING/Proyecto/datasets/noaa/2-d10-949.tar"
 
