@@ -1,5 +1,4 @@
 from .. import parser_base
-import numpy as np
 import pandas as pd
 
 

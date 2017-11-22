@@ -2,8 +2,8 @@ from utils import Utils
 
 
 class BitStreamWriter(object):
-    def __init__(self, filename):
-        self.file = open(filename, 'wb')
+    def __init__(self, path, filename):
+        self.file = open(path + "/" + filename, 'wb')
         self.current = 0
         self.offset = 0
 
