@@ -12,18 +12,26 @@ class CoderBase(object):
         self.output_file = BitStreamWriter(output_path, output_filename)
         self.parser = ParserVWC()
         self.count = 0
+        self.NO_DATA = '-999.000000'
 
-    def code(self):
-        while self.input_file.continue_reading and self.count < 100:
+    def code_file(self):
+        while self.input_file.continue_reading and self.count < 1000:
             line = self.input_file.read_line()
             parsing_header = self.parser.parsing_header
             data = self.parser.parse_line(line)
-            if not parsing_header and data[0] != '-999.000000':
-                value = float(data[0]) * 1000000
-                value = int(value)
-                self.output_file.write_int(value, 24)
+            if not parsing_header:
+                self._code(data[0])
                 self.count += 1
                 # print value
+
+    def _code(self, value):
+        if value == self.NO_DATA:
+            self.output_file.write_int(0, 24)
+        else:
+            print value
+            value = float(value) * 1000000
+            value = int(value)
+            self.output_file.write_int(value, 24)
 
     def close(self):
         self.input_file.close()

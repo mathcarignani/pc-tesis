@@ -11,10 +11,13 @@ class DecoderBase(object):
         self.output_file = FileWriter(output_path, output_filename)
         self.count = 0
 
-    def decode(self):
-        while self.input_file.continue_reading and self.count < 50:
-            decoded_val = self.input_file.read_int(24)
+    def decode_file(self):
+        while self.input_file.continue_reading and self.count < 900:
+            decoded_val = self._decode()
             self.output_file.write_line(str(decoded_val))
+
+    def _decode(self):
+        return self.input_file.read_int(24)
 
     def close(self):
         self.input_file.close()
