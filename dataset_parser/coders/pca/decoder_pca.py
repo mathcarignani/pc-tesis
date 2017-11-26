@@ -6,7 +6,7 @@ class DecoderPCA(decoder_base.DecoderBase, PCA):
     def __init__(self, *args, **kwargs):
         PCA.__init__(self)
         super(DecoderPCA, self).__init__(*args, **kwargs)
-        self.window = {'count': 0, 'value': None}
+        self._new_window(0, None)
 
     def _decode(self):
         if self.window['count'] > 0:
@@ -14,12 +14,14 @@ class DecoderPCA(decoder_base.DecoderBase, PCA):
         else:
             fi = self.input_file.read_bit()
             if fi == 0:
-                self.window['count'] = self.WINDOW_SIZE
-                self.window['value'] = self._decode_raw()
+                self._new_window(self.WINDOW_SIZE, self._decode_raw())
                 return self._window_value()
 
             else:  # fi == 1
                 return self._decode_raw()
+
+    def _new_window(self, count, value):
+        self.window = {'count': count, 'value': value}
 
     # PRE: self.window['count'] > 0
     def _window_value(self):

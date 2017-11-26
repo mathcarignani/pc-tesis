@@ -13,28 +13,27 @@ class CoderPCA(coder_base.CoderBase, PCA):
 
     def _code(self, value):
         value = self._map_value(value)
-        print value, '\n'
         if self._condition_holds(value):
-            print 'holds'
             self.window['array'].append(value)
-            if len(self.window['array']) == self.WINDOW_SIZE:
-                print 'full window'
-                print self.window['min'] + self.window['constant']
+            if self._full_window():
                 self._code_window_constant()
                 self._clear_window()
         else:
-            print 'doesnt hold'
             self._code_window_incomplete()
             self._clear_window()
             self._condition_holds(value)
             self.window['array'].append(value)
 
+    # TODO: this should not be part of the decoder...
     def _map_value(self, value):
         if value == self.NO_DATA:
             return None
         value = float(value) * 1000000
         value = int(value)
         return value
+
+    def _full_window(self):
+        len(self.window['array']) == self.WINDOW_SIZE
 
     def _code_window_constant(self):
         self.output_file.write_bit(0)  # fi = 0
