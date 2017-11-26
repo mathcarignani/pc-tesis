@@ -1,33 +1,33 @@
 from .. import coder_base
+from pca import PCA
 
 
-class CoderPCA(coder_base.CoderBase):
+class CoderPCA(coder_base.CoderBase, PCA):
     def __init__(self, *args, **kwargs):
+        PCA.__init__(self)
         super(CoderPCA, self).__init__(*args, **kwargs)
-        # inputs
-        self.ERROR_THRESHOLD = 10
-        self.WINDOW_SIZE = 10
-        # variables
         self._clear_window()
 
     def _clear_window(self):
-        self.window = []
-        self.window_min = None
-        self.window_max = None
-        self.window_constant = None
+        self.window = {'array': [], 'min': None, 'max': None, 'constant': None}
 
     def _code(self, value):
         value = self._map_value(value)
+        print value, '\n'
         if self._condition_holds(value):
-            self.window.append(value)
-            if len(self.window) == self.WINDOW_SIZE:
+            print 'holds'
+            self.window['array'].append(value)
+            if len(self.window['array']) == self.WINDOW_SIZE:
+                print 'full window'
+                print self.window['min'] + self.window['constant']
                 self._code_window_constant()
                 self._clear_window()
         else:
+            print 'doesnt hold'
             self._code_window_incomplete()
             self._clear_window()
             self._condition_holds(value)
-            self.window.append(value)
+            self.window['array'].append(value)
 
     def _map_value(self, value):
         if value == self.NO_DATA:
@@ -38,10 +38,10 @@ class CoderPCA(coder_base.CoderBase):
 
     def _code_window_constant(self):
         self.output_file.write_bit(0)  # fi = 0
-        self._code_raw(self.window_constant)
+        self._code_raw(self.window['min'] + self.window['constant'])
 
     def _code_window_incomplete(self):
-        for value in self.window:
+        for value in self.window['array']:
             self.output_file.write_bit(1)  # fi = 1
             self._code_raw(value)
 
@@ -50,23 +50,25 @@ class CoderPCA(coder_base.CoderBase):
             self.output_file.write_bit(1)  # nodata = 1
         else:
             self.output_file.write_bit(0)  # nodata = 0
-            self.output_file.write_int(value, 24)
+            self._code_value(value)
+
+    def _code_value(self, value):
+        self.output_file.write_int(value, 24)
 
     def _condition_holds(self, value):
         if value is None:
-            return self.window_constant is None
-        else:
-            if not self.window:  # empty window
-                self.window_min = value
-                self.window_max = value
-                self.window_constant = 0
-                return True
-            elif value < self.window_min:
-                self.window_min = value
-                self.window_constant = (self.window_max - self.window_min) / 2
-                return self.window_constant < self.ERROR_THRESHOLD
-            elif value > self.window_max:
-                self.window_max = value
-                self.window_constant = (self.window_max - self.window_min) / 2
-                return self.window_constant < self.ERROR_THRESHOLD
+            return self.window['constant'] is None
+        elif not self.window['array']:  # empty window
+            self.window.update({'min': value, 'max': value, 'constant': 0})
             return True
+        elif value < self.window['min']:
+            self.window.update({'min': value})
+            return self._update_constant()
+        elif value > self.window['max']:
+            self.window.update({'max': value})
+            return self._update_constant()
+        return True
+
+    def _update_constant(self):
+        self.window.update({'constant': (self.window['max'] - self.window['min']) / 2})
+        return self.window['constant'] < self.ERROR_THRESHOLD

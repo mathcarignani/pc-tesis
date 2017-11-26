@@ -15,11 +15,13 @@ class Utils(object):
 
         coder, decoder = Utils.str_to_coder(key)
 
+        print 'coding', key, '...\n'
         c = coder(input_path, input_filename, output_path, coded_filename)
         c.code_file()
         c.close()
 
-        d = DecoderBase(output_path, coded_filename, output_path, decoded_filename)
+        print 'decoding', key, '...\n'
+        d = decoder(output_path, coded_filename, output_path, decoded_filename)
         d.decode_file()
         d.close()
 

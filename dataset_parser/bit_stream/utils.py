@@ -9,8 +9,8 @@ class Utils(object):
         byte_count = 0
         while True:
             byte_count += 1
-            byte1 = bsr1.read_byte()
-            byte2 = bsr2.read_byte()
+            byte1 = bsr1._read_byte()
+            byte2 = bsr2._read_byte()
 
             if byte1 is None:
                 if byte2 is None:
