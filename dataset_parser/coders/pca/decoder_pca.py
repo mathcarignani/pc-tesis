@@ -14,15 +14,10 @@ class DecoderPCA(decoder_base.DecoderBase, PCA):
         else:
             fi = self.input_file.read_bit()
             if fi == 0:
-                print 'fi==0'
-                print self.window
                 self._new_window(self.WINDOW_SIZE, self._decode_value())
-                a = self._window_value()
-                print a
-                return a
+                return self._window_value()
 
             else:  # fi == 1
-                print 'fi==1'
                 return self._decode_raw()
 
     def _new_window(self, count, value):

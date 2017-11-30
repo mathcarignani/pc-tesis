@@ -15,7 +15,6 @@ class DecoderBase(object):
     def decode_file(self):
         while self.input_file.continue_reading: # and self.count < 20:
             decoded_val = self._decode()
-            print decoded_val, '\n'
             self.output_file.write_line(str(decoded_val))
             self.count += 1
 

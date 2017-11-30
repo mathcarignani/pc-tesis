@@ -9,17 +9,17 @@ class Utils(object):
         byte_count = 0
         while True:
             byte_count += 1
-            byte1 = bsr1._read_byte()
-            byte2 = bsr2._read_byte()
+            byte1 = bsr1.read_byte()
+            byte2 = bsr2.read_byte()
 
             if byte1 is None:
                 if byte2 is None:
                     print 'SAME FILE!'
                 else:
-                    print 'Reached EOF if file 1. DIFF at byte', byte_count
+                    print 'Reached EOF of file 1. DIFF at byte', byte_count
                 break
             elif byte2 is None:
-                print 'Reached EOF if file 2. DIFF at byte', byte_count
+                print 'Reached EOF of file 2. DIFF at byte', byte_count
                 break
         bsr1.close()
         bsr2.close()

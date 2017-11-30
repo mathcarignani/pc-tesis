@@ -12,12 +12,10 @@ class CoderPCA(coder_base.CoderBase, PCA):
     def _code(self, value):
         value = None if value == self.NO_DATA else value
         if self.window.condition_holds(value):
-            print 'holds', value
             if self.window.full():
                 self._code_window_constant()
                 self.window.clear()
         else:
-            print 'noholds', value
             self._code_window_incomplete()
             self.window.clear()
             self.window.condition_holds(value)

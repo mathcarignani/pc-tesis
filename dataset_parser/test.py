@@ -1,5 +1,6 @@
-from bit_stream.utils import Utils
+from bit_stream.utils import Utils as BitStreamUtils
 from coders.utils import Utils as CodersUtils
+from file_utils.utils import Utils as FileUtils
 from scripts.scripts import clean_file
 
 # original file
@@ -13,10 +14,14 @@ clean_filename = input_filename + '.clean'
 
 # BASE
 # CodersUtils.code_decode('base', parser_path, clean_filename, parser_path)
-# Utils.compare_files(parser_path, clean_filename, clean_filename + '.base.code.decode')
+# output_filename = clean_filename + '.base.code.decode'
+# BitStreamUtils.compare_files(parser_path, clean_filename, output_filename)
+# FileUtils.compare_files(parser_path, clean_filename, output_filename)
 
 # PCA
 CodersUtils.code_decode('pca', parser_path, clean_filename, parser_path)
+output_filename = clean_filename + '.pca.code.decode'
+FileUtils.compare_files(parser_path, clean_filename, output_filename)
 
 # APCA
 # CodersUtils.code_decode('apca', parser_path, clean_filename, parser_path)

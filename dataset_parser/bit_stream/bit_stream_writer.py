@@ -1,4 +1,4 @@
-from byte_utils import ByteUtils
+from byte_utils import code_byte
 
 
 class BitStreamWriter(object):
@@ -25,5 +25,5 @@ class BitStreamWriter(object):
         self.file.close()
 
     def _write_byte(self, byte):
-        self.file.write(ByteUtils.code_byte(byte))
+        self.file.write(code_byte(byte))
 
