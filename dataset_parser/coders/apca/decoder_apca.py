@@ -14,7 +14,9 @@ class DecoderAPCA(DecoderPCA):
         if self.window['count'] == 0:
             value = self._decode_value()
             last_timestamp = self._decode_timestamp()
-            self._new_window(last_timestamp - self.current_timestamp + 1, value)
+            # if last_timestamp > 7823 and last_timestamp < 7830:
+            #     print '\nlast_timestamp', last_timestamp
+            self._new_window(last_timestamp - self.current_timestamp, value)
         self.current_timestamp += 1
         return self._window_value()
 

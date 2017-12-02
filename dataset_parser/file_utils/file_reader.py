@@ -1,13 +1,14 @@
 from progress_bar import ProgressBar
+from utils import Utils
 # import time
 
 
 class FileReader:
     def __init__(self, path, filename):
-        self.full_filename = path + "/" + filename
+        self.full_path = Utils.full_path(path, filename)
         self.total_lines = self._total_lines()
         self.continue_reading = True
-        self.file = open(self.full_filename, "r")
+        self.file = open(self.full_path, "r")
         self.progress_bar = ProgressBar(self.total_lines)
         self.current_line_count = 0
         self.previous_line = self.file.readline()
@@ -26,7 +27,7 @@ class FileReader:
         return previous_line
 
     def _total_lines(self):
-        return sum(1 for line in open(self.full_filename, 'rb'))
+        return sum(1 for line in open(self.full_path, 'rb'))
 
     def close(self):
         self.file.close()

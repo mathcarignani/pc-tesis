@@ -4,6 +4,7 @@ from pca.coder_pca import CoderPCA
 from pca.decoder_pca import DecoderPCA
 from apca.coder_apca import CoderAPCA
 from apca.decoder_apca import DecoderAPCA
+from file_utils.utils import Utils as FileUtils
 
 
 class Utils(object):
@@ -15,12 +16,15 @@ class Utils(object):
 
         coder, decoder = Utils.str_to_coder(key)
 
-        print 'coding', key, '...\n'
+        print '\ncoding', key, '...\n'
         c = coder(input_path, input_filename, output_path, coded_filename)
         c.code_file()
         c.close()
 
-        print 'decoding', key, '...\n'
+        coded_size = FileUtils.file_size(output_path, coded_filename)
+        print '\nsize =', coded_size
+
+        print '\ndecoding', key, '...\n'
         d = decoder(output_path, coded_filename, output_path, decoded_filename)
         d.decode_file()
         d.close()

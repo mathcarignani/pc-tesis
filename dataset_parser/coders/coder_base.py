@@ -14,7 +14,7 @@ class CoderBase(object):
         self.NO_DATA = 'nodata'
 
     def code_file(self):
-        while self.input_file.continue_reading: # and self.count < 20:
+        while self.input_file.continue_reading:
             line = self.input_file.read_line()
             value = line.rstrip('\n')
             value = value if value == self.NO_DATA else int(value)
@@ -22,10 +22,11 @@ class CoderBase(object):
             self.count += 1
 
     def _code(self, value):
-        if value == self.NO_DATA:
-            self.output_file.write_int(0, 24)
-        else:
-            self.output_file.write_int(value, 24)
+        value = 0 if value == self.NO_DATA else value
+        self._code_raw(value)
+
+    def _code_raw(self, value):
+        self.output_file.write_int(value, 24)
 
     def close(self):
         self.input_file.close()

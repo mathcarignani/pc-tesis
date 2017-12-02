@@ -15,15 +15,17 @@ class DecoderBase(object):
     def decode_file(self):
         while self.input_file.continue_reading: # and self.count < 20:
             decoded_val = self._decode()
+            # print 'deco', self.count, decoded_val
             self.output_file.write_line(str(decoded_val))
             self.count += 1
 
     def _decode(self):
-        value = self.input_file.read_int(24)
-        if value == 0:
-            return self.NO_DATA
-        else:
-            return value
+        value = self._decode_raw()
+        value = self.NO_DATA if value == 0 else value
+        return value
+
+    def _decode_raw(self):
+        return self.input_file.read_int(24)
 
     def close(self):
         self.input_file.close()

@@ -13,12 +13,13 @@ class DecoderPCA(decoder_base.DecoderBase, PCA):
             return self._window_value()
         else:
             fi = self.input_file.read_bit()
+            value = self._decode_value()
             if fi == 0:
-                self._new_window(self.WINDOW_SIZE, self._decode_value())
+                self._new_window(self.fixed_window_size, value)
                 return self._window_value()
 
             else:  # fi == 1
-                return self._decode_raw()
+                return value
 
     def _new_window(self, count, value):
         self.window = {'count': count, 'value': value}
@@ -34,6 +35,3 @@ class DecoderPCA(decoder_base.DecoderBase, PCA):
             return self.NO_DATA
         else:  # nodata == 0
             return self._decode_raw()
-
-    def _decode_raw(self):
-        return self.input_file.read_int(24)

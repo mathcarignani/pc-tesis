@@ -1,23 +1,30 @@
+from apca import APCA
+
 import sys
 sys.path.append('../')
 
 from coders.pca.coder_pca import CoderPCA
 
 
-class CoderAPCA(CoderPCA):
+class CoderAPCA(CoderPCA, APCA):
     def __init__(self, *args, **kwargs):
-        super(CoderAPCA, self).__init__(*args, **kwargs)
+        super(CoderPCA, self).__init__(*args, **kwargs)
+        APCA.__init__(self)
         self.current_timestamp = 0
 
     def _code(self, value):
         value = self._map_value(value)
-        if not self.window.condition_holds(value):
-            self._code_window_constant()
+        if self.window.condition_holds(value):
+            if self.window.full():
+                self._code_window()
+                self.window.clear()
+        else:
+            self._code_window()
             self.window.clear()
             self.window.condition_holds(value)
         self.current_timestamp += 1
 
-    def _code_window_constant(self):
+    def _code_window(self):
         self._code_value(self.window.constant())
         self._code_timestamp()
 
