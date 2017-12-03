@@ -3,9 +3,9 @@ from pca import PCA
 
 
 class CoderPCA(coder_base.CoderBase, PCA):
-    def __init__(self, *args, **kwargs):
-        super(CoderPCA, self).__init__(*args, **kwargs)
-        PCA.__init__(self)
+    def __init__(self, input_path, input_filename, output_path, output_filename, params):
+        super(CoderPCA, self).__init__(input_path, input_filename, output_path, output_filename)
+        PCA.__init__(self, params)
 
     def _code(self, value):
         value = self._map_value(value)

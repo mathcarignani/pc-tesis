@@ -1,4 +1,4 @@
-from byte_utils import decode_byte
+from aux import decode_byte
 
 
 class BitStreamReader(object):
@@ -19,9 +19,6 @@ class BitStreamReader(object):
                 raise AssertionError('Reached EOF.')
         return ans
 
-    def close(self):
-        self.file.close()
-
     # PRE: self.continue_reading
     def read_bit(self):
         ans = self.current & (1 << self.offset)
@@ -40,3 +37,6 @@ class BitStreamReader(object):
         else:
             self.continue_reading = False
             return None
+
+    def close(self):
+        self.file.close()

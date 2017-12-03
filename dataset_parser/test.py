@@ -14,19 +14,26 @@ clean_filename = input_filename + '.clean'
 
 # # BASE
 CodersUtils.code_decode('base', parser_path, clean_filename, parser_path)
-output_filename = clean_filename + '.base.code.decode'
-BitStreamUtils.compare_files(parser_path, clean_filename, output_filename)
-FileScripts.compare_files(parser_path, clean_filename, output_filename)
-#
-# # PCA
-CodersUtils.code_decode('pca', parser_path, clean_filename, parser_path)
-output_filename = clean_filename + '.pca.code.decode'
-FileScripts.compare_files(parser_path, clean_filename, output_filename)
+
+# PCA
+coder_params = {'error_threshold': 5, 'fixed_window_size': 10}
+CodersUtils.code_decode('pca', parser_path, clean_filename, parser_path, coder_params)
+coder_params = {'error_threshold': 10, 'fixed_window_size': 10}
+CodersUtils.code_decode('pca', parser_path, clean_filename, parser_path, coder_params)
+coder_params = {'error_threshold': 1000, 'fixed_window_size': 10}
+CodersUtils.code_decode('pca', parser_path, clean_filename, parser_path, coder_params)
+coder_params = {'error_threshold': 1000, 'fixed_window_size': 11}
+CodersUtils.code_decode('pca', parser_path, clean_filename, parser_path, coder_params)
+coder_params = {'error_threshold': 1000, 'fixed_window_size': 15}
+CodersUtils.code_decode('pca', parser_path, clean_filename, parser_path, coder_params)
 
 # APCA
-CodersUtils.code_decode('apca', parser_path, clean_filename, parser_path)
-output_filename = clean_filename + '.apca.code.decode'
-FileScripts.compare_files(parser_path, clean_filename, output_filename)
+# coder_params = {'error_threshold': 5, 'fixed_window_size': 10}
+# CodersUtils.code_decode('pca', parser_path, clean_filename, parser_path, coder_params)
+# coder_params = {'error_threshold': 10, 'fixed_window_size': 10}
+# CodersUtils.code_decode('pca', parser_path, clean_filename, parser_path, coder_params)
+# coder_params = {'error_threshold': 1000, 'fixed_window_size': 10}
+# CodersUtils.code_decode('pca', parser_path, clean_filename, parser_path, coder_params)
 
 
 # compare size

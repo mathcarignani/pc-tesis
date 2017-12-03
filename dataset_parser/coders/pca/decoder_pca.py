@@ -3,9 +3,9 @@ from pca import PCA
 
 
 class DecoderPCA(decoder_base.DecoderBase, PCA):
-    def __init__(self, *args, **kwargs):
-        PCA.__init__(self)
-        super(DecoderPCA, self).__init__(*args, **kwargs)
+    def __init__(self, input_path, input_filename, output_path, output_filename, params):
+        super(DecoderPCA, self).__init__(input_path, input_filename, output_path, output_filename)
+        PCA.__init__(self, params)
         self._new_window(0, None)
 
     def _decode(self):

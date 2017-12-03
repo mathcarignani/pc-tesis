@@ -1,15 +1,15 @@
-from progress_bar import ProgressBar
+from aux.progress_bar import ProgressBar
 from utils import Utils
 # import time
 
 
 class FileReader:
-    def __init__(self, path, filename):
+    def __init__(self, path, filename, progress=False):
         self.full_path = Utils.full_path(path, filename)
         self.total_lines = self._total_lines()
         self.continue_reading = True
         self.file = open(self.full_path, "r")
-        self.progress_bar = ProgressBar(self.total_lines)
+        self.progress_bar = ProgressBar(self.total_lines) if progress else None
         self.current_line_count = 0
         self.previous_line = self.file.readline()
 
@@ -21,7 +21,7 @@ class FileReader:
             self.continue_reading = False
         else:
             self.current_line_count += 1
-            self.progress_bar.print_progress(self.current_line_count)
+            self.print_progress()
             self.previous_line = line
 
         return previous_line
@@ -31,6 +31,10 @@ class FileReader:
 
     def close(self):
         self.file.close()
+
+    def print_progress(self):
+        if self.progress_bar:
+            self.progress_bar.print_progress(self.current_line_count)
 
     # def parse_file(self, parser):
     #     print "Parsing '" + self.filename + "'"
@@ -52,8 +56,6 @@ class FileReader:
     #             # if self.current_line == 1000:
     #             # 	break
     #     self.close()
-
-
 
     # def _print_elapsed(self, start):
     #     end = time.time()

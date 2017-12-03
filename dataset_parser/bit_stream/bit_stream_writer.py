@@ -1,4 +1,4 @@
-from byte_utils import code_byte
+from aux import code_byte
 
 
 class BitStreamWriter(object):
@@ -21,9 +21,8 @@ class BitStreamWriter(object):
         for i in xrange(k-1, -1, -1):
             self.write_bit(x & (1 << i))
 
-    def close(self):
-        self.file.close()
-
     def _write_byte(self, byte):
         self.file.write(code_byte(byte))
 
+    def close(self):
+        self.file.close()

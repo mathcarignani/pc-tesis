@@ -6,7 +6,7 @@ from file_utils.file_writer import FileWriter
 
 
 class DecoderBase(object):
-    def __init__(self, input_path, input_filename, output_path, output_filename):
+    def __init__(self, input_path, input_filename, output_path, output_filename, params={}):
         self.NO_DATA = 'nodata'
         self.input_file = BitStreamReader(input_path, input_filename)
         self.output_file = FileWriter(output_path, output_filename)

@@ -7,9 +7,9 @@ from coders.pca.coder_pca import CoderPCA
 
 
 class CoderAPCA(CoderPCA, APCA):
-    def __init__(self, *args, **kwargs):
-        super(CoderPCA, self).__init__(*args, **kwargs)
-        APCA.__init__(self)
+    def __init__(self, input_path, input_filename, output_path, output_filename, params):
+        super(CoderPCA, self).__init__(input_path, input_filename, output_path, output_filename)
+        APCA.__init__(self, params)
         self.current_timestamp = 0
 
     def _code(self, value):

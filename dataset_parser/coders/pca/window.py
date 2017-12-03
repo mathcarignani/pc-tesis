@@ -15,7 +15,7 @@ class Window(object):
         self.array, self.min, self.max, self.half = [], None, None, None
 
     #
-    # PRE: self.fixed_window_size and self.max_window_size cannot both be none.
+    # PRE: self.fixed_window_size and self.max_window_size cannot both be None.
     #
     def full(self):
         if self.fixed_window_size:

@@ -7,7 +7,7 @@ from file_utils.file_reader import FileReader
 
 
 class CoderBase(object):
-    def __init__(self, input_path, input_filename, output_path, output_filename):
+    def __init__(self, input_path, input_filename, output_path, output_filename, params={}):
         self.input_file = FileReader(input_path, input_filename)
         self.output_file = BitStreamWriter(output_path, output_filename)
         self.count = 0

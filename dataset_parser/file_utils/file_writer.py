@@ -1,7 +1,3 @@
-from progress_bar import ProgressBar
-import time
-
-
 class FileWriter:
     def __init__(self, folder, filename):
         self.filename = filename

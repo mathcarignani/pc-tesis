@@ -3,8 +3,8 @@ from file_reader import FileReader
 
 class Scripts(object):
     @staticmethod
-    def compare_files(path, filename1, filename2, error_threshold=15, nodata=None):
-        NO_DATA = nodata if nodata is not None else 'nodata'
+    def compare_files(path, filename1, filename2, error_threshold=0, nodata='nodata'):
+        error_threshold = 0 if error_threshold is None else error_threshold
         fr1 = FileReader(path, filename1)
         fr2 = FileReader(path, filename2)
         line_count = 0
@@ -28,13 +28,15 @@ class Scripts(object):
             value2 = line2.rstrip('\n')
 
             error = False
-            if value1 == NO_DATA:
-                if value2 != NO_DATA:
+            if value1 == nodata:
+                if value2 != nodata:
                     error = True
-            elif value2 == NO_DATA:
+            elif value2 == nodata:
                 error = True
             else:
                 diff = abs(int(value1) - int(value2))
+                # print 'diff', diff
+                # print 'error_threshold', error_threshold
                 if diff > error_threshold:
                     error = True
             if error:
