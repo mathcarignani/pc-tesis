@@ -32,6 +32,6 @@ class DecoderPCA(decoder_base.DecoderBase, PCA):
     def _decode_value(self):
         nodata = self.input_file.read_bit()
         if nodata == 1:
-            return self.NO_DATA
+            return self.nodata
         else:  # nodata == 0
             return self._decode_raw()

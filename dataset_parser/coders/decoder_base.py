@@ -7,7 +7,8 @@ from file_utils.file_writer import FileWriter
 
 class DecoderBase(object):
     def __init__(self, input_path, input_filename, output_path, output_filename, params={}):
-        self.NO_DATA = 'nodata'
+        self.bit_count = params.get('bit_count') or 24
+        self.nodata = 'nodata'
         self.input_file = BitStreamReader(input_path, input_filename)
         self.output_file = FileWriter(output_path, output_filename)
         self.count = 0
@@ -21,11 +22,11 @@ class DecoderBase(object):
 
     def _decode(self):
         value = self._decode_raw()
-        value = self.NO_DATA if value == 0 else value
+        value = self.nodata if value == 0 else value
         return value
 
     def _decode_raw(self):
-        return self.input_file.read_int(24)
+        return self.input_file.read_int(self.bit_count)
 
     def close(self):
         self.input_file.close()

@@ -19,7 +19,7 @@ class CoderPCA(coder_base.CoderBase, PCA):
             self.window.condition_holds(value)
 
     def _map_value(self, value):
-        value = None if value == self.NO_DATA else value
+        value = None if value == self.nodata else value
         return value
 
     def _code_window(self):
