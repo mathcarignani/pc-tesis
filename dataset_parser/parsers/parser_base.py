@@ -1,4 +1,4 @@
-from utils import Utils
+from aux import print_number
 import sys as sys
 import numpy as np
 
@@ -50,8 +50,8 @@ class ParserBase(object):
         return data
 
     def process_data(self):
-        Utils.print_number("Total rows:", self.rows_count())
-        Utils.print_number("Total nan rows:", self.nan_rows_count())
+        print_number("Total rows:", self.rows_count())
+        print_number("Total nan rows:", self.nan_rows_count())
 
         columns = self.df.columns
         clean_df = self.df.dropna(axis=1, how='all')  # drop nan columns

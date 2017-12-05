@@ -34,8 +34,3 @@ CodersUtils.code_decode('pca', parser_path, clean_filename, parser_path, coder_p
 # CodersUtils.code_decode('pca', parser_path, clean_filename, parser_path, coder_params)
 # coder_params = {'error_threshold': 1000, 'fixed_window_size': 10}
 # CodersUtils.code_decode('pca', parser_path, clean_filename, parser_path, coder_params)
-
-
-# compare size
-
-# compare with one value per line file

@@ -44,3 +44,13 @@ class Scripts(object):
                 break
         fr1.close()
         fr2.close()
+
+    @staticmethod
+    def parse_file(path, filename, parser):
+        fr = FileReader(path, filename, True)
+        while fr.continue_reading:
+            line = fr.read_line()
+            parser.parse_line(line)
+            # if fr.current_line_count == 1000:
+            #     break
+        fr.close()
