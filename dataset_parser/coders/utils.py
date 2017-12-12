@@ -4,8 +4,8 @@ from pca.coder_pca import CoderPCA
 from pca.decoder_pca import DecoderPCA
 from apca.coder_apca import CoderAPCA
 from apca.decoder_apca import DecoderAPCA
-from file_utils.utils import Utils as FileUtils
-from file_utils.scripts import Scripts as FileScripts
+from file_utils import Utils as FileUtils
+from file_utils.text_utils.utils import Scripts as FileScripts
 
 
 

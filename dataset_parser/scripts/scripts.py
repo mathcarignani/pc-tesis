@@ -1,8 +1,8 @@
 import sys
 sys.path.append('../')
 
-from file_utils.file_reader import FileReader
-from file_utils.file_writer import FileWriter
+from file_utils.text_utils.file_reader import FileReader
+from file_utils.text_utils.file_writer import FileWriter
 from parsers.irkis.parser_vwc import ParserVWC
 
 

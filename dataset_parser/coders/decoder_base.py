@@ -1,8 +1,8 @@
 import sys
 sys.path.append('../')
 
-from bit_stream.bit_stream_reader import BitStreamReader
-from file_utils.file_writer import FileWriter
+from file_utils.bit_stream import BitStreamReader
+from file_utils.text_utils.file_writer import FileWriter
 
 
 class DecoderBase(object):
