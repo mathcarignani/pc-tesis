@@ -9,12 +9,12 @@ FileScripts.parse_file(path, filename, parser)
 df = parser.df
 
 import numpy as np
-a = np.array([])
+res = []
 for column_name in df.dtypes.index:
-    print len(a)
     values = df[column_name].values
     array = values[~np.isnan(values)]
     array = np.array(array)
-    print len(array)
-    print '1'
-    a = a + array
+    for i in array:
+        res.append(i)
+
+sorted = np.sort(res)

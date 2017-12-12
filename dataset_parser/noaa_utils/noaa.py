@@ -17,3 +17,5 @@ for filename in os.listdir(folder)[41:]:
     if filename in ['TAO_T2N110W_R_SST_10min.ascii', 'TAO_T8N110W_R_SST_10min.ascii']:  # only nan values
         continue
     _parse_and_process(folder, filename)
+
+
