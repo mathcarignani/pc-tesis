@@ -4,11 +4,12 @@ from file_utils.aux import full_path
 
 class FileReader:
     def __init__(self, path, filename, progress=False):
-        path = full_path(path, filename)
+        self.path, self.filename = path, filename
+        f_path = full_path(path, filename)
         self.continue_reading = True
-        self.file = open(path, "r")
+        self.file = open(f_path, "r")
         if progress:
-            total_lines = self._total_lines(path)
+            total_lines = self._total_lines(f_path)
             self.progress_bar = ProgressBar(total_lines)
         else:
             self.progress_bar = None

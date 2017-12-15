@@ -2,6 +2,7 @@ import sys
 sys.path.append('.')
 
 from csv_converter.csv_converter import CSVConverter
+from file_utils.csv_utils.csv_reader import CSVReader
 from parsers.irkis.parser_vwc import ParserVWC
 
 
@@ -19,10 +20,21 @@ args = {
     'delta': "01:00:00"
 }
 
+row_count = None
 for input_filename in input_filenames:
-    outputh_filename = input_filename + '.csv'
+    output_filename = input_filename + '.csv'
     parser_vwc = ParserVWC()
-    csv_converter = CSVConverter(input_path, input_filename, parser_vwc, output_path, outputh_filename, args)
-    csv_converter.close()
+    print "Converting", output_filename
+    CSVConverter(input_path, input_filename, parser_vwc, output_path, output_filename, args).run()
+
+    count = CSVReader(output_path, output_filename).total_lines()
+
+    if row_count is None:
+        row_count = count
+    elif row_count != count:
+        print "#### ERROR: row_count != count ### row_count=", row_count, "| count=", count
+    else:
+        print "SIZES MATCH!! count=", count
+
 
 

@@ -5,12 +5,12 @@ from file_utils.aux import full_path
 
 class CSVReader:
     def __init__(self, path, filename, progress=False):
-        path = full_path(path, filename)
+        self.full_path = full_path(path, filename)
         self.continue_reading = True
-        self.file = open(path, "r")
+        self.file = open(self.full_path, "r")
         self.csv_reader = csv.reader(self.file)
         if progress:
-            total_lines = self._total_lines(path)
+            total_lines = self.total_lines()
             self.progress_bar = ProgressBar(total_lines)
         else:
             self.progress_bar = None
@@ -30,8 +30,8 @@ class CSVReader:
 
         return previous_row
 
-    def _total_lines(self, path):
-        return sum(1 for _ in csv.reader(open(path, "r")))
+    def total_lines(self):
+        return sum(1 for _ in csv.reader(open(self.full_path, "r")))
 
     def close(self):
         self.file.close()
