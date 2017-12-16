@@ -63,8 +63,10 @@ class CSVConverter:
             self._add_row_missing()
 
     def _process_line(self):
-        line = self.input_file.read_line()
-        row = self.parser.parse_data(line)  # { 'timestamp': datetime, 'values' = [] }
+        row = None
+        while row is None:
+            line = self.input_file.read_line()
+            row = self.parser.parse_data(line)  # { 'timestamp': datetime, 'values' = [] }
 
         self.timestamp = row['timestamp']  # datetime
         if self.timestamp > self.last_timestamp:
