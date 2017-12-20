@@ -2,7 +2,7 @@ from aux.progress_bar import ProgressBar
 from file_utils.aux import full_path
 
 
-class FileReader:
+class TextFileReader:
     def __init__(self, path, filename, progress=False):
         self.path, self.filename = path, filename
         f_path = full_path(path, filename)

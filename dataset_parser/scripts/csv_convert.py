@@ -52,4 +52,4 @@ def noaa():
     }
     convert_to_csv(ParserNOAA, input_path, input_filenames, output_path, args)
 
-noaa()
+# noaa()

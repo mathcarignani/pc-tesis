@@ -1,5 +1,5 @@
-# from file_utils.text_utils.file_reader import FileReader
-# from file_utils.text_utils.file_writer import FileWriter
+# from file_utils.text_utils.text_file_reader import TextFileReader
+# from file_utils.text_utils.text_file_writer import TextFileWriter
 # from parser.parser_vwc import ParserVWC
 # from parser.parser_smet import ParserSMET
 # from data_quality.cleaner_vwc import CleanerVWC
@@ -25,19 +25,19 @@
 #
 #
 # def _parse_and_process(parser, folder, filename):
-#     file_reader = FileReader(folder, filename)
-#     file_reader.parse_file(parser)
+#     text_file_reader = TextFileReader(folder, filename)
+#     text_file_reader.parse_file(parser)
 #     parser.process_data()
 #
 #
 # def clean_vwc_files(input_folder, output_folder):
 #     for filename in VWC_FILES:
 #         # parse input file
-#         file_reader = FileReader(input_folder, filename)
+#         text_file_reader = TextFileReader(input_folder, filename)
 #         parser = ParserVWC()
-#         file_reader.parse_file(parser)
+#         text_file_reader.parse_file(parser)
 #         # clean and write output file
 #         cleaner_vwc = CleanerVWC(parser.df, filename)
-#         file_writer = FileWriter(output_folder, cleaner_vwc.filename)
+#         text_file_writer = TextFileWriter(output_folder, cleaner_vwc.filename)
 #         cleaner_vwc.clean()
-#         file_writer.write_file(cleaner_vwc)
+#         text_file_writer.write_file(cleaner_vwc)

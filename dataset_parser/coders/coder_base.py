@@ -2,14 +2,14 @@ import sys
 sys.path.append('../')
 
 from file_utils.bit_stream import BitStreamWriter
-from file_utils.text_utils.file_reader import FileReader
+from file_utils.text_utils.text_file_reader import TextFileReader
 
 
 class CoderBase(object):
     def __init__(self, input_path, input_filename, output_path, output_filename, params={}):
         self.bit_count = params.get('bit_count') or 24
         self.nodata = params.get('nodata') or 'nodata'
-        self.input_file = FileReader(input_path, input_filename)
+        self.input_file = TextFileReader(input_path, input_filename)
         self.output_file = BitStreamWriter(output_path, output_filename)
         self.count = 0
 

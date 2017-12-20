@@ -1,13 +1,11 @@
-from datetime import datetime, timedelta
+from datetime import datetime
 
-from file_utils.text_utils.file_reader import FileReader
+from file_utils.text_utils.text_file_reader import TextFileReader
 from file_utils.csv_utils.csv_writer import CSVWriter
+import converter_utils
 
 
 class CSVConverter:
-    DATE_FORMAT = "%Y-%m-%d %H:%M:%S"  # "2010-10-01 00:00:00"
-    DELTA_FORMAT = "%H:%M:%S"  # "01:00:00"
-
     # args = {
     #     'dataset': 'IRKIS',
     #     'first_timestamp': "2010-10-01 00:00:00",
@@ -15,14 +13,14 @@ class CSVConverter:
     #     'delta': "01:00:00",
     # }
     def __init__(self, input_path, input_filename, parser, output_path, output_filename, args):
-        self.input_file = FileReader(input_path, input_filename)
+        self.input_file = TextFileReader(input_path, input_filename)
         self.parser = parser
         self.output_file = CSVWriter(output_path, output_filename)
 
         self.args = args
-        self.first_timestamp = datetime.strptime(args['first_timestamp'], self.DATE_FORMAT)
-        self.last_timestamp = datetime.strptime(args['last_timestamp'], self.DATE_FORMAT)
-        self.delta = self._parse_delta()
+        self.first_timestamp = datetime.strptime(args['first_timestamp'], converter_utils.DATE_FORMAT)
+        self.last_timestamp = datetime.strptime(args['last_timestamp'], converter_utils.DATE_FORMAT)
+        self.delta = converter_utils.parse_delta(args['delta'])
 
     def run(self):
         self._write_metadata()
@@ -93,7 +91,7 @@ class CSVConverter:
         self._update_expected_timestamp()
 
     def _update_expected_timestamp(self):
-        self.expected_timestamp += self.delta
+        self.expected_timestamp = converter_utils.timestamp_plus_delta(self.expected_timestamp, self.delta)
         self.expected_timestamp_count += 1
 
     def _print_state(self, message=None):
@@ -108,10 +106,6 @@ class CSVConverter:
     def _raise_error(self, message):
         self._print_state()
         raise StandardError(message)
-
-    def _parse_delta(self):
-        t = datetime.strptime(self.args['delta'], self.DELTA_FORMAT)
-        return timedelta(hours=t.hour, minutes=t.minute, seconds=t.second)
 
     # def _string_timestamp(self):
     #     return self.expected_timestamp.strftime(self.DATE_FORMAT)

@@ -1,12 +1,12 @@
-from file_reader import FileReader
+from text_file_reader import TextFileReader
 
 
 class Utils(object):
     @staticmethod
     def compare_files(path, filename1, filename2, error_threshold=0, nodata='nodata'):
         error_threshold = 0 if error_threshold is None else error_threshold
-        fr1 = FileReader(path, filename1)
-        fr2 = FileReader(path, filename2)
+        fr1 = TextFileReader(path, filename1)
+        fr2 = TextFileReader(path, filename2)
         line_count = 0
         while True:
             line_count += 1
@@ -47,7 +47,7 @@ class Utils(object):
 
     @staticmethod
     def parse_file(path, filename, parser):
-        fr = FileReader(path, filename, True)
+        fr = TextFileReader(path, filename, True)
         while fr.continue_reading:
             line = fr.read_line()
             parser.parse_line(line)

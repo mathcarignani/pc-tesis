@@ -1,4 +1,4 @@
-class FileWriter:
+class TextFileWriter:
     def __init__(self, folder, filename):
         self.filename = filename
         self.written_lines = 0

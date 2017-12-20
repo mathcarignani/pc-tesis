@@ -1,7 +1,6 @@
+from datetime import datetime
+
 from .. import parser_base
-import matplotlib.pyplot as plt
-import numpy as np
-import pandas as pd
 
 
 class ParserNOAA(parser_base.ParserBase):
@@ -25,8 +24,6 @@ class ParserNOAA(parser_base.ParserBase):
     def _parse_columns(self, s_line):
         self.columns = s_line[2:]
         self.columns_length = len(self.columns)
-        # self.df = pd.DataFrame(columns=[s_line[2]])
-        # self.columns_count = len(self.df.columns)
 
     # EXAMPLE:
     # 20170101 000000 22.940 2 R
@@ -38,7 +35,7 @@ class ParserNOAA(parser_base.ParserBase):
         s_line = line.split()
         try:
             date = s_line[0] + ' ' + s_line[1]
-            timestamp = pd.to_datetime(date, format='%Y%m%d %H%M%S')
+            timestamp = datetime.strptime(date, self.date_format)
             values = s_line[2:]
             if self.columns_length != len(values):
                 raise StandardError("self.columns_length != len(data)")
@@ -47,27 +44,3 @@ class ParserNOAA(parser_base.ParserBase):
         except:
             print "INVALID LINE:", s_line
             return None
-        # try:
-        #     date = s_line[0] + ' ' + s_line[1]
-        #     timestamp = pd.to_datetime(date, format='%Y%m%d %H%M%S')
-        #     data = np.array([s_line[2]])
-        #     np_array = self._clean_data(data)
-        #     self.df.loc[timestamp] = np_array
-        # except:
-        #     self.errors['errors'].append(line)
-
-    # def plot(self, filename):
-    #     title = filename
-    #     df = self.df.copy(deep=True)
-    #     min_value = df.loc[df.idxmin()]['SST'][0]
-    #     max_value = df.loc[df.idxmax()]['SST'][0]
-    #     df['SSTnan'] = df['SST']
-    #     nan_value = min_value - (max_value - min_value) / 10
-    #     df['SSTnan'] = df['SSTnan'].apply(lambda x: nan_value if pd.isnull(x) else np.nan)
-    #
-    #     fig, ax = plt.subplots()
-    #     df['SST'].plot(ax=ax, linestyle='none', title=title, marker='.', markersize=0.2)
-    #     df['SSTnan'].plot(ax=ax, linestyle='none', marker='.', markersize=1)
-    #     ax.legend()
-    #     fig = ax.get_figure()
-    #     fig.savefig(title + '.plot.png')

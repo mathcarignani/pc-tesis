@@ -2,7 +2,7 @@ import sys
 sys.path.append('../')
 
 from file_utils.bit_stream import BitStreamReader
-from file_utils.text_utils.file_writer import FileWriter
+from file_utils.text_utils.text_file_writer import TextFileWriter
 
 
 class DecoderBase(object):
@@ -10,7 +10,7 @@ class DecoderBase(object):
         self.bit_count = params.get('bit_count') or 24
         self.nodata = 'nodata'
         self.input_file = BitStreamReader(input_path, input_filename)
-        self.output_file = FileWriter(output_path, output_filename)
+        self.output_file = TextFileWriter(output_path, output_filename)
         self.count = 0
 
     def decode_file(self):

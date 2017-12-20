@@ -1,12 +1,13 @@
+from datetime import datetime
+
 from .. import parser_base
-from .. import parser_extra
-import pandas as pd
 
-
-class ParserVWC(parser_base.ParserBase, parser_extra.ParserExtra):
+        
+class ParserVWC(parser_base.ParserBase):
     def __init__(self):
         super(ParserVWC, self).__init__()
         self.nodata = "-999.000000"
+        self.date_format = "%Y-%m-%dT%H:%M"  # "2009-10-01T01:00"
 
     # In the vwc files the header is only the first line.
     # EXAMPLE:
@@ -19,15 +20,12 @@ class ParserVWC(parser_base.ParserBase, parser_extra.ParserExtra):
     def _parse_columns(self, s_line):
         self.columns = s_line[1:]
         self.columns_length = len(self.columns)
-        # self.df = pd.DataFrame(columns=columns)
-        # self.columns_count = len(self.df.columns)
 
     # EXAMPLE:
     # 2009-10-01T01:00  279.26   275.43   275.43    1.1     0    0.0      0      0 271.947  0.000    0.000   1.000
     def parse_data(self, line):
         s_line = line.split()
-        current_date = s_line[0]
-        timestamp = pd.to_datetime(current_date)
+        timestamp = datetime.strptime(s_line[0], self.date_format)
         values = s_line[1:]
         if self.columns_length != len(values):
             raise StandardError("self.columns_length != len(data)")

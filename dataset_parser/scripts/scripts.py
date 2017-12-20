@@ -1,14 +1,14 @@
 import sys
 sys.path.append('../')
 
-# from file_utils.text_utils.file_reader import FileReader
-# from file_utils.text_utils.file_writer import FileWriter
+# from file_utils.text_utils.text_file_reader import TextFileReader
+# from file_utils.text_utils.text_file_writer import TextFileWriter
 # from parsers.irkis.parser_vwc import ParserVWC
 #
 #
 # def clean_file(input_path, input_filename, output_path, output_filename):
-#     input_file = FileReader(input_path, input_filename)
-#     output_file = FileWriter(output_path, output_filename)
+#     input_file = TextFileReader(input_path, input_filename)
+#     output_file = TextFileWriter(output_path, output_filename)
 #     parser = ParserVWC()
 #
 #     while input_file.continue_reading:
