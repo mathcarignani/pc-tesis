@@ -7,20 +7,13 @@ import converter_utils
 
 class CSVConverter:
     # args = {
-    #     'dataset': 'IRKIS',
-    #     'first_timestamp': "2010-10-01 00:00:00",
-    #     'last_timestamp': "2013-10-01 00:00:00",
-    #     'delta': "01:00:00",
+    #     'dataset': 'IRKIS'
     # }
     def __init__(self, input_path, input_filename, parser, output_path, output_filename, args):
         self.input_file = TextFileReader(input_path, input_filename)
         self.parser = parser
         self.output_file = CSVWriter(output_path, output_filename)
-
         self.args = args
-        self.first_timestamp = datetime.strptime(args['first_timestamp'], converter_utils.DATE_FORMAT)
-        self.last_timestamp = datetime.strptime(args['last_timestamp'], converter_utils.DATE_FORMAT)
-        self.delta = converter_utils.parse_delta(args['delta'])
 
     def run(self):
         self._write_metadata()
@@ -35,10 +28,7 @@ class CSVConverter:
     def _write_metadata(self):
         metadata = {
             'DATASET:': self.args['dataset'],
-            'FILENAME:': self.input_file.filename,
-            'FIRST_TIMESTAMP:': self.args['first_timestamp'],
-            'LAST_TIMESTAMP:': self.args['last_timestamp'],
-            'DELTA:': self.args['delta']
+            'FILENAME:': self.input_file.filename
         }
         for key, value in metadata.items():
             self.output_file.write_row([key, value])
@@ -47,18 +37,13 @@ class CSVConverter:
         while self.parser.parsing_header:
             line = self.input_file.read_line()
             self.parser.parse_header(line)
-        self.output_file.write_row(['Timestamp', 'Missing'] + self.parser.columns)
+        self.output_file.write_row(['Timestamp'] + self.parser.columns)
 
     def _write_data(self):
-        self.last_values = []
-        self.expected_timestamp = self.first_timestamp
-        self.expected_timestamp_count = 0
-
+        self.previous_timestamp = None
+        self.previous_values = None
         while self.input_file.continue_reading:
             self._process_line()
-        self.expected_timestamp = self.timestamp
-        while self.expected_timestamp < self.last_timestamp:
-            self._add_row_missing()
 
     def _process_line(self):
         row = None
@@ -67,45 +52,41 @@ class CSVConverter:
             row = self.parser.parse_data(line)  # { 'timestamp': datetime, 'values' = [] }
 
         self.timestamp = row['timestamp']  # datetime
-        if self.timestamp > self.last_timestamp:
-            self._raise_error("timestamp > last_timestamp")
-        elif self.timestamp < self.expected_timestamp:
-            if self.timestamp == self.expected_timestamp - self.delta and row['values'] == self.last_values:
-                self._print_state("ERROR: duplicate row")
+        self.values = row['values']
+
+        if self.previous_timestamp is None:  # first row, print timestamp
+            timestamp_str = self.timestamp.strftime(converter_utils.DATE_FORMAT)
+            self._add_row(timestamp_str, self.values)
+
+        elif self.timestamp < self.previous_timestamp:
+            self._raise_error("timestamp < previous_timestamp")  # stop
+        elif self.timestamp == self.previous_timestamp:
+            if row['values'] == self.last_values:
+                self._print_state("ERROR: duplicate row")  # print error and continue
             else:
-                self._raise_error("timestamp < expected_timestamp")
-        else:
-            while self.timestamp > self.expected_timestamp:
-                self._add_row_missing()
-            if self.timestamp < self.expected_timestamp:  # both timestamps should match
-                self._raise_error("timestamp < expected_timestamp")
-            self._add_row(row['values'])
+                self._raise_error("timestamp < previous_timestamp")  # stop
 
-    def _add_row(self, values):
-        self.output_file.write_row([self.expected_timestamp_count, '0'] + values)
-        self._update_expected_timestamp()
+        else:  # self.timestamp > self.previous_timestamp
+            delta = self.timestamp - self.previous_timestamp  # always positive
+            delta = converter_utils.format_timedelta(delta)
+            self._add_row(delta, self.values)
+
+        self.previous_timestamp = self.timestamp
+        self.previous_values = self.values
+
+    def _add_row(self, timestamp, values):
+        self.output_file.write_row([timestamp] + values)
         self.last_values = values
-
-    def _add_row_missing(self):
-        self.output_file.write_row([self.expected_timestamp_count, '1'])
-        self._update_expected_timestamp()
-
-    def _update_expected_timestamp(self):
-        self.expected_timestamp = converter_utils.timestamp_plus_delta(self.expected_timestamp, self.delta)
-        self.expected_timestamp_count += 1
 
     def _print_state(self, message=None):
         if message is not None:
             print message
-        print 'expected_timestamp_count =', self.expected_timestamp_count
-        print 'expected_timestamp =', self.expected_timestamp
+        print 'previous_timestamp =', self.previous_timestamp
         print 'timestamp =', self.timestamp
-        print 'last_timestamp =', self.last_timestamp
+        print 'previous_values =', self.previous_values
+        print 'values =', self.values
         print
 
     def _raise_error(self, message):
         self._print_state()
         raise StandardError(message)
-
-    # def _string_timestamp(self):
-    #     return self.expected_timestamp.strftime(self.DATE_FORMAT)

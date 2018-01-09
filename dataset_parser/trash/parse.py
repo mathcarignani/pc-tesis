@@ -17,4 +17,6 @@ for column_name in df.dtypes.index:
     for i in array:
         res.append(i)
 
+# remove duplicates
+res = np.unique(res)
 sorted = np.sort(res)
