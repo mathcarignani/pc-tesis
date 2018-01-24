@@ -1,5 +1,3 @@
-from datetime import datetime
-
 from file_utils.text_utils.text_file_reader import TextFileReader
 from file_utils.csv_utils.csv_writer import CSVWriter
 import converter_utils
@@ -75,8 +73,17 @@ class CSVConverter:
         self.previous_values = self.values
 
     def _add_row(self, timestamp, values):
+        if self.args['dataset'] == 'IRKIS':
+            values = self._map_values_irkis(values)
         self.output_file.write_row([timestamp] + values)
         self.last_values = values
+
+    def _map_values_irkis(self, values):
+        new_values = []
+        for value in values:
+            new_value = 'N' if value == 'N' else round(value, 3)
+            new_values.add(new_value)
+        return new_values
 
     def _print_state(self, message=None):
         if message is not None:
