@@ -73,16 +73,16 @@ class CSVConverter:
         self.previous_values = self.values
 
     def _add_row(self, timestamp, values):
+        self.last_values = values
         if self.args['dataset'] == 'IRKIS':
             values = self._map_values_irkis(values)
         self.output_file.write_row([timestamp] + values)
-        self.last_values = values
 
     def _map_values_irkis(self, values):
         new_values = []
         for value in values:
-            new_value = 'N' if value == 'N' else round(value, 3)
-            new_values.add(new_value)
+            new_value = 'N' if value == 'N' else round(float(value)*1000, 0)
+            new_values.append(new_value)
         return new_values
 
     def _print_state(self, message=None):
