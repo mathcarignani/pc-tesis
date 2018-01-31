@@ -15,7 +15,11 @@ def convert_to_csv(parser_klass, input_path, input_filenames, output_path, args)
     for input_filename in input_filenames:
         output_filename = input_filename + '.csv'
         print "\nConverting", output_filename
-        CSVConverter(input_path, input_filename, parser_klass(), output_path, output_filename, args).run()
+        csv_converter = CSVConverter(input_path, input_filename, parser_klass(), output_path, output_filename, args)
+        csv_converter.run()
+        csv_converter.print_stats()
+        csv_converter.plot()
+        csv_converter.close()
 
         count = CSVReader(output_path, output_filename).total_lines()
         if row_count is None:
@@ -32,7 +36,8 @@ def irkis():
     output_path = current_path + '/irkis'
 
     args = {
-        'dataset': 'IRKIS'
+        'dataset': 'IRKIS',
+        'no_data': 'N'
     }
     convert_to_csv(ParserVWC, input_path, input_filenames, output_path, args)
 

@@ -1,26 +1,38 @@
 from file_utils.text_utils.text_file_reader import TextFileReader
 from file_utils.csv_utils.csv_writer import CSVWriter
+from pandas_tools.pandas_tools import PandasTools
 import converter_utils
 
 
 class CSVConverter:
     # args = {
-    #     'dataset': 'IRKIS'
+    #     'dataset': 'IRKIS',
+    #     'no_data': 'N'
     # }
     def __init__(self, input_path, input_filename, parser, output_path, output_filename, args):
         self.input_file = TextFileReader(input_path, input_filename)
         self.parser = parser
         self.output_file = CSVWriter(output_path, output_filename)
         self.args = args
+        self.pandas_tools = PandasTools(args)
 
     def run(self):
         self._write_metadata()
         self._write_columns()
         self._write_data()
 
+    def print_stats(self):
+        self.pandas_tools.print_stats()
+
+    def plot(self):
+        self.pandas_tools.plot(self.input_file.filename)
+
+    def close(self):
         self.input_file.close()
         self.output_file.close()
 
+    ####################################################################################################################
+    ####################################################################################################################
     ####################################################################################################################
 
     def _write_metadata(self):
@@ -36,6 +48,7 @@ class CSVConverter:
             line = self.input_file.read_line()
             self.parser.parse_header(line)
         self.output_file.write_row(['Timestamp'] + self.parser.columns)
+        self.pandas_tools.new_df(self.parser.columns)
 
     def _write_data(self):
         self.previous_timestamp = None
@@ -77,6 +90,7 @@ class CSVConverter:
         if self.args['dataset'] == 'IRKIS':
             values = self._map_values_irkis(values)
         self.output_file.write_row([timestamp] + values)
+        self.pandas_tools.add_row(self.timestamp, values)
 
     def _map_values_irkis(self, values):
         new_values = []

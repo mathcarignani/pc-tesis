@@ -4,6 +4,15 @@ import sys
 import time
 
 
+#
+# EXAMPLE USAGE:
+# array = [1] * 100
+# progress_bar = ProgressBar(len(array))
+# count = 0
+# for element in array:
+#   count += 1
+#   progress_bar.print_progress(count)
+#
 class ProgressBar:
     def __init__(self, total, mod_range=1000, prefix='Progress:', suffix='Complete', decimals=1, bar_length=25):
         self.total = total
