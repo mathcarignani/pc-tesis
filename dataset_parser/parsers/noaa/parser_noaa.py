@@ -44,3 +44,6 @@ class ParserNOAA(parser_base.ParserBase):
         except:
             print "INVALID LINE:", s_line
             return None
+
+    def _map_value(self, value):
+        return ParserNOAA.NO_DATA if value == self.nodata else round(float(value)*1000, 0)

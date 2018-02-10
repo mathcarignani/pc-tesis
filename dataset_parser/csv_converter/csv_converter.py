@@ -5,16 +5,12 @@ import converter_utils
 
 
 class CSVConverter:
-    # args = {
-    #     'dataset': 'IRKIS',
-    #     'no_data': 'N'
-    # }
-    def __init__(self, input_path, input_filename, parser, output_path, output_filename, args):
+    def __init__(self, input_path, input_filename, parser, output_path, output_filename, dataset_utils):
         self.input_file = TextFileReader(input_path, input_filename)
         self.parser = parser
         self.output_file = CSVWriter(output_path, output_filename)
-        self.args = args
-        self.pandas_tools = PandasTools(args)
+        self.dataset_utils = dataset_utils
+        self.pandas_tools = PandasTools(dataset_utils)
 
     def run(self):
         self._write_metadata()
@@ -37,7 +33,7 @@ class CSVConverter:
 
     def _write_metadata(self):
         metadata = {
-            'DATASET:': self.args['dataset'],
+            'DATASET:': self.dataset_utils.NAME,
             'FILENAME:': self.input_file.filename
         }
         for key, value in metadata.items():
@@ -71,8 +67,9 @@ class CSVConverter:
 
         elif self.timestamp < self.previous_timestamp:
             self._raise_error("timestamp < previous_timestamp")  # stop
+
         elif self.timestamp == self.previous_timestamp:
-            if row['values'] == self.last_values:
+            if self.values == self.last_values:
                 self._print_state("ERROR: duplicate row")  # print error and continue
             else:
                 self._raise_error("timestamp < previous_timestamp")  # stop
@@ -87,17 +84,8 @@ class CSVConverter:
 
     def _add_row(self, timestamp, values):
         self.last_values = values
-        if self.args['dataset'] == 'IRKIS':
-            values = self._map_values_irkis(values)
         self.output_file.write_row([timestamp] + values)
         self.pandas_tools.add_row(self.timestamp, values)
-
-    def _map_values_irkis(self, values):
-        new_values = []
-        for value in values:
-            new_value = 'N' if value == 'N' else round(float(value)*1000, 0)
-            new_values.append(new_value)
-        return new_values
 
     def _print_state(self, message=None):
         if message is not None:

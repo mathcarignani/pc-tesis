@@ -1,9 +1,8 @@
 class ParserBase(object):
-    NODATA = "N"
+    NO_DATA = "N"
 
     def __init__(self):
         self.parsing_header = True
-        self.nodata = None
         self.columns = []
         self.columns_length = 0
 
@@ -19,15 +18,12 @@ class ParserBase(object):
     def _parse_header(self, line):
         raise NotImplementedError("This method must be implemented.")
 
-    def _parse_columns(self, s_line):
+    def _map_value(self, value):
         raise NotImplementedError("This method must be implemented.")
 
-    def _map_value(self, value):
-        return self.NODATA if value == self.nodata else value
-
     def _check_errors(self):
-        if self.nodata is None:
-            raise StandardError("Finished parsing header and nodata value is unknown.")
+        # if self.nodata is None:
+        #     raise StandardError("Finished parsing header and nodata value is unknown.")
         if self.date_format is None:
             raise StandardError("Finished parsing header and date_format is unknown")
         if self.columns_length == 0:
