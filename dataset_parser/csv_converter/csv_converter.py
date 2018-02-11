@@ -2,15 +2,16 @@ from file_utils.text_utils.text_file_reader import TextFileReader
 from file_utils.csv_utils.csv_writer import CSVWriter
 from pandas_tools.pandas_tools import PandasTools
 import converter_utils
+import logging
 
 
 class CSVConverter:
-    def __init__(self, input_path, input_filename, parser, output_path, output_filename, dataset_utils):
-        self.input_file = TextFileReader(input_path, input_filename)
+    def __init__(self, input_path, input_filename, parser, output_path, output_filename):
+        self.output_path = output_path
+        self.input_file = TextFileReader(input_path, input_filename, True)
         self.parser = parser
         self.output_file = CSVWriter(output_path, output_filename)
-        self.dataset_utils = dataset_utils
-        self.pandas_tools = PandasTools(dataset_utils)
+        self.pandas_tools = PandasTools()
 
     def run(self):
         self._write_metadata()
@@ -21,7 +22,7 @@ class CSVConverter:
         self.pandas_tools.print_stats()
 
     def plot(self):
-        self.pandas_tools.plot(self.input_file.filename)
+        self.parser.plot(self.output_path, self.input_file.filename, self.pandas_tools.df)
 
     def close(self):
         self.input_file.close()
@@ -33,7 +34,7 @@ class CSVConverter:
 
     def _write_metadata(self):
         metadata = {
-            'DATASET:': self.dataset_utils.NAME,
+            'DATASET:': self.parser.NAME,
             'FILENAME:': self.input_file.filename
         }
         for key, value in metadata.items():
@@ -89,12 +90,12 @@ class CSVConverter:
 
     def _print_state(self, message=None):
         if message is not None:
-            print message
-        print 'previous_timestamp =', self.previous_timestamp
-        print 'timestamp =', self.timestamp
-        print 'previous_values =', self.previous_values
-        print 'values =', self.values
-        print
+            logging.info(message)
+        logging.info('previous_timestamp =%s', self.previous_timestamp)
+        logging.info('timestamp =%s', self.timestamp)
+        logging.info('previous_values =%s', self.previous_values)
+        logging.info('values =%s', self.values)
+        logging.info('')
 
     def _raise_error(self, message):
         self._print_state()

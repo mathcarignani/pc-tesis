@@ -1,19 +1,15 @@
+import logging
 import numpy as np
 import pandas as pd
 
 import sys
 sys.path.append('.')
 
-# import csv_converter.converter_utils as converter_utils
-# from file_utils.csv_utils.csv_reader import CSVReader
-# from parsers.parser_base import ParserBase
-
 
 class PandasTools:
     NO_DATA = "N"
 
-    def __init__(self, dataset_utils):
-        self.dataset_utils = dataset_utils
+    def __init__(self):
         self.df = None
 
     def new_df(self, columns):
@@ -30,18 +26,22 @@ class PandasTools:
         columns = self.df.columns
         clean_df = self.df.dropna(axis=1, how='all')  # drop nan columns
 
-        print "Total nan columns:", len(columns) - len(clean_df.columns)
-        print "First timestamp:", clean_df.index[0]
-        print "Last timestamp:", clean_df.index[-1]
-        print "Min value:", np.nanmin(clean_df.values)
-        print "Max value:", np.nanmax(clean_df.values)
-        print
-        print "Dataset stats:"
-        print clean_df.describe(percentiles=[])
-        print
-        print "Null values count for each column:"
-        print clean_df.isnull().sum()
-        print
+        logging.info("Total nan columns: %s", len(columns) - len(clean_df.columns))
+        first_timestamp, last_timestamp = clean_df.index[0], clean_df.index[-1]
+        logging.info("First timestamp: %s", first_timestamp)
+        logging.info("Last timestamp: %s", last_timestamp)
+        diff_s = (last_timestamp - first_timestamp).total_seconds()
+        diff_m, diff_h, diff_d = divmod(diff_s, 60)[0], divmod(diff_s, 3600)[0], divmod(diff_s, 86400)[0]
+        logging.info("Last timestamp - First timestamp: %s sec | %s min | %s hours | %s days",
+                     diff_s, diff_m, diff_h, diff_d)
+        logging.info("Min value: %s", np.nanmin(clean_df.values))
+        logging.info("Max value: %s", np.nanmax(clean_df.values))
+        logging.info("\nDataset stats:")
+        logging.info(clean_df.describe(percentiles=[]))
+        logging.info("")
+        logging.info("Null values count for each column:")
+        logging.info(clean_df.isnull().sum())
+        logging.info("")
 
     def rows_count(self):
         return len(self.df.index)
@@ -51,7 +51,4 @@ class PandasTools:
 
     @staticmethod
     def print_number(name, value):
-        print name, "{0:,}".format(value)
-
-    def plot(self, filename):
-        self.dataset_utils.plot(filename, self.df)
+        logging.info("%s %s", name, "{0:,}".format(value))

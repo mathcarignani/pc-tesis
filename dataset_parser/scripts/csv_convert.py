@@ -1,9 +1,10 @@
+import logging
+
 import sys
 sys.path.append('.')
 
+from aux.logger import Logger
 from csv_converter.csv_converter import CSVConverter
-from dataset_utils.irkis_utils import IRKISUtils
-from dataset_utils.noaa_utils import NOAAUtils
 from file_utils.csv_utils.csv_reader import CSVReader
 from parsers.irkis.parser_vwc import ParserVWC
 from parsers.noaa.parser_noaa import ParserNOAA
@@ -13,12 +14,14 @@ current_path = os.path.dirname(os.path.abspath(__file__))
 datasets_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets/"
 
 
-def convert_to_csv(parser_klass, input_path, input_filenames, output_path, dataset_utils):
+def convert_to_csv(parser_klass, input_path, input_filenames, output_path):
     row_count = None
     for input_filename in input_filenames:
         output_filename = input_filename + '.csv'
-        print "\nConverting", output_filename
-        csv_converter = CSVConverter(input_path, input_filename, parser_klass(), output_path, output_filename, dataset_utils)
+        logging.info("#################################################################################")
+        logging.info("INPUT: %s/%s", input_path, input_filename)
+        logging.info("OUTPUT: %s/%s", output_path, output_filename)
+        csv_converter = CSVConverter(input_path, input_filename, parser_klass(), output_path, output_filename)
         csv_converter.run()
         csv_converter.print_stats()
         csv_converter.plot()
@@ -28,23 +31,18 @@ def convert_to_csv(parser_klass, input_path, input_filenames, output_path, datas
         if row_count is None:
             row_count = count
         elif row_count != count:
-            print "#### ERROR: row_count != count ### row_count=", row_count, "| count=", count
+            logging.info("#### ERROR: row_count != count ### row_count=%s | count=%s", row_count, count)
         else:
-            print "SIZES MATCH!! count=", count
+            logging.info("SIZES MATCH!! count=%s", count)
 
 
-def irkis():
-    input_path = datasets_path + "[1]irkis/vwc"
+def run(parser, logger_filename, input_folder, output_folder):
+    Logger.set(logger_filename)
+    input_path = datasets_path + input_folder
     input_filenames = os.listdir(input_path)
-    output_path = current_path + '/irkis'
-    convert_to_csv(ParserVWC, input_path, input_filenames, output_path, IRKISUtils())
+    output_path = current_path + output_folder
+    convert_to_csv(parser, input_path, input_filenames, output_path)
 
 
-def noaa():
-    input_path = datasets_path + "[2]noaa/2016"
-    input_filenames = os.listdir(input_path)
-    output_path = current_path + '/noaa'
-    convert_to_csv(ParserNOAA, input_path, input_filenames, output_path, NOAAUtils())
-
-irkis()
-# noaa()
+run(ParserVWC, "output-irkis.log", "[1]irkis/vwc", "/irkis")
+# run(ParserNOAA, "output-noaa.log", "[2]noaa/2016", "/noaa")

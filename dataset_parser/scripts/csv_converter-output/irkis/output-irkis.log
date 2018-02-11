@@ -1,11 +1,12 @@
-Pablos-MacBook-Pro-2:dataset_parser pablocerve$ python scripts/csv_convert.py 
-
-Converting vwc_1202.dat.csv
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[1]irkis/vwc/vwc_1202.dat
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/irkis/vwc_1202.dat.csv
 Total rows: 26,305
 Total nan rows: 10,438
 Total nan columns: 0
 First timestamp: 2010-10-01 00:00:00
 Last timestamp: 2013-10-01 00:00:00
+Last timestamp - First timestamp: 94694400.0 sec | 1578240.0 min | 26304.0 hours | 1096.0 days
 Min value: 240.0
 Max value: 541.0
 
@@ -39,13 +40,15 @@ Null values count for each column:
 -120cm_B    10438
 dtype: int64
 
-
-Converting vwc_1203.dat.csv
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[1]irkis/vwc/vwc_1203.dat
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/irkis/vwc_1203.dat.csv
 Total rows: 26,305
 Total nan rows: 10,657
 Total nan columns: 3
 First timestamp: 2010-10-01 00:00:00
 Last timestamp: 2013-10-01 00:00:00
+Last timestamp - First timestamp: 94694400.0 sec | 1578240.0 min | 26304.0 hours | 1096.0 days
 Min value: 165.0
 Max value: 385.0
 
@@ -76,14 +79,16 @@ Null values count for each column:
 -50cm_B    22946
 dtype: int64
 
-SIZES MATCH!! count= 26308
-
-Converting vwc_1204.dat.csv
+SIZES MATCH!! count=26308
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[1]irkis/vwc/vwc_1204.dat
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/irkis/vwc_1204.dat.csv
 Total rows: 26,305
 Total nan rows: 8,899
 Total nan columns: 1
 First timestamp: 2010-10-01 00:00:00
 Last timestamp: 2013-10-01 00:00:00
+Last timestamp - First timestamp: 94694400.0 sec | 1578240.0 min | 26304.0 hours | 1096.0 days
 Min value: 218.0
 Max value: 464.0
 
@@ -116,14 +121,16 @@ Null values count for each column:
 -80cm_B     26298
 dtype: int64
 
-SIZES MATCH!! count= 26308
-
-Converting vwc_1205.dat.csv
+SIZES MATCH!! count=26308
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[1]irkis/vwc/vwc_1205.dat
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/irkis/vwc_1205.dat.csv
 Total rows: 26,305
 Total nan rows: 9,396
 Total nan columns: 5
 First timestamp: 2010-10-01 00:00:00
 Last timestamp: 2013-10-01 00:00:00
+Last timestamp - First timestamp: 94694400.0 sec | 1578240.0 min | 26304.0 hours | 1096.0 days
 Min value: 272.0
 Max value: 600.0
 
@@ -144,50 +151,52 @@ Null values count for each column:
 -30cm_B    22721
 dtype: int64
 
-SIZES MATCH!! count= 26308
-
-Converting vwc_222.smet.csv
+SIZES MATCH!! count=26308
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[1]irkis/vwc/vwc_222.smet
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/irkis/vwc_222.smet.csv
 ERROR: duplicate row
-previous_timestamp = 2011-10-01 00:00:00
-timestamp = 2011-10-01 00:00:00
-previous_values = [515.0, 445.0, 323.0, 196.0, 403.0, 519.0, 422.0, 274.0, 184.0, 427.0]
-values = [515.0, 445.0, 323.0, 196.0, 403.0, 519.0, 422.0, 274.0, 184.0, 427.0]
-
-ERROR: duplicate row
-previous_timestamp = 2011-10-01 00:00:00
-timestamp = 2011-10-01 00:00:00
-previous_values = [515.0, 445.0, 323.0, 196.0, 403.0, 519.0, 422.0, 274.0, 184.0, 427.0]
-values = [515.0, 445.0, 323.0, 196.0, 403.0, 519.0, 422.0, 274.0, 184.0, 427.0]
+previous_timestamp =2011-10-01 00:00:00
+timestamp =2011-10-01 00:00:00
+previous_values =[515.0, 445.0, 323.0, 196.0, 403.0, 519.0, 422.0, 274.0, 184.0, 427.0]
+values =[515.0, 445.0, 323.0, 196.0, 403.0, 519.0, 422.0, 274.0, 184.0, 427.0]
 
 ERROR: duplicate row
-previous_timestamp = 2011-10-01 00:00:00
-timestamp = 2011-10-01 00:00:00
-previous_values = [515.0, 445.0, 323.0, 196.0, 403.0, 519.0, 422.0, 274.0, 184.0, 427.0]
-values = [515.0, 445.0, 323.0, 196.0, 403.0, 519.0, 422.0, 274.0, 184.0, 427.0]
+previous_timestamp =2011-10-01 00:00:00
+timestamp =2011-10-01 00:00:00
+previous_values =[515.0, 445.0, 323.0, 196.0, 403.0, 519.0, 422.0, 274.0, 184.0, 427.0]
+values =[515.0, 445.0, 323.0, 196.0, 403.0, 519.0, 422.0, 274.0, 184.0, 427.0]
 
 ERROR: duplicate row
-previous_timestamp = 2012-10-01 00:00:00
-timestamp = 2012-10-01 00:00:00
-previous_values = [551.0, 455.0, 'N', 232.0, 'N', 545.0, 438.0, 290.0, 'N', 444.0]
-values = [551.0, 455.0, 'N', 232.0, 'N', 545.0, 438.0, 290.0, 'N', 444.0]
+previous_timestamp =2011-10-01 00:00:00
+timestamp =2011-10-01 00:00:00
+previous_values =[515.0, 445.0, 323.0, 196.0, 403.0, 519.0, 422.0, 274.0, 184.0, 427.0]
+values =[515.0, 445.0, 323.0, 196.0, 403.0, 519.0, 422.0, 274.0, 184.0, 427.0]
 
 ERROR: duplicate row
-previous_timestamp = 2012-10-01 00:00:00
-timestamp = 2012-10-01 00:00:00
-previous_values = [551.0, 455.0, 'N', 232.0, 'N', 545.0, 438.0, 290.0, 'N', 444.0]
-values = [551.0, 455.0, 'N', 232.0, 'N', 545.0, 438.0, 290.0, 'N', 444.0]
+previous_timestamp =2012-10-01 00:00:00
+timestamp =2012-10-01 00:00:00
+previous_values =[551.0, 455.0, 'N', 232.0, 'N', 545.0, 438.0, 290.0, 'N', 444.0]
+values =[551.0, 455.0, 'N', 232.0, 'N', 545.0, 438.0, 290.0, 'N', 444.0]
 
 ERROR: duplicate row
-previous_timestamp = 2012-10-01 00:00:00
-timestamp = 2012-10-01 00:00:00
-previous_values = [551.0, 455.0, 'N', 232.0, 'N', 545.0, 438.0, 290.0, 'N', 444.0]
-values = [551.0, 455.0, 'N', 232.0, 'N', 545.0, 438.0, 290.0, 'N', 444.0]
+previous_timestamp =2012-10-01 00:00:00
+timestamp =2012-10-01 00:00:00
+previous_values =[551.0, 455.0, 'N', 232.0, 'N', 545.0, 438.0, 290.0, 'N', 444.0]
+values =[551.0, 455.0, 'N', 232.0, 'N', 545.0, 438.0, 290.0, 'N', 444.0]
+
+ERROR: duplicate row
+previous_timestamp =2012-10-01 00:00:00
+timestamp =2012-10-01 00:00:00
+previous_values =[551.0, 455.0, 'N', 232.0, 'N', 545.0, 438.0, 290.0, 'N', 444.0]
+values =[551.0, 455.0, 'N', 232.0, 'N', 545.0, 438.0, 290.0, 'N', 444.0]
 
 Total rows: 26,304
 Total nan rows: 809
 Total nan columns: 0
 First timestamp: 2010-10-01 00:00:00
 Last timestamp: 2013-09-30 23:00:00
+Last timestamp - First timestamp: 94690800.0 sec | 1578180.0 min | 26303.0 hours | 1095.0 days
 Min value: 128.0
 Max value: 562.0
 
@@ -221,50 +230,52 @@ Null values count for each column:
 -120cm_B      811
 dtype: int64
 
-#### ERROR: row_count != count ### row_count= 26308 | count= 26307
-
-Converting vwc_333.smet.csv
+#### ERROR: row_count != count ### row_count=26308 | count=26307
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[1]irkis/vwc/vwc_333.smet
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/irkis/vwc_333.smet.csv
 ERROR: duplicate row
-previous_timestamp = 2011-10-01 00:00:00
-timestamp = 2011-10-01 00:00:00
-previous_values = [296.0, 343.0, 337.0, 189.0, 345.0, 396.0, 343.0, 330.0, 197.0, 204.0]
-values = [296.0, 343.0, 337.0, 189.0, 345.0, 396.0, 343.0, 330.0, 197.0, 204.0]
-
-ERROR: duplicate row
-previous_timestamp = 2011-10-01 00:00:00
-timestamp = 2011-10-01 00:00:00
-previous_values = [296.0, 343.0, 337.0, 189.0, 345.0, 396.0, 343.0, 330.0, 197.0, 204.0]
-values = [296.0, 343.0, 337.0, 189.0, 345.0, 396.0, 343.0, 330.0, 197.0, 204.0]
+previous_timestamp =2011-10-01 00:00:00
+timestamp =2011-10-01 00:00:00
+previous_values =[296.0, 343.0, 337.0, 189.0, 345.0, 396.0, 343.0, 330.0, 197.0, 204.0]
+values =[296.0, 343.0, 337.0, 189.0, 345.0, 396.0, 343.0, 330.0, 197.0, 204.0]
 
 ERROR: duplicate row
-previous_timestamp = 2011-10-01 00:00:00
-timestamp = 2011-10-01 00:00:00
-previous_values = [296.0, 343.0, 337.0, 189.0, 345.0, 396.0, 343.0, 330.0, 197.0, 204.0]
-values = [296.0, 343.0, 337.0, 189.0, 345.0, 396.0, 343.0, 330.0, 197.0, 204.0]
+previous_timestamp =2011-10-01 00:00:00
+timestamp =2011-10-01 00:00:00
+previous_values =[296.0, 343.0, 337.0, 189.0, 345.0, 396.0, 343.0, 330.0, 197.0, 204.0]
+values =[296.0, 343.0, 337.0, 189.0, 345.0, 396.0, 343.0, 330.0, 197.0, 204.0]
 
 ERROR: duplicate row
-previous_timestamp = 2012-10-01 00:00:00
-timestamp = 2012-10-01 00:00:00
-previous_values = [342.0, 355.0, 339.0, 209.0, 354.0, 385.0, 351.0, 344.0, 212.0, 210.0]
-values = [342.0, 355.0, 339.0, 209.0, 354.0, 385.0, 351.0, 344.0, 212.0, 210.0]
+previous_timestamp =2011-10-01 00:00:00
+timestamp =2011-10-01 00:00:00
+previous_values =[296.0, 343.0, 337.0, 189.0, 345.0, 396.0, 343.0, 330.0, 197.0, 204.0]
+values =[296.0, 343.0, 337.0, 189.0, 345.0, 396.0, 343.0, 330.0, 197.0, 204.0]
 
 ERROR: duplicate row
-previous_timestamp = 2012-10-01 00:00:00
-timestamp = 2012-10-01 00:00:00
-previous_values = [342.0, 355.0, 339.0, 209.0, 354.0, 385.0, 351.0, 344.0, 212.0, 210.0]
-values = [342.0, 355.0, 339.0, 209.0, 354.0, 385.0, 351.0, 344.0, 212.0, 210.0]
+previous_timestamp =2012-10-01 00:00:00
+timestamp =2012-10-01 00:00:00
+previous_values =[342.0, 355.0, 339.0, 209.0, 354.0, 385.0, 351.0, 344.0, 212.0, 210.0]
+values =[342.0, 355.0, 339.0, 209.0, 354.0, 385.0, 351.0, 344.0, 212.0, 210.0]
 
 ERROR: duplicate row
-previous_timestamp = 2012-10-01 00:00:00
-timestamp = 2012-10-01 00:00:00
-previous_values = [342.0, 355.0, 339.0, 209.0, 354.0, 385.0, 351.0, 344.0, 212.0, 210.0]
-values = [342.0, 355.0, 339.0, 209.0, 354.0, 385.0, 351.0, 344.0, 212.0, 210.0]
+previous_timestamp =2012-10-01 00:00:00
+timestamp =2012-10-01 00:00:00
+previous_values =[342.0, 355.0, 339.0, 209.0, 354.0, 385.0, 351.0, 344.0, 212.0, 210.0]
+values =[342.0, 355.0, 339.0, 209.0, 354.0, 385.0, 351.0, 344.0, 212.0, 210.0]
+
+ERROR: duplicate row
+previous_timestamp =2012-10-01 00:00:00
+timestamp =2012-10-01 00:00:00
+previous_values =[342.0, 355.0, 339.0, 209.0, 354.0, 385.0, 351.0, 344.0, 212.0, 210.0]
+values =[342.0, 355.0, 339.0, 209.0, 354.0, 385.0, 351.0, 344.0, 212.0, 210.0]
 
 Total rows: 26,088
 Total nan rows: 1,321
 Total nan columns: 0
 First timestamp: 2010-10-10 00:00:00
 Last timestamp: 2013-09-30 23:00:00
+Last timestamp - First timestamp: 93913200.0 sec | 1565220.0 min | 26087.0 hours | 1086.0 days
 Min value: 38.0
 Max value: 451.0
 
@@ -298,50 +309,52 @@ Null values count for each column:
 -120cm_B    1324
 dtype: int64
 
-#### ERROR: row_count != count ### row_count= 26308 | count= 26091
-
-Converting vwc_SLF2.smet.csv
+#### ERROR: row_count != count ### row_count=26308 | count=26091
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[1]irkis/vwc/vwc_SLF2.smet
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/irkis/vwc_SLF2.smet.csv
 ERROR: duplicate row
-previous_timestamp = 2011-10-01 00:00:00
-timestamp = 2011-10-01 00:00:00
-previous_values = [346.0, 336.0, 305.0, 455.0, 259.0, 394.0, 363.0, 314.0, 469.0, 380.0]
-values = [346.0, 336.0, 305.0, 455.0, 259.0, 394.0, 363.0, 314.0, 469.0, 380.0]
-
-ERROR: duplicate row
-previous_timestamp = 2011-10-01 00:00:00
-timestamp = 2011-10-01 00:00:00
-previous_values = [346.0, 336.0, 305.0, 455.0, 259.0, 394.0, 363.0, 314.0, 469.0, 380.0]
-values = [346.0, 336.0, 305.0, 455.0, 259.0, 394.0, 363.0, 314.0, 469.0, 380.0]
+previous_timestamp =2011-10-01 00:00:00
+timestamp =2011-10-01 00:00:00
+previous_values =[346.0, 336.0, 305.0, 455.0, 259.0, 394.0, 363.0, 314.0, 469.0, 380.0]
+values =[346.0, 336.0, 305.0, 455.0, 259.0, 394.0, 363.0, 314.0, 469.0, 380.0]
 
 ERROR: duplicate row
-previous_timestamp = 2011-10-01 00:00:00
-timestamp = 2011-10-01 00:00:00
-previous_values = [346.0, 336.0, 305.0, 455.0, 259.0, 394.0, 363.0, 314.0, 469.0, 380.0]
-values = [346.0, 336.0, 305.0, 455.0, 259.0, 394.0, 363.0, 314.0, 469.0, 380.0]
+previous_timestamp =2011-10-01 00:00:00
+timestamp =2011-10-01 00:00:00
+previous_values =[346.0, 336.0, 305.0, 455.0, 259.0, 394.0, 363.0, 314.0, 469.0, 380.0]
+values =[346.0, 336.0, 305.0, 455.0, 259.0, 394.0, 363.0, 314.0, 469.0, 380.0]
 
 ERROR: duplicate row
-previous_timestamp = 2012-10-01 00:00:00
-timestamp = 2012-10-01 00:00:00
-previous_values = [383.0, 351.0, 318.0, 462.0, 262.0, 427.0, 364.0, 314.0, 476.0, 382.0]
-values = [383.0, 351.0, 318.0, 462.0, 262.0, 427.0, 364.0, 314.0, 476.0, 382.0]
+previous_timestamp =2011-10-01 00:00:00
+timestamp =2011-10-01 00:00:00
+previous_values =[346.0, 336.0, 305.0, 455.0, 259.0, 394.0, 363.0, 314.0, 469.0, 380.0]
+values =[346.0, 336.0, 305.0, 455.0, 259.0, 394.0, 363.0, 314.0, 469.0, 380.0]
 
 ERROR: duplicate row
-previous_timestamp = 2012-10-01 00:00:00
-timestamp = 2012-10-01 00:00:00
-previous_values = [383.0, 351.0, 318.0, 462.0, 262.0, 427.0, 364.0, 314.0, 476.0, 382.0]
-values = [383.0, 351.0, 318.0, 462.0, 262.0, 427.0, 364.0, 314.0, 476.0, 382.0]
+previous_timestamp =2012-10-01 00:00:00
+timestamp =2012-10-01 00:00:00
+previous_values =[383.0, 351.0, 318.0, 462.0, 262.0, 427.0, 364.0, 314.0, 476.0, 382.0]
+values =[383.0, 351.0, 318.0, 462.0, 262.0, 427.0, 364.0, 314.0, 476.0, 382.0]
 
 ERROR: duplicate row
-previous_timestamp = 2012-10-01 00:00:00
-timestamp = 2012-10-01 00:00:00
-previous_values = [383.0, 351.0, 318.0, 462.0, 262.0, 427.0, 364.0, 314.0, 476.0, 382.0]
-values = [383.0, 351.0, 318.0, 462.0, 262.0, 427.0, 364.0, 314.0, 476.0, 382.0]
+previous_timestamp =2012-10-01 00:00:00
+timestamp =2012-10-01 00:00:00
+previous_values =[383.0, 351.0, 318.0, 462.0, 262.0, 427.0, 364.0, 314.0, 476.0, 382.0]
+values =[383.0, 351.0, 318.0, 462.0, 262.0, 427.0, 364.0, 314.0, 476.0, 382.0]
+
+ERROR: duplicate row
+previous_timestamp =2012-10-01 00:00:00
+timestamp =2012-10-01 00:00:00
+previous_values =[383.0, 351.0, 318.0, 462.0, 262.0, 427.0, 364.0, 314.0, 476.0, 382.0]
+values =[383.0, 351.0, 318.0, 462.0, 262.0, 427.0, 364.0, 314.0, 476.0, 382.0]
 
 Total rows: 26,305
 Total nan rows: 1,826
 Total nan columns: 0
 First timestamp: 2010-10-01 00:00:00
 Last timestamp: 2013-10-01 00:00:00
+Last timestamp - First timestamp: 94694400.0 sec | 1578240.0 min | 26304.0 hours | 1096.0 days
 Min value: 215.0
 Max value: 580.0
 
@@ -375,4 +388,4 @@ Null values count for each column:
 -120cm_B    6511
 dtype: int64
 
-SIZES MATCH!! count= 26308
+SIZES MATCH!! count=26308
