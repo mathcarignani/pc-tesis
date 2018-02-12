@@ -5,6 +5,7 @@ class ParserBase(object):
         self.parsing_header = True
         self.columns = []
         self.columns_length = 0
+        self.asc_timestamp = True  # timestamp[row_i] > timestamp[row_j] if row_i > row_j
 
     # PRE: self.parsing_header
     def parse_header(self, line):

@@ -46,14 +46,14 @@ class ParserVWC(parser_base.ParserBase):
 
     @staticmethod
     def plot_non_nan(path, filename, df_label, label):
-        title = 'Sensors with label ' + label + ' in ' + filename
+        title = 'Sensors with label ' + label + ' in ' + filename + ' (data)'
         ax = df_label.plot(title=title, ylim=[0, 600])
         fig = ax.get_figure()
         fig.savefig(path + '/' + filename + '_' + label + '_data.png')
 
     @staticmethod
     def plot_nan(path, filename, df_label, label):
-        title = 'Sensors with label ' + label + ' in ' + filename + ' (nans)'
+        title = 'Sensors with label ' + label + ' in ' + filename + ' (nan)'
 
         columns_len = len(df_label.columns)
         for idx, column in enumerate(df_label.columns):

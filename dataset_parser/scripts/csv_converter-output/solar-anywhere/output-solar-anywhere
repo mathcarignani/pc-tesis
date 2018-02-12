@@ -1,0 +1,27 @@
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[4]solar-anywhere/2/data/(25.8010, -80.2087) SolarAnywhere Time Series 2013 Lat_25_85 Lon_-80_25 TMY3 format.csv
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/solar-anywhere/(25.8010, -80.2087) SolarAnywhere Time Series 2013 Lat_25_85 Lon_-80_25 TMY3 format.csv.csv
+Total rows: 8,760
+Total nan rows: 13
+Total nan columns: 0
+First timestamp: 2013-01-01 01:00:00
+Last timestamp: 2014-01-01 00:00:00
+Last timestamp - First timestamp: 31532400.0 sec | 525540.0 min | 8759.0 hours | 364.0 days
+Min value: 0.0
+Max value: 1003.0
+
+Dataset stats:
+               GHI          DNI          DHI
+count  8747.000000  8747.000000  8747.000000
+mean    200.356694   179.737053    86.707671
+std     272.356185   261.068787   109.283879
+min       0.000000     0.000000     0.000000
+50%      19.000000     5.000000    20.000000
+max    1003.000000   954.000000   469.000000
+
+Null values count for each column:
+GHI    13
+DNI    13
+DHI    13
+dtype: int64
+

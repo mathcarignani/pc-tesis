@@ -27,7 +27,7 @@ class ParserNOAA(parser_base.ParserBase):
             self.parsing_header = False
 
     def _parse_columns(self, s_line):
-        self.columns = s_line[2:]
+        self.columns = [s_line[2]]  # only select SST
         self.columns_length = len(self.columns)
 
     # EXAMPLE:
@@ -41,9 +41,7 @@ class ParserNOAA(parser_base.ParserBase):
         try:
             date = s_line[0] + ' ' + s_line[1]
             timestamp = datetime.strptime(date, self.date_format)
-            values = s_line[2:]
-            if self.columns_length != len(values):
-                raise StandardError("self.columns_length != len(data)")
+            values = [s_line[2]]  # only select SST
             data = [self._map_value(x) for x in values]
             return {'timestamp': timestamp, 'values': data}
         except:
@@ -57,10 +55,9 @@ class ParserNOAA(parser_base.ParserBase):
     def plot(path, filename, df):
         title = filename
         df = df.copy(deep=True)
-        min_value = df.loc[df.idxmin()]['SST'][0]
-        max_value = df.loc[df.idxmax()]['SST'][0]
-        df['SSTnan'] = df['SST']
+        min_value, max_value = df.loc[df.idxmin()]['SST'][0], df.loc[df.idxmax()]['SST'][0]
         nan_value = min_value - (max_value - min_value) / 10
+        df['SSTnan'] = df['SST']
         df['SSTnan'] = df['SSTnan'].apply(lambda x: nan_value if pd.isnull(x) else np.nan)
 
         fig, ax = plt.subplots()

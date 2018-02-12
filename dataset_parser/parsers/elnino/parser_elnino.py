@@ -1,7 +1,9 @@
-from .. import parser_base
+from datetime import datetime
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+
+from .. import parser_base
 
 
 # 1 80 3 7 800307 -0.02 -109.46 -6.8 0.7 . 26.14 26.24
@@ -17,47 +19,35 @@ import pandas as pd
 # 178079 98 6 14 980614 8.96 -140.33 -4.9 -2.3 76.2 27.36 28.03
 # 178080 98 6 15 980615 8.95 -140.33 . . . 27.09 28.09
 class ParserElNino(parser_base.ParserBase):
+    NAME = "EL-NINO"
+
     def __init__(self):
         super(ParserElNino, self).__init__()
-        self._parse_header(None)
-        self.parsing_header = False
         self.nodata = "."
+        self.date_format = "%Y%m%dT%H:%M"  # "19981001T00:00"
+        self.asc_timestamp = False
+        self._parse_header(None)
 
+    # EXAMPLE
+    # obs - year - month - day - date - lat - long - zon.winds - mer.winds - humidity - air temp. - s.s.temp.
     def _parse_header(self, _):
-        self._parse_columns(_)
+        self.columns = ['lat', 'long', 'zon.winds', 'mer.winds', 'humidity', 'air.temp', 'ss.temp']
+        self.columns_length = len(self.columns)
+        self.parsing_header = False
 
-    def _parse_columns(self, s_line):
-        # EXAMPLE
-        # obs - year - month - day - date - lat - long - zon.winds - mer.winds - humidity - air temp. - s.s.temp.
-        columns = ['date', 'lat', 'long', 'zon.winds', 'mer.winds', 'humidity', 'air.temp', 'ss.temp']
-        self.df = pd.DataFrame(columns=columns)
-        self.columns_count = len(self.df.columns)
-
-    def _parse_data(self, line):
+    def parse_data(self, line):
         # 2 80 3 8 800308 -0.02 -109.46 -4.9 1.1 . 25.66 25.97
         s_line = line.split()
+        timestamp = datetime.strptime("19" + s_line[4] + "T00:00", self.date_format)
+        values = s_line[5:]
+        if self.columns_length != len(values):
+            raise StandardError("self.columns_length != len(data)")
+        data = [self._map_value(x) for x in values]
+        return {'timestamp': timestamp, 'values': data}
 
-        try:
-            np_array = None
-            current_date = '19' + s_line[4]
-            timestamp = pd.to_datetime(current_date, format='%Y%m%d')
-            data = s_line[4:]
-            self._add_data(data, current_date, line, timestamp, np_array)
-        except:
-            self.errors['errors'].append(line)
+    def _map_value(self, value):
+        return ParserElNino.NO_DATA if value == self.nodata else float(value)  # round(float(value)*1000, 0)
 
-    def plot(self, filename):
-        title = filename
-        df = self.df.copy(deep=True)
-        min_value = df.loc[df.idxmin()]['SST'][0]
-        max_value = df.loc[df.idxmax()]['SST'][0]
-        df['SSTnan'] = df['SST']
-        nan_value = min_value - (max_value - min_value) / 10
-        df['SSTnan'] = df['SSTnan'].apply(lambda x: nan_value if pd.isnull(x) else np.nan)
-
-        fig, ax = plt.subplots()
-        df['SST'].plot(ax=ax, linestyle='none', title=title, marker='.', markersize=0.2)
-        df['SSTnan'].plot(ax=ax, linestyle='none', marker='.', markersize=1)
-        ax.legend()
-        fig = ax.get_figure()
-        fig.savefig(title + '.plot.png')
+    @staticmethod
+    def plot(path, filename, df):
+        pass

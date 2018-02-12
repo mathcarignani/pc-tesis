@@ -9,8 +9,9 @@ sys.path.append('.')
 class PandasTools:
     NO_DATA = "N"
 
-    def __init__(self):
+    def __init__(self, parser):
         self.df = None
+        self.parser = parser
 
     def new_df(self, columns):
         self.df = pd.DataFrame(columns=columns)
@@ -20,13 +21,28 @@ class PandasTools:
         self.df.loc[timestamp] = data
 
     def print_stats(self):
-        PandasTools.print_number("Total rows:", self.rows_count())
-        PandasTools.print_number("Total nan rows:", self.nan_rows_count())
+        total_rows, nan_rows = self.rows_count(), self.nan_rows_count()
+        PandasTools.print_number("Total rows:", total_rows)
+        PandasTools.print_number("Total nan rows:", nan_rows)
 
-        columns = self.df.columns
-        clean_df = self.df.dropna(axis=1, how='all')  # drop nan columns
+        if total_rows > nan_rows:
+            columns = self.df.columns
+            clean_df = self.df.dropna(axis=1, how='all')  # drop nan columns
 
-        logging.info("Total nan columns: %s", len(columns) - len(clean_df.columns))
+            logging.info("Total nan columns: %s", len(columns) - len(clean_df.columns))
+            if self.parser.asc_timestamp:
+                self._asc_timestamp_stats(clean_df)
+            logging.info("\nDataset stats:")
+            logging.info(clean_df.describe(include='all', percentiles=[]))
+            logging.info("")
+            logging.info("Null values count for each column:")
+            logging.info(clean_df.isnull().sum())
+        logging.info("")
+
+    #
+    # These stats only make sense for datasets in which the timestamp is always ASC
+    #
+    def _asc_timestamp_stats(self, clean_df):
         first_timestamp, last_timestamp = clean_df.index[0], clean_df.index[-1]
         logging.info("First timestamp: %s", first_timestamp)
         logging.info("Last timestamp: %s", last_timestamp)
@@ -36,12 +52,6 @@ class PandasTools:
                      diff_s, diff_m, diff_h, diff_d)
         logging.info("Min value: %s", np.nanmin(clean_df.values))
         logging.info("Max value: %s", np.nanmax(clean_df.values))
-        logging.info("\nDataset stats:")
-        logging.info(clean_df.describe(percentiles=[]))
-        logging.info("")
-        logging.info("Null values count for each column:")
-        logging.info(clean_df.isnull().sum())
-        logging.info("")
 
     def rows_count(self):
         return len(self.df.index)

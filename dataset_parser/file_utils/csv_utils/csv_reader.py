@@ -5,6 +5,7 @@ from file_utils.aux import full_path
 
 class CSVReader:
     def __init__(self, path, filename, progress=False):
+        self.path, self.filename = path, filename
         self.full_path = full_path(path, filename)
         self.continue_reading = True
         self.file = open(self.full_path, "r")
@@ -18,7 +19,7 @@ class CSVReader:
         self.previous_row = next(self.csv_reader, None)
 
     # PRE: self.continue_reading
-    def read_row(self):
+    def read_line(self):
         previous_row = self.previous_row
         row = next(self.csv_reader, None)
         if not row:
@@ -38,4 +39,4 @@ class CSVReader:
 
     def print_progress(self):
         if self.progress_bar:
-            self.progress_bar.print_progress(self.current_line_count)
+            self.progress_bar.print_progress(self.current_row_count)

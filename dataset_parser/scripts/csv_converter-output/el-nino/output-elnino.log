@@ -1,0 +1,34 @@
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[3]el-nino/large/dataset/tao-all2.dat
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/el-nino/tao-all2.dat.csv
+Total rows: 6,371
+Total nan rows: 0
+Total nan columns: 0
+
+Dataset stats:
+               lat         long    zon.winds    mer.winds     humidity  \
+count  6371.000000  6371.000000  5058.000000  5058.000000  2472.000000   
+mean      4.224825  -108.316668    -3.297647    -0.081317    84.856877   
+std       5.939811    78.699832     3.142386     3.913243     4.595394   
+min      -8.090000  -179.880000   -10.300000   -10.500000    67.200000   
+50%       8.960000  -140.240000    -3.600000     0.300000    85.200000   
+max       9.050000   165.040000    10.200000     9.400000    96.800000   
+
+          air.temp      ss.temp  
+count  6084.000000  5545.000000  
+mean     25.971325    26.832469  
+std       1.759186     2.065495  
+min      18.300000    18.260000  
+50%      26.250000    27.380000  
+max      30.040000    31.070000  
+
+Null values count for each column:
+lat             0
+long            0
+zon.winds    1313
+mer.winds    1313
+humidity     3899
+air.temp      287
+ss.temp       826
+dtype: int64
+
