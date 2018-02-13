@@ -1,0 +1,1529 @@
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T0N110W_R_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T0N110W_R_SST_10min.ascii.csv
+INVALID LINE: ['Deployment:', 'DM186A-20160413', '2016-04-13', 'to', '2016-12-31', '(36976', 'data', 'rows,', '1', 'depth', 'columns)']
+INVALID LINE: ['Depth', '(Meters)', '1', 'Quality', 'Mode']
+INVALID LINE: ['YYYYMMDD', 'HHMMSS', 'SST', 'Q', 'M']
+Total rows: 51,719
+Total nan rows: 14,861
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-12-31 23:50:00
+Last timestamp - First timestamp: 31621800.0 sec | 527030.0 min | 8783.0 hours | 365.0 days
+Min value: 19636.0
+Max value: 27203.0
+
+Dataset stats:
+                SST
+count  36858.000000
+mean   22977.828965
+std     1587.350924
+min    19636.000000
+50%    22478.500000
+max    27203.000000
+
+Null values count for each column:
+SST    14861
+dtype: int64
+
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T0N125W_D_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T0N125W_D_SST_10min.ascii.csv
+INVALID LINE: ['Deployment:', 'DM172A-20160307', '2016-03-08', 'to', '2016-12-31', '(42159', 'data', 'rows,', '1', 'depth', 'columns)']
+INVALID LINE: ['Depth', '(Meters)', '1', 'Quality', 'Mode']
+INVALID LINE: ['YYYYMMDD', 'HHMMSS', 'SST', 'Q', 'M']
+Total rows: 51,758
+Total nan rows: 156
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-12-31 23:50:00
+Last timestamp - First timestamp: 31621800.0 sec | 527030.0 min | 8783.0 hours | 365.0 days
+Min value: 21851.0
+Max value: 30031.0
+
+Dataset stats:
+                SST
+count  51602.000000
+mean   25091.859831
+std     2043.583896
+min    21851.000000
+50%    24199.000000
+max    30031.000000
+
+Null values count for each column:
+SST    156
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=51722 | count=51761
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T0N140W_R_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T0N140W_R_SST_10min.ascii.csv
+Total rows: 43,309
+Total nan rows: 122
+Total nan columns: 0
+First timestamp: 2016-02-28 16:10:00
+Last timestamp: 2016-12-31 23:50:00
+Last timestamp - First timestamp: 26552400.0 sec | 442540.0 min | 7375.0 hours | 307.0 days
+Min value: 23079.0
+Max value: 29734.0
+
+Dataset stats:
+                SST
+count  43187.000000
+mean   25475.410286
+std     1430.661563
+min    23079.000000
+50%    24931.000000
+max    29734.000000
+
+Null values count for each column:
+SST    122
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=51722 | count=43312
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T0N155W_R_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T0N155W_R_SST_10min.ascii.csv
+INVALID LINE: ['Deployment:', 'DM214A-20161004', '2016-10-05', 'to', '2016-12-31', '(12385', 'data', 'rows,', '1', 'depth', 'columns)']
+INVALID LINE: ['Depth', '(Meters)', '1', 'Quality', 'Mode']
+INVALID LINE: ['YYYYMMDD', 'HHMMSS', 'SST', 'Q', 'M']
+Total rows: 51,679
+Total nan rows: 6,023
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-12-31 23:50:00
+Last timestamp - First timestamp: 31621800.0 sec | 527030.0 min | 8783.0 hours | 365.0 days
+Min value: 5468.0
+Max value: 30722.0
+
+Dataset stats:
+               SST
+count  45656.00000
+mean   27298.23607
+std     1691.52333
+min     5468.00000
+50%    26980.00000
+max    30722.00000
+
+Null values count for each column:
+SST    6023
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=51722 | count=51682
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T0N165E_R_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T0N165E_R_SST_10min.ascii.csv
+INVALID LINE: ['Deployment:', 'DM193A-20160711', '2016-07-11', 'to', '2016-12-31', '(24272', 'data', 'rows,', '1', 'depth', 'columns)']
+INVALID LINE: ['Depth', '(Meters)', '1', 'Quality', 'Mode']
+INVALID LINE: ['YYYYMMDD', 'HHMMSS', 'SST', 'Q', 'M']
+Total rows: 51,463
+Total nan rows: 295
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-12-31 23:50:00
+Last timestamp - First timestamp: 31621800.0 sec | 527030.0 min | 8783.0 hours | 365.0 days
+Min value: 28164.0
+Max value: 31524.0
+
+Dataset stats:
+                SST
+count  51168.000000
+mean   29554.681285
+std      494.518462
+min    28164.000000
+50%    29554.000000
+max    31524.000000
+
+Null values count for each column:
+SST    295
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=51722 | count=51466
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T0N170W_R_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T0N170W_R_SST_10min.ascii.csv
+INVALID LINE: ['Deployment:', 'DM207A-20160829', '2016-08-29', 'to', '2016-12-31', '(17393', 'data', 'rows,', '1', 'depth', 'columns)']
+INVALID LINE: ['Depth', '(Meters)', '1', 'Quality', 'Mode']
+INVALID LINE: ['YYYYMMDD', 'HHMMSS', 'SST', 'Q', 'M']
+Total rows: 51,466
+Total nan rows: 241
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-12-31 23:50:00
+Last timestamp - First timestamp: 31621800.0 sec | 527030.0 min | 8783.0 hours | 365.0 days
+Min value: 25566.0
+Max value: 31270.0
+
+Dataset stats:
+                SST
+count  51225.000000
+mean   28270.832094
+std     1130.763174
+min    25566.000000
+50%    28195.000000
+max    31270.000000
+
+Null values count for each column:
+SST    241
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=51722 | count=51469
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T0N180W_R_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T0N180W_R_SST_10min.ascii.csv
+INVALID LINE: ['Deployment:', 'DM200A-20160724', '2016-07-24', 'to', '2016-11-07', '(14754', 'data', 'rows,', '1', 'depth', 'columns)']
+INVALID LINE: ['Depth', '(Meters)', '1', 'Quality', 'Mode']
+INVALID LINE: ['YYYYMMDD', 'HHMMSS', 'SST', 'Q', 'M']
+Total rows: 43,837
+Total nan rows: 142
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-11-07 04:00:00
+Last timestamp - First timestamp: 26884800.0 sec | 448080.0 min | 7468.0 hours | 311.0 days
+Min value: 27097.0
+Max value: 31298.0
+
+Dataset stats:
+                SST
+count  43695.000000
+mean   29115.141069
+std      673.706062
+min    27097.000000
+50%    29286.000000
+max    31298.000000
+
+Null values count for each column:
+SST    142
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=51722 | count=43840
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T0N95W_R_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T0N95W_R_SST_10min.ascii.csv
+Total rows: 41,599
+Total nan rows: 95
+Total nan columns: 0
+First timestamp: 2016-03-12 20:50:00
+Last timestamp: 2016-12-31 23:50:00
+Last timestamp - First timestamp: 25412400.0 sec | 423540.0 min | 7059.0 hours | 294.0 days
+Min value: 18234.0
+Max value: 31244.0
+
+Dataset stats:
+                SST
+count  41504.000000
+mean   22845.319198
+std     2537.882319
+min    18234.000000
+50%    22403.000000
+max    31244.000000
+
+Null values count for each column:
+SST    95
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=51722 | count=41602
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T2N110W_R_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T2N110W_R_SST_10min.ascii.csv
+Total rows: 51,810
+Total nan rows: 51,810
+
+#### ERROR: row_count != count ### row_count=51722 | count=51813
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T2N125W_D_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T2N125W_D_SST_10min.ascii.csv
+INVALID LINE: ['Deployment:', 'DM173A-20160308', '2016-03-09', 'to', '2016-09-11', '(25373', 'data', 'rows,', '1', 'depth', 'columns)']
+INVALID LINE: ['Depth', '(Meters)', '1', 'Quality', 'Mode']
+INVALID LINE: ['YYYYMMDD', 'HHMMSS', 'SST', 'Q', 'M']
+Total rows: 35,116
+Total nan rows: 183
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-09-11 19:00:00
+Last timestamp - First timestamp: 22014000.0 sec | 366900.0 min | 6115.0 hours | 254.0 days
+Min value: 22496.0
+Max value: 30597.0
+
+Dataset stats:
+                SST
+count  34933.000000
+mean   27378.750465
+std     1580.843323
+min    22496.000000
+50%    28091.000000
+max    30597.000000
+
+Null values count for each column:
+SST    183
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=51722 | count=35119
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T2N140W_D_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T2N140W_D_SST_10min.ascii.csv
+INVALID LINE: ['Deployment:', 'DM165A-20160225', '2016-02-25', 'to', '2016-12-31', '(43644', 'data', 'rows,', '1', 'depth', 'columns)']
+INVALID LINE: ['Depth', '(Meters)', '1', 'Quality', 'Mode']
+INVALID LINE: ['YYYYMMDD', 'HHMMSS', 'SST', 'Q', 'M']
+Total rows: 51,565
+Total nan rows: 25,121
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-12-31 23:50:00
+Last timestamp - First timestamp: 31621800.0 sec | 527030.0 min | 8783.0 hours | 365.0 days
+Min value: 24658.0
+Max value: 30746.0
+
+Dataset stats:
+                SST
+count  26444.000000
+mean   28281.740433
+std     1104.395042
+min    24658.000000
+50%    28453.000000
+max    30746.000000
+
+Null values count for each column:
+SST    25121
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=51722 | count=51568
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T2N155W_R_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T2N155W_R_SST_10min.ascii.csv
+INVALID LINE: ['Deployment:', 'DM215A-20161005', '2016-10-06', 'to', '2016-12-31', '(12226', 'data', 'rows,', '1', 'depth', 'columns)']
+INVALID LINE: ['Depth', '(Meters)', '1', 'Quality', 'Mode']
+INVALID LINE: ['YYYYMMDD', 'HHMMSS', 'SST', 'Q', 'M']
+Total rows: 51,694
+Total nan rows: 233
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-12-31 23:50:00
+Last timestamp - First timestamp: 31621800.0 sec | 527030.0 min | 8783.0 hours | 365.0 days
+Min value: 24965.0
+Max value: 30818.0
+
+Dataset stats:
+                SST
+count  51461.000000
+mean   27885.855191
+std     1238.649764
+min    24965.000000
+50%    27882.000000
+max    30818.000000
+
+Null values count for each column:
+SST    233
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=51722 | count=51697
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T2N165E_R_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T2N165E_R_SST_10min.ascii.csv
+INVALID LINE: ['Deployment:', 'DM192A-20160710', '2016-07-10', 'to', '2016-12-31', '(24462', 'data', 'rows,', '1', 'depth', 'columns)']
+INVALID LINE: ['Depth', '(Meters)', '1', 'Quality', 'Mode']
+INVALID LINE: ['YYYYMMDD', 'HHMMSS', 'SST', 'Q', 'M']
+Total rows: 33,239
+Total nan rows: 23,105
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-12-31 23:50:00
+Last timestamp - First timestamp: 31621800.0 sec | 527030.0 min | 8783.0 hours | 365.0 days
+Min value: 28039.0
+Max value: 31182.0
+
+Dataset stats:
+                SST
+count  10134.000000
+mean   29494.820209
+std      408.558316
+min    28039.000000
+50%    29427.500000
+max    31182.000000
+
+Null values count for each column:
+SST    23105
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=51722 | count=33242
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T2N170W_R_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T2N170W_R_SST_10min.ascii.csv
+INVALID LINE: ['Deployment:', 'DM206A-20160828', '2016-08-28', 'to', '2016-12-31', '(17580', 'data', 'rows,', '1', 'depth', 'columns)']
+INVALID LINE: ['Depth', '(Meters)', '1', 'Quality', 'Mode']
+INVALID LINE: ['YYYYMMDD', 'HHMMSS', 'SST', 'Q', 'M']
+Total rows: 51,685
+Total nan rows: 34,177
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-12-31 23:50:00
+Last timestamp - First timestamp: 31621800.0 sec | 527030.0 min | 8783.0 hours | 365.0 days
+Min value: 26123.0
+Max value: 28919.0
+
+Dataset stats:
+                SST
+count  17508.000000
+mean   27366.220242
+std      515.445597
+min    26123.000000
+50%    27430.000000
+max    28919.000000
+
+Null values count for each column:
+SST    34177
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=51722 | count=51688
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T2N180W_R_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T2N180W_R_SST_10min.ascii.csv
+INVALID LINE: ['Deployment:', 'DM201A-20160725', '2016-07-25', 'to', '2016-12-31', '(22387', 'data', 'rows,', '1', 'depth', 'columns)']
+INVALID LINE: ['Depth', '(Meters)', '1', 'Quality', 'Mode']
+INVALID LINE: ['YYYYMMDD', 'HHMMSS', 'SST', 'Q', 'M']
+Total rows: 51,602
+Total nan rows: 197
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-12-31 23:50:00
+Last timestamp - First timestamp: 31621800.0 sec | 527030.0 min | 8783.0 hours | 365.0 days
+Min value: 27258.0
+Max value: 31752.0
+
+Dataset stats:
+               SST
+count  51405.00000
+mean   29065.63453
+std      628.91028
+min    27258.00000
+50%    29233.00000
+max    31752.00000
+
+Null values count for each column:
+SST    197
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=51722 | count=51605
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T2N95W_R_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T2N95W_R_SST_10min.ascii.csv
+Total rows: 41,698
+Total nan rows: 16,738
+Total nan columns: 0
+First timestamp: 2016-03-11 21:20:00
+Last timestamp: 2016-12-31 23:50:00
+Last timestamp - First timestamp: 25497000.0 sec | 424950.0 min | 7082.0 hours | 295.0 days
+Min value: 22298.0
+Max value: 32041.0
+
+Dataset stats:
+                SST
+count  24960.000000
+mean   26759.481771
+std     1883.266062
+min    22298.000000
+50%    26999.000000
+max    32041.000000
+
+Null values count for each column:
+SST    16738
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=51722 | count=41701
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T2S110W_D_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T2S110W_D_SST_10min.ascii.csv
+INVALID LINE: ['Deployment:', 'DM185A-20160412', '2016-04-12', 'to', '2016-12-31', '(37191', 'data', 'rows,', '1', 'depth', 'columns)']
+INVALID LINE: ['Depth', '(Meters)', '1', 'Quality', 'Mode']
+INVALID LINE: ['YYYYMMDD', 'HHMMSS', 'SST', 'Q', 'M']
+Total rows: 51,883
+Total nan rows: 211
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-12-31 23:50:00
+Last timestamp - First timestamp: 31621800.0 sec | 527030.0 min | 8783.0 hours | 365.0 days
+Min value: 21399.0
+Max value: 30704.0
+
+Dataset stats:
+                SST
+count  51672.000000
+mean   24982.715223
+std     2428.052478
+min    21399.000000
+50%    24187.000000
+max    30704.000000
+
+Null values count for each column:
+SST    211
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=51722 | count=51886
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T2S125W_D_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T2S125W_D_SST_10min.ascii.csv
+INVALID LINE: ['Deployment:', 'DM171A-20160307', '2016-03-07', 'to', '2016-12-31', '(42234', 'data', 'rows,', '1', 'depth', 'columns)']
+INVALID LINE: ['Depth', '(Meters)', '1', 'Quality', 'Mode']
+INVALID LINE: ['YYYYMMDD', 'HHMMSS', 'SST', 'Q', 'M']
+Total rows: 51,712
+Total nan rows: 9,567
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-12-31 23:50:00
+Last timestamp - First timestamp: 31621800.0 sec | 527030.0 min | 8783.0 hours | 365.0 days
+Min value: 22575.0
+Max value: 30832.0
+
+Dataset stats:
+               SST
+count  42145.00000
+mean   25525.61362
+std     1774.56068
+min    22575.00000
+50%    25254.00000
+max    30832.00000
+
+Null values count for each column:
+SST    9567
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=51722 | count=51715
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T2S140W_D_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T2S140W_D_SST_10min.ascii.csv
+INVALID LINE: ['Deployment:', 'DM167A-20160228', '2016-02-29', 'to', '2016-12-31', '(43368', 'data', 'rows,', '1', 'depth', 'columns)']
+INVALID LINE: ['Depth', '(Meters)', '1', 'Quality', 'Mode']
+INVALID LINE: ['YYYYMMDD', 'HHMMSS', 'SST', 'Q', 'M']
+Total rows: 51,821
+Total nan rows: 17,900
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-12-31 23:50:00
+Last timestamp - First timestamp: 31621800.0 sec | 527030.0 min | 8783.0 hours | 365.0 days
+Min value: 5240.0
+Max value: 30536.0
+
+Dataset stats:
+                SST
+count  33921.000000
+mean   27716.977566
+std     1668.556956
+min     5240.000000
+50%    28646.000000
+max    30536.000000
+
+Null values count for each column:
+SST    17900
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=51722 | count=51824
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T2S155W_R_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T2S155W_R_SST_10min.ascii.csv
+INVALID LINE: ['Deployment:', 'DM213A-20161003', '2016-10-04', 'to', '2016-12-31', '(12317', 'data', 'rows,', '1', 'depth', 'columns)']
+INVALID LINE: ['Depth', '(Meters)', '1', 'Quality', 'Mode']
+INVALID LINE: ['YYYYMMDD', 'HHMMSS', 'SST', 'Q', 'M']
+Total rows: 51,546
+Total nan rows: 274
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-12-31 23:50:00
+Last timestamp - First timestamp: 31621800.0 sec | 527030.0 min | 8783.0 hours | 365.0 days
+Min value: 24806.0
+Max value: 31793.0
+
+Dataset stats:
+                SST
+count  51272.000000
+mean   28096.981471
+std     1552.984750
+min    24806.000000
+50%    28405.000000
+max    31793.000000
+
+Null values count for each column:
+SST    274
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=51722 | count=51549
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T2S165E_R_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T2S165E_R_SST_10min.ascii.csv
+INVALID LINE: ['Deployment:', 'DM194A-20160713', '2016-07-13', 'to', '2016-12-31', '(23949', 'data', 'rows,', '1', 'depth', 'columns)']
+INVALID LINE: ['Depth', '(Meters)', '1', 'Quality', 'Mode']
+INVALID LINE: ['YYYYMMDD', 'HHMMSS', 'SST', 'Q', 'M']
+Total rows: 51,377
+Total nan rows: 139
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-12-31 23:50:00
+Last timestamp - First timestamp: 31621800.0 sec | 527030.0 min | 8783.0 hours | 365.0 days
+Min value: 28772.0
+Max value: 32088.0
+
+Dataset stats:
+                SST
+count  51238.000000
+mean   30032.833424
+std      383.865509
+min    28772.000000
+50%    30038.000000
+max    32088.000000
+
+Null values count for each column:
+SST    139
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=51722 | count=51380
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T2S170W_R_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T2S170W_R_SST_10min.ascii.csv
+INVALID LINE: ['Deployment:', 'DM208A-20160831', '2016-08-31', 'to', '2016-12-31', '(17186', 'data', 'rows,', '1', 'depth', 'columns)']
+INVALID LINE: ['Depth', '(Meters)', '1', 'Quality', 'Mode']
+INVALID LINE: ['YYYYMMDD', 'HHMMSS', 'SST', 'Q', 'M']
+Total rows: 23,205
+Total nan rows: 76
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-12-31 23:50:00
+Last timestamp - First timestamp: 31621800.0 sec | 527030.0 min | 8783.0 hours | 365.0 days
+Min value: 26548.0
+Max value: 31758.0
+
+Dataset stats:
+                SST
+count  23129.000000
+mean   28407.150244
+std     1070.030739
+min    26548.000000
+50%    28229.000000
+max    31758.000000
+
+Null values count for each column:
+SST    76
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=51722 | count=23208
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T2S180W_R_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T2S180W_R_SST_10min.ascii.csv
+INVALID LINE: ['Deployment:', 'DM199A-20160723', '2016-07-23', 'to', '2016-12-31', '(22708', 'data', 'rows,', '1', 'depth', 'columns)']
+INVALID LINE: ['Depth', '(Meters)', '1', 'Quality', 'Mode']
+INVALID LINE: ['YYYYMMDD', 'HHMMSS', 'SST', 'Q', 'M']
+Total rows: 51,635
+Total nan rows: 215
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-12-31 23:50:00
+Last timestamp - First timestamp: 31621800.0 sec | 527030.0 min | 8783.0 hours | 365.0 days
+Min value: 27811.0
+Max value: 31477.0
+
+Dataset stats:
+                SST
+count  51420.000000
+mean   29532.592668
+std      624.237923
+min    27811.000000
+50%    29637.000000
+max    31477.000000
+
+Null values count for each column:
+SST    215
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=51722 | count=51638
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T2S95W_R_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T2S95W_R_SST_10min.ascii.csv
+Total rows: 37,507
+Total nan rows: 6,259
+Total nan columns: 0
+First timestamp: 2016-03-14 23:00:00
+Last timestamp: 2016-12-05 10:00:00
+Last timestamp - First timestamp: 22935600.0 sec | 382260.0 min | 6371.0 hours | 265.0 days
+Min value: 19681.0
+Max value: 31210.0
+
+Dataset stats:
+                SST
+count  31248.000000
+mean   23742.395321
+std     2929.442379
+min    19681.000000
+50%    22850.000000
+max    31210.000000
+
+Null values count for each column:
+SST    6259
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=51722 | count=37510
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T5N110W_R_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T5N110W_R_SST_10min.ascii.csv
+Total rows: 51,576
+Total nan rows: 3,971
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-12-31 23:50:00
+Last timestamp - First timestamp: 31621800.0 sec | 527030.0 min | 8783.0 hours | 365.0 days
+Min value: 22625.0
+Max value: 31608.0
+
+Dataset stats:
+                SST
+count  47605.000000
+mean   27934.433064
+std     1449.170311
+min    22625.000000
+50%    28508.000000
+max    31608.000000
+
+Null values count for each column:
+SST    3971
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=51722 | count=51579
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T5N125W_D_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T5N125W_D_SST_10min.ascii.csv
+INVALID LINE: ['Deployment:', 'DM174A-20160310', '2016-03-10', 'to', '2016-11-03', '(29936', 'data', 'rows,', '1', 'depth', 'columns)']
+INVALID LINE: ['Depth', '(Meters)', '1', 'Quality', 'Mode']
+INVALID LINE: ['YYYYMMDD', 'HHMMSS', 'SST', 'Q', 'M']
+Total rows: 39,846
+Total nan rows: 5,054
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-11-03 02:40:00
+Last timestamp - First timestamp: 26534400.0 sec | 442240.0 min | 7370.0 hours | 307.0 days
+Min value: 25187.0
+Max value: 30893.0
+
+Dataset stats:
+                SST
+count  34792.000000
+mean   28261.261784
+std     1048.156789
+min    25187.000000
+50%    28587.000000
+max    30893.000000
+
+Null values count for each column:
+SST    5054
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=51722 | count=39849
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T5N140W_D_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T5N140W_D_SST_10min.ascii.csv
+INVALID LINE: ['Deployment:', 'DM164A-20160224', '2016-02-24', 'to', '2016-12-31', '(43959', 'data', 'rows,', '1', 'depth', 'columns)']
+INVALID LINE: ['Depth', '(Meters)', '1', 'Quality', 'Mode']
+INVALID LINE: ['YYYYMMDD', 'HHMMSS', 'SST', 'Q', 'M']
+Total rows: 51,717
+Total nan rows: 7,948
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-12-31 23:50:00
+Last timestamp - First timestamp: 31621800.0 sec | 527030.0 min | 8783.0 hours | 365.0 days
+Min value: 24692.0
+Max value: 30574.0
+
+Dataset stats:
+                SST
+count  43769.000000
+mean   27762.138271
+std     1073.970028
+min    24692.000000
+50%    28141.000000
+max    30574.000000
+
+Null values count for each column:
+SST    7948
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=51722 | count=51720
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T5N155W_R_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T5N155W_R_SST_10min.ascii.csv
+INVALID LINE: ['Deployment:', 'DM216A-20161007', '2016-10-07', 'to', '2016-12-31', '(12011', 'data', 'rows,', '1', 'depth', 'columns)']
+INVALID LINE: ['Depth', '(Meters)', '1', 'Quality', 'Mode']
+INVALID LINE: ['YYYYMMDD', 'HHMMSS', 'SST', 'Q', 'M']
+Total rows: 51,857
+Total nan rows: 259
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-12-31 23:50:00
+Last timestamp - First timestamp: 31621800.0 sec | 527030.0 min | 8783.0 hours | 365.0 days
+Min value: 26313.0
+Max value: 30136.0
+
+Dataset stats:
+                SST
+count  51598.000000
+mean   28485.276891
+std      587.890031
+min    26313.000000
+50%    28625.000000
+max    30136.000000
+
+Null values count for each column:
+SST    259
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=51722 | count=51860
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T5N165E_R_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T5N165E_R_SST_10min.ascii.csv
+INVALID LINE: ['Deployment:', 'DM191A-20160709', '2016-07-09', 'to', '2016-12-31', '(24720', 'data', 'rows,', '1', 'depth', 'columns)']
+INVALID LINE: ['Depth', '(Meters)', '1', 'Quality', 'Mode']
+INVALID LINE: ['YYYYMMDD', 'HHMMSS', 'SST', 'Q', 'M']
+Total rows: 49,586
+Total nan rows: 8,062
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-12-31 23:50:00
+Last timestamp - First timestamp: 31621800.0 sec | 527030.0 min | 8783.0 hours | 365.0 days
+Min value: 28548.0
+Max value: 31836.0
+
+Dataset stats:
+                SST
+count  41524.000000
+mean   29706.404320
+std      677.482169
+min    28548.000000
+50%    29833.000000
+max    31836.000000
+
+Null values count for each column:
+SST    8062
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=51722 | count=49589
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T5N170W_R_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T5N170W_R_SST_10min.ascii.csv
+INVALID LINE: ['Deployment:', 'DM205A-20160827', '2016-08-27', 'to', '2016-12-31', '(17791', 'data', 'rows,', '1', 'depth', 'columns)']
+INVALID LINE: ['Depth', '(Meters)', '1', 'Quality', 'Mode']
+INVALID LINE: ['YYYYMMDD', 'HHMMSS', 'SST', 'Q', 'M']
+Total rows: 51,724
+Total nan rows: 211
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-12-31 23:50:00
+Last timestamp - First timestamp: 31621800.0 sec | 527030.0 min | 8783.0 hours | 365.0 days
+Min value: 26543.0
+Max value: 30802.0
+
+Dataset stats:
+                SST
+count  51513.000000
+mean   28847.118553
+std      460.820046
+min    26543.000000
+50%    28898.000000
+max    30802.000000
+
+Null values count for each column:
+SST    211
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=51722 | count=51727
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T5N180W_D_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T5N180W_D_SST_10min.ascii.csv
+INVALID LINE: ['Deployment:', 'DM202A-20160726', '2016-07-26', 'to', '2016-12-31', '(22346', 'data', 'rows,', '1', 'depth', 'columns)']
+INVALID LINE: ['Depth', '(Meters)', '1', 'Quality', 'Mode']
+INVALID LINE: ['YYYYMMDD', 'HHMMSS', 'SST', 'Q', 'M']
+Total rows: 52,130
+Total nan rows: 255
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-12-31 23:50:00
+Last timestamp - First timestamp: 31621800.0 sec | 527030.0 min | 8783.0 hours | 365.0 days
+Min value: 28075.0
+Max value: 31562.0
+
+Dataset stats:
+                SST
+count  51875.000000
+mean   29200.321099
+std      501.954994
+min    28075.000000
+50%    29188.000000
+max    31562.000000
+
+Null values count for each column:
+SST    255
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=51722 | count=52133
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T5N95W_D_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T5N95W_D_SST_10min.ascii.csv
+INVALID LINE: ['Deployment:', 'DM177A-20160310', '2016-03-10', 'to', '2016-08-25', '(23733', 'data', 'rows,', '1', 'depth', 'columns)']
+INVALID LINE: ['Depth', '(Meters)', '1', 'Quality', 'Mode']
+INVALID LINE: ['YYYYMMDD', 'HHMMSS', 'SST', 'Q', 'M']
+Total rows: 33,689
+Total nan rows: 944
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-08-25 05:00:00
+Last timestamp - First timestamp: 20494800.0 sec | 341580.0 min | 5693.0 hours | 237.0 days
+Min value: 27354.0
+Max value: 31381.0
+
+Dataset stats:
+                SST
+count  32745.000000
+mean   28854.137639
+std      775.407214
+min    27354.000000
+50%    28951.000000
+max    31381.000000
+
+Null values count for each column:
+SST    944
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=51722 | count=33692
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T5S110W_D_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T5S110W_D_SST_10min.ascii.csv
+INVALID LINE: ['Deployment:', 'DM184A-20160411', '2016-04-11', 'to', '2016-12-31', '(37232', 'data', 'rows,', '1', 'depth', 'columns)']
+INVALID LINE: ['Depth', '(Meters)', '1', 'Quality', 'Mode']
+INVALID LINE: ['YYYYMMDD', 'HHMMSS', 'SST', 'Q', 'M']
+Total rows: 51,777
+Total nan rows: 286
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-12-31 23:50:00
+Last timestamp - First timestamp: 31621800.0 sec | 527030.0 min | 8783.0 hours | 365.0 days
+Min value: 23102.0
+Max value: 29922.0
+
+Dataset stats:
+                SST
+count  51491.000000
+mean   26059.560370
+std     1765.215018
+min    23102.000000
+50%    25909.000000
+max    29922.000000
+
+Null values count for each column:
+SST    286
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=51722 | count=51780
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T5S125W_D_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T5S125W_D_SST_10min.ascii.csv
+INVALID LINE: ['Deployment:', 'DM170A-20160305', '2016-03-06', 'to', '2016-12-31', '(42496', 'data', 'rows,', '1', 'depth', 'columns)']
+INVALID LINE: ['Depth', '(Meters)', '1', 'Quality', 'Mode']
+INVALID LINE: ['YYYYMMDD', 'HHMMSS', 'SST', 'Q', 'M']
+Total rows: 51,812
+Total nan rows: 258
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-12-31 23:50:00
+Last timestamp - First timestamp: 31621800.0 sec | 527030.0 min | 8783.0 hours | 365.0 days
+Min value: 24183.0
+Max value: 29780.0
+
+Dataset stats:
+                SST
+count  51554.000000
+mean   27099.161966
+std     1396.199459
+min    24183.000000
+50%    27308.000000
+max    29780.000000
+
+Null values count for each column:
+SST    258
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=51722 | count=51815
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T5S140W_D_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T5S140W_D_SST_10min.ascii.csv
+INVALID LINE: ['Deployment:', 'DM168A-20160301', '2016-03-01', 'to', '2016-12-31', '(43182', 'data', 'rows,', '1', 'depth', 'columns)']
+INVALID LINE: ['Depth', '(Meters)', '1', 'Quality', 'Mode']
+INVALID LINE: ['YYYYMMDD', 'HHMMSS', 'SST', 'Q', 'M']
+Total rows: 51,794
+Total nan rows: 277
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-12-31 23:50:00
+Last timestamp - First timestamp: 31621800.0 sec | 527030.0 min | 8783.0 hours | 365.0 days
+Min value: 25127.0
+Max value: 30579.0
+
+Dataset stats:
+                SST
+count  51517.000000
+mean   27992.117631
+std     1392.381979
+min    25127.000000
+50%    28435.000000
+max    30579.000000
+
+Null values count for each column:
+SST    277
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=51722 | count=51797
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T5S155W_R_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T5S155W_R_SST_10min.ascii.csv
+INVALID LINE: ['Deployment:', 'DM212A-20161002', '2016-10-02', 'to', '2016-12-31', '(12628', 'data', 'rows,', '1', 'depth', 'columns)']
+INVALID LINE: ['Depth', '(Meters)', '1', 'Quality', 'Mode']
+INVALID LINE: ['YYYYMMDD', 'HHMMSS', 'SST', 'Q', 'M']
+Total rows: 51,401
+Total nan rows: 215
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-12-31 23:50:00
+Last timestamp - First timestamp: 31621800.0 sec | 527030.0 min | 8783.0 hours | 365.0 days
+Min value: 26769.0
+Max value: 32149.0
+
+Dataset stats:
+                SST
+count  51186.000000
+mean   29120.567343
+std     1202.872432
+min    26769.000000
+50%    29331.000000
+max    32149.000000
+
+Null values count for each column:
+SST    215
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=51722 | count=51404
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T5S165E_R_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T5S165E_R_SST_10min.ascii.csv
+INVALID LINE: ['Deployment:', 'DM195A-20160714', '2016-07-14', 'to', '2016-12-31', '(23842', 'data', 'rows,', '1', 'depth', 'columns)']
+INVALID LINE: ['Depth', '(Meters)', '1', 'Quality', 'Mode']
+INVALID LINE: ['YYYYMMDD', 'HHMMSS', 'SST', 'Q', 'M']
+Total rows: 51,646
+Total nan rows: 30,336
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-12-31 23:50:00
+Last timestamp - First timestamp: 31621800.0 sec | 527030.0 min | 8783.0 hours | 365.0 days
+Min value: 28971.0
+Max value: 32391.0
+
+Dataset stats:
+                SST
+count  21310.000000
+mean   29895.169404
+std      413.569578
+min    28971.000000
+50%    29890.000000
+max    32391.000000
+
+Null values count for each column:
+SST    30336
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=51722 | count=51649
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T5S170W_R_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T5S170W_R_SST_10min.ascii.csv
+INVALID LINE: ['Deployment:', 'DM209A-20160901', '2016-09-01', 'to', '2016-12-31', '(17073', 'data', 'rows,', '1', 'depth', 'columns)']
+INVALID LINE: ['Depth', '(Meters)', '1', 'Quality', 'Mode']
+INVALID LINE: ['YYYYMMDD', 'HHMMSS', 'SST', 'Q', 'M']
+Total rows: 51,834
+Total nan rows: 250
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-12-31 23:50:00
+Last timestamp - First timestamp: 31621800.0 sec | 527030.0 min | 8783.0 hours | 365.0 days
+Min value: 28118.0
+Max value: 32447.0
+
+Dataset stats:
+                SST
+count  51584.000000
+mean   29672.626493
+std      731.213719
+min    28118.000000
+50%    29618.000000
+max    32447.000000
+
+Null values count for each column:
+SST    250
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=51722 | count=51837
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T5S180W_D_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T5S180W_D_SST_10min.ascii.csv
+INVALID LINE: ['Deployment:', 'DM198A-20160721', '2016-07-21', 'to', '2016-12-31', '(22954', 'data', 'rows,', '1', 'depth', 'columns)']
+INVALID LINE: ['Depth', '(Meters)', '1', 'Quality', 'Mode']
+INVALID LINE: ['YYYYMMDD', 'HHMMSS', 'SST', 'Q', 'M']
+Total rows: 52,019
+Total nan rows: 29,172
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-12-31 23:50:00
+Last timestamp - First timestamp: 31621800.0 sec | 527030.0 min | 8783.0 hours | 365.0 days
+Min value: 28342.0
+Max value: 30786.0
+
+Dataset stats:
+                SST
+count  22847.000000
+mean   29281.148641
+std      358.204430
+min    28342.000000
+50%    29264.000000
+max    30786.000000
+
+Null values count for each column:
+SST    29172
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=51722 | count=52022
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T5S95W_D_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T5S95W_D_SST_10min.ascii.csv
+INVALID LINE: ['Deployment:', 'DM181A-20160315', '2016-03-15', 'to', '2016-07-07', '(16141', 'data', 'rows,', '1', 'depth', 'columns)']
+INVALID LINE: ['Depth', '(Meters)', '1', 'Quality', 'Mode']
+INVALID LINE: ['YYYYMMDD', 'HHMMSS', 'SST', 'Q', 'M']
+Total rows: 26,885
+Total nan rows: 10,833
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-07-07 19:00:00
+Last timestamp - First timestamp: 16311600.0 sec | 271860.0 min | 4531.0 hours | 188.0 days
+Min value: 23330.0
+Max value: 29689.0
+
+Dataset stats:
+                SST
+count  16052.000000
+mean   26961.933715
+std     1615.841528
+min    23330.000000
+50%    27885.000000
+max    29689.000000
+
+Null values count for each column:
+SST    10833
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=51722 | count=26888
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T8N110W_R_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T8N110W_R_SST_10min.ascii.csv
+Total rows: 51,576
+Total nan rows: 51,576
+
+#### ERROR: row_count != count ### row_count=51722 | count=51579
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T8N125W_D_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T8N125W_D_SST_10min.ascii.csv
+INVALID LINE: ['Deployment:', 'DM175A-20160311', '2016-03-12', 'to', '2016-12-31', '(41519', 'data', 'rows,', '1', 'depth', 'columns)']
+INVALID LINE: ['Depth', '(Meters)', '1', 'Quality', 'Mode']
+INVALID LINE: ['YYYYMMDD', 'HHMMSS', 'SST', 'Q', 'M']
+Total rows: 51,693
+Total nan rows: 306
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-12-31 23:50:00
+Last timestamp - First timestamp: 31621800.0 sec | 527030.0 min | 8783.0 hours | 365.0 days
+Min value: 27008.0
+Max value: 31359.0
+
+Dataset stats:
+                SST
+count  51387.000000
+mean   28240.060618
+std      540.923642
+min    27008.000000
+50%    28137.000000
+max    31359.000000
+
+Null values count for each column:
+SST    306
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=51722 | count=51696
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T8N155W_R_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T8N155W_R_SST_10min.ascii.csv
+INVALID LINE: ['Deployment:', 'DM217A-20161008', '2016-10-08', 'to', '2016-10-23', '(2070', 'data', 'rows,', '1', 'depth', 'columns)']
+INVALID LINE: ['Depth', '(Meters)', '1', 'Quality', 'Mode']
+INVALID LINE: ['YYYYMMDD', 'HHMMSS', 'SST', 'Q', 'M']
+Total rows: 27,268
+Total nan rows: 125
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-10-23 17:00:00
+Last timestamp - First timestamp: 25635600.0 sec | 427260.0 min | 7121.0 hours | 296.0 days
+Min value: 27354.0
+Max value: 30053.0
+
+Dataset stats:
+                SST
+count  27143.000000
+mean   28251.598202
+std      493.475735
+min    27354.000000
+50%    28203.000000
+max    30053.000000
+
+Null values count for each column:
+SST    125
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=51722 | count=27271
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T8N165E_R_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T8N165E_R_SST_10min.ascii.csv
+INVALID LINE: ['Deployment:', 'DM190A-20160708', '2016-07-08', 'to', '2016-12-31', '(24840', 'data', 'rows,', '1', 'depth', 'columns)']
+INVALID LINE: ['Depth', '(Meters)', '1', 'Quality', 'Mode']
+INVALID LINE: ['YYYYMMDD', 'HHMMSS', 'SST', 'Q', 'M']
+Total rows: 51,713
+Total nan rows: 22,761
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-12-31 23:50:00
+Last timestamp - First timestamp: 31621800.0 sec | 527030.0 min | 8783.0 hours | 365.0 days
+Min value: 26257.0
+Max value: 31489.0
+
+Dataset stats:
+                SST
+count  28952.000000
+mean   28745.760604
+std      499.207586
+min    26257.000000
+50%    28712.000000
+max    31489.000000
+
+Null values count for each column:
+SST    22761
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=51722 | count=51716
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T8N170W_R_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T8N170W_R_SST_10min.ascii.csv
+Total rows: 17,972
+Total nan rows: 14,044
+Total nan columns: 0
+First timestamp: 2016-08-26 03:40:00
+Last timestamp: 2016-12-31 23:50:00
+Last timestamp - First timestamp: 11045400.0 sec | 184090.0 min | 3068.0 hours | 127.0 days
+Min value: 28738.0
+Max value: 30733.0
+
+Dataset stats:
+                SST
+count   3928.000000
+mean   29537.006365
+std      251.532818
+min    28738.000000
+50%    29509.000000
+max    30733.000000
+
+Null values count for each column:
+SST    14044
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=51722 | count=17975
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T8N180W_D_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T8N180W_D_SST_10min.ascii.csv
+INVALID LINE: ['Deployment:', 'DM203A-20160727', '2016-07-27', 'to', '2016-12-31', '(22174', 'data', 'rows,', '1', 'depth', 'columns)']
+INVALID LINE: ['Depth', '(Meters)', '1', 'Quality', 'Mode']
+INVALID LINE: ['YYYYMMDD', 'HHMMSS', 'SST', 'Q', 'M']
+Total rows: 52,102
+Total nan rows: 236
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-12-31 23:50:00
+Last timestamp - First timestamp: 31621800.0 sec | 527030.0 min | 8783.0 hours | 365.0 days
+Min value: 27333.0
+Max value: 31101.0
+
+Dataset stats:
+                SST
+count  51866.000000
+mean   28837.403096
+std      726.142249
+min    27333.000000
+50%    28891.000000
+max    31101.000000
+
+Null values count for each column:
+SST    236
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=51722 | count=52105
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T8N95W_D_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T8N95W_D_SST_10min.ascii.csv
+INVALID LINE: ['Deployment:', 'DM176A-20160309', '2016-03-09', 'to', '2016-12-31', '(41663', 'data', 'rows,', '1', 'depth', 'columns)']
+INVALID LINE: ['Depth', '(Meters)', '1', 'Quality', 'Mode']
+INVALID LINE: ['YYYYMMDD', 'HHMMSS', 'SST', 'Q', 'M']
+Total rows: 51,435
+Total nan rows: 9,924
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-12-31 23:50:00
+Last timestamp - First timestamp: 31621800.0 sec | 527030.0 min | 8783.0 hours | 365.0 days
+Min value: 26232.0
+Max value: 32050.0
+
+Dataset stats:
+                SST
+count  41511.000000
+mean   28661.092795
+std     1062.975497
+min    26232.000000
+50%    28541.000000
+max    32050.000000
+
+Null values count for each column:
+SST    9924
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=51722 | count=51438
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T8S110W_D_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T8S110W_D_SST_10min.ascii.csv
+INVALID LINE: ['Deployment:', 'DM183A-20160321', '2016-03-22', 'to', '2016-12-31', '(40138', 'data', 'rows,', '1', 'depth', 'columns)']
+INVALID LINE: ['Depth', '(Meters)', '1', 'Quality', 'Mode']
+INVALID LINE: ['YYYYMMDD', 'HHMMSS', 'SST', 'Q', 'M']
+Total rows: 51,751
+Total nan rows: 16,924
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-12-31 23:50:00
+Last timestamp - First timestamp: 31621800.0 sec | 527030.0 min | 8783.0 hours | 365.0 days
+Min value: 23796.0
+Max value: 28734.0
+
+Dataset stats:
+                SST
+count  34827.000000
+mean   27070.786602
+std     1107.837188
+min    23796.000000
+50%    27298.000000
+max    28734.000000
+
+Null values count for each column:
+SST    16924
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=51722 | count=51754
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T8S125W_D_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T8S125W_D_SST_10min.ascii.csv
+INVALID LINE: ['Deployment:', 'DM169A-20160304', '2016-03-05', 'to', '2016-12-31', '(42594', 'data', 'rows,', '1', 'depth', 'columns)']
+INVALID LINE: ['Depth', '(Meters)', '1', 'Quality', 'Mode']
+INVALID LINE: ['YYYYMMDD', 'HHMMSS', 'SST', 'Q', 'M']
+Total rows: 51,767
+Total nan rows: 318
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-12-31 23:50:00
+Last timestamp - First timestamp: 31621800.0 sec | 527030.0 min | 8783.0 hours | 365.0 days
+Min value: 25135.0
+Max value: 29426.0
+
+Dataset stats:
+                SST
+count  51449.000000
+mean   27607.649789
+std     1064.137152
+min    25135.000000
+50%    27838.000000
+max    29426.000000
+
+Null values count for each column:
+SST    318
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=51722 | count=51770
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T8S155W_R_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T8S155W_R_SST_10min.ascii.csv
+INVALID LINE: ['Deployment:', 'DM211A-20161001', '2016-10-01', 'to', '2016-12-31', '(12803', 'data', 'rows,', '1', 'depth', 'columns)']
+INVALID LINE: ['Depth', '(Meters)', '1', 'Quality', 'Mode']
+INVALID LINE: ['YYYYMMDD', 'HHMMSS', 'SST', 'Q', 'M']
+Total rows: 51,843
+Total nan rows: 247
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-12-31 23:50:00
+Last timestamp - First timestamp: 31621800.0 sec | 527030.0 min | 8783.0 hours | 365.0 days
+Min value: 27782.0
+Max value: 32471.0
+
+Dataset stats:
+                SST
+count  51596.000000
+mean   29532.673037
+std      980.715352
+min    27782.000000
+50%    29737.000000
+max    32471.000000
+
+Null values count for each column:
+SST    247
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=51722 | count=51846
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T8S165E_R_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T8S165E_R_SST_10min.ascii.csv
+Total rows: 23,718
+Total nan rows: 88
+Total nan columns: 0
+First timestamp: 2016-07-16 08:00:00
+Last timestamp: 2016-12-31 23:50:00
+Last timestamp - First timestamp: 14572200.0 sec | 242870.0 min | 4047.0 hours | 168.0 days
+Min value: 28437.0
+Max value: 31657.0
+
+Dataset stats:
+                SST
+count  23630.000000
+mean   29665.874185
+std      532.278170
+min    28437.000000
+50%    29695.500000
+max    31657.000000
+
+Null values count for each column:
+SST    88
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=51722 | count=23721
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T8S170W_R_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T8S170W_R_SST_10min.ascii.csv
+INVALID LINE: ['Deployment:', 'DM210A-20160903', '2016-09-03', 'to', '2016-12-31', '(16873', 'data', 'rows,', '1', 'depth', 'columns)']
+INVALID LINE: ['Depth', '(Meters)', '1', 'Quality', 'Mode']
+INVALID LINE: ['YYYYMMDD', 'HHMMSS', 'SST', 'Q', 'M']
+Total rows: 51,811
+Total nan rows: 191
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-12-31 23:50:00
+Last timestamp - First timestamp: 31621800.0 sec | 527030.0 min | 8783.0 hours | 365.0 days
+Min value: 28580.0
+Max value: 32224.0
+
+Dataset stats:
+                SST
+count  51620.000000
+mean   29874.107439
+std      521.707707
+min    28580.000000
+50%    29860.000000
+max    32224.000000
+
+Null values count for each column:
+SST    191
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=51722 | count=51814
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T8S180W_D_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T8S180W_D_SST_10min.ascii.csv
+INVALID LINE: ['Deployment:', 'DM197A-20160720', '2016-07-20', 'to', '2016-12-31', '(23194', 'data', 'rows,', '1', 'depth', 'columns)']
+INVALID LINE: ['Depth', '(Meters)', '1', 'Quality', 'Mode']
+INVALID LINE: ['YYYYMMDD', 'HHMMSS', 'SST', 'Q', 'M']
+Total rows: 52,105
+Total nan rows: 29,000
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-12-31 23:50:00
+Last timestamp - First timestamp: 31621800.0 sec | 527030.0 min | 8783.0 hours | 365.0 days
+Min value: 29117.0
+Max value: 32886.0
+
+Dataset stats:
+                SST
+count  23105.000000
+mean   29849.285696
+std      362.587885
+min    29117.000000
+50%    29844.000000
+max    32886.000000
+
+Null values count for each column:
+SST    29000
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=51722 | count=52108
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T8S95W_D_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T8S95W_D_SST_10min.ascii.csv
+INVALID LINE: ['Deployment:', 'DM182A-20160318', '2016-03-18', 'to', '2016-06-05', '(11321', 'data', 'rows,', '1', 'depth', 'columns)']
+INVALID LINE: ['Depth', '(Meters)', '1', 'Quality', 'Mode']
+INVALID LINE: ['YYYYMMDD', 'HHMMSS', 'SST', 'Q', 'M']
+Total rows: 22,424
+Total nan rows: 1,083
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-06-05 21:00:00
+Last timestamp - First timestamp: 13554000.0 sec | 225900.0 min | 3765.0 hours | 156.0 days
+Min value: 24614.0
+Max value: 28642.0
+
+Dataset stats:
+                SST
+count  21341.000000
+mean   27173.274636
+std      952.233277
+min    24614.000000
+50%    27490.000000
+max    28642.000000
+
+Null values count for each column:
+SST    1083
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=51722 | count=22427
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/2016/TAO_T9N140W_D_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/noaa/TAO_T9N140W_D_SST_10min.ascii.csv
+INVALID LINE: ['Deployment:', 'DM163A-20160222', '2016-02-22', 'to', '2016-12-31', '(44158', 'data', 'rows,', '1', 'depth', 'columns)']
+INVALID LINE: ['Depth', '(Meters)', '1', 'Quality', 'Mode']
+INVALID LINE: ['YYYYMMDD', 'HHMMSS', 'SST', 'Q', 'M']
+Total rows: 51,653
+Total nan rows: 306
+Total nan columns: 0
+First timestamp: 2016-01-01 00:00:00
+Last timestamp: 2016-12-31 23:50:00
+Last timestamp - First timestamp: 31621800.0 sec | 527030.0 min | 8783.0 hours | 365.0 days
+Min value: 26443.0
+Max value: 30198.0
+
+Dataset stats:
+                SST
+count  51347.000000
+mean   28080.773950
+std      658.833375
+min    26443.000000
+50%    28136.000000
+max    30198.000000
+
+Null values count for each column:
+SST    306
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=51722 | count=51656

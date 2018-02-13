@@ -21,7 +21,8 @@ class CSVConverter:
         self.pandas_tools.print_stats()
 
     def plot(self):
-        self.parser.plot(self.output_path, self.input_file.filename, self.pandas_tools.df)
+        if not self.pandas_tools.is_empty_df():
+            self.parser.plot(self.output_path, self.input_file.filename, self.pandas_tools.df)
 
     def close(self):
         self.input_file.close()

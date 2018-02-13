@@ -12,6 +12,7 @@ class PandasTools:
     def __init__(self, parser):
         self.df = None
         self.parser = parser
+        self.empty_df = None
 
     def new_df(self, columns):
         self.df = pd.DataFrame(columns=columns)
@@ -22,6 +23,7 @@ class PandasTools:
 
     def print_stats(self):
         total_rows, nan_rows = self.rows_count(), self.nan_rows_count()
+        self.empty_df = total_rows == nan_rows
         PandasTools.print_number("Total rows:", total_rows)
         PandasTools.print_number("Total nan rows:", nan_rows)
 
@@ -58,6 +60,12 @@ class PandasTools:
 
     def nan_rows_count(self):
         return len(self.df.index[self.df.isnull().all(1)])
+
+    def is_empty_df(self):
+        if self.empty_df is None:
+            total_rows, nan_rows = self.rows_count(), self.nan_rows_count()
+            self.empty_df = total_rows == nan_rows
+        return self.empty_df
 
     @staticmethod
     def print_number(name, value):
