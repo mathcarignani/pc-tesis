@@ -1,7 +1,4 @@
 from datetime import datetime
-import matplotlib.pyplot as plt
-import numpy as np
-import pandas as pd
 
 from .. import parser_base
 

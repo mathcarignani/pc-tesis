@@ -1,0 +1,539 @@
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[5]climaps/crete/17/climaps-data/station_1736.csv
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/climaps/station_1736.csv.csv
+Total rows: 44,640
+Total nan rows: 0
+Total nan columns: 0
+First timestamp: 2018-01-01 00:00:00
+Last timestamp: 2018-01-31 23:59:00
+Last timestamp - First timestamp: 2678340.0 sec | 44639.0 min | 743.0 hours | 30.0 days
+Min value: 0.0
+Max value: 12785.0
+
+Dataset stats:
+       Humidity   Temperature  Vapor Pressure  Wet-bulb Temperature  \
+count   44637.0  44637.000000    44637.000000          44637.000000   
+mean        0.0    123.913704       95.267133            123.913704   
+std         0.0     24.599981       17.993038             24.599981   
+min         0.0     68.000000       47.000000             68.000000   
+50%         0.0    120.000000       95.000000            120.000000   
+max         0.0    194.000000      142.000000            194.000000   
+
+       Wind Direction  Wind Speed [avg]  Wind Speed [max]  Wind Speed [min]  \
+count    44640.000000      44640.000000      44640.000000      44640.000000   
+mean      4497.934745        161.391532        638.202845        993.006653   
+std       1575.753041        139.607137        646.114719        688.303651   
+min          0.000000          0.000000         34.000000          0.000000   
+50%       4212.000000        122.000000        355.000000        799.000000   
+max       8191.000000        880.000000       2047.000000       2047.000000   
+
+       Internal Temperature  Surface Temperature  
+count          42639.000000         42639.000000  
+mean            4710.997303          7228.479889  
+std              196.910384          1380.365089  
+min             3192.000000             0.000000  
+50%             4642.000000          7091.000000  
+max             5335.000000         12785.000000  
+
+Null values count for each column:
+Humidity                   3
+Temperature                3
+Vapor Pressure             3
+Wet-bulb Temperature       3
+Wind Direction             0
+Wind Speed [avg]           0
+Wind Speed [max]           0
+Wind Speed [min]           0
+Internal Temperature    2001
+Surface Temperature     2001
+dtype: int64
+
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[5]climaps/crete/17/climaps-data/station_1746.csv
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/climaps/station_1746.csv.csv
+Total rows: 44,640
+Total nan rows: 0
+Total nan columns: 0
+First timestamp: 2018-01-01 00:00:00
+Last timestamp: 2018-01-31 23:59:00
+Last timestamp - First timestamp: 2678340.0 sec | 44639.0 min | 743.0 hours | 30.0 days
+Min value: 0.0
+Max value: 196.0
+
+Dataset stats:
+       Humidity   Temperature  Vapor Pressure  Wet-bulb Temperature
+count   44640.0  44640.000000    44640.000000          44640.000000
+mean        0.0    128.123902       98.038575            128.123902
+std         0.0     24.196700       18.877769             24.196700
+min         0.0     78.000000       48.000000             78.000000
+50%         0.0    125.000000       99.000000            125.000000
+max         0.0    196.000000      142.000000            196.000000
+
+Null values count for each column:
+Humidity                0
+Temperature             0
+Vapor Pressure          0
+Wet-bulb Temperature    0
+dtype: int64
+
+SIZES MATCH!! count=44643
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[5]climaps/crete/17/climaps-data/station_1748.csv
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/climaps/station_1748.csv.csv
+Total rows: 44,640
+Total nan rows: 0
+Total nan columns: 0
+First timestamp: 2018-01-01 00:00:00
+Last timestamp: 2018-01-31 23:59:00
+Last timestamp - First timestamp: 2678340.0 sec | 44639.0 min | 743.0 hours | 30.0 days
+Min value: 0.0
+Max value: 197.0
+
+Dataset stats:
+       Humidity   Temperature  Vapor Pressure  Wet-bulb Temperature
+count   44640.0  44640.000000    44640.000000          44640.000000
+mean        0.0    129.106608      100.365591            129.106608
+std         0.0     25.272604       19.377853             25.272604
+min         0.0     74.000000       47.000000             74.000000
+50%         0.0    126.000000      101.000000            126.000000
+max         0.0    197.000000      148.000000            197.000000
+
+Null values count for each column:
+Humidity                0
+Temperature             0
+Vapor Pressure          0
+Wet-bulb Temperature    0
+dtype: int64
+
+SIZES MATCH!! count=44643
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[5]climaps/crete/17/climaps-data/station_1752.csv
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/climaps/station_1752.csv.csv
+Total rows: 44,640
+Total nan rows: 0
+Total nan columns: 0
+First timestamp: 2018-01-01 00:00:00
+Last timestamp: 2018-01-31 23:59:00
+Last timestamp - First timestamp: 2678340.0 sec | 44639.0 min | 743.0 hours | 30.0 days
+Min value: 0.0
+Max value: 195.0
+
+Dataset stats:
+       Humidity   Temperature  Vapor Pressure  Wet-bulb Temperature
+count   44640.0  44640.000000    44640.000000          44640.000000
+mean        0.0    128.932056       99.864673            128.932056
+std         0.0     23.971421       19.958201             23.971421
+min         0.0     76.000000       45.000000             76.000000
+50%         0.0    125.000000      101.000000            125.000000
+max         0.0    195.000000      145.000000            195.000000
+
+Null values count for each column:
+Humidity                0
+Temperature             0
+Vapor Pressure          0
+Wet-bulb Temperature    0
+dtype: int64
+
+SIZES MATCH!! count=44643
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[5]climaps/crete/17/climaps-data/station_1874.csv
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/climaps/station_1874.csv.csv
+Total rows: 44,640
+Total nan rows: 0
+Total nan columns: 0
+First timestamp: 2018-01-01 00:00:00
+Last timestamp: 2018-01-31 23:59:00
+Last timestamp - First timestamp: 2678340.0 sec | 44639.0 min | 743.0 hours | 30.0 days
+Min value: 0.0
+Max value: 215.0
+
+Dataset stats:
+       Humidity   Temperature  Vapor Pressure  Wet-bulb Temperature
+count   44640.0  44640.000000    44640.000000          44640.000000
+mean        0.0    133.367652       99.480085            133.367652
+std         0.0     26.258180       19.156634             26.258180
+min         0.0     84.000000       47.000000             84.000000
+50%         0.0    128.000000      100.000000            128.000000
+max         0.0    215.000000      146.000000            215.000000
+
+Null values count for each column:
+Humidity                0
+Temperature             0
+Vapor Pressure          0
+Wet-bulb Temperature    0
+dtype: int64
+
+SIZES MATCH!! count=44643
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[5]climaps/crete/17/climaps-data/station_1875.csv
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/climaps/station_1875.csv.csv
+Total rows: 44,640
+Total nan rows: 0
+Total nan columns: 0
+First timestamp: 2018-01-01 00:00:00
+Last timestamp: 2018-01-31 23:59:00
+Last timestamp - First timestamp: 2678340.0 sec | 44639.0 min | 743.0 hours | 30.0 days
+Min value: 0.0
+Max value: 8191.0
+
+Dataset stats:
+       Humidity   Temperature  Vapor Pressure  Wet-bulb Temperature  \
+count   44640.0  44640.000000    44640.000000          44640.000000   
+mean        0.0    133.010999      102.005690            133.010999   
+std         0.0     21.665910       18.565965             21.665910   
+min         0.0     84.000000       50.000000             84.000000   
+50%         0.0    130.000000      102.000000            130.000000   
+max         0.0    191.000000      148.000000            191.000000   
+
+       Wind Direction  Wind Speed [avg]  Wind Speed [max]  Wind Speed [min]  
+count    44640.000000      44640.000000      44640.000000      44640.000000  
+mean      4984.741823        146.002711        560.110887       1137.329861  
+std       1751.210426        125.173228        585.632421        707.245885  
+min          0.000000          0.000000         46.000000          0.000000  
+50%       4270.000000        113.000000        338.000000       1001.000000  
+max       8191.000000        767.000000       2047.000000       2047.000000  
+
+Null values count for each column:
+Humidity                0
+Temperature             0
+Vapor Pressure          0
+Wet-bulb Temperature    0
+Wind Direction          0
+Wind Speed [avg]        0
+Wind Speed [max]        0
+Wind Speed [min]        0
+dtype: int64
+
+SIZES MATCH!! count=44643
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[5]climaps/crete/17/climaps-data/station_1876.csv
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/climaps/station_1876.csv.csv
+Total rows: 44,640
+Total nan rows: 0
+Total nan columns: 0
+First timestamp: 2018-01-01 00:00:00
+Last timestamp: 2018-01-31 23:59:00
+Last timestamp - First timestamp: 2678340.0 sec | 44639.0 min | 743.0 hours | 30.0 days
+Min value: 0.0
+Max value: 13698.0
+
+Dataset stats:
+       Humidity   Temperature  Vapor Pressure  Wet-bulb Temperature  \
+count   44640.0  44640.000000    44640.000000          44640.000000   
+mean        0.0    126.964740       98.397379            126.964740   
+std         0.0     24.295487       19.071867             24.295487   
+min         0.0     73.000000       47.000000             73.000000   
+50%         0.0    123.000000       99.000000            123.000000   
+max         0.0    196.000000      142.000000            196.000000   
+
+       Internal Temperature  Surface Temperature  
+count          43721.000000         43721.000000  
+mean            4899.645914          5257.503580  
+std              210.298083          3449.356503  
+min             3047.000000             0.000000  
+50%             4874.000000          6255.000000  
+max             5346.000000         13698.000000  
+
+Null values count for each column:
+Humidity                  0
+Temperature               0
+Vapor Pressure            0
+Wet-bulb Temperature      0
+Internal Temperature    919
+Surface Temperature     919
+dtype: int64
+
+SIZES MATCH!! count=44643
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[5]climaps/crete/17/climaps-data/station_1877.csv
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/climaps/station_1877.csv.csv
+Total rows: 44,639
+Total nan rows: 0
+Total nan columns: 0
+First timestamp: 2018-01-01 00:00:00
+Last timestamp: 2018-01-31 23:59:00
+Last timestamp - First timestamp: 2678340.0 sec | 44639.0 min | 743.0 hours | 30.0 days
+Min value: 0.0
+Max value: 191.0
+
+Dataset stats:
+       Humidity   Temperature  Vapor Pressure  Wet-bulb Temperature
+count   44639.0  44639.000000    44639.000000          44639.000000
+mean        0.0    127.543583      100.080759            127.543583
+std         0.0     24.064041       19.512886             24.064041
+min         0.0     66.000000       48.000000             66.000000
+50%         0.0    126.000000      100.000000            126.000000
+max         0.0    191.000000      149.000000            191.000000
+
+Null values count for each column:
+Humidity                0
+Temperature             0
+Vapor Pressure          0
+Wet-bulb Temperature    0
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=44643 | count=44642
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[5]climaps/crete/17/climaps-data/station_1918.csv
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/climaps/station_1918.csv.csv
+Total rows: 44,640
+Total nan rows: 0
+Total nan columns: 0
+First timestamp: 2018-01-01 00:00:00
+Last timestamp: 2018-01-31 23:59:00
+Last timestamp - First timestamp: 2678340.0 sec | 44639.0 min | 743.0 hours | 30.0 days
+Min value: 0.0
+Max value: 8191.0
+
+Dataset stats:
+       Humidity   Temperature  Vapor Pressure  Wet-bulb Temperature  \
+count   44639.0  44639.000000    44639.000000          44639.000000   
+mean        0.0    124.550192       97.152176            124.550192   
+std         0.0     29.945368       18.601349             29.945368   
+min         0.0     51.000000       50.000000             51.000000   
+50%         0.0    124.000000       98.000000            124.000000   
+max         0.0    200.000000      144.000000            200.000000   
+
+       Internal Temperature  Surface Temperature  Wind Direction  \
+count          44636.000000         44636.000000    44640.000000   
+mean            4740.284927          4739.931109     4821.998522   
+std              142.882244           135.595564     3082.530144   
+min             4511.000000          4529.000000        0.000000   
+50%             4705.000000          4706.000000     4420.000000   
+max             5209.000000          5234.000000     8191.000000   
+
+       Wind Speed [avg]  Wind Speed [max]  Wind Speed [min]  
+count      44640.000000      44640.000000      44640.000000  
+mean         196.649261        442.157415        988.007572  
+std          160.183883        419.476569        631.151874  
+min            0.000000         41.000000          0.000000  
+50%          133.000000        325.000000        828.000000  
+max          922.000000       2047.000000       2047.000000  
+
+Null values count for each column:
+Humidity                1
+Temperature             1
+Vapor Pressure          1
+Wet-bulb Temperature    1
+Internal Temperature    4
+Surface Temperature     4
+Wind Direction          0
+Wind Speed [avg]        0
+Wind Speed [max]        0
+Wind Speed [min]        0
+dtype: int64
+
+SIZES MATCH!! count=44643
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[5]climaps/crete/17/climaps-data/station_1955.csv
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/climaps/station_1955.csv.csv
+Total rows: 44,640
+Total nan rows: 0
+Total nan columns: 0
+First timestamp: 2018-01-01 00:00:00
+Last timestamp: 2018-01-31 23:59:00
+Last timestamp - First timestamp: 2678340.0 sec | 44639.0 min | 743.0 hours | 30.0 days
+Min value: 0.0
+Max value: 13791.0
+
+Dataset stats:
+       Humidity   Temperature  Vapor Pressure  Wet-bulb Temperature  \
+count   44639.0  44639.000000    44639.000000          44639.000000   
+mean        0.0    130.239611       99.262035            130.239611   
+std         0.0     21.511407       19.614197             21.511407   
+min         0.0     74.000000       47.000000             74.000000   
+50%         0.0    128.000000      100.000000            128.000000   
+max         0.0    190.000000      146.000000            190.000000   
+
+       Internal Temperature  Surface Temperature  Wind Direction  \
+count          44177.000000         44177.000000    44640.000000   
+mean            5109.797655          4127.603912     4830.482616   
+std              304.082956          2336.069418     2715.374056   
+min             2894.000000             0.000000        0.000000   
+50%             5225.000000          5002.000000     4418.000000   
+max             5342.000000         13791.000000     8191.000000   
+
+       Wind Speed [avg]  Wind Speed [max]  Wind Speed [min]  
+count      44640.000000      44640.000000      44640.000000  
+mean         217.597401        424.377061        778.056407  
+std          164.739597        433.935764        570.588687  
+min            0.000000          6.000000          0.000000  
+50%          164.000000        287.000000        590.000000  
+max         1022.000000       2047.000000       2047.000000  
+
+Null values count for each column:
+Humidity                  1
+Temperature               1
+Vapor Pressure            1
+Wet-bulb Temperature      1
+Internal Temperature    463
+Surface Temperature     463
+Wind Direction            0
+Wind Speed [avg]          0
+Wind Speed [max]          0
+Wind Speed [min]          0
+dtype: int64
+
+SIZES MATCH!! count=44643
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[5]climaps/crete/17/climaps-data/station_1956.csv
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/climaps/station_1956.csv.csv
+Total rows: 44,640
+Total nan rows: 0
+Total nan columns: 0
+First timestamp: 2018-01-01 00:00:00
+Last timestamp: 2018-01-31 23:59:00
+Last timestamp - First timestamp: 2678340.0 sec | 44639.0 min | 743.0 hours | 30.0 days
+Min value: 0.0
+Max value: 16777191.0
+
+Dataset stats:
+       Humidity   Temperature  Vapor Pressure  Wet-bulb Temperature  \
+count   44640.0  44640.000000    44640.000000          44640.000000   
+mean        0.0    126.062410       97.995027            126.062410   
+std         0.0     21.979102       19.479167             21.979102   
+min         0.0     68.000000       42.000000             68.000000   
+50%         0.0    124.000000      100.000000            124.000000   
+max         0.0    187.000000      143.000000            187.000000   
+
+       Internal Temperature  Target Temperature  Wind Direction  \
+count          4.464000e+04        4.464000e+04    25152.000000   
+mean           3.471371e+06        1.224257e+07     6055.657284   
+std            2.408874e+05        7.349952e+06     2603.530500   
+min            2.730414e+06        1.800000e+01        0.000000   
+50%            3.500444e+06        1.666747e+07     7727.000000   
+max            4.104234e+06        1.677719e+07     8191.000000   
+
+       Wind Speed [avg]  Wind Speed [max]  Wind Speed [min]  
+count      25152.000000      25152.000000      25152.000000  
+mean         263.463502        405.090689        600.498927  
+std          187.737240        552.249844        531.529538  
+min            0.000000         37.000000          0.000000  
+50%          227.000000        192.500000        429.000000  
+max         1105.000000       2047.000000       2047.000000  
+
+Null values count for each column:
+Humidity                    0
+Temperature                 0
+Vapor Pressure              0
+Wet-bulb Temperature        0
+Internal Temperature        0
+Target Temperature          0
+Wind Direction          19488
+Wind Speed [avg]        19488
+Wind Speed [max]        19488
+Wind Speed [min]        19488
+dtype: int64
+
+SIZES MATCH!! count=44643
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[5]climaps/crete/17/climaps-data/station_1957.csv
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/climaps/station_1957.csv.csv
+Total rows: 44,640
+Total nan rows: 0
+Total nan columns: 0
+First timestamp: 2018-01-01 00:00:00
+Last timestamp: 2018-01-31 23:59:00
+Last timestamp - First timestamp: 2678340.0 sec | 44639.0 min | 743.0 hours | 30.0 days
+Min value: 0.0
+Max value: 8191.0
+
+Dataset stats:
+       Humidity   Temperature  Vapor Pressure  Wet-bulb Temperature  \
+count   44640.0  44640.000000    44640.000000          44640.000000   
+mean        0.0    124.610797      100.430220            124.610797   
+std         0.0     30.012477       19.473689             30.012477   
+min         0.0     46.000000       49.000000             46.000000   
+50%         0.0    127.000000      101.000000            127.000000   
+max         0.0    196.000000      152.000000            196.000000   
+
+       Wind Direction  Wind Speed [avg]  Wind Speed [max]  Wind Speed [min]  
+count    44640.000000      44640.000000      44640.000000      44640.000000  
+mean      4483.381541        222.868548        381.738374        704.780466  
+std       3147.262157        162.320057        416.354513        536.228062  
+min          0.000000          0.000000         35.000000          0.000000  
+50%       4159.000000        172.000000        281.000000        538.000000  
+max       8191.000000       1004.000000       2047.000000       2047.000000  
+
+Null values count for each column:
+Humidity                0
+Temperature             0
+Vapor Pressure          0
+Wet-bulb Temperature    0
+Wind Direction          0
+Wind Speed [avg]        0
+Wind Speed [max]        0
+Wind Speed [min]        0
+dtype: int64
+
+SIZES MATCH!! count=44643
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[5]climaps/crete/17/climaps-data/station_1958.csv
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/climaps/station_1958.csv.csv
+Total rows: 44,625
+Total nan rows: 0
+Total nan columns: 0
+First timestamp: 2018-01-01 00:00:00
+Last timestamp: 2018-01-31 23:59:00
+Last timestamp - First timestamp: 2678340.0 sec | 44639.0 min | 743.0 hours | 30.0 days
+Min value: 0.0
+Max value: 8191.0
+
+Dataset stats:
+       Humidity   Temperature  Vapor Pressure  Wet-bulb Temperature  \
+count   44621.0  44621.000000    44621.000000          44621.000000   
+mean        0.0    127.953744       98.424710            127.953744   
+std         0.0     24.091551       18.803089             24.091551   
+min         0.0     74.000000       48.000000             74.000000   
+50%         0.0    124.000000       99.000000            124.000000   
+max         0.0    197.000000      142.000000            197.000000   
+
+       Wind Direction  Wind Speed [avg]  Wind Speed [max]  Wind Speed [min]  
+count    44625.000000      44625.000000      44625.000000      44625.000000  
+mean      4943.815328        103.751933        872.644863       1112.853333  
+std       2681.942365        113.615775        756.677995        825.425236  
+min          0.000000          0.000000         20.000000          0.000000  
+50%       4902.000000         64.000000        549.000000       1027.000000  
+max       8191.000000        679.000000       2047.000000       2047.000000  
+
+Null values count for each column:
+Humidity                4
+Temperature             4
+Vapor Pressure          4
+Wet-bulb Temperature    4
+Wind Direction          0
+Wind Speed [avg]        0
+Wind Speed [max]        0
+Wind Speed [min]        0
+dtype: int64
+
+#### ERROR: row_count != count ### row_count=44643 | count=44628
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[5]climaps/crete/17/climaps-data/station_1959.csv
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/climaps/station_1959.csv.csv
+Total rows: 44,640
+Total nan rows: 0
+Total nan columns: 0
+First timestamp: 2018-01-01 00:00:00
+Last timestamp: 2018-01-31 23:59:00
+Last timestamp - First timestamp: 2678340.0 sec | 44639.0 min | 743.0 hours | 30.0 days
+Min value: 0.0
+Max value: 196.0
+
+Dataset stats:
+       Humidity   Temperature  Vapor Pressure  Wet-bulb Temperature
+count   44640.0  44640.000000    44640.000000          44640.000000
+mean        0.0    117.300762       97.061537            117.300762
+std         0.0     33.575343       19.728624             33.575343
+min         0.0     37.000000       45.000000             37.000000
+50%         0.0    118.000000       97.000000            118.000000
+max         0.0    196.000000      154.000000            196.000000
+
+Null values count for each column:
+Humidity                0
+Temperature             0
+Vapor Pressure          0
+Wet-bulb Temperature    0
+dtype: int64
+
+SIZES MATCH!! count=44643

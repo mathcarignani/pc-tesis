@@ -11,6 +11,8 @@ from parsers.irkis.parser_vwc import ParserVWC
 from parsers.noaa.parser_noaa import ParserNOAA
 from parsers.elnino.parser_elnino import ParserElNino
 from parsers.solar_anywhere.parser_solar_anywhere import ParserSolarAnywhere
+from parsers.climaps.parser_climaps import ParserClimaps
+
 
 import os
 current_path = os.path.dirname(os.path.abspath(__file__))
@@ -48,7 +50,8 @@ def run(parser, logger_filename, input_folder, output_folder, reader_cls=TextFil
     convert_to_csv(parser, input_path, input_filenames, output_path, reader_cls)
 
 
-# run(ParserVWC, "output-irkis.log", "[1]irkis/vwc", "/irkis")
-run(ParserNOAA, "output-noaa.log", "[2]noaa/2016", "/noaa")
-# run(ParserElNino, "output-elnino.log", "[3]el-nino/large/data", "/el-nino")
-# run(ParserSolarAnywhere, "output-solar-anywhere.log", "[4]solar-anywhere/2/data", "/solar-anywhere", CSVReader)
+# run(ParserVWC, "output-irkis.log", "[1]irkis/vwc", "/[1]irkis")
+# run(ParserNOAA, "output-noaa.log", "[2]noaa/2016", "/[2]noaa")
+# run(ParserElNino, "output-elnino.log", "[3]el-nino/large/data", "/[3]el-nino")
+# run(ParserSolarAnywhere, "output-solar-anywhere.log", "[4]solar-anywhere/2/data", "/[4]solar-anywhere", CSVReader)
+run(ParserClimaps, "output-climaps.log", "[5]climaps/crete/17/climaps-data", "/[5]climaps", CSVReader)
