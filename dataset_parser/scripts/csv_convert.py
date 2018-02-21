@@ -52,6 +52,9 @@ def run(parser, logger_filename, input_folder, output_folder, reader_cls=TextFil
 
 # run(ParserVWC, "output-irkis.log", "[1]irkis/vwc", "/[1]irkis")
 # run(ParserNOAA, "output-noaa.log", "[2]noaa/2016", "/[2]noaa")
+
+run(ParserNOAA, "output-noaa-buoy.log", "[2]noaa/buoy/17-2808.tar", "/[3]noaa-buoy")
+
 # run(ParserElNino, "output-elnino.log", "[3]el-nino/large/data", "/[3]el-nino")
 # run(ParserSolarAnywhere, "output-solar-anywhere.log", "[4]solar-anywhere/2/data", "/[4]solar-anywhere", CSVReader)
-run(ParserClimaps, "output-climaps.log", "[5]climaps/crete/17/climaps-data", "/[5]climaps", CSVReader)
+# run(ParserClimaps, "output-climaps.log", "[5]climaps/crete/17/climaps-data", "/[5]climaps", CSVReader)

@@ -1,0 +1,11 @@
+#################################################################################
+INPUT: /Users/pablocerve/Documents/FING/Proyecto/datasets/[2]noaa/buoy/17-2808.tar/TAO_T0N110W_D_SST_10min.ascii
+OUTPUT: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/[3]noaa-buoy/TAO_T0N110W_D_SST_10min.ascii.csv
+INVALID LINE: ['Deployment:', 'PM083A-19990511', '1999-05-11', 'to', '1999-11-15', '(27044', 'data', 'rows,', '1', 'depth', 'columns)']
+INVALID LINE: ['Depth', '(Meters)', '1', 'Quality', 'Mode']
+INVALID LINE: ['YYYYMMDD', 'HHMMSS', 'SST', 'Q', 'M']
+previous_timestamp =1999-05-11 21:00:00
+timestamp =1999-05-11 19:50:00
+previous_values =[26205.0]
+values =[26207.0]
+
