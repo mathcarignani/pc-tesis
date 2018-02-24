@@ -8,12 +8,9 @@ class TextFileReader:
         f_path = full_path(path, filename)
         self.continue_reading = True
         self.file = open(f_path, "r")
-        if progress:
-            total_lines = self._total_lines(f_path)
-            self.progress_bar = ProgressBar(total_lines)
-        else:
-            self.progress_bar = None
+        self.total_lines = self._total_lines(f_path)
         self.current_line_count = 0
+        self.progress_bar = None if not progress else self.new_progress_bar()
         self.previous_line = self.file.readline()
 
     # PRE: self.continue_reading
@@ -26,7 +23,6 @@ class TextFileReader:
             self.current_line_count += 1
             self.print_progress()
             self.previous_line = line
-
         return previous_line
 
     def _total_lines(self, path):
@@ -35,6 +31,9 @@ class TextFileReader:
     def close(self):
         self.file.close()
 
+    def new_progress_bar(self):
+        self.progress_bar = ProgressBar(self.total_lines - self.current_line_count)
+
     def print_progress(self):
         if self.progress_bar:
-            self.progress_bar.print_progress(self.current_line_count)
+            self.progress_bar.print_progress()

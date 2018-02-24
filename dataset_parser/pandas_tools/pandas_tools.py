@@ -1,9 +1,10 @@
 import logging
 import numpy as np
 import pandas as pd
-
 import sys
 sys.path.append('.')
+
+import csv_converter.converter_utils as converter_utils
 
 
 class PandasTools:
@@ -20,6 +21,25 @@ class PandasTools:
     def add_row(self, timestamp, row):
         data = [np.nan if x == PandasTools.NO_DATA else x for x in row]
         self.df.loc[timestamp] = data
+
+    #
+    # PRE: not(self.is_empty_df())
+    #
+    def df_to_csv(self, output_file):
+        previous_timestamp = None
+        for timestamp, row in self.df.iterrows():
+            values = [self.map_value(value) for value in row.values]
+            if previous_timestamp is None:  # first row
+                timestamp_str = timestamp.strftime(converter_utils.DATE_FORMAT)
+            else:
+                delta = timestamp - previous_timestamp  # always positive
+                timestamp_str = converter_utils.format_timedelta(delta)
+            output_file.write_row([timestamp_str] + values)
+            previous_timestamp = timestamp
+
+    @classmethod
+    def map_value(cls, value):
+        return cls.NO_DATA if pd.isnull(value) else round(float(value)*1000, 0)
 
     def print_stats(self):
         total_rows, nan_rows = self.rows_count(), self.nan_rows_count()

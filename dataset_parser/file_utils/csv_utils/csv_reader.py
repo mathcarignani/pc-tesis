@@ -1,4 +1,3 @@
-import codecs
 import csv
 from aux.progress_bar import ProgressBar
 from file_utils.aux import full_path
@@ -11,12 +10,9 @@ class CSVReader:
         self.continue_reading = True
         self.file = open(self.full_path, "r")
         self.csv_reader = csv.reader(self.file)
-        if progress:
-            total_lines = self.total_lines()
-            self.progress_bar = ProgressBar(total_lines)
-        else:
-            self.progress_bar = None
-        self.current_row_count = 0
+        self.total_lines = self.total_lines()
+        self.current_line_count = 0
+        self.progress_bar = None if not progress else self.new_progress_bar()
         self.previous_row = next(self.csv_reader, None)
 
     # PRE: self.continue_reading
@@ -26,7 +22,7 @@ class CSVReader:
         if not row:
             self.continue_reading = False
         else:
-            self.current_row_count += 1
+            self.current_line_count += 1
             self.print_progress()
             self.previous_row = row
 
@@ -38,6 +34,9 @@ class CSVReader:
     def close(self):
         self.file.close()
 
+    def new_progress_bar(self):
+        self.progress_bar = ProgressBar(self.total_lines - self.current_line_count)
+
     def print_progress(self):
         if self.progress_bar:
-            self.progress_bar.print_progress(self.current_row_count)
+            self.progress_bar.print_progress()

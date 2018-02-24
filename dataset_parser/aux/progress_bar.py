@@ -23,13 +23,15 @@ class ProgressBar:
         self.str_format = "{0:." + str(decimals) + "f}"
         self.bar_length = bar_length
         self.start_time = time.time()
+        self.current_line = 0
 
-    def print_progress(self, current_line):
-        if (current_line != self.total) and (current_line % self.mod_range != 0):
+    def print_progress(self):
+        self.current_line += 1
+        if (self.current_line != self.total) and (self.current_line % self.mod_range != 0):
             return
-        percentage = current_line / self.total_float
+        percentage = self.current_line / self.total_float
         percents = self.str_format.format(100 * percentage)
-        filled_length = int(round(self.bar_length * current_line / self.total_float))
+        filled_length = int(round(self.bar_length * self.current_line / self.total_float))
         bar = '█' * filled_length + '-' * (self.bar_length - filled_length)
 
         elapsed_s, remaining_s = self._elapsed_and_remaining(percentage)
@@ -39,7 +41,7 @@ class ProgressBar:
 
         line = '\r%s %s - Elapsed: %s - Remaining: %s' % (progress_str, percentage_str, elapsed_s, remaining_s)
         sys.stdout.write(line),
-        if current_line == self.total:
+        if self.current_line == self.total:
             sys.stdout.write('\n')
         sys.stdout.flush()
 
