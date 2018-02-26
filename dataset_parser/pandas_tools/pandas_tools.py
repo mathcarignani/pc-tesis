@@ -20,8 +20,22 @@ class PandasTools:
 
     def add_row(self, timestamp, row):
         data = [np.nan if x == PandasTools.NO_DATA else x for x in row]
+        if timestamp in self.df.index:
+            logging.info("DUPLICATE TIMESTAMP")
+            logging.info("timestamp = %s | data = %s", timestamp, data)
+            logging.info("self.df.loc[timestamp]")
+            logging.info("%s", self.df.loc[timestamp])
+            # if not self.df.loc[timestamp].empty:
+            #     raise StandardError()
+            #     data = (data + self.df.loc[timestamp]) / 2
+            #     logging.info("new_data = %s", data)
         self.df.loc[timestamp] = data
 
+    def concat_df(self, new_df):
+        if self.df is None:
+            self.df = new_df
+        else:
+            self.df = pd.concat([self.df, new_df], axis=1)
     #
     # PRE: not(self.is_empty_df())
     #

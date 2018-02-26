@@ -8,16 +8,14 @@ class CSVConverter:
         self.parser = parser
         self.pandas_tools = PandasTools(parser)
 
-    #
-    # If year=2013, then we only consider dates in which year>=2013
-    #
-    def input_csv_to_df(self, input_file, year=None):
+    def input_csv_to_df(self, input_file, lower_bound_date=None, columns=None):
         self.input_file = input_file
-        self.year = year
+        self.lower_bound_date = lower_bound_date
         while self.parser.parsing_header:
             line = self.input_file.read_line()
             self.parser.parse_header(line)
-        self.pandas_tools.new_df(self.parser.columns)
+        cols = self.parser.columns if columns is None else columns
+        self.pandas_tools.new_df(cols)
         self._write_data()
         self.input_file.close()
 
@@ -45,7 +43,7 @@ class CSVConverter:
 
     def _write_data(self):
         self.previous_timestamp, self.previous_values = None, None
-        self.inside_range = True if self.year is None else False
+        self.inside_range = True if self.lower_bound_date is None else False
         while self.input_file.continue_reading:
             self._process_line()
 
@@ -65,7 +63,7 @@ class CSVConverter:
         if self.inside_range:
             return True
         else:
-            self.inside_range = self.timestamp.year >= self.year
+            self.inside_range = self.timestamp >= self.lower_bound_date
             if self.inside_range:
                 self.input_file.new_progress_bar()
             return self.inside_range

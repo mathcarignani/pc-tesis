@@ -46,7 +46,7 @@ class ParserNOAA(parser_base.ParserBase):
             data = [self._map_value(x) for x in values]
             return {'timestamp': timestamp, 'values': data}
         except:
-            logging.info("INVALID LINE: %s", s_line)
+            logging.info("INVALID LINE: %s", line.strip('\n'))
             return None
 
     def _map_value(self, value):
