@@ -53,7 +53,10 @@ class PandasTools:
 
     @classmethod
     def map_value(cls, value):
-        return cls.NO_DATA if pd.isnull(value) else round(float(value)*1000, 0)
+        # OTHER
+        # return cls.NO_DATA if pd.isnull(value) else round(float(value)*1000, 0)
+        # NOAA
+        return cls.NO_DATA if pd.isnull(value) else round(float(value)*1000 , 0)
 
     def print_stats(self):
         total_rows, nan_rows = self.rows_count(), self.nan_rows_count()

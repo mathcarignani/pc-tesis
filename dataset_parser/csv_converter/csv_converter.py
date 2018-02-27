@@ -1,3 +1,4 @@
+from aux.date_range import DateRange
 from file_utils.csv_utils.csv_writer import CSVWriter
 from pandas_tools.pandas_tools import PandasTools
 import logging
@@ -8,9 +9,9 @@ class CSVConverter:
         self.parser = parser
         self.pandas_tools = PandasTools(parser)
 
-    def input_csv_to_df(self, input_file, lower_bound_date=None, columns=None):
+    def input_csv_to_df(self, input_file, date_range=DateRange(), columns=None):
         self.input_file = input_file
-        self.lower_bound_date = lower_bound_date
+        self.date_range = date_range
         while self.parser.parsing_header:
             line = self.input_file.read_line()
             self.parser.parse_header(line)
@@ -43,7 +44,6 @@ class CSVConverter:
 
     def _write_data(self):
         self.previous_timestamp, self.previous_values = None, None
-        self.inside_range = True if self.lower_bound_date is None else False
         while self.input_file.continue_reading:
             self._process_line()
 
@@ -53,20 +53,11 @@ class CSVConverter:
             line = self.input_file.read_line()
             row = self.parser.parse_data(line)  # { 'timestamp': datetime object, 'values': values array }
         self.timestamp, self.values = row['timestamp'], row['values']
-        if not self.timestamp_inside_range():
+        if not self.date_range.inside_range(self.timestamp):
             return
         self.print_warning()
         self.pandas_tools.add_row(self.timestamp, self.values)
         self.previous_timestamp, self.previous_values = self.timestamp, self.values
-
-    def timestamp_inside_range(self):
-        if self.inside_range:
-            return True
-        else:
-            self.inside_range = self.timestamp >= self.lower_bound_date
-            if self.inside_range:
-                self.input_file.new_progress_bar()
-            return self.inside_range
 
     def print_warning(self):
         # first row OR positive timestamp delta
