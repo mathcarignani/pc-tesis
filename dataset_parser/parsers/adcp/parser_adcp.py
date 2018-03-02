@@ -1,8 +1,7 @@
 from datetime import datetime
-import logging
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 import numpy as np
-import pandas as pd
+# import pandas as pd
 
 from .. import parser_base
 
@@ -12,8 +11,9 @@ class ParserADCP(parser_base.ParserBase):
 
     def __init__(self):
         super(ParserADCP, self).__init__()
-        self.nodata = "-9.999"
+        self.nodata = "-99.999"
         self.date_format = "%Y%m%d %H%M%S"  # "20101127 020000"
+        self.asc_timestamp = False
 
     # EXAMPLE:
     # Platform: T0N140W 2010-11-27 to 2016-04-05 (42261 total rows, 5 deployments) File Generated on 2018-02-17

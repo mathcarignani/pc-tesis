@@ -1,5 +1,4 @@
 from datetime import datetime
-import logging
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -10,8 +9,9 @@ from .. import parser_base
 class ParserNOAA(parser_base.ParserBase):
     NAME = "NOAA"
 
-    def __init__(self):
+    def __init__(self, logger):
         super(ParserNOAA, self).__init__()
+        self.logger = logger
         self.nodata = "-9.999"
         self.date_format = "%Y%m%d %H%M%S"  # "20170103 113000"
 
@@ -46,7 +46,7 @@ class ParserNOAA(parser_base.ParserBase):
             data = [self._map_value(x) for x in values]
             return {'timestamp': timestamp, 'values': data}
         except:
-            logging.info("INVALID LINE: %s", line.strip('\n'))
+            self.logger.info("INVALID LINE: %s", line.strip('\n'))
             return None
 
     def _map_value(self, value):

@@ -1,12 +1,31 @@
+# SOURCE: https://stackoverflow.com/a/11233293/4547232
+
 import logging
+# formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s')
+formatter = logging.Formatter('%(message)s')
 
 
-class Logger:
-    def __init__(self):
-        pass
+def setup_logger(name, log_file, level=logging.INFO):
+    """Function setup as many loggers as you want"""
 
-    @classmethod
-    def set(cls, filename):
-        logging.basicConfig(format='%(message)s', filename=filename, level=logging.DEBUG)
-        # log to file and print to stdout (https://stackoverflow.com/a/13733863/4547232)
-        logging.getLogger().addHandler(logging.StreamHandler())
+    handler = logging.FileHandler(log_file)
+    handler.setFormatter(formatter)
+
+    logger = logging.getLogger(name)
+    logger.setLevel(level)
+    logger.addHandler(handler)
+    # log to file and print to stdout (https://stackoverflow.com/a/13733863/4547232)
+    logger.addHandler(logging.StreamHandler())
+    return logger
+
+# # first file logger
+# logger = setup_logger('first_logger', 'first_logfile.log')
+# logger.info('This is just info message')
+#
+# # second file logger
+# super_logger = setup_logger('second_logger', 'second_logfile.log')
+# super_logger.error('This is an error message')
+#
+# def another_method():
+#    # using logger defined above also works here
+#    logger.info('Inside method')
