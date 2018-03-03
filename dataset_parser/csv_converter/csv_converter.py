@@ -78,12 +78,12 @@ class CSVConverter:
 
     def _print_state(self, message=None):
         if message is not None:
-            logging.info(message)
-        logging.info('previous_timestamp =%s', self.previous_timestamp)
-        logging.info('timestamp =%s', self.timestamp)
-        logging.info('previous_values =%s', self.previous_values)
-        logging.info('values =%s', self.values)
-        logging.info('')
+            self.logger.info(message)
+        self.logger.info('previous_timestamp =%s', self.previous_timestamp)
+        self.logger.info('timestamp =%s', self.timestamp)
+        self.logger.info('previous_values =%s', self.previous_values)
+        self.logger.info('values =%s', self.values)
+        self.logger.info('')
 
     # def _raise_error(self, message):
     #     self._print_state()

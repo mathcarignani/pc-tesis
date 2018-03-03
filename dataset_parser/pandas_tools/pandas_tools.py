@@ -66,7 +66,6 @@ class PandasTools:
         else:
             for timestamp, row in self.df.iterrows():
                 values = [self.map_value(value) for value in row.values]
-                print timestamp
                 if previous_timestamp is None:  # first row
                     timestamp_str = timestamp.strftime(converter_utils.DATE_FORMAT)
                 else:

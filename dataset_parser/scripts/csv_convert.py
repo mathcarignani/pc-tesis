@@ -77,7 +77,7 @@ def noaa_buoy(year):
         'logger': logger,
         'date_range': date_range,
         'reader_cls': TextFileReader,
-        'input_path': "[2]noaa-buoy/2",
+        'input_path': "[2]noaa-buoy/17-2808.tar",
         'output_path': "/[2]noaa-buoy",
         'output_filename': "noaa-buoy-%s.csv" % year
     }
