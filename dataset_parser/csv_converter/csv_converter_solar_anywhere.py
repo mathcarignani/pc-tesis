@@ -1,20 +1,23 @@
 from csv_converter import CSVConverter
 from file_utils.csv_utils.csv_writer import CSVWriter
 from pandas_tools.pandas_tools import PandasTools
-from parsers.noaa.parser_noaa import ParserNOAA
+from parsers.solar_anywhere.parser_solar_anywhere import ParserSolarAnywhere
 
 
-class CSVConverterNOAA(CSVConverter):
+class CSVConverterSolarAnywhere(CSVConverter):
     def __init__(self, logger):
         self.logger = logger
-        self.parser = ParserNOAA(self.logger)
+        self.parser = ParserSolarAnywhere(self.logger)
         self.pandas_tools = PandasTools(self.parser, self.logger)
 
-    def input_csv_to_df(self, input_file, date_range):
+    def input_csv_to_df(self, input_file, date_range, plot_output_path):
         csv_converter = CSVConverter(self.parser, self.logger)
-        # "TAO_T5N140W_D_SST_10min.ascii" => "T5N140W"
-        column = input_file.filename.split("_")[1]
-        csv_converter.input_csv_to_df(input_file, date_range, [column])
+        # "0_0.csv" => "0_0"
+        column_str = input_file.filename.split(".")[0]
+        columns = [column_str + '_' + column for column in ['GHI', 'DNI', 'DHI']]
+        csv_converter.input_csv_to_df(input_file, date_range, columns)
+        df = csv_converter.pandas_tools.df.copy()
+        ParserSolarAnywhere.plot(plot_output_path, input_file.filename, df)
         self.pandas_tools.concat_df(csv_converter.pandas_tools.df)
 
     def df_to_output_csv(self, output_path, output_filename):

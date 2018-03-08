@@ -1,7 +1,5 @@
 from datetime import datetime
-# import matplotlib.pyplot as plt
 import numpy as np
-# import pandas as pd
 
 from .. import parser_base
 
@@ -9,8 +7,9 @@ from .. import parser_base
 class ParserADCP(parser_base.ParserBase):
     NAME = "ADCP"
 
-    def __init__(self):
+    def __init__(self, logger=None):
         super(ParserADCP, self).__init__()
+        self.logger = logger
         self.nodata = "-99.999"
         self.date_format = "%Y%m%d %H%M%S"  # "20101127 020000"
         self.asc_timestamp = False
@@ -48,7 +47,7 @@ class ParserADCP(parser_base.ParserBase):
             data = [self._map_value(x) for x in values]
             return {'timestamp': timestamp, 'values': data}
         except:
-            logging.info("INVALID LINE: %s", line.strip('\n'))
+            self.logger.info("INVALID LINE: %s", line.strip('\n'))
             return None
 
     def _map_value(self, value):

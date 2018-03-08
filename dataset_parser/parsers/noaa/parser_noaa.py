@@ -67,3 +67,42 @@ class ParserNOAA(parser_base.ParserBase):
         ax.legend()
         fig = ax.get_figure()
         fig.savefig(path + '/' + title + '.plot.png')
+
+    ####################################################################################################################
+
+    BITS = 16
+    DELTA = "00:10:00"
+    NONE = 40001
+
+    @classmethod
+    def code_value_aux(cls, x, n_val):
+        if x == 'N':
+            return n_val
+        elif 0 <= int(x) <= 40000:
+            return int(x)
+        else:
+            raise StandardError("Invalid value to code", x)
+
+    # Used in CoderBase
+    @classmethod
+    def code_value(cls, x):
+        return cls.code_value_aux(x, cls.NONE)
+
+    # Used in CoderPCA
+    @classmethod
+    def code_value_2(cls, x):
+        return cls.code_value_aux(x, None)
+
+    # Used in DecoderBase
+    @classmethod
+    def decode_value(cls, y):
+        if y == cls.NONE:
+            return 'N'
+        elif 0 <= y <= 40000:
+            return y
+        else:
+            raise StandardError("Invalid value to decode", y)
+
+    @classmethod
+    def check_delta(cls, delta_str):
+        pass

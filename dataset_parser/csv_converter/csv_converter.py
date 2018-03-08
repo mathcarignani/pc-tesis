@@ -9,14 +9,15 @@ class CSVConverter:
         self.logger = logger
         self.pandas_tools = PandasTools(self.parser, self.logger)
 
-    def input_csv_to_df(self, input_file, date_range=DateRange(), columns=None, extra_index=None):
+    def input_csv_to_df(self, input_file, date_range=DateRange(), columns=None, adcp=False):
         self.input_file = input_file
         self.date_range = date_range
+        self.adcp = adcp
         while self.parser.parsing_header:
             line = self.input_file.read_line()
             self.parser.parse_header(line)
         cols = self.parser.columns if columns is None else columns
-        self.pandas_tools.new_df(cols, extra_index)
+        self.pandas_tools.new_df(cols)
         self._write_data()
         self.input_file.close()
 
@@ -55,13 +56,14 @@ class CSVConverter:
         self.timestamp, self.values = row['timestamp'], row['values']
         if not self.date_range.inside_range(self.timestamp):
             return
-        if self.parser.NAME == 'ADCP':
-            if self.previous_timestamp and self.previous_timestamp.day != self.timestamp.day:
-                print self.timestamp
-            self.pandas_tools.add_row(self.timestamp, self.values[1:], self.values[0])
-        else:
+        if self.adcp is None:
             self.print_warning()
             self.pandas_tools.add_row(self.timestamp, self.values)
+        else:
+            if self.previous_timestamp and self.previous_timestamp.day != self.timestamp.day:
+                print self.timestamp
+            self.pandas_tools.add_row(self.timestamp, self.values, self.adcp)
+
         self.previous_timestamp, self.previous_values = self.timestamp, self.values
 
     def print_warning(self):

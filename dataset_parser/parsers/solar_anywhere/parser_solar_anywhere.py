@@ -7,8 +7,9 @@ from .. import parser_base
 class ParserSolarAnywhere(parser_base.ParserBase):
     NAME = "SolarAnywhere"
 
-    def __init__(self):
+    def __init__(self, logger):
         super(ParserSolarAnywhere, self).__init__()
+        self.logger = logger
         self.nodata = "NaN"
         self.date_format = "%m/%d/%Y %H:%M"  # "06/14/2013 17:00"
         self.columns = ['GHI', 'DNI', 'DHI']
@@ -19,11 +20,15 @@ class ParserSolarAnywhere(parser_base.ParserBase):
             self.parsing_header = False
 
     def parse_data(self, line):
-        date = line[0] + ' ' + line[1]
-        timestamp = datetime.strptime(date, self.date_format)
-        values = [line[4], line[7], line[10]]  # GNI, DNI, DHI
-        data = [self._map_value(x) for x in values]
-        return {'timestamp': timestamp, 'values': data}
+        try:
+            date = line[0] + ' ' + line[1]
+            timestamp = datetime.strptime(date, self.date_format)
+            values = [line[4], line[7], line[10]]  # GNI, DNI, DHI
+            data = [self._map_value(x) for x in values]
+            return {'timestamp': timestamp, 'values': data}
+        except:
+            self.logger.info("INVALID LINE: %s", ' '.join(line))
+            return None
 
     def _map_value(self, value):
         return ParserSolarAnywhere.NO_DATA if value == self.nodata else float(value)
@@ -46,7 +51,8 @@ class ParserSolarAnywhere(parser_base.ParserBase):
         colors = {'GHI': 'Blue', 'DNI': 'Orange', 'DHI': 'Green'}
         for column in df.columns:
             title = filename + ' ' + column
-            ax = df[[column]].plot(title=title, ylim=[0, 1100], color=colors[column])
+            column_key = column[-3:]  # "0_0_GHI" => "GHI"
+            ax = df[[column]].plot(title=title, ylim=[0, 1100], color=colors[column_key])
             fig = ax.get_figure()
             fig.savefig(path + '/' + filename + '_' + column + '.png')
 
