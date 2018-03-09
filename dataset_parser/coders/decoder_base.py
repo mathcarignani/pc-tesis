@@ -19,16 +19,18 @@ class DecoderBase(object):
             self.row.append(decoded_val)
             if len(self.row) == self.row_length:
                 self.output_csv.write_row([self.parser.DELTA] + self.row)
+                self.count += 1
                 self.row = []
-            self.count += 1
 
-    def _decode(self):
-        value = self._decode_raw(self.parser.BITS)
-        return self.parser.decode_value(value)
-
-    def _decode_raw(self, bits):
-        return self.input_file.read_int(bits)
+    def _decode_raw(self):
+        return self.input_file.read_int(self.parser.BITS)
 
     def close(self):
         self.input_file.close()
         self.output_csv.close()
+
+    ####################################################################################################################
+
+    def _decode(self):
+        value = self._decode_raw()
+        return self.parser.alphabet_to_csv(value)

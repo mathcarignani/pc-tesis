@@ -5,14 +5,15 @@ class Window(object):
     # (2) If fixed_window_size is None and max_window_size == x => the window can have up to x elements.
     # (3) If fixed_window_size is None and max_window_size is None => the window can have as much elements as possible.
     #
-    def __init__(self, error_threshold, fixed_window_size, max_window_size=None):
+    def __init__(self, error_threshold, fixed_window_size, none, max_window_size=None):
         self.error_threshold = error_threshold
         self.fixed_window_size = fixed_window_size
+        self.none = none
         self.max_window_size = max_window_size
         self.clear()
 
     def clear(self):
-        self.array, self.min, self.max, self.half = [], None, None, None
+        self.array, self.min, self.max, self.half = [], self.none, self.none, self.none
 
     #
     # PRE: self.fixed_window_size and self.max_window_size cannot both be None.
@@ -27,8 +28,8 @@ class Window(object):
         return not self.array
 
     def constant(self):
-        if self.half is None:
-            return None
+        if self.half is self.none:
+            return self.none
         elif self.min == self.half:
             return self.min
         else:
@@ -38,9 +39,9 @@ class Window(object):
     #     print 'min', self.min, 'max', self.max, 'half', self.half
 
     def condition_holds(self, value):
-        if value is None:
-            if self.half is None:
-                self.array.append(None)
+        if value is self.none:
+            if self.half is self.none:
+                self.array.append(self.none)
                 return True
             else:
                 return False
@@ -48,7 +49,7 @@ class Window(object):
             self.min, self.max, self.half = value, value, 0
             self.array.append(value)
             return True
-        elif self.half is None:
+        elif self.half is self.none:
             return False
         elif value < self.min:
             return self._update_half(value, value, self.max)

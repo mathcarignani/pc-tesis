@@ -75,33 +75,22 @@ class ParserNOAA(parser_base.ParserBase):
     NONE = 40001
 
     @classmethod
-    def code_value_aux(cls, x, n_val):
+    def csv_to_alphabet(cls, x):
         if x == 'N':
-            return n_val
+            return cls.NONE
         elif 0 <= int(x) <= 40000:
             return int(x)
         else:
-            raise StandardError("Invalid value to code", x)
+            raise StandardError("Invalid value in the csv", x)
 
-    # Used in CoderBase
     @classmethod
-    def code_value(cls, x):
-        return cls.code_value_aux(x, cls.NONE)
-
-    # Used in CoderPCA
-    @classmethod
-    def code_value_2(cls, x):
-        return cls.code_value_aux(x, None)
-
-    # Used in DecoderBase
-    @classmethod
-    def decode_value(cls, y):
+    def alphabet_to_csv(cls, y):
         if y == cls.NONE:
             return 'N'
         elif 0 <= y <= 40000:
             return y
         else:
-            raise StandardError("Invalid value to decode", y)
+            raise StandardError("Invalid value in the alphabet", y)
 
     @classmethod
     def check_delta(cls, delta_str):
