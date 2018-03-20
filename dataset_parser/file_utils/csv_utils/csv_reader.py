@@ -10,7 +10,7 @@ class CSVReader:
         self.continue_reading = True
         self.file = open(self.full_path, "r")
         self.csv_reader = csv.reader(self.file)
-        self.total_lines = self.total_lines()
+        self.total_lines = self.total_lines_()
         self.current_line_count = 0
         self.progress_bar = None if not progress else self.new_progress_bar()
         self.previous_row = next(self.csv_reader, None)
@@ -28,7 +28,7 @@ class CSVReader:
 
         return previous_row
 
-    def total_lines(self):
+    def total_lines_(self):
         return sum(1 for _ in csv.reader(open(self.full_path, "r")))
 
     def close(self):

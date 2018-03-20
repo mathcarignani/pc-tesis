@@ -95,14 +95,15 @@ def noaa_buoy(year, month=None):
         'logger': logger,
         'date_range': date_range,
         'reader_cls': TextFileReader,
-        'input_path': "[2]noaa-buoy/17-2808.tar",
+        'input_path': "[2]noaa-sst/17-2808.tar",
         'output_path': "/[2]noaa-buoy",
         'output_filename': output_filename
     }
     run(args)
 
-for month in reversed(range(1, 13)):
-    noaa_buoy(2017, month)
+noaa_buoy(2009)
+# for month in reversed(range(1, 13)):
+#     noaa_buoy(2017, month)
 
 
 def noaa_adcp(year, month=None):
@@ -153,14 +154,14 @@ def solar_anywhere(year, month=None):
         'logger': logger,
         'date_range': date_range,
         'reader_cls': CSVReader,
-        'input_path': "[4]solar-anywhere/2014",
+        'input_path': "[4]solar-anywhere/2011",
         'output_path': "/[4]solar-anywhere",
         'output_filename': output_filename
     }
     run(args)
 
-# for month in reversed(range(1, 9)):
-#     noaa_adcp(2012, month)
+# solar_anywhere(2011)
+
 
 # run(ParserElNino, "output-elnino.log", "[3]el-nino/large/data", "/[3]el-nino")
 # run(ParserClimaps, "output-climaps.log", "[5]climaps/crete/17/climaps-data", "/[5]climaps", CSVReader)
