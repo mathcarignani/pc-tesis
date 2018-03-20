@@ -8,7 +8,7 @@ import os
 
 def change_csv_names():
     # dataset_path = csv_path + '/' + dataset_folder
-    dataset_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[4]solar-anywhere/2014"
+    dataset_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017"
     input_filenames = os.listdir(dataset_path)
     input_filenames = [f for f in input_filenames if os.path.isfile(os.path.join(dataset_path, f))]
     input_filenames = [f for f in input_filenames if f.endswith(".csv")]
@@ -37,16 +37,18 @@ def first_rows(input_file, output_file):
     output_file.write_row(['DATASET:', 'NOAA-SST'])  # DATASET:| IRKIS
     output_file.write_row(['TIME UNIT:', 'seconds'])  # TIME UNIT:| minutes
 
-    input_file.read_line()
+    row1, row2 = input_file.read_line(), input_file.read_line()
 
     row3, row4 = input_file.read_line(), input_file.read_line()
-    output_file.write_row(['FIRST TIMESTAMP:', row4[0]])  # FIRST TIMESTAMP:| 2010-10-01 00:00:00
+    output_file.write_row(['FIRST TIMESTAMP:', row3[1]])  # FIRST TIMESTAMP:| 2010-10-01 00:00:00
 
-    row3[0] = "Time Delta"
-    output_file.write_row(remove_commas(row3))  # Min Delta|Col1|Col2| ... |ColN
-
-    row4[0] = "0"
     output_file.write_row(remove_commas(row4))
+
+    # row[0] = "Time Delta"
+    # output_file.write_row(remove_commas(row3))  # Min Delta|Col1|Col2| ... |ColN
+
+    # row4[0] = "0"
+    # output_file.write_row(remove_commas(row4))
 
 
 def remove_commas(row):
@@ -63,8 +65,10 @@ def create_new_row(row):
 
 
 def convert_to_minutes(delta):
-    hours, minutes, seconds = delta.split(':')
-    return str(60*60*int(hours) + 60*int(minutes) + int(seconds))
+    return str(int(delta)*60)
+    # hours, minutes, seconds = delta.split(':')
+    # return str(60*60*int(hours) + 60*int(minutes) + int(seconds))
+
     # if seconds != '00':
     #     raise "SECONDS MUST BE '00'!!"
     # else:
@@ -82,7 +86,7 @@ def run_script(dataset_folder):
 
 
 # run_script('[1]irkis')
-run_script('[2]noaa-sst/years')
+run_script('[2]noaa-sst/months/2017')
 # run_script('[4]solar-anywhere/2011')
 # run_script('[4]solar-anywhere/2012')
 # run_script('[4]solar-anywhere/2013')

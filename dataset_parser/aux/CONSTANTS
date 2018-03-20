@@ -1,0 +1,9 @@
+#DATASET
+IRKIS=0
+NOAA-SST=1
+NOAA-ADCP=2
+SolarAnywhere=3
+
+#TIME_UNIT
+seconds=0
+minutes=1

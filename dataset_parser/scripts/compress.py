@@ -29,15 +29,13 @@ def compress(args):
 
     # code
     input_csv = CSVReader(input_path, input_filename, True)
-    row1, row2 = input_csv.read_line(), input_csv.read_line()
     c = coder(parser, input_csv, output_path, compressed_filename, coder_params)
     c.code_file()
     c.close()
 
     # decode
     output_csv = CSVWriter(output_path, decompressed_filename)
-    output_csv.write_row(row1), output_csv.write_row(row2)
-    d = decoder(parser, output_path, compressed_filename, output_csv, len(row2)-1, coder_params)
+    d = decoder(parser, output_path, compressed_filename, output_csv, coder_params)
     try:
         d.decode_file()
     except AssertionError as e:
@@ -78,7 +76,7 @@ def compress_noaa(logger, coder, decoder, coder_params={}):
         'coder': coder,
         'coder_params': coder_params,
         'decoder': decoder,
-        'input_path': '/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-buoy/months/2017',
+        'input_path': '/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017',
         'input_filename': 'noaa-buoy-201712.csv',
         'output_path': '/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output',
         'compressed_filename': 'noaa-buoy-201712.c.csv',
@@ -86,14 +84,16 @@ def compress_noaa(logger, coder, decoder, coder_params={}):
     }
     compress(args)
 
-# compress_noaa(CoderBase, DecoderBase)
 logger = setup_logger('log.log', 'log.log')
-compress_noaa(logger, CoderPCA, DecoderPCA, {'error_threshold': 100, 'fixed_window_size': 5})
-compress_noaa(logger, CoderPCA, DecoderPCA, {'error_threshold': 100, 'fixed_window_size': 10})
-compress_noaa(logger, CoderPCA, DecoderPCA, {'error_threshold': 100, 'fixed_window_size': 20})
-compress_noaa(logger, CoderPCA, DecoderPCA, {'error_threshold': 50, 'fixed_window_size': 5})
-compress_noaa(logger, CoderPCA, DecoderPCA, {'error_threshold': 50, 'fixed_window_size': 10})
-compress_noaa(logger, CoderPCA, DecoderPCA, {'error_threshold': 50, 'fixed_window_size': 20})
-compress_noaa(logger, CoderPCA, DecoderPCA, {'error_threshold': 10, 'fixed_window_size': 5})
-compress_noaa(logger, CoderPCA, DecoderPCA, {'error_threshold': 10, 'fixed_window_size': 10})
-compress_noaa(logger, CoderPCA, DecoderPCA, {'error_threshold': 10, 'fixed_window_size': 20})
+compress_noaa(logger, CoderBase, DecoderBase)
+
+# logger = setup_logger('log.log', 'log.log')
+# compress_noaa(logger, CoderPCA, DecoderPCA, {'error_threshold': 100, 'fixed_window_size': 5})
+# compress_noaa(logger, CoderPCA, DecoderPCA, {'error_threshold': 100, 'fixed_window_size': 10})
+# compress_noaa(logger, CoderPCA, DecoderPCA, {'error_threshold': 100, 'fixed_window_size': 20})
+# compress_noaa(logger, CoderPCA, DecoderPCA, {'error_threshold': 50, 'fixed_window_size': 5})
+# compress_noaa(logger, CoderPCA, DecoderPCA, {'error_threshold': 50, 'fixed_window_size': 10})
+# compress_noaa(logger, CoderPCA, DecoderPCA, {'error_threshold': 50, 'fixed_window_size': 20})
+# compress_noaa(logger, CoderPCA, DecoderPCA, {'error_threshold': 10, 'fixed_window_size': 5})
+# compress_noaa(logger, CoderPCA, DecoderPCA, {'error_threshold': 10, 'fixed_window_size': 10})
+# compress_noaa(logger, CoderPCA, DecoderPCA, {'error_threshold': 10, 'fixed_window_size': 20})
