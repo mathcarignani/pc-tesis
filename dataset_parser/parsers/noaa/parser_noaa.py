@@ -67,31 +67,3 @@ class ParserNOAA(parser_base.ParserBase):
         ax.legend()
         fig = ax.get_figure()
         fig.savefig(path + '/' + title + '.plot.png')
-
-    ####################################################################################################################
-
-    BITS = 16
-    DELTA = "00:10:00"
-    NONE = 40001
-
-    @classmethod
-    def csv_to_alphabet(cls, x):
-        if x == 'N':
-            return cls.NONE
-        elif 0 <= int(x) <= 40000:
-            return int(x)
-        else:
-            raise StandardError("Invalid value in the csv", x)
-
-    @classmethod
-    def alphabet_to_csv(cls, y):
-        if y == cls.NONE:
-            return 'N'
-        elif 0 <= y <= 40000:
-            return y
-        else:
-            raise StandardError("Invalid value in the alphabet", y)
-
-    @classmethod
-    def check_delta(cls, delta_str):
-        pass

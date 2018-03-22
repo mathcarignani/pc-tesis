@@ -13,17 +13,21 @@ class CSVCompare:
         self.row_count = 0
         while self.file1.continue_reading and self.file2.continue_reading:
             row1, row2 = self.file1.read_line(), self.file2.read_line()
-            if self.row_count < 2:
-                self._compare_first_two_rows(row1, row2)
+            if self.row_count < 4:
+                self._compare_first_four_rows(row1, row2)
             else:
                 self._compare_rows(row1, row2, threshold)
             self.row_count += 1
-        if not self.file1.continue_reading:
-            print "ERROR: reach end of file1"
-        elif not self.file1.continue_reading:
-            print "ERROR: reach end of file2"
 
-    def _compare_first_two_rows(self, row1, row2):
+        if self.file1.continue_reading or self.file2.continue_reading:
+            file_name = "file2" if self.file1.continue_reading else "file2"
+            print "ERROR: reach end of file", file_name
+            return False
+        else:
+            print "Same files!"
+            return True
+
+    def _compare_first_four_rows(self, row1, row2):
         if row1 != row2:
             self._print_row_count()
             for idx, val in enumerate(row1):

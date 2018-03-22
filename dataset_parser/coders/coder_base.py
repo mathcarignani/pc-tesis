@@ -1,13 +1,14 @@
 import sys
 sys.path.append('../')
 
-from aux.dataset_utils import DatasetUtils
+from coders.header_utils import HeaderUtils
 from file_utils.bit_stream.bit_stream_writer import BitStreamWriter
 
 
 class CoderBase(object):
-    def __init__(self, parser, input_csv, output_path, output_filename, *_):
-        self.parser = parser
+    DELTA_BITS = 17
+
+    def __init__(self, input_csv, output_path, output_filename, *_):
         self.input_csv = input_csv
         self.output_file = BitStreamWriter(output_path, output_filename)
         self.count = 0
@@ -17,7 +18,7 @@ class CoderBase(object):
         return "CoderBase"
 
     def code_file(self):
-        self._code_header()
+        self.info = HeaderUtils.code_header(self.input_csv, self.output_file)
         self._code_data_rows()
 
     def close(self):
@@ -26,34 +27,33 @@ class CoderBase(object):
 
     ####################################################################################################################
 
-    def _code_header(self):
-        dataset = self.input_csv.read_line()[1]
-        time_unit = self.input_csv.read_line()[1]
-        timestamp = self.input_csv.read_line()[1]
-        column_names = self.input_csv.read_line()
-
-        dataset_utils = DatasetUtils('code')
-        print "dataset", dataset_utils.dataset_value(dataset)
-        self.output_file.write_int(dataset_utils.dataset_value(dataset), 4)  # 4 bits for the dataset name
-
-        print "time_unit", dataset_utils.time_unit_value(time_unit)
-        self.output_file.write_int(dataset_utils.time_unit_value(time_unit), 4)  # 4 bits for the time unit
-
-        pass
-
     def _code_data_rows(self):
         while self.input_csv.continue_reading:
             row = self.input_csv.read_line()
-            self._code_row(row)
+            self._code_delta(row[0])
+            self._code_data(row[1:])
             self.count += 1
 
-    def _code_row(self, row):
-        self.parser.check_delta(row[0])
-        for value in row[1:]:
-            alphabet_value = self.parser.csv_to_alphabet(value)
+    def _code_delta(self, delta):
+        int_delta = int(delta)
+        if int_delta >= 2**self.DELTA_BITS:
+            raise StandardError("delta cannot be >= 2**%s and delta=%s" % (str(self.DELTA_BITS), str(int_delta)))
+        self.output_file.write_int(int_delta, self.DELTA_BITS)
+
+    def _code_data(self, row):
+        for value in row:
+            alphabet_value = self._csv_to_alphabet(value)
             self._code_raw(alphabet_value)
 
+    def _csv_to_alphabet(self, x):
+        if x == 'N':
+            return self.info['max'] + 1
+        elif self.info['min'] <= int(x) <= self.info['max']:
+            return int(x)
+        else:
+            raise StandardError("Invalid value in the csv = %s" % x)
+
     def _code_raw(self, value):
-        self.output_file.write_int(value, self.parser.BITS)
+        self.output_file.write_int(value, self.info['bits'])
 
 

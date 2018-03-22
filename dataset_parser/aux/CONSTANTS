@@ -7,3 +7,9 @@ SolarAnywhere=3
 #TIME_UNIT
 seconds=0
 minutes=1
+
+#ALPHABETS
+IRKIS=[0,600]=10
+NOAA-SST=[0,40000]=16
+NOAA-ADCP=[-1100,1900]=12
+SolarAnywhere=[0,1020]=11

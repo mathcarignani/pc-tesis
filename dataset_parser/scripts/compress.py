@@ -11,31 +11,26 @@ from file_utils.csv_utils.csv_writer import CSVWriter
 
 from coders.coder_base import CoderBase
 from coders.decoder_base import DecoderBase
-from coders.pca.coder_pca import CoderPCA
-from coders.pca.decoder_pca import DecoderPCA
-
-from parsers.adcp.parser_adcp import ParserADCP
-from parsers.irkis.parser_vwc import ParserVWC
-from parsers.noaa.parser_noaa import ParserNOAA
-from parsers.solar_anywhere.parser_solar_anywhere import ParserSolarAnywhere
+# from coders.pca.coder_pca import CoderPCA
+# from coders.pca.decoder_pca import DecoderPCA
 
 
 def compress(args):
     # read args
-    parser, coder, coder_params, decoder = args['parser'], args['coder'], args['coder_params'], args['decoder']
+    coder, coder_params, decoder = args['coder'], args['coder_params'], args['decoder']
     input_path, input_filename = args['input_path'], args['input_filename']
     output_path = args['output_path']
     compressed_filename, decompressed_filename = args['compressed_filename'], args['decompressed_filename']
 
     # code
     input_csv = CSVReader(input_path, input_filename, True)
-    c = coder(parser, input_csv, output_path, compressed_filename, coder_params)
+    c = coder(input_csv, output_path, compressed_filename, coder_params)
     c.code_file()
     c.close()
 
     # decode
     output_csv = CSVWriter(output_path, decompressed_filename)
-    d = decoder(parser, output_path, compressed_filename, output_csv, coder_params)
+    d = decoder(output_path, compressed_filename, output_csv, coder_params)
     try:
         d.decode_file()
     except AssertionError as e:
@@ -45,19 +40,24 @@ def compress(args):
 
     # compare
     compare = CSVCompare(input_path, input_filename, output_path, decompressed_filename)
-    compare.compare(coder_params.get('error_threshold') or 0)
+    same_file = compare.compare(coder_params.get('error_threshold') or 0)
 
     # print results
     logger = args['logger']
-    print_results(c, logger, input_path + "/" + input_filename, output_path + "/" + compressed_filename)
+    input_file = input_path + "/" + input_filename
+    compressed_file = output_path + "/" + compressed_filename
+    print_results(c, logger, input_file, compressed_file, same_file)
 
 
-def print_results(c, logger, input_file, compressed_file):
+def print_results(c, logger, input_file, compressed_file, same_file):
     input_size = os.path.getsize(input_file)
     compressed_size = os.path.getsize(compressed_file)
     logger.info
     logger.info("RESULTS")
-    logger.info("--------------------------")
+    if same_file:
+        logger.info("--------------------------(success)")
+    else:
+        logger.info("--------------------------(failure)")
     logger.info(c.get_info())
     logger.info("ORIGINAL FILE:")
     logger.info("-> name: %s" % input_file)
@@ -68,24 +68,50 @@ def print_results(c, logger, input_file, compressed_file):
     logger.info("-> %s%% of original" % PrintUtils.percentage(compressed_size, input_size))
     logger.info
 
-
-def compress_noaa(logger, coder, decoder, coder_params={}):
+def compress_file(logger, input_path, input_filename, coder, decoder, coder_params={}):
     args = {
         'logger': logger,
-        'parser': ParserNOAA,
         'coder': coder,
         'coder_params': coder_params,
         'decoder': decoder,
-        'input_path': '/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017',
-        'input_filename': 'noaa-buoy-201712.csv',
+        'input_path': input_path,
+        'input_filename': input_filename,
         'output_path': '/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output',
-        'compressed_filename': 'noaa-buoy-201712.c.csv',
-        'decompressed_filename': 'noaa-buoy-201712.c.d.csv'
+        'compressed_filename': input_filename.replace('.csv', '.c.csv'),
+        'decompressed_filename': input_filename.replace('.csv', '.c.d.csv')
     }
     compress(args)
 
-logger = setup_logger('log.log', 'log.log')
-compress_noaa(logger, CoderBase, DecoderBase)
+
+def compress_path(logger, input_path, coder, decoder):
+    input_filenames = os.listdir(input_path)
+    input_filenames = [f for f in input_filenames if os.path.isfile(os.path.join(input_path, f))]
+    input_filenames = [f for f in input_filenames if f.endswith(".csv")]
+    for input_filename in input_filenames:
+        compress_file(logger, input_path, input_filename, coder, decoder)
+
+# input_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis"
+# logger = setup_logger('irkis.log', 'irkis.log')
+# compress_path(logger, input_path, CoderBase, DecoderBase)
+
+# input_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017"
+# logger = setup_logger('noaa-sst.log', 'noaa-sst.log')
+# compress_path(logger, input_path, CoderBase, DecoderBase)
+
+# input_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2012"
+# logger = setup_logger('noaa-adcp.log', 'noaa-adcp.log')
+# compress_path(logger, input_path, CoderBase, DecoderBase)
+#
+input_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[4]solar-anywhere/2011"
+logger = setup_logger('solar-anywhere.log', 'solar-anywhere.log')
+compress_path(logger, input_path, CoderBase, DecoderBase)
+
+
+
+
+
+# folders = ['[1]irkis', ['[2]n']]
+
 
 # logger = setup_logger('log.log', 'log.log')
 # compress_noaa(logger, CoderPCA, DecoderPCA, {'error_threshold': 100, 'fixed_window_size': 5})
