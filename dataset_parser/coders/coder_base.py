@@ -18,7 +18,7 @@ class CoderBase(object):
         return "CoderBase"
 
     def code_file(self):
-        self.info = HeaderUtils.code_header(self.input_csv, self.output_file)
+        self.dataset = HeaderUtils.code_header(self.input_csv, self.output_file)
         self._code_data_rows()
 
     def close(self):
@@ -47,13 +47,13 @@ class CoderBase(object):
 
     def _csv_to_alphabet(self, x):
         if x == 'N':
-            return self.info['max'] + 1
-        elif self.info['min'] <= int(x) <= self.info['max']:
-            return int(x)
+            return self.dataset.nan
         else:
-            raise StandardError("Invalid value in the csv = %s" % x)
+            x = int(x)
+            if self.dataset.min <= x <= self.dataset.max:
+                return x + self.dataset.offset
+            else:
+                raise StandardError("Invalid value in the csv = %s. line = %s" % (x, self.count))
 
     def _code_raw(self, value):
-        self.output_file.write_int(value, self.info['bits'])
-
-
+        self.output_file.write_int(value, self.dataset.bits)

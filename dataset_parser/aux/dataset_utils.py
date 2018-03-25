@@ -1,7 +1,15 @@
 import sys
 sys.path.append('../')
 
+from aux.python_utils import inverse_dict
 from file_utils.text_utils.text_file_reader import TextFileReader
+
+
+class Dataset:
+    def __init__(self, dictionary):
+        self.min, self.max, self.bits = int(dictionary['min']), int(dictionary['max']), int(dictionary['bits'])
+        self.offset = -self.min
+        self.nan = self.offset + self.max + 1
 
 
 class DatasetUtils:
@@ -15,8 +23,26 @@ class DatasetUtils:
     # action can be 'code' or 'decode'
     #
     def __init__(self, action):
-        text_file = TextFileReader(self.PATH, self.FILENAME)
+        self.action = action
+        self._load_constants()
 
+    def map_dataset(self, key):
+        dictionary = self.constants['dataset_dictionary']
+        dictionary = dictionary if self.action == 'code' else inverse_dict(dictionary)
+        return dictionary[key]
+
+    def map_time_unit(self, key):
+        dictionary = self.constants['time_unit_dictionary']
+        dictionary = dictionary if self.action == 'code' else inverse_dict(dictionary)
+        return dictionary[key]
+
+    def create_dataset_constants(self, dataset_name):
+        return Dataset(self.constants['alphabets_dictionary'][dataset_name])
+
+    ####################################################################################################################
+
+    def _load_constants(self):
+        text_file = TextFileReader(self.PATH, self.FILENAME)
         self.constants = {
             'dataset_dictionary': {},
             'time_unit_dictionary': {},
@@ -35,29 +61,15 @@ class DatasetUtils:
             elif reading_dataset or reading_time_unit or reading_alphabets:
                 split_line = line.split('=')
                 if len(split_line) == 2:
-                    self._add_key_value(split_line, action, reading_dataset)
+                    self._add_key_value(split_line, reading_dataset)
                 elif len(split_line) == 3:
                     self._add_alphabet_values(split_line)
                 else:
                     reading_dataset, reading_time_unit, reading_alphabets = [False] * 3
 
-    def dataset_value(self, key):
-        return self.constants['dataset_dictionary'][key]
-
-    def time_unit_value(self, key):
-        return self.constants['time_unit_dictionary'][key]
-
-    def alphabet_values(self, dataset_name):
-        return self.constants['alphabets_dictionary'][dataset_name]
-
-    ####################################################################################################################
-
-    def _add_key_value(self, key_value, action, reading_dataset):
-        key, value = key_value
+    def _add_key_value(self, split_line, reading_dataset):
+        key, value = split_line
         value = int(value)
-        if action == 'decode':
-            aux = key
-            key, value = value, aux
         if reading_dataset:
             self.constants['dataset_dictionary'][key] = value
         else:  # reading_time_unit
@@ -66,6 +78,4 @@ class DatasetUtils:
     def _add_alphabet_values(self, split_line):
         dataset_name, min_max, bits = split_line  # key_value = ["IRKIS", "[0,600]", "16"]
         min_value, max_value = min_max.replace("[", "").replace("]", "").split(",")
-        min_value, max_value = int(min_value), int(max_value)
-        self.constants['alphabets_dictionary'][dataset_name] = {'min': min_value, 'max': max_value, 'bits': int(bits)}
-
+        self.constants['alphabets_dictionary'][dataset_name] = {'min': min_value, 'max': max_value, 'bits': bits}

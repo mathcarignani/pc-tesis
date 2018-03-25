@@ -13,7 +13,7 @@ class DecoderBase(object):
         self.row = []
 
     def decode_file(self):
-        self.info, self.columns_count = HeaderUtils.decode_header(self.input_file, self.output_csv)
+        self.dataset, self.columns_count = HeaderUtils.decode_header(self.input_file, self.output_csv)
         self._decode_data_rows()
 
     def close(self):
@@ -40,12 +40,14 @@ class DecoderBase(object):
         return self._alphabet_to_csv(value)
 
     def _alphabet_to_csv(self, y):
-        if y == self.info['max'] + 1:
+        if y == self.dataset.nan:
             return 'N'
-        elif self.info['min'] <= y <= self.info['max']:
-            return y
         else:
-            raise StandardError("Invalid value in the alphabet = %s" % y)
+            y -= self.dataset.offset
+            if self.dataset.min <= y <= self.dataset.max:
+                return y
+            else:
+                raise StandardError("Invalid value in the alphabet = %s" % y)
 
     def _decode_raw(self):
-        return self.input_file.read_int(self.info['bits'])
+        return self.input_file.read_int(self.dataset.bits)

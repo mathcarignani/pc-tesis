@@ -90,18 +90,18 @@ def compress_path(logger, input_path, coder, decoder):
     for input_filename in input_filenames:
         compress_file(logger, input_path, input_filename, coder, decoder)
 
-# input_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis"
-# logger = setup_logger('irkis.log', 'irkis.log')
-# compress_path(logger, input_path, CoderBase, DecoderBase)
+input_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis"
+logger = setup_logger('irkis.log', 'irkis.log')
+compress_path(logger, input_path, CoderBase, DecoderBase)
 
-# input_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017"
-# logger = setup_logger('noaa-sst.log', 'noaa-sst.log')
-# compress_path(logger, input_path, CoderBase, DecoderBase)
+input_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017"
+logger = setup_logger('noaa-sst.log', 'noaa-sst.log')
+compress_path(logger, input_path, CoderBase, DecoderBase)
 
-# input_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2012"
-# logger = setup_logger('noaa-adcp.log', 'noaa-adcp.log')
-# compress_path(logger, input_path, CoderBase, DecoderBase)
-#
+input_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2012"
+logger = setup_logger('noaa-adcp.log', 'noaa-adcp.log')
+compress_path(logger, input_path, CoderBase, DecoderBase)
+
 input_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[4]solar-anywhere/2011"
 logger = setup_logger('solar-anywhere.log', 'solar-anywhere.log')
 compress_path(logger, input_path, CoderBase, DecoderBase)

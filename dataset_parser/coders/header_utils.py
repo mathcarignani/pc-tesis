@@ -16,12 +16,12 @@ class HeaderUtils:
         dataset_utils = DatasetUtils('code')
 
         # DATASET:|NOAA-SST
-        dataset = input_csv.read_line()[1]
-        output_file.write_int(dataset_utils.dataset_value(dataset), 4)  # 4 bits for the dataset name
+        dataset_name = input_csv.read_line()[1]
+        output_file.write_int(dataset_utils.map_dataset(dataset_name), 4)  # 4 bits for the dataset name
 
         # TIME UNIT:|seconds
-        time_unit = input_csv.read_line()[1]
-        output_file.write_int(dataset_utils.time_unit_value(time_unit), 4)  # 4 bits for the time unit
+        time_unit_name = input_csv.read_line()[1]
+        output_file.write_int(dataset_utils.map_time_unit(time_unit_name), 4)  # 4 bits for the time unit
 
         # FIRST TIMESTAMP:|2017-01-01 00:00:00
         timestamp = input_csv.read_line()[1]
@@ -32,19 +32,19 @@ class HeaderUtils:
         column_names_array = input_csv.read_line()[1:]
         cls.code_column_names(column_names_array, output_file)
 
-        return dataset_utils.alphabet_values(dataset)  # {'min': min_value, 'max': max_value, 'bits': bits}
+        return dataset_utils.create_dataset_constants(dataset_name)
 
     @classmethod
     def decode_header(cls, input_file, output_csv):
         dataset_utils = DatasetUtils('decode')
 
-        coded_dataset = input_file.read_int(4)  # 4 bits for the dataset name
-        dataset = dataset_utils.dataset_value(coded_dataset)
-        output_csv.write_row(['DATASET:', dataset])
+        dataset_key = input_file.read_int(4)  # 4 bits for the dataset name
+        dataset_name = dataset_utils.map_dataset(dataset_key)
+        output_csv.write_row(['DATASET:', dataset_name])
 
-        coded_time_unit = input_file.read_int(4)  # 4 bits for the time unit
-        time_unit = dataset_utils.time_unit_value(coded_time_unit)
-        output_csv.write_row(['TIME UNIT:', time_unit])
+        time_unit_key = input_file.read_int(4)  # 4 bits for the time unit
+        time_unit_name = dataset_utils.map_time_unit(time_unit_key)
+        output_csv.write_row(['TIME UNIT:', time_unit_name])
 
         seconds = input_file.read_int(32)  # 32 bits for the timestamp
         timestamp = cls.seconds_to_date_str(seconds)
@@ -54,7 +54,7 @@ class HeaderUtils:
         output_csv.write_row(['Time Delta'] + column_names_array)
 
         columns_count = len(column_names_array)
-        return dataset_utils.alphabet_values(dataset), columns_count  # {'min': min_value, 'max': max_value, 'bits': bits}
+        return dataset_utils.create_dataset_constants(dataset_name), columns_count
 
     @classmethod
     def code_column_names(cls, column_names_array, output_file):
