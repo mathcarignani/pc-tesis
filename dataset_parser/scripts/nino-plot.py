@@ -43,9 +43,9 @@ def print_data(csv_file1, csv_file2, dictionary, count, last_timestamp, buoy_cou
     if change:
         csv_file1.write_row([])  # separator empty row in csv_file1
         row = dictionary_row(buoy_dictionary, count, last_timestamp, buoy_count)
-        diff_lat, diff_long = row[9:11]
-        if abs(diff_lat) >= 1 or abs(diff_long) >= 5:  # ony print weird scenarios
-            csv_file2.write_row(row)
+        # diff_lat, diff_long = row[9:11]
+        # if abs(diff_lat) >= 1 or abs(diff_long) >= 5:  # ony print weird scenarios
+        csv_file2.write_row(row)
 
 
 def run_loop(text_file, csv_file1, csv_file2, parser):
@@ -69,7 +69,8 @@ def run_loop(text_file, csv_file1, csv_file2, parser):
                 update_dictionary(dictionary, lat, longi)
                 update_dictionary(buoy_dictionary, lat, longi)
             else:
-                if timestamp < last_timestamp:
+                change_buoy = count in [142692, 144778]  # original buoys 59 and 61
+                if timestamp < last_timestamp or change_buoy:
                     print_data(csv_file1, csv_file2, dictionary, count-1, last_timestamp, buoy_count, buoy_dictionary, True)
                     buoy_dictionary = new_dictionary(count, timestamp, lat, longi)
                     buoy_count += 1
