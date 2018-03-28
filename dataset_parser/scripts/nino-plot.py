@@ -95,6 +95,7 @@ class Script:
         self.buoy_dictionary = {}
 
     def run_loop(self):
+        min_max_values = [None] * 6
         while self.text_file.continue_reading:  # and self.count < 10289:
             line = self.text_file.read_line()
             data = self.parser.parse_data(line)  # {'timestamp': timestamp, 'values': data}
@@ -102,14 +103,33 @@ class Script:
             lat, longi = data['values'][0:2]
             ss_temp = data['values'][6]
 
-            self.iteration(timestamp, lat, longi)
-            self.df_utils.add_row(timestamp, [lat, longi, ss_temp])
+            # calculate min and max for each column
+            self.update_min_max_values(min_max_values, [lat, longi, ss_temp])
 
-            self.last_timestamp = timestamp
-            self.count += 1
+            # self.iteration(timestamp, lat, longi)
+            # self.df_utils.add_row(timestamp, [lat, longi, ss_temp])
+            #
+            # self.last_timestamp = timestamp
+            # self.count += 1
+        print min_max_values
+        # self.print_data(True)
+        # self.df_utils.buoy_end()
 
-        self.print_data(True)
-        self.df_utils.buoy_end()
+    @classmethod
+    def update_min_max_values(cls, min_max_values, values):
+        for idx, val in enumerate(values):
+            if val != 'N':
+                val = float(val)
+                if val > 0:
+                    min_index, max_index = idx*2, idx*2 + 1
+                    min_value, max_value = min_max_values[min_index], min_max_values[max_index]
+                    if min_value is None:  # and max_value is None:
+                        min_max_values[min_index] = val
+                        min_max_values[max_index] = val
+                    elif val < min_value:
+                        min_max_values[min_index] = val
+                    elif val > max_value:
+                        min_max_values[max_index] = val
 
     def iteration(self, timestamp, lat, longi):
         if self.last_timestamp is None:  # first time the method is called

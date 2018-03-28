@@ -11,6 +11,7 @@ class CoderBase(object):
     def __init__(self, input_csv, output_path, output_filename, *_):
         self.input_csv = input_csv
         self.output_file = BitStreamWriter(output_path, output_filename)
+        self.dataset = None  # Dataset object
         self.count = 0
 
     @classmethod
@@ -41,11 +42,12 @@ class CoderBase(object):
         self.output_file.write_int(int_delta, self.DELTA_BITS)
 
     def _code_data(self, row):
-        for value in row:
-            alphabet_value = self._csv_to_alphabet(value)
+        for col_index, value in enumerate(row):
+            alphabet_value = self._csv_to_alphabet(value, col_index)
             self._code_raw(alphabet_value)
 
-    def _csv_to_alphabet(self, x):
+    def _csv_to_alphabet(self, x, col_index):
+        self.dataset.set_column(col_index)
         if x == 'N':
             return self.dataset.nan
         else:

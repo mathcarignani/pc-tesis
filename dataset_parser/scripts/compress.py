@@ -55,7 +55,7 @@ def print_results(c, logger, input_file, compressed_file, same_file):
     logger.info
     logger.info("RESULTS")
     if same_file:
-        logger.info("--------------------------(success)")
+        logger.info("--------------------------(same file!)")
     else:
         logger.info("--------------------------(failure)")
     logger.info(c.get_info())
@@ -67,6 +67,7 @@ def print_results(c, logger, input_file, compressed_file, same_file):
     logger.info("-> size (bytes): %s" % "{:,}".format(compressed_size))
     logger.info("-> %s%% of original" % PrintUtils.percentage(compressed_size, input_size))
     logger.info
+
 
 def compress_file(logger, input_path, input_filename, coder, decoder, coder_params={}):
     args = {
@@ -104,6 +105,10 @@ compress_path(logger, input_path, CoderBase, DecoderBase)
 
 input_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[4]solar-anywhere/2011"
 logger = setup_logger('solar-anywhere.log', 'solar-anywhere.log')
+compress_path(logger, input_path, CoderBase, DecoderBase)
+
+input_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino"
+logger = setup_logger('el-nino.log', 'el-nino.log')
 compress_path(logger, input_path, CoderBase, DecoderBase)
 
 

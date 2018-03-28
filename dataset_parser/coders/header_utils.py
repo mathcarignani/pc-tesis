@@ -11,6 +11,10 @@ class HeaderUtils:
     START_DATE = datetime.strptime("1900-01-01 00:00:00", DATE_FORMAT)
     END_DATE = datetime.strptime("2036-02-07 06:28:16", DATE_FORMAT)
 
+    #
+    # This method codes the header data from the input_csv file into the output_file.
+    # It returns a Dataset object.
+    #
     @classmethod
     def code_header(cls, input_csv, output_file):
         dataset_utils = DatasetUtils('code')
@@ -34,6 +38,10 @@ class HeaderUtils:
 
         return dataset_utils.create_dataset_constants(dataset_name)
 
+    #
+    # This method decodes the header data from the input_file into the output_csv file.
+    # It returns an array with a Dataset object and the number of columns (ignoring the 'Time Delta' column).
+    #
     @classmethod
     def decode_header(cls, input_file, output_csv):
         dataset_utils = DatasetUtils('decode')

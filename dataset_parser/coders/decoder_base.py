@@ -10,6 +10,8 @@ class DecoderBase(object):
     def __init__(self, input_path, input_filename, output_csv, *_):
         self.input_file = BitStreamReader(input_path, input_filename)
         self.output_csv = output_csv
+        self.dataset = None  # Dataset object
+        self.columns_count = None
         self.row = []
 
     def decode_file(self):
@@ -36,6 +38,7 @@ class DecoderBase(object):
         return self.input_file.read_int(CoderBase.DELTA_BITS)
 
     def _decode_data(self):
+        self.dataset.set_column(len(self.row) - 1)
         value = self._decode_raw()
         return self._alphabet_to_csv(value)
 

@@ -6,6 +6,22 @@ from file_utils.text_utils.text_file_reader import TextFileReader
 
 
 class Dataset:
+    def __init__(self, array):
+        self.column_code_array = []
+        for dictionary in array:
+            column_code = ColumnCode(dictionary)
+            self.column_code_array.append(column_code)
+        self.column_code_array_length = len(self.column_code_array)
+        self.current_column = None
+
+    def set_column(self, column_number):
+        column_code = self.column_code_array[column_number % self.column_code_array_length]
+        self.min, self.max, self.bits = column_code.min, column_code.max, column_code.bits
+        self.offset = column_code.offset
+        self.nan = column_code.nan
+
+
+class ColumnCode:
     def __init__(self, dictionary):
         self.min, self.max, self.bits = int(dictionary['min']), int(dictionary['max']), int(dictionary['bits'])
         self.offset = -self.min
@@ -75,7 +91,23 @@ class DatasetUtils:
         else:  # reading_time_unit
             self.constants['time_unit_dictionary'][key] = value
 
+    #
+    # split_line examples:
+    # ["IRKIS", "[0,600]", "16"]
+    # ["ElNino", "[-9000,9000],[-18000,18000],[0,4000]", "15,16,12"]
+    #
     def _add_alphabet_values(self, split_line):
-        dataset_name, min_max, bits = split_line  # key_value = ["IRKIS", "[0,600]", "16"]
-        min_value, max_value = min_max.replace("[", "").replace("]", "").split(",")
-        self.constants['alphabets_dictionary'][dataset_name] = {'min': min_value, 'max': max_value, 'bits': bits}
+        dataset_name, min_max_array, bits_array = split_line
+        min_max_array_split = min_max_array.split('],[')
+        bits_array_split = bits_array.split(',')
+
+        if len(min_max_array_split) != len(bits_array_split):
+            raise(StandardError, 'Both arrays (min_max_array and bits_array) must have the same length.')
+
+        alphabet_values_array = []
+        for idx, val in enumerate(min_max_array_split):
+            min_value, max_value = val.replace("[", "").replace("]", "").split(",")
+            bits = bits_array_split[idx]
+            alphabet_values_array.append({'min': min_value, 'max': max_value, 'bits': bits})
+
+        self.constants['alphabets_dictionary'][dataset_name] = alphabet_values_array
