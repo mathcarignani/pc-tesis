@@ -34,16 +34,17 @@ def modify_csv(path, old_file):
 
 
 def first_rows(input_file, output_file):
-    output_file.write_row(['DATASET:', 'NOAA-SST'])  # DATASET:| IRKIS
-    output_file.write_row(['TIME UNIT:', 'seconds'])  # TIME UNIT:| minutes
+    output_file.write_row(['DATASET:', 'ElNino'])  # DATASET:| IRKIS
+    output_file.write_row(['TIME UNIT:', 'hours'])  # TIME UNIT:| minutes
 
-    row1, row2 = input_file.read_line(), input_file.read_line()
+    row1 = input_file.read_line()
+    row2, row3 = input_file.read_line(), input_file.read_line()
+    output_file.write_row(['FIRST TIMESTAMP:', row3[0]])  # FIRST TIMESTAMP:| 2010-10-01 00:00:00
 
-    row3, row4 = input_file.read_line(), input_file.read_line()
-    output_file.write_row(['FIRST TIMESTAMP:', row3[1]])  # FIRST TIMESTAMP:| 2010-10-01 00:00:00
-
-    output_file.write_row(remove_commas(row4))
-
+    row2[0] = 'Time Delta'
+    output_file.write_row(row2)
+    row3[0] = 0
+    output_file.write_row(row3)
     # row[0] = "Time Delta"
     # output_file.write_row(remove_commas(row3))  # Min Delta|Col1|Col2| ... |ColN
 
@@ -52,9 +53,9 @@ def first_rows(input_file, output_file):
 
 
 def remove_commas(row):
-    new_row = [value.split('.')[0] for value in row]
-    new_row = [value.split('000')[0] for value in new_row]
-    return new_row
+    # new_row = [value.split('.')[0] for value in row]
+    # new_row = [value.split('000')[0] for value in new_row]
+    return row
 
 
 def create_new_row(row):
@@ -65,14 +66,11 @@ def create_new_row(row):
 
 
 def convert_to_minutes(delta):
-    return str(int(delta)*60)
-    # hours, minutes, seconds = delta.split(':')
-    # return str(60*60*int(hours) + 60*int(minutes) + int(seconds))
-
-    # if seconds != '00':
-    #     raise "SECONDS MUST BE '00'!!"
-    # else:
-    #     return str(60*int(hours) + int(minutes))
+    # return str(int(delta))
+    hours, minutes, seconds = delta.split(':')
+    if minutes != '00' or seconds != '00':
+        raise(StandardError, "ERROR!!")
+    return int(hours)
 
 
 def run_script(dataset_folder):
@@ -86,10 +84,11 @@ def run_script(dataset_folder):
 
 
 # run_script('[1]irkis')
-run_script('[2]noaa-sst/months/2017')
+# run_script('[2]noaa-sst/months/2017')
 # run_script('[4]solar-anywhere/2011')
 # run_script('[4]solar-anywhere/2012')
 # run_script('[4]solar-anywhere/2013')
 # run_script('[4]solar-anywhere/2014')
+run_script('[5]el-nino')
 
 

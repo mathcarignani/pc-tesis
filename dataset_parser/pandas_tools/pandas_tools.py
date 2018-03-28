@@ -77,7 +77,7 @@ class PandasTools:
 
     @classmethod
     def map_value(cls, value):
-        return cls.NO_DATA if pd.isnull(value) else int(round(float(value)*1000, 0))
+        return cls.NO_DATA if pd.isnull(value) else int(round(float(value)*100, 0))
 
     def print_stats(self):
         total_rows, nan_rows = self.rows_count(), self.nan_rows_count()

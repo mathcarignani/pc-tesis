@@ -43,7 +43,7 @@ class ParserElNino(parser_base.ParserBase):
         return {'timestamp': timestamp, 'values': data}
 
     def _map_value(self, value):
-        return ParserElNino.NO_DATA if value == self.nodata else float(value)  # round(float(value)*1000, 0)
+        return ParserElNino.NO_DATA if value == self.nodata else float(value)
 
     @staticmethod
     def plot(path, filename, df):
