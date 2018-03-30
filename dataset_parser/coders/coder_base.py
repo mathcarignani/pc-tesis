@@ -12,11 +12,9 @@ class CoderBase(object):
         self.input_csv = input_csv
         self.output_file = BitStreamWriter(output_path, output_filename)
         self.dataset = None  # Dataset object
-        self.count = 0
 
-    @classmethod
-    def get_info(cls):
-        return "CoderBase"
+    def get_info(self):
+        raise NotImplementedError
 
     def code_file(self):
         self.dataset = HeaderUtils.code_header(self.input_csv, self.output_file)
@@ -29,11 +27,7 @@ class CoderBase(object):
     ####################################################################################################################
 
     def _code_data_rows(self):
-        while self.input_csv.continue_reading:
-            row = self.input_csv.read_line()
-            self._code_delta(row[0])
-            self._code_data(row[1:])
-            self.count += 1
+        raise NotImplementedError
 
     def _code_delta(self, delta):
         int_delta = int(delta)
@@ -41,13 +35,7 @@ class CoderBase(object):
             raise StandardError("delta cannot be >= 2**%s and delta=%s" % (str(self.DELTA_BITS), str(int_delta)))
         self.output_file.write_int(int_delta, self.DELTA_BITS)
 
-    def _code_data(self, row):
-        for col_index, value in enumerate(row):
-            alphabet_value = self._csv_to_alphabet(value, col_index)
-            self._code_raw(alphabet_value)
-
-    def _csv_to_alphabet(self, x, col_index):
-        self.dataset.set_column(col_index)
+    def _csv_to_alphabet(self, x, row_index, col_index):
         if x == 'N':
             return self.dataset.nan
         else:
@@ -55,7 +43,9 @@ class CoderBase(object):
             if self.dataset.min <= x <= self.dataset.max:
                 return x + self.dataset.offset
             else:
-                raise StandardError("Invalid value in the csv = %s. line = %s" % (x, self.count))
+                error_str = ("ERROR: min = %s <= x = %s <= max = %s\n" % (self.dataset.min, x, self.dataset.max)) +\
+                            ("POSITION = [%s,%s]" % (row_index, col_index))
+                raise StandardError(error_str)
 
     def _code_raw(self, value):
         self.output_file.write_int(value, self.dataset.bits)

@@ -12,7 +12,6 @@ class DecoderBase(object):
         self.output_csv = output_csv
         self.dataset = None  # Dataset object
         self.columns_count = None
-        self.row = []
 
     def decode_file(self):
         self.dataset, self.columns_count = HeaderUtils.decode_header(self.input_file, self.output_csv)
@@ -25,22 +24,10 @@ class DecoderBase(object):
     ####################################################################################################################
 
     def _decode_data_rows(self):
-        count = 0  # TODO: count variable is not necessary but it is useful for debugging
-        while self.input_file.continue_reading:  # and count < 20:
-            decoded_val = self._decode_delta() if len(self.row) == 0 else self._decode_data()
-            self.row.append(decoded_val)
-            if len(self.row) == self.columns_count + 1:
-                self.output_csv.write_row(self.row)
-                count += 1
-                self.row = []
+        raise NotImplementedError
 
     def _decode_delta(self):
         return self.input_file.read_int(CoderBase.DELTA_BITS)
-
-    def _decode_data(self):
-        self.dataset.set_column(len(self.row) - 1)
-        value = self._decode_raw()
-        return self._alphabet_to_csv(value)
 
     def _alphabet_to_csv(self, y):
         if y == self.dataset.nan:

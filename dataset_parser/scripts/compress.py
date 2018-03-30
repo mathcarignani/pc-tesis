@@ -9,10 +9,10 @@ from file_utils.csv_utils.csv_compare import CSVCompare
 from file_utils.csv_utils.csv_reader import CSVReader
 from file_utils.csv_utils.csv_writer import CSVWriter
 
-from coders.coder_base import CoderBase
-from coders.decoder_base import DecoderBase
-# from coders.pca.coder_pca import CoderPCA
-# from coders.pca.decoder_pca import DecoderPCA
+from coders.basic.coder_basic import CoderBasic
+from coders.basic.decoder_basic import DecoderBasic
+from coders.pca.coder_pca import CoderPCA
+from coders.pca.decoder_pca import DecoderPCA
 
 
 def compress(args):
@@ -84,33 +84,36 @@ def compress_file(logger, input_path, input_filename, coder, decoder, coder_para
     compress(args)
 
 
-def compress_path(logger, input_path, coder, decoder):
+def compress_path(logger, input_path, coder, decoder, coder_params={}):
     input_filenames = os.listdir(input_path)
     input_filenames = [f for f in input_filenames if os.path.isfile(os.path.join(input_path, f))]
     input_filenames = [f for f in input_filenames if f.endswith(".csv")]
     for input_filename in input_filenames:
-        compress_file(logger, input_path, input_filename, coder, decoder)
-
-input_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis"
-logger = setup_logger('irkis.log', 'irkis.log')
-compress_path(logger, input_path, CoderBase, DecoderBase)
-
-input_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017"
-logger = setup_logger('noaa-sst.log', 'noaa-sst.log')
-compress_path(logger, input_path, CoderBase, DecoderBase)
-
-input_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2012"
-logger = setup_logger('noaa-adcp.log', 'noaa-adcp.log')
-compress_path(logger, input_path, CoderBase, DecoderBase)
-
-input_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[4]solar-anywhere/2011"
-logger = setup_logger('solar-anywhere.log', 'solar-anywhere.log')
-compress_path(logger, input_path, CoderBase, DecoderBase)
+        compress_file(logger, input_path, input_filename, coder, decoder, coder_params)
+#
+# input_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis"
+# logger = setup_logger('irkis.log', 'irkis.log')
+# compress_path(logger, input_path, CoderBasic, DecoderBasic)
+#
+# input_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017"
+# logger = setup_logger('noaa-sst.log', 'noaa-sst.log')
+# compress_path(logger, input_path, CoderBasic, DecoderBasic)
+#
+# input_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2012"
+# logger = setup_logger('noaa-adcp.log', 'noaa-adcp.log')
+# compress_path(logger, input_path, CoderBasic, DecoderBasic)
+#
+# input_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[4]solar-anywhere/2011"
+# logger = setup_logger('solar-anywhere.log', 'solar-anywhere.log')
+# compress_path(logger, input_path, CoderBasic, DecoderBasic)
+#
+# input_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino"
+# logger = setup_logger('el-nino.log', 'el-nino.log')
+# compress_path(logger, input_path, CoderBasic, DecoderBasic)
 
 input_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino"
 logger = setup_logger('el-nino.log', 'el-nino.log')
-compress_path(logger, input_path, CoderBase, DecoderBase)
-
+compress_path(logger, input_path, CoderPCA, DecoderPCA, {'error_threshold': 0, 'fixed_window_size': 5})
 
 
 

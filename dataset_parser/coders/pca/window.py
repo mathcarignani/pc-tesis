@@ -1,14 +1,14 @@
 class Window(object):
     #
     # There are three options for the window size parameters:
-    # (1) If fixed_window_size == x and max_window_size is None => the window can have exactly x elements
-    # (2) If fixed_window_size is None and max_window_size == x => the window can have up to x elements.
-    # (3) If fixed_window_size is None and max_window_size is None => the window can have as much elements as possible.
+    # (1) fixed_window_size == x and max_window_size is None => the window can have exactly x elements
+    # (2) fixed_window_size is None and max_window_size == x => the window can have up to x elements.
+    # (3) fixed_window_size is None and max_window_size is None => the window can have as much elements as possible.
     #
     def __init__(self, error_threshold, fixed_window_size, none, max_window_size=None):
         self.error_threshold = error_threshold
         self.fixed_window_size = fixed_window_size
-        self.none = none
+        self.none = none  # This is the value that represents nodata
         self.max_window_size = max_window_size
         self.clear()
 

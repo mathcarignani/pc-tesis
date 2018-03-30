@@ -7,13 +7,24 @@ class CSVReader:
     def __init__(self, path, filename, progress=False):
         self.path, self.filename = path, filename
         self.full_path = full_path(path, filename)
-        self.continue_reading = True
         self.file = open(self.full_path, "r")
         self.csv_reader = csv.reader(self.file)
         self.total_lines = self.total_lines_()
+        self.continue_reading = True
         self.current_line_count = 0
         self.progress_bar = None if not progress else self.new_progress_bar()
         self.previous_row = next(self.csv_reader, None)
+
+    def goto_row(self, row_number):
+        if row_number >= self.total_lines:
+            raise(StandardError, "PRE: row_number < self.total_lines failed.")
+        self.file.seek(0)  # https://stackoverflow.com/a/431771/4547232
+        self.continue_reading = True
+        self.current_line_count = 0
+        self.progress_bar = None
+        self.previous_row = next(self.csv_reader, None)
+        for _ in xrange(row_number):
+            self.read_line()
 
     # PRE: self.continue_reading
     def read_line(self):

@@ -1,11 +1,10 @@
 from .. import decoder_base
-from pca import PCA
 
 
-class DecoderPCA(decoder_base.DecoderBase, PCA):
+class DecoderPCA(decoder_base.DecoderBase):
     def __init__(self, parser, input_path, input_filename, output_csv, row_length, params):
         super(DecoderPCA, self).__init__(parser, input_path, input_filename, output_csv, row_length)
-        PCA.__init__(self, self.parser.NONE, params)
+        # PCA.__init__(self, self.parser.NONE, params)
         self.current_column = 0  # between 0 and row_length - 1
         self.window_matrix = []
 
