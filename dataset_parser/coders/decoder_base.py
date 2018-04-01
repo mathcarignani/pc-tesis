@@ -11,10 +11,12 @@ class DecoderBase(object):
         self.input_file = BitStreamReader(input_path, input_filename)
         self.output_csv = output_csv
         self.dataset = None  # Dataset object
-        self.columns_count = None
+        self.data_columns_count = None
+        self.data_rows_count = None
 
     def decode_file(self):
-        self.dataset, self.columns_count = HeaderUtils.decode_header(self.input_file, self.output_csv)
+        self.dataset, self.data_columns_count = HeaderUtils.decode_header(self.input_file, self.output_csv)
+        self._decode_data_rows_count()
         self._decode_data_rows()
 
     def close(self):
@@ -23,21 +25,26 @@ class DecoderBase(object):
 
     ####################################################################################################################
 
+    def _decode_data_rows_count(self):
+        self.data_rows_count = self.input_file.read_int(24)  # 24 bits for the data rows count
+
     def _decode_data_rows(self):
         raise NotImplementedError
 
-    def _decode_delta(self):
-        return self.input_file.read_int(CoderBase.DELTA_BITS)
-
-    def _alphabet_to_csv(self, y):
+    # def _alphabet_to_csv(self, y, row_index, col_index):
+    def _decode_value(self, y, row_index, col_index):
         if y == self.dataset.nan:
             return 'N'
-        else:
-            y -= self.dataset.offset
-            if self.dataset.min <= y <= self.dataset.max:
-                return y
-            else:
-                raise StandardError("Invalid value in the alphabet = %s" % y)
+
+        y -= self.dataset.offset
+        if self.dataset.min <= y <= self.dataset.max:
+            return y
+
+        CoderBase.raise_range_error(self.dataset.min, self.dataset.max, y, row_index, col_index)
 
     def _decode_raw(self):
         return self.input_file.read_int(self.dataset.bits)
+
+    def _decode_value_raw(self, row_index, col_index):
+        value = self._decode_raw()
+        return self._decode_value(value, row_index, col_index)

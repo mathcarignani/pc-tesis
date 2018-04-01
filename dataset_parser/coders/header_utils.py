@@ -61,8 +61,8 @@ class HeaderUtils:
         column_names_array = cls.decode_column_names(input_file)
         output_csv.write_row(['Time Delta'] + column_names_array)
 
-        columns_count = len(column_names_array)
-        return dataset_utils.create_dataset_constants(dataset_name), columns_count
+        data_columns_count = len(column_names_array)
+        return dataset_utils.create_dataset_constants(dataset_name), data_columns_count
 
     @classmethod
     def code_column_names(cls, column_names_array, output_file):

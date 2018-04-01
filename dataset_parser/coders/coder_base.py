@@ -6,7 +6,7 @@ from file_utils.bit_stream.bit_stream_writer import BitStreamWriter
 
 
 class CoderBase(object):
-    DELTA_BITS = 17
+    DELTA_BITS = 17  # TODO: add to the constants file
 
     def __init__(self, input_csv, output_path, output_filename, *_):
         self.input_csv = input_csv
@@ -18,6 +18,7 @@ class CoderBase(object):
 
     def code_file(self):
         self.dataset = HeaderUtils.code_header(self.input_csv, self.output_file)
+        self._code_data_rows_count()
         self._code_data_rows()
 
     def close(self):
@@ -26,26 +27,41 @@ class CoderBase(object):
 
     ####################################################################################################################
 
+    def _code_data_rows_count(self):
+        data_rows_count = self.input_csv.total_lines - 4
+        self.output_file.write_int(data_rows_count, 24)  # 24 bits for the data rows count
+
     def _code_data_rows(self):
         raise NotImplementedError
 
-    def _code_delta(self, delta):
-        int_delta = int(delta)
-        if int_delta >= 2**self.DELTA_BITS:
-            raise StandardError("delta cannot be >= 2**%s and delta=%s" % (str(self.DELTA_BITS), str(int_delta)))
-        self.output_file.write_int(int_delta, self.DELTA_BITS)
-
-    def _csv_to_alphabet(self, x, row_index, col_index):
+    #
+    # This method maps a value read in the csv file into an integer to be written in the output file.
+    # It also checks the minimum and maximum constraints.
+    #
+    def _code_value(self, x, row_index, col_index):
         if x == 'N':
             return self.dataset.nan
-        else:
-            x = int(x)
-            if self.dataset.min <= x <= self.dataset.max:
-                return x + self.dataset.offset
-            else:
-                error_str = ("ERROR: min = %s <= x = %s <= max = %s\n" % (self.dataset.min, x, self.dataset.max)) +\
-                            ("POSITION = [%s,%s]" % (row_index, col_index))
-                raise StandardError(error_str)
+
+        x = int(x)
+        if self.dataset.min <= x <= self.dataset.max:
+            return x + self.dataset.offset
+
+        CoderBase.raise_range_error(self.dataset.min, self.dataset.max, x, row_index, col_index)
 
     def _code_raw(self, value):
         self.output_file.write_int(value, self.dataset.bits)
+
+    def _code_value_raw(self, x, row_index, col_index):
+        value = self._code_value(x, row_index, col_index)
+        return self._code_raw(value)
+
+    ####################################################################################################################
+
+    #
+    # TODO: move this code to a utils module
+    #
+    @classmethod
+    def raise_range_error(cls, minimum, maximum, x, row_index, col_index):
+        error_str = ("ERROR: min = %s <= x = %s <= max = %s\n" % (minimum, x, maximum)) +\
+                    ("POSITION = [%s,%s]" % (row_index, col_index))
+        raise StandardError(error_str)

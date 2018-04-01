@@ -14,11 +14,19 @@ class Dataset:
         self.column_code_array_length = len(self.column_code_array)
         self.current_column = None
 
-    def set_column(self, column_number):
-        column_code = self.column_code_array[column_number % self.column_code_array_length]
+    def set_column(self, column_index):
+        if column_index == 0:  # time delta column
+            array_index = 0
+        else:  # data column
+            array_index = column_index % (self.column_code_array_length - 1)
+            if array_index == 0:
+                array_index = self.column_code_array_length - 1
+        column_code = self.column_code_array[array_index]
+
         self.min, self.max, self.bits = column_code.min, column_code.max, column_code.bits
         self.offset = column_code.offset
         self.nan = column_code.nan
+        # print column_number, array_index
 
 
 class ColumnCode:

@@ -69,7 +69,7 @@ def print_results(c, logger, input_file, compressed_file, same_file):
     logger.info
 
 
-def compress_file(logger, input_path, input_filename, coder, decoder, coder_params={}):
+def compress_file(logger, input_path, input_filename, coder, decoder, output_folder, coder_params={}):
     args = {
         'logger': logger,
         'coder': coder,
@@ -77,57 +77,41 @@ def compress_file(logger, input_path, input_filename, coder, decoder, coder_para
         'decoder': decoder,
         'input_path': input_path,
         'input_filename': input_filename,
-        'output_path': '/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output',
+        'output_path': "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/" + output_folder,
         'compressed_filename': input_filename.replace('.csv', '.c.csv'),
         'decompressed_filename': input_filename.replace('.csv', '.c.d.csv')
     }
     compress(args)
 
 
-def compress_path(logger, input_path, coder, decoder, coder_params={}):
+def compress_path(logger, input_path, coder, decoder, output_folder, coder_params={}):
     input_filenames = os.listdir(input_path)
     input_filenames = [f for f in input_filenames if os.path.isfile(os.path.join(input_path, f))]
     input_filenames = [f for f in input_filenames if f.endswith(".csv")]
     for input_filename in input_filenames:
-        compress_file(logger, input_path, input_filename, coder, decoder, coder_params)
+        compress_file(logger, input_path, input_filename, coder, decoder, output_folder, coder_params)
+
+
+# def coder_basic(folder, logger_name):
+#     input_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/" + folder
+#     logger = setup_logger(logger_name, logger_name)
+#     compress_path(logger, input_path, CoderBasic, DecoderBasic, 'coder_basic')
 #
-# input_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis"
-# logger = setup_logger('irkis.log', 'irkis.log')
-# compress_path(logger, input_path, CoderBasic, DecoderBasic)
-#
-# input_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017"
-# logger = setup_logger('noaa-sst.log', 'noaa-sst.log')
-# compress_path(logger, input_path, CoderBasic, DecoderBasic)
-#
-# input_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2012"
-# logger = setup_logger('noaa-adcp.log', 'noaa-adcp.log')
-# compress_path(logger, input_path, CoderBasic, DecoderBasic)
-#
-# input_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[4]solar-anywhere/2011"
-# logger = setup_logger('solar-anywhere.log', 'solar-anywhere.log')
-# compress_path(logger, input_path, CoderBasic, DecoderBasic)
-#
-# input_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino"
-# logger = setup_logger('el-nino.log', 'el-nino.log')
-# compress_path(logger, input_path, CoderBasic, DecoderBasic)
-
-input_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino"
-logger = setup_logger('el-nino.log', 'el-nino.log')
-compress_path(logger, input_path, CoderPCA, DecoderPCA, {'error_threshold': 0, 'fixed_window_size': 5})
+# coder_basic("[1]irkis", 'irkis.log')
+# coder_basic("[2]noaa-sst/months/2017", 'noaa-sst.log')
+# coder_basic("[3]noaa-adcp", 'noaa-adcp')
+# coder_basic("[4]solar-anywhere/2011", 'solar-anywhere.log')
+# coder_basic("[5]el-nino", 'el-nino.log')
 
 
+def coder_pca(folder, logger_name):
+    input_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/" + folder
+    logger = setup_logger(logger_name, logger_name)
+    compress_path(logger, input_path, CoderPCA, DecoderPCA, 'coder_pca', {'error_threshold': 0, 'fixed_window_size': 20})
 
+coder_pca("[1]irkis", 'irkis.log')
+coder_pca("[2]noaa-sst/months/2017", 'noaa-sst.log')
+coder_pca("[3]noaa-adcp", 'noaa-adcp')
+coder_pca("[4]solar-anywhere/2011", 'solar-anywhere.log')
+coder_pca("[5]el-nino", 'el-nino.log')
 
-# folders = ['[1]irkis', ['[2]n']]
-
-
-# logger = setup_logger('log.log', 'log.log')
-# compress_noaa(logger, CoderPCA, DecoderPCA, {'error_threshold': 100, 'fixed_window_size': 5})
-# compress_noaa(logger, CoderPCA, DecoderPCA, {'error_threshold': 100, 'fixed_window_size': 10})
-# compress_noaa(logger, CoderPCA, DecoderPCA, {'error_threshold': 100, 'fixed_window_size': 20})
-# compress_noaa(logger, CoderPCA, DecoderPCA, {'error_threshold': 50, 'fixed_window_size': 5})
-# compress_noaa(logger, CoderPCA, DecoderPCA, {'error_threshold': 50, 'fixed_window_size': 10})
-# compress_noaa(logger, CoderPCA, DecoderPCA, {'error_threshold': 50, 'fixed_window_size': 20})
-# compress_noaa(logger, CoderPCA, DecoderPCA, {'error_threshold': 10, 'fixed_window_size': 5})
-# compress_noaa(logger, CoderPCA, DecoderPCA, {'error_threshold': 10, 'fixed_window_size': 10})
-# compress_noaa(logger, CoderPCA, DecoderPCA, {'error_threshold': 10, 'fixed_window_size': 20})

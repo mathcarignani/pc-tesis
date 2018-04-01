@@ -1,0 +1,168 @@
+RESULTS
+--------------------------(same file!)
+CoderBase
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 4,686,665
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/el-nino.c.csv
+-> size (bytes): 2,686,486
+-> 57.32% of original
+RESULTS
+--------------------------(same file!)
+CoderBase
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 4,686,665
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/el-nino.c.csv
+-> size (bytes): 2,686,486
+-> 57.32% of original
+RESULTS
+--------------------------(same file!)
+CoderBase
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/2/el-nino.csv
+-> size (bytes): 668,799
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/el-nino.c.csv
+-> size (bytes): 581,720
+-> 86.98% of original
+RESULTS
+--------------------------(same file!)
+CoderBase
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/2/el-nino.csv
+-> size (bytes): 668,799
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/el-nino.c.csv
+-> size (bytes): 581,720
+-> 86.98% of original
+RESULTS
+--------------------------(same file!)
+CoderBase
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/2/el-nino.csv
+-> size (bytes): 668,799
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/el-nino.c.csv
+-> size (bytes): 581,720
+-> 86.98% of original
+RESULTS
+--------------------------(failure)
+CoderPCA
+-> error_threshold = 0
+-> fixed_window_size = 5
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/2/el-nino.csv
+-> size (bytes): 668,799
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/el-nino.c.csv
+-> size (bytes): 138,216
+-> 20.67% of original
+RESULTS
+--------------------------(failure)
+CoderPCA
+-> error_threshold = 0
+-> fixed_window_size = 5
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/2/el-nino.csv
+-> size (bytes): 668,799
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/el-nino.c.csv
+-> size (bytes): 138,216
+-> 20.67% of original
+RESULTS
+--------------------------(failure)
+CoderPCA
+-> error_threshold = 0
+-> fixed_window_size = 5
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/2/el-nino.csv
+-> size (bytes): 668,799
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/el-nino.c.csv
+-> size (bytes): 138,216
+-> 20.67% of original
+RESULTS
+--------------------------(failure)
+CoderPCA
+-> error_threshold = 0
+-> fixed_window_size = 5
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/2/el-nino.csv
+-> size (bytes): 668,799
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/el-nino.c.csv
+-> size (bytes): 138,216
+-> 20.67% of original
+RESULTS
+--------------------------(failure)
+CoderPCA
+-> error_threshold = 0
+-> fixed_window_size = 5
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/2/el-nino.csv
+-> size (bytes): 668,799
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/el-nino.c.csv
+-> size (bytes): 138,216
+-> 20.67% of original
+RESULTS
+--------------------------(failure)
+CoderPCA
+-> error_threshold = 0
+-> fixed_window_size = 5
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/2/el-nino.csv
+-> size (bytes): 668,799
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/el-nino.c.csv
+-> size (bytes): 138,216
+-> 20.67% of original
+RESULTS
+--------------------------(same file!)
+CoderPCA
+-> error_threshold = 0
+-> fixed_window_size = 5
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/2/el-nino.csv
+-> size (bytes): 668,799
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/el-nino.c.csv
+-> size (bytes): 138,216
+-> 20.67% of original
+RESULTS
+--------------------------(same file!)
+CoderPCA
+-> error_threshold = 20
+-> fixed_window_size = 5
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/2/el-nino.csv
+-> size (bytes): 668,799
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/el-nino.c.csv
+-> size (bytes): 130,278
+-> 19.48% of original
+RESULTS
+--------------------------(same file!)
+CoderPCA
+-> error_threshold = 20
+-> fixed_window_size = 5
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 4,686,665
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/el-nino.c.csv
+-> size (bytes): 663,147
+-> 14.15% of original
+RESULTS
+--------------------------(same file!)
+CoderBase
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 4,686,665
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/coder_basic/el-nino.c.csv
+-> size (bytes): 2,686,489
+-> 57.32% of original
