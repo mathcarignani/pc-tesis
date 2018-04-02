@@ -1,32 +1,34 @@
-from apca import APCA
-
 import sys
 sys.path.append('../')
 
-from coders.pca.coder_pca import CoderPCA
+from coders.cols.coder_cols import CoderCols
+from coders.apca.window_variable import WindowVariable
 
 
-class CoderAPCA(CoderPCA, APCA):
-    def __init__(self, input_path, input_filename, output_path, output_filename, params):
-        super(CoderPCA, self).__init__(input_path, input_filename, output_path, output_filename)
-        APCA.__init__(self, params)
-        self.current_timestamp = 0
+class CoderAPCA(CoderCols):
+    def __init__(self, input_csv, output_path, output_filename, params):
+        super(CoderAPCA, self).__init__(input_csv, output_path, output_filename, WindowVariable, params)
+        self.window_size_bit_length = self.params['max_window_size'].bit_length()
 
-    def _code(self, value):
-        value = self._map_value(value)
-        if self.window.condition_holds(value):
-            if self.window.full():
-                self._code_window()
-                self.window.clear()
-        else:
-            self._code_window()
-            self.window.clear()
-            self.window.condition_holds(value)
-        self.current_timestamp += 1
+    def get_info(self):
+        return "CoderAPCA" +\
+               ("\n-> error_threshold = %s" % self.params['error_threshold']) +\
+               ("\n-> max_window_size = %s" % self.params['max_window_size'])
 
-    def _code_window(self):
-        self._code_value(self.window.constant())
-        self._code_timestamp()
+    def _code_column(self):
+        window = self._create_window()
+        row_index = 0
+        self.input_csv.goto_row(4)  # first data row
+        while self.input_csv.continue_reading:
+            value = self.input_csv.read_line()[self.column_index]
+            if not window.condition_holds(value):
+                self._code_window(window, row_index)
+                window.clear()
+                window.condition_holds(value)
+            row_index += 1
+        if not window.is_empty():
+            self._code_window(window, row_index)
 
-    def _code_timestamp(self):
-        self._code_raw(self.current_timestamp)
+    def _code_window(self, window, row_index):
+        self.output_file.write_int(window.current_window_length, self.window_size_bit_length)
+        self._code_value_raw(window.constant, row_index, self.column_index)

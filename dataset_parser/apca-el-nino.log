@@ -1,0 +1,12 @@
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+-> error_threshold = 0
+-> max_window_size = 100
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 4,686,665
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/coder_apca/el-nino.c.csv
+-> size (bytes): 774,919
+-> 16.53% of original

@@ -1,0 +1,12 @@
+RESULTS
+--------------------------(same file!)
+CoderPCA
+-> error_threshold = 0
+-> fixed_window_size = 20
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[4]solar-anywhere/2011/solar-anywhere-2011.csv
+-> size (bytes): 927,415
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/coder_pca/solar-anywhere-2011.c.csv
+-> size (bytes): 415,127
+-> 44.76% of original

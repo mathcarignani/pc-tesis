@@ -13,6 +13,8 @@ from coders.basic.coder_basic import CoderBasic
 from coders.basic.decoder_basic import DecoderBasic
 from coders.pca.coder_pca import CoderPCA
 from coders.pca.decoder_pca import DecoderPCA
+from coders.apca.coder_apca import CoderAPCA
+from coders.apca.decoder_apca import DecoderAPCA
 
 
 def compress(args):
@@ -77,7 +79,7 @@ def compress_file(logger, input_path, input_filename, coder, decoder, output_fol
         'decoder': decoder,
         'input_path': input_path,
         'input_filename': input_filename,
-        'output_path': "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/" + output_folder,
+        'output_path': "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/" + output_folder,
         'compressed_filename': input_filename.replace('.csv', '.c.csv'),
         'decompressed_filename': input_filename.replace('.csv', '.c.d.csv')
     }
@@ -92,20 +94,22 @@ def compress_path(logger, input_path, coder, decoder, output_folder, coder_param
         compress_file(logger, input_path, input_filename, coder, decoder, output_folder, coder_params)
 
 
-# def coder_basic(folder, logger_name):
-#     input_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/" + folder
-#     logger = setup_logger(logger_name, logger_name)
-#     compress_path(logger, input_path, CoderBasic, DecoderBasic, 'coder_basic')
-#
-# coder_basic("[1]irkis", 'irkis.log')
-# coder_basic("[2]noaa-sst/months/2017", 'noaa-sst.log')
-# coder_basic("[3]noaa-adcp", 'noaa-adcp')
-# coder_basic("[4]solar-anywhere/2011", 'solar-anywhere.log')
-# coder_basic("[5]el-nino", 'el-nino.log')
+def coder_basic(folder, logger_name):
+    input_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/" + folder
+    logger_name = 'basic-' + logger_name
+    logger = setup_logger(logger_name, logger_name)
+    compress_path(logger, input_path, CoderBasic, DecoderBasic, 'coder_basic')
+
+coder_basic("[1]irkis", 'irkis.log')
+coder_basic("[2]noaa-sst/months/2017", 'noaa-sst.log')
+coder_basic("[3]noaa-adcp", 'noaa-adcp')
+coder_basic("[4]solar-anywhere/2011", 'solar-anywhere.log')
+coder_basic("[5]el-nino", 'el-nino.log')
 
 
 def coder_pca(folder, logger_name):
     input_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/" + folder
+    logger_name = 'pca-' + logger_name
     logger = setup_logger(logger_name, logger_name)
     compress_path(logger, input_path, CoderPCA, DecoderPCA, 'coder_pca', {'error_threshold': 0, 'fixed_window_size': 20})
 
@@ -115,3 +119,15 @@ coder_pca("[3]noaa-adcp", 'noaa-adcp')
 coder_pca("[4]solar-anywhere/2011", 'solar-anywhere.log')
 coder_pca("[5]el-nino", 'el-nino.log')
 
+
+def coder_apca(folder, logger_name):
+    input_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/" + folder
+    logger_name = 'apca-' + logger_name
+    logger = setup_logger(logger_name, logger_name)
+    compress_path(logger, input_path, CoderAPCA, DecoderAPCA, 'coder_apca', {'error_threshold': 0, 'max_window_size': 100})
+
+coder_apca("[1]irkis", 'irkis.log')
+coder_apca("[2]noaa-sst/months/2017", 'noaa-sst.log')
+coder_apca("[3]noaa-adcp", 'noaa-adcp')
+coder_apca("[4]solar-anywhere/2011", 'solar-anywhere.log')
+coder_apca("[5]el-nino", 'el-nino.log')

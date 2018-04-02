@@ -3,6 +3,9 @@ class WindowFixed(object):
         self.nan = "N"  # This is the value that represents nodata
         self.error_threshold = params['error_threshold']
         self.fixed_window_size = params['fixed_window_size']
+        self.clear()
+
+    def clear(self):
         self.current_window, self.current_window_length = [], 0
 
     #
@@ -32,7 +35,7 @@ class WindowFixed(object):
                 res = self.convert_array(self.current_window)
         else:
             res = self.check_condition()
-        self.current_window, self.current_window_length = [], 0
+        self.clear()
         return res
 
     def check_condition(self):
