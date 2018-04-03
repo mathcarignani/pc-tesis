@@ -49,7 +49,7 @@ class CoderBase(object):
         CoderBase.raise_range_error(self.dataset.min, self.dataset.max, x, row_index, col_index)
 
     def _code_raw(self, value):
-        self.output_file.write_int(value, self.dataset.bits)
+        self.output_file.write_int(value, self.dataset.get_bits())
 
     def _code_value_raw(self, x, row_index, col_index):
         value = self._code_value(x, row_index, col_index)

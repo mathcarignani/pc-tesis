@@ -22,11 +22,20 @@ class Dataset:
             if array_index == 0:
                 array_index = self.column_code_array_length - 1
         column_code = self.column_code_array[array_index]
+        self.current_column = column_code
 
         self.min, self.max, self.bits = column_code.min, column_code.max, column_code.bits
         self.offset = column_code.offset
         self.nan = column_code.nan
+
         # print column_number, array_index
+
+    def get_bits(self):
+        self.add_bits(self.bits)
+        return self.bits
+
+    def add_bits(self, bits):
+        self.current_column.add_bits(bits)
 
 
 class ColumnCode:
@@ -34,6 +43,10 @@ class ColumnCode:
         self.min, self.max, self.bits = int(dictionary['min']), int(dictionary['max']), int(dictionary['bits'])
         self.offset = -self.min
         self.nan = self.offset + self.max + 1
+        self.total_bits = 0
+
+    def add_bits(self, bits):
+        self.total_bits += bits
 
 
 class DatasetUtils:

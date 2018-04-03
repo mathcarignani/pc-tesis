@@ -28,9 +28,11 @@ class CoderPCA(CoderCols):
 
     def _code_window(self, res, row_index):
         if isinstance(res, list):
+            self.dataset.add_bits(1)  # count the bits
             self.output_file.write_bit(1)  # fi = 1
             for value in res:
                 self._code_value_raw(value, row_index, self.column_index)
         else:
+            self.dataset.add_bits(1)  # count the bits
             self.output_file.write_bit(0)  # fi = 0
             self._code_value_raw(res, row_index, self.column_index)

@@ -30,5 +30,6 @@ class CoderAPCA(CoderCols):
             self._code_window(window, row_index)
 
     def _code_window(self, window, row_index):
+        self.dataset.add_bits(self.window_size_bit_length)  # count the bits used for coding the window length
         self.output_file.write_int(window.current_window_length, self.window_size_bit_length)
         self._code_value_raw(window.constant, row_index, self.column_index)

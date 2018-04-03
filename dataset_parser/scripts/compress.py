@@ -17,18 +17,38 @@ from coders.apca.coder_apca import CoderAPCA
 from coders.apca.decoder_apca import DecoderAPCA
 
 
-def compress(args):
+def csv_files_filenames(input_path):
+    input_filenames = os.listdir(input_path)
+    input_filenames = [f for f in input_filenames if os.path.isfile(os.path.join(input_path, f))]
+    input_filenames = [f for f in input_filenames if f.endswith(".csv")]
+    return input_filenames
+
+
+def csv_row_count(input_path, input_filename):
+    csv = CSVReader(input_path, input_filename)
+    csv.close()
+    return csv.total_lines - 4
+
+
+def create_folder(directory):
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+
+
+def compress_file(args):
     # read args
     coder, coder_params, decoder = args['coder'], args['coder_params'], args['decoder']
     input_path, input_filename = args['input_path'], args['input_filename']
     output_path = args['output_path']
-    compressed_filename, decompressed_filename = args['compressed_filename'], args['decompressed_filename']
+    compressed_filename = input_filename.replace('.csv', '.c.csv')
+    decompressed_filename = input_filename.replace('.csv', '.c.d.csv')
 
     # code
     input_csv = CSVReader(input_path, input_filename, True)
     c = coder(input_csv, output_path, compressed_filename, coder_params)
     c.code_file()
     c.close()
+    columns_bits = [column_code.total_bits for column_code in c.dataset.column_code_array]
 
     # decode
     output_csv = CSVWriter(output_path, decompressed_filename)
@@ -41,25 +61,26 @@ def compress(args):
     d.close()
 
     # compare
-    compare = CSVCompare(input_path, input_filename, output_path, decompressed_filename)
-    same_file = compare.compare(coder_params.get('error_threshold') or 0)
+    csv_compare = CSVCompare(input_path, input_filename, output_path, decompressed_filename)
+    same_file = csv_compare.compare(coder_params.get('error_threshold') or 0)
 
     # print results
     logger = args['logger']
     input_file = input_path + "/" + input_filename
     compressed_file = output_path + "/" + compressed_filename
-    print_results(c, logger, input_file, compressed_file, same_file)
+    compressed_size = print_results(c, logger, input_file, compressed_file, same_file)
+    return [compressed_size] + columns_bits
 
 
 def print_results(c, logger, input_file, compressed_file, same_file):
     input_size = os.path.getsize(input_file)
     compressed_size = os.path.getsize(compressed_file)
-    logger.info
+    logger.info("")
     logger.info("RESULTS")
     if same_file:
         logger.info("--------------------------(same file!)")
     else:
-        logger.info("--------------------------(failure)")
+        raise StandardError("ERROR: DIFFERENT FILES!")
     logger.info(c.get_info())
     logger.info("ORIGINAL FILE:")
     logger.info("-> name: %s" % input_file)
@@ -68,66 +89,102 @@ def print_results(c, logger, input_file, compressed_file, same_file):
     logger.info("-> name: %s" % compressed_file)
     logger.info("-> size (bytes): %s" % "{:,}".format(compressed_size))
     logger.info("-> %s%% of original" % PrintUtils.percentage(compressed_size, input_size))
-    logger.info
+    logger.info("")
+    return compressed_size
 
 
-def compress_file(logger, input_path, input_filename, coder, decoder, output_folder, coder_params={}):
-    args = {
-        'logger': logger,
-        'coder': coder,
-        'coder_params': coder_params,
-        'decoder': decoder,
-        'input_path': input_path,
-        'input_filename': input_filename,
-        'output_path': "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/" + output_folder,
-        'compressed_filename': input_filename.replace('.csv', '.c.csv'),
-        'decompressed_filename': input_filename.replace('.csv', '.c.d.csv')
-    }
-    compress(args)
+dataset_array = [
+    # {'name': 'IRKIS', 'folder': "[1]irkis", 'logger': "irkis.log", 'o_folder': "[1]irkis"},
+    {'name': 'NOAA-SST', 'folder': "[2]noaa-sst/months/2017", 'logger': "noaa-sst.log", 'o_folder': "[2]noaa-sst"},
+    # {'name': 'NOAA-ADCP', 'folder': "[3]noaa-adcp/2015", 'logger': "noaa-adcp.log", 'o_folder': "[3]noaa-adcp"},
+    # {'name': 'SolarAnywhere', 'folder': "[4]solar-anywhere/2011", 'logger': "solar-anywhere.log", 'o_folder': "[4]solar-anywhere"},
+    # {'name': 'ElNino', 'folder': "[5]el-nino", 'logger': "el-nino.log", 'o_folder': "[5]el-nino"}
+]
+
+coders_array = [
+    {
+        'name': 'CoderBasic',
+        'coder': CoderBasic,
+        'decoder': DecoderBasic,
+        'o_folder': 'basic',
+        'params': [{}]
+    },
+    {
+        'name': 'CoderPCA',
+        'coder': CoderPCA,
+        'decoder': DecoderPCA,
+        'o_folder': 'pca',
+        'params': [
+            {'error_threshold': 0, 'fixed_window_size': 5},
+            # {'error_threshold': 0, 'fixed_window_size': 10},
+            # {'error_threshold': 0, 'fixed_window_size': 20},
+            # {'error_threshold': 0, 'fixed_window_size': 40}
+        ]
+    },
+    # {
+    #     'name': 'CoderAPCA',
+    #     'coder': CoderAPCA,
+    #     'decoder': DecoderAPCA,
+    #     'o_folder': 'apca',
+    #     'params': [
+    #         {'error_threshold': 0, 'max_window_size': 5},
+    #         {'error_threshold': 0, 'max_window_size': 10},
+    #         {'error_threshold': 0, 'max_window_size': 20},
+    #         {'error_threshold': 0, 'max_window_size': 40}
+    #     ]
+    # },
+]
 
 
-def compress_path(logger, input_path, coder, decoder, output_folder, coder_params={}):
-    input_filenames = os.listdir(input_path)
-    input_filenames = [f for f in input_filenames if os.path.isfile(os.path.join(input_path, f))]
-    input_filenames = [f for f in input_filenames if f.endswith(".csv")]
-    for input_filename in input_filenames:
-        compress_file(logger, input_path, input_filename, coder, decoder, output_folder, coder_params)
+def script():
+    datasets_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/"
+    output_path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/"
+    csv = CSVWriter(output_path, 'results.csv')
+    csv.write_row(['Dataset', 'Filename', '#rows', 'Coder', 'Params', 'Size (B)', 'Compression Rate (%)'])
+    for dataset_dictionary in dataset_array:
+        row = [dataset_dictionary['name']]
 
+        input_path = datasets_path + dataset_dictionary['folder']
+        logger_name = dataset_dictionary['logger']
+        logger = setup_logger(logger_name, logger_name)
 
-def coder_basic(folder, logger_name):
-    input_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/" + folder
-    logger_name = 'basic-' + logger_name
-    logger = setup_logger(logger_name, logger_name)
-    compress_path(logger, input_path, CoderBasic, DecoderBasic, 'coder_basic')
+        output_dataset_path = output_path + dataset_dictionary['o_folder']
+        create_folder(output_dataset_path)
 
-coder_basic("[1]irkis", 'irkis.log')
-coder_basic("[2]noaa-sst/months/2017", 'noaa-sst.log')
-coder_basic("[3]noaa-adcp", 'noaa-adcp')
-coder_basic("[4]solar-anywhere/2011", 'solar-anywhere.log')
-coder_basic("[5]el-nino", 'el-nino.log')
+        for id1, input_filename in enumerate(csv_files_filenames(input_path)):
+            values = [input_filename, PrintUtils.separate(csv_row_count(input_path, input_filename))]
+            row = row + values if id1 == 0 else [None] + values
+            base_values = None
 
+            for id2, coder_dictionary in enumerate(coders_array):
+                values = [coder_dictionary['name']]
+                row = row + values if id2 == 0 else [None, None, None] + values
 
-def coder_pca(folder, logger_name):
-    input_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/" + folder
-    logger_name = 'pca-' + logger_name
-    logger = setup_logger(logger_name, logger_name)
-    compress_path(logger, input_path, CoderPCA, DecoderPCA, 'coder_pca', {'error_threshold': 0, 'fixed_window_size': 20})
+                output_dataset_coder_path = output_dataset_path + '/' + coder_dictionary['o_folder']
+                create_folder(output_dataset_coder_path)
 
-coder_pca("[1]irkis", 'irkis.log')
-coder_pca("[2]noaa-sst/months/2017", 'noaa-sst.log')
-coder_pca("[3]noaa-adcp", 'noaa-adcp')
-coder_pca("[4]solar-anywhere/2011", 'solar-anywhere.log')
-coder_pca("[5]el-nino", 'el-nino.log')
+                for id3, params in enumerate(coder_dictionary['params']):
+                    values = [params]
+                    row = row + values if id3 == 0 else [None, None, None, None] + values
+                    args = {
+                        'logger': logger,
+                        'coder': coder_dictionary['coder'],
+                        'coder_params': params,
+                        'decoder': coder_dictionary['decoder'],
+                        'input_path': input_path,
+                        'input_filename': input_filename,
+                        'output_path': output_dataset_coder_path
+                    }
+                    compression_values = compress_file(args)
+                    if base_values is None:
+                        base_values = compression_values
+                        for value in compression_values:
+                            row += [PrintUtils.separate(value), 100]
+                    else:
+                        for idx, value in enumerate(compression_values):
+                            percentage = PrintUtils.percentage(value, base_values[idx])
+                            row += [PrintUtils.separate(value), PrintUtils.separate(percentage)]
+                    csv.write_row(row)
+    csv.close()
 
-
-def coder_apca(folder, logger_name):
-    input_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/" + folder
-    logger_name = 'apca-' + logger_name
-    logger = setup_logger(logger_name, logger_name)
-    compress_path(logger, input_path, CoderAPCA, DecoderAPCA, 'coder_apca', {'error_threshold': 0, 'max_window_size': 100})
-
-coder_apca("[1]irkis", 'irkis.log')
-coder_apca("[2]noaa-sst/months/2017", 'noaa-sst.log')
-coder_apca("[3]noaa-adcp", 'noaa-adcp')
-coder_apca("[4]solar-anywhere/2011", 'solar-anywhere.log')
-coder_apca("[5]el-nino", 'el-nino.log')
+script()

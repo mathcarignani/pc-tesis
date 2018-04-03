@@ -1,0 +1,8 @@
+Dataset,Filename,#rows,Coder,Params,Size (B),Compression Rate (%)
+NOAA-SST,noaa-buoy-201701.csv,4.392,CoderBasic,{},492.948,100,74.664,100,3.864.960,100
+,,,CoderPCA,"{'fixed_window_size': 5, 'error_threshold': 0}",353.029,71.62,75.543,101.18,2.744.729,71.02
+,noaa-buoy-201702.csv,3.984,CoderBasic,{},447.201,100,67.728,100,3.505.920,100
+,,,CoderPCA,"{'fixed_window_size': 5, 'error_threshold': 0}",322.460,72.11,68.525,101.18,2.507.195,71.51
+,noaa-buoy-201703.csv,4.362,CoderBasic,{},489.585,100,74.154,100,3.838.560,100
+,,,CoderPCA,"{'fixed_window_size': 5, 'error_threshold': 0}",340.736,69.6,75.027,101.18,2.646.895,68.96
+,noaa-buoy-201704.csv,4.290,CoderBasic,{},481.512,100,72.930,100,3.775.200,100
