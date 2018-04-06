@@ -94,11 +94,11 @@ def print_results(c, logger, input_file, compressed_file, same_file):
 
 
 dataset_array = [
-    # {'name': 'IRKIS', 'folder': "[1]irkis", 'logger': "irkis.log", 'o_folder': "[1]irkis"},
+    {'name': 'IRKIS', 'folder': "[1]irkis", 'logger': "irkis.log", 'o_folder': "[1]irkis"},
     {'name': 'NOAA-SST', 'folder': "[2]noaa-sst/months/2017", 'logger': "noaa-sst.log", 'o_folder': "[2]noaa-sst"},
-    # {'name': 'NOAA-ADCP', 'folder': "[3]noaa-adcp/2015", 'logger': "noaa-adcp.log", 'o_folder': "[3]noaa-adcp"},
-    # {'name': 'SolarAnywhere', 'folder': "[4]solar-anywhere/2011", 'logger': "solar-anywhere.log", 'o_folder': "[4]solar-anywhere"},
-    # {'name': 'ElNino', 'folder': "[5]el-nino", 'logger': "el-nino.log", 'o_folder': "[5]el-nino"}
+    {'name': 'NOAA-ADCP', 'folder': "[3]noaa-adcp/2015", 'logger': "noaa-adcp.log", 'o_folder': "[3]noaa-adcp"},
+    {'name': 'SolarAnywhere', 'folder': "[4]solar-anywhere/2011", 'logger': "solar-anywhere.log", 'o_folder': "[4]solar-anywhere"},
+    {'name': 'ElNino', 'folder': "[5]el-nino", 'logger': "el-nino.log", 'o_folder': "[5]el-nino"}
 ]
 
 coders_array = [
@@ -116,23 +116,56 @@ coders_array = [
         'o_folder': 'pca',
         'params': [
             {'error_threshold': 0, 'fixed_window_size': 5},
-            # {'error_threshold': 0, 'fixed_window_size': 10},
-            # {'error_threshold': 0, 'fixed_window_size': 20},
-            # {'error_threshold': 0, 'fixed_window_size': 40}
+            {'error_threshold': 0, 'fixed_window_size': 10},
+            {'error_threshold': 0, 'fixed_window_size': 20},
+            {'error_threshold': 0, 'fixed_window_size': 40},
+            {'error_threshold': 50, 'fixed_window_size': 5},
+            {'error_threshold': 50, 'fixed_window_size': 10},
+            {'error_threshold': 50, 'fixed_window_size': 20},
+            {'error_threshold': 50, 'fixed_window_size': 40},
+            {'error_threshold': 100, 'fixed_window_size': 5},
+            {'error_threshold': 100, 'fixed_window_size': 10},
+            {'error_threshold': 100, 'fixed_window_size': 20},
+            {'error_threshold': 100, 'fixed_window_size': 40},
+            {'error_threshold': 250, 'fixed_window_size': 5},
+            {'error_threshold': 250, 'fixed_window_size': 10},
+            {'error_threshold': 250, 'fixed_window_size': 20},
+            {'error_threshold': 250, 'fixed_window_size': 40},
+            {'error_threshold': 500, 'fixed_window_size': 5},
+            {'error_threshold': 500, 'fixed_window_size': 10},
+            {'error_threshold': 500, 'fixed_window_size': 20},
+            {'error_threshold': 500, 'fixed_window_size': 40}
         ]
     },
-    # {
-    #     'name': 'CoderAPCA',
-    #     'coder': CoderAPCA,
-    #     'decoder': DecoderAPCA,
-    #     'o_folder': 'apca',
-    #     'params': [
-    #         {'error_threshold': 0, 'max_window_size': 5},
-    #         {'error_threshold': 0, 'max_window_size': 10},
-    #         {'error_threshold': 0, 'max_window_size': 20},
-    #         {'error_threshold': 0, 'max_window_size': 40}
-    #     ]
-    # },
+    {
+        'name': 'CoderAPCA',
+        'coder': CoderAPCA,
+        'decoder': DecoderAPCA,
+        'o_folder': 'apca',
+        'params': [
+            {'error_threshold': 0, 'max_window_size': 5},
+            {'error_threshold': 0, 'max_window_size': 10},
+            {'error_threshold': 0, 'max_window_size': 20},
+            {'error_threshold': 0, 'max_window_size': 40},
+            {'error_threshold': 50, 'max_window_size': 5},
+            {'error_threshold': 50, 'max_window_size': 10},
+            {'error_threshold': 50, 'max_window_size': 20},
+            {'error_threshold': 50, 'max_window_size': 40},
+            {'error_threshold': 100, 'max_window_size': 5},
+            {'error_threshold': 100, 'max_window_size': 10},
+            {'error_threshold': 100, 'max_window_size': 20},
+            {'error_threshold': 100, 'max_window_size': 40},
+            {'error_threshold': 250, 'max_window_size': 5},
+            {'error_threshold': 250, 'max_window_size': 10},
+            {'error_threshold': 250, 'max_window_size': 20},
+            {'error_threshold': 250, 'max_window_size': 40},
+            {'error_threshold': 500, 'max_window_size': 5},
+            {'error_threshold': 500, 'max_window_size': 10},
+            {'error_threshold': 500, 'max_window_size': 20},
+            {'error_threshold': 500, 'max_window_size': 40},
+
+        ]
+    },
 ]
 
 

@@ -18,6 +18,9 @@ class WindowFixed(object):
     def is_full(self):
         return self.current_window_length == self.fixed_window_size
 
+    def is_empty(self):
+        return self.current_window_length == 0
+
     #
     # If the window condition holds it returns the constant, otherwise it returns data_array.
     #

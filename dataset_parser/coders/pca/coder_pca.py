@@ -24,7 +24,9 @@ class CoderPCA(CoderCols):
             if window.is_full():
                 self._code_window(window.add_2_output(), row_index)
             row_index += 1
-        self._code_window(window.add_2_output(), row_index)
+
+        if not window.is_empty():
+            self._code_window(window.add_2_output(), row_index)
 
     def _code_window(self, res, row_index):
         if isinstance(res, list):
