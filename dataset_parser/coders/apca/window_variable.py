@@ -53,7 +53,7 @@ class WindowVariable(object):
         new_min_aux = new_min + abs(new_min)  # >= 0
         new_max_aux = new_max + abs(new_min)  # >= 0
 
-        if new_max_aux - new_min_aux >= 2*self.error_threshold:  # condition does not hold
+        if new_max_aux - new_min_aux > 2*self.error_threshold:  # condition does not hold
             return False
 
         # condition holds, update min, max and constant

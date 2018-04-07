@@ -49,7 +49,7 @@ class WindowFixed(object):
         min_val_aux = min_val + abs(min_val)  # >= 0
         max_val_aux = max_val + abs(min_val)  # >= 0
 
-        if max_val_aux - min_val_aux >= 2*self.error_threshold:  # condition does not hold
+        if max_val_aux - min_val_aux > 2*self.error_threshold:  # condition does not hold
             return data_array
 
         # condition holds

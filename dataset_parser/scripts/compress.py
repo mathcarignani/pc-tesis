@@ -163,7 +163,6 @@ coders_array = [
             {'error_threshold': 500, 'max_window_size': 10},
             {'error_threshold': 500, 'max_window_size': 20},
             {'error_threshold': 500, 'max_window_size': 40},
-
         ]
     },
 ]
