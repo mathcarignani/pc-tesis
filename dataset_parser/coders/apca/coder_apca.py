@@ -23,8 +23,7 @@ class CoderAPCA(CoderCols):
             value = self.input_csv.read_line()[self.column_index]
             if not window.condition_holds(value):
                 self._code_window(window, row_index)
-                window.clear()
-                window.condition_holds(value)
+                window.clear(value)
             row_index += 1
         if not window.is_empty():
             self._code_window(window, row_index)

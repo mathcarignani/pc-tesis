@@ -1,3 +1,9 @@
+import sys
+sys.path.append('.')
+
+import coders.pca.window_utils as window_utils
+
+
 class WindowVariable(object):
     def __init__(self, params):
         self.nan = "N"  # This is the value that represents nodata
@@ -5,9 +11,11 @@ class WindowVariable(object):
         self.max_window_size = params['max_window_size']
         self.clear()
 
-    def clear(self):
-        self.current_window, self.current_window_length = [], 0
+    def clear(self, value=None):
+        self.current_window_length = 0
         self.min, self.max, self.constant = [self.nan] * 3
+        if value is not None:
+            self.condition_holds(value)
 
     def is_full(self):
         return self.current_window_length == self.max_window_size
@@ -15,21 +23,14 @@ class WindowVariable(object):
     def is_empty(self):
         return self.current_window_length == 0
 
-    #
-    # PRE: not self.is_full()
-    #
-    def add_value_2_output(self, value):
-        self.current_window.append(value)
-        self.current_window_length += 1
-        return True
-
     def condition_holds(self, value):
         if self.is_full():
             return False
 
         if value is self.nan:
             if self.constant == self.nan:
-                return self.add_value_2_output(self.nan)
+                self.current_window_length += 1
+                return True
             else:
                 return False
 
@@ -37,7 +38,8 @@ class WindowVariable(object):
 
         if self.is_empty():
             self.min, self.max, self.constant = [value] * 3
-            return self.add_value_2_output(value)
+            self.current_window_length += 1
+            return True
 
         if self.constant is self.nan:
             return False
@@ -47,13 +49,11 @@ class WindowVariable(object):
         elif value > self.max:
             return self._update_constant(value, self.min, value)
         else:  # self.min <= value <= self.max
-            return self.add_value_2_output(value)
+            self.current_window_length += 1
+            return True
 
     def _update_constant(self, value, new_min, new_max):
-        new_min_aux = new_min + abs(new_min)  # >= 0
-        new_max_aux = new_max + abs(new_min)  # >= 0
-
-        if new_max_aux - new_min_aux > 2*self.error_threshold:  # condition does not hold
+        if not window_utils.valid_threshold(new_min, new_max, self.error_threshold):  # condition does not hold
             return False
 
         # condition holds, update min, max and constant

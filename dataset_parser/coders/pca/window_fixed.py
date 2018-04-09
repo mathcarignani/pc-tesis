@@ -1,3 +1,9 @@
+import sys
+sys.path.append('.')
+
+import coders.pca.window_utils as window_utils
+
+
 class WindowFixed(object):
     def __init__(self, params):
         self.nan = "N"  # This is the value that represents nodata
@@ -44,12 +50,8 @@ class WindowFixed(object):
     def check_condition(self):
         data_array = self.convert_array(self.current_window)
         min_val, max_val = min(data_array), max(data_array)
-        # print min_val, max_val
 
-        min_val_aux = min_val + abs(min_val)  # >= 0
-        max_val_aux = max_val + abs(min_val)  # >= 0
-
-        if max_val_aux - min_val_aux > 2*self.error_threshold:  # condition does not hold
+        if not window_utils.valid_threshold(min_val, max_val, self.error_threshold):  # condition does not hold
             return data_array
 
         # condition holds
