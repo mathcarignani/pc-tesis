@@ -105,13 +105,13 @@ dataset_array = [
 ]
 
 coders_array = [
-    # {
-    #     'name': 'CoderBasic',
-    #     'coder': CoderBasic,
-    #     'decoder': DecoderBasic,
-    #     'o_folder': 'basic',
-    #     'params': [{}]
-    # },
+    {
+        'name': 'CoderBasic',
+        'coder': CoderBasic,
+        'decoder': DecoderBasic,
+        'o_folder': 'basic',
+        'params': [{}]
+    },
     # {
     #     'name': 'CoderPCA',
     #     'coder': CoderPCA,
@@ -204,11 +204,11 @@ coders_array = [
         'decoder': DecoderCA,
         'o_folder': 'ca',
         'params': [
-            # {'error_threshold': 0, 'max_window_size': 5},
-            # {'error_threshold': 0, 'max_window_size': 10},
-            # {'error_threshold': 0, 'max_window_size': 20},
-            # {'error_threshold': 0, 'max_window_size': 40},
-            # {'error_threshold': 0, 'max_window_size': 100},
+            {'error_threshold': 0, 'max_window_size': 5},
+            {'error_threshold': 0, 'max_window_size': 10},
+            {'error_threshold': 0, 'max_window_size': 20},
+            {'error_threshold': 0, 'max_window_size': 40},
+            {'error_threshold': 0, 'max_window_size': 100},
             {'error_threshold': 10, 'max_window_size': 5},
             {'error_threshold': 10, 'max_window_size': 10},
             {'error_threshold': 10, 'max_window_size': 20},
