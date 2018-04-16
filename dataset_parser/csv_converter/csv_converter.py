@@ -8,16 +8,25 @@ class CSVConverter:
         self.parser = parser
         self.logger = logger
         self.pandas_tools = PandasTools(self.parser, self.logger)
+        # initialized in the input_csv_to_df method
+        self.input_file = None
+        self.date_range = None
+        self.adcp = None
+        self.repeat_timestamp = None
 
-    def input_csv_to_df(self, input_file, date_range=DateRange(), columns=None, adcp=False):
+    #
+    # repeat_timestamp is True if it is expected that the same timestamp can be repeated
+    #
+    def input_csv_to_df(self, input_file, date_range=None, columns=None, adcp=False, repeat_timestamp=False):
         self.input_file = input_file
         self.date_range = date_range
         self.adcp = adcp
+        self.repeat_timestamp = repeat_timestamp
         while self.parser.parsing_header:
             line = self.input_file.read_line()
             self.parser.parse_header(line)
         cols = self.parser.columns if columns is None else columns
-        self.pandas_tools.new_df(cols)
+        self.pandas_tools.new_df(cols, repeat_timestamp)
         self._write_data()
         self.input_file.close()
 
@@ -28,10 +37,11 @@ class CSVConverter:
         if self.pandas_tools.is_empty_df():
             return
         output_file = CSVWriter(output_path, output_filename)
-        output_file.write_row(['DATASET:', self.parser.NAME])
-        output_file.write_row(['FILENAME:', self.input_file.filename])
-        output_file.write_row(['Timestamp'] + self.parser.columns)
-        self.pandas_tools.df_to_csv(output_file)
+        output_file.write_row(['DATASET:', self.parser.name])
+        output_file.write_row(['TIME UNIT:', self.parser.time_unit])
+        output_file.write_row(['FIRST TIMESTAMP:', self.pandas_tools.first_timestamp()])
+        output_file.write_row(['Time Delta'] + self.parser.columns)
+        self.pandas_tools.df_to_csv(output_file, self.parser.time_unit)
         output_file.close()
 
     def plot(self, output_path):
@@ -54,10 +64,11 @@ class CSVConverter:
             line = self.input_file.read_line()
             row = self.parser.parse_data(line)  # { 'timestamp': datetime object, 'values': values array }
         self.timestamp, self.values = row['timestamp'], row['values']
-        if not self.date_range.inside_range(self.timestamp):
+        if self.date_range and not self.date_range.inside_range(self.timestamp):
             return
-        if self.adcp is None:
-            self.print_warning()
+        if self.adcp is False:
+            if not self.repeat_timestamp:
+                self.print_warning()
             self.pandas_tools.add_row(self.timestamp, self.values)
         else:
             if self.previous_timestamp and self.previous_timestamp.day != self.timestamp.day:

@@ -17,6 +17,7 @@ from parsers.adcp.parser_adcp import ParserADCP
 # from parsers.elnino.parser_elnino import ParserElNino
 from parsers.irkis.parser_vwc import ParserVWC
 from parsers.noaa.parser_noaa import ParserNOAA
+from parsers.noaa_spc.parser_noaa_spc import ParserNOAASPC
 from parsers.solar_anywhere.parser_solar_anywhere import ParserSolarAnywhere
 
 
@@ -25,18 +26,18 @@ current_path = os.path.dirname(os.path.abspath(__file__))
 datasets_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets/"
 
 
-def convert_to_csv(parser_klass, input_path, input_filenames, output_path, reader_cls, date_range):
-    for input_filename in input_filenames:
-        output_filename = input_filename + '.csv'
-        logging.info("#################################################################################")
-        logging.info("INPUT: %s/%s", input_path, input_filename)
-        logging.info("OUTPUT: %s/%s", output_path, output_filename)
-        input_file = reader_cls(input_path, input_filename)
-        csv_converter = CSVConverter(parser_klass())
-        csv_converter.input_csv_to_df(input_file, date_range)
-        csv_converter.print_stats()
-        csv_converter.df_to_output_csv(output_path, output_filename)
-        csv_converter.plot(output_path)
+# def convert_to_csv(parser_klass, input_path, input_filenames, output_path, reader_cls, date_range):
+#     for input_filename in input_filenames:
+#         output_filename = input_filename + '.csv'
+#         logging.info("#################################################################################")
+#         logging.info("INPUT: %s/%s", input_path, input_filename)
+#         logging.info("OUTPUT: %s/%s", output_path, output_filename)
+#         input_file = reader_cls(input_path, input_filename)
+#         csv_converter = CSVConverter(parser_klass())
+#         csv_converter.input_csv_to_df(input_file, date_range)
+#         csv_converter.print_stats()
+#         csv_converter.df_to_output_csv(output_path, output_filename)
+#         csv_converter.plot(output_path)
 
 
 def convert_to_csv_many(args, csv_converter, input_path, input_filenames, output_path, plot_output_path=None):
@@ -101,7 +102,7 @@ def noaa_buoy(year, month=None):
     }
     run(args)
 
-noaa_buoy(2009)
+# noaa_buoy(2009)
 # for month in reversed(range(1, 13)):
 #     noaa_buoy(2017, month)
 
@@ -167,4 +168,55 @@ def solar_anywhere(year, month=None):
 # run(ParserClimaps, "output-climaps.log", "[5]climaps/crete/17/climaps-data", "/[5]climaps", CSVReader)
 
 
+def noaa_spc(dataset):
+    input_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets/[6]noaa-spc-reports"
+    input_filename = "noaa_spc." + dataset + "_reports.csv"
+    output_path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/[6]noaa-spc-reports"
+    logger_filename = "noaa_spc-" + dataset + ".log"
+    output_filename = "noaa_spc-" + dataset + ".csv"
 
+    logger = setup_logger(logger_filename, logger_filename)
+    if dataset == 'tornado':
+        input_file = CSVReader(input_path, input_filename, False, '\t')
+    else:
+        input_file = CSVReader(input_path, input_filename)
+
+    parser = ParserNOAASPC(logger, dataset)
+    csv_converter = CSVConverter(parser, logger)
+    csv_converter.input_csv_to_df(input_file, None, None, False, True)
+    csv_converter.df_to_output_csv(output_path, output_filename)
+    csv_converter.print_stats()
+
+    input_file.close()
+
+noaa_spc('hail')
+noaa_spc('tornado')
+noaa_spc('wind')
+
+# def compare():
+#     path1 = "/Users/pablocerve/Documents/FING/Proyecto/datasets/[6]noaa-spc-reports"
+#     filename1 = "noaa_spc.wind_reports.csv"
+#     path2 = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/[6]noaa-spc-reports"
+#     filename2 = "noaa_spc-wind.csv"
+#
+#     file1 = CSVReader(path1, filename1)
+#     file2 = CSVReader(path2, filename2)
+#
+#     file1.goto_row(1)
+#     file2.goto_row(4)
+#
+#     count = 0
+#     while file1.continue_reading:
+#         row1 = file1.read_line()
+#         row2 = file2.read_line()
+#         lat1, long1, speed1 = int(float(row1[7])*100), int(float(row1[8])*100), int(row1[2])
+#         row2 = row2[1:]
+#         lat2, long2, speed2 = [int(i) for i in row2]
+#
+#         if lat1 != lat2 or long1 != long2 or speed1 != speed2:
+#             print 'count', count
+#             print row1
+#             print row2
+#             break
+#         count += 1
+#     print count

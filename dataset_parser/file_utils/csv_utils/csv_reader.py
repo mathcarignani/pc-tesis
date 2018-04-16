@@ -4,11 +4,11 @@ from file_utils.aux import full_path
 
 
 class CSVReader:
-    def __init__(self, path, filename, progress=False):
+    def __init__(self, path, filename, progress=False, delimiter=','):
         self.path, self.filename = path, filename
         self.full_path = full_path(path, filename)
         self.file = open(self.full_path, "r")
-        self.csv_reader = csv.reader(self.file)
+        self.csv_reader = csv.reader(self.file, delimiter=delimiter)
         self.total_lines = self.total_lines_()
         self.continue_reading = True
         self.current_line_count = 0

@@ -14,11 +14,19 @@ class PandasTools:
         self.logger = logger
         self.df = None
         self.empty_df = None
+        # initialized in new_df
+        self.repeat_timestamp = None
 
-    def new_df(self, columns):
-        self.df = pd.DataFrame(columns=columns)
+    #
+    # repeat_timestamp is True if it is expected that the same timestamp can be repeated
+    #
+    def new_df(self, columns, repeat_timestamp):
+        cols = columns if not repeat_timestamp else ['Timestamp'] + columns
+        self.df = pd.DataFrame(columns=cols)
+        self.repeat_timestamp = repeat_timestamp
 
     def add_row(self, timestamp, row, adcp=False):
+        print timestamp
         data = [np.nan if x == PandasTools.NO_DATA else x for x in row]
         if adcp:
             # row = [depth, UCUR, VCUR, WCUR]
@@ -26,16 +34,9 @@ class PandasTools:
             for idx, component in enumerate(['UCUR', 'VCUR', 'WCUR']):
                 col = adcp + "_" + str(int(depth)) + "_" + component
                 self.df.loc[timestamp, col] = row[1 + idx]
+        elif self.repeat_timestamp:
+            self.df.loc[len(self.df)] = [timestamp] + data
         else:
-            if timestamp in self.df.index:
-                self.logger.info("DUPLICATE TIMESTAMP")
-                self.logger.info("timestamp = %s | data = %s", timestamp, data)
-                self.logger.info("self.df.loc[timestamp]")
-                self.logger.info("%s", self.df.loc[timestamp])
-                # if not self.df.loc[timestamp].empty:
-                #     raise StandardError()
-                #     data = (data + self.df.loc[timestamp]) / 2
-                #     self.logger.info("new_data = %s", data)
             self.df.loc[timestamp] = data
 
     def concat_df(self, new_df):
@@ -49,10 +50,12 @@ class PandasTools:
             # print "self.df.shape", self.df.shape
 
     #
-    # PRE: not(self.is_empty_df())
+    # PRE:
+    # (1) not(self.is_empty_df())
+    # (2) time_unit in ['minutes']
     #
-    def df_to_csv(self, output_file):
-        previous_timestamp = None
+    def df_to_csv(self, output_file, time_unit):
+        previous_timestamp = self._first_timestamp()
         # if self.parser.NAME == 'ADCP':
         #     for index, row in self.df.iterrows():
         #         timestamp, depth = index
@@ -66,18 +69,25 @@ class PandasTools:
         #         previous_timestamp = timestamp
         # else:
         for timestamp, row in self.df.iterrows():
+            if self.repeat_timestamp:
+                timestamp = row[0]
+                row = row[1:]
             values = [self.map_value(value) for value in row.values]
-            if previous_timestamp is None:  # first row
-                timestamp_str = timestamp.strftime(converter_utils.DATE_FORMAT)
-            else:
-                delta = timestamp - previous_timestamp  # always positive
-                timestamp_str = converter_utils.format_timedelta(delta)
+            delta = timestamp - previous_timestamp  # always positive
+            timestamp_str = converter_utils.format_timedelta(delta, time_unit)
             output_file.write_row([timestamp_str] + values)
             previous_timestamp = timestamp
 
+    def _first_timestamp(self):
+        return self.df['Timestamp'].iloc[0] if self.repeat_timestamp else self.df.index.min()
+
+    def first_timestamp(self):
+        timestamp_str = self._first_timestamp().strftime(converter_utils.DATE_FORMAT)
+        return timestamp_str
+
     @classmethod
     def map_value(cls, value):
-        return cls.NO_DATA if pd.isnull(value) else int(round(float(value)*100, 0))
+        return cls.NO_DATA if pd.isnull(value) else int(value)
 
     def print_stats(self):
         total_rows, nan_rows = self.rows_count(), self.nan_rows_count()
@@ -103,15 +113,19 @@ class PandasTools:
     # These stats only make sense for datasets in which the timestamp is always ASC
     #
     def _asc_timestamp_stats(self, clean_df):
-        first_timestamp, last_timestamp = clean_df.index[0], clean_df.index[-1]
+        if self.repeat_timestamp:
+            first_timestamp, last_timestamp = clean_df['Timestamp'].iloc[0], clean_df['Timestamp'].iloc[-1]
+        else:
+            first_timestamp, last_timestamp = clean_df.index[0], clean_df.index[-1]
         self.logger.info("First timestamp: %s", first_timestamp)
         self.logger.info("Last timestamp: %s", last_timestamp)
         diff_s = (last_timestamp - first_timestamp).total_seconds()
         diff_m, diff_h, diff_d = divmod(diff_s, 60)[0], divmod(diff_s, 3600)[0], divmod(diff_s, 86400)[0]
         self.logger.info("Last timestamp - First timestamp: %s sec | %s min | %s hours | %s days",
                      diff_s, diff_m, diff_h, diff_d)
-        self.logger.info("Min value: %s", np.nanmin(clean_df.values))
-        self.logger.info("Max value: %s", np.nanmax(clean_df.values))
+        if not self.repeat_timestamp:
+            self.logger.info("Min value: %s", np.nanmin(clean_df.values))
+            self.logger.info("Max value: %s", np.nanmax(clean_df.values))
 
     def rows_count(self):
         return len(self.df.index)
