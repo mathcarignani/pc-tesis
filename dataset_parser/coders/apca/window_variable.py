@@ -23,14 +23,22 @@ class WindowVariable(object):
     def is_empty(self):
         return self.current_window_length == 0
 
+    #
+    # PRE: not self.is_full()
+    #
+    def add_value_2_output(self, _):
+        # We don't care about the actual value
+        # self.current_window.append(value)
+        self.current_window_length += 1
+        return True
+
     def condition_holds(self, value):
         if self.is_full():
             return False
 
         if value is self.nan:
             if self.constant == self.nan:
-                self.current_window_length += 1
-                return True
+                return self.add_value_2_output(value)
             else:
                 return False
 
@@ -38,8 +46,7 @@ class WindowVariable(object):
 
         if self.is_empty():
             self.min, self.max, self.constant = [value] * 3
-            self.current_window_length += 1
-            return True
+            return self.add_value_2_output(value)
 
         if self.constant is self.nan:
             return False
@@ -49,8 +56,7 @@ class WindowVariable(object):
         elif value > self.max:
             return self._update_constant(value, self.min, value)
         else:  # self.min <= value <= self.max
-            self.current_window_length += 1
-            return True
+            return self.add_value_2_output(value)
 
     def _update_constant(self, value, new_min, new_max):
         if not window_utils.valid_threshold(new_min, new_max, self.error_threshold):  # condition does not hold

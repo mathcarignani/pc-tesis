@@ -4,6 +4,9 @@ NOAA-SST=1
 NOAA-ADCP=2
 SolarAnywhere=3
 ElNino=4
+NOAA-SPC-hail=5
+NOAA-SPC-tornado=6
+NOAA-SPC-wind=7
 
 #TIME_UNIT
 seconds=0

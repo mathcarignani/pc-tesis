@@ -36,9 +36,13 @@ class ParserElNino(parser_base.ParserBase):
         # 2 80 3 8 800308 -0.02 -109.46 -4.9 1.1 . 25.66 25.97
         s_line = line.split()
         timestamp = datetime.strptime("19" + s_line[4] + "T00:00", self.date_format)
+
         values = s_line[5:]
         if self.columns_length != len(values):
             raise StandardError("self.columns_length != len(data)")
+
+        # lat, long, zon_winds, mer_winds, humidity, air_temp, ss_temp = values
+
         data = [self._map_value(x) for x in values]
         return {'timestamp': timestamp, 'values': data}
 
