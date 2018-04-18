@@ -14,7 +14,6 @@ from file_utils.text_utils.text_file_reader import TextFileReader
 
 from parsers.adcp.parser_adcp import ParserADCP
 # from parsers.climaps.parser_climaps import ParserClimaps
-# from parsers.elnino.parser_elnino import ParserElNino
 from parsers.irkis.parser_vwc import ParserVWC
 from parsers.noaa.parser_noaa import ParserNOAA
 from parsers.noaa_spc.parser_noaa_spc import ParserNOAASPC
@@ -24,20 +23,6 @@ from parsers.solar_anywhere.parser_solar_anywhere import ParserSolarAnywhere
 import os
 current_path = os.path.dirname(os.path.abspath(__file__))
 datasets_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets/"
-
-
-# def convert_to_csv(parser_klass, input_path, input_filenames, output_path, reader_cls, date_range):
-#     for input_filename in input_filenames:
-#         output_filename = input_filename + '.csv'
-#         logging.info("#################################################################################")
-#         logging.info("INPUT: %s/%s", input_path, input_filename)
-#         logging.info("OUTPUT: %s/%s", output_path, output_filename)
-#         input_file = reader_cls(input_path, input_filename)
-#         csv_converter = CSVConverter(parser_klass())
-#         csv_converter.input_csv_to_df(input_file, date_range)
-#         csv_converter.print_stats()
-#         csv_converter.df_to_output_csv(output_path, output_filename)
-#         csv_converter.plot(output_path)
 
 
 def convert_to_csv_many(args, csv_converter, input_path, input_filenames, output_path, plot_output_path=None):
@@ -68,13 +53,6 @@ def run(args):
         convert_to_csv_many(args, CSVConverterADCP(logger), input_path, input_filenames, output_path)
     elif parser_cls == ParserSolarAnywhere:
         convert_to_csv_many(args, CSVConverterSolarAnywhere(logger), input_path, input_filenames, output_path, output_path)
-    else:
-        pass
-        # convert_to_csv(parser_cls(), input_path, input_filenames, output_path, reader_cls, date_range)
-
-
-def irkis():
-    run(ParserVWC, "output-irkis.log", "[1]irkis/vwc", "/[1]irkis")
 
 
 def noaa_buoy(year, month=None):
@@ -164,10 +142,6 @@ def solar_anywhere(year, month=None):
 # solar_anywhere(2011)
 
 
-# run(ParserElNino, "output-elnino.log", "[3]el-nino/large/data", "/[3]el-nino")
-# run(ParserClimaps, "output-climaps.log", "[5]climaps/crete/17/climaps-data", "/[5]climaps", CSVReader)
-
-
 def noaa_spc(dataset):
     input_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets/[6]noaa-spc-reports"
     input_filename = "noaa_spc." + dataset + "_reports.csv"
@@ -189,9 +163,9 @@ def noaa_spc(dataset):
 
     input_file.close()
 
-noaa_spc('hail')
-noaa_spc('tornado')
-noaa_spc('wind')
+# noaa_spc('hail')
+# noaa_spc('tornado')
+# noaa_spc('wind')
 
 # def compare():
 #     path1 = "/Users/pablocerve/Documents/FING/Proyecto/datasets/[6]noaa-spc-reports"

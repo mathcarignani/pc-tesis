@@ -49,14 +49,14 @@ class DataFrameUtils:
 
     def buoy_start(self, new_buoy_id):
         print "new buoy", new_buoy_id
-        columns = ["lat", "long", "SST"]
+        columns = ["lat", "long", "ZonWinds", "MerWinds", "Humidity", "AirTemp", "SST"]
         columns = ["%s_%s" % (new_buoy_id, column) for column in columns]
 
         if new_buoy_id != 1:  # this is only False the first time this method is called
             self.buoy_end()
 
         self.current_pandas_tools = PandasTools(self.parser, self.logger)
-        self.current_pandas_tools.new_df(columns)
+        self.current_pandas_tools.new_df(columns, False)
 
     def add_row(self, timestamp, row):
         self.current_pandas_tools.add_row(timestamp, row)
@@ -70,12 +70,12 @@ class DataFrameUtils:
         # output to file
         output_file = CSVWriter(output_path, output_filename)
         output_file.write_row(['DATASET:', self.parser.NAME])
-        # output_file.write_row(['TIME UNIT:', 'hours'])
-        # output_file.write_row(['FIRST TIMESTAMP:', '???'])
-        row = ['Timestamp']
+        output_file.write_row(['TIME UNIT:', 'hours'])
+        output_file.write_row(['FIRST TIMESTAMP:', self.pandas_tools.first_timestamp()])
+        row = ['Time Delta']
         row.extend(self.pandas_tools.df.columns)
         output_file.write_row(row)
-        self.pandas_tools.df_to_csv(output_file)
+        self.pandas_tools.df_to_csv(output_file, 'hours')
         output_file.close()
 
 
@@ -95,25 +95,24 @@ class Script:
         self.buoy_dictionary = {}
 
     def run_loop(self):
-        min_max_values = [None] * 6
+        min_max_values = [None] * 2 * 7
         while self.text_file.continue_reading:  # and self.count < 10289:
             line = self.text_file.read_line()
             data = self.parser.parse_data(line)  # {'timestamp': timestamp, 'values': data}
             timestamp = data['timestamp']
-            lat, longi = data['values'][0:2]
-            ss_temp = data['values'][6]
+            lat, longi, zon_winds, mer_winds, humidity, air_temp, ss_temp = data['values']
 
             # calculate min and max for each column
-            self.update_min_max_values(min_max_values, [lat, longi, ss_temp])
+            self.update_min_max_values(min_max_values, [lat, longi, zon_winds, mer_winds, humidity, air_temp, ss_temp])
 
-            # self.iteration(timestamp, lat, longi)
-            # self.df_utils.add_row(timestamp, [lat, longi, ss_temp])
-            #
-            # self.last_timestamp = timestamp
-            # self.count += 1
+            self.iteration(timestamp, lat, longi)
+            self.df_utils.add_row(timestamp, [lat, longi, zon_winds, mer_winds, humidity, air_temp, ss_temp])
+
+            self.last_timestamp = timestamp
+            self.count += 1
         print min_max_values
-        # self.print_data(True)
-        # self.df_utils.buoy_end()
+        self.print_data(True)
+        self.df_utils.buoy_end()
 
     @classmethod
     def update_min_max_values(cls, min_max_values, values):

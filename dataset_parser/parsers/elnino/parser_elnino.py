@@ -41,13 +41,26 @@ class ParserElNino(parser_base.ParserBase):
         if self.columns_length != len(values):
             raise StandardError("self.columns_length != len(data)")
 
-        # lat, long, zon_winds, mer_winds, humidity, air_temp, ss_temp = values
+        lat, long, zon_winds, mer_winds, humidity, air_temp, ss_temp = values
+        zon_winds, mer_winds, humidity = [self._check_commas(x, 1) for x in [zon_winds, mer_winds, humidity]]
+        lat, long, air_temp, ss_temp = [self._check_commas(x, 2) for x in [lat, long, air_temp, ss_temp]]
+        data = [lat, long, zon_winds, mer_winds, humidity, air_temp, ss_temp]
 
-        data = [self._map_value(x) for x in values]
         return {'timestamp': timestamp, 'values': data}
 
-    def _map_value(self, value):
-        return ParserElNino.NO_DATA if value == self.nodata else float(value)
+    #
+    # Check that the value doesn't have more numbers after the comma than its supposed to
+    #
+    def _check_commas(self, value, power):
+        if value == self.nodata:
+            return ParserElNino.NO_DATA
+
+        split_value = value.split(".")
+        if len(split_value) == 2 and len(split_value[1]) > power:
+            raise StandardError("More than power (%s) numbers after the comma. value = %" % (power, value))
+
+        return float(value) * 10 ** power
+
 
     @staticmethod
     def plot(path, filename, df):

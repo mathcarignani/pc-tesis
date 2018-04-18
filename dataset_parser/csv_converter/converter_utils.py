@@ -11,5 +11,13 @@ def format_timedelta(td, time_unit):
         if seconds != 0:
             raise StandardError("seconds must be 0 if time_unit == 'minutes'")
         return 60*hours + minutes
+
+    elif time_unit == 'hours':
+        if seconds != 0:
+            raise StandardError("seconds must be 0 if time_unit == 'hours'")
+        if minutes != 0:
+            raise StandardError("minutes must be 0 if time_unit == 'hours'")
+        return hours
+
     else:
         raise StandardError("Implement time_unit = " + time_unit)

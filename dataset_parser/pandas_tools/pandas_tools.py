@@ -87,6 +87,9 @@ class PandasTools:
 
     @classmethod
     def map_value(cls, value):
+        #
+        # The values were float up until this point because pandas stats for int columns are incomplete
+        #
         return cls.NO_DATA if pd.isnull(value) else int(value)
 
     def print_stats(self):
@@ -103,7 +106,10 @@ class PandasTools:
             if self.parser.asc_timestamp:
                 self._asc_timestamp_stats(clean_df)
             self.logger.info("\nDataset stats:")
-            self.logger.info(clean_df.describe(include='all', percentiles=[]))
+            des = clean_df.describe(include='all', percentiles=[])
+            for i in des:
+                self.logger.info(des[i])
+                self.logger.info("")
             self.logger.info("")
             self.logger.info("Null values count for each column:")
             self.logger.info(clean_df.isnull().sum())
