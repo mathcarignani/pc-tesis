@@ -16,7 +16,7 @@ from .. import parser_base
 # 178079 98 6 14 980614 8.96 -140.33 -4.9 -2.3 76.2 27.36 28.03
 # 178080 98 6 15 980615 8.95 -140.33 . . . 27.09 28.09
 class ParserElNino(parser_base.ParserBase):
-    NAME = "EL-NINO"
+    NAME = "ElNino"
 
     def __init__(self):
         super(ParserElNino, self).__init__()

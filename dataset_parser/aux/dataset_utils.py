@@ -65,6 +65,7 @@ class DatasetUtils:
 
     def map_dataset(self, key):
         dictionary = self.constants['dataset_dictionary']
+        print dictionary
         dictionary = dictionary if self.action == 'code' else inverse_dict(dictionary)
         return dictionary[key]
 

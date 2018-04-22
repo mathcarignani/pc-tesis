@@ -1,18 +1,16 @@
+import os
+
 import sys
 sys.path.append('.')
 from file_utils.csv_utils.csv_reader import CSVReader
 from file_utils.csv_utils.csv_writer import CSVWriter
 
-import os
+from scripts.utils import csv_files_filenames
 
 
 def change_csv_names():
-    # dataset_path = csv_path + '/' + dataset_folder
     dataset_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017"
-    input_filenames = os.listdir(dataset_path)
-    input_filenames = [f for f in input_filenames if os.path.isfile(os.path.join(dataset_path, f))]
-    input_filenames = [f for f in input_filenames if f.endswith(".csv")]
-    for filename in input_filenames:
+    for filename in csv_files_filenames(dataset_path):
         old_name = dataset_path + '/' + filename
         new_name = dataset_path + '/' + filename.replace(".csv", ".old.csv")
         print old_name, new_name
@@ -75,11 +73,7 @@ def convert_to_minutes(delta):
 
 def run_script(dataset_folder):
     dataset_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/" + dataset_folder
-    input_filenames = os.listdir(dataset_path)
-    input_filenames = [f for f in input_filenames if os.path.isfile(os.path.join(dataset_path, f))]
-    input_filenames = [f for f in input_filenames if f.endswith(".old.csv")]
-    # print input_filenames
-    for input_filename in input_filenames:
+    for input_filename in csv_files_filenames(dataset_path, ".old.csv"):
         modify_csv(dataset_path, input_filename)
 
 

@@ -18,24 +18,13 @@ from coders.apca.decoder_apca import DecoderAPCA
 from coders.ca.coder_ca import CoderCA
 from coders.ca.decoder_ca import DecoderCA
 
-
-
-def csv_files_filenames(input_path):
-    input_filenames = os.listdir(input_path)
-    input_filenames = [f for f in input_filenames if os.path.isfile(os.path.join(input_path, f))]
-    input_filenames = [f for f in input_filenames if f.endswith(".csv")]
-    return input_filenames
+from scripts.utils import csv_files_filenames, create_folder
 
 
 def csv_row_count(input_path, input_filename):
     csv = CSVReader(input_path, input_filename)
     csv.close()
     return csv.total_lines - 4
-
-
-def create_folder(directory):
-    if not os.path.exists(directory):
-        os.makedirs(directory)
 
 
 def compress_file(args):
@@ -101,10 +90,10 @@ dataset_array = [
     # {'name': 'NOAA-SST', 'folder': "[2]noaa-sst/months/2017", 'logger': "noaa-sst.log", 'o_folder': "[2]noaa-sst"},
     # {'name': 'NOAA-ADCP', 'folder': "[3]noaa-adcp/2015", 'logger': "noaa-adcp.log", 'o_folder': "[3]noaa-adcp"},
     # {'name': 'SolarAnywhere', 'folder': "[4]solar-anywhere/2011", 'logger': "solar-anywhere.log", 'o_folder': "[4]solar-anywhere"},
-    # {'name': 'ElNino', 'folder': "[5]el-nino", 'logger': "el-nino.log", 'o_folder': "[5]el-nino"},
-    {'name': 'NOAA-SPC-hail', 'folder': "[6]noaa-spc-reports/hail", 'logger': "noaa-spc-hail.log", 'o_folder': "[6]noaa-spc-reports"},
-    {'name': 'NOAA-SPC-tornado', 'folder': "[6]noaa-spc-reports/tornado", 'logger': "noaa-spc-tornado.log", 'o_folder': "[6]noaa-spc-reports"},
-    {'name': 'NOAA-SPC-wind', 'folder': "[6]noaa-spc-reports/wind", 'logger': "noaa-spc-wind.log", 'o_folder': "[6]noaa-spc-reports"}
+    {'name': 'ElNino', 'folder': "[5]el-nino", 'logger': "el-nino.log", 'o_folder': "[5]el-nino"},
+    # {'name': 'NOAA-SPC-hail', 'folder': "[6]noaa-spc-reports/hail", 'logger': "noaa-spc-hail.log", 'o_folder': "[6]noaa-spc-reports"},
+    # {'name': 'NOAA-SPC-tornado', 'folder': "[6]noaa-spc-reports/tornado", 'logger': "noaa-spc-tornado.log", 'o_folder': "[6]noaa-spc-reports"},
+    # {'name': 'NOAA-SPC-wind', 'folder': "[6]noaa-spc-reports/wind", 'logger': "noaa-spc-wind.log", 'o_folder': "[6]noaa-spc-reports"}
 ]
 
 coders_array = [
