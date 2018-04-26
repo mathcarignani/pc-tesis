@@ -6,20 +6,24 @@ class CSVCompare:
         self.file2 = CSVReader(file2_path, file2_filename)
 
     #
-    # threshold >=0 is the maximum difference between the original and the compressed values
+    # threshold is an array with the the maximum difference between the original and the compressed values
     # in a near-lossless compression schema
     #
-    def compare(self, threshold=0):
+    def compare(self, threshold=None):
         self.row_count = 0
-        while self.file1.continue_reading and self.file2.continue_reading:
+        idx_error = False
+        while not idx_error and self.file1.continue_reading and self.file2.continue_reading:
             row1, row2 = self.file1.read_line(), self.file2.read_line()
             if self.row_count < 4:
-                self._compare_first_four_rows(row1, row2)
+                idx_error = self._compare_first_four_rows(row1, row2)
             else:
-                self._compare_rows(row1, row2, threshold)
+                idx_error = self._compare_rows(row1, row2, threshold)
             self.row_count += 1
 
-        if self.file1.continue_reading or self.file2.continue_reading:
+        if idx_error:
+            print "ERROR IN LINE %s", self._print_row_count()
+            return False
+        elif self.file1.continue_reading or self.file2.continue_reading:
             file_name = "file2" if self.file1.continue_reading else "file2"
             print "ERROR: reach end of file", file_name
             return False
@@ -27,33 +31,29 @@ class CSVCompare:
             print "Same files!"
             return True
 
-    def _compare_first_four_rows(self, row1, row2):
-        if row1 != row2:
-            self._print_row_count()
-            for idx, val in enumerate(row1):
-                if row1[idx] != row2[idx]:
-                    self._print_idx_error(idx, row1, row2)
+    @classmethod
+    def _compare_first_four_rows(cls, row1, row2):
+        return True if row1 != row2 else False
 
     def _compare_rows(self, row1, row2, threshold):
-        first_error = True
         for idx, val in enumerate(row2):
             idx_error = False
-            if idx == 0:  # timestamp
-                if row1[idx] != row2[idx]:
-                    idx_error = True
-            elif row1[idx] == 'N' or row2[idx] == 'N':  # both values must be 'N'
+            if row1[idx] == 'N' or row2[idx] == 'N':  # both values must be 'N'
                 if row1[idx] != 'N' or row2[idx] != 'N':
                     idx_error = True
-            else:  # two numbers
+            else:
+                error_threshold = 0 if threshold is None else threshold[idx]
+                # two numbers
                 abs_diff = abs(int(row1[idx]) - int(row2[idx]))
-                if abs_diff > threshold:
+                if abs_diff > error_threshold:
+                    print 'abs_diff', abs_diff, 'error_threshold', error_threshold
                     idx_error = True
 
-            if idx_error and first_error:
-                first_error = False
-                self._print_row_count()
             if idx_error:
                 self._print_idx_error(idx, row1, row2)
+                return True
+            else:
+                return False
 
     def _print_row_count(self):
         print "row_count = %s" % str(self.row_count)

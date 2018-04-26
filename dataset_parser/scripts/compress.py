@@ -19,6 +19,7 @@ from coders.ca.coder_ca import CoderCA
 from coders.ca.decoder_ca import DecoderCA
 
 from scripts.utils import csv_files_filenames, create_folder
+from scripts.calculate_std import calculate_file_stats, calculate_stds_percentages
 
 
 def csv_row_count(input_path, input_filename):
@@ -54,7 +55,7 @@ def compress_file(args):
 
     # compare
     csv_compare = CSVCompare(input_path, input_filename, output_path, decompressed_filename)
-    same_file = csv_compare.compare(coder_params.get('error_threshold') or 0)
+    same_file = csv_compare.compare(coder_params.get('error_threshold'))
 
     # print results
     logger = args['logger']
@@ -90,10 +91,10 @@ dataset_array = [
     # {'name': 'NOAA-SST', 'folder': "[2]noaa-sst/months/2017", 'logger': "noaa-sst.log", 'o_folder': "[2]noaa-sst"},
     # {'name': 'NOAA-ADCP', 'folder': "[3]noaa-adcp/2015", 'logger': "noaa-adcp.log", 'o_folder': "[3]noaa-adcp"},
     # {'name': 'SolarAnywhere', 'folder': "[4]solar-anywhere/2011", 'logger': "solar-anywhere.log", 'o_folder': "[4]solar-anywhere"},
-    {'name': 'ElNino', 'folder': "[5]el-nino", 'logger': "el-nino.log", 'o_folder': "[5]el-nino"},
+    # {'name': 'ElNino', 'folder': "[5]el-nino", 'logger': "el-nino.log", 'o_folder': "[5]el-nino"},
     # {'name': 'NOAA-SPC-hail', 'folder': "[6]noaa-spc-reports/hail", 'logger': "noaa-spc-hail.log", 'o_folder': "[6]noaa-spc-reports"},
     # {'name': 'NOAA-SPC-tornado', 'folder': "[6]noaa-spc-reports/tornado", 'logger': "noaa-spc-tornado.log", 'o_folder': "[6]noaa-spc-reports"},
-    # {'name': 'NOAA-SPC-wind', 'folder': "[6]noaa-spc-reports/wind", 'logger': "noaa-spc-wind.log", 'o_folder': "[6]noaa-spc-reports"}
+    {'name': 'NOAA-SPC-wind', 'folder': "[6]noaa-spc-reports/wind", 'logger': "noaa-spc-wind.log", 'o_folder': "[6]noaa-spc-reports"}
 ]
 
 coders_array = [
@@ -101,190 +102,137 @@ coders_array = [
         'name': 'CoderBasic',
         'coder': CoderBasic,
         'decoder': DecoderBasic,
-        'o_folder': 'basic',
-        'params': [{}]
+        'o_folder': 'basic'
     },
     {
         'name': 'CoderPCA',
         'coder': CoderPCA,
         'decoder': DecoderPCA,
         'o_folder': 'pca',
-        'params': [
-            {'error_threshold': 0, 'fixed_window_size': 5},
-            {'error_threshold': 0, 'fixed_window_size': 10},
-            {'error_threshold': 0, 'fixed_window_size': 20},
-            {'error_threshold': 0, 'fixed_window_size': 40},
-            {'error_threshold': 0, 'fixed_window_size': 100},
-            {'error_threshold': 10, 'fixed_window_size': 5},
-            {'error_threshold': 10, 'fixed_window_size': 10},
-            {'error_threshold': 10, 'fixed_window_size': 20},
-            {'error_threshold': 10, 'fixed_window_size': 40},
-            {'error_threshold': 10, 'fixed_window_size': 100},
-            {'error_threshold': 25, 'fixed_window_size': 5},
-            {'error_threshold': 25, 'fixed_window_size': 10},
-            {'error_threshold': 25, 'fixed_window_size': 20},
-            {'error_threshold': 25, 'fixed_window_size': 40},
-            {'error_threshold': 25, 'fixed_window_size': 100},
-            {'error_threshold': 50, 'fixed_window_size': 5},
-            {'error_threshold': 50, 'fixed_window_size': 10},
-            {'error_threshold': 50, 'fixed_window_size': 20},
-            {'error_threshold': 50, 'fixed_window_size': 40},
-            {'error_threshold': 50, 'fixed_window_size': 100},
-            {'error_threshold': 100, 'fixed_window_size': 5},
-            {'error_threshold': 100, 'fixed_window_size': 10},
-            {'error_threshold': 100, 'fixed_window_size': 20},
-            {'error_threshold': 100, 'fixed_window_size': 40},
-            {'error_threshold': 100, 'fixed_window_size': 100},
-            {'error_threshold': 250, 'fixed_window_size': 5},
-            {'error_threshold': 250, 'fixed_window_size': 10},
-            {'error_threshold': 250, 'fixed_window_size': 20},
-            {'error_threshold': 250, 'fixed_window_size': 40},
-            {'error_threshold': 250, 'fixed_window_size': 100},
-            {'error_threshold': 500, 'fixed_window_size': 5},
-            {'error_threshold': 500, 'fixed_window_size': 10},
-            {'error_threshold': 500, 'fixed_window_size': 20},
-            {'error_threshold': 500, 'fixed_window_size': 40},
-            {'error_threshold': 500, 'fixed_window_size': 100}
-        ]
+        'params': {'fixed_window_size': [5, 10, 25, 50, 100, 200]}
     },
     {
         'name': 'CoderAPCA',
         'coder': CoderAPCA,
         'decoder': DecoderAPCA,
         'o_folder': 'apca',
-        'params': [
-            {'error_threshold': 0, 'max_window_size': 5},
-            {'error_threshold': 0, 'max_window_size': 10},
-            {'error_threshold': 0, 'max_window_size': 20},
-            {'error_threshold': 0, 'max_window_size': 40},
-            {'error_threshold': 0, 'max_window_size': 100},
-            {'error_threshold': 10, 'max_window_size': 5},
-            {'error_threshold': 10, 'max_window_size': 10},
-            {'error_threshold': 10, 'max_window_size': 20},
-            {'error_threshold': 10, 'max_window_size': 40},
-            {'error_threshold': 10, 'max_window_size': 100},
-            {'error_threshold': 25, 'max_window_size': 5},
-            {'error_threshold': 25, 'max_window_size': 10},
-            {'error_threshold': 25, 'max_window_size': 20},
-            {'error_threshold': 25, 'max_window_size': 40},
-            {'error_threshold': 25, 'max_window_size': 100},
-            {'error_threshold': 50, 'max_window_size': 5},
-            {'error_threshold': 50, 'max_window_size': 10},
-            {'error_threshold': 50, 'max_window_size': 20},
-            {'error_threshold': 50, 'max_window_size': 40},
-            {'error_threshold': 50, 'max_window_size': 100},
-            {'error_threshold': 100, 'max_window_size': 5},
-            {'error_threshold': 100, 'max_window_size': 10},
-            {'error_threshold': 100, 'max_window_size': 20},
-            {'error_threshold': 100, 'max_window_size': 40},
-            {'error_threshold': 100, 'max_window_size': 100},
-            {'error_threshold': 250, 'max_window_size': 5},
-            {'error_threshold': 250, 'max_window_size': 10},
-            {'error_threshold': 250, 'max_window_size': 20},
-            {'error_threshold': 250, 'max_window_size': 40},
-            {'error_threshold': 250, 'max_window_size': 100},
-            {'error_threshold': 500, 'max_window_size': 5},
-            {'error_threshold': 500, 'max_window_size': 10},
-            {'error_threshold': 500, 'max_window_size': 20},
-            {'error_threshold': 500, 'max_window_size': 40},
-            {'error_threshold': 500, 'max_window_size': 100},
-        ]
+        'params': {'max_window_size': [5, 10, 25, 50, 100, 200]}
     },
     {
         'name': 'CoderCA',
         'coder': CoderCA,
         'decoder': DecoderCA,
         'o_folder': 'ca',
-        'params': [
-            {'error_threshold': 0, 'max_window_size': 5},
-            {'error_threshold': 0, 'max_window_size': 10},
-            {'error_threshold': 0, 'max_window_size': 20},
-            {'error_threshold': 0, 'max_window_size': 40},
-            {'error_threshold': 0, 'max_window_size': 100},
-            {'error_threshold': 10, 'max_window_size': 5},
-            {'error_threshold': 10, 'max_window_size': 10},
-            {'error_threshold': 10, 'max_window_size': 20},
-            {'error_threshold': 10, 'max_window_size': 40},
-            {'error_threshold': 10, 'max_window_size': 100},
-            {'error_threshold': 25, 'max_window_size': 5},
-            {'error_threshold': 25, 'max_window_size': 10},
-            {'error_threshold': 25, 'max_window_size': 20},
-            {'error_threshold': 25, 'max_window_size': 40},
-            {'error_threshold': 25, 'max_window_size': 100},
-            {'error_threshold': 50, 'max_window_size': 5},
-            {'error_threshold': 50, 'max_window_size': 10},
-            {'error_threshold': 50, 'max_window_size': 20},
-            {'error_threshold': 50, 'max_window_size': 40},
-            {'error_threshold': 50, 'max_window_size': 100},
-            {'error_threshold': 100, 'max_window_size': 5},
-            {'error_threshold': 100, 'max_window_size': 10},
-            {'error_threshold': 100, 'max_window_size': 20},
-            {'error_threshold': 100, 'max_window_size': 40},
-            {'error_threshold': 100, 'max_window_size': 100},
-            {'error_threshold': 250, 'max_window_size': 5},
-            {'error_threshold': 250, 'max_window_size': 10},
-            {'error_threshold': 250, 'max_window_size': 20},
-            {'error_threshold': 250, 'max_window_size': 40},
-            {'error_threshold': 250, 'max_window_size': 100},
-            {'error_threshold': 500, 'max_window_size': 5},
-            {'error_threshold': 500, 'max_window_size': 10},
-            {'error_threshold': 500, 'max_window_size': 20},
-            {'error_threshold': 500, 'max_window_size': 40},
-            {'error_threshold': 500, 'max_window_size': 100},
-        ]
+        'params': {'max_window_size': [5, 10, 25, 50, 100, 200]}
     },
 ]
 
 
-def script():
+def script(output_filename):
     datasets_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/"
     output_path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/"
-    csv = CSVWriter(output_path, 'results.csv')
-    csv.write_row(['Dataset', 'Filename', '#rows', 'Coder', 'Params', 'Size (B)', 'Compression Rate (%)'])
+    csv = CSVWriter(output_path, output_filename)
+    csv.write_row(['Dataset', 'Filename', '#rows', 'Coder', '%', 'Error Threshold',
+                   'Window Param', 'Size (B)', 'CR (%)',
+                   'Delta - Size (b)', 'Delta - CR (%)',
+                   'Other columns - Size (b)', 'Other columns - CR (%)'])
+
     for dataset_dictionary in dataset_array:
-        row = [dataset_dictionary['name']]
-
-        input_path = datasets_path + dataset_dictionary['folder']
-        logger_name = dataset_dictionary['logger']
-        logger = setup_logger(logger_name, logger_name)
-
-        output_dataset_path = output_path + dataset_dictionary['o_folder']
-        create_folder(output_dataset_path)
-
-        for id1, input_filename in enumerate(csv_files_filenames(input_path)):
-            values = [input_filename, PrintUtils.separate(csv_row_count(input_path, input_filename))]
-            row = row + values if id1 == 0 else [None] + values
-            base_values = None
-
-            for id2, coder_dictionary in enumerate(coders_array):
-                values = [coder_dictionary['name']]
-                row = row + values if id2 == 0 else [None, None, None] + values
-
-                output_dataset_coder_path = output_dataset_path + '/' + coder_dictionary['o_folder']
-                create_folder(output_dataset_coder_path)
-
-                for id3, params in enumerate(coder_dictionary['params']):
-                    values = [params]
-                    row = row + values if id3 == 0 else [None, None, None, None] + values
-                    args = {
-                        'logger': logger,
-                        'coder': coder_dictionary['coder'],
-                        'coder_params': params,
-                        'decoder': coder_dictionary['decoder'],
-                        'input_path': input_path,
-                        'input_filename': input_filename,
-                        'output_path': output_dataset_coder_path
-                    }
-                    compression_values = compress_file(args)
-                    if base_values is None:
-                        base_values = compression_values
-                        for value in compression_values:
-                            row += [PrintUtils.separate(value), 100]
-                    else:
-                        for idx, value in enumerate(compression_values):
-                            percentage = PrintUtils.percentage(value, base_values[idx])
-                            row += [PrintUtils.separate(value), PrintUtils.separate(percentage)]
-                    csv.write_row(row)
+        run_script_on_dataset(csv, datasets_path, dataset_dictionary, output_path)
     csv.close()
 
-script()
+
+def run_script_on_dataset(csv, datasets_path, dataset_dictionary, output_path):
+    input_path = datasets_path + dataset_dictionary['folder']
+    logger_name = dataset_dictionary['logger']
+    logger = setup_logger(logger_name, logger_name)
+
+    output_dataset_path = output_path + dataset_dictionary['o_folder']
+    create_folder(output_dataset_path)
+
+    for id1, input_filename in enumerate(csv_files_filenames(input_path)):
+        row = [dataset_dictionary['name']] if id1 == 0 else [None]
+        run_script_on_file(csv, id1, row, logger, input_path, input_filename, output_dataset_path)
+
+
+def run_script_on_file(csv, id1, row, logger, input_path, input_filename, output_dataset_path):
+    base_values = None
+    row_count = PrintUtils.separate(csv_row_count(input_path, input_filename))
+
+    # calculate error thresholds
+    percentages = [0, 3, 5, 10, 15, 20, 30]
+    stds = calculate_file_stats(input_path, input_filename)
+    thresholds_hash = calculate_stds_percentages(stds, percentages)
+
+    for id2, coder_dictionary in enumerate(coders_array):
+        if id1 == 0 and id2 == 0:  # first row of dataset and file
+            row += [input_filename, row_count]
+        elif id2 == 0:  # first row of file
+            row = [None, input_filename, row_count]
+        else:
+            row = [None, None, None]
+        base_values = run_script_on_coder(csv, row, coder_dictionary, output_dataset_path, logger,
+                                          input_path, input_filename, base_values, thresholds_hash)
+
+
+def run_script_on_coder(csv, row, coder_dictionary, output_dataset_path, logger, input_path, input_filename, base_values, thresholds_hash):
+    output_dataset_coder_path = output_dataset_path + '/' + coder_dictionary['o_folder']
+    create_folder(output_dataset_coder_path)
+
+    # CoderBasic - no params
+    if coder_dictionary['name'] == 'CoderBasic':
+        values = [coder_dictionary['name']] + [None] * 3
+        args = {
+            'logger': logger,
+            'coder': coder_dictionary['coder'],
+            'coder_params': {},
+            'decoder': coder_dictionary['decoder'],
+            'input_path': input_path,
+            'input_filename': input_filename,
+            'output_path': output_dataset_coder_path
+        }
+        compression_values = compress_file(args)
+        base_values = out_results(base_values, compression_values, row + values, csv)
+    else:
+        # CoderPCA, CoderAPCA and CoderCA
+        window_param_name = coder_dictionary['params'].keys()[0]  # there's a single key
+        window_sizes = coder_dictionary['params'][window_param_name]
+        percentages = thresholds_hash.keys()
+
+        for id3, percentage in enumerate(percentages):
+            error_thresold_array = thresholds_hash[percentage]
+            params = {'error_threshold': error_thresold_array}
+            for id4, window_size in enumerate(window_sizes):
+                values = [coder_dictionary['name']] if id3 == 0 and id4 == 0 else [None]
+                values += [percentage, params['error_threshold']] if id4 == 0 else [None, None]
+                values += [window_size]
+
+                params[window_param_name] = window_size
+                args = {
+                    'logger': logger,
+                    'coder': coder_dictionary['coder'],
+                    'coder_params': params,
+                    'decoder': coder_dictionary['decoder'],
+                    'input_path': input_path,
+                    'input_filename': input_filename,
+                    'output_path': output_dataset_coder_path
+                }
+                compression_values = compress_file(args)
+                base_values = out_results(base_values, compression_values, row + values, csv)
+    return base_values
+
+
+def out_results(base_values, compression_values, row, csv):
+    values = []
+    if base_values is None:
+        base_values = compression_values
+        for value in compression_values:
+            values += [PrintUtils.separate(value), 100]
+    else:
+        for idx, value in enumerate(compression_values):
+            percentage = PrintUtils.percentage(value, base_values[idx])
+            values += [PrintUtils.separate(value), PrintUtils.separate(percentage)]
+    csv.write_row(row + values)
+    return base_values
+
+script("results8_noaa-spc-wind.csv")

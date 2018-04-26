@@ -89,6 +89,16 @@ def calculate_folder_stats(input_path):
     return stds_arrays
 
 
+def calculate_stds_percentages(stds, percentages):
+    res = {}
+    for percentage in percentages:
+        div_percentage = float(percentage) / 100
+        row = ['N' if value == 'N' else int(round(value * div_percentage, 0)) for value in stds[1:]]
+        row.insert(0, 0)  # the error threshold for the timedelta is always 0
+        res[percentage] = row
+    return res
+
+
 def irkis():
     input_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis"
     stds_arrays = calculate_folder_stats(input_path)
@@ -119,4 +129,4 @@ def irkis():
 
     csv_write.close()
 
-irkis()
+# irkis()

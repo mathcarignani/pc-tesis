@@ -24,10 +24,13 @@ class CoderCols(CoderBase):
         raise NotImplementedError
 
     def _create_window(self):
-        params = {k:v for k,v in self.params.items()}
-        if self.column_index == 0:
-            # error_threshold must be 0 because deltas must be compressed with a lossless algorithm
-            params['error_threshold'] = 0
+        keys = self.params.keys()
+        params = {}
+        for key in keys:
+            if isinstance(self.params[key], list):
+                params[key] = self.params[key][self.column_index]
+            else:
+                params[key] = self.params[key]
         return self.window_cls(params)
 
     ####################################################################################################################
