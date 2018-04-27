@@ -67,6 +67,8 @@ def process(input_filename, output_filename, index):
     best_perc, best_windows, best_values = update_arrays(best_perc, best_window, best_windows, best_values)
     print_best_windows(csv_writer, current_coder, best_windows, best_values)
 
+
+# COL
 # process("results1_irkis.csv", "results1_irkis-col.csv", 12)
 
 # process("results2_noaa-sst.csv", "results2_noaa-sst-col.csv", 12)
@@ -92,6 +94,16 @@ def process(input_filename, output_filename, index):
 # process("results7_noaa-spc-tornado.csv", "results7_noaa-spc-tornado-col1.csv", 12)
 # process("results7_noaa-spc-tornado.csv", "results7_noaa-spc-tornado-col2.csv", 14)
 
-process("results8_noaa-spc-wind.csv", "results8_noaa-spc-wind-col1.csv", 12)
-process("results8_noaa-spc-wind.csv", "results8_noaa-spc-wind-col2.csv", 14)
-process("results8_noaa-spc-wind.csv", "results8_noaa-spc-wind-col3.csv", 16)
+# process("results8_noaa-spc-wind.csv", "results8_noaa-spc-wind-col1.csv", 12)
+# process("results8_noaa-spc-wind.csv", "results8_noaa-spc-wind-col2.csv", 14)
+# process("results8_noaa-spc-wind.csv", "results8_noaa-spc-wind-col3.csv", 16)
+
+# TD
+process("results1_irkis.csv", "results1_irkis-td.csv", 10)
+process("results2_noaa-sst.csv", "results2_noaa-sst-td.csv", 10)
+process("results3_noaa-adcp.csv", "results3_noaa-adcp-td.csv", 10)
+process("results4_solar-anywhere.csv", "results4_solar-anywhere-td.csv", 10)
+process("results5_el-nino.csv", "results5_el-nino-td.csv", 10)
+process("results6_noaa-spc-hail.csv", "results6_noaa-spc-hail-td.csv", 10)
+process("results7_noaa-spc-tornado.csv", "results7_noaa-spc-tornado-td.csv", 10)
+process("results8_noaa-spc-wind.csv", "results8_noaa-spc-wind-td.csv", 10)

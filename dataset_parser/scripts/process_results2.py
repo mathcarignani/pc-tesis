@@ -74,30 +74,43 @@ def calculate_results_file(row):
     return out_row
 
 
-input_path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/cols"
+# input_path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/cols"
+#
+# filenames = [
+#     "results1_irkis-col.csv",
+#     "results2_noaa-sst-col.csv",
+#     "results3_noaa-adcp-col.csv",
+#     "results4_solar-anywhere-col1.csv",
+#     "results4_solar-anywhere-col2.csv",
+#     "results4_solar-anywhere-col3.csv",
+#     "results5_el-nino-col1.csv",
+#     "results5_el-nino-col2.csv",
+#     "results5_el-nino-col3.csv",
+#     "results5_el-nino-col4.csv",
+#     "results5_el-nino-col5.csv",
+#     "results5_el-nino-col6.csv",
+#     "results5_el-nino-col7.csv",
+#     "results6_noaa-spc-hail-col1.csv",
+#     "results6_noaa-spc-hail-col2.csv",
+#     "results6_noaa-spc-hail-col3.csv",
+#     "results7_noaa-spc-tornado-col1.csv",
+#     "results7_noaa-spc-tornado-col2.csv",
+#     "results8_noaa-spc-wind-col1.csv",
+#     "results8_noaa-spc-wind-col2.csv",
+#     "results8_noaa-spc-wind-col3.csv"
+# ]
+
+input_path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/td"
 
 filenames = [
-    "results1_irkis-col.csv",
-    "results2_noaa-sst-col.csv",
-    "results3_noaa-adcp-col.csv",
-    "results4_solar-anywhere-col1.csv",
-    "results4_solar-anywhere-col2.csv",
-    "results4_solar-anywhere-col3.csv",
-    "results5_el-nino-col1.csv",
-    "results5_el-nino-col2.csv",
-    "results5_el-nino-col3.csv",
-    "results5_el-nino-col4.csv",
-    "results5_el-nino-col5.csv",
-    "results5_el-nino-col6.csv",
-    "results5_el-nino-col7.csv",
-    "results6_noaa-spc-hail-col1.csv",
-    "results6_noaa-spc-hail-col2.csv",
-    "results6_noaa-spc-hail-col3.csv",
-    "results7_noaa-spc-tornado-col1.csv",
-    "results7_noaa-spc-tornado-col2.csv",
-    "results8_noaa-spc-wind-col1.csv",
-    "results8_noaa-spc-wind-col2.csv",
-    "results8_noaa-spc-wind-col3.csv"
+    "results1_irkis-td.csv",
+    "results2_noaa-sst-td.csv",
+    "results3_noaa-adcp-td.csv",
+    "results4_solar-anywhere-td.csv",
+    "results5_el-nino-td.csv",
+    "results6_noaa-spc-hail-td.csv",
+    "results7_noaa-spc-tornado-td.csv",
+    "results8_noaa-spc-wind-td.csv",
 ]
 
 csv_writer = CSVWriter(input_path, "RESULTS.csv")
