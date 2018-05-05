@@ -100,23 +100,28 @@ def calculate_results_file(row):
 #     "results8_noaa-spc-wind-col3.csv"
 # ]
 
-input_path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/td"
+# input_path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/td"
+#
+# filenames = [
+#     "results1_irkis-td.csv",
+#     "results2_noaa-sst-td.csv",
+#     "results3_noaa-adcp-td.csv",
+#     "results4_solar-anywhere-td.csv",
+#     "results5_el-nino-td.csv",
+#     "results6_noaa-spc-hail-td.csv",
+#     "results7_noaa-spc-tornado-td.csv",
+#     "results8_noaa-spc-wind-td.csv",
+# ]
+#
+# csv_writer = CSVWriter(input_path, "RESULTS.csv")
+# for filename in filenames:
+#     csv_reader = CSVReader(input_path, filename)
+#     calculate_results(csv_reader, csv_writer)
+#     csv_reader.close()
+# csv_writer.close()
 
-filenames = [
-    "results1_irkis-td.csv",
-    "results2_noaa-sst-td.csv",
-    "results3_noaa-adcp-td.csv",
-    "results4_solar-anywhere-td.csv",
-    "results5_el-nino-td.csv",
-    "results6_noaa-spc-hail-td.csv",
-    "results7_noaa-spc-tornado-td.csv",
-    "results8_noaa-spc-wind-td.csv",
-]
-
+input_path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/paper-output/results"
 csv_writer = CSVWriter(input_path, "RESULTS.csv")
-for filename in filenames:
-    csv_reader = CSVReader(input_path, filename)
-    calculate_results(csv_reader, csv_writer)
-    csv_reader.close()
+csv_reader = CSVReader(input_path, "results1+2.process_results.out.csv")
+calculate_results(csv_reader, csv_writer)
 csv_writer.close()
-

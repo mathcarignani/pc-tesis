@@ -4,7 +4,8 @@ sys.path.append('.')
 from file_utils.csv_utils.csv_reader import CSVReader
 from file_utils.csv_utils.csv_writer import CSVWriter
 
-input_path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/"
+# input_path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/"
+input_path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/paper-output/results"
 
 
 def get_best(line, index, best_perc, best_window, best_row):
@@ -99,11 +100,14 @@ def process(input_filename, output_filename, index):
 # process("results8_noaa-spc-wind.csv", "results8_noaa-spc-wind-col3.csv", 16)
 
 # TD
-process("results1_irkis.csv", "results1_irkis-td.csv", 10)
-process("results2_noaa-sst.csv", "results2_noaa-sst-td.csv", 10)
-process("results3_noaa-adcp.csv", "results3_noaa-adcp-td.csv", 10)
-process("results4_solar-anywhere.csv", "results4_solar-anywhere-td.csv", 10)
-process("results5_el-nino.csv", "results5_el-nino-td.csv", 10)
-process("results6_noaa-spc-hail.csv", "results6_noaa-spc-hail-td.csv", 10)
-process("results7_noaa-spc-tornado.csv", "results7_noaa-spc-tornado-td.csv", 10)
-process("results8_noaa-spc-wind.csv", "results8_noaa-spc-wind-td.csv", 10)
+# process("results1_irkis.csv", "results1_irkis-td.csv", 10)
+# process("results2_noaa-sst.csv", "results2_noaa-sst-td.csv", 10)
+# process("results3_noaa-adcp.csv", "results3_noaa-adcp-td.csv", 10)
+# process("results4_solar-anywhere.csv", "results4_solar-anywhere-td.csv", 10)
+# process("results5_el-nino.csv", "results5_el-nino-td.csv", 10)
+# process("results6_noaa-spc-hail.csv", "results6_noaa-spc-hail-td.csv", 10)
+# process("results7_noaa-spc-tornado.csv", "results7_noaa-spc-tornado-td.csv", 10)
+# process("results8_noaa-spc-wind.csv", "results8_noaa-spc-wind-td.csv", 10)
+
+# PAPER-OUTPUT
+process("results1+2.csv", "results1+2.process_results.out.csv", 12)
