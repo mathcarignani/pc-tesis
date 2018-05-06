@@ -22,13 +22,16 @@ from scripts.utils import csv_files_filenames, create_folder
 from scripts.calculate_std import calculate_file_stats, calculate_stds_percentages
 
 
+PYTHON_CODERS = [CoderBasic, CoderPCA, CoderAPCA, CoderCA]
+
+
 def csv_row_count(input_path, input_filename):
     csv = CSVReader(input_path, input_filename)
     csv.close()
     return csv.total_lines - 4
 
 
-def compress_file(args):
+def code_decode_python(args):
     # read args
     coder, coder_params, decoder = args['coder'], args['coder_params'], args['decoder']
     input_path, input_filename = args['input_path'], args['input_filename']
@@ -41,6 +44,7 @@ def compress_file(args):
     c = coder(input_csv, output_path, compressed_filename, coder_params)
     c.code_file()
     c.close()
+    coder_info = c.get_info()
     columns_bits = [column_code.total_bits for column_code in c.dataset.column_code_array]
 
     # decode
@@ -53,6 +57,26 @@ def compress_file(args):
             print "ERROR: Reached End Of File."
     d.close()
 
+    return [coder_info, columns_bits]
+
+
+def code_decode_cpp(args):
+    return [0, 0]
+
+
+def compress_file(args):
+    # read args
+    coder, coder_params, decoder = args['coder'], args['coder_params'], args['decoder']
+    input_path, input_filename = args['input_path'], args['input_filename']
+    output_path = args['output_path']
+    compressed_filename = input_filename.replace('.csv', '.c.csv')
+    decompressed_filename = input_filename.replace('.csv', '.c.d.csv')
+
+    if coder in PYTHON_CODERS:
+        coder_info, columns_bits = code_decode_python(args)
+    else:
+        coder_info, columns_bits = code_decode_cpp(args)
+
     # compare
     csv_compare = CSVCompare(input_path, input_filename, output_path, decompressed_filename)
     same_file = csv_compare.compare(coder_params.get('error_threshold'))
@@ -61,11 +85,11 @@ def compress_file(args):
     logger = args['logger']
     input_file = input_path + "/" + input_filename
     compressed_file = output_path + "/" + compressed_filename
-    compressed_size = print_results(c, logger, input_file, compressed_file, same_file)
+    compressed_size = print_results(coder_info, logger, input_file, compressed_file, same_file)
     return [compressed_size] + columns_bits
 
 
-def print_results(c, logger, input_file, compressed_file, same_file):
+def print_results(coder_info, logger, input_file, compressed_file, same_file):
     input_size = os.path.getsize(input_file)
     compressed_size = os.path.getsize(compressed_file)
     logger.info("")
@@ -74,7 +98,7 @@ def print_results(c, logger, input_file, compressed_file, same_file):
         logger.info("--------------------------(same file!)")
     else:
         raise StandardError("ERROR: DIFFERENT FILES!")
-    logger.info(c.get_info())
+    logger.info(coder_info)
     logger.info("ORIGINAL FILE:")
     logger.info("-> name: %s" % input_file)
     logger.info("-> size (bytes): %s" % "{:,}".format(input_size))
