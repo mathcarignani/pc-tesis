@@ -23,14 +23,29 @@ set(CMAKE_CXX_STANDARD 11)
 
 
 set(EXT_DIR external)
-set(HEAD_DIR include)
-set(SRC_DIR src)
-include_directories(${EXT_DIR} ${HEAD_DIR} ${SRC_DIR})
+
+set(BIT_STREAM_HEAD_DIR include/file_utils/bit_stream)
+set(BIT_STREAM_SRC_DIR src/file_utils/bit_stream)
+
+set(CSV_HEAD_DIR include/file_utils/csv)
+set(CSV_SRC_DIR src/file_utils/csv)
+
+set(HEAD_DIRS include ${BIT_STREAM_HEAD_DIR} ${CSV_HEAD_DIR})
+set(SRC_DIRS src ${BIT_STREAM_SRC_DIR} ${CSV_SRC_DIR})
+include_directories(${EXT_DIR} ${HEAD_DIRS} ${SRC_DIR})
+
+
+set(BIT_STREAM_HEAD_FILES ${BIT_STREAM_HEAD_DIR}/bit_stream_reader.h ${BIT_STREAM_HEAD_DIR}/bit_stream_writer.h)
+set(BIT_STREAM_SRC_FILES ${BIT_STREAM_SRC_DIR}/bit_stream_reader.cpp ${BIT_STREAM_SRC_DIR}/bit_stream_writer.cpp)
+
+set(CSV_HEAD_FILES ${CSV_HEAD_DIR}/csv_reader.h ${CSV_HEAD_DIR}/csv_utils.h ${CSV_HEAD_DIR}/csv_writer.h)
+set(CSV_SRC_FILES ${CSV_SRC_DIR}/csv_reader.cpp ${CSV_SRC_DIR}/csv_utils.cpp ${CSV_SRC_DIR}/csv_writer.cpp)
 
 set(EXTERNAL_FILES external/minicsv.h)
-set(HEAD_FILES include/operation_utils.h include/file_utils.h include/csv_utils.h include/bit_stream.h)
-set(SOURCE_FILES src/operation_utils.cpp src/file_utils.cpp src/csv_utils.cpp src/bit_stream.cpp)
-add_executable(cpp_project ${EXTERNAL_FILES} ${HEAD_FILES} ${SOURCE_FILES} main.cpp)
+set(HEAD_FILES include/string_utils.h ${BIT_STREAM_HEAD_FILES} ${CSV_HEAD_FILES})
+set(SOURCE_FILES src/string_utils.cpp ${BIT_STREAM_SRC_FILES} ${CSV_SRC_FILES})
+
+add_executable(cpp_project ${HEAD_FILES} ${SOURCE_FILES} main.cpp)
 
 
 #include_directories(include/ src/ external/)

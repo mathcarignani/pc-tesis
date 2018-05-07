@@ -5,10 +5,12 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/main.cpp" "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles/cpp_project.dir/main.cpp.o"
-  "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/bit_stream.cpp" "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles/cpp_project.dir/src/bit_stream.cpp.o"
-  "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/csv_utils.cpp" "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles/cpp_project.dir/src/csv_utils.cpp.o"
-  "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils.cpp" "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles/cpp_project.dir/src/file_utils.cpp.o"
-  "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/operation_utils.cpp" "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles/cpp_project.dir/src/operation_utils.cpp.o"
+  "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/bit_stream/bit_stream_reader.cpp" "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_reader.cpp.o"
+  "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/bit_stream/bit_stream_writer.cpp" "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_writer.cpp.o"
+  "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/csv/csv_reader.cpp" "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_reader.cpp.o"
+  "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/csv/csv_utils.cpp" "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_utils.cpp.o"
+  "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/csv/csv_writer.cpp" "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_writer.cpp.o"
+  "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/string_utils.cpp" "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles/cpp_project.dir/src/string_utils.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
@@ -16,7 +18,8 @@ set(CMAKE_CXX_COMPILER_ID "AppleClang")
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../external"
   "../include"
-  "../src"
+  "../include/file_utils/bit_stream"
+  "../include/file_utils/csv"
   )
 
 # Targets to which this target links.

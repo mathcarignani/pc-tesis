@@ -150,113 +150,167 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-src/bit_stream.o: src/bit_stream.cpp.o
+src/file_utils/bit_stream/bit_stream_reader.o: src/file_utils/bit_stream/bit_stream_reader.cpp.o
 
-.PHONY : src/bit_stream.o
-
-# target to build an object file
-src/bit_stream.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/bit_stream.cpp.o
-.PHONY : src/bit_stream.cpp.o
-
-src/bit_stream.i: src/bit_stream.cpp.i
-
-.PHONY : src/bit_stream.i
-
-# target to preprocess a source file
-src/bit_stream.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/bit_stream.cpp.i
-.PHONY : src/bit_stream.cpp.i
-
-src/bit_stream.s: src/bit_stream.cpp.s
-
-.PHONY : src/bit_stream.s
-
-# target to generate assembly for a file
-src/bit_stream.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/bit_stream.cpp.s
-.PHONY : src/bit_stream.cpp.s
-
-src/csv_utils.o: src/csv_utils.cpp.o
-
-.PHONY : src/csv_utils.o
+.PHONY : src/file_utils/bit_stream/bit_stream_reader.o
 
 # target to build an object file
-src/csv_utils.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/csv_utils.cpp.o
-.PHONY : src/csv_utils.cpp.o
+src/file_utils/bit_stream/bit_stream_reader.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_reader.cpp.o
+.PHONY : src/file_utils/bit_stream/bit_stream_reader.cpp.o
 
-src/csv_utils.i: src/csv_utils.cpp.i
+src/file_utils/bit_stream/bit_stream_reader.i: src/file_utils/bit_stream/bit_stream_reader.cpp.i
 
-.PHONY : src/csv_utils.i
+.PHONY : src/file_utils/bit_stream/bit_stream_reader.i
 
 # target to preprocess a source file
-src/csv_utils.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/csv_utils.cpp.i
-.PHONY : src/csv_utils.cpp.i
+src/file_utils/bit_stream/bit_stream_reader.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_reader.cpp.i
+.PHONY : src/file_utils/bit_stream/bit_stream_reader.cpp.i
 
-src/csv_utils.s: src/csv_utils.cpp.s
+src/file_utils/bit_stream/bit_stream_reader.s: src/file_utils/bit_stream/bit_stream_reader.cpp.s
 
-.PHONY : src/csv_utils.s
+.PHONY : src/file_utils/bit_stream/bit_stream_reader.s
 
 # target to generate assembly for a file
-src/csv_utils.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/csv_utils.cpp.s
-.PHONY : src/csv_utils.cpp.s
+src/file_utils/bit_stream/bit_stream_reader.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_reader.cpp.s
+.PHONY : src/file_utils/bit_stream/bit_stream_reader.cpp.s
 
-src/file_utils.o: src/file_utils.cpp.o
+src/file_utils/bit_stream/bit_stream_writer.o: src/file_utils/bit_stream/bit_stream_writer.cpp.o
 
-.PHONY : src/file_utils.o
+.PHONY : src/file_utils/bit_stream/bit_stream_writer.o
 
 # target to build an object file
-src/file_utils.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/file_utils.cpp.o
-.PHONY : src/file_utils.cpp.o
+src/file_utils/bit_stream/bit_stream_writer.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_writer.cpp.o
+.PHONY : src/file_utils/bit_stream/bit_stream_writer.cpp.o
 
-src/file_utils.i: src/file_utils.cpp.i
+src/file_utils/bit_stream/bit_stream_writer.i: src/file_utils/bit_stream/bit_stream_writer.cpp.i
 
-.PHONY : src/file_utils.i
+.PHONY : src/file_utils/bit_stream/bit_stream_writer.i
 
 # target to preprocess a source file
-src/file_utils.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/file_utils.cpp.i
-.PHONY : src/file_utils.cpp.i
+src/file_utils/bit_stream/bit_stream_writer.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_writer.cpp.i
+.PHONY : src/file_utils/bit_stream/bit_stream_writer.cpp.i
 
-src/file_utils.s: src/file_utils.cpp.s
+src/file_utils/bit_stream/bit_stream_writer.s: src/file_utils/bit_stream/bit_stream_writer.cpp.s
 
-.PHONY : src/file_utils.s
+.PHONY : src/file_utils/bit_stream/bit_stream_writer.s
 
 # target to generate assembly for a file
-src/file_utils.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/file_utils.cpp.s
-.PHONY : src/file_utils.cpp.s
+src/file_utils/bit_stream/bit_stream_writer.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_writer.cpp.s
+.PHONY : src/file_utils/bit_stream/bit_stream_writer.cpp.s
 
-src/operation_utils.o: src/operation_utils.cpp.o
+src/file_utils/csv/csv_reader.o: src/file_utils/csv/csv_reader.cpp.o
 
-.PHONY : src/operation_utils.o
+.PHONY : src/file_utils/csv/csv_reader.o
 
 # target to build an object file
-src/operation_utils.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/operation_utils.cpp.o
-.PHONY : src/operation_utils.cpp.o
+src/file_utils/csv/csv_reader.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_reader.cpp.o
+.PHONY : src/file_utils/csv/csv_reader.cpp.o
 
-src/operation_utils.i: src/operation_utils.cpp.i
+src/file_utils/csv/csv_reader.i: src/file_utils/csv/csv_reader.cpp.i
 
-.PHONY : src/operation_utils.i
+.PHONY : src/file_utils/csv/csv_reader.i
 
 # target to preprocess a source file
-src/operation_utils.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/operation_utils.cpp.i
-.PHONY : src/operation_utils.cpp.i
+src/file_utils/csv/csv_reader.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_reader.cpp.i
+.PHONY : src/file_utils/csv/csv_reader.cpp.i
 
-src/operation_utils.s: src/operation_utils.cpp.s
+src/file_utils/csv/csv_reader.s: src/file_utils/csv/csv_reader.cpp.s
 
-.PHONY : src/operation_utils.s
+.PHONY : src/file_utils/csv/csv_reader.s
 
 # target to generate assembly for a file
-src/operation_utils.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/operation_utils.cpp.s
-.PHONY : src/operation_utils.cpp.s
+src/file_utils/csv/csv_reader.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_reader.cpp.s
+.PHONY : src/file_utils/csv/csv_reader.cpp.s
+
+src/file_utils/csv/csv_utils.o: src/file_utils/csv/csv_utils.cpp.o
+
+.PHONY : src/file_utils/csv/csv_utils.o
+
+# target to build an object file
+src/file_utils/csv/csv_utils.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_utils.cpp.o
+.PHONY : src/file_utils/csv/csv_utils.cpp.o
+
+src/file_utils/csv/csv_utils.i: src/file_utils/csv/csv_utils.cpp.i
+
+.PHONY : src/file_utils/csv/csv_utils.i
+
+# target to preprocess a source file
+src/file_utils/csv/csv_utils.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_utils.cpp.i
+.PHONY : src/file_utils/csv/csv_utils.cpp.i
+
+src/file_utils/csv/csv_utils.s: src/file_utils/csv/csv_utils.cpp.s
+
+.PHONY : src/file_utils/csv/csv_utils.s
+
+# target to generate assembly for a file
+src/file_utils/csv/csv_utils.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_utils.cpp.s
+.PHONY : src/file_utils/csv/csv_utils.cpp.s
+
+src/file_utils/csv/csv_writer.o: src/file_utils/csv/csv_writer.cpp.o
+
+.PHONY : src/file_utils/csv/csv_writer.o
+
+# target to build an object file
+src/file_utils/csv/csv_writer.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_writer.cpp.o
+.PHONY : src/file_utils/csv/csv_writer.cpp.o
+
+src/file_utils/csv/csv_writer.i: src/file_utils/csv/csv_writer.cpp.i
+
+.PHONY : src/file_utils/csv/csv_writer.i
+
+# target to preprocess a source file
+src/file_utils/csv/csv_writer.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_writer.cpp.i
+.PHONY : src/file_utils/csv/csv_writer.cpp.i
+
+src/file_utils/csv/csv_writer.s: src/file_utils/csv/csv_writer.cpp.s
+
+.PHONY : src/file_utils/csv/csv_writer.s
+
+# target to generate assembly for a file
+src/file_utils/csv/csv_writer.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_writer.cpp.s
+.PHONY : src/file_utils/csv/csv_writer.cpp.s
+
+src/string_utils.o: src/string_utils.cpp.o
+
+.PHONY : src/string_utils.o
+
+# target to build an object file
+src/string_utils.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/string_utils.cpp.o
+.PHONY : src/string_utils.cpp.o
+
+src/string_utils.i: src/string_utils.cpp.i
+
+.PHONY : src/string_utils.i
+
+# target to preprocess a source file
+src/string_utils.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/string_utils.cpp.i
+.PHONY : src/string_utils.cpp.i
+
+src/string_utils.s: src/string_utils.cpp.s
+
+.PHONY : src/string_utils.s
+
+# target to generate assembly for a file
+src/string_utils.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/string_utils.cpp.s
+.PHONY : src/string_utils.cpp.s
 
 # Help Target
 help:
@@ -270,18 +324,24 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... src/bit_stream.o"
-	@echo "... src/bit_stream.i"
-	@echo "... src/bit_stream.s"
-	@echo "... src/csv_utils.o"
-	@echo "... src/csv_utils.i"
-	@echo "... src/csv_utils.s"
-	@echo "... src/file_utils.o"
-	@echo "... src/file_utils.i"
-	@echo "... src/file_utils.s"
-	@echo "... src/operation_utils.o"
-	@echo "... src/operation_utils.i"
-	@echo "... src/operation_utils.s"
+	@echo "... src/file_utils/bit_stream/bit_stream_reader.o"
+	@echo "... src/file_utils/bit_stream/bit_stream_reader.i"
+	@echo "... src/file_utils/bit_stream/bit_stream_reader.s"
+	@echo "... src/file_utils/bit_stream/bit_stream_writer.o"
+	@echo "... src/file_utils/bit_stream/bit_stream_writer.i"
+	@echo "... src/file_utils/bit_stream/bit_stream_writer.s"
+	@echo "... src/file_utils/csv/csv_reader.o"
+	@echo "... src/file_utils/csv/csv_reader.i"
+	@echo "... src/file_utils/csv/csv_reader.s"
+	@echo "... src/file_utils/csv/csv_utils.o"
+	@echo "... src/file_utils/csv/csv_utils.i"
+	@echo "... src/file_utils/csv/csv_utils.s"
+	@echo "... src/file_utils/csv/csv_writer.o"
+	@echo "... src/file_utils/csv/csv_writer.i"
+	@echo "... src/file_utils/csv/csv_writer.s"
+	@echo "... src/string_utils.o"
+	@echo "... src/string_utils.i"
+	@echo "... src/string_utils.s"
 .PHONY : help
 
 

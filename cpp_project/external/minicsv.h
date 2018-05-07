@@ -93,8 +93,8 @@ namespace mini
             sep(const char delimiter_, const std::string& escape_) : delimiter(delimiter_), escape(escape_) {}
 
             // I had to remove the const because it was raising warning ignored-qualifiers
-            // const char get_delimiter() const { return delimiter; }
-            char get_delimiter() const { return delimiter; }
+            const char get_delimiter() const { return delimiter; }
+//            char get_delimiter() const { return delimiter; }
 
             const std::string& get_escape() const { return escape; }
         private:
