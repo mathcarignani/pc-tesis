@@ -201,9 +201,81 @@ CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_writer.cpp.o.provides: CMakeFi
 CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_writer.cpp.o.provides.build: CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_writer.cpp.o
 
 
+CMakeFiles/cpp_project.dir/src/coders/coder_base.cpp.o: CMakeFiles/cpp_project.dir/flags.make
+CMakeFiles/cpp_project.dir/src/coders/coder_base.cpp.o: ../src/coders/coder_base.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/cpp_project.dir/src/coders/coder_base.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp_project.dir/src/coders/coder_base.cpp.o -c /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/coder_base.cpp
+
+CMakeFiles/cpp_project.dir/src/coders/coder_base.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cpp_project.dir/src/coders/coder_base.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/coder_base.cpp > CMakeFiles/cpp_project.dir/src/coders/coder_base.cpp.i
+
+CMakeFiles/cpp_project.dir/src/coders/coder_base.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpp_project.dir/src/coders/coder_base.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/coder_base.cpp -o CMakeFiles/cpp_project.dir/src/coders/coder_base.cpp.s
+
+CMakeFiles/cpp_project.dir/src/coders/coder_base.cpp.o.requires:
+
+.PHONY : CMakeFiles/cpp_project.dir/src/coders/coder_base.cpp.o.requires
+
+CMakeFiles/cpp_project.dir/src/coders/coder_base.cpp.o.provides: CMakeFiles/cpp_project.dir/src/coders/coder_base.cpp.o.requires
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/coder_base.cpp.o.provides.build
+.PHONY : CMakeFiles/cpp_project.dir/src/coders/coder_base.cpp.o.provides
+
+CMakeFiles/cpp_project.dir/src/coders/coder_base.cpp.o.provides.build: CMakeFiles/cpp_project.dir/src/coders/coder_base.cpp.o
+
+
+CMakeFiles/cpp_project.dir/src/coders/header_utils.cpp.o: CMakeFiles/cpp_project.dir/flags.make
+CMakeFiles/cpp_project.dir/src/coders/header_utils.cpp.o: ../src/coders/header_utils.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/cpp_project.dir/src/coders/header_utils.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp_project.dir/src/coders/header_utils.cpp.o -c /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/header_utils.cpp
+
+CMakeFiles/cpp_project.dir/src/coders/header_utils.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cpp_project.dir/src/coders/header_utils.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/header_utils.cpp > CMakeFiles/cpp_project.dir/src/coders/header_utils.cpp.i
+
+CMakeFiles/cpp_project.dir/src/coders/header_utils.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpp_project.dir/src/coders/header_utils.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/header_utils.cpp -o CMakeFiles/cpp_project.dir/src/coders/header_utils.cpp.s
+
+CMakeFiles/cpp_project.dir/src/coders/header_utils.cpp.o.requires:
+
+.PHONY : CMakeFiles/cpp_project.dir/src/coders/header_utils.cpp.o.requires
+
+CMakeFiles/cpp_project.dir/src/coders/header_utils.cpp.o.provides: CMakeFiles/cpp_project.dir/src/coders/header_utils.cpp.o.requires
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/header_utils.cpp.o.provides.build
+.PHONY : CMakeFiles/cpp_project.dir/src/coders/header_utils.cpp.o.provides
+
+CMakeFiles/cpp_project.dir/src/coders/header_utils.cpp.o.provides.build: CMakeFiles/cpp_project.dir/src/coders/header_utils.cpp.o
+
+
+CMakeFiles/cpp_project.dir/src/coders/basic/coder_basic.cpp.o: CMakeFiles/cpp_project.dir/flags.make
+CMakeFiles/cpp_project.dir/src/coders/basic/coder_basic.cpp.o: ../src/coders/basic/coder_basic.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/cpp_project.dir/src/coders/basic/coder_basic.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp_project.dir/src/coders/basic/coder_basic.cpp.o -c /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/basic/coder_basic.cpp
+
+CMakeFiles/cpp_project.dir/src/coders/basic/coder_basic.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cpp_project.dir/src/coders/basic/coder_basic.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/basic/coder_basic.cpp > CMakeFiles/cpp_project.dir/src/coders/basic/coder_basic.cpp.i
+
+CMakeFiles/cpp_project.dir/src/coders/basic/coder_basic.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpp_project.dir/src/coders/basic/coder_basic.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/basic/coder_basic.cpp -o CMakeFiles/cpp_project.dir/src/coders/basic/coder_basic.cpp.s
+
+CMakeFiles/cpp_project.dir/src/coders/basic/coder_basic.cpp.o.requires:
+
+.PHONY : CMakeFiles/cpp_project.dir/src/coders/basic/coder_basic.cpp.o.requires
+
+CMakeFiles/cpp_project.dir/src/coders/basic/coder_basic.cpp.o.provides: CMakeFiles/cpp_project.dir/src/coders/basic/coder_basic.cpp.o.requires
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/basic/coder_basic.cpp.o.provides.build
+.PHONY : CMakeFiles/cpp_project.dir/src/coders/basic/coder_basic.cpp.o.provides
+
+CMakeFiles/cpp_project.dir/src/coders/basic/coder_basic.cpp.o.provides.build: CMakeFiles/cpp_project.dir/src/coders/basic/coder_basic.cpp.o
+
+
 CMakeFiles/cpp_project.dir/main.cpp.o: CMakeFiles/cpp_project.dir/flags.make
 CMakeFiles/cpp_project.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/cpp_project.dir/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/cpp_project.dir/main.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp_project.dir/main.cpp.o -c /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/main.cpp
 
 CMakeFiles/cpp_project.dir/main.cpp.i: cmake_force
@@ -233,6 +305,9 @@ cpp_project_OBJECTS = \
 "CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_reader.cpp.o" \
 "CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_utils.cpp.o" \
 "CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_writer.cpp.o" \
+"CMakeFiles/cpp_project.dir/src/coders/coder_base.cpp.o" \
+"CMakeFiles/cpp_project.dir/src/coders/header_utils.cpp.o" \
+"CMakeFiles/cpp_project.dir/src/coders/basic/coder_basic.cpp.o" \
 "CMakeFiles/cpp_project.dir/main.cpp.o"
 
 # External object files for target cpp_project
@@ -244,10 +319,13 @@ cpp_project: CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_wri
 cpp_project: CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_reader.cpp.o
 cpp_project: CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_utils.cpp.o
 cpp_project: CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_writer.cpp.o
+cpp_project: CMakeFiles/cpp_project.dir/src/coders/coder_base.cpp.o
+cpp_project: CMakeFiles/cpp_project.dir/src/coders/header_utils.cpp.o
+cpp_project: CMakeFiles/cpp_project.dir/src/coders/basic/coder_basic.cpp.o
 cpp_project: CMakeFiles/cpp_project.dir/main.cpp.o
 cpp_project: CMakeFiles/cpp_project.dir/build.make
 cpp_project: CMakeFiles/cpp_project.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable cpp_project"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable cpp_project"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cpp_project.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -261,6 +339,9 @@ CMakeFiles/cpp_project.dir/requires: CMakeFiles/cpp_project.dir/src/file_utils/b
 CMakeFiles/cpp_project.dir/requires: CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_reader.cpp.o.requires
 CMakeFiles/cpp_project.dir/requires: CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_utils.cpp.o.requires
 CMakeFiles/cpp_project.dir/requires: CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_writer.cpp.o.requires
+CMakeFiles/cpp_project.dir/requires: CMakeFiles/cpp_project.dir/src/coders/coder_base.cpp.o.requires
+CMakeFiles/cpp_project.dir/requires: CMakeFiles/cpp_project.dir/src/coders/header_utils.cpp.o.requires
+CMakeFiles/cpp_project.dir/requires: CMakeFiles/cpp_project.dir/src/coders/basic/coder_basic.cpp.o.requires
 CMakeFiles/cpp_project.dir/requires: CMakeFiles/cpp_project.dir/main.cpp.o.requires
 
 .PHONY : CMakeFiles/cpp_project.dir/requires

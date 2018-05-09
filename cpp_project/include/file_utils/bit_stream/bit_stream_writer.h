@@ -13,7 +13,7 @@ private:
 
 public:
 
-    BitStreamWriter(char * file);
+    BitStreamWriter(const char * file);
 
     void pushBit(unsigned int bit);
 

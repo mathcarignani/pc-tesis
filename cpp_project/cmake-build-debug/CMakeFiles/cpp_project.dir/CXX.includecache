@@ -6,6 +6,20 @@
 
 #IncludeRegexTransform: 
 
+../include/coders/basic/coder_basic.h
+coder_base.h
+../include/coders/basic/coder_base.h
+
+../include/coders/basic/decoder_basic.h
+
+../include/coders/coder_base.h
+string
+-
+bit_stream_writer.h
+../include/coders/bit_stream_writer.h
+csv_reader.h
+../include/coders/csv_reader.h
+
 ../include/file_utils/bit_stream/bit_stream_reader.h
 stdio.h
 -
@@ -47,6 +61,36 @@ stdlib.h
 -
 csv_utils.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/csv_utils.h
+coder_basic.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/coder_basic.h
+decoder_basic.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/decoder_basic.h
+bit_stream_reader.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/bit_stream_reader.h
+bit_stream_writer.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/bit_stream_writer.h
+csv_reader.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/csv_reader.h
+csv_writer.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/csv_writer.h
+
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/basic/coder_basic.cpp
+coder_basic.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/basic/coder_basic.h
+
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/coder_base.cpp
+coder_base.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/coder_base.h
+cstring
+-
+iostream
+-
+bit_stream_writer.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/bit_stream_writer.h
+csv_reader.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/csv_reader.h
+
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/header_utils.cpp
 
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/bit_stream/bit_stream_reader.cpp
 bit_stream_reader.h

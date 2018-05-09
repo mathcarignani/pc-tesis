@@ -31,7 +31,7 @@ void CSVUtils::CopyCSV(std::string path1, std::string filename1, std::string pat
     csv_writer.close();
 }
 
-void CSVUtils::CompareCSV(std::string path1, std::string filename1, std::string path2, std::string filename2){
+void CSVUtils::CompareCSVLossless(std::string path1, std::string filename1, std::string path2, std::string filename2){
     CSVReader csv_reader1 = CSVReader(path1, filename1);
     CSVReader csv_reader2 = CSVReader(path2, filename2);
     assert(csv_reader1.total_lines == csv_reader2.total_lines);

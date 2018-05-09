@@ -2,7 +2,7 @@
 #include "bit_stream_writer.h"
 
 
-BitStreamWriter::BitStreamWriter(char * file){
+BitStreamWriter::BitStreamWriter(const char * file){
     fp = fopen(file,"w");
     current = 0, offset = 0;
 }

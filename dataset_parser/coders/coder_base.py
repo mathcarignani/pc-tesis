@@ -6,8 +6,6 @@ from file_utils.bit_stream.bit_stream_writer import BitStreamWriter
 
 
 class CoderBase(object):
-    DELTA_BITS = 17  # TODO: add to the constants file
-
     def __init__(self, input_csv, output_path, output_filename, *_):
         self.input_csv = input_csv
         self.output_file = BitStreamWriter(output_path, output_filename)

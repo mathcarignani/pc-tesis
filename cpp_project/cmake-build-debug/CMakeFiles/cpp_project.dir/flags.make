@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -std=gnu++11
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external -I/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include -I/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/file_utils/bit_stream -I/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/file_utils/csv 
+CXX_INCLUDES = -I/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external -I/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include -I/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/file_utils/bit_stream -I/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/file_utils/csv -I/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders -I/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/basic 
 

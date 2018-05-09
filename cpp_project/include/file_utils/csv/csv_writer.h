@@ -15,9 +15,7 @@ public:
     std::string full_path;
 
     CSVWriter(std::string path, std::string filename);
-
     void writeRow(std::vector<std::string> row);
-
     void close();
 };
 
