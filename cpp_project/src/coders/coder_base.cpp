@@ -30,7 +30,7 @@ int CoderBase::codeValue(std::string x, int row_index, int col_index){
 
 void CoderBase::codeRaw(int value){
 //    self.output_file.write_int(value, self.dataset.get_bits())
-    output_file.pushInt(value, 20);
+//    output_file.pushInt(value, 20);
 }
 
 void CoderBase::codeValueRaw(std::string x, int row_index, int col_index){
@@ -52,11 +52,7 @@ void CoderBase::raiseRangeError(){
 void CoderBase::codeFile(){
 //    dataset = HeaderUtils::code_header(input_csv, output_file);
     codeDataRowsCount();
-    codeDataRowsCount();
-    codeDataRowsCount();
-    codeDataRowsCount();
     codeDataRows();
-
 }
 
 void CoderBase::close(){

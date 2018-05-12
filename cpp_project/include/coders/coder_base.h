@@ -10,8 +10,10 @@
 class CoderBase {
 
 private:
-    CSVReader &input_csv;
-    BitStreamWriter &output_file;
+//    CSVReader &input_csv;
+//    BitStreamWriter &output_file;
+
+
 //    Dataset dataset;
 
     void codeDataRowsCount();
@@ -22,8 +24,13 @@ private:
     //
     int codeValue(std::string x, int row_index, int col_index);
     void codeRaw(int value);
-    void codeValueRaw(std::string x, int row_index, int col_index);
     void raiseRangeError();
+
+protected:
+    CSVReader &input_csv;
+    BitStreamWriter &output_file;
+    int columns_count = 2; // number of columns in the csv file
+    void codeValueRaw(std::string x, int row_index, int col_index);
 
 public:
     CoderBase(CSVReader &input_csv, BitStreamWriter &output_file) : input_csv(input_csv), output_file(output_file) { }

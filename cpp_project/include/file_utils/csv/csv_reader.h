@@ -4,27 +4,16 @@
 
 #include <fstream>
 #include <string>
+#include "text_reader.h"
 
 
-class CSVReader {
+class CSVReader: public TextReader {
 
-private:
-    std::ifstream file;
-    int current_line_count=0;
-
-    static int totalLines();
 
 public:
-    int total_lines=0;
-    std::string current_line;
-    bool continue_reading;
-    std::string full_path;
-
-    CSVReader(std::string path, std::string filename);
-    std::vector<std::string> readLine();
-    void close();
-
-//    void GoToRow(int row_number);
+    using TextReader::TextReader;
+    // PRE: continue_reading
+    std::vector<std::string> readLineCSV();
 };
 
 #endif //CPP_PROJECT_CSV_READER_H

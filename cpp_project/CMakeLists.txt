@@ -21,48 +21,73 @@ set(CMAKE_CXX_STANDARD 11)
 
 #add_executable(cpp_project main.cpp external/minicsv.h include/csv_utils.h src/csv_utils.cpp)
 
-set(EXT_DIR external)
-
 set(CODER_BASE_HEAD_DIR include/coders)
 set(CODER_BASE_SRC_DIR src/coders)
+
+set(CODER_COLS_HEAD_DIR include/coders/cols)
+set(CODER_COLS_SRC_DIR src/coders/cols)
 
 set(CODER_BASIC_HEAD_DIR include/coders/basic)
 set(CODER_BASIC_SRC_DIR src/coders/basic)
 
-set(CODER_HEAD_DIRS ${CODER_BASE_HEAD_DIR} ${CODER_BASIC_HEAD_DIR})
-set(CODER_STR_DIRS ${CODER_BASE_SRC_DIR} ${CODER_BASIC_SRC_DIR})
+set(CODER_HEAD_DIRS ${CODER_BASE_HEAD_DIR} ${CODER_COLS_HEAD_DIR} ${CODER_BASIC_HEAD_DIR})
+set(CODER_STR_DIRS ${CODER_BASE_SRC_DIR} ${CODER_COLS_SRC_DIR} ${CODER_BASIC_SRC_DIR})
 
 set(BIT_STREAM_HEAD_DIR include/file_utils/bit_stream)
 set(BIT_STREAM_SRC_DIR src/file_utils/bit_stream)
 
+set(TEXT_HEAD_DIR include/file_utils/text)
+set(TEXT_SRC_DIR src/file_utils/text)
+
 set(CSV_HEAD_DIR include/file_utils/csv)
 set(CSV_SRC_DIR src/file_utils/csv)
 
-set(HEAD_DIRS include ${BIT_STREAM_HEAD_DIR} ${CSV_HEAD_DIR} ${CODER_HEAD_DIRS})
-set(SRC_DIRS src ${BIT_STREAM_SRC_DIR} ${CSV_SRC_DIR} ${CODER_STR_DIRS})
-include_directories(${EXT_DIR} ${HEAD_DIRS} ${SRC_DIR})
+set(DATASET_HEAD_DIR include/dataset)
+set(DATASET_SRC_DIR src/dataset)
 
-set(CODER_BASE_HEAD_FILES ${CODER_BASE_HEAD_DIR}/coder_base.h ${CODER_BASE_HEAD_DIR}/header_utils.h) # ${CODER_BASE_HEAD_DIR}/decoder_base.h ${CODER_BASE_HEAD_DIR}/header_utils.h)
-set(CODER_BASE_SRC_FILES ${CODER_BASE_SRC_DIR}/coder_base.cpp ${CODER_BASE_SRC_DIR}/header_utils.cpp) # ${CODER_BASE_SRC_DIR}/decoder_base.cpp ${CODER_BASE_SRC_DIR}/header_utils.cpp)
+set(HEAD_DIRS include ${BIT_STREAM_HEAD_DIR} ${TEXT_HEAD_DIR} ${CSV_HEAD_DIR} ${CODER_HEAD_DIRS} ${DATASET_HEAD_DIR})
+set(SRC_DIRS src ${BIT_STREAM_SRC_DIR} ${TEXT_SRC_DIR} ${CSV_SRC_DIR} ${CODER_STR_DIRS} ${DATASET_SRC_DIR})
+include_directories(${HEAD_DIRS} ${SRC_DIR})
 
-set(CODER_BASIC_HEAD_FILES ${CODER_BASIC_HEAD_DIR}/coder_basic.h) # ${CODER_BASIC_HEAD_DIR}/decoder_basic.h)
-set(CODER_BASIC_SRC_FILES ${CODER_BASIC_SRC_DIR}/coder_basic.cpp) # ${CODER_BASIC_SRC_DIR}/decoder_basic.cpp)
-
-set(CODER_HEAD_FILES ${CODER_BASE_HEAD_FILES} ${CODER_BASIC_HEAD_FILES})
-set(CODER_SRC_FILES ${CODER_BASE_SRC_FILES} ${CODER_BASIC_SRC_FILES})
-
+### FILE UTILS BEGIN ###################################################################################################
 set(BIT_STREAM_HEAD_FILES ${BIT_STREAM_HEAD_DIR}/bit_stream_reader.h ${BIT_STREAM_HEAD_DIR}/bit_stream_writer.h)
 set(BIT_STREAM_SRC_FILES ${BIT_STREAM_SRC_DIR}/bit_stream_reader.cpp ${BIT_STREAM_SRC_DIR}/bit_stream_writer.cpp)
+
+set(TEXT_HEAD_FILES ${TEXT_HEAD_DIR}/text_reader.h ${TEXT_HEAD_DIR}/text_utils.h)
+set(TEXT_SRC_FILES ${TEXT_SRC_DIR}/text_reader.cpp ${TEXT_SRC_DIR}/text_utils.cpp)
 
 set(CSV_HEAD_FILES ${CSV_HEAD_DIR}/csv_reader.h ${CSV_HEAD_DIR}/csv_utils.h ${CSV_HEAD_DIR}/csv_writer.h)
 set(CSV_SRC_FILES ${CSV_SRC_DIR}/csv_reader.cpp ${CSV_SRC_DIR}/csv_utils.cpp ${CSV_SRC_DIR}/csv_writer.cpp)
 
-set(EXTERNAL_FILES external/minicsv.h)
-set(HEAD_FILES include/string_utils.h ${BIT_STREAM_HEAD_FILES} ${CSV_HEAD_FILES} ${CODER_HEAD_FILES})
-set(SOURCE_FILES src/string_utils.cpp ${BIT_STREAM_SRC_FILES} ${CSV_SRC_FILES} ${CODER_SRC_FILES})
+set(FILE_UTILS_HEAD_FILES include/string_utils.h ${BIT_STREAM_HEAD_FILES} ${TEXT_HEAD_FILES} ${CSV_HEAD_FILES})
+set(FILE_UTILS_SRC_FILES src/string_utils.cpp ${BIT_STREAM_SRC_FILES} ${TEXT_SRC_FILES} ${CSV_SRC_FILES})
+### FILE UTILS END #####################################################################################################
+
+### DATASET BEGIN ######################################################################################################
+set(DATASET_HEAD_FILES ${DATASET_HEAD_DIR}/dataset_utils.h)
+set(DATASET_SRC_FILES ${DATASET_SRC_DIR}/dataset_utils.cpp)
+### DATASET END ########################################################################################################
+
+### CODERS BEGIN #######################################################################################################
+set(CODER_BASE_HEAD_FILES ${CODER_BASE_HEAD_DIR}/coder_base.h ${CODER_BASE_HEAD_DIR}/header_utils.h) # ${CODER_BASE_HEAD_DIR}/decoder_base.h ${CODER_BASE_HEAD_DIR}/header_utils.h)
+set(CODER_BASE_SRC_FILES ${CODER_BASE_SRC_DIR}/coder_base.cpp ${CODER_BASE_SRC_DIR}/header_utils.cpp) # ${CODER_BASE_SRC_DIR}/decoder_base.cpp ${CODER_BASE_SRC_DIR}/header_utils.cpp)
+
+set(CODER_COLS_HEAD_FILES ${CODER_COLS_HEAD_DIR}/coder_cols.h) # ${CODER_COLS_HEAD_DIR}/decoder_cols.h)
+set(CODER_COLS_SRC_FILES ${CODER_COLS_SRC_DIR}/coder_cols.cpp) # ${CODER_COLS_SRC_DIR}/decoder_cols.cpp)
+
+set(CODER_BASIC_HEAD_FILES ${CODER_BASIC_HEAD_DIR}/coder_basic.h) # ${CODER_BASIC_HEAD_DIR}/decoder_basic.h)
+set(CODER_BASIC_SRC_FILES ${CODER_BASIC_SRC_DIR}/coder_basic.cpp) # ${CODER_BASIC_SRC_DIR}/decoder_basic.cpp)
+
+set(CODER_HEAD_FILES ${CODER_BASE_HEAD_FILES} ${DATASET_HEAD_FILES} ${CODER_COLS_HEAD_FILES} ${CODER_BASIC_HEAD_FILES})
+set(CODER_SRC_FILES ${CODER_BASE_SRC_FILES} ${DATASET_SRC_FILES} ${CODER_COLS_SRC_FILES} ${CODER_BASIC_SRC_FILES})
+### CODERS END #########################################################################################################
+
+
+
+set(HEAD_FILES ${FILE_UTILS_HEAD_FILES} ${DATASET_HEAD_FILES} ${CODER_HEAD_FILES} include/scripts.h)
+set(SOURCE_FILES ${FILE_UTILS_SRC_FILES} ${CODER_SRC_FILES} src/scripts.cpp)
 
 add_executable(cpp_project ${HEAD_FILES} ${SOURCE_FILES} main.cpp)
-
 
 #include_directories(include/ src/ external/)
 #set(SOURCE_FILES external/minicsv.h include/operation_utils.h include/file_utils.h include/csv_utils.h src/operation_utils.cpp src/csv_utils.cpp  main.cpp)

@@ -6,25 +6,13 @@
 #include <vector>
 #include "csv_reader.h"
 #include "csv_writer.h"
-#include <assert.h>
-
-
-int CSVUtils::lineCount(std::string path, std::string filename){
-    std::string full_path = path + '/' + filename;
-    int line_count = 0;
-    std::string line;
-    std::ifstream file(full_path);
-    while (std::getline(file, line)) ++line_count;
-    file.close();
-    return line_count;
-}
-
+#include "assert.h"
 
 void CSVUtils::CopyCSV(std::string path1, std::string filename1, std::string path2, std::string filename2){
     CSVReader csv_reader = CSVReader(path1, filename1);
     CSVWriter csv_writer = CSVWriter(path2, filename2);
     while (csv_reader.continue_reading) {
-        std::vector<std::string> row = csv_reader.readLine();
+        std::vector<std::string> row = csv_reader.readLineCSV();
         csv_writer.writeRow(row);
     }
     csv_reader.close();
@@ -36,8 +24,8 @@ void CSVUtils::CompareCSVLossless(std::string path1, std::string filename1, std:
     CSVReader csv_reader2 = CSVReader(path2, filename2);
     assert(csv_reader1.total_lines == csv_reader2.total_lines);
     while (csv_reader1.continue_reading) {
-        std::vector<std::string> row1 = csv_reader1.readLine();
-        std::vector<std::string> row2 = csv_reader2.readLine();
+        std::vector<std::string> row1 = csv_reader1.readLineCSV();
+        std::vector<std::string> row2 = csv_reader2.readLineCSV();
         assert(row1 == row2);
     }
     csv_reader1.close();

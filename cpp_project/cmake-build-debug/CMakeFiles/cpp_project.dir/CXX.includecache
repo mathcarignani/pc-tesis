@@ -7,10 +7,8 @@
 #IncludeRegexTransform: 
 
 ../include/coders/basic/coder_basic.h
-coder_base.h
-../include/coders/basic/coder_base.h
-
-../include/coders/basic/decoder_basic.h
+coder_cols.h
+../include/coders/basic/coder_cols.h
 
 ../include/coders/coder_base.h
 string
@@ -19,6 +17,14 @@ bit_stream_writer.h
 ../include/coders/bit_stream_writer.h
 csv_reader.h
 ../include/coders/csv_reader.h
+
+../include/coders/cols/coder_cols.h
+coder_base.h
+../include/coders/cols/coder_base.h
+
+../include/dataset/dataset_utils.h
+text_reader.h
+../include/dataset/text_reader.h
 
 ../include/file_utils/bit_stream/bit_stream_reader.h
 stdio.h
@@ -33,6 +39,8 @@ fstream
 -
 string
 -
+text_reader.h
+../include/file_utils/csv/text_reader.h
 
 ../include/file_utils/csv/csv_utils.h
 string
@@ -46,6 +54,18 @@ string
 vector
 -
 
+../include/file_utils/text/text_reader.h
+fstream
+-
+string
+-
+
+../include/file_utils/text/text_utils.h
+string
+-
+
+../include/scripts.h
+
 ../include/string_utils.h
 string
 -
@@ -53,30 +73,16 @@ vector
 -
 
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/main.cpp
-cstring
--
-iostream
--
-stdlib.h
--
-csv_utils.h
-/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/csv_utils.h
-coder_basic.h
-/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/coder_basic.h
-decoder_basic.h
-/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/decoder_basic.h
-bit_stream_reader.h
-/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/bit_stream_reader.h
-bit_stream_writer.h
-/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/bit_stream_writer.h
-csv_reader.h
-/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/csv_reader.h
-csv_writer.h
-/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/csv_writer.h
+scripts.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/scripts.h
 
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/basic/coder_basic.cpp
 coder_basic.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/basic/coder_basic.h
+iostream
+-
+vector
+-
 
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/coder_base.cpp
 coder_base.h
@@ -90,7 +96,21 @@ bit_stream_writer.h
 csv_reader.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/csv_reader.h
 
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/cols/coder_cols.cpp
+coder_cols.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/cols/coder_cols.h
+iostream
+-
+
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/header_utils.cpp
+
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/dataset/dataset_utils.cpp
+dataset_utils.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/dataset/dataset_utils.h
+iostream
+-
+assert.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/dataset/assert.h
 
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/bit_stream/bit_stream_reader.cpp
 bit_stream_reader.h
@@ -109,8 +129,6 @@ vector
 -
 string_utils.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/csv/string_utils.h
-csv_utils.h
-/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/csv/csv_utils.h
 
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/csv/csv_utils.cpp
 csv_utils.h
@@ -126,7 +144,7 @@ csv_reader.h
 csv_writer.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/csv/csv_writer.h
 assert.h
--
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/csv/assert.h
 
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/csv/csv_writer.cpp
 csv_writer.h
@@ -135,6 +153,46 @@ string_utils.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/csv/string_utils.h
 iostream
 -
+
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/text/text_reader.cpp
+text_reader.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/text/text_reader.h
+assert.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/text/assert.h
+text_utils.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/text/text_utils.h
+
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/text/text_utils.cpp
+text_utils.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/text/text_utils.h
+fstream
+-
+iostream
+-
+vector
+-
+assert.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/text/assert.h
+
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/scripts.cpp
+scripts.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/scripts.h
+iostream
+-
+coder_basic.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coder_basic.h
+csv_utils.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/csv_utils.h
+csv_reader.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/csv_reader.h
+csv_writer.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/csv_writer.h
+bit_stream_reader.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/bit_stream_reader.h
+bit_stream_writer.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/bit_stream_writer.h
+dataset_utils.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/dataset_utils.h
 
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/string_utils.cpp
 string_utils.h

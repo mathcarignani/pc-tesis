@@ -204,6 +204,33 @@ src/coders/coder_base.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/coder_base.cpp.s
 .PHONY : src/coders/coder_base.cpp.s
 
+src/coders/cols/coder_cols.o: src/coders/cols/coder_cols.cpp.o
+
+.PHONY : src/coders/cols/coder_cols.o
+
+# target to build an object file
+src/coders/cols/coder_cols.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/cols/coder_cols.cpp.o
+.PHONY : src/coders/cols/coder_cols.cpp.o
+
+src/coders/cols/coder_cols.i: src/coders/cols/coder_cols.cpp.i
+
+.PHONY : src/coders/cols/coder_cols.i
+
+# target to preprocess a source file
+src/coders/cols/coder_cols.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/cols/coder_cols.cpp.i
+.PHONY : src/coders/cols/coder_cols.cpp.i
+
+src/coders/cols/coder_cols.s: src/coders/cols/coder_cols.cpp.s
+
+.PHONY : src/coders/cols/coder_cols.s
+
+# target to generate assembly for a file
+src/coders/cols/coder_cols.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/cols/coder_cols.cpp.s
+.PHONY : src/coders/cols/coder_cols.cpp.s
+
 src/coders/header_utils.o: src/coders/header_utils.cpp.o
 
 .PHONY : src/coders/header_utils.o
@@ -230,6 +257,33 @@ src/coders/header_utils.s: src/coders/header_utils.cpp.s
 src/coders/header_utils.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/header_utils.cpp.s
 .PHONY : src/coders/header_utils.cpp.s
+
+src/dataset/dataset_utils.o: src/dataset/dataset_utils.cpp.o
+
+.PHONY : src/dataset/dataset_utils.o
+
+# target to build an object file
+src/dataset/dataset_utils.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/dataset/dataset_utils.cpp.o
+.PHONY : src/dataset/dataset_utils.cpp.o
+
+src/dataset/dataset_utils.i: src/dataset/dataset_utils.cpp.i
+
+.PHONY : src/dataset/dataset_utils.i
+
+# target to preprocess a source file
+src/dataset/dataset_utils.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/dataset/dataset_utils.cpp.i
+.PHONY : src/dataset/dataset_utils.cpp.i
+
+src/dataset/dataset_utils.s: src/dataset/dataset_utils.cpp.s
+
+.PHONY : src/dataset/dataset_utils.s
+
+# target to generate assembly for a file
+src/dataset/dataset_utils.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/dataset/dataset_utils.cpp.s
+.PHONY : src/dataset/dataset_utils.cpp.s
 
 src/file_utils/bit_stream/bit_stream_reader.o: src/file_utils/bit_stream/bit_stream_reader.cpp.o
 
@@ -366,6 +420,87 @@ src/file_utils/csv/csv_writer.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_writer.cpp.s
 .PHONY : src/file_utils/csv/csv_writer.cpp.s
 
+src/file_utils/text/text_reader.o: src/file_utils/text/text_reader.cpp.o
+
+.PHONY : src/file_utils/text/text_reader.o
+
+# target to build an object file
+src/file_utils/text/text_reader.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/file_utils/text/text_reader.cpp.o
+.PHONY : src/file_utils/text/text_reader.cpp.o
+
+src/file_utils/text/text_reader.i: src/file_utils/text/text_reader.cpp.i
+
+.PHONY : src/file_utils/text/text_reader.i
+
+# target to preprocess a source file
+src/file_utils/text/text_reader.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/file_utils/text/text_reader.cpp.i
+.PHONY : src/file_utils/text/text_reader.cpp.i
+
+src/file_utils/text/text_reader.s: src/file_utils/text/text_reader.cpp.s
+
+.PHONY : src/file_utils/text/text_reader.s
+
+# target to generate assembly for a file
+src/file_utils/text/text_reader.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/file_utils/text/text_reader.cpp.s
+.PHONY : src/file_utils/text/text_reader.cpp.s
+
+src/file_utils/text/text_utils.o: src/file_utils/text/text_utils.cpp.o
+
+.PHONY : src/file_utils/text/text_utils.o
+
+# target to build an object file
+src/file_utils/text/text_utils.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/file_utils/text/text_utils.cpp.o
+.PHONY : src/file_utils/text/text_utils.cpp.o
+
+src/file_utils/text/text_utils.i: src/file_utils/text/text_utils.cpp.i
+
+.PHONY : src/file_utils/text/text_utils.i
+
+# target to preprocess a source file
+src/file_utils/text/text_utils.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/file_utils/text/text_utils.cpp.i
+.PHONY : src/file_utils/text/text_utils.cpp.i
+
+src/file_utils/text/text_utils.s: src/file_utils/text/text_utils.cpp.s
+
+.PHONY : src/file_utils/text/text_utils.s
+
+# target to generate assembly for a file
+src/file_utils/text/text_utils.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/file_utils/text/text_utils.cpp.s
+.PHONY : src/file_utils/text/text_utils.cpp.s
+
+src/scripts.o: src/scripts.cpp.o
+
+.PHONY : src/scripts.o
+
+# target to build an object file
+src/scripts.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/scripts.cpp.o
+.PHONY : src/scripts.cpp.o
+
+src/scripts.i: src/scripts.cpp.i
+
+.PHONY : src/scripts.i
+
+# target to preprocess a source file
+src/scripts.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/scripts.cpp.i
+.PHONY : src/scripts.cpp.i
+
+src/scripts.s: src/scripts.cpp.s
+
+.PHONY : src/scripts.s
+
+# target to generate assembly for a file
+src/scripts.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/scripts.cpp.s
+.PHONY : src/scripts.cpp.s
+
 src/string_utils.o: src/string_utils.cpp.o
 
 .PHONY : src/string_utils.o
@@ -411,9 +546,15 @@ help:
 	@echo "... src/coders/coder_base.o"
 	@echo "... src/coders/coder_base.i"
 	@echo "... src/coders/coder_base.s"
+	@echo "... src/coders/cols/coder_cols.o"
+	@echo "... src/coders/cols/coder_cols.i"
+	@echo "... src/coders/cols/coder_cols.s"
 	@echo "... src/coders/header_utils.o"
 	@echo "... src/coders/header_utils.i"
 	@echo "... src/coders/header_utils.s"
+	@echo "... src/dataset/dataset_utils.o"
+	@echo "... src/dataset/dataset_utils.i"
+	@echo "... src/dataset/dataset_utils.s"
 	@echo "... src/file_utils/bit_stream/bit_stream_reader.o"
 	@echo "... src/file_utils/bit_stream/bit_stream_reader.i"
 	@echo "... src/file_utils/bit_stream/bit_stream_reader.s"
@@ -429,6 +570,15 @@ help:
 	@echo "... src/file_utils/csv/csv_writer.o"
 	@echo "... src/file_utils/csv/csv_writer.i"
 	@echo "... src/file_utils/csv/csv_writer.s"
+	@echo "... src/file_utils/text/text_reader.o"
+	@echo "... src/file_utils/text/text_reader.i"
+	@echo "... src/file_utils/text/text_reader.s"
+	@echo "... src/file_utils/text/text_utils.o"
+	@echo "... src/file_utils/text/text_utils.i"
+	@echo "... src/file_utils/text/text_utils.s"
+	@echo "... src/scripts.o"
+	@echo "... src/scripts.i"
+	@echo "... src/scripts.s"
 	@echo "... src/string_utils.o"
 	@echo "... src/string_utils.i"
 	@echo "... src/string_utils.s"
