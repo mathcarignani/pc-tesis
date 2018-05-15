@@ -64,31 +64,29 @@ set(FILE_UTILS_SRC_FILES src/string_utils.cpp ${BIT_STREAM_SRC_FILES} ${TEXT_SRC
 ### FILE UTILS END #####################################################################################################
 
 ### DATASET BEGIN ######################################################################################################
-set(DATASET_HEAD_FILES ${DATASET_HEAD_DIR}/dataset_utils.h)
-set(DATASET_SRC_FILES ${DATASET_SRC_DIR}/dataset_utils.cpp)
+set(DATASET_HEAD_FILES ${DATASET_HEAD_DIR}/range.h ${DATASET_HEAD_DIR}/column_code.h ${DATASET_HEAD_DIR}/dataset.h ${DATASET_HEAD_DIR}/dataset_utils.h)
+set(DATASET_SRC_FILES ${DATASET_SRC_DIR}/column_code.cpp ${DATASET_SRC_DIR}/dataset.cpp ${DATASET_SRC_DIR}/dataset_utils.cpp)
 ### DATASET END ########################################################################################################
 
 ### CODERS BEGIN #######################################################################################################
-set(CODER_BASE_HEAD_FILES ${CODER_BASE_HEAD_DIR}/coder_base.h ${CODER_BASE_HEAD_DIR}/header_utils.h) # ${CODER_BASE_HEAD_DIR}/decoder_base.h ${CODER_BASE_HEAD_DIR}/header_utils.h)
-set(CODER_BASE_SRC_FILES ${CODER_BASE_SRC_DIR}/coder_base.cpp ${CODER_BASE_SRC_DIR}/header_utils.cpp) # ${CODER_BASE_SRC_DIR}/decoder_base.cpp ${CODER_BASE_SRC_DIR}/header_utils.cpp)
+set(CODER_BASE_HEAD_FILES ${CODER_BASE_HEAD_DIR}/header_utils.h ${CODER_BASE_HEAD_DIR}/coder_base.h ${CODER_BASE_HEAD_DIR}/decoder_base.h)
+set(CODER_BASE_SRC_FILES ${CODER_BASE_SRC_DIR}/header_utils.cpp ${CODER_BASE_SRC_DIR}/coder_base.cpp ${CODER_BASE_SRC_DIR}/decoder_base.cpp)
 
-set(CODER_COLS_HEAD_FILES ${CODER_COLS_HEAD_DIR}/coder_cols.h) # ${CODER_COLS_HEAD_DIR}/decoder_cols.h)
-set(CODER_COLS_SRC_FILES ${CODER_COLS_SRC_DIR}/coder_cols.cpp) # ${CODER_COLS_SRC_DIR}/decoder_cols.cpp)
+set(CODER_COLS_HEAD_FILES ${CODER_COLS_HEAD_DIR}/coder_cols.h ${CODER_COLS_HEAD_DIR}/decoder_cols.h)
+set(CODER_COLS_SRC_FILES ${CODER_COLS_SRC_DIR}/coder_cols.cpp ${CODER_COLS_SRC_DIR}/decoder_cols.cpp)
 
-set(CODER_BASIC_HEAD_FILES ${CODER_BASIC_HEAD_DIR}/coder_basic.h) # ${CODER_BASIC_HEAD_DIR}/decoder_basic.h)
-set(CODER_BASIC_SRC_FILES ${CODER_BASIC_SRC_DIR}/coder_basic.cpp) # ${CODER_BASIC_SRC_DIR}/decoder_basic.cpp)
+set(CODER_BASIC_HEAD_FILES ${CODER_BASIC_HEAD_DIR}/coder_basic.h ${CODER_BASIC_HEAD_DIR}/decoder_basic.h)
+set(CODER_BASIC_SRC_FILES ${CODER_BASIC_SRC_DIR}/coder_basic.cpp ${CODER_BASIC_SRC_DIR}/decoder_basic.cpp)
 
 set(CODER_HEAD_FILES ${CODER_BASE_HEAD_FILES} ${DATASET_HEAD_FILES} ${CODER_COLS_HEAD_FILES} ${CODER_BASIC_HEAD_FILES})
 set(CODER_SRC_FILES ${CODER_BASE_SRC_FILES} ${DATASET_SRC_FILES} ${CODER_COLS_SRC_FILES} ${CODER_BASIC_SRC_FILES})
 ### CODERS END #########################################################################################################
 
+set(OTHER_HEAD_FILES include/scripts.h include/tests.h)
+set(OTHER_SRC_FILES src/scripts.cpp src/tests.cpp)
 
 
-set(HEAD_FILES ${FILE_UTILS_HEAD_FILES} ${DATASET_HEAD_FILES} ${CODER_HEAD_FILES} include/scripts.h)
-set(SOURCE_FILES ${FILE_UTILS_SRC_FILES} ${CODER_SRC_FILES} src/scripts.cpp)
+set(HEAD_FILES ${FILE_UTILS_HEAD_FILES} ${DATASET_HEAD_FILES} ${CODER_HEAD_FILES} ${OTHER_HEAD_FILES})
+set(SOURCE_FILES ${FILE_UTILS_SRC_FILES} ${CODER_SRC_FILES} ${OTHER_SRC_FILES})
 
 add_executable(cpp_project ${HEAD_FILES} ${SOURCE_FILES} main.cpp)
-
-#include_directories(include/ src/ external/)
-#set(SOURCE_FILES external/minicsv.h include/operation_utils.h include/file_utils.h include/csv_utils.h src/operation_utils.cpp src/csv_utils.cpp  main.cpp)
-#add_executable(cpp_project ${SOURCE_FILES})

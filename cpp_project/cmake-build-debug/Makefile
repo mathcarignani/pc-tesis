@@ -177,6 +177,33 @@ src/coders/basic/coder_basic.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/basic/coder_basic.cpp.s
 .PHONY : src/coders/basic/coder_basic.cpp.s
 
+src/coders/basic/decoder_basic.o: src/coders/basic/decoder_basic.cpp.o
+
+.PHONY : src/coders/basic/decoder_basic.o
+
+# target to build an object file
+src/coders/basic/decoder_basic.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/basic/decoder_basic.cpp.o
+.PHONY : src/coders/basic/decoder_basic.cpp.o
+
+src/coders/basic/decoder_basic.i: src/coders/basic/decoder_basic.cpp.i
+
+.PHONY : src/coders/basic/decoder_basic.i
+
+# target to preprocess a source file
+src/coders/basic/decoder_basic.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/basic/decoder_basic.cpp.i
+.PHONY : src/coders/basic/decoder_basic.cpp.i
+
+src/coders/basic/decoder_basic.s: src/coders/basic/decoder_basic.cpp.s
+
+.PHONY : src/coders/basic/decoder_basic.s
+
+# target to generate assembly for a file
+src/coders/basic/decoder_basic.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/basic/decoder_basic.cpp.s
+.PHONY : src/coders/basic/decoder_basic.cpp.s
+
 src/coders/coder_base.o: src/coders/coder_base.cpp.o
 
 .PHONY : src/coders/coder_base.o
@@ -231,6 +258,60 @@ src/coders/cols/coder_cols.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/cols/coder_cols.cpp.s
 .PHONY : src/coders/cols/coder_cols.cpp.s
 
+src/coders/cols/decoder_cols.o: src/coders/cols/decoder_cols.cpp.o
+
+.PHONY : src/coders/cols/decoder_cols.o
+
+# target to build an object file
+src/coders/cols/decoder_cols.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/cols/decoder_cols.cpp.o
+.PHONY : src/coders/cols/decoder_cols.cpp.o
+
+src/coders/cols/decoder_cols.i: src/coders/cols/decoder_cols.cpp.i
+
+.PHONY : src/coders/cols/decoder_cols.i
+
+# target to preprocess a source file
+src/coders/cols/decoder_cols.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/cols/decoder_cols.cpp.i
+.PHONY : src/coders/cols/decoder_cols.cpp.i
+
+src/coders/cols/decoder_cols.s: src/coders/cols/decoder_cols.cpp.s
+
+.PHONY : src/coders/cols/decoder_cols.s
+
+# target to generate assembly for a file
+src/coders/cols/decoder_cols.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/cols/decoder_cols.cpp.s
+.PHONY : src/coders/cols/decoder_cols.cpp.s
+
+src/coders/decoder_base.o: src/coders/decoder_base.cpp.o
+
+.PHONY : src/coders/decoder_base.o
+
+# target to build an object file
+src/coders/decoder_base.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/decoder_base.cpp.o
+.PHONY : src/coders/decoder_base.cpp.o
+
+src/coders/decoder_base.i: src/coders/decoder_base.cpp.i
+
+.PHONY : src/coders/decoder_base.i
+
+# target to preprocess a source file
+src/coders/decoder_base.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/decoder_base.cpp.i
+.PHONY : src/coders/decoder_base.cpp.i
+
+src/coders/decoder_base.s: src/coders/decoder_base.cpp.s
+
+.PHONY : src/coders/decoder_base.s
+
+# target to generate assembly for a file
+src/coders/decoder_base.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/decoder_base.cpp.s
+.PHONY : src/coders/decoder_base.cpp.s
+
 src/coders/header_utils.o: src/coders/header_utils.cpp.o
 
 .PHONY : src/coders/header_utils.o
@@ -257,6 +338,60 @@ src/coders/header_utils.s: src/coders/header_utils.cpp.s
 src/coders/header_utils.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/header_utils.cpp.s
 .PHONY : src/coders/header_utils.cpp.s
+
+src/dataset/column_code.o: src/dataset/column_code.cpp.o
+
+.PHONY : src/dataset/column_code.o
+
+# target to build an object file
+src/dataset/column_code.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/dataset/column_code.cpp.o
+.PHONY : src/dataset/column_code.cpp.o
+
+src/dataset/column_code.i: src/dataset/column_code.cpp.i
+
+.PHONY : src/dataset/column_code.i
+
+# target to preprocess a source file
+src/dataset/column_code.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/dataset/column_code.cpp.i
+.PHONY : src/dataset/column_code.cpp.i
+
+src/dataset/column_code.s: src/dataset/column_code.cpp.s
+
+.PHONY : src/dataset/column_code.s
+
+# target to generate assembly for a file
+src/dataset/column_code.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/dataset/column_code.cpp.s
+.PHONY : src/dataset/column_code.cpp.s
+
+src/dataset/dataset.o: src/dataset/dataset.cpp.o
+
+.PHONY : src/dataset/dataset.o
+
+# target to build an object file
+src/dataset/dataset.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/dataset/dataset.cpp.o
+.PHONY : src/dataset/dataset.cpp.o
+
+src/dataset/dataset.i: src/dataset/dataset.cpp.i
+
+.PHONY : src/dataset/dataset.i
+
+# target to preprocess a source file
+src/dataset/dataset.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/dataset/dataset.cpp.i
+.PHONY : src/dataset/dataset.cpp.i
+
+src/dataset/dataset.s: src/dataset/dataset.cpp.s
+
+.PHONY : src/dataset/dataset.s
+
+# target to generate assembly for a file
+src/dataset/dataset.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/dataset/dataset.cpp.s
+.PHONY : src/dataset/dataset.cpp.s
 
 src/dataset/dataset_utils.o: src/dataset/dataset_utils.cpp.o
 
@@ -528,6 +663,33 @@ src/string_utils.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/string_utils.cpp.s
 .PHONY : src/string_utils.cpp.s
 
+src/tests.o: src/tests.cpp.o
+
+.PHONY : src/tests.o
+
+# target to build an object file
+src/tests.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests.cpp.o
+.PHONY : src/tests.cpp.o
+
+src/tests.i: src/tests.cpp.i
+
+.PHONY : src/tests.i
+
+# target to preprocess a source file
+src/tests.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests.cpp.i
+.PHONY : src/tests.cpp.i
+
+src/tests.s: src/tests.cpp.s
+
+.PHONY : src/tests.s
+
+# target to generate assembly for a file
+src/tests.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests.cpp.s
+.PHONY : src/tests.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -543,15 +705,30 @@ help:
 	@echo "... src/coders/basic/coder_basic.o"
 	@echo "... src/coders/basic/coder_basic.i"
 	@echo "... src/coders/basic/coder_basic.s"
+	@echo "... src/coders/basic/decoder_basic.o"
+	@echo "... src/coders/basic/decoder_basic.i"
+	@echo "... src/coders/basic/decoder_basic.s"
 	@echo "... src/coders/coder_base.o"
 	@echo "... src/coders/coder_base.i"
 	@echo "... src/coders/coder_base.s"
 	@echo "... src/coders/cols/coder_cols.o"
 	@echo "... src/coders/cols/coder_cols.i"
 	@echo "... src/coders/cols/coder_cols.s"
+	@echo "... src/coders/cols/decoder_cols.o"
+	@echo "... src/coders/cols/decoder_cols.i"
+	@echo "... src/coders/cols/decoder_cols.s"
+	@echo "... src/coders/decoder_base.o"
+	@echo "... src/coders/decoder_base.i"
+	@echo "... src/coders/decoder_base.s"
 	@echo "... src/coders/header_utils.o"
 	@echo "... src/coders/header_utils.i"
 	@echo "... src/coders/header_utils.s"
+	@echo "... src/dataset/column_code.o"
+	@echo "... src/dataset/column_code.i"
+	@echo "... src/dataset/column_code.s"
+	@echo "... src/dataset/dataset.o"
+	@echo "... src/dataset/dataset.i"
+	@echo "... src/dataset/dataset.s"
 	@echo "... src/dataset/dataset_utils.o"
 	@echo "... src/dataset/dataset_utils.i"
 	@echo "... src/dataset/dataset_utils.s"
@@ -582,6 +759,9 @@ help:
 	@echo "... src/string_utils.o"
 	@echo "... src/string_utils.i"
 	@echo "... src/string_utils.s"
+	@echo "... src/tests.o"
+	@echo "... src/tests.i"
+	@echo "... src/tests.s"
 .PHONY : help
 
 

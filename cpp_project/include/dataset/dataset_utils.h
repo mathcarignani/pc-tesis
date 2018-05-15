@@ -2,15 +2,24 @@
 #ifndef CPP_PROJECT_DATASET_UTILS_H
 #define CPP_PROJECT_DATASET_UTILS_H
 
+#include <vector>
 #include "text_reader.h"
+#include "range.h"
 
 class DatasetUtils {
 
 private:
-    const std::string PATH = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/aux";
+    const std::string PATH = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/constants";
     const std::string FILENAME = "CONSTANTS"; // "PAPER_CONSTANTS"
+    const std::string SEPARATOR = "=";
+    const std::string DATASET_KEY = "#DATASET";
+    const std::string TIME_UNIT_KEY = "#TIME_UNIT";
+    const std::string ALPHABETS_KEY = "#ALPHABETS";
+
     TextReader input_file = TextReader(PATH, FILENAME);
     std::string action;
+
+    std::string findLine(std::string string_group, std::string string_to_find);
 
 public:
     DatasetUtils(std::string action_);
@@ -18,6 +27,8 @@ public:
     std::string decodeDatasetName(int dataset_int);
     int codeTimeUnit(std::string time_unit_name);
     std::string decodeTimeUnit(int time_unit_int);
+    std::vector<Range> getRangeVector(std::string dataset_name);
+    std::vector<int> getBitsVector(std::string dataset_name);
     void close();
 
 };

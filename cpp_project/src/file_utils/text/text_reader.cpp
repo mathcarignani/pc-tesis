@@ -1,8 +1,10 @@
 
 #include "text_reader.h"
 
+#include <iostream>
 #include "assert.h"
 #include "text_utils.h"
+#include "string_utils.h"
 
 TextReader::TextReader(std::string path, std::string filename){
     total_lines = TextUtils::lineCount(path, filename);
@@ -14,19 +16,30 @@ TextReader::TextReader(std::string path, std::string filename){
 
 std::string TextReader::readLine(){
     assert(continue_reading);
-
     readLineAux();
     return current_line;
 }
 
-void TextReader::goToRow(int row_number){
-    assert(row_number <= total_lines);
-
+void TextReader::goToStart(){
     file.clear();
     file.seekg(0, std::ios::beg);
     current_line_count = 0;
     continue_reading = total_lines > 0;
-    for(int i=0; i < row_number; i++) { readLineAux(); }
+}
+
+void TextReader::goToLine(int line_number){
+    assert(line_number <= total_lines);
+
+    goToStart();
+    for(int i=0; i < line_number; i++) { readLineAux(); }
+}
+
+bool TextReader::findLine(const std::string string_to_find){
+    while (continue_reading) {
+        readLineAux();
+        if (StringUtils::find(current_line, string_to_find)) { return true; }
+    }
+    return false;
 }
 
 void TextReader::readLineAux() {

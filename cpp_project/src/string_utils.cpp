@@ -1,7 +1,14 @@
 
 #include "string_utils.h"
+
 #include <iostream>
-#include <string>
+
+//
+// SOURCE: https://stackoverflow.com/a/2340309/4547232
+//
+bool StringUtils::find(std::string string, std::string string_to_find) {
+    return (string.find(string_to_find) != std::string::npos);
+}
 
 //
 // SOURCE: https://stackoverflow.com/a/46943631/4547232
@@ -45,7 +52,7 @@ std::string StringUtils::join(std::vector<std::string> arr, std::string token){
 //
 // SOURCE: https://stackoverflow.com/a/5891683/4547232
 //
-std::string StringUtils::RemoveChars(const std::string& source, const std::string& chars){
+std::string StringUtils::removeChars(const std::string& source, const std::string& chars){
     std::string result="";
     for (unsigned int i=0; i<source.length(); i++) {
         bool foundany=false;
@@ -55,6 +62,15 @@ std::string StringUtils::RemoveChars(const std::string& source, const std::strin
         if (!foundany) {
             result+=source[i];
         }
+    }
+    return result;
+}
+
+
+std::string StringUtils::removeLastChar(const std::string& source){
+    std::string result="";
+    for (unsigned int i=0; i<source.length() - 1; i++) {
+        result+=source[i];
     }
     return result;
 }

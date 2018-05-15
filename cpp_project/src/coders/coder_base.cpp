@@ -1,10 +1,11 @@
 
 #include "coder_base.h"
 
-#include <cstring>
+//#include <cstring>
 #include <iostream>
-#include "bit_stream_writer.h"
-#include "csv_reader.h"
+//#include "bit_stream_writer.h"
+//#include "csv_reader.h"
+#include "header_utils.h"
 
 
 void CoderBase::codeDataRowsCount(){
@@ -50,9 +51,9 @@ void CoderBase::raiseRangeError(){
 }
 
 void CoderBase::codeFile(){
-//    dataset = HeaderUtils::code_header(input_csv, output_file);
+    dataset = HeaderUtils::codeHeader(input_csv, output_file);
     codeDataRowsCount();
-    codeDataRows();
+//    codeDataRows();
 }
 
 void CoderBase::close(){

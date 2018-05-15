@@ -13,7 +13,7 @@ private:
 
 public:
 
-    BitStreamReader(char * file);
+    BitStreamReader(const char * file);
 
     int getBit();
 

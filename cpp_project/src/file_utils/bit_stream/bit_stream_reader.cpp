@@ -2,7 +2,7 @@
 #include "bit_stream_reader.h"
 
 
-BitStreamReader::BitStreamReader(char * file){
+BitStreamReader::BitStreamReader(const char * file){
     fp = fopen(file, "rb");
     offset = 0;
     current = (unsigned char)getc(fp);

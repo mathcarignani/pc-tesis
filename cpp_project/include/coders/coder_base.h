@@ -5,17 +5,12 @@
 #include <string>
 #include "bit_stream_writer.h"
 #include "csv_reader.h"
+#include "dataset.h"
 
 
 class CoderBase {
 
 private:
-//    CSVReader &input_csv;
-//    BitStreamWriter &output_file;
-
-
-//    Dataset dataset;
-
     void codeDataRowsCount();
     virtual void codeDataRows() = 0;
     //
@@ -29,7 +24,9 @@ private:
 protected:
     CSVReader &input_csv;
     BitStreamWriter &output_file;
-    int columns_count = 2; // number of columns in the csv file
+    Dataset dataset;
+    int columns_count = 0; // number of columns in the csv file
+
     void codeValueRaw(std::string x, int row_index, int col_index);
 
 public:

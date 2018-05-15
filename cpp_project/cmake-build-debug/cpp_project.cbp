@@ -101,16 +101,34 @@
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/basic/coder_basic.h">
 			<Option target="cpp_project"/>
 		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/basic/decoder_basic.h">
+			<Option target="cpp_project"/>
+		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/coder_base.h">
 			<Option target="cpp_project"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/cols/coder_cols.h">
 			<Option target="cpp_project"/>
 		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/cols/decoder_cols.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/decoder_base.h">
+			<Option target="cpp_project"/>
+		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/header_utils.h">
 			<Option target="cpp_project"/>
 		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/dataset/column_code.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/dataset/dataset.h">
+			<Option target="cpp_project"/>
+		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/dataset/dataset_utils.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/dataset/range.h">
 			<Option target="cpp_project"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/file_utils/bit_stream/bit_stream_reader.h">
@@ -140,10 +158,16 @@
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/string_utils.h">
 			<Option target="cpp_project"/>
 		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/tests.h">
+			<Option target="cpp_project"/>
+		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/main.cpp">
 			<Option target="cpp_project"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/basic/coder_basic.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/basic/decoder_basic.cpp">
 			<Option target="cpp_project"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/coder_base.cpp">
@@ -152,7 +176,19 @@
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/cols/coder_cols.cpp">
 			<Option target="cpp_project"/>
 		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/cols/decoder_cols.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/decoder_base.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/header_utils.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/dataset/column_code.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/dataset/dataset.cpp">
 			<Option target="cpp_project"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/dataset/dataset_utils.cpp">
@@ -183,6 +219,9 @@
 			<Option target="cpp_project"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/string_utils.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/tests.cpp">
 			<Option target="cpp_project"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/CMakeLists.txt">

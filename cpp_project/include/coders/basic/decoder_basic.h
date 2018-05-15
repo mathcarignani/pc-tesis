@@ -2,15 +2,15 @@
 #ifndef CPP_PROJECT_DECODER_BASIC_H
 #define CPP_PROJECT_DECODER_BASIC_H
 
-#include "decoder_base.h"
+#include "decoder_cols.h"
 
-class DecoderBasic: public DecoderBase {
+class DecoderBasic: public DecoderCols {
 
 private:
-    void decodeDataRows() override;
+//    void decodeDataRows() override;
 
 public:
-    using DecoderBase::DecoderBase;
+    using DecoderCols::DecoderCols;
 };
 
 #endif //CPP_PROJECT_DECODER_BASIC_H

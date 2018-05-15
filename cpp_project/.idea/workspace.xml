@@ -12,21 +12,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2fbb5dd3-364e-4d62-8cd3-b832deb1f263" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/pablocerve.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/include/coders/cols/coder_cols.h" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/include/coders/cols/decoder_cols.h" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/include/dataset/dataset.h" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/include/dataset/dataset_utils.h" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/include/file_utils/text/text_reader.h" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/include/file_utils/text/text_utils.h" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/include/scripts.h" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/coders/cols/coder_cols.cpp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/coders/cols/decoder_cols.cpp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/dataset/dataset.cpp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/dataset/dataset_utils.cpp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/file_utils/text/text_reader.cpp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/file_utils/text/text_utils.cpp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/scripts.cpp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/include/dataset/column_code.h" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/include/dataset/range.h" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/include/tests.h" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/dataset/column_code.cpp" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/tests.cpp" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" />
@@ -36,31 +26,55 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/cmake_clean.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/cmake_clean.cmake" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/depend.internal" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/depend.internal" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/depend.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/depend.make" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/flags.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/flags.make" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/link.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/link.txt" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/main.cpp.o" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/main.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/main.cpp.o" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/progress.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/progress.make" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/basic/coder_basic.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/basic/coder_basic.cpp.o" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/coder_base.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/coder_base.cpp.o" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/cols/coder_cols.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/cols/coder_cols.cpp.o" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/decoder_base.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/decoder_base.cpp.o" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/header_utils.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/header_utils.cpp.o" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/dataset/dataset_utils.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/dataset/dataset_utils.cpp.o" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_reader.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_reader.cpp.o" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_reader.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_reader.cpp.o" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_utils.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_utils.cpp.o" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/file_utils/text/text_reader.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/file_utils/text/text_reader.cpp.o" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/scripts.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/scripts.cpp.o" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/string_utils.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/string_utils.cpp.o" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/cpp_project" afterPath="$PROJECT_DIR$/cmake-build-debug/cpp_project" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/cpp_project.cbp" afterPath="$PROJECT_DIR$/cmake-build-debug/cpp_project.cbp" />
-      <change beforePath="$PROJECT_DIR$/external/minicsv.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/include/coders/basic/coder_basic.h" afterPath="$PROJECT_DIR$/include/coders/basic/coder_basic.h" />
       <change beforePath="$PROJECT_DIR$/include/coders/basic/decoder_basic.h" afterPath="$PROJECT_DIR$/include/coders/basic/decoder_basic.h" />
       <change beforePath="$PROJECT_DIR$/include/coders/coder_base.h" afterPath="$PROJECT_DIR$/include/coders/coder_base.h" />
-      <change beforePath="$PROJECT_DIR$/include/file_utils/csv/csv_reader.h" afterPath="$PROJECT_DIR$/include/file_utils/csv/csv_reader.h" />
-      <change beforePath="$PROJECT_DIR$/include/file_utils/csv/csv_utils.h" afterPath="$PROJECT_DIR$/include/file_utils/csv/csv_utils.h" />
+      <change beforePath="$PROJECT_DIR$/include/coders/cols/coder_cols.h" afterPath="$PROJECT_DIR$/include/coders/cols/coder_cols.h" />
+      <change beforePath="$PROJECT_DIR$/include/coders/cols/decoder_cols.h" afterPath="$PROJECT_DIR$/include/coders/cols/decoder_cols.h" />
+      <change beforePath="$PROJECT_DIR$/include/coders/decoder_base.h" afterPath="$PROJECT_DIR$/include/coders/decoder_base.h" />
+      <change beforePath="$PROJECT_DIR$/include/coders/header_utils.h" afterPath="$PROJECT_DIR$/include/coders/header_utils.h" />
+      <change beforePath="$PROJECT_DIR$/include/dataset/dataset.h" afterPath="$PROJECT_DIR$/include/dataset/dataset.h" />
+      <change beforePath="$PROJECT_DIR$/include/dataset/dataset_utils.h" afterPath="$PROJECT_DIR$/include/dataset/dataset_utils.h" />
+      <change beforePath="$PROJECT_DIR$/include/file_utils/bit_stream/bit_stream_reader.h" afterPath="$PROJECT_DIR$/include/file_utils/bit_stream/bit_stream_reader.h" />
+      <change beforePath="$PROJECT_DIR$/include/file_utils/text/text_reader.h" afterPath="$PROJECT_DIR$/include/file_utils/text/text_reader.h" />
+      <change beforePath="$PROJECT_DIR$/include/scripts.h" afterPath="$PROJECT_DIR$/include/scripts.h" />
+      <change beforePath="$PROJECT_DIR$/include/string_utils.h" afterPath="$PROJECT_DIR$/include/string_utils.h" />
       <change beforePath="$PROJECT_DIR$/main.cpp" afterPath="$PROJECT_DIR$/main.cpp" />
       <change beforePath="$PROJECT_DIR$/noaa_spc-wind.csv.c" afterPath="$PROJECT_DIR$/noaa_spc-wind.csv.c" />
       <change beforePath="$PROJECT_DIR$/src/coders/basic/coder_basic.cpp" afterPath="$PROJECT_DIR$/src/coders/basic/coder_basic.cpp" />
       <change beforePath="$PROJECT_DIR$/src/coders/basic/decoder_basic.cpp" afterPath="$PROJECT_DIR$/src/coders/basic/decoder_basic.cpp" />
       <change beforePath="$PROJECT_DIR$/src/coders/coder_base.cpp" afterPath="$PROJECT_DIR$/src/coders/coder_base.cpp" />
+      <change beforePath="$PROJECT_DIR$/src/coders/cols/coder_cols.cpp" afterPath="$PROJECT_DIR$/src/coders/cols/coder_cols.cpp" />
+      <change beforePath="$PROJECT_DIR$/src/coders/decoder_base.cpp" afterPath="$PROJECT_DIR$/src/coders/decoder_base.cpp" />
+      <change beforePath="$PROJECT_DIR$/src/coders/header_utils.cpp" afterPath="$PROJECT_DIR$/src/coders/header_utils.cpp" />
+      <change beforePath="$PROJECT_DIR$/src/dataset/dataset.cpp" afterPath="$PROJECT_DIR$/src/dataset/dataset.cpp" />
+      <change beforePath="$PROJECT_DIR$/src/dataset/dataset_utils.cpp" afterPath="$PROJECT_DIR$/src/dataset/dataset_utils.cpp" />
+      <change beforePath="$PROJECT_DIR$/src/file_utils/bit_stream/bit_stream_reader.cpp" afterPath="$PROJECT_DIR$/src/file_utils/bit_stream/bit_stream_reader.cpp" />
       <change beforePath="$PROJECT_DIR$/src/file_utils/csv/csv_reader.cpp" afterPath="$PROJECT_DIR$/src/file_utils/csv/csv_reader.cpp" />
-      <change beforePath="$PROJECT_DIR$/src/file_utils/csv/csv_utils.cpp" afterPath="$PROJECT_DIR$/src/file_utils/csv/csv_utils.cpp" />
+      <change beforePath="$PROJECT_DIR$/src/file_utils/text/text_reader.cpp" afterPath="$PROJECT_DIR$/src/file_utils/text/text_reader.cpp" />
+      <change beforePath="$PROJECT_DIR$/src/scripts.cpp" afterPath="$PROJECT_DIR$/src/scripts.cpp" />
+      <change beforePath="$PROJECT_DIR$/src/string_utils.cpp" afterPath="$PROJECT_DIR$/src/string_utils.cpp" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/aux/CONSTANTS" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/aux/PAPER_CONSTANTS" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/aux/dataset_utils.py" afterPath="$PROJECT_DIR$/../dataset_parser/aux/dataset_utils.py" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -73,24 +87,48 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="dataset_utils.cpp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/dataset/dataset_utils.cpp">
+      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+            <state relative-caret-position="120">
+              <caret line="9" column="20" lean-forward="true" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="scripts.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/scripts.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="496">
+              <caret line="43" column="22" lean-forward="true" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
               <folding>
-                <element signature="e#1#27#0" expanded="true" />
+                <element signature="e#1#21#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dataset_utils.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/include/dataset/dataset_utils.h">
+      <file leaf-file-name="decoder_base.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/coders/decoder_base.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="19" selection-end-column="50" />
-              <folding />
+            <state relative-caret-position="210">
+              <caret line="14" column="34" lean-forward="true" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+              <folding>
+                <element signature="e#1#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header_utils.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/coders/header_utils.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="316">
+              <caret line="32" column="1" lean-forward="true" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+              <folding>
+                <element signature="e#1#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -101,8 +139,6 @@
     <findStrings>
       <find>min</find>
       <find>string</find>
-      <find>cout</find>
-      <find>header_utils</find>
       <find>writer</find>
       <find>BIT_STREAM_HEAD_DIR</find>
       <find>CODER_BASIC_SRC_DIR</find>
@@ -117,7 +153,19 @@
       <find>assert</find>
       <find>&lt;assert</find>
       <find>assert.h</find>
+      <find>&lt;vector&gt;</find>
+      <find>stoi</find>
+      <find>cout</find>
+      <find>dataset_ut</find>
+      <find>header_utils</find>
+      <find>DATASET_HEAD_FILES</find>
+      <find>column_code</find>
+      <find>RemoveChars</find>
+      <find>decoder</find>
     </findStrings>
+    <replaceStrings>
+      <replace>removeChars</replace>
+    </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src</dir>
       <dir>$PROJECT_DIR$</dir>
@@ -129,51 +177,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/bit_stream.cpp" />
-        <option value="$PROJECT_DIR$/bit_stream.h" />
-        <option value="$PROJECT_DIR$/src/csv_utils.h.cpp" />
-        <option value="$PROJECT_DIR$/include/bit_stream.h" />
         <option value="$PROJECT_DIR$/src/bit_stream.cpp" />
         <option value="$PROJECT_DIR$/include/operation_utils.h" />
         <option value="$PROJECT_DIR$/src/operation_utils.cpp" />
         <option value="$PROJECT_DIR$/src/csv_utils.cpp" />
-        <option value="$PROJECT_DIR$/include/file_utils/bit_stream/bit_stream_reader.h" />
         <option value="$PROJECT_DIR$/external/minicsv.h" />
         <option value="$PROJECT_DIR$/include/csv_utils.h" />
         <option value="$PROJECT_DIR$/src/file_utils.cpp" />
         <option value="$PROJECT_DIR$/include/file_utils.h" />
-        <option value="$PROJECT_DIR$/src/file_utils/bit_stream/bit_stream_reader.cpp" />
-        <option value="$PROJECT_DIR$/src/string_utils.cpp" />
-        <option value="$PROJECT_DIR$/include/string_utils.h" />
         <option value="$PROJECT_DIR$/include/file_utils/csv/csv_writer.h" />
         <option value="$PROJECT_DIR$/src/file_utils/csv/csv_writer.cpp" />
-        <option value="$PROJECT_DIR$/include/coders/header_utils.h" />
         <option value="$PROJECT_DIR$/include/file_utils/bit_stream/bit_stream_writer.h" />
         <option value="$PROJECT_DIR$/src/file_utils/bit_stream/bit_stream_writer.cpp" />
-        <option value="$PROJECT_DIR$/include/coders/decoder_base.h" />
-        <option value="$PROJECT_DIR$/include/coders/basic/decoder_basic.h" />
-        <option value="$PROJECT_DIR$/src/coders/basic/decoder_basic.cpp" />
         <option value="$PROJECT_DIR$/include/coders/basic/coder_basic.h" />
-        <option value="$PROJECT_DIR$/src/coders/cols/coder_cols.cpp" />
-        <option value="$PROJECT_DIR$/src/coders/coder_base.cpp" />
-        <option value="$PROJECT_DIR$/include/coders/cols/coder_cols.h" />
-        <option value="$PROJECT_DIR$/include/coders/coder_base.h" />
         <option value="$PROJECT_DIR$/include/dataset.h" />
         <option value="$PROJECT_DIR$/include/file_utils/csv/csv_utils.h" />
         <option value="$PROJECT_DIR$/include/file_utils/text/text_utils.h" />
         <option value="$PROJECT_DIR$/src/file_utils/text/text_utils.cpp" />
         <option value="$PROJECT_DIR$/include/file_utils/csv/csv_reader.h" />
-        <option value="$PROJECT_DIR$/include/file_utils/text/text_reader.h" />
-        <option value="$PROJECT_DIR$/src/file_utils/csv/csv_reader.cpp" />
         <option value="$PROJECT_DIR$/src/file_utils/csv/csv_utils.cpp" />
+        <option value="$PROJECT_DIR$/include/file_utils/text/text_reader.h" />
         <option value="$PROJECT_DIR$/src/coders/basic/coder_basic.cpp" />
-        <option value="$PROJECT_DIR$/src/file_utils/text/text_reader.cpp" />
         <option value="$PROJECT_DIR$/include/scripts.h" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/main.cpp" />
-        <option value="$PROJECT_DIR$/src/scripts.cpp" />
+        <option value="$PROJECT_DIR$/include/tests.h" />
+        <option value="$PROJECT_DIR$/src/coders/cols/coder_cols.cpp" />
         <option value="$PROJECT_DIR$/include/dataset/dataset_utils.h" />
+        <option value="$PROJECT_DIR$/include/coders/coder_base.h" />
+        <option value="$PROJECT_DIR$/include/dataset/dataset.h" />
+        <option value="$PROJECT_DIR$/src/coders/coder_base.cpp" />
+        <option value="$PROJECT_DIR$/include/dataset/range.h" />
+        <option value="$PROJECT_DIR$/include/dataset/column_code.h" />
+        <option value="$PROJECT_DIR$/src/dataset/column_code.cpp" />
+        <option value="$PROJECT_DIR$/src/dataset/dataset.cpp" />
+        <option value="$PROJECT_DIR$/src/tests.cpp" />
+        <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/src/dataset/dataset_utils.cpp" />
+        <option value="$PROJECT_DIR$/src/file_utils/text/text_reader.cpp" />
+        <option value="$PROJECT_DIR$/include/string_utils.h" />
+        <option value="$PROJECT_DIR$/src/file_utils/csv/csv_reader.cpp" />
+        <option value="$PROJECT_DIR$/src/string_utils.cpp" />
+        <option value="$PROJECT_DIR$/include/coders/cols/coder_cols.h" />
+        <option value="$PROJECT_DIR$/include/coders/header_utils.h" />
+        <option value="$PROJECT_DIR$/include/coders/cols/decoder_cols.h" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/include/coders/decoder_base.h" />
+        <option value="$PROJECT_DIR$/src/coders/decoder_base.cpp" />
+        <option value="$PROJECT_DIR$/include/coders/basic/decoder_basic.h" />
+        <option value="$PROJECT_DIR$/src/coders/basic/decoder_basic.cpp" />
+        <option value="$PROJECT_DIR$/src/file_utils/bit_stream/bit_stream_reader.cpp" />
+        <option value="$PROJECT_DIR$/include/file_utils/bit_stream/bit_stream_reader.h" />
+        <option value="$PROJECT_DIR$/src/scripts.cpp" />
+        <option value="$PROJECT_DIR$/src/coders/header_utils.cpp" />
       </list>
     </option>
   </component>
@@ -185,10 +239,10 @@
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-294" />
+    <option name="x" value="-261" />
     <option name="y" value="-1057" />
     <option name="width" value="1793" />
-    <option name="height" value="1041" />
+    <option name="height" value="1031" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -235,7 +289,21 @@
               <item name="cpp_project" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
               <item name="cpp_project" type="462c0819:PsiDirectoryNode" />
               <item name="include" type="462c0819:PsiDirectoryNode" />
-              <item name="dataset" type="462c0819:PsiDirectoryNode" />
+              <item name="coders" type="462c0819:PsiDirectoryNode" />
+              <item name="cols" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cpp_project" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="cpp_project" type="462c0819:PsiDirectoryNode" />
+              <item name="include" type="462c0819:PsiDirectoryNode" />
+              <item name="file_utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cpp_project" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="cpp_project" type="462c0819:PsiDirectoryNode" />
+              <item name="include" type="462c0819:PsiDirectoryNode" />
+              <item name="file_utils" type="462c0819:PsiDirectoryNode" />
+              <item name="csv" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cpp_project" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
@@ -246,7 +314,20 @@
               <item name="cpp_project" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
               <item name="cpp_project" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="dataset" type="462c0819:PsiDirectoryNode" />
+              <item name="coders" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cpp_project" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="cpp_project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="file_utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cpp_project" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="cpp_project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="file_utils" type="462c0819:PsiDirectoryNode" />
+              <item name="bit_stream" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -311,12 +392,12 @@
       <updated>1525578622617</updated>
       <workItem from="1525578624210" duration="19234000" />
       <workItem from="1525842143067" duration="10330000" />
-      <workItem from="1526009112560" duration="12521000" />
+      <workItem from="1526009112560" duration="29024000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42085000" />
+    <option name="totallyTimeSpent" value="58588000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -328,19 +409,19 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-294" y="-1057" width="1793" height="1041" extended-state="0" />
+    <frame x="-261" y="-1057" width="1793" height="1031" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17663656" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.49774265" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2410148" sideWeight="0.43623024" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28541225" sideWeight="0.46557564" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19767442" sideWeight="0.7048533" order="9" side_tool="true" content_ui="tabs" x="-274" y="-702" width="1698" height="313" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11099366" sideWeight="0.493228" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19767442" sideWeight="0.29514673" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30555555" sideWeight="0.26918736" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2008547" sideWeight="0.46106094" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2991453" sideWeight="0.82223475" order="9" side_tool="true" content_ui="tabs" x="-274" y="-702" width="1698" height="313" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.110042736" sideWeight="0.49097064" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2991453" sideWeight="0.17776524" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.49774265" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28646934" sideWeight="0.48645598" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17628205" sideWeight="0.4819413" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39957717" sideWeight="0.493228" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -362,42 +443,42 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/main.cpp</url>
-          <line>8</line>
+          <line>9</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/src/scripts.cpp</url>
-          <line>33</line>
+          <line>34</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/src/scripts.cpp</url>
-          <line>34</line>
+          <line>35</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/src/scripts.cpp</url>
-          <line>35</line>
+          <line>36</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/src/coders/coder_base.cpp</url>
-          <line>53</line>
+          <line>54</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/src/coders/coder_base.cpp</url>
-          <line>54</line>
+          <line>55</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/src/coders/coder_base.cpp</url>
-          <line>10</line>
+          <line>11</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/src/coders/coder_base.cpp</url>
-          <line>11</line>
+          <line>12</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
@@ -422,7 +503,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/main.cpp</url>
-          <line>10</line>
+          <line>11</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>
@@ -456,24 +537,12 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test2.h" />
-    <entry file="file://$PROJECT_DIR$/test.h" />
-    <entry file="file://$PROJECT_DIR$/bit_stream.cpp" />
-    <entry file="file://$PROJECT_DIR$/bit_stream.h" />
-    <entry file="file://$PROJECT_DIR$/include/csv_utils.h" />
     <entry file="file://$PROJECT_DIR$/src/csv_utils.cpp" />
     <entry file="file://$PROJECT_DIR$/include/operation_utils.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="2" lean-forward="false" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Developer/CommandLineTools/usr/include/c++/v1/algorithm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="2130" column="0" lean-forward="false" selection-start-line="2130" selection-start-column="0" selection-end-line="2130" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -487,39 +556,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/file_utils/bit_stream/bit_stream_reader.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="33" lean-forward="false" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/coders/header_utils.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <element signature="e#72#89#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/coders/header_utils.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/file_utils/bit_stream/bit_stream_reader.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/include/file_utils/bit_stream/bit_stream_writer.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -528,57 +564,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/file_utils/bit_stream/bit_stream_writer.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/coders/decoder_base.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/string_utils.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <element signature="e#72#89#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/coders/basic/decoder_basic.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="25" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/coders/basic/decoder_basic.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/coders/cols/decoder_cols.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/coders/cols/decoder_cols.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -610,44 +596,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/coders/decoder_base.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="18" column="9" lean-forward="false" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///Library/Developer/CommandLineTools/usr/include/c++/v1/istream">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="181">
           <caret line="1649" column="0" lean-forward="false" selection-start-line="1649" selection-start-column="0" selection-end-line="1649" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/string_utils.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/coders/cols/coder_cols.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding>
-            <element signature="e#1#24#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dataset/dataset.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -660,26 +612,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/dataset/dataset.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="11" lean-forward="false" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/include/file_utils/csv/csv_utils.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/file_utils/text/text_utils.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -703,46 +639,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/coders/basic/coder_basic.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding>
-            <element signature="e#1#25#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/file_utils/csv/csv_reader.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="35" lean-forward="false" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
-          <folding>
-            <element signature="e#68#86#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/file_utils/csv/csv_reader.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="36" lean-forward="false" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
-          <folding>
-            <element signature="e#1#24#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/file_utils/text/text_reader.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding>
-            <element signature="e#1#25#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/include/file_utils/csv/csv_writer.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -753,97 +649,324 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/file_utils/text/text_reader.h">
+    <entry file="file://$PROJECT_DIR$/include/file_utils/text/text_utils.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="28" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="28" />
-          <folding>
-            <element signature="e#70#88#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/coders/coder_base.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="584">
-          <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+        <state relative-caret-position="150">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/include/scripts.h">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="35" lean-forward="false" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/tests.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="22" lean-forward="true" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Developer/CommandLineTools/usr/include/c++/v1/algorithm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="664" column="70" lean-forward="false" selection-start-line="664" selection-start-column="70" selection-end-line="664" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/coders/basic/coder_basic.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/coders/cols/coder_cols.cpp">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="530">
-          <caret line="89" column="66" lean-forward="false" selection-start-line="89" selection-start-column="66" selection-end-line="89" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="18" lean-forward="false" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scripts.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="42" column="1" lean-forward="false" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding>
-            <element signature="e#1#21#0" expanded="true" />
-            <element signature="e#97#119#0" expanded="true" />
+            <element signature="e#1#24#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/coders/cols/coder_cols.h">
+    <entry file="file://$PROJECT_DIR$/include/dataset/dataset.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="35" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="35" />
+        <state relative-caret-position="195">
+          <caret line="13" column="4" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/coders/basic/coder_basic.h">
+    <entry file="file://$PROJECT_DIR$/include/dataset/range.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="31" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="31" />
+        <state relative-caret-position="270">
+          <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/coders/coder_base.h">
+    <entry file="file://$PROJECT_DIR$/include/file_utils/text/text_reader.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="35" column="118" lean-forward="true" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="118" />
+        <state relative-caret-position="105">
+          <caret line="8" column="6" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/dataset/column_code.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="11" lean-forward="true" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+          <folding>
+            <element signature="e#70#87#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dataset/column_code.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dataset/dataset.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding>
+            <element signature="e#1#21#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/include/dataset/dataset_utils.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="19" selection-end-column="50" />
+        <state relative-caret-position="345">
+          <caret line="25" column="23" lean-forward="false" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/file_utils/csv/csv_reader.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="15" column="35" lean-forward="false" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tests.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="27" column="54" lean-forward="false" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dataset/dataset_utils.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state relative-caret-position="165">
+          <caret line="14" column="25" lean-forward="false" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/string_utils.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding>
-            <element signature="e#1#27#0" expanded="true" />
+            <element signature="e#1#26#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/string_utils.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/file_utils/csv/csv_reader.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="9" column="46" lean-forward="false" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/file_utils/text/text_reader.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="27" lean-forward="false" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+          <folding>
+            <element signature="e#1#25#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/coders/basic/coder_basic.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="6" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/coders/cols/coder_cols.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="35" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="35" />
+          <folding>
+            <element signature="e#68#91#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/coders/cols/decoder_cols.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/coders/header_utils.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="36" lean-forward="false" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+          <folding>
+            <element signature="e#72#89#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="80" column="69" lean-forward="false" selection-start-line="80" selection-start-column="69" selection-end-line="80" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/coders/decoder_base.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding>
+            <element signature="e#72#102#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/coders/coder_base.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding>
+            <element signature="e#68#85#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/coders/coder_base.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/coders/basic/decoder_basic.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/file_utils/bit_stream/bit_stream_writer.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/file_utils/bit_stream/bit_stream_reader.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/file_utils/bit_stream/bit_stream_reader.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="21" lean-forward="false" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/coders/basic/decoder_basic.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="5" selection-end-column="3" />
+          <folding>
+            <marker date="1526349101000" expanded="true" signature="31:74" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="9" column="20" lean-forward="true" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scripts.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="43" column="22" lean-forward="true" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
+          <folding>
+            <element signature="e#1#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/coders/decoder_base.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="34" lean-forward="true" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+          <folding>
+            <element signature="e#1#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/coders/header_utils.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="32" column="1" lean-forward="true" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
+          <folding>
+            <element signature="e#1#26#0" expanded="true" />
           </folding>
         </state>
       </provider>

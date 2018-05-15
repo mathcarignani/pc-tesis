@@ -4,6 +4,7 @@
 
 #include "bit_stream_reader.h"
 #include "csv_writer.h"
+#include "dataset.h"
 
 
 class DecoderBase {
@@ -11,12 +12,12 @@ class DecoderBase {
 private:
     BitStreamReader &input_file;
     CSVWriter &output_csv;
-    //    Dataset dataset;
+    Dataset dataset;
     int data_columns_count;
     int data_rows_count;
 
     void decodeDataRowsCount();
-    void decodeDataRows() = 0;
+//    void decodeDataRows() = 0;
     void decodeValue(std::string y, int row_index, int col_index);
     void decodeRaw();
     void decodeValueRaw(int row_index, int col_index);

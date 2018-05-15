@@ -8,3 +8,7 @@ void CoderCols::codeDataRows() {
         codeColumn();
     }
 }
+
+void CoderCols::setDataset(){
+
+}

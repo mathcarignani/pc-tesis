@@ -3,13 +3,14 @@
 
 #include <iostream>
 #include "coder_basic.h"
-//#include "decoder_basic.h"
+#include "decoder_basic.h"
 #include "csv_utils.h"
 #include "csv_reader.h"
 #include "csv_writer.h"
 #include "bit_stream_reader.h"
 #include "bit_stream_writer.h"
 #include "dataset_utils.h"
+#include "assert.h"
 
 void Scripts::copyAndCompareCSV(){
     std::string input_path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project";
@@ -35,14 +36,11 @@ void Scripts::codeAndDecodeCSV(){
     coder_basic.codeFile();
     coder_basic.close();
 
-//    CSVWriter csv_writer = CSVWriter(input_path, decoded_filename);
-//    std::string decoded_path = input_path + "/" + coded_filename;
-//    DecoderBasic decoder_basic = DecoderBasic(, csv_writer);
-//    decoder_basic.decodeFile();
-//    decoder_basic.close();
-}
+    BitStreamReader bit_stream_reader = BitStreamReader(coded_path.c_str());
+    std::string decoded_path = input_path + "/" + decoded_filename;
+    CSVWriter csv_writer = CSVWriter(input_path, decoded_path);
 
-void Scripts::testDatasetUtils(){
-    DatasetUtils dataset_utils = DatasetUtils("code");
-    dataset_utils.close();
+    DecoderBasic decoder_basic = DecoderBasic(bit_stream_reader, csv_writer);
+    decoder_basic.decodeFile();
+    decoder_basic.close();
 }

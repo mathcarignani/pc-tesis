@@ -14,6 +14,7 @@ private:
 
 protected:
     void readLineAux();
+    void goToStart();
 
 public:
     int total_lines;
@@ -22,10 +23,9 @@ public:
     std::string full_path;
 
     TextReader(std::string path, std::string filename);
-    // PRE: continue_reading
-    std::string readLine();
-    // PRE: row_number <= total_lines
-    void goToRow(int row_number);
+    std::string readLine(); // PRE: continue_reading
+    void goToLine(int line_number); // PRE: line_number <= total_lines
+    bool findLine(std::string string_to_find);
     void close();
 };
 
