@@ -18,7 +18,9 @@ void Scripts::copyAndCompareCSV(){
     std::string output_path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project";
     std::string output_filename = "noaa_spc-wind.copy.csv";
 
+    std::cout << "CopyCSV" << std::endl;
     CSVUtils::CopyCSV(input_path, input_filename, output_path, output_filename);
+    std::cout << "CompareCSVLossless" << std::endl;
     CSVUtils::CompareCSVLossless(input_path, input_filename, output_path, output_filename);
 }
 

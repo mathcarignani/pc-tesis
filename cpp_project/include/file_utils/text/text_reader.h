@@ -10,7 +10,6 @@ class TextReader {
 
 private:
     std::ifstream file;
-    int current_line_count;
 
 protected:
     void readLineAux();
@@ -18,6 +17,7 @@ protected:
 
 public:
     int total_lines;
+    int current_line_count;
     std::string current_line;
     bool continue_reading;
     std::string full_path;

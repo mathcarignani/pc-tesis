@@ -55,6 +55,10 @@ csv_writer.h
 ../include/coders/csv_writer.h
 dataset.h
 ../include/coders/dataset.h
+dataset_utils.h
+../include/coders/dataset_utils.h
+datetime_utils.h
+../include/coders/datetime_utils.h
 
 ../include/dataset/column_code.h
 vector
@@ -75,6 +79,10 @@ range.h
 ../include/dataset/range.h
 
 ../include/dataset/range.h
+iostream
+-
+
+../include/datetime_utils.h
 iostream
 -
 
@@ -126,7 +134,11 @@ vector
 
 ../include/tests.h
 
+../include/vector_utils.h
+
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/main.cpp
+datetime_utils.h
+-
 scripts.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/scripts.h
 tests.h
@@ -171,8 +183,8 @@ header_utils.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/header_utils.h
 assert.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/assert.h
-dataset_utils.h
-/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/dataset_utils.h
+vector
+-
 
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/dataset/column_code.cpp
 column_code.h
@@ -191,6 +203,20 @@ assert.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/dataset/assert.h
 string_utils.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/dataset/string_utils.h
+datetime_utils.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/dataset/datetime_utils.h
+
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/datetime_utils.cpp
+datetime_utils.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/datetime_utils.h
+iomanip
+-
+sstream
+-
+assert.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/assert.h
+vector
+-
 
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/bit_stream/bit_stream_reader.cpp
 bit_stream_reader.h
@@ -209,6 +235,8 @@ vector
 -
 string_utils.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/csv/string_utils.h
+vector_utils.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/csv/vector_utils.h
 
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/csv/csv_utils.cpp
 csv_utils.h
@@ -297,4 +325,8 @@ dataset_utils.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/dataset_utils.h
 assert.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/assert.h
+header_utils.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/header_utils.h
+math.h
+-
 

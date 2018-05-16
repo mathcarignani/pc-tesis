@@ -100,7 +100,9 @@ class HeaderUtils:
     # EXAMPLES:
     # HeaderUtils.date_str_to_seconds("1899-12-31 23:59:59") => ValueError: ERROR: Date outside range.
     # HeaderUtils.date_str_to_seconds("1900-01-01 00:00:00") => 0
+    # HeaderUtils.date_str_to_seconds("1950-01-01 00:00:00") => 1577836800
     # HeaderUtils.date_str_to_seconds("2000-01-01 00:00:00") => 3155673600
+    # HeaderUtils.date_str_to_seconds("2010-01-01 00:00:00") => 3155673600
     # HeaderUtils.date_str_to_seconds("2036-02-07 06:28:16") => 4294967296
     # HeaderUtils.date_str_to_seconds("2036-02-07 06:28:17") => ValueError: ERROR: Date outside range.
     #

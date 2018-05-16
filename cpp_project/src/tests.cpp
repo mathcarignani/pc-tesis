@@ -4,6 +4,8 @@
 #include <iostream>
 #include "dataset_utils.h"
 #include "assert.h"
+#include "header_utils.h"
+#include <math.h>
 
 
 void Tests::testDatasetUtils(){
@@ -33,4 +35,31 @@ void Tests::testDatasetUtils(){
     assert(bits_vector == expected_bits_vector);
 
     dataset_utils.close();
+}
+
+void Tests::testDatetimeUtils(){
+    std::cout << "Tests::testDatetimeUtils" << std::endl;
+
+    std::string date_format = "%Y-%m-%d %H:%M:%S";
+    std::tm start_date = DatetimeUtils::parseDate("1900-01-01 00:00:00", date_format);
+    std::tm end_date = DatetimeUtils::parseDate("2036-02-07 06:28:16", date_format);
+    assert(DatetimeUtils::compareDates(start_date, start_date) == 0);
+    assert(DatetimeUtils::compareDates(start_date, end_date) == 1);
+    assert(DatetimeUtils::compareDates(end_date, start_date) == -1);
+
+    std::tm start_date_plus_1_second = DatetimeUtils::parseDate("1900-01-01 00:00:01", date_format);
+    std::tm start_date_plus_50_years = DatetimeUtils::parseDate("1950-01-01 00:00:00", date_format);
+    std::tm start_date_plus_100_years = DatetimeUtils::parseDate("2000-01-01 00:00:00", date_format);
+    std::tm start_date_plus_110_years = DatetimeUtils::parseDate("2010-01-01 00:00:00", date_format);
+    std::tm start_date_plus_120_years = DatetimeUtils::parseDate("2020-01-01 00:00:00", date_format);
+    std::tm start_date_plus_136_years = DatetimeUtils::parseDate("2036-01-01 00:00:00", date_format);
+
+    assert(DatetimeUtils::datetimeToSecondsSince(start_date, start_date) == 0);
+    assert(DatetimeUtils::datetimeToSecondsSince(start_date, start_date_plus_1_second) == 1);
+    assert(DatetimeUtils::datetimeToSecondsSince(start_date, start_date_plus_50_years) == 1577836800);
+    assert(DatetimeUtils::datetimeToSecondsSince(start_date, start_date_plus_100_years) == 3155673600);
+    assert(DatetimeUtils::datetimeToSecondsSince(start_date, start_date_plus_110_years) == 3471292800);
+    assert(DatetimeUtils::datetimeToSecondsSince(start_date, start_date_plus_120_years) == 3786825600);
+    assert(DatetimeUtils::datetimeToSecondsSince(start_date, start_date_plus_136_years) == 4291747200);
+    assert(DatetimeUtils::datetimeToSecondsSince(start_date, end_date) == pow(2,32));
 }

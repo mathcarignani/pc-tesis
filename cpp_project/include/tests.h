@@ -6,6 +6,7 @@ class Tests {
 
 public:
     static void testDatasetUtils();
+    static void testDatetimeUtils();
 };
 
 #endif //CPP_PROJECT_TESTS_H

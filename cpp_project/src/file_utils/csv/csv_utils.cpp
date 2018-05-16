@@ -26,6 +26,15 @@ void CSVUtils::CompareCSVLossless(std::string path1, std::string filename1, std:
     while (csv_reader1.continue_reading) {
         std::vector<std::string> row1 = csv_reader1.readLineCSV();
         std::vector<std::string> row2 = csv_reader2.readLineCSV();
+        if (row1 != row2){
+
+            for (auto const& c : row2)
+                std::cout << c << ' ';
+                std::cout << std::endl;
+//
+//            std::cout << "row1 = " << row1 << std::endl;
+//            std::cout << "row1 = " << row1 << std::endl;
+        }
         assert(row1 == row2);
     }
     csv_reader1.close();

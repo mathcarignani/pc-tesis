@@ -11,7 +11,7 @@ CSVWriter::CSVWriter(std::string path, std::string filename){
 
 void CSVWriter::writeRow(std::vector<std::string> row){
     std::string line = StringUtils::join(row, ",");
-    file << line + "\n";
+    file << line << std::endl;
 }
 
 void CSVWriter::close(){

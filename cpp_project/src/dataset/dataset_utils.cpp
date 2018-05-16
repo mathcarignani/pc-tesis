@@ -3,6 +3,7 @@
 
 #include "assert.h"
 #include "string_utils.h"
+#include "datetime_utils.h"
 
 DatasetUtils::DatasetUtils(std::string action_){
     assert(action_ == "code" || action_ == "decode");
@@ -22,16 +23,16 @@ int DatasetUtils::codeDatasetName(std::string dataset_name){
     return std::stoi(StringUtils::split(line, SEPARATOR)[1]);
 }
 
-std::string DatasetUtils::decodeDatasetName(int dataset_int){
-    assert(action == "decode");
-    std::string line = findLine(DATASET_KEY, std::to_string(dataset_int));
-    return StringUtils::split(line, SEPARATOR)[0];
-}
-
 int DatasetUtils::codeTimeUnit(std::string time_unit_name){
     assert(action == "code");
     std::string line = findLine(TIME_UNIT_KEY, time_unit_name);
     return std::stoi(StringUtils::split(line, SEPARATOR)[1]);
+}
+
+std::string DatasetUtils::decodeDatasetName(int dataset_int){
+    assert(action == "decode");
+    std::string line = findLine(DATASET_KEY, std::to_string(dataset_int));
+    return StringUtils::split(line, SEPARATOR)[0];
 }
 
 std::string DatasetUtils::decodeTimeUnit(int time_unit_int){

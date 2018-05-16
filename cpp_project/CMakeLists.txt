@@ -59,8 +59,8 @@ set(TEXT_SRC_FILES ${TEXT_SRC_DIR}/text_reader.cpp ${TEXT_SRC_DIR}/text_utils.cp
 set(CSV_HEAD_FILES ${CSV_HEAD_DIR}/csv_reader.h ${CSV_HEAD_DIR}/csv_utils.h ${CSV_HEAD_DIR}/csv_writer.h)
 set(CSV_SRC_FILES ${CSV_SRC_DIR}/csv_reader.cpp ${CSV_SRC_DIR}/csv_utils.cpp ${CSV_SRC_DIR}/csv_writer.cpp)
 
-set(FILE_UTILS_HEAD_FILES include/string_utils.h ${BIT_STREAM_HEAD_FILES} ${TEXT_HEAD_FILES} ${CSV_HEAD_FILES})
-set(FILE_UTILS_SRC_FILES src/string_utils.cpp ${BIT_STREAM_SRC_FILES} ${TEXT_SRC_FILES} ${CSV_SRC_FILES})
+set(FILE_UTILS_HEAD_FILES ${BIT_STREAM_HEAD_FILES} ${TEXT_HEAD_FILES} ${CSV_HEAD_FILES})
+set(FILE_UTILS_SRC_FILES ${BIT_STREAM_SRC_FILES} ${TEXT_SRC_FILES} ${CSV_SRC_FILES})
 ### FILE UTILS END #####################################################################################################
 
 ### DATASET BEGIN ######################################################################################################
@@ -82,11 +82,13 @@ set(CODER_HEAD_FILES ${CODER_BASE_HEAD_FILES} ${DATASET_HEAD_FILES} ${CODER_COLS
 set(CODER_SRC_FILES ${CODER_BASE_SRC_FILES} ${DATASET_SRC_FILES} ${CODER_COLS_SRC_FILES} ${CODER_BASIC_SRC_FILES})
 ### CODERS END #########################################################################################################
 
-set(OTHER_HEAD_FILES include/scripts.h include/tests.h)
-set(OTHER_SRC_FILES src/scripts.cpp src/tests.cpp)
+set(OTHER_HEAD_FILES1 include/string_utils.h include/datetime_utils.h include/vector_utils.h)
+set(OTHER_SRC_FILES1 src/string_utils.cpp src/datetime_utils.cpp )
 
+set(OTHER_HEAD_FILES2 include/scripts.h include/tests.h)
+set(OTHER_SRC_FILES2 src/scripts.cpp src/tests.cpp)
 
-set(HEAD_FILES ${FILE_UTILS_HEAD_FILES} ${DATASET_HEAD_FILES} ${CODER_HEAD_FILES} ${OTHER_HEAD_FILES})
-set(SOURCE_FILES ${FILE_UTILS_SRC_FILES} ${CODER_SRC_FILES} ${OTHER_SRC_FILES})
+set(HEAD_FILES ${OTHER_HEAD_FILES1} ${FILE_UTILS_HEAD_FILES} ${DATASET_HEAD_FILES} ${CODER_HEAD_FILES} ${OTHER_HEAD_FILES2})
+set(SOURCE_FILES ${OTHER_SRC_FILES1} ${FILE_UTILS_SRC_FILES} ${CODER_SRC_FILES} ${OTHER_SRC_FILES2})
 
 add_executable(cpp_project ${HEAD_FILES} ${SOURCE_FILES} main.cpp)
