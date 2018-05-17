@@ -7,8 +7,8 @@
 #include "tests.h"
 
 int main(int argc, char *argv[]){
-    Scripts::copyAndCompareCSV();
-//    Scripts::codeAndDecodeCSV();
+//    Scripts::copyAndCompareCSV();
+    Scripts::codeAndDecodeCSV();
 //    Tests::testDatasetUtils();
 //    Tests::testDatetimeUtils();
     return 0;

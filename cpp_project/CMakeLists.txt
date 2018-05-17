@@ -30,8 +30,11 @@ set(CODER_COLS_SRC_DIR src/coders/cols)
 set(CODER_BASIC_HEAD_DIR include/coders/basic)
 set(CODER_BASIC_SRC_DIR src/coders/basic)
 
-set(CODER_HEAD_DIRS ${CODER_BASE_HEAD_DIR} ${CODER_COLS_HEAD_DIR} ${CODER_BASIC_HEAD_DIR})
-set(CODER_STR_DIRS ${CODER_BASE_SRC_DIR} ${CODER_COLS_SRC_DIR} ${CODER_BASIC_SRC_DIR})
+set(CODER_HEADER_HEAD_DIR include/coders/header)
+set(CODER_HEADER_SRC_DIR src/coders/header)
+
+set(CODER_HEAD_DIRS ${CODER_HEADER_HEAD_DIR} ${CODER_BASE_HEAD_DIR} ${CODER_COLS_HEAD_DIR} ${CODER_BASIC_HEAD_DIR})
+set(CODER_STR_DIRS ${CODER_HEADER_SRC_DIR} ${CODER_BASE_SRC_DIR} ${CODER_COLS_SRC_DIR} ${CODER_BASIC_SRC_DIR})
 
 set(BIT_STREAM_HEAD_DIR include/file_utils/bit_stream)
 set(BIT_STREAM_SRC_DIR src/file_utils/bit_stream)
@@ -69,8 +72,11 @@ set(DATASET_SRC_FILES ${DATASET_SRC_DIR}/column_code.cpp ${DATASET_SRC_DIR}/data
 ### DATASET END ########################################################################################################
 
 ### CODERS BEGIN #######################################################################################################
-set(CODER_BASE_HEAD_FILES ${CODER_BASE_HEAD_DIR}/header_utils.h ${CODER_BASE_HEAD_DIR}/coder_base.h ${CODER_BASE_HEAD_DIR}/decoder_base.h)
-set(CODER_BASE_SRC_FILES ${CODER_BASE_SRC_DIR}/header_utils.cpp ${CODER_BASE_SRC_DIR}/coder_base.cpp ${CODER_BASE_SRC_DIR}/decoder_base.cpp)
+set(CODER_HEADER_HEAD_FILES ${CODER_HEADER_HEAD_DIR}/header_utils.h ${CODER_HEADER_HEAD_DIR}/header_coder.h ${CODER_HEADER_HEAD_DIR}/header_decoder.h)
+set(CODER_HEADER_SRC_FILES ${CODER_HEADER_SRC_DIR}/header_coder.cpp ${CODER_HEADER_SRC_DIR}/header_decoder.cpp)
+
+set(CODER_BASE_HEAD_FILES ${CODER_BASE_HEAD_DIR}/coder_base.h ${CODER_BASE_HEAD_DIR}/decoder_base.h)
+set(CODER_BASE_SRC_FILES ${CODER_BASE_SRC_DIR}/coder_base.cpp ${CODER_BASE_SRC_DIR}/decoder_base.cpp)
 
 set(CODER_COLS_HEAD_FILES ${CODER_COLS_HEAD_DIR}/coder_cols.h ${CODER_COLS_HEAD_DIR}/decoder_cols.h)
 set(CODER_COLS_SRC_FILES ${CODER_COLS_SRC_DIR}/coder_cols.cpp ${CODER_COLS_SRC_DIR}/decoder_cols.cpp)
@@ -78,8 +84,8 @@ set(CODER_COLS_SRC_FILES ${CODER_COLS_SRC_DIR}/coder_cols.cpp ${CODER_COLS_SRC_D
 set(CODER_BASIC_HEAD_FILES ${CODER_BASIC_HEAD_DIR}/coder_basic.h ${CODER_BASIC_HEAD_DIR}/decoder_basic.h)
 set(CODER_BASIC_SRC_FILES ${CODER_BASIC_SRC_DIR}/coder_basic.cpp ${CODER_BASIC_SRC_DIR}/decoder_basic.cpp)
 
-set(CODER_HEAD_FILES ${CODER_BASE_HEAD_FILES} ${DATASET_HEAD_FILES} ${CODER_COLS_HEAD_FILES} ${CODER_BASIC_HEAD_FILES})
-set(CODER_SRC_FILES ${CODER_BASE_SRC_FILES} ${DATASET_SRC_FILES} ${CODER_COLS_SRC_FILES} ${CODER_BASIC_SRC_FILES})
+set(CODER_HEAD_FILES ${CODER_HEADER_HEAD_FILES} ${CODER_BASE_HEAD_FILES} ${DATASET_HEAD_FILES} ${CODER_COLS_HEAD_FILES} ${CODER_BASIC_HEAD_FILES})
+set(CODER_SRC_FILES ${CODER_HEADER_SRC_FILES} ${CODER_BASE_SRC_FILES} ${DATASET_SRC_FILES} ${CODER_COLS_SRC_FILES} ${CODER_BASIC_SRC_FILES})
 ### CODERS END #########################################################################################################
 
 set(OTHER_HEAD_FILES1 include/string_utils.h include/datetime_utils.h include/vector_utils.h)

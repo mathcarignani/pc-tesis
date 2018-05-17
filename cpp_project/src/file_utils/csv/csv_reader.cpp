@@ -11,7 +11,7 @@ std::vector<std::string> CSVReader::readLineCSV(){
 //    if (current_line_count == 1){
 //        std::cout << "CURRENT_LINE 1 " << current_line.size() << " " << current_line << std::endl;
 //    }
-    current_line = StringUtils::removeLastChar(current_line);
+//    current_line = StringUtils::removeLastChar(current_line);
 //    if (current_line_count == 1){
 //        std::cout << "CURRENT_LINE 2 " << current_line.size() << " " << current_line << std::endl;
 //    }

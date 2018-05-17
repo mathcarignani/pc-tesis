@@ -5,7 +5,7 @@
 #include <iostream>
 //#include "bit_stream_writer.h"
 //#include "csv_reader.h"
-#include "header_utils.h"
+#include "coders/header/header_coder.h"
 
 
 void CoderBase::codeDataRowsCount(){
@@ -51,7 +51,7 @@ void CoderBase::raiseRangeError(){
 }
 
 void CoderBase::codeFile(){
-    dataset = HeaderUtils::codeHeader(input_csv, output_file);
+    dataset = HeaderCoder(input_csv, output_file).codeHeader();
     codeDataRowsCount();
 //    codeDataRows();
 }

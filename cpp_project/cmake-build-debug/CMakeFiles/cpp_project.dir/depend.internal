@@ -29,16 +29,13 @@ CMakeFiles/cpp_project.dir/src/coders/basic/decoder_basic.cpp.o
  /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/basic/decoder_basic.cpp
 CMakeFiles/cpp_project.dir/src/coders/coder_base.cpp.o
  ../include/coders/coder_base.h
- ../include/coders/header_utils.h
+ ../include/coders/header/header_coder.h
  ../include/dataset/column_code.h
  ../include/dataset/dataset.h
  ../include/dataset/dataset_utils.h
  ../include/dataset/range.h
- ../include/datetime_utils.h
- ../include/file_utils/bit_stream/bit_stream_reader.h
  ../include/file_utils/bit_stream/bit_stream_writer.h
  ../include/file_utils/csv/csv_reader.h
- ../include/file_utils/csv/csv_writer.h
  ../include/file_utils/text/text_reader.h
  /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/coder_base.cpp
 CMakeFiles/cpp_project.dir/src/coders/cols/coder_cols.cpp.o
@@ -55,31 +52,39 @@ CMakeFiles/cpp_project.dir/src/coders/cols/decoder_cols.cpp.o
  /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/cols/decoder_cols.cpp
 CMakeFiles/cpp_project.dir/src/coders/decoder_base.cpp.o
  ../include/coders/decoder_base.h
- ../include/coders/header_utils.h
+ ../include/coders/header/header_decoder.h
  ../include/dataset/column_code.h
  ../include/dataset/dataset.h
  ../include/dataset/dataset_utils.h
  ../include/dataset/range.h
- ../include/datetime_utils.h
  ../include/file_utils/bit_stream/bit_stream_reader.h
- ../include/file_utils/bit_stream/bit_stream_writer.h
- ../include/file_utils/csv/csv_reader.h
  ../include/file_utils/csv/csv_writer.h
  ../include/file_utils/text/text_reader.h
  /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/decoder_base.cpp
-CMakeFiles/cpp_project.dir/src/coders/header_utils.cpp.o
- ../include/coders/header_utils.h
+CMakeFiles/cpp_project.dir/src/coders/header/header_coder.cpp.o
+ ../include/coders/header/header_coder.h
+ ../include/coders/header/header_utils.h
  ../include/dataset/column_code.h
  ../include/dataset/dataset.h
  ../include/dataset/dataset_utils.h
  ../include/dataset/range.h
  ../include/datetime_utils.h
- ../include/file_utils/bit_stream/bit_stream_reader.h
  ../include/file_utils/bit_stream/bit_stream_writer.h
  ../include/file_utils/csv/csv_reader.h
+ ../include/file_utils/text/text_reader.h
+ ../include/string_utils.h
+ /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/header/header_coder.cpp
+CMakeFiles/cpp_project.dir/src/coders/header/header_decoder.cpp.o
+ ../include/coders/header/header_decoder.h
+ ../include/dataset/column_code.h
+ ../include/dataset/dataset.h
+ ../include/dataset/dataset_utils.h
+ ../include/dataset/range.h
+ ../include/file_utils/bit_stream/bit_stream_reader.h
  ../include/file_utils/csv/csv_writer.h
  ../include/file_utils/text/text_reader.h
- /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/header_utils.cpp
+ ../include/string_utils.h
+ /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/header/header_decoder.cpp
 CMakeFiles/cpp_project.dir/src/dataset/column_code.cpp.o
  ../include/dataset/column_code.h
  ../include/dataset/range.h
@@ -92,7 +97,6 @@ CMakeFiles/cpp_project.dir/src/dataset/dataset.cpp.o
 CMakeFiles/cpp_project.dir/src/dataset/dataset_utils.cpp.o
  ../include/dataset/dataset_utils.h
  ../include/dataset/range.h
- ../include/datetime_utils.h
  ../include/file_utils/text/text_reader.h
  ../include/string_utils.h
  /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/dataset/dataset_utils.cpp
@@ -152,16 +156,10 @@ CMakeFiles/cpp_project.dir/src/string_utils.cpp.o
  ../include/string_utils.h
  /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/string_utils.cpp
 CMakeFiles/cpp_project.dir/src/tests.cpp.o
- ../include/coders/header_utils.h
- ../include/dataset/column_code.h
- ../include/dataset/dataset.h
+ ../include/coders/header/header_utils.h
  ../include/dataset/dataset_utils.h
  ../include/dataset/range.h
  ../include/datetime_utils.h
- ../include/file_utils/bit_stream/bit_stream_reader.h
- ../include/file_utils/bit_stream/bit_stream_writer.h
- ../include/file_utils/csv/csv_reader.h
- ../include/file_utils/csv/csv_writer.h
  ../include/file_utils/text/text_reader.h
  ../include/tests.h
  /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/tests.cpp

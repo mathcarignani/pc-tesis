@@ -1,7 +1,7 @@
 
 #include "decoder_base.h"
 
-#include "header_utils.h"
+#include "header_decoder.h"
 
 void DecoderBase::decodeDataRowsCount(){
     data_rows_count = input_file.getInt(24); // 24 bits for the data rows count
@@ -12,7 +12,7 @@ void DecoderBase::decodeDataRowsCount(){
 //void DecoderBase::decodeValueRaw(int row_index, int col_index);
 
 void DecoderBase::decodeFile(){
-    dataset = HeaderUtils::decodeHeader(input_file, output_csv);
+    dataset = HeaderDecoder(input_file, output_csv).decodeHeader();
     decodeDataRowsCount();
 }
 

@@ -312,32 +312,59 @@ src/coders/decoder_base.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/decoder_base.cpp.s
 .PHONY : src/coders/decoder_base.cpp.s
 
-src/coders/header_utils.o: src/coders/header_utils.cpp.o
+src/coders/header/header_coder.o: src/coders/header/header_coder.cpp.o
 
-.PHONY : src/coders/header_utils.o
+.PHONY : src/coders/header/header_coder.o
 
 # target to build an object file
-src/coders/header_utils.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/header_utils.cpp.o
-.PHONY : src/coders/header_utils.cpp.o
+src/coders/header/header_coder.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/header/header_coder.cpp.o
+.PHONY : src/coders/header/header_coder.cpp.o
 
-src/coders/header_utils.i: src/coders/header_utils.cpp.i
+src/coders/header/header_coder.i: src/coders/header/header_coder.cpp.i
 
-.PHONY : src/coders/header_utils.i
+.PHONY : src/coders/header/header_coder.i
 
 # target to preprocess a source file
-src/coders/header_utils.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/header_utils.cpp.i
-.PHONY : src/coders/header_utils.cpp.i
+src/coders/header/header_coder.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/header/header_coder.cpp.i
+.PHONY : src/coders/header/header_coder.cpp.i
 
-src/coders/header_utils.s: src/coders/header_utils.cpp.s
+src/coders/header/header_coder.s: src/coders/header/header_coder.cpp.s
 
-.PHONY : src/coders/header_utils.s
+.PHONY : src/coders/header/header_coder.s
 
 # target to generate assembly for a file
-src/coders/header_utils.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/header_utils.cpp.s
-.PHONY : src/coders/header_utils.cpp.s
+src/coders/header/header_coder.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/header/header_coder.cpp.s
+.PHONY : src/coders/header/header_coder.cpp.s
+
+src/coders/header/header_decoder.o: src/coders/header/header_decoder.cpp.o
+
+.PHONY : src/coders/header/header_decoder.o
+
+# target to build an object file
+src/coders/header/header_decoder.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/header/header_decoder.cpp.o
+.PHONY : src/coders/header/header_decoder.cpp.o
+
+src/coders/header/header_decoder.i: src/coders/header/header_decoder.cpp.i
+
+.PHONY : src/coders/header/header_decoder.i
+
+# target to preprocess a source file
+src/coders/header/header_decoder.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/header/header_decoder.cpp.i
+.PHONY : src/coders/header/header_decoder.cpp.i
+
+src/coders/header/header_decoder.s: src/coders/header/header_decoder.cpp.s
+
+.PHONY : src/coders/header/header_decoder.s
+
+# target to generate assembly for a file
+src/coders/header/header_decoder.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/header/header_decoder.cpp.s
+.PHONY : src/coders/header/header_decoder.cpp.s
 
 src/dataset/column_code.o: src/dataset/column_code.cpp.o
 
@@ -747,9 +774,12 @@ help:
 	@echo "... src/coders/decoder_base.o"
 	@echo "... src/coders/decoder_base.i"
 	@echo "... src/coders/decoder_base.s"
-	@echo "... src/coders/header_utils.o"
-	@echo "... src/coders/header_utils.i"
-	@echo "... src/coders/header_utils.s"
+	@echo "... src/coders/header/header_coder.o"
+	@echo "... src/coders/header/header_coder.i"
+	@echo "... src/coders/header/header_coder.s"
+	@echo "... src/coders/header/header_decoder.o"
+	@echo "... src/coders/header/header_decoder.i"
+	@echo "... src/coders/header/header_decoder.s"
 	@echo "... src/dataset/column_code.o"
 	@echo "... src/dataset/column_code.i"
 	@echo "... src/dataset/column_code.s"
