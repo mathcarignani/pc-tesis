@@ -53,8 +53,8 @@ set(SRC_DIRS src ${BIT_STREAM_SRC_DIR} ${TEXT_SRC_DIR} ${CSV_SRC_DIR} ${CODER_ST
 include_directories(${HEAD_DIRS} ${SRC_DIR})
 
 ### FILE UTILS BEGIN ###################################################################################################
-set(BIT_STREAM_HEAD_FILES ${BIT_STREAM_HEAD_DIR}/bit_stream_reader.h ${BIT_STREAM_HEAD_DIR}/bit_stream_writer.h)
-set(BIT_STREAM_SRC_FILES ${BIT_STREAM_SRC_DIR}/bit_stream_reader.cpp ${BIT_STREAM_SRC_DIR}/bit_stream_writer.cpp)
+set(BIT_STREAM_HEAD_FILES ${BIT_STREAM_HEAD_DIR}/bit_stream_reader.h ${BIT_STREAM_HEAD_DIR}/bit_stream_writer.h ${BIT_STREAM_HEAD_DIR}/bit_stream_utils.h)
+set(BIT_STREAM_SRC_FILES ${BIT_STREAM_SRC_DIR}/bit_stream_reader.cpp ${BIT_STREAM_SRC_DIR}/bit_stream_writer.cpp ${BIT_STREAM_SRC_DIR}/bit_stream_utils.cpp)
 
 set(TEXT_HEAD_FILES ${TEXT_HEAD_DIR}/text_reader.h ${TEXT_HEAD_DIR}/text_utils.h)
 set(TEXT_SRC_FILES ${TEXT_SRC_DIR}/text_reader.cpp ${TEXT_SRC_DIR}/text_utils.cpp)

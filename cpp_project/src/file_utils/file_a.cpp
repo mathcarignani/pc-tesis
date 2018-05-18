@@ -1,22 +1,10 @@
-//#include "file_utils.h"
 //
-//int FileUtils::compare(char* file1, char* file2){
+//#include "file_a.h"
 //
-//    BitStreamReader* reader1=new BitStreamReader(file1);
-//    BitStreamReader* reader2=new BitStreamReader(file2);
+//#include "bit_stream_reader.h"
 //
-//    int cont=1; // first different bit
-//
-//    while (!reader1->reachedEOF()){
-//        if (reader2->reachedEOF()) return cont;
-//        if (reader1->getBit()!=reader2->getBit()) return cont;
-//        cont++;
-//    }
-//    if (!reader2->reachedEOF()) return cont;
-//
-//    return 0;
-//}
-//
+
+
 //void FileUtils::unary_code(BitStreamWriter* file, int n){
 //    for (int i=0; i<n; i++)
 //        file->pushBit(0);

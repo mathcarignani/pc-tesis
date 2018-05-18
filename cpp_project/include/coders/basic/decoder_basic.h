@@ -7,7 +7,7 @@
 class DecoderBasic: public DecoderCols {
 
 private:
-//    void decodeDataRows() override;
+    void decodeColumn() override;
 
 public:
     using DecoderCols::DecoderCols;

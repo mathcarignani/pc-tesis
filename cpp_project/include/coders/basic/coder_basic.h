@@ -11,7 +11,6 @@ private:
 
 public:
     using CoderCols::CoderCols;
-//    std::string getInfo();
-
 };
+
 #endif //CPP_PROJECT_CODER_BASIC_H

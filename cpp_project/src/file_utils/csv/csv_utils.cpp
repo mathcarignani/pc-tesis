@@ -7,13 +7,17 @@
 #include "csv_reader.h"
 #include "csv_writer.h"
 #include "assert.h"
+#include "vector_utils.h"
+#include "string_utils.h"
 
 void CSVUtils::CopyCSV(std::string path1, std::string filename1, std::string path2, std::string filename2){
     CSVReader csv_reader = CSVReader(path1, filename1);
     CSVWriter csv_writer = CSVWriter(path2, filename2);
     while (csv_reader.continue_reading) {
         std::vector<std::string> row = csv_reader.readLineCSV();
-        csv_writer.writeRow(row);
+        std::string row_str = StringUtils::join(row, ",");
+        std::vector<std::string> row_str_split = StringUtils::split(row_str, ",");
+        csv_writer.writeRow(row_str_split);
     }
     csv_reader.close();
     csv_writer.close();
@@ -22,18 +26,12 @@ void CSVUtils::CopyCSV(std::string path1, std::string filename1, std::string pat
 void CSVUtils::CompareCSVLossless(std::string path1, std::string filename1, std::string path2, std::string filename2){
     CSVReader csv_reader1 = CSVReader(path1, filename1);
     CSVReader csv_reader2 = CSVReader(path2, filename2);
-    assert(csv_reader1.total_lines == csv_reader2.total_lines);
+//    assert(csv_reader1.total_lines == csv_reader2.total_lines);
     while (csv_reader1.continue_reading) {
         std::vector<std::string> row1 = csv_reader1.readLineCSV();
         std::vector<std::string> row2 = csv_reader2.readLineCSV();
         if (row1 != row2){
-
-            for (auto const& c : row2)
-                std::cout << c << ' ';
-                std::cout << std::endl;
-//
-//            std::cout << "row1 = " << row1 << std::endl;
-//            std::cout << "row1 = " << row1 << std::endl;
+            std::cout << "current_line" << csv_reader1.current_line_count << std::endl;
         }
         assert(row1 == row2);
     }

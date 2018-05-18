@@ -501,6 +501,33 @@ src/file_utils/bit_stream/bit_stream_reader.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_reader.cpp.s
 .PHONY : src/file_utils/bit_stream/bit_stream_reader.cpp.s
 
+src/file_utils/bit_stream/bit_stream_utils.o: src/file_utils/bit_stream/bit_stream_utils.cpp.o
+
+.PHONY : src/file_utils/bit_stream/bit_stream_utils.o
+
+# target to build an object file
+src/file_utils/bit_stream/bit_stream_utils.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_utils.cpp.o
+.PHONY : src/file_utils/bit_stream/bit_stream_utils.cpp.o
+
+src/file_utils/bit_stream/bit_stream_utils.i: src/file_utils/bit_stream/bit_stream_utils.cpp.i
+
+.PHONY : src/file_utils/bit_stream/bit_stream_utils.i
+
+# target to preprocess a source file
+src/file_utils/bit_stream/bit_stream_utils.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_utils.cpp.i
+.PHONY : src/file_utils/bit_stream/bit_stream_utils.cpp.i
+
+src/file_utils/bit_stream/bit_stream_utils.s: src/file_utils/bit_stream/bit_stream_utils.cpp.s
+
+.PHONY : src/file_utils/bit_stream/bit_stream_utils.s
+
+# target to generate assembly for a file
+src/file_utils/bit_stream/bit_stream_utils.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_utils.cpp.s
+.PHONY : src/file_utils/bit_stream/bit_stream_utils.cpp.s
+
 src/file_utils/bit_stream/bit_stream_writer.o: src/file_utils/bit_stream/bit_stream_writer.cpp.o
 
 .PHONY : src/file_utils/bit_stream/bit_stream_writer.o
@@ -795,6 +822,9 @@ help:
 	@echo "... src/file_utils/bit_stream/bit_stream_reader.o"
 	@echo "... src/file_utils/bit_stream/bit_stream_reader.i"
 	@echo "... src/file_utils/bit_stream/bit_stream_reader.s"
+	@echo "... src/file_utils/bit_stream/bit_stream_utils.o"
+	@echo "... src/file_utils/bit_stream/bit_stream_utils.i"
+	@echo "... src/file_utils/bit_stream/bit_stream_utils.s"
 	@echo "... src/file_utils/bit_stream/bit_stream_writer.o"
 	@echo "... src/file_utils/bit_stream/bit_stream_writer.i"
 	@echo "... src/file_utils/bit_stream/bit_stream_writer.s"

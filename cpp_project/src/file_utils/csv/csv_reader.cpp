@@ -8,13 +8,20 @@
 
 std::vector<std::string> CSVReader::readLineCSV(){
     std::string current_line = readLine();
-//    if (current_line_count == 1){
-//        std::cout << "CURRENT_LINE 1 " << current_line.size() << " " << current_line << std::endl;
-//    }
-//    current_line = StringUtils::removeLastChar(current_line);
-//    if (current_line_count == 1){
-//        std::cout << "CURRENT_LINE 2 " << current_line.size() << " " << current_line << std::endl;
-//    }
+//    current_line.pop_back();
     std::vector<std::string> current_line_vector = StringUtils::split(current_line, ","); // split by the comma
+
+//    if (current_line_count < 5){
+//        std::cout << "read line" << std::endl;
+//        std::cout << current_line.size() << std::endl;
+//        std::cout << current_line << std::endl;
+//        std::cout << current_line_vector.size() << std::endl;
+//
+//        for(int i=0; i < current_line_vector.size(); i++){
+//            std::cout << "i=" << i << std::endl;
+//            std::cout << current_line_vector[i].size() << std::endl;
+//            std::cout << current_line_vector[i] << std::endl;
+//        }
+//    }
     return current_line_vector;
 }

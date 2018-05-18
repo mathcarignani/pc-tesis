@@ -5,10 +5,10 @@
 #include "string_utils.h"
 #include "datetime_utils.h"
 #include "header_utils.h"
+#include "vector_utils.h"
 
 
 Dataset HeaderCoder::codeHeader(){
-    std::cout << "CODING..." << std::endl;
     DatasetUtils dataset_utils = DatasetUtils("code");
     codeDatasetName(dataset_utils);
     codeTimeUnit(dataset_utils);
@@ -49,15 +49,30 @@ void HeaderCoder::codeFirstTimestamp(){
 }
 
 long int HeaderCoder::codeTimestamp(std::string timestamp_str){
-    std::tm timestamp_tm = DatetimeUtils::parseDate(timestamp_str, HeaderUtils::date_format());
+    std::tm timestamp_tm = DatetimeUtils::stringToDatetime(timestamp_str, HeaderUtils::date_format());
 
     assert(DatetimeUtils::compareDates(HeaderUtils::start_date(), timestamp_tm) == 1);
     assert(DatetimeUtils::compareDates(timestamp_tm, HeaderUtils::end_date()) == 1);
 
-    long int seconds = DatetimeUtils::datetimeToSecondsSince(HeaderUtils::start_date(), timestamp_tm);
+    long int seconds = DatetimeUtils::mapDatetimeToSeconds(HeaderUtils::start_date(), timestamp_tm);
+    std::cout << seconds;
     return seconds;
 }
 
 void HeaderCoder::codeColumnNames(){
     // Time Delta|T0N110W|T0N125W|T0N155W|...|T9N140W
+    std::vector<std::string> current_line = input_csv.readLineCSV();
+    std::string column_names_str = StringUtils::join(current_line, ",");
+    int number_of_chars = column_names_str.size();
+
+    // code the number of chars in unary code
+    for(int i=0; i < number_of_chars; i++) { output_file.pushBit(1); }
+    int zeros_count = number_of_chars % 8 + 8;
+    for(int i=0; i < zeros_count; i++) { output_file.pushBit(0); }
+    // code the chars (each char uses 1 byte)
+    for(int i=0; i < number_of_chars; i++) {
+        char character = column_names_str[i];
+        int char_as_int = StringUtils::charToInt(character);
+        output_file.pushInt(char_as_int, 8);
+    }
 }

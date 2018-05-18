@@ -8,9 +8,13 @@
 class DatetimeUtils {
 
 public:
-    static std::tm parseDate(std::string tm_str, std::string datetime_format);
+    static std::tm stringToDatetime(std::string tm_str, std::string datetime_format);
+    static std::string datetimeToString(std::tm datetime, std::string datetime_format);
+
     static int compareDates(std::tm date1, std::tm date2);
-    static long int datetimeToSecondsSince(std::tm start_date, std::tm date);
+
+    static long int mapDatetimeToSeconds(std::tm start_date, std::tm date);
+    static std::tm mapSecondsToDatetime(std::tm start_date, long int seconds);
 
 private:
     static int secondsInYear(int year);
@@ -19,6 +23,7 @@ private:
 //    static int secondsInMonth(int year, int month);
     static int secondsInHour();
     static int secondsInMinute();
+    static int daysInMonth(int month, int year);
     static bool isLeapYear(int year);
 };
 

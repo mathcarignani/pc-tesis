@@ -9,8 +9,10 @@
 int main(int argc, char *argv[]){
 //    Scripts::copyAndCompareCSV();
     Scripts::codeAndDecodeCSV();
+
 //    Tests::testDatasetUtils();
 //    Tests::testDatetimeUtils();
+//    Tests::testStringUtils();
     return 0;
 }
 

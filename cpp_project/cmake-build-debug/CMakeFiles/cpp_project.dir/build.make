@@ -153,9 +153,33 @@ CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_writer.cpp.o.pro
 CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_writer.cpp.o.provides.build: CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_writer.cpp.o
 
 
+CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_utils.cpp.o: CMakeFiles/cpp_project.dir/flags.make
+CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_utils.cpp.o: ../src/file_utils/bit_stream/bit_stream_utils.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_utils.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_utils.cpp.o -c /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/bit_stream/bit_stream_utils.cpp
+
+CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_utils.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_utils.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/bit_stream/bit_stream_utils.cpp > CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_utils.cpp.i
+
+CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_utils.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_utils.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/bit_stream/bit_stream_utils.cpp -o CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_utils.cpp.s
+
+CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_utils.cpp.o.requires:
+
+.PHONY : CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_utils.cpp.o.requires
+
+CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_utils.cpp.o.provides: CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_utils.cpp.o.requires
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_utils.cpp.o.provides.build
+.PHONY : CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_utils.cpp.o.provides
+
+CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_utils.cpp.o.provides.build: CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_utils.cpp.o
+
+
 CMakeFiles/cpp_project.dir/src/file_utils/text/text_reader.cpp.o: CMakeFiles/cpp_project.dir/flags.make
 CMakeFiles/cpp_project.dir/src/file_utils/text/text_reader.cpp.o: ../src/file_utils/text/text_reader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/cpp_project.dir/src/file_utils/text/text_reader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/cpp_project.dir/src/file_utils/text/text_reader.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp_project.dir/src/file_utils/text/text_reader.cpp.o -c /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/text/text_reader.cpp
 
 CMakeFiles/cpp_project.dir/src/file_utils/text/text_reader.cpp.i: cmake_force
@@ -179,7 +203,7 @@ CMakeFiles/cpp_project.dir/src/file_utils/text/text_reader.cpp.o.provides.build:
 
 CMakeFiles/cpp_project.dir/src/file_utils/text/text_utils.cpp.o: CMakeFiles/cpp_project.dir/flags.make
 CMakeFiles/cpp_project.dir/src/file_utils/text/text_utils.cpp.o: ../src/file_utils/text/text_utils.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/cpp_project.dir/src/file_utils/text/text_utils.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/cpp_project.dir/src/file_utils/text/text_utils.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp_project.dir/src/file_utils/text/text_utils.cpp.o -c /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/text/text_utils.cpp
 
 CMakeFiles/cpp_project.dir/src/file_utils/text/text_utils.cpp.i: cmake_force
@@ -203,7 +227,7 @@ CMakeFiles/cpp_project.dir/src/file_utils/text/text_utils.cpp.o.provides.build: 
 
 CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_reader.cpp.o: CMakeFiles/cpp_project.dir/flags.make
 CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_reader.cpp.o: ../src/file_utils/csv/csv_reader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_reader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_reader.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_reader.cpp.o -c /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/csv/csv_reader.cpp
 
 CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_reader.cpp.i: cmake_force
@@ -227,7 +251,7 @@ CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_reader.cpp.o.provides.build: C
 
 CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_utils.cpp.o: CMakeFiles/cpp_project.dir/flags.make
 CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_utils.cpp.o: ../src/file_utils/csv/csv_utils.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_utils.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_utils.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_utils.cpp.o -c /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/csv/csv_utils.cpp
 
 CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_utils.cpp.i: cmake_force
@@ -251,7 +275,7 @@ CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_utils.cpp.o.provides.build: CM
 
 CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_writer.cpp.o: CMakeFiles/cpp_project.dir/flags.make
 CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_writer.cpp.o: ../src/file_utils/csv/csv_writer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_writer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_writer.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_writer.cpp.o -c /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/csv/csv_writer.cpp
 
 CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_writer.cpp.i: cmake_force
@@ -275,7 +299,7 @@ CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_writer.cpp.o.provides.build: C
 
 CMakeFiles/cpp_project.dir/src/coders/header/header_coder.cpp.o: CMakeFiles/cpp_project.dir/flags.make
 CMakeFiles/cpp_project.dir/src/coders/header/header_coder.cpp.o: ../src/coders/header/header_coder.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/cpp_project.dir/src/coders/header/header_coder.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/cpp_project.dir/src/coders/header/header_coder.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp_project.dir/src/coders/header/header_coder.cpp.o -c /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/header/header_coder.cpp
 
 CMakeFiles/cpp_project.dir/src/coders/header/header_coder.cpp.i: cmake_force
@@ -299,7 +323,7 @@ CMakeFiles/cpp_project.dir/src/coders/header/header_coder.cpp.o.provides.build: 
 
 CMakeFiles/cpp_project.dir/src/coders/header/header_decoder.cpp.o: CMakeFiles/cpp_project.dir/flags.make
 CMakeFiles/cpp_project.dir/src/coders/header/header_decoder.cpp.o: ../src/coders/header/header_decoder.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/cpp_project.dir/src/coders/header/header_decoder.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/cpp_project.dir/src/coders/header/header_decoder.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp_project.dir/src/coders/header/header_decoder.cpp.o -c /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/header/header_decoder.cpp
 
 CMakeFiles/cpp_project.dir/src/coders/header/header_decoder.cpp.i: cmake_force
@@ -323,7 +347,7 @@ CMakeFiles/cpp_project.dir/src/coders/header/header_decoder.cpp.o.provides.build
 
 CMakeFiles/cpp_project.dir/src/coders/coder_base.cpp.o: CMakeFiles/cpp_project.dir/flags.make
 CMakeFiles/cpp_project.dir/src/coders/coder_base.cpp.o: ../src/coders/coder_base.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/cpp_project.dir/src/coders/coder_base.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/cpp_project.dir/src/coders/coder_base.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp_project.dir/src/coders/coder_base.cpp.o -c /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/coder_base.cpp
 
 CMakeFiles/cpp_project.dir/src/coders/coder_base.cpp.i: cmake_force
@@ -347,7 +371,7 @@ CMakeFiles/cpp_project.dir/src/coders/coder_base.cpp.o.provides.build: CMakeFile
 
 CMakeFiles/cpp_project.dir/src/coders/decoder_base.cpp.o: CMakeFiles/cpp_project.dir/flags.make
 CMakeFiles/cpp_project.dir/src/coders/decoder_base.cpp.o: ../src/coders/decoder_base.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/cpp_project.dir/src/coders/decoder_base.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/cpp_project.dir/src/coders/decoder_base.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp_project.dir/src/coders/decoder_base.cpp.o -c /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/decoder_base.cpp
 
 CMakeFiles/cpp_project.dir/src/coders/decoder_base.cpp.i: cmake_force
@@ -371,7 +395,7 @@ CMakeFiles/cpp_project.dir/src/coders/decoder_base.cpp.o.provides.build: CMakeFi
 
 CMakeFiles/cpp_project.dir/src/dataset/column_code.cpp.o: CMakeFiles/cpp_project.dir/flags.make
 CMakeFiles/cpp_project.dir/src/dataset/column_code.cpp.o: ../src/dataset/column_code.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/cpp_project.dir/src/dataset/column_code.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/cpp_project.dir/src/dataset/column_code.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp_project.dir/src/dataset/column_code.cpp.o -c /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/dataset/column_code.cpp
 
 CMakeFiles/cpp_project.dir/src/dataset/column_code.cpp.i: cmake_force
@@ -395,7 +419,7 @@ CMakeFiles/cpp_project.dir/src/dataset/column_code.cpp.o.provides.build: CMakeFi
 
 CMakeFiles/cpp_project.dir/src/dataset/dataset.cpp.o: CMakeFiles/cpp_project.dir/flags.make
 CMakeFiles/cpp_project.dir/src/dataset/dataset.cpp.o: ../src/dataset/dataset.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/cpp_project.dir/src/dataset/dataset.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/cpp_project.dir/src/dataset/dataset.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp_project.dir/src/dataset/dataset.cpp.o -c /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/dataset/dataset.cpp
 
 CMakeFiles/cpp_project.dir/src/dataset/dataset.cpp.i: cmake_force
@@ -419,7 +443,7 @@ CMakeFiles/cpp_project.dir/src/dataset/dataset.cpp.o.provides.build: CMakeFiles/
 
 CMakeFiles/cpp_project.dir/src/dataset/dataset_utils.cpp.o: CMakeFiles/cpp_project.dir/flags.make
 CMakeFiles/cpp_project.dir/src/dataset/dataset_utils.cpp.o: ../src/dataset/dataset_utils.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/cpp_project.dir/src/dataset/dataset_utils.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/cpp_project.dir/src/dataset/dataset_utils.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp_project.dir/src/dataset/dataset_utils.cpp.o -c /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/dataset/dataset_utils.cpp
 
 CMakeFiles/cpp_project.dir/src/dataset/dataset_utils.cpp.i: cmake_force
@@ -443,7 +467,7 @@ CMakeFiles/cpp_project.dir/src/dataset/dataset_utils.cpp.o.provides.build: CMake
 
 CMakeFiles/cpp_project.dir/src/coders/cols/coder_cols.cpp.o: CMakeFiles/cpp_project.dir/flags.make
 CMakeFiles/cpp_project.dir/src/coders/cols/coder_cols.cpp.o: ../src/coders/cols/coder_cols.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/cpp_project.dir/src/coders/cols/coder_cols.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/cpp_project.dir/src/coders/cols/coder_cols.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp_project.dir/src/coders/cols/coder_cols.cpp.o -c /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/cols/coder_cols.cpp
 
 CMakeFiles/cpp_project.dir/src/coders/cols/coder_cols.cpp.i: cmake_force
@@ -467,7 +491,7 @@ CMakeFiles/cpp_project.dir/src/coders/cols/coder_cols.cpp.o.provides.build: CMak
 
 CMakeFiles/cpp_project.dir/src/coders/cols/decoder_cols.cpp.o: CMakeFiles/cpp_project.dir/flags.make
 CMakeFiles/cpp_project.dir/src/coders/cols/decoder_cols.cpp.o: ../src/coders/cols/decoder_cols.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/cpp_project.dir/src/coders/cols/decoder_cols.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/cpp_project.dir/src/coders/cols/decoder_cols.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp_project.dir/src/coders/cols/decoder_cols.cpp.o -c /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/cols/decoder_cols.cpp
 
 CMakeFiles/cpp_project.dir/src/coders/cols/decoder_cols.cpp.i: cmake_force
@@ -491,7 +515,7 @@ CMakeFiles/cpp_project.dir/src/coders/cols/decoder_cols.cpp.o.provides.build: CM
 
 CMakeFiles/cpp_project.dir/src/coders/basic/coder_basic.cpp.o: CMakeFiles/cpp_project.dir/flags.make
 CMakeFiles/cpp_project.dir/src/coders/basic/coder_basic.cpp.o: ../src/coders/basic/coder_basic.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/cpp_project.dir/src/coders/basic/coder_basic.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/cpp_project.dir/src/coders/basic/coder_basic.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp_project.dir/src/coders/basic/coder_basic.cpp.o -c /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/basic/coder_basic.cpp
 
 CMakeFiles/cpp_project.dir/src/coders/basic/coder_basic.cpp.i: cmake_force
@@ -515,7 +539,7 @@ CMakeFiles/cpp_project.dir/src/coders/basic/coder_basic.cpp.o.provides.build: CM
 
 CMakeFiles/cpp_project.dir/src/coders/basic/decoder_basic.cpp.o: CMakeFiles/cpp_project.dir/flags.make
 CMakeFiles/cpp_project.dir/src/coders/basic/decoder_basic.cpp.o: ../src/coders/basic/decoder_basic.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/cpp_project.dir/src/coders/basic/decoder_basic.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/cpp_project.dir/src/coders/basic/decoder_basic.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp_project.dir/src/coders/basic/decoder_basic.cpp.o -c /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/basic/decoder_basic.cpp
 
 CMakeFiles/cpp_project.dir/src/coders/basic/decoder_basic.cpp.i: cmake_force
@@ -539,7 +563,7 @@ CMakeFiles/cpp_project.dir/src/coders/basic/decoder_basic.cpp.o.provides.build: 
 
 CMakeFiles/cpp_project.dir/src/scripts.cpp.o: CMakeFiles/cpp_project.dir/flags.make
 CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../src/scripts.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/cpp_project.dir/src/scripts.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/cpp_project.dir/src/scripts.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp_project.dir/src/scripts.cpp.o -c /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/scripts.cpp
 
 CMakeFiles/cpp_project.dir/src/scripts.cpp.i: cmake_force
@@ -563,7 +587,7 @@ CMakeFiles/cpp_project.dir/src/scripts.cpp.o.provides.build: CMakeFiles/cpp_proj
 
 CMakeFiles/cpp_project.dir/src/tests.cpp.o: CMakeFiles/cpp_project.dir/flags.make
 CMakeFiles/cpp_project.dir/src/tests.cpp.o: ../src/tests.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/cpp_project.dir/src/tests.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/cpp_project.dir/src/tests.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp_project.dir/src/tests.cpp.o -c /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/tests.cpp
 
 CMakeFiles/cpp_project.dir/src/tests.cpp.i: cmake_force
@@ -587,7 +611,7 @@ CMakeFiles/cpp_project.dir/src/tests.cpp.o.provides.build: CMakeFiles/cpp_projec
 
 CMakeFiles/cpp_project.dir/main.cpp.o: CMakeFiles/cpp_project.dir/flags.make
 CMakeFiles/cpp_project.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/cpp_project.dir/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/cpp_project.dir/main.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp_project.dir/main.cpp.o -c /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/main.cpp
 
 CMakeFiles/cpp_project.dir/main.cpp.i: cmake_force
@@ -615,6 +639,7 @@ cpp_project_OBJECTS = \
 "CMakeFiles/cpp_project.dir/src/datetime_utils.cpp.o" \
 "CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_reader.cpp.o" \
 "CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_writer.cpp.o" \
+"CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_utils.cpp.o" \
 "CMakeFiles/cpp_project.dir/src/file_utils/text/text_reader.cpp.o" \
 "CMakeFiles/cpp_project.dir/src/file_utils/text/text_utils.cpp.o" \
 "CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_reader.cpp.o" \
@@ -642,6 +667,7 @@ cpp_project: CMakeFiles/cpp_project.dir/src/string_utils.cpp.o
 cpp_project: CMakeFiles/cpp_project.dir/src/datetime_utils.cpp.o
 cpp_project: CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_reader.cpp.o
 cpp_project: CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_writer.cpp.o
+cpp_project: CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_utils.cpp.o
 cpp_project: CMakeFiles/cpp_project.dir/src/file_utils/text/text_reader.cpp.o
 cpp_project: CMakeFiles/cpp_project.dir/src/file_utils/text/text_utils.cpp.o
 cpp_project: CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_reader.cpp.o
@@ -663,7 +689,7 @@ cpp_project: CMakeFiles/cpp_project.dir/src/tests.cpp.o
 cpp_project: CMakeFiles/cpp_project.dir/main.cpp.o
 cpp_project: CMakeFiles/cpp_project.dir/build.make
 cpp_project: CMakeFiles/cpp_project.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Linking CXX executable cpp_project"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Linking CXX executable cpp_project"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cpp_project.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -675,6 +701,7 @@ CMakeFiles/cpp_project.dir/requires: CMakeFiles/cpp_project.dir/src/string_utils
 CMakeFiles/cpp_project.dir/requires: CMakeFiles/cpp_project.dir/src/datetime_utils.cpp.o.requires
 CMakeFiles/cpp_project.dir/requires: CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_reader.cpp.o.requires
 CMakeFiles/cpp_project.dir/requires: CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_writer.cpp.o.requires
+CMakeFiles/cpp_project.dir/requires: CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_utils.cpp.o.requires
 CMakeFiles/cpp_project.dir/requires: CMakeFiles/cpp_project.dir/src/file_utils/text/text_reader.cpp.o.requires
 CMakeFiles/cpp_project.dir/requires: CMakeFiles/cpp_project.dir/src/file_utils/text/text_utils.cpp.o.requires
 CMakeFiles/cpp_project.dir/requires: CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_reader.cpp.o.requires

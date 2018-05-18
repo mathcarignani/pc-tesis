@@ -13,5 +13,8 @@ public:
     static std::string join(std::vector<std::string> arr, std::string token);
     static std::string removeChars(const std::string& source, const std::string& chars);
     static std::string removeLastChar(const std::string& source);
+    static int charToInt(const char character);
+    static const char intToChar(const int integer);
 };
+
 #endif //CPP_PROJECT_STRING_UTILS_H

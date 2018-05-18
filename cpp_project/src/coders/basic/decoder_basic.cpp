@@ -1,6 +1,6 @@
 
 #include "decoder_basic.h"
 
-//void DecoderBasic::decodeDataRows(){
-//
-//}
+void DecoderBasic::decodeColumn(){
+
+}

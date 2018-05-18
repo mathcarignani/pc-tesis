@@ -6,12 +6,22 @@
 #include "assert.h"
 #include <vector>
 
-std::tm DatetimeUtils::parseDate(std::string tm_str, std::string datetime_format){
+std::tm DatetimeUtils::stringToDatetime(std::string tm_str, std::string datetime_format){
     std::tm tm;
     std::memset(&tm, 0, sizeof(std::tm));
     std::istringstream ss(tm_str);
     ss >> std::get_time(&tm, datetime_format.c_str());
     return tm;
+}
+
+//
+// SOURCE: https://stackoverflow.com/a/16358111/4547232
+//
+std::string DatetimeUtils::datetimeToString(std::tm datetime, std::string datetime_format){
+    std::ostringstream oss;
+    oss << std::put_time(&datetime, datetime_format.c_str());
+    std::string str = oss.str();
+    return str;
 }
 
 int DatetimeUtils::compareDates(std::tm date1, std::tm date2) {
@@ -33,7 +43,7 @@ int DatetimeUtils::compareDates(std::tm date1, std::tm date2) {
     return 0;
 }
 
-long int DatetimeUtils::datetimeToSecondsSince(std::tm start_date, std::tm date){
+long int DatetimeUtils::mapDatetimeToSeconds(std::tm start_date, std::tm date){
     assert(compareDates(start_date, date) != -1);
     assert(start_date.tm_year == 0 and start_date.tm_mon == 0 and start_date.tm_mday == 1);
     assert(start_date.tm_hour == 0 and start_date.tm_min == 0 and start_date.tm_sec == 0);
@@ -48,6 +58,56 @@ long int DatetimeUtils::datetimeToSecondsSince(std::tm start_date, std::tm date)
     return seconds;
 }
 
+std::tm DatetimeUtils::mapSecondsToDatetime(std::tm start_date, long int seconds){
+    assert(start_date.tm_year == 0 and start_date.tm_mon == 0 and start_date.tm_mday == 1);
+    assert(start_date.tm_hour == 0 and start_date.tm_min == 0 and start_date.tm_sec == 0);
+
+    long int whole_days = seconds / secondsInDay();
+    long int remaining_seconds = seconds % secondsInDay();
+
+    int year = start_date.tm_year + 1900;
+    int month = start_date.tm_mon;
+    int day = start_date.tm_mday;
+    int days_in_month = daysInMonth(month, year);
+
+    for(int i=0; i < whole_days; i++){
+        if (day == days_in_month){
+            day = 1; month ++;
+            if (month == 12) { month = 0; year++; }
+            days_in_month = daysInMonth(month, year);
+        }
+        else {
+            day++;
+        }
+    }
+
+    std::cout << "remaining seconds " << remaining_seconds << std::endl;
+    int hour = start_date.tm_hour;
+    int min = start_date.tm_min;
+    int sec = start_date.tm_sec;
+    for(int i=0; i < remaining_seconds; i++){
+        sec++;
+        if (sec == 60){
+            sec = 0; min++;
+            if (min == 60) {
+                min = 0; hour++;
+                if (hour == 24){
+                    hour = 0; day++;
+                    if (day == days_in_month){
+                        day = 1; month ++;
+                        if (month == 12) { month = 0; year++; }
+                    }
+                }
+            }
+        }
+    }
+    std::string timestamp_str = std::to_string(year) + "-" + std::to_string(month + 1) + "-" + std::to_string(day);
+    timestamp_str += " " + std::to_string(hour) + ":" + std::to_string(min) + ":" + std::to_string(sec);
+    std::cout << timestamp_str << std::endl;
+    std::tm timestamp_tm = stringToDatetime(timestamp_str, "%Y-%m-%d %H:%M:%S");
+    return timestamp_tm;
+}
+
 int DatetimeUtils::secondsInYear(int year){
     int day_count = 365;
     if (isLeapYear(year)){ day_count++; }
@@ -55,11 +115,10 @@ int DatetimeUtils::secondsInYear(int year){
 }
 
 int DatetimeUtils::daysSinceJanuary1(std::tm date){
-    std::vector<int> days_per_month = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+//    std::vector<int> days_per_month = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     int day_count = 0;
     for(int i=0; i < date.tm_mon; i++){
-        day_count += days_per_month[i];
-        if (i==1 and isLeapYear(date.tm_year)) { day_count++; }
+        day_count += daysInMonth(i, date.tm_year);
     }
     day_count += date.tm_mday - 1;
     return day_count;
@@ -75,6 +134,13 @@ int DatetimeUtils::secondsInHour(){
 
 int DatetimeUtils::secondsInMinute(){
     return 60;
+}
+
+int DatetimeUtils::daysInMonth(int month, int year){
+    std::vector<int> days_per_month = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    int days_in_month = days_per_month[month];
+    if (month == 1 and isLeapYear(year)) { days_in_month++; }
+    return days_in_month;
 }
 
 bool DatetimeUtils::isLeapYear(int year){

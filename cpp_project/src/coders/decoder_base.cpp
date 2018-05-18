@@ -3,6 +3,7 @@
 
 #include "header_decoder.h"
 
+
 void DecoderBase::decodeDataRowsCount(){
     data_rows_count = input_file.getInt(24); // 24 bits for the data rows count
 }

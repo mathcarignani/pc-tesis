@@ -6,6 +6,10 @@
 
 class DecoderCols: public DecoderBase {
 
+private:
+    void decodeDataRows() override;
+    virtual void decodeColumn() = 0;
+
 public:
     using DecoderBase::DecoderBase;
 
