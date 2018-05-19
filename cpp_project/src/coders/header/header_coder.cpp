@@ -55,7 +55,6 @@ long int HeaderCoder::codeTimestamp(std::string timestamp_str){
     assert(DatetimeUtils::compareDates(timestamp_tm, HeaderUtils::end_date()) == 1);
 
     long int seconds = DatetimeUtils::mapDatetimeToSeconds(HeaderUtils::start_date(), timestamp_tm);
-    std::cout << seconds;
     return seconds;
 }
 

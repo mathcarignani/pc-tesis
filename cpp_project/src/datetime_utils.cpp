@@ -81,7 +81,6 @@ std::tm DatetimeUtils::mapSecondsToDatetime(std::tm start_date, long int seconds
         }
     }
 
-    std::cout << "remaining seconds " << remaining_seconds << std::endl;
     int hour = start_date.tm_hour;
     int min = start_date.tm_min;
     int sec = start_date.tm_sec;
@@ -103,7 +102,6 @@ std::tm DatetimeUtils::mapSecondsToDatetime(std::tm start_date, long int seconds
     }
     std::string timestamp_str = std::to_string(year) + "-" + std::to_string(month + 1) + "-" + std::to_string(day);
     timestamp_str += " " + std::to_string(hour) + ":" + std::to_string(min) + ":" + std::to_string(sec);
-    std::cout << timestamp_str << std::endl;
     std::tm timestamp_tm = stringToDatetime(timestamp_str, "%Y-%m-%d %H:%M:%S");
     return timestamp_tm;
 }

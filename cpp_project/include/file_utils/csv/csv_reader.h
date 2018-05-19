@@ -9,9 +9,11 @@
 
 class CSVReader: public TextReader {
 
+private:
+    bool clean_char = false;
 
 public:
-    using TextReader::TextReader;
+    CSVReader(std::string path, std::string filename, bool clean_char_);
     // PRE: continue_reading
     std::vector<std::string> readLineCSV();
 };

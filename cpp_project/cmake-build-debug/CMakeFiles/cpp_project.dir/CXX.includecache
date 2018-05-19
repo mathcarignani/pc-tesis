@@ -285,6 +285,8 @@ string_utils.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/csv/string_utils.h
 vector_utils.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/csv/vector_utils.h
+text_utils.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/csv/text_utils.h
 
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/csv/csv_utils.cpp
 csv_utils.h

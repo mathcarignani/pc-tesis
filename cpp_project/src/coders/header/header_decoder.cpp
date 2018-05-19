@@ -22,20 +22,20 @@ void HeaderDecoder::decodeDatasetName(DatasetUtils & dataset_utils){
     int dataset_int = input_file.getInt(4); // 4 bits for the dataset name
     std::string dataset_name = dataset_utils.decodeDatasetName(dataset_int);
     std::vector<std::string> row = {"DATASET:", dataset_name};
-    output_csv.writeRow(row);
+    output_csv.writeRowDecoder(row);
 }
 
 void HeaderDecoder::decodeTimeUnit(DatasetUtils & dataset_utils){
     int time_unit_int = input_file.getInt(4); // 4 bits for the time unit
     std::string time_unit_name = dataset_utils.decodeTimeUnit(time_unit_int);
     std::vector<std::string> row = {"TIME UNIT:", time_unit_name};
-    output_csv.writeRow(row);
+    output_csv.writeRowDecoder(row);
 }
 void HeaderDecoder::decodeFirstTimestamp(){
     long int seconds = input_file.getInt(32); // 32 bits for the timestamp
     std::string timestamp_str = decodeTimestamp(seconds);
     std::vector<std::string> row = {"FIRST TIMESTAMP:", timestamp_str};
-    output_csv.writeRow(row);
+    output_csv.writeRowDecoder(row);
 }
 
 std::string HeaderDecoder::decodeTimestamp(long int seconds){
@@ -62,5 +62,5 @@ void HeaderDecoder::decodeColumnNames(){
         column_names += character;
     }
     std::vector<std::string> row = StringUtils::split(column_names, ",");
-    output_csv.writeRow(row);
+    output_csv.writeRowDecoder(row);
 }

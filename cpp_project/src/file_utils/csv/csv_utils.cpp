@@ -11,12 +11,19 @@
 #include "string_utils.h"
 
 void CSVUtils::CopyCSV(std::string path1, std::string filename1, std::string path2, std::string filename2){
-    CSVReader csv_reader = CSVReader(path1, filename1);
+    CSVReader csv_reader = CSVReader(path1, filename1, false);
     CSVWriter csv_writer = CSVWriter(path2, filename2);
     while (csv_reader.continue_reading) {
         std::vector<std::string> row = csv_reader.readLineCSV();
         std::string row_str = StringUtils::join(row, ",");
         std::vector<std::string> row_str_split = StringUtils::split(row_str, ",");
+//        if (csv_reader.current_line_count == 2){
+//            std::cout << "row_str" << std::endl;
+//            std::cout << row_str.size() << std::endl;
+//            std::cout << row_str << std::endl;
+//            std::cout << "##################################" << std::endl;
+//            std::vector<std::string> row_str_split = {"TIME UNIT:", "minutes"};
+//        }
         csv_writer.writeRow(row_str_split);
     }
     csv_reader.close();
@@ -24,14 +31,27 @@ void CSVUtils::CopyCSV(std::string path1, std::string filename1, std::string pat
 }
 
 void CSVUtils::CompareCSVLossless(std::string path1, std::string filename1, std::string path2, std::string filename2){
-    CSVReader csv_reader1 = CSVReader(path1, filename1);
-    CSVReader csv_reader2 = CSVReader(path2, filename2);
+    CSVReader csv_reader1 = CSVReader(path1, filename1, false);
+    CSVReader csv_reader2 = CSVReader(path2, filename2, false);
 //    assert(csv_reader1.total_lines == csv_reader2.total_lines);
     while (csv_reader1.continue_reading) {
         std::vector<std::string> row1 = csv_reader1.readLineCSV();
         std::vector<std::string> row2 = csv_reader2.readLineCSV();
+//        if (csv_reader1.current_line_count == 1){
+//            std::cout << "current_line " << csv_reader1.current_line_count << std::endl;
+//            std::cout << "ROW 1" << std::endl;
+//            std::cout << row1[0].size() << std::endl;
+//            std::cout << row1[0] << std::endl;
+//            std::cout << row1[1].size() << std::endl;
+//            std::cout << row1[1] << std::endl;
+//            std::cout << "ROW 2" << std::endl;
+//            std::cout << row2[0].size() << std::endl;
+//            std::cout << row2[0] << std::endl;
+//            std::cout << row2[1].size() << std::endl;
+//            std::cout << row2[1] << std::endl;
+//        }
         if (row1 != row2){
-            std::cout << "current_line" << csv_reader1.current_line_count << std::endl;
+            std::cout << "current_line " << csv_reader1.current_line_count << std::endl;
         }
         assert(row1 == row2);
     }

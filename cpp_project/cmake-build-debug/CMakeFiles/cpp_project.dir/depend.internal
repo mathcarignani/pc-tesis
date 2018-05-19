@@ -127,6 +127,7 @@ CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_writer.cpp.o
 CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_reader.cpp.o
  ../include/file_utils/csv/csv_reader.h
  ../include/file_utils/text/text_reader.h
+ ../include/file_utils/text/text_utils.h
  ../include/string_utils.h
  ../include/vector_utils.h
  /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/csv/csv_reader.cpp

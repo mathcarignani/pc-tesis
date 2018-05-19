@@ -8,10 +8,8 @@
 
 class TextReader {
 
-private:
-    std::ifstream file;
-
 protected:
+    std::ifstream file;
     void readLineAux();
     void goToStart();
 
@@ -22,6 +20,7 @@ public:
     bool continue_reading;
     std::string full_path;
 
+    TextReader();
     TextReader(std::string path, std::string filename);
     std::string readLine(); // PRE: continue_reading
     void goToLine(int line_number); // PRE: line_number <= total_lines

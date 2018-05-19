@@ -6,6 +6,10 @@
 #include "text_utils.h"
 #include "string_utils.h"
 
+TextReader::TextReader(){
+
+}
+
 TextReader::TextReader(std::string path, std::string filename){
     total_lines = TextUtils::lineCount(path, filename);
     full_path = path + "/" + filename;

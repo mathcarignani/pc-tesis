@@ -13,9 +13,11 @@ private:
 
 public:
     std::string full_path;
+    int current_line_count = 0;
 
     CSVWriter(std::string path, std::string filename);
     void writeRow(std::vector<std::string> row);
+    void writeRowDecoder(std::vector<std::string> row);
     void close();
 };
 

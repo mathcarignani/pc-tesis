@@ -95,4 +95,8 @@ void Tests::testStringUtils(){
     assert(char_as_int_as_char == 'a');
 
     std::cout << StringUtils::intToChar(35);
+    std::cout << StringUtils::intToChar(34);
+    std::cout << StringUtils::intToChar(130);
+    std::cout << StringUtils::intToChar(42);
+    std::cout << StringUtils::intToChar(130);
 }
