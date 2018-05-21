@@ -9,7 +9,6 @@
 
 
 Dataset HeaderDecoder::decodeHeader(){
-    std::cout << "DECODING..." << std::endl;
     DatasetUtils dataset_utils = DatasetUtils("decode");
     std::string dataset_name = decodeDatasetName(dataset_utils);
     decodeTimeUnit(dataset_utils);

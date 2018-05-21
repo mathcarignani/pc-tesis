@@ -15,10 +15,10 @@ int main(int argc, char *argv[]){
         std::string output_path = argv[4];
         std::string output_filename = argv[5];
 
-        std::cout << "input_path=" << input_path << std::endl;
-        std::cout << "input_filename=" << input_filename << std::endl;
-        std::cout << "output_path=" << output_path << std::endl;
-        std::cout << "output_filename=" << output_filename << std::endl;
+//        std::cout << "input_path=" << input_path << std::endl;
+//        std::cout << "input_filename=" << input_filename << std::endl;
+//        std::cout << "output_path=" << output_path << std::endl;
+//        std::cout << "output_filename=" << output_filename << std::endl;
 
         std::string coder_name = argv[6];
         assert(coder_name == "CoderBasic");

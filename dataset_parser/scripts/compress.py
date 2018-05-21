@@ -19,6 +19,7 @@ from scripts.compress_args import CompressArgs
 
 
 def code_python(args):
+    start_time = time.time()
     args.code_python()
     input_csv = CSVReader(args.input_path, args.input_filename, True)
     c = args.coder(input_csv, args.output_path, args.compressed_filename, args.coder_params)
@@ -26,10 +27,13 @@ def code_python(args):
     c.close()
     coder_info = c.get_info()
     columns_bits = [column_code.total_bits for column_code in c.dataset.column_code_array]
+    elapsed_time = time.time() - start_time
+    print args.input_filename, "code_python - elapsed time =", round(elapsed_time, 2), "seconds"
     return [coder_info, columns_bits]
 
 
 def decode_python(args):
+    start_time = time.time()
     args.decode_python()
     output_csv = CSVWriter(args.output_path, args.deco_filename)
     d = args.decoder(args.output_path, args.compressed_filename, output_csv, args.coder_params)
@@ -39,6 +43,8 @@ def decode_python(args):
         if e == "Reached EOF.":
             print "ERROR: Reached End Of File."
     d.close()
+    elapsed_time = time.time() - start_time
+    print args.compressed_filename, "decode_python - elapsed time =", round(elapsed_time, 2), "seconds"
 
 
 def code_decode_python(args):
@@ -59,7 +65,7 @@ def compress_file(args):
     py_filename = args.deco_filename
     decode_cpp(args)
     cpp_filename = args.deco_filename
-    # print "Comparing decompressed files..."
+    print "Comparing decompressed files..."
     assert(BitStreamUtils.compare_files(args.output_path, py_filename, args.output_path, cpp_filename))
     assert(BitStreamUtils.compare_files(args.input_path, args.input_filename, args.output_path, cpp_filename))
     same_file = True
