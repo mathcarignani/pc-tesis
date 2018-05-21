@@ -11,7 +11,7 @@
 #include "string_utils.h"
 
 void CSVUtils::CopyCSV(std::string path1, std::string filename1, std::string path2, std::string filename2){
-    CSVReader csv_reader = CSVReader(path1, filename1, false);
+    CSVReader csv_reader = CSVReader(path1, filename1);
     CSVWriter csv_writer = CSVWriter(path2, filename2);
     while (csv_reader.continue_reading) {
         std::vector<std::string> row = csv_reader.readLineCSV();
@@ -31,8 +31,8 @@ void CSVUtils::CopyCSV(std::string path1, std::string filename1, std::string pat
 }
 
 void CSVUtils::CompareCSVLossless(std::string path1, std::string filename1, std::string path2, std::string filename2){
-    CSVReader csv_reader1 = CSVReader(path1, filename1, false);
-    CSVReader csv_reader2 = CSVReader(path2, filename2, false);
+    CSVReader csv_reader1 = CSVReader(path1, filename1);
+    CSVReader csv_reader2 = CSVReader(path2, filename2);
 //    assert(csv_reader1.total_lines == csv_reader2.total_lines);
     while (csv_reader1.continue_reading) {
         std::vector<std::string> row1 = csv_reader1.readLineCSV();

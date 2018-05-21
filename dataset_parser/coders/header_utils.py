@@ -68,12 +68,18 @@ class HeaderUtils:
     def code_column_names(cls, column_names_array, output_file):
         column_names_str = ",".join(column_names_array)
         number_of_bytes = len(column_names_str)
+        zeros_count = number_of_bytes % 8 + 8
+
+        # print "number_of_bytes = " + str(number_of_bytes)
+        # print "zeros_count = " + str(zeros_count)
 
         # code the number of bytes in unary code
         for _ in xrange(number_of_bytes):
+            # print "1"
             output_file.write_bit(1)
-        zeros_count = number_of_bytes % 8 + 8
+
         for _ in xrange(zeros_count):
+            # print "0"
             output_file.write_bit(0)
         # code the chars (each char uses 1 byte)
         for char in column_names_str:

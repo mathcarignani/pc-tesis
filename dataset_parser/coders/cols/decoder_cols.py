@@ -11,7 +11,7 @@ class DecoderCols(DecoderBase):
 
     def _decode_data_rows(self):
         columns = []
-        for _ in xrange(self.data_columns_count):
+        for _ in xrange(self.data_columns_count + 1):
             print 'decode column_index', self.column_index
             self.dataset.set_column(self.column_index)
             column = self._decode_column()

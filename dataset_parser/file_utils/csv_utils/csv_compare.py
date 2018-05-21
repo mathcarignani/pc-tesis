@@ -1,5 +1,6 @@
 from csv_reader import CSVReader
 
+
 class CSVCompare:
     def __init__(self, file1_path, file1_filename, file2_path, file2_filename):
         self.file1 = CSVReader(file1_path, file1_filename)
@@ -36,6 +37,10 @@ class CSVCompare:
         return True if row1 != row2 else False
 
     def _compare_rows(self, row1, row2, threshold):
+        if len(row1) != len(row2):
+            print "len(row1) = %s != %s = len(row2)" % (len(row1), len(row2))
+            return True
+
         for idx, val in enumerate(row2):
             idx_error = False
             if row1[idx] == 'N' or row2[idx] == 'N':  # both values must be 'N'

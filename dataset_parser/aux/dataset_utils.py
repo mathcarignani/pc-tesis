@@ -54,7 +54,7 @@ class DatasetUtils:
     # path and filename to the CONSTANTS file
     #
     PATH = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/constants"
-    FILENAME = "PAPER_CONSTANTS"  # "CONSTANTS"
+    FILENAME = "CONSTANTS"  # "CONSTANTS"
 
     #
     # action can be 'code' or 'decode'

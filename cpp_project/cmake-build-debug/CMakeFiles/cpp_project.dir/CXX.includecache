@@ -143,6 +143,8 @@ string
 -
 
 ../include/scripts.h
+string
+-
 
 ../include/string_utils.h
 string
@@ -163,6 +165,10 @@ scripts.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/scripts.h
 tests.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/tests.h
+assert.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/assert.h
+bit_stream_utils.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/bit_stream_utils.h
 
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/basic/coder_basic.cpp
 coder_basic.h
@@ -179,20 +185,20 @@ decoder_basic.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/coder_base.cpp
 coder_base.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/coder_base.h
-iostream
--
-coders/header/header_coder.h
-/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/coders/header/header_coder.h
+header_coder.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/header_coder.h
 
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/cols/coder_cols.cpp
 coder_cols.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/cols/coder_cols.h
-iostream
--
+assert.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/cols/assert.h
 
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/cols/decoder_cols.cpp
 decoder_cols.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/cols/decoder_cols.h
+vector
+-
 
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/decoder_base.cpp
 decoder_base.h
@@ -201,8 +207,8 @@ header_decoder.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/header_decoder.h
 
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/header/header_coder.cpp
-coders/header/header_coder.h
-/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/header/coders/header/header_coder.h
+header_coder.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/header/header_coder.h
 assert.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/header/assert.h
 string_utils.h
@@ -215,8 +221,6 @@ vector_utils.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/header/vector_utils.h
 
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/header/header_decoder.cpp
-datetime_utils.h
--
 header_decoder.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/header/header_decoder.h
 assert.h
@@ -227,6 +231,8 @@ dataset_utils.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/header/dataset_utils.h
 header_utils.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/header/header_utils.h
+vector
+-
 
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/dataset/column_code.cpp
 column_code.h

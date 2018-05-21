@@ -10,16 +10,17 @@ class CoderCols: public CoderBase {
 private:
     void codeDataRows() override;
     virtual void codeColumn() = 0;
+//    void raiseRangeError(int value) override;
 //    void createWindow();
+
 protected:
-    Dataset dataset;
     int column_index = 0;
     int row_index = 0;
 
 public:
     using CoderBase::CoderBase;
-    void setDataset();
-    //    virtual std::string getInfo() = 0;
+//    void setDataset(Dataset dataset, int columns_count_);
+//    virtual std::string getInfo() = 0;
 };
 
 #endif //CPP_PROJECT_CODER_COLS_H

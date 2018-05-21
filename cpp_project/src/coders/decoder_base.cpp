@@ -8,13 +8,36 @@ void DecoderBase::decodeDataRowsCount(){
     data_rows_count = input_file.getInt(24); // 24 bits for the data rows count
 }
 
-//void DecoderBase::decodeValue(std::string y, int row_index, int col_index);
-//void DecoderBase::decodeRaw();
-//void DecoderBase::decodeValueRaw(int row_index, int col_index);
+std::string DecoderBase::decodeValue(int y){
+    if (y == dataset.nan()) { return "N"; }
+
+    y -= dataset.offset();
+    if (dataset.insideRange(y)) { return std::to_string(y); }
+
+    throw std::invalid_argument(std::to_string(y));
+}
+
+int DecoderBase::decodeRaw(){
+    return input_file.getInt(dataset.bits());
+}
+
+std::string DecoderBase::decodeValueRaw(){
+    int value = decodeRaw();
+    std::string coded_value;
+    try {
+        coded_value = decodeValue(value);
+    }
+    catch( const std::invalid_argument& e ){
+        std::cout << e.what() << std::endl;
+        exit(-1);
+    }
+    return coded_value;
+}
 
 void DecoderBase::decodeFile(){
     dataset = HeaderDecoder(input_file, output_csv).decodeHeader();
     decodeDataRowsCount();
+    decodeDataRows();
 }
 
 void DecoderBase::close(){

@@ -1,5 +1,5 @@
 
-#include "coders/header/header_coder.h"
+#include "header_coder.h"
 
 #include "assert.h"
 #include "string_utils.h"
@@ -10,14 +10,18 @@
 
 Dataset HeaderCoder::codeHeader(){
     DatasetUtils dataset_utils = DatasetUtils("code");
-    codeDatasetName(dataset_utils);
-    codeTimeUnit(dataset_utils);
-    codeFirstTimestamp();
-    codeColumnNames();
-    return Dataset();
+    std::string dataset_name = codeDatasetName(dataset_utils); // 0.5 byte
+    codeTimeUnit(dataset_utils); // 0.5 byte
+    codeFirstTimestamp(); // 4 bytes
+    int data_columns_count = codeColumnNames();
+
+    std::vector<Range> ranges = dataset_utils.getRangeVector(dataset_name);
+    std::vector<int> bits = dataset_utils.getBitsVector(dataset_name);
+    Dataset dataset = Dataset(ranges, bits, data_columns_count);
+    return dataset;
 }
 
-void HeaderCoder::codeDatasetName(DatasetUtils & dataset_utils){
+std::string HeaderCoder::codeDatasetName(DatasetUtils & dataset_utils){
     // DATASET:|NOAA-SST
     std::vector<std::string> current_line = input_csv.readLineCSV();
     assert(current_line.size() == 2);
@@ -25,6 +29,7 @@ void HeaderCoder::codeDatasetName(DatasetUtils & dataset_utils){
     std::string dataset_name = StringUtils::removeLastChar(current_line[1]);
     int dataset_int = dataset_utils.codeDatasetName(dataset_name);
     output_file.pushInt(dataset_int, 4); // 4 bits for the dataset name
+    return dataset_name;
 }
 
 
@@ -58,15 +63,20 @@ long int HeaderCoder::codeTimestamp(std::string timestamp_str){
     return seconds;
 }
 
-void HeaderCoder::codeColumnNames(){
+int HeaderCoder::codeColumnNames(){
     // Time Delta|T0N110W|T0N125W|T0N155W|...|T9N140W
     std::vector<std::string> current_line = input_csv.readLineCSV();
+    current_line.erase(current_line.begin()); // remove "Time Delta"
+    int data_columns_count = current_line.size();
     std::string column_names_str = StringUtils::join(current_line, ",");
-    int number_of_chars = column_names_str.size();
+    int number_of_chars = column_names_str.size() - 1;
+    int zeros_count = number_of_chars % 8 + 8;
+
+//    std::cout << "number_of_chars = " << number_of_chars << std::endl;
+//    std::cout << "zeros_count = " << zeros_count << std::endl;
 
     // code the number of chars in unary code
     for(int i=0; i < number_of_chars; i++) { output_file.pushBit(1); }
-    int zeros_count = number_of_chars % 8 + 8;
     for(int i=0; i < zeros_count; i++) { output_file.pushBit(0); }
     // code the chars (each char uses 1 byte)
     for(int i=0; i < number_of_chars; i++) {
@@ -74,4 +84,5 @@ void HeaderCoder::codeColumnNames(){
         int char_as_int = StringUtils::charToInt(character);
         output_file.pushInt(char_as_int, 8);
     }
+    return data_columns_count;
 }

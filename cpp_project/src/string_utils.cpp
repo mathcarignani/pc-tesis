@@ -76,11 +76,9 @@ std::string StringUtils::removeLastChar(const std::string& source){
 }
 
 int StringUtils::charToInt(const char character){
-    int integer = character - '0';
-    return integer;
+    return (int) character;
 }
 
 const char StringUtils::intToChar(const int integer){
-    const char character = (char)integer + '0';
-    return character;
+    return (char) integer;
 }

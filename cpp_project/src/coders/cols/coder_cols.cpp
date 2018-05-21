@@ -1,14 +1,24 @@
 
 #include "coder_cols.h"
-#include <iostream>
+
+#include "assert.h"
+
 
 void CoderCols::codeDataRows() {
-    for (column_index = 0; column_index < columns_count; column_index++) {
-        std::cout << "code column_index" << column_index;
+    std::cout << "dataset.columns_count " << dataset.data_columns_count << std::endl;
+    int total_columns = dataset.data_columns_count + 1;
+    for(column_index = 0; column_index < total_columns; column_index++) {
+        std::cout << "CPP code column_index " << column_index << std::endl;
+        dataset.setColumn(column_index);
         codeColumn();
     }
+    std::cout << "ENDLINE" << std::endl;
 }
 
-void CoderCols::setDataset(){
-
-}
+//void CoderCols::raiseRangeError(int value){
+//    std::cout << "RangeError" << std::endl;
+//    std::cout << "Position = [row_index, col_index] = [" << row_index << "," << column_index << "]" << std::endl;
+//    dataset.printRange();
+//    std::cout << "value = " << value << std::endl;
+//    assert(1==0);
+//}

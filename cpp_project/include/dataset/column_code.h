@@ -7,18 +7,16 @@
 
 class ColumnCode {
 
-private:
+public:
     Range range;
     int bits;
     int offset;
     int nan;
     int total_bits = 0;
 
-public:
     ColumnCode();
     ColumnCode(Range range_, int bits_);
     void addBits(int bits_);
-
 };
 
 #endif //CPP_PROJECT_COLUMN_CODE_H

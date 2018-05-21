@@ -1,28 +1,33 @@
 
-#include <datetime_utils.h>
 #include "header_decoder.h"
 
 #include "assert.h"
 #include "string_utils.h"
 #include "dataset_utils.h"
 #include "header_utils.h"
+#include <vector>
 
 
 Dataset HeaderDecoder::decodeHeader(){
     std::cout << "DECODING..." << std::endl;
     DatasetUtils dataset_utils = DatasetUtils("decode");
-    decodeDatasetName(dataset_utils);
+    std::string dataset_name = decodeDatasetName(dataset_utils);
     decodeTimeUnit(dataset_utils);
     decodeFirstTimestamp();
-    decodeColumnNames();
-    return Dataset();
+    int data_columns_count = decodeColumnNames();
+
+    std::vector<Range> ranges = dataset_utils.getRangeVector(dataset_name);
+    std::vector<int> bits = dataset_utils.getBitsVector(dataset_name);
+    Dataset dataset = Dataset(ranges, bits, data_columns_count);
+    return dataset;
 }
 
-void HeaderDecoder::decodeDatasetName(DatasetUtils & dataset_utils){
+std::string HeaderDecoder::decodeDatasetName(DatasetUtils & dataset_utils){
     int dataset_int = input_file.getInt(4); // 4 bits for the dataset name
     std::string dataset_name = dataset_utils.decodeDatasetName(dataset_int);
     std::vector<std::string> row = {"DATASET:", dataset_name};
     output_csv.writeRowDecoder(row);
+    return dataset_name;
 }
 
 void HeaderDecoder::decodeTimeUnit(DatasetUtils & dataset_utils){
@@ -48,7 +53,7 @@ std::string HeaderDecoder::decodeTimestamp(long int seconds){
     return timestamp_str;
 }
 
-void HeaderDecoder::decodeColumnNames(){
+int HeaderDecoder::decodeColumnNames(){
     int number_of_chars = 0;
     // decode the number of chars in unary code
     while (input_file.getBit() > 0) { number_of_chars++; }
@@ -62,5 +67,8 @@ void HeaderDecoder::decodeColumnNames(){
         column_names += character;
     }
     std::vector<std::string> row = StringUtils::split(column_names, ",");
-    output_csv.writeRowDecoder(row);
+    int data_columns_count = row.size();
+    row.insert(row.begin(), "Time Delta"); // add "Time Delta"
+    output_csv.writeRowDecoder(row); // call writeRow instead of writeRowDecoder
+    return data_columns_count;
 }

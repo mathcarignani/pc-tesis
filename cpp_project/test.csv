@@ -1,6 +1,0 @@
-DATASET:,NOAA-SPC-wind
-TIME UNIT:,minutes
-FIRST TIMESTAMP:,2015-01-03 09:15:00
-Time Delta,Latitude,Longitude,Speed
-0,3203,-9370,915
-0,3247,-9380,915

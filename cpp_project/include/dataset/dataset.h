@@ -11,10 +11,17 @@ private:
     ColumnCode column_code;
 
 public:
+    int data_columns_count;
+
     Dataset();
-    Dataset(std::vector<Range> ranges, std::vector<int> bits);
+    Dataset(std::vector<Range> ranges, std::vector<int> bits, int data_columns_count_);
     void setColumn(int column_index);
-    void addBits(int bits);
+    int getBits();
+    int bits();
+    int offset();
+    int nan();
+    bool insideRange(int value);
+//    void printRange();
 };
 
 #endif //CPP_PROJECT_DATASET_H

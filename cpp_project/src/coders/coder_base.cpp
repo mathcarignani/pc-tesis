@@ -1,11 +1,7 @@
 
 #include "coder_base.h"
 
-//#include <cstring>
-#include <iostream>
-//#include "bit_stream_writer.h"
-//#include "csv_reader.h"
-#include "coders/header/header_coder.h"
+#include "header_coder.h"
 
 
 void CoderBase::codeDataRowsCount(){
@@ -17,43 +13,35 @@ void CoderBase::codeDataRowsCount(){
 // This method maps a value read in the csv file into an integer to be written in the output file.
 // It also checks the minimum and maximum constraints.
 //
-int CoderBase::codeValue(std::string x, int row_index, int col_index){
-//    if x == 'N':
-//        return self.dataset.nan
-//
-//    x = int(x)
-//    if self.dataset.min <= x <= self.dataset.max:
-//        return x + self.dataset.offset
-//
-//    CoderBase.raise_range_error(self.dataset.min, self.dataset.max, x, row_index, col_index)
-    return std::stoi(x);
+int CoderBase::codeValue(std::string x){
+    if (x[0] == 'N'){ return dataset.nan(); }
+
+    int x_int = std::stoi(x);
+    if (dataset.insideRange(x_int)) { return x_int + dataset.offset(); }
+
+    throw std::invalid_argument(std::to_string(x_int));
 }
 
 void CoderBase::codeRaw(int value){
-//    self.output_file.write_int(value, self.dataset.get_bits())
-//    output_file.pushInt(value, 20);
+    output_file.pushInt(value, dataset.getBits());
 }
 
-void CoderBase::codeValueRaw(std::string x, int row_index, int col_index){
-    int value = codeValue(x, row_index, col_index);
+void CoderBase::codeValueRaw(std::string x){
+    int value;
+    try {
+        value = codeValue(x);
+    }
+    catch( const std::invalid_argument& e ){
+        std::cout << e.what() << std::endl;
+        exit(-1);
+    }
     codeRaw(value);
-}
-
-void CoderBase::raiseRangeError(){
-//    #
-//    # TODO: move this code to a utils module
-//    #
-//    @classmethod
-//    def raise_range_error(cls, minimum, maximum, x, row_index, col_index):
-//        error_str = ("ERROR: min = %s <= x = %s <= max = %s\n" % (minimum, x, maximum)) +\
-//                        ("POSITION = [%s,%s]" % (row_index, col_index))
-//        raise StandardError(error_str)
 }
 
 void CoderBase::codeFile(){
     dataset = HeaderCoder(input_csv, output_file).codeHeader();
     codeDataRowsCount();
-//    codeDataRows();
+    codeDataRows();
 }
 
 void CoderBase::close(){

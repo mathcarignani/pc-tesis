@@ -18,11 +18,11 @@ public:
 private:
     CSVReader &input_csv;
     BitStreamWriter &output_file;
-    void codeDatasetName(DatasetUtils & dataset_utils);
+    std::string codeDatasetName(DatasetUtils & dataset_utils);
     void codeTimeUnit(DatasetUtils & dataset_utils);
     void codeFirstTimestamp();
     static long int codeTimestamp(std::string timestamp_str);
-    void codeColumnNames();
+    int codeColumnNames();
 };
 
 #endif //CPP_PROJECT_HEADER_CODER_H

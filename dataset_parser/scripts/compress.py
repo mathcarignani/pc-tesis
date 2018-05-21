@@ -2,54 +2,37 @@ import sys
 sys.path.append('.')
 
 import os
+import time
 
 from aux.logger import setup_logger
 from aux.print_utils import PrintUtils
 from file_utils.csv_utils.csv_compare import CSVCompare
 from file_utils.csv_utils.csv_reader import CSVReader
 from file_utils.csv_utils.csv_writer import CSVWriter
-
-from coders.basic.coder_basic import CoderBasic
-from coders.basic.decoder_basic import DecoderBasic
-from coders.pca.coder_pca import CoderPCA
-from coders.pca.decoder_pca import DecoderPCA
-from coders.apca.coder_apca import CoderAPCA
-from coders.apca.decoder_apca import DecoderAPCA
-from coders.ca.coder_ca import CoderCA
-from coders.ca.decoder_ca import DecoderCA
-
+from file_utils.csv_utils.csv_utils import CSVUtils
+from file_utils.bit_stream.utils import BitStreamUtils
 from scripts.utils import csv_files_filenames, create_folder
 from scripts.calculate_std import calculate_file_stats, calculate_stds_percentages
+from scripts.compress_aux import PYTHON_CODERS, dataset_array, coders_array
+from scripts.compress_cpp import code_cpp, decode_cpp, code_decode_cpp
+from scripts.compress_args import CompressArgs
 
 
-PYTHON_CODERS = [CoderBasic, CoderPCA, CoderAPCA, CoderCA]
-
-
-def csv_row_count(input_path, input_filename):
-    csv = CSVReader(input_path, input_filename)
-    csv.close()
-    return csv.total_lines - 4
-
-
-def code_decode_python(args):
-    # read args
-    coder, coder_params, decoder = args['coder'], args['coder_params'], args['decoder']
-    input_path, input_filename = args['input_path'], args['input_filename']
-    output_path = args['output_path']
-    compressed_filename = input_filename.replace('.csv', '.c.csv')
-    decompressed_filename = input_filename.replace('.csv', '.c.d.csv')
-
-    # code
-    input_csv = CSVReader(input_path, input_filename, True)
-    c = coder(input_csv, output_path, compressed_filename, coder_params)
+def code_python(args):
+    args.code_python()
+    input_csv = CSVReader(args.input_path, args.input_filename, True)
+    c = args.coder(input_csv, args.output_path, args.compressed_filename, args.coder_params)
     c.code_file()
     c.close()
     coder_info = c.get_info()
     columns_bits = [column_code.total_bits for column_code in c.dataset.column_code_array]
+    return [coder_info, columns_bits]
 
-    # decode
-    output_csv = CSVWriter(output_path, decompressed_filename)
-    d = decoder(output_path, compressed_filename, output_csv, coder_params)
+
+def decode_python(args):
+    args.decode_python()
+    output_csv = CSVWriter(args.output_path, args.deco_filename)
+    d = args.decoder(args.output_path, args.compressed_filename, output_csv, args.coder_params)
     try:
         d.decode_file()
     except AssertionError as e:
@@ -57,35 +40,44 @@ def code_decode_python(args):
             print "ERROR: Reached End Of File."
     d.close()
 
+
+def code_decode_python(args):
+    coder_info, columns_bits = code_python(args)
+    decode_python(args)
     return [coder_info, columns_bits]
 
 
-def code_decode_cpp(args):
-    return [0, 0]
-
-
 def compress_file(args):
-    # read args
-    coder, coder_params, decoder = args['coder'], args['coder_params'], args['decoder']
-    input_path, input_filename = args['input_path'], args['input_filename']
-    output_path = args['output_path']
-    compressed_filename = input_filename.replace('.csv', '.c.csv')
-    decompressed_filename = input_filename.replace('.csv', '.c.d.csv')
+    coder_info, columns_bits = code_python(args)
+    py_filename = args.compressed_filename
+    code_cpp(args)
+    cpp_filename = args.compressed_filename
+    print "Comparing compressed files..."
+    assert(BitStreamUtils.compare_files(args.output_path, py_filename, args.output_path, cpp_filename))
 
-    if coder in PYTHON_CODERS:
-        coder_info, columns_bits = code_decode_python(args)
-    else:
-        coder_info, columns_bits = code_decode_cpp(args)
+    decode_python(args)
+    py_filename = args.deco_filename
+    decode_cpp(args)
+    cpp_filename = args.deco_filename
+    print "Comparing decompressed files..."
+    assert(BitStreamUtils.compare_files(args.output_path, py_filename, args.output_path, cpp_filename))
+    assert(BitStreamUtils.compare_files(args.input_path, args.input_filename, args.output_path, cpp_filename))
+    same_file = True
+
+    # if args.coder in PYTHON_CODERS:
+    #     coder_info, columns_bits = code_decode_python(args)
+    # else:
+    #     coder_info, columns_bits = code_decode_cpp(args)
 
     # compare
-    csv_compare = CSVCompare(input_path, input_filename, output_path, decompressed_filename)
-    same_file = csv_compare.compare(coder_params.get('error_threshold'))
+    # csv_compare = CSVCompare(args.input_path, args.input_filename, args.output_path, args.deco_filename)
+    # same_file = csv_compare.compare(args.coder_params.get('error_threshold'))
+    # assert same_file
 
     # print results
-    logger = args['logger']
-    input_file = input_path + "/" + input_filename
-    compressed_file = output_path + "/" + compressed_filename
-    compressed_size = print_results(coder_info, logger, input_file, compressed_file, same_file)
+    input_file = args.input_path + "/" + args.input_filename
+    compressed_file = args.output_path + "/" + args.compressed_filename
+    compressed_size = print_results(coder_info, args.logger, input_file, compressed_file, same_file)
     return [compressed_size] + columns_bits
 
 
@@ -109,68 +101,12 @@ def print_results(coder_info, logger, input_file, compressed_file, same_file):
     logger.info("")
     return compressed_size
 
-#
-# dataset_array = [
-#     {'name': 'IRKIS', 'folder': "[1]irkis", 'logger': "irkis.log", 'o_folder': "[1]irkis"},
-#     {'name': 'NOAA-SST', 'folder': "[2]noaa-sst/months/2017", 'logger': "noaa-sst.log", 'o_folder': "[2]noaa-sst"},
-#     {'name': 'NOAA-ADCP', 'folder': "[3]noaa-adcp/2015", 'logger': "noaa-adcp.log", 'o_folder': "[3]noaa-adcp"},
-#     {'name': 'SolarAnywhere', 'folder': "[4]solar-anywhere/2011", 'logger': "solar-anywhere.log", 'o_folder': "[4]solar-anywhere"},
-#     {'name': 'ElNino', 'folder': "[5]el-nino", 'logger': "el-nino.log", 'o_folder': "[5]el-nino"},
-#     {'name': 'NOAA-SPC-hail', 'folder': "[6]noaa-spc-reports/hail", 'logger': "noaa-spc-hail.log", 'o_folder': "[6]noaa-spc-reports"},
-#     {'name': 'NOAA-SPC-tornado', 'folder': "[6]noaa-spc-reports/tornado", 'logger': "noaa-spc-tornado.log", 'o_folder': "[6]noaa-spc-reports"},
-#     {'name': 'NOAA-SPC-wind', 'folder': "[6]noaa-spc-reports/wind", 'logger': "noaa-spc-wind.log", 'o_folder': "[6]noaa-spc-reports"}
-# ]
-
-dataset_array = [
-    # {'name': 'CO2', 'folder': "CO2", 'logger': "CO2.log", 'o_folder': "CO2"},
-    # {'name': 'Humidity', 'folder': "Humidity", 'logger': "Humidity.log", 'o_folder': "Humidity"},
-    # {'name': 'Lysimeter', 'folder': "Lysimeter", 'logger': "Lysimeter.log", 'o_folder': "Lysimeter"},
-    # {'name': 'Moisture', 'folder': "Moisture", 'logger': "Moisture.log", 'o_folder': "Moisture"},
-    # {'name': 'Pressure', 'folder': "Pressure", 'logger': "Pressure.log", 'o_folder': "Pressure"},
-    # {'name': 'Radiation', 'folder': "Radiation", 'logger': "Radiation.log", 'o_folder': "Radiation"},
-    # {'name': 'Snow_height', 'folder': "Snow_height", 'logger': "Snow_height.log", 'o_folder': "Snow_height"},
-    # {'name': 'Temperature', 'folder': "Temperature", 'logger': "Temperature.log", 'o_folder': "Temperature"},
-    # {'name': 'Voltage', 'folder': "Voltage", 'logger': "Voltage.log", 'o_folder': "Voltage"},
-    {'name': 'Wind_direction', 'folder': "Wind_direction", 'logger': "Wind_direction.log", 'o_folder': "Wind_direction"},
-    {'name': 'Wind_speed', 'folder': "Wind_speed", 'logger': "Wind_speed.log", 'o_folder': "Wind_speed"},
-]
-
-coders_array = [
-    {
-        'name': 'CoderBasic',
-        'coder': CoderBasic,
-        'decoder': DecoderBasic,
-        'o_folder': 'basic'
-    },
-    {
-        'name': 'CoderPCA',
-        'coder': CoderPCA,
-        'decoder': DecoderPCA,
-        'o_folder': 'pca',
-        'params': {'fixed_window_size': [5, 10, 25, 50, 100, 200]}
-    },
-    {
-        'name': 'CoderAPCA',
-        'coder': CoderAPCA,
-        'decoder': DecoderAPCA,
-        'o_folder': 'apca',
-        'params': {'max_window_size': [5, 10, 25, 50, 100, 200]}
-    },
-    {
-        'name': 'CoderCA',
-        'coder': CoderCA,
-        'decoder': DecoderCA,
-        'o_folder': 'ca',
-        'params': {'max_window_size': [5, 10, 25, 50, 100, 200]}
-    },
-]
-
 
 def script(output_filename):
-    # datasets_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/"
-    datasets_path = "/Users/pablocerve/Documents/FING/Proyecto/results/paper_csv/3-without-outliers/"
-    # output_path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/"
-    output_path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/paper-output/"
+    datasets_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/"
+    # datasets_path = "/Users/pablocerve/Documents/FING/Proyecto/results/paper_csv/3-without-outliers/"
+    output_path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/"
+    # output_path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/paper-output/"
 
     csv = CSVWriter(output_path, output_filename)
     csv.write_row(['Dataset', 'Filename', '#rows', 'Coder', '%', 'Error Threshold',
@@ -198,7 +134,7 @@ def run_script_on_dataset(csv, datasets_path, dataset_dictionary, output_path):
 
 def run_script_on_file(csv, id1, row, logger, input_path, input_filename, output_dataset_path):
     base_values = None
-    row_count = PrintUtils.separate(csv_row_count(input_path, input_filename))
+    row_count = PrintUtils.separate(CSVUtils.csv_row_count(input_path, input_filename))
 
     # calculate error thresholds
     percentages = [0, 3, 5, 10, 15, 20, 30]
@@ -232,7 +168,8 @@ def run_script_on_coder(csv, row, coder_dictionary, output_dataset_path, logger,
             'input_filename': input_filename,
             'output_path': output_dataset_coder_path
         }
-        compression_values = compress_file(args)
+        compress_args = CompressArgs(args)
+        compression_values = compress_file(compress_args)
         base_values = out_results(base_values, compression_values, row + values, csv)
     else:
         # CoderPCA, CoderAPCA and CoderCA
@@ -258,7 +195,8 @@ def run_script_on_coder(csv, row, coder_dictionary, output_dataset_path, logger,
                     'input_filename': input_filename,
                     'output_path': output_dataset_coder_path
                 }
-                compression_values = compress_file(args)
+                compress_args = CompressArgs(args)
+                compression_values = compress_file(compress_args)
                 base_values = out_results(base_values, compression_values, row + values, csv)
     return base_values
 
@@ -276,4 +214,16 @@ def out_results(base_values, compression_values, row, csv):
     csv.write_row(row + values)
     return base_values
 
+
+def compare():
+    path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[6]noaa-spc-reports/basic"
+    file1 = "noaa_spc-wind.c.cpp.csv"
+    file2 = "noaa_spc-wind.c.python.csv"
+    path1 = path + "/" + file1
+    path2 = path + "/" + file2
+    print file1 + " " + str(os.path.getsize(path1))
+    print file2 + " " + str(os.path.getsize(path2))
+    assert(BitStreamUtils.compare_files(path, file1, path, file2))
+
 script("results.csv")
+# compare()

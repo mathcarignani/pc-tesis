@@ -36,9 +36,9 @@ int BitStreamUtils::compareBytes(std::string path1, std::string filename1, std::
         if (reader2->reachedEOF()) return byte_count;
         unsigned int reader1_byte = reader1->getInt(8);
         unsigned int reader2_byte = reader2->getInt(8);
-        std::cout << "byte " << byte_count << " " << reader1_byte << " " << reader2_byte << std::endl;
-//        if (reader1_byte!=reader2_byte) return byte_count;
-        if (byte_count == 30) { return byte_count; }
+//        std::cout << "byte " << byte_count << " " << reader1_byte << " " << reader2_byte << std::endl;
+        if (reader1_byte!=reader2_byte) return byte_count;
+//        if (byte_count == 100) { return byte_count; }
         byte_count++;
     }
     if (!reader2->reachedEOF()) return byte_count;

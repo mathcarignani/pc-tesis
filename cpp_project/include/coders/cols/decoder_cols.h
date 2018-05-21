@@ -8,9 +8,10 @@ class DecoderCols: public DecoderBase {
 
 private:
     void decodeDataRows() override;
-    virtual void decodeColumn() = 0;
+    virtual std::vector<std::string> decodeColumn() = 0;
 
 public:
+    int column_index = 0;
     using DecoderBase::DecoderBase;
 
 };

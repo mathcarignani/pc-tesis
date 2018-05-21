@@ -12,9 +12,8 @@ class DecoderBase {
 private:
     void decodeDataRowsCount();
     virtual void decodeDataRows() = 0;
-//    void decodeValue(std::string y, int row_index, int col_index);
-//    void decodeRaw();
-//    void decodeValueRaw(int row_index, int col_index);
+    std::string decodeValue(int y);
+    int decodeRaw();
 
 protected:
     BitStreamReader &input_file;
@@ -22,6 +21,8 @@ protected:
     Dataset dataset;
     int data_columns_count;
     int data_rows_count;
+
+    std::string decodeValueRaw();
 
 public:
     DecoderBase(BitStreamReader &input_file, CSVWriter &output_csv) : input_file(input_file), output_csv(output_csv) { }

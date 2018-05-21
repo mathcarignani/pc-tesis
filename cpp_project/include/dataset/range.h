@@ -17,6 +17,14 @@ struct Range {
         begin = b;
         end = e;
     }
+
+    bool insideRange(int value){
+        return (begin <= value and value <= end);
+    }
+
+    void print(){
+        std::cout << "Range = [" << begin << "," << end << "]" << std::endl;
+    }
 };
 
 #endif //CPP_PROJECT_RANGE_H

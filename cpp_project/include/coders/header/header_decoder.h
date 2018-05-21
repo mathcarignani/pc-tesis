@@ -18,11 +18,11 @@ public:
 private:
     BitStreamReader &input_file;
     CSVWriter &output_csv;
-    void decodeDatasetName(DatasetUtils & dataset_utils);
+    std::string decodeDatasetName(DatasetUtils & dataset_utils);
     void decodeTimeUnit(DatasetUtils & dataset_utils);
     void decodeFirstTimestamp();
     static std::string decodeTimestamp(long int seconds);
-    void decodeColumnNames();
+    int decodeColumnNames();
 };
 
 #endif //CPP_PROJECT_HEADER_DECODER_H

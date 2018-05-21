@@ -3,6 +3,8 @@
 
 CMakeFiles/cpp_project.dir/main.cpp.o
  ../include/datetime_utils.h
+ ../include/file_utils/bit_stream/bit_stream_utils.h
+ ../include/file_utils/bit_stream/bit_stream_writer.h
  ../include/scripts.h
  ../include/tests.h
  /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/main.cpp
