@@ -30,9 +30,9 @@ void Dataset::setColumn(int column_index){
 }
 
 int Dataset::getBits(){
-    int bits = column_code.bits;
-    column_code.addBits(bits);
-    return bits;
+//    int bits = column_code.bits;
+//    column_code.addBits(bits);
+    return column_code.bits;
 }
 
 int Dataset::bits(){

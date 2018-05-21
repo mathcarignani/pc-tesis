@@ -29,7 +29,10 @@ class CSVCompare:
             print "ERROR: reach end of file", file_name
             return False
         else:
-            print "Same files!"
+            if threshold is None:
+                print "Same files! - without threshold"
+            else:
+                print "Same files! - compared with threshold = ", threshold
             return True
 
     @classmethod
@@ -41,24 +44,29 @@ class CSVCompare:
             print "len(row1) = %s != %s = len(row2)" % (len(row1), len(row2))
             return True
 
-        for idx, val in enumerate(row2):
-            idx_error = False
+        idx_error = False
+        for idx in xrange(len(row1)):
             if row1[idx] == 'N' or row2[idx] == 'N':  # both values must be 'N'
                 if row1[idx] != 'N' or row2[idx] != 'N':
                     idx_error = True
             else:
-                error_threshold = 0 if threshold is None else threshold[idx]
-                # two numbers
-                abs_diff = abs(int(row1[idx]) - int(row2[idx]))
-                if abs_diff > error_threshold:
-                    print 'abs_diff', abs_diff, 'error_threshold', error_threshold
-                    idx_error = True
+                if threshold is None:  # compare strings instead of int
+                    # print self.row_count
+                    if row1[idx] != row2[idx]:
+                        idx_error = True
+                else:
+                    error_threshold = threshold[idx]
+                    # two numbers
+                    abs_diff = abs(int(row1[idx]) - int(row2[idx]))
+                    if abs_diff > error_threshold:
+                        print 'abs_diff', abs_diff, 'error_threshold', error_threshold
+                        idx_error = True
 
             if idx_error:
                 self._print_idx_error(idx, row1, row2)
                 return True
-            else:
-                return False
+
+        return False
 
     def _print_row_count(self):
         print "row_count = %s" % str(self.row_count)

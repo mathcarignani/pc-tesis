@@ -32,10 +32,10 @@ int main(int argc, char *argv[]){
 
         return 0;
     }
-//    std::string path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[6]noaa-spc-reports/basic";
-//    assert(BitStreamUtils::compareBytes(path, "noaa_spc-wind.c.cpp.csv", path, "noaa_spc-wind.c.python.csv") == 0);
+    std::string path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[3]noaa-adcp/basic";
+    assert(BitStreamUtils::compareBytes(path, "noaa-adcp-201501.c.cpp.csv", path, "noaa-adcp-201501.c.python.csv") == 0);
 //    Scripts::copyAndCompareCSV();
-    Scripts::codeAndDecodeCSV();
+//    Scripts::codeAndDecodeCSV();
 
 //    Tests::testDatasetUtils();
 //    Tests::testDatetimeUtils();

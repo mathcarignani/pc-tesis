@@ -59,10 +59,13 @@ def compress_file(args):
     py_filename = args.deco_filename
     decode_cpp(args)
     cpp_filename = args.deco_filename
-    print "Comparing decompressed files..."
+    # print "Comparing decompressed files..."
     assert(BitStreamUtils.compare_files(args.output_path, py_filename, args.output_path, cpp_filename))
     assert(BitStreamUtils.compare_files(args.input_path, args.input_filename, args.output_path, cpp_filename))
     same_file = True
+    # csv_compare = CSVCompare(args.input_path, args.input_filename, args.output_path, cpp_filename)
+    # same_file = csv_compare.compare(args.coder_params.get('error_threshold'))
+    # assert same_file
 
     # if args.coder in PYTHON_CODERS:
     #     coder_info, columns_bits = code_decode_python(args)
