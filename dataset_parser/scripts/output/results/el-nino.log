@@ -1,0 +1,12 @@
+
+RESULTS
+--------------------------(same file!)
+CoderBase
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[5]el-nino/basic/el-nino.c.cpp.csv
+-> size (bytes): 4,926,794
+-> 50.17% of original
+

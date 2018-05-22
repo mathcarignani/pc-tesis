@@ -13,6 +13,8 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/decoder_base.cpp" "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/decoder_base.cpp.o"
   "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/header/header_coder.cpp" "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/header/header_coder.cpp.o"
   "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/header/header_decoder.cpp" "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/header/header_decoder.cpp.o"
+  "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/pca/coder_pca.cpp" "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/pca/coder_pca.cpp.o"
+  "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/pca/decoder_pca.cpp" "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/pca/decoder_pca.cpp.o"
   "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/dataset/column_code.cpp" "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles/cpp_project.dir/src/dataset/column_code.cpp.o"
   "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/dataset/dataset.cpp" "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles/cpp_project.dir/src/dataset/dataset.cpp.o"
   "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/dataset/dataset_utils.cpp" "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles/cpp_project.dir/src/dataset/dataset_utils.cpp.o"
@@ -41,6 +43,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../include/coders"
   "../include/coders/cols"
   "../include/coders/basic"
+  "../include/coders/pca"
   "../include/dataset"
   )
 

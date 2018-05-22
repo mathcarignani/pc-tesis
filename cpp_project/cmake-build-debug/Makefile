@@ -366,6 +366,60 @@ src/coders/header/header_decoder.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/header/header_decoder.cpp.s
 .PHONY : src/coders/header/header_decoder.cpp.s
 
+src/coders/pca/coder_pca.o: src/coders/pca/coder_pca.cpp.o
+
+.PHONY : src/coders/pca/coder_pca.o
+
+# target to build an object file
+src/coders/pca/coder_pca.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/pca/coder_pca.cpp.o
+.PHONY : src/coders/pca/coder_pca.cpp.o
+
+src/coders/pca/coder_pca.i: src/coders/pca/coder_pca.cpp.i
+
+.PHONY : src/coders/pca/coder_pca.i
+
+# target to preprocess a source file
+src/coders/pca/coder_pca.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/pca/coder_pca.cpp.i
+.PHONY : src/coders/pca/coder_pca.cpp.i
+
+src/coders/pca/coder_pca.s: src/coders/pca/coder_pca.cpp.s
+
+.PHONY : src/coders/pca/coder_pca.s
+
+# target to generate assembly for a file
+src/coders/pca/coder_pca.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/pca/coder_pca.cpp.s
+.PHONY : src/coders/pca/coder_pca.cpp.s
+
+src/coders/pca/decoder_pca.o: src/coders/pca/decoder_pca.cpp.o
+
+.PHONY : src/coders/pca/decoder_pca.o
+
+# target to build an object file
+src/coders/pca/decoder_pca.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/pca/decoder_pca.cpp.o
+.PHONY : src/coders/pca/decoder_pca.cpp.o
+
+src/coders/pca/decoder_pca.i: src/coders/pca/decoder_pca.cpp.i
+
+.PHONY : src/coders/pca/decoder_pca.i
+
+# target to preprocess a source file
+src/coders/pca/decoder_pca.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/pca/decoder_pca.cpp.i
+.PHONY : src/coders/pca/decoder_pca.cpp.i
+
+src/coders/pca/decoder_pca.s: src/coders/pca/decoder_pca.cpp.s
+
+.PHONY : src/coders/pca/decoder_pca.s
+
+# target to generate assembly for a file
+src/coders/pca/decoder_pca.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/pca/decoder_pca.cpp.s
+.PHONY : src/coders/pca/decoder_pca.cpp.s
+
 src/dataset/column_code.o: src/dataset/column_code.cpp.o
 
 .PHONY : src/dataset/column_code.o
@@ -807,6 +861,12 @@ help:
 	@echo "... src/coders/header/header_decoder.o"
 	@echo "... src/coders/header/header_decoder.i"
 	@echo "... src/coders/header/header_decoder.s"
+	@echo "... src/coders/pca/coder_pca.o"
+	@echo "... src/coders/pca/coder_pca.i"
+	@echo "... src/coders/pca/coder_pca.s"
+	@echo "... src/coders/pca/decoder_pca.o"
+	@echo "... src/coders/pca/decoder_pca.i"
+	@echo "... src/coders/pca/decoder_pca.s"
 	@echo "... src/dataset/column_code.o"
 	@echo "... src/dataset/column_code.i"
 	@echo "... src/dataset/column_code.s"

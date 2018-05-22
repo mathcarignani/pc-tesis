@@ -97,6 +97,10 @@ CMakeFiles/cpp_project.dir/src/coders/header/header_decoder.cpp.o
  ../include/file_utils/text/text_reader.h
  ../include/string_utils.h
  /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/header/header_decoder.cpp
+CMakeFiles/cpp_project.dir/src/coders/pca/coder_pca.cpp.o
+ /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/pca/coder_pca.cpp
+CMakeFiles/cpp_project.dir/src/coders/pca/decoder_pca.cpp.o
+ /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/pca/decoder_pca.cpp
 CMakeFiles/cpp_project.dir/src/dataset/column_code.cpp.o
  ../include/dataset/column_code.h
  ../include/dataset/range.h

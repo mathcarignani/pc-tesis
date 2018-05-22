@@ -97,6 +97,10 @@ CMakeFiles/cpp_project.dir/src/coders/header/header_decoder.cpp.o: ../include/fi
 CMakeFiles/cpp_project.dir/src/coders/header/header_decoder.cpp.o: ../include/string_utils.h
 CMakeFiles/cpp_project.dir/src/coders/header/header_decoder.cpp.o: ../src/coders/header/header_decoder.cpp
 
+CMakeFiles/cpp_project.dir/src/coders/pca/coder_pca.cpp.o: ../src/coders/pca/coder_pca.cpp
+
+CMakeFiles/cpp_project.dir/src/coders/pca/decoder_pca.cpp.o: ../src/coders/pca/decoder_pca.cpp
+
 CMakeFiles/cpp_project.dir/src/dataset/column_code.cpp.o: ../include/dataset/column_code.h
 CMakeFiles/cpp_project.dir/src/dataset/column_code.cpp.o: ../include/dataset/range.h
 CMakeFiles/cpp_project.dir/src/dataset/column_code.cpp.o: ../src/dataset/column_code.cpp

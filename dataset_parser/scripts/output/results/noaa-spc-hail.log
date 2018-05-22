@@ -1,0 +1,12 @@
+
+RESULTS
+--------------------------(same file!)
+CoderBase
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[6]noaa-spc-reports/hail/noaa_spc-hail.csv
+-> size (bytes): 322,005
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[6]noaa-spc-reports/basic/noaa_spc-hail.c.cpp.csv
+-> size (bytes): 110,920
+-> 34.45% of original
+
