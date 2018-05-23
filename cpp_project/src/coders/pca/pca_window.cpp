@@ -26,51 +26,52 @@ void PCAWindow::updateConstantValue(){
 }
 
 void PCAWindow::addValue(std::string x){
-    if (length == 0){ // first value to be added
-        if (x[0] == 'N'){
-            nan_window = true;
-            constant_value = "N";
-        }
-        else { // x is an integer
-            nan_window = false;
-            int x_int = std::stoi(x);
-            min = x_int;
-            max = x_int;
-            constant_value = x;
-        }
-    }
-    else { // not the first value to be added
-        if (x[0] == 'N'){
-            if (!nan_window){
-                constant_value = "";
-            }
-        }
-        else { // x is an integer
-            if (nan_window) {
-                nan_window = false;
-                constant_value = "";
-            }
-            else if (hasConstantValue()){
-                int x_int = std::stoi(x);
-                updateMinAndMax(x_int);
-                bool valid_threshold = validThreshold(min, max, error_threshold);
-                if (valid_threshold){
-                    updateConstantValue();
-                }
-                else {
-                    constant_value = "";
-                }
-            }
-        }
-
-    }
+    if (isEmpty()){ addFirstValue(x);    }
+    else {         addNonFirstValue(x); }
     array->push_back(x);
     length++;
 }
 
+void PCAWindow::addFirstValue(std::string x){
+    if (x[0] == 'N'){
+        nan_window = true;
+        constant_value = "N";
+    }
+    else { // x is an integer
+        nan_window = false;
+        int x_int = std::stoi(x);
+        min = x_int;
+        max = x_int;
+        constant_value = x;
+    }
+}
+
+void PCAWindow::addNonFirstValue(std::string x){
+    if (x[0] == 'N'){
+        if (!nan_window){
+            constant_value = "";
+        }
+    }
+    else { // x is an integer
+        if (nan_window) {
+            nan_window = false;
+            constant_value = "";
+        }
+        else if (hasConstantValue()){
+            int x_int = std::stoi(x);
+            updateMinAndMax(x_int);
+            bool valid_threshold = validThreshold(min, max, error_threshold);
+            if (valid_threshold){
+                updateConstantValue();
+            }
+            else {
+                constant_value = "";
+            }
+        }
+    }
+}
+
 bool PCAWindow::isFull(){
-//    std::cout << "length = " << length << std::endl;
-//    std::cout << "fixed_window_size = " << fixed_window_size << std::endl;
     return length == fixed_window_size;
 }
 
@@ -95,7 +96,5 @@ bool PCAWindow::validThreshold(int min, int max, int error_threshold){
 }
 
 std::string PCAWindow::getElement(int pos){
-//    std::cout << "length = " << length << std::endl;
-//    std::cout << "pos = " << pos << std::endl;
     return array->at(pos);
 }

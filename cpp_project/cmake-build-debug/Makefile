@@ -150,6 +150,87 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+src/coders/apca/apca_window.o: src/coders/apca/apca_window.cpp.o
+
+.PHONY : src/coders/apca/apca_window.o
+
+# target to build an object file
+src/coders/apca/apca_window.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/apca/apca_window.cpp.o
+.PHONY : src/coders/apca/apca_window.cpp.o
+
+src/coders/apca/apca_window.i: src/coders/apca/apca_window.cpp.i
+
+.PHONY : src/coders/apca/apca_window.i
+
+# target to preprocess a source file
+src/coders/apca/apca_window.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/apca/apca_window.cpp.i
+.PHONY : src/coders/apca/apca_window.cpp.i
+
+src/coders/apca/apca_window.s: src/coders/apca/apca_window.cpp.s
+
+.PHONY : src/coders/apca/apca_window.s
+
+# target to generate assembly for a file
+src/coders/apca/apca_window.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/apca/apca_window.cpp.s
+.PHONY : src/coders/apca/apca_window.cpp.s
+
+src/coders/apca/coder_apca.o: src/coders/apca/coder_apca.cpp.o
+
+.PHONY : src/coders/apca/coder_apca.o
+
+# target to build an object file
+src/coders/apca/coder_apca.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/apca/coder_apca.cpp.o
+.PHONY : src/coders/apca/coder_apca.cpp.o
+
+src/coders/apca/coder_apca.i: src/coders/apca/coder_apca.cpp.i
+
+.PHONY : src/coders/apca/coder_apca.i
+
+# target to preprocess a source file
+src/coders/apca/coder_apca.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/apca/coder_apca.cpp.i
+.PHONY : src/coders/apca/coder_apca.cpp.i
+
+src/coders/apca/coder_apca.s: src/coders/apca/coder_apca.cpp.s
+
+.PHONY : src/coders/apca/coder_apca.s
+
+# target to generate assembly for a file
+src/coders/apca/coder_apca.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/apca/coder_apca.cpp.s
+.PHONY : src/coders/apca/coder_apca.cpp.s
+
+src/coders/apca/decoder_apca.o: src/coders/apca/decoder_apca.cpp.o
+
+.PHONY : src/coders/apca/decoder_apca.o
+
+# target to build an object file
+src/coders/apca/decoder_apca.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/apca/decoder_apca.cpp.o
+.PHONY : src/coders/apca/decoder_apca.cpp.o
+
+src/coders/apca/decoder_apca.i: src/coders/apca/decoder_apca.cpp.i
+
+.PHONY : src/coders/apca/decoder_apca.i
+
+# target to preprocess a source file
+src/coders/apca/decoder_apca.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/apca/decoder_apca.cpp.i
+.PHONY : src/coders/apca/decoder_apca.cpp.i
+
+src/coders/apca/decoder_apca.s: src/coders/apca/decoder_apca.cpp.s
+
+.PHONY : src/coders/apca/decoder_apca.s
+
+# target to generate assembly for a file
+src/coders/apca/decoder_apca.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/apca/decoder_apca.cpp.s
+.PHONY : src/coders/apca/decoder_apca.cpp.s
+
 src/coders/basic/coder_basic.o: src/coders/basic/coder_basic.cpp.o
 
 .PHONY : src/coders/basic/coder_basic.o
@@ -864,6 +945,15 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... src/coders/apca/apca_window.o"
+	@echo "... src/coders/apca/apca_window.i"
+	@echo "... src/coders/apca/apca_window.s"
+	@echo "... src/coders/apca/coder_apca.o"
+	@echo "... src/coders/apca/coder_apca.i"
+	@echo "... src/coders/apca/coder_apca.s"
+	@echo "... src/coders/apca/decoder_apca.o"
+	@echo "... src/coders/apca/decoder_apca.i"
+	@echo "... src/coders/apca/decoder_apca.s"
 	@echo "... src/coders/basic/coder_basic.o"
 	@echo "... src/coders/basic/coder_basic.i"
 	@echo "... src/coders/basic/coder_basic.s"

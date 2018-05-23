@@ -6,6 +6,7 @@
 #include "decoder_basic.h"
 #include "coder_pca.h"
 //#include "decoder_pca.h"
+#include "coder_apca.h"
 #include "csv_utils.h"
 #include "bit_stream_utils.h"
 #include "assert.h"
@@ -42,7 +43,22 @@ void Scripts::decodePCA(Path input_path, Path output_path, int fixed_window_size
 
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+void Scripts::codeAPCA(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector){
+    CSVReader csv_reader = CSVReader(input_path);
+    BitStreamWriter bit_stream_writer = BitStreamWriter(output_path);
+    CoderAPCA coder = CoderAPCA(csv_reader, bit_stream_writer);
+    coder.setCoderParams(max_window_size, error_thresholds_vector);
+    coder.codeFile();
+    coder.close();
+}
+
+void Scripts::decodeAPCA(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector){
+
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void Scripts::copyAndCompareCSV(){
     std::string project_path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project";
@@ -69,7 +85,7 @@ void Scripts::codeAndDecodeCSV(){
     std::cout << "codeCSV" << std::endl;
     std::vector<int> error_thresholds_vector;
     for(int i=0; i < 11; i++) { error_thresholds_vector.push_back(0); }
-    codePCA(input_path, coded_path, 5, error_thresholds_vector);
+    codeAPCA(input_path, coded_path, 5, error_thresholds_vector);
 
 
 //    std::cout << "codeCSV" << std::endl;

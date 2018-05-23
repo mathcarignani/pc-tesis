@@ -5,6 +5,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/main.cpp" "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles/cpp_project.dir/main.cpp.o"
+  "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/apca/apca_window.cpp" "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/apca/apca_window.cpp.o"
+  "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/apca/coder_apca.cpp" "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/apca/coder_apca.cpp.o"
+  "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/apca/decoder_apca.cpp" "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/apca/decoder_apca.cpp.o"
   "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/basic/coder_basic.cpp" "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/basic/coder_basic.cpp.o"
   "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/basic/decoder_basic.cpp" "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/basic/decoder_basic.cpp.o"
   "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/coder_base.cpp" "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/coder_base.cpp.o"
@@ -46,6 +49,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../include/coders/cols"
   "../include/coders/basic"
   "../include/coders/pca"
+  "../include/coders/apca"
   "../include/dataset"
   )
 

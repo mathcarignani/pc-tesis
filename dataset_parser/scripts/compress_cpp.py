@@ -43,6 +43,10 @@ def coder_params(args):
         error_thresholds = " ".join(str(i) for i in args.coder_params['error_threshold'])
         string = "CoderPCA " + str(args.coder_params['fixed_window_size']) + " " + error_thresholds
         return string
+    elif args.coder_name == "CoderAPCA":
+        error_thresholds = " ".join(str(i) for i in args.coder_params['error_threshold'])
+        string = "CoderAPCA " + str(args.coder_params['max_window_size']) + " " + error_thresholds
+        return string
 
 
 def code_decode_cpp(args):

@@ -6,6 +6,18 @@
 
 #IncludeRegexTransform: 
 
+../include/coders/apca/apca_window.h
+vector
+-
+string
+-
+
+../include/coders/apca/coder_apca.h
+coder_cols.h
+../include/coders/apca/coder_cols.h
+apca_window.h
+../include/coders/apca/apca_window.h
+
 ../include/coders/basic/coder_basic.h
 coder_cols.h
 ../include/coders/basic/coder_cols.h
@@ -212,6 +224,20 @@ stdlib.h
 vector
 -
 
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/apca/apca_window.cpp
+apca_window.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/apca/apca_window.h
+string_utils.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/apca/string_utils.h
+pca_window.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/apca/pca_window.h
+
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/apca/coder_apca.cpp
+coder_apca.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/apca/coder_apca.h
+
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/apca/decoder_apca.cpp
+
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/basic/coder_basic.cpp
 coder_basic.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/basic/coder_basic.h
@@ -411,6 +437,8 @@ decoder_basic.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/decoder_basic.h
 coder_pca.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coder_pca.h
+coder_apca.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coder_apca.h
 csv_utils.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/csv_utils.h
 bit_stream_utils.h

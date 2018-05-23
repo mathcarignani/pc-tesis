@@ -633,9 +633,81 @@ CMakeFiles/cpp_project.dir/src/coders/pca/decoder_pca.cpp.o.provides: CMakeFiles
 CMakeFiles/cpp_project.dir/src/coders/pca/decoder_pca.cpp.o.provides.build: CMakeFiles/cpp_project.dir/src/coders/pca/decoder_pca.cpp.o
 
 
+CMakeFiles/cpp_project.dir/src/coders/apca/apca_window.cpp.o: CMakeFiles/cpp_project.dir/flags.make
+CMakeFiles/cpp_project.dir/src/coders/apca/apca_window.cpp.o: ../src/coders/apca/apca_window.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/cpp_project.dir/src/coders/apca/apca_window.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp_project.dir/src/coders/apca/apca_window.cpp.o -c /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/apca/apca_window.cpp
+
+CMakeFiles/cpp_project.dir/src/coders/apca/apca_window.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cpp_project.dir/src/coders/apca/apca_window.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/apca/apca_window.cpp > CMakeFiles/cpp_project.dir/src/coders/apca/apca_window.cpp.i
+
+CMakeFiles/cpp_project.dir/src/coders/apca/apca_window.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpp_project.dir/src/coders/apca/apca_window.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/apca/apca_window.cpp -o CMakeFiles/cpp_project.dir/src/coders/apca/apca_window.cpp.s
+
+CMakeFiles/cpp_project.dir/src/coders/apca/apca_window.cpp.o.requires:
+
+.PHONY : CMakeFiles/cpp_project.dir/src/coders/apca/apca_window.cpp.o.requires
+
+CMakeFiles/cpp_project.dir/src/coders/apca/apca_window.cpp.o.provides: CMakeFiles/cpp_project.dir/src/coders/apca/apca_window.cpp.o.requires
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/apca/apca_window.cpp.o.provides.build
+.PHONY : CMakeFiles/cpp_project.dir/src/coders/apca/apca_window.cpp.o.provides
+
+CMakeFiles/cpp_project.dir/src/coders/apca/apca_window.cpp.o.provides.build: CMakeFiles/cpp_project.dir/src/coders/apca/apca_window.cpp.o
+
+
+CMakeFiles/cpp_project.dir/src/coders/apca/coder_apca.cpp.o: CMakeFiles/cpp_project.dir/flags.make
+CMakeFiles/cpp_project.dir/src/coders/apca/coder_apca.cpp.o: ../src/coders/apca/coder_apca.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/cpp_project.dir/src/coders/apca/coder_apca.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp_project.dir/src/coders/apca/coder_apca.cpp.o -c /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/apca/coder_apca.cpp
+
+CMakeFiles/cpp_project.dir/src/coders/apca/coder_apca.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cpp_project.dir/src/coders/apca/coder_apca.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/apca/coder_apca.cpp > CMakeFiles/cpp_project.dir/src/coders/apca/coder_apca.cpp.i
+
+CMakeFiles/cpp_project.dir/src/coders/apca/coder_apca.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpp_project.dir/src/coders/apca/coder_apca.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/apca/coder_apca.cpp -o CMakeFiles/cpp_project.dir/src/coders/apca/coder_apca.cpp.s
+
+CMakeFiles/cpp_project.dir/src/coders/apca/coder_apca.cpp.o.requires:
+
+.PHONY : CMakeFiles/cpp_project.dir/src/coders/apca/coder_apca.cpp.o.requires
+
+CMakeFiles/cpp_project.dir/src/coders/apca/coder_apca.cpp.o.provides: CMakeFiles/cpp_project.dir/src/coders/apca/coder_apca.cpp.o.requires
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/apca/coder_apca.cpp.o.provides.build
+.PHONY : CMakeFiles/cpp_project.dir/src/coders/apca/coder_apca.cpp.o.provides
+
+CMakeFiles/cpp_project.dir/src/coders/apca/coder_apca.cpp.o.provides.build: CMakeFiles/cpp_project.dir/src/coders/apca/coder_apca.cpp.o
+
+
+CMakeFiles/cpp_project.dir/src/coders/apca/decoder_apca.cpp.o: CMakeFiles/cpp_project.dir/flags.make
+CMakeFiles/cpp_project.dir/src/coders/apca/decoder_apca.cpp.o: ../src/coders/apca/decoder_apca.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/cpp_project.dir/src/coders/apca/decoder_apca.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp_project.dir/src/coders/apca/decoder_apca.cpp.o -c /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/apca/decoder_apca.cpp
+
+CMakeFiles/cpp_project.dir/src/coders/apca/decoder_apca.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cpp_project.dir/src/coders/apca/decoder_apca.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/apca/decoder_apca.cpp > CMakeFiles/cpp_project.dir/src/coders/apca/decoder_apca.cpp.i
+
+CMakeFiles/cpp_project.dir/src/coders/apca/decoder_apca.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpp_project.dir/src/coders/apca/decoder_apca.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/apca/decoder_apca.cpp -o CMakeFiles/cpp_project.dir/src/coders/apca/decoder_apca.cpp.s
+
+CMakeFiles/cpp_project.dir/src/coders/apca/decoder_apca.cpp.o.requires:
+
+.PHONY : CMakeFiles/cpp_project.dir/src/coders/apca/decoder_apca.cpp.o.requires
+
+CMakeFiles/cpp_project.dir/src/coders/apca/decoder_apca.cpp.o.provides: CMakeFiles/cpp_project.dir/src/coders/apca/decoder_apca.cpp.o.requires
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/apca/decoder_apca.cpp.o.provides.build
+.PHONY : CMakeFiles/cpp_project.dir/src/coders/apca/decoder_apca.cpp.o.provides
+
+CMakeFiles/cpp_project.dir/src/coders/apca/decoder_apca.cpp.o.provides.build: CMakeFiles/cpp_project.dir/src/coders/apca/decoder_apca.cpp.o
+
+
 CMakeFiles/cpp_project.dir/src/scripts.cpp.o: CMakeFiles/cpp_project.dir/flags.make
 CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../src/scripts.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/cpp_project.dir/src/scripts.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/cpp_project.dir/src/scripts.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp_project.dir/src/scripts.cpp.o -c /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/scripts.cpp
 
 CMakeFiles/cpp_project.dir/src/scripts.cpp.i: cmake_force
@@ -659,7 +731,7 @@ CMakeFiles/cpp_project.dir/src/scripts.cpp.o.provides.build: CMakeFiles/cpp_proj
 
 CMakeFiles/cpp_project.dir/src/tests.cpp.o: CMakeFiles/cpp_project.dir/flags.make
 CMakeFiles/cpp_project.dir/src/tests.cpp.o: ../src/tests.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/cpp_project.dir/src/tests.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/cpp_project.dir/src/tests.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp_project.dir/src/tests.cpp.o -c /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/tests.cpp
 
 CMakeFiles/cpp_project.dir/src/tests.cpp.i: cmake_force
@@ -683,7 +755,7 @@ CMakeFiles/cpp_project.dir/src/tests.cpp.o.provides.build: CMakeFiles/cpp_projec
 
 CMakeFiles/cpp_project.dir/main.cpp.o: CMakeFiles/cpp_project.dir/flags.make
 CMakeFiles/cpp_project.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/cpp_project.dir/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/cpp_project.dir/main.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp_project.dir/main.cpp.o -c /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/main.cpp
 
 CMakeFiles/cpp_project.dir/main.cpp.i: cmake_force
@@ -731,6 +803,9 @@ cpp_project_OBJECTS = \
 "CMakeFiles/cpp_project.dir/src/coders/pca/pca_window.cpp.o" \
 "CMakeFiles/cpp_project.dir/src/coders/pca/coder_pca.cpp.o" \
 "CMakeFiles/cpp_project.dir/src/coders/pca/decoder_pca.cpp.o" \
+"CMakeFiles/cpp_project.dir/src/coders/apca/apca_window.cpp.o" \
+"CMakeFiles/cpp_project.dir/src/coders/apca/coder_apca.cpp.o" \
+"CMakeFiles/cpp_project.dir/src/coders/apca/decoder_apca.cpp.o" \
 "CMakeFiles/cpp_project.dir/src/scripts.cpp.o" \
 "CMakeFiles/cpp_project.dir/src/tests.cpp.o" \
 "CMakeFiles/cpp_project.dir/main.cpp.o"
@@ -762,12 +837,15 @@ cpp_project: CMakeFiles/cpp_project.dir/src/coders/basic/decoder_basic.cpp.o
 cpp_project: CMakeFiles/cpp_project.dir/src/coders/pca/pca_window.cpp.o
 cpp_project: CMakeFiles/cpp_project.dir/src/coders/pca/coder_pca.cpp.o
 cpp_project: CMakeFiles/cpp_project.dir/src/coders/pca/decoder_pca.cpp.o
+cpp_project: CMakeFiles/cpp_project.dir/src/coders/apca/apca_window.cpp.o
+cpp_project: CMakeFiles/cpp_project.dir/src/coders/apca/coder_apca.cpp.o
+cpp_project: CMakeFiles/cpp_project.dir/src/coders/apca/decoder_apca.cpp.o
 cpp_project: CMakeFiles/cpp_project.dir/src/scripts.cpp.o
 cpp_project: CMakeFiles/cpp_project.dir/src/tests.cpp.o
 cpp_project: CMakeFiles/cpp_project.dir/main.cpp.o
 cpp_project: CMakeFiles/cpp_project.dir/build.make
 cpp_project: CMakeFiles/cpp_project.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Linking CXX executable cpp_project"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Linking CXX executable cpp_project"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cpp_project.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -799,6 +877,9 @@ CMakeFiles/cpp_project.dir/requires: CMakeFiles/cpp_project.dir/src/coders/basic
 CMakeFiles/cpp_project.dir/requires: CMakeFiles/cpp_project.dir/src/coders/pca/pca_window.cpp.o.requires
 CMakeFiles/cpp_project.dir/requires: CMakeFiles/cpp_project.dir/src/coders/pca/coder_pca.cpp.o.requires
 CMakeFiles/cpp_project.dir/requires: CMakeFiles/cpp_project.dir/src/coders/pca/decoder_pca.cpp.o.requires
+CMakeFiles/cpp_project.dir/requires: CMakeFiles/cpp_project.dir/src/coders/apca/apca_window.cpp.o.requires
+CMakeFiles/cpp_project.dir/requires: CMakeFiles/cpp_project.dir/src/coders/apca/coder_apca.cpp.o.requires
+CMakeFiles/cpp_project.dir/requires: CMakeFiles/cpp_project.dir/src/coders/apca/decoder_apca.cpp.o.requires
 CMakeFiles/cpp_project.dir/requires: CMakeFiles/cpp_project.dir/src/scripts.cpp.o.requires
 CMakeFiles/cpp_project.dir/requires: CMakeFiles/cpp_project.dir/src/tests.cpp.o.requires
 CMakeFiles/cpp_project.dir/requires: CMakeFiles/cpp_project.dir/main.cpp.o.requires

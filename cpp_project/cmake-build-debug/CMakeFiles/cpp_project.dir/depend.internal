@@ -9,6 +9,26 @@ CMakeFiles/cpp_project.dir/main.cpp.o
  ../include/scripts.h
  ../include/tests.h
  /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/main.cpp
+CMakeFiles/cpp_project.dir/src/coders/apca/apca_window.cpp.o
+ ../include/coders/apca/apca_window.h
+ ../include/coders/pca/pca_window.h
+ ../include/string_utils.h
+ /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/apca/apca_window.cpp
+CMakeFiles/cpp_project.dir/src/coders/apca/coder_apca.cpp.o
+ ../include/coders/apca/apca_window.h
+ ../include/coders/apca/coder_apca.h
+ ../include/coders/coder_base.h
+ ../include/coders/cols/coder_cols.h
+ ../include/dataset/column_code.h
+ ../include/dataset/dataset.h
+ ../include/dataset/range.h
+ ../include/file_utils/bit_stream/bit_stream_writer.h
+ ../include/file_utils/csv/csv_reader.h
+ ../include/file_utils/path.h
+ ../include/file_utils/text/text_reader.h
+ /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/apca/coder_apca.cpp
+CMakeFiles/cpp_project.dir/src/coders/apca/decoder_apca.cpp.o
+ /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/apca/decoder_apca.cpp
 CMakeFiles/cpp_project.dir/src/coders/basic/coder_basic.cpp.o
  ../include/coders/basic/coder_basic.h
  ../include/coders/coder_base.h
@@ -187,6 +207,8 @@ CMakeFiles/cpp_project.dir/src/file_utils/text/text_utils.cpp.o
  ../include/file_utils/text/text_utils.h
  /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/text/text_utils.cpp
 CMakeFiles/cpp_project.dir/src/scripts.cpp.o
+ ../include/coders/apca/apca_window.h
+ ../include/coders/apca/coder_apca.h
  ../include/coders/basic/coder_basic.h
  ../include/coders/basic/decoder_basic.h
  ../include/coders/coder_base.h

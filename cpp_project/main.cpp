@@ -34,17 +34,22 @@ int main(int argc, char *argv[]){
         if (action == "c"){   Scripts::codeBasic(input_path, output_path); }
         else              { Scripts::decodeBasic(input_path, output_path); }
     }
-    else if (coder_name == "CoderPCA"){
+    else if (coder_name == "CoderPCA" || coder_name == "CoderAPCA"){
         assert(argc >= 9);
-        int fixed_window_size = atoi(argv[7]);
+        int window_size = atoi(argv[7]); // fixed_window_size for PCA and max_window_size for APCA
         std::vector<int> error_thresholds_vector;
-        for(int i=8; i < argc; i++){
-            int error_threshold = atoi(argv[i]);
-            error_thresholds_vector.push_back(error_threshold);
+        for(int i=8; i < argc; i++){ error_thresholds_vector.push_back(atoi(argv[i])); }
+
+        if (coder_name == "CoderPCA"){
+            if (action == "c") {   Scripts::codePCA(input_path, output_path, window_size, error_thresholds_vector); }
+            else               { Scripts::decodePCA(input_path, output_path, window_size, error_thresholds_vector); }
+        }
+        else {
+            assert(coder_name == "CoderAPCA");
+            if (action == "c") {   Scripts::codeAPCA(input_path, output_path, window_size, error_thresholds_vector); }
+            else               { Scripts::decodeAPCA(input_path, output_path, window_size, error_thresholds_vector); }
         }
 
-        if (action == "c") {   Scripts::codePCA(input_path, output_path, fixed_window_size, error_thresholds_vector); }
-        else               { Scripts::decodePCA(input_path, output_path, fixed_window_size, error_thresholds_vector); }
     }
 
     return 0;

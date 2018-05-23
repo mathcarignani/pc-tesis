@@ -15,11 +15,7 @@ void CoderPCA::codeColumn(){
     while (input_csv.continue_reading){
         std::vector<std::string> csv_row = input_csv.readLineCSV();
         std::string csv_value = csv_row[column_index];
-
-//        std::cout << row_index << std::endl;
-//        std::cout << "csv_value " << csv_value << std::endl;
         window.addValue(csv_value);
-//        std::cout << "after window.addValue(csv_value);" << std::endl;
         if (window.isFull()) { codeWindow(window); }
         row_index++;
     }
@@ -35,21 +31,14 @@ PCAWindow CoderPCA::createWindow(){
 }
 
 void CoderPCA::codeWindow(PCAWindow & window){
-//    std::cout << "CodeWindow BEGIN" << std::endl;
-    if (window.hasConstantValue()){
-        codeWindowAsConstant(window);
-    }
-    else {
-        codeWindowEachValue(window);
-    }
+    if (window.hasConstantValue()){ codeWindowAsConstant(window); }
+    else {                          codeWindowEachValue(window);  }
     window.clearWindow();
-//    std::cout << "CodeWindow END" << std::endl;
 }
 
 void CoderPCA::codeWindowAsConstant(PCAWindow & window){
     codeBit(0);
     codeValueRaw(window.constant_value);
-//    std::cout << "constant " << window.constant_value << std::endl;
 }
 
 void CoderPCA::codeWindowEachValue(PCAWindow & window){
@@ -57,7 +46,6 @@ void CoderPCA::codeWindowEachValue(PCAWindow & window){
     for(int i=0; i < window.length; i++){
         std::string csv_value = window.getElement(i);
         codeValueRaw(csv_value);
-//        std::cout << "window " << csv_value << std::endl;
     }
 }
 

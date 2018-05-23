@@ -10,6 +10,10 @@ class CoderAPCA(CoderCols):
         super(CoderAPCA, self).__init__(input_csv, output_path, output_filename, WindowVariable, params)
         self.window_size_bit_length = self.params['max_window_size'].bit_length()
 
+    @classmethod
+    def name(cls):
+        return "CoderAPCA"
+
     def get_info(self):
         return "CoderAPCA" +\
                ("\n-> error_threshold = %s" % self.params['error_threshold']) +\

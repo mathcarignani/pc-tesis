@@ -9,15 +9,18 @@ class PCAWindow {
 
 private:
     int fixed_window_size;
-    void updateMinAndMax(int x_int);
-    void updateConstantValue();
-
-public:
     int error_threshold;
-    int length;
     bool nan_window;
     int min;
     int max;
+
+    void updateMinAndMax(int x_int);
+    void updateConstantValue();
+    void addFirstValue(std::string x); // PRE: isEmpty()
+    void addNonFirstValue(std::string x); // PRE: !isFull() && !isEmpty()
+
+public:
+    int length;
     std::string constant_value;
     std::vector<std::string> *array;
 

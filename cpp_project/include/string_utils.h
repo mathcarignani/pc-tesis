@@ -15,6 +15,7 @@ public:
     static std::string removeLastChar(const std::string& source);
     static int charToInt(const char character);
     static const char intToChar(const int integer);
+    static int bitLength(uint32_t value);
 };
 
 #endif //CPP_PROJECT_STRING_UTILS_H
