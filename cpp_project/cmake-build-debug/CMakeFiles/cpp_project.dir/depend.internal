@@ -28,6 +28,16 @@ CMakeFiles/cpp_project.dir/src/coders/apca/coder_apca.cpp.o
  ../include/file_utils/text/text_reader.h
  /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/apca/coder_apca.cpp
 CMakeFiles/cpp_project.dir/src/coders/apca/decoder_apca.cpp.o
+ ../include/coders/apca/decoder_apca.h
+ ../include/coders/cols/decoder_cols.h
+ ../include/coders/decoder_base.h
+ ../include/dataset/column_code.h
+ ../include/dataset/dataset.h
+ ../include/dataset/range.h
+ ../include/file_utils/bit_stream/bit_stream_reader.h
+ ../include/file_utils/csv/csv_writer.h
+ ../include/file_utils/path.h
+ ../include/string_utils.h
  /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/apca/decoder_apca.cpp
 CMakeFiles/cpp_project.dir/src/coders/basic/coder_basic.cpp.o
  ../include/coders/basic/coder_basic.h
@@ -140,6 +150,15 @@ CMakeFiles/cpp_project.dir/src/coders/pca/coder_pca.cpp.o
  ../include/file_utils/text/text_reader.h
  /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/pca/coder_pca.cpp
 CMakeFiles/cpp_project.dir/src/coders/pca/decoder_pca.cpp.o
+ ../include/coders/cols/decoder_cols.h
+ ../include/coders/decoder_base.h
+ ../include/coders/pca/decoder_pca.h
+ ../include/dataset/column_code.h
+ ../include/dataset/dataset.h
+ ../include/dataset/range.h
+ ../include/file_utils/bit_stream/bit_stream_reader.h
+ ../include/file_utils/csv/csv_writer.h
+ ../include/file_utils/path.h
  /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/pca/decoder_pca.cpp
 CMakeFiles/cpp_project.dir/src/coders/pca/pca_window.cpp.o
  ../include/coders/pca/pca_window.h
@@ -209,6 +228,7 @@ CMakeFiles/cpp_project.dir/src/file_utils/text/text_utils.cpp.o
 CMakeFiles/cpp_project.dir/src/scripts.cpp.o
  ../include/coders/apca/apca_window.h
  ../include/coders/apca/coder_apca.h
+ ../include/coders/apca/decoder_apca.h
  ../include/coders/basic/coder_basic.h
  ../include/coders/basic/decoder_basic.h
  ../include/coders/coder_base.h
@@ -216,6 +236,7 @@ CMakeFiles/cpp_project.dir/src/scripts.cpp.o
  ../include/coders/cols/decoder_cols.h
  ../include/coders/decoder_base.h
  ../include/coders/pca/coder_pca.h
+ ../include/coders/pca/decoder_pca.h
  ../include/coders/pca/pca_window.h
  ../include/dataset/column_code.h
  ../include/dataset/dataset.h

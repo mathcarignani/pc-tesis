@@ -18,6 +18,10 @@ coder_cols.h
 apca_window.h
 ../include/coders/apca/apca_window.h
 
+../include/coders/apca/decoder_apca.h
+decoder_cols.h
+../include/coders/apca/decoder_cols.h
+
 ../include/coders/basic/coder_basic.h
 coder_cols.h
 ../include/coders/basic/coder_cols.h
@@ -89,6 +93,10 @@ coder_cols.h
 ../include/coders/pca/coder_cols.h
 pca_window.h
 ../include/coders/pca/pca_window.h
+
+../include/coders/pca/decoder_pca.h
+decoder_cols.h
+../include/coders/pca/decoder_cols.h
 
 ../include/coders/pca/pca_window.h
 vector
@@ -237,6 +245,10 @@ coder_apca.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/apca/coder_apca.h
 
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/apca/decoder_apca.cpp
+decoder_apca.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/apca/decoder_apca.h
+string_utils.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/apca/string_utils.h
 
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/basic/coder_basic.cpp
 coder_basic.h
@@ -305,6 +317,8 @@ assert.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/pca/assert.h
 
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/pca/decoder_pca.cpp
+decoder_pca.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/pca/decoder_pca.h
 
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/pca/pca_window.cpp
 pca_window.h
@@ -437,8 +451,12 @@ decoder_basic.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/decoder_basic.h
 coder_pca.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coder_pca.h
+decoder_pca.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/decoder_pca.h
 coder_apca.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coder_apca.h
+decoder_apca.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/decoder_apca.h
 csv_utils.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/csv_utils.h
 bit_stream_utils.h

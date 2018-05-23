@@ -5,8 +5,9 @@
 #include "coder_basic.h"
 #include "decoder_basic.h"
 #include "coder_pca.h"
-//#include "decoder_pca.h"
+#include "decoder_pca.h"
 #include "coder_apca.h"
+#include "decoder_apca.h"
 #include "csv_utils.h"
 #include "bit_stream_utils.h"
 #include "assert.h"
@@ -39,8 +40,13 @@ void Scripts::codePCA(Path input_path, Path output_path, int fixed_window_size, 
     coder.close();
 }
 
-void Scripts::decodePCA(Path input_path, Path output_path, int fixed_window_size, std::vector<int> error_thresholds_vector){
-
+void Scripts::decodePCA(Path input_path, Path output_path, int fixed_window_size){
+    BitStreamReader bit_stream_reader = BitStreamReader(input_path);
+    CSVWriter csv_writer = CSVWriter(output_path);
+    DecoderPCA decoder = DecoderPCA(bit_stream_reader, csv_writer);
+    decoder.setCoderParams(fixed_window_size);
+    decoder.decodeFile();
+    decoder.close();
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -54,8 +60,13 @@ void Scripts::codeAPCA(Path input_path, Path output_path, int max_window_size, s
     coder.close();
 }
 
-void Scripts::decodeAPCA(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector){
-
+void Scripts::decodeAPCA(Path input_path, Path output_path, int max_window_size){
+    BitStreamReader bit_stream_reader = BitStreamReader(input_path);
+    CSVWriter csv_writer = CSVWriter(output_path);
+    DecoderAPCA decoder = DecoderAPCA(bit_stream_reader, csv_writer);
+    decoder.setCoderParams(max_window_size);
+    decoder.decodeFile();
+    decoder.close();
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -85,8 +96,9 @@ void Scripts::codeAndDecodeCSV(){
     std::cout << "codeCSV" << std::endl;
     std::vector<int> error_thresholds_vector;
     for(int i=0; i < 11; i++) { error_thresholds_vector.push_back(0); }
-    codeAPCA(input_path, coded_path, 5, error_thresholds_vector);
-
+    int fixed_window_size = 5;
+    codeAPCA(input_path, coded_path, fixed_window_size, error_thresholds_vector);
+    decodeAPCA(coded_path, decoded_path, fixed_window_size);
 
 //    std::cout << "codeCSV" << std::endl;
 //    codeBasic(input_path, coded_path);

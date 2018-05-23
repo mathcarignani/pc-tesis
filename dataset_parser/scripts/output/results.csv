@@ -1,1 +1,7 @@
 Dataset,Filename,#rows,Coder,%,Error Threshold,Window Param,Size (B),CR (%),Delta - Size (b),Delta - CR (%),Other columns - Size (b),Other columns - CR (%)
+IRKIS,vwc_1202.dat.csv,26.305,CoderAPCA,0,"[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]",5,138.935,100,105.240,100,1.005.433,100
+IRKIS,vwc_1202.dat.csv,26.305,,,,10,106.056,76.33,55.272,52.52,792.372,78.81
+IRKIS,vwc_1202.dat.csv,26.305,,,,25,88.880,63.97,23.188,22.03,687.045,68.33
+IRKIS,vwc_1202.dat.csv,26.305,,,,50,87.415,62.92,12.144,11.54,686.368,68.27
+IRKIS,vwc_1202.dat.csv,26.305,,,,100,89.268,64.25,6.360,6.04,706.979,70.32
+IRKIS,vwc_1202.dat.csv,26.305,,,,200,92.661,66.69,3.325,3.16,737.154,73.32

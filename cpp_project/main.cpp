@@ -42,12 +42,12 @@ int main(int argc, char *argv[]){
 
         if (coder_name == "CoderPCA"){
             if (action == "c") {   Scripts::codePCA(input_path, output_path, window_size, error_thresholds_vector); }
-            else               { Scripts::decodePCA(input_path, output_path, window_size, error_thresholds_vector); }
+            else               { Scripts::decodePCA(input_path, output_path, window_size); }
         }
         else {
             assert(coder_name == "CoderAPCA");
             if (action == "c") {   Scripts::codeAPCA(input_path, output_path, window_size, error_thresholds_vector); }
-            else               { Scripts::decodeAPCA(input_path, output_path, window_size, error_thresholds_vector); }
+            else               { Scripts::decodeAPCA(input_path, output_path, window_size); }
         }
 
     }

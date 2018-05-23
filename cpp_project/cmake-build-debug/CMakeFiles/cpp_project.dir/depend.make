@@ -27,6 +27,16 @@ CMakeFiles/cpp_project.dir/src/coders/apca/coder_apca.cpp.o: ../include/file_uti
 CMakeFiles/cpp_project.dir/src/coders/apca/coder_apca.cpp.o: ../include/file_utils/text/text_reader.h
 CMakeFiles/cpp_project.dir/src/coders/apca/coder_apca.cpp.o: ../src/coders/apca/coder_apca.cpp
 
+CMakeFiles/cpp_project.dir/src/coders/apca/decoder_apca.cpp.o: ../include/coders/apca/decoder_apca.h
+CMakeFiles/cpp_project.dir/src/coders/apca/decoder_apca.cpp.o: ../include/coders/cols/decoder_cols.h
+CMakeFiles/cpp_project.dir/src/coders/apca/decoder_apca.cpp.o: ../include/coders/decoder_base.h
+CMakeFiles/cpp_project.dir/src/coders/apca/decoder_apca.cpp.o: ../include/dataset/column_code.h
+CMakeFiles/cpp_project.dir/src/coders/apca/decoder_apca.cpp.o: ../include/dataset/dataset.h
+CMakeFiles/cpp_project.dir/src/coders/apca/decoder_apca.cpp.o: ../include/dataset/range.h
+CMakeFiles/cpp_project.dir/src/coders/apca/decoder_apca.cpp.o: ../include/file_utils/bit_stream/bit_stream_reader.h
+CMakeFiles/cpp_project.dir/src/coders/apca/decoder_apca.cpp.o: ../include/file_utils/csv/csv_writer.h
+CMakeFiles/cpp_project.dir/src/coders/apca/decoder_apca.cpp.o: ../include/file_utils/path.h
+CMakeFiles/cpp_project.dir/src/coders/apca/decoder_apca.cpp.o: ../include/string_utils.h
 CMakeFiles/cpp_project.dir/src/coders/apca/decoder_apca.cpp.o: ../src/coders/apca/decoder_apca.cpp
 
 CMakeFiles/cpp_project.dir/src/coders/basic/coder_basic.cpp.o: ../include/coders/basic/coder_basic.h
@@ -139,6 +149,15 @@ CMakeFiles/cpp_project.dir/src/coders/pca/coder_pca.cpp.o: ../include/file_utils
 CMakeFiles/cpp_project.dir/src/coders/pca/coder_pca.cpp.o: ../include/file_utils/text/text_reader.h
 CMakeFiles/cpp_project.dir/src/coders/pca/coder_pca.cpp.o: ../src/coders/pca/coder_pca.cpp
 
+CMakeFiles/cpp_project.dir/src/coders/pca/decoder_pca.cpp.o: ../include/coders/cols/decoder_cols.h
+CMakeFiles/cpp_project.dir/src/coders/pca/decoder_pca.cpp.o: ../include/coders/decoder_base.h
+CMakeFiles/cpp_project.dir/src/coders/pca/decoder_pca.cpp.o: ../include/coders/pca/decoder_pca.h
+CMakeFiles/cpp_project.dir/src/coders/pca/decoder_pca.cpp.o: ../include/dataset/column_code.h
+CMakeFiles/cpp_project.dir/src/coders/pca/decoder_pca.cpp.o: ../include/dataset/dataset.h
+CMakeFiles/cpp_project.dir/src/coders/pca/decoder_pca.cpp.o: ../include/dataset/range.h
+CMakeFiles/cpp_project.dir/src/coders/pca/decoder_pca.cpp.o: ../include/file_utils/bit_stream/bit_stream_reader.h
+CMakeFiles/cpp_project.dir/src/coders/pca/decoder_pca.cpp.o: ../include/file_utils/csv/csv_writer.h
+CMakeFiles/cpp_project.dir/src/coders/pca/decoder_pca.cpp.o: ../include/file_utils/path.h
 CMakeFiles/cpp_project.dir/src/coders/pca/decoder_pca.cpp.o: ../src/coders/pca/decoder_pca.cpp
 
 CMakeFiles/cpp_project.dir/src/coders/pca/pca_window.cpp.o: ../include/coders/pca/pca_window.h
@@ -208,6 +227,7 @@ CMakeFiles/cpp_project.dir/src/file_utils/text/text_utils.cpp.o: ../src/file_uti
 
 CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../include/coders/apca/apca_window.h
 CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../include/coders/apca/coder_apca.h
+CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../include/coders/apca/decoder_apca.h
 CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../include/coders/basic/coder_basic.h
 CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../include/coders/basic/decoder_basic.h
 CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../include/coders/coder_base.h
@@ -215,6 +235,7 @@ CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../include/coders/cols/coder_cols.
 CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../include/coders/cols/decoder_cols.h
 CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../include/coders/decoder_base.h
 CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../include/coders/pca/coder_pca.h
+CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../include/coders/pca/decoder_pca.h
 CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../include/coders/pca/pca_window.h
 CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../include/dataset/column_code.h
 CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../include/dataset/dataset.h

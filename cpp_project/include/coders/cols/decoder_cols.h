@@ -12,6 +12,7 @@ private:
 
 public:
     int column_index = 0;
+    int row_index = 0;
     using DecoderBase::DecoderBase;
 
 };

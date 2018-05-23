@@ -61,15 +61,15 @@ def compress_file(args):
     cpp_filename = args.compressed_filename
     print "Comparing compressed files..."
     assert(BitStreamUtils.compare_files(args.output_path, py_filename, args.output_path, cpp_filename))
-    same_file = False
 
-    # decode_python(args)
-    # py_filename = args.deco_filename
-    # decode_cpp(args)
-    # cpp_filename = args.deco_filename
-    # print "Comparing decompressed files..."
-    # assert(BitStreamUtils.compare_files(args.output_path, py_filename, args.output_path, cpp_filename))
-    # assert(BitStreamUtils.compare_files(args.input_path, args.input_filename, args.output_path, cpp_filename))
+    decode_python(args)
+    py_filename = args.deco_filename
+    decode_cpp(args)
+    cpp_filename = args.deco_filename
+    print "Comparing decompressed files..."
+    assert(BitStreamUtils.compare_files(args.output_path, py_filename, args.output_path, cpp_filename))
+    assert(BitStreamUtils.compare_files(args.input_path, args.input_filename, args.output_path, cpp_filename))
+    same_file = True
     # assert(1 == 0)
     # csv_compare = CSVCompare(args.input_path, args.input_filename, args.output_path, cpp_filename)
     # same_file = csv_compare.compare(args.coder_params.get('error_threshold'))

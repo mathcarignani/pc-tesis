@@ -13,10 +13,10 @@ public:
     static void decodeBasic(Path input_path, Path output_path);
 
     static void codePCA(Path input_path, Path output_path, int fixed_window_size, std::vector<int> error_thresholds_vector);
-    static void decodePCA(Path input_path, Path output_path, int fixed_window_size, std::vector<int> error_thresholds_vector);
+    static void decodePCA(Path input_path, Path output_path, int fixed_window_size);
 
     static void codeAPCA(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector);
-    static void decodeAPCA(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector);
+    static void decodeAPCA(Path input_path, Path output_path, int max_window_size);
 
 
     static void copyAndCompareCSV();
