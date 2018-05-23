@@ -29,9 +29,12 @@ void Dataset::setColumn(int column_index){
     column_code = column_code_vector[array_index];
 }
 
+void Dataset::addBits(int bits){
+    column_code.addBits(bits);
+}
+
 int Dataset::getBits(){
-//    int bits = column_code.bits;
-//    column_code.addBits(bits);
+    addBits(column_code.bits);
     return column_code.bits;
 }
 

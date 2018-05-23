@@ -21,7 +21,10 @@ int main(int argc, char *argv[]){
 //        std::cout << "output_filename=" << output_filename << std::endl;
 
         std::string coder_name = argv[6];
-        assert(coder_name == "CoderBasic");
+        if (coder_name == "CoderBasic"){
+            assert(argc == 7);
+
+        }
 
         if (action == "c"){
             Scripts::codeCSV(input_path, input_filename, output_path, output_filename);
@@ -32,10 +35,10 @@ int main(int argc, char *argv[]){
 
         return 0;
     }
-    std::string path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[3]noaa-adcp/basic";
-    assert(BitStreamUtils::compareBytes(path, "noaa-adcp-201501.c.cpp.csv", path, "noaa-adcp-201501.c.python.csv") == 0);
+//    std::string path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[3]noaa-adcp/basic";
+//    assert(BitStreamUtils::compareBytes(path, "noaa-adcp-201501.c.cpp.csv", path, "noaa-adcp-201501.c.python.csv") == 0);
 //    Scripts::copyAndCompareCSV();
-//    Scripts::codeAndDecodeCSV();
+    Scripts::codeAndDecodeCSV();
 
 //    Tests::testDatasetUtils();
 //    Tests::testDatetimeUtils();

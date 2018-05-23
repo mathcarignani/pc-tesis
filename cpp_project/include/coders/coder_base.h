@@ -26,6 +26,7 @@ protected:
     BitStreamWriter &output_file;
     Dataset dataset;
 
+    void codeBit(int bit);
     void codeValueRaw(std::string x);
 
 public:

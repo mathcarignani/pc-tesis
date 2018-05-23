@@ -45,8 +45,8 @@ int DatetimeUtils::compareDates(std::tm date1, std::tm date2) {
 
 long int DatetimeUtils::mapDatetimeToSeconds(std::tm start_date, std::tm date){
     assert(compareDates(start_date, date) != -1);
-    assert(start_date.tm_year == 0 and start_date.tm_mon == 0 and start_date.tm_mday == 1);
-    assert(start_date.tm_hour == 0 and start_date.tm_min == 0 and start_date.tm_sec == 0);
+    assert(start_date.tm_year == 0 && start_date.tm_mon == 0 && start_date.tm_mday == 1);
+    assert(start_date.tm_hour == 0 && start_date.tm_min == 0 && start_date.tm_sec == 0);
 
     long int seconds = 0;
     for(int i=0; i < date.tm_year; i++){ seconds += secondsInYear(1900 + i); }
@@ -59,8 +59,8 @@ long int DatetimeUtils::mapDatetimeToSeconds(std::tm start_date, std::tm date){
 }
 
 std::tm DatetimeUtils::mapSecondsToDatetime(std::tm start_date, long int seconds){
-    assert(start_date.tm_year == 0 and start_date.tm_mon == 0 and start_date.tm_mday == 1);
-    assert(start_date.tm_hour == 0 and start_date.tm_min == 0 and start_date.tm_sec == 0);
+    assert(start_date.tm_year == 0 && start_date.tm_mon == 0 && start_date.tm_mday == 1);
+    assert(start_date.tm_hour == 0 && start_date.tm_min == 0 && start_date.tm_sec == 0);
 
     long int whole_days = seconds / secondsInDay();
     long int remaining_seconds = seconds % secondsInDay();
@@ -137,7 +137,7 @@ int DatetimeUtils::secondsInMinute(){
 int DatetimeUtils::daysInMonth(int month, int year){
     std::vector<int> days_per_month = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     int days_in_month = days_per_month[month];
-    if (month == 1 and isLeapYear(year)) { days_in_month++; }
+    if (month == 1 && isLeapYear(year)) { days_in_month++; }
     return days_in_month;
 }
 

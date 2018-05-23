@@ -20,6 +20,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/cpp_project.dir/src/coders/cols/decoder_cols.cpp.o"
   "CMakeFiles/cpp_project.dir/src/coders/basic/coder_basic.cpp.o"
   "CMakeFiles/cpp_project.dir/src/coders/basic/decoder_basic.cpp.o"
+  "CMakeFiles/cpp_project.dir/src/coders/pca/pca_window.cpp.o"
   "CMakeFiles/cpp_project.dir/src/coders/pca/coder_pca.cpp.o"
   "CMakeFiles/cpp_project.dir/src/coders/pca/decoder_pca.cpp.o"
   "CMakeFiles/cpp_project.dir/src/scripts.cpp.o"

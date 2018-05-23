@@ -4,6 +4,8 @@
 #include <iostream>
 #include "coder_basic.h"
 #include "decoder_basic.h"
+#include "coder_pca.h"
+//#include "decoder_pca.h"
 #include "csv_utils.h"
 #include "bit_stream_utils.h"
 #include "assert.h"
@@ -48,9 +50,10 @@ void Scripts::codeCSV(std::string input_path, std::string input_filename, std::s
     std::string coded_path = output_path + "/" + output_filename;
     BitStreamWriter bit_stream_writer = BitStreamWriter(coded_path.c_str());
 
-    CoderBasic coder_basic = CoderBasic(csv_reader, bit_stream_writer);
-    coder_basic.codeFile();
-    coder_basic.close();
+    // CoderBasic coder = CoderBasic(csv_reader, bit_stream_writer);
+    CoderPCA coder = CoderPCA(csv_reader, bit_stream_writer);
+    coder.codeFile();
+    coder.close();
 }
 
 void Scripts::decodeCSV(std::string input_path, std::string input_filename, std::string output_path, std::string output_filename){
@@ -58,7 +61,7 @@ void Scripts::decodeCSV(std::string input_path, std::string input_filename, std:
     BitStreamReader bit_stream_reader = BitStreamReader(coded_path.c_str());
     CSVWriter csv_writer = CSVWriter(output_path, output_filename);
 
-    DecoderBasic decoder_basic = DecoderBasic(bit_stream_reader, csv_writer);
-    decoder_basic.decodeFile();
-    decoder_basic.close();
+    DecoderBasic decoder = DecoderBasic(bit_stream_reader, csv_writer);
+    decoder.decodeFile();
+    decoder.close();
 }

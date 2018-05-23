@@ -16,6 +16,7 @@ public:
     Dataset();
     Dataset(std::vector<Range> ranges, std::vector<int> bits, int data_columns_count_);
     void setColumn(int column_index);
+    void addBits(int bits);
     int getBits();
     int bits();
     int offset();

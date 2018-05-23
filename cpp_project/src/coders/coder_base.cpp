@@ -26,6 +26,11 @@ void CoderBase::codeRaw(int value){
     output_file.pushInt(value, dataset.getBits());
 }
 
+void CoderBase::codeBit(int bit){
+    dataset.addBits(1);
+    output_file.pushBit(bit);
+}
+
 void CoderBase::codeValueRaw(std::string x){
     int value;
     try {

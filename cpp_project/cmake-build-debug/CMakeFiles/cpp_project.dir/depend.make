@@ -97,9 +97,22 @@ CMakeFiles/cpp_project.dir/src/coders/header/header_decoder.cpp.o: ../include/fi
 CMakeFiles/cpp_project.dir/src/coders/header/header_decoder.cpp.o: ../include/string_utils.h
 CMakeFiles/cpp_project.dir/src/coders/header/header_decoder.cpp.o: ../src/coders/header/header_decoder.cpp
 
+CMakeFiles/cpp_project.dir/src/coders/pca/coder_pca.cpp.o: ../include/coders/coder_base.h
+CMakeFiles/cpp_project.dir/src/coders/pca/coder_pca.cpp.o: ../include/coders/cols/coder_cols.h
+CMakeFiles/cpp_project.dir/src/coders/pca/coder_pca.cpp.o: ../include/coders/pca/coder_pca.h
+CMakeFiles/cpp_project.dir/src/coders/pca/coder_pca.cpp.o: ../include/coders/pca/pca_window.h
+CMakeFiles/cpp_project.dir/src/coders/pca/coder_pca.cpp.o: ../include/dataset/column_code.h
+CMakeFiles/cpp_project.dir/src/coders/pca/coder_pca.cpp.o: ../include/dataset/dataset.h
+CMakeFiles/cpp_project.dir/src/coders/pca/coder_pca.cpp.o: ../include/dataset/range.h
+CMakeFiles/cpp_project.dir/src/coders/pca/coder_pca.cpp.o: ../include/file_utils/bit_stream/bit_stream_writer.h
+CMakeFiles/cpp_project.dir/src/coders/pca/coder_pca.cpp.o: ../include/file_utils/csv/csv_reader.h
+CMakeFiles/cpp_project.dir/src/coders/pca/coder_pca.cpp.o: ../include/file_utils/text/text_reader.h
 CMakeFiles/cpp_project.dir/src/coders/pca/coder_pca.cpp.o: ../src/coders/pca/coder_pca.cpp
 
 CMakeFiles/cpp_project.dir/src/coders/pca/decoder_pca.cpp.o: ../src/coders/pca/decoder_pca.cpp
+
+CMakeFiles/cpp_project.dir/src/coders/pca/pca_window.cpp.o: ../include/coders/pca/pca_window.h
+CMakeFiles/cpp_project.dir/src/coders/pca/pca_window.cpp.o: ../src/coders/pca/pca_window.cpp
 
 CMakeFiles/cpp_project.dir/src/dataset/column_code.cpp.o: ../include/dataset/column_code.h
 CMakeFiles/cpp_project.dir/src/dataset/column_code.cpp.o: ../include/dataset/range.h
@@ -163,6 +176,8 @@ CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../include/coders/coder_base.h
 CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../include/coders/cols/coder_cols.h
 CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../include/coders/cols/decoder_cols.h
 CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../include/coders/decoder_base.h
+CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../include/coders/pca/coder_pca.h
+CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../include/coders/pca/pca_window.h
 CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../include/dataset/column_code.h
 CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../include/dataset/dataset.h
 CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../include/dataset/range.h

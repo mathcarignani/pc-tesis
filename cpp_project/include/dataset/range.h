@@ -19,7 +19,7 @@ struct Range {
     }
 
     bool insideRange(int value){
-        return (begin <= value and value <= end);
+        return (begin <= value && value <= end);
     }
 
     void print(){

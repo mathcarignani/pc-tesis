@@ -72,6 +72,18 @@ iostream
 datetime_utils.h
 ../include/coders/header/datetime_utils.h
 
+../include/coders/pca/coder_pca.h
+coder_cols.h
+../include/coders/pca/coder_cols.h
+pca_window.h
+../include/coders/pca/pca_window.h
+
+../include/coders/pca/pca_window.h
+vector
+-
+string
+-
+
 ../include/dataset/column_code.h
 vector
 -
@@ -173,10 +185,6 @@ bit_stream_utils.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/basic/coder_basic.cpp
 coder_basic.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/basic/coder_basic.h
-iostream
--
-vector
--
 
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/basic/decoder_basic.cpp
 decoder_basic.h
@@ -235,8 +243,16 @@ vector
 -
 
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/pca/coder_pca.cpp
+coder_pca.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/pca/coder_pca.h
 
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/pca/decoder_pca.cpp
+
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/pca/pca_window.cpp
+pca_window.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/pca/pca_window.h
+iostream
+-
 
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/dataset/column_code.cpp
 column_code.h
@@ -359,6 +375,8 @@ coder_basic.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coder_basic.h
 decoder_basic.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/decoder_basic.h
+coder_pca.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coder_pca.h
 csv_utils.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/csv_utils.h
 bit_stream_utils.h

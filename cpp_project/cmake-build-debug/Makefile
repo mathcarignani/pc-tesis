@@ -420,6 +420,33 @@ src/coders/pca/decoder_pca.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/pca/decoder_pca.cpp.s
 .PHONY : src/coders/pca/decoder_pca.cpp.s
 
+src/coders/pca/pca_window.o: src/coders/pca/pca_window.cpp.o
+
+.PHONY : src/coders/pca/pca_window.o
+
+# target to build an object file
+src/coders/pca/pca_window.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/pca/pca_window.cpp.o
+.PHONY : src/coders/pca/pca_window.cpp.o
+
+src/coders/pca/pca_window.i: src/coders/pca/pca_window.cpp.i
+
+.PHONY : src/coders/pca/pca_window.i
+
+# target to preprocess a source file
+src/coders/pca/pca_window.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/pca/pca_window.cpp.i
+.PHONY : src/coders/pca/pca_window.cpp.i
+
+src/coders/pca/pca_window.s: src/coders/pca/pca_window.cpp.s
+
+.PHONY : src/coders/pca/pca_window.s
+
+# target to generate assembly for a file
+src/coders/pca/pca_window.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/pca/pca_window.cpp.s
+.PHONY : src/coders/pca/pca_window.cpp.s
+
 src/dataset/column_code.o: src/dataset/column_code.cpp.o
 
 .PHONY : src/dataset/column_code.o
@@ -867,6 +894,9 @@ help:
 	@echo "... src/coders/pca/decoder_pca.o"
 	@echo "... src/coders/pca/decoder_pca.i"
 	@echo "... src/coders/pca/decoder_pca.s"
+	@echo "... src/coders/pca/pca_window.o"
+	@echo "... src/coders/pca/pca_window.i"
+	@echo "... src/coders/pca/pca_window.s"
 	@echo "... src/dataset/column_code.o"
 	@echo "... src/dataset/column_code.i"
 	@echo "... src/dataset/column_code.s"

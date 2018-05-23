@@ -1,9 +1,6 @@
 
 #include "coder_basic.h"
 
-#include <iostream>
-#include <vector>
-//#include "csv_reader.h"
 
 void CoderBasic::codeColumn() {
     row_index = 0;
