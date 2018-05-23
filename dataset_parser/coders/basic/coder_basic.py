@@ -8,6 +8,10 @@ class CoderBasic(CoderCols):
     def __init__(self, input_csv, output_path, output_filename, *_):
         super(CoderBasic, self).__init__(input_csv, output_path, output_filename, None, None)
 
+    @classmethod
+    def name(cls):
+        return "CoderBasic"
+
     def get_info(self):
         return "CoderBase"
 

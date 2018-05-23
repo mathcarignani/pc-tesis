@@ -5,7 +5,7 @@
 
 
 void CoderCols::codeDataRows() {
-    std::cout << "dataset.columns_count " << dataset.data_columns_count << std::endl;
+//    std::cout << "dataset.columns_count " << dataset.data_columns_count << std::endl;
     int total_columns = dataset.data_columns_count + 1;
     for(column_index = 0; column_index < total_columns; column_index++) {
         std::cout << "code column_index " << column_index << std::endl;

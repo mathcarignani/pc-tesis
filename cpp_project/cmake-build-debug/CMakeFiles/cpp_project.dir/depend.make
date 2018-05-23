@@ -4,6 +4,7 @@
 CMakeFiles/cpp_project.dir/main.cpp.o: ../include/datetime_utils.h
 CMakeFiles/cpp_project.dir/main.cpp.o: ../include/file_utils/bit_stream/bit_stream_utils.h
 CMakeFiles/cpp_project.dir/main.cpp.o: ../include/file_utils/bit_stream/bit_stream_writer.h
+CMakeFiles/cpp_project.dir/main.cpp.o: ../include/file_utils/path.h
 CMakeFiles/cpp_project.dir/main.cpp.o: ../include/scripts.h
 CMakeFiles/cpp_project.dir/main.cpp.o: ../include/tests.h
 CMakeFiles/cpp_project.dir/main.cpp.o: ../main.cpp
@@ -16,6 +17,7 @@ CMakeFiles/cpp_project.dir/src/coders/basic/coder_basic.cpp.o: ../include/datase
 CMakeFiles/cpp_project.dir/src/coders/basic/coder_basic.cpp.o: ../include/dataset/range.h
 CMakeFiles/cpp_project.dir/src/coders/basic/coder_basic.cpp.o: ../include/file_utils/bit_stream/bit_stream_writer.h
 CMakeFiles/cpp_project.dir/src/coders/basic/coder_basic.cpp.o: ../include/file_utils/csv/csv_reader.h
+CMakeFiles/cpp_project.dir/src/coders/basic/coder_basic.cpp.o: ../include/file_utils/path.h
 CMakeFiles/cpp_project.dir/src/coders/basic/coder_basic.cpp.o: ../include/file_utils/text/text_reader.h
 CMakeFiles/cpp_project.dir/src/coders/basic/coder_basic.cpp.o: ../src/coders/basic/coder_basic.cpp
 
@@ -27,6 +29,7 @@ CMakeFiles/cpp_project.dir/src/coders/basic/decoder_basic.cpp.o: ../include/data
 CMakeFiles/cpp_project.dir/src/coders/basic/decoder_basic.cpp.o: ../include/dataset/range.h
 CMakeFiles/cpp_project.dir/src/coders/basic/decoder_basic.cpp.o: ../include/file_utils/bit_stream/bit_stream_reader.h
 CMakeFiles/cpp_project.dir/src/coders/basic/decoder_basic.cpp.o: ../include/file_utils/csv/csv_writer.h
+CMakeFiles/cpp_project.dir/src/coders/basic/decoder_basic.cpp.o: ../include/file_utils/path.h
 CMakeFiles/cpp_project.dir/src/coders/basic/decoder_basic.cpp.o: ../src/coders/basic/decoder_basic.cpp
 
 CMakeFiles/cpp_project.dir/src/coders/coder_base.cpp.o: ../include/coders/coder_base.h
@@ -37,6 +40,7 @@ CMakeFiles/cpp_project.dir/src/coders/coder_base.cpp.o: ../include/dataset/datas
 CMakeFiles/cpp_project.dir/src/coders/coder_base.cpp.o: ../include/dataset/range.h
 CMakeFiles/cpp_project.dir/src/coders/coder_base.cpp.o: ../include/file_utils/bit_stream/bit_stream_writer.h
 CMakeFiles/cpp_project.dir/src/coders/coder_base.cpp.o: ../include/file_utils/csv/csv_reader.h
+CMakeFiles/cpp_project.dir/src/coders/coder_base.cpp.o: ../include/file_utils/path.h
 CMakeFiles/cpp_project.dir/src/coders/coder_base.cpp.o: ../include/file_utils/text/text_reader.h
 CMakeFiles/cpp_project.dir/src/coders/coder_base.cpp.o: ../src/coders/coder_base.cpp
 
@@ -47,6 +51,7 @@ CMakeFiles/cpp_project.dir/src/coders/cols/coder_cols.cpp.o: ../include/dataset/
 CMakeFiles/cpp_project.dir/src/coders/cols/coder_cols.cpp.o: ../include/dataset/range.h
 CMakeFiles/cpp_project.dir/src/coders/cols/coder_cols.cpp.o: ../include/file_utils/bit_stream/bit_stream_writer.h
 CMakeFiles/cpp_project.dir/src/coders/cols/coder_cols.cpp.o: ../include/file_utils/csv/csv_reader.h
+CMakeFiles/cpp_project.dir/src/coders/cols/coder_cols.cpp.o: ../include/file_utils/path.h
 CMakeFiles/cpp_project.dir/src/coders/cols/coder_cols.cpp.o: ../include/file_utils/text/text_reader.h
 CMakeFiles/cpp_project.dir/src/coders/cols/coder_cols.cpp.o: ../src/coders/cols/coder_cols.cpp
 
@@ -57,6 +62,7 @@ CMakeFiles/cpp_project.dir/src/coders/cols/decoder_cols.cpp.o: ../include/datase
 CMakeFiles/cpp_project.dir/src/coders/cols/decoder_cols.cpp.o: ../include/dataset/range.h
 CMakeFiles/cpp_project.dir/src/coders/cols/decoder_cols.cpp.o: ../include/file_utils/bit_stream/bit_stream_reader.h
 CMakeFiles/cpp_project.dir/src/coders/cols/decoder_cols.cpp.o: ../include/file_utils/csv/csv_writer.h
+CMakeFiles/cpp_project.dir/src/coders/cols/decoder_cols.cpp.o: ../include/file_utils/path.h
 CMakeFiles/cpp_project.dir/src/coders/cols/decoder_cols.cpp.o: ../src/coders/cols/decoder_cols.cpp
 
 CMakeFiles/cpp_project.dir/src/coders/decoder_base.cpp.o: ../include/coders/decoder_base.h
@@ -67,6 +73,7 @@ CMakeFiles/cpp_project.dir/src/coders/decoder_base.cpp.o: ../include/dataset/dat
 CMakeFiles/cpp_project.dir/src/coders/decoder_base.cpp.o: ../include/dataset/range.h
 CMakeFiles/cpp_project.dir/src/coders/decoder_base.cpp.o: ../include/file_utils/bit_stream/bit_stream_reader.h
 CMakeFiles/cpp_project.dir/src/coders/decoder_base.cpp.o: ../include/file_utils/csv/csv_writer.h
+CMakeFiles/cpp_project.dir/src/coders/decoder_base.cpp.o: ../include/file_utils/path.h
 CMakeFiles/cpp_project.dir/src/coders/decoder_base.cpp.o: ../include/file_utils/text/text_reader.h
 CMakeFiles/cpp_project.dir/src/coders/decoder_base.cpp.o: ../src/coders/decoder_base.cpp
 
@@ -79,6 +86,7 @@ CMakeFiles/cpp_project.dir/src/coders/header/header_coder.cpp.o: ../include/data
 CMakeFiles/cpp_project.dir/src/coders/header/header_coder.cpp.o: ../include/datetime_utils.h
 CMakeFiles/cpp_project.dir/src/coders/header/header_coder.cpp.o: ../include/file_utils/bit_stream/bit_stream_writer.h
 CMakeFiles/cpp_project.dir/src/coders/header/header_coder.cpp.o: ../include/file_utils/csv/csv_reader.h
+CMakeFiles/cpp_project.dir/src/coders/header/header_coder.cpp.o: ../include/file_utils/path.h
 CMakeFiles/cpp_project.dir/src/coders/header/header_coder.cpp.o: ../include/file_utils/text/text_reader.h
 CMakeFiles/cpp_project.dir/src/coders/header/header_coder.cpp.o: ../include/string_utils.h
 CMakeFiles/cpp_project.dir/src/coders/header/header_coder.cpp.o: ../include/vector_utils.h
@@ -93,6 +101,7 @@ CMakeFiles/cpp_project.dir/src/coders/header/header_decoder.cpp.o: ../include/da
 CMakeFiles/cpp_project.dir/src/coders/header/header_decoder.cpp.o: ../include/datetime_utils.h
 CMakeFiles/cpp_project.dir/src/coders/header/header_decoder.cpp.o: ../include/file_utils/bit_stream/bit_stream_reader.h
 CMakeFiles/cpp_project.dir/src/coders/header/header_decoder.cpp.o: ../include/file_utils/csv/csv_writer.h
+CMakeFiles/cpp_project.dir/src/coders/header/header_decoder.cpp.o: ../include/file_utils/path.h
 CMakeFiles/cpp_project.dir/src/coders/header/header_decoder.cpp.o: ../include/file_utils/text/text_reader.h
 CMakeFiles/cpp_project.dir/src/coders/header/header_decoder.cpp.o: ../include/string_utils.h
 CMakeFiles/cpp_project.dir/src/coders/header/header_decoder.cpp.o: ../src/coders/header/header_decoder.cpp
@@ -106,6 +115,7 @@ CMakeFiles/cpp_project.dir/src/coders/pca/coder_pca.cpp.o: ../include/dataset/da
 CMakeFiles/cpp_project.dir/src/coders/pca/coder_pca.cpp.o: ../include/dataset/range.h
 CMakeFiles/cpp_project.dir/src/coders/pca/coder_pca.cpp.o: ../include/file_utils/bit_stream/bit_stream_writer.h
 CMakeFiles/cpp_project.dir/src/coders/pca/coder_pca.cpp.o: ../include/file_utils/csv/csv_reader.h
+CMakeFiles/cpp_project.dir/src/coders/pca/coder_pca.cpp.o: ../include/file_utils/path.h
 CMakeFiles/cpp_project.dir/src/coders/pca/coder_pca.cpp.o: ../include/file_utils/text/text_reader.h
 CMakeFiles/cpp_project.dir/src/coders/pca/coder_pca.cpp.o: ../src/coders/pca/coder_pca.cpp
 
@@ -133,17 +143,21 @@ CMakeFiles/cpp_project.dir/src/datetime_utils.cpp.o: ../include/datetime_utils.h
 CMakeFiles/cpp_project.dir/src/datetime_utils.cpp.o: ../src/datetime_utils.cpp
 
 CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_reader.cpp.o: ../include/file_utils/bit_stream/bit_stream_reader.h
+CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_reader.cpp.o: ../include/file_utils/path.h
 CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_reader.cpp.o: ../src/file_utils/bit_stream/bit_stream_reader.cpp
 
 CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_utils.cpp.o: ../include/file_utils/bit_stream/bit_stream_reader.h
 CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_utils.cpp.o: ../include/file_utils/bit_stream/bit_stream_utils.h
 CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_utils.cpp.o: ../include/file_utils/bit_stream/bit_stream_writer.h
+CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_utils.cpp.o: ../include/file_utils/path.h
 CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_utils.cpp.o: ../src/file_utils/bit_stream/bit_stream_utils.cpp
 
 CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_writer.cpp.o: ../include/file_utils/bit_stream/bit_stream_writer.h
+CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_writer.cpp.o: ../include/file_utils/path.h
 CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_writer.cpp.o: ../src/file_utils/bit_stream/bit_stream_writer.cpp
 
 CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_reader.cpp.o: ../include/file_utils/csv/csv_reader.h
+CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_reader.cpp.o: ../include/file_utils/path.h
 CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_reader.cpp.o: ../include/file_utils/text/text_reader.h
 CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_reader.cpp.o: ../include/file_utils/text/text_utils.h
 CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_reader.cpp.o: ../include/string_utils.h
@@ -153,12 +167,14 @@ CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_reader.cpp.o: ../src/file_util
 CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_utils.cpp.o: ../include/file_utils/csv/csv_reader.h
 CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_utils.cpp.o: ../include/file_utils/csv/csv_utils.h
 CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_utils.cpp.o: ../include/file_utils/csv/csv_writer.h
+CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_utils.cpp.o: ../include/file_utils/path.h
 CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_utils.cpp.o: ../include/file_utils/text/text_reader.h
 CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_utils.cpp.o: ../include/string_utils.h
 CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_utils.cpp.o: ../include/vector_utils.h
 CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_utils.cpp.o: ../src/file_utils/csv/csv_utils.cpp
 
 CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_writer.cpp.o: ../include/file_utils/csv/csv_writer.h
+CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_writer.cpp.o: ../include/file_utils/path.h
 CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_writer.cpp.o: ../include/string_utils.h
 CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_writer.cpp.o: ../src/file_utils/csv/csv_writer.cpp
 
@@ -187,6 +203,7 @@ CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../include/file_utils/bit_stream/b
 CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../include/file_utils/csv/csv_reader.h
 CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../include/file_utils/csv/csv_utils.h
 CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../include/file_utils/csv/csv_writer.h
+CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../include/file_utils/path.h
 CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../include/file_utils/text/text_reader.h
 CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../include/scripts.h
 CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../src/scripts.cpp

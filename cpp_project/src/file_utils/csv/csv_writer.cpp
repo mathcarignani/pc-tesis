@@ -4,9 +4,19 @@
 
 #include <iostream>
 
-CSVWriter::CSVWriter(std::string path, std::string filename){
+void CSVWriter::constructor(std::string path, std::string filename){
     full_path = path + "/" + filename;
     file.open(full_path);
+}
+
+CSVWriter::CSVWriter(){}
+
+CSVWriter::CSVWriter(std::string path, std::string filename){
+    constructor(path, filename);
+}
+
+CSVWriter::CSVWriter(Path path){
+    constructor(path.file_path, path.file_filename);
 }
 
 void CSVWriter::writeRow(std::vector<std::string> row){

@@ -8,11 +8,18 @@
 class CoderPCA: public CoderCols {
 
 private:
+    int fixed_window_size;
+    std::vector<int> error_thresholds_vector;
+
     void codeColumn() override;
-    void codeWindow(PCAWindow & pca_window);
+    PCAWindow createWindow();
+    void codeWindow(PCAWindow & window);
+    void codeWindowAsConstant(PCAWindow & window);
+    void codeWindowEachValue(PCAWindow & window);
 
 public:
     using CoderCols::CoderCols;
+    void setCoderParams(int fixed_window_size_, std::vector<int> error_thresholds_vector_);
     std::string getInfo() override;
 };
 

@@ -3,9 +3,9 @@ class CompressArgs:
     def __init__(self, args):
         self.logger = args['logger']
         self.coder = args['coder']
+        self.coder_name = self.coder.name()
         self.coder_params = args['coder_params']
         self.decoder = args['decoder']
-        self.coder_params = args['coder_params']
         self.input_path = args['input_path']
         self.input_filename = args['input_filename']
         self.output_path = args['output_path']

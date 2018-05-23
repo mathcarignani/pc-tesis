@@ -3,13 +3,14 @@
 #define CPP_PROJECT_CSV_UTILS_H
 
 #include <string>
+#include "path.h"
 
 class CSVUtils {
 
 public:
-    static void CopyCSV(std::string path1, std::string filename1, std::string path2, std::string filename2);
+    static void CopyCSV(Path input_path, Path output_path);
 
-    static void CompareCSVLossless(std::string path1, std::string filename1, std::string path2, std::string filename2);
+    static void CompareCSVLossless(Path path1, Path path2);
 
 };
 

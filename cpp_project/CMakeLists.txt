@@ -39,6 +39,8 @@ set(CODER_PCA_SRC_DIR src/coders/pca)
 set(CODER_HEAD_DIRS ${CODER_HEADER_HEAD_DIR} ${CODER_BASE_HEAD_DIR} ${CODER_COLS_HEAD_DIR} ${CODER_BASIC_HEAD_DIR} ${CODER_PCA_HEAD_DIR})
 set(CODER_STR_DIRS ${CODER_HEADER_SRC_DIR} ${CODER_BASE_SRC_DIR} ${CODER_COLS_SRC_DIR} ${CODER_BASIC_SRC_DIR} ${CODER_PCA_SRC_DIR})
 
+set(FILE_UTILS_HEAD_DIR include/file_utils)
+
 set(BIT_STREAM_HEAD_DIR include/file_utils/bit_stream)
 set(BIT_STREAM_SRC_DIR src/file_utils/bit_stream)
 
@@ -51,7 +53,7 @@ set(CSV_SRC_DIR src/file_utils/csv)
 set(DATASET_HEAD_DIR include/dataset)
 set(DATASET_SRC_DIR src/dataset)
 
-set(HEAD_DIRS include ${BIT_STREAM_HEAD_DIR} ${TEXT_HEAD_DIR} ${CSV_HEAD_DIR} ${CODER_HEAD_DIRS} ${DATASET_HEAD_DIR})
+set(HEAD_DIRS include ${FILE_UTILS_HEAD_DIR} ${BIT_STREAM_HEAD_DIR} ${TEXT_HEAD_DIR} ${CSV_HEAD_DIR} ${CODER_HEAD_DIRS} ${DATASET_HEAD_DIR})
 set(SRC_DIRS src ${BIT_STREAM_SRC_DIR} ${TEXT_SRC_DIR} ${CSV_SRC_DIR} ${CODER_STR_DIRS} ${DATASET_SRC_DIR})
 include_directories(${HEAD_DIRS} ${SRC_DIR})
 
@@ -65,7 +67,7 @@ set(TEXT_SRC_FILES ${TEXT_SRC_DIR}/text_reader.cpp ${TEXT_SRC_DIR}/text_utils.cp
 set(CSV_HEAD_FILES ${CSV_HEAD_DIR}/csv_reader.h ${CSV_HEAD_DIR}/csv_utils.h ${CSV_HEAD_DIR}/csv_writer.h)
 set(CSV_SRC_FILES ${CSV_SRC_DIR}/csv_reader.cpp ${CSV_SRC_DIR}/csv_utils.cpp ${CSV_SRC_DIR}/csv_writer.cpp)
 
-set(FILE_UTILS_HEAD_FILES ${BIT_STREAM_HEAD_FILES} ${TEXT_HEAD_FILES} ${CSV_HEAD_FILES})
+set(FILE_UTILS_HEAD_FILES ${FILE_UTILS_HEAD_DIR}/path.h ${BIT_STREAM_HEAD_FILES} ${TEXT_HEAD_FILES} ${CSV_HEAD_FILES})
 set(FILE_UTILS_SRC_FILES ${BIT_STREAM_SRC_FILES} ${TEXT_SRC_FILES} ${CSV_SRC_FILES})
 ### FILE UTILS END #####################################################################################################
 

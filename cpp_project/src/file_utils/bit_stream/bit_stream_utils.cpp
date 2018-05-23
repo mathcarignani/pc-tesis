@@ -4,12 +4,9 @@
 #include "bit_stream_reader.h"
 #include <iostream>
 
-int BitStreamUtils::compare(std::string path1, std::string filename1, std::string path2, std::string filename2){
-    std::string fullpath1 = path1 + "/" + filename1;
-    std::string fullpath2 = path2 + "/" + filename2;
-
-    BitStreamReader* reader1=new BitStreamReader(fullpath1.c_str());
-    BitStreamReader* reader2=new BitStreamReader(fullpath2.c_str());
+int BitStreamUtils::compare(Path path1, Path path2){
+    BitStreamReader* reader1=new BitStreamReader(path1);
+    BitStreamReader* reader2=new BitStreamReader(path2);
 
     int cont=1; // first different bit
 
@@ -23,12 +20,9 @@ int BitStreamUtils::compare(std::string path1, std::string filename1, std::strin
     return 0;
 }
 
-int BitStreamUtils::compareBytes(std::string path1, std::string filename1, std::string path2, std::string filename2){
-    std::string fullpath1 = path1 + "/" + filename1;
-    std::string fullpath2 = path2 + "/" + filename2;
-
-    BitStreamReader* reader1=new BitStreamReader(fullpath1.c_str());
-    BitStreamReader* reader2=new BitStreamReader(fullpath2.c_str());
+int BitStreamUtils::compareBytes(Path path1, Path path2){
+    BitStreamReader* reader1=new BitStreamReader(path1);
+    BitStreamReader* reader2=new BitStreamReader(path2);
 
     int byte_count=1; // first different byte
 

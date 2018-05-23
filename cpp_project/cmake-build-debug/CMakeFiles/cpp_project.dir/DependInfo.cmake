@@ -37,6 +37,7 @@ set(CMAKE_CXX_COMPILER_ID "AppleClang")
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../include"
+  "../include/file_utils"
   "../include/file_utils/bit_stream"
   "../include/file_utils/text"
   "../include/file_utils/csv"

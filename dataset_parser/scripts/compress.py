@@ -54,6 +54,7 @@ def code_decode_python(args):
 
 
 def compress_file(args):
+    print args.coder_params
     coder_info, columns_bits = code_python(args)
     py_filename = args.compressed_filename
     code_cpp(args)
@@ -61,14 +62,15 @@ def compress_file(args):
     print "Comparing compressed files..."
     assert(BitStreamUtils.compare_files(args.output_path, py_filename, args.output_path, cpp_filename))
 
-    decode_python(args)
-    py_filename = args.deco_filename
-    decode_cpp(args)
-    cpp_filename = args.deco_filename
-    print "Comparing decompressed files..."
-    assert(BitStreamUtils.compare_files(args.output_path, py_filename, args.output_path, cpp_filename))
-    assert(BitStreamUtils.compare_files(args.input_path, args.input_filename, args.output_path, cpp_filename))
+    # decode_python(args)
+    # py_filename = args.deco_filename
+    # decode_cpp(args)
+    # cpp_filename = args.deco_filename
+    # print "Comparing decompressed files..."
+    # assert(BitStreamUtils.compare_files(args.output_path, py_filename, args.output_path, cpp_filename))
+    # assert(BitStreamUtils.compare_files(args.input_path, args.input_filename, args.output_path, cpp_filename))
     same_file = True
+    # assert(1 == 0)
     # csv_compare = CSVCompare(args.input_path, args.input_filename, args.output_path, cpp_filename)
     # same_file = csv_compare.compare(args.coder_params.get('error_threshold'))
     # assert same_file
@@ -165,9 +167,10 @@ def run_script_on_coder(csv, row, coder_dictionary, output_dataset_path, logger,
     output_dataset_coder_path = output_dataset_path + '/' + coder_dictionary['o_folder']
     create_folder(output_dataset_coder_path)
 
+    coder_name = coder_dictionary['coder'].name()
     # CoderBasic - no params
-    if coder_dictionary['name'] == 'CoderBasic':
-        values = [coder_dictionary['name']] + [None] * 3
+    if coder_name == 'CoderBasic':
+        values = [coder_name] + [None] * 3
         args = {
             'logger': logger,
             'coder': coder_dictionary['coder'],
@@ -190,7 +193,7 @@ def run_script_on_coder(csv, row, coder_dictionary, output_dataset_path, logger,
             error_thresold_array = thresholds_hash[percentage]
             params = {'error_threshold': error_thresold_array}
             for id4, window_size in enumerate(window_sizes):
-                values = [coder_dictionary['name']] if id3 == 0 and id4 == 0 else [None]
+                values = [coder_name] if id3 == 0 and id4 == 0 else [None]
                 values += [percentage, params['error_threshold']] if id4 == 0 else [None, None]
                 values += [window_size]
 

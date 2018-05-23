@@ -113,16 +113,26 @@ iostream
 ../include/file_utils/bit_stream/bit_stream_reader.h
 stdio.h
 -
+string
+-
+path.h
+../include/file_utils/bit_stream/path.h
 
 ../include/file_utils/bit_stream/bit_stream_utils.h
 bit_stream_writer.h
 ../include/file_utils/bit_stream/bit_stream_writer.h
 string
 -
+path.h
+../include/file_utils/bit_stream/path.h
 
 ../include/file_utils/bit_stream/bit_stream_writer.h
 stdio.h
 -
+string
+-
+path.h
+../include/file_utils/bit_stream/path.h
 
 ../include/file_utils/csv/csv_reader.h
 fstream
@@ -131,10 +141,14 @@ string
 -
 text_reader.h
 ../include/file_utils/csv/text_reader.h
+path.h
+../include/file_utils/csv/path.h
 
 ../include/file_utils/csv/csv_utils.h
 string
 -
+path.h
+../include/file_utils/csv/path.h
 
 ../include/file_utils/csv/csv_writer.h
 fstream
@@ -142,6 +156,12 @@ fstream
 string
 -
 vector
+-
+path.h
+../include/file_utils/csv/path.h
+
+../include/file_utils/path.h
+string
 -
 
 ../include/file_utils/text/text_reader.h
@@ -156,6 +176,10 @@ string
 
 ../include/scripts.h
 string
+-
+path.h
+../include/path.h
+vector
 -
 
 ../include/string_utils.h
@@ -181,6 +205,12 @@ assert.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/assert.h
 bit_stream_utils.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/bit_stream_utils.h
+path.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/path.h
+stdlib.h
+-
+vector
+-
 
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/basic/coder_basic.cpp
 coder_basic.h
@@ -245,6 +275,8 @@ vector
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/pca/coder_pca.cpp
 coder_pca.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/pca/coder_pca.h
+assert.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/pca/assert.h
 
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/pca/decoder_pca.cpp
 
@@ -299,6 +331,8 @@ iostream
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/bit_stream/bit_stream_writer.cpp
 bit_stream_writer.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/bit_stream/bit_stream_writer.h
+iostream
+-
 
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/csv/csv_reader.cpp
 csv_reader.h

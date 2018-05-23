@@ -5,17 +5,23 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include "path.h"
 
 class CSVWriter {
 
 private:
     std::ofstream file;
 
+    void constructor(std::string path, std::string filename);
+
 public:
     std::string full_path;
     int current_line_count = 0;
 
+    CSVWriter();
     CSVWriter(std::string path, std::string filename);
+    CSVWriter(Path path);
+
     void writeRow(std::vector<std::string> row);
     void writeRowDecoder(std::vector<std::string> row);
     void close();

@@ -1,14 +1,29 @@
 
 #include "bit_stream_writer.h"
 
+#include <iostream>
 
-BitStreamWriter::BitStreamWriter(const char * file){
+void BitStreamWriter::construct(const char * file){
     fp = fopen(file,"w");
     current = 0, offset = 0;
 }
 
-void BitStreamWriter::pushBit(unsigned int bit){
+BitStreamWriter::BitStreamWriter(){}
 
+BitStreamWriter::BitStreamWriter(const char * file){
+    construct(file);
+}
+
+BitStreamWriter::BitStreamWriter(std::string path, std::string filename){
+    std::string full_path = path + "/" + filename;
+    construct(full_path.c_str());
+}
+
+BitStreamWriter::BitStreamWriter(Path path){
+    construct(path.full_path.c_str());
+}
+
+void BitStreamWriter::pushBit(unsigned int bit){
     if (bit > 0)  current |= 1 << offset;
     offset = (offset + 1) & 7;
 

@@ -9,6 +9,10 @@ class CoderPCA(CoderCols):
     def __init__(self, input_csv, output_path, output_filename, params):
         super(CoderPCA, self).__init__(input_csv, output_path, output_filename, WindowFixed, params)
 
+    @classmethod
+    def name(cls):
+        return "CoderPCA"
+
     def get_info(self):
         return "CoderPCA" +\
                ("\n-> error_threshold = %s" % self.params['error_threshold']) +\
@@ -34,7 +38,9 @@ class CoderPCA(CoderCols):
             self.output_file.write_bit(1)  # fi = 1
             for value in res:
                 self._code_value_raw(value, row_index, self.column_index)
+                # print "window", value
         else:
             self.dataset.add_bits(1)  # count the bits
             self.output_file.write_bit(0)  # fi = 0
             self._code_value_raw(res, row_index, self.column_index)
+            # print "constant", res

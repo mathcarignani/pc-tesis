@@ -4,11 +4,10 @@
 #include <iostream>
 
 
-PCAWindow::PCAWindow(int error_threshold_, int fixed_window_size_){
-    error_threshold = error_threshold_;
+PCAWindow::PCAWindow(int fixed_window_size_, int error_threshold_){
     fixed_window_size = fixed_window_size_;
+    error_threshold = error_threshold_;
     array = new std::vector<std::string>;
-//    array.reserve(fixed_window_size);
     length = 0;
     nan_window = false;
     min = 0;

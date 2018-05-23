@@ -7,12 +7,22 @@
 #include "vector_utils.h"
 #include "text_utils.h"
 
-CSVReader::CSVReader(std::string path, std::string filename){
+void CSVReader::constructor(std::string path, std::string filename){
     total_lines = TextUtils::lineCount(path, filename);
     full_path = path + "/" + filename;
     file.open(full_path);
     current_line_count = 0;
     continue_reading = total_lines > 0;
+}
+
+CSVReader::CSVReader(){}
+
+CSVReader::CSVReader(std::string path, std::string filename){
+    constructor(path, filename);
+}
+
+CSVReader::CSVReader(Path path){
+    constructor(path.file_path, path.file_filename);
 }
 
 std::vector<std::string> CSVReader::readLineCSV(){
