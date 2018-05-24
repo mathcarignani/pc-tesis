@@ -33,6 +33,7 @@ public:
     CoderBase(CSVReader &input_csv, BitStreamWriter &output_file) : input_csv(input_csv), output_file(output_file) { }
     virtual std::string getInfo() = 0;
     void codeFile();
+    void printBits();
     void close();
 };
 

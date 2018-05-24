@@ -18,10 +18,11 @@ Dataset::Dataset(std::vector<Range> ranges, std::vector<int> bits, int data_colu
     }
     column_code = column_code_vector[0];
     data_columns_count = data_columns_count_;
+    array_index = 0;
 }
 
 void Dataset::setColumn(int column_index){
-    int array_index = 0;
+    array_index = 0;
     if (column_index != 0){
         array_index = column_index % (column_code_vector.size() - 1);
         if (array_index == 0){ array_index = column_code_vector.size() - 1; }
@@ -30,7 +31,7 @@ void Dataset::setColumn(int column_index){
 }
 
 void Dataset::addBits(int bits){
-    column_code.addBits(bits);
+    column_code_vector[array_index].addBits(bits);
 }
 
 int Dataset::getBits(){
@@ -52,6 +53,12 @@ int Dataset::nan(){
 
 bool Dataset::insideRange(int value){
     return column_code.range.insideRange(value);
+}
+
+void Dataset::printBits(){
+    for(int i=0; i<column_code_vector.size(); i++){
+        std::cout << "total_bits " << column_code_vector[i].total_bits << std::endl;
+    }
 }
 
 //void Dataset::printRange(){

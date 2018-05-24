@@ -13,8 +13,7 @@ void CoderPCA::codeColumn(){
     row_index = 0;
     input_csv.goToLine(4); // first data row
     while (input_csv.continue_reading){
-        std::vector<std::string> csv_row = input_csv.readLineCSV();
-        std::string csv_value = csv_row[column_index];
+        std::string csv_value = input_csv.readLineCSVWithIndex(column_index);
         window.addValue(csv_value);
         if (window.isFull()) { codeWindow(window); }
         row_index++;

@@ -1,4 +1,8 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/cpp_project.dir/external/benchmarkLinux/DataStructures/DynArray/DynArray.cpp.o"
+  "CMakeFiles/cpp_project.dir/external/benchmarkLinux/DataStructures/Line/Line.cpp.o"
+  "CMakeFiles/cpp_project.dir/external/benchmarkLinux/DataStructures/Polygon/CPolygon.cpp.o"
+  "CMakeFiles/cpp_project.dir/external/benchmarkLinux/Algorithms/PWLH/Control/LinearBucket.cpp.o"
   "CMakeFiles/cpp_project.dir/src/string_utils.cpp.o"
   "CMakeFiles/cpp_project.dir/src/datetime_utils.cpp.o"
   "CMakeFiles/cpp_project.dir/src/file_utils/bit_stream/bit_stream_reader.cpp.o"
@@ -26,6 +30,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/cpp_project.dir/src/coders/apca/apca_window.cpp.o"
   "CMakeFiles/cpp_project.dir/src/coders/apca/coder_apca.cpp.o"
   "CMakeFiles/cpp_project.dir/src/coders/apca/decoder_apca.cpp.o"
+  "CMakeFiles/cpp_project.dir/src/coders/pwlh/pwlh_window.cpp.o"
+  "CMakeFiles/cpp_project.dir/src/coders/pwlh/coder_pwlh.cpp.o"
+  "CMakeFiles/cpp_project.dir/src/coders/pwlh/decoder_pwlh.cpp.o"
   "CMakeFiles/cpp_project.dir/src/scripts.cpp.o"
   "CMakeFiles/cpp_project.dir/src/tests.cpp.o"
   "CMakeFiles/cpp_project.dir/main.cpp.o"

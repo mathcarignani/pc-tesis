@@ -1,8 +1,6 @@
 
 #include "coder_cols.h"
 
-#include "assert.h"
-
 
 void CoderCols::codeDataRows() {
 //    std::cout << "dataset.columns_count " << dataset.data_columns_count << std::endl;

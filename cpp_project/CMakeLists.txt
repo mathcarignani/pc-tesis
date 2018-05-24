@@ -20,6 +20,14 @@ set(CMAKE_CXX_STANDARD 11)
 #add_executable(cpp_project ${HEADER_FILES} ${SOURCE_FILES})
 
 #add_executable(cpp_project main.cpp external/minicsv.h include/csv_utils.h src/csv_utils.cpp)
+set(BENCHMARK_DIR external/benchmarkLinux)
+set(PWLH_CONTROL_DIR external/benchmarkLinux/Algorithms/PWLH/Control)
+set(DATA_DIR external/benchmarkLinux/DataManagementLayer/Data)
+set(DYN_ARRAY_DIR external/benchmarkLinux/DataStructures/DynArray)
+set(LINE_DIR external/benchmarkLinux/DataStructures/Line)
+set(POLYGON_DIR external/benchmarkLinux/DataStructures/Polygon)
+
+set(EXTERNAL_DIRS ${BENCHMARK_DIR} ${PWLH_CONTROL_DIR} ${DATA_DIR} ${DYN_ARRAY_DIR} ${LINE_DIR} ${POLYGON_DIR})
 
 set(CODER_HEADER_HEAD_DIR include/coders/header)
 set(CODER_HEADER_SRC_DIR src/coders/header)
@@ -39,8 +47,20 @@ set(CODER_PCA_SRC_DIR src/coders/pca)
 set(CODER_APCA_HEAD_DIR include/coders/apca)
 set(CODER_APCA_SRC_DIR src/coders/apca)
 
-set(CODER_HEAD_DIRS ${CODER_HEADER_HEAD_DIR} ${CODER_BASE_HEAD_DIR} ${CODER_COLS_HEAD_DIR} ${CODER_BASIC_HEAD_DIR} ${CODER_PCA_HEAD_DIR} ${CODER_APCA_HEAD_DIR})
-set(CODER_STR_DIRS ${CODER_HEADER_SRC_DIR} ${CODER_BASE_SRC_DIR} ${CODER_COLS_SRC_DIR} ${CODER_BASIC_SRC_DIR} ${CODER_PCA_SRC_DIR} ${CODER_APCA_SRC_DIR})
+set(CODER_PWLH_HEAD_DIR include/coders/pwlh)
+set(CODER_PWLH_SRC_DIR src/coders/pwlh)
+
+set(CODER_SF_HEAD_DIR include/coders/slide_filter)
+set(CODER_SF_SRC_DIR src/coders/slide_filter)
+
+set(CODER_HEAD_DIRS1 ${CODER_HEADER_HEAD_DIR} ${CODER_BASE_HEAD_DIR} ${CODER_COLS_HEAD_DIR} ${CODER_BASIC_HEAD_DIR})
+set(CODER_HEAD_DIRS2 ${CODER_PCA_HEAD_DIR} ${CODER_APCA_HEAD_DIR} ${CODER_PWLH_HEAD_DIR} ${CODER_SF_HEAD_DIR})
+
+set(CODER_SRC_DIRS1 ${CODER_HEADER_SRC_DIR} ${CODER_BASE_SRC_DIR} ${CODER_COLS_SRC_DIR} ${CODER_BASIC_SRC_DIR})
+set(CODER_SRC_DIRS2 ${CODER_PCA_SRC_DIR} ${CODER_APCA_SRC_DIR} ${CODER_PWLH_SRC_DIR} ${CODER_SF_SRC_DIR})
+
+set(CODER_HEAD_DIRS ${CODER_HEAD_DIRS1} ${CODER_HEAD_DIRS2})
+set(CODER_SRC_DIRS ${CODER_SRC_DIRS1} ${CODER_SRC_DIRS2})
 
 set(FILE_UTILS_HEAD_DIR include/file_utils)
 
@@ -57,8 +77,16 @@ set(DATASET_HEAD_DIR include/dataset)
 set(DATASET_SRC_DIR src/dataset)
 
 set(HEAD_DIRS include ${FILE_UTILS_HEAD_DIR} ${BIT_STREAM_HEAD_DIR} ${TEXT_HEAD_DIR} ${CSV_HEAD_DIR} ${CODER_HEAD_DIRS} ${DATASET_HEAD_DIR})
-set(SRC_DIRS src ${BIT_STREAM_SRC_DIR} ${TEXT_SRC_DIR} ${CSV_SRC_DIR} ${CODER_STR_DIRS} ${DATASET_SRC_DIR})
-include_directories(${HEAD_DIRS} ${SRC_DIR})
+set(SRC_DIRS src ${BIT_STREAM_SRC_DIR} ${TEXT_SRC_DIR} ${CSV_SRC_DIR} ${CODER_SRC_DIRS} ${DATASET_SRC_DIR})
+include_directories(${EXTERNAL_DIRS} ${HEAD_DIRS} ${SRC_DIR})
+
+### EXTERNAL BEGIN #####################################################################################################
+set(EXTERNAL_DATA_STRUCTURES_HEAD_FILES ${DYN_ARRAY_DIR}/DynArray.h ${LINE_DIR}/Line.h ${POLYGON_DIR}/CPolygon.h)
+set(EXTERNAL_DATA_STRUCTURES_SRC_FILES ${DYN_ARRAY_DIR}/DynArray.cpp ${LINE_DIR}/Line.cpp ${POLYGON_DIR}/CPolygon.cpp)
+
+set(EXTERNAL_HEAD_FILES ${BENCHMARK_DIR}/stdafx.h ${EXTERNAL_DATA_STRUCTURES_HEAD_FILES} ${DATA_DIR}/DataItem.h ${PWLH_CONTROL_DIR}/LinearBucket.h)
+set(EXTERNAL_SRC_FILES ${EXTERNAL_DATA_STRUCTURES_SRC_FILES} ${PWLH_CONTROL_DIR}/LinearBucket.cpp)
+### EXTERNAL END #######################################################################################################
 
 ### FILE UTILS BEGIN ###################################################################################################
 set(BIT_STREAM_HEAD_FILES ${BIT_STREAM_HEAD_DIR}/bit_stream_reader.h ${BIT_STREAM_HEAD_DIR}/bit_stream_writer.h ${BIT_STREAM_HEAD_DIR}/bit_stream_utils.h)
@@ -98,8 +126,20 @@ set(CODER_PCA_SRC_FILES ${CODER_PCA_SRC_DIR}/pca_window.cpp ${CODER_PCA_SRC_DIR}
 set(CODER_APCA_HEAD_FILES ${CODER_APCA_HEAD_DIR}/apca_window.h ${CODER_APCA_HEAD_DIR}/coder_apca.h ${CODER_APCA_HEAD_DIR}/decoder_apca.h)
 set(CODER_APCA_SRC_FILES ${CODER_APCA_SRC_DIR}/apca_window.cpp ${CODER_APCA_SRC_DIR}/coder_apca.cpp ${CODER_APCA_SRC_DIR}/decoder_apca.cpp)
 
-set(CODER_HEAD_FILES ${CODER_HEADER_HEAD_FILES} ${CODER_BASE_HEAD_FILES} ${DATASET_HEAD_FILES} ${CODER_COLS_HEAD_FILES} ${CODER_BASIC_HEAD_FILES} ${CODER_PCA_HEAD_FILES} ${CODER_APCA_HEAD_FILES})
-set(CODER_SRC_FILES ${CODER_HEADER_SRC_FILES} ${CODER_BASE_SRC_FILES} ${DATASET_SRC_FILES} ${CODER_COLS_SRC_FILES} ${CODER_BASIC_SRC_FILES} ${CODER_PCA_SRC_FILES} ${CODER_APCA_SRC_FILES})
+set(CODER_PWLH_HEAD_FILES ${CODER_PWLH_HEAD_DIR}/pwlh_window.h ${CODER_PWLH_HEAD_DIR}/coder_pwlh.h ${CODER_PWLH_HEAD_DIR}/decoder_pwlh.h)
+set(CODER_PWLH_SRC_FILES ${CODER_PWLH_SRC_DIR}/pwlh_window.cpp ${CODER_PWLH_SRC_DIR}/coder_pwlh.cpp ${CODER_PWLH_SRC_DIR}/decoder_pwlh.cpp)
+
+set(CODER_SF_HEAD_FILES) # ${CODER_SF_HEAD_DIR}/slide_filter_window.h ${CODER_SF_HEAD_DIR}/coder_slide_filter.h ${CODER_SF_HEAD_DIR}/decoder_slide_filter.h)
+set(CODER_SF_SRC_FILES) # ${CODER_SF_SRC_DIR}/slide_filter_window.cpp ${CODER_SF_SRC_DIR}/coder_slide_filter.cpp ${CODER_SF_SRC_DIR}/decoder_slide_filter.cpp)
+
+set(CODER_HEAD_FILES1 ${CODER_HEADER_HEAD_FILES} ${CODER_BASE_HEAD_FILES} ${DATASET_HEAD_FILES} ${CODER_COLS_HEAD_FILES} ${CODER_BASIC_HEAD_FILES})
+set(CODER_HEAD_FILES2 ${CODER_PCA_HEAD_FILES} ${CODER_APCA_HEAD_FILES} ${CODER_PWLH_HEAD_FILES} ${CODER_SF_HEAD_FILES})
+
+set(CODER_SRC_FILES1 ${CODER_HEADER_SRC_FILES} ${CODER_BASE_SRC_FILES} ${DATASET_SRC_FILES} ${CODER_COLS_SRC_FILES} ${CODER_BASIC_SRC_FILES})
+set(CODER_SRC_FILES2 ${CODER_PCA_SRC_FILES} ${CODER_APCA_SRC_FILES} ${CODER_PWLH_SRC_FILES} ${CODER_SF_SRC_FILES})
+
+set(CODER_HEAD_FILES ${CODER_HEAD_FILES1} ${CODER_HEAD_FILES2})
+set(CODER_SRC_FILES ${CODER_SRC_FILES1} ${CODER_SRC_FILES2})
 ### CODERS END #########################################################################################################
 
 set(OTHER_HEAD_FILES1 include/string_utils.h include/datetime_utils.h include/vector_utils.h)
@@ -108,7 +148,7 @@ set(OTHER_SRC_FILES1 src/string_utils.cpp src/datetime_utils.cpp )
 set(OTHER_HEAD_FILES2 include/scripts.h include/tests.h)
 set(OTHER_SRC_FILES2 src/scripts.cpp src/tests.cpp)
 
-set(HEAD_FILES ${OTHER_HEAD_FILES1} ${FILE_UTILS_HEAD_FILES} ${DATASET_HEAD_FILES} ${CODER_HEAD_FILES} ${OTHER_HEAD_FILES2})
-set(SOURCE_FILES ${OTHER_SRC_FILES1} ${FILE_UTILS_SRC_FILES} ${CODER_SRC_FILES} ${OTHER_SRC_FILES2})
+set(HEAD_FILES ${EXTERNAL_HEAD_FILES} ${OTHER_HEAD_FILES1} ${FILE_UTILS_HEAD_FILES} ${DATASET_HEAD_FILES} ${CODER_HEAD_FILES} ${OTHER_HEAD_FILES2})
+set(SOURCE_FILES ${EXTERNAL_SRC_FILES} ${OTHER_SRC_FILES1} ${FILE_UTILS_SRC_FILES} ${CODER_SRC_FILES} ${OTHER_SRC_FILES2})
 
 add_executable(cpp_project ${HEAD_FILES} ${SOURCE_FILES} main.cpp)

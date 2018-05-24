@@ -8,9 +8,10 @@ struct Dataset {
 
 private:
     std::vector<ColumnCode> column_code_vector;
-    ColumnCode column_code;
+    int array_index;
 
 public:
+    ColumnCode column_code;
     int data_columns_count;
 
     Dataset();
@@ -22,6 +23,7 @@ public:
     int offset();
     int nan();
     bool insideRange(int value);
+    void printBits();
 //    void printRange();
 };
 

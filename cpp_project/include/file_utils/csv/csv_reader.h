@@ -20,6 +20,8 @@ public:
 
     // PRE: continue_reading
     std::vector<std::string> readLineCSV();
+    // PRE: continue reading
+    std::string readLineCSVWithIndex(int index);
 };
 
 #endif //CPP_PROJECT_CSV_READER_H

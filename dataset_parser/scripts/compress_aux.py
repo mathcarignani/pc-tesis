@@ -8,7 +8,7 @@ from coders.apca.decoder_apca import DecoderAPCA
 from coders.ca.coder_ca import CoderCA
 from coders.ca.decoder_ca import DecoderCA
 
-PYTHON_CODERS = [CoderBasic, CoderPCA, CoderAPCA, CoderCA]
+PYTHON_CODERS = ["CoderBasic", "CoderPCA", "CoderAPCA", "CoderCA"]
 
 dataset_array = [
     {'name': 'IRKIS', 'folder': "[1]irkis", 'logger': "irkis.log", 'o_folder': "[1]irkis"},
@@ -36,12 +36,12 @@ dataset_array = [
 # ]
 
 coders_array = [
-    # {
-    #     'name': 'CoderBasic',
-    #     'coder': CoderBasic,
-    #     'decoder': DecoderBasic,
-    #     'o_folder': 'basic'
-    # },
+    {
+        'name': 'CoderBasic',
+        'coder': CoderBasic,
+        'decoder': DecoderBasic,
+        'o_folder': 'basic'
+    },
     # {
     #     'name': 'CoderPCA',
     #     'coder': CoderPCA,
@@ -49,13 +49,13 @@ coders_array = [
     #     'o_folder': 'pca',
     #     'params': {'fixed_window_size': [5, 10, 25, 50, 100, 200]}
     # },
-    {
-        'name': 'CoderAPCA',
-        'coder': CoderAPCA,
-        'decoder': DecoderAPCA,
-        'o_folder': 'apca',
-        'params': {'max_window_size': [5, 10, 25, 50, 100, 200]}
-    },
+    # {
+    #     'name': 'CoderAPCA',
+    #     'coder': CoderAPCA,
+    #     'decoder': DecoderAPCA,
+    #     'o_folder': 'apca',
+    #     'params': {'max_window_size': [5, 10, 25, 50, 100, 200]}
+    # },
     # {
     #     'name': 'CoderCA',
     #     'coder': CoderCA,
@@ -63,4 +63,9 @@ coders_array = [
     #     'o_folder': 'ca',
     #     'params': {'max_window_size': [5, 10, 25, 50, 100, 200]}
     # },
+    {
+        'name': 'CoderPWLH',
+        'o_folder': 'pwlh',
+        'params': {'max_window_size': [5, 10, 25, 50, 100, 200]}
+    },
 ]

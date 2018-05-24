@@ -65,7 +65,7 @@ int HeaderDecoder::decodeColumnNames(){
         char character = StringUtils::intToChar(char_as_int);
         column_names += character;
     }
-    std::vector<std::string> row = StringUtils::split(column_names, ",");
+    std::vector<std::string> row = StringUtils::splitByString(column_names, ",");
     int data_columns_count = row.size();
     row.insert(row.begin(), "Time Delta"); // add "Time Delta"
     output_csv.writeRowDecoder(row); // call writeRow instead of writeRowDecoder

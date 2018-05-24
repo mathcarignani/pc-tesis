@@ -16,7 +16,7 @@ void CSVUtils::CopyCSV(Path input_path, Path output_path){
     while (csv_reader.continue_reading) {
         std::vector<std::string> row = csv_reader.readLineCSV();
         std::string row_str = StringUtils::join(row, ",");
-        std::vector<std::string> row_str_split = StringUtils::split(row_str, ",");
+        std::vector<std::string> row_str_split = StringUtils::splitByString(row_str, ",");
 //        if (csv_reader.current_line_count == 2){
 //            std::cout << "row_str" << std::endl;
 //            std::cout << row_str.size() << std::endl;

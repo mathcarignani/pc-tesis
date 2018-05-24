@@ -27,6 +27,7 @@ def code_python(args):
     c.close()
     coder_info = c.get_info()
     columns_bits = [column_code.total_bits for column_code in c.dataset.column_code_array]
+    print columns_bits
     elapsed_time = time.time() - start_time
     print args.input_filename, "code_python - elapsed time =", round(elapsed_time, 2), "seconds"
     return [coder_info, columns_bits]
@@ -54,36 +55,35 @@ def code_decode_python(args):
 
 
 def compress_file(args):
-    print args.coder_params
-    coder_info, columns_bits = code_python(args)
-    py_filename = args.compressed_filename
-    code_cpp(args)
-    cpp_filename = args.compressed_filename
-    print "Comparing compressed files..."
-    assert(BitStreamUtils.compare_files(args.output_path, py_filename, args.output_path, cpp_filename))
+    if args.coder_name not in PYTHON_CODERS:
+        coder_info, columns_bits = code_decode_cpp(args)
+        print "column_bits", columns_bits
+        csv_compare = CSVCompare(args.input_path, args.input_filename, args.output_path, args.deco_filename)
+        same_file = csv_compare.compare(args.coder_params['error_threshold'], False)
+        same_file = True
+    else:
+        coder_info, columns_bits = code_decode_python(args)
+        csv_compare = CSVCompare(args.input_path, args.input_filename, args.output_path, args.deco_filename)
+        same_file = csv_compare.compare(args.coder_params.get('error_threshold'), False)
+        assert same_file
 
-    decode_python(args)
-    py_filename = args.deco_filename
-    decode_cpp(args)
-    cpp_filename = args.deco_filename
-    print "Comparing decompressed files..."
-    assert(BitStreamUtils.compare_files(args.output_path, py_filename, args.output_path, cpp_filename))
-    assert(BitStreamUtils.compare_files(args.input_path, args.input_filename, args.output_path, cpp_filename))
-    same_file = True
-    # assert(1 == 0)
-    # csv_compare = CSVCompare(args.input_path, args.input_filename, args.output_path, cpp_filename)
-    # same_file = csv_compare.compare(args.coder_params.get('error_threshold'))
-    # assert same_file
-
-    # if args.coder in PYTHON_CODERS:
-    #     coder_info, columns_bits = code_decode_python(args)
-    # else:
-    #     coder_info, columns_bits = code_decode_cpp(args)
-
-    # compare
-    # csv_compare = CSVCompare(args.input_path, args.input_filename, args.output_path, args.deco_filename)
-    # same_file = csv_compare.compare(args.coder_params.get('error_threshold'))
-    # assert same_file
+    # print args.coder_params
+    # coder_info, columns_bits_python = code_python(args)
+    # py_filename = args.compressed_filename
+    # columns_bits_cpp = code_cpp(args)
+    # cpp_filename = args.compressed_filename
+    # print "Comparing compressed files and column bits..."
+    # assert(BitStreamUtils.compare_files(args.output_path, py_filename, args.output_path, cpp_filename))
+    # assert(columns_bits_python == columns_bits_cpp)
+    #
+    # decode_python(args)
+    # py_filename = args.deco_filename
+    # decode_cpp(args)
+    # cpp_filename = args.deco_filename
+    # print "Comparing decompressed files..."
+    # assert(BitStreamUtils.compare_files(args.output_path, py_filename, args.output_path, cpp_filename))
+    # assert(BitStreamUtils.compare_files(args.input_path, args.input_filename, args.output_path, cpp_filename))
+    # same_file = True
 
     # print results
     input_file = args.input_path + "/" + args.input_filename
@@ -167,15 +167,16 @@ def run_script_on_coder(csv, row, coder_dictionary, output_dataset_path, logger,
     output_dataset_coder_path = output_dataset_path + '/' + coder_dictionary['o_folder']
     create_folder(output_dataset_coder_path)
 
-    coder_name = coder_dictionary['coder'].name()
+    coder_name = coder_dictionary['name']
     # CoderBasic - no params
     if coder_name == 'CoderBasic':
         values = [coder_name] + [None] * 3
         args = {
             'logger': logger,
-            'coder': coder_dictionary['coder'],
+            'coder': coder_dictionary.get('coder'),
+            'coder_name': coder_dictionary['name'],
             'coder_params': {},
-            'decoder': coder_dictionary['decoder'],
+            'decoder': coder_dictionary.get('decoder'),
             'input_path': input_path,
             'input_filename': input_filename,
             'output_path': output_dataset_coder_path
@@ -200,9 +201,10 @@ def run_script_on_coder(csv, row, coder_dictionary, output_dataset_path, logger,
                 params[window_param_name] = window_size
                 args = {
                     'logger': logger,
-                    'coder': coder_dictionary['coder'],
+                    'coder': coder_dictionary.get('coder'),
+                    'coder_name': coder_dictionary['name'],
                     'coder_params': params,
-                    'decoder': coder_dictionary['decoder'],
+                    'decoder': coder_dictionary.get('decoder'),
                     'input_path': input_path,
                     'input_filename': input_filename,
                     'output_path': output_dataset_coder_path

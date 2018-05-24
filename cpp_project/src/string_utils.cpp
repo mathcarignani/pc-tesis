@@ -2,6 +2,7 @@
 #include "string_utils.h"
 
 #include <iostream>
+#include <math.h>
 
 //
 // SOURCE: https://stackoverflow.com/a/2340309/4547232
@@ -13,13 +14,14 @@ bool StringUtils::find(std::string string, std::string string_to_find) {
 //
 // SOURCE: https://stackoverflow.com/a/46943631/4547232
 //
-std::vector<std::string> StringUtils::split(std::string str, std::string token){
+std::vector<std::string> StringUtils::splitByString(std::string str, std::string delimiter){
     std::vector<std::string>result;
+    int delimiter_size = delimiter.size();
     while(str.size()){
-        int index = str.find(token);
+        int index = str.find(delimiter);
         if(index!=std::string::npos){
             result.push_back(str.substr(0,index));
-            str = str.substr(index+token.size());
+            str = str.substr(index+delimiter_size);
             if(str.size()==0)result.push_back(str);
         }else{
             result.push_back(str);
@@ -27,6 +29,45 @@ std::vector<std::string> StringUtils::split(std::string str, std::string token){
         }
     }
     return result;
+}
+
+//
+// SOURCE: https://stackoverflow.com/a/19751779/4547232
+//
+std::vector<std::string> StringUtils::splitByChar(std::string str, const char delimiter){
+    std::vector<std::string> result;
+    std::string acc = "";
+    for(int i = 0; i < str.size(); i++){
+        if(str[i] == delimiter){
+            result.push_back(acc);
+            acc = "";
+        }
+        else{
+            acc += str[i];
+        }
+    }
+    result.push_back(acc); // here we assume that str[str.size()-1] != delimiter
+    return result;
+}
+
+std::string StringUtils::splitByCharWithIndex(std::string str, const char delimiter, int index){
+    int delimiter_count = 0;
+    std::string acc = "";
+    for(int i = 0; i < str.size(); i++){
+        if (index != delimiter_count){
+            if(str[i] == delimiter){
+                delimiter_count++;
+            }
+        }
+        else {
+            if(str[i] != delimiter){
+                acc += str[i];
+            }
+            else {
+                return acc;
+            }
+        }
+    }
 }
 
 //
@@ -95,4 +136,15 @@ int StringUtils::bitLength(uint32_t value){
         }
     }
     return bits + value;
+}
+
+int StringUtils::doubleToInt(double d){
+    int d_int = (int)round(d);
+    return d_int;
+}
+
+std::string StringUtils::doubleToString(double d){
+    int d_int = doubleToInt(d);
+    std::string d_string = std::to_string(d_int);
+    return d_string;
 }

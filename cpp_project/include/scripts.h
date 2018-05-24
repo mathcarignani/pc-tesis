@@ -18,6 +18,11 @@ public:
     static void codeAPCA(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector);
     static void decodeAPCA(Path input_path, Path output_path, int max_window_size);
 
+    static void codePWLH(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector);
+    static void decodePWLH(Path input_path, Path output_path, int max_window_size);
+
+    static void codeSF(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector);
+    static void decodeSF(Path input_path, Path output_path, int max_window_size);
 
     static void copyAndCompareCSV();
     static void codeAndDecodeCSV();

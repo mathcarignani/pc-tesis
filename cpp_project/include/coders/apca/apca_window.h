@@ -2,7 +2,6 @@
 #ifndef CPP_PROJECT_APCA_WINDOW_H
 #define CPP_PROJECT_APCA_WINDOW_H
 
-#include <vector>
 #include <string>
 
 class APCAWindow {
@@ -24,7 +23,6 @@ public:
     bool isFull();
     bool isEmpty();
     void addFirstValue(std::string x);
-    static bool validThreshold(int min, int max, int error_threshold);
     bool updateConstantValue(int new_min, int new_max);
 };
 

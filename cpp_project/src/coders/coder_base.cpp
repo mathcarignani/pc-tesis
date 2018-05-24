@@ -37,7 +37,7 @@ void CoderBase::codeValueRaw(std::string x){
         value = codeValue(x);
     }
     catch( const std::invalid_argument& e ){
-        std::cout << e.what() << std::endl;
+        std::cout << "STRING OUT OF DATASET RANGE = " << e.what() << std::endl;
         exit(-1);
     }
     codeRaw(value);
@@ -47,6 +47,10 @@ void CoderBase::codeFile(){
     dataset = HeaderCoder(input_csv, output_file).codeHeader();
     codeDataRowsCount();
     codeDataRows();
+}
+
+void CoderBase::printBits(){
+    dataset.printBits();
 }
 
 void CoderBase::close(){
