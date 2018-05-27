@@ -4,6 +4,8 @@ from file_utils.aux import full_path
 
 
 class CSVReader:
+    FIRST_DATA_ROW = 4
+
     def __init__(self, path, filename, progress=False, delimiter=','):
         self.path, self.filename = path, filename
         self.full_path = full_path(path, filename)
@@ -25,6 +27,9 @@ class CSVReader:
         self.previous_row = next(self.csv_reader, None)
         for _ in xrange(row_number):
             self.read_line()
+
+    def goto_first_data_row(self):
+        self.goto_row(self.FIRST_DATA_ROW)
 
     # PRE: self.continue_reading
     def read_line(self):

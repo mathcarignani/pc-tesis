@@ -3,10 +3,11 @@ sys.path.append('.')
 
 from file_utils.csv_utils.csv_reader import CSVReader
 from file_utils.csv_utils.csv_writer import CSVWriter
+from scripts.compress_aux import THRESHOLD_PERCENTAGES
 
-percentages = [0, 3, 5, 10, 15, 20, 30]
+percentages = THRESHOLD_PERCENTAGES
 percentages_len = len(percentages)
-coders_len = 3
+coders_len = 4
 coder_index = 2
 
 
@@ -74,34 +75,34 @@ def calculate_results_file(row):
     return out_row
 
 
-# input_path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/cols"
-#
-# filenames = [
-#     "results1_irkis-col.csv",
-#     "results2_noaa-sst-col.csv",
-#     "results3_noaa-adcp-col.csv",
-#     "results4_solar-anywhere-col1.csv",
-#     "results4_solar-anywhere-col2.csv",
-#     "results4_solar-anywhere-col3.csv",
-#     "results5_el-nino-col1.csv",
-#     "results5_el-nino-col2.csv",
-#     "results5_el-nino-col3.csv",
-#     "results5_el-nino-col4.csv",
-#     "results5_el-nino-col5.csv",
-#     "results5_el-nino-col6.csv",
-#     "results5_el-nino-col7.csv",
-#     "results6_noaa-spc-hail-col1.csv",
-#     "results6_noaa-spc-hail-col2.csv",
-#     "results6_noaa-spc-hail-col3.csv",
-#     "results7_noaa-spc-tornado-col1.csv",
-#     "results7_noaa-spc-tornado-col2.csv",
-#     "results8_noaa-spc-wind-col1.csv",
-#     "results8_noaa-spc-wind-col2.csv",
-#     "results8_noaa-spc-wind-col3.csv"
-# ]
+input_path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/results4/all/merged_results/process_results/cols"
+output_file = "PROCESS_RESULTS2-cols.csv"
+filenames = [
+    "results1_irkis-col.csv",
+    "results2_noaa-sst-col.csv",
+    "results3_noaa-adcp-col.csv",
+    "results4_solar-anywhere-col1.csv",
+    "results4_solar-anywhere-col2.csv",
+    "results4_solar-anywhere-col3.csv",
+    "results5_el-nino-col1.csv",
+    "results5_el-nino-col2.csv",
+    "results5_el-nino-col3.csv",
+    "results5_el-nino-col4.csv",
+    "results5_el-nino-col5.csv",
+    "results5_el-nino-col6.csv",
+    "results5_el-nino-col7.csv",
+    "results6_noaa-spc-hail-col1.csv",
+    "results6_noaa-spc-hail-col2.csv",
+    "results6_noaa-spc-hail-col3.csv",
+    "results7_noaa-spc-tornado-col1.csv",
+    "results7_noaa-spc-tornado-col2.csv",
+    "results8_noaa-spc-wind-col1.csv",
+    "results8_noaa-spc-wind-col2.csv",
+    "results8_noaa-spc-wind-col3.csv"
+]
 
-# input_path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/td"
-#
+# input_path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/results4/all/merged_results/process_results/td"
+# output_file = "PROCESS_RESULTS2-td.csv"
 # filenames = [
 #     "results1_irkis-td.csv",
 #     "results2_noaa-sst-td.csv",
@@ -112,16 +113,17 @@ def calculate_results_file(row):
 #     "results7_noaa-spc-tornado-td.csv",
 #     "results8_noaa-spc-wind-td.csv",
 # ]
-#
-# csv_writer = CSVWriter(input_path, "RESULTS.csv")
-# for filename in filenames:
-#     csv_reader = CSVReader(input_path, filename)
-#     calculate_results(csv_reader, csv_writer)
-#     csv_reader.close()
-# csv_writer.close()
-
-input_path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/paper-output/results"
-csv_writer = CSVWriter(input_path, "RESULTS.csv")
-csv_reader = CSVReader(input_path, "results1+2.process_results.out.csv")
-calculate_results(csv_reader, csv_writer)
+csv_writer = CSVWriter(input_path, output_file)
+for filename in filenames:
+    csv_reader = CSVReader(input_path, filename)
+    calculate_results(csv_reader, csv_writer)
+    csv_reader.close()
 csv_writer.close()
+
+
+# PAPER-OUTPUT
+# input_path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/paper-output/results"
+# csv_writer = CSVWriter(input_path, "RESULTS.csv")
+# csv_reader = CSVReader(input_path, "results1+2.process_results.out.csv")
+# calculate_results(csv_reader, csv_writer)
+# csv_writer.close()

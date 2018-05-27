@@ -8,9 +8,13 @@ from coders.apca.decoder_apca import DecoderAPCA
 from coders.ca.coder_ca import CoderCA
 from coders.ca.decoder_ca import DecoderCA
 
-PYTHON_CODERS = ["CoderBasic", "CoderPCA", "CoderAPCA", "CoderCA"]
 
-dataset_array = [
+THRESHOLD_PERCENTAGES = [0, 3, 5, 10, 15, 20, 30]
+CSV_PATH = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/"
+
+PYTHON_CODERS = ["CoderAPCA", "CoderCA"]  # ["CoderBasic", "CoderPCA", "CoderAPCA", "CoderCA"]
+
+DATASETS_ARRAY = [
     {'name': 'IRKIS', 'folder': "[1]irkis", 'logger': "irkis.log", 'o_folder': "[1]irkis"},
     {'name': 'NOAA-SST', 'folder': "[2]noaa-sst/months/2017", 'logger': "noaa-sst.log", 'o_folder': "[2]noaa-sst"},
     {'name': 'NOAA-ADCP', 'folder': "[3]noaa-adcp/2015", 'logger': "noaa-adcp.log", 'o_folder': "[3]noaa-adcp"},
@@ -21,7 +25,7 @@ dataset_array = [
     {'name': 'NOAA-SPC-wind', 'folder': "[6]noaa-spc-reports/wind", 'logger': "noaa-spc-wind.log", 'o_folder': "[6]noaa-spc-reports"}
 ]
 
-# dataset_array = [
+# DATASET_ARRAY = [
 #     {'name': 'CO2', 'folder': "CO2", 'logger': "CO2.log", 'o_folder': "CO2"},
 #     {'name': 'Humidity', 'folder': "Humidity", 'logger': "Humidity.log", 'o_folder': "Humidity"},
 #     {'name': 'Lysimeter', 'folder': "Lysimeter", 'logger': "Lysimeter.log", 'o_folder': "Lysimeter"},
@@ -35,7 +39,7 @@ dataset_array = [
 #     {'name': 'Wind_speed', 'folder': "Wind_speed", 'logger': "Wind_speed.log", 'o_folder': "Wind_speed"},
 # ]
 
-coders_array = [
+CODERS_ARRAY = [
     {
         'name': 'CoderBasic',
         'coder': CoderBasic,

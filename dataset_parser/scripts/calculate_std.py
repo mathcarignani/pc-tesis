@@ -6,6 +6,7 @@ sys.path.append('.')
 from file_utils.csv_utils.csv_reader import CSVReader
 from file_utils.csv_utils.csv_writer import CSVWriter
 from scripts.utils import csv_files_filenames
+from scripts.compress_aux import THRESHOLD_PERCENTAGES
 
 
 def calculate_stats(csv_reader, columns_count):
@@ -57,7 +58,7 @@ def calculate_summs(csv_reader, means, columns_count):
 
 
 def calculate_stds(csv_reader, counts, means):
-    csv_reader.goto_row(4)  # first data row
+    csv_reader.goto_first_data_row()
 
     columns_count = len(counts)
     summs = calculate_summs(csv_reader, means, columns_count)
@@ -103,8 +104,6 @@ def irkis():
     input_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis"
     stds_arrays = calculate_folder_stats(input_path)
 
-    percentages = [0, 3, 5, 10, 15, 20, 30]
-
     output_path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output"
     output_filename = "out.csv"
     csv_write = CSVWriter(output_path, output_filename)
@@ -119,7 +118,7 @@ def irkis():
         row = ['N' if value == 'N' else round(value, 2) for value in std_array[1:]]
         csv_write.write_row([std_array[0]] + row)
 
-    for percentage in percentages:
+    for percentage in THRESHOLD_PERCENTAGES:
         csv_write.write_row(["%s %%" % percentage])
         div_percentage = float(percentage) / 100
 

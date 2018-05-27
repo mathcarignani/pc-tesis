@@ -177,7 +177,7 @@ def noaa_spc(dataset):
 #     file2 = CSVReader(path2, filename2)
 #
 #     file1.goto_row(1)
-#     file2.goto_row(4)
+#     file2.goto_first_data_row()
 #
 #     count = 0
 #     while file1.continue_reading:

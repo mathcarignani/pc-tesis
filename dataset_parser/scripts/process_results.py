@@ -3,9 +3,10 @@ sys.path.append('.')
 
 from file_utils.csv_utils.csv_reader import CSVReader
 from file_utils.csv_utils.csv_writer import CSVWriter
+from scripts.compress_aux import THRESHOLD_PERCENTAGES
 
-# input_path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/"
-input_path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/paper-output/results"
+input_path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/results4/all/merged_results"
+# input_path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/paper-output/results"
 
 
 def get_best(line, index, best_perc, best_window, best_row):
@@ -34,7 +35,7 @@ def process(input_filename, output_filename, index):
     csv_reader = CSVReader(input_path, input_filename)
     csv_writer = CSVWriter(input_path, output_filename)
 
-    percentages = [0, 3, 5, 10, 15, 20, 30]
+    percentages = THRESHOLD_PERCENTAGES
     csv_writer.write_row(["Dataset", "Filename", "Coder"] + percentages + [''] + percentages)
 
     current_coder = None
@@ -70,44 +71,44 @@ def process(input_filename, output_filename, index):
 
 
 # COL
-# process("results1_irkis.csv", "results1_irkis-col.csv", 12)
+process("results1_irkis.csv", "results1_irkis-col.csv", 12)
 
-# process("results2_noaa-sst.csv", "results2_noaa-sst-col.csv", 12)
+process("results2_noaa-sst.csv", "results2_noaa-sst-col.csv", 12)
 
-# process("results3_noaa-adcp.csv", "results3_noaa-adcp-col.csv", 12)
+process("results3_noaa-adcp.csv", "results3_noaa-adcp-col.csv", 12)
 
-# process("results4_solar-anywhere.csv", "results4_solar-anywhere-col1.csv", 12)
-# process("results4_solar-anywhere.csv", "results4_solar-anywhere-col2.csv", 14)
-# process("results4_solar-anywhere.csv", "results4_solar-anywhere-col3.csv", 16)
+process("results4_solar-anywhere.csv", "results4_solar-anywhere-col1.csv", 12)
+process("results4_solar-anywhere.csv", "results4_solar-anywhere-col2.csv", 14)
+process("results4_solar-anywhere.csv", "results4_solar-anywhere-col3.csv", 16)
 
-# process("results5_el-nino.csv", "results5_el-nino-col1.csv", 12)
-# process("results5_el-nino.csv", "results5_el-nino-col2.csv", 14)
-# process("results5_el-nino.csv", "results5_el-nino-col3.csv", 16)
-# process("results5_el-nino.csv", "results5_el-nino-col4.csv", 18)
-# process("results5_el-nino.csv", "results5_el-nino-col5.csv", 20)
-# process("results5_el-nino.csv", "results5_el-nino-col6.csv", 22)
-# process("results5_el-nino.csv", "results5_el-nino-col7.csv", 24)
+process("results5_el-nino.csv", "results5_el-nino-col1.csv", 12)
+process("results5_el-nino.csv", "results5_el-nino-col2.csv", 14)
+process("results5_el-nino.csv", "results5_el-nino-col3.csv", 16)
+process("results5_el-nino.csv", "results5_el-nino-col4.csv", 18)
+process("results5_el-nino.csv", "results5_el-nino-col5.csv", 20)
+process("results5_el-nino.csv", "results5_el-nino-col6.csv", 22)
+process("results5_el-nino.csv", "results5_el-nino-col7.csv", 24)
 
-# process("results6_noaa-spc-hail.csv", "results6_noaa-spc-hail-col1.csv", 12)
-# process("results6_noaa-spc-hail.csv", "results6_noaa-spc-hail-col2.csv", 14)
-# process("results6_noaa-spc-hail.csv", "results6_noaa-spc-hail-col3.csv", 16)
+process("results6_noaa-spc-hail.csv", "results6_noaa-spc-hail-col1.csv", 12)
+process("results6_noaa-spc-hail.csv", "results6_noaa-spc-hail-col2.csv", 14)
+process("results6_noaa-spc-hail.csv", "results6_noaa-spc-hail-col3.csv", 16)
 
-# process("results7_noaa-spc-tornado.csv", "results7_noaa-spc-tornado-col1.csv", 12)
-# process("results7_noaa-spc-tornado.csv", "results7_noaa-spc-tornado-col2.csv", 14)
+process("results7_noaa-spc-tornado.csv", "results7_noaa-spc-tornado-col1.csv", 12)
+process("results7_noaa-spc-tornado.csv", "results7_noaa-spc-tornado-col2.csv", 14)
 
-# process("results8_noaa-spc-wind.csv", "results8_noaa-spc-wind-col1.csv", 12)
-# process("results8_noaa-spc-wind.csv", "results8_noaa-spc-wind-col2.csv", 14)
-# process("results8_noaa-spc-wind.csv", "results8_noaa-spc-wind-col3.csv", 16)
+process("results8_noaa-spc-wind.csv", "results8_noaa-spc-wind-col1.csv", 12)
+process("results8_noaa-spc-wind.csv", "results8_noaa-spc-wind-col2.csv", 14)
+process("results8_noaa-spc-wind.csv", "results8_noaa-spc-wind-col3.csv", 16)
 
 # TD
-# process("results1_irkis.csv", "results1_irkis-td.csv", 10)
-# process("results2_noaa-sst.csv", "results2_noaa-sst-td.csv", 10)
-# process("results3_noaa-adcp.csv", "results3_noaa-adcp-td.csv", 10)
-# process("results4_solar-anywhere.csv", "results4_solar-anywhere-td.csv", 10)
-# process("results5_el-nino.csv", "results5_el-nino-td.csv", 10)
-# process("results6_noaa-spc-hail.csv", "results6_noaa-spc-hail-td.csv", 10)
-# process("results7_noaa-spc-tornado.csv", "results7_noaa-spc-tornado-td.csv", 10)
-# process("results8_noaa-spc-wind.csv", "results8_noaa-spc-wind-td.csv", 10)
+process("results1_irkis.csv", "results1_irkis-td.csv", 10)
+process("results2_noaa-sst.csv", "results2_noaa-sst-td.csv", 10)
+process("results3_noaa-adcp.csv", "results3_noaa-adcp-td.csv", 10)
+process("results4_solar-anywhere.csv", "results4_solar-anywhere-td.csv", 10)
+process("results5_el-nino.csv", "results5_el-nino-td.csv", 10)
+process("results6_noaa-spc-hail.csv", "results6_noaa-spc-hail-td.csv", 10)
+process("results7_noaa-spc-tornado.csv", "results7_noaa-spc-tornado-td.csv", 10)
+process("results8_noaa-spc-wind.csv", "results8_noaa-spc-wind-td.csv", 10)
 
 # PAPER-OUTPUT
-process("results1+2.csv", "results1+2.process_results.out.csv", 12)
+# process("results1+2.csv", "results1+2.process_results.out.csv", 12)

@@ -13,7 +13,7 @@ from file_utils.csv_utils.csv_utils import CSVUtils
 from file_utils.bit_stream.utils import BitStreamUtils
 from scripts.utils import csv_files_filenames, create_folder
 from scripts.calculate_std import calculate_file_stats, calculate_stds_percentages
-from scripts.compress_aux import PYTHON_CODERS, dataset_array, coders_array
+from scripts.compress_aux import THRESHOLD_PERCENTAGES, CSV_PATH, PYTHON_CODERS, DATASETS_ARRAY, CODERS_ARRAY
 from scripts.compress_cpp import code_cpp, decode_cpp, code_decode_cpp
 from scripts.compress_args import CompressArgs
 
@@ -59,7 +59,7 @@ def compress_file(args):
         coder_info, columns_bits = code_decode_cpp(args)
         print "column_bits", columns_bits
         csv_compare = CSVCompare(args.input_path, args.input_filename, args.output_path, args.deco_filename)
-        same_file = csv_compare.compare(args.coder_params['error_threshold'], False)
+        same_file = csv_compare.compare(args.coder_params.get('error_threshold'), False)
         same_file = True
     else:
         coder_info, columns_bits = code_decode_python(args)
@@ -114,7 +114,7 @@ def print_results(coder_info, logger, input_file, compressed_file, same_file):
 
 
 def script(output_filename):
-    datasets_path = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/"
+    datasets_path = CSV_PATH
     # datasets_path = "/Users/pablocerve/Documents/FING/Proyecto/results/paper_csv/3-without-outliers/"
     output_path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/"
     # output_path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/paper-output/"
@@ -125,7 +125,7 @@ def script(output_filename):
                    'Delta - Size (b)', 'Delta - CR (%)',
                    'Other columns - Size (b)', 'Other columns - CR (%)'])
 
-    for dataset_dictionary in dataset_array:
+    for dataset_dictionary in DATASETS_ARRAY:
         run_script_on_dataset(csv, datasets_path, dataset_dictionary, output_path)
     csv.close()
 
@@ -151,11 +151,10 @@ def run_script_on_file(csv, id1, row, logger, input_path, input_filename, output
     row_count = PrintUtils.separate(CSVUtils.csv_row_count(input_path, input_filename))
 
     # calculate error thresholds
-    percentages = [0, 3, 5, 10, 15, 20, 30]
     stds = calculate_file_stats(input_path, input_filename)
-    thresholds_hash = calculate_stds_percentages(stds, percentages)
+    thresholds_hash = calculate_stds_percentages(stds, THRESHOLD_PERCENTAGES)
 
-    for id2, coder_dictionary in enumerate(coders_array):
+    for id2, coder_dictionary in enumerate(CODERS_ARRAY):
         if id1 == 0 and id2 == 0:  # first row of dataset and file
             row += [input_filename, row_count]
         elif id2 == 0:  # first row of file

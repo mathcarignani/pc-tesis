@@ -19,7 +19,7 @@ class CoderCA(CoderCols):
         self.total = 0
         window = self._create_window()
         self.row_index = 0
-        self.input_csv.goto_row(4)  # first data row
+        self.input_csv.goto_first_data_row()
         # if self.column_index != 6:
         #     return
         while self.input_csv.continue_reading:  # and self.row_index < 10:

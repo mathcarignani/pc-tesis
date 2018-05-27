@@ -17,7 +17,7 @@ class CoderBasic(CoderCols):
 
     def _code_column(self):
         row_index = 0
-        self.input_csv.goto_row(4)  # first data row
+        self.input_csv.goto_first_data_row()
         while self.input_csv.continue_reading:
             value = self.input_csv.read_line()[self.column_index]
             self._code_value_raw(value, row_index, self.column_index)

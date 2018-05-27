@@ -12,106 +12,92 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2fbb5dd3-364e-4d62-8cd3-b832deb1f263" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/external/benchmarkLinux/Algorithms/PWLH/Control/LinearBucket.cpp.o" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/external/benchmarkLinux/DataStructures/DynArray/DynArray.cpp.o" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/external/benchmarkLinux/DataStructures/Line/Line.cpp.o" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/external/benchmarkLinux/DataStructures/Polygon/CPolygon.cpp.o" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/pwlh/coder_pwlh.cpp.o" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/pwlh/decoder_pwlh.cpp.o" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/pwlh/pwlh_window.cpp.o" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/slide_filter/decoder_slide_filter.cpp.o" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/external/benchmarkLinux/Algorithms/SlideFilter/Control/SlideFilters.cpp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/external/benchmarkLinux/Algorithms/SlideFilter/Control/SlideFilters.h" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/external/benchmarkLinux/Algorithms/SlideFilter/Data/SlideFiltersEntry.h" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/external/benchmarkLinux/Algorithms/SlideFilter/Data/SlideFiltersInput.cpp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/external/benchmarkLinux/Algorithms/SlideFilter/Data/SlideFiltersInput.h" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/external/benchmarkLinux/Algorithms/SlideFilter/Data/SlideFiltersOutPut.cpp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/external/benchmarkLinux/Algorithms/SlideFilter/Data/SlideFiltersOutPut.h" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/external/benchmarkLinux/DataManagementLayer/Data/DataItem.h" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/external/benchmarkLinux/DataStructures/DynArray/DynArray.cpp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/external/benchmarkLinux/DataStructures/DynArray/DynArray.h" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/external/benchmarkLinux/DataStructures/Line/Line.cpp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/external/benchmarkLinux/DataStructures/Line/Line.h" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/external/benchmarkLinux/DataStructures/Polygon/CPolygon.cpp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/external/benchmarkLinux/DataStructures/Polygon/CPolygon.h" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/external/benchmarkLinux/stdafx.h" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/include/coders/pwlh/coder_pwlh.h" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/include/coders/pwlh/decoder_pwlh.h" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/include/coders/pwlh/pwlh_window.h" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/include/coders/slide_filter/coder_slide_filter.h" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/include/coders/slide_filter/decoder_slide_filter.h" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/include/coders/slide_filter/slide_filter_window.h" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/coders/pwlh/coder_pwlh.cpp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/coders/pwlh/decoder_pwlh.cpp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/coders/pwlh/pwlh_window.cpp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/coders/slide_filter/coder_slide_filter.cpp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/coders/slide_filter/decoder_slide_filter.cpp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/coders/slide_filter/slide_filter_window.cpp" />
       <change beforePath="$PROJECT_DIR$/../cpp_paper/benchmarkLinux/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../cpp_paper/benchmarkLinux/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/CXX.includecache" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/CXX.includecache" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/DependInfo.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/DependInfo.cmake" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/build.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/build.make" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/cmake_clean.cmake" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/cmake_clean.cmake" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/depend.internal" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/depend.internal" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/depend.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/depend.make" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/flags.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/flags.make" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/link.txt" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/link.txt" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/main.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/main.cpp.o" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/progress.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/progress.make" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/apca/apca_window.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/apca/apca_window.cpp.o" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/apca/coder_apca.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/apca/coder_apca.cpp.o" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/apca/decoder_apca.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/apca/decoder_apca.cpp.o" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/basic/coder_basic.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/basic/coder_basic.cpp.o" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/basic/decoder_basic.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/basic/decoder_basic.cpp.o" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/coder_base.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/coder_base.cpp.o" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/cols/coder_cols.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/cols/coder_cols.cpp.o" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/cols/decoder_cols.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/cols/decoder_cols.cpp.o" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/decoder_base.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/decoder_base.cpp.o" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/header/header_coder.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/header/header_coder.cpp.o" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/header/header_decoder.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/header/header_decoder.cpp.o" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/pca/coder_pca.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/pca/coder_pca.cpp.o" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/pca/decoder_pca.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/pca/decoder_pca.cpp.o" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/dataset/dataset.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/dataset/dataset.cpp.o" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/dataset/dataset_utils.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/dataset/dataset_utils.cpp.o" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_reader.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_reader.cpp.o" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_utils.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/file_utils/csv/csv_utils.cpp.o" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/scripts.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/scripts.cpp.o" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/string_utils.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/cpp_project.dir/src/string_utils.cpp.o" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/progress.marks" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cpp_project" afterPath="$PROJECT_DIR$/cmake-build-debug/cpp_project" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cpp_project.cbp" afterPath="$PROJECT_DIR$/cmake-build-debug/cpp_project.cbp" />
-      <change beforePath="$PROJECT_DIR$/include/coders/apca/apca_window.h" afterPath="$PROJECT_DIR$/include/coders/apca/apca_window.h" />
-      <change beforePath="$PROJECT_DIR$/include/coders/apca/decoder_apca.h" afterPath="$PROJECT_DIR$/include/coders/apca/decoder_apca.h" />
-      <change beforePath="$PROJECT_DIR$/include/coders/coder_base.h" afterPath="$PROJECT_DIR$/include/coders/coder_base.h" />
-      <change beforePath="$PROJECT_DIR$/include/dataset/dataset.h" afterPath="$PROJECT_DIR$/include/dataset/dataset.h" />
-      <change beforePath="$PROJECT_DIR$/include/file_utils/csv/csv_reader.h" afterPath="$PROJECT_DIR$/include/file_utils/csv/csv_reader.h" />
-      <change beforePath="$PROJECT_DIR$/include/scripts.h" afterPath="$PROJECT_DIR$/include/scripts.h" />
-      <change beforePath="$PROJECT_DIR$/include/string_utils.h" afterPath="$PROJECT_DIR$/include/string_utils.h" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" afterPath="$PROJECT_DIR$/main.cpp" />
-      <change beforePath="$PROJECT_DIR$/noaa_spc-wind.csv.c" afterPath="$PROJECT_DIR$/noaa_spc-wind.csv.c" />
-      <change beforePath="$PROJECT_DIR$/src/coders/apca/coder_apca.cpp" afterPath="$PROJECT_DIR$/src/coders/apca/coder_apca.cpp" />
-      <change beforePath="$PROJECT_DIR$/src/coders/apca/decoder_apca.cpp" afterPath="$PROJECT_DIR$/src/coders/apca/decoder_apca.cpp" />
-      <change beforePath="$PROJECT_DIR$/src/coders/basic/coder_basic.cpp" afterPath="$PROJECT_DIR$/src/coders/basic/coder_basic.cpp" />
-      <change beforePath="$PROJECT_DIR$/src/coders/coder_base.cpp" afterPath="$PROJECT_DIR$/src/coders/coder_base.cpp" />
-      <change beforePath="$PROJECT_DIR$/src/coders/cols/coder_cols.cpp" afterPath="$PROJECT_DIR$/src/coders/cols/coder_cols.cpp" />
-      <change beforePath="$PROJECT_DIR$/src/coders/header/header_decoder.cpp" afterPath="$PROJECT_DIR$/src/coders/header/header_decoder.cpp" />
-      <change beforePath="$PROJECT_DIR$/src/coders/pca/coder_pca.cpp" afterPath="$PROJECT_DIR$/src/coders/pca/coder_pca.cpp" />
-      <change beforePath="$PROJECT_DIR$/src/dataset/dataset.cpp" afterPath="$PROJECT_DIR$/src/dataset/dataset.cpp" />
-      <change beforePath="$PROJECT_DIR$/src/dataset/dataset_utils.cpp" afterPath="$PROJECT_DIR$/src/dataset/dataset_utils.cpp" />
-      <change beforePath="$PROJECT_DIR$/src/file_utils/csv/csv_reader.cpp" afterPath="$PROJECT_DIR$/src/file_utils/csv/csv_reader.cpp" />
-      <change beforePath="$PROJECT_DIR$/src/file_utils/csv/csv_utils.cpp" afterPath="$PROJECT_DIR$/src/file_utils/csv/csv_utils.cpp" />
-      <change beforePath="$PROJECT_DIR$/src/scripts.cpp" afterPath="$PROJECT_DIR$/src/scripts.cpp" />
-      <change beforePath="$PROJECT_DIR$/src/string_utils.cpp" afterPath="$PROJECT_DIR$/src/string_utils.cpp" />
-      <change beforePath="$PROJECT_DIR$/../dataset_parser/file_utils/csv_utils/csv_compare.py" afterPath="$PROJECT_DIR$/../dataset_parser/file_utils/csv_utils/csv_compare.py" />
-      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/compress.py" afterPath="$PROJECT_DIR$/../dataset_parser/scripts/compress.py" />
-      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/compress_args.py" afterPath="$PROJECT_DIR$/../dataset_parser/scripts/compress_args.py" />
-      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/compress_aux.py" afterPath="$PROJECT_DIR$/../dataset_parser/scripts/compress_aux.py" />
-      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/compress_cpp.py" afterPath="$PROJECT_DIR$/../dataset_parser/scripts/compress_cpp.py" />
-      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[1]irkis/basic/vwc_1202.dat.c.d.python.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[1]irkis/basic/vwc_1202.dat.c.python.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[1]irkis/basic/vwc_1203.dat.c.d.python.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[1]irkis/basic/vwc_1203.dat.c.python.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[1]irkis/basic/vwc_1204.dat.c.d.python.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[1]irkis/basic/vwc_1204.dat.c.python.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[1]irkis/basic/vwc_1205.dat.c.d.python.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[1]irkis/basic/vwc_1205.dat.c.python.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[1]irkis/basic/vwc_222.smet.c.d.python.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[1]irkis/basic/vwc_222.smet.c.python.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[1]irkis/basic/vwc_333.smet.c.d.python.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[1]irkis/basic/vwc_333.smet.c.python.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[1]irkis/basic/vwc_SLF2.smet.c.d.python.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[1]irkis/basic/vwc_SLF2.smet.c.python.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[1]irkis/pwlh/vwc_1202.dat.c.cpp.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[1]irkis/pwlh/vwc_1202.dat.c.d.cpp.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[1]irkis/pwlh/vwc_1203.dat.c.cpp.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[1]irkis/pwlh/vwc_1203.dat.c.d.cpp.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[1]irkis/pwlh/vwc_1204.dat.c.cpp.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[1]irkis/pwlh/vwc_1204.dat.c.d.cpp.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[1]irkis/pwlh/vwc_1205.dat.c.cpp.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[1]irkis/pwlh/vwc_1205.dat.c.d.cpp.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[1]irkis/pwlh/vwc_222.smet.c.cpp.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[1]irkis/pwlh/vwc_222.smet.c.d.cpp.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[1]irkis/pwlh/vwc_333.smet.c.cpp.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[1]irkis/pwlh/vwc_333.smet.c.d.cpp.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[1]irkis/pwlh/vwc_SLF2.smet.c.cpp.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[1]irkis/pwlh/vwc_SLF2.smet.c.d.cpp.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[2]noaa-sst/basic/noaa-buoy-201701.c.d.python.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[2]noaa-sst/basic/noaa-buoy-201701.c.python.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[2]noaa-sst/basic/noaa-buoy-201702.c.d.python.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[2]noaa-sst/basic/noaa-buoy-201702.c.python.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[2]noaa-sst/basic/noaa-buoy-201703.c.d.python.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[2]noaa-sst/basic/noaa-buoy-201703.c.python.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[2]noaa-sst/basic/noaa-buoy-201704.c.d.python.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[2]noaa-sst/basic/noaa-buoy-201704.c.python.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[2]noaa-sst/basic/noaa-buoy-201705.c.d.python.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[2]noaa-sst/basic/noaa-buoy-201705.c.python.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[2]noaa-sst/basic/noaa-buoy-201706.c.d.python.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[2]noaa-sst/basic/noaa-buoy-201706.c.python.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[2]noaa-sst/basic/noaa-buoy-201707.c.d.python.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[2]noaa-sst/basic/noaa-buoy-201707.c.python.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[2]noaa-sst/basic/noaa-buoy-201708.c.d.python.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[2]noaa-sst/basic/noaa-buoy-201708.c.python.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[2]noaa-sst/basic/noaa-buoy-201709.c.d.python.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[2]noaa-sst/basic/noaa-buoy-201709.c.python.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[2]noaa-sst/basic/noaa-buoy-201710.c.d.python.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[2]noaa-sst/basic/noaa-buoy-201710.c.python.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[2]noaa-sst/basic/noaa-buoy-201711.c.d.python.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[2]noaa-sst/basic/noaa-buoy-201711.c.python.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[2]noaa-sst/basic/noaa-buoy-201712.c.d.python.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[2]noaa-sst/basic/noaa-buoy-201712.c.python.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[2]noaa-sst/pwlh/noaa-buoy-201701.c.cpp.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[2]noaa-sst/pwlh/noaa-buoy-201701.c.d.cpp.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[2]noaa-sst/pwlh/noaa-buoy-201702.c.cpp.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[2]noaa-sst/pwlh/noaa-buoy-201702.c.d.cpp.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[2]noaa-sst/pwlh/noaa-buoy-201703.c.cpp.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[2]noaa-sst/pwlh/noaa-buoy-201703.c.d.cpp.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[2]noaa-sst/pwlh/noaa-buoy-201704.c.cpp.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[2]noaa-sst/pwlh/noaa-buoy-201704.c.d.cpp.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[2]noaa-sst/pwlh/noaa-buoy-201705.c.cpp.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[2]noaa-sst/pwlh/noaa-buoy-201705.c.d.cpp.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[2]noaa-sst/pwlh/noaa-buoy-201706.c.cpp.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[2]noaa-sst/pwlh/noaa-buoy-201706.c.d.cpp.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[2]noaa-sst/pwlh/noaa-buoy-201707.c.cpp.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[2]noaa-sst/pwlh/noaa-buoy-201707.c.d.cpp.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[2]noaa-sst/pwlh/noaa-buoy-201708.c.cpp.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[2]noaa-sst/pwlh/noaa-buoy-201708.c.d.cpp.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[2]noaa-sst/pwlh/noaa-buoy-201709.c.cpp.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[2]noaa-sst/pwlh/noaa-buoy-201709.c.d.cpp.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[2]noaa-sst/pwlh/noaa-buoy-201710.c.cpp.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[2]noaa-sst/pwlh/noaa-buoy-201710.c.d.cpp.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[2]noaa-sst/pwlh/noaa-buoy-201711.c.cpp.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[2]noaa-sst/pwlh/noaa-buoy-201711.c.d.cpp.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[2]noaa-sst/pwlh/noaa-buoy-201712.c.cpp.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[2]noaa-sst/pwlh/noaa-buoy-201712.c.d.cpp.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[3]noaa-adcp/basic/noaa-adcp-201501.c.d.python.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[3]noaa-adcp/basic/noaa-adcp-201501.c.python.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[3]noaa-adcp/basic/noaa-adcp-201502.c.d.python.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[3]noaa-adcp/basic/noaa-adcp-201502.c.python.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[3]noaa-adcp/pwlh/noaa-adcp-201501.c.cpp.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[3]noaa-adcp/pwlh/noaa-adcp-201501.c.d.cpp.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[3]noaa-adcp/pwlh/noaa-adcp-201502.c.cpp.csv" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results3-1,2/[3]noaa-adcp/pwlh/noaa-adcp-201502.c.d.cpp.csv" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -124,85 +110,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="csv_reader.cpp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/file_utils/csv/csv_reader.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="36" column="53" lean-forward="false" selection-start-line="36" selection-start-column="53" selection-end-line="36" selection-end-column="53" />
-              <folding>
-                <element signature="e#1#24#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="string_utils.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/string_utils.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="52" column="96" lean-forward="false" selection-start-line="52" selection-start-column="96" selection-end-line="52" selection-end-column="96" />
-              <folding>
-                <element signature="e#1#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="string_utils.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/include/string_utils.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="21" column="48" lean-forward="false" selection-start-line="21" selection-start-column="48" selection-end-line="21" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="csv_reader.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/include/file_utils/csv/csv_reader.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="32" lean-forward="false" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="coder_pwlh.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/coders/pwlh/coder_pwlh.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="49" lean-forward="false" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
+            <state relative-caret-position="269">
+              <caret line="27" column="18" lean-forward="false" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="coder_pca.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/coders/pca/coder_pca.cpp">
+      <file leaf-file-name="pwlh_window.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/coders/pwlh/pwlh_window.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="22" column="36" lean-forward="false" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="coder_apca.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/coders/apca/coder_apca.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="5" lean-forward="false" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="coder_basic.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/coders/basic/coder_basic.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="55" lean-forward="false" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
+            <state relative-caret-position="295">
+              <caret line="32" column="34" lean-forward="false" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -481,12 +403,12 @@
       <workItem from="1526670048990" duration="4039000" />
       <workItem from="1526688033754" duration="37165000" />
       <workItem from="1527023379533" duration="16655000" />
-      <workItem from="1527055941002" duration="45474000" />
+      <workItem from="1527055941002" duration="48646000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="201528000" />
+    <option name="totallyTimeSpent" value="204700000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -499,6 +421,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-316" y="-1057" width="1887" height="1049" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16237941" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.49774265" order="6" side_tool="false" content_ui="tabs" />
@@ -509,7 +432,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.49774265" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21907757" sideWeight="0.29431254" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21383648" sideWeight="0.4677686" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.07232705" sideWeight="0.4677686" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2620545" sideWeight="0.493228" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -829,14 +752,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/coders/pwlh/pwlh_window.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="69" column="36" lean-forward="false" selection-start-line="69" selection-start-column="36" selection-end-line="69" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/coders/slide_filter/decoder_slide_filter.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -947,16 +862,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/coders/pwlh/coder_pwlh.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="8" lean-forward="true" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
-          <folding>
-            <element signature="e#68#91#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/file_utils/text/text_reader.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="645">
@@ -1045,14 +950,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/coders/pwlh/coder_pwlh.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="49" lean-forward="false" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/include/file_utils/csv/csv_reader.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -1074,18 +971,42 @@
         <state relative-caret-position="313">
           <caret line="52" column="96" lean-forward="false" selection-start-line="52" selection-start-column="96" selection-end-line="52" selection-end-column="96" />
           <folding>
-            <element signature="e#1#26#0" expanded="true" />
+            <element signature="e#1#26#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/file_utils/csv/csv_reader.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="36" column="53" lean-forward="false" selection-start-line="36" selection-start-column="53" selection-end-line="36" selection-end-column="53" />
+        <state relative-caret-position="282">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding>
-            <element signature="e#1#24#0" expanded="true" />
+            <element signature="e#1#24#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/coders/pwlh/coder_pwlh.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="9" column="8" lean-forward="true" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/coders/pwlh/coder_pwlh.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="27" column="18" lean-forward="false" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/coders/pwlh/pwlh_window.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="32" column="34" lean-forward="false" selection-start-line="32" selection-start-column="29" selection-end-line="32" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
