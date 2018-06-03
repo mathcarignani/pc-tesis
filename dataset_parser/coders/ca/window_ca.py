@@ -175,12 +175,18 @@ class Line(object):
     #
     def _check_point(self, point):
         y_inter = self.y_intersection(point)
-        # print "y_inter=%s, point.y=%s" % (y_inter, point.y)
+        # print "checkPoint(CAPoint other_point)"
+        # point._print()
+        # print self.to_str()
+        # print "y_inter = %s" % y_inter
         if y_inter == point.y:
+            # print "y_inter == point.y"
             return 0  # the point is inside the line
         elif y_inter > point.y:
+            # print "y_inter > point.y"
             return -1  # the point is below the line
         else:  # y_inter < point.y
+            # print "y_inter < point.y"
             return 1  # the point is above the line
 
     #

@@ -16,10 +16,23 @@ private:
     // Returns the position of the point regarding the line.
     //
     int checkPoint(CAPoint other_point){
+//        std::cout << "checkPoint(CAPoint other_point)" << std::endl;
+//        other_point.print();
+//        print();
         double y_inter = yIntersection(other_point);
-        if (y_inter == other_point.y)      { return 0;  } // the point is inside the line
-        else if (y_inter > other_point.y ) { return -1; } // the point is below the line
-        else                         { return 1;  } // the point is above the line
+//        std::cout << "y_inter = " << std::to_string(y_inter);
+        if (y_inter == other_point.y) { // the point is inside the line
+//            std::cout << "y_inter == other_point.y" << std::endl;
+            return 0;
+        }
+        else if (y_inter > other_point.y ) { // the point is below the line
+//            std::cout << "y_inter > other_point.y" << std::endl;
+            return -1;
+        }
+        else { // the point is above the line
+//            std::cout << "y_inter < other_point.y" << std::endl;
+            return 1;
+        }
     }
 
 public:

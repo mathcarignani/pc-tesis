@@ -12,6 +12,7 @@ void CoderCA::codeColumn(){
     input_csv.goToLine(4); // first data row
     while (input_csv.continue_reading){
         std::string csv_value = input_csv.readLineCSVWithIndex(column_index);
+//        std::cout << row_index << " " << csv_value << std::endl;
         code(window, false, csv_value);
         row_index++;
     }
@@ -72,9 +73,13 @@ void CoderCA::code(CAWindow & window, bool force_code, std::string x){
         else {
             CAPoint incoming_point = CAPoint(window.length + 1, x_int);
             if (not window.conditionHolds(incoming_point, x)){
+//                std::cout << "(5.2)" << std::endl;
                 codeWindow(window, window.length, window.constant_value);
                 codeWindow(window, 1, x);
                 window.createNonNanWindow(x, x_int);
+            }
+            else {
+//                std::cout << "(5.3)" << std::endl;
             }
         }
     }

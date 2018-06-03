@@ -2,12 +2,10 @@ import sys
 sys.path.append('.')
 
 import os
-import time
 
 from aux.logger import setup_logger
 from aux.print_utils import PrintUtils
 from file_utils.csv_utils.csv_compare import CSVCompare
-from file_utils.csv_utils.csv_reader import CSVReader
 from file_utils.csv_utils.csv_writer import CSVWriter
 from file_utils.csv_utils.csv_utils import CSVUtils
 from file_utils.bit_stream.utils import BitStreamUtils
@@ -15,43 +13,8 @@ from scripts.utils import csv_files_filenames, create_folder
 from scripts.calculate_std import calculate_file_stats, calculate_stds_percentages
 from scripts.compress_aux import THRESHOLD_PERCENTAGES, CSV_PATH, PYTHON_CODERS, DATASETS_ARRAY, CODERS_ARRAY
 from scripts.compress_cpp import code_cpp, decode_cpp, code_decode_cpp
+from scripts.compress_python import code_python, decode_python, code_decode_python
 from scripts.compress_args import CompressArgs
-
-
-def code_python(args):
-    start_time = time.time()
-    args.code_python()
-    input_csv = CSVReader(args.input_path, args.input_filename, True)
-    c = args.coder(input_csv, args.output_path, args.compressed_filename, args.coder_params)
-    c.code_file()
-    c.close()
-    coder_info = c.get_info()
-    columns_bits = [column_code.total_bits for column_code in c.dataset.column_code_array]
-    print columns_bits
-    elapsed_time = time.time() - start_time
-    print args.input_filename, "code_python - elapsed time =", round(elapsed_time, 2), "seconds"
-    return [coder_info, columns_bits]
-
-
-def decode_python(args):
-    start_time = time.time()
-    args.decode_python()
-    output_csv = CSVWriter(args.output_path, args.deco_filename)
-    d = args.decoder(args.output_path, args.compressed_filename, output_csv, args.coder_params)
-    try:
-        d.decode_file()
-    except AssertionError as e:
-        if e == "Reached EOF.":
-            print "ERROR: Reached End Of File."
-    d.close()
-    elapsed_time = time.time() - start_time
-    print args.compressed_filename, "decode_python - elapsed time =", round(elapsed_time, 2), "seconds"
-
-
-def code_decode_python(args):
-    coder_info, columns_bits = code_python(args)
-    decode_python(args)
-    return [coder_info, columns_bits]
 
 
 def compress_file(args):
@@ -74,18 +37,18 @@ def compress_file(args):
     cpp_filename = args.compressed_filename
     print "Comparing compressed files and column bits..."
     assert(BitStreamUtils.compare_files(args.output_path, py_filename, args.output_path, cpp_filename))
-    columns_bits = columns_bits_cpp
     assert(columns_bits_python == columns_bits_cpp)
+    columns_bits = columns_bits_cpp
 
     decode_python(args)
     py_filename = args.deco_filename
     decode_cpp(args)
     cpp_filename = args.deco_filename
     print "Comparing decompressed files..."
-    # csv_compare = CSVCompare(args.output_path, py_filename, args.output_path, cpp_filename)
-    # assert(csv_compare.compare())
+    csv_compare = CSVCompare(args.output_path, py_filename, args.output_path, cpp_filename)
+    assert(csv_compare.compare())
     assert(BitStreamUtils.compare_files(args.output_path, py_filename, args.output_path, cpp_filename))
-    assert(BitStreamUtils.compare_files(args.input_path, args.input_filename, args.output_path, py_filename))
+    # assert(BitStreamUtils.compare_files(args.input_path, args.input_filename, args.output_path, py_filename))
     same_file = True
 
     # print results
@@ -156,6 +119,8 @@ def run_script_on_file(csv, id1, row, logger, input_path, input_filename, output
     # calculate error thresholds
     stds = calculate_file_stats(input_path, input_filename)
     thresholds_hash = calculate_stds_percentages(stds, THRESHOLD_PERCENTAGES)
+    print "THRE", thresholds_hash
+    thresholds_hash = {3: [0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0]}
 
     for id2, coder_dictionary in enumerate(CODERS_ARRAY):
         if id1 == 0 and id2 == 0:  # first row of dataset and file

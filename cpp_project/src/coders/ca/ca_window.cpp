@@ -20,7 +20,7 @@ void CAWindow::updateSMinAndSMax(CAPoint incoming_point){
         s_min = s_min_new;
     }
 
-    if (s_max_new.yIntersection(incoming_point) > s_max.yIntersection(incoming_point)){
+    if (s_max_new.yIntersection(incoming_point) < s_max.yIntersection(incoming_point)){
         s_max = s_max_new;
     }
 }
