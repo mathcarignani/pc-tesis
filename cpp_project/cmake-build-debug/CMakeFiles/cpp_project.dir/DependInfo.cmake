@@ -14,6 +14,9 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/apca/decoder_apca.cpp" "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/apca/decoder_apca.cpp.o"
   "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/basic/coder_basic.cpp" "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/basic/coder_basic.cpp.o"
   "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/basic/decoder_basic.cpp" "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/basic/decoder_basic.cpp.o"
+  "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/ca/ca_window.cpp" "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/ca/ca_window.cpp.o"
+  "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/ca/coder_ca.cpp" "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/ca/coder_ca.cpp.o"
+  "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/ca/decoder_ca.cpp" "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/ca/decoder_ca.cpp.o"
   "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/coder_base.cpp" "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/coder_base.cpp.o"
   "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/cols/coder_cols.cpp" "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/cols/coder_cols.cpp.o"
   "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/cols/decoder_cols.cpp" "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles/cpp_project.dir/src/coders/cols/decoder_cols.cpp.o"
@@ -65,6 +68,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../include/coders/apca"
   "../include/coders/pwlh"
   "../include/coders/slide_filter"
+  "../include/coders/ca"
   "../include/dataset"
   )
 

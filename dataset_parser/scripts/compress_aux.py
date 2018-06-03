@@ -40,26 +40,26 @@ DATASETS_ARRAY = [
 # ]
 
 CODERS_ARRAY = [
-    {
-        'name': 'CoderBasic',
-        'coder': CoderBasic,
-        'decoder': DecoderBasic,
-        'o_folder': 'basic'
-    },
-    {
-        'name': 'CoderPCA',
-        'coder': CoderPCA,
-        'decoder': DecoderPCA,
-        'o_folder': 'pca',
-        'params': {'fixed_window_size': [5, 10, 25, 50, 100, 200]}
-    },
-    {
-        'name': 'CoderAPCA',
-        'coder': CoderAPCA,
-        'decoder': DecoderAPCA,
-        'o_folder': 'apca',
-        'params': {'max_window_size': [5, 10, 25, 50, 100, 200]}
-    },
+    # {
+    #     'name': 'CoderBasic',
+    #     'coder': CoderBasic,
+    #     'decoder': DecoderBasic,
+    #     'o_folder': 'basic'
+    # },
+    # {
+    #     'name': 'CoderPCA',
+    #     'coder': CoderPCA,
+    #     'decoder': DecoderPCA,
+    #     'o_folder': 'pca',
+    #     'params': {'fixed_window_size': [5, 10, 25, 50, 100, 200]}
+    # },
+    # {
+    #     'name': 'CoderAPCA',
+    #     'coder': CoderAPCA,
+    #     'decoder': DecoderAPCA,
+    #     'o_folder': 'apca',
+    #     'params': {'max_window_size': [5, 10, 25, 50, 100, 200]}
+    # },
     {
         'name': 'CoderCA',
         'coder': CoderCA,
@@ -67,9 +67,9 @@ CODERS_ARRAY = [
         'o_folder': 'ca',
         'params': {'max_window_size': [5, 10, 25, 50, 100, 200]}
     },
-    {
-        'name': 'CoderPWLH',
-        'o_folder': 'pwlh',
-        'params': {'max_window_size': [5, 10, 25, 50, 100, 200]}
-    },
+    # {
+    #     'name': 'CoderPWLH',
+    #     'o_folder': 'pwlh',
+    #     'params': {'max_window_size': [5, 10, 25, 50, 100, 200]}
+    # },
 ]

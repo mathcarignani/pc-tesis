@@ -88,6 +88,29 @@ CMakeFiles/cpp_project.dir/src/coders/basic/decoder_basic.cpp.o: ../include/file
 CMakeFiles/cpp_project.dir/src/coders/basic/decoder_basic.cpp.o: ../include/file_utils/path.h
 CMakeFiles/cpp_project.dir/src/coders/basic/decoder_basic.cpp.o: ../src/coders/basic/decoder_basic.cpp
 
+CMakeFiles/cpp_project.dir/src/coders/ca/ca_window.cpp.o: ../include/coders/ca/ca_line.h
+CMakeFiles/cpp_project.dir/src/coders/ca/ca_window.cpp.o: ../include/coders/ca/ca_point.h
+CMakeFiles/cpp_project.dir/src/coders/ca/ca_window.cpp.o: ../include/coders/ca/ca_window.h
+CMakeFiles/cpp_project.dir/src/coders/ca/ca_window.cpp.o: ../include/string_utils.h
+CMakeFiles/cpp_project.dir/src/coders/ca/ca_window.cpp.o: ../src/coders/ca/ca_window.cpp
+
+CMakeFiles/cpp_project.dir/src/coders/ca/coder_ca.cpp.o: ../include/coders/ca/ca_line.h
+CMakeFiles/cpp_project.dir/src/coders/ca/coder_ca.cpp.o: ../include/coders/ca/ca_point.h
+CMakeFiles/cpp_project.dir/src/coders/ca/coder_ca.cpp.o: ../include/coders/ca/ca_window.h
+CMakeFiles/cpp_project.dir/src/coders/ca/coder_ca.cpp.o: ../include/coders/ca/coder_ca.h
+CMakeFiles/cpp_project.dir/src/coders/ca/coder_ca.cpp.o: ../include/coders/coder_base.h
+CMakeFiles/cpp_project.dir/src/coders/ca/coder_ca.cpp.o: ../include/coders/cols/coder_cols.h
+CMakeFiles/cpp_project.dir/src/coders/ca/coder_ca.cpp.o: ../include/dataset/column_code.h
+CMakeFiles/cpp_project.dir/src/coders/ca/coder_ca.cpp.o: ../include/dataset/dataset.h
+CMakeFiles/cpp_project.dir/src/coders/ca/coder_ca.cpp.o: ../include/dataset/range.h
+CMakeFiles/cpp_project.dir/src/coders/ca/coder_ca.cpp.o: ../include/file_utils/bit_stream/bit_stream_writer.h
+CMakeFiles/cpp_project.dir/src/coders/ca/coder_ca.cpp.o: ../include/file_utils/csv/csv_reader.h
+CMakeFiles/cpp_project.dir/src/coders/ca/coder_ca.cpp.o: ../include/file_utils/path.h
+CMakeFiles/cpp_project.dir/src/coders/ca/coder_ca.cpp.o: ../include/file_utils/text/text_reader.h
+CMakeFiles/cpp_project.dir/src/coders/ca/coder_ca.cpp.o: ../src/coders/ca/coder_ca.cpp
+
+CMakeFiles/cpp_project.dir/src/coders/ca/decoder_ca.cpp.o: ../src/coders/ca/decoder_ca.cpp
+
 CMakeFiles/cpp_project.dir/src/coders/coder_base.cpp.o: ../include/coders/coder_base.h
 CMakeFiles/cpp_project.dir/src/coders/coder_base.cpp.o: ../include/coders/header/header_coder.h
 CMakeFiles/cpp_project.dir/src/coders/coder_base.cpp.o: ../include/dataset/column_code.h
@@ -315,6 +338,10 @@ CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../include/coders/apca/coder_apca.
 CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../include/coders/apca/decoder_apca.h
 CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../include/coders/basic/coder_basic.h
 CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../include/coders/basic/decoder_basic.h
+CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../include/coders/ca/ca_line.h
+CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../include/coders/ca/ca_point.h
+CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../include/coders/ca/ca_window.h
+CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../include/coders/ca/coder_ca.h
 CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../include/coders/coder_base.h
 CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../include/coders/cols/coder_cols.h
 CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../include/coders/cols/decoder_cols.h

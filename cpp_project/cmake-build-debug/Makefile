@@ -393,6 +393,87 @@ src/coders/basic/decoder_basic.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/basic/decoder_basic.cpp.s
 .PHONY : src/coders/basic/decoder_basic.cpp.s
 
+src/coders/ca/ca_window.o: src/coders/ca/ca_window.cpp.o
+
+.PHONY : src/coders/ca/ca_window.o
+
+# target to build an object file
+src/coders/ca/ca_window.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/ca/ca_window.cpp.o
+.PHONY : src/coders/ca/ca_window.cpp.o
+
+src/coders/ca/ca_window.i: src/coders/ca/ca_window.cpp.i
+
+.PHONY : src/coders/ca/ca_window.i
+
+# target to preprocess a source file
+src/coders/ca/ca_window.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/ca/ca_window.cpp.i
+.PHONY : src/coders/ca/ca_window.cpp.i
+
+src/coders/ca/ca_window.s: src/coders/ca/ca_window.cpp.s
+
+.PHONY : src/coders/ca/ca_window.s
+
+# target to generate assembly for a file
+src/coders/ca/ca_window.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/ca/ca_window.cpp.s
+.PHONY : src/coders/ca/ca_window.cpp.s
+
+src/coders/ca/coder_ca.o: src/coders/ca/coder_ca.cpp.o
+
+.PHONY : src/coders/ca/coder_ca.o
+
+# target to build an object file
+src/coders/ca/coder_ca.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/ca/coder_ca.cpp.o
+.PHONY : src/coders/ca/coder_ca.cpp.o
+
+src/coders/ca/coder_ca.i: src/coders/ca/coder_ca.cpp.i
+
+.PHONY : src/coders/ca/coder_ca.i
+
+# target to preprocess a source file
+src/coders/ca/coder_ca.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/ca/coder_ca.cpp.i
+.PHONY : src/coders/ca/coder_ca.cpp.i
+
+src/coders/ca/coder_ca.s: src/coders/ca/coder_ca.cpp.s
+
+.PHONY : src/coders/ca/coder_ca.s
+
+# target to generate assembly for a file
+src/coders/ca/coder_ca.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/ca/coder_ca.cpp.s
+.PHONY : src/coders/ca/coder_ca.cpp.s
+
+src/coders/ca/decoder_ca.o: src/coders/ca/decoder_ca.cpp.o
+
+.PHONY : src/coders/ca/decoder_ca.o
+
+# target to build an object file
+src/coders/ca/decoder_ca.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/ca/decoder_ca.cpp.o
+.PHONY : src/coders/ca/decoder_ca.cpp.o
+
+src/coders/ca/decoder_ca.i: src/coders/ca/decoder_ca.cpp.i
+
+.PHONY : src/coders/ca/decoder_ca.i
+
+# target to preprocess a source file
+src/coders/ca/decoder_ca.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/ca/decoder_ca.cpp.i
+.PHONY : src/coders/ca/decoder_ca.cpp.i
+
+src/coders/ca/decoder_ca.s: src/coders/ca/decoder_ca.cpp.s
+
+.PHONY : src/coders/ca/decoder_ca.s
+
+# target to generate assembly for a file
+src/coders/ca/decoder_ca.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/ca/decoder_ca.cpp.s
+.PHONY : src/coders/ca/decoder_ca.cpp.s
+
 src/coders/coder_base.o: src/coders/coder_base.cpp.o
 
 .PHONY : src/coders/coder_base.o
@@ -1161,6 +1242,15 @@ help:
 	@echo "... src/coders/basic/decoder_basic.o"
 	@echo "... src/coders/basic/decoder_basic.i"
 	@echo "... src/coders/basic/decoder_basic.s"
+	@echo "... src/coders/ca/ca_window.o"
+	@echo "... src/coders/ca/ca_window.i"
+	@echo "... src/coders/ca/ca_window.s"
+	@echo "... src/coders/ca/coder_ca.o"
+	@echo "... src/coders/ca/coder_ca.i"
+	@echo "... src/coders/ca/coder_ca.s"
+	@echo "... src/coders/ca/decoder_ca.o"
+	@echo "... src/coders/ca/decoder_ca.i"
+	@echo "... src/coders/ca/decoder_ca.s"
 	@echo "... src/coders/coder_base.o"
 	@echo "... src/coders/coder_base.i"
 	@echo "... src/coders/coder_base.s"

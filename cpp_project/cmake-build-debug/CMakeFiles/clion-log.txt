@@ -1,4 +1,15 @@
 /Applications/CLion.app/Contents/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project
 -- Configuring done
+CMake Error at CMakeLists.txt:149 (add_executable):
+  Cannot find source file:
+
+    external/benchmarkLinux/DataStructures/Line/Line.cpp
+
+  Tried extensions .c .C .c++ .cc .cpp .cxx .m .M .mm .h .hh .h++ .hm .hpp
+  .hxx .in .txx
+
+
+CMake Error: CMake can not determine linker language for target: cpp_project
+CMake Error: Cannot determine link language for target "cpp_project".
 -- Generating done
 -- Build files have been written to: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug

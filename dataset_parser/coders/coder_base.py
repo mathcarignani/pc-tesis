@@ -50,6 +50,7 @@ class CoderBase(object):
         self.output_file.write_int(value, self.dataset.get_bits())
 
     def _code_value_raw(self, x, row_index, col_index):
+        # print "codeValue(x) = " + str(x)
         value = self._code_value(x, row_index, col_index)
         return self._code_raw(value)
 

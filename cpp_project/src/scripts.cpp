@@ -10,6 +10,8 @@
 #include "decoder_apca.h"
 #include "coder_pwlh.h"
 #include "decoder_pwlh.h"
+#include "coder_ca.h"
+//#include "decoder_ca.h"
 //#include "coder_slide_filter.h"
 //#include "decoder_slide_filter.h"
 #include "csv_utils.h"
@@ -95,6 +97,29 @@ void Scripts::decodePWLH(Path input_path, Path output_path, int max_window_size)
     decoder.setCoderParams(max_window_size);
     decoder.decodeFile();
     decoder.close();
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+void Scripts::codeCA(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector){
+    CSVReader csv_reader = CSVReader(input_path);
+    BitStreamWriter bit_stream_writer = BitStreamWriter(output_path);
+    CoderCA coder = CoderCA(csv_reader, bit_stream_writer);
+    coder.setCoderParams(max_window_size, error_thresholds_vector);
+    coder.codeFile();
+    coder.printBits();
+    coder.close();
+}
+
+void Scripts::decodeCA(Path input_path, Path output_path, int max_window_size){
+//    BitStreamReader bit_stream_reader = BitStreamReader(input_path);
+//    CSVWriter csv_writer = CSVWriter(output_path);
+//    DecoderPWLH decoder = DecoderPWLH(bit_stream_reader, csv_writer);
+//    decoder.setCoderParams(max_window_size);
+//    decoder.decodeFile();
+//    decoder.close();
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

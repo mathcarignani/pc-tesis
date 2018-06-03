@@ -74,12 +74,13 @@ class WindowCA(object):
             # print "(5) else:"
             incoming_value = int(incoming_value)
             if self.snapshot_value == self.nan:
+                # print "(5.1)"
                 coder.code_window(self.current_window_length, self._snapshot_value())  # code nan window
                 coder.code_window(1, incoming_value)  # code single value window
                 self.create_non_nan_window(incoming_value)
             else:
                 incoming_point = Point(self.current_window_length + 1, incoming_value)
-
+                # incoming_point._print()
                 if self.s_min.point_below_line(incoming_point) or self.s_max.point_above_line(incoming_point):
                     # print "(5.2)"
                     # incoming_point._print()
@@ -109,6 +110,28 @@ class WindowCA(object):
         else:
             return self.snapshot_value.y
 
+    def print_state(self):
+        if self.archived_value is None:
+            print "archived_value = None"
+        elif self.archived_value == self.nan:
+            print "archived_value = self.nan"
+        else:
+            print "archived_value = " + self.archived_value.to_str()
+        if self.snapshot_value is None:
+            print "snapshot_value = None"
+        elif self.snapshot_value == self.nan:
+            print "snapshot_value = self.nan"
+        else:
+            print "snapshot_value = " + self.snapshot_value.to_str()
+        if self.s_min is None:
+            print "s_min = None"
+        else:
+            print "s_min = " + self.s_min.to_str()
+        if self.s_max is None:
+            print "s_max = None"
+        else:
+            print "s_max = " + self.s_max.to_str()
+
 
 class Point(object):
     def __init__(self, x, y):
@@ -128,6 +151,9 @@ class Point(object):
 
     def _print(self):
         print "x=%s, y=%s" % (self.x, self.y)
+
+    # def to_str(self):
+    #     return "(x,y)=(%s,%s)" % (self.x, self.y)
 
 
 class Line(object):
@@ -162,3 +188,6 @@ class Line(object):
     #
     def y_intersection(self, point):
         return self.m * point.x + self.point.y
+
+    def to_str(self):
+        return "(x,y,m)=(%s,%s,%s)" % (self.point.x, self.point.y, self.m)

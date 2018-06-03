@@ -24,10 +24,13 @@ class CoderCA(CoderCols):
         #     return
         while self.input_csv.continue_reading:  # and self.row_index < 10:
             value = self.input_csv.read_line()[self.column_index]
+            # print str(self.row_index) + " " + value
             # if self.column_index == 6 and 3860 < self.row_index < 3880:
             #     print '>>>>>>>>>>>>>>>>>>>>>>>>> row_index', self.row_index, 'value', value
+            # window.print_state()
             window.code(value, self)
             self.row_index += 1
+        # print self.row_index
         window.code(None, self)  # Force code
 
     def code_window(self, window_length, window_value):

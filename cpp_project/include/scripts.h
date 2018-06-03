@@ -21,6 +21,9 @@ public:
     static void codePWLH(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector);
     static void decodePWLH(Path input_path, Path output_path, int max_window_size);
 
+    static void codeCA(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector);
+    static void decodeCA(Path input_path, Path output_path, int max_window_size);
+
     static void codeSF(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector);
     static void decodeSF(Path input_path, Path output_path, int max_window_size);
 

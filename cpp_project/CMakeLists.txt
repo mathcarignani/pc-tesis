@@ -5,21 +5,6 @@ set(CMAKE_CXX_STANDARD 11)
 
 ###############################
 
-#set(HEADERS_DIR include)
-#set(SOURCE_DIR src)
-#
-#AUX_SOURCE_DIRECTORY(${SOURCE_DIR} SOURCE_FILES)
-#
-#FILE(GLOB HEADER_FILES ${HEADERS_DIR}/*.h)
-##FILE(GLOB SOURCE_FILES ${SOURCE_DIR}/*.cpp )
-#
-#
-#include_directories(${SOURCE_DIR})
-#
-#
-#add_executable(cpp_project ${HEADER_FILES} ${SOURCE_FILES})
-
-#add_executable(cpp_project main.cpp external/minicsv.h include/csv_utils.h src/csv_utils.cpp)
 set(BENCHMARK_DIR external/benchmarkLinux)
 set(PWLH_CONTROL_DIR external/benchmarkLinux/Algorithms/PWLH/Control)
 set(DATA_DIR external/benchmarkLinux/DataManagementLayer/Data)
@@ -53,14 +38,19 @@ set(CODER_PWLH_SRC_DIR src/coders/pwlh)
 set(CODER_SF_HEAD_DIR include/coders/slide_filter)
 set(CODER_SF_SRC_DIR src/coders/slide_filter)
 
+set(CODER_CA_HEAD_DIR include/coders/ca)
+set(CODER_CA_SRC_DIR src/coders/ca)
+
 set(CODER_HEAD_DIRS1 ${CODER_HEADER_HEAD_DIR} ${CODER_BASE_HEAD_DIR} ${CODER_COLS_HEAD_DIR} ${CODER_BASIC_HEAD_DIR})
 set(CODER_HEAD_DIRS2 ${CODER_PCA_HEAD_DIR} ${CODER_APCA_HEAD_DIR} ${CODER_PWLH_HEAD_DIR} ${CODER_SF_HEAD_DIR})
+set(CODER_HEAD_DIRS3 ${CODER_CA_HEAD_DIR})
 
 set(CODER_SRC_DIRS1 ${CODER_HEADER_SRC_DIR} ${CODER_BASE_SRC_DIR} ${CODER_COLS_SRC_DIR} ${CODER_BASIC_SRC_DIR})
 set(CODER_SRC_DIRS2 ${CODER_PCA_SRC_DIR} ${CODER_APCA_SRC_DIR} ${CODER_PWLH_SRC_DIR} ${CODER_SF_SRC_DIR})
+set(CODER_SRC_DIRS3 ${CODER_CA_SRC_DIR})
 
-set(CODER_HEAD_DIRS ${CODER_HEAD_DIRS1} ${CODER_HEAD_DIRS2})
-set(CODER_SRC_DIRS ${CODER_SRC_DIRS1} ${CODER_SRC_DIRS2})
+set(CODER_HEAD_DIRS ${CODER_HEAD_DIRS1} ${CODER_HEAD_DIRS2} ${CODER_HEAD_DIRS3})
+set(CODER_SRC_DIRS ${CODER_SRC_DIRS1} ${CODER_SRC_DIRS2} ${CODER_SRC_DIRS3})
 
 set(FILE_UTILS_HEAD_DIR include/file_utils)
 
@@ -132,14 +122,19 @@ set(CODER_PWLH_SRC_FILES ${CODER_PWLH_SRC_DIR}/pwlh_window.cpp ${CODER_PWLH_SRC_
 set(CODER_SF_HEAD_FILES) # ${CODER_SF_HEAD_DIR}/slide_filter_window.h ${CODER_SF_HEAD_DIR}/coder_slide_filter.h ${CODER_SF_HEAD_DIR}/decoder_slide_filter.h)
 set(CODER_SF_SRC_FILES) # ${CODER_SF_SRC_DIR}/slide_filter_window.cpp ${CODER_SF_SRC_DIR}/coder_slide_filter.cpp ${CODER_SF_SRC_DIR}/decoder_slide_filter.cpp)
 
+set(CODER_CA_HEAD_FILES ${CODER_CA_HEAD_DIR}/ca_point.h ${CODER_CA_HEAD_DIR}/ca_line.h ${CODER_CA_HEAD_DIR}/ca_window.h ${CODER_CA_HEAD_DIR}/coder_ca.h ${CODER_CA_HEAD_DIR}/decoder_ca.h)
+set(CODER_CA_SRC_FILES ${CODER_CA_SRC_DIR}/ca_window.cpp ${CODER_CA_SRC_DIR}/coder_ca.cpp ${CODER_CA_SRC_DIR}/decoder_ca.cpp)
+
 set(CODER_HEAD_FILES1 ${CODER_HEADER_HEAD_FILES} ${CODER_BASE_HEAD_FILES} ${DATASET_HEAD_FILES} ${CODER_COLS_HEAD_FILES} ${CODER_BASIC_HEAD_FILES})
 set(CODER_HEAD_FILES2 ${CODER_PCA_HEAD_FILES} ${CODER_APCA_HEAD_FILES} ${CODER_PWLH_HEAD_FILES} ${CODER_SF_HEAD_FILES})
+set(CODER_HEAD_FILES3 ${CODER_CA_HEAD_FILES})
 
 set(CODER_SRC_FILES1 ${CODER_HEADER_SRC_FILES} ${CODER_BASE_SRC_FILES} ${DATASET_SRC_FILES} ${CODER_COLS_SRC_FILES} ${CODER_BASIC_SRC_FILES})
 set(CODER_SRC_FILES2 ${CODER_PCA_SRC_FILES} ${CODER_APCA_SRC_FILES} ${CODER_PWLH_SRC_FILES} ${CODER_SF_SRC_FILES})
+set(CODER_SRC_FILES3 ${CODER_CA_SRC_FILES})
 
-set(CODER_HEAD_FILES ${CODER_HEAD_FILES1} ${CODER_HEAD_FILES2})
-set(CODER_SRC_FILES ${CODER_SRC_FILES1} ${CODER_SRC_FILES2})
+set(CODER_HEAD_FILES ${CODER_HEAD_FILES1} ${CODER_HEAD_FILES2} ${CODER_HEAD_FILES3})
+set(CODER_SRC_FILES ${CODER_SRC_FILES1} ${CODER_SRC_FILES2} ${CODER_SRC_FILES3})
 ### CODERS END #########################################################################################################
 
 set(OTHER_HEAD_FILES1 include/string_utils.h include/datetime_utils.h include/vector_utils.h)

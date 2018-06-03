@@ -63,6 +63,7 @@
 					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/apca"/>
 					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/pwlh"/>
 					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/slide_filter"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/ca"/>
 					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/dataset"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
@@ -105,6 +106,7 @@
 					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/apca"/>
 					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/pwlh"/>
 					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/slide_filter"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/ca"/>
 					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/dataset"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
@@ -165,6 +167,21 @@
 			<Option target="cpp_project"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/basic/decoder_basic.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/ca/ca_line.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/ca/ca_point.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/ca/ca_window.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/ca/coder_ca.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/ca/decoder_ca.h">
 			<Option target="cpp_project"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/coder_base.h">
@@ -276,6 +293,15 @@
 			<Option target="cpp_project"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/basic/decoder_basic.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/ca/ca_window.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/ca/coder_ca.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/ca/decoder_ca.cpp">
 			<Option target="cpp_project"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/coder_base.cpp">
