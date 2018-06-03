@@ -106,6 +106,10 @@ coder_cols.h
 ca_window.h
 ../include/coders/ca/ca_window.h
 
+../include/coders/ca/decoder_ca.h
+decoder_cols.h
+../include/coders/ca/decoder_cols.h
+
 ../include/coders/coder_base.h
 string
 -
@@ -437,6 +441,14 @@ coder_ca.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/ca/coder_ca.h
 
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/ca/decoder_ca.cpp
+decoder_ca.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/ca/decoder_ca.h
+string_utils.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/ca/string_utils.h
+ca_line.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/ca/ca_line.h
+cmath
+-
 
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/coder_base.cpp
 coder_base.h
@@ -659,6 +671,8 @@ decoder_pwlh.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/decoder_pwlh.h
 coder_ca.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coder_ca.h
+decoder_ca.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/decoder_ca.h
 csv_utils.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/csv_utils.h
 bit_stream_utils.h

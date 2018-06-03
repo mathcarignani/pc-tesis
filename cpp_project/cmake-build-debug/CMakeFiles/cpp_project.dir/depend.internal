@@ -110,6 +110,18 @@ CMakeFiles/cpp_project.dir/src/coders/ca/coder_ca.cpp.o
  ../include/file_utils/text/text_reader.h
  /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/ca/coder_ca.cpp
 CMakeFiles/cpp_project.dir/src/coders/ca/decoder_ca.cpp.o
+ ../include/coders/ca/ca_line.h
+ ../include/coders/ca/ca_point.h
+ ../include/coders/ca/decoder_ca.h
+ ../include/coders/cols/decoder_cols.h
+ ../include/coders/decoder_base.h
+ ../include/dataset/column_code.h
+ ../include/dataset/dataset.h
+ ../include/dataset/range.h
+ ../include/file_utils/bit_stream/bit_stream_reader.h
+ ../include/file_utils/csv/csv_writer.h
+ ../include/file_utils/path.h
+ ../include/string_utils.h
  /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/ca/decoder_ca.cpp
 CMakeFiles/cpp_project.dir/src/coders/coder_base.cpp.o
  ../include/coders/coder_base.h
@@ -343,6 +355,7 @@ CMakeFiles/cpp_project.dir/src/scripts.cpp.o
  ../include/coders/ca/ca_point.h
  ../include/coders/ca/ca_window.h
  ../include/coders/ca/coder_ca.h
+ ../include/coders/ca/decoder_ca.h
  ../include/coders/coder_base.h
  ../include/coders/cols/coder_cols.h
  ../include/coders/cols/decoder_cols.h
