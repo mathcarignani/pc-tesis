@@ -49,9 +49,8 @@ def compress_file(args):
     # csv_compare = CSVCompare(args.output_path, py_d_filename, args.output_path, cpp_d_filename)
     # assert(csv_compare.compare())
     print "Comparing original and decompressed files..."
-    # assert(BitStreamUtils.compare_files(args.input_path, args.input_filename, args.output_path, py_d_filename))
-    csv_compare = CSVCompare(args.input_path, args.input_filename, args.output_path, cpp_d_filename)
-    same_file = csv_compare.compare()
+    csv_compare = CSVCompare(args.input_path, args.input_filename, args.output_path, py_d_filename)
+    same_file = csv_compare.compare(args.coder_params['error_threshold'], True)
     assert same_file
 
     # print results
@@ -122,8 +121,6 @@ def run_script_on_file(csv, id1, row, logger, input_path, input_filename, output
     # calculate error thresholds
     stds = calculate_file_stats(input_path, input_filename)
     thresholds_hash = calculate_stds_percentages(stds, THRESHOLD_PERCENTAGES)
-    print "THRE", thresholds_hash
-    thresholds_hash = {3: [0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0]}
 
     for id2, coder_dictionary in enumerate(CODERS_ARRAY):
         if id1 == 0 and id2 == 0:  # first row of dataset and file
