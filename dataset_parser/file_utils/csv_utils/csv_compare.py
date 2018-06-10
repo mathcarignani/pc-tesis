@@ -16,7 +16,7 @@ class CSVCompare:
     # Returns true iff there is no error.
     #
     def compare(self, error_thresholds=None, abort=True):
-        self.error_thresholds = self._set_error_thresholds(error_thresholds)
+        self.error_thresholds = self._check_error_thresholds(error_thresholds)
         self.abort = abort
         same_file = self._check_same_file()
         self._print_result(same_file)
@@ -25,12 +25,10 @@ class CSVCompare:
     ####################################################################################################################
 
     @classmethod
-    def _set_error_thresholds(cls, error_thresholds):
+    def _check_error_thresholds(cls, error_thresholds):
         if error_thresholds is not None:
             for error in error_thresholds:
-                assert(error >= 0)
-            if sum(error_thresholds) == 0:
-                error_thresholds = None
+                assert(error == "N" or (isinstance(error, int) and error >= 0))
         return error_thresholds
 
     def _print_result(self, same_file):
@@ -108,7 +106,7 @@ class CSVCompare:
 
         else:
             error = 0 if self.error_thresholds is None else self.error_thresholds[col_index]
-            assert(error >= 0)
+            assert(isinstance(error, int) and error >= 0)
 
             if error == 0:  # compare strings instead of int
                 if value1 != value2:

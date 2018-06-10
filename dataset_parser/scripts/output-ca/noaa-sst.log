@@ -1,0 +1,1176 @@
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 0, 0, 0, 0, 0, 0, 'N', 0, 'N', 'N', 0, 0, 'N', 0, 0, 'N', 0, 0, 0, 0, 0, 0, 0, 'N', 0, 'N', 0, 0, 0, 0, 0, 'N', 0, 0, 0, 0, 'N', 0, 0, 'N', 'N', 0, 'N', 'N', 'N', 0, 0, 'N', 0, 0, 0, 0, 0, 'N', 0]
+-> max_window_size = 5
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201701.csv
+-> size (bytes): 1,098,682
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201701.c.cpp.csv
+-> size (bytes): 398,126
+-> 36.24% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 0, 0, 0, 0, 0, 0, 'N', 0, 'N', 'N', 0, 0, 'N', 0, 0, 'N', 0, 0, 0, 0, 0, 0, 0, 'N', 0, 'N', 0, 0, 0, 0, 0, 'N', 0, 0, 0, 0, 'N', 0, 0, 'N', 'N', 0, 'N', 'N', 'N', 0, 0, 'N', 0, 0, 0, 0, 0, 'N', 0]
+-> max_window_size = 10
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201701.csv
+-> size (bytes): 1,098,682
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201701.c.cpp.csv
+-> size (bytes): 394,147
+-> 35.87% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 0, 0, 0, 0, 0, 0, 'N', 0, 'N', 'N', 0, 0, 'N', 0, 0, 'N', 0, 0, 0, 0, 0, 0, 0, 'N', 0, 'N', 0, 0, 0, 0, 0, 'N', 0, 0, 0, 0, 'N', 0, 0, 'N', 'N', 0, 'N', 'N', 'N', 0, 0, 'N', 0, 0, 0, 0, 0, 'N', 0]
+-> max_window_size = 25
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201701.csv
+-> size (bytes): 1,098,682
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201701.c.cpp.csv
+-> size (bytes): 398,230
+-> 36.25% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 0, 0, 0, 0, 0, 0, 'N', 0, 'N', 'N', 0, 0, 'N', 0, 0, 'N', 0, 0, 0, 0, 0, 0, 0, 'N', 0, 'N', 0, 0, 0, 0, 0, 'N', 0, 0, 0, 0, 'N', 0, 0, 'N', 'N', 0, 'N', 'N', 'N', 0, 0, 'N', 0, 0, 0, 0, 0, 'N', 0]
+-> max_window_size = 50
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201701.csv
+-> size (bytes): 1,098,682
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201701.c.cpp.csv
+-> size (bytes): 411,691
+-> 37.47% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 0, 0, 0, 0, 0, 0, 'N', 0, 'N', 'N', 0, 0, 'N', 0, 0, 'N', 0, 0, 0, 0, 0, 0, 0, 'N', 0, 'N', 0, 0, 0, 0, 0, 'N', 0, 0, 0, 0, 'N', 0, 0, 'N', 'N', 0, 'N', 'N', 'N', 0, 0, 'N', 0, 0, 0, 0, 0, 'N', 0]
+-> max_window_size = 100
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201701.csv
+-> size (bytes): 1,098,682
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201701.c.cpp.csv
+-> size (bytes): 427,516
+-> 38.91% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 0, 0, 0, 0, 0, 0, 'N', 0, 'N', 'N', 0, 0, 'N', 0, 0, 'N', 0, 0, 0, 0, 0, 0, 0, 'N', 0, 'N', 0, 0, 0, 0, 0, 'N', 0, 0, 0, 0, 'N', 0, 0, 'N', 'N', 0, 'N', 'N', 'N', 0, 0, 'N', 0, 0, 0, 0, 0, 'N', 0]
+-> max_window_size = 200
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201701.csv
+-> size (bytes): 1,098,682
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201701.c.cpp.csv
+-> size (bytes): 444,591
+-> 40.47% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 30, 30, 24, 33, 31, 29, 'N', 51, 'N', 'N', 3, 22, 'N', 36, 18, 'N', 31, 39, 2, 47, 54, 35, 26, 'N', 54, 'N', 31, 14, 60, 9, 37, 'N', 4, 35, 42, 37, 'N', 36, 4, 'N', 'N', 43, 'N', 'N', 'N', 3, 21, 'N', 32, 21, 134, 62, 167, 'N', 36]
+-> max_window_size = 5
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201701.csv
+-> size (bytes): 1,098,682
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201701.c.cpp.csv
+-> size (bytes): 197,771
+-> 18.0% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 30, 30, 24, 33, 31, 29, 'N', 51, 'N', 'N', 3, 22, 'N', 36, 18, 'N', 31, 39, 2, 47, 54, 35, 26, 'N', 54, 'N', 31, 14, 60, 9, 37, 'N', 4, 35, 42, 37, 'N', 36, 4, 'N', 'N', 43, 'N', 'N', 'N', 3, 21, 'N', 32, 21, 134, 62, 167, 'N', 36]
+-> max_window_size = 10
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201701.csv
+-> size (bytes): 1,098,682
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201701.c.cpp.csv
+-> size (bytes): 142,744
+-> 12.99% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 30, 30, 24, 33, 31, 29, 'N', 51, 'N', 'N', 3, 22, 'N', 36, 18, 'N', 31, 39, 2, 47, 54, 35, 26, 'N', 54, 'N', 31, 14, 60, 9, 37, 'N', 4, 35, 42, 37, 'N', 36, 4, 'N', 'N', 43, 'N', 'N', 'N', 3, 21, 'N', 32, 21, 134, 62, 167, 'N', 36]
+-> max_window_size = 25
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201701.csv
+-> size (bytes): 1,098,682
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201701.c.cpp.csv
+-> size (bytes): 111,428
+-> 10.14% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 30, 30, 24, 33, 31, 29, 'N', 51, 'N', 'N', 3, 22, 'N', 36, 18, 'N', 31, 39, 2, 47, 54, 35, 26, 'N', 54, 'N', 31, 14, 60, 9, 37, 'N', 4, 35, 42, 37, 'N', 36, 4, 'N', 'N', 43, 'N', 'N', 'N', 3, 21, 'N', 32, 21, 134, 62, 167, 'N', 36]
+-> max_window_size = 50
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201701.csv
+-> size (bytes): 1,098,682
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201701.c.cpp.csv
+-> size (bytes): 106,359
+-> 9.68% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 30, 30, 24, 33, 31, 29, 'N', 51, 'N', 'N', 3, 22, 'N', 36, 18, 'N', 31, 39, 2, 47, 54, 35, 26, 'N', 54, 'N', 31, 14, 60, 9, 37, 'N', 4, 35, 42, 37, 'N', 36, 4, 'N', 'N', 43, 'N', 'N', 'N', 3, 21, 'N', 32, 21, 134, 62, 167, 'N', 36]
+-> max_window_size = 100
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201701.csv
+-> size (bytes): 1,098,682
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201701.c.cpp.csv
+-> size (bytes): 107,335
+-> 9.77% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 30, 30, 24, 33, 31, 29, 'N', 51, 'N', 'N', 3, 22, 'N', 36, 18, 'N', 31, 39, 2, 47, 54, 35, 26, 'N', 54, 'N', 31, 14, 60, 9, 37, 'N', 4, 35, 42, 37, 'N', 36, 4, 'N', 'N', 43, 'N', 'N', 'N', 3, 21, 'N', 32, 21, 134, 62, 167, 'N', 36]
+-> max_window_size = 200
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201701.csv
+-> size (bytes): 1,098,682
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201701.c.cpp.csv
+-> size (bytes): 110,382
+-> 10.05% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 50, 50, 41, 55, 52, 48, 'N', 85, 'N', 'N', 5, 36, 'N', 61, 31, 'N', 51, 65, 4, 79, 89, 58, 43, 'N', 89, 'N', 52, 23, 101, 15, 62, 'N', 7, 58, 69, 62, 'N', 60, 7, 'N', 'N', 72, 'N', 'N', 'N', 5, 34, 'N', 53, 35, 223, 104, 279, 'N', 61]
+-> max_window_size = 5
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201701.csv
+-> size (bytes): 1,098,682
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201701.c.cpp.csv
+-> size (bytes): 184,920
+-> 16.83% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 50, 50, 41, 55, 52, 48, 'N', 85, 'N', 'N', 5, 36, 'N', 61, 31, 'N', 51, 65, 4, 79, 89, 58, 43, 'N', 89, 'N', 52, 23, 101, 15, 62, 'N', 7, 58, 69, 62, 'N', 60, 7, 'N', 'N', 72, 'N', 'N', 'N', 5, 34, 'N', 53, 35, 223, 104, 279, 'N', 61]
+-> max_window_size = 10
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201701.csv
+-> size (bytes): 1,098,682
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201701.c.cpp.csv
+-> size (bytes): 122,909
+-> 11.19% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 50, 50, 41, 55, 52, 48, 'N', 85, 'N', 'N', 5, 36, 'N', 61, 31, 'N', 51, 65, 4, 79, 89, 58, 43, 'N', 89, 'N', 52, 23, 101, 15, 62, 'N', 7, 58, 69, 62, 'N', 60, 7, 'N', 'N', 72, 'N', 'N', 'N', 5, 34, 'N', 53, 35, 223, 104, 279, 'N', 61]
+-> max_window_size = 25
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201701.csv
+-> size (bytes): 1,098,682
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201701.c.cpp.csv
+-> size (bytes): 83,702
+-> 7.62% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 50, 50, 41, 55, 52, 48, 'N', 85, 'N', 'N', 5, 36, 'N', 61, 31, 'N', 51, 65, 4, 79, 89, 58, 43, 'N', 89, 'N', 52, 23, 101, 15, 62, 'N', 7, 58, 69, 62, 'N', 60, 7, 'N', 'N', 72, 'N', 'N', 'N', 5, 34, 'N', 53, 35, 223, 104, 279, 'N', 61]
+-> max_window_size = 50
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201701.csv
+-> size (bytes): 1,098,682
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201701.c.cpp.csv
+-> size (bytes): 74,261
+-> 6.76% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 50, 50, 41, 55, 52, 48, 'N', 85, 'N', 'N', 5, 36, 'N', 61, 31, 'N', 51, 65, 4, 79, 89, 58, 43, 'N', 89, 'N', 52, 23, 101, 15, 62, 'N', 7, 58, 69, 62, 'N', 60, 7, 'N', 'N', 72, 'N', 'N', 'N', 5, 34, 'N', 53, 35, 223, 104, 279, 'N', 61]
+-> max_window_size = 100
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201701.csv
+-> size (bytes): 1,098,682
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201701.c.cpp.csv
+-> size (bytes): 72,637
+-> 6.61% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 50, 50, 41, 55, 52, 48, 'N', 85, 'N', 'N', 5, 36, 'N', 61, 31, 'N', 51, 65, 4, 79, 89, 58, 43, 'N', 89, 'N', 52, 23, 101, 15, 62, 'N', 7, 58, 69, 62, 'N', 60, 7, 'N', 'N', 72, 'N', 'N', 'N', 5, 34, 'N', 53, 35, 223, 104, 279, 'N', 61]
+-> max_window_size = 200
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201701.csv
+-> size (bytes): 1,098,682
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201701.c.cpp.csv
+-> size (bytes): 73,974
+-> 6.73% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 101, 100, 81, 111, 104, 95, 'N', 170, 'N', 'N', 11, 72, 'N', 122, 61, 'N', 103, 130, 7, 158, 179, 116, 86, 'N', 179, 'N', 103, 47, 201, 30, 124, 'N', 14, 116, 139, 125, 'N', 119, 14, 'N', 'N', 144, 'N', 'N', 'N', 9, 69, 'N', 106, 70, 447, 207, 558, 'N', 121]
+-> max_window_size = 5
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201701.csv
+-> size (bytes): 1,098,682
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201701.c.cpp.csv
+-> size (bytes): 175,299
+-> 15.96% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 101, 100, 81, 111, 104, 95, 'N', 170, 'N', 'N', 11, 72, 'N', 122, 61, 'N', 103, 130, 7, 158, 179, 116, 86, 'N', 179, 'N', 103, 47, 201, 30, 124, 'N', 14, 116, 139, 125, 'N', 119, 14, 'N', 'N', 144, 'N', 'N', 'N', 9, 69, 'N', 106, 70, 447, 207, 558, 'N', 121]
+-> max_window_size = 10
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201701.csv
+-> size (bytes): 1,098,682
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201701.c.cpp.csv
+-> size (bytes): 107,944
+-> 9.82% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 101, 100, 81, 111, 104, 95, 'N', 170, 'N', 'N', 11, 72, 'N', 122, 61, 'N', 103, 130, 7, 158, 179, 116, 86, 'N', 179, 'N', 103, 47, 201, 30, 124, 'N', 14, 116, 139, 125, 'N', 119, 14, 'N', 'N', 144, 'N', 'N', 'N', 9, 69, 'N', 106, 70, 447, 207, 558, 'N', 121]
+-> max_window_size = 25
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201701.csv
+-> size (bytes): 1,098,682
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201701.c.cpp.csv
+-> size (bytes): 62,477
+-> 5.69% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 101, 100, 81, 111, 104, 95, 'N', 170, 'N', 'N', 11, 72, 'N', 122, 61, 'N', 103, 130, 7, 158, 179, 116, 86, 'N', 179, 'N', 103, 47, 201, 30, 124, 'N', 14, 116, 139, 125, 'N', 119, 14, 'N', 'N', 144, 'N', 'N', 'N', 9, 69, 'N', 106, 70, 447, 207, 558, 'N', 121]
+-> max_window_size = 50
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201701.csv
+-> size (bytes): 1,098,682
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201701.c.cpp.csv
+-> size (bytes): 48,559
+-> 4.42% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 101, 100, 81, 111, 104, 95, 'N', 170, 'N', 'N', 11, 72, 'N', 122, 61, 'N', 103, 130, 7, 158, 179, 116, 86, 'N', 179, 'N', 103, 47, 201, 30, 124, 'N', 14, 116, 139, 125, 'N', 119, 14, 'N', 'N', 144, 'N', 'N', 'N', 9, 69, 'N', 106, 70, 447, 207, 558, 'N', 121]
+-> max_window_size = 100
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201701.csv
+-> size (bytes): 1,098,682
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201701.c.cpp.csv
+-> size (bytes): 43,735
+-> 3.98% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 101, 100, 81, 111, 104, 95, 'N', 170, 'N', 'N', 11, 72, 'N', 122, 61, 'N', 103, 130, 7, 158, 179, 116, 86, 'N', 179, 'N', 103, 47, 201, 30, 124, 'N', 14, 116, 139, 125, 'N', 119, 14, 'N', 'N', 144, 'N', 'N', 'N', 9, 69, 'N', 106, 70, 447, 207, 558, 'N', 121]
+-> max_window_size = 200
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201701.csv
+-> size (bytes): 1,098,682
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201701.c.cpp.csv
+-> size (bytes): 43,272
+-> 3.94% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 151, 149, 122, 166, 156, 143, 'N', 255, 'N', 'N', 16, 108, 'N', 182, 92, 'N', 154, 195, 11, 237, 268, 174, 129, 'N', 268, 'N', 155, 70, 302, 45, 186, 'N', 21, 173, 208, 187, 'N', 179, 21, 'N', 'N', 216, 'N', 'N', 'N', 14, 103, 'N', 159, 106, 670, 311, 837, 'N', 182]
+-> max_window_size = 5
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201701.csv
+-> size (bytes): 1,098,682
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201701.c.cpp.csv
+-> size (bytes): 172,454
+-> 15.7% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 151, 149, 122, 166, 156, 143, 'N', 255, 'N', 'N', 16, 108, 'N', 182, 92, 'N', 154, 195, 11, 237, 268, 174, 129, 'N', 268, 'N', 155, 70, 302, 45, 186, 'N', 21, 173, 208, 187, 'N', 179, 21, 'N', 'N', 216, 'N', 'N', 'N', 14, 103, 'N', 159, 106, 670, 311, 837, 'N', 182]
+-> max_window_size = 10
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201701.csv
+-> size (bytes): 1,098,682
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201701.c.cpp.csv
+-> size (bytes): 103,069
+-> 9.38% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 151, 149, 122, 166, 156, 143, 'N', 255, 'N', 'N', 16, 108, 'N', 182, 92, 'N', 154, 195, 11, 237, 268, 174, 129, 'N', 268, 'N', 155, 70, 302, 45, 186, 'N', 21, 173, 208, 187, 'N', 179, 21, 'N', 'N', 216, 'N', 'N', 'N', 14, 103, 'N', 159, 106, 670, 311, 837, 'N', 182]
+-> max_window_size = 25
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201701.csv
+-> size (bytes): 1,098,682
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201701.c.cpp.csv
+-> size (bytes): 54,993
+-> 5.01% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 151, 149, 122, 166, 156, 143, 'N', 255, 'N', 'N', 16, 108, 'N', 182, 92, 'N', 154, 195, 11, 237, 268, 174, 129, 'N', 268, 'N', 155, 70, 302, 45, 186, 'N', 21, 173, 208, 187, 'N', 179, 21, 'N', 'N', 216, 'N', 'N', 'N', 14, 103, 'N', 159, 106, 670, 311, 837, 'N', 182]
+-> max_window_size = 50
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201701.csv
+-> size (bytes): 1,098,682
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201701.c.cpp.csv
+-> size (bytes): 39,534
+-> 3.6% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 151, 149, 122, 166, 156, 143, 'N', 255, 'N', 'N', 16, 108, 'N', 182, 92, 'N', 154, 195, 11, 237, 268, 174, 129, 'N', 268, 'N', 155, 70, 302, 45, 186, 'N', 21, 173, 208, 187, 'N', 179, 21, 'N', 'N', 216, 'N', 'N', 'N', 14, 103, 'N', 159, 106, 670, 311, 837, 'N', 182]
+-> max_window_size = 100
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201701.csv
+-> size (bytes): 1,098,682
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201701.c.cpp.csv
+-> size (bytes): 32,956
+-> 3.0% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 151, 149, 122, 166, 156, 143, 'N', 255, 'N', 'N', 16, 108, 'N', 182, 92, 'N', 154, 195, 11, 237, 268, 174, 129, 'N', 268, 'N', 155, 70, 302, 45, 186, 'N', 21, 173, 208, 187, 'N', 179, 21, 'N', 'N', 216, 'N', 'N', 'N', 14, 103, 'N', 159, 106, 670, 311, 837, 'N', 182]
+-> max_window_size = 200
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201701.csv
+-> size (bytes): 1,098,682
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201701.c.cpp.csv
+-> size (bytes): 31,521
+-> 2.87% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 201, 199, 163, 221, 208, 190, 'N', 339, 'N', 'N', 21, 143, 'N', 243, 123, 'N', 206, 260, 15, 316, 357, 232, 172, 'N', 358, 'N', 207, 93, 403, 60, 248, 'N', 28, 231, 278, 250, 'N', 238, 29, 'N', 'N', 288, 'N', 'N', 'N', 19, 137, 'N', 212, 141, 894, 414, 1117, 'N', 242]
+-> max_window_size = 5
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201701.csv
+-> size (bytes): 1,098,682
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201701.c.cpp.csv
+-> size (bytes): 171,264
+-> 15.59% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 201, 199, 163, 221, 208, 190, 'N', 339, 'N', 'N', 21, 143, 'N', 243, 123, 'N', 206, 260, 15, 316, 357, 232, 172, 'N', 358, 'N', 207, 93, 403, 60, 248, 'N', 28, 231, 278, 250, 'N', 238, 29, 'N', 'N', 288, 'N', 'N', 'N', 19, 137, 'N', 212, 141, 894, 414, 1117, 'N', 242]
+-> max_window_size = 10
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201701.csv
+-> size (bytes): 1,098,682
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201701.c.cpp.csv
+-> size (bytes): 101,039
+-> 9.2% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 201, 199, 163, 221, 208, 190, 'N', 339, 'N', 'N', 21, 143, 'N', 243, 123, 'N', 206, 260, 15, 316, 357, 232, 172, 'N', 358, 'N', 207, 93, 403, 60, 248, 'N', 28, 231, 278, 250, 'N', 238, 29, 'N', 'N', 288, 'N', 'N', 'N', 19, 137, 'N', 212, 141, 894, 414, 1117, 'N', 242]
+-> max_window_size = 25
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201701.csv
+-> size (bytes): 1,098,682
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201701.c.cpp.csv
+-> size (bytes): 51,714
+-> 4.71% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 201, 199, 163, 221, 208, 190, 'N', 339, 'N', 'N', 21, 143, 'N', 243, 123, 'N', 206, 260, 15, 316, 357, 232, 172, 'N', 358, 'N', 207, 93, 403, 60, 248, 'N', 28, 231, 278, 250, 'N', 238, 29, 'N', 'N', 288, 'N', 'N', 'N', 19, 137, 'N', 212, 141, 894, 414, 1117, 'N', 242]
+-> max_window_size = 50
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201701.csv
+-> size (bytes): 1,098,682
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201701.c.cpp.csv
+-> size (bytes): 35,230
+-> 3.21% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 201, 199, 163, 221, 208, 190, 'N', 339, 'N', 'N', 21, 143, 'N', 243, 123, 'N', 206, 260, 15, 316, 357, 232, 172, 'N', 358, 'N', 207, 93, 403, 60, 248, 'N', 28, 231, 278, 250, 'N', 238, 29, 'N', 'N', 288, 'N', 'N', 'N', 19, 137, 'N', 212, 141, 894, 414, 1117, 'N', 242]
+-> max_window_size = 100
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201701.csv
+-> size (bytes): 1,098,682
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201701.c.cpp.csv
+-> size (bytes): 27,905
+-> 2.54% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 201, 199, 163, 221, 208, 190, 'N', 339, 'N', 'N', 21, 143, 'N', 243, 123, 'N', 206, 260, 15, 316, 357, 232, 172, 'N', 358, 'N', 207, 93, 403, 60, 248, 'N', 28, 231, 278, 250, 'N', 238, 29, 'N', 'N', 288, 'N', 'N', 'N', 19, 137, 'N', 212, 141, 894, 414, 1117, 'N', 242]
+-> max_window_size = 200
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201701.csv
+-> size (bytes): 1,098,682
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201701.c.cpp.csv
+-> size (bytes): 25,758
+-> 2.34% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 302, 299, 244, 332, 313, 286, 'N', 509, 'N', 'N', 32, 215, 'N', 365, 184, 'N', 308, 390, 22, 474, 536, 347, 258, 'N', 536, 'N', 310, 140, 604, 89, 372, 'N', 42, 347, 417, 375, 'N', 357, 43, 'N', 'N', 432, 'N', 'N', 'N', 28, 206, 'N', 318, 211, 1341, 622, 1675, 'N', 364]
+-> max_window_size = 5
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201701.csv
+-> size (bytes): 1,098,682
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201701.c.cpp.csv
+-> size (bytes): 170,551
+-> 15.52% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 302, 299, 244, 332, 313, 286, 'N', 509, 'N', 'N', 32, 215, 'N', 365, 184, 'N', 308, 390, 22, 474, 536, 347, 258, 'N', 536, 'N', 310, 140, 604, 89, 372, 'N', 42, 347, 417, 375, 'N', 357, 43, 'N', 'N', 432, 'N', 'N', 'N', 28, 206, 'N', 318, 211, 1341, 622, 1675, 'N', 364]
+-> max_window_size = 10
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201701.csv
+-> size (bytes): 1,098,682
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201701.c.cpp.csv
+-> size (bytes): 99,657
+-> 9.07% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 302, 299, 244, 332, 313, 286, 'N', 509, 'N', 'N', 32, 215, 'N', 365, 184, 'N', 308, 390, 22, 474, 536, 347, 258, 'N', 536, 'N', 310, 140, 604, 89, 372, 'N', 42, 347, 417, 375, 'N', 357, 43, 'N', 'N', 432, 'N', 'N', 'N', 28, 206, 'N', 318, 211, 1341, 622, 1675, 'N', 364]
+-> max_window_size = 25
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201701.csv
+-> size (bytes): 1,098,682
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201701.c.cpp.csv
+-> size (bytes): 49,496
+-> 4.51% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 302, 299, 244, 332, 313, 286, 'N', 509, 'N', 'N', 32, 215, 'N', 365, 184, 'N', 308, 390, 22, 474, 536, 347, 258, 'N', 536, 'N', 310, 140, 604, 89, 372, 'N', 42, 347, 417, 375, 'N', 357, 43, 'N', 'N', 432, 'N', 'N', 'N', 28, 206, 'N', 318, 211, 1341, 622, 1675, 'N', 364]
+-> max_window_size = 50
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201701.csv
+-> size (bytes): 1,098,682
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201701.c.cpp.csv
+-> size (bytes): 32,128
+-> 2.92% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 302, 299, 244, 332, 313, 286, 'N', 509, 'N', 'N', 32, 215, 'N', 365, 184, 'N', 308, 390, 22, 474, 536, 347, 258, 'N', 536, 'N', 310, 140, 604, 89, 372, 'N', 42, 347, 417, 375, 'N', 357, 43, 'N', 'N', 432, 'N', 'N', 'N', 28, 206, 'N', 318, 211, 1341, 622, 1675, 'N', 364]
+-> max_window_size = 100
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201701.csv
+-> size (bytes): 1,098,682
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201701.c.cpp.csv
+-> size (bytes): 23,845
+-> 2.17% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 302, 299, 244, 332, 313, 286, 'N', 509, 'N', 'N', 32, 215, 'N', 365, 184, 'N', 308, 390, 22, 474, 536, 347, 258, 'N', 536, 'N', 310, 140, 604, 89, 372, 'N', 42, 347, 417, 375, 'N', 357, 43, 'N', 'N', 432, 'N', 'N', 'N', 28, 206, 'N', 318, 211, 1341, 622, 1675, 'N', 364]
+-> max_window_size = 200
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201701.csv
+-> size (bytes): 1,098,682
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201701.c.cpp.csv
+-> size (bytes): 20,775
+-> 1.89% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 0, 0, 0, 0, 0, 0, 'N', 0, 'N', 0, 0, 0, 'N', 0, 'N', 'N', 0, 0, 0, 0, 0, 0, 0, 'N', 'N', 0, 0, 0, 0, 0, 0, 'N', 'N', 0, 0, 0, 'N', 0, 0, 'N', 'N', 0, 'N', 'N', 'N', 0, 0, 'N', 0, 0, 0, 0, 0, 'N', 0]
+-> max_window_size = 5
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201702.csv
+-> size (bytes): 996,619
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201702.c.cpp.csv
+-> size (bytes): 362,903
+-> 36.41% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 0, 0, 0, 0, 0, 0, 'N', 0, 'N', 0, 0, 0, 'N', 0, 'N', 'N', 0, 0, 0, 0, 0, 0, 0, 'N', 'N', 0, 0, 0, 0, 0, 0, 'N', 'N', 0, 0, 0, 'N', 0, 0, 'N', 'N', 0, 'N', 'N', 'N', 0, 0, 'N', 0, 0, 0, 0, 0, 'N', 0]
+-> max_window_size = 10
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201702.csv
+-> size (bytes): 996,619
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201702.c.cpp.csv
+-> size (bytes): 359,449
+-> 36.07% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 0, 0, 0, 0, 0, 0, 'N', 0, 'N', 0, 0, 0, 'N', 0, 'N', 'N', 0, 0, 0, 0, 0, 0, 0, 'N', 'N', 0, 0, 0, 0, 0, 0, 'N', 'N', 0, 0, 0, 'N', 0, 0, 'N', 'N', 0, 'N', 'N', 'N', 0, 0, 'N', 0, 0, 0, 0, 0, 'N', 0]
+-> max_window_size = 25
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201702.csv
+-> size (bytes): 996,619
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201702.c.cpp.csv
+-> size (bytes): 363,432
+-> 36.47% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 0, 0, 0, 0, 0, 0, 'N', 0, 'N', 0, 0, 0, 'N', 0, 'N', 'N', 0, 0, 0, 0, 0, 0, 0, 'N', 'N', 0, 0, 0, 0, 0, 0, 'N', 'N', 0, 0, 0, 'N', 0, 0, 'N', 'N', 0, 'N', 'N', 'N', 0, 0, 'N', 0, 0, 0, 0, 0, 'N', 0]
+-> max_window_size = 50
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201702.csv
+-> size (bytes): 996,619
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201702.c.cpp.csv
+-> size (bytes): 375,797
+-> 37.71% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 0, 0, 0, 0, 0, 0, 'N', 0, 'N', 0, 0, 0, 'N', 0, 'N', 'N', 0, 0, 0, 0, 0, 0, 0, 'N', 'N', 0, 0, 0, 0, 0, 0, 'N', 'N', 0, 0, 0, 'N', 0, 0, 'N', 'N', 0, 'N', 'N', 'N', 0, 0, 'N', 0, 0, 0, 0, 0, 'N', 0]
+-> max_window_size = 100
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201702.csv
+-> size (bytes): 996,619
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201702.c.cpp.csv
+-> size (bytes): 390,301
+-> 39.16% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 0, 0, 0, 0, 0, 0, 'N', 0, 'N', 0, 0, 0, 'N', 0, 'N', 'N', 0, 0, 0, 0, 0, 0, 0, 'N', 'N', 0, 0, 0, 0, 0, 0, 'N', 'N', 0, 0, 0, 'N', 0, 0, 'N', 'N', 0, 'N', 'N', 'N', 0, 0, 'N', 0, 0, 0, 0, 0, 'N', 0]
+-> max_window_size = 200
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201702.csv
+-> size (bytes): 996,619
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201702.c.cpp.csv
+-> size (bytes): 405,921
+-> 40.73% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 31, 28, 16, 28, 97, 25, 'N', 38, 'N', 42, 20, 25, 'N', 4, 'N', 'N', 34, 21, 25, 35, 147, 38, 18, 'N', 'N', 40, 33, 46, 59, 22, 5, 'N', 'N', 39, 37, 72, 'N', 35, 25, 'N', 'N', 2, 'N', 'N', 'N', 14, 18, 'N', 14, 28, 96, 32, 94, 'N', 34]
+-> max_window_size = 5
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201702.csv
+-> size (bytes): 996,619
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201702.c.cpp.csv
+-> size (bytes): 192,020
+-> 19.27% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 31, 28, 16, 28, 97, 25, 'N', 38, 'N', 42, 20, 25, 'N', 4, 'N', 'N', 34, 21, 25, 35, 147, 38, 18, 'N', 'N', 40, 33, 46, 59, 22, 5, 'N', 'N', 39, 37, 72, 'N', 35, 25, 'N', 'N', 2, 'N', 'N', 'N', 14, 18, 'N', 14, 28, 96, 32, 94, 'N', 34]
+-> max_window_size = 10
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201702.csv
+-> size (bytes): 996,619
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201702.c.cpp.csv
+-> size (bytes): 148,024
+-> 14.85% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 31, 28, 16, 28, 97, 25, 'N', 38, 'N', 42, 20, 25, 'N', 4, 'N', 'N', 34, 21, 25, 35, 147, 38, 18, 'N', 'N', 40, 33, 46, 59, 22, 5, 'N', 'N', 39, 37, 72, 'N', 35, 25, 'N', 'N', 2, 'N', 'N', 'N', 14, 18, 'N', 14, 28, 96, 32, 94, 'N', 34]
+-> max_window_size = 25
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201702.csv
+-> size (bytes): 996,619
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201702.c.cpp.csv
+-> size (bytes): 124,384
+-> 12.48% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 31, 28, 16, 28, 97, 25, 'N', 38, 'N', 42, 20, 25, 'N', 4, 'N', 'N', 34, 21, 25, 35, 147, 38, 18, 'N', 'N', 40, 33, 46, 59, 22, 5, 'N', 'N', 39, 37, 72, 'N', 35, 25, 'N', 'N', 2, 'N', 'N', 'N', 14, 18, 'N', 14, 28, 96, 32, 94, 'N', 34]
+-> max_window_size = 50
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201702.csv
+-> size (bytes): 996,619
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201702.c.cpp.csv
+-> size (bytes): 121,721
+-> 12.21% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 31, 28, 16, 28, 97, 25, 'N', 38, 'N', 42, 20, 25, 'N', 4, 'N', 'N', 34, 21, 25, 35, 147, 38, 18, 'N', 'N', 40, 33, 46, 59, 22, 5, 'N', 'N', 39, 37, 72, 'N', 35, 25, 'N', 'N', 2, 'N', 'N', 'N', 14, 18, 'N', 14, 28, 96, 32, 94, 'N', 34]
+-> max_window_size = 100
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201702.csv
+-> size (bytes): 996,619
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201702.c.cpp.csv
+-> size (bytes): 123,794
+-> 12.42% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 31, 28, 16, 28, 97, 25, 'N', 38, 'N', 42, 20, 25, 'N', 4, 'N', 'N', 34, 21, 25, 35, 147, 38, 18, 'N', 'N', 40, 33, 46, 59, 22, 5, 'N', 'N', 39, 37, 72, 'N', 35, 25, 'N', 'N', 2, 'N', 'N', 'N', 14, 18, 'N', 14, 28, 96, 32, 94, 'N', 34]
+-> max_window_size = 200
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201702.csv
+-> size (bytes): 996,619
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201702.c.cpp.csv
+-> size (bytes): 127,710
+-> 12.81% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 51, 47, 27, 46, 162, 41, 'N', 64, 'N', 71, 34, 41, 'N', 7, 'N', 'N', 57, 35, 42, 59, 244, 63, 30, 'N', 'N', 66, 55, 76, 98, 36, 8, 'N', 'N', 66, 62, 120, 'N', 58, 42, 'N', 'N', 4, 'N', 'N', 'N', 23, 30, 'N', 23, 47, 160, 53, 156, 'N', 57]
+-> max_window_size = 5
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201702.csv
+-> size (bytes): 996,619
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201702.c.cpp.csv
+-> size (bytes): 176,299
+-> 17.69% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 51, 47, 27, 46, 162, 41, 'N', 64, 'N', 71, 34, 41, 'N', 7, 'N', 'N', 57, 35, 42, 59, 244, 63, 30, 'N', 'N', 66, 55, 76, 98, 36, 8, 'N', 'N', 66, 62, 120, 'N', 58, 42, 'N', 'N', 4, 'N', 'N', 'N', 23, 30, 'N', 23, 47, 160, 53, 156, 'N', 57]
+-> max_window_size = 10
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201702.csv
+-> size (bytes): 996,619
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201702.c.cpp.csv
+-> size (bytes): 124,759
+-> 12.52% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 51, 47, 27, 46, 162, 41, 'N', 64, 'N', 71, 34, 41, 'N', 7, 'N', 'N', 57, 35, 42, 59, 244, 63, 30, 'N', 'N', 66, 55, 76, 98, 36, 8, 'N', 'N', 66, 62, 120, 'N', 58, 42, 'N', 'N', 4, 'N', 'N', 'N', 23, 30, 'N', 23, 47, 160, 53, 156, 'N', 57]
+-> max_window_size = 25
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201702.csv
+-> size (bytes): 996,619
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201702.c.cpp.csv
+-> size (bytes): 93,850
+-> 9.42% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 51, 47, 27, 46, 162, 41, 'N', 64, 'N', 71, 34, 41, 'N', 7, 'N', 'N', 57, 35, 42, 59, 244, 63, 30, 'N', 'N', 66, 55, 76, 98, 36, 8, 'N', 'N', 66, 62, 120, 'N', 58, 42, 'N', 'N', 4, 'N', 'N', 'N', 23, 30, 'N', 23, 47, 160, 53, 156, 'N', 57]
+-> max_window_size = 50
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201702.csv
+-> size (bytes): 996,619
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201702.c.cpp.csv
+-> size (bytes): 87,514
+-> 8.78% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 51, 47, 27, 46, 162, 41, 'N', 64, 'N', 71, 34, 41, 'N', 7, 'N', 'N', 57, 35, 42, 59, 244, 63, 30, 'N', 'N', 66, 55, 76, 98, 36, 8, 'N', 'N', 66, 62, 120, 'N', 58, 42, 'N', 'N', 4, 'N', 'N', 'N', 23, 30, 'N', 23, 47, 160, 53, 156, 'N', 57]
+-> max_window_size = 100
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201702.csv
+-> size (bytes): 996,619
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201702.c.cpp.csv
+-> size (bytes): 87,268
+-> 8.76% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 51, 47, 27, 46, 162, 41, 'N', 64, 'N', 71, 34, 41, 'N', 7, 'N', 'N', 57, 35, 42, 59, 244, 63, 30, 'N', 'N', 66, 55, 76, 98, 36, 8, 'N', 'N', 66, 62, 120, 'N', 58, 42, 'N', 'N', 4, 'N', 'N', 'N', 23, 30, 'N', 23, 47, 160, 53, 156, 'N', 57]
+-> max_window_size = 200
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201702.csv
+-> size (bytes): 996,619
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201702.c.cpp.csv
+-> size (bytes): 89,487
+-> 8.98% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 103, 93, 53, 92, 323, 82, 'N', 128, 'N', 142, 68, 83, 'N', 13, 'N', 'N', 114, 71, 83, 118, 489, 126, 60, 'N', 'N', 132, 110, 153, 196, 73, 17, 'N', 'N', 131, 124, 241, 'N', 115, 85, 'N', 'N', 8, 'N', 'N', 'N', 47, 60, 'N', 46, 95, 319, 107, 312, 'N', 113]
+-> max_window_size = 5
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201702.csv
+-> size (bytes): 996,619
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201702.c.cpp.csv
+-> size (bytes): 163,743
+-> 16.43% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 103, 93, 53, 92, 323, 82, 'N', 128, 'N', 142, 68, 83, 'N', 13, 'N', 'N', 114, 71, 83, 118, 489, 126, 60, 'N', 'N', 132, 110, 153, 196, 73, 17, 'N', 'N', 131, 124, 241, 'N', 115, 85, 'N', 'N', 8, 'N', 'N', 'N', 47, 60, 'N', 46, 95, 319, 107, 312, 'N', 113]
+-> max_window_size = 10
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201702.csv
+-> size (bytes): 996,619
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201702.c.cpp.csv
+-> size (bytes): 105,304
+-> 10.57% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 103, 93, 53, 92, 323, 82, 'N', 128, 'N', 142, 68, 83, 'N', 13, 'N', 'N', 114, 71, 83, 118, 489, 126, 60, 'N', 'N', 132, 110, 153, 196, 73, 17, 'N', 'N', 131, 124, 241, 'N', 115, 85, 'N', 'N', 8, 'N', 'N', 'N', 47, 60, 'N', 46, 95, 319, 107, 312, 'N', 113]
+-> max_window_size = 25
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201702.csv
+-> size (bytes): 996,619
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201702.c.cpp.csv
+-> size (bytes): 67,086
+-> 6.73% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 103, 93, 53, 92, 323, 82, 'N', 128, 'N', 142, 68, 83, 'N', 13, 'N', 'N', 114, 71, 83, 118, 489, 126, 60, 'N', 'N', 132, 110, 153, 196, 73, 17, 'N', 'N', 131, 124, 241, 'N', 115, 85, 'N', 'N', 8, 'N', 'N', 'N', 47, 60, 'N', 46, 95, 319, 107, 312, 'N', 113]
+-> max_window_size = 50
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201702.csv
+-> size (bytes): 996,619
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201702.c.cpp.csv
+-> size (bytes): 56,500
+-> 5.67% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 103, 93, 53, 92, 323, 82, 'N', 128, 'N', 142, 68, 83, 'N', 13, 'N', 'N', 114, 71, 83, 118, 489, 126, 60, 'N', 'N', 132, 110, 153, 196, 73, 17, 'N', 'N', 131, 124, 241, 'N', 115, 85, 'N', 'N', 8, 'N', 'N', 'N', 47, 60, 'N', 46, 95, 319, 107, 312, 'N', 113]
+-> max_window_size = 100
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201702.csv
+-> size (bytes): 996,619
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201702.c.cpp.csv
+-> size (bytes): 53,337
+-> 5.35% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 103, 93, 53, 92, 323, 82, 'N', 128, 'N', 142, 68, 83, 'N', 13, 'N', 'N', 114, 71, 83, 118, 489, 126, 60, 'N', 'N', 132, 110, 153, 196, 73, 17, 'N', 'N', 131, 124, 241, 'N', 115, 85, 'N', 'N', 8, 'N', 'N', 'N', 47, 60, 'N', 46, 95, 319, 107, 312, 'N', 113]
+-> max_window_size = 200
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201702.csv
+-> size (bytes): 996,619
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201702.c.cpp.csv
+-> size (bytes): 53,643
+-> 5.38% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 154, 140, 80, 138, 485, 124, 'N', 192, 'N', 212, 102, 124, 'N', 20, 'N', 'N', 171, 106, 125, 177, 733, 190, 89, 'N', 'N', 198, 165, 229, 294, 109, 25, 'N', 'N', 197, 186, 361, 'N', 173, 127, 'N', 'N', 12, 'N', 'N', 'N', 70, 90, 'N', 68, 142, 479, 160, 468, 'N', 170]
+-> max_window_size = 5
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201702.csv
+-> size (bytes): 996,619
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201702.c.cpp.csv
+-> size (bytes): 159,743
+-> 16.03% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 154, 140, 80, 138, 485, 124, 'N', 192, 'N', 212, 102, 124, 'N', 20, 'N', 'N', 171, 106, 125, 177, 733, 190, 89, 'N', 'N', 198, 165, 229, 294, 109, 25, 'N', 'N', 197, 186, 361, 'N', 173, 127, 'N', 'N', 12, 'N', 'N', 'N', 70, 90, 'N', 68, 142, 479, 160, 468, 'N', 170]
+-> max_window_size = 10
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201702.csv
+-> size (bytes): 996,619
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201702.c.cpp.csv
+-> size (bytes): 99,239
+-> 9.96% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 154, 140, 80, 138, 485, 124, 'N', 192, 'N', 212, 102, 124, 'N', 20, 'N', 'N', 171, 106, 125, 177, 733, 190, 89, 'N', 'N', 198, 165, 229, 294, 109, 25, 'N', 'N', 197, 186, 361, 'N', 173, 127, 'N', 'N', 12, 'N', 'N', 'N', 70, 90, 'N', 68, 142, 479, 160, 468, 'N', 170]
+-> max_window_size = 25
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201702.csv
+-> size (bytes): 996,619
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201702.c.cpp.csv
+-> size (bytes): 58,011
+-> 5.82% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 154, 140, 80, 138, 485, 124, 'N', 192, 'N', 212, 102, 124, 'N', 20, 'N', 'N', 171, 106, 125, 177, 733, 190, 89, 'N', 'N', 198, 165, 229, 294, 109, 25, 'N', 'N', 197, 186, 361, 'N', 173, 127, 'N', 'N', 12, 'N', 'N', 'N', 70, 90, 'N', 68, 142, 479, 160, 468, 'N', 170]
+-> max_window_size = 50
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201702.csv
+-> size (bytes): 996,619
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201702.c.cpp.csv
+-> size (bytes): 45,579
+-> 4.57% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 154, 140, 80, 138, 485, 124, 'N', 192, 'N', 212, 102, 124, 'N', 20, 'N', 'N', 171, 106, 125, 177, 733, 190, 89, 'N', 'N', 198, 165, 229, 294, 109, 25, 'N', 'N', 197, 186, 361, 'N', 173, 127, 'N', 'N', 12, 'N', 'N', 'N', 70, 90, 'N', 68, 142, 479, 160, 468, 'N', 170]
+-> max_window_size = 100
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201702.csv
+-> size (bytes): 996,619
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201702.c.cpp.csv
+-> size (bytes): 41,003
+-> 4.11% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 154, 140, 80, 138, 485, 124, 'N', 192, 'N', 212, 102, 124, 'N', 20, 'N', 'N', 171, 106, 125, 177, 733, 190, 89, 'N', 'N', 198, 165, 229, 294, 109, 25, 'N', 'N', 197, 186, 361, 'N', 173, 127, 'N', 'N', 12, 'N', 'N', 'N', 70, 90, 'N', 68, 142, 479, 160, 468, 'N', 170]
+-> max_window_size = 200
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201702.csv
+-> size (bytes): 996,619
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201702.c.cpp.csv
+-> size (bytes): 40,380
+-> 4.05% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 205, 186, 107, 184, 647, 165, 'N', 256, 'N', 283, 136, 165, 'N', 26, 'N', 'N', 228, 142, 166, 236, 978, 253, 119, 'N', 'N', 264, 220, 306, 392, 146, 33, 'N', 'N', 263, 248, 481, 'N', 230, 170, 'N', 'N', 16, 'N', 'N', 'N', 93, 120, 'N', 91, 190, 638, 213, 624, 'N', 226]
+-> max_window_size = 5
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201702.csv
+-> size (bytes): 996,619
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201702.c.cpp.csv
+-> size (bytes): 158,024
+-> 15.86% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 205, 186, 107, 184, 647, 165, 'N', 256, 'N', 283, 136, 165, 'N', 26, 'N', 'N', 228, 142, 166, 236, 978, 253, 119, 'N', 'N', 264, 220, 306, 392, 146, 33, 'N', 'N', 263, 248, 481, 'N', 230, 170, 'N', 'N', 16, 'N', 'N', 'N', 93, 120, 'N', 91, 190, 638, 213, 624, 'N', 226]
+-> max_window_size = 10
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201702.csv
+-> size (bytes): 996,619
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201702.c.cpp.csv
+-> size (bytes): 96,304
+-> 9.66% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 205, 186, 107, 184, 647, 165, 'N', 256, 'N', 283, 136, 165, 'N', 26, 'N', 'N', 228, 142, 166, 236, 978, 253, 119, 'N', 'N', 264, 220, 306, 392, 146, 33, 'N', 'N', 263, 248, 481, 'N', 230, 170, 'N', 'N', 16, 'N', 'N', 'N', 93, 120, 'N', 91, 190, 638, 213, 624, 'N', 226]
+-> max_window_size = 25
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201702.csv
+-> size (bytes): 996,619
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201702.c.cpp.csv
+-> size (bytes): 53,633
+-> 5.38% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 205, 186, 107, 184, 647, 165, 'N', 256, 'N', 283, 136, 165, 'N', 26, 'N', 'N', 228, 142, 166, 236, 978, 253, 119, 'N', 'N', 264, 220, 306, 392, 146, 33, 'N', 'N', 263, 248, 481, 'N', 230, 170, 'N', 'N', 16, 'N', 'N', 'N', 93, 120, 'N', 91, 190, 638, 213, 624, 'N', 226]
+-> max_window_size = 50
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201702.csv
+-> size (bytes): 996,619
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201702.c.cpp.csv
+-> size (bytes): 40,022
+-> 4.02% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 205, 186, 107, 184, 647, 165, 'N', 256, 'N', 283, 136, 165, 'N', 26, 'N', 'N', 228, 142, 166, 236, 978, 253, 119, 'N', 'N', 264, 220, 306, 392, 146, 33, 'N', 'N', 263, 248, 481, 'N', 230, 170, 'N', 'N', 16, 'N', 'N', 'N', 93, 120, 'N', 91, 190, 638, 213, 624, 'N', 226]
+-> max_window_size = 100
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201702.csv
+-> size (bytes): 996,619
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201702.c.cpp.csv
+-> size (bytes): 34,646
+-> 3.48% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 205, 186, 107, 184, 647, 165, 'N', 256, 'N', 283, 136, 165, 'N', 26, 'N', 'N', 228, 142, 166, 236, 978, 253, 119, 'N', 'N', 264, 220, 306, 392, 146, 33, 'N', 'N', 263, 248, 481, 'N', 230, 170, 'N', 'N', 16, 'N', 'N', 'N', 93, 120, 'N', 91, 190, 638, 213, 624, 'N', 226]
+-> max_window_size = 200
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201702.csv
+-> size (bytes): 996,619
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201702.c.cpp.csv
+-> size (bytes): 33,468
+-> 3.36% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 308, 280, 160, 277, 970, 247, 'N', 384, 'N', 425, 204, 248, 'N', 39, 'N', 'N', 343, 213, 249, 354, 1467, 379, 179, 'N', 'N', 396, 330, 458, 588, 218, 50, 'N', 'N', 394, 372, 722, 'N', 345, 254, 'N', 'N', 23, 'N', 'N', 'N', 140, 180, 'N', 137, 285, 957, 320, 936, 'N', 339]
+-> max_window_size = 5
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201702.csv
+-> size (bytes): 996,619
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201702.c.cpp.csv
+-> size (bytes): 156,805
+-> 15.73% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 308, 280, 160, 277, 970, 247, 'N', 384, 'N', 425, 204, 248, 'N', 39, 'N', 'N', 343, 213, 249, 354, 1467, 379, 179, 'N', 'N', 396, 330, 458, 588, 218, 50, 'N', 'N', 394, 372, 722, 'N', 345, 254, 'N', 'N', 23, 'N', 'N', 'N', 140, 180, 'N', 137, 285, 957, 320, 936, 'N', 339]
+-> max_window_size = 10
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201702.csv
+-> size (bytes): 996,619
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201702.c.cpp.csv
+-> size (bytes): 94,151
+-> 9.45% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 308, 280, 160, 277, 970, 247, 'N', 384, 'N', 425, 204, 248, 'N', 39, 'N', 'N', 343, 213, 249, 354, 1467, 379, 179, 'N', 'N', 396, 330, 458, 588, 218, 50, 'N', 'N', 394, 372, 722, 'N', 345, 254, 'N', 'N', 23, 'N', 'N', 'N', 140, 180, 'N', 137, 285, 957, 320, 936, 'N', 339]
+-> max_window_size = 25
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201702.csv
+-> size (bytes): 996,619
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201702.c.cpp.csv
+-> size (bytes): 50,084
+-> 5.03% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 308, 280, 160, 277, 970, 247, 'N', 384, 'N', 425, 204, 248, 'N', 39, 'N', 'N', 343, 213, 249, 354, 1467, 379, 179, 'N', 'N', 396, 330, 458, 588, 218, 50, 'N', 'N', 394, 372, 722, 'N', 345, 254, 'N', 'N', 23, 'N', 'N', 'N', 140, 180, 'N', 137, 285, 957, 320, 936, 'N', 339]
+-> max_window_size = 50
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201702.csv
+-> size (bytes): 996,619
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201702.c.cpp.csv
+-> size (bytes): 35,473
+-> 3.56% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 308, 280, 160, 277, 970, 247, 'N', 384, 'N', 425, 204, 248, 'N', 39, 'N', 'N', 343, 213, 249, 354, 1467, 379, 179, 'N', 'N', 396, 330, 458, 588, 218, 50, 'N', 'N', 394, 372, 722, 'N', 345, 254, 'N', 'N', 23, 'N', 'N', 'N', 140, 180, 'N', 137, 285, 957, 320, 936, 'N', 339]
+-> max_window_size = 100
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201702.csv
+-> size (bytes): 996,619
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201702.c.cpp.csv
+-> size (bytes): 29,080
+-> 2.92% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderCA
+-> error_threshold = [0, 308, 280, 160, 277, 970, 247, 'N', 384, 'N', 425, 204, 248, 'N', 39, 'N', 'N', 343, 213, 249, 354, 1467, 379, 179, 'N', 'N', 396, 330, 458, 588, 218, 50, 'N', 'N', 394, 372, 722, 'N', 345, 254, 'N', 'N', 23, 'N', 'N', 'N', 140, 180, 'N', 137, 285, 957, 320, 936, 'N', 339]
+-> max_window_size = 200
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201702.csv
+-> size (bytes): 996,619
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[2]noaa-sst/ca/noaa-buoy-201702.c.cpp.csv
+-> size (bytes): 27,165
+-> 2.73% of original
+
