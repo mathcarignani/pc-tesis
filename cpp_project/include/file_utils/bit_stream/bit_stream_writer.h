@@ -10,6 +10,14 @@
 class BitStreamWriter {
 
 private:
+    //
+    // SOURCE: https://os.mbed.com/forum/helloworld/topic/2053/?page=1#comment-54746
+    //
+    union Float {
+        float    m_float;
+        uint8_t  m_bytes[sizeof(float)];
+    };
+
     FILE * fp;
     unsigned char current, offset;
     void construct(const char * file);
@@ -23,6 +31,8 @@ public:
     void pushBit(unsigned int bit);
 
     void pushInt(unsigned int x, int k);
+
+    void pushFloat(float x);
 
     void close();
 

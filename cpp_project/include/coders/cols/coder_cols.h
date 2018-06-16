@@ -20,7 +20,6 @@ protected:
 public:
     using CoderBase::CoderBase;
 //    void setDataset(Dataset dataset, int columns_count_);
-//    virtual std::string getInfo() = 0;
 };
 
 #endif //CPP_PROJECT_CODER_COLS_H

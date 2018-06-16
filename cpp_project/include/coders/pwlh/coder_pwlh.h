@@ -10,15 +10,21 @@ class CoderPWLH: public CoderCols {
 private:
     int max_window_size;
     std::vector<int> error_thresholds_vector;
+    bool integer_mode;
+    PWLHWindow window;
 
     void codeColumn() override;
+    void codeColumnBefore();
+    void codeColumnWhile(std::string csv_value);
+    void codeColumnAfter();
     PWLHWindow createWindow();
     void codeWindow(PWLHWindow & window);
+    void codeWindowDouble(PWLHWindow & window);
+    void codeWindowInt(PWLHWindow & window);
 
 public:
     using CoderCols::CoderCols;
-    void setCoderParams(int max_window_size_, std::vector<int> error_thresholds_vector_);
-    std::string getInfo() override;
+    void setCoderParams(int max_window_size_, std::vector<int> error_thresholds_vector_, bool integer_mode_);
 };
 
 #endif //CPP_PROJECT_CODER_PWLH_H

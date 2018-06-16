@@ -38,6 +38,14 @@ void BitStreamWriter::pushInt(unsigned int x, int k){
         this->pushBit( !!(x & (1 << i) ) );
 }
 
+void BitStreamWriter::pushFloat(float x){
+    Float my_float;
+    my_float.m_float = x; // assign a float to union
+    for (int i=0; i < sizeof(float); i++){
+        pushInt(my_float.m_bytes[i], 8); // get the 4 bytes
+    }
+}
+
 void BitStreamWriter::close(){
     if (offset > 0)
         fputc(current,fp), offset = 0, current = 0;

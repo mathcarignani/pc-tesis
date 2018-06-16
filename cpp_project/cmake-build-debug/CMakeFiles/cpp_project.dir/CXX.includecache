@@ -519,6 +519,8 @@ iostream
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/pwlh/coder_pwlh.cpp
 coder_pwlh.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/pwlh/coder_pwlh.h
+cfloat
+-
 
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/pwlh/decoder_pwlh.cpp
 decoder_pwlh.h
@@ -527,6 +529,8 @@ string_utils.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/pwlh/string_utils.h
 pwlh_window.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/pwlh/pwlh_window.h
+cfloat
+-
 
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/pwlh/pwlh_window.cpp
 pwlh_window.h
@@ -703,4 +707,10 @@ math.h
 -
 string_utils.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/string_utils.h
+bit_stream_writer.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/bit_stream_writer.h
+bit_stream_reader.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/bit_stream_reader.h
+cfloat
+-
 

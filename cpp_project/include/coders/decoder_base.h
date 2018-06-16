@@ -23,6 +23,7 @@ protected:
     int data_rows_count;
 
     std::string decodeValueRaw();
+    float decodeFloat();
 
 public:
     DecoderBase(BitStreamReader &input_file, CSVWriter &output_csv) : input_file(input_file), output_csv(output_csv) { }

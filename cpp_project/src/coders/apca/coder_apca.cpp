@@ -32,7 +32,3 @@ void CoderAPCA::codeWindow(APCAWindow & window){
     output_file.pushInt(window.length, window.max_window_size_bit_length);
     codeValueRaw(window.constant_value);
 }
-
-std::string CoderAPCA::getInfo() {
-    return "a";
-}

@@ -386,6 +386,9 @@ CMakeFiles/cpp_project.dir/src/tests.cpp.o: ../include/coders/header/header_util
 CMakeFiles/cpp_project.dir/src/tests.cpp.o: ../include/dataset/dataset_utils.h
 CMakeFiles/cpp_project.dir/src/tests.cpp.o: ../include/dataset/range.h
 CMakeFiles/cpp_project.dir/src/tests.cpp.o: ../include/datetime_utils.h
+CMakeFiles/cpp_project.dir/src/tests.cpp.o: ../include/file_utils/bit_stream/bit_stream_reader.h
+CMakeFiles/cpp_project.dir/src/tests.cpp.o: ../include/file_utils/bit_stream/bit_stream_writer.h
+CMakeFiles/cpp_project.dir/src/tests.cpp.o: ../include/file_utils/path.h
 CMakeFiles/cpp_project.dir/src/tests.cpp.o: ../include/file_utils/text/text_reader.h
 CMakeFiles/cpp_project.dir/src/tests.cpp.o: ../include/string_utils.h
 CMakeFiles/cpp_project.dir/src/tests.cpp.o: ../include/tests.h

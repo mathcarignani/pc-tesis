@@ -34,7 +34,7 @@ void CoderBase::codeBit(int bit){
 void CoderBase::codeValueRaw(std::string x){
     int value;
     try {
-//        std::cout << "codeValue(x) = " << x << std::endl;
+//        std::cout << "codeValueRaw = " << x << std::endl;
         value = codeValue(x);
     }
     catch( const std::invalid_argument& e ){
@@ -42,6 +42,12 @@ void CoderBase::codeValueRaw(std::string x){
         exit(-1);
     }
     codeRaw(value);
+}
+
+void CoderBase::codeFloat(float x){
+//    std::cout << "codeFloat " << x << std::endl;
+    dataset.addBits(sizeof(float)*8);
+    output_file.pushFloat(x);
 }
 
 void CoderBase::codeFile(){

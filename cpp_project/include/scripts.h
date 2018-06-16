@@ -18,8 +18,8 @@ public:
     static void codeAPCA(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector);
     static void decodeAPCA(Path input_path, Path output_path, int max_window_size);
 
-    static void codePWLH(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector);
-    static void decodePWLH(Path input_path, Path output_path, int max_window_size);
+    static void codePWLH(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector, bool integer_mode);
+    static void decodePWLH(Path input_path, Path output_path, int max_window_size, bool integer_mode);
 
     static void codeCA(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector);
     static void decodeCA(Path input_path, Path output_path, int max_window_size);

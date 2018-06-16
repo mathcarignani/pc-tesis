@@ -11,8 +11,3 @@ void CoderBasic::codeColumn() {
         row_index++;
     }
 }
-
-std::string CoderBasic::getInfo() {
-    return "a";
-}
-

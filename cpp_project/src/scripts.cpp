@@ -80,21 +80,21 @@ void Scripts::decodeAPCA(Path input_path, Path output_path, int max_window_size)
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-void Scripts::codePWLH(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector){
+void Scripts::codePWLH(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector, bool integer_mode){
     CSVReader csv_reader = CSVReader(input_path);
     BitStreamWriter bit_stream_writer = BitStreamWriter(output_path);
     CoderPWLH coder = CoderPWLH(csv_reader, bit_stream_writer);
-    coder.setCoderParams(max_window_size, error_thresholds_vector);
+    coder.setCoderParams(max_window_size, error_thresholds_vector, integer_mode);
     coder.codeFile();
     coder.printBits();
     coder.close();
 }
 
-void Scripts::decodePWLH(Path input_path, Path output_path, int max_window_size){
+void Scripts::decodePWLH(Path input_path, Path output_path, int max_window_size, bool integer_mode){
     BitStreamReader bit_stream_reader = BitStreamReader(input_path);
     CSVWriter csv_writer = CSVWriter(output_path);
     DecoderPWLH decoder = DecoderPWLH(bit_stream_reader, csv_writer);
-    decoder.setCoderParams(max_window_size);
+    decoder.setCoderParams(max_window_size, integer_mode);
     decoder.decodeFile();
     decoder.close();
 }
@@ -163,17 +163,15 @@ void Scripts::codeAndDecodeCSV(){
     std::string project_path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project";
     Path input_path = Path(project_path, "noaa_spc-wind.csv");
     Path coded_path = Path(project_path, "noaa_spc-wind.csv.c");
-    Path decoded_path = Path(project_path, "noaa_spc-wind.csv.c.d.csv");
+    Path decoded_path = Path(project_path, "noaa_spc-wind.csv.c.d-float.csv");
 
     std::cout << "codeCSV" << std::endl;
     std::vector<int> error_thresholds_vector;
-    for(int i=0; i < 11; i++) { error_thresholds_vector.push_back(0); }
+    for(int i=0; i < 11; i++) { error_thresholds_vector.push_back(5); }
     int fixed_window_size = 5;
-//    codeAPCA(input_path, coded_path, fixed_window_size, error_thresholds_vector);
-//    decodeAPCA(coded_path, decoded_path, fixed_window_size);
 
-    codePWLH(input_path, coded_path, fixed_window_size, error_thresholds_vector);
-    decodePWLH(coded_path, decoded_path, fixed_window_size);
+    codePWLH(input_path, coded_path, fixed_window_size, error_thresholds_vector, false);
+    decodePWLH(coded_path, decoded_path, fixed_window_size, false);
 
     //    std::cout << "decodeCSV" << std::endl;
 

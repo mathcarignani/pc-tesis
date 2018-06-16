@@ -60,13 +60,17 @@ def coder_params(args):
         error_thresholds = " ".join(str(i) for i in args.coder_params['error_threshold'])
         string = "CoderAPCA " + str(args.coder_params['max_window_size']) + " " + error_thresholds
         return string
+    elif args.coder_name == "CoderCA":
+        error_thresholds = " ".join(str(i) for i in args.coder_params['error_threshold'])
+        string = "CoderCA " + str(args.coder_params['max_window_size']) + " " + error_thresholds
+        return string
     elif args.coder_name == "CoderPWLH":
         error_thresholds = " ".join(str(i) for i in args.coder_params['error_threshold'])
         string = "CoderPWLH " + str(args.coder_params['max_window_size']) + " " + error_thresholds
         return string
-    elif args.coder_name == "CoderCA":
+    elif args.coder_name == "CoderPWLHint":
         error_thresholds = " ".join(str(i) for i in args.coder_params['error_threshold'])
-        string = "CoderCA " + str(args.coder_params['max_window_size']) + " " + error_thresholds
+        string = "CoderPWLHint " + str(args.coder_params['max_window_size']) + " " + error_thresholds
         return string
 
 

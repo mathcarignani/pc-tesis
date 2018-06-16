@@ -10,6 +10,14 @@
 class BitStreamReader {
 
 private:
+    //
+    // SOURCE: https://os.mbed.com/forum/helloworld/topic/2053/?page=1#comment-54746
+    //
+    union Float {
+        float    m_float;
+        uint8_t  m_bytes[sizeof(float)];
+    };
+
     FILE* fp;
     unsigned char current, offset;
     void construct(const char * file);
@@ -23,6 +31,8 @@ public:
     int getBit();
 
     unsigned int getInt(int bits);
+
+    float getFloat();
 
     bool reachedEOF();
 

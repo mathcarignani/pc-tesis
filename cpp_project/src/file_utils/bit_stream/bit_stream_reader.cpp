@@ -41,6 +41,16 @@ unsigned int BitStreamReader::getInt(int bits){
     return ans;
 }
 
+float BitStreamReader::getFloat(){
+    Float my_float;
+    // receive bytes and assign them to the union bytes
+    for (int i=0; i < sizeof(float); i++){
+        my_float.m_bytes[i] = getInt(8);
+    }
+    // get the float back from the union
+    return my_float.m_float;
+}
+
 bool BitStreamReader::reachedEOF(){
     return feof(fp);
 }

@@ -7,6 +7,9 @@
 #include "coders/header/header_utils.h"
 #include <math.h>
 #include "string_utils.h"
+#include "bit_stream_writer.h"
+#include "bit_stream_reader.h"
+#include <cfloat>
 
 
 void Tests::testDatasetUtils(){
@@ -99,4 +102,24 @@ void Tests::testStringUtils(){
     std::cout << StringUtils::intToChar(130);
     std::cout << StringUtils::intToChar(42);
     std::cout << StringUtils::intToChar(130);
+}
+
+void Tests::testFloatCoder(){
+    std::cout << "Tests::testFloatCoder" << std::endl;
+    std::string path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/test-output";
+    Path coded_path = Path(path, "testFloat.code");
+
+    BitStreamWriter bit_stream_writer = BitStreamWriter(coded_path);
+    float a = 0.238728932739; bit_stream_writer.pushFloat(a);
+    float b = 0.2893232; bit_stream_writer.pushFloat(b);
+    float c = 203020323.22; bit_stream_writer.pushFloat(c);
+    float d = FLT_MAX; bit_stream_writer.pushFloat(d);
+    bit_stream_writer.close();
+
+    BitStreamReader bit_stream_reader = BitStreamReader(coded_path);
+    float a_deco = bit_stream_reader.getFloat(); std::cout << a_deco << std::endl;
+    float b_deco = bit_stream_reader.getFloat(); std::cout << b_deco << std::endl;
+    float c_deco = bit_stream_reader.getFloat(); std::cout << c_deco << std::endl;
+    float d_deco = bit_stream_reader.getFloat(); std::cout << d_deco << std::endl;
+    assert(d_deco == FLT_MAX);
 }

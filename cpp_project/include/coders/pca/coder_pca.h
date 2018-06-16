@@ -20,7 +20,6 @@ private:
 public:
     using CoderCols::CoderCols;
     void setCoderParams(int fixed_window_size_, std::vector<int> error_thresholds_vector_);
-    std::string getInfo() override;
 };
 
 #endif //CPP_PROJECT_CODER_PCA_H

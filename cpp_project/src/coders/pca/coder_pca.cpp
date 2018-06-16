@@ -47,7 +47,3 @@ void CoderPCA::codeWindowEachValue(PCAWindow & window){
         codeValueRaw(csv_value);
     }
 }
-
-std::string CoderPCA::getInfo() {
-    return "a";
-}

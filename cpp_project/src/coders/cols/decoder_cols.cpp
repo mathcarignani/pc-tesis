@@ -13,6 +13,7 @@ void DecoderCols::decodeDataRows(){
         columns.push_back(column);
     }
 
+    // TODO: move to a different method
     // transpose matrix
     for(int row_index; row_index < data_rows_count; row_index++){
         std::vector<std::string> row;

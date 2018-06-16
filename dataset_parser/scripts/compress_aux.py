@@ -10,9 +10,8 @@ from coders.ca.decoder_ca import DecoderCA
 
 
 THRESHOLD_PERCENTAGES = [0, 3, 5, 10, 15, 20, 30]
+WINDOW_SIZES = [5, 10, 25, 50, 100, 200]
 CSV_PATH = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/"
-
-PYTHON_CODERS = ["CoderAPCA", "CoderCA"]  # ["CoderBasic", "CoderPCA", "CoderAPCA", "CoderCA"]
 
 DATASETS_ARRAY = [
     {'name': 'IRKIS', 'folder': "[1]irkis", 'logger': "irkis.log", 'o_folder': "[1]irkis"},
@@ -51,25 +50,30 @@ CODERS_ARRAY = [
     #     'coder': CoderPCA,
     #     'decoder': DecoderPCA,
     #     'o_folder': 'pca',
-    #     'params': {'fixed_window_size': [5, 10, 25, 50, 100, 200]}
+    #     'params': {'fixed_window_size': WINDOW_SIZES}
     # },
     # {
     #     'name': 'CoderAPCA',
     #     'coder': CoderAPCA,
     #     'decoder': DecoderAPCA,
     #     'o_folder': 'apca',
-    #     'params': {'max_window_size': [5, 10, 25, 50, 100, 200]}
+    #     'params': {'max_window_size': WINDOW_SIZES}
     # },
-    {
-        'name': 'CoderCA',
-        'coder': CoderCA,
-        'decoder': DecoderCA,
-        'o_folder': 'ca',
-        'params': {'max_window_size': [5, 10, 25, 50, 100, 200]}
-    },
+    # {
+    #     'name': 'CoderCA',
+    #     'coder': CoderCA,
+    #     'decoder': DecoderCA,
+    #     'o_folder': 'ca',
+    #     'params': {'max_window_size': WINDOW_SIZES}
+    # },
     # {
     #     'name': 'CoderPWLH',
     #     'o_folder': 'pwlh',
-    #     'params': {'max_window_size': [5, 10, 25, 50, 100, 200]}
+    #     'params': {'max_window_size': WINDOW_SIZES}
     # },
+    {
+        'name': 'CoderPWLHint',
+        'o_folder': 'pwlh-int',
+        'params': {'max_window_size': WINDOW_SIZES}
+    }
 ]

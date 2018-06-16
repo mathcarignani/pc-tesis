@@ -34,6 +34,10 @@ std::string DecoderBase::decodeValueRaw(){
     return coded_value;
 }
 
+float DecoderBase::decodeFloat(){
+    return input_file.getFloat();
+}
+
 void DecoderBase::decodeFile(){
     dataset = HeaderDecoder(input_file, output_csv).decodeHeader();
     decodeDataRowsCount();

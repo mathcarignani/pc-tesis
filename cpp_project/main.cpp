@@ -9,20 +9,21 @@
 #include <vector>
 
 int main(int argc, char *argv[]){
-    std::cout << "argc " << argc << std::endl;
-    for (int i=0; i<argc; i++){
-        std::cout << i << " " << argv[i] << std::endl;
-    }
+//    std::cout << "argc " << argc << std::endl;
+//    for (int i=0; i<argc; i++){
+//        std::cout << i << " " << argv[i] << std::endl;
+//    }
 
     if (argc <= 1){
-//    std::string path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[3]noaa-adcp/basic";
-//    assert(BitStreamUtils::compareBytes(path, "noaa-adcp-201501.c.cpp.csv", path, "noaa-adcp-201501.c.python.csv") == 0);
-//    Scripts::copyAndCompareCSV();
+//        Tests::testFloatCoder();
+//        std::string path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[3]noaa-adcp/basic";
+//        assert(BitStreamUtils::compareBytes(path, "noaa-adcp-201501.c.cpp.csv", path, "noaa-adcp-201501.c.python.csv") == 0);
+//        Scripts::copyAndCompareCSV();
         Scripts::codeAndDecodeCSV();
 
-//    Tests::testDatasetUtils();
-//    Tests::testDatetimeUtils();
-//    Tests::testStringUtils();
+//        Tests::testDatasetUtils();
+//        Tests::testDatetimeUtils();
+//        Tests::testStringUtils();
         return 0;
     }
 
@@ -40,11 +41,12 @@ int main(int argc, char *argv[]){
         else              { Scripts::decodeBasic(input_path, output_path); }
     }
     else {
-        bool coders1 = coder_name == "CoderPCA" || coder_name == "CoderAPCA" || coder_name == "CoderPWLH";
-        bool coders2 = coder_name == "CoderCA" || coder_name == "CoderSF";
-        assert(coders1 || coders2);
+        bool coders1 = coder_name == "CoderPCA" || coder_name == "CoderAPCA";
+        bool coders2 = coder_name == "CoderPWLH" || coder_name == "CoderPWLHint";
+        bool coders3 = coder_name == "CoderCA" || coder_name == "CoderSF";
+        assert(coders1 || coders2 || coders3);
         assert(argc >= 9);
-        int window_size = atoi(argv[7]); // fixed_window_size for PCA and max_window_size for APCA
+        int window_size = atoi(argv[7]); // fixed_window_size for PCA and max_window_size for other algorithms
         std::vector<int> error_thresholds_vector;
         for(int i=8; i < argc; i++){ error_thresholds_vector.push_back(atoi(argv[i])); }
 
@@ -56,9 +58,11 @@ int main(int argc, char *argv[]){
             if (action == "c") {   Scripts::codeAPCA(input_path, output_path, window_size, error_thresholds_vector); }
             else               { Scripts::decodeAPCA(input_path, output_path, window_size); }
         }
-        else if (coder_name == "CoderPWLH"){
-            if (action == "c") {   Scripts::codePWLH(input_path, output_path, window_size, error_thresholds_vector); }
-            else               { Scripts::decodePWLH(input_path, output_path, window_size); }
+        else if (coders2){ // coder_name == "CoderPWLH" || coder_name == "CoderPWLHint"
+            bool integer_mode = false;
+            if (coder_name == "CoderPWLHint") { integer_mode = true; }
+            if (action == "c") {   Scripts::codePWLH(input_path, output_path, window_size, error_thresholds_vector, integer_mode); }
+            else               { Scripts::decodePWLH(input_path, output_path, window_size, integer_mode); }
         }
         else if (coder_name == "CoderCA"){
             if (action == "c") {   Scripts::codeCA(input_path, output_path, window_size, error_thresholds_vector); }

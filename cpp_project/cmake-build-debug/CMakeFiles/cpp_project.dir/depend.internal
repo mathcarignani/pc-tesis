@@ -387,6 +387,9 @@ CMakeFiles/cpp_project.dir/src/tests.cpp.o
  ../include/dataset/dataset_utils.h
  ../include/dataset/range.h
  ../include/datetime_utils.h
+ ../include/file_utils/bit_stream/bit_stream_reader.h
+ ../include/file_utils/bit_stream/bit_stream_writer.h
+ ../include/file_utils/path.h
  ../include/file_utils/text/text_reader.h
  ../include/string_utils.h
  ../include/tests.h

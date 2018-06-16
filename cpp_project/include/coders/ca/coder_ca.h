@@ -19,7 +19,6 @@ public:
     using CoderCols::CoderCols;
     void setCoderParams(int max_window_size_, std::vector<int> error_thresholds_vector_);
     void codeWindow(CAWindow & window, int window_length, std::string window_value);
-    std::string getInfo() override;
 };
 
 #endif //CPP_PROJECT_CODER_CA_H

@@ -11,25 +11,13 @@ from file_utils.csv_utils.csv_utils import CSVUtils
 from file_utils.bit_stream.utils import BitStreamUtils
 from scripts.utils import csv_files_filenames, create_folder
 from scripts.calculate_std import calculate_file_stats, calculate_stds_percentages
-from scripts.compress_aux import THRESHOLD_PERCENTAGES, CSV_PATH, PYTHON_CODERS, DATASETS_ARRAY, CODERS_ARRAY
+from scripts.compress_aux import THRESHOLD_PERCENTAGES, CSV_PATH, DATASETS_ARRAY, CODERS_ARRAY
 from scripts.compress_cpp import code_cpp, decode_cpp, code_decode_cpp
 from scripts.compress_python import code_python, decode_python, code_decode_python
 from scripts.compress_args import CompressArgs
 
 
-def compress_file(args):
-    # if args.coder_name not in PYTHON_CODERS:
-    #     coder_info, columns_bits = code_decode_cpp(args)
-    #     print "column_bits", columns_bits
-    #     csv_compare = CSVCompare(args.input_path, args.input_filename, args.output_path, args.deco_filename)
-    #     same_file = csv_compare.compare(args.coder_params.get('error_threshold'), False)
-    #     same_file = True
-    # else:
-    #     coder_info, columns_bits = code_decode_python(args)
-    #     csv_compare = CSVCompare(args.input_path, args.input_filename, args.output_path, args.deco_filename)
-    #     same_file = csv_compare.compare(args.coder_params.get('error_threshold'), False)
-    #     assert same_file
-
+def compare_python_and_cpp(args):
     # print args.coder_params
     coder_info, columns_bits_python = code_python(args)
     py_c_filename = args.compressed_filename
@@ -53,6 +41,24 @@ def compress_file(args):
     same_file = csv_compare.compare(args.coder_params['error_threshold'], True)
     assert same_file
 
+    return [coder_info, columns_bits, same_file]
+
+
+def compress_decompress_compare(args):
+    print "Compressing and decompressing files..."
+    coder_info, columns_bits = code_decode_cpp(args)
+    print "Comparing original and decompressed files..."
+    csv_compare = CSVCompare(args.input_path, args.input_filename, args.output_path, args.deco_filename)
+    same_file = csv_compare.compare(args.coder_params.get('error_threshold'), False)
+    # assert same_file
+
+    return [coder_info, columns_bits, same_file]
+
+
+def compress_file(args):
+    coder_info, columns_bits, same_file = compress_decompress_compare(args)
+    # coder_info, columns_bits, same_file = compare_python_and_cpp(args)
+
     # print results
     input_file = args.input_path + "/" + args.input_filename
     compressed_file = args.output_path + "/" + args.compressed_filename
@@ -68,7 +74,8 @@ def print_results(coder_info, logger, input_file, compressed_file, same_file):
     if same_file:
         logger.info("--------------------------(same file!)")
     else:
-        raise StandardError("ERROR: DIFFERENT FILES!")
+        logger.info("ERROR: DIFFERENT FILES!")
+        # raise StandardError("ERROR: DIFFERENT FILES!")
     logger.info(coder_info)
     logger.info("ORIGINAL FILE:")
     logger.info("-> name: %s" % input_file)

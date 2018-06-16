@@ -18,7 +18,6 @@ private:
 public:
     using CoderCols::CoderCols;
     void setCoderParams(int max_window_size_, std::vector<int> error_thresholds_vector_);
-    std::string getInfo() override;
 };
 
 #endif //CPP_PROJECT_CODER_APCA_H

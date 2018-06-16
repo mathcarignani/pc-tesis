@@ -45,7 +45,3 @@ void CoderPWLH::codeWindow(PWLHWindow & window){
 //        codeValueRaw(window.constant_value); // no need to code another value
 //    }
 }
-
-std::string CoderPWLH::getInfo() {
-    return "a";
-}

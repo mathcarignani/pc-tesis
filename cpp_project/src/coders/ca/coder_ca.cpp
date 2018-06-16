@@ -91,7 +91,3 @@ void CoderCA::codeWindow(CAWindow & window, int window_length, std::string windo
     output_file.pushInt(window_length, window.max_window_size_bit_length);
     codeValueRaw(window_value);
 }
-
-std::string CoderCA::getInfo() {
-    return "a";
-}
