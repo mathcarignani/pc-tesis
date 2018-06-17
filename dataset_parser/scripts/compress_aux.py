@@ -66,11 +66,11 @@ CODERS_ARRAY = [
     #     'o_folder': 'ca',
     #     'params': {'max_window_size': WINDOW_SIZES}
     # },
-    # {
-    #     'name': 'CoderPWLH',
-    #     'o_folder': 'pwlh',
-    #     'params': {'max_window_size': WINDOW_SIZES}
-    # },
+    {
+        'name': 'CoderPWLH',
+        'o_folder': 'pwlh',
+        'params': {'max_window_size': WINDOW_SIZES}
+    },
     {
         'name': 'CoderPWLHint',
         'o_folder': 'pwlh-int',
