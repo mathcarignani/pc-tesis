@@ -1,10 +1,10 @@
 
-#ifndef CPP_PROJECT_DECODER_CA_H
-#define CPP_PROJECT_DECODER_CA_H
+#ifndef CPP_PROJECT_DECODER_SLIDE_FILTER_H
+#define CPP_PROJECT_DECODER_SLIDE_FILTER_H
 
 #include "decoder_cols.h"
 
-class DecoderCA: public DecoderCols {
+class DecoderSlideFilter: public DecoderCols {
 
 private:
     int max_window_size_bit_length;
@@ -20,4 +20,4 @@ public:
     void setCoderParams(int max_window_size_);
 };
 
-#endif //CPP_PROJECT_DECODER_CA_H
+#endif //CPP_PROJECT_DECODER_SLIDE_FILTER_H

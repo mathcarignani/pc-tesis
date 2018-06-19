@@ -276,6 +276,35 @@ CMakeFiles/cpp_project.dir/src/coders/pwlh/pwlh_window.cpp.o
  ../include/dataset/range.h
  ../include/string_utils.h
  /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/pwlh/pwlh_window.cpp
+CMakeFiles/cpp_project.dir/src/coders/slide_filter/coder_slide_filter.cpp.o
+ ../include/coders/coder_base.h
+ ../include/coders/cols/coder_cols.h
+ ../include/coders/slide_filter/coder_slide_filter.h
+ ../include/coders/slide_filter/slide_filter_window.h
+ ../include/dataset/column_code.h
+ ../include/dataset/dataset.h
+ ../include/dataset/range.h
+ ../include/file_utils/bit_stream/bit_stream_writer.h
+ ../include/file_utils/csv/csv_reader.h
+ ../include/file_utils/path.h
+ ../include/file_utils/text/text_reader.h
+ /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/slide_filter/coder_slide_filter.cpp
+CMakeFiles/cpp_project.dir/src/coders/slide_filter/decoder_slide_filter.cpp.o
+ ../include/coders/cols/decoder_cols.h
+ ../include/coders/decoder_base.h
+ ../include/coders/slide_filter/decoder_slide_filter.h
+ ../include/dataset/column_code.h
+ ../include/dataset/dataset.h
+ ../include/dataset/range.h
+ ../include/file_utils/bit_stream/bit_stream_reader.h
+ ../include/file_utils/csv/csv_writer.h
+ ../include/file_utils/path.h
+ ../include/string_utils.h
+ /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/slide_filter/decoder_slide_filter.cpp
+CMakeFiles/cpp_project.dir/src/coders/slide_filter/slide_filter_window.cpp.o
+ ../include/coders/slide_filter/slide_filter_window.h
+ ../include/string_utils.h
+ /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/slide_filter/slide_filter_window.cpp
 CMakeFiles/cpp_project.dir/src/dataset/column_code.cpp.o
  ../include/dataset/column_code.h
  ../include/dataset/range.h
@@ -366,6 +395,9 @@ CMakeFiles/cpp_project.dir/src/scripts.cpp.o
  ../include/coders/pwlh/coder_pwlh.h
  ../include/coders/pwlh/decoder_pwlh.h
  ../include/coders/pwlh/pwlh_window.h
+ ../include/coders/slide_filter/coder_slide_filter.h
+ ../include/coders/slide_filter/decoder_slide_filter.h
+ ../include/coders/slide_filter/slide_filter_window.h
  ../include/dataset/column_code.h
  ../include/dataset/dataset.h
  ../include/dataset/range.h

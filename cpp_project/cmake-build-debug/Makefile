@@ -798,6 +798,87 @@ src/coders/pwlh/pwlh_window.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/pwlh/pwlh_window.cpp.s
 .PHONY : src/coders/pwlh/pwlh_window.cpp.s
 
+src/coders/slide_filter/coder_slide_filter.o: src/coders/slide_filter/coder_slide_filter.cpp.o
+
+.PHONY : src/coders/slide_filter/coder_slide_filter.o
+
+# target to build an object file
+src/coders/slide_filter/coder_slide_filter.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/slide_filter/coder_slide_filter.cpp.o
+.PHONY : src/coders/slide_filter/coder_slide_filter.cpp.o
+
+src/coders/slide_filter/coder_slide_filter.i: src/coders/slide_filter/coder_slide_filter.cpp.i
+
+.PHONY : src/coders/slide_filter/coder_slide_filter.i
+
+# target to preprocess a source file
+src/coders/slide_filter/coder_slide_filter.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/slide_filter/coder_slide_filter.cpp.i
+.PHONY : src/coders/slide_filter/coder_slide_filter.cpp.i
+
+src/coders/slide_filter/coder_slide_filter.s: src/coders/slide_filter/coder_slide_filter.cpp.s
+
+.PHONY : src/coders/slide_filter/coder_slide_filter.s
+
+# target to generate assembly for a file
+src/coders/slide_filter/coder_slide_filter.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/slide_filter/coder_slide_filter.cpp.s
+.PHONY : src/coders/slide_filter/coder_slide_filter.cpp.s
+
+src/coders/slide_filter/decoder_slide_filter.o: src/coders/slide_filter/decoder_slide_filter.cpp.o
+
+.PHONY : src/coders/slide_filter/decoder_slide_filter.o
+
+# target to build an object file
+src/coders/slide_filter/decoder_slide_filter.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/slide_filter/decoder_slide_filter.cpp.o
+.PHONY : src/coders/slide_filter/decoder_slide_filter.cpp.o
+
+src/coders/slide_filter/decoder_slide_filter.i: src/coders/slide_filter/decoder_slide_filter.cpp.i
+
+.PHONY : src/coders/slide_filter/decoder_slide_filter.i
+
+# target to preprocess a source file
+src/coders/slide_filter/decoder_slide_filter.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/slide_filter/decoder_slide_filter.cpp.i
+.PHONY : src/coders/slide_filter/decoder_slide_filter.cpp.i
+
+src/coders/slide_filter/decoder_slide_filter.s: src/coders/slide_filter/decoder_slide_filter.cpp.s
+
+.PHONY : src/coders/slide_filter/decoder_slide_filter.s
+
+# target to generate assembly for a file
+src/coders/slide_filter/decoder_slide_filter.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/slide_filter/decoder_slide_filter.cpp.s
+.PHONY : src/coders/slide_filter/decoder_slide_filter.cpp.s
+
+src/coders/slide_filter/slide_filter_window.o: src/coders/slide_filter/slide_filter_window.cpp.o
+
+.PHONY : src/coders/slide_filter/slide_filter_window.o
+
+# target to build an object file
+src/coders/slide_filter/slide_filter_window.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/slide_filter/slide_filter_window.cpp.o
+.PHONY : src/coders/slide_filter/slide_filter_window.cpp.o
+
+src/coders/slide_filter/slide_filter_window.i: src/coders/slide_filter/slide_filter_window.cpp.i
+
+.PHONY : src/coders/slide_filter/slide_filter_window.i
+
+# target to preprocess a source file
+src/coders/slide_filter/slide_filter_window.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/slide_filter/slide_filter_window.cpp.i
+.PHONY : src/coders/slide_filter/slide_filter_window.cpp.i
+
+src/coders/slide_filter/slide_filter_window.s: src/coders/slide_filter/slide_filter_window.cpp.s
+
+.PHONY : src/coders/slide_filter/slide_filter_window.s
+
+# target to generate assembly for a file
+src/coders/slide_filter/slide_filter_window.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/slide_filter/slide_filter_window.cpp.s
+.PHONY : src/coders/slide_filter/slide_filter_window.cpp.s
+
 src/dataset/column_code.o: src/dataset/column_code.cpp.o
 
 .PHONY : src/dataset/column_code.o
@@ -1287,6 +1368,15 @@ help:
 	@echo "... src/coders/pwlh/pwlh_window.o"
 	@echo "... src/coders/pwlh/pwlh_window.i"
 	@echo "... src/coders/pwlh/pwlh_window.s"
+	@echo "... src/coders/slide_filter/coder_slide_filter.o"
+	@echo "... src/coders/slide_filter/coder_slide_filter.i"
+	@echo "... src/coders/slide_filter/coder_slide_filter.s"
+	@echo "... src/coders/slide_filter/decoder_slide_filter.o"
+	@echo "... src/coders/slide_filter/decoder_slide_filter.i"
+	@echo "... src/coders/slide_filter/decoder_slide_filter.s"
+	@echo "... src/coders/slide_filter/slide_filter_window.o"
+	@echo "... src/coders/slide_filter/slide_filter_window.i"
+	@echo "... src/coders/slide_filter/slide_filter_window.s"
 	@echo "... src/dataset/column_code.o"
 	@echo "... src/dataset/column_code.i"
 	@echo "... src/dataset/column_code.s"

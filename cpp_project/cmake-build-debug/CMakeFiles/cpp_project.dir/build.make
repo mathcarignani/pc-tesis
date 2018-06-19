@@ -873,9 +873,81 @@ CMakeFiles/cpp_project.dir/src/coders/pwlh/decoder_pwlh.cpp.o.provides: CMakeFil
 CMakeFiles/cpp_project.dir/src/coders/pwlh/decoder_pwlh.cpp.o.provides.build: CMakeFiles/cpp_project.dir/src/coders/pwlh/decoder_pwlh.cpp.o
 
 
+CMakeFiles/cpp_project.dir/src/coders/slide_filter/slide_filter_window.cpp.o: CMakeFiles/cpp_project.dir/flags.make
+CMakeFiles/cpp_project.dir/src/coders/slide_filter/slide_filter_window.cpp.o: ../src/coders/slide_filter/slide_filter_window.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/cpp_project.dir/src/coders/slide_filter/slide_filter_window.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp_project.dir/src/coders/slide_filter/slide_filter_window.cpp.o -c /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/slide_filter/slide_filter_window.cpp
+
+CMakeFiles/cpp_project.dir/src/coders/slide_filter/slide_filter_window.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cpp_project.dir/src/coders/slide_filter/slide_filter_window.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/slide_filter/slide_filter_window.cpp > CMakeFiles/cpp_project.dir/src/coders/slide_filter/slide_filter_window.cpp.i
+
+CMakeFiles/cpp_project.dir/src/coders/slide_filter/slide_filter_window.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpp_project.dir/src/coders/slide_filter/slide_filter_window.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/slide_filter/slide_filter_window.cpp -o CMakeFiles/cpp_project.dir/src/coders/slide_filter/slide_filter_window.cpp.s
+
+CMakeFiles/cpp_project.dir/src/coders/slide_filter/slide_filter_window.cpp.o.requires:
+
+.PHONY : CMakeFiles/cpp_project.dir/src/coders/slide_filter/slide_filter_window.cpp.o.requires
+
+CMakeFiles/cpp_project.dir/src/coders/slide_filter/slide_filter_window.cpp.o.provides: CMakeFiles/cpp_project.dir/src/coders/slide_filter/slide_filter_window.cpp.o.requires
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/slide_filter/slide_filter_window.cpp.o.provides.build
+.PHONY : CMakeFiles/cpp_project.dir/src/coders/slide_filter/slide_filter_window.cpp.o.provides
+
+CMakeFiles/cpp_project.dir/src/coders/slide_filter/slide_filter_window.cpp.o.provides.build: CMakeFiles/cpp_project.dir/src/coders/slide_filter/slide_filter_window.cpp.o
+
+
+CMakeFiles/cpp_project.dir/src/coders/slide_filter/coder_slide_filter.cpp.o: CMakeFiles/cpp_project.dir/flags.make
+CMakeFiles/cpp_project.dir/src/coders/slide_filter/coder_slide_filter.cpp.o: ../src/coders/slide_filter/coder_slide_filter.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/cpp_project.dir/src/coders/slide_filter/coder_slide_filter.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp_project.dir/src/coders/slide_filter/coder_slide_filter.cpp.o -c /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/slide_filter/coder_slide_filter.cpp
+
+CMakeFiles/cpp_project.dir/src/coders/slide_filter/coder_slide_filter.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cpp_project.dir/src/coders/slide_filter/coder_slide_filter.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/slide_filter/coder_slide_filter.cpp > CMakeFiles/cpp_project.dir/src/coders/slide_filter/coder_slide_filter.cpp.i
+
+CMakeFiles/cpp_project.dir/src/coders/slide_filter/coder_slide_filter.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpp_project.dir/src/coders/slide_filter/coder_slide_filter.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/slide_filter/coder_slide_filter.cpp -o CMakeFiles/cpp_project.dir/src/coders/slide_filter/coder_slide_filter.cpp.s
+
+CMakeFiles/cpp_project.dir/src/coders/slide_filter/coder_slide_filter.cpp.o.requires:
+
+.PHONY : CMakeFiles/cpp_project.dir/src/coders/slide_filter/coder_slide_filter.cpp.o.requires
+
+CMakeFiles/cpp_project.dir/src/coders/slide_filter/coder_slide_filter.cpp.o.provides: CMakeFiles/cpp_project.dir/src/coders/slide_filter/coder_slide_filter.cpp.o.requires
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/slide_filter/coder_slide_filter.cpp.o.provides.build
+.PHONY : CMakeFiles/cpp_project.dir/src/coders/slide_filter/coder_slide_filter.cpp.o.provides
+
+CMakeFiles/cpp_project.dir/src/coders/slide_filter/coder_slide_filter.cpp.o.provides.build: CMakeFiles/cpp_project.dir/src/coders/slide_filter/coder_slide_filter.cpp.o
+
+
+CMakeFiles/cpp_project.dir/src/coders/slide_filter/decoder_slide_filter.cpp.o: CMakeFiles/cpp_project.dir/flags.make
+CMakeFiles/cpp_project.dir/src/coders/slide_filter/decoder_slide_filter.cpp.o: ../src/coders/slide_filter/decoder_slide_filter.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/cpp_project.dir/src/coders/slide_filter/decoder_slide_filter.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp_project.dir/src/coders/slide_filter/decoder_slide_filter.cpp.o -c /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/slide_filter/decoder_slide_filter.cpp
+
+CMakeFiles/cpp_project.dir/src/coders/slide_filter/decoder_slide_filter.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cpp_project.dir/src/coders/slide_filter/decoder_slide_filter.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/slide_filter/decoder_slide_filter.cpp > CMakeFiles/cpp_project.dir/src/coders/slide_filter/decoder_slide_filter.cpp.i
+
+CMakeFiles/cpp_project.dir/src/coders/slide_filter/decoder_slide_filter.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpp_project.dir/src/coders/slide_filter/decoder_slide_filter.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/slide_filter/decoder_slide_filter.cpp -o CMakeFiles/cpp_project.dir/src/coders/slide_filter/decoder_slide_filter.cpp.s
+
+CMakeFiles/cpp_project.dir/src/coders/slide_filter/decoder_slide_filter.cpp.o.requires:
+
+.PHONY : CMakeFiles/cpp_project.dir/src/coders/slide_filter/decoder_slide_filter.cpp.o.requires
+
+CMakeFiles/cpp_project.dir/src/coders/slide_filter/decoder_slide_filter.cpp.o.provides: CMakeFiles/cpp_project.dir/src/coders/slide_filter/decoder_slide_filter.cpp.o.requires
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/slide_filter/decoder_slide_filter.cpp.o.provides.build
+.PHONY : CMakeFiles/cpp_project.dir/src/coders/slide_filter/decoder_slide_filter.cpp.o.provides
+
+CMakeFiles/cpp_project.dir/src/coders/slide_filter/decoder_slide_filter.cpp.o.provides.build: CMakeFiles/cpp_project.dir/src/coders/slide_filter/decoder_slide_filter.cpp.o
+
+
 CMakeFiles/cpp_project.dir/src/coders/ca/ca_window.cpp.o: CMakeFiles/cpp_project.dir/flags.make
 CMakeFiles/cpp_project.dir/src/coders/ca/ca_window.cpp.o: ../src/coders/ca/ca_window.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/cpp_project.dir/src/coders/ca/ca_window.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/cpp_project.dir/src/coders/ca/ca_window.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp_project.dir/src/coders/ca/ca_window.cpp.o -c /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/ca/ca_window.cpp
 
 CMakeFiles/cpp_project.dir/src/coders/ca/ca_window.cpp.i: cmake_force
@@ -899,7 +971,7 @@ CMakeFiles/cpp_project.dir/src/coders/ca/ca_window.cpp.o.provides.build: CMakeFi
 
 CMakeFiles/cpp_project.dir/src/coders/ca/coder_ca.cpp.o: CMakeFiles/cpp_project.dir/flags.make
 CMakeFiles/cpp_project.dir/src/coders/ca/coder_ca.cpp.o: ../src/coders/ca/coder_ca.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/cpp_project.dir/src/coders/ca/coder_ca.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/cpp_project.dir/src/coders/ca/coder_ca.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp_project.dir/src/coders/ca/coder_ca.cpp.o -c /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/ca/coder_ca.cpp
 
 CMakeFiles/cpp_project.dir/src/coders/ca/coder_ca.cpp.i: cmake_force
@@ -923,7 +995,7 @@ CMakeFiles/cpp_project.dir/src/coders/ca/coder_ca.cpp.o.provides.build: CMakeFil
 
 CMakeFiles/cpp_project.dir/src/coders/ca/decoder_ca.cpp.o: CMakeFiles/cpp_project.dir/flags.make
 CMakeFiles/cpp_project.dir/src/coders/ca/decoder_ca.cpp.o: ../src/coders/ca/decoder_ca.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/cpp_project.dir/src/coders/ca/decoder_ca.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/cpp_project.dir/src/coders/ca/decoder_ca.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp_project.dir/src/coders/ca/decoder_ca.cpp.o -c /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/ca/decoder_ca.cpp
 
 CMakeFiles/cpp_project.dir/src/coders/ca/decoder_ca.cpp.i: cmake_force
@@ -947,7 +1019,7 @@ CMakeFiles/cpp_project.dir/src/coders/ca/decoder_ca.cpp.o.provides.build: CMakeF
 
 CMakeFiles/cpp_project.dir/src/scripts.cpp.o: CMakeFiles/cpp_project.dir/flags.make
 CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../src/scripts.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/cpp_project.dir/src/scripts.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/cpp_project.dir/src/scripts.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp_project.dir/src/scripts.cpp.o -c /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/scripts.cpp
 
 CMakeFiles/cpp_project.dir/src/scripts.cpp.i: cmake_force
@@ -971,7 +1043,7 @@ CMakeFiles/cpp_project.dir/src/scripts.cpp.o.provides.build: CMakeFiles/cpp_proj
 
 CMakeFiles/cpp_project.dir/src/tests.cpp.o: CMakeFiles/cpp_project.dir/flags.make
 CMakeFiles/cpp_project.dir/src/tests.cpp.o: ../src/tests.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/cpp_project.dir/src/tests.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/cpp_project.dir/src/tests.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp_project.dir/src/tests.cpp.o -c /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/tests.cpp
 
 CMakeFiles/cpp_project.dir/src/tests.cpp.i: cmake_force
@@ -995,7 +1067,7 @@ CMakeFiles/cpp_project.dir/src/tests.cpp.o.provides.build: CMakeFiles/cpp_projec
 
 CMakeFiles/cpp_project.dir/main.cpp.o: CMakeFiles/cpp_project.dir/flags.make
 CMakeFiles/cpp_project.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/cpp_project.dir/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object CMakeFiles/cpp_project.dir/main.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp_project.dir/main.cpp.o -c /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/main.cpp
 
 CMakeFiles/cpp_project.dir/main.cpp.i: cmake_force
@@ -1053,6 +1125,9 @@ cpp_project_OBJECTS = \
 "CMakeFiles/cpp_project.dir/src/coders/pwlh/pwlh_window.cpp.o" \
 "CMakeFiles/cpp_project.dir/src/coders/pwlh/coder_pwlh.cpp.o" \
 "CMakeFiles/cpp_project.dir/src/coders/pwlh/decoder_pwlh.cpp.o" \
+"CMakeFiles/cpp_project.dir/src/coders/slide_filter/slide_filter_window.cpp.o" \
+"CMakeFiles/cpp_project.dir/src/coders/slide_filter/coder_slide_filter.cpp.o" \
+"CMakeFiles/cpp_project.dir/src/coders/slide_filter/decoder_slide_filter.cpp.o" \
 "CMakeFiles/cpp_project.dir/src/coders/ca/ca_window.cpp.o" \
 "CMakeFiles/cpp_project.dir/src/coders/ca/coder_ca.cpp.o" \
 "CMakeFiles/cpp_project.dir/src/coders/ca/decoder_ca.cpp.o" \
@@ -1097,6 +1172,9 @@ cpp_project: CMakeFiles/cpp_project.dir/src/coders/apca/decoder_apca.cpp.o
 cpp_project: CMakeFiles/cpp_project.dir/src/coders/pwlh/pwlh_window.cpp.o
 cpp_project: CMakeFiles/cpp_project.dir/src/coders/pwlh/coder_pwlh.cpp.o
 cpp_project: CMakeFiles/cpp_project.dir/src/coders/pwlh/decoder_pwlh.cpp.o
+cpp_project: CMakeFiles/cpp_project.dir/src/coders/slide_filter/slide_filter_window.cpp.o
+cpp_project: CMakeFiles/cpp_project.dir/src/coders/slide_filter/coder_slide_filter.cpp.o
+cpp_project: CMakeFiles/cpp_project.dir/src/coders/slide_filter/decoder_slide_filter.cpp.o
 cpp_project: CMakeFiles/cpp_project.dir/src/coders/ca/ca_window.cpp.o
 cpp_project: CMakeFiles/cpp_project.dir/src/coders/ca/coder_ca.cpp.o
 cpp_project: CMakeFiles/cpp_project.dir/src/coders/ca/decoder_ca.cpp.o
@@ -1105,7 +1183,7 @@ cpp_project: CMakeFiles/cpp_project.dir/src/tests.cpp.o
 cpp_project: CMakeFiles/cpp_project.dir/main.cpp.o
 cpp_project: CMakeFiles/cpp_project.dir/build.make
 cpp_project: CMakeFiles/cpp_project.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Linking CXX executable cpp_project"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Linking CXX executable cpp_project"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cpp_project.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -1147,6 +1225,9 @@ CMakeFiles/cpp_project.dir/requires: CMakeFiles/cpp_project.dir/src/coders/apca/
 CMakeFiles/cpp_project.dir/requires: CMakeFiles/cpp_project.dir/src/coders/pwlh/pwlh_window.cpp.o.requires
 CMakeFiles/cpp_project.dir/requires: CMakeFiles/cpp_project.dir/src/coders/pwlh/coder_pwlh.cpp.o.requires
 CMakeFiles/cpp_project.dir/requires: CMakeFiles/cpp_project.dir/src/coders/pwlh/decoder_pwlh.cpp.o.requires
+CMakeFiles/cpp_project.dir/requires: CMakeFiles/cpp_project.dir/src/coders/slide_filter/slide_filter_window.cpp.o.requires
+CMakeFiles/cpp_project.dir/requires: CMakeFiles/cpp_project.dir/src/coders/slide_filter/coder_slide_filter.cpp.o.requires
+CMakeFiles/cpp_project.dir/requires: CMakeFiles/cpp_project.dir/src/coders/slide_filter/decoder_slide_filter.cpp.o.requires
 CMakeFiles/cpp_project.dir/requires: CMakeFiles/cpp_project.dir/src/coders/ca/ca_window.cpp.o.requires
 CMakeFiles/cpp_project.dir/requires: CMakeFiles/cpp_project.dir/src/coders/ca/coder_ca.cpp.o.requires
 CMakeFiles/cpp_project.dir/requires: CMakeFiles/cpp_project.dir/src/coders/ca/decoder_ca.cpp.o.requires

@@ -276,6 +276,35 @@ CMakeFiles/cpp_project.dir/src/coders/pwlh/pwlh_window.cpp.o: ../include/dataset
 CMakeFiles/cpp_project.dir/src/coders/pwlh/pwlh_window.cpp.o: ../include/string_utils.h
 CMakeFiles/cpp_project.dir/src/coders/pwlh/pwlh_window.cpp.o: ../src/coders/pwlh/pwlh_window.cpp
 
+CMakeFiles/cpp_project.dir/src/coders/slide_filter/coder_slide_filter.cpp.o: ../include/coders/coder_base.h
+CMakeFiles/cpp_project.dir/src/coders/slide_filter/coder_slide_filter.cpp.o: ../include/coders/cols/coder_cols.h
+CMakeFiles/cpp_project.dir/src/coders/slide_filter/coder_slide_filter.cpp.o: ../include/coders/slide_filter/coder_slide_filter.h
+CMakeFiles/cpp_project.dir/src/coders/slide_filter/coder_slide_filter.cpp.o: ../include/coders/slide_filter/slide_filter_window.h
+CMakeFiles/cpp_project.dir/src/coders/slide_filter/coder_slide_filter.cpp.o: ../include/dataset/column_code.h
+CMakeFiles/cpp_project.dir/src/coders/slide_filter/coder_slide_filter.cpp.o: ../include/dataset/dataset.h
+CMakeFiles/cpp_project.dir/src/coders/slide_filter/coder_slide_filter.cpp.o: ../include/dataset/range.h
+CMakeFiles/cpp_project.dir/src/coders/slide_filter/coder_slide_filter.cpp.o: ../include/file_utils/bit_stream/bit_stream_writer.h
+CMakeFiles/cpp_project.dir/src/coders/slide_filter/coder_slide_filter.cpp.o: ../include/file_utils/csv/csv_reader.h
+CMakeFiles/cpp_project.dir/src/coders/slide_filter/coder_slide_filter.cpp.o: ../include/file_utils/path.h
+CMakeFiles/cpp_project.dir/src/coders/slide_filter/coder_slide_filter.cpp.o: ../include/file_utils/text/text_reader.h
+CMakeFiles/cpp_project.dir/src/coders/slide_filter/coder_slide_filter.cpp.o: ../src/coders/slide_filter/coder_slide_filter.cpp
+
+CMakeFiles/cpp_project.dir/src/coders/slide_filter/decoder_slide_filter.cpp.o: ../include/coders/cols/decoder_cols.h
+CMakeFiles/cpp_project.dir/src/coders/slide_filter/decoder_slide_filter.cpp.o: ../include/coders/decoder_base.h
+CMakeFiles/cpp_project.dir/src/coders/slide_filter/decoder_slide_filter.cpp.o: ../include/coders/slide_filter/decoder_slide_filter.h
+CMakeFiles/cpp_project.dir/src/coders/slide_filter/decoder_slide_filter.cpp.o: ../include/dataset/column_code.h
+CMakeFiles/cpp_project.dir/src/coders/slide_filter/decoder_slide_filter.cpp.o: ../include/dataset/dataset.h
+CMakeFiles/cpp_project.dir/src/coders/slide_filter/decoder_slide_filter.cpp.o: ../include/dataset/range.h
+CMakeFiles/cpp_project.dir/src/coders/slide_filter/decoder_slide_filter.cpp.o: ../include/file_utils/bit_stream/bit_stream_reader.h
+CMakeFiles/cpp_project.dir/src/coders/slide_filter/decoder_slide_filter.cpp.o: ../include/file_utils/csv/csv_writer.h
+CMakeFiles/cpp_project.dir/src/coders/slide_filter/decoder_slide_filter.cpp.o: ../include/file_utils/path.h
+CMakeFiles/cpp_project.dir/src/coders/slide_filter/decoder_slide_filter.cpp.o: ../include/string_utils.h
+CMakeFiles/cpp_project.dir/src/coders/slide_filter/decoder_slide_filter.cpp.o: ../src/coders/slide_filter/decoder_slide_filter.cpp
+
+CMakeFiles/cpp_project.dir/src/coders/slide_filter/slide_filter_window.cpp.o: ../include/coders/slide_filter/slide_filter_window.h
+CMakeFiles/cpp_project.dir/src/coders/slide_filter/slide_filter_window.cpp.o: ../include/string_utils.h
+CMakeFiles/cpp_project.dir/src/coders/slide_filter/slide_filter_window.cpp.o: ../src/coders/slide_filter/slide_filter_window.cpp
+
 CMakeFiles/cpp_project.dir/src/dataset/column_code.cpp.o: ../include/dataset/column_code.h
 CMakeFiles/cpp_project.dir/src/dataset/column_code.cpp.o: ../include/dataset/range.h
 CMakeFiles/cpp_project.dir/src/dataset/column_code.cpp.o: ../src/dataset/column_code.cpp
@@ -365,6 +394,9 @@ CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../include/coders/pca/pca_window.h
 CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../include/coders/pwlh/coder_pwlh.h
 CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../include/coders/pwlh/decoder_pwlh.h
 CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../include/coders/pwlh/pwlh_window.h
+CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../include/coders/slide_filter/coder_slide_filter.h
+CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../include/coders/slide_filter/decoder_slide_filter.h
+CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../include/coders/slide_filter/slide_filter_window.h
 CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../include/dataset/column_code.h
 CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../include/dataset/dataset.h
 CMakeFiles/cpp_project.dir/src/scripts.cpp.o: ../include/dataset/range.h
