@@ -4,6 +4,8 @@
 #include "string_utils.h"
 #include <iostream>
 
+SlideFilterWindow::SlideFilterWindow() {}
+
 SlideFilterWindow::SlideFilterWindow(int max_window_size_, int error_threshold_){
     max_window_size = max_window_size_;
     max_window_size_bit_length = StringUtils::bitLength(max_window_size);

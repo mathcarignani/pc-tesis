@@ -3,6 +3,7 @@
 
 #include <iostream>
 
+PCAWindow::PCAWindow() {}
 
 PCAWindow::PCAWindow(int fixed_window_size_, int error_threshold_){
     fixed_window_size = fixed_window_size_;

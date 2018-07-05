@@ -10,8 +10,12 @@ class CoderSlideFilter: public CoderCols {
 private:
     int max_window_size;
     std::vector<int> error_thresholds_vector;
+    SlideFilterWindow window;
 
-    void codeColumn() override;
+    void codeColumnBefore() override;
+    void codeColumnWhile(std::string csv_value) override;
+    void codeColumnAfter() override;
+
     SlideFilterWindow createWindow();
 //    void code(CAWindow & window, bool force_code, std::string x);
 

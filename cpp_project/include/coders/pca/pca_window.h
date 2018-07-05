@@ -24,6 +24,7 @@ public:
     std::string constant_value;
     std::vector<std::string> *array;
 
+    PCAWindow();
     PCAWindow(int fixed_window_size_, int error_threshold_);
     void addValue(std::string x); // PRE: !isFull()
     bool isFull();

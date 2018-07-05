@@ -13,10 +13,10 @@ private:
     bool integer_mode;
     PWLHWindow window;
 
-    void codeColumn() override;
-    void codeColumnBefore();
-    void codeColumnWhile(std::string csv_value);
-    void codeColumnAfter();
+    void codeColumnBefore() override;
+    void codeColumnWhile(std::string csv_value) override;
+    void codeColumnAfter() override;
+
     PWLHWindow createWindow();
     void codeWindow(PWLHWindow & window);
     void codeWindowDouble(PWLHWindow & window);

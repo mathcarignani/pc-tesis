@@ -22,6 +22,7 @@ public:
     std::string constant_value;
     bool nan_window;
 
+    CAWindow();
     CAWindow(int max_window_size_, int error_threshold_);
     bool isFull();
     bool isEmpty();

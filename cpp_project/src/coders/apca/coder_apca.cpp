@@ -7,18 +7,18 @@ void CoderAPCA::setCoderParams(int max_window_size_, std::vector<int> error_thre
     error_thresholds_vector = error_thresholds_vector_;
 }
 
-void CoderAPCA::codeColumn(){
-    APCAWindow window = createWindow();
-    row_index = 0;
-    input_csv.goToLine(4); // first data row
-    while (input_csv.continue_reading){
-        std::string csv_value = input_csv.readLineCSVWithIndex(column_index);
-        if (!window.conditionHolds(csv_value)){
-            codeWindow(window);
-            window.addFirstValue(csv_value);
-        }
-        row_index++;
+void CoderAPCA::codeColumnBefore(){
+    window = createWindow();
+}
+
+void CoderAPCA::codeColumnWhile(std::string csv_value){
+    if (!window.conditionHolds(csv_value)){
+        codeWindow(window);
+        window.addFirstValue(csv_value);
     }
+}
+
+void CoderAPCA::codeColumnAfter(){
     if (!window.isEmpty()){ codeWindow(window); }
 }
 

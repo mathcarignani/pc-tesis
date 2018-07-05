@@ -10,8 +10,12 @@ class CoderPCA: public CoderCols {
 private:
     int fixed_window_size;
     std::vector<int> error_thresholds_vector;
+    PCAWindow window;
 
-    void codeColumn() override;
+    void codeColumnBefore() override;
+    void codeColumnWhile(std::string csv_value) override;
+    void codeColumnAfter() override;
+
     PCAWindow createWindow();
     void codeWindow(PCAWindow & window);
     void codeWindowAsConstant(PCAWindow & window);

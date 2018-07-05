@@ -20,19 +20,6 @@ void CoderPWLH::setCoderParams(int max_window_size_, std::vector<int> error_thre
     }
 }
 
-void CoderPWLH::codeColumn(){
-    row_index = 0;
-    input_csv.goToLine(4); // first data row
-    codeColumnBefore();
-    while (input_csv.continue_reading){
-        std::string csv_value = input_csv.readLineCSVWithIndex(column_index);
-//        std::cout << "csv_value = " << csv_value << std::endl;
-        codeColumnWhile(csv_value);
-        row_index++;
-    }
-    codeColumnAfter();
-}
-
 void CoderPWLH::codeColumnBefore(){
     window = createWindow();
 }

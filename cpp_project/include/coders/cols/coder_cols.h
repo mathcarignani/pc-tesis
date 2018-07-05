@@ -9,9 +9,10 @@ class CoderCols: public CoderBase {
 
 private:
     void codeDataRows() override;
-    virtual void codeColumn() = 0;
-//    void raiseRangeError(int value) override;
-//    void createWindow();
+    void codeColumn();
+    virtual void codeColumnBefore() = 0;
+    virtual void codeColumnWhile(std::string csv_value) = 0;
+    virtual void codeColumnAfter() = 0;
 
 protected:
     int column_index = 0;
@@ -19,7 +20,7 @@ protected:
 
 public:
     using CoderBase::CoderBase;
-//    void setDataset(Dataset dataset, int columns_count_);
+
 };
 
 #endif //CPP_PROJECT_CODER_COLS_H

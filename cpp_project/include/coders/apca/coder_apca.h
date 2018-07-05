@@ -10,8 +10,12 @@ class CoderAPCA: public CoderCols {
 private:
     int max_window_size;
     std::vector<int> error_thresholds_vector;
+    APCAWindow window;
 
-    void codeColumn() override;
+    void codeColumnBefore() override;
+    void codeColumnWhile(std::string csv_value) override;
+    void codeColumnAfter() override;
+
     APCAWindow createWindow();
     void codeWindow(APCAWindow & window);
 

@@ -18,6 +18,7 @@ public:
     int length;
     std::string constant_value;
 
+    APCAWindow();
     APCAWindow(int max_window_size_, int error_threshold_);
     bool conditionHolds(std::string x);
     bool isFull();

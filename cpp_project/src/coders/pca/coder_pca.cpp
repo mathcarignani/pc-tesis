@@ -8,16 +8,16 @@ void CoderPCA::setCoderParams(int fixed_window_size_, std::vector<int> error_thr
     error_thresholds_vector = error_thresholds_vector_;
 }
 
-void CoderPCA::codeColumn(){
-    PCAWindow window = createWindow();
-    row_index = 0;
-    input_csv.goToLine(4); // first data row
-    while (input_csv.continue_reading){
-        std::string csv_value = input_csv.readLineCSVWithIndex(column_index);
-        window.addValue(csv_value);
-        if (window.isFull()) { codeWindow(window); }
-        row_index++;
-    }
+void CoderPCA::codeColumnBefore(){
+    window = createWindow();
+}
+
+void CoderPCA::codeColumnWhile(std::string csv_value){
+    window.addValue(csv_value);
+    if (window.isFull()) { codeWindow(window); }
+}
+
+void CoderPCA::codeColumnAfter(){
     if (!window.isEmpty()) {
         assert(!window.isFull());
         codeWindowEachValue(window);

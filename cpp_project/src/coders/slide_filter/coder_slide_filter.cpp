@@ -6,17 +6,18 @@ void CoderSlideFilter::setCoderParams(int max_window_size_, std::vector<int> err
     error_thresholds_vector = error_thresholds_vector_;
 }
 
-void CoderSlideFilter::codeColumn(){
-    SlideFilterWindow window = createWindow();
-    row_index = 0;
-    input_csv.goToLine(4); // first data row
-    while (input_csv.continue_reading){
-        std::string csv_value = input_csv.readLineCSVWithIndex(column_index);
-//        std::cout << row_index << " " << csv_value << std::endl;
-//        code(window, false, csv_value);
-        row_index++;
-    }
-//    code(window, true, "0"); // force code
+void CoderSlideFilter::codeColumnBefore(){
+    window = createWindow();
+}
+
+void CoderSlideFilter::codeColumnWhile(std::string csv_value){
+    // TODO
+    // code(window, false, csv_value);
+}
+
+void CoderSlideFilter::codeColumnAfter(){
+    // TODO
+    // code(window, true, "0"); // force code
 }
 
 SlideFilterWindow CoderSlideFilter::createWindow(){
