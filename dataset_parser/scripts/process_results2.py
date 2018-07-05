@@ -7,7 +7,7 @@ from scripts.compress_aux import THRESHOLD_PERCENTAGES
 
 percentages = THRESHOLD_PERCENTAGES
 percentages_len = len(percentages)
-coders_len = 4
+coders_len = 5
 coder_index = 2
 
 
@@ -75,7 +75,7 @@ def calculate_results_file(row):
     return out_row
 
 
-input_path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/results4/all/merged_results/process_results/cols"
+input_path = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-dudas-4/results/MERGED_RESULTS2/cols"
 output_file = "PROCESS_RESULTS2-cols.csv"
 filenames = [
     "results1_irkis-col.csv",
@@ -101,7 +101,7 @@ filenames = [
     "results8_noaa-spc-wind-col3.csv"
 ]
 
-# input_path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/results4/all/merged_results/process_results/td"
+# input_path = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-dudas-4/results/MERGED_RESULTS2/td"
 # output_file = "PROCESS_RESULTS2-td.csv"
 # filenames = [
 #     "results1_irkis-td.csv",

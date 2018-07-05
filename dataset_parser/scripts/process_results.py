@@ -5,7 +5,7 @@ from file_utils.csv_utils.csv_reader import CSVReader
 from file_utils.csv_utils.csv_writer import CSVWriter
 from scripts.compress_aux import THRESHOLD_PERCENTAGES
 
-input_path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/results4/all/merged_results"
+input_path = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-dudas-4/results/MERGED_RESULTS2"
 # input_path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/paper-output/results"
 
 

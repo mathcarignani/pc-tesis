@@ -10,8 +10,8 @@ void CoderPWLH::setCoderParams(int max_window_size_, std::vector<int> error_thre
     if (integer_mode) {
         // substract 1 to every error_threshold > 0
         for (int i=0; i < error_thresholds_vector_.size(); i++){
-            int error_threshold = error_thresholds_vector_.at(column_index);
-            if (error_threshold > 0) { error_threshold -= 1; }
+            int error_threshold = error_thresholds_vector_.at(i);
+            if (error_threshold > 0) { error_threshold = error_threshold - 1; }
             error_thresholds_vector.push_back(error_threshold);
         }
     }
