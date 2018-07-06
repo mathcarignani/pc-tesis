@@ -10,16 +10,16 @@ def execute(exe_str):
     print ">>>>>>>>>>>>>>>>>>>>>>>>>>>> C++"
     print exe_str
     print ">>>>>>>>>>>>>>>>>>>>>>>>>>>> C++"
-    os.system(exe_str)
+    # os.system(exe_str)
     column_bits = []
-    # sub = subprocess.Popen(exe_str.split(" "), stdout=subprocess.PIPE)
-    # stdout = sub.communicate()[0]
-    # stdout_list = stdout.split("\n")
-    # for line in stdout_list:
-    #     if "total_bits" in line:
-    #         print line
-    #         bits = int(line.replace("total_bits ", ""))
-    #         column_bits.append(bits)
+    sub = subprocess.Popen(exe_str.split(" "), stdout=subprocess.PIPE)
+    stdout = sub.communicate()[0]
+    stdout_list = stdout.split("\n")
+    for line in stdout_list:
+        if "total_bits" in line:
+            print line
+            bits = int(line.replace("total_bits ", ""))
+            column_bits.append(bits)
     print "<<<<<<<<<<<<<<<<<<<<<<<<<<<< C++"
     return column_bits
 
