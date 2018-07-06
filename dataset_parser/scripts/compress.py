@@ -63,7 +63,15 @@ def compress_file(args):
     input_file = args.input_path + "/" + args.input_filename
     compressed_file = args.output_path + "/" + args.compressed_filename
     compressed_size = print_results(coder_info, args.logger, input_file, compressed_file, same_file)
+    size_check(compressed_size, columns_bits)
     return [compressed_size] + columns_bits
+
+
+def size_check(compressed_size, columns_bits):
+    columns_bytes = sum(columns_bits)/8
+    diff = compressed_size - columns_bytes
+    max_header_size = 1000
+    assert(diff < max_header_size)
 
 
 def print_results(coder_info, logger, input_file, compressed_file, same_file):
