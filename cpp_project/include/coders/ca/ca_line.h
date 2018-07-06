@@ -80,10 +80,10 @@ public:
         return line;
     }
 
-    void print(){
-        std::cout << "(x,y,m)=(";
-        std::cout << std::to_string(point.x) << "," << std::to_string(point.y) << "," << std::to_string(m) << ")";
-    }
+//    void print(){
+//        std::cout << "(x,y,m)=(";
+//        std::cout << std::to_string(point.x) << "," << std::to_string(point.y) << "," << std::to_string(m) << ")";
+//    }
 };
 
 #endif //CPP_PROJECT_LINE_H

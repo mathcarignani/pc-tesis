@@ -22,9 +22,9 @@ struct Range {
         return (begin <= value && value <= end);
     }
 
-    void print(){
-        std::cout << "Range = [" << begin << "," << end << "]" << std::endl;
-    }
+//    void print(){
+//        std::cout << "Range = [" << begin << "," << end << "]" << std::endl;
+//    }
 };
 
 #endif //CPP_PROJECT_RANGE_H

@@ -8,6 +8,7 @@
 class StringUtils {
 
 public:
+    static bool stringInList(std::string & str, std::vector<std::string> arr);
     static bool find(std::string string, std::string string_to_find);
     static std::vector<std::string> splitByString(std::string str, std::string delimiter);
     static std::vector<std::string> splitByChar(std::string str, const char delimiter);

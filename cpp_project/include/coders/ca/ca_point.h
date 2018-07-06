@@ -28,9 +28,9 @@ public:
         return point.x == x && point.y == y;
     }
 
-    void print(){
-        std::cout << "(x,y)=(" << std::to_string(x) << "," << std::to_string(y) << ")";
-    }
+//    void print(){
+//        std::cout << "(x,y)=(" << std::to_string(x) << "," << std::to_string(y) << ")";
+//    }
 };
 
 #endif //CPP_PROJECT_POINT_H

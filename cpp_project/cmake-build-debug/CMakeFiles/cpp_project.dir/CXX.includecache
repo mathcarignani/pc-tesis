@@ -415,6 +415,8 @@ stdlib.h
 -
 vector
 -
+string_utils.h
+/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/string_utils.h
 
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/apca/apca_window.cpp
 apca_window.h
@@ -477,8 +479,6 @@ coder_cols.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/cols/decoder_cols.cpp
 decoder_cols.h
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/cols/decoder_cols.h
-vector
--
 
 /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/decoder_base.cpp
 decoder_base.h

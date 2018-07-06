@@ -32,6 +32,7 @@ CMakeFiles/cpp_project.dir/main.cpp.o: ../include/file_utils/bit_stream/bit_stre
 CMakeFiles/cpp_project.dir/main.cpp.o: ../include/file_utils/bit_stream/bit_stream_writer.h
 CMakeFiles/cpp_project.dir/main.cpp.o: ../include/file_utils/path.h
 CMakeFiles/cpp_project.dir/main.cpp.o: ../include/scripts.h
+CMakeFiles/cpp_project.dir/main.cpp.o: ../include/string_utils.h
 CMakeFiles/cpp_project.dir/main.cpp.o: ../include/tests.h
 CMakeFiles/cpp_project.dir/main.cpp.o: ../main.cpp
 

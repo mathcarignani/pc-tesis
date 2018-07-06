@@ -5,6 +5,16 @@
 #include <math.h>
 
 //
+// SOURCE: https://stackoverflow.com/a/14516630/4547232
+//
+bool StringUtils::stringInList(std::string & str, std::vector<std::string> arr){
+    for (int i = 0; i < arr.size(); i++) {
+        if (str == arr[i]) { return true; }
+    }
+    return false;
+}
+
+//
 // SOURCE: https://stackoverflow.com/a/2340309/4547232
 //
 bool StringUtils::find(std::string string, std::string string_to_find) {

@@ -78,10 +78,10 @@ bool CAWindow::isEmpty(){
     return length == 0;
 }
 
-void CAWindow::printState(){
-    std::cout << "archived_value = "; archived_value.print();
-    std::cout << "constant_value = " << constant_value << std::endl;
-    std::cout << "snapshot_value = "; snapshot_value.print(); std::cout << std::endl;
-    std::cout << "s_min = "; s_min.print(); std::cout << std::endl;
-    std::cout << "s_max = "; s_max.print(); std::cout << std::endl;
-}
+//void CAWindow::printState(){
+//    std::cout << "archived_value = "; archived_value.print();
+//    std::cout << "constant_value = " << constant_value << std::endl;
+//    std::cout << "snapshot_value = "; snapshot_value.print(); std::cout << std::endl;
+//    std::cout << "s_min = "; s_min.print(); std::cout << std::endl;
+//    std::cout << "s_max = "; s_max.print(); std::cout << std::endl;
+//}

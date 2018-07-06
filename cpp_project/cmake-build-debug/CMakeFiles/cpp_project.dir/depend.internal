@@ -33,6 +33,7 @@ CMakeFiles/cpp_project.dir/main.cpp.o
  ../include/file_utils/bit_stream/bit_stream_writer.h
  ../include/file_utils/path.h
  ../include/scripts.h
+ ../include/string_utils.h
  ../include/tests.h
  /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/main.cpp
 CMakeFiles/cpp_project.dir/src/coders/apca/apca_window.cpp.o
