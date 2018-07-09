@@ -70,7 +70,9 @@ def compress_file(args):
 def size_check(compressed_size, columns_bits):
     columns_bytes = sum(columns_bits)/8
     diff = compressed_size - columns_bytes
-    max_header_size = 1000
+    max_header_size = 15000
+    if diff >= max_header_size:
+        print 'DIFF = %s' % diff
     assert(diff < max_header_size)
 
 
