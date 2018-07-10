@@ -115,12 +115,7 @@ std::vector<std::string> PWLHWindow::decodePoints(float point1_y, float point2_y
     Line* line = new Line(&p1, &p2);
 //    std::cout << "B<point1_y_int, point2_y_int> = " << line->getValue(0) << ", " << line->getValue(window_size-1) << ">" << std::endl;
 
-    std::vector<std::string> res(window_size);
-    for (int i=0; i < window_size; i++){
-        double value = line->getValue(i);
-        res[i] = StringUtils::doubleToString(value);
-    }
-    return res;
+    return proyectPointsOntoLine(line, window_size);
 }
 
 std::vector<std::string> PWLHWindow::decodePointsIntegerMode(std::string point1_y, std::string point2_y, int window_size){
@@ -132,6 +127,10 @@ std::vector<std::string> PWLHWindow::decodePointsIntegerMode(std::string point1_
     Line* line = new Line(&p1, &p2);
 //    std::cout << "B<point1_y_int, point2_y_int> = " << line->getValue(0) << ", " << line->getValue(window_size-1) << ">" << std::endl;
 
+    return proyectPointsOntoLine(line, window_size);
+}
+
+std::vector<std::string> PWLHWindow::proyectPointsOntoLine(Line* line, int window_size){
     std::vector<std::string> res(window_size);
     for (int i=0; i < window_size; i++){
         double value = line->getValue(i);

@@ -38,6 +38,7 @@ public:
 
     static std::vector<std::string> decodePoints(float point1_y, float point2_y, int window_size);
     static std::vector<std::string> decodePointsIntegerMode(std::string point1_y, std::string point2_y, int window_size);
+    static std::vector<std::string> proyectPointsOntoLine(Line* line, int window_size);
 };
 
 #endif //CPP_PROJECT_PWLH_WINDOW_H
