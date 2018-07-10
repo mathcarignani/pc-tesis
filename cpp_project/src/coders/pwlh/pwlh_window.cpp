@@ -36,14 +36,15 @@ bool PWLHWindow::conditionHolds(std::string x){
             bucket->addPoint(x_int);
             if (bucket->checkEpsConstraint() && checkIntegerModeConstraint()){ // bucket is valid
 //                std::cout << "BUCKET IS VALID" << std::endl;
-                length++; return true;
+                length++;
+                return true;
             }
-            else {
+            else { // bucket is invalid
 //                std::cout << "ELSE" << std::endl;
                 bucket->removePoint();
                 bucket->getAproximatedLine(p1, p2);
                 p1.x = 0;
-                p2.x = length - 1;
+                p2.x = length - 1; // TODO: consider time delta column
 //                std::cout << "p1=(x,y)=" << p1.x << "," << p1.y << std::endl;
 //                std::cout << "p2=(x,y)=" << p2.x << "," << p2.y << std::endl;
                 return false;
@@ -78,9 +79,7 @@ void PWLHWindow::addFirstValue(std::string x){
     else { // x is an integer
         nan_window = false;
         int x_int = std::stoi(x);
-        if (bucket->getSize() != 0){
-            bucket->resetBucket();
-        }
+        if (bucket->getSize() != 0) { bucket->resetBucket(); }
 //        std::cout << "addFirstValue ELSE " << x_int << std::endl;
         bucket->addPoint((double) x_int);
         constant_value = x;
@@ -111,7 +110,7 @@ std::string PWLHWindow::getPoint2YIntegerMode(){
 std::vector<std::string> PWLHWindow::decodePoints(float point1_y, float point2_y, int window_size){
 //    std::cout << "A<point1_y_int, point2_y_int> = " << point1_y_int << ", " << point2_y_int << ">" << std::endl;
     Point p1 = Point(point1_y, 0);
-    Point p2 = Point(point2_y, window_size-1);
+    Point p2 = Point(point2_y, window_size-1); // TODO: consider time delta column
     Line* line = new Line(&p1, &p2);
 //    std::cout << "B<point1_y_int, point2_y_int> = " << line->getValue(0) << ", " << line->getValue(window_size-1) << ">" << std::endl;
 
@@ -123,7 +122,7 @@ std::vector<std::string> PWLHWindow::decodePointsIntegerMode(std::string point1_
     int point2_y_int = std::stoi(point2_y);
 //    std::cout << "A<point1_y_int, point2_y_int> = " << point1_y_int << ", " << point2_y_int << ">" << std::endl;
     Point p1 = Point(point1_y_int, 0);
-    Point p2 = Point(point2_y_int, window_size-1);
+    Point p2 = Point(point2_y_int, window_size-1); // TODO: consider time delta column
     Line* line = new Line(&p1, &p2);
 //    std::cout << "B<point1_y_int, point2_y_int> = " << line->getValue(0) << ", " << line->getValue(window_size-1) << ">" << std::endl;
 
@@ -131,6 +130,7 @@ std::vector<std::string> PWLHWindow::decodePointsIntegerMode(std::string point1_
 }
 
 std::vector<std::string> PWLHWindow::proyectPointsOntoLine(Line* line, int window_size){
+    // TODO: consider time delta column
     std::vector<std::string> res(window_size);
     for (int i=0; i < window_size; i++){
         double value = line->getValue(i);

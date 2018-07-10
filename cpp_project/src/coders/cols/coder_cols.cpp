@@ -22,6 +22,11 @@ void CoderCols::codeTimeDeltaColumn(){
     while (input_csv.continue_reading){
         std::string csv_value = input_csv.readLineCSVWithIndex(column_index);
         codeValueRaw(csv_value); // same as CoderBasic
+
+        // add int value to the time_delta_vector
+        int csv_value_int = std::stoi(csv_value);
+        time_delta_vector.push_back(csv_value_int);
+
         row_index++;
     }
 }
