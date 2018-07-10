@@ -8,10 +8,24 @@ void DecoderCols::decodeDataRows(){
     for(column_index = 0; column_index < total_columns; column_index++) {
         std::cout << "decode column_index " << column_index << std::endl;
         dataset.setColumn(column_index);
-        std::vector<std::string> column = decodeColumn();
+        std::vector<std::string> column = decodeColumnAux();
         columns.push_back(column);
     }
     transposeMatrix(columns, total_columns);
+}
+
+std::vector<std::string> DecoderCols::decodeColumnAux(){
+    if (column_index == 0) { return decodeTimeDeltaColumn(); } else { return decodeColumn(); }
+}
+
+std::vector<std::string> DecoderCols::decodeTimeDeltaColumn(){
+    // TODO: use a more appropriate lossless compression schema for coding the time delta column.
+    std::vector<std::string> column;
+    for(int row_index = 0; row_index < data_rows_count; row_index++){
+        std::string value = decodeValueRaw();
+        column.push_back(value);
+    }
+    return column;
 }
 
 void DecoderCols::transposeMatrix(std::vector<std::vector<std::string>> columns, int total_columns){

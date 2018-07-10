@@ -9,6 +9,8 @@ class DecoderCols: public DecoderBase {
 private:
     void decodeDataRows() override;
     virtual std::vector<std::string> decodeColumn() = 0;
+    std::vector<std::string> decodeColumnAux();
+    std::vector<std::string> decodeTimeDeltaColumn();
     void transposeMatrix(std::vector<std::vector<std::string>> columns, int total_columns);
 
 public:
