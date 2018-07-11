@@ -93,6 +93,10 @@ void LinearBucket::addPoint(double value)
 	polygon->addPoint(polygon->getSize(), value);
 }
 
+void LinearBucket::addPointMOD(double time, double value){ ///////////////////////////////////////////////////////// MOD
+    polygon->addPoint(time, value);
+}
+
 void LinearBucket::removePoint()
 {
 	polygon->removePoint();

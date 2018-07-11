@@ -25,7 +25,8 @@ void CoderPWLH::codeColumnBefore(){
 }
 
 void CoderPWLH::codeColumnWhile(std::string csv_value){
-    if (!window.conditionHolds(csv_value)){
+    int x_delta = time_delta_vector[row_index]; // >= 0
+    if (!window.conditionHolds(csv_value, x_delta)){
         codeWindow(window);
         window.addFirstValue(csv_value);
     }

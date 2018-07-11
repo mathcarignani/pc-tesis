@@ -28,6 +28,7 @@ public:
 	void getAproximatedLine(Point& vertex1, Point& vertex2);
 
 	void addPoint(double value);
+	void addPointMOD(double time, double value); /////////////////////////////////////////////////////////////////// MOD
 	void removePoint();
 
 	void resetBucket();

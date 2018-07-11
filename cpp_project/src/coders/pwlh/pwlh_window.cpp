@@ -12,12 +12,15 @@ PWLHWindow::PWLHWindow(int max_window_size_, int error_threshold_, Range range_,
     error_threshold = error_threshold_;
     range = range_;
     bucket = new LinearBucket(error_threshold);
-    length = 0;
+    length = 0; x_coord = 0;
     nan_window = false;
     integer_mode = integer_mode_;
 }
 
-bool PWLHWindow::conditionHolds(std::string x){
+//
+// PRE: x_delta >= 0
+//
+bool PWLHWindow::conditionHolds(std::string x, int x_delta){
     if (isEmpty()){ // this condition is only true the first time this method is called
         addFirstValue(x);
         return true;
@@ -29,35 +32,36 @@ bool PWLHWindow::conditionHolds(std::string x){
         if (nan_window){ length++; return true;  }
         else {                     return false; }
     }
-    else { // x is an integer
-        if (nan_window) { return false; }
-        else {
-            int x_int = std::stoi(x);
-            bucket->addPoint(x_int);
-            if (bucket->checkEpsConstraint() && checkIntegerModeConstraint()){ // bucket is valid
+    // x is an integer
+    if (nan_window || x_delta == 0) { return false; }
+
+    int x_int = std::stoi(x);
+    int new_x_coord = x_coord + x_delta;
+    bucket->addPointMOD(new_x_coord, x_int);
+
+    if (bucket->checkEpsConstraint() && checkIntegerModeConstraint()){ // bucket is valid
 //                std::cout << "BUCKET IS VALID" << std::endl;
-                length++;
-                return true;
-            }
-            else { // bucket is invalid
+        length++; x_coord = new_x_coord;
+        return true;
+    }
+    else { // bucket is invalid
 //                std::cout << "ELSE" << std::endl;
-                bucket->removePoint();
-                bucket->getAproximatedLine(p1, p2);
-                p1.x = 0;
-                p2.x = length - 1; // TODO: consider time delta column
+        bucket->removePoint();
+        bucket->getAproximatedLine(p1, p2);
+        assert(p1.x == 0);
+        assert(p2.x == x_coord);
 //                std::cout << "p1=(x,y)=" << p1.x << "," << p1.y << std::endl;
 //                std::cout << "p2=(x,y)=" << p2.x << "," << p2.y << std::endl;
-                return false;
-            }
-        }
+        return false;
     }
+
 }
 
 bool PWLHWindow::checkIntegerModeConstraint(){
     bucket->getAproximatedLine(p1, p2);
-    if (!integer_mode) { return true; }
+    if (!integer_mode){ return true; }
+
     // this constraint is only checked when running in integer mode
-//    bucket->getAproximatedLine(p1, p2);
     return range.insideRange(StringUtils::doubleToInt(p1.y)) && range.insideRange(StringUtils::doubleToInt(p2.y));
 }
 
@@ -78,10 +82,11 @@ void PWLHWindow::addFirstValue(std::string x){
     }
     else { // x is an integer
         nan_window = false;
+        x_coord = 0;
         int x_int = std::stoi(x);
         if (bucket->getSize() != 0) { bucket->resetBucket(); }
 //        std::cout << "addFirstValue ELSE " << x_int << std::endl;
-        bucket->addPoint((double) x_int);
+        bucket->addPointMOD(0, (double) x_int); // should be the same as calling bucket->addPoint((double) x_int);
         constant_value = x;
         constant_value_float = (float) x_int;
     }

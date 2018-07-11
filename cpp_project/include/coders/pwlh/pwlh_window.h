@@ -18,6 +18,7 @@ private:
 public:
     int max_window_size_bit_length;
     int length;
+    int x_coord;
     bool nan_window;
     std::string constant_value;
     float constant_value_float;
@@ -26,7 +27,7 @@ public:
 
     PWLHWindow();
     PWLHWindow(int max_window_size_, int error_threshold_, Range range_, bool integer_mode_);
-    bool conditionHolds(std::string x);
+    bool conditionHolds(std::string x, int x_delta);
     bool checkIntegerModeConstraint();
     bool isFull();
     bool isEmpty();
