@@ -24,6 +24,10 @@ std::vector<std::string> DecoderCols::decodeTimeDeltaColumn(){
     for(int row_index = 0; row_index < data_rows_count; row_index++){
         std::string value = decodeValueRaw();
         column.push_back(value);
+
+        // add int value to the time_delta_vector
+        int value_int = std::stoi(value);
+        time_delta_vector.push_back(value_int);
     }
     return column;
 }

@@ -69,18 +69,18 @@ void CoderPWLH::codeWindowDouble(PWLHWindow & window){
 
 void CoderPWLH::codeWindowInt(PWLHWindow & window){
     if (window.nan_window){
-//        std::cout << "I window.nan_window" << std::endl;
+        std::cout << "I window.nan_window" << std::endl;
         codeValueRaw(window.constant_value); // no need to code another value
     }
     else if (window.length > 1){
-//        std::cout << "I window.length > 1" << std::endl;
+        std::cout << "I window.length > 1" << std::endl;
         std::string point1_y = window.getPoint1YIntegerMode();
         std::string point2_y = window.getPoint2YIntegerMode();
         codeValueRaw(point1_y);
         codeValueRaw(point2_y);
     }
     else { // window.length == 1 => this code can only run the last time codeWindow is called
-//        std::cout << "I else" << std::endl;
+        std::cout << "I else" << std::endl;
         codeValueRaw(window.constant_value); // no need to code another value
     }
 }

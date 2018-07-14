@@ -5,6 +5,7 @@
 #include <string>
 #include "LinearBucket.h"
 #include "range.h"
+#include <vector>
 
 class PWLHWindow {
 
@@ -37,9 +38,9 @@ public:
     std::string getPoint1YIntegerMode();
     std::string getPoint2YIntegerMode();
 
-    static std::vector<std::string> decodePoints(float point1_y, float point2_y, int window_size);
-    static std::vector<std::string> decodePointsIntegerMode(std::string point1_y, std::string point2_y, int window_size);
-    static std::vector<std::string> proyectPointsOntoLine(Line* line, int window_size);
+    static std::vector<std::string> decodePoints(float point1_y, float point2_y, std::vector<int> x_coords);
+    static std::vector<std::string> decodePointsIntegerMode(std::string point1_y, std::string point2_y, std::vector<int> x_coords);
+    static std::vector<std::string> proyectPointsOntoLine(Line* line, std::vector<int> x_coords);
 };
 
 #endif //CPP_PROJECT_PWLH_WINDOW_H

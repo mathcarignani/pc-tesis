@@ -16,6 +16,8 @@ private:
 public:
     int column_index = 0;
     int row_index = 0;
+    std::vector<int> time_delta_vector;
+
     using DecoderBase::DecoderBase;
 
 };

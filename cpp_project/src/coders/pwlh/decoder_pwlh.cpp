@@ -36,7 +36,8 @@ void DecoderPWLH::decodeWindowDouble(std::vector<std::string> & column, int wind
         float point2_y = decodeFloat();
 //        std::cout << "point1_y = " << point1_y << std::endl;
 //        std::cout << "point2_y = " << point2_y << std::endl;
-        std::vector<std::string> decoded_points = PWLHWindow::decodePoints(point1_y, point2_y, window_size);
+        std::vector<int> x_coords = createXCoordsVector(window_size);
+        std::vector<std::string> decoded_points = PWLHWindow::decodePoints(point1_y, point2_y, x_coords);
         addPoints(column, window_size, decoded_points);
     }
     else { // window_size == 1 => this code can only run the last time decodeWindow is called
@@ -48,7 +49,7 @@ void DecoderPWLH::decodeWindowDouble(std::vector<std::string> & column, int wind
 }
 
 void DecoderPWLH::decodeWindowInt(std::vector<std::string> & column, int window_size){
-//    std::cout << "WINDOW SIZE = " << window_size << std::endl;
+    std::cout << "WINDOW SIZE = " << window_size << std::endl;
     std::string value = decodeValueRaw();
     if (value == "N"){
         addNullPoints(column, window_size);
@@ -56,9 +57,10 @@ void DecoderPWLH::decodeWindowInt(std::vector<std::string> & column, int window_
     else if (window_size > 1) {
         std::string point1_y = value;
         std::string point2_y = decodeValueRaw();
-//        std::cout << "point1_y = " << point1_y << std::endl;
-//        std::cout << "point2_y = " << point2_y << std::endl;
-        std::vector<std::string> decoded_points = PWLHWindow::decodePointsIntegerMode(point1_y, point2_y, window_size);
+        std::cout << "point1_y = " << point1_y << std::endl;
+        std::cout << "point2_y = " << point2_y << std::endl;
+        std::vector<int> x_coords = createXCoordsVector(window_size);
+        std::vector<std::string> decoded_points = PWLHWindow::decodePointsIntegerMode(point1_y, point2_y, x_coords);
         addPoints(column, window_size, decoded_points);
     }
     else { // window_size == 1 => this code can only run the last time decodeWindow is called
@@ -69,7 +71,7 @@ void DecoderPWLH::decodeWindowInt(std::vector<std::string> & column, int window_
 
 void DecoderPWLH::addNullPoints(std::vector<std::string> & column, int window_size){
     for (int i=0; i < window_size; i++){
-        // std::cout << "OUTPUT >>>>>>>>>>>>>>>> " << "N" << std::endl;
+         std::cout << "OUTPUT >>>>>>>>>>>>>>>> " << "N" << std::endl;
         column.push_back("N");
         row_index++;
     }
@@ -82,4 +84,16 @@ void DecoderPWLH::addPoints(std::vector<std::string> & column, int window_size, 
         column.push_back(decoded_point);
         row_index++;
     }
+}
+
+std::vector<int> DecoderPWLH::createXCoordsVector(int window_size){
+    std::vector<int> result;
+    int current_sum = 0;
+    int time_delta = 0;
+    for(int i = 0; i < window_size; i++){
+        if (i > 0) { time_delta = time_delta_vector.at(row_index + i); }
+        current_sum += time_delta;
+        result.push_back(current_sum);
+    }
+    return result;
 }

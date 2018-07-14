@@ -48,10 +48,10 @@ bool PWLHWindow::conditionHolds(std::string x, int x_delta){
 //                std::cout << "ELSE" << std::endl;
         bucket->removePoint();
         bucket->getAproximatedLine(p1, p2);
+        std::cout << "p1=(x,y)=" << p1.x << "," << p1.y << std::endl;
+        std::cout << "p2=(x,y)=" << p2.x << "," << p2.y << std::endl;
         assert(p1.x == 0);
         assert(p2.x == x_coord);
-//                std::cout << "p1=(x,y)=" << p1.x << "," << p1.y << std::endl;
-//                std::cout << "p2=(x,y)=" << p2.x << "," << p2.y << std::endl;
         return false;
     }
 
@@ -112,33 +112,36 @@ std::string PWLHWindow::getPoint2YIntegerMode(){
     return StringUtils::doubleToString(p2.y);
 }
 
-std::vector<std::string> PWLHWindow::decodePoints(float point1_y, float point2_y, int window_size){
+std::vector<std::string> PWLHWindow::decodePoints(float point1_y, float point2_y, std::vector<int> x_coords){
 //    std::cout << "A<point1_y_int, point2_y_int> = " << point1_y_int << ", " << point2_y_int << ">" << std::endl;
-    Point p1 = Point(point1_y, 0);
-    Point p2 = Point(point2_y, window_size-1); // TODO: consider time delta column
+    int first_x_coord = x_coords.front(); assert(first_x_coord == 0); // TODO: comment out
+    Point p1 = Point(point1_y, 0); // x_coords.front() == 0
+    Point p2 = Point(point2_y, x_coords.back());
     Line* line = new Line(&p1, &p2);
 //    std::cout << "B<point1_y_int, point2_y_int> = " << line->getValue(0) << ", " << line->getValue(window_size-1) << ">" << std::endl;
 
-    return proyectPointsOntoLine(line, window_size);
+    return proyectPointsOntoLine(line, x_coords);
 }
 
-std::vector<std::string> PWLHWindow::decodePointsIntegerMode(std::string point1_y, std::string point2_y, int window_size){
+std::vector<std::string> PWLHWindow::decodePointsIntegerMode(std::string point1_y, std::string point2_y, std::vector<int> x_coords){
     int point1_y_int = std::stoi(point1_y);
     int point2_y_int = std::stoi(point2_y);
 //    std::cout << "A<point1_y_int, point2_y_int> = " << point1_y_int << ", " << point2_y_int << ">" << std::endl;
-    Point p1 = Point(point1_y_int, 0);
-    Point p2 = Point(point2_y_int, window_size-1); // TODO: consider time delta column
+    int first_x_coord = x_coords.front(); assert(first_x_coord == 0); // TODO: comment out
+    Point p1 = Point(point1_y_int, 0); // x_coords.front() == 0
+    Point p2 = Point(point2_y_int, x_coords.back());
     Line* line = new Line(&p1, &p2);
 //    std::cout << "B<point1_y_int, point2_y_int> = " << line->getValue(0) << ", " << line->getValue(window_size-1) << ">" << std::endl;
 
-    return proyectPointsOntoLine(line, window_size);
+    return proyectPointsOntoLine(line, x_coords);
 }
 
-std::vector<std::string> PWLHWindow::proyectPointsOntoLine(Line* line, int window_size){
-    // TODO: consider time delta column
+std::vector<std::string> PWLHWindow::proyectPointsOntoLine(Line* line, std::vector<int> x_coords){
+    int window_size = x_coords.size();
     std::vector<std::string> res(window_size);
     for (int i=0; i < window_size; i++){
-        double value = line->getValue(i);
+        int x_coord = x_coords.at(i);
+        double value = line->getValue(x_coord);
         res[i] = StringUtils::doubleToString(value);
     }
     return res;
