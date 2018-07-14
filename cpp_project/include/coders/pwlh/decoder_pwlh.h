@@ -14,6 +14,8 @@ private:
     void decodeWindow(std::vector<std::string> & column);
     void decodeWindowDouble(std::vector<std::string> & column, int window_size);
     void decodeWindowInt(std::vector<std::string> & column, int window_size);
+    void addNullPoints(std::vector<std::string> & column, int window_size);
+    void addPoints(std::vector<std::string> & column, int window_size, std::vector<std::string> decoded_points);
 
 public:
     using DecoderCols::DecoderCols;
