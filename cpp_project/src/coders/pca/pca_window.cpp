@@ -34,9 +34,9 @@ void PCAWindow::addValue(std::string x){
 }
 
 void PCAWindow::addFirstValue(std::string x){
-    if (x[0] == 'N'){
+    if (x[0] == 'N'){ // TODO: move 'N' to a constant
         nan_window = true;
-        constant_value = "N";
+        constant_value = "N"; // TODO: move "N" to a constant
     }
     else { // x is an integer
         nan_window = false;
@@ -48,7 +48,7 @@ void PCAWindow::addFirstValue(std::string x){
 }
 
 void PCAWindow::addNonFirstValue(std::string x){
-    if (x[0] == 'N'){
+    if (x[0] == 'N'){ // TODO: move 'N' to a constant
         if (!nan_window){
             constant_value = "";
         }

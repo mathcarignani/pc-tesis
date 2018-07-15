@@ -25,6 +25,7 @@ void CoderPWLH::codeColumnBefore(){
 }
 
 void CoderPWLH::codeColumnWhile(std::string csv_value){
+//    std::cout << "row_index = " << row_index << std::endl;
     int x_delta = time_delta_vector[row_index]; // >= 0
     if (!window.conditionHolds(csv_value, x_delta)){
         codeWindow(window);
@@ -50,37 +51,37 @@ void CoderPWLH::codeWindow(PWLHWindow & window){
 
 void CoderPWLH::codeWindowDouble(PWLHWindow & window){
     if (window.nan_window){
-//        std::cout << "D window.nan_window" << std::endl;
+//        std::cout << "   D window.nan_window" << std::endl;
         codeFloat(FLT_MAX); // no need to code another value
     }
     else if (window.length > 1){
-//        std::cout << "D window.length > 1" << std::endl;
         float point1_y = window.getPoint1Y();
         float point2_y = window.getPoint2Y();
+//        std::cout << "   D window.length > 1.. point1_y = " << point1_y << ", point2_y" << point2_y << std::endl;
         codeFloat(point1_y);
         codeFloat(point2_y);
     }
     else { // window.length == 1 => this code can only run the last time codeWindow is called
         // IMPORTANT: window.constant_value_float is an int casted as a float
-//        std::cout << "D else" << std::endl;
+//        std::cout << "   D else" << std::endl;
         codeFloat(window.constant_value_float); // no need to code another value
     }
 }
 
 void CoderPWLH::codeWindowInt(PWLHWindow & window){
     if (window.nan_window){
-        std::cout << "I window.nan_window" << std::endl;
+//        std::cout << "   I window.nan_window" << std::endl;
         codeValueRaw(window.constant_value); // no need to code another value
     }
     else if (window.length > 1){
-        std::cout << "I window.length > 1" << std::endl;
         std::string point1_y = window.getPoint1YIntegerMode();
         std::string point2_y = window.getPoint2YIntegerMode();
+//        std::cout << "   I window.length > 1.. point1_y = " << point1_y << ", point2_y" << point2_y << std::endl;
         codeValueRaw(point1_y);
         codeValueRaw(point2_y);
     }
     else { // window.length == 1 => this code can only run the last time codeWindow is called
-        std::cout << "I else" << std::endl;
+//        std::cout << "   I else" << std::endl;
         codeValueRaw(window.constant_value); // no need to code another value
     }
 }

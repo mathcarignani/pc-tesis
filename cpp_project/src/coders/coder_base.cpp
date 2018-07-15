@@ -14,7 +14,7 @@ void CoderBase::codeDataRowsCount(){
 // It also checks the minimum and maximum constraints.
 //
 int CoderBase::codeValue(std::string x){
-    if (x[0] == 'N'){ return dataset.nan(); }
+    if (x[0] == NO_DATA_CHAR){ return dataset.nan(); }
 
     int x_int = std::stoi(x);
     if (dataset.insideRange(x_int)) { return x_int + dataset.offset(); }

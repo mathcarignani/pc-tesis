@@ -44,6 +44,12 @@ int LinearBucket::getSize()
 //            Point &vertex2: second point
 void LinearBucket::getAproximatedLine(Point &vertex1, Point &vertex2)
 {
+	getAproximatedLineMOD(vertex1, vertex2, -1);
+}
+
+
+void LinearBucket::getAproximatedLineMOD(Point &vertex1, Point &vertex2, int x_coord) ////////////////////////////// MOD
+{
 	DynArray<Point*>* hull = polygon->getConvexHull();
 	int size = hull->size();
 	double minWidth = 0;
@@ -79,7 +85,8 @@ void LinearBucket::getAproximatedLine(Point &vertex1, Point &vertex2)
 		Line l2(l1.getSlope(), l1.getIntercept() + haftWidth);
 		vertex1.x = 0;
 		vertex1.y = l2.getValue(vertex1.x);
-		vertex2.x = polygon->getSize() - 1;
+		if (x_coord == -1){ vertex2.x = polygon->getSize() - 1; } // original code
+		else {  			vertex2.x = x_coord; } // MOD code
 		vertex2.y = l2.getValue(vertex2.x);
 	}
 	else if( size == 1)
@@ -93,7 +100,8 @@ void LinearBucket::addPoint(double value)
 	polygon->addPoint(polygon->getSize(), value);
 }
 
-void LinearBucket::addPointMOD(double time, double value){ ///////////////////////////////////////////////////////// MOD
+void LinearBucket::addPointMOD(double time, double value) ////////////////////////////////////////////////////////// MOD
+{
     polygon->addPoint(time, value);
 }
 

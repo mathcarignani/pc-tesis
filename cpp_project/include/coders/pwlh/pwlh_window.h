@@ -29,7 +29,7 @@ public:
     PWLHWindow();
     PWLHWindow(int max_window_size_, int error_threshold_, Range range_, bool integer_mode_);
     bool conditionHolds(std::string x, int x_delta);
-    bool checkIntegerModeConstraint();
+    bool checkIntegerModeConstraint(int new_x_coord);
     bool isFull();
     bool isEmpty();
     void addFirstValue(std::string x);

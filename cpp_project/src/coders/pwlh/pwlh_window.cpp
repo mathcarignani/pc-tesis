@@ -28,7 +28,7 @@ bool PWLHWindow::conditionHolds(std::string x, int x_delta){
     else if (isFull()){
         return false;
     }
-    else if (x[0] == 'N'){
+    else if (x[0] == 'N'){ // TODO: move 'N' to a constant
         if (nan_window){ length++; return true;  }
         else {                     return false; }
     }
@@ -37,28 +37,31 @@ bool PWLHWindow::conditionHolds(std::string x, int x_delta){
 
     int x_int = std::stoi(x);
     int new_x_coord = x_coord + x_delta;
+//    std::cout << "addPointMOD, new_x_coord = " << new_x_coord << " , x_int = " << x_int << std::endl;
     bucket->addPointMOD(new_x_coord, x_int);
 
-    if (bucket->checkEpsConstraint() && checkIntegerModeConstraint()){ // bucket is valid
-//                std::cout << "BUCKET IS VALID" << std::endl;
+    if (bucket->checkEpsConstraint() && checkIntegerModeConstraint(new_x_coord)){ // bucket is valid
+//        std::cout << "BUCKET IS VALID" << std::endl;
         length++; x_coord = new_x_coord;
         return true;
     }
     else { // bucket is invalid
-//                std::cout << "ELSE" << std::endl;
+//        std::cout << "ELSE" << std::endl;
         bucket->removePoint();
-        bucket->getAproximatedLine(p1, p2);
-        std::cout << "p1=(x,y)=" << p1.x << "," << p1.y << std::endl;
-        std::cout << "p2=(x,y)=" << p2.x << "," << p2.y << std::endl;
+        bucket->getAproximatedLineMOD(p1, p2, x_coord);
+//        std::cout << "p1=(x,y)=" << p1.x << "," << p1.y << std::endl;
+//        std::cout << "p2=(x,y)=" << p2.x << "," << p2.y << std::endl;
         assert(p1.x == 0);
         assert(p2.x == x_coord);
         return false;
     }
-
 }
 
-bool PWLHWindow::checkIntegerModeConstraint(){
-    bucket->getAproximatedLine(p1, p2);
+bool PWLHWindow::checkIntegerModeConstraint(int new_x_coord){
+//    std::cout << "checkIntegerModeConstraint" << std::endl;
+    bucket->getAproximatedLineMOD(p1, p2, new_x_coord);
+//    std::cout << "p1=(x,y)=" << p1.x << "," << p1.y << std::endl;
+//    std::cout << "p2=(x,y)=" << p2.x << "," << p2.y << std::endl;
     if (!integer_mode){ return true; }
 
     // this constraint is only checked when running in integer mode
@@ -75,9 +78,9 @@ bool PWLHWindow::isEmpty(){
 
 void PWLHWindow::addFirstValue(std::string x){
     length = 1;
-    if (x[0] == 'N'){
+    if (x[0] == 'N'){ // TODO: move 'N' to a constant
         nan_window = true;
-        constant_value = "N";
+        constant_value = "N"; // TODO: move "N" to a constant
         constant_value_float = 0; // doesn't matter
     }
     else { // x is an integer

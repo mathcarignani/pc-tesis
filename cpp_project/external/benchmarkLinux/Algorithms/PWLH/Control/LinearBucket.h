@@ -26,6 +26,7 @@ public:
 
 	// Get approximated line of this bucket
 	void getAproximatedLine(Point& vertex1, Point& vertex2);
+	void getAproximatedLineMOD(Point& vertex1, Point& vertex2, int x_coord); /////////////////////////////////////// MOD
 
 	void addPoint(double value);
 	void addPointMOD(double time, double value); /////////////////////////////////////////////////////////////////// MOD

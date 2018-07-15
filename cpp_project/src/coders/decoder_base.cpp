@@ -9,7 +9,7 @@ void DecoderBase::decodeDataRowsCount(){
 }
 
 std::string DecoderBase::decodeValue(int y){
-    if (y == dataset.nan()) { return "N"; }
+    if (y == dataset.nan()) { return NO_DATA; }
 
     y -= dataset.offset();
     if (dataset.insideRange(y)) { return std::to_string(y); }
