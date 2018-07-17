@@ -10,7 +10,7 @@ def execute(exe_str):
     print ">>>>>>>>>>>>>>>>>>>>>>>>>>>> C++"
     print exe_str
     print ">>>>>>>>>>>>>>>>>>>>>>>>>>>> C++"
-    os.system(exe_str)
+    # os.system(exe_str)
     column_bits = []
     sub = subprocess.Popen(exe_str.split(" "), stdout=subprocess.PIPE)
     stdout = sub.communicate()[0]
