@@ -3,6 +3,7 @@
 
 #include "string_utils.h"
 #include <cmath>
+#include "constants.h"
 
 void DecoderSlideFilter::setCoderParams(int max_window_size_){
     max_window_size_bit_length = StringUtils::bitLength(max_window_size_);
@@ -17,7 +18,7 @@ std::vector<std::string> DecoderSlideFilter::decodeColumn(){
     while (row_index < data_rows_count){
         decodeWindow(column);
 
-        if (current_value == NO_DATA || previous_value == current_value || current_window_size == 1){
+        if (current_value == Constants::NO_DATA || previous_value == current_value || current_window_size == 1){
             for (int i=0; i < current_window_size; i++){
                 column.push_back(current_value);
                 row_index++;

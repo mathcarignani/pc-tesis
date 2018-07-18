@@ -2,6 +2,7 @@
 #include "pwlh_window.h"
 
 #include "string_utils.h"
+#include "constants.h"
 
 
 PWLHWindow::PWLHWindow(){}
@@ -28,7 +29,7 @@ bool PWLHWindow::conditionHolds(std::string x, int x_delta){
     else if (isFull()){
         return false;
     }
-    else if (x[0] == 'N'){ // TODO: move 'N' to a constant
+    else if (x[0] == Constants::NO_DATA_CHAR){
         if (nan_window){ length++; return true;  }
         else {                     return false; }
     }
@@ -78,9 +79,9 @@ bool PWLHWindow::isEmpty(){
 
 void PWLHWindow::addFirstValue(std::string x){
     length = 1;
-    if (x[0] == 'N'){ // TODO: move 'N' to a constant
+    if (x[0] == Constants::NO_DATA_CHAR){
         nan_window = true;
-        constant_value = "N"; // TODO: move "N" to a constant
+        constant_value = Constants::NO_DATA;
         constant_value_float = 0; // doesn't matter
     }
     else { // x is an integer

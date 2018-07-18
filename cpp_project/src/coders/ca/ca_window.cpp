@@ -2,7 +2,7 @@
 #include "ca_window.h"
 
 #include "string_utils.h"
-#include <iostream>
+#include "constants.h"
 
 CAWindow::CAWindow() {}
 
@@ -39,7 +39,7 @@ void CAWindow::createNonNanWindow(std::string incoming_value_str, int incoming_v
 
 void CAWindow::createNanWindow(){
     nan_window = true;
-    constant_value = "N"; // TODO: move "N" to a constant
+    constant_value = Constants::NO_DATA;
     archived_value = CAPoint(); // we don't use this value
     snapshot_value = archived_value; // we don't use this value
     length = 1;

@@ -2,6 +2,7 @@
 #include "pca_window.h"
 
 #include <iostream>
+#include "constants.h"
 
 PCAWindow::PCAWindow() {}
 
@@ -34,9 +35,9 @@ void PCAWindow::addValue(std::string x){
 }
 
 void PCAWindow::addFirstValue(std::string x){
-    if (x[0] == 'N'){ // TODO: move 'N' to a constant
+    if (x[0] == Constants::NO_DATA_CHAR){
         nan_window = true;
-        constant_value = "N"; // TODO: move "N" to a constant
+        constant_value = Constants::NO_DATA;
     }
     else { // x is an integer
         nan_window = false;
@@ -48,7 +49,7 @@ void PCAWindow::addFirstValue(std::string x){
 }
 
 void PCAWindow::addNonFirstValue(std::string x){
-    if (x[0] == 'N'){ // TODO: move 'N' to a constant
+    if (x[0] == Constants::NO_DATA_CHAR){
         if (!nan_window){
             constant_value = "";
         }

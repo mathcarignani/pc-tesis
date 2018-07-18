@@ -555,6 +555,33 @@ src/coders/cols/decoder_cols.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/cols/decoder_cols.cpp.s
 .PHONY : src/coders/cols/decoder_cols.cpp.s
 
+src/coders/constants.o: src/coders/constants.cpp.o
+
+.PHONY : src/coders/constants.o
+
+# target to build an object file
+src/coders/constants.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/constants.cpp.o
+.PHONY : src/coders/constants.cpp.o
+
+src/coders/constants.i: src/coders/constants.cpp.i
+
+.PHONY : src/coders/constants.i
+
+# target to preprocess a source file
+src/coders/constants.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/constants.cpp.i
+.PHONY : src/coders/constants.cpp.i
+
+src/coders/constants.s: src/coders/constants.cpp.s
+
+.PHONY : src/coders/constants.s
+
+# target to generate assembly for a file
+src/coders/constants.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/constants.cpp.s
+.PHONY : src/coders/constants.cpp.s
+
 src/coders/decoder_base.o: src/coders/decoder_base.cpp.o
 
 .PHONY : src/coders/decoder_base.o
@@ -1341,6 +1368,9 @@ help:
 	@echo "... src/coders/cols/decoder_cols.o"
 	@echo "... src/coders/cols/decoder_cols.i"
 	@echo "... src/coders/cols/decoder_cols.s"
+	@echo "... src/coders/constants.o"
+	@echo "... src/coders/constants.i"
+	@echo "... src/coders/constants.s"
 	@echo "... src/coders/decoder_base.o"
 	@echo "... src/coders/decoder_base.i"
 	@echo "... src/coders/decoder_base.s"

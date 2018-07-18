@@ -5,6 +5,7 @@
 #include "bit_stream_reader.h"
 #include "csv_writer.h"
 #include "dataset.h"
+#include "constants.h"
 
 
 class DecoderBase {
@@ -26,8 +27,6 @@ protected:
     float decodeFloat();
 
 public:
-    std::string NO_DATA = "N";
-    char NO_DATA_CHAR = 'N';
     DecoderBase(BitStreamReader &input_file, CSVWriter &output_csv) : input_file(input_file), output_csv(output_csv) { }
     void decodeFile();
     void close();

@@ -6,6 +6,7 @@
 #include "bit_stream_writer.h"
 #include "csv_reader.h"
 #include "dataset.h"
+#include "constants.h"
 
 
 class CoderBase {
@@ -31,8 +32,6 @@ protected:
     void codeFloat(float x);
 
 public:
-    std::string NO_DATA = "N";
-    char NO_DATA_CHAR = 'N';
     CoderBase(CSVReader &input_csv, BitStreamWriter &output_file) : input_csv(input_csv), output_file(output_file) { }
     void codeFile();
     void printBits();

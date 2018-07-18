@@ -3,6 +3,7 @@
 
 #include "string_utils.h"
 #include "pca_window.h"
+#include "constants.h"
 
 APCAWindow::APCAWindow() {}
 
@@ -24,7 +25,7 @@ bool APCAWindow::conditionHolds(std::string x){
     else if (isFull()){
         return false;
     }
-    else if (x[0] == 'N'){ // TODO: move 'N' to a constant
+    else if (x[0] == Constants::NO_DATA_CHAR){
         if (nan_window){ length++; return true;  }
         else {                     return false; }
     }
@@ -68,9 +69,9 @@ bool APCAWindow::isEmpty(){
 
 void APCAWindow::addFirstValue(std::string x){
     length = 1;
-    if (x[0] == 'N'){ // TODO: move 'N' to a constant
+    if (x[0] == Constants::NO_DATA_CHAR){
         nan_window = true;
-        constant_value = "N"; // TODO: move "N" to a constant
+        constant_value = Constants::NO_DATA;
     }
     else { // x is an integer
         nan_window = false;

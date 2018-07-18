@@ -28,7 +28,7 @@ void CoderCA::code(CAWindow & window, bool force_code, std::string x){
         codeWindow(window, window.length, window.constant_value);
     }
     else if (window.isEmpty()){
-        if (x[0] == NO_DATA_CHAR){ // this condition can only be true on the first iteration
+        if (x[0] == Constants::NO_DATA_CHAR){ // this condition can only be true on the first iteration
             window.createNanWindow();
         }
         else { // x is an integer
@@ -44,7 +44,7 @@ void CoderCA::code(CAWindow & window, bool force_code, std::string x){
     }
     else if (window.isFull()){
         codeWindow(window, window.length, window.constant_value);
-        if (x[0] == NO_DATA_CHAR){
+        if (x[0] == Constants::NO_DATA_CHAR){
             window.createNanWindow();
         }
         else { // x is an integer
@@ -53,7 +53,7 @@ void CoderCA::code(CAWindow & window, bool force_code, std::string x){
             window.createNonNanWindow(x, x_int);
         }
     }
-    else if (x[0] == NO_DATA_CHAR){
+    else if (x[0] == Constants::NO_DATA_CHAR){
         if (window.nan_window){
             window.updateLength(window.length + 1);
         }

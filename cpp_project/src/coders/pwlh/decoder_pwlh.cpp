@@ -4,6 +4,7 @@
 #include "string_utils.h"
 #include "pwlh_window.h"
 #include <cfloat>
+#include "constants.h"
 
 void DecoderPWLH::setCoderParams(int max_window_size_, bool integer_mode_){
     max_window_size_bit_length = StringUtils::bitLength(max_window_size_);
@@ -51,7 +52,7 @@ void DecoderPWLH::decodeWindowDouble(std::vector<std::string> & column, int wind
 void DecoderPWLH::decodeWindowInt(std::vector<std::string> & column, int window_size){
 //    std::cout << "WINDOW SIZE = " << window_size << std::endl;
     std::string value = decodeValueRaw();
-    if (value == NO_DATA){
+    if (value == Constants::NO_DATA){
         addNullPoints(column, window_size);
     }
     else if (window_size > 1) {
@@ -72,7 +73,7 @@ void DecoderPWLH::decodeWindowInt(std::vector<std::string> & column, int window_
 void DecoderPWLH::addNullPoints(std::vector<std::string> & column, int window_size){
     for (int i=0; i < window_size; i++){
 //         std::cout << "OUTPUT >>>>>>>>>>>>>>>> " << "N" << std::endl;
-        column.push_back(NO_DATA);
+        column.push_back(Constants::NO_DATA);
         row_index++;
     }
 }
