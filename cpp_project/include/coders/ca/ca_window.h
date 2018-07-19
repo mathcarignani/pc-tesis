@@ -21,6 +21,7 @@ public:
     int length;
     std::string constant_value;
     bool nan_window;
+    int x_coord;
 
     CAWindow();
     CAWindow(int max_window_size_, int error_threshold_);
@@ -29,8 +30,8 @@ public:
     void updateSMinAndSMax(CAPoint incoming_point);
     void createNonNanWindow(std::string incoming_value_str, int incoming_value);
     void createNanWindow();
-    bool conditionHolds(CAPoint incoming_point, std::string x);
-    void updateValues(std::string x, int x_int);
+    bool conditionHolds(int x_delta, int x_int, std::string x);
+    void updateValues(std::string x, int x_int, int x_delta);
     void updateLength(int new_length);
     void printState();
 };

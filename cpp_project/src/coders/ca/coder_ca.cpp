@@ -7,86 +7,88 @@ void CoderCA::setCoderParams(int max_window_size_, std::vector<int> error_thresh
 }
 
 void CoderCA::codeColumnBefore(){
-    window = createWindow();
+    int error_threshold = error_thresholds_vector.at(column_index);
+    window = CAWindow(max_window_size, error_threshold);
+    max_window_size_bit_length = window.max_window_size_bit_length;
 }
 
 void CoderCA::codeColumnWhile(std::string csv_value){
-    code(window, false, csv_value);
+    int x_delta = time_delta_vector[row_index]; // >= 0
+    code(window, csv_value, x_delta);
 }
 
 void CoderCA::codeColumnAfter(){
-    code(window, true, "0"); // force code
+    codeWindow(window.length, window.constant_value);
 }
 
-CAWindow CoderCA::createWindow(){
-    int error_threshold = error_thresholds_vector.at(column_index);
-    return CAWindow(max_window_size, error_threshold);
-}
+//
+// NOTE: when force_code is true, the values of x and x_delta doesn't matter
+//
+// TODO: consider the x_delta == 0 case
+//
+void CoderCA::code(CAWindow & window, std::string x, int x_delta){
+    bool no_data_x = x[0] == Constants::NO_DATA_CHAR;
+    int x_int;
+    if (!no_data_x) { x_int = std::stoi(x); }
 
-void CoderCA::code(CAWindow & window, bool force_code, std::string x){
-    if (force_code){
-        codeWindow(window, window.length, window.constant_value);
-    }
-    else if (window.isEmpty()){
-        if (x[0] == Constants::NO_DATA_CHAR){ // this condition can only be true on the first iteration
+    if (window.isEmpty()){
+        if (no_data_x){ // this condition can only be true on the first iteration
             window.createNanWindow();
+            return;
         }
-        else { // x is an integer
-            int x_int = std::stoi(x);
-            if (window.nan_window){
-                codeWindow(window, 1, x);
-                window.createNonNanWindow(x, x_int);
-            }
-            else {
-                window.updateValues(x, x_int);
-            }
-        }
-    }
-    else if (window.isFull()){
-        codeWindow(window, window.length, window.constant_value);
-        if (x[0] == Constants::NO_DATA_CHAR){
-            window.createNanWindow();
-        }
-        else { // x is an integer
-            int x_int = std::stoi(x);
-            codeWindow(window, 1, x);
+        // x is an integer
+        if (window.nan_window){
+            codeWindow(1, x);
             window.createNonNanWindow(x, x_int);
         }
+        else { //
+            window.updateValues(x, x_int, x_delta);
+        }
+        return;
     }
-    else if (x[0] == Constants::NO_DATA_CHAR){
+    if (window.isFull()){
+        codeWindow(window.length, window.constant_value);
+        if (no_data_x){
+            window.createNanWindow();
+            return;
+        }
+        // x is an integer
+        codeWindow(1, x);
+        window.createNonNanWindow(x, x_int);
+        return;
+    }
+    if (no_data_x){
         if (window.nan_window){
             window.updateLength(window.length + 1);
+            return;
         }
-        else {
-            codeWindow(window, window.length, window.constant_value);
-            window.createNanWindow();
-        }
+        codeWindow(window.length, window.constant_value);
+        window.createNanWindow();
+        return;
     }
-    else { // x is an integer
-        int x_int = std::stoi(x);
-        if (window.nan_window){
-            codeWindow(window, window.length, window.constant_value); // code nan window
-            codeWindow(window, 1, x); // code single value window
-            window.createNonNanWindow(x, x_int);
-        }
-        else {
-            CAPoint incoming_point = CAPoint(window.length + 1, x_int);
-            if (not window.conditionHolds(incoming_point, x)){
+    // x is an integer
+    if (window.nan_window){
+        codeWindow(window.length, window.constant_value); // code nan window
+        codeWindow(1, x); // code single value window
+        window.createNonNanWindow(x, x_int);
+        return;
+    }
+
+    // non-nan window
+    if (not window.conditionHolds(x_delta, x_int, x)){
 //                std::cout << "(5.2)" << std::endl;
-                codeWindow(window, window.length, window.constant_value);
-                codeWindow(window, 1, x);
-                window.createNonNanWindow(x, x_int);
-            }
-            else {
+        codeWindow(window.length, window.constant_value);
+        codeWindow(1, x);
+        window.createNonNanWindow(x, x_int);
+    }
+    else {
 //                std::cout << "(5.3)" << std::endl;
-            }
-        }
     }
 }
 
-void CoderCA::codeWindow(CAWindow & window, int window_length, std::string window_value){
+void CoderCA::codeWindow(int window_length, std::string window_value){
     if (window_length == 0) { return; }
-    dataset.addBits(window.max_window_size_bit_length);
-    output_file.pushInt(window_length, window.max_window_size_bit_length);
+    dataset.addBits(max_window_size_bit_length);
+    output_file.pushInt(window_length, max_window_size_bit_length);
     codeValueRaw(window_value);
 }

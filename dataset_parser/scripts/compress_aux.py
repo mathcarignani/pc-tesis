@@ -39,12 +39,12 @@ DATASETS_ARRAY = [
 # ]
 
 CODERS_ARRAY = [
-    {
-        'name': 'CoderBasic',
-        'coder': CoderBasic,
-        'decoder': DecoderBasic,
-        'o_folder': 'basic'
-    },
+    # {
+    #     'name': 'CoderBasic',
+    #     'coder': CoderBasic,
+    #     'decoder': DecoderBasic,
+    #     'o_folder': 'basic'
+    # },
     # {
     #     'name': 'CoderPCA',
     #     'coder': CoderPCA,
@@ -59,21 +59,21 @@ CODERS_ARRAY = [
     #     'o_folder': 'apca',
     #     'params': {'max_window_size': WINDOW_SIZES}
     # },
-    # {
-    #     'name': 'CoderCA',
-    #     'coder': CoderCA,
-    #     'decoder': DecoderCA,
-    #     'o_folder': 'ca',
-    #     'params': {'max_window_size': WINDOW_SIZES}
-    # },
     {
-        'name': 'CoderPWLH',
-        'o_folder': 'pwlh',
+        'name': 'CoderCA',
+        'coder': CoderCA,
+        'decoder': DecoderCA,
+        'o_folder': 'ca',
         'params': {'max_window_size': WINDOW_SIZES}
     },
-    {
-        'name': 'CoderPWLHint',
-        'o_folder': 'pwlh-int',
-        'params': {'max_window_size': WINDOW_SIZES}
-    }
+    # {
+    #     'name': 'CoderPWLH',
+    #     'o_folder': 'pwlh',
+    #     'params': {'max_window_size': WINDOW_SIZES}
+    # },
+    # {
+    #     'name': 'CoderPWLHint',
+    #     'o_folder': 'pwlh-int',
+    #     'params': {'max_window_size': WINDOW_SIZES}
+    # }
 ]

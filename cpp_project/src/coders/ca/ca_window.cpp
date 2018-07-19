@@ -18,49 +18,53 @@ void CAWindow::updateSMinAndSMax(CAPoint incoming_point){
     CALine s_min_new = CALine::sMin(archived_value, incoming_point, error_threshold);
     CALine s_max_new = CALine::sMax(archived_value, incoming_point, error_threshold);
 
-    if (s_min_new.yIntersection(incoming_point) > s_min.yIntersection(incoming_point)){
-        s_min = s_min_new;
-    }
-
-    if (s_max_new.yIntersection(incoming_point) < s_max.yIntersection(incoming_point)){
-        s_max = s_max_new;
-    }
+    if (s_min_new.yIntersection(incoming_point) > s_min.yIntersection(incoming_point)){ s_min = s_min_new; }
+    if (s_max_new.yIntersection(incoming_point) < s_max.yIntersection(incoming_point)){ s_max = s_max_new; }
 }
 
 void CAWindow::createNonNanWindow(std::string incoming_value_str, int incoming_value){
     nan_window = false;
-    constant_value = incoming_value_str;
-    archived_value = CAPoint(0, incoming_value);
-    snapshot_value = archived_value;
     length = 0;
+    constant_value = incoming_value_str;
+    x_coord = 0;
+    archived_value = CAPoint(x_coord, incoming_value);
+    snapshot_value = archived_value;
     s_min = CALine();
     s_max = CALine();
 }
 
 void CAWindow::createNanWindow(){
     nan_window = true;
-    constant_value = Constants::NO_DATA;
-    archived_value = CAPoint(); // we don't use this value
-    snapshot_value = archived_value; // we don't use this value
     length = 1;
-    s_min = CALine(); // we don't use this value
-    s_max = CALine(); // we don't use this value
+    constant_value = Constants::NO_DATA;
+    // we don't use the following variables
+    x_coord = 0;
+    archived_value = CAPoint();
+    snapshot_value = archived_value;
+    s_min = CALine();
+    s_max = CALine();
 }
 
-bool CAWindow::conditionHolds(CAPoint incoming_point, std::string x){
+bool CAWindow::conditionHolds(int x_delta, int x_int, std::string x){
+    int new_x_coord = x_coord + x_delta;
+    CAPoint incoming_point = CAPoint(new_x_coord, x_int);
     bool condition_holds = not (s_min.pointBelowLine(incoming_point) or s_max.pointAboveLine(incoming_point));
     if (condition_holds){
+        length++;
+        x_coord = new_x_coord;
         snapshot_value = incoming_point;
         constant_value = x;
         updateSMinAndSMax(incoming_point);
-        length++;
     }
     return condition_holds;
 }
 
-void CAWindow::updateValues(std::string x, int x_int){
+void CAWindow::updateValues(std::string x, int x_int, int x_delta){
+    int new_x_coord = x_coord + x_delta;
+    CAPoint incoming_point = CAPoint(new_x_coord, x_int);
     length = 1;
-    snapshot_value = CAPoint(length, x_int);
+    x_coord = new_x_coord;
+    snapshot_value = incoming_point;
     constant_value = x;
     s_min = CALine::sMin(archived_value, snapshot_value, error_threshold);
     s_max = CALine::sMax(archived_value, snapshot_value, error_threshold);

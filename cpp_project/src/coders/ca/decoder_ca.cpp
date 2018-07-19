@@ -42,11 +42,19 @@ void DecoderCA::createWindow(std::vector<std::string> & column, std::string prev
     int current_value_int = std::stoi(current_value);
 
     CAPoint first_point = CAPoint(0, previous_value_int);
-    CAPoint last_point = CAPoint(current_window_size, current_value_int);
+    int last_point_time_delta = 0;
+    for (int i=1; i < current_window_size; i++){ last_point_time_delta += time_delta_vector.at(row_index + i); }
+    CAPoint last_point = CAPoint(last_point_time_delta, current_value_int);
     CALine line = CALine(first_point, last_point);
 
+    int current_sum = 0;
+    int time_delta = 0;
+
     for (int i=0; i < current_window_size; i++){
-        CAPoint point = CAPoint(i + 1, 0); // y doesn't matter
+        if (i > 0) { time_delta = time_delta_vector.at(row_index); }
+        current_sum += time_delta;
+
+        CAPoint point = CAPoint(current_sum, 0); // y doesn't matter
         double y = line.yIntersection(point);
         int val = std::round(y);
         std::string val_str = std::to_string(val);
