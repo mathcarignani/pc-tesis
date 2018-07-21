@@ -39,12 +39,12 @@ DATASETS_ARRAY = [
 # ]
 
 CODERS_ARRAY = [
-    # {
-    #     'name': 'CoderBasic',
-    #     'coder': CoderBasic,
-    #     'decoder': DecoderBasic,
-    #     'o_folder': 'basic'
-    # },
+    {
+        'name': 'CoderBasic',
+        'coder': CoderBasic,
+        'decoder': DecoderBasic,
+        'o_folder': 'basic'
+    },
     # {
     #     'name': 'CoderPCA',
     #     'coder': CoderPCA,

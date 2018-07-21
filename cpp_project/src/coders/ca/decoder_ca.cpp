@@ -16,6 +16,7 @@ std::vector<std::string> DecoderCA::decodeColumn(){
     row_index = 0;
 
     while (row_index < data_rows_count){
+        std::cout << "row_index = " << row_index << std::endl;
         decodeWindow(column);
 
         if (current_value == Constants::NO_DATA || previous_value == current_value || current_window_size == 1){
@@ -42,22 +43,27 @@ void DecoderCA::createWindow(std::vector<std::string> & column, std::string prev
     int current_value_int = std::stoi(current_value);
 
     CAPoint first_point = CAPoint(0, previous_value_int);
+    std::cout << "first_point = (0," << previous_value_int << ")" <<  std::endl;
     int last_point_time_delta = 0;
-    for (int i=1; i < current_window_size; i++){ last_point_time_delta += time_delta_vector.at(row_index + i); }
+    for (int i=0; i < current_window_size; i++){ last_point_time_delta += time_delta_vector.at(row_index + i); }
     CAPoint last_point = CAPoint(last_point_time_delta, current_value_int);
+    std::cout << "last_point = (" << last_point_time_delta << "," << current_value_int << ")" <<  std::endl;
     CALine line = CALine(first_point, last_point);
 
     int current_sum = 0;
     int time_delta = 0;
 
     for (int i=0; i < current_window_size; i++){
-        if (i > 0) { time_delta = time_delta_vector.at(row_index); }
+//        if (i > 0) { time_delta = time_delta_vector.at(row_index); }
+        time_delta = time_delta_vector.at(row_index);
         current_sum += time_delta;
 
+        std::cout << "current_sum = " << current_sum <<  std::endl;
         CAPoint point = CAPoint(current_sum, 0); // y doesn't matter
         double y = line.yIntersection(point);
         int val = std::round(y);
         std::string val_str = std::to_string(val);
+        std::cout << "val_str = " << val_str <<  std::endl;
         column.push_back(val_str);
         row_index++;
         if (i == current_window_size - 1){

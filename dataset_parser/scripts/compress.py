@@ -17,31 +17,31 @@ from scripts.compress_python import code_python, decode_python, code_decode_pyth
 from scripts.compress_args import CompressArgs
 
 
-def compare_python_and_cpp(args):
-    # print args.coder_params
-    coder_info, columns_bits_python = code_python(args)
-    py_c_filename = args.compressed_filename
-    _, columns_bits_cpp = code_cpp(args)
-    cpp_c_filename = args.compressed_filename
-    print "Comparing compressed python and cpp files and column bits..."
-    assert(BitStreamUtils.compare_files(args.output_path, py_c_filename, args.output_path, cpp_c_filename))
-    assert(columns_bits_python == columns_bits_cpp)
-    columns_bits = columns_bits_cpp
-
-    decode_python(args)
-    py_d_filename = args.deco_filename
-    decode_cpp(args)
-    cpp_d_filename = args.deco_filename
-    print "Comparing decompressed python and cpp files files..."
-    assert(BitStreamUtils.compare_files(args.output_path, py_d_filename, args.output_path, cpp_d_filename))
-    # csv_compare = CSVCompare(args.output_path, py_d_filename, args.output_path, cpp_d_filename)
-    # assert(csv_compare.compare())
-    print "Comparing original and decompressed files..."
-    csv_compare = CSVCompare(args.input_path, args.input_filename, args.output_path, py_d_filename)
-    same_file = csv_compare.compare(args.coder_params['error_threshold'], True)
-    assert same_file
-
-    return [coder_info, columns_bits, same_file]
+# def compare_python_and_cpp(args):
+#     # print args.coder_params
+#     coder_info, columns_bits_python = code_python(args)
+#     py_c_filename = args.compressed_filename
+#     _, columns_bits_cpp = code_cpp(args)
+#     cpp_c_filename = args.compressed_filename
+#     print "Comparing compressed python and cpp files and column bits..."
+#     assert(BitStreamUtils.compare_files(args.output_path, py_c_filename, args.output_path, cpp_c_filename))
+#     assert(columns_bits_python == columns_bits_cpp)
+#     columns_bits = columns_bits_cpp
+#
+#     decode_python(args)
+#     py_d_filename = args.deco_filename
+#     decode_cpp(args)
+#     cpp_d_filename = args.deco_filename
+#     print "Comparing decompressed python and cpp files files..."
+#     assert(BitStreamUtils.compare_files(args.output_path, py_d_filename, args.output_path, cpp_d_filename))
+#     # csv_compare = CSVCompare(args.output_path, py_d_filename, args.output_path, cpp_d_filename)
+#     # assert(csv_compare.compare())
+#     print "Comparing original and decompressed files..."
+#     csv_compare = CSVCompare(args.input_path, args.input_filename, args.output_path, py_d_filename)
+#     same_file = csv_compare.compare(args.coder_params['error_threshold'], True)
+#     assert same_file
+#
+#     return [coder_info, columns_bits, same_file]
 
 
 def compress_decompress_compare(args):
