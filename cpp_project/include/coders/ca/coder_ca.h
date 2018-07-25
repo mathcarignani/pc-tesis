@@ -21,10 +21,13 @@ private:
     void codeOriginal(CAWindow & window, std::string x, int x_delta);
     void code(CAWindow & window, std::string x, int x_delta);
 
+    void codeValueAndCreateNonNanWindow(CAWindow & window, std::string x, int x_int);
+    void codeWindow(int window_length, std::string window_value);
+
 public:
     using CoderCols::CoderCols;
     void setCoderParams(int max_window_size_, std::vector<int> error_thresholds_vector_);
-    void codeWindow(int window_length, std::string window_value);
+
 };
 
 #endif //CPP_PROJECT_CODER_CA_H

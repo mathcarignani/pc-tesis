@@ -14,12 +14,9 @@
     <list default="true" id="2fbb5dd3-364e-4d62-8cd3-b832deb1f263" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/../cpp_paper/benchmarkLinux/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../cpp_paper/benchmarkLinux/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cpp_project" afterPath="$PROJECT_DIR$/cmake-build-debug/cpp_project" />
       <change beforePath="$PROJECT_DIR$/include/coders/ca/coder_ca.h" afterPath="$PROJECT_DIR$/include/coders/ca/coder_ca.h" />
+      <change beforePath="$PROJECT_DIR$/src/coders/ca/ca_window.cpp" afterPath="$PROJECT_DIR$/src/coders/ca/ca_window.cpp" />
       <change beforePath="$PROJECT_DIR$/src/coders/ca/coder_ca.cpp" afterPath="$PROJECT_DIR$/src/coders/ca/coder_ca.cpp" />
-      <change beforePath="$PROJECT_DIR$/src/coders/ca/decoder_ca.cpp" afterPath="$PROJECT_DIR$/src/coders/ca/decoder_ca.cpp" />
-      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/compress_aux.py" afterPath="$PROJECT_DIR$/../dataset_parser/scripts/compress_aux.py" />
-      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/compress_cpp.py" afterPath="$PROJECT_DIR$/../dataset_parser/scripts/compress_cpp.py" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,8 +42,8 @@
       <file leaf-file-name="ca_window.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/coders/ca/ca_window.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="24" column="15" lean-forward="false" selection-start-line="24" selection-start-column="15" selection-end-line="24" selection-end-column="15" />
+            <state relative-caret-position="-381">
+              <caret line="24" column="84" lean-forward="true" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="84" />
               <folding>
                 <element signature="e#1#23#0" expanded="true" />
               </folding>
@@ -54,11 +51,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="decoder_ca.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="decoder_ca.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/coders/ca/decoder_ca.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="34" column="37" lean-forward="false" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
+            <state relative-caret-position="-23">
+              <caret line="24" column="51" lean-forward="true" selection-start-line="24" selection-start-column="51" selection-end-line="24" selection-end-column="51" />
               <folding>
                 <element signature="e#1#24#0" expanded="true" />
               </folding>
@@ -66,11 +63,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="coder_ca.cpp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="coder_ca.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/coders/ca/coder_ca.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="689">
-              <caret line="65" column="45" lean-forward="true" selection-start-line="65" selection-start-column="45" selection-end-line="65" selection-end-column="45" />
+            <state relative-caret-position="564">
+              <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -79,8 +76,8 @@
       <file leaf-file-name="coder_ca.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/include/coders/ca/coder_ca.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="56" lean-forward="false" selection-start-line="20" selection-start-column="56" selection-end-line="20" selection-end-column="56" />
+            <state relative-caret-position="330">
+              <caret line="23" column="85" lean-forward="false" selection-start-line="23" selection-start-column="85" selection-end-line="23" selection-end-column="85" />
               <folding />
             </state>
           </provider>
@@ -90,8 +87,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>vector</find>
-      <find>OUTPUT</find>
       <find>getAproximatedLine</find>
       <find>csv_value =</find>
       <find>row_index =</find>
@@ -119,7 +114,9 @@
       <find>updateValues</find>
       <find>conditionHolds</find>
       <find>CALine</find>
+      <find>codeWindow(1,</find>
       <find>push_back</find>
+      <find>codeValue(</find>
     </findStrings>
     <replaceStrings>
       <replace>removeChars</replace>
@@ -132,6 +129,7 @@
       <replace>NO_DATA</replace>
       <replace>NO_DATA__CHAR</replace>
       <replace>NO_DATA_CHAR</replace>
+      <replace>codeValue(</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src</dir>
@@ -196,9 +194,9 @@
         <option value="$PROJECT_DIR$/src/coders/coder_base.cpp" />
         <option value="$PROJECT_DIR$/include/coders/coder_base.h" />
         <option value="$PROJECT_DIR$/include/coders/ca/ca_window.h" />
+        <option value="$PROJECT_DIR$/src/coders/ca/decoder_ca.cpp" />
         <option value="$PROJECT_DIR$/src/coders/ca/ca_window.cpp" />
         <option value="$PROJECT_DIR$/include/coders/ca/coder_ca.h" />
-        <option value="$PROJECT_DIR$/src/coders/ca/decoder_ca.cpp" />
         <option value="$PROJECT_DIR$/src/coders/ca/coder_ca.cpp" />
       </list>
     </option>
@@ -214,7 +212,7 @@
     <option name="x" value="-301" />
     <option name="y" value="-1057" />
     <option name="width" value="1845" />
-    <option name="height" value="1019" />
+    <option name="height" value="1057" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -366,12 +364,12 @@
       <workItem from="1531806750455" duration="372000" />
       <workItem from="1531939007300" duration="12570000" />
       <workItem from="1532201273082" duration="10436000" />
-      <workItem from="1532481227332" duration="5242000" />
+      <workItem from="1532481227332" duration="7126000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="322032000" />
+    <option name="totallyTimeSpent" value="323916000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -383,17 +381,18 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-301" y="-1057" width="1845" height="1019" extended-state="0" />
+    <frame x="-301" y="-1057" width="1845" height="1057" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17489035" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.49774265" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.10714286" sideWeight="0.33683047" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16943868" sideWeight="0.33683047" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17819707" sideWeight="0.4520316" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12693156" sideWeight="0.5157372" order="9" side_tool="true" content_ui="tabs" x="-274" y="-702" width="1698" height="313" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.49774265" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23020063" sideWeight="0.29431254" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2012987" sideWeight="0.4677686" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.059251558" sideWeight="0.4677686" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2620545" sideWeight="0.493228" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -880,14 +879,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/coders/ca/coder_ca.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="56" lean-forward="false" selection-start-line="20" selection-start-column="56" selection-end-line="20" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/coders/pwlh/coder_pwlh.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
@@ -896,10 +887,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/coders/ca/decoder_ca.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-23">
+          <caret line="24" column="51" lean-forward="true" selection-start-line="24" selection-start-column="51" selection-end-line="24" selection-end-column="51" />
+          <folding>
+            <element signature="e#1#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/coders/ca/coder_ca.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="23" column="85" lean-forward="false" selection-start-line="23" selection-start-column="85" selection-end-line="23" selection-end-column="85" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/coders/ca/ca_window.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="24" column="15" lean-forward="false" selection-start-line="24" selection-start-column="15" selection-end-line="24" selection-end-column="15" />
+        <state relative-caret-position="-381">
+          <caret line="24" column="84" lean-forward="true" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="84" />
           <folding>
             <element signature="e#1#23#0" expanded="true" />
           </folding>
@@ -908,19 +917,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/coders/ca/coder_ca.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="689">
-          <caret line="65" column="45" lean-forward="true" selection-start-line="65" selection-start-column="45" selection-end-line="65" selection-end-column="45" />
+        <state relative-caret-position="564">
+          <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/coders/ca/decoder_ca.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="34" column="37" lean-forward="false" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
-          <folding>
-            <element signature="e#1#24#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

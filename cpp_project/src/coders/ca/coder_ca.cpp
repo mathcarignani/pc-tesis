@@ -30,35 +30,35 @@ void CoderCA::codeColumnAfter(){
 void CoderCA::codeOriginal(CAWindow & window, std::string x, int x_delta){
     int x_int = std::stoi(x);
 
+//    if (row_index == 0){
+//        codeValueAndCreateNonNanWindow(window, x, x_int);
+//        return;
+//    }
     if (window.isEmpty()){
         std::cout << "window.isEmpty()" << std::endl;
-        if (row_index == 0 || x_delta == 0){
-            codeWindow(1, x);
-            window.createNonNanWindow(x, x_int);
+        if (x_delta == 0){
+            codeValueAndCreateNonNanWindow(window, x, x_int);
         }
         else {
             window.updateValues(x, x_int, x_delta);
         }
         return;
     }
-    if (window.isFull() || x_delta == 0 || not window.conditionHolds(x_delta, x_int, x)){
+    if (x_delta == 0 || window.isFull() || not window.conditionHolds(x_delta, x_int, x)){
         std::cout << "window.isFull()" << std::endl;
         codeWindow(window.length, window.constant_value);
-        codeWindow(1, x);
-        window.createNonNanWindow(x, x_int);
+        codeValueAndCreateNonNanWindow(window, x, x_int);
     }
 }
 
 //
 // NOTE: when force_code is true, the values of x and x_delta doesn't matter
 //
-// TODO: consider the x_delta == 0 case
-//
 void CoderCA::code(CAWindow & window, std::string x, int x_delta){
     bool no_data_x = x[0] == Constants::NO_DATA_CHAR;
 
      assert(!no_data_x);
-//     assert(x_delta > 0);
+     assert(x_delta > 0);
      codeOriginal(window, x, x_delta);
      return;
 
@@ -72,9 +72,8 @@ void CoderCA::code(CAWindow & window, std::string x, int x_delta){
             return;
         }
         // x is an integer
-        if (window.nan_window or x_delta == 0){
-            codeWindow(1, x);
-            window.createNonNanWindow(x, x_int);
+        if (x_delta == 0 || window.nan_window){
+            codeValueAndCreateNonNanWindow(window, x, x_int);
         }
         else { //
             window.updateValues(x, x_int, x_delta);
@@ -89,8 +88,7 @@ void CoderCA::code(CAWindow & window, std::string x, int x_delta){
             return;
         }
         // x is an integer
-        codeWindow(1, x);
-        window.createNonNanWindow(x, x_int);
+        codeValueAndCreateNonNanWindow(window, x, x_int);
         return;
     }
     if (no_data_x){
@@ -107,21 +105,24 @@ void CoderCA::code(CAWindow & window, std::string x, int x_delta){
     if (window.nan_window){
         std::cout << "window.nan_window" << std::endl;
         codeWindow(window.length, window.constant_value); // code nan window
-        codeWindow(1, x); // code single value window
-        window.createNonNanWindow(x, x_int);
+        codeValueAndCreateNonNanWindow(window, x, x_int);
         return;
     }
 
     // non-nan window
-    if (not window.conditionHolds(x_delta, x_int, x) or x_delta == 0){
+    if (x_delta == 0 || not window.conditionHolds(x_delta, x_int, x)){
         std::cout << "not window.conditionHolds(x_delta, x_int, x)" << std::endl;
         codeWindow(window.length, window.constant_value);
-        codeWindow(1, x);
-        window.createNonNanWindow(x, x_int);
+        codeValueAndCreateNonNanWindow(window, x, x_int);
     }
     else {
         std::cout << "else" << std::endl;
     }
+}
+
+void CoderCA::codeValueAndCreateNonNanWindow(CAWindow & window, std::string x, int x_int){
+    codeWindow(1, x);
+    window.createNonNanWindow(x, x_int);
 }
 
 void CoderCA::codeWindow(int window_length, std::string window_value){

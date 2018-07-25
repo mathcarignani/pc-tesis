@@ -45,6 +45,10 @@ void CAWindow::createNanWindow(){
     s_max = CALine();
 }
 
+//
+// TODO: REFACTOR. conditionHolds and updateValues are very similar methods.
+//
+
 bool CAWindow::conditionHolds(int x_delta, int x_int, std::string x){
     int new_x_coord = x_coord + x_delta;
     CAPoint incoming_point = CAPoint(new_x_coord, x_int);
