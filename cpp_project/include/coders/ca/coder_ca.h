@@ -18,6 +18,7 @@ private:
     void codeColumnAfter() override;
 
     CAWindow createWindow();
+    void codeOriginal(CAWindow & window, std::string x, int x_delta);
     void code(CAWindow & window, std::string x, int x_delta);
 
 public:

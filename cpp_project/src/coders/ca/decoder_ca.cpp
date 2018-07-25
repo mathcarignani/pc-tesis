@@ -15,12 +15,16 @@ std::vector<std::string> DecoderCA::decodeColumn(){
     std::string previous_value = "random"; // any value that cannot be read from the csv
     row_index = 0;
 
+    std::cout << "row_index = " << row_index << std::endl;
+
     while (row_index < data_rows_count){
         std::cout << "row_index = " << row_index << std::endl;
         decodeWindow(column);
 
-        if (current_value == Constants::NO_DATA || previous_value == current_value || current_window_size == 1){
+        int time_delta = time_delta_vector.at(row_index);
+        if (current_value == Constants::NO_DATA || previous_value == "random" || time_delta == 0){
             for (int i=0; i < current_window_size; i++){
+                std::cout << ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> PUSH = " << current_value <<  std::endl;
                 column.push_back(current_value);
                 row_index++;
             }
@@ -36,9 +40,11 @@ std::vector<std::string> DecoderCA::decodeColumn(){
 void DecoderCA::decodeWindow(std::vector<std::string> & column){
     current_window_size = input_file.getInt(max_window_size_bit_length);
     current_value = decodeValueRaw();
+    std::cout << "current_window_size = " << current_window_size << ", current_value = " << current_value << std::endl;
 }
 
 void DecoderCA::createWindow(std::vector<std::string> & column, std::string previous_value){
+    std::cout << "previous_value = " << previous_value << ", current_value = " << current_value << std::endl;
     int previous_value_int = std::stoi(previous_value);
     int current_value_int = std::stoi(current_value);
 
@@ -56,6 +62,8 @@ void DecoderCA::createWindow(std::vector<std::string> & column, std::string prev
     for (int i=0; i < current_window_size; i++){
 //        if (i > 0) { time_delta = time_delta_vector.at(row_index); }
         time_delta = time_delta_vector.at(row_index);
+        std::cout << "time_delta = " << time_delta <<  std::endl;
+        if (i > 0) { assert(time_delta > 0); }
         current_sum += time_delta;
 
         std::cout << "current_sum = " << current_sum <<  std::endl;
@@ -63,7 +71,7 @@ void DecoderCA::createWindow(std::vector<std::string> & column, std::string prev
         double y = line.yIntersection(point);
         int val = std::round(y);
         std::string val_str = std::to_string(val);
-        std::cout << "val_str = " << val_str <<  std::endl;
+        std::cout << ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> PUSH = " << val_str <<  std::endl;
         column.push_back(val_str);
         row_index++;
         if (i == current_window_size - 1){
