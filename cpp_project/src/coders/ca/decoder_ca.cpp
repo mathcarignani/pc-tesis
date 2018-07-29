@@ -21,8 +21,7 @@ std::vector<std::string> DecoderCA::decodeColumn(){
         std::cout << "row_index = " << row_index << std::endl;
         decodeWindow(column);
 
-        int time_delta = time_delta_vector.at(row_index);
-        if (current_value == Constants::NO_DATA || previous_value == "random" || time_delta == 0){
+        if (current_value == Constants::NO_DATA || current_window_size == 1){ // || previous_value == current_value || previous_value == "random" || time_delta == 0){
             for (int i=0; i < current_window_size; i++){
                 std::cout << ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> PUSH = " << current_value <<  std::endl;
                 column.push_back(current_value);

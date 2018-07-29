@@ -14,9 +14,8 @@
     <list default="true" id="2fbb5dd3-364e-4d62-8cd3-b832deb1f263" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/../cpp_paper/benchmarkLinux/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../cpp_paper/benchmarkLinux/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/include/coders/ca/coder_ca.h" afterPath="$PROJECT_DIR$/include/coders/ca/coder_ca.h" />
-      <change beforePath="$PROJECT_DIR$/src/coders/ca/ca_window.cpp" afterPath="$PROJECT_DIR$/src/coders/ca/ca_window.cpp" />
       <change beforePath="$PROJECT_DIR$/src/coders/ca/coder_ca.cpp" afterPath="$PROJECT_DIR$/src/coders/ca/coder_ca.cpp" />
+      <change beforePath="$PROJECT_DIR$/src/coders/ca/decoder_ca.cpp" afterPath="$PROJECT_DIR$/src/coders/ca/decoder_ca.cpp" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,11 +50,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="decoder_ca.cpp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="decoder_ca.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/coders/ca/decoder_ca.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-23">
-              <caret line="24" column="51" lean-forward="true" selection-start-line="24" selection-start-column="51" selection-end-line="24" selection-end-column="51" />
+            <state relative-caret-position="556">
+              <caret line="44" column="48" lean-forward="false" selection-start-line="44" selection-start-column="48" selection-end-line="44" selection-end-column="48" />
               <folding>
                 <element signature="e#1#24#0" expanded="true" />
               </folding>
@@ -63,11 +62,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="coder_ca.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="coder_ca.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/coders/ca/coder_ca.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="564">
-              <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+            <state relative-caret-position="186">
+              <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="2" selection-end-line="62" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -194,10 +193,10 @@
         <option value="$PROJECT_DIR$/src/coders/coder_base.cpp" />
         <option value="$PROJECT_DIR$/include/coders/coder_base.h" />
         <option value="$PROJECT_DIR$/include/coders/ca/ca_window.h" />
-        <option value="$PROJECT_DIR$/src/coders/ca/decoder_ca.cpp" />
         <option value="$PROJECT_DIR$/src/coders/ca/ca_window.cpp" />
         <option value="$PROJECT_DIR$/include/coders/ca/coder_ca.h" />
         <option value="$PROJECT_DIR$/src/coders/ca/coder_ca.cpp" />
+        <option value="$PROJECT_DIR$/src/coders/ca/decoder_ca.cpp" />
       </list>
     </option>
   </component>
@@ -364,12 +363,12 @@
       <workItem from="1531806750455" duration="372000" />
       <workItem from="1531939007300" duration="12570000" />
       <workItem from="1532201273082" duration="10436000" />
-      <workItem from="1532481227332" duration="7126000" />
+      <workItem from="1532481227332" duration="7658000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="323916000" />
+    <option name="totallyTimeSpent" value="324448000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -392,7 +391,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.49774265" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23020063" sideWeight="0.29431254" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.059251558" sideWeight="0.4677686" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17359668" sideWeight="0.4677686" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2620545" sideWeight="0.493228" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -887,16 +886,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/coders/ca/decoder_ca.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-23">
-          <caret line="24" column="51" lean-forward="true" selection-start-line="24" selection-start-column="51" selection-end-line="24" selection-end-column="51" />
-          <folding>
-            <element signature="e#1#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/include/coders/ca/coder_ca.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -917,9 +906,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/coders/ca/coder_ca.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="564">
-          <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+        <state relative-caret-position="186">
+          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="2" selection-end-line="62" selection-end-column="14" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/coders/ca/decoder_ca.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="556">
+          <caret line="44" column="48" lean-forward="false" selection-start-line="44" selection-start-column="48" selection-end-line="44" selection-end-column="48" />
+          <folding>
+            <element signature="e#1#24#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

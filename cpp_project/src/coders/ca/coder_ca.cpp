@@ -57,10 +57,10 @@ void CoderCA::codeOriginal(CAWindow & window, std::string x, int x_delta){
 void CoderCA::code(CAWindow & window, std::string x, int x_delta){
     bool no_data_x = x[0] == Constants::NO_DATA_CHAR;
 
-     assert(!no_data_x);
-     assert(x_delta > 0);
-     codeOriginal(window, x, x_delta);
-     return;
+//     assert(!no_data_x);
+//     assert(x_delta > 0);
+//     codeOriginal(window, x, x_delta);
+//     return;
 
     int x_int;
     if (!no_data_x) { x_int = std::stoi(x); }
