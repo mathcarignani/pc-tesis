@@ -5,7 +5,7 @@ void DecoderPCA::setCoderParams(int fixed_window_size_){
     fixed_window_size = fixed_window_size_;
 }
 
-std::vector<std::string> DecoderPCA::decodeColumn(){
+std::vector<std::string> DecoderPCA::decodeDataColumn(){
     std::vector<std::string> column;
     row_index = 0;
     while (data_rows_count - row_index >= fixed_window_size){

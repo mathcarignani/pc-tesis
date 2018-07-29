@@ -2,7 +2,10 @@
 #include "coder_cols.h"
 
 
-void CoderCols::codeDataRows() {
+void CoderCols::codeDataRows(){
+    if (MASK_MODE) {
+        codeNoDataMask();
+    }
     int total_columns = dataset.data_columns_count + 1;
     for(column_index = 0; column_index < total_columns; column_index++) {
         std::cout << "code column_index " << column_index << std::endl;
@@ -11,7 +14,11 @@ void CoderCols::codeDataRows() {
     }
 }
 
-void CoderCols::codeColumn(){
+void CoderCols::codeNoDataMask(){
+    // TODO: implement
+}
+
+void CoderCols::codeColumn() {
     row_index = 0;
     input_csv.goToLine(4); // first data row
     if (column_index == 0) { codeTimeDeltaColumn(); } else { codeDataColumn(); }

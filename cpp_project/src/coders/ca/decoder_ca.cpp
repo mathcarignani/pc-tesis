@@ -10,9 +10,9 @@ void DecoderCA::setCoderParams(int max_window_size_){
 }
 
 
-std::vector<std::string> DecoderCA::decodeColumn(){
+std::vector<std::string> DecoderCA::decodeDataColumn(){
     std::vector<std::string> column;
-    std::string previous_value = "random"; // any value that cannot be read from the csv
+    std::string archived_value = "random"; // any value that cannot be read from the csv
     row_index = 0;
 
     std::cout << "row_index = " << row_index << std::endl;
@@ -21,7 +21,12 @@ std::vector<std::string> DecoderCA::decodeColumn(){
         std::cout << "row_index = " << row_index << std::endl;
         decodeWindow(column);
 
-        if (current_value == Constants::NO_DATA || current_window_size == 1){ // || previous_value == current_value || previous_value == "random" || time_delta == 0){
+        if (current_window_size == 1){
+            std::cout << ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> PUSH = " << current_value <<  std::endl;
+            column.push_back(current_value);
+            row_index++;
+        }
+        else if (current_value == Constants::NO_DATA){
             for (int i=0; i < current_window_size; i++){
                 std::cout << ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> PUSH = " << current_value <<  std::endl;
                 column.push_back(current_value);
@@ -29,9 +34,9 @@ std::vector<std::string> DecoderCA::decodeColumn(){
             }
         }
         else {
-            createWindow(column, previous_value);
+            createWindow(column, archived_value);
         }
-        previous_value = current_value;
+        archived_value = current_value;
     }
     return column;
 }
@@ -42,13 +47,13 @@ void DecoderCA::decodeWindow(std::vector<std::string> & column){
     std::cout << "current_window_size = " << current_window_size << ", current_value = " << current_value << std::endl;
 }
 
-void DecoderCA::createWindow(std::vector<std::string> & column, std::string previous_value){
-    std::cout << "previous_value = " << previous_value << ", current_value = " << current_value << std::endl;
-    int previous_value_int = std::stoi(previous_value);
+void DecoderCA::createWindow(std::vector<std::string> & column, std::string archived_value){
+    std::cout << "archived_value = " << archived_value << ", current_value = " << current_value << std::endl;
+    int archived_value_int = std::stoi(archived_value);
     int current_value_int = std::stoi(current_value);
 
-    CAPoint first_point = CAPoint(0, previous_value_int);
-    std::cout << "first_point = (0," << previous_value_int << ")" <<  std::endl;
+    CAPoint first_point = CAPoint(0, archived_value_int);
+    std::cout << "first_point = (0," << archived_value_int << ")" <<  std::endl;
     int last_point_time_delta = 0;
     for (int i=0; i < current_window_size; i++){ last_point_time_delta += time_delta_vector.at(row_index + i); }
     CAPoint last_point = CAPoint(last_point_time_delta, current_value_int);

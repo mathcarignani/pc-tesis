@@ -10,7 +10,7 @@ private:
     int max_window_size_bit_length;
     bool integer_mode;
 
-    std::vector<std::string> decodeColumn() override;
+    std::vector<std::string> decodeDataColumn() override;
     void decodeWindow(std::vector<std::string> & column);
     void decodeWindowDouble(std::vector<std::string> & column, int window_size);
     void decodeWindowInt(std::vector<std::string> & column, int window_size);

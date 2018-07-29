@@ -9,7 +9,7 @@ class DecoderAPCA: public DecoderCols {
 private:
     int max_window_size_bit_length;
 
-    std::vector<std::string> decodeColumn() override;
+    std::vector<std::string> decodeDataColumn() override;
     void decodeWindow(std::vector<std::string> & column);
 
 public:

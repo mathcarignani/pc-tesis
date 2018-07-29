@@ -3,19 +3,26 @@
 
 
 void DecoderCols::decodeDataRows(){
+    if (MASK_MODE) {
+        decodeNoDataMask();
+    }
     std::vector<std::vector<std::string>> columns;
     int total_columns = dataset.data_columns_count + 1;
     for(column_index = 0; column_index < total_columns; column_index++) {
         std::cout << "decode column_index " << column_index << std::endl;
         dataset.setColumn(column_index);
-        std::vector<std::string> column = decodeColumnAux();
+        std::vector<std::string> column = decodeColumn();
         columns.push_back(column);
     }
     transposeMatrix(columns, total_columns);
 }
 
-std::vector<std::string> DecoderCols::decodeColumnAux(){
-    if (column_index == 0) { return decodeTimeDeltaColumn(); } else { return decodeColumn(); }
+void DecoderCols::decodeNoDataMask() {
+    // TODO: implement
+}
+
+std::vector<std::string> DecoderCols::decodeColumn(){
+    if (column_index == 0) { return decodeTimeDeltaColumn(); } else { return decodeDataColumn(); }
 }
 
 std::vector<std::string> DecoderCols::decodeTimeDeltaColumn(){

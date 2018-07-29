@@ -30,10 +30,6 @@ void CoderCA::codeColumnAfter(){
 void CoderCA::codeOriginal(CAWindow & window, std::string x, int x_delta){
     int x_int = std::stoi(x);
 
-//    if (row_index == 0){
-//        codeValueAndCreateNonNanWindow(window, x, x_int);
-//        return;
-//    }
     if (window.isEmpty()){
         std::cout << "window.isEmpty()" << std::endl;
         if (x_delta == 0){

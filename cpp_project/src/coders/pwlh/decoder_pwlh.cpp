@@ -11,7 +11,7 @@ void DecoderPWLH::setCoderParams(int max_window_size_, bool integer_mode_){
     integer_mode = integer_mode_;
 }
 
-std::vector<std::string> DecoderPWLH::decodeColumn(){
+std::vector<std::string> DecoderPWLH::decodeDataColumn(){
     std::vector<std::string> column;
     row_index = 0;
     decodeWindow(column);

@@ -7,7 +7,7 @@
 class DecoderBasic: public DecoderCols {
 
 private:
-    std::vector<std::string> decodeColumn() override;
+    std::vector<std::string> decodeDataColumn() override;
 
 public:
     using DecoderCols::DecoderCols;

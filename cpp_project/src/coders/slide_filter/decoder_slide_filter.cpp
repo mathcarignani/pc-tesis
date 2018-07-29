@@ -10,7 +10,7 @@ void DecoderSlideFilter::setCoderParams(int max_window_size_){
 }
 
 
-std::vector<std::string> DecoderSlideFilter::decodeColumn(){
+std::vector<std::string> DecoderSlideFilter::decodeDataColumn(){
     std::vector<std::string> column;
     std::string previous_value = "random"; // any value that cannot be read from the csv
     row_index = 0;

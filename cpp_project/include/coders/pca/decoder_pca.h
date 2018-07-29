@@ -9,7 +9,7 @@ class DecoderPCA: public DecoderCols {
 private:
     int fixed_window_size;
 
-    std::vector<std::string> decodeColumn() override;
+    std::vector<std::string> decodeDataColumn() override;
     void decodeWindow(std::vector<std::string> & column, int window_size);
 
 public:
