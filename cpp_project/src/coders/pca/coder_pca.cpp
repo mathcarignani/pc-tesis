@@ -13,6 +13,8 @@ void CoderPCA::codeColumnBefore(){
 }
 
 void CoderPCA::codeColumnWhile(std::string csv_value){
+//    if (Constants::MASK_MODE && Constants::isNoData(csv_value)) { return; } // MASK_MODE => ignore no data
+
     window.addValue(csv_value);
     if (window.isFull()) { codeWindow(window); }
 }
@@ -20,7 +22,7 @@ void CoderPCA::codeColumnWhile(std::string csv_value){
 void CoderPCA::codeColumnAfter(){
     if (!window.isEmpty()) {
         assert(!window.isFull());
-        codeWindowEachValue(window);
+        codeNonConstantWindow(window);
     }
 }
 
@@ -30,17 +32,17 @@ PCAWindow CoderPCA::createWindow(){
 }
 
 void CoderPCA::codeWindow(PCAWindow & window){
-    if (window.hasConstantValue()){ codeWindowAsConstant(window); }
-    else {                          codeWindowEachValue(window);  }
+    if (window.hasConstantValue()){ codeConstantWindow(window); }
+    else {                          codeNonConstantWindow(window);  }
     window.clearWindow();
 }
 
-void CoderPCA::codeWindowAsConstant(PCAWindow & window){
+void CoderPCA::codeConstantWindow(PCAWindow & window){
     codeBit(0);
     codeValueRaw(window.constant_value);
 }
 
-void CoderPCA::codeWindowEachValue(PCAWindow & window){
+void CoderPCA::codeNonConstantWindow(PCAWindow & window){
     codeBit(1);
     for(int i=0; i < window.length; i++){
         std::string csv_value = window.getElement(i);

@@ -9,6 +9,7 @@ struct Dataset {
 private:
     std::vector<ColumnCode> column_code_vector;
     int array_index;
+    bool mask_mode;
 
 public:
     ColumnCode column_code;
@@ -17,6 +18,7 @@ public:
     Dataset();
     Dataset(std::vector<Range> ranges, std::vector<int> bits, int data_columns_count_);
     void setColumn(int column_index);
+    void setMaskMode(bool mask_mode_);
     void addBits(int bits);
     int getBits();
     int bits();

@@ -18,8 +18,8 @@ private:
 
     PCAWindow createWindow();
     void codeWindow(PCAWindow & window);
-    void codeWindowAsConstant(PCAWindow & window);
-    void codeWindowEachValue(PCAWindow & window);
+    void codeConstantWindow(PCAWindow & window);
+    void codeNonConstantWindow(PCAWindow & window);
 
 public:
     using CoderCols::CoderCols;

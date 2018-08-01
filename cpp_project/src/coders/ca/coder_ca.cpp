@@ -51,7 +51,7 @@ void CoderCA::codeOriginal(CAWindow & window, std::string x, int x_delta){
 // NOTE: when force_code is true, the values of x and x_delta doesn't matter
 //
 void CoderCA::code(CAWindow & window, std::string x, int x_delta){
-    bool no_data_x = x[0] == Constants::NO_DATA_CHAR;
+    bool no_data_x = Constants::isNoData(x);
 
 //     assert(!no_data_x);
 //     assert(x_delta > 0);
@@ -124,7 +124,6 @@ void CoderCA::codeValueAndCreateNonNanWindow(CAWindow & window, std::string x, i
 void CoderCA::codeWindow(int window_length, std::string window_value){
     std::cout << "window.length = " << window_length << ", window.constant_value = " << window_value << std::endl;
     if (window_length == 0) { return; }
-    dataset.addBits(max_window_size_bit_length);
-    output_file.pushInt(window_length, max_window_size_bit_length);
+    codeInt(window_length, max_window_size_bit_length);
     codeValueRaw(window_value);
 }

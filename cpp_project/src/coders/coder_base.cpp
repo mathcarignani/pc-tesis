@@ -14,7 +14,7 @@ void CoderBase::codeDataRowsCount(){
 // It also checks the minimum and maximum constraints.
 //
 int CoderBase::codeValue(std::string x){
-    if (x[0] == Constants::NO_DATA_CHAR){ return dataset.nan(); }
+    if (Constants::isNoData(x)){ return dataset.nan(); }
 
     int x_int = std::stoi(x);
     if (dataset.insideRange(x_int)) { return x_int + dataset.offset(); }
@@ -29,6 +29,17 @@ void CoderBase::codeRaw(int value){
 void CoderBase::codeBit(int bit){
     dataset.addBits(1);
     output_file.pushBit(bit);
+}
+
+void CoderBase::codeBool(bool bit){
+    dataset.addBits(1);
+    if (bit) { output_file.pushBit(1); }
+    else     { output_file.pushBit(0); }
+}
+
+void CoderBase::codeInt(int value, int bits){
+    dataset.addBits(bits);
+    output_file.pushInt(value, bits);
 }
 
 void CoderBase::codeValueRaw(std::string x){

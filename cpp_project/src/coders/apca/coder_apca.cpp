@@ -28,7 +28,6 @@ APCAWindow CoderAPCA::createWindow(){
 }
 
 void CoderAPCA::codeWindow(APCAWindow & window){
-    dataset.addBits(window.max_window_size_bit_length);
-    output_file.pushInt(window.length, window.max_window_size_bit_length);
+    codeInt(window.length, window.max_window_size_bit_length);
     codeValueRaw(window.constant_value);
 }

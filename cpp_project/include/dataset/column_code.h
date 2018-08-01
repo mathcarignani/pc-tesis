@@ -13,10 +13,11 @@ public:
     int offset;
     int nan;
     int total_bits = 0;
+    int total_mask_bits = 0;
 
     ColumnCode();
     ColumnCode(Range range_, int bits_);
-    void addBits(int bits_);
+    void addBits(int bits_, bool mask_mode);
 };
 
 #endif //CPP_PROJECT_COLUMN_CODE_H

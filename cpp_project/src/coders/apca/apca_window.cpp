@@ -25,7 +25,7 @@ bool APCAWindow::conditionHolds(std::string x){
     else if (isFull()){
         return false;
     }
-    else if (x[0] == Constants::NO_DATA_CHAR){
+    else if (Constants::isNoData(x)){
         if (nan_window){ length++; return true;  }
         else {                     return false; }
     }
@@ -69,7 +69,7 @@ bool APCAWindow::isEmpty(){
 
 void APCAWindow::addFirstValue(std::string x){
     length = 1;
-    if (x[0] == Constants::NO_DATA_CHAR){
+    if (Constants::isNoData(x)){
         nan_window = true;
         constant_value = Constants::NO_DATA;
     }

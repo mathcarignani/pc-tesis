@@ -35,40 +35,42 @@ void PCAWindow::addValue(std::string x){
 }
 
 void PCAWindow::addFirstValue(std::string x){
-    if (x[0] == Constants::NO_DATA_CHAR){
+    if (Constants::isNoData(x)){
         nan_window = true;
         constant_value = Constants::NO_DATA;
+        return;
     }
-    else { // x is an integer
-        nan_window = false;
-        int x_int = std::stoi(x);
-        min = x_int;
-        max = x_int;
-        constant_value = x;
-    }
+
+    // x is an integer
+    nan_window = false;
+    int x_int = std::stoi(x);
+    min = x_int;
+    max = x_int;
+    constant_value = x;
 }
 
 void PCAWindow::addNonFirstValue(std::string x){
-    if (x[0] == Constants::NO_DATA_CHAR){
+    if (Constants::isNoData(x)){
         if (!nan_window){
             constant_value = "";
         }
+        return;
     }
-    else { // x is an integer
-        if (nan_window) {
-            nan_window = false;
-            constant_value = "";
+
+    // x is an integer
+    if (nan_window) {
+        nan_window = false;
+        constant_value = "";
+    }
+    else if (hasConstantValue()){
+        int x_int = std::stoi(x);
+        updateMinAndMax(x_int);
+        bool valid_threshold = validThreshold(min, max, error_threshold);
+        if (valid_threshold){
+            updateConstantValue();
         }
-        else if (hasConstantValue()){
-            int x_int = std::stoi(x);
-            updateMinAndMax(x_int);
-            bool valid_threshold = validThreshold(min, max, error_threshold);
-            if (valid_threshold){
-                updateConstantValue();
-            }
-            else {
-                constant_value = "";
-            }
+        else {
+            constant_value = "";
         }
     }
 }

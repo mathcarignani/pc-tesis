@@ -30,8 +30,15 @@ void Dataset::setColumn(int column_index){
     column_code = column_code_vector[array_index];
 }
 
+void Dataset::setMaskMode(bool mask_mode_){
+    mask_mode = mask_mode_;
+}
+
 void Dataset::addBits(int bits){
-    column_code_vector[array_index].addBits(bits);
+    if (mask_mode){
+        std::cout << "MASK MODE";
+    }
+    column_code_vector[array_index].addBits(bits, mask_mode);
 }
 
 int Dataset::getBits(){
@@ -57,6 +64,9 @@ bool Dataset::insideRange(int value){
 
 void Dataset::printBits(){
     for(int i=0; i<column_code_vector.size(); i++){
+        if (i > 0){
+            std::cout << "total_mask_bits " << column_code_vector[i].total_mask_bits << std::endl;
+        }
         std::cout << "total_bits " << column_code_vector[i].total_bits << std::endl;
     }
 }

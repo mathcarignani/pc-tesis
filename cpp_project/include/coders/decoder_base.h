@@ -23,6 +23,8 @@ protected:
     int data_columns_count;
     int data_rows_count;
 
+    bool decodeBool();
+    int decodeInt(int bits);
     std::string decodeValueRaw();
     float decodeFloat();
 

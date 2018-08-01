@@ -1,11 +1,9 @@
 
 #include "coder_cols.h"
 
+#include "assert.h"
 
 void CoderCols::codeDataRows(){
-    if (MASK_MODE) {
-        codeNoDataMask();
-    }
     int total_columns = dataset.data_columns_count + 1;
     for(column_index = 0; column_index < total_columns; column_index++) {
         std::cout << "code column_index " << column_index << std::endl;
@@ -14,18 +12,30 @@ void CoderCols::codeDataRows(){
     }
 }
 
-void CoderCols::codeNoDataMask(){
-    // TODO: implement
+void CoderCols::goToFirstDataRow() {
+    row_index = 0;
+    input_csv.goToLine(4); // first data row
 }
 
 void CoderCols::codeColumn() {
-    row_index = 0;
-    input_csv.goToLine(4); // first data row
-    if (column_index == 0) { codeTimeDeltaColumn(); } else { codeDataColumn(); }
+    if (column_index == 0) {
+        codeTimeDeltaColumn();
+    }
+    else {
+        if (Constants::MASK_MODE) {
+            codeDataColumnNoDataMask();
+        }
+        codeDataColumn();
+    }
 }
 
+//
+// TODO: use a more appropriate lossless compression schema for coding the time delta column.
+//
 void CoderCols::codeTimeDeltaColumn(){
-    // TODO: use a more appropriate lossless compression schema for coding the time delta column.
+    dataset.setMaskMode(false);
+
+    goToFirstDataRow();
     while (input_csv.continue_reading){
         std::string csv_value = input_csv.readLineCSVWithIndex(column_index);
         codeValueRaw(csv_value); // same as CoderBasic
@@ -38,13 +48,50 @@ void CoderCols::codeTimeDeltaColumn(){
     }
 }
 
+void CoderCols::codeDataColumnNoDataMask(){
+    dataset.setMaskMode(true);
+
+    bool burst_is_no_data = false;
+    int burst_length = 0; // <= Constants::MASK_MAX_SIZE
+
+    goToFirstDataRow();
+    while (input_csv.continue_reading) {
+        std::string csv_value = input_csv.readLineCSVWithIndex(column_index);
+        bool no_data = Constants::isNoData(csv_value);
+        if (row_index == 0){
+            burst_is_no_data = no_data;
+            burst_length = 1;
+        }
+        else if (no_data != burst_is_no_data || burst_length == Constants::MASK_MAX_SIZE){
+            codeBool(burst_is_no_data);
+            codeInt(burst_length - 1, Constants::MASK_BITS); // 1<= burst_length <= Constants::MASK_MAX_SIZE
+            std::cout << "ccode burst_length = " << burst_length << std::endl;
+            burst_is_no_data = no_data;
+            burst_length = 1;
+        }
+        else {
+            burst_length++;
+        }
+        row_index++;
+    }
+    assert(burst_length > 0);
+    codeBool(burst_is_no_data);
+    codeInt(burst_length - 1, Constants::MASK_BITS);
+    std::cout << "ccode burst_length = " << burst_length << std::endl;
+}
+
 void CoderCols::codeDataColumn(){
+    dataset.setMaskMode(false);
+
     this->codeColumnBefore();
+
+    goToFirstDataRow();
     while (input_csv.continue_reading){
         std::string csv_value = input_csv.readLineCSVWithIndex(column_index);
 //        std::cout << "csv_value = " << csv_value << std::endl;
         this->codeColumnWhile(csv_value);
         row_index++;
     }
+
     this->codeColumnAfter();
 }

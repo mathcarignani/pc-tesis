@@ -21,6 +21,14 @@ int DecoderBase::decodeRaw(){
     return input_file.getInt(dataset.bits());
 }
 
+bool DecoderBase::decodeBool(){
+    if (input_file.getBit()) { return true; } else { return false; }
+}
+
+int DecoderBase::decodeInt(int bits){
+    return (input_file.getInt(bits));
+}
+
 std::string DecoderBase::decodeValueRaw(){
     int value = decodeRaw();
     std::string coded_value;

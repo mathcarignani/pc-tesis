@@ -44,8 +44,7 @@ PWLHWindow CoderPWLH::createWindow(){
 }
 
 void CoderPWLH::codeWindow(PWLHWindow & window){
-    dataset.addBits(window.max_window_size_bit_length);
-    output_file.pushInt(window.length, window.max_window_size_bit_length);
+    codeInt(window.length, window.max_window_size_bit_length);
     if (integer_mode) { codeWindowInt(window); } else { codeWindowDouble(window); }
 }
 

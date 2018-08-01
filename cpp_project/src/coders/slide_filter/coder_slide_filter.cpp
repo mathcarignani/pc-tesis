@@ -88,7 +88,6 @@ SlideFilterWindow CoderSlideFilter::createWindow(){
 
 void CoderSlideFilter::codeWindow(SlideFilterWindow & window, int window_length, std::string window_value){
     if (window_length == 0) { return; }
-    dataset.addBits(window.max_window_size_bit_length);
-    output_file.pushInt(window_length, window.max_window_size_bit_length);
+    codeInt(window_length, window.max_window_size_bit_length);
     codeValueRaw(window_value);
 }

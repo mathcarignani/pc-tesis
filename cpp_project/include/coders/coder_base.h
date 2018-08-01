@@ -28,6 +28,8 @@ protected:
     Dataset dataset;
 
     void codeBit(int bit);
+    void codeBool(bool bit);
+    void codeInt(int value, int bits);
     void codeValueRaw(std::string x);
     void codeFloat(float x);
 

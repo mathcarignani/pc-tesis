@@ -7,7 +7,7 @@ EXE = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-buil
 
 
 def execute(exe_str):
-    print_mode = False
+    print_mode = True
     print ">>>>>>>>>>>>>>>>>>>>>>>>>>>> C++"
     print exe_str
     print ">>>>>>>>>>>>>>>>>>>>>>>>>>>> C++"
