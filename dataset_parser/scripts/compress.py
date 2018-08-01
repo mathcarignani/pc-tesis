@@ -46,29 +46,34 @@ from scripts.compress_args import CompressArgs
 
 def compress_decompress_compare(args):
     print "Compressing and decompressing files..."
-    coder_info, columns_bits = code_decode_cpp(args)
+    coder_info, columns_bits, column_mask_bits = code_decode_cpp(args)
     print "Comparing original and decompressed files..."
     csv_compare = CSVCompare(args.input_path, args.input_filename, args.output_path, args.deco_filename)
     same_file = csv_compare.compare(args.coder_params.get('error_threshold'), False)
     assert same_file
 
-    return [coder_info, columns_bits, same_file]
+    return [coder_info, columns_bits, column_mask_bits, same_file]
 
 
 def compress_file(args):
-    coder_info, columns_bits, same_file = compress_decompress_compare(args)
+    coder_info, columns_bits, column_mask_bits, same_file = compress_decompress_compare(args)
     # coder_info, columns_bits, same_file = compare_python_and_cpp(args)
 
     # print results
     input_file = args.input_path + "/" + args.input_filename
     compressed_file = args.output_path + "/" + args.compressed_filename
     compressed_size = print_results(coder_info, args.logger, input_file, compressed_file, same_file)
-    size_check(compressed_size, columns_bits)
-    return [compressed_size] + columns_bits
+    size_check(compressed_size, columns_bits, column_mask_bits)
+    compression_values = []
+    for i in range(0, len(columns_bits)):
+        compression_values.append(columns_bits[i])
+        compression_values.append(column_mask_bits[i])
+        compression_values.append(columns_bits[i] + column_mask_bits[i])
+    return [compressed_size] + compression_values
 
 
-def size_check(compressed_size, columns_bits):
-    columns_bytes = sum(columns_bits)/8
+def size_check(compressed_size, columns_bits, column_mask_bits):
+    columns_bytes = sum(columns_bits + column_mask_bits)/8
     diff = compressed_size - columns_bytes
     max_header_size = 15000
     if diff >= max_header_size:
@@ -105,10 +110,10 @@ def script(output_filename):
     # output_path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/paper-output/"
 
     csv = CSVWriter(output_path, output_filename)
-    csv.write_row(['Dataset', 'Filename', '#rows', 'Coder', '%', 'Error Threshold',
-                   'Window Param', 'Size (B)', 'CR (%)',
-                   'Delta - Size (b)', 'Delta - CR (%)',
-                   'Other columns - Size (b)', 'Other columns - CR (%)'])
+    row = ['Dataset', 'Filename', '#rows', 'Coder', '%', 'Error Threshold', 'Window Param', 'Size (B)', 'CR (%)',
+           'Delta - Size (data)', 'Delta - Size (mask)', 'Delta - Size (total)', 'Delta - CR (%)',
+           'Other columns - Size (data)', 'Other columns - Size (mask)', 'Other columns - Size (total)', 'Other columns - CR (%)']
+    csv.write_row(row)
 
     for dataset_dictionary in DATASETS_ARRAY:
         run_script_on_dataset(csv, datasets_path, dataset_dictionary, output_path)
@@ -170,6 +175,8 @@ def run_script_on_coder(csv, row, coder_dictionary, output_dataset_path, logger,
         }
         compress_args = CompressArgs(args)
         compression_values = compress_file(compress_args)
+        print "base values - CoderBasic"
+        print base_values
         base_values = out_results(base_values, compression_values, row + values, csv)
     else:
         # CoderPCA, CoderAPCA and CoderCA
@@ -198,6 +205,8 @@ def run_script_on_coder(csv, row, coder_dictionary, output_dataset_path, logger,
                 }
                 compress_args = CompressArgs(args)
                 compression_values = compress_file(compress_args)
+                print "base values - Other"
+                print base_values
                 base_values = out_results(base_values, compression_values, row + values, csv)
     return base_values
 
@@ -206,12 +215,23 @@ def out_results(base_values, compression_values, row, csv):
     values = []
     if base_values is None:
         base_values = compression_values
-        for value in compression_values:
-            values += [PrintUtils.separate(value), 100]
+        print "base"
+        for idx, value in enumerate(compression_values):
+            if (idx % 3) == 0:  # idx is 0, 3, 6, 9, 12, etc.
+                val = PrintUtils.separate(value) if idx == 0 else value
+                values += [val, 100]
+            else:
+                print "mask", value
+                values += [value]
     else:
         for idx, value in enumerate(compression_values):
-            percentage = PrintUtils.percentage(value, base_values[idx])
-            values += [PrintUtils.separate(value), PrintUtils.separate(percentage)]
+            if (idx % 3) == 0:  # idx is 0, 3, 6, 9, 12, etc.
+                percentage = PrintUtils.percentage(value, base_values[idx])
+                val = PrintUtils.separate(value) if idx == 0 else value
+                values += [val, PrintUtils.separate(percentage)]
+            else:
+                print "mask", value
+                values += [value]
     csv.write_row(row + values)
     return base_values
 

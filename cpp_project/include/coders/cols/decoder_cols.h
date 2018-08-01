@@ -29,6 +29,8 @@ protected:
     int current_index;
     bool burst_is_no_data;
     int burst_length;
+    int total_no_data; // number of "nodata" entries
+    int total_data; // number of non-"nodata" entries
 
     bool isNoData();
 

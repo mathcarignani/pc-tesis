@@ -13,7 +13,7 @@ void CoderPCA::codeColumnBefore(){
 }
 
 void CoderPCA::codeColumnWhile(std::string csv_value){
-//    if (Constants::MASK_MODE && Constants::isNoData(csv_value)) { return; } // MASK_MODE => ignore no data
+    if (Constants::MASK_MODE && Constants::isNoData(csv_value)) { return; } // MASK_MODE => ignore no data
 
     window.addValue(csv_value);
     if (window.isFull()) { codeWindow(window); }

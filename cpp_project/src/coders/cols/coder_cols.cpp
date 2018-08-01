@@ -55,6 +55,7 @@ void CoderCols::codeDataColumnNoDataMask(){
     int burst_length = 0; // <= Constants::MASK_MAX_SIZE
 
     goToFirstDataRow();
+    int total = 0;
     while (input_csv.continue_reading) {
         std::string csv_value = input_csv.readLineCSVWithIndex(column_index);
         bool no_data = Constants::isNoData(csv_value);
@@ -65,6 +66,7 @@ void CoderCols::codeDataColumnNoDataMask(){
         else if (no_data != burst_is_no_data || burst_length == Constants::MASK_MAX_SIZE){
             codeBool(burst_is_no_data);
             codeInt(burst_length - 1, Constants::MASK_BITS); // 1<= burst_length <= Constants::MASK_MAX_SIZE
+            total++;
             std::cout << "ccode burst_length = " << burst_length << std::endl;
             burst_is_no_data = no_data;
             burst_length = 1;
@@ -77,6 +79,8 @@ void CoderCols::codeDataColumnNoDataMask(){
     assert(burst_length > 0);
     codeBool(burst_is_no_data);
     codeInt(burst_length - 1, Constants::MASK_BITS);
+    total++;
+    std::cout << "total bursts = " << total << std::endl;
     std::cout << "ccode burst_length = " << burst_length << std::endl;
 }
 
