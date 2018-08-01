@@ -14,44 +14,7 @@
     <list default="true" id="2fbb5dd3-364e-4d62-8cd3-b832deb1f263" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/../cpp_paper/benchmarkLinux/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../cpp_paper/benchmarkLinux/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cpp_project" afterPath="$PROJECT_DIR$/cmake-build-debug/cpp_project" />
-      <change beforePath="$PROJECT_DIR$/include/coders/coder_base.h" afterPath="$PROJECT_DIR$/include/coders/coder_base.h" />
-      <change beforePath="$PROJECT_DIR$/include/coders/cols/coder_cols.h" afterPath="$PROJECT_DIR$/include/coders/cols/coder_cols.h" />
-      <change beforePath="$PROJECT_DIR$/include/coders/cols/decoder_cols.h" afterPath="$PROJECT_DIR$/include/coders/cols/decoder_cols.h" />
-      <change beforePath="$PROJECT_DIR$/include/coders/constants.h" afterPath="$PROJECT_DIR$/include/coders/constants.h" />
-      <change beforePath="$PROJECT_DIR$/include/coders/decoder_base.h" afterPath="$PROJECT_DIR$/include/coders/decoder_base.h" />
-      <change beforePath="$PROJECT_DIR$/include/coders/pca/coder_pca.h" afterPath="$PROJECT_DIR$/include/coders/pca/coder_pca.h" />
-      <change beforePath="$PROJECT_DIR$/include/coders/pca/decoder_pca.h" afterPath="$PROJECT_DIR$/include/coders/pca/decoder_pca.h" />
-      <change beforePath="$PROJECT_DIR$/include/dataset/column_code.h" afterPath="$PROJECT_DIR$/include/dataset/column_code.h" />
-      <change beforePath="$PROJECT_DIR$/include/dataset/dataset.h" afterPath="$PROJECT_DIR$/include/dataset/dataset.h" />
-      <change beforePath="$PROJECT_DIR$/src/coders/apca/apca_window.cpp" afterPath="$PROJECT_DIR$/src/coders/apca/apca_window.cpp" />
-      <change beforePath="$PROJECT_DIR$/src/coders/apca/coder_apca.cpp" afterPath="$PROJECT_DIR$/src/coders/apca/coder_apca.cpp" />
-      <change beforePath="$PROJECT_DIR$/src/coders/ca/coder_ca.cpp" afterPath="$PROJECT_DIR$/src/coders/ca/coder_ca.cpp" />
-      <change beforePath="$PROJECT_DIR$/src/coders/coder_base.cpp" afterPath="$PROJECT_DIR$/src/coders/coder_base.cpp" />
-      <change beforePath="$PROJECT_DIR$/src/coders/cols/coder_cols.cpp" afterPath="$PROJECT_DIR$/src/coders/cols/coder_cols.cpp" />
-      <change beforePath="$PROJECT_DIR$/src/coders/cols/decoder_cols.cpp" afterPath="$PROJECT_DIR$/src/coders/cols/decoder_cols.cpp" />
-      <change beforePath="$PROJECT_DIR$/src/coders/constants.cpp" afterPath="$PROJECT_DIR$/src/coders/constants.cpp" />
-      <change beforePath="$PROJECT_DIR$/src/coders/decoder_base.cpp" afterPath="$PROJECT_DIR$/src/coders/decoder_base.cpp" />
-      <change beforePath="$PROJECT_DIR$/src/coders/pca/coder_pca.cpp" afterPath="$PROJECT_DIR$/src/coders/pca/coder_pca.cpp" />
       <change beforePath="$PROJECT_DIR$/src/coders/pca/decoder_pca.cpp" afterPath="$PROJECT_DIR$/src/coders/pca/decoder_pca.cpp" />
-      <change beforePath="$PROJECT_DIR$/src/coders/pca/pca_window.cpp" afterPath="$PROJECT_DIR$/src/coders/pca/pca_window.cpp" />
-      <change beforePath="$PROJECT_DIR$/src/coders/pwlh/coder_pwlh.cpp" afterPath="$PROJECT_DIR$/src/coders/pwlh/coder_pwlh.cpp" />
-      <change beforePath="$PROJECT_DIR$/src/coders/pwlh/pwlh_window.cpp" afterPath="$PROJECT_DIR$/src/coders/pwlh/pwlh_window.cpp" />
-      <change beforePath="$PROJECT_DIR$/src/coders/slide_filter/coder_slide_filter.cpp" afterPath="$PROJECT_DIR$/src/coders/slide_filter/coder_slide_filter.cpp" />
-      <change beforePath="$PROJECT_DIR$/src/dataset/column_code.cpp" afterPath="$PROJECT_DIR$/src/dataset/column_code.cpp" />
-      <change beforePath="$PROJECT_DIR$/src/dataset/dataset.cpp" afterPath="$PROJECT_DIR$/src/dataset/dataset.cpp" />
-      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/compress_aux.py" afterPath="$PROJECT_DIR$/../dataset_parser/scripts/compress_aux.py" />
-      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/compress_cpp.py" afterPath="$PROJECT_DIR$/../dataset_parser/scripts/compress_cpp.py" />
-      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/el-nino.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/full_output.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/irkis.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/noaa-adcp.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/noaa-spc-hail.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/noaa-spc-tornado.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/noaa-spc-wind.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/noaa-sst.log" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/results.csv" afterPath="$PROJECT_DIR$/../dataset_parser/scripts/output/results.csv" />
-      <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/output/solar-anywhere.log" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -98,7 +61,7 @@
         <entry file="file://$PROJECT_DIR$/src/coders/cols/coder_cols.cpp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="262">
-              <caret line="58" column="77" lean-forward="true" selection-start-line="58" selection-start-column="77" selection-end-line="58" selection-end-column="77" />
+              <caret line="58" column="77" lean-forward="false" selection-start-line="58" selection-start-column="77" selection-end-line="58" selection-end-column="77" />
               <folding>
                 <element signature="e#1#24#0" expanded="true" />
               </folding>
@@ -106,21 +69,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="coder_pca.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="coder_pca.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/coders/pca/coder_pca.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="10" column="34" lean-forward="true" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+            <state relative-caret-position="105">
+              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="decoder_pca.cpp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="decoder_pca.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/coders/pca/decoder_pca.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="29" column="20" lean-forward="true" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
+            <state relative-caret-position="237">
+              <caret line="23" column="55" lean-forward="false" selection-start-line="23" selection-start-column="55" selection-end-line="23" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -242,8 +205,8 @@
         <option value="$PROJECT_DIR$/src/coders/constants.cpp" />
         <option value="$PROJECT_DIR$/src/dataset/dataset.cpp" />
         <option value="$PROJECT_DIR$/src/coders/cols/coder_cols.cpp" />
-        <option value="$PROJECT_DIR$/src/coders/pca/decoder_pca.cpp" />
         <option value="$PROJECT_DIR$/src/coders/pca/coder_pca.cpp" />
+        <option value="$PROJECT_DIR$/src/coders/pca/decoder_pca.cpp" />
       </list>
     </option>
   </component>
@@ -401,12 +364,12 @@
       <workItem from="1532481227332" duration="8503000" />
       <workItem from="1532832534060" duration="9544000" />
       <workItem from="1533009712325" duration="6262000" />
-      <workItem from="1533086568136" duration="1835000" />
+      <workItem from="1533086568136" duration="2070000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="342934000" />
+    <option name="totallyTimeSpent" value="343169000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -419,17 +382,18 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-294" y="-1057" width="1842" height="1042" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17517847" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.49774265" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2312566" sideWeight="0.33683047" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2312566" sideWeight="0.33683047" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17819707" sideWeight="0.4520316" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12693156" sideWeight="0.5157372" order="9" side_tool="true" content_ui="tabs" x="-274" y="-702" width="1698" height="313" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.09186906" sideWeight="0.48426282" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23020063" sideWeight="0.29431254" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.49774265" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17845829" sideWeight="0.4677686" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17845829" sideWeight="0.4677686" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2620545" sideWeight="0.493228" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -501,7 +465,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/src/coders/pca/decoder_pca.cpp</url>
-          <line>87</line>
+          <line>88</line>
           <option name="timeStamp" value="187" />
         </line-breakpoint>
       </breakpoints>
@@ -897,7 +861,7 @@
         <state relative-caret-position="247">
           <caret line="43" column="18" lean-forward="false" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
           <folding>
-            <element signature="e#1#26#0" expanded="true" />
+            <element signature="e#1#26#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -931,7 +895,7 @@
         <state relative-caret-position="635">
           <caret line="59" column="37" lean-forward="false" selection-start-line="59" selection-start-column="37" selection-end-line="59" selection-end-column="37" />
           <folding>
-            <element signature="e#1#24#0" expanded="true" />
+            <element signature="e#1#24#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -963,25 +927,25 @@
     <entry file="file://$PROJECT_DIR$/src/coders/cols/coder_cols.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="262">
-          <caret line="58" column="77" lean-forward="true" selection-start-line="58" selection-start-column="77" selection-end-line="58" selection-end-column="77" />
+          <caret line="58" column="77" lean-forward="false" selection-start-line="58" selection-start-column="77" selection-end-line="58" selection-end-column="77" />
           <folding>
             <element signature="e#1#24#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/coders/pca/decoder_pca.cpp">
+    <entry file="file://$PROJECT_DIR$/src/coders/pca/coder_pca.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="29" column="20" lean-forward="true" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
+        <state relative-caret-position="105">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/coders/pca/coder_pca.cpp">
+    <entry file="file://$PROJECT_DIR$/src/coders/pca/decoder_pca.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="10" column="34" lean-forward="true" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+        <state relative-caret-position="237">
+          <caret line="23" column="55" lean-forward="false" selection-start-line="23" selection-start-column="55" selection-end-line="23" selection-end-column="55" />
           <folding />
         </state>
       </provider>

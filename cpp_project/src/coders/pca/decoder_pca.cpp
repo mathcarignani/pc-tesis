@@ -16,11 +16,12 @@ std::vector<std::string> DecoderPCA::decodeDataColumnNoMask(){
     std::cout << "decodeDataColumnNoMask";
     std::vector<std::string> column;
     row_index = 0;
-    int unprocessed_rows = data_rows_count;
-    while (unprocessed_rows >= fixed_window_size){
+//    int unprocessed_rows = data_rows_count;
+    while (data_rows_count - row_index >= fixed_window_size){
         decodeWindow(column, fixed_window_size);
-        unprocessed_rows -= row_index;
+//        unprocessed_rows -= row_index;
     }
+    int unprocessed_rows = data_rows_count - row_index;
     if (unprocessed_rows > 0) { decodeWindow(column, unprocessed_rows); }
     return column;
 }
