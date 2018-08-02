@@ -175,8 +175,6 @@ def run_script_on_coder(csv, row, coder_dictionary, output_dataset_path, logger,
         }
         compress_args = CompressArgs(args)
         compression_values = compress_file(compress_args)
-        print "base values - CoderBasic"
-        print base_values
         base_values = out_results(base_values, compression_values, row + values, csv)
     else:
         # CoderPCA, CoderAPCA and CoderCA
@@ -205,8 +203,6 @@ def run_script_on_coder(csv, row, coder_dictionary, output_dataset_path, logger,
                 }
                 compress_args = CompressArgs(args)
                 compression_values = compress_file(compress_args)
-                print "base values - Other"
-                print base_values
                 base_values = out_results(base_values, compression_values, row + values, csv)
     return base_values
 
@@ -215,13 +211,11 @@ def out_results(base_values, compression_values, row, csv):
     values = []
     if base_values is None:
         base_values = compression_values
-        print "base"
         for idx, value in enumerate(compression_values):
             if (idx % 3) == 0:  # idx is 0, 3, 6, 9, 12, etc.
                 val = PrintUtils.separate(value) if idx == 0 else value
                 values += [val, 100]
             else:
-                print "mask", value
                 values += [value]
     else:
         for idx, value in enumerate(compression_values):
@@ -230,7 +224,6 @@ def out_results(base_values, compression_values, row, csv):
                 val = PrintUtils.separate(value) if idx == 0 else value
                 values += [val, PrintUtils.separate(percentage)]
             else:
-                print "mask", value
                 values += [value]
     csv.write_row(row + values)
     return base_values
