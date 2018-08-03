@@ -10,11 +10,10 @@ from file_utils.csv_utils.csv_writer import CSVWriter
 from file_utils.csv_utils.csv_utils import CSVUtils
 from file_utils.bit_stream.utils import BitStreamUtils
 from scripts.utils import csv_files_filenames, create_folder
-from scripts.calculate_std import calculate_file_stats, calculate_stds_percentages
-from scripts.compress_aux import THRESHOLD_PERCENTAGES, CSV_PATH, DATASETS_ARRAY, CODERS_ARRAY
-from scripts.compress_cpp import code_cpp, decode_cpp, code_decode_cpp
-from scripts.compress_python import code_python, decode_python, code_decode_python
-from scripts.compress_args import CompressArgs
+from scripts.compress.calculate_std import calculate_file_stats, calculate_stds_percentages
+from scripts.compress.compress_aux import THRESHOLD_PERCENTAGES, CSV_PATH, DATASETS_ARRAY, CODERS_ARRAY
+from scripts.compress.compress_cpp import code_decode_cpp
+from scripts.compress.compress_args import CompressArgs
 
 
 # def compare_python_and_cpp(args):
@@ -106,7 +105,7 @@ def print_results(coder_info, logger, input_file, compressed_file, same_file):
 def script(output_filename):
     datasets_path = CSV_PATH
     # datasets_path = "/Users/pablocerve/Documents/FING/Proyecto/results/paper_csv/3-without-outliers/"
-    output_path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/"
+    output_path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/"
     # output_path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/paper-output/"
 
     csv = CSVWriter(output_path, output_filename)

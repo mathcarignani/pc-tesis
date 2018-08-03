@@ -3,7 +3,7 @@ sys.path.append('.')
 
 from file_utils.csv_utils.csv_reader import CSVReader
 from file_utils.csv_utils.csv_writer import CSVWriter
-from scripts.compress_aux import THRESHOLD_PERCENTAGES
+from scripts.compress.compress_aux import THRESHOLD_PERCENTAGES
 
 percentages = THRESHOLD_PERCENTAGES
 percentages_len = len(percentages)

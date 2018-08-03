@@ -6,7 +6,7 @@ import math
 from matplotlib import pyplot as plt
 
 from file_utils.csv_utils.csv_reader import CSVReader
-from scripts.compress_aux import CSV_PATH, DATASETS_ARRAY
+from scripts.compress.compress_aux import CSV_PATH, DATASETS_ARRAY
 from scripts.utils import csv_files_filenames
 
 
