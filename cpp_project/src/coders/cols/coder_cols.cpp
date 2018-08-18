@@ -22,7 +22,7 @@ void CoderCols::codeColumn() {
         codeTimeDeltaColumn();
     }
     else {
-        if (Constants::MASK_MODE) {
+        if (MASK_MODE) {
             codeDataColumnNoDataMask();
         }
         codeDataColumn();

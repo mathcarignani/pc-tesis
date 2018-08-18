@@ -11,13 +11,13 @@ private:
 
     std::vector<std::string> decodeDataColumn() override;
 
-    /// !Constants::MASK_MODE
+    /// !MASK_MODE
     std::vector<std::string> decodeDataColumnNoMask();
     void decodeWindow(std::vector<std::string> & column, int window_size);
     void decodeConstantWindow(std::vector<std::string> & column, int window_size);
     void decodeNonConstantWindow(std::vector<std::string> & column, int window_size);
 
-    /// Constants::MASK_MODE
+    /// MASK_MODE
     std::vector<std::string> decodeDataColumnMaskMode();
     void decodeWindowMaskMode(std::vector<std::string> & column, int window_size);
     void decodeConstantWindowMaskMode(std::vector<std::string> & column, int window_size);

@@ -3,7 +3,6 @@
 
 const std::string Constants::NO_DATA = "N";
 const char Constants::NO_DATA_CHAR = 'N';
-const bool Constants::MASK_MODE = true;
 const int Constants::MASK_BITS = 8;
 const int Constants::MASK_MAX_SIZE = 256;
 

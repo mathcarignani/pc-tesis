@@ -23,7 +23,7 @@ protected:
     int row_index = 0;
     std::vector<int> time_delta_vector;
 
-    // Constants::MASK_MODE
+    // MASK_MODE
     std::vector<bool> burst_is_no_data_vector;
     std::vector<int> burst_length_vector;
     int current_index;

@@ -8,11 +8,11 @@ void DecoderPCA::setCoderParams(int fixed_window_size_){
 }
 
 std::vector<std::string> DecoderPCA::decodeDataColumn(){
-    if (Constants::MASK_MODE) { return decodeDataColumnMaskMode(); }
+    if (MASK_MODE) { return decodeDataColumnMaskMode(); }
     else                      { return decodeDataColumnNoMask(); }
 }
 
-/// !Constants::MASK_MODE //////////////////////////////////////////////////////////////////////////////////////////////
+/// !MASK_MODE /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 std::vector<std::string> DecoderPCA::decodeDataColumnNoMask(){
     std::vector<std::string> column;
@@ -49,7 +49,7 @@ void DecoderPCA::decodeNonConstantWindow(std::vector<std::string> & column, int 
     }
 }
 
-/// Constants::MASK_MODE ///////////////////////////////////////////////////////////////////////////////////////////////
+/// MASK_MODE //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 std::vector<std::string> DecoderPCA::decodeDataColumnMaskMode(){
     std::cout << "decodeDataColumnMaskMode size = " << burst_is_no_data_vector.size() << std::endl;

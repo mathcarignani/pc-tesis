@@ -2,6 +2,8 @@
 #ifndef CPP_PROJECT_CONSTANTS_H
 #define CPP_PROJECT_CONSTANTS_H
 
+#define MASK_MODE 1
+
 #include <string>
 
 class Constants {
@@ -9,7 +11,6 @@ class Constants {
 public:
     static const std::string NO_DATA;
     static const char NO_DATA_CHAR;
-    static const bool MASK_MODE;
     static const int MASK_BITS;
     static const int MASK_MAX_SIZE;
 

@@ -21,7 +21,7 @@ std::vector<std::string> DecoderCols::decodeColumn(){
         return decodeTimeDeltaColumn();
     }
     else {
-        if (Constants::MASK_MODE) {
+        if (MASK_MODE) {
             decodeDataColumnNoDataMask();
         }
         return decodeDataColumn();
