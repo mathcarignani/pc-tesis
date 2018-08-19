@@ -2,7 +2,7 @@
 #ifndef CPP_PROJECT_CONSTANTS_H
 #define CPP_PROJECT_CONSTANTS_H
 
-#define MASK_MODE 1
+#define MASK_MODE 0
 
 #include <string>
 

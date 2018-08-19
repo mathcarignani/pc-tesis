@@ -27,7 +27,6 @@ protected:
 
 public:
     using CoderBase::CoderBase;
-
 };
 
 #endif //CPP_PROJECT_CODER_COLS_H

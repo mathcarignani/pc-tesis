@@ -8,7 +8,6 @@
 #include "dataset.h"
 #include "constants.h"
 
-
 class CoderBase {
 
 private:

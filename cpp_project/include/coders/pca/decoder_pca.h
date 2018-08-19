@@ -10,18 +10,9 @@ private:
     int fixed_window_size;
 
     std::vector<std::string> decodeDataColumn() override;
-
-    /// !MASK_MODE
-    std::vector<std::string> decodeDataColumnNoMask();
     void decodeWindow(std::vector<std::string> & column, int window_size);
     void decodeConstantWindow(std::vector<std::string> & column, int window_size);
     void decodeNonConstantWindow(std::vector<std::string> & column, int window_size);
-
-    /// MASK_MODE
-    std::vector<std::string> decodeDataColumnMaskMode();
-    void decodeWindowMaskMode(std::vector<std::string> & column, int window_size);
-    void decodeConstantWindowMaskMode(std::vector<std::string> & column, int window_size);
-    void decodeNonConstantWindowMaskMode(std::vector<std::string> & column, int window_size);
 
 public:
     using DecoderCols::DecoderCols;
