@@ -2,8 +2,6 @@
 #include "apca_window.h"
 
 #include "string_utils.h"
-#include "pca_window.h"
-#include "constants.h"
 
 APCAWindow::APCAWindow() {}
 
@@ -12,9 +10,11 @@ APCAWindow::APCAWindow(int max_window_size_, int error_threshold_){
     max_window_size_bit_length = StringUtils::bitLength(max_window_size);
     error_threshold = error_threshold_;
     length = 0;
-    nan_window = false;
     min = 0;
     max = 0;
+#if MASK_MODE
+    nan_window = false;
+#endif
 }
 
 bool APCAWindow::conditionHolds(std::string x){
@@ -25,59 +25,37 @@ bool APCAWindow::conditionHolds(std::string x){
     else if (isFull()){
         return false;
     }
-    else if (Constants::isNoData(x)){
+#if MASK_MODE
+    if (Constants::isNoData(x)){
         if (nan_window){ length++; return true;  }
         else {                     return false; }
     }
-    else { // x is an integer
-        if (nan_window) { return false; }
-        else {
-            int x_int = std::stoi(x);
-            if (x_int < min){
-                return updateConstantValue(x_int, max);
-            }
-            else if (x_int > max){
-                return updateConstantValue(min, x_int);
-            }
-            else { // min <= x_int && x_int <= max
-                length++; return true;
-            }
-        }
-    }
+    // x is an integer
+    if (nan_window) { return false; }
+#endif
+    int x_int = std::stoi(x);
+    if (x_int < min) { return updateConstantValue(x_int, max); }
+    if (x_int > max) { return updateConstantValue(min, x_int); }
+    // min <= x_int <= max
+    length++;
+    return true;
 }
 
 bool APCAWindow::updateConstantValue(int new_min, int new_max){
     if (!PCAWindow::validThreshold(new_min, new_max, error_threshold)) { return false; }
-    else {
-        // condition holds, update min, max and constant
-        min = new_min;
-        max = new_max;
-        int constant = min + max;
-        if (constant != 0) { constant /= 2; }
-        constant_value = std::to_string(constant);
-        length++; return true;
-    }
+
+    // condition holds, update min, max and constant
+    min = new_min; max = new_max;
+    PCAWindow::updateConstantValue();
+    length++;
+    return true;
 }
 
 bool APCAWindow::isFull(){
     return length == max_window_size;
 }
 
-bool APCAWindow::isEmpty(){
-    return length == 0;
-}
-
 void APCAWindow::addFirstValue(std::string x){
     length = 1;
-    if (Constants::isNoData(x)){
-        nan_window = true;
-        constant_value = Constants::NO_DATA;
-    }
-    else { // x is an integer
-        nan_window = false;
-        int x_int = std::stoi(x);
-        min = x_int;
-        max = x_int;
-        constant_value = x;
-    }
+    PCAWindow::addFirstValue(x);
 }

@@ -3,15 +3,18 @@
 #define CPP_PROJECT_APCA_WINDOW_H
 
 #include <string>
+#include "pca_window.h"
 
-class APCAWindow {
+class APCAWindow : public PCAWindow {
 
 private:
     int max_window_size;
     int error_threshold;
-    bool nan_window;
     int min;
     int max;
+#if MASK_MODE
+    bool nan_window;
+#endif
 
 public:
     int max_window_size_bit_length;
@@ -22,7 +25,6 @@ public:
     APCAWindow(int max_window_size_, int error_threshold_);
     bool conditionHolds(std::string x);
     bool isFull();
-    bool isEmpty();
     void addFirstValue(std::string x);
     bool updateConstantValue(int new_min, int new_max);
 };

@@ -18,9 +18,11 @@ private:
 #endif
 
     void updateMinAndMax(int x_int);
-    void updateConstantValue();
-    void addFirstValue(std::string x); // PRE: isEmpty()
     void addNonFirstValue(std::string x); // PRE: !isFull() && !isEmpty()
+
+protected:
+    void addFirstValue(std::string x); // PRE: isEmpty()
+    void updateConstantValue();
 
 public:
     int length;

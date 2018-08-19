@@ -12,6 +12,9 @@ void CoderAPCA::codeColumnBefore(){
 }
 
 void CoderAPCA::codeColumnWhile(std::string csv_value){
+#if MASK_MODE
+    if (Constants::isNoData(csv_value)) { return; } // MASK_MODE => skip no_data
+#endif
     if (!window.conditionHolds(csv_value)){
         codeWindow(window);
         window.addFirstValue(csv_value);

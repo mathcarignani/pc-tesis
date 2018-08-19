@@ -15,13 +15,9 @@
       <change beforePath="$PROJECT_DIR$/../cpp_paper/benchmarkLinux/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../cpp_paper/benchmarkLinux/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/cpp_project" afterPath="$PROJECT_DIR$/cmake-build-debug/cpp_project" />
-      <change beforePath="$PROJECT_DIR$/include/coders/coder_base.h" afterPath="$PROJECT_DIR$/include/coders/coder_base.h" />
-      <change beforePath="$PROJECT_DIR$/include/coders/cols/coder_cols.h" afterPath="$PROJECT_DIR$/include/coders/cols/coder_cols.h" />
-      <change beforePath="$PROJECT_DIR$/include/coders/constants.h" afterPath="$PROJECT_DIR$/include/coders/constants.h" />
-      <change beforePath="$PROJECT_DIR$/include/coders/pca/decoder_pca.h" afterPath="$PROJECT_DIR$/include/coders/pca/decoder_pca.h" />
+      <change beforePath="$PROJECT_DIR$/include/coders/apca/apca_window.h" afterPath="$PROJECT_DIR$/include/coders/apca/apca_window.h" />
       <change beforePath="$PROJECT_DIR$/include/coders/pca/pca_window.h" afterPath="$PROJECT_DIR$/include/coders/pca/pca_window.h" />
-      <change beforePath="$PROJECT_DIR$/src/coders/pca/coder_pca.cpp" afterPath="$PROJECT_DIR$/src/coders/pca/coder_pca.cpp" />
-      <change beforePath="$PROJECT_DIR$/src/coders/pca/decoder_pca.cpp" afterPath="$PROJECT_DIR$/src/coders/pca/decoder_pca.cpp" />
+      <change beforePath="$PROJECT_DIR$/src/coders/apca/apca_window.cpp" afterPath="$PROJECT_DIR$/src/coders/apca/apca_window.cpp" />
       <change beforePath="$PROJECT_DIR$/src/coders/pca/pca_window.cpp" afterPath="$PROJECT_DIR$/src/coders/pca/pca_window.cpp" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -35,14 +31,38 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="coder_pca.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/include/coders/pca/coder_pca.h">
+      <file leaf-file-name="apca_window.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/include/coders/apca/apca_window.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="29" lean-forward="true" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+            <state relative-caret-position="420">
+              <caret line="28" column="9" lean-forward="false" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
               <folding>
-                <element signature="e#66#89#0" expanded="true" />
+                <element signature="e#70#87#0" expanded="true" />
+                <element signature="e#255#271#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pca_window.h" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/include/coders/pca/pca_window.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="26" column="7" lean-forward="true" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
+              <folding>
+                <element signature="e#68#85#0" expanded="true" />
+                <element signature="e#252#268#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="coder_apca.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/include/coders/apca/coder_apca.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -50,8 +70,8 @@
       <file leaf-file-name="coder_pca.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/coders/pca/coder_pca.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="33" lean-forward="true" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+            <state relative-caret-position="242">
+              <caret line="24" column="16" lean-forward="false" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
               <folding>
                 <element signature="e#1#23#0" expanded="true" />
               </folding>
@@ -59,69 +79,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pca_window.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/include/coders/pca/pca_window.h">
+      <file leaf-file-name="decoder_apca.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/include/coders/apca/decoder_apca.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="28" lean-forward="true" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
-              <folding>
-                <element signature="e#68#85#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pca_window.cpp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/coders/pca/pca_window.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-52">
-              <caret line="40" column="4" lean-forward="false" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="4" />
-              <folding>
-                <element signature="e#1#24#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="decoder_pca.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/include/coders/pca/decoder_pca.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="74" lean-forward="false" selection-start-line="12" selection-start-column="74" selection-end-line="12" selection-end-column="74" />
+            <state relative-caret-position="165">
+              <caret line="11" column="29" lean-forward="false" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="constants.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/include/coders/constants.h">
+      <file leaf-file-name="apca_window.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/coders/apca/apca_window.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="decoder_pca.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/coders/pca/decoder_pca.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="61" lean-forward="true" selection-start-line="25" selection-start-column="61" selection-end-line="25" selection-end-column="61" />
+            <state relative-caret-position="563">
+              <caret line="65" column="1" lean-forward="false" selection-start-line="65" selection-start-column="1" selection-end-line="65" selection-end-column="1" />
               <folding>
                 <element signature="e#1#25#0" expanded="true" />
-                <marker date="1534643380000" expanded="true" signature="738:877" ph="..." />
+                <element signature="e#365#384#0" expanded="true" />
+                <element signature="e#654#851#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="decoder_cols.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/coders/cols/decoder_cols.cpp">
+      <file leaf-file-name="pca_window.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/coders/pca/pca_window.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="69" column="18" lean-forward="false" selection-start-line="69" selection-start-column="18" selection-end-line="69" selection-end-column="18" />
-              <folding />
+            <state relative-caret-position="-543">
+              <caret line="14" column="12" lean-forward="true" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+              <folding>
+                <element signature="e#1#24#0" expanded="true" />
+                <element signature="e#359#378#0" expanded="true" />
+                <element signature="e#910#1079#0" expanded="true" />
+                <element signature="e#1246#1427#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -193,8 +185,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/include/coders/ca/ca_line.h" />
-        <option value="$PROJECT_DIR$/include/coders/ca/ca_point.h" />
         <option value="$PROJECT_DIR$/include/dataset/range.h" />
         <option value="$PROJECT_DIR$/include/vector_utils.h" />
         <option value="$PROJECT_DIR$/.gitignore" />
@@ -221,7 +211,6 @@
         <option value="$PROJECT_DIR$/src/coders/apca/coder_apca.cpp" />
         <option value="$PROJECT_DIR$/src/coders/pwlh/coder_pwlh.cpp" />
         <option value="$PROJECT_DIR$/src/coders/slide_filter/coder_slide_filter.cpp" />
-        <option value="$PROJECT_DIR$/src/coders/apca/apca_window.cpp" />
         <option value="$PROJECT_DIR$/src/coders/ca/coder_ca.cpp" />
         <option value="$PROJECT_DIR$/src/coders/pwlh/pwlh_window.cpp" />
         <option value="$PROJECT_DIR$/src/coders/decoder_base.cpp" />
@@ -238,12 +227,15 @@
         <option value="$PROJECT_DIR$/include/coders/pca/coder_pca.h" />
         <option value="$PROJECT_DIR$/include/coders/coder_base.h" />
         <option value="$PROJECT_DIR$/include/coders/cols/coder_cols.h" />
-        <option value="$PROJECT_DIR$/include/coders/pca/pca_window.h" />
         <option value="$PROJECT_DIR$/src/coders/pca/coder_pca.cpp" />
-        <option value="$PROJECT_DIR$/src/coders/pca/pca_window.cpp" />
         <option value="$PROJECT_DIR$/include/coders/pca/decoder_pca.h" />
         <option value="$PROJECT_DIR$/src/coders/pca/decoder_pca.cpp" />
         <option value="$PROJECT_DIR$/include/coders/constants.h" />
+        <option value="$PROJECT_DIR$/src/coders/pca/pca_window.cpp" />
+        <option value="$PROJECT_DIR$/include/coders/pca/pca_apca_window.h" />
+        <option value="$PROJECT_DIR$/src/coders/apca/apca_window.cpp" />
+        <option value="$PROJECT_DIR$/include/coders/apca/apca_window.h" />
+        <option value="$PROJECT_DIR$/include/coders/pca/pca_window.h" />
       </list>
     </option>
   </component>
@@ -293,6 +285,20 @@
               <item name="cpp_project" type="462c0819:PsiDirectoryNode" />
               <item name="include" type="462c0819:PsiDirectoryNode" />
               <item name="coders" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cpp_project" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="cpp_project" type="462c0819:PsiDirectoryNode" />
+              <item name="include" type="462c0819:PsiDirectoryNode" />
+              <item name="coders" type="462c0819:PsiDirectoryNode" />
+              <item name="apca" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cpp_project" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="cpp_project" type="462c0819:PsiDirectoryNode" />
+              <item name="include" type="462c0819:PsiDirectoryNode" />
+              <item name="coders" type="462c0819:PsiDirectoryNode" />
+              <item name="pca" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -390,12 +396,12 @@
       <workItem from="1533009712325" duration="6262000" />
       <workItem from="1533086568136" duration="8472000" />
       <workItem from="1533268254662" duration="1650000" />
-      <workItem from="1534561356196" duration="11523000" />
+      <workItem from="1534561356196" duration="14372000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="362744000" />
+    <option name="totallyTimeSpent" value="365593000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -568,39 +574,10 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/include/coders/ca/ca_window.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" column="32" lean-forward="false" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/coders/ca/ca_line.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="46" column="10" lean-forward="false" selection-start-line="46" selection-start-column="4" selection-end-line="46" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/coders/ca/coder_ca.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="85" lean-forward="false" selection-start-line="23" selection-start-column="85" selection-end-line="23" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/coders/ca/ca_window.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
           <caret line="29" column="18" lean-forward="false" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/coders/apca/decoder_apca.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="29" lean-forward="false" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -858,14 +835,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/coders/apca/apca_window.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="49" column="20" lean-forward="false" selection-start-line="49" selection-start-column="20" selection-end-line="49" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/include/coders/pwlh/coder_pwlh.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -902,37 +871,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/coders/pca/coder_pca.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="29" lean-forward="true" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
-          <folding>
-            <element signature="e#66#89#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/coders/pca/coder_pca.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="33" lean-forward="true" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
-          <folding>
-            <element signature="e#1#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/coders/pca/decoder_pca.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="74" lean-forward="false" selection-start-line="12" selection-start-column="74" selection-end-line="12" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/coders/cols/decoder_cols.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
+        <state relative-caret-position="357">
           <caret line="69" column="18" lean-forward="false" selection-start-line="69" selection-start-column="18" selection-end-line="69" selection-end-column="18" />
           <folding />
         </state>
@@ -943,7 +884,7 @@
         <state relative-caret-position="375">
           <caret line="25" column="61" lean-forward="true" selection-start-line="25" selection-start-column="61" selection-end-line="25" selection-end-column="61" />
           <folding>
-            <element signature="e#1#25#0" expanded="true" />
+            <element signature="e#1#25#0" expanded="false" />
             <marker date="1534643380000" expanded="true" signature="738:877" ph="..." />
           </folding>
         </state>
@@ -965,22 +906,101 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/coders/pca/pca_window.h">
+    <entry file="file://$PROJECT_DIR$/include/coders/pca/decoder_pca.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="28" lean-forward="true" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
+        <state relative-caret-position="180">
+          <caret line="12" column="74" lean-forward="false" selection-start-line="12" selection-start-column="74" selection-end-line="12" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/coders/pca/coder_pca.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="29" lean-forward="true" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
           <folding>
-            <element signature="e#68#85#0" expanded="true" />
+            <element signature="e#66#89#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/coders/pca/pca_apca_window.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/coders/apca/apca_window.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="9" lean-forward="false" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
+          <folding>
+            <element signature="e#70#87#0" expanded="true" />
+            <element signature="e#255#271#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/coders/apca/coder_apca.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/coders/pca/pca_window.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-52">
-          <caret line="40" column="4" lean-forward="false" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="4" />
+        <state relative-caret-position="-543">
+          <caret line="14" column="12" lean-forward="true" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
           <folding>
             <element signature="e#1#24#0" expanded="true" />
+            <element signature="e#359#378#0" expanded="true" />
+            <element signature="e#910#1079#0" expanded="true" />
+            <element signature="e#1246#1427#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/coders/apca/apca_window.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="563">
+          <caret line="65" column="1" lean-forward="false" selection-start-line="65" selection-start-column="1" selection-end-line="65" selection-end-column="1" />
+          <folding>
+            <element signature="e#1#25#0" expanded="true" />
+            <element signature="e#365#384#0" expanded="true" />
+            <element signature="e#654#851#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/coders/apca/decoder_apca.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="29" lean-forward="false" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/coders/pca/coder_pca.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="24" column="16" lean-forward="false" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
+          <folding>
+            <element signature="e#1#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/coders/pca/pca_window.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="7" lean-forward="true" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
+          <folding>
+            <element signature="e#68#85#0" expanded="true" />
+            <element signature="e#252#268#0" expanded="true" />
           </folding>
         </state>
       </provider>

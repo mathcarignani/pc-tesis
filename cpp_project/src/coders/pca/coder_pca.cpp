@@ -16,7 +16,6 @@ void CoderPCA::codeColumnWhile(std::string csv_value){
 #if MASK_MODE
     if (Constants::isNoData(csv_value)) { return; } // MASK_MODE => skip no_data
 #endif
-
     window.addValue(csv_value);
     if (window.isFull()) { codeWindow(window); }
 }
@@ -34,8 +33,8 @@ PCAWindow CoderPCA::createWindow(){
 }
 
 void CoderPCA::codeWindow(PCAWindow & window){
-    if (window.has_constant_value){ codeConstantWindow(window); }
-    else {                          codeNonConstantWindow(window);  }
+    if (window.has_constant_value) { codeConstantWindow(window);     }
+    else                           { codeNonConstantWindow(window);  }
     window.clearWindow();
 }
 

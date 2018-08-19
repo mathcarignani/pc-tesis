@@ -62,13 +62,11 @@ void PCAWindow::addNonFirstValue(std::string x){
     // x is an integer
     if (nan_window) { has_constant_value = false; }
 #endif
-
     if (!has_constant_value) { return; }
 
     int x_int = std::stoi(x);
     updateMinAndMax(x_int);
-    bool valid_threshold = validThreshold(min, max, error_threshold);
-    if (valid_threshold){
+    if (validThreshold(min, max, error_threshold)){
         updateConstantValue();
     }
     else {
