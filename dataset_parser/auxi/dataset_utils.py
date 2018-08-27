@@ -1,7 +1,7 @@
 import sys
 sys.path.append('../')
 
-from aux.python_utils import inverse_dict
+from auxi.python_utils import inverse_dict
 from file_utils.text_utils.text_file_reader import TextFileReader
 
 

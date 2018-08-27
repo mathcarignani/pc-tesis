@@ -3,8 +3,8 @@ from calendar import monthrange
 import sys
 sys.path.append('.')
 
-from aux.date_range import DateRange
-from aux.logger import setup_logger
+from auxi.date_range import DateRange
+from auxi.logger import setup_logger
 from csv_converter.csv_converter import CSVConverter
 from csv_converter.csv_converter_noaa import CSVConverterNOAA
 from csv_converter.csv_converter_adcp import CSVConverterADCP

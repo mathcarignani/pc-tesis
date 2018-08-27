@@ -3,8 +3,8 @@ sys.path.append('.')
 
 import os
 
-from aux.logger import setup_logger
-from aux.print_utils import PrintUtils
+from auxi.logger import setup_logger
+from auxi.print_utils import PrintUtils
 from file_utils.csv_utils.csv_compare import CSVCompare
 from file_utils.csv_utils.csv_writer import CSVWriter
 from file_utils.csv_utils.csv_utils import CSVUtils

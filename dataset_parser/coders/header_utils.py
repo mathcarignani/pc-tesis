@@ -3,7 +3,7 @@ from datetime import datetime, timedelta
 import sys
 sys.path.append('../')
 
-from aux.dataset_utils import DatasetUtils
+from auxi.dataset_utils import DatasetUtils
 
 
 class HeaderUtils:

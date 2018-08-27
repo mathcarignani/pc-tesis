@@ -3,7 +3,7 @@ import os
 import sys
 sys.path.append('.')
 
-from aux.logger import setup_logger
+from auxi.logger import setup_logger
 from scripts.utils import create_folder
 from file_utils.text_utils.text_file_reader import TextFileReader
 from file_utils.csv_utils.csv_writer import CSVWriter

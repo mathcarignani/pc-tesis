@@ -1,4 +1,4 @@
-from aux.date_range import DateRange
+from auxi.date_range import DateRange
 from file_utils.csv_utils.csv_writer import CSVWriter
 from pandas_tools.pandas_tools import PandasTools
 

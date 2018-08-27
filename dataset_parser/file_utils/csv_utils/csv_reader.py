@@ -1,5 +1,5 @@
 import csv
-from aux.progress_bar import ProgressBar
+from auxi.progress_bar import ProgressBar
 from file_utils.aux import full_path
 
 
