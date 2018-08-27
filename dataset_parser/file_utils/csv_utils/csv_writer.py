@@ -1,5 +1,5 @@
 import csv
-from file_utils.aux import full_path
+from file_utils.auxi import full_path
 
 
 class CSVWriter:

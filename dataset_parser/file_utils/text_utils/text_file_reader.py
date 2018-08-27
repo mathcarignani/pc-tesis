@@ -1,5 +1,5 @@
 from auxi.progress_bar import ProgressBar
-from file_utils.aux import full_path
+from file_utils.auxi import full_path
 
 
 class TextFileReader:

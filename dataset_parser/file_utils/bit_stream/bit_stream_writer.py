@@ -1,4 +1,4 @@
-from aux import code_byte
+from auxi import code_byte
 
 
 class BitStreamWriter(object):

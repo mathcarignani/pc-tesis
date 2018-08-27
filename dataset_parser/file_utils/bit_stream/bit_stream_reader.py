@@ -1,4 +1,4 @@
-from aux import decode_byte
+from auxi import decode_byte
 
 
 class BitStreamReader(object):
