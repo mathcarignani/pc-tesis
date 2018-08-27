@@ -170,15 +170,15 @@ void Scripts::codeAndDecodeCSV(){
     for(int i=0; i < 11; i++) { error_thresholds_vector.push_back(5); }
     int fixed_window_size = 5;
 
-    codePWLH(input_path, coded_path, fixed_window_size, error_thresholds_vector, false);
-    decodePWLH(coded_path, decoded_path, fixed_window_size, false);
+//    codePWLH(input_path, coded_path, fixed_window_size, error_thresholds_vector, false);
+//    decodePWLH(coded_path, decoded_path, fixed_window_size, false);
 
     //    std::cout << "decodeCSV" << std::endl;
 
 //    std::cout << "codeCSV" << std::endl;
-//    codeBasic(input_path, coded_path);
+    codeBasic(input_path, coded_path);
 //    std::cout << "decodeCSV" << std::endl;
-//    decodeBasic(coded_path, decoded_path);
+    decodeBasic(coded_path, decoded_path);
 //
 //    std::cout << "Compare" << std::endl;
 //    CSVUtils::CompareCSVLossless(input_path, decoded_path);

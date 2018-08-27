@@ -13,13 +13,13 @@ PCAWindow::PCAWindow(int fixed_window_size_, int error_threshold_){
     has_constant_value = true;
     min = 0;
     max = 0;
-#if MASK_MODE
+#if !MASK_MODE
     nan_window = false;
 #endif
 }
 
 void PCAWindow::updateMinAndMax(int x_int){
-    if (x_int < min) { min = x_int; }
+    if (x_int < min)      { min = x_int; }
     else if (x_int > max) { max = x_int; }
 }
 
@@ -30,14 +30,14 @@ void PCAWindow::updateConstantValue(){
 }
 
 void PCAWindow::addValue(std::string x){
-    if (isEmpty()){ addFirstValue(x);    }
-    else {         addNonFirstValue(x); }
+    if (isEmpty()) { addFirstValue(x);    }
+    else           { addNonFirstValue(x); }
     array->push_back(x);
     length++;
 }
 
 void PCAWindow::addFirstValue(std::string x){
-#if MASK_MODE
+#if !MASK_MODE
     if (Constants::isNoData(x)){
         nan_window = true;
         constant_value = Constants::NO_DATA;
@@ -46,7 +46,6 @@ void PCAWindow::addFirstValue(std::string x){
     // x is an integer
     nan_window = false;
 #endif
-
     int x_int = std::stoi(x);
     min = x_int;
     max = x_int;
@@ -54,7 +53,7 @@ void PCAWindow::addFirstValue(std::string x){
 }
 
 void PCAWindow::addNonFirstValue(std::string x){
-#if MASK_MODE
+#if !MASK_MODE
     if (Constants::isNoData(x)){
         if (!nan_window){ has_constant_value = false; }
         return;

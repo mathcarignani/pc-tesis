@@ -12,9 +12,9 @@ private:
 
     void goToFirstDataRow();
     void codeColumn();
-    void codeTimeDeltaColumn();
+#if MASK_MODE
     void codeDataColumnNoDataMask();
-    void codeDataColumn();
+#endif
 
     virtual void codeColumnBefore() = 0;
     virtual void codeColumnWhile(std::string csv_value) = 0;
@@ -24,6 +24,9 @@ protected:
     int column_index = 0;
     int row_index = 0;
     std::vector<int> time_delta_vector;
+
+    void codeDataColumn();
+    void codeTimeDeltaColumn();
 
 public:
     using CoderBase::CoderBase;

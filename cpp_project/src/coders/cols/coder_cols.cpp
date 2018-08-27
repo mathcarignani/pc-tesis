@@ -20,13 +20,12 @@ void CoderCols::goToFirstDataRow() {
 void CoderCols::codeColumn() {
     if (column_index == 0) {
         codeTimeDeltaColumn();
+        return;
     }
-    else {
-        if (MASK_MODE) {
-            codeDataColumnNoDataMask();
-        }
-        codeDataColumn();
-    }
+#if MASK_MODE
+    codeDataColumnNoDataMask();
+#endif
+    codeDataColumn();
 }
 
 //
@@ -43,11 +42,11 @@ void CoderCols::codeTimeDeltaColumn(){
         // add int value to the time_delta_vector
         int csv_value_int = std::stoi(csv_value);
         time_delta_vector.push_back(csv_value_int);
-
         row_index++;
     }
 }
 
+#if MASK_MODE
 void CoderCols::codeDataColumnNoDataMask(){
     dataset.setMaskMode(true);
 
@@ -83,6 +82,7 @@ void CoderCols::codeDataColumnNoDataMask(){
     std::cout << "total bursts = " << total << std::endl;
     std::cout << "ccode burst_length = " << burst_length << std::endl;
 }
+#endif
 
 void CoderCols::codeDataColumn(){
     dataset.setMaskMode(false);
@@ -92,7 +92,6 @@ void CoderCols::codeDataColumn(){
     goToFirstDataRow();
     while (input_csv.continue_reading){
         std::string csv_value = input_csv.readLineCSVWithIndex(column_index);
-//        std::cout << "csv_value = " << csv_value << std::endl;
         this->codeColumnWhile(csv_value);
         row_index++;
     }

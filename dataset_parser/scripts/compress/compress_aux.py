@@ -9,17 +9,17 @@ from coders.ca.coder_ca import CoderCA
 from coders.ca.decoder_ca import DecoderCA
 
 
-THRESHOLD_PERCENTAGES = [0, 1, 3, 5, 10, 15, 20, 30]
-WINDOW_SIZES = [5, 10, 25, 50, 100, 200]
+THRESHOLD_PERCENTAGES = [0, 30] # [0, 1, 3, 5, 10, 15, 20, 30]
+WINDOW_SIZES = [5, 200] # [5, 10, 25, 50, 100, 200]
 CSV_PATH = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/"
 
 DATASETS_ARRAY = [
-    # {'name': 'IRKIS', 'folder': "[1]irkis", 'logger': "irkis.log", 'o_folder': "[1]irkis"},
+    {'name': 'IRKIS', 'folder': "[1]irkis", 'logger': "irkis.log", 'o_folder': "[1]irkis"},
     # {'name': 'NOAA-SST', 'folder': "[2]noaa-sst/months/2017", 'logger': "noaa-sst.log", 'o_folder': "[2]noaa-sst"},
     # {'name': 'NOAA-ADCP', 'folder': "[3]noaa-adcp/2015", 'logger': "noaa-adcp.log", 'o_folder': "[3]noaa-adcp"},
     # {'name': 'SolarAnywhere', 'folder': "[4]solar-anywhere/all", 'logger': "solar-anywhere.log", 'o_folder': "[4]solar-anywhere"},
     # {'name': 'ElNino', 'folder': "[5]el-nino", 'logger': "el-nino.log", 'o_folder': "[5]el-nino"},
-    {'name': 'NOAA-SPC-hail', 'folder': "[6]noaa-spc-reports/hail", 'logger': "noaa-spc-hail.log", 'o_folder': "[6]noaa-spc-reports"},
+    # {'name': 'NOAA-SPC-hail', 'folder': "[6]noaa-spc-reports/hail", 'logger': "noaa-spc-hail.log", 'o_folder': "[6]noaa-spc-reports"},
     # {'name': 'NOAA-SPC-tornado', 'folder': "[6]noaa-spc-reports/tornado", 'logger': "noaa-spc-tornado.log", 'o_folder': "[6]noaa-spc-reports"},
     # {'name': 'NOAA-SPC-wind', 'folder': "[6]noaa-spc-reports/wind", 'logger': "noaa-spc-wind.log", 'o_folder': "[6]noaa-spc-reports"}
 ]
@@ -52,13 +52,13 @@ CODERS_ARRAY = [
         'o_folder': 'pca',
         'params': {'fixed_window_size': WINDOW_SIZES}
     },
-    # {
-    #     'name': 'CoderAPCA',
-    #     'coder': CoderAPCA,
-    #     'decoder': DecoderAPCA,
-    #     'o_folder': 'apca',
-    #     'params': {'max_window_size': WINDOW_SIZES}
-    # },
+    {
+        'name': 'CoderAPCA',
+        'coder': CoderAPCA,
+        'decoder': DecoderAPCA,
+        'o_folder': 'apca',
+        'params': {'max_window_size': WINDOW_SIZES}
+    },
     # {
     #     'name': 'CoderCA',
     #     'coder': CoderCA,

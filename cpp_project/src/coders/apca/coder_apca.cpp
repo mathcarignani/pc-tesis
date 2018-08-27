@@ -1,7 +1,6 @@
 
 #include "coder_apca.h"
 
-
 void CoderAPCA::setCoderParams(int max_window_size_, std::vector<int> error_thresholds_vector_){
     max_window_size = max_window_size_;
     error_thresholds_vector = error_thresholds_vector_;
@@ -13,7 +12,7 @@ void CoderAPCA::codeColumnBefore(){
 
 void CoderAPCA::codeColumnWhile(std::string csv_value){
 #if MASK_MODE
-    if (Constants::isNoData(csv_value)) { return; } // MASK_MODE => skip no_data
+    if (Constants::isNoData(csv_value)) { return; } // skip no_data
 #endif
     if (!window.conditionHolds(csv_value)){
         codeWindow(window);

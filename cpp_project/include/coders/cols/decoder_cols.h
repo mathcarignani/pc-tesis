@@ -11,9 +11,9 @@ private:
 
     std::vector<std::string> decodeColumn();
     std::vector<std::string> decodeTimeDeltaColumn();
-
+#if MASK_MODE
     void decodeDataColumnNoDataMask();
-
+#endif
     void transposeMatrix(std::vector<std::vector<std::string>> columns, int total_columns);
 
     virtual std::vector<std::string> decodeDataColumn() = 0;
@@ -23,7 +23,7 @@ protected:
     int row_index = 0;
     std::vector<int> time_delta_vector;
 
-    // MASK_MODE
+#if MASK_MODE
     std::vector<bool> burst_is_no_data_vector;
     std::vector<int> burst_length_vector;
     int current_index;
@@ -33,6 +33,7 @@ protected:
     int total_data; // number of non-"nodata" entries
 
     bool isNoData();
+#endif
 
 public:
     using DecoderBase::DecoderBase;

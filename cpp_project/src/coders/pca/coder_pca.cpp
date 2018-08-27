@@ -1,6 +1,5 @@
 
 #include "coder_pca.h"
-
 #include "assert.h"
 
 void CoderPCA::setCoderParams(int fixed_window_size_, std::vector<int> error_thresholds_vector_){
@@ -14,7 +13,7 @@ void CoderPCA::codeColumnBefore(){
 
 void CoderPCA::codeColumnWhile(std::string csv_value){
 #if MASK_MODE
-    if (Constants::isNoData(csv_value)) { return; } // MASK_MODE => skip no_data
+    if (Constants::isNoData(csv_value)) { return; } // skip no_data
 #endif
     window.addValue(csv_value);
     if (window.isFull()) { codeWindow(window); }

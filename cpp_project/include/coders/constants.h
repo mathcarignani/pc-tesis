@@ -2,6 +2,8 @@
 #ifndef CPP_PROJECT_CONSTANTS_H
 #define CPP_PROJECT_CONSTANTS_H
 
+// MASK_MODE = 0 => the algorithm needs to process the no_data values
+// MASK_MODE = 1 => the algorithm can assume there will be no no_data values
 #define MASK_MODE 0
 
 #include <string>

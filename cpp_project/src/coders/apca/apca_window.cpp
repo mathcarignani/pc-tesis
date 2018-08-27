@@ -12,7 +12,7 @@ APCAWindow::APCAWindow(int max_window_size_, int error_threshold_){
     length = 0;
     min = 0;
     max = 0;
-#if MASK_MODE
+#if !MASK_MODE
     nan_window = false;
 #endif
 }
@@ -25,7 +25,7 @@ bool APCAWindow::conditionHolds(std::string x){
     else if (isFull()){
         return false;
     }
-#if MASK_MODE
+#if !MASK_MODE
     if (Constants::isNoData(x)){
         if (nan_window){ length++; return true;  }
         else {                     return false; }
@@ -56,6 +56,6 @@ bool APCAWindow::isFull(){
 }
 
 void APCAWindow::addFirstValue(std::string x){
-    length = 1;
     PCAWindow::addFirstValue(x);
+    length = 1;
 }

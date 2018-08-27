@@ -11,8 +11,10 @@ private:
 
     std::vector<std::string> decodeDataColumn() override;
     void decodeWindow(std::vector<std::string> & column, int window_size);
-    void decodeConstantWindow(std::vector<std::string> & column, int window_size);
     void decodeNonConstantWindow(std::vector<std::string> & column, int window_size);
+
+protected:
+    void decodeConstantWindow(std::vector<std::string> & column, int window_size);
 
 public:
     using DecoderCols::DecoderCols;

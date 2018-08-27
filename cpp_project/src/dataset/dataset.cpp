@@ -3,9 +3,7 @@
 
 #include "assert.h"
 
-Dataset::Dataset(){
-
-}
+Dataset::Dataset(){}
 
 Dataset::Dataset(std::vector<Range> ranges, std::vector<int> bits, int data_columns_count_){
     assert(ranges.size() > 0);

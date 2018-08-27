@@ -12,7 +12,7 @@ private:
     int error_threshold;
     int min;
     int max;
-#if MASK_MODE
+#if !MASK_MODE
     bool nan_window;
 #endif
 

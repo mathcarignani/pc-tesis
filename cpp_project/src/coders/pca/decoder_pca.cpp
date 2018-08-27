@@ -1,6 +1,5 @@
 
 #include "decoder_pca.h"
-
 #include "assert.h"
 
 void DecoderPCA::setCoderParams(int fixed_window_size_){
@@ -21,11 +20,11 @@ std::vector<std::string> DecoderPCA::decodeDataColumn(){
         if (isNoData()) {
             column.push_back(Constants::NO_DATA);
             row_index++;
-        } else {
-            int w_size = fixed_window_size;
-            if (total_data < w_size) { w_size = total_data; }
-            decodeWindow(column, w_size);
+            continue;
         }
+        int w_size = fixed_window_size;
+        if (total_data < w_size) { w_size = total_data; }
+        decodeWindow(column, w_size);
     #else
         int w_size = fixed_window_size;
         if (unprocessed_rows < w_size) { w_size = unprocessed_rows; }
