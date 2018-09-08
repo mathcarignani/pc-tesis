@@ -66,7 +66,7 @@ void CoderCols::codeDataColumnNoDataMask(){
             codeBool(burst_is_no_data);
             codeInt(burst_length - 1, Constants::MASK_BITS); // 1<= burst_length <= Constants::MASK_MAX_SIZE
             total++;
-            std::cout << "ccode burst_length = " << burst_length << std::endl;
+//            std::cout << "ccode burst_length = " << burst_length << std::endl;
             burst_is_no_data = no_data;
             burst_length = 1;
         }
@@ -79,8 +79,8 @@ void CoderCols::codeDataColumnNoDataMask(){
     codeBool(burst_is_no_data);
     codeInt(burst_length - 1, Constants::MASK_BITS);
     total++;
-    std::cout << "total bursts = " << total << std::endl;
-    std::cout << "ccode burst_length = " << burst_length << std::endl;
+//    std::cout << "total bursts = " << total << std::endl;
+//    std::cout << "ccode burst_length = " << burst_length << std::endl;
 }
 #endif
 

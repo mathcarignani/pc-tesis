@@ -3,6 +3,7 @@
 
 #include "bit_stream_reader.h"
 #include <iostream>
+#include <stdio.h>
 
 int BitStreamUtils::compare(Path path1, Path path2){
     BitStreamReader* reader1=new BitStreamReader(path1);
@@ -40,4 +41,8 @@ int BitStreamUtils::compareBytes(Path path1, Path path2){
     return 0;
 }
 
+void BitStreamUtils::removeFile(Path path){
+    const char * file_path = path.full_path.c_str();
+    remove(file_path);
+}
 

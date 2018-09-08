@@ -64,6 +64,24 @@ void Dataset::printBits(){
     }
 }
 
+std::vector<int> Dataset::totalMaskBitsArray(){
+    int size = column_code_vector.size();
+    std::vector<int> res(size);
+    for(int i=0; i < size; i++){
+        res[i] = column_code_vector[i].total_mask_bits;
+    }
+    return res;
+}
+
+std::vector<int> Dataset::totalBitsArray(){
+    int size = column_code_vector.size();
+    std::vector<int> res(size);
+    for(int i=0; i < size; i++){
+        res[i] = column_code_vector[i].total_bits;
+    }
+    return res;
+}
+
 //void Dataset::printRange(){
 //    column_code.range.print();
 //}

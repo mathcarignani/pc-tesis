@@ -5,7 +5,7 @@
 #include <string>
 #include "pca_window.h"
 
-class APCAWindow : public PCAWindow {
+class APCAWindow {
 
 private:
     int max_window_size;
@@ -25,6 +25,7 @@ public:
     APCAWindow(int max_window_size_, int error_threshold_);
     bool conditionHolds(std::string x);
     bool isFull();
+    bool isEmpty();
     void addFirstValue(std::string x);
     bool updateConstantValue(int new_min, int new_max);
 };

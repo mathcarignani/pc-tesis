@@ -24,7 +24,6 @@ private:
 protected:
     CSVReader &input_csv;
     BitStreamWriter &output_file;
-    Dataset dataset;
 
     void codeBit(int bit);
     void codeBool(bool bit);
@@ -33,6 +32,7 @@ protected:
     void codeFloat(float x);
 
 public:
+    Dataset dataset;
     CoderBase(CSVReader &input_csv, BitStreamWriter &output_file) : input_csv(input_csv), output_file(output_file) { }
     void codeFile();
     void printBits();

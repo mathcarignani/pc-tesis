@@ -19,13 +19,14 @@
 #include "assert.h"
 
 
-void Scripts::codeBasic(Path input_path, Path output_path){
+Dataset Scripts::codeBasic(Path input_path, Path output_path){
     CSVReader csv_reader = CSVReader(input_path);
     BitStreamWriter bit_stream_writer = BitStreamWriter(output_path);
     CoderBasic coder = CoderBasic(csv_reader, bit_stream_writer);
     coder.codeFile();
     coder.printBits();
     coder.close();
+    return coder.dataset;
 }
 
 void Scripts::decodeBasic(Path input_path, Path output_path){
@@ -38,7 +39,7 @@ void Scripts::decodeBasic(Path input_path, Path output_path){
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-void Scripts::codePCA(Path input_path, Path output_path, int fixed_window_size, std::vector<int> error_thresholds_vector){
+Dataset Scripts::codePCA(Path input_path, Path output_path, int fixed_window_size, std::vector<int> error_thresholds_vector){
     CSVReader csv_reader = CSVReader(input_path);
     BitStreamWriter bit_stream_writer = BitStreamWriter(output_path);
     CoderPCA coder = CoderPCA(csv_reader, bit_stream_writer);
@@ -46,6 +47,7 @@ void Scripts::codePCA(Path input_path, Path output_path, int fixed_window_size, 
     coder.codeFile();
     coder.printBits();
     coder.close();
+    return coder.dataset;
 }
 
 void Scripts::decodePCA(Path input_path, Path output_path, int fixed_window_size){
@@ -59,14 +61,14 @@ void Scripts::decodePCA(Path input_path, Path output_path, int fixed_window_size
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-void Scripts::codeAPCA(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector){
+Dataset Scripts::codeAPCA(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector){
     CSVReader csv_reader = CSVReader(input_path);
     BitStreamWriter bit_stream_writer = BitStreamWriter(output_path);
     CoderAPCA coder = CoderAPCA(csv_reader, bit_stream_writer);
     coder.setCoderParams(max_window_size, error_thresholds_vector);
     coder.codeFile();
     coder.printBits();
-    coder.close();
+    return coder.dataset;
 }
 
 void Scripts::decodeAPCA(Path input_path, Path output_path, int max_window_size){
@@ -80,14 +82,14 @@ void Scripts::decodeAPCA(Path input_path, Path output_path, int max_window_size)
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-void Scripts::codePWLH(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector, bool integer_mode){
+Dataset Scripts::codePWLH(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector, bool integer_mode){
     CSVReader csv_reader = CSVReader(input_path);
     BitStreamWriter bit_stream_writer = BitStreamWriter(output_path);
     CoderPWLH coder = CoderPWLH(csv_reader, bit_stream_writer);
     coder.setCoderParams(max_window_size, error_thresholds_vector, integer_mode);
     coder.codeFile();
     coder.printBits();
-    coder.close();
+    return coder.dataset;
 }
 
 void Scripts::decodePWLH(Path input_path, Path output_path, int max_window_size, bool integer_mode){
@@ -101,14 +103,14 @@ void Scripts::decodePWLH(Path input_path, Path output_path, int max_window_size,
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-void Scripts::codeCA(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector){
+Dataset Scripts::codeCA(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector){
     CSVReader csv_reader = CSVReader(input_path);
     BitStreamWriter bit_stream_writer = BitStreamWriter(output_path);
     CoderCA coder = CoderCA(csv_reader, bit_stream_writer);
     coder.setCoderParams(max_window_size, error_thresholds_vector);
     coder.codeFile();
     coder.printBits();
-    coder.close();
+    return coder.dataset;
 }
 
 void Scripts::decodeCA(Path input_path, Path output_path, int max_window_size){
@@ -122,14 +124,14 @@ void Scripts::decodeCA(Path input_path, Path output_path, int max_window_size){
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-void Scripts::codeSF(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector){
+Dataset Scripts::codeSF(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector){
     CSVReader csv_reader = CSVReader(input_path);
     BitStreamWriter bit_stream_writer = BitStreamWriter(output_path);
     CoderSlideFilter coder = CoderSlideFilter(csv_reader, bit_stream_writer);
     coder.setCoderParams(max_window_size, error_thresholds_vector);
     coder.codeFile();
     coder.printBits();
-    coder.close();
+    return coder.dataset;
 }
 
 void Scripts::decodeSF(Path input_path, Path output_path, int max_window_size){
@@ -139,51 +141,4 @@ void Scripts::decodeSF(Path input_path, Path output_path, int max_window_size){
     decoder.setCoderParams(max_window_size);
     decoder.decodeFile();
     decoder.close();
-}
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-void Scripts::copyAndCompareCSV(){
-    std::string project_path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project";
-    Path input_path = Path(project_path, "noaa_spc-wind.csv");
-    Path copy_path = Path(project_path, "noaa_spc-wind.copy.csv");
-
-    std::cout << "CopyCSV" << std::endl;
-    CSVUtils::CopyCSV(input_path, copy_path);
-
-    std::cout << "Compare" << std::endl;
-    CSVUtils::CompareCSVLossless(input_path, copy_path);
-
-    int first_diff_bit = BitStreamUtils::compare(input_path, copy_path);
-    if (first_diff_bit !=0 ) { std::cout << "ERROR: first different bit = " << first_diff_bit << std::endl; }
-    assert(first_diff_bit == 0);
-}
-
-void Scripts::codeAndDecodeCSV(){
-    std::string project_path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project";
-    Path input_path = Path(project_path, "noaa_spc-wind.csv");
-    Path coded_path = Path(project_path, "noaa_spc-wind.csv.c");
-    Path decoded_path = Path(project_path, "noaa_spc-wind.csv.c.d-float.csv");
-
-    std::cout << "codeCSV" << std::endl;
-    std::vector<int> error_thresholds_vector;
-    for(int i=0; i < 11; i++) { error_thresholds_vector.push_back(5); }
-    int fixed_window_size = 5;
-
-//    codePWLH(input_path, coded_path, fixed_window_size, error_thresholds_vector, false);
-//    decodePWLH(coded_path, decoded_path, fixed_window_size, false);
-
-    //    std::cout << "decodeCSV" << std::endl;
-
-//    std::cout << "codeCSV" << std::endl;
-    codeBasic(input_path, coded_path);
-//    std::cout << "decodeCSV" << std::endl;
-    decodeBasic(coded_path, decoded_path);
-//
-//    std::cout << "Compare" << std::endl;
-//    CSVUtils::CompareCSVLossless(input_path, decoded_path);
-//
-//    int first_diff_bit = BitStreamUtils::compare(input_path, decoded_path);
-//    if (first_diff_bit !=0 ) { std::cout << "ERROR: first different bit = " << first_diff_bit << std::endl; }
-//    assert(first_diff_bit == 0);
 }

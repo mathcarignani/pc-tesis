@@ -19,8 +19,6 @@ private:
 
     void updateMinAndMax(int x_int);
     void addNonFirstValue(std::string x); // PRE: !isFull() && !isEmpty()
-
-protected:
     void addFirstValue(std::string x); // PRE: isEmpty()
     void updateConstantValue();
 
@@ -38,6 +36,7 @@ public:
     void clearWindow();
     std::string getElement(int pos); // PRE: pos < length
 
+    static std::string calculateConstantValue(int min, int max);
     static bool validThreshold(int min, int max, int error_threshold);
 };
 

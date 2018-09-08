@@ -5,32 +5,28 @@
 #include <string>
 #include "path.h"
 #include <vector>
+#include "dataset.h"
 
 class Scripts {
 
 public:
-    static void codeBasic(Path input_path, Path output_path);
+    static Dataset codeBasic(Path input_path, Path output_path);
     static void decodeBasic(Path input_path, Path output_path);
 
-    static void codePCA(Path input_path, Path output_path, int fixed_window_size, std::vector<int> error_thresholds_vector);
+    static Dataset codePCA(Path input_path, Path output_path, int fixed_window_size, std::vector<int> error_thresholds_vector);
     static void decodePCA(Path input_path, Path output_path, int fixed_window_size);
 
-    static void codeAPCA(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector);
+    static Dataset codeAPCA(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector);
     static void decodeAPCA(Path input_path, Path output_path, int max_window_size);
 
-    static void codePWLH(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector, bool integer_mode);
+    static Dataset codePWLH(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector, bool integer_mode);
     static void decodePWLH(Path input_path, Path output_path, int max_window_size, bool integer_mode);
 
-    static void codeCA(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector);
+    static Dataset codeCA(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector);
     static void decodeCA(Path input_path, Path output_path, int max_window_size);
 
-    static void codeSF(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector);
+    static Dataset codeSF(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector);
     static void decodeSF(Path input_path, Path output_path, int max_window_size);
-
-    static void copyAndCompareCSV();
-    static void codeAndDecodeCSV();
-    static void codeCSV(std::string input_path, std::string input_filename, std::string output_path, std::string output_filename);
-    static void decodeCSV(std::string input_path, std::string input_filename, std::string output_path, std::string output_filename);
 };
 
 #endif //CPP_PROJECT_SCRIPTS_H

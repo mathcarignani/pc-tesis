@@ -10,7 +10,17 @@
 #include "bit_stream_writer.h"
 #include "bit_stream_reader.h"
 #include <cfloat>
+#include "tests_coder.h"
 
+void Tests::runAll() {
+    testDatasetUtils();
+    testDatetimeUtils();
+    testStringUtils();
+    testFloatCoder();
+    TestsCoder::testCoderDecoder();
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void Tests::testDatasetUtils(){
     std::cout << "Tests::testStringUtils" << std::endl;
@@ -90,24 +100,33 @@ void Tests::testDatetimeUtils(){
 
 void Tests::testStringUtils(){
     std::cout << "Tests::testStringUtils" << std::endl;
+    int char_as_int;
+    char char_as_int_as_char;
 
-    const char character = 'a';
-    int char_as_int = StringUtils::charToInt(character);
-    assert(char_as_int == 49);
-    const char char_as_int_as_char = StringUtils::intToChar(char_as_int);
+    char_as_int = StringUtils::charToInt('A');
+    assert(char_as_int == 65);
+    char_as_int_as_char = StringUtils::intToChar(char_as_int);
+    assert(char_as_int_as_char == 'A');
+
+    char_as_int = StringUtils::charToInt('Z');
+    assert(char_as_int == 90);
+    char_as_int_as_char = StringUtils::intToChar(char_as_int);
+    assert(char_as_int_as_char == 'Z');
+
+    char_as_int = StringUtils::charToInt('a');
+    assert(char_as_int == 97);
+    char_as_int_as_char = StringUtils::intToChar(char_as_int);
     assert(char_as_int_as_char == 'a');
 
-    std::cout << StringUtils::intToChar(35);
-    std::cout << StringUtils::intToChar(34);
-    std::cout << StringUtils::intToChar(130);
-    std::cout << StringUtils::intToChar(42);
-    std::cout << StringUtils::intToChar(130);
+    char_as_int = StringUtils::charToInt('z');
+    assert(char_as_int == 122);
+    char_as_int_as_char = StringUtils::intToChar(char_as_int);
+    assert(char_as_int_as_char == 'z');
 }
 
 void Tests::testFloatCoder(){
     std::cout << "Tests::testFloatCoder" << std::endl;
-    std::string path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/test-output";
-    Path coded_path = Path(path, "testFloat.code");
+    Path coded_path = Path(TestsCoder::TEST_OUTPUT_PATH, "testFloat.code");
 
     BitStreamWriter bit_stream_writer = BitStreamWriter(coded_path);
     float a = 0.238728932739; bit_stream_writer.pushFloat(a);
@@ -117,9 +136,9 @@ void Tests::testFloatCoder(){
     bit_stream_writer.close();
 
     BitStreamReader bit_stream_reader = BitStreamReader(coded_path);
-    float a_deco = bit_stream_reader.getFloat(); std::cout << a_deco << std::endl;
-    float b_deco = bit_stream_reader.getFloat(); std::cout << b_deco << std::endl;
-    float c_deco = bit_stream_reader.getFloat(); std::cout << c_deco << std::endl;
-    float d_deco = bit_stream_reader.getFloat(); std::cout << d_deco << std::endl;
-    assert(d_deco == FLT_MAX);
+    float diff = 0.00000000000000000000000000000001;
+    float a_deco = bit_stream_reader.getFloat(); assert(a_deco - a < diff);
+    float b_deco = bit_stream_reader.getFloat(); assert(b_deco - b < diff);
+    float c_deco = bit_stream_reader.getFloat(); assert(c_deco - c < diff);
+    float d_deco = bit_stream_reader.getFloat(); assert(d_deco == d);
 }

@@ -15,16 +15,8 @@ int main(int argc, char *argv[]){
 //        std::cout << i << " " << argv[i] << std::endl;
 //    }
 
-    if (argc <= 1){
-//        Tests::testFloatCoder();
-//        std::string path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[3]noaa-adcp/basic";
-//        assert(BitStreamUtils::compareBytes(path, "noaa-adcp-201501.c.cpp.csv", path, "noaa-adcp-201501.c.python.csv") == 0);
-//        Scripts::copyAndCompareCSV();
-        Scripts::codeAndDecodeCSV();
-
-//        Tests::testDatasetUtils();
-//        Tests::testDatetimeUtils();
-//        Tests::testStringUtils();
+    if (argc <= 1) {
+        Tests::runAll();
         return 0;
     }
 

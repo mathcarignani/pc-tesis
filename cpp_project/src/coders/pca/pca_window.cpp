@@ -24,9 +24,7 @@ void PCAWindow::updateMinAndMax(int x_int){
 }
 
 void PCAWindow::updateConstantValue(){
-    int constant = min + max;
-    if (constant != 0) { constant /= 2; }
-    constant_value = std::to_string(constant);
+    constant_value = calculateConstantValue(min, max);
 }
 
 void PCAWindow::addValue(std::string x){
@@ -89,6 +87,12 @@ void PCAWindow::clearWindow(){
 
 std::string PCAWindow::getElement(int pos){
     return array->at(pos);
+}
+
+std::string PCAWindow::calculateConstantValue(int min, int max){
+    int constant = min + max;
+    if (constant != 0) { constant /= 2; }
+    return std::to_string(constant);
 }
 
 bool PCAWindow::validThreshold(int min, int max, int error_threshold){

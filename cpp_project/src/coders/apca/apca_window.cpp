@@ -2,6 +2,7 @@
 #include "apca_window.h"
 
 #include "string_utils.h"
+#include "iostream"
 
 APCAWindow::APCAWindow() {}
 
@@ -46,7 +47,7 @@ bool APCAWindow::updateConstantValue(int new_min, int new_max){
 
     // condition holds, update min, max and constant
     min = new_min; max = new_max;
-    PCAWindow::updateConstantValue();
+    constant_value = PCAWindow::calculateConstantValue(min, max);
     length++;
     return true;
 }
@@ -55,7 +56,24 @@ bool APCAWindow::isFull(){
     return length == max_window_size;
 }
 
+bool APCAWindow::isEmpty(){
+    return length == 0;
+}
+
 void APCAWindow::addFirstValue(std::string x){
-    PCAWindow::addFirstValue(x);
+#if !MASK_MODE
+    if (Constants::isNoData(x)){
+        nan_window = true;
+        constant_value = Constants::NO_DATA;
+        length = 1;
+        return;
+    }
+    // x is an integer
+    nan_window = false;
+#endif
+    int x_int = std::stoi(x);
+    min = x_int;
+    max = x_int;
+    constant_value = x;
     length = 1;
 }

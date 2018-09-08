@@ -26,6 +26,8 @@ public:
     int nan();
     bool insideRange(int value);
     void printBits();
+    std::vector<int> totalMaskBitsArray();
+    std::vector<int> totalBitsArray();
 //    void printRange();
 };
 
