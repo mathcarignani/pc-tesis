@@ -7,8 +7,6 @@
 class CoderBasic: public CoderCols {
 
 private:
-    void codeDataRows() override;
-    void codeColumn();
     void codeColumnBefore() override;
     void codeColumnWhile(std::string csv_value) override;
     void codeColumnAfter() override;

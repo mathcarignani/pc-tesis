@@ -37,23 +37,12 @@ void CSVUtils::CompareCSVLossless(Path path1, Path path2){
     while (csv_reader1.continue_reading) {
         std::vector<std::string> row1 = csv_reader1.readLineCSV();
         std::vector<std::string> row2 = csv_reader2.readLineCSV();
-//        if (csv_reader1.current_line_count == 1){
-//            std::cout << "current_line " << csv_reader1.current_line_count << std::endl;
-//            std::cout << "ROW 1" << std::endl;
-//            std::cout << row1[0].size() << std::endl;
-//            std::cout << row1[0] << std::endl;
-//            std::cout << row1[1].size() << std::endl;
-//            std::cout << row1[1] << std::endl;
-//            std::cout << "ROW 2" << std::endl;
-//            std::cout << row2[0].size() << std::endl;
-//            std::cout << row2[0] << std::endl;
-//            std::cout << row2[1].size() << std::endl;
-//            std::cout << row2[1] << std::endl;
-//        }
         if (row1 != row2){
             std::cout << "current_line " << csv_reader1.current_line_count << std::endl;
+            std::cout << "line1 = " << StringUtils::join(row1, ".") << std::endl;
+            std::cout << "line2 = " << StringUtils::join(row2, ".") << std::endl;
+            break;
         }
-        assert(row1 == row2);
     }
     csv_reader1.close();
     csv_reader2.close();

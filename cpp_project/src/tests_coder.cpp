@@ -7,6 +7,8 @@
 #include "vector_utils.h"
 #include "bit_stream_utils.h"
 #include "assert.h"
+#include "string_utils.h"
+#include "csv_utils.h"
 
 const std::string TestsCoder::DATASETS_PATH = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv";
 const std::string TestsCoder::TEST_OUTPUT_PATH = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/test_files";
@@ -114,15 +116,15 @@ void TestsCoder::testCoderDecoder(){
             compareDecodedFiles(mode, file_path, output_decode_path, expected_path_str, coder_name);
 
             // Coder PWLH
-            coder_name = setAndWriteCoderName("CoderPWLHInt", bits_csv);
-            output_code_path = codedFilePath(output_path_str, file_path, coder_name);
-            expected_code_path = codedFilePath(expected_path_str, file_path, coder_name);
-            output_decode_path = decodedFilePath(output_path_str, file_path, coder_name);
-
-            ds = Scripts::codePWLH(file_path, output_code_path, 5, errors_vector, false); writeBitsCSV(bits_csv, ds); // CODE
-            compareFiles(output_code_path, expected_code_path);
-            Scripts::decodePWLH(output_code_path, output_decode_path, 5, false); // DECODE
-            compareDecodedFiles(mode, file_path, output_decode_path, expected_path_str, coder_name);
+//            coder_name = setAndWriteCoderName("CoderPWLH", bits_csv);
+//            output_code_path = codedFilePath(output_path_str, file_path, coder_name);
+//            expected_code_path = codedFilePath(expected_path_str, file_path, coder_name);
+//            output_decode_path = decodedFilePath(output_path_str, file_path, coder_name);
+//
+//            ds = Scripts::codePWLH(file_path, output_code_path, 5, errors_vector, false); writeBitsCSV(bits_csv, ds); // CODE
+//            compareFiles(output_code_path, expected_code_path);
+//            Scripts::decodePWLH(output_code_path, output_decode_path, 5, false); // DECODE
+//            compareDecodedFiles(mode, file_path, output_decode_path, expected_path_str, coder_name);
 
             // Coder CA
             coder_name = setAndWriteCoderName("CoderCA", bits_csv);
@@ -186,6 +188,17 @@ void TestsCoder::compareFiles(Path path1, Path path2){
         std::cout << "File 1 = " << path1.full_path << std::endl;
         std::cout << "File 2 = " << path2.full_path << std::endl;
         std::cout << "First diff byte = " << res << std::endl;
+
+        std::vector<std::string> filename1_split = StringUtils::splitByChar(path1.file_filename, '.');
+        std::vector<std::string> filename2_split = StringUtils::splitByChar(path2.file_filename, '.');
+        std::string file1_ext = filename1_split[filename1_split.size()-1];
+        std::string file2_ext = filename2_split[filename2_split.size()-1];
+
+        if (file1_ext == "csv" && file2_ext == "csv"){
+            std::cout << "Compare CSV..." << std::endl;
+            CSVUtils::CompareCSVLossless(path1, path2);
+        }
+
     }
 //    assert(res == 0);
 }
