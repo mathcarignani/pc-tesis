@@ -45,7 +45,7 @@ PWLHWindow CoderPWLH::createWindow(){
 
 void CoderPWLH::codeWindow(PWLHWindow & window){
     codeInt(window.length, window.max_window_size_bit_length);
-    if (integer_mode) { codeWindowInt(window); } else { codeWindowDouble(window); }
+    (integer_mode) ? codeWindowInt(window) : codeWindowDouble(window);
 }
 
 void CoderPWLH::codeWindowDouble(PWLHWindow & window){

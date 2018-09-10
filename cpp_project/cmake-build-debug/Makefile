@@ -258,87 +258,6 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-src/coders/apca/apca_window.o: src/coders/apca/apca_window.cpp.o
-
-.PHONY : src/coders/apca/apca_window.o
-
-# target to build an object file
-src/coders/apca/apca_window.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/apca/apca_window.cpp.o
-.PHONY : src/coders/apca/apca_window.cpp.o
-
-src/coders/apca/apca_window.i: src/coders/apca/apca_window.cpp.i
-
-.PHONY : src/coders/apca/apca_window.i
-
-# target to preprocess a source file
-src/coders/apca/apca_window.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/apca/apca_window.cpp.i
-.PHONY : src/coders/apca/apca_window.cpp.i
-
-src/coders/apca/apca_window.s: src/coders/apca/apca_window.cpp.s
-
-.PHONY : src/coders/apca/apca_window.s
-
-# target to generate assembly for a file
-src/coders/apca/apca_window.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/apca/apca_window.cpp.s
-.PHONY : src/coders/apca/apca_window.cpp.s
-
-src/coders/apca/coder_apca.o: src/coders/apca/coder_apca.cpp.o
-
-.PHONY : src/coders/apca/coder_apca.o
-
-# target to build an object file
-src/coders/apca/coder_apca.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/apca/coder_apca.cpp.o
-.PHONY : src/coders/apca/coder_apca.cpp.o
-
-src/coders/apca/coder_apca.i: src/coders/apca/coder_apca.cpp.i
-
-.PHONY : src/coders/apca/coder_apca.i
-
-# target to preprocess a source file
-src/coders/apca/coder_apca.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/apca/coder_apca.cpp.i
-.PHONY : src/coders/apca/coder_apca.cpp.i
-
-src/coders/apca/coder_apca.s: src/coders/apca/coder_apca.cpp.s
-
-.PHONY : src/coders/apca/coder_apca.s
-
-# target to generate assembly for a file
-src/coders/apca/coder_apca.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/apca/coder_apca.cpp.s
-.PHONY : src/coders/apca/coder_apca.cpp.s
-
-src/coders/apca/decoder_apca.o: src/coders/apca/decoder_apca.cpp.o
-
-.PHONY : src/coders/apca/decoder_apca.o
-
-# target to build an object file
-src/coders/apca/decoder_apca.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/apca/decoder_apca.cpp.o
-.PHONY : src/coders/apca/decoder_apca.cpp.o
-
-src/coders/apca/decoder_apca.i: src/coders/apca/decoder_apca.cpp.i
-
-.PHONY : src/coders/apca/decoder_apca.i
-
-# target to preprocess a source file
-src/coders/apca/decoder_apca.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/apca/decoder_apca.cpp.i
-.PHONY : src/coders/apca/decoder_apca.cpp.i
-
-src/coders/apca/decoder_apca.s: src/coders/apca/decoder_apca.cpp.s
-
-.PHONY : src/coders/apca/decoder_apca.s
-
-# target to generate assembly for a file
-src/coders/apca/decoder_apca.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/apca/decoder_apca.cpp.s
-.PHONY : src/coders/apca/decoder_apca.cpp.s
-
 src/coders/basic/coder_basic.o: src/coders/basic/coder_basic.cpp.o
 
 .PHONY : src/coders/basic/coder_basic.o
@@ -392,87 +311,6 @@ src/coders/basic/decoder_basic.s: src/coders/basic/decoder_basic.cpp.s
 src/coders/basic/decoder_basic.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/basic/decoder_basic.cpp.s
 .PHONY : src/coders/basic/decoder_basic.cpp.s
-
-src/coders/ca/ca_window.o: src/coders/ca/ca_window.cpp.o
-
-.PHONY : src/coders/ca/ca_window.o
-
-# target to build an object file
-src/coders/ca/ca_window.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/ca/ca_window.cpp.o
-.PHONY : src/coders/ca/ca_window.cpp.o
-
-src/coders/ca/ca_window.i: src/coders/ca/ca_window.cpp.i
-
-.PHONY : src/coders/ca/ca_window.i
-
-# target to preprocess a source file
-src/coders/ca/ca_window.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/ca/ca_window.cpp.i
-.PHONY : src/coders/ca/ca_window.cpp.i
-
-src/coders/ca/ca_window.s: src/coders/ca/ca_window.cpp.s
-
-.PHONY : src/coders/ca/ca_window.s
-
-# target to generate assembly for a file
-src/coders/ca/ca_window.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/ca/ca_window.cpp.s
-.PHONY : src/coders/ca/ca_window.cpp.s
-
-src/coders/ca/coder_ca.o: src/coders/ca/coder_ca.cpp.o
-
-.PHONY : src/coders/ca/coder_ca.o
-
-# target to build an object file
-src/coders/ca/coder_ca.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/ca/coder_ca.cpp.o
-.PHONY : src/coders/ca/coder_ca.cpp.o
-
-src/coders/ca/coder_ca.i: src/coders/ca/coder_ca.cpp.i
-
-.PHONY : src/coders/ca/coder_ca.i
-
-# target to preprocess a source file
-src/coders/ca/coder_ca.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/ca/coder_ca.cpp.i
-.PHONY : src/coders/ca/coder_ca.cpp.i
-
-src/coders/ca/coder_ca.s: src/coders/ca/coder_ca.cpp.s
-
-.PHONY : src/coders/ca/coder_ca.s
-
-# target to generate assembly for a file
-src/coders/ca/coder_ca.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/ca/coder_ca.cpp.s
-.PHONY : src/coders/ca/coder_ca.cpp.s
-
-src/coders/ca/decoder_ca.o: src/coders/ca/decoder_ca.cpp.o
-
-.PHONY : src/coders/ca/decoder_ca.o
-
-# target to build an object file
-src/coders/ca/decoder_ca.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/ca/decoder_ca.cpp.o
-.PHONY : src/coders/ca/decoder_ca.cpp.o
-
-src/coders/ca/decoder_ca.i: src/coders/ca/decoder_ca.cpp.i
-
-.PHONY : src/coders/ca/decoder_ca.i
-
-# target to preprocess a source file
-src/coders/ca/decoder_ca.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/ca/decoder_ca.cpp.i
-.PHONY : src/coders/ca/decoder_ca.cpp.i
-
-src/coders/ca/decoder_ca.s: src/coders/ca/decoder_ca.cpp.s
-
-.PHONY : src/coders/ca/decoder_ca.s
-
-# target to generate assembly for a file
-src/coders/ca/decoder_ca.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/ca/decoder_ca.cpp.s
-.PHONY : src/coders/ca/decoder_ca.cpp.s
 
 src/coders/coder_base.o: src/coders/coder_base.cpp.o
 
@@ -554,6 +392,168 @@ src/coders/cols/decoder_cols.s: src/coders/cols/decoder_cols.cpp.s
 src/coders/cols/decoder_cols.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/cols/decoder_cols.cpp.s
 .PHONY : src/coders/cols/decoder_cols.cpp.s
+
+src/coders/constant/apca/apca_window.o: src/coders/constant/apca/apca_window.cpp.o
+
+.PHONY : src/coders/constant/apca/apca_window.o
+
+# target to build an object file
+src/coders/constant/apca/apca_window.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/constant/apca/apca_window.cpp.o
+.PHONY : src/coders/constant/apca/apca_window.cpp.o
+
+src/coders/constant/apca/apca_window.i: src/coders/constant/apca/apca_window.cpp.i
+
+.PHONY : src/coders/constant/apca/apca_window.i
+
+# target to preprocess a source file
+src/coders/constant/apca/apca_window.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/constant/apca/apca_window.cpp.i
+.PHONY : src/coders/constant/apca/apca_window.cpp.i
+
+src/coders/constant/apca/apca_window.s: src/coders/constant/apca/apca_window.cpp.s
+
+.PHONY : src/coders/constant/apca/apca_window.s
+
+# target to generate assembly for a file
+src/coders/constant/apca/apca_window.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/constant/apca/apca_window.cpp.s
+.PHONY : src/coders/constant/apca/apca_window.cpp.s
+
+src/coders/constant/apca/coder_apca.o: src/coders/constant/apca/coder_apca.cpp.o
+
+.PHONY : src/coders/constant/apca/coder_apca.o
+
+# target to build an object file
+src/coders/constant/apca/coder_apca.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/constant/apca/coder_apca.cpp.o
+.PHONY : src/coders/constant/apca/coder_apca.cpp.o
+
+src/coders/constant/apca/coder_apca.i: src/coders/constant/apca/coder_apca.cpp.i
+
+.PHONY : src/coders/constant/apca/coder_apca.i
+
+# target to preprocess a source file
+src/coders/constant/apca/coder_apca.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/constant/apca/coder_apca.cpp.i
+.PHONY : src/coders/constant/apca/coder_apca.cpp.i
+
+src/coders/constant/apca/coder_apca.s: src/coders/constant/apca/coder_apca.cpp.s
+
+.PHONY : src/coders/constant/apca/coder_apca.s
+
+# target to generate assembly for a file
+src/coders/constant/apca/coder_apca.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/constant/apca/coder_apca.cpp.s
+.PHONY : src/coders/constant/apca/coder_apca.cpp.s
+
+src/coders/constant/apca/decoder_apca.o: src/coders/constant/apca/decoder_apca.cpp.o
+
+.PHONY : src/coders/constant/apca/decoder_apca.o
+
+# target to build an object file
+src/coders/constant/apca/decoder_apca.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/constant/apca/decoder_apca.cpp.o
+.PHONY : src/coders/constant/apca/decoder_apca.cpp.o
+
+src/coders/constant/apca/decoder_apca.i: src/coders/constant/apca/decoder_apca.cpp.i
+
+.PHONY : src/coders/constant/apca/decoder_apca.i
+
+# target to preprocess a source file
+src/coders/constant/apca/decoder_apca.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/constant/apca/decoder_apca.cpp.i
+.PHONY : src/coders/constant/apca/decoder_apca.cpp.i
+
+src/coders/constant/apca/decoder_apca.s: src/coders/constant/apca/decoder_apca.cpp.s
+
+.PHONY : src/coders/constant/apca/decoder_apca.s
+
+# target to generate assembly for a file
+src/coders/constant/apca/decoder_apca.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/constant/apca/decoder_apca.cpp.s
+.PHONY : src/coders/constant/apca/decoder_apca.cpp.s
+
+src/coders/constant/pca/coder_pca.o: src/coders/constant/pca/coder_pca.cpp.o
+
+.PHONY : src/coders/constant/pca/coder_pca.o
+
+# target to build an object file
+src/coders/constant/pca/coder_pca.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/constant/pca/coder_pca.cpp.o
+.PHONY : src/coders/constant/pca/coder_pca.cpp.o
+
+src/coders/constant/pca/coder_pca.i: src/coders/constant/pca/coder_pca.cpp.i
+
+.PHONY : src/coders/constant/pca/coder_pca.i
+
+# target to preprocess a source file
+src/coders/constant/pca/coder_pca.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/constant/pca/coder_pca.cpp.i
+.PHONY : src/coders/constant/pca/coder_pca.cpp.i
+
+src/coders/constant/pca/coder_pca.s: src/coders/constant/pca/coder_pca.cpp.s
+
+.PHONY : src/coders/constant/pca/coder_pca.s
+
+# target to generate assembly for a file
+src/coders/constant/pca/coder_pca.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/constant/pca/coder_pca.cpp.s
+.PHONY : src/coders/constant/pca/coder_pca.cpp.s
+
+src/coders/constant/pca/decoder_pca.o: src/coders/constant/pca/decoder_pca.cpp.o
+
+.PHONY : src/coders/constant/pca/decoder_pca.o
+
+# target to build an object file
+src/coders/constant/pca/decoder_pca.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/constant/pca/decoder_pca.cpp.o
+.PHONY : src/coders/constant/pca/decoder_pca.cpp.o
+
+src/coders/constant/pca/decoder_pca.i: src/coders/constant/pca/decoder_pca.cpp.i
+
+.PHONY : src/coders/constant/pca/decoder_pca.i
+
+# target to preprocess a source file
+src/coders/constant/pca/decoder_pca.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/constant/pca/decoder_pca.cpp.i
+.PHONY : src/coders/constant/pca/decoder_pca.cpp.i
+
+src/coders/constant/pca/decoder_pca.s: src/coders/constant/pca/decoder_pca.cpp.s
+
+.PHONY : src/coders/constant/pca/decoder_pca.s
+
+# target to generate assembly for a file
+src/coders/constant/pca/decoder_pca.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/constant/pca/decoder_pca.cpp.s
+.PHONY : src/coders/constant/pca/decoder_pca.cpp.s
+
+src/coders/constant/pca/pca_window.o: src/coders/constant/pca/pca_window.cpp.o
+
+.PHONY : src/coders/constant/pca/pca_window.o
+
+# target to build an object file
+src/coders/constant/pca/pca_window.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/constant/pca/pca_window.cpp.o
+.PHONY : src/coders/constant/pca/pca_window.cpp.o
+
+src/coders/constant/pca/pca_window.i: src/coders/constant/pca/pca_window.cpp.i
+
+.PHONY : src/coders/constant/pca/pca_window.i
+
+# target to preprocess a source file
+src/coders/constant/pca/pca_window.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/constant/pca/pca_window.cpp.i
+.PHONY : src/coders/constant/pca/pca_window.cpp.i
+
+src/coders/constant/pca/pca_window.s: src/coders/constant/pca/pca_window.cpp.s
+
+.PHONY : src/coders/constant/pca/pca_window.s
+
+# target to generate assembly for a file
+src/coders/constant/pca/pca_window.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/constant/pca/pca_window.cpp.s
+.PHONY : src/coders/constant/pca/pca_window.cpp.s
 
 src/coders/constants.o: src/coders/constants.cpp.o
 
@@ -663,248 +663,248 @@ src/coders/header/header_decoder.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/header/header_decoder.cpp.s
 .PHONY : src/coders/header/header_decoder.cpp.s
 
-src/coders/pca/coder_pca.o: src/coders/pca/coder_pca.cpp.o
+src/coders/linear/ca/ca_window.o: src/coders/linear/ca/ca_window.cpp.o
 
-.PHONY : src/coders/pca/coder_pca.o
-
-# target to build an object file
-src/coders/pca/coder_pca.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/pca/coder_pca.cpp.o
-.PHONY : src/coders/pca/coder_pca.cpp.o
-
-src/coders/pca/coder_pca.i: src/coders/pca/coder_pca.cpp.i
-
-.PHONY : src/coders/pca/coder_pca.i
-
-# target to preprocess a source file
-src/coders/pca/coder_pca.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/pca/coder_pca.cpp.i
-.PHONY : src/coders/pca/coder_pca.cpp.i
-
-src/coders/pca/coder_pca.s: src/coders/pca/coder_pca.cpp.s
-
-.PHONY : src/coders/pca/coder_pca.s
-
-# target to generate assembly for a file
-src/coders/pca/coder_pca.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/pca/coder_pca.cpp.s
-.PHONY : src/coders/pca/coder_pca.cpp.s
-
-src/coders/pca/decoder_pca.o: src/coders/pca/decoder_pca.cpp.o
-
-.PHONY : src/coders/pca/decoder_pca.o
+.PHONY : src/coders/linear/ca/ca_window.o
 
 # target to build an object file
-src/coders/pca/decoder_pca.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/pca/decoder_pca.cpp.o
-.PHONY : src/coders/pca/decoder_pca.cpp.o
+src/coders/linear/ca/ca_window.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/linear/ca/ca_window.cpp.o
+.PHONY : src/coders/linear/ca/ca_window.cpp.o
 
-src/coders/pca/decoder_pca.i: src/coders/pca/decoder_pca.cpp.i
+src/coders/linear/ca/ca_window.i: src/coders/linear/ca/ca_window.cpp.i
 
-.PHONY : src/coders/pca/decoder_pca.i
+.PHONY : src/coders/linear/ca/ca_window.i
 
 # target to preprocess a source file
-src/coders/pca/decoder_pca.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/pca/decoder_pca.cpp.i
-.PHONY : src/coders/pca/decoder_pca.cpp.i
+src/coders/linear/ca/ca_window.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/linear/ca/ca_window.cpp.i
+.PHONY : src/coders/linear/ca/ca_window.cpp.i
 
-src/coders/pca/decoder_pca.s: src/coders/pca/decoder_pca.cpp.s
+src/coders/linear/ca/ca_window.s: src/coders/linear/ca/ca_window.cpp.s
 
-.PHONY : src/coders/pca/decoder_pca.s
+.PHONY : src/coders/linear/ca/ca_window.s
 
 # target to generate assembly for a file
-src/coders/pca/decoder_pca.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/pca/decoder_pca.cpp.s
-.PHONY : src/coders/pca/decoder_pca.cpp.s
+src/coders/linear/ca/ca_window.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/linear/ca/ca_window.cpp.s
+.PHONY : src/coders/linear/ca/ca_window.cpp.s
 
-src/coders/pca/pca_window.o: src/coders/pca/pca_window.cpp.o
+src/coders/linear/ca/coder_ca.o: src/coders/linear/ca/coder_ca.cpp.o
 
-.PHONY : src/coders/pca/pca_window.o
+.PHONY : src/coders/linear/ca/coder_ca.o
 
 # target to build an object file
-src/coders/pca/pca_window.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/pca/pca_window.cpp.o
-.PHONY : src/coders/pca/pca_window.cpp.o
+src/coders/linear/ca/coder_ca.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/linear/ca/coder_ca.cpp.o
+.PHONY : src/coders/linear/ca/coder_ca.cpp.o
 
-src/coders/pca/pca_window.i: src/coders/pca/pca_window.cpp.i
+src/coders/linear/ca/coder_ca.i: src/coders/linear/ca/coder_ca.cpp.i
 
-.PHONY : src/coders/pca/pca_window.i
+.PHONY : src/coders/linear/ca/coder_ca.i
 
 # target to preprocess a source file
-src/coders/pca/pca_window.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/pca/pca_window.cpp.i
-.PHONY : src/coders/pca/pca_window.cpp.i
+src/coders/linear/ca/coder_ca.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/linear/ca/coder_ca.cpp.i
+.PHONY : src/coders/linear/ca/coder_ca.cpp.i
 
-src/coders/pca/pca_window.s: src/coders/pca/pca_window.cpp.s
+src/coders/linear/ca/coder_ca.s: src/coders/linear/ca/coder_ca.cpp.s
 
-.PHONY : src/coders/pca/pca_window.s
+.PHONY : src/coders/linear/ca/coder_ca.s
 
 # target to generate assembly for a file
-src/coders/pca/pca_window.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/pca/pca_window.cpp.s
-.PHONY : src/coders/pca/pca_window.cpp.s
+src/coders/linear/ca/coder_ca.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/linear/ca/coder_ca.cpp.s
+.PHONY : src/coders/linear/ca/coder_ca.cpp.s
 
-src/coders/pwlh/coder_pwlh.o: src/coders/pwlh/coder_pwlh.cpp.o
+src/coders/linear/ca/decoder_ca.o: src/coders/linear/ca/decoder_ca.cpp.o
 
-.PHONY : src/coders/pwlh/coder_pwlh.o
+.PHONY : src/coders/linear/ca/decoder_ca.o
 
 # target to build an object file
-src/coders/pwlh/coder_pwlh.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/pwlh/coder_pwlh.cpp.o
-.PHONY : src/coders/pwlh/coder_pwlh.cpp.o
+src/coders/linear/ca/decoder_ca.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/linear/ca/decoder_ca.cpp.o
+.PHONY : src/coders/linear/ca/decoder_ca.cpp.o
 
-src/coders/pwlh/coder_pwlh.i: src/coders/pwlh/coder_pwlh.cpp.i
+src/coders/linear/ca/decoder_ca.i: src/coders/linear/ca/decoder_ca.cpp.i
 
-.PHONY : src/coders/pwlh/coder_pwlh.i
+.PHONY : src/coders/linear/ca/decoder_ca.i
 
 # target to preprocess a source file
-src/coders/pwlh/coder_pwlh.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/pwlh/coder_pwlh.cpp.i
-.PHONY : src/coders/pwlh/coder_pwlh.cpp.i
+src/coders/linear/ca/decoder_ca.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/linear/ca/decoder_ca.cpp.i
+.PHONY : src/coders/linear/ca/decoder_ca.cpp.i
 
-src/coders/pwlh/coder_pwlh.s: src/coders/pwlh/coder_pwlh.cpp.s
+src/coders/linear/ca/decoder_ca.s: src/coders/linear/ca/decoder_ca.cpp.s
 
-.PHONY : src/coders/pwlh/coder_pwlh.s
+.PHONY : src/coders/linear/ca/decoder_ca.s
 
 # target to generate assembly for a file
-src/coders/pwlh/coder_pwlh.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/pwlh/coder_pwlh.cpp.s
-.PHONY : src/coders/pwlh/coder_pwlh.cpp.s
+src/coders/linear/ca/decoder_ca.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/linear/ca/decoder_ca.cpp.s
+.PHONY : src/coders/linear/ca/decoder_ca.cpp.s
 
-src/coders/pwlh/decoder_pwlh.o: src/coders/pwlh/decoder_pwlh.cpp.o
+src/coders/linear/pwlh/coder_pwlh.o: src/coders/linear/pwlh/coder_pwlh.cpp.o
 
-.PHONY : src/coders/pwlh/decoder_pwlh.o
+.PHONY : src/coders/linear/pwlh/coder_pwlh.o
 
 # target to build an object file
-src/coders/pwlh/decoder_pwlh.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/pwlh/decoder_pwlh.cpp.o
-.PHONY : src/coders/pwlh/decoder_pwlh.cpp.o
+src/coders/linear/pwlh/coder_pwlh.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/linear/pwlh/coder_pwlh.cpp.o
+.PHONY : src/coders/linear/pwlh/coder_pwlh.cpp.o
 
-src/coders/pwlh/decoder_pwlh.i: src/coders/pwlh/decoder_pwlh.cpp.i
+src/coders/linear/pwlh/coder_pwlh.i: src/coders/linear/pwlh/coder_pwlh.cpp.i
 
-.PHONY : src/coders/pwlh/decoder_pwlh.i
+.PHONY : src/coders/linear/pwlh/coder_pwlh.i
 
 # target to preprocess a source file
-src/coders/pwlh/decoder_pwlh.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/pwlh/decoder_pwlh.cpp.i
-.PHONY : src/coders/pwlh/decoder_pwlh.cpp.i
+src/coders/linear/pwlh/coder_pwlh.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/linear/pwlh/coder_pwlh.cpp.i
+.PHONY : src/coders/linear/pwlh/coder_pwlh.cpp.i
 
-src/coders/pwlh/decoder_pwlh.s: src/coders/pwlh/decoder_pwlh.cpp.s
+src/coders/linear/pwlh/coder_pwlh.s: src/coders/linear/pwlh/coder_pwlh.cpp.s
 
-.PHONY : src/coders/pwlh/decoder_pwlh.s
+.PHONY : src/coders/linear/pwlh/coder_pwlh.s
 
 # target to generate assembly for a file
-src/coders/pwlh/decoder_pwlh.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/pwlh/decoder_pwlh.cpp.s
-.PHONY : src/coders/pwlh/decoder_pwlh.cpp.s
+src/coders/linear/pwlh/coder_pwlh.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/linear/pwlh/coder_pwlh.cpp.s
+.PHONY : src/coders/linear/pwlh/coder_pwlh.cpp.s
 
-src/coders/pwlh/pwlh_window.o: src/coders/pwlh/pwlh_window.cpp.o
+src/coders/linear/pwlh/decoder_pwlh.o: src/coders/linear/pwlh/decoder_pwlh.cpp.o
 
-.PHONY : src/coders/pwlh/pwlh_window.o
+.PHONY : src/coders/linear/pwlh/decoder_pwlh.o
 
 # target to build an object file
-src/coders/pwlh/pwlh_window.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/pwlh/pwlh_window.cpp.o
-.PHONY : src/coders/pwlh/pwlh_window.cpp.o
+src/coders/linear/pwlh/decoder_pwlh.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/linear/pwlh/decoder_pwlh.cpp.o
+.PHONY : src/coders/linear/pwlh/decoder_pwlh.cpp.o
 
-src/coders/pwlh/pwlh_window.i: src/coders/pwlh/pwlh_window.cpp.i
+src/coders/linear/pwlh/decoder_pwlh.i: src/coders/linear/pwlh/decoder_pwlh.cpp.i
 
-.PHONY : src/coders/pwlh/pwlh_window.i
+.PHONY : src/coders/linear/pwlh/decoder_pwlh.i
 
 # target to preprocess a source file
-src/coders/pwlh/pwlh_window.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/pwlh/pwlh_window.cpp.i
-.PHONY : src/coders/pwlh/pwlh_window.cpp.i
+src/coders/linear/pwlh/decoder_pwlh.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/linear/pwlh/decoder_pwlh.cpp.i
+.PHONY : src/coders/linear/pwlh/decoder_pwlh.cpp.i
 
-src/coders/pwlh/pwlh_window.s: src/coders/pwlh/pwlh_window.cpp.s
+src/coders/linear/pwlh/decoder_pwlh.s: src/coders/linear/pwlh/decoder_pwlh.cpp.s
 
-.PHONY : src/coders/pwlh/pwlh_window.s
+.PHONY : src/coders/linear/pwlh/decoder_pwlh.s
 
 # target to generate assembly for a file
-src/coders/pwlh/pwlh_window.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/pwlh/pwlh_window.cpp.s
-.PHONY : src/coders/pwlh/pwlh_window.cpp.s
+src/coders/linear/pwlh/decoder_pwlh.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/linear/pwlh/decoder_pwlh.cpp.s
+.PHONY : src/coders/linear/pwlh/decoder_pwlh.cpp.s
 
-src/coders/slide_filter/coder_slide_filter.o: src/coders/slide_filter/coder_slide_filter.cpp.o
+src/coders/linear/pwlh/pwlh_window.o: src/coders/linear/pwlh/pwlh_window.cpp.o
 
-.PHONY : src/coders/slide_filter/coder_slide_filter.o
+.PHONY : src/coders/linear/pwlh/pwlh_window.o
 
 # target to build an object file
-src/coders/slide_filter/coder_slide_filter.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/slide_filter/coder_slide_filter.cpp.o
-.PHONY : src/coders/slide_filter/coder_slide_filter.cpp.o
+src/coders/linear/pwlh/pwlh_window.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/linear/pwlh/pwlh_window.cpp.o
+.PHONY : src/coders/linear/pwlh/pwlh_window.cpp.o
 
-src/coders/slide_filter/coder_slide_filter.i: src/coders/slide_filter/coder_slide_filter.cpp.i
+src/coders/linear/pwlh/pwlh_window.i: src/coders/linear/pwlh/pwlh_window.cpp.i
 
-.PHONY : src/coders/slide_filter/coder_slide_filter.i
+.PHONY : src/coders/linear/pwlh/pwlh_window.i
 
 # target to preprocess a source file
-src/coders/slide_filter/coder_slide_filter.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/slide_filter/coder_slide_filter.cpp.i
-.PHONY : src/coders/slide_filter/coder_slide_filter.cpp.i
+src/coders/linear/pwlh/pwlh_window.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/linear/pwlh/pwlh_window.cpp.i
+.PHONY : src/coders/linear/pwlh/pwlh_window.cpp.i
 
-src/coders/slide_filter/coder_slide_filter.s: src/coders/slide_filter/coder_slide_filter.cpp.s
+src/coders/linear/pwlh/pwlh_window.s: src/coders/linear/pwlh/pwlh_window.cpp.s
 
-.PHONY : src/coders/slide_filter/coder_slide_filter.s
+.PHONY : src/coders/linear/pwlh/pwlh_window.s
 
 # target to generate assembly for a file
-src/coders/slide_filter/coder_slide_filter.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/slide_filter/coder_slide_filter.cpp.s
-.PHONY : src/coders/slide_filter/coder_slide_filter.cpp.s
+src/coders/linear/pwlh/pwlh_window.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/linear/pwlh/pwlh_window.cpp.s
+.PHONY : src/coders/linear/pwlh/pwlh_window.cpp.s
 
-src/coders/slide_filter/decoder_slide_filter.o: src/coders/slide_filter/decoder_slide_filter.cpp.o
+src/coders/linear/slide_filter/coder_slide_filter.o: src/coders/linear/slide_filter/coder_slide_filter.cpp.o
 
-.PHONY : src/coders/slide_filter/decoder_slide_filter.o
+.PHONY : src/coders/linear/slide_filter/coder_slide_filter.o
 
 # target to build an object file
-src/coders/slide_filter/decoder_slide_filter.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/slide_filter/decoder_slide_filter.cpp.o
-.PHONY : src/coders/slide_filter/decoder_slide_filter.cpp.o
+src/coders/linear/slide_filter/coder_slide_filter.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/linear/slide_filter/coder_slide_filter.cpp.o
+.PHONY : src/coders/linear/slide_filter/coder_slide_filter.cpp.o
 
-src/coders/slide_filter/decoder_slide_filter.i: src/coders/slide_filter/decoder_slide_filter.cpp.i
+src/coders/linear/slide_filter/coder_slide_filter.i: src/coders/linear/slide_filter/coder_slide_filter.cpp.i
 
-.PHONY : src/coders/slide_filter/decoder_slide_filter.i
+.PHONY : src/coders/linear/slide_filter/coder_slide_filter.i
 
 # target to preprocess a source file
-src/coders/slide_filter/decoder_slide_filter.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/slide_filter/decoder_slide_filter.cpp.i
-.PHONY : src/coders/slide_filter/decoder_slide_filter.cpp.i
+src/coders/linear/slide_filter/coder_slide_filter.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/linear/slide_filter/coder_slide_filter.cpp.i
+.PHONY : src/coders/linear/slide_filter/coder_slide_filter.cpp.i
 
-src/coders/slide_filter/decoder_slide_filter.s: src/coders/slide_filter/decoder_slide_filter.cpp.s
+src/coders/linear/slide_filter/coder_slide_filter.s: src/coders/linear/slide_filter/coder_slide_filter.cpp.s
 
-.PHONY : src/coders/slide_filter/decoder_slide_filter.s
+.PHONY : src/coders/linear/slide_filter/coder_slide_filter.s
 
 # target to generate assembly for a file
-src/coders/slide_filter/decoder_slide_filter.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/slide_filter/decoder_slide_filter.cpp.s
-.PHONY : src/coders/slide_filter/decoder_slide_filter.cpp.s
+src/coders/linear/slide_filter/coder_slide_filter.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/linear/slide_filter/coder_slide_filter.cpp.s
+.PHONY : src/coders/linear/slide_filter/coder_slide_filter.cpp.s
 
-src/coders/slide_filter/slide_filter_window.o: src/coders/slide_filter/slide_filter_window.cpp.o
+src/coders/linear/slide_filter/decoder_slide_filter.o: src/coders/linear/slide_filter/decoder_slide_filter.cpp.o
 
-.PHONY : src/coders/slide_filter/slide_filter_window.o
+.PHONY : src/coders/linear/slide_filter/decoder_slide_filter.o
 
 # target to build an object file
-src/coders/slide_filter/slide_filter_window.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/slide_filter/slide_filter_window.cpp.o
-.PHONY : src/coders/slide_filter/slide_filter_window.cpp.o
+src/coders/linear/slide_filter/decoder_slide_filter.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/linear/slide_filter/decoder_slide_filter.cpp.o
+.PHONY : src/coders/linear/slide_filter/decoder_slide_filter.cpp.o
 
-src/coders/slide_filter/slide_filter_window.i: src/coders/slide_filter/slide_filter_window.cpp.i
+src/coders/linear/slide_filter/decoder_slide_filter.i: src/coders/linear/slide_filter/decoder_slide_filter.cpp.i
 
-.PHONY : src/coders/slide_filter/slide_filter_window.i
+.PHONY : src/coders/linear/slide_filter/decoder_slide_filter.i
 
 # target to preprocess a source file
-src/coders/slide_filter/slide_filter_window.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/slide_filter/slide_filter_window.cpp.i
-.PHONY : src/coders/slide_filter/slide_filter_window.cpp.i
+src/coders/linear/slide_filter/decoder_slide_filter.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/linear/slide_filter/decoder_slide_filter.cpp.i
+.PHONY : src/coders/linear/slide_filter/decoder_slide_filter.cpp.i
 
-src/coders/slide_filter/slide_filter_window.s: src/coders/slide_filter/slide_filter_window.cpp.s
+src/coders/linear/slide_filter/decoder_slide_filter.s: src/coders/linear/slide_filter/decoder_slide_filter.cpp.s
 
-.PHONY : src/coders/slide_filter/slide_filter_window.s
+.PHONY : src/coders/linear/slide_filter/decoder_slide_filter.s
 
 # target to generate assembly for a file
-src/coders/slide_filter/slide_filter_window.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/slide_filter/slide_filter_window.cpp.s
-.PHONY : src/coders/slide_filter/slide_filter_window.cpp.s
+src/coders/linear/slide_filter/decoder_slide_filter.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/linear/slide_filter/decoder_slide_filter.cpp.s
+.PHONY : src/coders/linear/slide_filter/decoder_slide_filter.cpp.s
+
+src/coders/linear/slide_filter/slide_filter_window.o: src/coders/linear/slide_filter/slide_filter_window.cpp.o
+
+.PHONY : src/coders/linear/slide_filter/slide_filter_window.o
+
+# target to build an object file
+src/coders/linear/slide_filter/slide_filter_window.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/linear/slide_filter/slide_filter_window.cpp.o
+.PHONY : src/coders/linear/slide_filter/slide_filter_window.cpp.o
+
+src/coders/linear/slide_filter/slide_filter_window.i: src/coders/linear/slide_filter/slide_filter_window.cpp.i
+
+.PHONY : src/coders/linear/slide_filter/slide_filter_window.i
+
+# target to preprocess a source file
+src/coders/linear/slide_filter/slide_filter_window.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/linear/slide_filter/slide_filter_window.cpp.i
+.PHONY : src/coders/linear/slide_filter/slide_filter_window.cpp.i
+
+src/coders/linear/slide_filter/slide_filter_window.s: src/coders/linear/slide_filter/slide_filter_window.cpp.s
+
+.PHONY : src/coders/linear/slide_filter/slide_filter_window.s
+
+# target to generate assembly for a file
+src/coders/linear/slide_filter/slide_filter_window.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/linear/slide_filter/slide_filter_window.cpp.s
+.PHONY : src/coders/linear/slide_filter/slide_filter_window.cpp.s
 
 src/dataset/column_code.o: src/dataset/column_code.cpp.o
 
@@ -1362,30 +1362,12 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... src/coders/apca/apca_window.o"
-	@echo "... src/coders/apca/apca_window.i"
-	@echo "... src/coders/apca/apca_window.s"
-	@echo "... src/coders/apca/coder_apca.o"
-	@echo "... src/coders/apca/coder_apca.i"
-	@echo "... src/coders/apca/coder_apca.s"
-	@echo "... src/coders/apca/decoder_apca.o"
-	@echo "... src/coders/apca/decoder_apca.i"
-	@echo "... src/coders/apca/decoder_apca.s"
 	@echo "... src/coders/basic/coder_basic.o"
 	@echo "... src/coders/basic/coder_basic.i"
 	@echo "... src/coders/basic/coder_basic.s"
 	@echo "... src/coders/basic/decoder_basic.o"
 	@echo "... src/coders/basic/decoder_basic.i"
 	@echo "... src/coders/basic/decoder_basic.s"
-	@echo "... src/coders/ca/ca_window.o"
-	@echo "... src/coders/ca/ca_window.i"
-	@echo "... src/coders/ca/ca_window.s"
-	@echo "... src/coders/ca/coder_ca.o"
-	@echo "... src/coders/ca/coder_ca.i"
-	@echo "... src/coders/ca/coder_ca.s"
-	@echo "... src/coders/ca/decoder_ca.o"
-	@echo "... src/coders/ca/decoder_ca.i"
-	@echo "... src/coders/ca/decoder_ca.s"
 	@echo "... src/coders/coder_base.o"
 	@echo "... src/coders/coder_base.i"
 	@echo "... src/coders/coder_base.s"
@@ -1395,6 +1377,24 @@ help:
 	@echo "... src/coders/cols/decoder_cols.o"
 	@echo "... src/coders/cols/decoder_cols.i"
 	@echo "... src/coders/cols/decoder_cols.s"
+	@echo "... src/coders/constant/apca/apca_window.o"
+	@echo "... src/coders/constant/apca/apca_window.i"
+	@echo "... src/coders/constant/apca/apca_window.s"
+	@echo "... src/coders/constant/apca/coder_apca.o"
+	@echo "... src/coders/constant/apca/coder_apca.i"
+	@echo "... src/coders/constant/apca/coder_apca.s"
+	@echo "... src/coders/constant/apca/decoder_apca.o"
+	@echo "... src/coders/constant/apca/decoder_apca.i"
+	@echo "... src/coders/constant/apca/decoder_apca.s"
+	@echo "... src/coders/constant/pca/coder_pca.o"
+	@echo "... src/coders/constant/pca/coder_pca.i"
+	@echo "... src/coders/constant/pca/coder_pca.s"
+	@echo "... src/coders/constant/pca/decoder_pca.o"
+	@echo "... src/coders/constant/pca/decoder_pca.i"
+	@echo "... src/coders/constant/pca/decoder_pca.s"
+	@echo "... src/coders/constant/pca/pca_window.o"
+	@echo "... src/coders/constant/pca/pca_window.i"
+	@echo "... src/coders/constant/pca/pca_window.s"
 	@echo "... src/coders/constants.o"
 	@echo "... src/coders/constants.i"
 	@echo "... src/coders/constants.s"
@@ -1407,33 +1407,33 @@ help:
 	@echo "... src/coders/header/header_decoder.o"
 	@echo "... src/coders/header/header_decoder.i"
 	@echo "... src/coders/header/header_decoder.s"
-	@echo "... src/coders/pca/coder_pca.o"
-	@echo "... src/coders/pca/coder_pca.i"
-	@echo "... src/coders/pca/coder_pca.s"
-	@echo "... src/coders/pca/decoder_pca.o"
-	@echo "... src/coders/pca/decoder_pca.i"
-	@echo "... src/coders/pca/decoder_pca.s"
-	@echo "... src/coders/pca/pca_window.o"
-	@echo "... src/coders/pca/pca_window.i"
-	@echo "... src/coders/pca/pca_window.s"
-	@echo "... src/coders/pwlh/coder_pwlh.o"
-	@echo "... src/coders/pwlh/coder_pwlh.i"
-	@echo "... src/coders/pwlh/coder_pwlh.s"
-	@echo "... src/coders/pwlh/decoder_pwlh.o"
-	@echo "... src/coders/pwlh/decoder_pwlh.i"
-	@echo "... src/coders/pwlh/decoder_pwlh.s"
-	@echo "... src/coders/pwlh/pwlh_window.o"
-	@echo "... src/coders/pwlh/pwlh_window.i"
-	@echo "... src/coders/pwlh/pwlh_window.s"
-	@echo "... src/coders/slide_filter/coder_slide_filter.o"
-	@echo "... src/coders/slide_filter/coder_slide_filter.i"
-	@echo "... src/coders/slide_filter/coder_slide_filter.s"
-	@echo "... src/coders/slide_filter/decoder_slide_filter.o"
-	@echo "... src/coders/slide_filter/decoder_slide_filter.i"
-	@echo "... src/coders/slide_filter/decoder_slide_filter.s"
-	@echo "... src/coders/slide_filter/slide_filter_window.o"
-	@echo "... src/coders/slide_filter/slide_filter_window.i"
-	@echo "... src/coders/slide_filter/slide_filter_window.s"
+	@echo "... src/coders/linear/ca/ca_window.o"
+	@echo "... src/coders/linear/ca/ca_window.i"
+	@echo "... src/coders/linear/ca/ca_window.s"
+	@echo "... src/coders/linear/ca/coder_ca.o"
+	@echo "... src/coders/linear/ca/coder_ca.i"
+	@echo "... src/coders/linear/ca/coder_ca.s"
+	@echo "... src/coders/linear/ca/decoder_ca.o"
+	@echo "... src/coders/linear/ca/decoder_ca.i"
+	@echo "... src/coders/linear/ca/decoder_ca.s"
+	@echo "... src/coders/linear/pwlh/coder_pwlh.o"
+	@echo "... src/coders/linear/pwlh/coder_pwlh.i"
+	@echo "... src/coders/linear/pwlh/coder_pwlh.s"
+	@echo "... src/coders/linear/pwlh/decoder_pwlh.o"
+	@echo "... src/coders/linear/pwlh/decoder_pwlh.i"
+	@echo "... src/coders/linear/pwlh/decoder_pwlh.s"
+	@echo "... src/coders/linear/pwlh/pwlh_window.o"
+	@echo "... src/coders/linear/pwlh/pwlh_window.i"
+	@echo "... src/coders/linear/pwlh/pwlh_window.s"
+	@echo "... src/coders/linear/slide_filter/coder_slide_filter.o"
+	@echo "... src/coders/linear/slide_filter/coder_slide_filter.i"
+	@echo "... src/coders/linear/slide_filter/coder_slide_filter.s"
+	@echo "... src/coders/linear/slide_filter/decoder_slide_filter.o"
+	@echo "... src/coders/linear/slide_filter/decoder_slide_filter.i"
+	@echo "... src/coders/linear/slide_filter/decoder_slide_filter.s"
+	@echo "... src/coders/linear/slide_filter/slide_filter_window.o"
+	@echo "... src/coders/linear/slide_filter/slide_filter_window.i"
+	@echo "... src/coders/linear/slide_filter/slide_filter_window.s"
 	@echo "... src/dataset/column_code.o"
 	@echo "... src/dataset/column_code.i"
 	@echo "... src/dataset/column_code.s"
