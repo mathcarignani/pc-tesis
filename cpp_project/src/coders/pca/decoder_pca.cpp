@@ -19,7 +19,7 @@ std::vector<std::string> DecoderPCA::decodeDataColumn(){
     #if MASK_MODE
         if (isNoData()) {
             column.push_back(Constants::NO_DATA);
-            row_index++;
+            row_index++; unprocessed_rows--;
             continue;
         }
         int w_size = fixed_window_size;

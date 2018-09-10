@@ -45,11 +45,11 @@ void TestsCoder::testCoderDecoder(){
 
     for(int i = 0; i < paths.size(); i++){
         Path file_path = paths[i];
-        writeStringCSV(bits_csv, file_path.file_filename);
+        writeStringCSV(bits_csv, file_path.file_filename, true);
 
         for(int j = 0; j < modes.size(); j++){
             std::string mode = modes[j];
-            writeStringCSV(bits_csv, mode);
+            writeStringCSV(bits_csv, mode, false);
 
             std::vector<int> errors_vector;
             std::string expected_path_str, output_path_str;
@@ -155,8 +155,12 @@ void TestsCoder::writeBitsCSV(CSVWriter & csv_writer, Dataset dataset){
     csv_writer.writeRow(VectorUtils::intVectorToStringVector(dataset.totalBitsArray()));
 }
 
-void TestsCoder::writeStringCSV(CSVWriter & csv_writer, std::string mode){
+void TestsCoder::writeStringCSV(CSVWriter & csv_writer, std::string mode, bool title){
     std::cout << ">> " << mode << std::endl;
+    if (title){
+        csv_writer.writeRow({""});
+    }
+    csv_writer.writeRow({""});
     csv_writer.writeRow({mode});
     csv_writer.writeRow({""});
 }
@@ -200,5 +204,5 @@ void TestsCoder::compareFiles(Path path1, Path path2){
         }
 
     }
-//    assert(res == 0);
+    assert(res == 0);
 }

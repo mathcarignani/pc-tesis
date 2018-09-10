@@ -53,7 +53,7 @@ void DecoderCols::decodeDataColumnNoDataMask() {
     while (row_index < data_rows_count){
         burst_is_no_data = decodeBool();
         burst_length = decodeInt(Constants::MASK_BITS) + 1; // 1<= burst_length <= Constants::MASK_MAX_SIZE
-        std::cout << "decode burst_length = " << burst_length << std::endl;
+//        std::cout << "decode burst_length = " << burst_length << std::endl;
         burst_is_no_data_vector.push_back(burst_is_no_data);
         burst_length_vector.push_back(burst_length);
         if (burst_is_no_data) { total_no_data += burst_length; } else { total_data += burst_length; }
@@ -63,17 +63,17 @@ void DecoderCols::decodeDataColumnNoDataMask() {
     current_index = 0;
     burst_is_no_data = burst_is_no_data_vector.at(current_index);
     burst_length = burst_length_vector.at(current_index);
-    std::cout << "END decodeDataColumnNoDataMask" << std::endl;
+//    std::cout << "END decodeDataColumnNoDataMask" << std::endl;
 }
 
 bool DecoderCols::isNoData(){
-    std::cout << "current_index = " << current_index << std::endl;
-    std::cout << "size = " << burst_is_no_data_vector.size() << std::endl;
+//    std::cout << "current_index = " << current_index << std::endl;
+//    std::cout << "size = " << burst_is_no_data_vector.size() << std::endl;
     if (burst_length == 0){
         current_index++;
         burst_is_no_data = burst_is_no_data_vector.at(current_index);
         burst_length = burst_length_vector.at(current_index);
-        std::cout << "bburst_length = " << burst_length << std::endl;
+//        std::cout << "bburst_length = " << burst_length << std::endl;
     }
     burst_length--;
     return burst_is_no_data;
