@@ -34,7 +34,7 @@ bool APCAWindow::conditionHolds(std::string x){
     // x is an integer
     if (nan_window) { return false; }
 #endif
-    int x_int = std::stoi(x);
+    int x_int = StringUtils::stringToInt(x);
     if (x_int < min) { return updateConstantValue(x_int, max); }
     if (x_int > max) { return updateConstantValue(min, x_int); }
     // min <= x_int <= max
@@ -71,7 +71,7 @@ void APCAWindow::addFirstValue(std::string x){
     // x is an integer
     nan_window = false;
 #endif
-    int x_int = std::stoi(x);
+    int x_int = StringUtils::stringToInt(x);
     min = x_int;
     max = x_int;
     constant_value = x;

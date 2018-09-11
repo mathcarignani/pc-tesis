@@ -13,7 +13,8 @@ private:
     void goToFirstDataRow();
     void codeColumn();
 #if MASK_MODE
-    void codeDataColumnNoDataMask();
+    int codeDataColumnNoDataMask();
+    int codeBurst(bool burst_is_no_data, int burst_length);
 #endif
 
     virtual void codeColumnBefore() = 0;
@@ -24,6 +25,10 @@ protected:
     int column_index = 0;
     int row_index = 0;
     std::vector<int> time_delta_vector;
+
+#if MASK_MODE
+    int total_data_rows;
+#endif
 
     void codeDataColumn();
     void codeTimeDeltaColumn();

@@ -2,6 +2,7 @@
 #include "coder_cols.h"
 
 #include "assert.h"
+#include "string_utils.h"
 
 void CoderCols::codeDataRows(){
     int total_columns = dataset.data_columns_count + 1;
@@ -25,7 +26,7 @@ void CoderCols::codeColumn() {
         return;
     }
 #if MASK_MODE
-    codeDataColumnNoDataMask();
+    total_data_rows = codeDataColumnNoDataMask();
 #endif
     codeDataColumn();
 }
@@ -42,21 +43,21 @@ void CoderCols::codeTimeDeltaColumn(){
         codeValueRaw(csv_value); // same as CoderBasic
 
         // add int value to the time_delta_vector
-        int csv_value_int = std::stoi(csv_value);
+        int csv_value_int = StringUtils::stringToInt(csv_value);
         time_delta_vector.push_back(csv_value_int);
         row_index++;
     }
 }
 
 #if MASK_MODE
-void CoderCols::codeDataColumnNoDataMask(){
+int CoderCols::codeDataColumnNoDataMask(){
     dataset.setMaskMode(true);
 
     bool burst_is_no_data = false;
     int burst_length = 0; // <= Constants::MASK_MAX_SIZE
+    int total_data_rows = 0;
 
     goToFirstDataRow();
-    int total = 0;
     while (input_csv.continue_reading) {
         std::string csv_value = input_csv.readLineCSVWithIndex(column_index);
         bool no_data = Constants::isNoData(csv_value);
@@ -65,10 +66,7 @@ void CoderCols::codeDataColumnNoDataMask(){
             burst_length = 1;
         }
         else if (no_data != burst_is_no_data || burst_length == Constants::MASK_MAX_SIZE){
-            codeBool(burst_is_no_data);
-            codeInt(burst_length - 1, Constants::MASK_BITS); // 1<= burst_length <= Constants::MASK_MAX_SIZE
-            total++;
-//            std::cout << "ccode burst_length = " << burst_length << std::endl;
+            total_data_rows += codeBurst(burst_is_no_data, burst_length);
             burst_is_no_data = no_data;
             burst_length = 1;
         }
@@ -78,13 +76,16 @@ void CoderCols::codeDataColumnNoDataMask(){
         row_index++;
     }
     assert(burst_length > 0);
-    codeBool(burst_is_no_data);
-    codeInt(burst_length - 1, Constants::MASK_BITS);
-    total++;
-//    std::cout << "total bursts = " << total << std::endl;
-//    std::cout << "ccode burst_length = " << burst_length << std::endl;
+    total_data_rows += codeBurst(burst_is_no_data, burst_length);
+    return total_data_rows;
 }
 #endif
+
+int CoderCols::codeBurst(bool burst_is_no_data, int burst_length){
+    codeBool(burst_is_no_data);
+    codeInt(burst_length - 1, Constants::MASK_BITS); // 1<= burst_length <= Constants::MASK_MAX_SIZE
+    return ((burst_is_no_data) ? 0 : burst_length);
+}
 
 void CoderCols::codeDataColumn(){
     dataset.setMaskMode(false);

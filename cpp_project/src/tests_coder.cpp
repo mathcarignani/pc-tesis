@@ -13,6 +13,21 @@
 const std::string TestsCoder::DATASETS_PATH = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv";
 const std::string TestsCoder::TEST_OUTPUT_PATH = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/test_files";
 
+void TestsCoder::testSideFilderCoder() {
+    Path file_path = Path(DATASETS_PATH + "/[1]irkis", "vwc_1202.dat.csv");
+    std::vector<int> lossless{0,  0, 0, 0, 0, 0,  0, 0, 0, 0, 0};
+    std::vector<int>    lossy{0, 12, 3, 5, 2, 4, 10, 6, 4, 3, 2};
+
+    std::string coder_name = "CoderSF";
+    Path output_code_path = codedFilePath(TEST_OUTPUT_PATH, file_path, coder_name);
+
+    Scripts::codeSF(file_path, output_code_path, 5, lossy); // CODE
+//    compareFiles(output_code_path, expected_code_path);
+//    Scripts::decodePCA(output_code_path, output_decode_path, 5); // DECODE
+//    compareDecodedFiles(mode, file_path, output_decode_path, expected_path_str, coder_name);
+}
+
+
 void TestsCoder::testCoderDecoder(){
     std::cout << "Tests::testCoderDecoder" << std::endl;
     std::string mask_mode_folder = (MASK_MODE) ? "mask_mode_true" : "mask_mode_false";

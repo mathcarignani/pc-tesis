@@ -13,6 +13,7 @@ public:
     static const std::string TEST_OUTPUT_PATH;
 
     static void testCoderDecoder();
+    static void testSideFilderCoder();
 
 private:
     static std::string setAndWriteCoderName(std::string coder_name, CSVWriter & csv_writer);

@@ -19,13 +19,13 @@ std::string DatasetUtils::findLine(std::string string_group, std::string string_
 int DatasetUtils::codeDatasetName(std::string dataset_name){
     assert(action == "code");
     std::string line = findLine(DATASET_KEY, dataset_name);
-    return std::stoi(StringUtils::splitByString(line, SEPARATOR)[1]);
+    return StringUtils::stringToInt(StringUtils::splitByString(line, SEPARATOR)[1]);
 }
 
 int DatasetUtils::codeTimeUnit(std::string time_unit_name){
     assert(action == "code");
     std::string line = findLine(TIME_UNIT_KEY, time_unit_name);
-    return std::stoi(StringUtils::splitByString(line, SEPARATOR)[1]);
+    return StringUtils::stringToInt(StringUtils::splitByString(line, SEPARATOR)[1]);
 }
 
 std::string DatasetUtils::decodeDatasetName(int dataset_int){
@@ -49,8 +49,8 @@ std::vector<Range> DatasetUtils::getRangeVector(std::string dataset_name) {
         std::string range_str = StringUtils::removeChars(ranges_str_split[i], "[");
         range_str = StringUtils::removeChars(range_str, "]"); // "2500,5000"
         std::vector<std::string> ranges_vector_str = StringUtils::splitByString(range_str, ","); // <"2500", "5000">
-        int min = std::stoi(ranges_vector_str[0]); // 2500
-        int max = std::stoi(ranges_vector_str[1]); // 5000
+        int min = StringUtils::stringToInt(ranges_vector_str[0]); // 2500
+        int max = StringUtils::stringToInt(ranges_vector_str[1]); // 5000
         result.emplace_back(Range(min, max));
     }
     return result;
@@ -63,7 +63,7 @@ std::vector<int> DatasetUtils::getBitsVector(std::string dataset_name) {
     std::vector<int> result;
     for (int i = 0; i < bits_vector_str.size(); i++){
         std::string bit_str = bits_vector_str[i];
-        int bit = std::stoi(bit_str);
+        int bit = StringUtils::stringToInt(bit_str);
         result.emplace_back(bit);
     }
     return result;

@@ -49,8 +49,8 @@ void DecoderCA::decodeWindow(std::vector<std::string> & column){
 
 void DecoderCA::createWindow(std::vector<std::string> & column, std::string archived_value){
 //    std::cout << "archived_value = " << archived_value << ", current_value = " << current_value << std::endl;
-    int archived_value_int = std::stoi(archived_value);
-    int current_value_int = std::stoi(current_value);
+    int archived_value_int = StringUtils::stringToInt(archived_value);
+    int current_value_int = StringUtils::stringToInt(current_value);
 
     CAPoint first_point = CAPoint(0, archived_value_int);
 //    std::cout << "first_point = (0," << archived_value_int << ")" <<  std::endl;

@@ -38,8 +38,8 @@ void DecoderSlideFilter::decodeWindow(std::vector<std::string> & column){
 }
 
 void DecoderSlideFilter::createWindow(std::vector<std::string> & column, std::string previous_value){
-//    int previous_value_int = std::stoi(previous_value);
-//    int current_value_int = std::stoi(current_value);
+//    int previous_value_int = StringUtils::stringToInt(previous_value);
+//    int current_value_int = StringUtils::stringToInt(current_value);
 //
 //    CAPoint first_point = CAPoint(0, previous_value_int);
 //    CAPoint last_point = CAPoint(current_window_size, current_value_int);

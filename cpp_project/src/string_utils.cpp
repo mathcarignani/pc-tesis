@@ -4,6 +4,10 @@
 #include <iostream>
 #include <math.h>
 
+int StringUtils::stringToInt(std::string & str){
+    return (std::stoi(str));
+}
+
 //
 // SOURCE: https://stackoverflow.com/a/14516630/4547232
 //

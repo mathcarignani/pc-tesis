@@ -1,5 +1,6 @@
 
 #include "coder_ca.h"
+#include "string_utils.h"
 
 void CoderCA::setCoderParams(int max_window_size_, std::vector<int> error_thresholds_vector_){
     max_window_size = max_window_size_;
@@ -25,10 +26,10 @@ void CoderCA::codeColumnAfter(){
 //
 // PRE:
 // (1) x_delta >= 0
-// (2) std::stoi(x) is an integer
+// (2) StringUtils::stringToInt is an integer
 //
 void CoderCA::codeOriginal(CAWindow & window, std::string x, int x_delta){
-    int x_int = std::stoi(x);
+    int x_int = StringUtils::stringToInt(x);
 
     if (window.isEmpty()){
 //        std::cout << "window.isEmpty()" << std::endl;
@@ -59,7 +60,7 @@ void CoderCA::code(CAWindow & window, std::string x, int x_delta){
 //     return;
 
     int x_int;
-    if (!no_data_x) { x_int = std::stoi(x); }
+    if (!no_data_x) { x_int = StringUtils::stringToInt(x); }
 
     if (window.isEmpty()){
 //        std::cout << "window.isEmpty()" << std::endl;

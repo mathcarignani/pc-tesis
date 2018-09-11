@@ -2,6 +2,7 @@
 #include "coder_base.h"
 
 #include "header_coder.h"
+#include "string_utils.h"
 
 
 void CoderBase::codeDataRowsCount(){
@@ -16,7 +17,7 @@ void CoderBase::codeDataRowsCount(){
 int CoderBase::codeValue(std::string x){
     if (Constants::isNoData(x)){ return dataset.nan(); }
 
-    int x_int = std::stoi(x);
+    int x_int = StringUtils::stringToInt(x);
     if (dataset.insideRange(x_int)) { return x_int + dataset.offset(); }
 
     throw std::invalid_argument(std::to_string(x_int));

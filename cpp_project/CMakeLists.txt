@@ -11,8 +11,9 @@ set(DATA_DIR external/benchmarkLinux/DataManagementLayer/Data)
 set(DYN_ARRAY_DIR external/benchmarkLinux/DataStructures/DynArray)
 set(LINE_DIR external/benchmarkLinux/DataStructures/Line)
 set(POLYGON_DIR external/benchmarkLinux/DataStructures/Polygon)
+set(SF_DATA_DIR external/benchmarkLinux/Algorithms/SlideFilter/Data)
 
-set(EXTERNAL_DIRS ${BENCHMARK_DIR} ${PWLH_CONTROL_DIR} ${DATA_DIR} ${DYN_ARRAY_DIR} ${LINE_DIR} ${POLYGON_DIR})
+set(EXTERNAL_DIRS ${BENCHMARK_DIR} ${PWLH_CONTROL_DIR} ${DATA_DIR} ${DYN_ARRAY_DIR} ${LINE_DIR} ${POLYGON_DIR} ${SF_DATA_DIR})
 
 set(CODER_HEADER_HEAD_DIR include/coders/header)
 set(CODER_HEADER_SRC_DIR src/coders/header)
@@ -74,7 +75,7 @@ include_directories(${EXTERNAL_DIRS} ${HEAD_DIRS} ${SRC_DIR})
 set(EXTERNAL_DATA_STRUCTURES_HEAD_FILES ${DYN_ARRAY_DIR}/DynArray.h ${LINE_DIR}/Line.h ${POLYGON_DIR}/CPolygon.h)
 set(EXTERNAL_DATA_STRUCTURES_SRC_FILES ${DYN_ARRAY_DIR}/DynArray.cpp ${LINE_DIR}/Line.cpp ${POLYGON_DIR}/CPolygon.cpp)
 
-set(EXTERNAL_HEAD_FILES ${BENCHMARK_DIR}/stdafx.h ${EXTERNAL_DATA_STRUCTURES_HEAD_FILES} ${DATA_DIR}/DataItem.h ${PWLH_CONTROL_DIR}/LinearBucket.h)
+set(EXTERNAL_HEAD_FILES ${BENCHMARK_DIR}/stdafx.h ${EXTERNAL_DATA_STRUCTURES_HEAD_FILES} ${DATA_DIR}/DataItem.h ${PWLH_CONTROL_DIR}/LinearBucket.h ${SF_DATA_DIR}/SlideFiltersEntry.h)
 set(EXTERNAL_SRC_FILES ${EXTERNAL_DATA_STRUCTURES_SRC_FILES} ${PWLH_CONTROL_DIR}/LinearBucket.cpp)
 ### EXTERNAL END #######################################################################################################
 

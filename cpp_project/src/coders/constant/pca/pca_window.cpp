@@ -2,6 +2,7 @@
 #include "pca_window.h"
 
 #include <iostream>
+#include "string_utils.h"
 
 PCAWindow::PCAWindow() {}
 
@@ -44,7 +45,7 @@ void PCAWindow::addFirstValue(std::string x){
     // x is an integer
     nan_window = false;
 #endif
-    int x_int = std::stoi(x);
+    int x_int = StringUtils::stringToInt(x);
     min = x_int;
     max = x_int;
     constant_value = x;
@@ -61,7 +62,7 @@ void PCAWindow::addNonFirstValue(std::string x){
 #endif
     if (!has_constant_value) { return; }
 
-    int x_int = std::stoi(x);
+    int x_int = StringUtils::stringToInt(x);
     updateMinAndMax(x_int);
     if (validThreshold(min, max, error_threshold)){
         updateConstantValue();

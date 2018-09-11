@@ -36,7 +36,7 @@ bool PWLHWindow::conditionHolds(std::string x, int x_delta){
     // x is an integer
     if (nan_window || x_delta == 0) { return false; }
 
-    int x_int = std::stoi(x);
+    int x_int = StringUtils::stringToInt(x);
     int new_x_coord = x_coord + x_delta;
 //    std::cout << "addPointMOD, new_x_coord = " << new_x_coord << " , x_int = " << x_int << std::endl;
     bucket->addPointMOD(new_x_coord, x_int);
@@ -87,7 +87,7 @@ void PWLHWindow::addFirstValue(std::string x){
     else { // x is an integer
         nan_window = false;
         x_coord = 0;
-        int x_int = std::stoi(x);
+        int x_int = StringUtils::stringToInt(x);
         if (bucket->getSize() != 0) { bucket->resetBucket(); }
 //        std::cout << "addFirstValue ELSE " << x_int << std::endl;
         bucket->addPointMOD(0, (double) x_int); // should be the same as calling bucket->addPoint((double) x_int);
@@ -128,8 +128,8 @@ std::vector<std::string> PWLHWindow::decodePoints(float point1_y, float point2_y
 }
 
 std::vector<std::string> PWLHWindow::decodePointsIntegerMode(std::string point1_y, std::string point2_y, std::vector<int> x_coords){
-    int point1_y_int = std::stoi(point1_y);
-    int point2_y_int = std::stoi(point2_y);
+    int point1_y_int = StringUtils::stringToInt(point1_y);
+    int point2_y_int = StringUtils::stringToInt(point2_y);
 //    std::cout << "A<point1_y_int, point2_y_int> = " << point1_y_int << ", " << point2_y_int << ">" << std::endl;
     int first_x_coord = x_coords.front(); assert(first_x_coord == 0); // TODO: comment out
     Point p1 = Point(point1_y_int, 0); // x_coords.front() == 0

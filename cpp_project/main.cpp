@@ -2,6 +2,7 @@
 #include <datetime_utils.h>
 #include "scripts.h"
 #include "tests.h"
+#include "tests_coder.h"
 #include "assert.h"
 #include "bit_stream_utils.h"
 #include "path.h"
@@ -16,7 +17,8 @@ int main(int argc, char *argv[]){
 //    }
 
     if (argc <= 1) {
-        Tests::runAll();
+        TestsCoder::testSideFilderCoder();
+//        Tests::runAll();
         return 0;
     }
 
