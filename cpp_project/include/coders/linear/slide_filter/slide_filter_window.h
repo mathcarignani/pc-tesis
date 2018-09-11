@@ -12,6 +12,7 @@ class SlideFilterWindow {
 private:
     std::vector<DataItem> data;
     int error_threshold;
+    int total_data_rows;
 
 public:
     int length;
@@ -21,6 +22,7 @@ public:
     int getDataLength();
     DataItem getAt(int pos);
     int getEsp();
+    int getPosition(int timestamp);
 
 };
 

@@ -10,8 +10,10 @@ class CoderSlideFilter: public CoderCols {
 
 private:
     int max_window_size;
+    int max_window_size_bit_length;
     std::vector<int> error_thresholds_vector;
     SlideFilterWindow* m_pSFData;
+    int last_recodring_position;
 
     int m_nBegin_Point;
 
