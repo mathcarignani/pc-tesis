@@ -5,6 +5,7 @@
 #include <sstream>
 #include "assert.h"
 #include <vector>
+#include "string_utils.h"
 
 std::tm DatetimeUtils::stringToDatetime(std::string tm_str, std::string datetime_format){
     std::tm tm;
@@ -100,8 +101,9 @@ std::tm DatetimeUtils::mapSecondsToDatetime(std::tm start_date, long int seconds
             }
         }
     }
-    std::string timestamp_str = std::to_string(year) + "-" + std::to_string(month + 1) + "-" + std::to_string(day);
-    timestamp_str += " " + std::to_string(hour) + ":" + std::to_string(min) + ":" + std::to_string(sec);
+    int month_plus = month + 1;
+    std::string timestamp_str = StringUtils::intToString(year) + "-" + StringUtils::intToString(month_plus) + "-" + StringUtils::intToString(day);
+    timestamp_str += " " + StringUtils::intToString(hour) + ":" + StringUtils::intToString(min) + ":" + StringUtils::intToString(sec);
     std::tm timestamp_tm = stringToDatetime(timestamp_str, "%Y-%m-%d %H:%M:%S");
     return timestamp_tm;
 }

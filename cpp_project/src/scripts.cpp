@@ -14,6 +14,7 @@
 #include "decoder_ca.h"
 #include "coder_slide_filter.h"
 #include "decoder_slide_filter.h"
+#include "coder_fr.h"
 #include "csv_utils.h"
 #include "bit_stream_utils.h"
 #include "assert.h"
@@ -141,4 +142,16 @@ void Scripts::decodeSF(Path input_path, Path output_path, int max_window_size){
     decoder.setCoderParams(max_window_size);
     decoder.decodeFile();
     decoder.close();
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Dataset Scripts::codeFR(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector){
+    CSVReader csv_reader = CSVReader(input_path);
+    BitStreamWriter bit_stream_writer = BitStreamWriter(output_path);
+    CoderFR coder = CoderFR(csv_reader, bit_stream_writer);
+    coder.setCoderParams(max_window_size, error_thresholds_vector);
+    coder.codeFile();
+    coder.printBits();
+    return coder.dataset;
 }

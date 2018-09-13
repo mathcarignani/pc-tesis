@@ -1,11 +1,14 @@
 
 #include "string_utils.h"
-
+#include "math_utils.h"
 #include <iostream>
-#include <math.h>
 
 int StringUtils::stringToInt(std::string & str){
-    return (std::stoi(str));
+    return std::stoi(str);
+}
+
+std::string StringUtils::intToString(int & integer){
+    return std::to_string(integer);
 }
 
 //
@@ -82,6 +85,7 @@ std::string StringUtils::splitByCharWithIndex(std::string str, const char delimi
             }
         }
     }
+    return acc;
 }
 
 //
@@ -138,27 +142,7 @@ const char StringUtils::intToChar(const int integer){
     return (char) integer;
 }
 
-//
-// SOURCE: https://stackoverflow.com/a/21192373/4547232
-//
-int StringUtils::bitLength(uint32_t value){
-    int bits = 0;
-    for (int bit_test = 16; bit_test > 0; bit_test >>= 1){
-        if (value >> bit_test != 0){
-            bits += bit_test;
-            value >>= bit_test;
-        }
-    }
-    return bits + value;
-}
-
-int StringUtils::doubleToInt(double d){
-    int d_int = (int)round(d);
-    return d_int;
-}
-
 std::string StringUtils::doubleToString(double d){
-    int d_int = doubleToInt(d);
-    std::string d_string = std::to_string(d_int);
-    return d_string;
+    int d_int = MathUtils::doubleToInt(d);
+    return intToString(d_int);
 }

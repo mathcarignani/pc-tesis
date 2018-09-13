@@ -2,13 +2,14 @@
 #include "apca_window.h"
 
 #include "string_utils.h"
+#include "math_utils.h"
 #include "iostream"
 
 APCAWindow::APCAWindow() {}
 
 APCAWindow::APCAWindow(int max_window_size_, int error_threshold_){
     max_window_size = max_window_size_;
-    max_window_size_bit_length = StringUtils::bitLength(max_window_size);
+    max_window_size_bit_length = MathUtils::bitLength(max_window_size);
     error_threshold = error_threshold_;
     length = 0;
     min = 0;

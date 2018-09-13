@@ -1,13 +1,13 @@
 
 #include "coder_slide_filter.h"
 #include "assert.h"
-#include "string_utils.h"
+#include "math_utils.h"
 
 
 void CoderSlideFilter::setCoderParams(int max_window_size_, std::vector<int> error_thresholds_vector_){
     max_window_size = max_window_size_;
     error_thresholds_vector = error_thresholds_vector_;
-    max_window_size_bit_length = StringUtils::bitLength(max_window_size);
+    max_window_size_bit_length = MathUtils::bitLength(max_window_size);
 }
 
 void CoderSlideFilter::codeColumnBefore(){

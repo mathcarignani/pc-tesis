@@ -30,13 +30,13 @@ int DatasetUtils::codeTimeUnit(std::string time_unit_name){
 
 std::string DatasetUtils::decodeDatasetName(int dataset_int){
     assert(action == "decode");
-    std::string line = findLine(DATASET_KEY, std::to_string(dataset_int));
+    std::string line = findLine(DATASET_KEY, StringUtils::intToString(dataset_int));
     return StringUtils::splitByString(line, SEPARATOR)[0];
 }
 
 std::string DatasetUtils::decodeTimeUnit(int time_unit_int){
     assert(action == "decode");
-    std::string line = findLine(TIME_UNIT_KEY, std::to_string(time_unit_int));
+    std::string line = findLine(TIME_UNIT_KEY, StringUtils::intToString(time_unit_int));
     return StringUtils::splitByString(line, SEPARATOR)[0];
 }
 

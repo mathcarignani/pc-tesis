@@ -10,14 +10,17 @@
 #include "bit_stream_writer.h"
 #include "bit_stream_reader.h"
 #include <cfloat>
+#include <tests_string_utils.h>
 #include "tests_coder.h"
+#include "tests_math_utils.h"
 
 void Tests::runAll() {
     testDatasetUtils();
     testDatetimeUtils();
-    testStringUtils();
     testFloatCoder();
-    TestsCoder::testCoderDecoder();
+    TestsMathUtils::runAll();
+    TestsStringUtils::runAll();
+//    TestsCoder::testCoderDecoder();
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -96,32 +99,6 @@ void Tests::testDatetimeUtils(){
     assert(DatetimeUtils::compareDates(start_date_plus_136_years, DatetimeUtils::mapSecondsToDatetime(start_date, 4291747200)) == 0);
     assert(DatetimeUtils::compareDates(example_date, DatetimeUtils::mapSecondsToDatetime(start_date, 3629265300)) == 0);
     assert(DatetimeUtils::compareDates(end_date, DatetimeUtils::mapSecondsToDatetime(start_date, pow(2,32))) == 0);
-}
-
-void Tests::testStringUtils(){
-    std::cout << "Tests::testStringUtils" << std::endl;
-    int char_as_int;
-    char char_as_int_as_char;
-
-    char_as_int = StringUtils::charToInt('A');
-    assert(char_as_int == 65);
-    char_as_int_as_char = StringUtils::intToChar(char_as_int);
-    assert(char_as_int_as_char == 'A');
-
-    char_as_int = StringUtils::charToInt('Z');
-    assert(char_as_int == 90);
-    char_as_int_as_char = StringUtils::intToChar(char_as_int);
-    assert(char_as_int_as_char == 'Z');
-
-    char_as_int = StringUtils::charToInt('a');
-    assert(char_as_int == 97);
-    char_as_int_as_char = StringUtils::intToChar(char_as_int);
-    assert(char_as_int_as_char == 'a');
-
-    char_as_int = StringUtils::charToInt('z');
-    assert(char_as_int == 122);
-    char_as_int_as_char = StringUtils::intToChar(char_as_int);
-    assert(char_as_int_as_char == 'z');
 }
 
 void Tests::testFloatCoder(){

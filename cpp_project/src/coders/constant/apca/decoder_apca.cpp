@@ -1,10 +1,10 @@
 
 #include "decoder_apca.h"
 #include "assert.h"
-#include "string_utils.h"
+#include "math_utils.h"
 
 void DecoderAPCA::setCoderParams(int max_window_size_){
-    max_window_size_bit_length = StringUtils::bitLength(max_window_size_);
+    max_window_size_bit_length = MathUtils::bitLength(max_window_size_);
 }
 
 std::vector<std::string> DecoderAPCA::decodeDataColumn(){

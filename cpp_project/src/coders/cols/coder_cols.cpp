@@ -79,13 +79,13 @@ int CoderCols::codeDataColumnNoDataMask(){
     total_data_rows += codeBurst(burst_is_no_data, burst_length);
     return total_data_rows;
 }
-#endif
 
 int CoderCols::codeBurst(bool burst_is_no_data, int burst_length){
     codeBool(burst_is_no_data);
     codeInt(burst_length - 1, Constants::MASK_BITS); // 1<= burst_length <= Constants::MASK_MAX_SIZE
     return ((burst_is_no_data) ? 0 : burst_length);
 }
+#endif
 
 void CoderCols::codeDataColumn(){
     dataset.setMaskMode(false);

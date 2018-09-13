@@ -42,13 +42,16 @@ set(CODER_SF_SRC_DIR src/coders/linear/slide_filter)
 set(CODER_CA_HEAD_DIR include/coders/linear/ca)
 set(CODER_CA_SRC_DIR src/coders/linear/ca)
 
+set(CODER_FR_HEAD_DIR include/coders/linear/fr)
+set(CODER_FR_SRC_DIR src/coders/linear/fr)
+
 set(CODER_HEAD_OTHER ${CODER_HEADER_HEAD_DIR} ${CODER_BASE_HEAD_DIR} ${CODER_COLS_HEAD_DIR} ${CODER_BASIC_HEAD_DIR})
 set(CODER_HEAD_CONST ${CODER_PCA_HEAD_DIR} ${CODER_APCA_HEAD_DIR} ${CODER_PWLH_HEAD_DIR})
-set(CODER_HEAD_LINEAR ${CODER_CA_HEAD_DIR} ${CODER_SF_HEAD_DIR})
+set(CODER_HEAD_LINEAR ${CODER_CA_HEAD_DIR} ${CODER_SF_HEAD_DIR} ${CODER_FR_HEAD_DIR} ${CODER_FR_HEAD_DIR})
 
 set(CODER_SRC_OTHER ${CODER_HEADER_SRC_DIR} ${CODER_BASE_SRC_DIR} ${CODER_COLS_SRC_DIR} ${CODER_BASIC_SRC_DIR})
 set(CODER_SRC_CONST ${CODER_PCA_SRC_DIR} ${CODER_APCA_SRC_DIR} ${CODER_PWLH_SRC_DIR})
-set(CODER_SRC_LINEAR ${CODER_CA_SRC_DIR} ${CODER_SF_SRC_DIR})
+set(CODER_SRC_LINEAR ${CODER_CA_SRC_DIR} ${CODER_SF_SRC_DIR} ${CODER_FR_SRC_DIR})
 
 set(CODER_HEAD_DIRS ${CODER_HEAD_OTHER} ${CODER_HEAD_CONST} ${CODER_HEAD_LINEAR})
 set(CODER_SRC_DIRS ${CODER_SRC_OTHER} ${CODER_SRC_CONST} ${CODER_SRC_LINEAR})
@@ -123,28 +126,31 @@ set(CODER_PWLH_SRC_FILES ${CODER_PWLH_SRC_DIR}/pwlh_window.cpp ${CODER_PWLH_SRC_
 set(CODER_SF_HEAD_FILES ${CODER_SF_HEAD_DIR}/slide_filter_window.h ${CODER_SF_HEAD_DIR}/coder_slide_filter.h ${CODER_SF_HEAD_DIR}/decoder_slide_filter.h)
 set(CODER_SF_SRC_FILES ${CODER_SF_SRC_DIR}/slide_filter_window.cpp ${CODER_SF_SRC_DIR}/coder_slide_filter.cpp ${CODER_SF_SRC_DIR}/decoder_slide_filter.cpp)
 
-set(CODER_CA_HEAD_FILES ${CODER_CA_HEAD_DIR}/ca_point.h ${CODER_CA_HEAD_DIR}/ca_line.h ${CODER_CA_HEAD_DIR}/ca_window.h ${CODER_CA_HEAD_DIR}/coder_ca.h ${CODER_CA_HEAD_DIR}/decoder_ca.h)
+set(CODER_CA_HEAD_FILES ${CODER_CA_HEAD_DIR}/ca_line.h ${CODER_CA_HEAD_DIR}/ca_window.h ${CODER_CA_HEAD_DIR}/coder_ca.h ${CODER_CA_HEAD_DIR}/decoder_ca.h)
 set(CODER_CA_SRC_FILES ${CODER_CA_SRC_DIR}/ca_window.cpp ${CODER_CA_SRC_DIR}/coder_ca.cpp ${CODER_CA_SRC_DIR}/decoder_ca.cpp)
+
+set(CODER_FR_HEAD_FILES ${CODER_FR_HEAD_DIR}/fr_window.h ${CODER_FR_HEAD_DIR}/coder_fr.h ${CODER_FR_HEAD_DIR}/decoder_fr.h)
+set(CODER_FR_SRC_FILES ${CODER_FR_SRC_DIR}/fr_window.cpp ${CODER_FR_SRC_DIR}/coder_fr.cpp ${CODER_FR_SRC_DIR}/decoder_fr.cpp)
 
 set(CODER_HEAD_FILES0 ${CODER_BASE_HEAD_DIR}/constants.h)
 set(CODER_HEAD_FILES1 ${CODER_HEADER_HEAD_FILES} ${CODER_BASE_HEAD_FILES} ${DATASET_HEAD_FILES} ${CODER_COLS_HEAD_FILES} ${CODER_BASIC_HEAD_FILES})
 set(CODER_HEAD_FILES2 ${CODER_PCA_HEAD_FILES} ${CODER_APCA_HEAD_FILES} ${CODER_PWLH_HEAD_FILES} ${CODER_SF_HEAD_FILES})
-set(CODER_HEAD_FILES3 ${CODER_SF_HEAD_FILES} ${CODER_CA_HEAD_FILES})
+set(CODER_HEAD_FILES3 ${CODER_SF_HEAD_FILES} ${CODER_CA_HEAD_FILES} ${CODER_FR_HEAD_FILES})
 
 set(CODER_SRC_FILES0 ${CODER_BASE_SRC_DIR}/constants.cpp)
 set(CODER_SRC_FILES1 ${CODER_HEADER_SRC_FILES} ${CODER_BASE_SRC_FILES} ${DATASET_SRC_FILES} ${CODER_COLS_SRC_FILES} ${CODER_BASIC_SRC_FILES})
 set(CODER_SRC_FILES2 ${CODER_PCA_SRC_FILES} ${CODER_APCA_SRC_FILES} ${CODER_PWLH_SRC_FILES} ${CODER_SF_SRC_FILES})
-set(CODER_SRC_FILES3 ${CODER_SF_HEAD_FILES} ${CODER_CA_SRC_FILES})
+set(CODER_SRC_FILES3 ${CODER_SF_HEAD_FILES} ${CODER_CA_SRC_FILES} ${CODER_FR_SRC_FILES})
 
 set(CODER_HEAD_FILES ${CODER_HEAD_FILES0} ${CODER_HEAD_FILES1} ${CODER_HEAD_FILES2} ${CODER_HEAD_FILES3})
 set(CODER_SRC_FILES ${CODER_SRC_FILES0} ${CODER_SRC_FILES1} ${CODER_SRC_FILES2} ${CODER_SRC_FILES3})
 ### CODERS END #########################################################################################################
 
-set(OTHER_HEAD_FILES1 include/string_utils.h include/datetime_utils.h include/vector_utils.h)
-set(OTHER_SRC_FILES1 src/string_utils.cpp src/datetime_utils.cpp )
+set(OTHER_HEAD_FILES1 include/string_utils.h include/math_utils.h include/datetime_utils.h include/vector_utils.h)
+set(OTHER_SRC_FILES1 src/string_utils.cpp src/math_utils.cpp src/datetime_utils.cpp )
 
-set(OTHER_HEAD_FILES2 include/scripts.h include/tests_coder.h include/tests.h)
-set(OTHER_SRC_FILES2 src/scripts.cpp src/tests_coder.cpp src/tests.cpp)
+set(OTHER_HEAD_FILES2 include/scripts.h include/tests_coder.h include/tests_math_utils.h include/tests_string_utils.h include/tests.h)
+set(OTHER_SRC_FILES2 src/scripts.cpp src/tests_coder.cpp src/tests_math_utils.cpp src/tests_string_utils.cpp src/tests.cpp)
 
 set(HEAD_FILES ${EXTERNAL_HEAD_FILES} ${OTHER_HEAD_FILES1} ${FILE_UTILS_HEAD_FILES} ${DATASET_HEAD_FILES} ${CODER_HEAD_FILES} ${OTHER_HEAD_FILES2})
 set(SOURCE_FILES ${EXTERNAL_SRC_FILES} ${OTHER_SRC_FILES1} ${FILE_UTILS_SRC_FILES} ${CODER_SRC_FILES} ${OTHER_SRC_FILES2})

@@ -20,7 +20,7 @@ int CoderBase::codeValue(std::string x){
     int x_int = StringUtils::stringToInt(x);
     if (dataset.insideRange(x_int)) { return x_int + dataset.offset(); }
 
-    throw std::invalid_argument(std::to_string(x_int));
+    throw std::invalid_argument(StringUtils::intToString(x_int));
 }
 
 void CoderBase::codeRaw(int value){

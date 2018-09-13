@@ -744,6 +744,87 @@ src/coders/linear/ca/decoder_ca.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/linear/ca/decoder_ca.cpp.s
 .PHONY : src/coders/linear/ca/decoder_ca.cpp.s
 
+src/coders/linear/fr/coder_fr.o: src/coders/linear/fr/coder_fr.cpp.o
+
+.PHONY : src/coders/linear/fr/coder_fr.o
+
+# target to build an object file
+src/coders/linear/fr/coder_fr.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/linear/fr/coder_fr.cpp.o
+.PHONY : src/coders/linear/fr/coder_fr.cpp.o
+
+src/coders/linear/fr/coder_fr.i: src/coders/linear/fr/coder_fr.cpp.i
+
+.PHONY : src/coders/linear/fr/coder_fr.i
+
+# target to preprocess a source file
+src/coders/linear/fr/coder_fr.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/linear/fr/coder_fr.cpp.i
+.PHONY : src/coders/linear/fr/coder_fr.cpp.i
+
+src/coders/linear/fr/coder_fr.s: src/coders/linear/fr/coder_fr.cpp.s
+
+.PHONY : src/coders/linear/fr/coder_fr.s
+
+# target to generate assembly for a file
+src/coders/linear/fr/coder_fr.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/linear/fr/coder_fr.cpp.s
+.PHONY : src/coders/linear/fr/coder_fr.cpp.s
+
+src/coders/linear/fr/decoder_fr.o: src/coders/linear/fr/decoder_fr.cpp.o
+
+.PHONY : src/coders/linear/fr/decoder_fr.o
+
+# target to build an object file
+src/coders/linear/fr/decoder_fr.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/linear/fr/decoder_fr.cpp.o
+.PHONY : src/coders/linear/fr/decoder_fr.cpp.o
+
+src/coders/linear/fr/decoder_fr.i: src/coders/linear/fr/decoder_fr.cpp.i
+
+.PHONY : src/coders/linear/fr/decoder_fr.i
+
+# target to preprocess a source file
+src/coders/linear/fr/decoder_fr.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/linear/fr/decoder_fr.cpp.i
+.PHONY : src/coders/linear/fr/decoder_fr.cpp.i
+
+src/coders/linear/fr/decoder_fr.s: src/coders/linear/fr/decoder_fr.cpp.s
+
+.PHONY : src/coders/linear/fr/decoder_fr.s
+
+# target to generate assembly for a file
+src/coders/linear/fr/decoder_fr.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/linear/fr/decoder_fr.cpp.s
+.PHONY : src/coders/linear/fr/decoder_fr.cpp.s
+
+src/coders/linear/fr/fr_window.o: src/coders/linear/fr/fr_window.cpp.o
+
+.PHONY : src/coders/linear/fr/fr_window.o
+
+# target to build an object file
+src/coders/linear/fr/fr_window.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/linear/fr/fr_window.cpp.o
+.PHONY : src/coders/linear/fr/fr_window.cpp.o
+
+src/coders/linear/fr/fr_window.i: src/coders/linear/fr/fr_window.cpp.i
+
+.PHONY : src/coders/linear/fr/fr_window.i
+
+# target to preprocess a source file
+src/coders/linear/fr/fr_window.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/linear/fr/fr_window.cpp.i
+.PHONY : src/coders/linear/fr/fr_window.cpp.i
+
+src/coders/linear/fr/fr_window.s: src/coders/linear/fr/fr_window.cpp.s
+
+.PHONY : src/coders/linear/fr/fr_window.s
+
+# target to generate assembly for a file
+src/coders/linear/fr/fr_window.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/linear/fr/fr_window.cpp.s
+.PHONY : src/coders/linear/fr/fr_window.cpp.s
+
 src/coders/linear/pwlh/coder_pwlh.o: src/coders/linear/pwlh/coder_pwlh.cpp.o
 
 .PHONY : src/coders/linear/pwlh/coder_pwlh.o
@@ -1230,6 +1311,33 @@ src/file_utils/text/text_utils.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/file_utils/text/text_utils.cpp.s
 .PHONY : src/file_utils/text/text_utils.cpp.s
 
+src/math_utils.o: src/math_utils.cpp.o
+
+.PHONY : src/math_utils.o
+
+# target to build an object file
+src/math_utils.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/math_utils.cpp.o
+.PHONY : src/math_utils.cpp.o
+
+src/math_utils.i: src/math_utils.cpp.i
+
+.PHONY : src/math_utils.i
+
+# target to preprocess a source file
+src/math_utils.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/math_utils.cpp.i
+.PHONY : src/math_utils.cpp.i
+
+src/math_utils.s: src/math_utils.cpp.s
+
+.PHONY : src/math_utils.s
+
+# target to generate assembly for a file
+src/math_utils.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/math_utils.cpp.s
+.PHONY : src/math_utils.cpp.s
+
 src/scripts.o: src/scripts.cpp.o
 
 .PHONY : src/scripts.o
@@ -1338,6 +1446,60 @@ src/tests_coder.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests_coder.cpp.s
 .PHONY : src/tests_coder.cpp.s
 
+src/tests_math_utils.o: src/tests_math_utils.cpp.o
+
+.PHONY : src/tests_math_utils.o
+
+# target to build an object file
+src/tests_math_utils.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests_math_utils.cpp.o
+.PHONY : src/tests_math_utils.cpp.o
+
+src/tests_math_utils.i: src/tests_math_utils.cpp.i
+
+.PHONY : src/tests_math_utils.i
+
+# target to preprocess a source file
+src/tests_math_utils.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests_math_utils.cpp.i
+.PHONY : src/tests_math_utils.cpp.i
+
+src/tests_math_utils.s: src/tests_math_utils.cpp.s
+
+.PHONY : src/tests_math_utils.s
+
+# target to generate assembly for a file
+src/tests_math_utils.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests_math_utils.cpp.s
+.PHONY : src/tests_math_utils.cpp.s
+
+src/tests_string_utils.o: src/tests_string_utils.cpp.o
+
+.PHONY : src/tests_string_utils.o
+
+# target to build an object file
+src/tests_string_utils.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests_string_utils.cpp.o
+.PHONY : src/tests_string_utils.cpp.o
+
+src/tests_string_utils.i: src/tests_string_utils.cpp.i
+
+.PHONY : src/tests_string_utils.i
+
+# target to preprocess a source file
+src/tests_string_utils.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests_string_utils.cpp.i
+.PHONY : src/tests_string_utils.cpp.i
+
+src/tests_string_utils.s: src/tests_string_utils.cpp.s
+
+.PHONY : src/tests_string_utils.s
+
+# target to generate assembly for a file
+src/tests_string_utils.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests_string_utils.cpp.s
+.PHONY : src/tests_string_utils.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1416,6 +1578,15 @@ help:
 	@echo "... src/coders/linear/ca/decoder_ca.o"
 	@echo "... src/coders/linear/ca/decoder_ca.i"
 	@echo "... src/coders/linear/ca/decoder_ca.s"
+	@echo "... src/coders/linear/fr/coder_fr.o"
+	@echo "... src/coders/linear/fr/coder_fr.i"
+	@echo "... src/coders/linear/fr/coder_fr.s"
+	@echo "... src/coders/linear/fr/decoder_fr.o"
+	@echo "... src/coders/linear/fr/decoder_fr.i"
+	@echo "... src/coders/linear/fr/decoder_fr.s"
+	@echo "... src/coders/linear/fr/fr_window.o"
+	@echo "... src/coders/linear/fr/fr_window.i"
+	@echo "... src/coders/linear/fr/fr_window.s"
 	@echo "... src/coders/linear/pwlh/coder_pwlh.o"
 	@echo "... src/coders/linear/pwlh/coder_pwlh.i"
 	@echo "... src/coders/linear/pwlh/coder_pwlh.s"
@@ -1470,6 +1641,9 @@ help:
 	@echo "... src/file_utils/text/text_utils.o"
 	@echo "... src/file_utils/text/text_utils.i"
 	@echo "... src/file_utils/text/text_utils.s"
+	@echo "... src/math_utils.o"
+	@echo "... src/math_utils.i"
+	@echo "... src/math_utils.s"
 	@echo "... src/scripts.o"
 	@echo "... src/scripts.i"
 	@echo "... src/scripts.s"
@@ -1482,6 +1656,12 @@ help:
 	@echo "... src/tests_coder.o"
 	@echo "... src/tests_coder.i"
 	@echo "... src/tests_coder.s"
+	@echo "... src/tests_math_utils.o"
+	@echo "... src/tests_math_utils.i"
+	@echo "... src/tests_math_utils.s"
+	@echo "... src/tests_string_utils.o"
+	@echo "... src/tests_string_utils.i"
+	@echo "... src/tests_string_utils.s"
 .PHONY : help
 
 

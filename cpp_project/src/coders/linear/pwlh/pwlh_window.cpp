@@ -1,7 +1,7 @@
 
 #include "pwlh_window.h"
-
 #include "string_utils.h"
+#include "math_utils.h"
 #include "constants.h"
 
 
@@ -9,7 +9,7 @@ PWLHWindow::PWLHWindow(){}
 
 PWLHWindow::PWLHWindow(int max_window_size_, int error_threshold_, Range range_, bool integer_mode_){
     max_window_size = max_window_size_;
-    max_window_size_bit_length = StringUtils::bitLength(max_window_size);
+    max_window_size_bit_length = MathUtils::bitLength(max_window_size);
     error_threshold = error_threshold_;
     range = range_;
     bucket = new LinearBucket(error_threshold);
@@ -66,7 +66,7 @@ bool PWLHWindow::checkIntegerModeConstraint(int new_x_coord){
     if (!integer_mode){ return true; }
 
     // this constraint is only checked when running in integer mode
-    return range.insideRange(StringUtils::doubleToInt(p1.y)) && range.insideRange(StringUtils::doubleToInt(p2.y));
+    return range.insideRange(MathUtils::doubleToInt(p1.y)) && range.insideRange(MathUtils::doubleToInt(p2.y));
 }
 
 bool PWLHWindow::isFull(){

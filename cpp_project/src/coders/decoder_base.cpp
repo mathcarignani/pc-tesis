@@ -2,6 +2,7 @@
 #include "decoder_base.h"
 
 #include "header_decoder.h"
+#include "string_utils.h"
 
 
 void DecoderBase::decodeDataRowsCount(){
@@ -12,9 +13,9 @@ std::string DecoderBase::decodeValue(int y){
     if (y == dataset.nan()) { return Constants::NO_DATA; }
 
     y -= dataset.offset();
-    if (dataset.insideRange(y)) { return std::to_string(y); }
+    if (dataset.insideRange(y)) { return StringUtils::intToString(y); }
 
-    throw std::invalid_argument(std::to_string(y));
+    throw std::invalid_argument(StringUtils::intToString(y));
 }
 
 int DecoderBase::decodeRaw(){

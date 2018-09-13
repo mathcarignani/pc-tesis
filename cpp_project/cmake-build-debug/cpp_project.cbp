@@ -65,6 +65,7 @@
 					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/pwlh"/>
 					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/ca"/>
 					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/slide_filter"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/fr"/>
 					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/dataset"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
@@ -109,6 +110,7 @@
 					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/pwlh"/>
 					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/ca"/>
 					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/slide_filter"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/fr"/>
 					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/dataset"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
@@ -210,9 +212,6 @@
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/ca/ca_line.h">
 			<Option target="cpp_project"/>
 		</Unit>
-		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/ca/ca_point.h">
-			<Option target="cpp_project"/>
-		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/ca/ca_window.h">
 			<Option target="cpp_project"/>
 		</Unit>
@@ -220,6 +219,15 @@
 			<Option target="cpp_project"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/ca/decoder_ca.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/fr/coder_fr.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/fr/decoder_fr.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/fr/fr_window.h">
 			<Option target="cpp_project"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/pwlh/coder_pwlh.h">
@@ -282,6 +290,9 @@
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/file_utils/text/text_utils.h">
 			<Option target="cpp_project"/>
 		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/math_utils.h">
+			<Option target="cpp_project"/>
+		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/scripts.h">
 			<Option target="cpp_project"/>
 		</Unit>
@@ -292,6 +303,12 @@
 			<Option target="cpp_project"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/tests_coder.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/tests_math_utils.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/tests_string_utils.h">
 			<Option target="cpp_project"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/vector_utils.h">
@@ -354,6 +371,15 @@
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/linear/ca/decoder_ca.cpp">
 			<Option target="cpp_project"/>
 		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/linear/fr/coder_fr.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/linear/fr/decoder_fr.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/linear/fr/fr_window.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/linear/pwlh/coder_pwlh.cpp">
 			<Option target="cpp_project"/>
 		</Unit>
@@ -408,6 +434,9 @@
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/text/text_utils.cpp">
 			<Option target="cpp_project"/>
 		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/math_utils.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/scripts.cpp">
 			<Option target="cpp_project"/>
 		</Unit>
@@ -418,6 +447,12 @@
 			<Option target="cpp_project"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/tests_coder.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/tests_math_utils.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/tests_string_utils.cpp">
 			<Option target="cpp_project"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/CMakeLists.txt">

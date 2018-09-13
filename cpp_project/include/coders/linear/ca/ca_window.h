@@ -3,7 +3,6 @@
 #define CPP_PROJECT_WINDOW_CA_H
 
 #include <string>
-#include "ca_point.h"
 #include "ca_line.h"
 
 class CAWindow {

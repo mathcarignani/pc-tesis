@@ -1,12 +1,12 @@
 
 #include "decoder_ca.h"
-
 #include "string_utils.h"
+#include "math_utils.h"
 #include "ca_line.h"
 #include <cmath>
 
 void DecoderCA::setCoderParams(int max_window_size_){
-    max_window_size_bit_length = StringUtils::bitLength(max_window_size_);
+    max_window_size_bit_length = MathUtils::bitLength(max_window_size_);
 }
 
 
@@ -74,7 +74,7 @@ void DecoderCA::createWindow(std::vector<std::string> & column, std::string arch
         CAPoint point = CAPoint(current_sum, 0); // y doesn't matter
         double y = line.yIntersection(point);
         int val = std::round(y);
-        std::string val_str = std::to_string(val);
+        std::string val_str = StringUtils::intToString(val);
 //        std::cout << ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> PUSH = " << val_str <<  std::endl;
         column.push_back(val_str);
         row_index++;

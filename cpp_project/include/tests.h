@@ -13,7 +13,6 @@ public:
 private:
     static void testDatasetUtils();
     static void testDatetimeUtils();
-    static void testStringUtils();
     static void testFloatCoder();
 };
 

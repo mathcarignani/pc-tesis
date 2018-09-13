@@ -17,7 +17,7 @@ private:
 public:
     int length;
     SlideFilterWindow();
-    SlideFilterWindow(int total_data_rows, int error_threshold_);
+    SlideFilterWindow(int total_data_rows_, int error_threshold_);
     void addDataItem(int timestamp, std::string value);
     int getDataLength();
     DataItem getAt(int pos);

@@ -2,9 +2,44 @@
 #ifndef CPP_PROJECT_LINE_H
 #define CPP_PROJECT_LINE_H
 
-#include "ca_point.h"
 #include "assert.h"
 #include <iostream>
+#include "DataItem.h"
+#include "math_utils.h"
+
+class CAPoint {
+
+public:
+    int x;
+    int y;
+
+    CAPoint(){
+        x = 0;
+        y = 0;
+    }
+
+    CAPoint(int x_, int y_){
+        x = x_;
+        y = y_;
+    }
+
+    CAPoint(DataItem& input) {
+        x = input.timestamp;
+        y = input.value;
+    }
+
+    CAPoint copy(){
+        return CAPoint(x, y);
+    }
+
+    bool equal(CAPoint point){
+        return point.x == x && point.y == y;
+    }
+
+//    void print(){
+//        std::cout << "(x,y)=(" << StringUtils::intToString(x) << "," << StringUtils::intToString(y) << ")";
+//    }
+};
 
 class CALine {
 
@@ -60,6 +95,14 @@ public:
         return m * other_point.x + point.y;
     }
 
+    //
+    // Returns the distance from a point to its projection on self.
+    //
+    double distance(CAPoint other_point){
+        double dis = MathUtils::doubleAbsolute(other_point.y - yIntersection(other_point));
+        return dis;
+    }
+
     bool pointBelowLine(CAPoint other_point){
         return checkPoint(other_point) == -1;
     }
@@ -82,7 +125,7 @@ public:
 
 //    void print(){
 //        std::cout << "(x,y,m)=(";
-//        std::cout << std::to_string(point.x) << "," << std::to_string(point.y) << "," << std::to_string(m) << ")";
+//        std::cout << StringUtils::intToString(point.x) << "," << StringUtils::intToString(point.y) << "," << StringUtils::intToString(m) << ")";
 //    }
 };
 

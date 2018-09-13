@@ -27,6 +27,9 @@ public:
 
     static Dataset codeSF(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector);
     static void decodeSF(Path input_path, Path output_path, int max_window_size);
+
+    static Dataset codeFR(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector);
+    static void decodeFR(Path input_path, Path output_path, int max_window_size);
 };
 
 #endif //CPP_PROJECT_SCRIPTS_H

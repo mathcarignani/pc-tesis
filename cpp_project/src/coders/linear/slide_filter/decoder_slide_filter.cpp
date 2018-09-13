@@ -1,12 +1,12 @@
 
 #include "decoder_slide_filter.h"
 
-#include "string_utils.h"
+#include "math_utils.h"
 #include <cmath>
 #include "constants.h"
 
 void DecoderSlideFilter::setCoderParams(int max_window_size_){
-    max_window_size_bit_length = StringUtils::bitLength(max_window_size_);
+    max_window_size_bit_length = MathUtils::bitLength(max_window_size_);
 }
 
 
@@ -49,7 +49,7 @@ void DecoderSlideFilter::createWindow(std::vector<std::string> & column, std::st
 //        CAPoint point = CAPoint(i + 1, 0); // y doesn't matter
 //        double y = line.yIntersection(point);
 //        int val = std::round(y);
-//        std::string val_str = std::to_string(val);
+//        std::string val_str = StringUtils::intToString(val);
 //        column.push_back(val_str);
 //        row_index++;
 //        if (i == current_window_size - 1){

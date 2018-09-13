@@ -1,13 +1,14 @@
 
 #include "decoder_pwlh.h"
 
-#include "string_utils.h"
+#include "math_utils.h"
 #include "pwlh_window.h"
 #include <cfloat>
 #include "constants.h"
+#include "string_utils.h"
 
 void DecoderPWLH::setCoderParams(int max_window_size_, bool integer_mode_){
-    max_window_size_bit_length = StringUtils::bitLength(max_window_size_);
+    max_window_size_bit_length = MathUtils::bitLength(max_window_size_);
     integer_mode = integer_mode_;
 }
 
@@ -43,7 +44,7 @@ void DecoderPWLH::decodeWindowDouble(std::vector<std::string> & column, int wind
     }
     else { // window_size == 1 => this code can only run the last time decodeWindow is called
         int value_int = static_cast<int>(value);
-        std::string value_str = std::to_string(value_int);
+        std::string value_str = StringUtils::intToString(value_int);
         column.push_back(value_str);
         row_index++;
     }

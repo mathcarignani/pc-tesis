@@ -2,6 +2,7 @@
 #include "pca_window.h"
 
 #include <iostream>
+#include <math_utils.h>
 #include "string_utils.h"
 
 PCAWindow::PCAWindow() {}
@@ -93,12 +94,10 @@ std::string PCAWindow::getElement(int pos){
 std::string PCAWindow::calculateConstantValue(int min, int max){
     int constant = min + max;
     if (constant != 0) { constant /= 2; }
-    return std::to_string(constant);
+    return StringUtils::intToString(constant);
 }
 
 bool PCAWindow::validThreshold(int min, int max, int error_threshold){
-    int min_val_aux = min + std::abs(min); // >= 0
-    int max_val_aux = max + std::abs(min); // >= 0
-    int width = max_val_aux - min_val_aux; // >= 0
+    int width = MathUtils::intAbsolute(max - min);
     return width <= 2*error_threshold;
 }
