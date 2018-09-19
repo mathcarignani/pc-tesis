@@ -15,6 +15,7 @@
 #include "coder_slide_filter.h"
 #include "decoder_slide_filter.h"
 #include "coder_fr.h"
+#include "decoder_fr.h"
 #include "csv_utils.h"
 #include "bit_stream_utils.h"
 #include "assert.h"
@@ -154,4 +155,13 @@ Dataset Scripts::codeFR(Path input_path, Path output_path, int max_window_size, 
     coder.codeFile();
     coder.printBits();
     return coder.dataset;
+}
+
+void Scripts::decodeFR(Path input_path, Path output_path, int max_window_size){
+    BitStreamReader bit_stream_reader = BitStreamReader(input_path);
+    CSVWriter csv_writer = CSVWriter(output_path);
+    DecoderFR decoder = DecoderFR(bit_stream_reader, csv_writer);
+    decoder.setCoderParams(max_window_size);
+    decoder.decodeFile();
+    decoder.close();
 }

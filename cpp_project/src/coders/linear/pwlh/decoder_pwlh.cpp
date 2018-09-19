@@ -6,6 +6,7 @@
 #include <cfloat>
 #include "constants.h"
 #include "string_utils.h"
+#include "coder_utils.h"
 
 void DecoderPWLH::setCoderParams(int max_window_size_, bool integer_mode_){
     max_window_size_bit_length = MathUtils::bitLength(max_window_size_);
@@ -15,7 +16,7 @@ void DecoderPWLH::setCoderParams(int max_window_size_, bool integer_mode_){
 std::vector<std::string> DecoderPWLH::decodeDataColumn(){
     std::vector<std::string> column;
     row_index = 0;
-    decodeWindow(column);
+//    decodeWindow(column);
     while (row_index < data_rows_count){
         decodeWindow(column);
     }
@@ -38,7 +39,7 @@ void DecoderPWLH::decodeWindowDouble(std::vector<std::string> & column, int wind
         float point2_y = decodeFloat();
 //        std::cout << "point1_y = " << point1_y << std::endl;
 //        std::cout << "point2_y = " << point2_y << std::endl;
-        std::vector<int> x_coords = createXCoordsVector(window_size);
+        std::vector<int> x_coords = CoderUtils::createXCoordsVector(time_delta_vector, window_size, row_index);
         std::vector<std::string> decoded_points = PWLHWindow::decodePoints(point1_y, point2_y, x_coords);
         addPoints(column, window_size, decoded_points);
     }
@@ -61,7 +62,7 @@ void DecoderPWLH::decodeWindowInt(std::vector<std::string> & column, int window_
         std::string point2_y = decodeValueRaw();
 //        std::cout << "point1_y = " << point1_y << std::endl;
 //        std::cout << "point2_y = " << point2_y << std::endl;
-        std::vector<int> x_coords = createXCoordsVector(window_size);
+        std::vector<int> x_coords = CoderUtils::createXCoordsVector(time_delta_vector, window_size, row_index);
         std::vector<std::string> decoded_points = PWLHWindow::decodePointsIntegerMode(point1_y, point2_y, x_coords);
         addPoints(column, window_size, decoded_points);
     }
@@ -86,16 +87,4 @@ void DecoderPWLH::addPoints(std::vector<std::string> & column, int window_size, 
         column.push_back(decoded_point);
         row_index++;
     }
-}
-
-std::vector<int> DecoderPWLH::createXCoordsVector(int window_size){
-    std::vector<int> result;
-    int current_sum = 0;
-    int time_delta = 0;
-    for(int i = 0; i < window_size; i++){
-        if (i > 0) { time_delta = time_delta_vector.at(row_index + i); }
-        current_sum += time_delta;
-        result.push_back(current_sum);
-    }
-    return result;
 }

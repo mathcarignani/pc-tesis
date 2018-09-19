@@ -18,6 +18,7 @@ private:
     void codeColumnAfter() override;
 
     void codeWindow();
+    void codeItem(DataItem item, int index);
 
 public:
     using CoderCols::CoderCols;

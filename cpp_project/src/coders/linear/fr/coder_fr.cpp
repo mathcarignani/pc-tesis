@@ -31,6 +31,7 @@ void CoderFR::codeColumnWhile(std::string csv_value) {
 void CoderFR::codeColumnAfter() {
     if (window->isEmpty()) { return; }
     assert(!window->isFull());
+    codeWindow();
 }
 
 void CoderFR::codeWindow(){
@@ -40,10 +41,14 @@ void CoderFR::codeWindow(){
     assert(size <= max_window_size);
     for(int i=0; i < size; i++){
         DataItem item = items[i];
-        int value = (int) item.value;
-        codeValueRaw(StringUtils::intToString(value));
-        if (i != 0){
-            codeInt(i, max_window_size_bit_length);
-        }
+        codeItem(item, i);
     }
+}
+
+void CoderFR::codeItem(DataItem item, int index){
+    int value = (int) item.value;
+    codeValueRaw(StringUtils::intToString(value));
+    // we always code the value in the first index, so we don't have to code its index
+    if (index == 0) { return; }
+    codeInt(index, max_window_size_bit_length);
 }

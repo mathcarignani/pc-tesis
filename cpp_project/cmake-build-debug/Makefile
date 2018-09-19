@@ -339,6 +339,33 @@ src/coders/coder_base.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/coder_base.cpp.s
 .PHONY : src/coders/coder_base.cpp.s
 
+src/coders/coder_utils.o: src/coders/coder_utils.cpp.o
+
+.PHONY : src/coders/coder_utils.o
+
+# target to build an object file
+src/coders/coder_utils.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/coder_utils.cpp.o
+.PHONY : src/coders/coder_utils.cpp.o
+
+src/coders/coder_utils.i: src/coders/coder_utils.cpp.i
+
+.PHONY : src/coders/coder_utils.i
+
+# target to preprocess a source file
+src/coders/coder_utils.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/coder_utils.cpp.i
+.PHONY : src/coders/coder_utils.cpp.i
+
+src/coders/coder_utils.s: src/coders/coder_utils.cpp.s
+
+.PHONY : src/coders/coder_utils.s
+
+# target to generate assembly for a file
+src/coders/coder_utils.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/coder_utils.cpp.s
+.PHONY : src/coders/coder_utils.cpp.s
+
 src/coders/cols/coder_cols.o: src/coders/cols/coder_cols.cpp.o
 
 .PHONY : src/coders/cols/coder_cols.o
@@ -1533,6 +1560,9 @@ help:
 	@echo "... src/coders/coder_base.o"
 	@echo "... src/coders/coder_base.i"
 	@echo "... src/coders/coder_base.s"
+	@echo "... src/coders/coder_utils.o"
+	@echo "... src/coders/coder_utils.i"
+	@echo "... src/coders/coder_utils.s"
 	@echo "... src/coders/cols/coder_cols.o"
 	@echo "... src/coders/cols/coder_cols.i"
 	@echo "... src/coders/cols/coder_cols.s"

@@ -16,7 +16,6 @@ private:
     void decodeWindowInt(std::vector<std::string> & column, int window_size);
     void addNullPoints(std::vector<std::string> & column, int window_size);
     void addPoints(std::vector<std::string> & column, int window_size, std::vector<std::string> decoded_points);
-    std::vector<int> createXCoordsVector(int window_size);
 
 public:
     using DecoderCols::DecoderCols;

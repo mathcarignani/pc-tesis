@@ -20,7 +20,7 @@ void Tests::runAll() {
     testFloatCoder();
     TestsMathUtils::runAll();
     TestsStringUtils::runAll();
-//    TestsCoder::testCoderDecoder();
+    TestsCoder::testCoderDecoder();
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
