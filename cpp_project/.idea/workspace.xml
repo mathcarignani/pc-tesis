@@ -12,18 +12,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2fbb5dd3-364e-4d62-8cd3-b832deb1f263" name="Default" comment="Changes to SlideFilter">
-      <change afterPath="$PROJECT_DIR$/include/coders/linear/fr/coder_fr.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/include/coders/linear/fr/decoder_fr.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/include/coders/linear/fr/fr_window.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/include/math_utils.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/include/tests_math_utils.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/include/tests_string_utils.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/coders/linear/fr/coder_fr.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/coders/linear/fr/decoder_fr.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/coders/linear/fr/fr_window.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/math_utils.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_math_utils.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests_string_utils.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../cpp_paper/benchmarkLinux/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp_paper/benchmarkLinux/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../cpp_paper/benchmarkLinux/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp_paper/benchmarkLinux/cmake-build-debug/CMakeCache.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../cpp_paper/benchmarkLinux/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp_paper/benchmarkLinux/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
@@ -35,39 +23,6 @@
       <change beforePath="$PROJECT_DIR$/../cpp_paper/benchmarkLinux/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp_paper/benchmarkLinux/cmake-build-debug/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../cpp_paper/benchmarkLinux/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp_paper/benchmarkLinux/cmake-build-debug/cmake_install.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cpp_project" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cpp_project" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cpp_project.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cpp_project.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/coders/linear/ca/ca_line.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/coders/linear/ca/ca_line.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/coders/linear/ca/ca_point.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/coders/linear/ca/ca_window.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/coders/linear/ca/ca_window.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/coders/linear/slide_filter/slide_filter_window.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/coders/linear/slide_filter/slide_filter_window.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/operation_utils.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/scripts.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/scripts.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/string_utils.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/string_utils.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/tests.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/tests.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/vector_utils.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/vector_utils.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/coders/coder_base.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/coders/coder_base.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/coders/cols/coder_cols.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/coders/cols/coder_cols.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/coders/constant/apca/apca_window.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/coders/constant/apca/apca_window.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/coders/constant/apca/decoder_apca.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/coders/constant/apca/decoder_apca.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/coders/constant/pca/pca_window.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/coders/constant/pca/pca_window.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/coders/decoder_base.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/coders/decoder_base.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/coders/linear/ca/ca_window.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/coders/linear/ca/ca_window.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/coders/linear/ca/decoder_ca.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/coders/linear/ca/decoder_ca.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/coders/linear/pwlh/decoder_pwlh.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/coders/linear/pwlh/decoder_pwlh.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/coders/linear/pwlh/pwlh_window.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/coders/linear/pwlh/pwlh_window.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/coders/linear/slide_filter/coder_slide_filter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/coders/linear/slide_filter/coder_slide_filter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/coders/linear/slide_filter/decoder_slide_filter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/coders/linear/slide_filter/decoder_slide_filter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dataset/dataset_utils.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataset/dataset_utils.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/datetime_utils.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/datetime_utils.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/file_utils/csv/csv_utils.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/file_utils/csv/csv_utils.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/operation_utils.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scripts.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/string_utils.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/string_utils.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests_coder.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests_coder.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/compress/compress_aux.py" beforeDir="false" afterPath="$PROJECT_DIR$/../dataset_parser/scripts/compress/compress_aux.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/compress/compress_cpp.py" beforeDir="false" afterPath="$PROJECT_DIR$/../dataset_parser/scripts/compress/compress_cpp.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../dataset_parser/scripts/compress/output/results.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../dataset_parser/scripts/compress/output/results.csv" afterDir="false" />
@@ -84,80 +39,32 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="coder_base.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/coders/coder_base.cpp">
+      <file leaf-file-name="coder_fr.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/coders/linear/fr/coder_fr.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="40" column="16" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="16" />
+            <state relative-caret-position="300">
+              <caret line="20" column="37" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="37" />
               <folding>
-                <element signature="e#1#24#0" expanded="true" />
+                <element signature="e#1#22#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tests_coder.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/tests_coder.cpp">
+      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-              <folding>
-                <element signature="e#1#25#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="105">
+              <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="coder_slide_filter.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/coders/linear/slide_filter/coder_slide_filter.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="37" column="45" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="45" />
-              <folding>
-                <element signature="e#1#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="csv_reader.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/file_utils/csv/csv_reader.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="35" selection-start-line="35" selection-end-line="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="slide_filter_window.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/coders/linear/slide_filter/slide_filter_window.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" column="34" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="34" />
-              <folding>
-                <element signature="e#1#33#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="coder_cols.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/coders/cols/coder_cols.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="9" lean-forward="true" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
-              <folding>
-                <element signature="e#1#24#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="constants.h" pinned="false" current-in-tab="true">
+      <file leaf-file-name="constants.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/include/coders/constants.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+            <state relative-caret-position="105">
+              <caret line="7" column="14" lean-forward="true" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -319,6 +226,35 @@
               <item name="cpp_project" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="cpp_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cpp_project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="coders" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cpp_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cpp_project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="coders" type="462c0819:PsiDirectoryNode" />
+              <item name="linear" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cpp_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cpp_project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="coders" type="462c0819:PsiDirectoryNode" />
+              <item name="linear" type="462c0819:PsiDirectoryNode" />
+              <item name="fr" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cpp_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cpp_project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="coders" type="462c0819:PsiDirectoryNode" />
+              <item name="linear" type="462c0819:PsiDirectoryNode" />
+              <item name="pwlh" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -414,7 +350,7 @@
       <workItem from="1536118511116" duration="22291000" />
       <workItem from="1536384330034" duration="7280000" />
       <workItem from="1536455813275" duration="49033000" />
-      <workItem from="1536734456809" duration="15646000" />
+      <workItem from="1536734456809" duration="17128000" />
     </task>
     <task id="LOCAL-00001" summary="Changes to SlideFilter">
       <created>1536698328121</created>
@@ -427,7 +363,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="471483000" />
+    <option name="totallyTimeSpent" value="472965000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -444,14 +380,14 @@
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17213556" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49774265" weight="0.32980973" />
-      <window_info active="true" anchor="bottom" id="Messages" order="7" sideWeight="0.33683047" visible="true" weight="0.22071129" />
+      <window_info active="true" anchor="bottom" id="Messages" order="7" sideWeight="0.33683047" visible="true" weight="0.15585774" />
       <window_info anchor="bottom" id="CMake" order="8" sideWeight="0.4520316" weight="0.17740232" />
       <window_info anchor="bottom" x="-274" y="-702" width="1698" height="313" id="Event Log" order="9" sideWeight="0.5157372" side_tool="true" weight="0.12693156" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.48426282" weight="0.333682" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.29431254" weight="0.2792887" />
       <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.49774265" weight="0.32980973" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4677686" weight="0.23117155" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4677686" weight="0.32692307" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.493228" weight="0.37970713" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -828,13 +764,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="150" selection-start-line="150" selection-end-line="150" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/include/string_utils.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -926,16 +855,6 @@
           <caret line="40" column="16" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="16" />
           <folding>
             <element signature="e#1#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/coders/linear/fr/coder_fr.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
-          <folding>
-            <element signature="e#1#22#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1036,8 +955,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/include/coders/constants.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="105">
+          <caret line="7" column="14" lean-forward="true" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/coders/linear/fr/coder_fr.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="37" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="37" />
+          <folding>
+            <element signature="e#1#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
         </state>
       </provider>
     </entry>

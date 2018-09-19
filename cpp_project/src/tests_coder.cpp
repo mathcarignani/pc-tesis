@@ -21,8 +21,8 @@ void TestsCoder::testSideFilderCoder() {
     std::string coder_name = "CoderSF";
     Path output_code_path = codedFilePath(TEST_OUTPUT_PATH, file_path, coder_name);
 
-//    Scripts::codeFR(file_path, output_code_path, 5, lossy);
-    Scripts::codeSF(file_path, output_code_path, 5, lossy); // CODE
+    Scripts::codeFR(file_path, output_code_path, 5, lossy);
+//    Scripts::codeSF(file_path, output_code_path, 5, lossy); // CODE
 
 //    compareFiles(output_code_path, expected_code_path);
 //    Scripts::decodePCA(output_code_path, output_decode_path, 5); // DECODE
