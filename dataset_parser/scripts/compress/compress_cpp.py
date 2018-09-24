@@ -80,6 +80,14 @@ def coder_params(args):
         error_thresholds = " ".join(str(i) for i in args.coder_params['error_threshold'])
         string = "CoderPWLHint " + str(args.coder_params['max_window_size']) + " " + error_thresholds
         return string
+    elif args.coder_name == "CoderFR":
+        error_thresholds = " ".join(str(i) for i in args.coder_params['error_threshold'])
+        string = "CoderFR " + str(args.coder_params['max_window_size']) + " " + error_thresholds
+        return string
+    else:
+        print args.coder_name
+        raise(StandardError, "ERROR: Invalid name")
+
 
 
 def code_decode_cpp(args):

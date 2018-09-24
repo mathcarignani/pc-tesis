@@ -30,7 +30,8 @@ int main(int argc, char *argv[]){
     Path output_path = Path(argv[4], argv[5]);
 
     std::string coder_name = argv[6];
-    std::vector<std::string> coders_array{"CoderBasic", "CoderPCA", "CoderAPCA", "CoderPWLH", "CoderPWLHint", "CoderCA", "CoderSF"};
+    std::vector<std::string> coders_array{"CoderBasic", "CoderPCA", "CoderAPCA", "CoderPWLH",
+                                          "CoderPWLHint", "CoderCA", "CoderSF", "CoderFR"};
 
     if (coder_name == "CoderBasic"){
         assert(argc == 7);
@@ -63,9 +64,14 @@ int main(int argc, char *argv[]){
         if (action == "c") {   Scripts::codeCA(input_path, output_path, window_size, error_thresholds_vector); }
         else               { Scripts::decodeCA(input_path, output_path, window_size); }
     }
-    else { // coder_name == "CoderSF"
+    else if (coder_name == "CoderSF"){
         if (action == "c") {   Scripts::codeSF(input_path, output_path, window_size, error_thresholds_vector); }
         else               { Scripts::decodeSF(input_path, output_path, window_size); }
     }
+    else if (coder_name == "CoderFR"){
+        if (action == "c") {   Scripts::codeFR(input_path, output_path, window_size, error_thresholds_vector); }
+        else               { Scripts::decodeFR(input_path, output_path, window_size); }
+    }
+
     return 0;
 }

@@ -7,8 +7,8 @@ ORIGINAL FILE:
 -> size (bytes): 907,207
 COMPRESSED FILE:
 -> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/basic/vwc_1202.dat.c.cpp.csv
--> size (bytes): 384,811
--> 42.42% of original
+-> size (bytes): 229,810
+-> 25.33% of original
 
 
 RESULTS
@@ -19,8 +19,8 @@ ORIGINAL FILE:
 -> size (bytes): 907,207
 COMPRESSED FILE:
 -> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/basic/vwc_1202.dat.c.cpp.csv
--> size (bytes): 384,811
--> 42.42% of original
+-> size (bytes): 229,810
+-> 25.33% of original
 
 
 RESULTS
@@ -31,8 +31,8 @@ ORIGINAL FILE:
 -> size (bytes): 907,207
 COMPRESSED FILE:
 -> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/basic/vwc_1202.dat.c.cpp.csv
--> size (bytes): 384,811
--> 42.42% of original
+-> size (bytes): 229,810
+-> 25.33% of original
 
 
 RESULTS
@@ -43,8 +43,8 @@ ORIGINAL FILE:
 -> size (bytes): 907,207
 COMPRESSED FILE:
 -> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/basic/vwc_1202.dat.c.cpp.csv
--> size (bytes): 386,297
--> 42.58% of original
+-> size (bytes): 229,810
+-> 25.33% of original
 
 
 RESULTS
@@ -55,8 +55,8 @@ ORIGINAL FILE:
 -> size (bytes): 907,207
 COMPRESSED FILE:
 -> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/basic/vwc_1202.dat.c.cpp.csv
--> size (bytes): 386,297
--> 42.58% of original
+-> size (bytes): 229,810
+-> 25.33% of original
 
 
 RESULTS
@@ -67,282 +67,4110 @@ ORIGINAL FILE:
 -> size (bytes): 907,207
 COMPRESSED FILE:
 -> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/basic/vwc_1202.dat.c.cpp.csv
--> size (bytes): 386,297
--> 42.58% of original
+-> size (bytes): 229,810
+-> 25.33% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
+-> size (bytes): 907,207
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1202.dat.c.cpp.csv
+-> size (bytes): 203,161
+-> 22.39% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
+-> size (bytes): 907,207
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1202.dat.c.cpp.csv
+-> size (bytes): 204,599
+-> 22.55% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
+-> size (bytes): 907,207
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1202.dat.c.cpp.csv
+-> size (bytes): 213,338
+-> 23.52% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
+-> size (bytes): 907,207
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1202.dat.c.cpp.csv
+-> size (bytes): 222,977
+-> 24.58% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
+-> size (bytes): 907,207
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1202.dat.c.cpp.csv
+-> size (bytes): 232,908
+-> 25.67% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
+-> size (bytes): 907,207
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1202.dat.c.cpp.csv
+-> size (bytes): 243,319
+-> 26.82% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
+-> size (bytes): 907,207
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1202.dat.c.cpp.csv
+-> size (bytes): 203,161
+-> 22.39% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
+-> size (bytes): 907,207
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1202.dat.c.cpp.csv
+-> size (bytes): 204,599
+-> 22.55% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
+-> size (bytes): 907,207
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1202.dat.c.cpp.csv
+-> size (bytes): 213,338
+-> 23.52% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
+-> size (bytes): 907,207
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1202.dat.c.cpp.csv
+-> size (bytes): 222,977
+-> 24.58% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
+-> size (bytes): 907,207
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1202.dat.c.cpp.csv
+-> size (bytes): 232,908
+-> 25.67% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
+-> size (bytes): 907,207
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1202.dat.c.cpp.csv
+-> size (bytes): 243,319
+-> 26.82% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
+-> size (bytes): 907,207
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1202.dat.c.cpp.csv
+-> size (bytes): 188,278
+-> 20.75% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
+-> size (bytes): 907,207
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1202.dat.c.cpp.csv
+-> size (bytes): 182,050
+-> 20.07% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
+-> size (bytes): 907,207
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1202.dat.c.cpp.csv
+-> size (bytes): 184,752
+-> 20.36% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
+-> size (bytes): 907,207
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1202.dat.c.cpp.csv
+-> size (bytes): 191,427
+-> 21.1% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
+-> size (bytes): 907,207
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1202.dat.c.cpp.csv
+-> size (bytes): 198,927
+-> 21.93% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
+-> size (bytes): 907,207
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1202.dat.c.cpp.csv
+-> size (bytes): 207,130
+-> 22.83% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
+-> size (bytes): 907,207
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1202.dat.c.cpp.csv
+-> size (bytes): 156,657
+-> 17.27% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
+-> size (bytes): 907,207
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1202.dat.c.cpp.csv
+-> size (bytes): 133,609
+-> 14.73% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
+-> size (bytes): 907,207
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1202.dat.c.cpp.csv
+-> size (bytes): 123,471
+-> 13.61% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
+-> size (bytes): 907,207
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1202.dat.c.cpp.csv
+-> size (bytes): 123,679
+-> 13.63% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
+-> size (bytes): 907,207
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1202.dat.c.cpp.csv
+-> size (bytes): 125,931
+-> 13.88% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
+-> size (bytes): 907,207
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1202.dat.c.cpp.csv
+-> size (bytes): 129,242
+-> 14.25% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
+-> size (bytes): 907,207
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1202.dat.c.cpp.csv
+-> size (bytes): 140,330
+-> 15.47% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
+-> size (bytes): 907,207
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1202.dat.c.cpp.csv
+-> size (bytes): 107,472
+-> 11.85% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
+-> size (bytes): 907,207
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1202.dat.c.cpp.csv
+-> size (bytes): 89,588
+-> 9.88% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
+-> size (bytes): 907,207
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1202.dat.c.cpp.csv
+-> size (bytes): 85,421
+-> 9.42% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
+-> size (bytes): 907,207
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1202.dat.c.cpp.csv
+-> size (bytes): 84,409
+-> 9.3% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
+-> size (bytes): 907,207
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1202.dat.c.cpp.csv
+-> size (bytes): 84,796
+-> 9.35% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
+-> size (bytes): 907,207
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1202.dat.c.cpp.csv
+-> size (bytes): 138,523
+-> 15.27% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
+-> size (bytes): 907,207
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1202.dat.c.cpp.csv
+-> size (bytes): 103,262
+-> 11.38% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
+-> size (bytes): 907,207
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1202.dat.c.cpp.csv
+-> size (bytes): 82,937
+-> 9.14% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
+-> size (bytes): 907,207
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1202.dat.c.cpp.csv
+-> size (bytes): 77,331
+-> 8.52% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
+-> size (bytes): 907,207
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1202.dat.c.cpp.csv
+-> size (bytes): 75,305
+-> 8.3% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
+-> size (bytes): 907,207
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1202.dat.c.cpp.csv
+-> size (bytes): 75,001
+-> 8.27% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
+-> size (bytes): 907,207
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1202.dat.c.cpp.csv
+-> size (bytes): 137,992
+-> 15.21% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
+-> size (bytes): 907,207
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1202.dat.c.cpp.csv
+-> size (bytes): 102,053
+-> 11.25% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
+-> size (bytes): 907,207
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1202.dat.c.cpp.csv
+-> size (bytes): 80,871
+-> 8.91% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
+-> size (bytes): 907,207
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1202.dat.c.cpp.csv
+-> size (bytes): 74,883
+-> 8.25% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
+-> size (bytes): 907,207
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1202.dat.c.cpp.csv
+-> size (bytes): 72,538
+-> 8.0% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
+-> size (bytes): 907,207
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1202.dat.c.cpp.csv
+-> size (bytes): 71,941
+-> 7.93% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
+-> size (bytes): 907,207
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1202.dat.c.cpp.csv
+-> size (bytes): 137,427
+-> 15.15% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
+-> size (bytes): 907,207
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1202.dat.c.cpp.csv
+-> size (bytes): 100,780
+-> 11.11% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
+-> size (bytes): 907,207
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1202.dat.c.cpp.csv
+-> size (bytes): 78,516
+-> 8.65% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
+-> size (bytes): 907,207
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1202.dat.c.cpp.csv
+-> size (bytes): 71,715
+-> 7.91% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
+-> size (bytes): 907,207
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1202.dat.c.cpp.csv
+-> size (bytes): 68,788
+-> 7.58% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
+-> size (bytes): 907,207
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1202.dat.c.cpp.csv
+-> size (bytes): 67,693
+-> 7.46% of original
 
 
 RESULTS
 --------------------------(same file!)
 CoderBasic
 ORIGINAL FILE:
--> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
--> size (bytes): 907,207
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1203.dat.csv
+-> size (bytes): 757,485
 COMPRESSED FILE:
--> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/basic/vwc_1202.dat.c.cpp.csv
--> size (bytes): 384,811
--> 42.42% of original
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/basic/vwc_1203.dat.c.cpp.csv
+-> size (bytes): 136,095
+-> 17.97% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1203.dat.csv
+-> size (bytes): 757,485
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1203.dat.c.cpp.csv
+-> size (bytes): 126,006
+-> 16.63% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1203.dat.csv
+-> size (bytes): 757,485
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1203.dat.c.cpp.csv
+-> size (bytes): 128,522
+-> 16.97% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1203.dat.csv
+-> size (bytes): 757,485
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1203.dat.c.cpp.csv
+-> size (bytes): 133,933
+-> 17.68% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1203.dat.csv
+-> size (bytes): 757,485
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1203.dat.c.cpp.csv
+-> size (bytes): 138,983
+-> 18.35% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1203.dat.csv
+-> size (bytes): 757,485
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1203.dat.c.cpp.csv
+-> size (bytes): 144,208
+-> 19.04% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1203.dat.csv
+-> size (bytes): 757,485
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1203.dat.c.cpp.csv
+-> size (bytes): 149,233
+-> 19.7% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1203.dat.csv
+-> size (bytes): 757,485
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1203.dat.c.cpp.csv
+-> size (bytes): 126,006
+-> 16.63% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1203.dat.csv
+-> size (bytes): 757,485
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1203.dat.c.cpp.csv
+-> size (bytes): 128,522
+-> 16.97% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1203.dat.csv
+-> size (bytes): 757,485
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1203.dat.c.cpp.csv
+-> size (bytes): 133,933
+-> 17.68% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1203.dat.csv
+-> size (bytes): 757,485
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1203.dat.c.cpp.csv
+-> size (bytes): 138,983
+-> 18.35% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1203.dat.csv
+-> size (bytes): 757,485
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1203.dat.c.cpp.csv
+-> size (bytes): 144,208
+-> 19.04% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1203.dat.csv
+-> size (bytes): 757,485
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1203.dat.c.cpp.csv
+-> size (bytes): 149,233
+-> 19.7% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1203.dat.csv
+-> size (bytes): 757,485
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1203.dat.c.cpp.csv
+-> size (bytes): 104,465
+-> 13.79% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1203.dat.csv
+-> size (bytes): 757,485
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1203.dat.c.cpp.csv
+-> size (bytes): 98,147
+-> 12.96% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1203.dat.csv
+-> size (bytes): 757,485
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1203.dat.c.cpp.csv
+-> size (bytes): 98,902
+-> 13.06% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1203.dat.csv
+-> size (bytes): 757,485
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1203.dat.c.cpp.csv
+-> size (bytes): 101,619
+-> 13.42% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1203.dat.csv
+-> size (bytes): 757,485
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1203.dat.c.cpp.csv
+-> size (bytes): 104,543
+-> 13.8% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1203.dat.csv
+-> size (bytes): 757,485
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1203.dat.c.cpp.csv
+-> size (bytes): 107,428
+-> 14.18% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1203.dat.csv
+-> size (bytes): 757,485
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1203.dat.c.cpp.csv
+-> size (bytes): 96,380
+-> 12.72% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1203.dat.csv
+-> size (bytes): 757,485
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1203.dat.c.cpp.csv
+-> size (bytes): 84,632
+-> 11.17% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1203.dat.csv
+-> size (bytes): 757,485
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1203.dat.c.cpp.csv
+-> size (bytes): 81,508
+-> 10.76% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1203.dat.csv
+-> size (bytes): 757,485
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1203.dat.c.cpp.csv
+-> size (bytes): 82,901
+-> 10.94% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1203.dat.csv
+-> size (bytes): 757,485
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1203.dat.c.cpp.csv
+-> size (bytes): 84,627
+-> 11.17% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1203.dat.csv
+-> size (bytes): 757,485
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1203.dat.c.cpp.csv
+-> size (bytes): 86,527
+-> 11.42% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1203.dat.csv
+-> size (bytes): 757,485
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1203.dat.c.cpp.csv
+-> size (bytes): 95,043
+-> 12.55% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1203.dat.csv
+-> size (bytes): 757,485
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1203.dat.c.cpp.csv
+-> size (bytes): 80,439
+-> 10.62% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1203.dat.csv
+-> size (bytes): 757,485
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1203.dat.c.cpp.csv
+-> size (bytes): 74,368
+-> 9.82% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1203.dat.csv
+-> size (bytes): 757,485
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1203.dat.c.cpp.csv
+-> size (bytes): 74,535
+-> 9.84% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1203.dat.csv
+-> size (bytes): 757,485
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1203.dat.c.cpp.csv
+-> size (bytes): 75,709
+-> 9.99% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1203.dat.csv
+-> size (bytes): 757,485
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1203.dat.c.cpp.csv
+-> size (bytes): 77,469
+-> 10.23% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1203.dat.csv
+-> size (bytes): 757,485
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1203.dat.c.cpp.csv
+-> size (bytes): 94,422
+-> 12.47% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1203.dat.csv
+-> size (bytes): 757,485
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1203.dat.c.cpp.csv
+-> size (bytes): 78,613
+-> 10.38% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1203.dat.csv
+-> size (bytes): 757,485
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1203.dat.c.cpp.csv
+-> size (bytes): 70,535
+-> 9.31% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1203.dat.csv
+-> size (bytes): 757,485
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1203.dat.c.cpp.csv
+-> size (bytes): 69,319
+-> 9.15% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1203.dat.csv
+-> size (bytes): 757,485
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1203.dat.c.cpp.csv
+-> size (bytes): 69,731
+-> 9.21% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1203.dat.csv
+-> size (bytes): 757,485
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1203.dat.c.cpp.csv
+-> size (bytes): 71,081
+-> 9.38% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1203.dat.csv
+-> size (bytes): 757,485
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1203.dat.c.cpp.csv
+-> size (bytes): 94,122
+-> 12.43% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1203.dat.csv
+-> size (bytes): 757,485
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1203.dat.c.cpp.csv
+-> size (bytes): 77,915
+-> 10.29% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1203.dat.csv
+-> size (bytes): 757,485
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1203.dat.c.cpp.csv
+-> size (bytes): 68,979
+-> 9.11% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1203.dat.csv
+-> size (bytes): 757,485
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1203.dat.c.cpp.csv
+-> size (bytes): 67,017
+-> 8.85% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1203.dat.csv
+-> size (bytes): 757,485
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1203.dat.c.cpp.csv
+-> size (bytes): 66,841
+-> 8.82% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1203.dat.csv
+-> size (bytes): 757,485
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1203.dat.c.cpp.csv
+-> size (bytes): 67,897
+-> 8.96% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1203.dat.csv
+-> size (bytes): 757,485
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1203.dat.c.cpp.csv
+-> size (bytes): 93,935
+-> 12.4% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1203.dat.csv
+-> size (bytes): 757,485
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1203.dat.c.cpp.csv
+-> size (bytes): 77,359
+-> 10.21% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1203.dat.csv
+-> size (bytes): 757,485
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1203.dat.c.cpp.csv
+-> size (bytes): 67,762
+-> 8.95% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1203.dat.csv
+-> size (bytes): 757,485
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1203.dat.c.cpp.csv
+-> size (bytes): 65,237
+-> 8.61% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1203.dat.csv
+-> size (bytes): 757,485
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1203.dat.c.cpp.csv
+-> size (bytes): 64,512
+-> 8.52% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1203.dat.csv
+-> size (bytes): 757,485
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1203.dat.c.cpp.csv
+-> size (bytes): 65,103
+-> 8.59% of original
 
 
 RESULTS
 --------------------------(same file!)
 CoderBasic
 ORIGINAL FILE:
--> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
--> size (bytes): 907,207
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1204.dat.csv
+-> size (bytes): 800,273
 COMPRESSED FILE:
--> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/basic/vwc_1202.dat.c.cpp.csv
--> size (bytes): 384,811
--> 42.42% of original
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/basic/vwc_1204.dat.c.cpp.csv
+-> size (bytes): 163,081
+-> 20.38% of original
 
 
 RESULTS
 --------------------------(same file!)
-CoderPCA
+CoderFR
 ORIGINAL FILE:
--> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
--> size (bytes): 907,207
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1204.dat.csv
+-> size (bytes): 800,273
 COMPRESSED FILE:
--> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/pca/vwc_1202.dat.c.cpp.csv
--> size (bytes): 55,998
--> 6.17% of original
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1204.dat.c.cpp.csv
+-> size (bytes): 148,555
+-> 18.56% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1204.dat.csv
+-> size (bytes): 800,273
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1204.dat.c.cpp.csv
+-> size (bytes): 150,860
+-> 18.85% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1204.dat.csv
+-> size (bytes): 800,273
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1204.dat.c.cpp.csv
+-> size (bytes): 157,228
+-> 19.65% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1204.dat.csv
+-> size (bytes): 800,273
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1204.dat.c.cpp.csv
+-> size (bytes): 163,422
+-> 20.42% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1204.dat.csv
+-> size (bytes): 800,273
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1204.dat.c.cpp.csv
+-> size (bytes): 170,011
+-> 21.24% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1204.dat.csv
+-> size (bytes): 800,273
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1204.dat.c.cpp.csv
+-> size (bytes): 176,601
+-> 22.07% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1204.dat.csv
+-> size (bytes): 800,273
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1204.dat.c.cpp.csv
+-> size (bytes): 132,976
+-> 16.62% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1204.dat.csv
+-> size (bytes): 800,273
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1204.dat.c.cpp.csv
+-> size (bytes): 128,059
+-> 16.0% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1204.dat.csv
+-> size (bytes): 800,273
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1204.dat.c.cpp.csv
+-> size (bytes): 129,791
+-> 16.22% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1204.dat.csv
+-> size (bytes): 800,273
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1204.dat.c.cpp.csv
+-> size (bytes): 133,904
+-> 16.73% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1204.dat.csv
+-> size (bytes): 800,273
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1204.dat.c.cpp.csv
+-> size (bytes): 138,519
+-> 17.31% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1204.dat.csv
+-> size (bytes): 800,273
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1204.dat.c.cpp.csv
+-> size (bytes): 143,310
+-> 17.91% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1204.dat.csv
+-> size (bytes): 800,273
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1204.dat.c.cpp.csv
+-> size (bytes): 125,381
+-> 15.67% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1204.dat.csv
+-> size (bytes): 800,273
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1204.dat.c.cpp.csv
+-> size (bytes): 115,423
+-> 14.42% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1204.dat.csv
+-> size (bytes): 800,273
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1204.dat.c.cpp.csv
+-> size (bytes): 113,486
+-> 14.18% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1204.dat.csv
+-> size (bytes): 800,273
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1204.dat.c.cpp.csv
+-> size (bytes): 115,736
+-> 14.46% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1204.dat.csv
+-> size (bytes): 800,273
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1204.dat.c.cpp.csv
+-> size (bytes): 119,171
+-> 14.89% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1204.dat.csv
+-> size (bytes): 800,273
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1204.dat.c.cpp.csv
+-> size (bytes): 123,024
+-> 15.37% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1204.dat.csv
+-> size (bytes): 800,273
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1204.dat.c.cpp.csv
+-> size (bytes): 114,286
+-> 14.28% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1204.dat.csv
+-> size (bytes): 800,273
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1204.dat.c.cpp.csv
+-> size (bytes): 98,756
+-> 12.34% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1204.dat.csv
+-> size (bytes): 800,273
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1204.dat.c.cpp.csv
+-> size (bytes): 92,541
+-> 11.56% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1204.dat.csv
+-> size (bytes): 800,273
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1204.dat.c.cpp.csv
+-> size (bytes): 92,952
+-> 11.62% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1204.dat.csv
+-> size (bytes): 800,273
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1204.dat.c.cpp.csv
+-> size (bytes): 94,706
+-> 11.83% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1204.dat.csv
+-> size (bytes): 800,273
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1204.dat.c.cpp.csv
+-> size (bytes): 97,115
+-> 12.14% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1204.dat.csv
+-> size (bytes): 800,273
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1204.dat.c.cpp.csv
+-> size (bytes): 107,877
+-> 13.48% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1204.dat.csv
+-> size (bytes): 800,273
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1204.dat.c.cpp.csv
+-> size (bytes): 87,592
+-> 10.95% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1204.dat.csv
+-> size (bytes): 800,273
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1204.dat.c.cpp.csv
+-> size (bytes): 77,260
+-> 9.65% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1204.dat.csv
+-> size (bytes): 800,273
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1204.dat.c.cpp.csv
+-> size (bytes): 75,404
+-> 9.42% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1204.dat.csv
+-> size (bytes): 800,273
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1204.dat.c.cpp.csv
+-> size (bytes): 75,630
+-> 9.45% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1204.dat.csv
+-> size (bytes): 800,273
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1204.dat.c.cpp.csv
+-> size (bytes): 76,635
+-> 9.58% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1204.dat.csv
+-> size (bytes): 800,273
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1204.dat.c.cpp.csv
+-> size (bytes): 107,623
+-> 13.45% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1204.dat.csv
+-> size (bytes): 800,273
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1204.dat.c.cpp.csv
+-> size (bytes): 86,882
+-> 10.86% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1204.dat.csv
+-> size (bytes): 800,273
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1204.dat.c.cpp.csv
+-> size (bytes): 76,063
+-> 9.5% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1204.dat.csv
+-> size (bytes): 800,273
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1204.dat.c.cpp.csv
+-> size (bytes): 73,724
+-> 9.21% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1204.dat.csv
+-> size (bytes): 800,273
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1204.dat.c.cpp.csv
+-> size (bytes): 73,454
+-> 9.18% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1204.dat.csv
+-> size (bytes): 800,273
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1204.dat.c.cpp.csv
+-> size (bytes): 74,165
+-> 9.27% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1204.dat.csv
+-> size (bytes): 800,273
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1204.dat.c.cpp.csv
+-> size (bytes): 107,053
+-> 13.38% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1204.dat.csv
+-> size (bytes): 800,273
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1204.dat.c.cpp.csv
+-> size (bytes): 85,415
+-> 10.67% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1204.dat.csv
+-> size (bytes): 800,273
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1204.dat.c.cpp.csv
+-> size (bytes): 73,208
+-> 9.15% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1204.dat.csv
+-> size (bytes): 800,273
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1204.dat.c.cpp.csv
+-> size (bytes): 70,244
+-> 8.78% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1204.dat.csv
+-> size (bytes): 800,273
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1204.dat.c.cpp.csv
+-> size (bytes): 69,488
+-> 8.68% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1204.dat.csv
+-> size (bytes): 800,273
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1204.dat.c.cpp.csv
+-> size (bytes): 69,811
+-> 8.72% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1204.dat.csv
+-> size (bytes): 800,273
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1204.dat.c.cpp.csv
+-> size (bytes): 106,705
+-> 13.33% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1204.dat.csv
+-> size (bytes): 800,273
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1204.dat.c.cpp.csv
+-> size (bytes): 84,509
+-> 10.56% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1204.dat.csv
+-> size (bytes): 800,273
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1204.dat.c.cpp.csv
+-> size (bytes): 71,198
+-> 8.9% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1204.dat.csv
+-> size (bytes): 800,273
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1204.dat.c.cpp.csv
+-> size (bytes): 67,548
+-> 8.44% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1204.dat.csv
+-> size (bytes): 800,273
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1204.dat.c.cpp.csv
+-> size (bytes): 66,409
+-> 8.3% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1204.dat.csv
+-> size (bytes): 800,273
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1204.dat.c.cpp.csv
+-> size (bytes): 66,189
+-> 8.27% of original
 
 
 RESULTS
 --------------------------(same file!)
 CoderBasic
 ORIGINAL FILE:
--> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
--> size (bytes): 907,207
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1205.dat.csv
+-> size (bytes): 709,013
 COMPRESSED FILE:
--> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/basic/vwc_1202.dat.c.cpp.csv
--> size (bytes): 384,811
--> 42.42% of original
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/basic/vwc_1205.dat.c.cpp.csv
+-> size (bytes): 106,375
+-> 15.0% of original
 
 
 RESULTS
 --------------------------(same file!)
-CoderPCA
+CoderFR
 ORIGINAL FILE:
--> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
--> size (bytes): 907,207
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1205.dat.csv
+-> size (bytes): 709,013
 COMPRESSED FILE:
--> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/pca/vwc_1202.dat.c.cpp.csv
--> size (bytes): 55,998
--> 6.17% of original
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1205.dat.c.cpp.csv
+-> size (bytes): 103,461
+-> 14.59% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1205.dat.csv
+-> size (bytes): 709,013
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1205.dat.c.cpp.csv
+-> size (bytes): 106,342
+-> 15.0% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1205.dat.csv
+-> size (bytes): 709,013
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1205.dat.c.cpp.csv
+-> size (bytes): 110,478
+-> 15.58% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1205.dat.csv
+-> size (bytes): 709,013
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1205.dat.c.cpp.csv
+-> size (bytes): 113,992
+-> 16.08% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1205.dat.csv
+-> size (bytes): 709,013
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1205.dat.c.cpp.csv
+-> size (bytes): 117,518
+-> 16.57% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1205.dat.csv
+-> size (bytes): 709,013
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1205.dat.c.cpp.csv
+-> size (bytes): 121,038
+-> 17.07% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1205.dat.csv
+-> size (bytes): 709,013
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1205.dat.c.cpp.csv
+-> size (bytes): 101,328
+-> 14.29% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1205.dat.csv
+-> size (bytes): 709,013
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1205.dat.c.cpp.csv
+-> size (bytes): 103,655
+-> 14.62% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1205.dat.csv
+-> size (bytes): 709,013
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1205.dat.c.cpp.csv
+-> size (bytes): 107,735
+-> 15.2% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1205.dat.csv
+-> size (bytes): 709,013
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1205.dat.c.cpp.csv
+-> size (bytes): 111,240
+-> 15.69% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1205.dat.csv
+-> size (bytes): 709,013
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1205.dat.c.cpp.csv
+-> size (bytes): 114,636
+-> 16.17% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1205.dat.csv
+-> size (bytes): 709,013
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1205.dat.c.cpp.csv
+-> size (bytes): 117,998
+-> 16.64% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1205.dat.csv
+-> size (bytes): 709,013
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1205.dat.c.cpp.csv
+-> size (bytes): 85,889
+-> 12.11% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1205.dat.csv
+-> size (bytes): 709,013
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1205.dat.c.cpp.csv
+-> size (bytes): 80,783
+-> 11.39% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1205.dat.csv
+-> size (bytes): 709,013
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1205.dat.c.cpp.csv
+-> size (bytes): 80,248
+-> 11.32% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1205.dat.csv
+-> size (bytes): 709,013
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1205.dat.c.cpp.csv
+-> size (bytes): 81,840
+-> 11.54% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1205.dat.csv
+-> size (bytes): 709,013
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1205.dat.c.cpp.csv
+-> size (bytes): 83,709
+-> 11.81% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1205.dat.csv
+-> size (bytes): 709,013
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1205.dat.c.cpp.csv
+-> size (bytes): 85,526
+-> 12.06% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1205.dat.csv
+-> size (bytes): 709,013
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1205.dat.c.cpp.csv
+-> size (bytes): 83,112
+-> 11.72% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1205.dat.csv
+-> size (bytes): 709,013
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1205.dat.c.cpp.csv
+-> size (bytes): 75,906
+-> 10.71% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1205.dat.csv
+-> size (bytes): 709,013
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1205.dat.c.cpp.csv
+-> size (bytes): 73,766
+-> 10.4% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1205.dat.csv
+-> size (bytes): 709,013
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1205.dat.c.cpp.csv
+-> size (bytes): 74,714
+-> 10.54% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1205.dat.csv
+-> size (bytes): 709,013
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1205.dat.c.cpp.csv
+-> size (bytes): 76,083
+-> 10.73% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1205.dat.csv
+-> size (bytes): 709,013
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1205.dat.c.cpp.csv
+-> size (bytes): 77,411
+-> 10.92% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1205.dat.csv
+-> size (bytes): 709,013
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1205.dat.c.cpp.csv
+-> size (bytes): 82,257
+-> 11.6% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1205.dat.csv
+-> size (bytes): 709,013
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1205.dat.c.cpp.csv
+-> size (bytes): 73,764
+-> 10.4% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1205.dat.csv
+-> size (bytes): 709,013
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1205.dat.c.cpp.csv
+-> size (bytes): 69,943
+-> 9.86% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1205.dat.csv
+-> size (bytes): 709,013
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1205.dat.c.cpp.csv
+-> size (bytes): 69,774
+-> 9.84% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1205.dat.csv
+-> size (bytes): 709,013
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1205.dat.c.cpp.csv
+-> size (bytes): 70,426
+-> 9.93% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1205.dat.csv
+-> size (bytes): 709,013
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1205.dat.c.cpp.csv
+-> size (bytes): 71,279
+-> 10.05% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1205.dat.csv
+-> size (bytes): 709,013
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1205.dat.c.cpp.csv
+-> size (bytes): 81,774
+-> 11.53% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1205.dat.csv
+-> size (bytes): 709,013
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1205.dat.c.cpp.csv
+-> size (bytes): 72,684
+-> 10.25% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1205.dat.csv
+-> size (bytes): 709,013
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1205.dat.c.cpp.csv
+-> size (bytes): 68,105
+-> 9.61% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1205.dat.csv
+-> size (bytes): 709,013
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1205.dat.c.cpp.csv
+-> size (bytes): 67,358
+-> 9.5% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1205.dat.csv
+-> size (bytes): 709,013
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1205.dat.c.cpp.csv
+-> size (bytes): 67,646
+-> 9.54% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1205.dat.csv
+-> size (bytes): 709,013
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1205.dat.c.cpp.csv
+-> size (bytes): 68,262
+-> 9.63% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1205.dat.csv
+-> size (bytes): 709,013
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1205.dat.c.cpp.csv
+-> size (bytes): 81,615
+-> 11.51% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1205.dat.csv
+-> size (bytes): 709,013
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1205.dat.c.cpp.csv
+-> size (bytes): 72,416
+-> 10.21% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1205.dat.csv
+-> size (bytes): 709,013
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1205.dat.c.cpp.csv
+-> size (bytes): 67,605
+-> 9.54% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1205.dat.csv
+-> size (bytes): 709,013
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1205.dat.c.cpp.csv
+-> size (bytes): 66,682
+-> 9.4% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1205.dat.csv
+-> size (bytes): 709,013
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1205.dat.c.cpp.csv
+-> size (bytes): 66,809
+-> 9.42% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1205.dat.csv
+-> size (bytes): 709,013
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1205.dat.c.cpp.csv
+-> size (bytes): 67,346
+-> 9.5% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1205.dat.csv
+-> size (bytes): 709,013
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1205.dat.c.cpp.csv
+-> size (bytes): 81,293
+-> 11.47% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1205.dat.csv
+-> size (bytes): 709,013
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1205.dat.c.cpp.csv
+-> size (bytes): 71,826
+-> 10.13% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1205.dat.csv
+-> size (bytes): 709,013
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1205.dat.c.cpp.csv
+-> size (bytes): 66,601
+-> 9.39% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1205.dat.csv
+-> size (bytes): 709,013
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1205.dat.c.cpp.csv
+-> size (bytes): 65,422
+-> 9.23% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1205.dat.csv
+-> size (bytes): 709,013
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1205.dat.c.cpp.csv
+-> size (bytes): 65,300
+-> 9.21% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1205.dat.csv
+-> size (bytes): 709,013
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_1205.dat.c.cpp.csv
+-> size (bytes): 65,618
+-> 9.25% of original
 
 
 RESULTS
 --------------------------(same file!)
 CoderBasic
 ORIGINAL FILE:
--> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
--> size (bytes): 907,207
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_222.smet.csv
+-> size (bytes): 1,045,529
 COMPRESSED FILE:
--> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/basic/vwc_1202.dat.c.cpp.csv
--> size (bytes): 384,811
--> 42.42% of original
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/basic/vwc_222.smet.c.cpp.csv
+-> size (bytes): 315,994
+-> 30.22% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_222.smet.csv
+-> size (bytes): 1,045,529
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_222.smet.c.cpp.csv
+-> size (bytes): 264,841
+-> 25.33% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_222.smet.csv
+-> size (bytes): 1,045,529
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_222.smet.c.cpp.csv
+-> size (bytes): 262,882
+-> 25.14% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_222.smet.csv
+-> size (bytes): 1,045,529
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_222.smet.c.cpp.csv
+-> size (bytes): 273,178
+-> 26.13% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_222.smet.csv
+-> size (bytes): 1,045,529
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_222.smet.c.cpp.csv
+-> size (bytes): 285,831
+-> 27.34% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_222.smet.csv
+-> size (bytes): 1,045,529
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_222.smet.c.cpp.csv
+-> size (bytes): 299,239
+-> 28.62% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_222.smet.csv
+-> size (bytes): 1,045,529
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_222.smet.c.cpp.csv
+-> size (bytes): 313,423
+-> 29.98% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_222.smet.csv
+-> size (bytes): 1,045,529
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_222.smet.c.cpp.csv
+-> size (bytes): 264,841
+-> 25.33% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_222.smet.csv
+-> size (bytes): 1,045,529
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_222.smet.c.cpp.csv
+-> size (bytes): 262,882
+-> 25.14% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_222.smet.csv
+-> size (bytes): 1,045,529
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_222.smet.c.cpp.csv
+-> size (bytes): 273,178
+-> 26.13% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_222.smet.csv
+-> size (bytes): 1,045,529
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_222.smet.c.cpp.csv
+-> size (bytes): 285,831
+-> 27.34% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_222.smet.csv
+-> size (bytes): 1,045,529
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_222.smet.c.cpp.csv
+-> size (bytes): 299,239
+-> 28.62% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_222.smet.csv
+-> size (bytes): 1,045,529
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_222.smet.c.cpp.csv
+-> size (bytes): 313,423
+-> 29.98% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_222.smet.csv
+-> size (bytes): 1,045,529
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_222.smet.c.cpp.csv
+-> size (bytes): 216,496
+-> 20.71% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_222.smet.csv
+-> size (bytes): 1,045,529
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_222.smet.c.cpp.csv
+-> size (bytes): 191,594
+-> 18.33% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_222.smet.csv
+-> size (bytes): 1,045,529
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_222.smet.c.cpp.csv
+-> size (bytes): 187,789
+-> 17.96% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_222.smet.csv
+-> size (bytes): 1,045,529
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_222.smet.c.cpp.csv
+-> size (bytes): 193,849
+-> 18.54% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_222.smet.csv
+-> size (bytes): 1,045,529
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_222.smet.c.cpp.csv
+-> size (bytes): 201,289
+-> 19.25% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_222.smet.csv
+-> size (bytes): 1,045,529
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_222.smet.c.cpp.csv
+-> size (bytes): 209,752
+-> 20.06% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_222.smet.csv
+-> size (bytes): 1,045,529
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_222.smet.c.cpp.csv
+-> size (bytes): 185,965
+-> 17.79% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_222.smet.csv
+-> size (bytes): 1,045,529
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_222.smet.c.cpp.csv
+-> size (bytes): 145,382
+-> 13.91% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_222.smet.csv
+-> size (bytes): 1,045,529
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_222.smet.c.cpp.csv
+-> size (bytes): 129,253
+-> 12.36% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_222.smet.csv
+-> size (bytes): 1,045,529
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_222.smet.c.cpp.csv
+-> size (bytes): 129,431
+-> 12.38% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_222.smet.csv
+-> size (bytes): 1,045,529
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_222.smet.c.cpp.csv
+-> size (bytes): 132,165
+-> 12.64% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_222.smet.csv
+-> size (bytes): 1,045,529
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_222.smet.c.cpp.csv
+-> size (bytes): 136,098
+-> 13.02% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_222.smet.csv
+-> size (bytes): 1,045,529
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_222.smet.c.cpp.csv
+-> size (bytes): 180,247
+-> 17.24% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_222.smet.csv
+-> size (bytes): 1,045,529
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_222.smet.c.cpp.csv
+-> size (bytes): 130,752
+-> 12.51% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_222.smet.csv
+-> size (bytes): 1,045,529
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_222.smet.c.cpp.csv
+-> size (bytes): 105,283
+-> 10.07% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_222.smet.csv
+-> size (bytes): 1,045,529
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_222.smet.c.cpp.csv
+-> size (bytes): 101,251
+-> 9.68% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_222.smet.csv
+-> size (bytes): 1,045,529
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_222.smet.c.cpp.csv
+-> size (bytes): 101,410
+-> 9.7% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_222.smet.csv
+-> size (bytes): 1,045,529
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_222.smet.c.cpp.csv
+-> size (bytes): 103,534
+-> 9.9% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_222.smet.csv
+-> size (bytes): 1,045,529
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_222.smet.c.cpp.csv
+-> size (bytes): 178,687
+-> 17.09% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_222.smet.csv
+-> size (bytes): 1,045,529
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_222.smet.c.cpp.csv
+-> size (bytes): 125,763
+-> 12.03% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_222.smet.csv
+-> size (bytes): 1,045,529
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_222.smet.c.cpp.csv
+-> size (bytes): 96,197
+-> 9.2% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_222.smet.csv
+-> size (bytes): 1,045,529
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_222.smet.c.cpp.csv
+-> size (bytes): 89,405
+-> 8.55% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_222.smet.csv
+-> size (bytes): 1,045,529
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_222.smet.c.cpp.csv
+-> size (bytes): 87,935
+-> 8.41% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_222.smet.csv
+-> size (bytes): 1,045,529
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_222.smet.c.cpp.csv
+-> size (bytes): 88,945
+-> 8.51% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_222.smet.csv
+-> size (bytes): 1,045,529
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_222.smet.c.cpp.csv
+-> size (bytes): 177,909
+-> 17.02% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_222.smet.csv
+-> size (bytes): 1,045,529
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_222.smet.c.cpp.csv
+-> size (bytes): 123,705
+-> 11.83% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_222.smet.csv
+-> size (bytes): 1,045,529
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_222.smet.c.cpp.csv
+-> size (bytes): 91,958
+-> 8.8% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_222.smet.csv
+-> size (bytes): 1,045,529
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_222.smet.c.cpp.csv
+-> size (bytes): 83,571
+-> 7.99% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_222.smet.csv
+-> size (bytes): 1,045,529
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_222.smet.c.cpp.csv
+-> size (bytes): 80,974
+-> 7.74% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_222.smet.csv
+-> size (bytes): 1,045,529
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_222.smet.c.cpp.csv
+-> size (bytes): 81,009
+-> 7.75% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_222.smet.csv
+-> size (bytes): 1,045,529
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_222.smet.c.cpp.csv
+-> size (bytes): 177,168
+-> 16.95% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_222.smet.csv
+-> size (bytes): 1,045,529
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_222.smet.c.cpp.csv
+-> size (bytes): 121,794
+-> 11.65% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_222.smet.csv
+-> size (bytes): 1,045,529
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_222.smet.c.cpp.csv
+-> size (bytes): 88,148
+-> 8.43% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_222.smet.csv
+-> size (bytes): 1,045,529
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_222.smet.c.cpp.csv
+-> size (bytes): 78,101
+-> 7.47% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_222.smet.csv
+-> size (bytes): 1,045,529
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_222.smet.c.cpp.csv
+-> size (bytes): 74,004
+-> 7.08% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_222.smet.csv
+-> size (bytes): 1,045,529
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_222.smet.c.cpp.csv
+-> size (bytes): 72,896
+-> 6.97% of original
 
 
 RESULTS
 --------------------------(same file!)
 CoderBasic
 ORIGINAL FILE:
--> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
--> size (bytes): 907,207
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_333.smet.csv
+-> size (bytes): 1,072,266
 COMPRESSED FILE:
--> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/basic/vwc_1202.dat.c.cpp.csv
--> size (bytes): 384,811
--> 42.42% of original
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/basic/vwc_333.smet.c.cpp.csv
+-> size (bytes): 336,007
+-> 31.34% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_333.smet.csv
+-> size (bytes): 1,072,266
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_333.smet.c.cpp.csv
+-> size (bytes): 274,748
+-> 25.62% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_333.smet.csv
+-> size (bytes): 1,072,266
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_333.smet.c.cpp.csv
+-> size (bytes): 270,523
+-> 25.23% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_333.smet.csv
+-> size (bytes): 1,072,266
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_333.smet.c.cpp.csv
+-> size (bytes): 280,104
+-> 26.12% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_333.smet.csv
+-> size (bytes): 1,072,266
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_333.smet.c.cpp.csv
+-> size (bytes): 292,955
+-> 27.32% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_333.smet.csv
+-> size (bytes): 1,072,266
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_333.smet.c.cpp.csv
+-> size (bytes): 307,000
+-> 28.63% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_333.smet.csv
+-> size (bytes): 1,072,266
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_333.smet.c.cpp.csv
+-> size (bytes): 321,402
+-> 29.97% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_333.smet.csv
+-> size (bytes): 1,072,266
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_333.smet.c.cpp.csv
+-> size (bytes): 237,965
+-> 22.19% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_333.smet.csv
+-> size (bytes): 1,072,266
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_333.smet.c.cpp.csv
+-> size (bytes): 215,808
+-> 20.13% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_333.smet.csv
+-> size (bytes): 1,072,266
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_333.smet.c.cpp.csv
+-> size (bytes): 214,730
+-> 20.03% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_333.smet.csv
+-> size (bytes): 1,072,266
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_333.smet.c.cpp.csv
+-> size (bytes): 222,707
+-> 20.77% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_333.smet.csv
+-> size (bytes): 1,072,266
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_333.smet.c.cpp.csv
+-> size (bytes): 232,340
+-> 21.67% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_333.smet.csv
+-> size (bytes): 1,072,266
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_333.smet.c.cpp.csv
+-> size (bytes): 242,521
+-> 22.62% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_333.smet.csv
+-> size (bytes): 1,072,266
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_333.smet.c.cpp.csv
+-> size (bytes): 221,164
+-> 20.63% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_333.smet.csv
+-> size (bytes): 1,072,266
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_333.smet.c.cpp.csv
+-> size (bytes): 186,441
+-> 17.39% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_333.smet.csv
+-> size (bytes): 1,072,266
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_333.smet.c.cpp.csv
+-> size (bytes): 174,840
+-> 16.31% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_333.smet.csv
+-> size (bytes): 1,072,266
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_333.smet.c.cpp.csv
+-> size (bytes): 178,005
+-> 16.6% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_333.smet.csv
+-> size (bytes): 1,072,266
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_333.smet.c.cpp.csv
+-> size (bytes): 184,428
+-> 17.2% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_333.smet.csv
+-> size (bytes): 1,072,266
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_333.smet.c.cpp.csv
+-> size (bytes): 191,813
+-> 17.89% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_333.smet.csv
+-> size (bytes): 1,072,266
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_333.smet.c.cpp.csv
+-> size (bytes): 201,965
+-> 18.84% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_333.smet.csv
+-> size (bytes): 1,072,266
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_333.smet.c.cpp.csv
+-> size (bytes): 155,589
+-> 14.51% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_333.smet.csv
+-> size (bytes): 1,072,266
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_333.smet.c.cpp.csv
+-> size (bytes): 133,867
+-> 12.48% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_333.smet.csv
+-> size (bytes): 1,072,266
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_333.smet.c.cpp.csv
+-> size (bytes): 131,793
+-> 12.29% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_333.smet.csv
+-> size (bytes): 1,072,266
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_333.smet.c.cpp.csv
+-> size (bytes): 134,448
+-> 12.54% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_333.smet.csv
+-> size (bytes): 1,072,266
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_333.smet.c.cpp.csv
+-> size (bytes): 138,915
+-> 12.96% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_333.smet.csv
+-> size (bytes): 1,072,266
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_333.smet.c.cpp.csv
+-> size (bytes): 189,228
+-> 17.65% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_333.smet.csv
+-> size (bytes): 1,072,266
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_333.smet.c.cpp.csv
+-> size (bytes): 134,610
+-> 12.55% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_333.smet.csv
+-> size (bytes): 1,072,266
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_333.smet.c.cpp.csv
+-> size (bytes): 104,964
+-> 9.79% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_333.smet.csv
+-> size (bytes): 1,072,266
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_333.smet.c.cpp.csv
+-> size (bytes): 98,353
+-> 9.17% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_333.smet.csv
+-> size (bytes): 1,072,266
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_333.smet.c.cpp.csv
+-> size (bytes): 97,473
+-> 9.09% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_333.smet.csv
+-> size (bytes): 1,072,266
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_333.smet.c.cpp.csv
+-> size (bytes): 98,913
+-> 9.22% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_333.smet.csv
+-> size (bytes): 1,072,266
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_333.smet.c.cpp.csv
+-> size (bytes): 187,205
+-> 17.46% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_333.smet.csv
+-> size (bytes): 1,072,266
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_333.smet.c.cpp.csv
+-> size (bytes): 129,771
+-> 12.1% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_333.smet.csv
+-> size (bytes): 1,072,266
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_333.smet.c.cpp.csv
+-> size (bytes): 96,748
+-> 9.02% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_333.smet.csv
+-> size (bytes): 1,072,266
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_333.smet.c.cpp.csv
+-> size (bytes): 88,187
+-> 8.22% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_333.smet.csv
+-> size (bytes): 1,072,266
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_333.smet.c.cpp.csv
+-> size (bytes): 85,719
+-> 7.99% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_333.smet.csv
+-> size (bytes): 1,072,266
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_333.smet.c.cpp.csv
+-> size (bytes): 85,991
+-> 8.02% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_333.smet.csv
+-> size (bytes): 1,072,266
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_333.smet.c.cpp.csv
+-> size (bytes): 186,233
+-> 17.37% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_333.smet.csv
+-> size (bytes): 1,072,266
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_333.smet.c.cpp.csv
+-> size (bytes): 127,037
+-> 11.85% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_333.smet.csv
+-> size (bytes): 1,072,266
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_333.smet.c.cpp.csv
+-> size (bytes): 91,792
+-> 8.56% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_333.smet.csv
+-> size (bytes): 1,072,266
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_333.smet.c.cpp.csv
+-> size (bytes): 81,771
+-> 7.63% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_333.smet.csv
+-> size (bytes): 1,072,266
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_333.smet.c.cpp.csv
+-> size (bytes): 78,239
+-> 7.3% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_333.smet.csv
+-> size (bytes): 1,072,266
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_333.smet.c.cpp.csv
+-> size (bytes): 77,632
+-> 7.24% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_333.smet.csv
+-> size (bytes): 1,072,266
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_333.smet.c.cpp.csv
+-> size (bytes): 185,794
+-> 17.33% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_333.smet.csv
+-> size (bytes): 1,072,266
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_333.smet.c.cpp.csv
+-> size (bytes): 125,609
+-> 11.71% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_333.smet.csv
+-> size (bytes): 1,072,266
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_333.smet.c.cpp.csv
+-> size (bytes): 88,860
+-> 8.29% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_333.smet.csv
+-> size (bytes): 1,072,266
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_333.smet.c.cpp.csv
+-> size (bytes): 77,665
+-> 7.24% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_333.smet.csv
+-> size (bytes): 1,072,266
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_333.smet.c.cpp.csv
+-> size (bytes): 72,903
+-> 6.8% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_333.smet.csv
+-> size (bytes): 1,072,266
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_333.smet.c.cpp.csv
+-> size (bytes): 71,442
+-> 6.66% of original
 
 
 RESULTS
 --------------------------(same file!)
 CoderBasic
 ORIGINAL FILE:
--> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
--> size (bytes): 907,207
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_SLF2.smet.csv
+-> size (bytes): 1,071,489
 COMPRESSED FILE:
--> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/basic/vwc_1202.dat.c.cpp.csv
--> size (bytes): 384,811
--> 42.42% of original
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/basic/vwc_SLF2.smet.c.cpp.csv
+-> size (bytes): 332,221
+-> 31.01% of original
 
 
 RESULTS
 --------------------------(same file!)
-CoderBasic
+CoderFR
 ORIGINAL FILE:
--> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
--> size (bytes): 907,207
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_SLF2.smet.csv
+-> size (bytes): 1,071,489
 COMPRESSED FILE:
--> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/basic/vwc_1202.dat.c.cpp.csv
--> size (bytes): 384,811
--> 42.42% of original
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_SLF2.smet.c.cpp.csv
+-> size (bytes): 257,074
+-> 23.99% of original
 
 
 RESULTS
 --------------------------(same file!)
-CoderBasic
+CoderFR
 ORIGINAL FILE:
--> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
--> size (bytes): 907,207
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_SLF2.smet.csv
+-> size (bytes): 1,071,489
 COMPRESSED FILE:
--> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/basic/vwc_1202.dat.c.cpp.csv
--> size (bytes): 384,811
--> 42.42% of original
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_SLF2.smet.c.cpp.csv
+-> size (bytes): 244,895
+-> 22.86% of original
 
 
 RESULTS
 --------------------------(same file!)
-CoderPCA
+CoderFR
 ORIGINAL FILE:
--> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
--> size (bytes): 907,207
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_SLF2.smet.csv
+-> size (bytes): 1,071,489
 COMPRESSED FILE:
--> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/pca/vwc_1202.dat.c.cpp.csv
--> size (bytes): 213,918
--> 23.58% of original
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_SLF2.smet.c.cpp.csv
+-> size (bytes): 248,834
+-> 23.22% of original
 
 
 RESULTS
 --------------------------(same file!)
-CoderPCA
+CoderFR
 ORIGINAL FILE:
--> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
--> size (bytes): 907,207
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_SLF2.smet.csv
+-> size (bytes): 1,071,489
 COMPRESSED FILE:
--> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/pca/vwc_1202.dat.c.cpp.csv
--> size (bytes): 213,918
--> 23.58% of original
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_SLF2.smet.c.cpp.csv
+-> size (bytes): 258,484
+-> 24.12% of original
 
 
 RESULTS
 --------------------------(same file!)
-CoderPCA
+CoderFR
 ORIGINAL FILE:
--> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
--> size (bytes): 907,207
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_SLF2.smet.csv
+-> size (bytes): 1,071,489
 COMPRESSED FILE:
--> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/pca/vwc_1202.dat.c.cpp.csv
--> size (bytes): 213,918
--> 23.58% of original
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_SLF2.smet.c.cpp.csv
+-> size (bytes): 269,988
+-> 25.2% of original
 
 
 RESULTS
 --------------------------(same file!)
-CoderPCA
+CoderFR
 ORIGINAL FILE:
--> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
--> size (bytes): 907,207
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_SLF2.smet.csv
+-> size (bytes): 1,071,489
 COMPRESSED FILE:
--> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/pca/vwc_1202.dat.c.cpp.csv
--> size (bytes): 213,918
--> 23.58% of original
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_SLF2.smet.c.cpp.csv
+-> size (bytes): 281,996
+-> 26.32% of original
 
 
 RESULTS
 --------------------------(same file!)
-CoderPCA
+CoderFR
 ORIGINAL FILE:
--> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
--> size (bytes): 907,207
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_SLF2.smet.csv
+-> size (bytes): 1,071,489
 COMPRESSED FILE:
--> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/pca/vwc_1202.dat.c.cpp.csv
--> size (bytes): 218,563
--> 24.09% of original
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_SLF2.smet.c.cpp.csv
+-> size (bytes): 257,074
+-> 23.99% of original
 
 
 RESULTS
 --------------------------(same file!)
-CoderPCA
+CoderFR
 ORIGINAL FILE:
--> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
--> size (bytes): 907,207
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_SLF2.smet.csv
+-> size (bytes): 1,071,489
 COMPRESSED FILE:
--> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/pca/vwc_1202.dat.c.cpp.csv
--> size (bytes): 229,678
--> 25.32% of original
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_SLF2.smet.c.cpp.csv
+-> size (bytes): 244,895
+-> 22.86% of original
 
 
 RESULTS
 --------------------------(same file!)
-CoderPCA
+CoderFR
 ORIGINAL FILE:
--> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
--> size (bytes): 907,207
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_SLF2.smet.csv
+-> size (bytes): 1,071,489
 COMPRESSED FILE:
--> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/pca/vwc_1202.dat.c.cpp.csv
--> size (bytes): 232,100
--> 25.58% of original
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_SLF2.smet.c.cpp.csv
+-> size (bytes): 248,834
+-> 23.22% of original
 
 
 RESULTS
 --------------------------(same file!)
-CoderPCA
+CoderFR
 ORIGINAL FILE:
--> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
--> size (bytes): 907,207
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_SLF2.smet.csv
+-> size (bytes): 1,071,489
 COMPRESSED FILE:
--> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/pca/vwc_1202.dat.c.cpp.csv
--> size (bytes): 232,681
--> 25.65% of original
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_SLF2.smet.c.cpp.csv
+-> size (bytes): 258,484
+-> 24.12% of original
 
 
 RESULTS
 --------------------------(same file!)
-CoderBasic
+CoderFR
 ORIGINAL FILE:
--> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
--> size (bytes): 907,207
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_SLF2.smet.csv
+-> size (bytes): 1,071,489
 COMPRESSED FILE:
--> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/basic/vwc_1202.dat.c.cpp.csv
--> size (bytes): 384,811
--> 42.42% of original
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_SLF2.smet.c.cpp.csv
+-> size (bytes): 269,988
+-> 25.2% of original
 
 
 RESULTS
 --------------------------(same file!)
-CoderPCA
+CoderFR
 ORIGINAL FILE:
--> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
--> size (bytes): 907,207
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_SLF2.smet.csv
+-> size (bytes): 1,071,489
 COMPRESSED FILE:
--> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/pca/vwc_1202.dat.c.cpp.csv
--> size (bytes): 213,918
--> 23.58% of original
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_SLF2.smet.c.cpp.csv
+-> size (bytes): 281,996
+-> 26.32% of original
 
 
 RESULTS
 --------------------------(same file!)
-CoderPCA
+CoderFR
 ORIGINAL FILE:
--> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
--> size (bytes): 907,207
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_SLF2.smet.csv
+-> size (bytes): 1,071,489
 COMPRESSED FILE:
--> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/pca/vwc_1202.dat.c.cpp.csv
--> size (bytes): 234,731
--> 25.87% of original
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_SLF2.smet.c.cpp.csv
+-> size (bytes): 232,115
+-> 21.66% of original
 
 
 RESULTS
 --------------------------(same file!)
-CoderPCA
+CoderFR
 ORIGINAL FILE:
--> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
--> size (bytes): 907,207
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_SLF2.smet.csv
+-> size (bytes): 1,071,489
 COMPRESSED FILE:
--> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/pca/vwc_1202.dat.c.cpp.csv
--> size (bytes): 131,048
--> 14.45% of original
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_SLF2.smet.c.cpp.csv
+-> size (bytes): 208,637
+-> 19.47% of original
 
 
 RESULTS
 --------------------------(same file!)
-CoderPCA
+CoderFR
 ORIGINAL FILE:
--> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_1202.dat.csv
--> size (bytes): 907,207
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_SLF2.smet.csv
+-> size (bytes): 1,071,489
 COMPRESSED FILE:
--> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/pca/vwc_1202.dat.c.cpp.csv
--> size (bytes): 125,530
--> 13.84% of original
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_SLF2.smet.c.cpp.csv
+-> size (bytes): 205,522
+-> 19.18% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_SLF2.smet.csv
+-> size (bytes): 1,071,489
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_SLF2.smet.c.cpp.csv
+-> size (bytes): 212,110
+-> 19.8% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_SLF2.smet.csv
+-> size (bytes): 1,071,489
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_SLF2.smet.c.cpp.csv
+-> size (bytes): 220,865
+-> 20.61% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_SLF2.smet.csv
+-> size (bytes): 1,071,489
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_SLF2.smet.c.cpp.csv
+-> size (bytes): 230,019
+-> 21.47% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_SLF2.smet.csv
+-> size (bytes): 1,071,489
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_SLF2.smet.c.cpp.csv
+-> size (bytes): 207,752
+-> 19.39% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_SLF2.smet.csv
+-> size (bytes): 1,071,489
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_SLF2.smet.c.cpp.csv
+-> size (bytes): 166,892
+-> 15.58% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_SLF2.smet.csv
+-> size (bytes): 1,071,489
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_SLF2.smet.c.cpp.csv
+-> size (bytes): 150,284
+-> 14.03% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_SLF2.smet.csv
+-> size (bytes): 1,071,489
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_SLF2.smet.c.cpp.csv
+-> size (bytes): 150,886
+-> 14.08% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_SLF2.smet.csv
+-> size (bytes): 1,071,489
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_SLF2.smet.c.cpp.csv
+-> size (bytes): 155,512
+-> 14.51% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_SLF2.smet.csv
+-> size (bytes): 1,071,489
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_SLF2.smet.c.cpp.csv
+-> size (bytes): 161,230
+-> 15.05% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_SLF2.smet.csv
+-> size (bytes): 1,071,489
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_SLF2.smet.c.cpp.csv
+-> size (bytes): 186,932
+-> 17.45% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_SLF2.smet.csv
+-> size (bytes): 1,071,489
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_SLF2.smet.c.cpp.csv
+-> size (bytes): 132,926
+-> 12.41% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_SLF2.smet.csv
+-> size (bytes): 1,071,489
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_SLF2.smet.c.cpp.csv
+-> size (bytes): 104,334
+-> 9.74% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_SLF2.smet.csv
+-> size (bytes): 1,071,489
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_SLF2.smet.c.cpp.csv
+-> size (bytes): 98,758
+-> 9.22% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_SLF2.smet.csv
+-> size (bytes): 1,071,489
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_SLF2.smet.c.cpp.csv
+-> size (bytes): 98,484
+-> 9.19% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_SLF2.smet.csv
+-> size (bytes): 1,071,489
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_SLF2.smet.c.cpp.csv
+-> size (bytes): 100,525
+-> 9.38% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_SLF2.smet.csv
+-> size (bytes): 1,071,489
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_SLF2.smet.c.cpp.csv
+-> size (bytes): 186,142
+-> 17.37% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_SLF2.smet.csv
+-> size (bytes): 1,071,489
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_SLF2.smet.c.cpp.csv
+-> size (bytes): 130,384
+-> 12.17% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_SLF2.smet.csv
+-> size (bytes): 1,071,489
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_SLF2.smet.c.cpp.csv
+-> size (bytes): 98,799
+-> 9.22% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_SLF2.smet.csv
+-> size (bytes): 1,071,489
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_SLF2.smet.c.cpp.csv
+-> size (bytes): 90,914
+-> 8.48% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_SLF2.smet.csv
+-> size (bytes): 1,071,489
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_SLF2.smet.c.cpp.csv
+-> size (bytes): 89,132
+-> 8.32% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_SLF2.smet.csv
+-> size (bytes): 1,071,489
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_SLF2.smet.c.cpp.csv
+-> size (bytes): 90,290
+-> 8.43% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_SLF2.smet.csv
+-> size (bytes): 1,071,489
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_SLF2.smet.c.cpp.csv
+-> size (bytes): 185,414
+-> 17.3% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_SLF2.smet.csv
+-> size (bytes): 1,071,489
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_SLF2.smet.c.cpp.csv
+-> size (bytes): 127,626
+-> 11.91% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_SLF2.smet.csv
+-> size (bytes): 1,071,489
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_SLF2.smet.c.cpp.csv
+-> size (bytes): 93,611
+-> 8.74% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_SLF2.smet.csv
+-> size (bytes): 1,071,489
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_SLF2.smet.c.cpp.csv
+-> size (bytes): 84,024
+-> 7.84% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_SLF2.smet.csv
+-> size (bytes): 1,071,489
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_SLF2.smet.c.cpp.csv
+-> size (bytes): 80,751
+-> 7.54% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_SLF2.smet.csv
+-> size (bytes): 1,071,489
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_SLF2.smet.c.cpp.csv
+-> size (bytes): 80,707
+-> 7.53% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_SLF2.smet.csv
+-> size (bytes): 1,071,489
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_SLF2.smet.c.cpp.csv
+-> size (bytes): 184,784
+-> 17.25% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_SLF2.smet.csv
+-> size (bytes): 1,071,489
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_SLF2.smet.c.cpp.csv
+-> size (bytes): 125,660
+-> 11.73% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_SLF2.smet.csv
+-> size (bytes): 1,071,489
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_SLF2.smet.c.cpp.csv
+-> size (bytes): 89,821
+-> 8.38% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_SLF2.smet.csv
+-> size (bytes): 1,071,489
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_SLF2.smet.c.cpp.csv
+-> size (bytes): 78,584
+-> 7.33% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_SLF2.smet.csv
+-> size (bytes): 1,071,489
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_SLF2.smet.c.cpp.csv
+-> size (bytes): 73,959
+-> 6.9% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderFR
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[1]irkis/vwc_SLF2.smet.csv
+-> size (bytes): 1,071,489
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[1]irkis/fr/vwc_SLF2.smet.c.cpp.csv
+-> size (bytes): 72,949
+-> 6.81% of original
 

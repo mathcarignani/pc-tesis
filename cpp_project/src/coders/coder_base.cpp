@@ -46,7 +46,6 @@ void CoderBase::codeInt(int value, int bits){
 void CoderBase::codeValueRaw(std::string x){
     int value;
     try {
-//        std::cout << "codeValueRaw = " << x << std::endl;
         value = codeValue(x);
     }
     catch( const std::invalid_argument& e ){

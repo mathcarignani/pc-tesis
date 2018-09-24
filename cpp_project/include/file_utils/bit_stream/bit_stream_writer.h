@@ -24,8 +24,6 @@ private:
 
 public:
     BitStreamWriter();
-    BitStreamWriter(const char * file);
-    BitStreamWriter(std::string path, std::string filename);
     BitStreamWriter(Path path);
 
     void pushBit(unsigned int bit);

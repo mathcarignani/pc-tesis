@@ -9,8 +9,8 @@ from coders.ca.coder_ca import CoderCA
 from coders.ca.decoder_ca import DecoderCA
 
 
-THRESHOLD_PERCENTAGES = [0, 30] # [0, 1, 3, 5, 10, 15, 20, 30]
-WINDOW_SIZES = [5, 200] # [5, 10, 25, 50, 100, 200]
+THRESHOLD_PERCENTAGES = [0, 1, 3, 5, 10, 15, 20, 30]
+WINDOW_SIZES = [5, 10, 25, 50, 100, 200]
 CSV_PATH = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/"
 
 DATASETS_ARRAY = [
@@ -45,20 +45,20 @@ CODERS_ARRAY = [
         'decoder': DecoderBasic,
         'o_folder': 'basic'
     },
-    {
-        'name': 'CoderPCA',
-        'coder': CoderPCA,
-        'decoder': DecoderPCA,
-        'o_folder': 'pca',
-        'params': {'fixed_window_size': WINDOW_SIZES}
-    },
-    {
-        'name': 'CoderAPCA',
-        'coder': CoderAPCA,
-        'decoder': DecoderAPCA,
-        'o_folder': 'apca',
-        'params': {'max_window_size': WINDOW_SIZES}
-    },
+    # {
+    #     'name': 'CoderPCA',
+    #     'coder': CoderPCA,
+    #     'decoder': DecoderPCA,
+    #     'o_folder': 'pca',
+    #     'params': {'fixed_window_size': WINDOW_SIZES}
+    # },
+    # {
+    #     'name': 'CoderAPCA',
+    #     'coder': CoderAPCA,
+    #     'decoder': DecoderAPCA,
+    #     'o_folder': 'apca',
+    #     'params': {'max_window_size': WINDOW_SIZES}
+    # },
     # {
     #     'name': 'CoderCA',
     #     'coder': CoderCA,
@@ -76,4 +76,9 @@ CODERS_ARRAY = [
     #     'o_folder': 'pwlh-int',
     #     'params': {'max_window_size': WINDOW_SIZES}
     # }
+    {
+        'name': 'CoderFR',
+        'o_folder': 'fr',
+        'params': {'max_window_size': WINDOW_SIZES}
+    }
 ]

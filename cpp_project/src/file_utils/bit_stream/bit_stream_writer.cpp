@@ -10,15 +10,6 @@ void BitStreamWriter::construct(const char * file){
 
 BitStreamWriter::BitStreamWriter(){}
 
-BitStreamWriter::BitStreamWriter(const char * file){
-    construct(file);
-}
-
-BitStreamWriter::BitStreamWriter(std::string path, std::string filename){
-    std::string full_path = path + "/" + filename;
-    construct(full_path.c_str());
-}
-
 BitStreamWriter::BitStreamWriter(Path path){
     construct(path.full_path.c_str());
 }

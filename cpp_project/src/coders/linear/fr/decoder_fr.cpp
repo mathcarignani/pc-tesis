@@ -4,6 +4,8 @@
 #include "assert.h"
 #include "DataItem.h"
 #include "string_utils.h"
+#include "coder_utils.h"
+#include "ca_line.h"
 
 void DecoderFR::setCoderParams(int max_window_size_){
     max_window_size = max_window_size_;
@@ -11,59 +13,92 @@ void DecoderFR::setCoderParams(int max_window_size_){
 }
 
 std::vector<std::string> DecoderFR::decodeDataColumn(){
-    std::vector<std::string> column;
-    row_index = 0;
-    int unprocessed_rows = data_rows_count;
+    column = new Column(data_rows_count, total_data, total_no_data);
 
-#if MASK_MODE
-    assert(total_no_data + total_data == data_rows_count);
-#endif
-
-    while (unprocessed_rows > 0){
-    #if MASK_MODE
+    while (column->unprocessed_rows > 0){
         if (isNoData()) {
-            column.push_back(Constants::NO_DATA);
-            row_index++; unprocessed_rows--;
+            column->addNoData();
             continue;
         }
-        int w_size = (total_data < max_window_size) ? total_data : max_window_size;
-        decodeWindow(column, w_size);
-    #else
-        // TODO: not implemented
-    #endif
-        unprocessed_rows = data_rows_count - row_index;
+        int remaining_data = column->unprocessed_data_rows;
+        int w_size = (remaining_data < max_window_size) ? remaining_data : max_window_size;
+        decodeWindow(w_size);
     }
-    return column;
+
+    column->assertAfter();
+    return column->column_vector;
 }
 
-void DecoderFR::decodeWindow(std::vector<std::string> & column, int window_size){
+void DecoderFR::decodeWindow(int window_size){
+    std::vector<DataItem> data_items = readDataItems(window_size);
+    int size = data_items.size();
+    assert(0 < size <= window_size);
+    assert(data_items[0].timestamp == 0);
+    assert(data_items[size-1].timestamp == window_size - 1);
+
+    std::vector<int> x_coords = CoderUtils::createXCoordsVector(time_delta_vector, window_size, column->row_index);
+
+    int value;
+    CALine line;
+    CAPoint first_point, last_point;
+    std::string push_value;
+
+    int i = 0;
+    int data_item_index = 0;
+    int next_timestamp = 0;
+
+    while (i < window_size) {
+        if (i > 0 && isNoData()) {
+            // isNoData() is always false in the first iteration
+            column->addNoData();
+            continue;
+        }
+        if (i == next_timestamp) {
+            DataItem data_item = data_items[data_item_index];
+            value = data_item.value;
+            if (data_item.timestamp != window_size - 1) { // not the last data_item
+                DataItem new_data_item = data_items[data_item_index + 1];
+                if (new_data_item.timestamp != data_item.timestamp + 1) {
+                    // we need to create a line because we will need to do a projection
+                    // since there are points in between which were not decoded in data_items
+                    first_point = CAPoint(x_coords[data_item.timestamp], data_item.value);
+                    last_point = CAPoint(x_coords[new_data_item.timestamp], new_data_item.value);
+                    line = CALine(first_point, last_point);
+                }
+                next_timestamp = new_data_item.timestamp;
+                data_item_index++;
+            }
+        }
+        else {
+            // project x_coord into the line
+            value = line.yIntersection(x_coords[i]);
+        }
+        push_value = StringUtils::intToString(value);
+        column->addData(push_value);
+        i++;
+    }
+}
+
+std::vector<DataItem> DecoderFR::readDataItems(int window_size){
+    assert(window_size > 0);
     std::vector<DataItem> window;
-    window.reserve(window_size);
-    for(int i=0; i < window_size; i++){
+
+    bool first_index = true;
+    int index;
+    while(true) {
         std::string value_str = decodeValueRaw();
         int value = StringUtils::stringToInt(value_str);
-        int index = (i == 0) ? 0 : decodeInt(max_window_size_bit_length);
-        window[i] = DataItem(value, index);
+
+        if (first_index) {
+            // we always code the value in the first index, so we don't have to code its index
+            index = 0;
+            first_index = false;
+        }
+        else {
+            index = decodeInt(max_window_size_bit_length); // 1 <= index <= max_window_size
+        }
+        window.push_back(DataItem(value, index));
+        if (index == window_size - 1) { break; }
     }
-
-    ///////////////////// TODO
-
-//    int i = 0;
-//    while (i < window_size){
-//    #if MASK_MODE
-//        if (i > 0 && isNoData()) { // always false in the first iteration
-//            column.push_back(Constants::NO_DATA);
-//            row_index++;
-//            continue;
-//        }
-//    #endif
-//        std::string value = decodeValueRaw();
-//        column.push_back(value);
-//        i++;
-//        row_index++;
-//    }
-#if MASK_MODE
-    total_data -= window_size;
-#endif
+    return window;
 }
-

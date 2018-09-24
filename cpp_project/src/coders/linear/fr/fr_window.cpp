@@ -39,9 +39,14 @@ bool FRWindow::isEmpty(){
 std::vector<DataItem> FRWindow::getItems(){
     std::vector<int> array{};
     getIndexes(array, 0, length - 1);
-    VectorUtils::printIntVector(array);
+//    VectorUtils::printIntVector(array);
+
     std::vector<DataItem> result;
-    for(int i=0; i < array.size(); i++) { result.push_back(data[i]); }
+    for(int i=0; i < array.size(); i++) {
+        int position = array[i];
+        DataItem data_item(data[position].value, position);
+        result.push_back(data_item);
+    }
     return result;
 }
 

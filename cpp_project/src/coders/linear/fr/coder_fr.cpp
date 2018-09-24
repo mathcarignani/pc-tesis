@@ -16,10 +16,9 @@ void CoderFR::codeColumnBefore(){
 }
 
 void CoderFR::codeColumnWhile(std::string csv_value) {
-#if MASK_MODE
     // TODO: consider x_delta
     if (Constants::isNoData(csv_value)) { return; } // skip no_data
-#endif
+
     int x_delta = time_delta_vector[row_index]; // >= 0
     window->addDataItem(x_delta, csv_value);
     if (window->isFull()){
@@ -37,7 +36,7 @@ void CoderFR::codeColumnAfter() {
 void CoderFR::codeWindow(){
     std::vector<DataItem> items = window->getItems();
 
-    int size = items.size();
+    int size = items.size(); // 1 <= size <= max_window_size
     assert(size <= max_window_size);
     for(int i=0; i < size; i++){
         DataItem item = items[i];
@@ -47,8 +46,9 @@ void CoderFR::codeWindow(){
 
 void CoderFR::codeItem(DataItem item, int index){
     int value = (int) item.value;
-    codeValueRaw(StringUtils::intToString(value));
+    std::string value_str = StringUtils::intToString(value);
+    codeValueRaw(value_str);
     // we always code the value in the first index, so we don't have to code its index
     if (index == 0) { return; }
-    codeInt(index, max_window_size_bit_length);
+    codeInt(item.timestamp, max_window_size_bit_length); // 1 <= index <= max_window_size
 }

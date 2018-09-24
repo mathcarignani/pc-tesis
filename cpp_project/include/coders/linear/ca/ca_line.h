@@ -91,15 +91,22 @@ public:
     //
     // Returns the y coordinate of the intersection between self and the vertical line that passes through point.
     //
-    double yIntersection(CAPoint other_point){
-        return m * other_point.x + point.y;
+    double yIntersection(CAPoint point){
+        return m * point.x + point.y;
+    }
+
+    //
+    // Returns the y coordinate of the intersection between self and the vertical line that passes through point.
+    //
+    double yIntersection(int x_coord){
+        return m * x_coord + point.y;
     }
 
     //
     // Returns the distance from a point to its projection on self.
     //
     double distance(CAPoint other_point){
-        double dis = MathUtils::doubleAbsolute(other_point.y - yIntersection(other_point));
+        double dis = MathUtils::doubleAbsolute(other_point.y - yIntersection(other_point.x));
         return dis;
     }
 
