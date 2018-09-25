@@ -108,7 +108,7 @@ set(CODER_HEADER_SRC_FILES ${CODER_HEADER_SRC_DIR}/header_coder.cpp ${CODER_HEAD
 set(CODER_BASE_HEAD_FILES ${CODER_BASE_HEAD_DIR}/coder_base.h ${CODER_BASE_HEAD_DIR}/decoder_base.h)
 set(CODER_BASE_SRC_FILES ${CODER_BASE_SRC_DIR}/coder_base.cpp ${CODER_BASE_SRC_DIR}/decoder_base.cpp)
 
-set(CODER_COLS_HEAD_FILES ${CODER_COLS_HEAD_DIR}/coder_cols.h ${CODER_COLS_HEAD_DIR}/decoder_cols.h)
+set(CODER_COLS_HEAD_FILES ${CODER_COLS_HEAD_DIR}/mask.h ${CODER_COLS_HEAD_DIR}/coder_cols.h ${CODER_COLS_HEAD_DIR}/decoder_cols.h)
 set(CODER_COLS_SRC_FILES ${CODER_COLS_SRC_DIR}/coder_cols.cpp ${CODER_COLS_SRC_DIR}/decoder_cols.cpp)
 
 set(CODER_BASIC_HEAD_FILES ${CODER_BASIC_HEAD_DIR}/coder_basic.h ${CODER_BASIC_HEAD_DIR}/decoder_basic.h)

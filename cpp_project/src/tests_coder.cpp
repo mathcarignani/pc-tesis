@@ -22,14 +22,8 @@ void TestsCoder::testSideFilderCoder() {
     Path output_code_path = codedFilePath(TEST_OUTPUT_PATH, file_path, coder_name);
     Path output_decode_path = decodedFilePath(TEST_OUTPUT_PATH, file_path, coder_name);
 
-    Scripts::codeFR(file_path, output_code_path, 5, lossy);
-    Scripts::decodeFR(output_code_path, output_decode_path, 5);
-
-//    Scripts::codeSF(file_path, output_code_path, 5, lossy); // CODE
-
-//    compareFiles(output_code_path, expected_code_path);
-//    Scripts::decodePCA(output_code_path, output_decode_path, 5); // DECODE
-//    compareDecodedFiles(mode, file_path, output_decode_path, expected_path_str, coder_name);
+    Scripts::codeSF(file_path, output_code_path, 5, lossy);
+    Scripts::decodeSF(output_code_path, output_decode_path, 5);
 }
 
 

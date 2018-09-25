@@ -13,7 +13,7 @@ private:
     int max_window_size_bit_length;
     std::vector<int> error_thresholds_vector;
     SlideFilterWindow* m_pSFData;
-    int last_recodring_position;
+//    int last_recording_position;
 
     int m_nBegin_Point;
 

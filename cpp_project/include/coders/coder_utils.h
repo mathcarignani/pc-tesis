@@ -6,11 +6,14 @@
 #include <string>
 #include "constants.h"
 #include <assert.h>
+#include "mask.h"
+#include <iostream>
 
 class CoderUtils {
 
 public:
     static std::vector<int> createXCoordsVector(std::vector<int> time_delta_vector, int window_size, int row_index);
+    static std::vector<int> createXCoordsVector(Mask* mask, std::vector<int> time_delta_vector, int window_size);
 };
 
 class Column {
@@ -27,6 +30,10 @@ public:
         unprocessed_rows = unprocessed_rows_;
         unprocessed_data_rows = total_data;
         unprocessed_no_data_rows = total_no_data;
+        std::cout << "unprocessed_rows_ " << unprocessed_rows_ << std::endl;
+        std::cout << "total_data " << total_data << std::endl;
+        std::cout << "total_no_data " << total_no_data << std::endl;
+
         assert(unprocessed_rows = unprocessed_data_rows + unprocessed_no_data_rows);
     }
 

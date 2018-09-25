@@ -3,6 +3,7 @@
 #define CPP_PROJECT_DECODER_COLS_H
 
 #include "decoder_base.h"
+#include "mask.h"
 
 class DecoderCols: public DecoderBase {
 
@@ -24,15 +25,11 @@ protected:
     std::vector<int> time_delta_vector;
 
 #if MASK_MODE
-    std::vector<bool> burst_is_no_data_vector;
-    std::vector<int> burst_length_vector;
-    int current_index;
-    bool burst_is_no_data;
-    int burst_length;
-    int total_no_data; // number of "nodata" entries
-    int total_data; // number of non-"nodata" entries
-
+    Mask* mask;
+    int total_data;
+    int total_no_data;
     bool isNoData();
+    void reset();
 #endif
 
 public:

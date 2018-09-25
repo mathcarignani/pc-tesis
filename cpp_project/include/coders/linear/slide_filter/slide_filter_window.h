@@ -22,7 +22,7 @@ public:
     int getDataLength();
     DataItem getAt(int pos);
     int getEsp();
-    int getPosition(int timestamp);
+//    int getPosition(int timestamp);
 
 };
 

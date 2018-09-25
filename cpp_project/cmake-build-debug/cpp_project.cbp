@@ -179,6 +179,9 @@
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/cols/decoder_cols.h">
 			<Option target="cpp_project"/>
 		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/cols/mask.h">
+			<Option target="cpp_project"/>
+		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/constant/apca/apca_window.h">
 			<Option target="cpp_project"/>
 		</Unit>

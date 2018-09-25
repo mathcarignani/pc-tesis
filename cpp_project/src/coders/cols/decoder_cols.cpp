@@ -45,38 +45,27 @@ std::vector<std::string> DecoderCols::decodeTimeDeltaColumn(){
 
 #if MASK_MODE
 void DecoderCols::decodeDataColumnNoDataMask() {
-    burst_is_no_data_vector.clear();
-    burst_length_vector.clear();
-    total_no_data = 0;
-    total_data = 0;
+    mask = new Mask();
 
     int row_index = 0;
     while (row_index < data_rows_count){
-        burst_is_no_data = decodeBool();
-        burst_length = decodeInt(Constants::MASK_BITS) + 1; // 1<= burst_length <= Constants::MASK_MAX_SIZE
-        burst_is_no_data_vector.push_back(burst_is_no_data);
-        burst_length_vector.push_back(burst_length);
-        if (burst_is_no_data) { total_no_data += burst_length; } else { total_data += burst_length; }
+        bool burst_is_no_data = decodeBool();
+        int burst_length = decodeInt(Constants::MASK_BITS) + 1; // 1<= burst_length <= Constants::MASK_MAX_SIZE
+        mask->add(burst_is_no_data, burst_length);
         row_index += burst_length;
     }
     assert(row_index == data_rows_count);
-    current_index = 0;
-    burst_is_no_data = burst_is_no_data_vector.at(current_index);
-    burst_length = burst_length_vector.at(current_index);
-
+    total_data = mask->total_data;
+    total_no_data = mask->total_no_data;
+    reset();
 }
 
 bool DecoderCols::isNoData(){
-    if (burst_length == 0){
-        current_index++;
-        burst_is_no_data = burst_is_no_data_vector.at(current_index);
-        burst_length = burst_length_vector.at(current_index);
-//        std::cout << "burst_length = " << burst_length << std::endl;
-//        std::cout << (burst_is_no_data ? "1" : "0") << std::endl;
-    }
-    burst_length--;
-//    std::cout << " " << (burst_is_no_data ? "nodata" : "data") << std::endl;
-    return burst_is_no_data;
+    return mask->isNoData();
+}
+
+void DecoderCols::reset(){
+    mask->reset();
 }
 #endif
 
