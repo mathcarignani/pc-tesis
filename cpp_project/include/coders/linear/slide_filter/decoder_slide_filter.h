@@ -18,7 +18,8 @@ private:
 //    std::string current_value;
 
     std::vector<std::string> decodeDataColumn() override;
-    SlideFiltersEntry decodeEntry();
+    SlideFiltersEntry* decodeEntry();
+    SlideFiltersEntry* getAt(std::vector<SlideFiltersEntry*> & m_pCompressData, int position);
     std::vector<DataItem> decompress();
 
 //    void decodeWindow(std::vector<std::string> & column);
