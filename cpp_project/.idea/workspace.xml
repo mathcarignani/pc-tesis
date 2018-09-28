@@ -23,10 +23,6 @@
       <change beforePath="$PROJECT_DIR$/../cpp_paper/benchmarkLinux/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp_paper/benchmarkLinux/cmake-build-debug/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../cpp_paper/benchmarkLinux/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp_paper/benchmarkLinux/cmake-build-debug/cmake_install.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cpp_project" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cpp_project" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/coders/linear/slide_filter/decoder_slide_filter.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/coders/linear/slide_filter/decoder_slide_filter.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/coders/linear/slide_filter/coder_slide_filter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/coders/linear/slide_filter/coder_slide_filter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/coders/linear/slide_filter/decoder_slide_filter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/coders/linear/slide_filter/decoder_slide_filter.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../dataset_parser/src/bq-helper" beforeDir="false" afterPath="$PROJECT_DIR$/../dataset_parser/src/bq-helper" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -111,8 +107,8 @@
           <file leaf-file-name="slide_filter_window.cpp" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/coders/linear/slide_filter/slide_filter_window.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="363">
-                  <caret line="25" column="28" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
+                <state relative-caret-position="210">
+                  <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
                   <folding>
                     <element signature="e#1#33#0" expanded="true" />
                   </folding>
@@ -136,8 +132,8 @@
           <file leaf-file-name="coder_slide_filter.cpp" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/coders/linear/slide_filter/coder_slide_filter.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="121">
-                  <caret line="231" column="22" selection-start-line="231" selection-start-column="8" selection-end-line="231" selection-end-column="22" />
+                <state relative-caret-position="361">
+                  <caret line="247" column="55" lean-forward="true" selection-start-line="247" selection-start-column="55" selection-end-line="247" selection-end-column="55" />
                   <folding>
                     <element signature="e#1#32#0" expanded="true" />
                   </folding>
@@ -432,7 +428,7 @@
       <workItem from="1536455813275" duration="49033000" />
       <workItem from="1536734456809" duration="23604000" />
       <workItem from="1537502234075" duration="38680000" />
-      <workItem from="1537856895103" duration="7095000" />
+      <workItem from="1537856895103" duration="9130000" />
     </task>
     <task id="LOCAL-00001" summary="Changes to SlideFilter">
       <created>1536698328121</created>
@@ -445,7 +441,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="525216000" />
+    <option name="totallyTimeSpent" value="527251000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -458,18 +454,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-328" y="-1057" width="1875" height="1047" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1574973" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49774265" weight="0.32980973" />
-      <window_info active="true" anchor="bottom" id="Messages" order="7" sideWeight="0.33683047" visible="true" weight="0.23684211" />
+      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.33683047" weight="0.23684211" />
       <window_info anchor="bottom" id="CMake" order="8" sideWeight="0.4520316" weight="0.17740232" />
       <window_info anchor="bottom" x="-274" y="-702" width="1698" height="313" id="Event Log" order="9" sideWeight="0.5157372" side_tool="true" weight="0.12693156" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.48426282" weight="0.09368421" />
       <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.49774265" weight="0.32980973" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.29431254" weight="0.22947368" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4677686" weight="0.104210526" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4677686" visible="true" weight="0.25894737" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.493228" weight="0.23894736" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -974,8 +969,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/coders/linear/slide_filter/slide_filter_window.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="25" column="28" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
+        <state relative-caret-position="210">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
           <folding>
             <element signature="e#1#33#0" expanded="true" />
           </folding>
@@ -984,8 +979,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/coders/linear/slide_filter/coder_slide_filter.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="231" column="22" selection-start-line="231" selection-start-column="8" selection-end-line="231" selection-end-column="22" />
+        <state relative-caret-position="361">
+          <caret line="247" column="55" lean-forward="true" selection-start-line="247" selection-start-column="55" selection-end-line="247" selection-end-column="55" />
           <folding>
             <element signature="e#1#32#0" expanded="true" />
           </folding>
