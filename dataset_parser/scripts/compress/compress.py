@@ -5,6 +5,7 @@ import os
 
 from auxi.logger import setup_logger
 from auxi.print_utils import PrintUtils
+from auxi.os_utils import git_path
 from file_utils.csv_utils.csv_compare import CSVCompare
 from file_utils.csv_utils.csv_writer import CSVWriter
 from file_utils.csv_utils.csv_utils import CSVUtils
@@ -105,8 +106,8 @@ def print_results(coder_info, logger, input_file, compressed_file, same_file):
 def script(output_filename):
     datasets_path = CSV_PATH
     # datasets_path = "/Users/pablocerve/Documents/FING/Proyecto/results/paper_csv/3-without-outliers/"
-    output_path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/"
-    # output_path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/paper-output/"
+    output_path = git_path() + "/dataset_parser/scripts/compress/output/"
+    # output_path = python_git_path() + "/dataset_parser/scripts/paper-output/"
 
     csv = CSVWriter(output_path, output_filename)
     row = ['Dataset', 'Filename', '#rows', 'Coder', '%', 'Error Threshold', 'Window Param', 'Size (B)', 'CR (%)',

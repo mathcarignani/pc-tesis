@@ -1,4 +1,5 @@
 
+from auxi.os_utils import datasets_csv_path
 from coders.basic.coder_basic import CoderBasic
 from coders.basic.decoder_basic import DecoderBasic
 from coders.pca.coder_pca import CoderPCA
@@ -11,7 +12,7 @@ from coders.ca.decoder_ca import DecoderCA
 
 THRESHOLD_PERCENTAGES = [0, 1, 3, 5, 10, 15, 20, 30]
 WINDOW_SIZES = [5, 10, 25, 50, 100, 200]
-CSV_PATH = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv/"
+CSV_PATH = datasets_csv_path()
 
 DATASETS_ARRAY = [
     {'name': 'IRKIS', 'folder': "[1]irkis", 'logger': "irkis.log", 'o_folder': "[1]irkis"},
