@@ -13,6 +13,7 @@ public:
     // Otherwise it returns the index of the first different bit.
     static int compare(Path path1, Path path2);
     static int compareBytes(Path path1, Path path2);
+    static void printBytes(Path path);
     static void removeFile(Path path);
 };
 

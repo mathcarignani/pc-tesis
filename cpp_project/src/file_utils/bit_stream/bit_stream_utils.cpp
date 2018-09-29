@@ -25,20 +25,34 @@ int BitStreamUtils::compareBytes(Path path1, Path path2){
     BitStreamReader* reader1=new BitStreamReader(path1);
     BitStreamReader* reader2=new BitStreamReader(path2);
 
-    int byte_count=1; // first different byte
+    int cont=1; // first different bit
+    bool diff = false;
 
     while (!reader1->reachedEOF()){
-        if (reader2->reachedEOF()) return byte_count;
-        unsigned int reader1_byte = reader1->getInt(8);
-        unsigned int reader2_byte = reader2->getInt(8);
-//        std::cout << "byte " << byte_count << " " << reader1_byte << " " << reader2_byte << std::endl;
-        if (reader1_byte!=reader2_byte) return byte_count;
-//        if (byte_count == 100) { return byte_count; }
-        byte_count++;
+        if (reader2->reachedEOF()) { diff = true; break; }
+        if (reader1->getInt(8)!=reader2->getInt(8)) { diff = true; break; }
+        cont++;
     }
-    if (!reader2->reachedEOF()) return byte_count;
+    if (!diff && !reader2->reachedEOF()) { diff = true; }
 
-    return 0;
+    delete reader1;
+    delete reader2;
+
+    cont = (diff ? cont : 0);
+    return cont;
+}
+
+void BitStreamUtils::printBytes(Path path){
+    std::cout << "printBytes " << path.full_path << std::endl;
+    BitStreamReader* reader=new BitStreamReader(path);
+    int cont = 1;
+    int byte;
+    while (!reader->reachedEOF()){
+        byte = reader->getInt(8);
+        std::cout << cont << " - " << byte << std::endl;
+        cont++;
+    }
+    delete reader;
 }
 
 void BitStreamUtils::removeFile(Path path){

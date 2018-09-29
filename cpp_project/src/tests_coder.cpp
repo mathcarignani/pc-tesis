@@ -201,7 +201,7 @@ void TestsCoder::compareDecodedFiles(std::string mode, Path file_path, Path outp
 }
 
 void TestsCoder::compareFiles(Path path1, Path path2){
-    int res = BitStreamUtils::compare(path1, path2);
+    int res = BitStreamUtils::compareBytes(path1, path2);
     if (res !=0 ){
         std::cout << "FAILURE!" << std::endl;
         std::cout << "File 1 = " << path1.full_path << std::endl;

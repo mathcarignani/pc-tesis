@@ -70,6 +70,7 @@ Dataset Scripts::codeAPCA(Path input_path, Path output_path, int max_window_size
     coder.setCoderParams(max_window_size, error_thresholds_vector);
     coder.codeFile();
     coder.printBits();
+    coder.close();
     return coder.dataset;
 }
 
@@ -91,6 +92,7 @@ Dataset Scripts::codePWLH(Path input_path, Path output_path, int max_window_size
     coder.setCoderParams(max_window_size, error_thresholds_vector, integer_mode);
     coder.codeFile();
     coder.printBits();
+    coder.close();
     return coder.dataset;
 }
 
@@ -112,6 +114,7 @@ Dataset Scripts::codeCA(Path input_path, Path output_path, int max_window_size, 
     coder.setCoderParams(max_window_size, error_thresholds_vector);
     coder.codeFile();
     coder.printBits();
+    coder.close();
     return coder.dataset;
 }
 
@@ -133,6 +136,7 @@ Dataset Scripts::codeSF(Path input_path, Path output_path, int max_window_size, 
     coder.setCoderParams(max_window_size, error_thresholds_vector);
     coder.codeFile();
     coder.printBits();
+    coder.close();
     return coder.dataset;
 }
 
@@ -154,6 +158,7 @@ Dataset Scripts::codeFR(Path input_path, Path output_path, int max_window_size, 
     coder.setCoderParams(max_window_size, error_thresholds_vector);
     coder.codeFile();
     coder.printBits();
+    coder.close();
     return coder.dataset;
 }
 

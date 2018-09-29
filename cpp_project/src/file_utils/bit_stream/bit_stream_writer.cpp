@@ -39,7 +39,7 @@ void BitStreamWriter::pushFloat(float x){
 
 void BitStreamWriter::close(){
     if (offset > 0)
-        fputc(current,fp); offset = 0; current = 0;
+        fputc(current,fp), offset = 0, current = 0;
     fclose(fp);
 }
 
