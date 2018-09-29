@@ -17,8 +17,8 @@ private:
     int decodeRaw();
 
 protected:
-    BitStreamReader &input_file;
-    CSVWriter &output_csv;
+    BitStreamReader* input_file;
+    CSVWriter* output_csv;
     Dataset dataset;
     int data_columns_count;
     int data_rows_count;
@@ -29,7 +29,7 @@ protected:
     float decodeFloat();
 
 public:
-    DecoderBase(BitStreamReader &input_file, CSVWriter &output_csv) : input_file(input_file), output_csv(output_csv) { }
+    DecoderBase(BitStreamReader* input_file_, CSVWriter* output_csv_);
     void decodeFile();
     void close();
 };

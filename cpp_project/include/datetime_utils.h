@@ -3,7 +3,8 @@
 #define CPP_PROJECT_DATETIME_UTILS_H
 
 #include <iostream>
-
+#include <cstring>
+#include <ctime>
 
 class DatetimeUtils {
 
@@ -15,6 +16,8 @@ public:
 
     static long int mapDatetimeToSeconds(std::tm start_date, std::tm date);
     static std::tm mapSecondsToDatetime(std::tm start_date, long int seconds);
+
+    static void printDateTime(std::tm date);
 
 private:
     static int secondsInYear(int year);

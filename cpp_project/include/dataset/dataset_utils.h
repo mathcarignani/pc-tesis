@@ -5,18 +5,19 @@
 #include <vector>
 #include "text_reader.h"
 #include "range.h"
+#include "os_utils.h"
 
 class DatasetUtils {
 
 private:
-    const std::string PATH = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/constants";
+    const std::string PATH = OSUtils::GIT_PATH + "/constants";
     const std::string FILENAME = "CONSTANTS"; // "PAPER_CONSTANTS"
     const std::string SEPARATOR = "=";
     const std::string DATASET_KEY = "#DATASET";
     const std::string TIME_UNIT_KEY = "#TIME_UNIT";
     const std::string ALPHABETS_KEY = "#ALPHABETS";
 
-    TextReader input_file = TextReader(PATH, FILENAME);
+    TextReader* input_file;
     std::string action;
 
     std::string findLine(std::string string_group, std::string string_to_find);

@@ -22,8 +22,8 @@ private:
 //    virtual void raiseRangeError(int value) = 0;
 
 protected:
-    CSVReader &input_csv;
-    BitStreamWriter &output_file;
+    CSVReader* input_csv;
+    BitStreamWriter* output_file;
 
     void codeBit(int bit);
     void codeBool(bool bit);
@@ -33,7 +33,7 @@ protected:
 
 public:
     Dataset dataset;
-    CoderBase(CSVReader &input_csv, BitStreamWriter &output_file) : input_csv(input_csv), output_file(output_file) { }
+    CoderBase(CSVReader* input_csv_, BitStreamWriter* output_file_);
     void codeFile();
     void printBits();
     void close();

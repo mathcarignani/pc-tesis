@@ -36,7 +36,7 @@ std::vector<std::string> DecoderPCA::decodeDataColumn(){
 }
 
 void DecoderPCA::decodeWindow(std::vector<std::string> & column, int window_size){
-    int fi = input_file.getBit();
+    int fi = input_file->getBit();
     if (fi){ decodeNonConstantWindow(column, window_size); }
     else {   decodeConstantWindow(column, window_size); }
 #if MASK_MODE

@@ -18,7 +18,8 @@
 #include <assert.h>
 #if defined(__unix__)
 //#include <dirent.h>
-#include "redef.h"
+//TODO: uncomment next line
+//#include "redef.h"
 #elif defined(__linux__)
 #include "redef.h"
 #elif defined(_WIN32)

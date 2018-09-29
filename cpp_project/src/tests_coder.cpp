@@ -9,9 +9,10 @@
 #include "assert.h"
 #include "string_utils.h"
 #include "csv_utils.h"
+#include "os_utils.h"
 
-const std::string TestsCoder::DATASETS_PATH = "/Users/pablocerve/Documents/FING/Proyecto/datasets-csv";
-const std::string TestsCoder::TEST_OUTPUT_PATH = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/test_files";
+const std::string TestsCoder::DATASETS_PATH = OSUtils::DATASETS_CSV_PATH;
+const std::string TestsCoder::TEST_OUTPUT_PATH = OSUtils::CPP_PROJECT_PATH + "/test_files";
 
 void TestsCoder::testSideFilderCoder() {
     Path file_path = Path(DATASETS_PATH + "/[1]irkis", "vwc_1202.dat.csv");

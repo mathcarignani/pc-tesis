@@ -7,6 +7,7 @@
 #include <vector>
 #include "string_utils.h"
 
+
 std::tm DatetimeUtils::stringToDatetime(std::string tm_str, std::string datetime_format){
     std::tm tm;
     std::memset(&tm, 0, sizeof(std::tm));
@@ -102,10 +103,19 @@ std::tm DatetimeUtils::mapSecondsToDatetime(std::tm start_date, long int seconds
         }
     }
     int month_plus = month + 1;
-    std::string timestamp_str = StringUtils::intToString(year) + "-" + StringUtils::intToString(month_plus) + "-" + StringUtils::intToString(day);
-    timestamp_str += " " + StringUtils::intToString(hour) + ":" + StringUtils::intToString(min) + ":" + StringUtils::intToString(sec);
+    std::string timestamp_str = StringUtils::intToStringPos(year, 4) + "-" +
+                                StringUtils::intToStringPos(month_plus, 2) + "-" +
+                                StringUtils::intToStringPos(day, 2);
+    timestamp_str += " " + StringUtils::intToStringPos(hour, 2) + ":" +
+                           StringUtils::intToStringPos(min, 2) + ":" +
+                           StringUtils::intToStringPos(sec, 2);
     std::tm timestamp_tm = stringToDatetime(timestamp_str, "%Y-%m-%d %H:%M:%S");
     return timestamp_tm;
+}
+
+void DatetimeUtils::printDateTime(std::tm date){
+    std::cout << date.tm_year << "-" << date.tm_mon << "-" << date.tm_mday << " ";
+    std::cout << date.tm_hour << "-" << date.tm_min << "-" << date.tm_sec << std::endl;
 }
 
 int DatetimeUtils::secondsInYear(int year){

@@ -11,6 +11,12 @@ std::string StringUtils::intToString(int & integer){
     return std::to_string(integer);
 }
 
+std::string StringUtils::intToStringPos(int & integer, int size){
+    std::string str = intToString(integer);
+    while (str.size() < size){ str = "0" + str; }
+    return str;
+}
+
 //
 // SOURCE: https://stackoverflow.com/a/14516630/4547232
 //

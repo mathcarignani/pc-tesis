@@ -37,7 +37,7 @@ std::vector<std::string> DecoderCA::decodeDataColumn(){
 }
 
 void DecoderCA::decodeWindow(std::vector<std::string> & column){
-    current_window_size = input_file.getInt(max_window_size_bit_length);
+    current_window_size = input_file->getInt(max_window_size_bit_length);
     current_value = decodeValueRaw();
 }
 

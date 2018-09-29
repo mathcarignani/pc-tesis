@@ -31,7 +31,7 @@ std::vector<std::string> DecoderAPCA::decodeDataColumn(){
 }
 
 void DecoderAPCA::decodeWindow(std::vector<std::string> & column){
-    int window_size = input_file.getInt(max_window_size_bit_length);
+    int window_size = input_file->getInt(max_window_size_bit_length);
     DecoderPCA::decodeConstantWindow(column, window_size);
 #if MASK_MODE
     total_data -= window_size;

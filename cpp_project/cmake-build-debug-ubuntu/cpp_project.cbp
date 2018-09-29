@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="cpp_project"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug-ubuntu"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug-ubuntu/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug-ubuntu/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug-ubuntu/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug-ubuntu/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug-ubuntu"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug-ubuntu/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug-ubuntu/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug-ubuntu/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug-ubuntu/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug-ubuntu"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug-ubuntu/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug-ubuntu/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug-ubuntu/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug-ubuntu/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="cpp_project">
+				<Option output="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug-ubuntu/cpp_project" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug-ubuntu"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux"/>
+					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/Algorithms/PWLH/Control"/>
+					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/DataManagementLayer/Data"/>
+					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/DataStructures/DynArray"/>
+					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/DataStructures/Line"/>
+					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/DataStructures/Polygon"/>
+					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/Algorithms/SlideFilter/Data"/>
+					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include"/>
+					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/file_utils"/>
+					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/file_utils/bit_stream"/>
+					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/file_utils/text"/>
+					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/file_utils/csv"/>
+					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/header"/>
+					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders"/>
+					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/cols"/>
+					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/basic"/>
+					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/constant/pca"/>
+					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/constant/apca"/>
+					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/pwlh"/>
+					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/ca"/>
+					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/slide_filter"/>
+					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/fr"/>
+					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/dataset"/>
+					<Add directory="/usr/include/c++/4.8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/4.8"/>
+					<Add directory="/usr/include/c++/4.8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug-ubuntu/Makefile&quot;  VERBOSE=1 cpp_project"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug-ubuntu/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug-ubuntu/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug-ubuntu/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="cpp_project/fast">
+				<Option output="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug-ubuntu/cpp_project" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug-ubuntu"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux"/>
+					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/Algorithms/PWLH/Control"/>
+					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/DataManagementLayer/Data"/>
+					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/DataStructures/DynArray"/>
+					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/DataStructures/Line"/>
+					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/DataStructures/Polygon"/>
+					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/Algorithms/SlideFilter/Data"/>
+					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include"/>
+					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/file_utils"/>
+					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/file_utils/bit_stream"/>
+					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/file_utils/text"/>
+					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/file_utils/csv"/>
+					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/header"/>
+					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders"/>
+					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/cols"/>
+					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/basic"/>
+					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/constant/pca"/>
+					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/constant/apca"/>
+					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/pwlh"/>
+					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/ca"/>
+					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/slide_filter"/>
+					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/fr"/>
+					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/dataset"/>
+					<Add directory="/usr/include/c++/4.8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/4.8"/>
+					<Add directory="/usr/include/c++/4.8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug-ubuntu/Makefile&quot;  VERBOSE=1 cpp_project/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug-ubuntu/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug-ubuntu/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug-ubuntu/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/Algorithms/PWLH/Control/LinearBucket.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/Algorithms/PWLH/Control/LinearBucket.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/Algorithms/SlideFilter/Data/SlideFiltersEntry.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/DataManagementLayer/Data/DataItem.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/DataStructures/DynArray/DynArray.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/DataStructures/DynArray/DynArray.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/DataStructures/Line/Line.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/DataStructures/Line/Line.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/DataStructures/Polygon/CPolygon.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/DataStructures/Polygon/CPolygon.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/stdafx.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/basic/coder_basic.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/basic/decoder_basic.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/coder_base.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/coder_utils.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/cols/coder_cols.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/cols/decoder_cols.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/cols/mask.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/constant/apca/apca_window.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/constant/apca/coder_apca.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/constant/apca/decoder_apca.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/constant/pca/coder_pca.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/constant/pca/decoder_pca.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/constant/pca/pca_window.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/constants.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/decoder_base.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/header/header_coder.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/header/header_decoder.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/header/header_utils.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/ca/ca_line.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/ca/ca_window.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/ca/coder_ca.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/ca/decoder_ca.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/fr/coder_fr.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/fr/decoder_fr.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/fr/fr_window.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/pwlh/coder_pwlh.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/pwlh/decoder_pwlh.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/pwlh/pwlh_window.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/slide_filter/coder_slide_filter.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/slide_filter/decoder_slide_filter.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/slide_filter/slide_filter_window.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/dataset/column_code.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/dataset/dataset.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/dataset/dataset_utils.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/dataset/range.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/datetime_utils.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/file_utils/bit_stream/bit_stream_reader.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/file_utils/bit_stream/bit_stream_utils.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/file_utils/bit_stream/bit_stream_writer.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/file_utils/csv/csv_reader.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/file_utils/csv/csv_utils.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/file_utils/csv/csv_writer.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/file_utils/path.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/file_utils/text/text_reader.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/file_utils/text/text_utils.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/math_utils.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/os_utils.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/scripts.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/string_utils.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/tests.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/tests_coder.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/tests_math_utils.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/tests_string_utils.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/vector_utils.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/main.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/basic/coder_basic.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/basic/decoder_basic.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/coder_base.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/coder_utils.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/cols/coder_cols.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/cols/decoder_cols.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/constant/apca/apca_window.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/constant/apca/coder_apca.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/constant/apca/decoder_apca.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/constant/pca/coder_pca.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/constant/pca/decoder_pca.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/constant/pca/pca_window.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/constants.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/decoder_base.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/header/header_coder.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/header/header_decoder.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/linear/ca/ca_window.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/linear/ca/coder_ca.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/linear/ca/decoder_ca.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/linear/fr/coder_fr.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/linear/fr/decoder_fr.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/linear/fr/fr_window.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/linear/pwlh/coder_pwlh.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/linear/pwlh/decoder_pwlh.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/linear/pwlh/pwlh_window.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/linear/slide_filter/coder_slide_filter.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/linear/slide_filter/decoder_slide_filter.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/linear/slide_filter/slide_filter_window.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/dataset/column_code.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/dataset/dataset.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/dataset/dataset_utils.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/datetime_utils.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/bit_stream/bit_stream_reader.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/bit_stream/bit_stream_utils.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/bit_stream/bit_stream_writer.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/csv/csv_reader.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/csv/csv_utils.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/csv/csv_writer.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/text/text_reader.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/text/text_utils.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/math_utils.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/os_utils.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/scripts.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/string_utils.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/tests.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/tests_coder.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/tests_math_utils.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/tests_string_utils.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

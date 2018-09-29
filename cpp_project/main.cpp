@@ -4,10 +4,6 @@
 #include "tests.h"
 #include "tests_coder.h"
 #include "assert.h"
-#include "bit_stream_utils.h"
-#include "path.h"
-#include <stdlib.h>
-#include <vector>
 #include "string_utils.h"
 
 int main(int argc, char *argv[]){
@@ -17,8 +13,8 @@ int main(int argc, char *argv[]){
 //    }
 
     if (argc <= 1) {
-        TestsCoder::testSideFilderCoder();
-//        Tests::runAll();
+//        TestsCoder::testSideFilderCoder();
+        Tests::runAll();
         return 0;
     }
 

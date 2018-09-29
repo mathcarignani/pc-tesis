@@ -146,8 +146,8 @@ set(CODER_HEAD_FILES ${CODER_HEAD_FILES0} ${CODER_HEAD_FILES1} ${CODER_HEAD_FILE
 set(CODER_SRC_FILES ${CODER_SRC_FILES0} ${CODER_SRC_FILES1} ${CODER_SRC_FILES2} ${CODER_SRC_FILES3})
 ### CODERS END #########################################################################################################
 
-set(OTHER_HEAD_FILES1 include/string_utils.h include/math_utils.h include/datetime_utils.h include/vector_utils.h)
-set(OTHER_SRC_FILES1 src/string_utils.cpp src/math_utils.cpp src/datetime_utils.cpp )
+set(OTHER_HEAD_FILES1 include/os_utils.h include/string_utils.h include/math_utils.h include/datetime_utils.h include/vector_utils.h)
+set(OTHER_SRC_FILES1 src/os_utils.cpp src/string_utils.cpp src/math_utils.cpp src/datetime_utils.cpp )
 
 set(OTHER_HEAD_FILES2 include/scripts.h include/tests_coder.h include/tests_math_utils.h include/tests_string_utils.h include/tests.h)
 set(OTHER_SRC_FILES2 src/scripts.cpp src/tests_coder.cpp src/tests_math_utils.cpp src/tests_string_utils.cpp src/tests.cpp)

@@ -10,6 +10,7 @@ class StringUtils {
 public:
     static int stringToInt(std::string & str);
     static std::string intToString(int & integer);
+    static std::string intToStringPos(int & integer, int size);
     static bool stringInList(std::string & str, std::vector<std::string> arr);
     static bool find(std::string string, std::string string_to_find);
     static std::vector<std::string> splitByString(std::string str, std::string delimiter);

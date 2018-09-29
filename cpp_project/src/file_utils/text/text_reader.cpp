@@ -55,3 +55,7 @@ void TextReader::readLineAux() {
 void TextReader::close(){
     file.close();
 }
+
+TextReader::~TextReader(){
+    close();
+}

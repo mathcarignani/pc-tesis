@@ -75,6 +75,6 @@ void DecoderCols::transposeMatrix(std::vector<std::vector<std::string>> columns,
         for(int column_index_ = 0; column_index_ < total_columns; column_index_++) {
             row.push_back(columns[column_index_][row_index_]);
         }
-        output_csv.writeRowDecoder(row);
+        output_csv->writeRowDecoder(row);
     }
 }

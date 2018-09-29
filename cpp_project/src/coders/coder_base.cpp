@@ -4,10 +4,14 @@
 #include "header_coder.h"
 #include "string_utils.h"
 
+CoderBase::CoderBase(CSVReader* input_csv_, BitStreamWriter* output_file_){
+   input_csv = input_csv_;
+   output_file = output_file_;
+}
 
 void CoderBase::codeDataRowsCount(){
-    int data_rows_count = input_csv.total_lines - 4;
-    output_file.pushInt(data_rows_count, 24); // 24 bits for the data rows count
+    int data_rows_count = input_csv->total_lines - 4;
+    output_file->pushInt(data_rows_count, 24); // 24 bits for the data rows count
 }
 
 //
@@ -24,23 +28,23 @@ int CoderBase::codeValue(std::string x){
 }
 
 void CoderBase::codeRaw(int value){
-    output_file.pushInt(value, dataset.getBits());
+    output_file->pushInt(value, dataset.getBits());
 }
 
 void CoderBase::codeBit(int bit){
     dataset.addBits(1);
-    output_file.pushBit(bit);
+    output_file->pushBit(bit);
 }
 
 void CoderBase::codeBool(bool bit){
     dataset.addBits(1);
-    if (bit) { output_file.pushBit(1); }
-    else     { output_file.pushBit(0); }
+    if (bit) { output_file->pushBit(1); }
+    else     { output_file->pushBit(0); }
 }
 
 void CoderBase::codeInt(int value, int bits){
     dataset.addBits(bits);
-    output_file.pushInt(value, bits);
+    output_file->pushInt(value, bits);
 }
 
 void CoderBase::codeValueRaw(std::string x){
@@ -58,7 +62,7 @@ void CoderBase::codeValueRaw(std::string x){
 void CoderBase::codeFloat(float x){
 //    std::cout << "codeFloat " << x << std::endl;
     dataset.addBits(sizeof(float)*8);
-    output_file.pushFloat(x);
+    output_file->pushFloat(x);
 }
 
 void CoderBase::codeFile(){
@@ -72,6 +76,6 @@ void CoderBase::printBits(){
 }
 
 void CoderBase::close(){
-    input_csv.close();
-    output_file.~BitStreamWriter();
+    delete input_csv;
+    delete output_file;
 }

@@ -5,8 +5,13 @@
 #include "string_utils.h"
 
 
+DecoderBase::DecoderBase(BitStreamReader* input_file_, CSVWriter* output_csv_){
+    input_file = input_file_;
+    output_csv = output_csv_;
+}
+
 void DecoderBase::decodeDataRowsCount(){
-    data_rows_count = input_file.getInt(24); // 24 bits for the data rows count
+    data_rows_count = input_file->getInt(24); // 24 bits for the data rows count
 }
 
 std::string DecoderBase::decodeValue(int y){
@@ -19,15 +24,15 @@ std::string DecoderBase::decodeValue(int y){
 }
 
 int DecoderBase::decodeRaw(){
-    return input_file.getInt(dataset.bits());
+    return input_file->getInt(dataset.bits());
 }
 
 bool DecoderBase::decodeBool(){
-    if (input_file.getBit()) { return true; } else { return false; }
+    if (input_file->getBit()) { return true; } else { return false; }
 }
 
 int DecoderBase::decodeInt(int bits){
-    return (input_file.getInt(bits));
+    return (input_file->getInt(bits));
 }
 
 std::string DecoderBase::decodeValueRaw(){
@@ -44,7 +49,7 @@ std::string DecoderBase::decodeValueRaw(){
 }
 
 float DecoderBase::decodeFloat(){
-    return input_file.getFloat();
+    return input_file->getFloat();
 }
 
 void DecoderBase::decodeFile(){
@@ -54,6 +59,6 @@ void DecoderBase::decodeFile(){
 }
 
 void DecoderBase::close(){
-    input_file.~BitStreamReader();
-    output_csv.close();
+    delete input_file;
+    delete output_csv;
 }

@@ -17,7 +17,7 @@ void CoderCols::codeDataRows(){
 
 void CoderCols::goToFirstDataRow() {
     row_index = 0;
-    input_csv.goToLine(4); // first data row
+    input_csv->goToLine(4); // first data row
 }
 
 void CoderCols::codeColumn() {
@@ -38,8 +38,8 @@ void CoderCols::codeTimeDeltaColumn(){
     dataset.setMaskMode(false);
 
     goToFirstDataRow();
-    while (input_csv.continue_reading){
-        std::string csv_value = input_csv.readLineCSVWithIndex(column_index);
+    while (input_csv->continue_reading){
+        std::string csv_value = input_csv->readLineCSVWithIndex(column_index);
         codeValueRaw(csv_value); // same as CoderBasic
 
         // add int value to the time_delta_vector
@@ -58,8 +58,8 @@ int CoderCols::codeDataColumnNoDataMask(){
     int total_data_rows = 0;
 
     goToFirstDataRow();
-    while (input_csv.continue_reading) {
-        std::string csv_value = input_csv.readLineCSVWithIndex(column_index);
+    while (input_csv->continue_reading) {
+        std::string csv_value = input_csv->readLineCSVWithIndex(column_index);
         bool no_data = Constants::isNoData(csv_value);
         if (row_index == 0){
             burst_is_no_data = no_data;
@@ -93,8 +93,8 @@ void CoderCols::codeDataColumn(){
     this->codeColumnBefore();
 
     goToFirstDataRow();
-    while (input_csv.continue_reading){
-        std::string csv_value = input_csv.readLineCSVWithIndex(column_index);
+    while (input_csv->continue_reading){
+        std::string csv_value = input_csv->readLineCSVWithIndex(column_index);
         this->codeColumnWhile(csv_value);
         row_index++;
     }

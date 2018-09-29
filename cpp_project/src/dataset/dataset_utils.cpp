@@ -4,16 +4,18 @@
 #include "assert.h"
 #include "string_utils.h"
 
+
 DatasetUtils::DatasetUtils(std::string action_){
     assert(action_ == "code" || action_ == "decode");
     action = action_;
+    input_file = new TextReader(PATH, FILENAME);
 }
 
 std::string DatasetUtils::findLine(std::string string_group, std::string string_to_find){
-    input_file.goToLine(0);
-    assert(input_file.findLine(string_group));
-    assert(input_file.findLine(string_to_find));
-    return input_file.current_line;
+    input_file->goToLine(0);
+    assert(input_file->findLine(string_group));
+    assert(input_file->findLine(string_to_find));
+    return input_file->current_line;
 }
 
 int DatasetUtils::codeDatasetName(std::string dataset_name){
@@ -70,5 +72,5 @@ std::vector<int> DatasetUtils::getBitsVector(std::string dataset_name) {
 }
 
 void DatasetUtils::close(){
-    input_file.close();
+    delete input_file;
 }

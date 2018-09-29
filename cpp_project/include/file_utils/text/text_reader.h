@@ -26,6 +26,7 @@ public:
     void goToLine(int line_number); // PRE: line_number <= total_lines
     bool findLine(std::string string_to_find);
     void close();
+    ~TextReader();
 };
 
 #endif //CPP_PROJECT_TEXT_READER_H

@@ -4,6 +4,9 @@
 
 #include <sstream>
 #include "string_utils.h"
+#include <cstring>
+#include <vector>
+#include <algorithm>
 
 class VectorUtils {
 

@@ -22,8 +22,8 @@
 
 
 Dataset Scripts::codeBasic(Path input_path, Path output_path){
-    CSVReader csv_reader = CSVReader(input_path);
-    BitStreamWriter bit_stream_writer = BitStreamWriter(output_path);
+    CSVReader* csv_reader = new CSVReader(input_path);
+    BitStreamWriter* bit_stream_writer = new BitStreamWriter(output_path);
     CoderBasic coder = CoderBasic(csv_reader, bit_stream_writer);
     coder.codeFile();
     coder.printBits();
@@ -32,8 +32,8 @@ Dataset Scripts::codeBasic(Path input_path, Path output_path){
 }
 
 void Scripts::decodeBasic(Path input_path, Path output_path){
-    BitStreamReader bit_stream_reader = BitStreamReader(input_path);
-    CSVWriter csv_writer = CSVWriter(output_path);
+    BitStreamReader* bit_stream_reader = new BitStreamReader(input_path);
+    CSVWriter* csv_writer = new CSVWriter(output_path);
     DecoderBasic decoder = DecoderBasic(bit_stream_reader, csv_writer);
     decoder.decodeFile();
     decoder.close();
@@ -42,8 +42,8 @@ void Scripts::decodeBasic(Path input_path, Path output_path){
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Dataset Scripts::codePCA(Path input_path, Path output_path, int fixed_window_size, std::vector<int> error_thresholds_vector){
-    CSVReader csv_reader = CSVReader(input_path);
-    BitStreamWriter bit_stream_writer = BitStreamWriter(output_path);
+    CSVReader* csv_reader = new CSVReader(input_path);
+    BitStreamWriter* bit_stream_writer = new BitStreamWriter(output_path);
     CoderPCA coder = CoderPCA(csv_reader, bit_stream_writer);
     coder.setCoderParams(fixed_window_size, error_thresholds_vector);
     coder.codeFile();
@@ -53,8 +53,8 @@ Dataset Scripts::codePCA(Path input_path, Path output_path, int fixed_window_siz
 }
 
 void Scripts::decodePCA(Path input_path, Path output_path, int fixed_window_size){
-    BitStreamReader bit_stream_reader = BitStreamReader(input_path);
-    CSVWriter csv_writer = CSVWriter(output_path);
+    BitStreamReader* bit_stream_reader = new BitStreamReader(input_path);
+    CSVWriter* csv_writer = new CSVWriter(output_path);
     DecoderPCA decoder = DecoderPCA(bit_stream_reader, csv_writer);
     decoder.setCoderParams(fixed_window_size);
     decoder.decodeFile();
@@ -64,8 +64,8 @@ void Scripts::decodePCA(Path input_path, Path output_path, int fixed_window_size
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Dataset Scripts::codeAPCA(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector){
-    CSVReader csv_reader = CSVReader(input_path);
-    BitStreamWriter bit_stream_writer = BitStreamWriter(output_path);
+    CSVReader* csv_reader = new CSVReader(input_path);
+    BitStreamWriter* bit_stream_writer = new BitStreamWriter(output_path);
     CoderAPCA coder = CoderAPCA(csv_reader, bit_stream_writer);
     coder.setCoderParams(max_window_size, error_thresholds_vector);
     coder.codeFile();
@@ -74,8 +74,8 @@ Dataset Scripts::codeAPCA(Path input_path, Path output_path, int max_window_size
 }
 
 void Scripts::decodeAPCA(Path input_path, Path output_path, int max_window_size){
-    BitStreamReader bit_stream_reader = BitStreamReader(input_path);
-    CSVWriter csv_writer = CSVWriter(output_path);
+    BitStreamReader* bit_stream_reader = new BitStreamReader(input_path);
+    CSVWriter* csv_writer = new CSVWriter(output_path);
     DecoderAPCA decoder = DecoderAPCA(bit_stream_reader, csv_writer);
     decoder.setCoderParams(max_window_size);
     decoder.decodeFile();
@@ -85,8 +85,8 @@ void Scripts::decodeAPCA(Path input_path, Path output_path, int max_window_size)
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Dataset Scripts::codePWLH(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector, bool integer_mode){
-    CSVReader csv_reader = CSVReader(input_path);
-    BitStreamWriter bit_stream_writer = BitStreamWriter(output_path);
+    CSVReader* csv_reader = new CSVReader(input_path);
+    BitStreamWriter* bit_stream_writer = new BitStreamWriter(output_path);
     CoderPWLH coder = CoderPWLH(csv_reader, bit_stream_writer);
     coder.setCoderParams(max_window_size, error_thresholds_vector, integer_mode);
     coder.codeFile();
@@ -95,8 +95,8 @@ Dataset Scripts::codePWLH(Path input_path, Path output_path, int max_window_size
 }
 
 void Scripts::decodePWLH(Path input_path, Path output_path, int max_window_size, bool integer_mode){
-    BitStreamReader bit_stream_reader = BitStreamReader(input_path);
-    CSVWriter csv_writer = CSVWriter(output_path);
+    BitStreamReader* bit_stream_reader = new BitStreamReader(input_path);
+    CSVWriter* csv_writer = new CSVWriter(output_path);
     DecoderPWLH decoder = DecoderPWLH(bit_stream_reader, csv_writer);
     decoder.setCoderParams(max_window_size, integer_mode);
     decoder.decodeFile();
@@ -106,8 +106,8 @@ void Scripts::decodePWLH(Path input_path, Path output_path, int max_window_size,
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Dataset Scripts::codeCA(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector){
-    CSVReader csv_reader = CSVReader(input_path);
-    BitStreamWriter bit_stream_writer = BitStreamWriter(output_path);
+    CSVReader* csv_reader = new CSVReader(input_path);
+    BitStreamWriter* bit_stream_writer = new BitStreamWriter(output_path);
     CoderCA coder = CoderCA(csv_reader, bit_stream_writer);
     coder.setCoderParams(max_window_size, error_thresholds_vector);
     coder.codeFile();
@@ -116,8 +116,8 @@ Dataset Scripts::codeCA(Path input_path, Path output_path, int max_window_size, 
 }
 
 void Scripts::decodeCA(Path input_path, Path output_path, int max_window_size){
-    BitStreamReader bit_stream_reader = BitStreamReader(input_path);
-    CSVWriter csv_writer = CSVWriter(output_path);
+    BitStreamReader* bit_stream_reader = new BitStreamReader(input_path);
+    CSVWriter* csv_writer = new CSVWriter(output_path);
     DecoderCA decoder = DecoderCA(bit_stream_reader, csv_writer);
     decoder.setCoderParams(max_window_size);
     decoder.decodeFile();
@@ -127,8 +127,8 @@ void Scripts::decodeCA(Path input_path, Path output_path, int max_window_size){
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Dataset Scripts::codeSF(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector){
-    CSVReader csv_reader = CSVReader(input_path);
-    BitStreamWriter bit_stream_writer = BitStreamWriter(output_path);
+    CSVReader* csv_reader = new CSVReader(input_path);
+    BitStreamWriter* bit_stream_writer = new BitStreamWriter(output_path);
     CoderSlideFilter coder = CoderSlideFilter(csv_reader, bit_stream_writer);
     coder.setCoderParams(max_window_size, error_thresholds_vector);
     coder.codeFile();
@@ -137,8 +137,8 @@ Dataset Scripts::codeSF(Path input_path, Path output_path, int max_window_size, 
 }
 
 void Scripts::decodeSF(Path input_path, Path output_path, int max_window_size){
-    BitStreamReader bit_stream_reader = BitStreamReader(input_path);
-    CSVWriter csv_writer = CSVWriter(output_path);
+    BitStreamReader* bit_stream_reader = new BitStreamReader(input_path);
+    CSVWriter* csv_writer = new CSVWriter(output_path);
     DecoderSlideFilter decoder = DecoderSlideFilter(bit_stream_reader, csv_writer);
     decoder.setCoderParams(max_window_size);
     decoder.decodeFile();
@@ -148,8 +148,8 @@ void Scripts::decodeSF(Path input_path, Path output_path, int max_window_size){
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Dataset Scripts::codeFR(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector){
-    CSVReader csv_reader = CSVReader(input_path);
-    BitStreamWriter bit_stream_writer = BitStreamWriter(output_path);
+    CSVReader* csv_reader = new CSVReader(input_path);
+    BitStreamWriter* bit_stream_writer = new BitStreamWriter(output_path);
     CoderFR coder = CoderFR(csv_reader, bit_stream_writer);
     coder.setCoderParams(max_window_size, error_thresholds_vector);
     coder.codeFile();
@@ -158,8 +158,8 @@ Dataset Scripts::codeFR(Path input_path, Path output_path, int max_window_size, 
 }
 
 void Scripts::decodeFR(Path input_path, Path output_path, int max_window_size){
-    BitStreamReader bit_stream_reader = BitStreamReader(input_path);
-    CSVWriter csv_writer = CSVWriter(output_path);
+    BitStreamReader* bit_stream_reader = new BitStreamReader(input_path);
+    CSVWriter* csv_writer = new CSVWriter(output_path);
     DecoderFR decoder = DecoderFR(bit_stream_reader, csv_writer);
     decoder.setCoderParams(max_window_size);
     decoder.decodeFile();

@@ -6,6 +6,7 @@
 #include <string>
 #include "text_reader.h"
 #include "path.h"
+#include <vector>
 
 
 class CSVReader: public TextReader {
