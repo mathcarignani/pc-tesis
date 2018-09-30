@@ -13,7 +13,11 @@
   <component name="ChangeListManager">
     <list default="true" id="2fbb5dd3-364e-4d62-8cd3-b832deb1f263" name="Default" comment="Changes to SlideFilter">
       <change beforePath="$PROJECT_DIR$/../cpp_paper/benchmarkLinux/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp_paper/benchmarkLinux/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cpp_project" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cpp_project" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tests_coder.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests_coder.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_files/expected/mask_mode_true/bits-out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/test_files/expected/mask_mode_true/bits-out.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../dataset_parser/src/bq-helper" beforeDir="false" afterPath="$PROJECT_DIR$/../dataset_parser/src/bq-helper" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -40,11 +44,11 @@
       <file leaf-file-name="tests_coder.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/tests_coder.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="38" selection-start-line="38" selection-end-line="38" />
+            <state relative-caret-position="290">
+              <caret line="104" lean-forward="true" selection-start-line="104" selection-end-line="114" selection-end-column="100" />
               <folding>
                 <element signature="e#1#25#0" expanded="true" />
-                <element signature="e#1434#1488#0" expanded="true" />
+                <element signature="e#1420#1502#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -53,8 +57,8 @@
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="270">
+              <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -215,32 +219,6 @@
               <item name="cpp_project" type="b2602c69:ProjectViewProjectNode" />
               <item name="cpp_project" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="cpp_project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cpp_project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cpp_project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cpp_project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="coders" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cpp_project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cpp_project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="coders" type="462c0819:PsiDirectoryNode" />
-              <item name="constant" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cpp_project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cpp_project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="coders" type="462c0819:PsiDirectoryNode" />
-              <item name="constant" type="462c0819:PsiDirectoryNode" />
-              <item name="apca" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -355,7 +333,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="555103000" />
+    <option name="totallyTimeSpent" value="556051000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -368,6 +346,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-329" y="-1057" width="1875" height="1047" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1574973" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49774265" weight="0.32980973" />
@@ -550,7 +529,7 @@
           <caret line="11" selection-start-line="11" selection-end-line="11" />
           <folding>
             <element signature="e#1#25#0" expanded="true" />
-            <element signature="e#1434#1488#0" expanded="true" />
+            <element signature="e#1420#1502#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -888,18 +867,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="270">
+          <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tests_coder.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
+        <state relative-caret-position="290">
+          <caret line="104" lean-forward="true" selection-start-line="104" selection-end-line="114" selection-end-column="100" />
           <folding>
             <element signature="e#1#25#0" expanded="true" />
-            <element signature="e#1434#1488#0" expanded="true" />
+            <element signature="e#1420#1502#0" expanded="true" />
           </folding>
         </state>
       </provider>
