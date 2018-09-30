@@ -13,11 +13,8 @@
   <component name="ChangeListManager">
     <list default="true" id="2fbb5dd3-364e-4d62-8cd3-b832deb1f263" name="Default" comment="Changes to SlideFilter">
       <change beforePath="$PROJECT_DIR$/../cpp_paper/benchmarkLinux/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp_paper/benchmarkLinux/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cpp_project" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cpp_project" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests_coder.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests_coder.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_files/expected/mask_mode_true/bits-out.csv" beforeDir="false" afterPath="$PROJECT_DIR$/test_files/expected/mask_mode_true/bits-out.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_files/expected/mask_mode_true/lossless/vwc_1202.dat.csv-CoderCA-Code" beforeDir="false" afterPath="$PROJECT_DIR$/test_files/expected/mask_mode_true/lossless/vwc_1202.dat.csv-CoderCA-Code" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../dataset_parser/src/bq-helper" beforeDir="false" afterPath="$PROJECT_DIR$/../dataset_parser/src/bq-helper" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -44,8 +41,8 @@
       <file leaf-file-name="tests_coder.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/tests_coder.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="104" lean-forward="true" selection-start-line="104" selection-end-line="114" selection-end-column="100" />
+            <state relative-caret-position="294">
+              <caret line="149" lean-forward="true" selection-start-line="149" selection-end-line="158" selection-end-column="102" />
               <folding>
                 <element signature="e#1#25#0" expanded="true" />
                 <element signature="e#1420#1502#0" expanded="true" />
@@ -333,7 +330,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="556051000" />
+    <option name="totallyTimeSpent" value="556244000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -380,23 +377,23 @@
       <window_info id="Favorites" order="2" side_tool="true" />
     </layout>
     <layout-to-restore>
-      <window_info anchor="bottom" id="CMake" order="8" sideWeight="0.4520316" weight="0.17819707" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17517847" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49774265" weight="0.32980973" />
+      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.49774265" weight="0.32980973" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.29431254" weight="0.23020063" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.48426282" weight="0.32731137" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.493228" weight="0.2620545" />
+      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.33683047" weight="0.25611052" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4677686" visible="true" weight="0.11158342" />
       <window_info anchor="bottom" x="-274" y="-702" width="1698" height="313" id="Event Log" order="9" sideWeight="0.5157372" side_tool="true" weight="0.12693156" />
-      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.49774265" weight="0.32980973" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.48426282" weight="0.32731137" />
-      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.33683047" weight="0.25611052" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="CMake" order="8" sideWeight="0.4520316" weight="0.17819707" />
       <window_info id="Favorites" order="2" side_tool="true" />
     </layout-to-restore>
   </component>
@@ -874,8 +871,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tests_coder.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="104" lean-forward="true" selection-start-line="104" selection-end-line="114" selection-end-column="100" />
+        <state relative-caret-position="294">
+          <caret line="149" lean-forward="true" selection-start-line="149" selection-end-line="158" selection-end-column="102" />
           <folding>
             <element signature="e#1#25#0" expanded="true" />
             <element signature="e#1420#1502#0" expanded="true" />
