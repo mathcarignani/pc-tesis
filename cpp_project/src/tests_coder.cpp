@@ -11,6 +11,9 @@
 #include "csv_utils.h"
 #include "os_utils.h"
 
+// Set to 1 to set up the tests, then set to 0
+#define RECORD 0
+
 const std::string TestsCoder::DATASETS_PATH = OSUtils::DATASETS_CSV_PATH;
 const std::string TestsCoder::TEST_OUTPUT_PATH = OSUtils::CPP_PROJECT_PATH + "/test_files";
 
@@ -34,8 +37,11 @@ void TestsCoder::testCoderDecoder(){
 
     std::string expected_root_folder = TEST_OUTPUT_PATH + "/expected/" + mask_mode_folder;
 
-    bool record = false; // Set to true to set up the tests, then set to false
-    std::string output_root_folder = (record) ? expected_root_folder : TEST_OUTPUT_PATH + "/output/" + mask_mode_folder;
+#if RECORD
+    std::string output_root_folder = expected_root_folder;
+#else
+    std::string output_root_folder = TEST_OUTPUT_PATH + "/output/" + mask_mode_folder;
+#endif
 
     Path bits_csv_path = Path(output_root_folder, "bits-out.csv");
     CSVWriter bits_csv = CSVWriter(bits_csv_path);

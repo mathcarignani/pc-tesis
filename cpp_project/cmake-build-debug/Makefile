@@ -1365,6 +1365,33 @@ src/math_utils.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/math_utils.cpp.s
 .PHONY : src/math_utils.cpp.s
 
+src/os_utils.o: src/os_utils.cpp.o
+
+.PHONY : src/os_utils.o
+
+# target to build an object file
+src/os_utils.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/os_utils.cpp.o
+.PHONY : src/os_utils.cpp.o
+
+src/os_utils.i: src/os_utils.cpp.i
+
+.PHONY : src/os_utils.i
+
+# target to preprocess a source file
+src/os_utils.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/os_utils.cpp.i
+.PHONY : src/os_utils.cpp.i
+
+src/os_utils.s: src/os_utils.cpp.s
+
+.PHONY : src/os_utils.s
+
+# target to generate assembly for a file
+src/os_utils.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/os_utils.cpp.s
+.PHONY : src/os_utils.cpp.s
+
 src/scripts.o: src/scripts.cpp.o
 
 .PHONY : src/scripts.o
@@ -1674,6 +1701,9 @@ help:
 	@echo "... src/math_utils.o"
 	@echo "... src/math_utils.i"
 	@echo "... src/math_utils.s"
+	@echo "... src/os_utils.o"
+	@echo "... src/os_utils.i"
+	@echo "... src/os_utils.s"
 	@echo "... src/scripts.o"
 	@echo "... src/scripts.i"
 	@echo "... src/scripts.s"

@@ -7,12 +7,13 @@
   </component>
   <component name="CMakeSettings">
     <configurations>
-      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" GENERATION_DIR="cmake-build-debug-ubuntu" BUILD_OPTIONS="-j 4" />
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" GENERATION_DIR="cmake-build-debug" BUILD_OPTIONS="-j 4" />
     </configurations>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2fbb5dd3-364e-4d62-8cd3-b832deb1f263" name="Default" comment="Changes to SlideFilter">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cpp_paper/benchmarkLinux/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../cpp_paper/benchmarkLinux/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests_coder.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests_coder.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../dataset_parser/src/bq-helper" beforeDir="false" afterPath="$PROJECT_DIR$/../dataset_parser/src/bq-helper" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -36,16 +37,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tests_coder.cpp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="tests_coder.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/tests_coder.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="293">
+              <caret line="38" selection-start-line="38" selection-end-line="38" />
+              <folding>
+                <element signature="e#1#25#0" expanded="true" />
+                <element signature="e#1434#1488#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
@@ -172,12 +177,12 @@
         <option value="$PROJECT_DIR$/src/coders/constant/apca/decoder_apca.cpp" />
         <option value="$PROJECT_DIR$/src/coders/decoder_base.cpp" />
         <option value="$PROJECT_DIR$/include/file_utils/bit_stream/bit_stream_utils.h" />
-        <option value="$PROJECT_DIR$/src/tests_coder.cpp" />
         <option value="$PROJECT_DIR$/src/file_utils/bit_stream/bit_stream_utils.cpp" />
         <option value="$PROJECT_DIR$/src/file_utils/bit_stream/bit_stream_reader.cpp" />
         <option value="$PROJECT_DIR$/src/file_utils/bit_stream/bit_stream_writer.cpp" />
         <option value="$PROJECT_DIR$/src/scripts.cpp" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/tests_coder.cpp" />
       </list>
     </option>
   </component>
@@ -247,7 +252,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="settings.editor.selected.configurable" value="CPPToolchains" />
+    <property name="settings.editor.selected.configurable" value="CMakeSettings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -350,7 +355,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="554907000" />
+    <option name="totallyTimeSpent" value="555103000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -363,18 +368,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-329" y="-1057" width="1875" height="1047" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1574973" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49774265" weight="0.32980973" />
-      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.33683047" weight="0.28526315" />
+      <window_info active="true" anchor="bottom" id="Messages" order="7" sideWeight="0.33683047" visible="true" weight="0.28526315" />
       <window_info anchor="bottom" id="CMake" order="8" sideWeight="0.4520316" weight="0.17740232" />
       <window_info anchor="bottom" x="-274" y="-702" width="1698" height="313" id="Event Log" order="9" sideWeight="0.5157372" side_tool="true" weight="0.12693156" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.48426282" weight="0.09368421" />
       <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.49774265" weight="0.32980973" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.29431254" weight="0.19263157" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4677686" visible="true" weight="0.3831579" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4677686" weight="0.3831579" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.493228" weight="0.23894736" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.29431254" weight="0.21102864" />
@@ -544,6 +548,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="e#1#25#0" expanded="true" />
+            <element signature="e#1434#1488#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -826,13 +834,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/tests_coder.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/include/coders/constant/apca/coder_apca.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
@@ -889,6 +890,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tests_coder.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+          <folding>
+            <element signature="e#1#25#0" expanded="true" />
+            <element signature="e#1434#1488#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
