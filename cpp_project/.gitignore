@@ -17,7 +17,7 @@ cmake-build-debug/CMakeFiles/**
 cmake-build-debug/cpp_project
 cmake-build-debug-ubuntu/CMakeFiles/**
 cmake-build-debug-ubuntu/cpp_project
-
+.idea/workspace.xml
 
 # Only the files inside test_files/expected should be added to version control
 test_files/output/**
