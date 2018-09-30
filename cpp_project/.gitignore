@@ -14,6 +14,8 @@
 # *.hex
 
 cmake-build-debug/CMakeFiles/**
+cmake-build-debug-ubuntu/CMakeFiles/**
+
 
 # Only the files inside test_files/expected should be added to version control
 test_files/output/**

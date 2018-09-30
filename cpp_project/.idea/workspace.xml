@@ -12,13 +12,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2fbb5dd3-364e-4d62-8cd3-b832deb1f263" name="Default" comment="Changes to SlideFilter">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-ubuntu/cpp_project" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-ubuntu/cpp_project" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/file_utils/bit_stream/bit_stream_utils.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/file_utils/bit_stream/bit_stream_utils.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/file_utils/bit_stream/bit_stream_utils.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/file_utils/bit_stream/bit_stream_utils.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/file_utils/bit_stream/bit_stream_writer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/file_utils/bit_stream/bit_stream_writer.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scripts.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests_coder.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests_coder.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dataset_parser/src/bq-helper" beforeDir="false" afterPath="$PROJECT_DIR$/../dataset_parser/src/bq-helper" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <ignored path="$PROJECT_DIR$/cmake-build-debug-ubuntu/" />
@@ -31,7 +26,35 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="tests.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tests.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tests_coder.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tests_coder.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -95,11 +118,15 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="master_test" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/coders/linear/fr/decoder_fr.cpp" />
         <option value="$PROJECT_DIR$/src/coders/linear/fr/coder_fr.cpp" />
         <option value="$PROJECT_DIR$/include/coders/linear/slide_filter/slide_filter_window.h" />
         <option value="$PROJECT_DIR$/include/coders/linear/slide_filter/coder_slide_filter.h" />
@@ -150,6 +177,7 @@
         <option value="$PROJECT_DIR$/src/file_utils/bit_stream/bit_stream_reader.cpp" />
         <option value="$PROJECT_DIR$/src/file_utils/bit_stream/bit_stream_writer.cpp" />
         <option value="$PROJECT_DIR$/src/scripts.cpp" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -181,6 +209,32 @@
             <path>
               <item name="cpp_project" type="b2602c69:ProjectViewProjectNode" />
               <item name="cpp_project" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cpp_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cpp_project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cpp_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cpp_project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="coders" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cpp_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cpp_project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="coders" type="462c0819:PsiDirectoryNode" />
+              <item name="constant" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cpp_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cpp_project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="coders" type="462c0819:PsiDirectoryNode" />
+              <item name="constant" type="462c0819:PsiDirectoryNode" />
+              <item name="apca" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -296,7 +350,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="554832000" />
+    <option name="totallyTimeSpent" value="554907000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -308,27 +362,60 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-4" width="1920" height="1084" extended-state="6" />
+    <frame x="-329" y="-1057" width="1875" height="1047" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1984375" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1574973" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49774265" weight="0.32980973" />
-      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.47708333" visible="true" weight="0.20360552" />
-      <window_info anchor="bottom" id="CMake" order="8" sideWeight="0.4520316" weight="0.30010605" />
-      <window_info anchor="bottom" x="0" y="368" width="1920" height="340" id="Event Log" order="9" sideWeight="0.43020833" side_tool="true" weight="0.38918346" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.48426282" weight="0.4559915" />
+      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.33683047" weight="0.28526315" />
+      <window_info anchor="bottom" id="CMake" order="8" sideWeight="0.4520316" weight="0.17740232" />
+      <window_info anchor="bottom" x="-274" y="-702" width="1698" height="313" id="Event Log" order="9" sideWeight="0.5157372" side_tool="true" weight="0.12693156" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.48426282" weight="0.09368421" />
       <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.49774265" weight="0.32980973" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.29431254" weight="0.21102864" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.29431254" weight="0.19263157" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" auto_hide="true" x="0" y="365" width="1920" height="345" id="Terminal" order="11" sideWeight="0.5697917" side_tool="true" weight="0.23435843" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4677686" visible="true" weight="0.3831579" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.493228" weight="0.36585367" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.493228" weight="0.23894736" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.29431254" weight="0.21102864" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1984375" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49774265" weight="0.32980973" />
+      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.49774265" weight="0.32980973" />
+      <window_info anchor="bottom" id="CMake" order="8" sideWeight="0.4520316" weight="0.30010605" />
+      <window_info anchor="bottom" auto_hide="true" x="0" y="365" width="1920" height="345" id="Terminal" order="11" sideWeight="0.5697917" side_tool="true" weight="0.23435843" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.48426282" weight="0.4559915" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.493228" weight="0.36585367" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" x="0" y="368" width="1920" height="340" id="Event Log" order="9" sideWeight="0.43020833" side_tool="true" weight="0.38918346" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.47708333" visible="true" weight="0.20360552" />
+      <window_info id="Favorites" order="2" side_tool="true" />
     </layout>
+    <layout-to-restore>
+      <window_info anchor="bottom" id="CMake" order="8" sideWeight="0.4520316" weight="0.17819707" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17517847" />
+      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49774265" weight="0.32980973" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.29431254" weight="0.23020063" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.493228" weight="0.2620545" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4677686" visible="true" weight="0.11158342" />
+      <window_info anchor="bottom" x="-274" y="-702" width="1698" height="313" id="Event Log" order="9" sideWeight="0.5157372" side_tool="true" weight="0.12693156" />
+      <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.49774265" weight="0.32980973" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.48426282" weight="0.32731137" />
+      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.33683047" weight="0.25611052" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -436,6 +523,30 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/tests.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/coders/decoder_base.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="508">
+          <caret line="39" column="43" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="43" />
+          <folding>
+            <element signature="e#1#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tests_coder.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
@@ -461,19 +572,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
-          <folding>
-            <element signature="e#76#95#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/lib/gcc/x86_64-linux-gnu/5/include/float.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="103" column="8" selection-start-line="103" selection-start-column="8" selection-end-line="103" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///usr/lib/gcc/x86_64-linux-gnu/5/include/float.h" />
     <entry file="file://$PROJECT_DIR$/include/tests_coder.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="212">
@@ -499,9 +601,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="106" column="40" selection-start-line="106" selection-start-column="40" selection-end-line="106" selection-end-column="40" />
-          <folding>
-            <element signature="e#1#28#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -533,9 +632,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
           <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-          <folding>
-            <element signature="e#1#27#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -543,9 +639,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="313">
           <caret line="25" column="10" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="10" />
-          <folding>
-            <element signature="e#74#91#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -622,9 +715,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/coders/basic/decoder_basic.cpp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
@@ -634,13 +724,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tests.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="27" column="31" lean-forward="true" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
+        <state relative-caret-position="330">
+          <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/coders/constant/apca/apca_window.cpp">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/include/coders/constants.h">
       <provider selected="true" editor-type-id="text-editor">
@@ -655,9 +742,6 @@
           <caret line="30" column="1" selection-start-line="30" selection-end-line="30" selection-end-column="1" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/coders/basic/coder_basic.cpp">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/coders/cols/coder_cols.cpp">
       <provider selected="true" editor-type-id="text-editor">
@@ -725,9 +809,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="431">
           <caret line="42" column="25" lean-forward="true" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
-          <folding>
-            <element signature="e#1#31#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -747,11 +828,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tests_coder.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="117" column="34" selection-start-line="117" selection-start-column="34" selection-end-line="117" selection-end-column="34" />
-          <folding>
-            <element signature="e#1#25#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="165">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
@@ -793,9 +871,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/coders/constant/apca/coder_apca.cpp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/coders/decoder_base.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -807,6 +882,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2386">
           <caret line="160" column="18" selection-start-line="160" selection-start-column="18" selection-end-line="160" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
