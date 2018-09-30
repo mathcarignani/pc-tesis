@@ -5,8 +5,6 @@
 #include "constants.h"
 
 
-PWLHWindow::PWLHWindow(){}
-
 PWLHWindow::PWLHWindow(int max_window_size_, int error_threshold_, Range range_, bool integer_mode_){
     max_window_size = max_window_size_;
     max_window_size_bit_length = MathUtils::bitLength(max_window_size);

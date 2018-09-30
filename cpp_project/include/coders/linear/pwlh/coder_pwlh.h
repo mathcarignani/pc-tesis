@@ -11,16 +11,16 @@ private:
     int max_window_size;
     std::vector<int> error_thresholds_vector;
     bool integer_mode;
-    PWLHWindow window;
+    PWLHWindow* window;
 
     void codeColumnBefore() override;
     void codeColumnWhile(std::string csv_value) override;
     void codeColumnAfter() override;
 
-    PWLHWindow createWindow();
-    void codeWindow(PWLHWindow & window);
-    void codeWindowDouble(PWLHWindow & window);
-    void codeWindowInt(PWLHWindow & window);
+    PWLHWindow* createWindow();
+    void codeWindow(PWLHWindow* window);
+    void codeWindowDouble(PWLHWindow* window);
+    void codeWindowInt(PWLHWindow* window);
 
 public:
     using CoderCols::CoderCols;
