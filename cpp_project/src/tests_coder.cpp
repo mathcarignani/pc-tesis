@@ -30,22 +30,11 @@ void TestsCoder::testSideFilderCoder() {
     Scripts::decodeSF(output_code_path, output_decode_path, 5);
 }
 
+TestsCoder::TestsCoder(){
+    setDatasets();
+}
 
-void TestsCoder::testCoderDecoder(){
-    std::cout << "Tests::testCoderDecoder" << std::endl;
-    std::string mask_mode_folder = (MASK_MODE) ? "mask_mode_true" : "mask_mode_false";
-
-    std::string expected_root_folder = TEST_OUTPUT_PATH + "/expected/" + mask_mode_folder;
-
-#if RECORD
-    std::string output_root_folder = expected_root_folder;
-#else
-    std::string output_root_folder = TEST_OUTPUT_PATH + "/output/" + mask_mode_folder;
-#endif
-
-    Path bits_csv_path = Path(output_root_folder, "bits-out.csv");
-    CSVWriter bits_csv = CSVWriter(bits_csv_path);
-
+void TestsCoder::setDatasets(){
     Path file1_path = Path(DATASETS_PATH + "/[1]irkis", "vwc_1202.dat.csv");
     std::vector<int> file1_lossless{0,  0, 0, 0, 0, 0,  0, 0, 0, 0, 0};
     std::vector<int>    file1_lossy{0, 12, 3, 5, 2, 4, 10, 6, 4, 3, 2};
@@ -58,9 +47,25 @@ void TestsCoder::testCoderDecoder(){
     std::vector<int> file3_lossless{0,   0,   0,  0};
     std::vector<int>    file3_lossy{0, 143, 252, 16};
 
-    std::vector<Path> paths{file1_path, file2_path, file3_path};
-    std::vector<std::vector<int>> lossless{file1_lossless, file2_lossless, file3_lossless};
-    std::vector<std::vector<int>> lossy{file1_lossy, file2_lossy, file3_lossy};
+    paths = {file1_path, file2_path, file3_path};
+    lossless = {file1_lossless, file2_lossless, file3_lossless};
+    lossy = {file1_lossy, file2_lossy, file3_lossy};
+}
+
+void TestsCoder::runAll(){
+    std::cout << "TestsCoder::run" << std::endl;
+    std::string mask_mode_folder = (MASK_MODE) ? "mask_mode_true" : "mask_mode_false";
+
+    std::string expected_root_folder = TEST_OUTPUT_PATH + "/expected/" + mask_mode_folder;
+
+#if RECORD
+    std::string output_root_folder = expected_root_folder;
+#else
+    std::string output_root_folder = TEST_OUTPUT_PATH + "/output/" + mask_mode_folder;
+#endif
+
+    Path bits_csv_path = Path(output_root_folder, "bits-out.csv");
+    CSVWriter bits_csv = CSVWriter(bits_csv_path);
 
     std::vector<std::string> modes{"LOSSLESS", "LOSSY"};
     int win_size = 5;

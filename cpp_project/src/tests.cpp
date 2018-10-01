@@ -22,7 +22,7 @@ void Tests::runAll() {
     TestsMathUtils::runAll();
     TestsStringUtils::runAll();
     TestsVectorUtils::runAll();
-    TestsCoder::testCoderDecoder();
+    TestsCoder().runAll();
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

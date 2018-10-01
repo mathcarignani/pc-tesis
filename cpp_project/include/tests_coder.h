@@ -12,10 +12,17 @@ public:
     static const std::string DATASETS_PATH;
     static const std::string TEST_OUTPUT_PATH;
 
-    static void testCoderDecoder();
+    TestsCoder();
+    void setDatasets();
+    void runAll();
+
     static void testSideFilderCoder();
 
 private:
+    std::vector<Path> paths;
+    std::vector<std::vector<int>> lossless;
+    std::vector<std::vector<int>> lossy;
+
     static std::string setAndWriteCoderName(std::string coder_name, CSVWriter & csv_writer);
     static void writeBitsCSV(CSVWriter & csv_writer, Dataset dataset);
     static void writeStringCSV(CSVWriter & csv_writer, std::string mode, bool title);
