@@ -17,33 +17,6 @@ from scripts.compress.compress_cpp import code_decode_cpp
 from scripts.compress.compress_args import CompressArgs
 
 
-# def compare_python_and_cpp(args):
-#     # print args.coder_params
-#     coder_info, columns_bits_python = code_python(args)
-#     py_c_filename = args.compressed_filename
-#     _, columns_bits_cpp = code_cpp(args)
-#     cpp_c_filename = args.compressed_filename
-#     print "Comparing compressed python and cpp files and column bits..."
-#     assert(BitStreamUtils.compare_files(args.output_path, py_c_filename, args.output_path, cpp_c_filename))
-#     assert(columns_bits_python == columns_bits_cpp)
-#     columns_bits = columns_bits_cpp
-#
-#     decode_python(args)
-#     py_d_filename = args.deco_filename
-#     decode_cpp(args)
-#     cpp_d_filename = args.deco_filename
-#     print "Comparing decompressed python and cpp files files..."
-#     assert(BitStreamUtils.compare_files(args.output_path, py_d_filename, args.output_path, cpp_d_filename))
-#     # csv_compare = CSVCompare(args.output_path, py_d_filename, args.output_path, cpp_d_filename)
-#     # assert(csv_compare.compare())
-#     print "Comparing original and decompressed files..."
-#     csv_compare = CSVCompare(args.input_path, args.input_filename, args.output_path, py_d_filename)
-#     same_file = csv_compare.compare(args.coder_params['error_threshold'], True)
-#     assert same_file
-#
-#     return [coder_info, columns_bits, same_file]
-
-
 def compress_decompress_compare(args):
     print "Compressing and decompressing files..."
     coder_info, columns_bits, column_mask_bits = code_decode_cpp(args)
@@ -57,7 +30,6 @@ def compress_decompress_compare(args):
 
 def compress_file(args):
     coder_info, columns_bits, column_mask_bits, same_file = compress_decompress_compare(args)
-    # coder_info, columns_bits, same_file = compare_python_and_cpp(args)
 
     # print results
     input_file = args.input_path + "/" + args.input_filename
@@ -177,7 +149,7 @@ def run_script_on_coder(csv, row, coder_dictionary, output_dataset_path, logger,
         compression_values = compress_file(compress_args)
         base_values = out_results(base_values, compression_values, row + values, csv)
     else:
-        # CoderPCA, CoderAPCA and CoderCA
+        # other coders
         window_param_name = coder_dictionary['params'].keys()[0]  # there's a single key
         window_sizes = coder_dictionary['params'][window_param_name]
         percentages = thresholds_hash.keys()
