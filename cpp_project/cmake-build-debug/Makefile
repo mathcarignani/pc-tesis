@@ -1554,6 +1554,33 @@ src/tests_string_utils.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests_string_utils.cpp.s
 .PHONY : src/tests_string_utils.cpp.s
 
+src/tests_vector_utils.o: src/tests_vector_utils.cpp.o
+
+.PHONY : src/tests_vector_utils.o
+
+# target to build an object file
+src/tests_vector_utils.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests_vector_utils.cpp.o
+.PHONY : src/tests_vector_utils.cpp.o
+
+src/tests_vector_utils.i: src/tests_vector_utils.cpp.i
+
+.PHONY : src/tests_vector_utils.i
+
+# target to preprocess a source file
+src/tests_vector_utils.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests_vector_utils.cpp.i
+.PHONY : src/tests_vector_utils.cpp.i
+
+src/tests_vector_utils.s: src/tests_vector_utils.cpp.s
+
+.PHONY : src/tests_vector_utils.s
+
+# target to generate assembly for a file
+src/tests_vector_utils.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests_vector_utils.cpp.s
+.PHONY : src/tests_vector_utils.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1722,6 +1749,9 @@ help:
 	@echo "... src/tests_string_utils.o"
 	@echo "... src/tests_string_utils.i"
 	@echo "... src/tests_string_utils.s"
+	@echo "... src/tests_vector_utils.o"
+	@echo "... src/tests_vector_utils.i"
+	@echo "... src/tests_vector_utils.s"
 .PHONY : help
 
 

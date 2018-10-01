@@ -12,6 +12,7 @@ private:
     std::vector<int> error_thresholds_vector;
     bool integer_mode;
     PWLHWindow* window;
+    int delta_sum;
 
     void codeColumnBefore() override;
     void codeColumnWhile(std::string csv_value) override;

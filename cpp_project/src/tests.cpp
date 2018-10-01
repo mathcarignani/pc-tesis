@@ -10,9 +10,10 @@
 #include "bit_stream_writer.h"
 #include "bit_stream_reader.h"
 #include <cfloat>
-#include <tests_string_utils.h>
+#include "tests_string_utils.h"
 #include "tests_coder.h"
 #include "tests_math_utils.h"
+#include "tests_vector_utils.h"
 
 void Tests::runAll() {
     testDatasetUtils();
@@ -20,6 +21,7 @@ void Tests::runAll() {
     testFloatCoder();
     TestsMathUtils::runAll();
     TestsStringUtils::runAll();
+    TestsVectorUtils::runAll();
     TestsCoder::testCoderDecoder();
 }
 

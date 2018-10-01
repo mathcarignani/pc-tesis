@@ -12,8 +12,10 @@ PWLHWindow::PWLHWindow(int max_window_size_, int error_threshold_, Range range_,
     range = range_;
     bucket = new LinearBucket(error_threshold);
     length = 0; x_coord = 0;
-    nan_window = false;
     integer_mode = integer_mode_;
+#if !MASK_MODE
+    nan_window = false;
+#endif
 }
 
 //
@@ -27,40 +29,38 @@ bool PWLHWindow::conditionHolds(std::string x, int x_delta){
     else if (isFull()){
         return false;
     }
-    else if (Constants::isNoData(x)){
+#if !MASK_MODE
+    if (Constants::isNoData(x)){
         if (nan_window){ length++; return true;  }
         else {                     return false; }
     }
+#endif
     // x is an integer
-    if (nan_window || x_delta == 0) { return false; }
+#if !MASK_MODE
+    if (nan_window) { return false; }
+#endif
+    if (x_delta == 0) { return false; } // when x_delta == 0 we need to create a new window
 
     int x_int = StringUtils::stringToInt(x);
     int new_x_coord = x_coord + x_delta;
-//    std::cout << "addPointMOD, new_x_coord = " << new_x_coord << " , x_int = " << x_int << std::endl;
     bucket->addPointMOD(new_x_coord, x_int);
 
     if (bucket->checkEpsConstraint() && checkIntegerModeConstraint(new_x_coord)){ // bucket is valid
-//        std::cout << "BUCKET IS VALID" << std::endl;
         length++; x_coord = new_x_coord;
         return true;
     }
-    else { // bucket is invalid
-//        std::cout << "ELSE" << std::endl;
-        bucket->removePoint();
-        bucket->getAproximatedLineMOD(p1, p2, x_coord);
-//        std::cout << "p1=(x,y)=" << p1.x << "," << p1.y << std::endl;
-//        std::cout << "p2=(x,y)=" << p2.x << "," << p2.y << std::endl;
-        assert(p1.x == 0);
-        assert(p2.x == x_coord);
-        return false;
-    }
+    // bucket is invalid
+    bucket->removePoint();
+    bucket->getAproximatedLineMOD(p1, p2, x_coord);
+#if CHECKS
+    assert(p1.x == 0);
+    assert(p2.x == x_coord);
+#endif
+    return false;
 }
 
 bool PWLHWindow::checkIntegerModeConstraint(int new_x_coord){
-//    std::cout << "checkIntegerModeConstraint" << std::endl;
     bucket->getAproximatedLineMOD(p1, p2, new_x_coord);
-//    std::cout << "p1=(x,y)=" << p1.x << "," << p1.y << std::endl;
-//    std::cout << "p2=(x,y)=" << p2.x << "," << p2.y << std::endl;
     if (!integer_mode){ return true; }
 
     // this constraint is only checked when running in integer mode
@@ -77,68 +77,68 @@ bool PWLHWindow::isEmpty(){
 
 void PWLHWindow::addFirstValue(std::string x){
     length = 1;
+#if !MASK_MODE
     if (Constants::isNoData(x)){
         nan_window = true;
         constant_value = Constants::NO_DATA;
         constant_value_float = 0; // doesn't matter
+        return;
     }
-    else { // x is an integer
-        nan_window = false;
-        x_coord = 0;
-        int x_int = StringUtils::stringToInt(x);
-        if (bucket->getSize() != 0) { bucket->resetBucket(); }
-//        std::cout << "addFirstValue ELSE " << x_int << std::endl;
-        bucket->addPointMOD(0, (double) x_int); // should be the same as calling bucket->addPoint((double) x_int);
-        constant_value = x;
-        constant_value_float = (float) x_int;
-    }
+#endif
+    // x is an integer
+#if !MASK_MODE
+    nan_window = false;
+#endif
+    x_coord = 0;
+    int x_int = StringUtils::stringToInt(x);
+    if (bucket->getSize() != 0) { bucket->resetBucket(); }
+    bucket->addPointMOD(0, (double) x_int); // should be the same as calling bucket->addPoint((double) x_int);
+    constant_value = x;
+    constant_value_float = (float) x_int;
 }
 
 float PWLHWindow::getPoint1Y(){
-//    std::cout << "p1.y = " << p1.y << std::endl;
     return p1.y;
 }
 
 float PWLHWindow::getPoint2Y(){
-//    std::cout << "p2.y = " << p2.y << std::endl;
     return p2.y;
 }
 
 std::string PWLHWindow::getPoint1YIntegerMode(){
-//    std::cout << "p1.y = " << p1.y << std::endl;
     return StringUtils::doubleToString(p1.y);
 }
 
 std::string PWLHWindow::getPoint2YIntegerMode(){
-//    std::cout << "p2.y = " << p2.y << std::endl;
     return StringUtils::doubleToString(p2.y);
 }
 
 std::vector<std::string> PWLHWindow::decodePoints(float point1_y, float point2_y, std::vector<int> x_coords){
-//    std::cout << "A<point1_y_int, point2_y_int> = " << point1_y_int << ", " << point2_y_int << ">" << std::endl;
-    int first_x_coord = x_coords.front(); assert(first_x_coord == 0); // TODO: comment out
-    Point p1 = Point(point1_y, 0); // x_coords.front() == 0
+    int first_x_coord = x_coords.front();
+#if CHECKS
+    assert(first_x_coord == 0);
+#endif
+    Point p1 = Point(point1_y, first_x_coord);
     Point p2 = Point(point2_y, x_coords.back());
     Line* line = new Line(&p1, &p2);
-//    std::cout << "B<point1_y_int, point2_y_int> = " << line->getValue(0) << ", " << line->getValue(window_size-1) << ">" << std::endl;
-
-    return proyectPointsOntoLine(line, x_coords);
+    return projectPointsOntoLine(line, x_coords);
 }
 
 std::vector<std::string> PWLHWindow::decodePointsIntegerMode(std::string point1_y, std::string point2_y, std::vector<int> x_coords){
     int point1_y_int = StringUtils::stringToInt(point1_y);
     int point2_y_int = StringUtils::stringToInt(point2_y);
-//    std::cout << "A<point1_y_int, point2_y_int> = " << point1_y_int << ", " << point2_y_int << ">" << std::endl;
-    int first_x_coord = x_coords.front(); assert(first_x_coord == 0); // TODO: comment out
-    Point p1 = Point(point1_y_int, 0); // x_coords.front() == 0
-    Point p2 = Point(point2_y_int, x_coords.back());
+    int first_x_coord = x_coords.front();
+    int last_x_coord = x_coords.back();
+#if CHECKS
+    assert(first_x_coord == 0);
+#endif
+    Point p1 = Point(point1_y_int, first_x_coord);
+    Point p2 = Point(point2_y_int, last_x_coord);
     Line* line = new Line(&p1, &p2);
-//    std::cout << "B<point1_y_int, point2_y_int> = " << line->getValue(0) << ", " << line->getValue(window_size-1) << ">" << std::endl;
-
-    return proyectPointsOntoLine(line, x_coords);
+    return projectPointsOntoLine(line, x_coords);
 }
 
-std::vector<std::string> PWLHWindow::proyectPointsOntoLine(Line* line, std::vector<int> x_coords){
+std::vector<std::string> PWLHWindow::projectPointsOntoLine(Line* line, std::vector<int> x_coords){
     int window_size = x_coords.size();
     std::vector<std::string> res(window_size);
     for (int i=0; i < window_size; i++){

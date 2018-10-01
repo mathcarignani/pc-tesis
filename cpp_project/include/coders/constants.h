@@ -6,6 +6,7 @@
 // MASK_MODE = 1 => the algorithm can assume there will be no no_data values
 #define MASK_MODE 1
 #define COUT 1
+#define CHECKS 1
 
 #include <string>
 

@@ -11,8 +11,6 @@ class DecoderFR: public DecoderCols {
 private:
     int max_window_size;
     int max_window_size_bit_length;
-    Column* column;
-
 
     std::vector<std::string> decodeDataColumn() override;
     void decodeWindow(int window_size);

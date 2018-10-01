@@ -7,8 +7,21 @@
 #include <cstring>
 #include <vector>
 #include <algorithm>
+#include <iostream>
 
 class VectorUtils {
+
+private:
+    template <typename T>
+    static void printVector(T vector){
+        std::cout << "[";
+        int size = vector.size();
+        for(int i=0; i < size; i++){
+            std::cout << vector[i];
+            if (i != size - 1) { std::cout << ", "; }
+        }
+        std::cout << "]" << std::endl;
+    }
 
 public:
     static std::vector<std::string> intVectorToStringVector(std::vector<int> int_vector){
@@ -20,18 +33,26 @@ public:
         return res;
     }
 
-    static void printIntVector(std::vector<int> int_vector){
-        std::cout << "[";
-        int size = int_vector.size();
-        for(int i=0; i < size; i++){
-            std::cout << int_vector[i];
-            if (i != size - 1) { std::cout << ", "; }
-        }
-        std::cout << "]" << std::endl;
+    static void printIntVector(std::vector<int> vector){
+        printVector(vector);
+    }
+
+    static void printStringVector(std::vector<std::string> vector){
+        printVector(vector);
     }
 
     static bool vectorIncludesInt(std::vector<int> int_vector, int element){
         return (std::find(int_vector.begin(), int_vector.end(), element) != int_vector.end());
+    }
+
+    static std::vector<int> removeOccurrences(std::vector<int> int_vector, int integer){
+        std::vector<int> new_vector;
+        for(int i=0; i < int_vector.size(); i++){
+            int element = int_vector.at(i);
+            if (element == integer) { continue; }
+            new_vector.push_back(element);
+        }
+        return new_vector;
     }
 };
 

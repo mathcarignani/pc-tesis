@@ -4,6 +4,7 @@
 
 #include "decoder_base.h"
 #include "mask.h"
+#include "coder_utils.h"
 
 class DecoderCols: public DecoderBase {
 
@@ -23,6 +24,7 @@ protected:
     int column_index = 0;
     int row_index = 0;
     std::vector<int> time_delta_vector;
+    Column* column;
 
 #if MASK_MODE
     Mask* mask;
@@ -31,6 +33,8 @@ protected:
     bool isNoData();
     void reset();
 #endif
+
+    static std::vector<int> createXCoordsVector(int window_size, int row_index_start);
 
 public:
     using DecoderBase::DecoderBase;

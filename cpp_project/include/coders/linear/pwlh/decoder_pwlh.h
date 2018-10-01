@@ -11,11 +11,17 @@ private:
     bool integer_mode;
 
     std::vector<std::string> decodeDataColumn() override;
-    void decodeWindow(std::vector<std::string> & column);
-    void decodeWindowDouble(std::vector<std::string> & column, int window_size);
-    void decodeWindowInt(std::vector<std::string> & column, int window_size);
-    void addNullPoints(std::vector<std::string> & column, int window_size);
-    void addPoints(std::vector<std::string> & column, int window_size, std::vector<std::string> decoded_points);
+    void decodeWindow();
+    void decodeWindowDouble(int window_size);
+    void decodeWindowInt(int window_size);
+
+#if !MASK_MODE
+    void addPoints(int window_size, std::vector<std::string> decoded_points);
+    void addNoDataPoints(int window_size);
+#else
+    std::vector<int> createXCoordsWithNoDataVector(int window_size);
+    void addPointsWithNoData(int window_size, std::vector<std::string> decoded_points, std::vector<int> x_coords_with_nodata);
+#endif
 
 public:
     using DecoderCols::DecoderCols;

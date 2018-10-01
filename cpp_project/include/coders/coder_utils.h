@@ -30,10 +30,6 @@ public:
         unprocessed_rows = unprocessed_rows_;
         unprocessed_data_rows = total_data;
         unprocessed_no_data_rows = total_no_data;
-        std::cout << "unprocessed_rows_ " << unprocessed_rows_ << std::endl;
-        std::cout << "total_data " << total_data << std::endl;
-        std::cout << "total_no_data " << total_no_data << std::endl;
-
         assert(unprocessed_rows = unprocessed_data_rows + unprocessed_no_data_rows);
     }
 

@@ -63,6 +63,7 @@ void TestsCoder::testCoderDecoder(){
     std::vector<std::vector<int>> lossy{file1_lossy, file2_lossy, file3_lossy};
 
     std::vector<std::string> modes{"LOSSLESS", "LOSSY"};
+    int win_size = 5;
 
     for(int i = 0; i < paths.size(); i++){
         Path file_path = paths[i];
@@ -109,9 +110,9 @@ void TestsCoder::testCoderDecoder(){
             expected_code_path = codedFilePath(expected_path_str, file_path, coder_name);
             output_decode_path = decodedFilePath(output_path_str, file_path, coder_name);
 
-            ds = Scripts::codePCA(file_path, output_code_path, 5, errors_vector); writeBitsCSV(bits_csv, ds); // CODE
+            ds = Scripts::codePCA(file_path, output_code_path, win_size, errors_vector); writeBitsCSV(bits_csv, ds); // CODE
             compareFiles(output_code_path, expected_code_path);
-            Scripts::decodePCA(output_code_path, output_decode_path, 5); // DECODE
+            Scripts::decodePCA(output_code_path, output_decode_path, win_size); // DECODE
             compareDecodedFiles(mode, file_path, output_decode_path, expected_path_str, coder_name);
 
             // Coder APCA
@@ -120,9 +121,9 @@ void TestsCoder::testCoderDecoder(){
             expected_code_path = codedFilePath(expected_path_str, file_path, coder_name);
             output_decode_path = decodedFilePath(output_path_str, file_path, coder_name);
 
-            ds = Scripts::codeAPCA(file_path, output_code_path, 5, errors_vector); writeBitsCSV(bits_csv, ds); // CODE
+            ds = Scripts::codeAPCA(file_path, output_code_path, win_size, errors_vector); writeBitsCSV(bits_csv, ds); // CODE
             compareFiles(output_code_path, expected_code_path);
-            Scripts::decodeAPCA(output_code_path, output_decode_path, 5); // DECODE
+            Scripts::decodeAPCA(output_code_path, output_decode_path, win_size); // DECODE
             compareDecodedFiles(mode, file_path, output_decode_path, expected_path_str, coder_name);
 
             // Coder PWLHInt
@@ -131,9 +132,9 @@ void TestsCoder::testCoderDecoder(){
             expected_code_path = codedFilePath(expected_path_str, file_path, coder_name);
             output_decode_path = decodedFilePath(output_path_str, file_path, coder_name);
 
-            ds = Scripts::codePWLH(file_path, output_code_path, 5, errors_vector, true); writeBitsCSV(bits_csv, ds); // CODE
+            ds = Scripts::codePWLH(file_path, output_code_path, win_size, errors_vector, true); writeBitsCSV(bits_csv, ds); // CODE
             compareFiles(output_code_path, expected_code_path);
-            Scripts::decodePWLH(output_code_path, output_decode_path, 5, true); // DECODE
+            Scripts::decodePWLH(output_code_path, output_decode_path, win_size, true); // DECODE
             compareDecodedFiles(mode, file_path, output_decode_path, expected_path_str, coder_name);
 
             // Coder PWLH
@@ -142,9 +143,9 @@ void TestsCoder::testCoderDecoder(){
             expected_code_path = codedFilePath(expected_path_str, file_path, coder_name);
             output_decode_path = decodedFilePath(output_path_str, file_path, coder_name);
 
-            ds = Scripts::codePWLH(file_path, output_code_path, 5, errors_vector, false); writeBitsCSV(bits_csv, ds); // CODE
+            ds = Scripts::codePWLH(file_path, output_code_path, win_size, errors_vector, false); writeBitsCSV(bits_csv, ds); // CODE
             compareFiles(output_code_path, expected_code_path);
-            Scripts::decodePWLH(output_code_path, output_decode_path, 5, false); // DECODE
+            Scripts::decodePWLH(output_code_path, output_decode_path, win_size, false); // DECODE
             compareDecodedFiles(mode, file_path, output_decode_path, expected_path_str, coder_name);
 
 //            // Coder CA
@@ -153,9 +154,9 @@ void TestsCoder::testCoderDecoder(){
 //            expected_code_path = codedFilePath(expected_path_str, file_path, coder_name);
 //            output_decode_path = decodedFilePath(output_path_str, file_path, coder_name);
 //
-//            ds = Scripts::codeCA(file_path, output_code_path, 5, errors_vector); writeBitsCSV(bits_csv, ds); // CODE
+//            ds = Scripts::codeCA(file_path, output_code_path, win_size, errors_vector); writeBitsCSV(bits_csv, ds); // CODE
 //            compareFiles(output_code_path, expected_code_path);
-//            Scripts::decodeCA(output_code_path, output_decode_path, 5); // DECODE
+//            Scripts::decodeCA(output_code_path, output_decode_path, win_size); // DECODE
 //            compareDecodedFiles(mode, file_path, output_decode_path, expected_path_str, coder_name);
         }
     }
