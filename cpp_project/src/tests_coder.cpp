@@ -52,6 +52,13 @@ void TestsCoder::setDatasets(){
     lossy = {file1_lossy, file2_lossy, file3_lossy};
 }
 
+void TestsCoder::setCoderPaths(std::string coder_name_){
+    coder_name = setAndWriteCoderName(coder_name_, bits_csv);
+    output_code_path = codedFilePath(output_path_str, file_path, coder_name);
+    expected_code_path = codedFilePath(expected_path_str, file_path, coder_name);
+    output_decode_path = decodedFilePath(output_path_str, file_path, coder_name);
+}
+
 void TestsCoder::runAll(){
     std::cout << "TestsCoder::run" << std::endl;
     std::string mask_mode_folder = (MASK_MODE) ? "mask_mode_true" : "mask_mode_false";
@@ -59,19 +66,19 @@ void TestsCoder::runAll(){
     std::string expected_root_folder = TEST_OUTPUT_PATH + "/expected/" + mask_mode_folder;
 
 #if RECORD
-    std::string output_root_folder = expected_root_folder;
+    output_root_folder = expected_root_folder;
 #else
-    std::string output_root_folder = TEST_OUTPUT_PATH + "/output/" + mask_mode_folder;
+    output_root_folder = TEST_OUTPUT_PATH + "/output/" + mask_mode_folder;
 #endif
 
     Path bits_csv_path = Path(output_root_folder, "bits-out.csv");
-    CSVWriter bits_csv = CSVWriter(bits_csv_path);
+    bits_csv = new CSVWriter(bits_csv_path);
 
     std::vector<std::string> modes{"LOSSLESS", "LOSSY"};
     int win_size = 5;
 
     for(int i = 0; i < paths.size(); i++){
-        Path file_path = paths[i];
+        file_path = paths[i];
         writeStringCSV(bits_csv, file_path.file_filename, true);
 
         for(int j = 0; j < modes.size(); j++){
@@ -79,7 +86,6 @@ void TestsCoder::runAll(){
             writeStringCSV(bits_csv, mode, false);
 
             std::vector<int> errors_vector;
-            std::string expected_path_str, output_path_str;
 
             if (mode == "LOSSLESS") {
                 errors_vector = lossless[i];
@@ -92,73 +98,41 @@ void TestsCoder::runAll(){
                 output_path_str = output_root_folder + "/lossy";
             }
 
-            Path expected_code_path, output_code_path, output_decode_path;
-            std::string coder_name;
             Dataset ds;
 
             if (mode == "LOSSLESS"){
-                // Coder Basic
-                coder_name = setAndWriteCoderName("CoderBasic", bits_csv);
-                output_code_path = codedFilePath(output_path_str, file_path, coder_name);
-                expected_code_path = codedFilePath(expected_path_str, file_path, coder_name);
-                output_decode_path = decodedFilePath(output_path_str, file_path, coder_name);
-
+                setCoderPaths("CoderBasic");
                 ds = Scripts::codeBasic(file_path, output_code_path); writeBitsCSV(bits_csv, ds); // CODE
                 compareFiles(output_code_path, expected_code_path);
                 Scripts::decodeBasic(output_code_path, output_decode_path); // DECODE
                 compareDecodedFiles(mode, file_path, output_decode_path, expected_path_str, coder_name);
             }
 
-            // Coder PCA
-            coder_name = setAndWriteCoderName("CoderPCA", bits_csv);
-            output_code_path = codedFilePath(output_path_str, file_path, coder_name);
-            expected_code_path = codedFilePath(expected_path_str, file_path, coder_name);
-            output_decode_path = decodedFilePath(output_path_str, file_path, coder_name);
-
+            setCoderPaths("CoderPCA");
             ds = Scripts::codePCA(file_path, output_code_path, win_size, errors_vector); writeBitsCSV(bits_csv, ds); // CODE
             compareFiles(output_code_path, expected_code_path);
             Scripts::decodePCA(output_code_path, output_decode_path, win_size); // DECODE
             compareDecodedFiles(mode, file_path, output_decode_path, expected_path_str, coder_name);
 
-            // Coder APCA
-            coder_name = setAndWriteCoderName("CoderAPCA", bits_csv);
-            output_code_path = codedFilePath(output_path_str, file_path, coder_name);
-            expected_code_path = codedFilePath(expected_path_str, file_path, coder_name);
-            output_decode_path = decodedFilePath(output_path_str, file_path, coder_name);
-
+            setCoderPaths("CoderAPCA");
             ds = Scripts::codeAPCA(file_path, output_code_path, win_size, errors_vector); writeBitsCSV(bits_csv, ds); // CODE
             compareFiles(output_code_path, expected_code_path);
             Scripts::decodeAPCA(output_code_path, output_decode_path, win_size); // DECODE
             compareDecodedFiles(mode, file_path, output_decode_path, expected_path_str, coder_name);
 
-            // Coder PWLHInt
-            coder_name = setAndWriteCoderName("CoderPWLHInt", bits_csv);
-            output_code_path = codedFilePath(output_path_str, file_path, coder_name);
-            expected_code_path = codedFilePath(expected_path_str, file_path, coder_name);
-            output_decode_path = decodedFilePath(output_path_str, file_path, coder_name);
-
+            setCoderPaths("CoderPWLHInt");
             ds = Scripts::codePWLH(file_path, output_code_path, win_size, errors_vector, true); writeBitsCSV(bits_csv, ds); // CODE
             compareFiles(output_code_path, expected_code_path);
             Scripts::decodePWLH(output_code_path, output_decode_path, win_size, true); // DECODE
             compareDecodedFiles(mode, file_path, output_decode_path, expected_path_str, coder_name);
 
-            // Coder PWLH
-            coder_name = setAndWriteCoderName("CoderPWLH", bits_csv);
-            output_code_path = codedFilePath(output_path_str, file_path, coder_name);
-            expected_code_path = codedFilePath(expected_path_str, file_path, coder_name);
-            output_decode_path = decodedFilePath(output_path_str, file_path, coder_name);
-
+            setCoderPaths("CoderPWLH");
             ds = Scripts::codePWLH(file_path, output_code_path, win_size, errors_vector, false); writeBitsCSV(bits_csv, ds); // CODE
             compareFiles(output_code_path, expected_code_path);
             Scripts::decodePWLH(output_code_path, output_decode_path, win_size, false); // DECODE
             compareDecodedFiles(mode, file_path, output_decode_path, expected_path_str, coder_name);
 
-//            // Coder CA
-//            coder_name = setAndWriteCoderName("CoderCA", bits_csv);
-//            output_code_path = codedFilePath(output_path_str, file_path, coder_name);
-//            expected_code_path = codedFilePath(expected_path_str, file_path, coder_name);
-//            output_decode_path = decodedFilePath(output_path_str, file_path, coder_name);
-//
+//            setCoderPaths("CoderCA");
 //            ds = Scripts::codeCA(file_path, output_code_path, win_size, errors_vector); writeBitsCSV(bits_csv, ds); // CODE
 //            compareFiles(output_code_path, expected_code_path);
 //            Scripts::decodeCA(output_code_path, output_decode_path, win_size); // DECODE
@@ -166,30 +140,30 @@ void TestsCoder::runAll(){
         }
     }
     // compare bits files
-    bits_csv.close();
+    bits_csv->close();
     Path expected_bits_csv_path = Path(expected_root_folder, "bits-out.csv");
     compareFiles(expected_bits_csv_path, bits_csv_path);
 }
 
-std::string TestsCoder::setAndWriteCoderName(std::string coder_name, CSVWriter & csv_writer){
+std::string TestsCoder::setAndWriteCoderName(std::string coder_name, CSVWriter* csv_writer){
     std::cout << ">> " << coder_name << std::endl;
-    csv_writer.writeRow({coder_name});
+    csv_writer->writeRow({coder_name});
     return coder_name;
 }
 
-void TestsCoder::writeBitsCSV(CSVWriter & csv_writer, Dataset dataset){
-    csv_writer.writeRow(VectorUtils::intVectorToStringVector(dataset.totalMaskBitsArray()));
-    csv_writer.writeRow(VectorUtils::intVectorToStringVector(dataset.totalBitsArray()));
+void TestsCoder::writeBitsCSV(CSVWriter* csv_writer, Dataset dataset){
+    csv_writer->writeRow(VectorUtils::intVectorToStringVector(dataset.totalMaskBitsArray()));
+    csv_writer->writeRow(VectorUtils::intVectorToStringVector(dataset.totalBitsArray()));
 }
 
-void TestsCoder::writeStringCSV(CSVWriter & csv_writer, std::string mode, bool title){
+void TestsCoder::writeStringCSV(CSVWriter* csv_writer, std::string mode, bool title){
     std::cout << ">> " << mode << std::endl;
     if (title){
-        csv_writer.writeRow({""});
+        csv_writer->writeRow({""});
     }
-    csv_writer.writeRow({""});
-    csv_writer.writeRow({mode});
-    csv_writer.writeRow({""});
+    csv_writer->writeRow({""});
+    csv_writer->writeRow({mode});
+    csv_writer->writeRow({""});
 }
 
 Path TestsCoder::codedFilePath(std::string folder, Path file_path, std::string coder_name){

@@ -13,19 +13,26 @@ public:
     static const std::string TEST_OUTPUT_PATH;
 
     TestsCoder();
-    void setDatasets();
     void runAll();
 
     static void testSideFilderCoder();
 
 private:
     std::vector<Path> paths;
-    std::vector<std::vector<int>> lossless;
-    std::vector<std::vector<int>> lossy;
+    std::vector<std::vector<int>> lossless, lossy;
+    std::string output_root_folder;
+    CSVWriter* bits_csv;
+    std::string coder_name;
+    Path expected_code_path, output_code_path, output_decode_path;
+    std::string expected_path_str, output_path_str;
+    Path file_path;
 
-    static std::string setAndWriteCoderName(std::string coder_name, CSVWriter & csv_writer);
-    static void writeBitsCSV(CSVWriter & csv_writer, Dataset dataset);
-    static void writeStringCSV(CSVWriter & csv_writer, std::string mode, bool title);
+    void setDatasets();
+    void setCoderPaths(std::string coder_name_);
+
+    static std::string setAndWriteCoderName(std::string coder_name, CSVWriter* csv_writer);
+    static void writeBitsCSV(CSVWriter* csv_writer, Dataset dataset);
+    static void writeStringCSV(CSVWriter* csv_writer, std::string mode, bool title);
     static Path codedFilePath(std::string folder, Path file_path, std::string coder_name);
     static Path decodedFilePath(std::string folder, Path file_path, std::string coder_name);
     static void compareDecodedFiles(std::string mode, Path file_path, Path output_decode_path, std::string expected_path_str, std::string coder_name);
