@@ -104,7 +104,10 @@ void TestsCoders::runAll(){
             testCoderPWLHInt();
             testCoderPWLH();
             // testCoderCA();
-            // testCoderFR();
+            // TODO: fix the FR coder so that it works for deltas equal to 0
+            if (!StringUtils::find(file_path.file_filename, "noaa_spc-hail.csv")) {
+                testCoderFR();
+            }
             // testCoderSF();
         #else
             testCoderPCA();
