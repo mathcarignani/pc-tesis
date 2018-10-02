@@ -41,7 +41,8 @@ private:
     void testCoderPWLHInt();
     void testCoderPWLH();
     void testCoderCA();
-
+    void testCoderFR();
+    void testCoderSF();
 };
 
 #endif //CPP_PROJECT_TESTS_CODERS_H
