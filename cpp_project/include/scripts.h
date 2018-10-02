@@ -25,11 +25,13 @@ public:
     static Dataset codeCA(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector);
     static void decodeCA(Path input_path, Path output_path, int max_window_size);
 
+#if MASK_MODE
     static Dataset codeSF(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector);
     static void decodeSF(Path input_path, Path output_path, int max_window_size);
 
     static Dataset codeFR(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector);
     static void decodeFR(Path input_path, Path output_path, int max_window_size);
+#endif
 };
 
 #endif //CPP_PROJECT_SCRIPTS_H

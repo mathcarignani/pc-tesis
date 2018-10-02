@@ -1,4 +1,6 @@
 
+#if MASK_MODE
+
 #include "decoder_fr.h"
 #include "math_utils.h"
 #include "assert.h"
@@ -102,3 +104,5 @@ std::vector<DataItem> DecoderFR::readDataItems(int window_size){
     }
     return window;
 }
+
+#endif // MASK_MODE

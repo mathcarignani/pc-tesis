@@ -1,4 +1,6 @@
 
+#if MASK_MODE
+
 #include "decoder_slide_filter.h"
 #include "decoder_base.h"
 #include "math_utils.h"
@@ -129,3 +131,5 @@ std::vector<DataItem> DecoderSlideFilter::decompress()
     delete l;
     return m_pApproxData;
 }
+
+#endif // MASK_MODE

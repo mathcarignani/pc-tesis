@@ -59,16 +59,16 @@ void CoderPWLH::codeWindowDouble(PWLHWindow* window){
         return;
     }
 #endif
-    if (window->length > 1){
+    if (window->length > 1) {
         float point1_y = window->getPoint1Y();
         float point2_y = window->getPoint2Y();
         codeFloat(point1_y);
         codeFloat(point2_y);
+        return;
     }
-    else { // window.length == 1 => this code can only run the last time codeWindow is called
-        // IMPORTANT: window.constant_value_float is an int casted as a float
-        codeFloat(window->constant_value_float); // no need to code another value
-    }
+    // window.length == 1 => this code can only run the last time codeWindow is called
+    // IMPORTANT: window.constant_value_float is an int casted as a float
+    codeFloat(window->constant_value_float); // no need to code another value
 }
 
 void CoderPWLH::codeWindowInt(PWLHWindow* window){
@@ -83,8 +83,8 @@ void CoderPWLH::codeWindowInt(PWLHWindow* window){
         std::string point2_y = window->getPoint2YIntegerMode();
         codeValueRaw(point1_y);
         codeValueRaw(point2_y);
+        return;
     }
-    else { // window.length == 1 => this code can only run the last time codeWindow is called
-        codeValueRaw(window->constant_value); // no need to code another value
-    }
+    // window.length == 1 => this code can only run the last time codeWindow is called
+    codeValueRaw(window->constant_value); // no need to code another value
 }

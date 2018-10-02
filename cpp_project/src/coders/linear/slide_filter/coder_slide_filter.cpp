@@ -1,9 +1,10 @@
 
+#if MASK_MODE
+
 #include "coder_slide_filter.h"
 #include "assert.h"
 #include "math_utils.h"
 #include <iomanip>
-
 
 void CoderSlideFilter::setCoderParams(int max_window_size_, std::vector<int> error_thresholds_vector_){
     max_window_size = max_window_size_;
@@ -19,9 +20,7 @@ void CoderSlideFilter::codeColumnBefore(){
 }
 
 void CoderSlideFilter::codeColumnWhile(std::string csv_value){
-#if MASK_MODE
     if (Constants::isNoData(csv_value)) { return; } // skip no_data
-#endif
     int x_delta = time_delta_vector[row_index]; // >= 0
     m_pSFData->addDataItem(x_delta, csv_value);
 }
@@ -315,3 +314,5 @@ void CoderSlideFilter::filtering_mechanism(int position)
         }
     }
 }
+
+#endif // MASK_MODE

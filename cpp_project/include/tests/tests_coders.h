@@ -41,8 +41,10 @@ private:
     void testCoderPWLHInt();
     void testCoderPWLH();
     void testCoderCA();
+#if MASK_MODE
     void testCoderFR();
     void testCoderSF();
+#endif
 };
 
 #endif //CPP_PROJECT_TESTS_CODERS_H

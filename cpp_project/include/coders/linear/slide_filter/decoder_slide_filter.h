@@ -2,6 +2,8 @@
 #ifndef CPP_PROJECT_DECODER_SLIDE_FILTER_H
 #define CPP_PROJECT_DECODER_SLIDE_FILTER_H
 
+#if MASK_MODE
+
 #include "decoder_cols.h"
 #include "coder_utils.h"
 #include "SlideFiltersEntry.h"
@@ -29,5 +31,7 @@ public:
     using DecoderCols::DecoderCols;
     void setCoderParams(int max_window_size_);
 };
+
+#endif // MASK_MODE
 
 #endif //CPP_PROJECT_DECODER_SLIDE_FILTER_H

@@ -129,6 +129,7 @@ void Scripts::decodeCA(Path input_path, Path output_path, int max_window_size){
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#if MASK_MODE
 Dataset Scripts::codeSF(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector){
     CSVReader* csv_reader = new CSVReader(input_path);
     BitStreamWriter* bit_stream_writer = new BitStreamWriter(output_path);
@@ -148,9 +149,11 @@ void Scripts::decodeSF(Path input_path, Path output_path, int max_window_size){
     decoder.decodeFile();
     decoder.close();
 }
+#endif
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#if MASK_MODE
 Dataset Scripts::codeFR(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector){
     CSVReader* csv_reader = new CSVReader(input_path);
     BitStreamWriter* bit_stream_writer = new BitStreamWriter(output_path);
@@ -170,3 +173,4 @@ void Scripts::decodeFR(Path input_path, Path output_path, int max_window_size){
     decoder.decodeFile();
     decoder.close();
 }
+#endif

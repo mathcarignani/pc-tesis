@@ -15,7 +15,11 @@ void DecoderPWLH::setCoderParams(int max_window_size_, bool integer_mode_){
 }
 
 std::vector<std::string> DecoderPWLH::decodeDataColumn(){
+#if MASK_MODE
     column = new Column(data_rows_count, total_data, total_no_data);
+#else
+    column = new Column(data_rows_count);
+#endif
 
     while (column->unprocessed_rows > 0){
     #if MASK_MODE
@@ -42,7 +46,7 @@ void DecoderPWLH::decodeWindowDouble(int window_size){
     float value = decodeFloat();
 #if !MASK_MODE
     if (value == FLT_MAX){
-        addNullPoints(window_size);
+        addNoDataPoints(window_size);
         return;
     }
 #endif
@@ -50,7 +54,7 @@ void DecoderPWLH::decodeWindowDouble(int window_size){
         float point1_y = value;
         float point2_y = decodeFloat();
     #if !MASK_MODE
-        std::vector<int> x_coords = CoderUtils::createXCoordsVector(time_delta_vector, window_size, row_index);
+        std::vector<int> x_coords = CoderUtils::createXCoordsVector(time_delta_vector, window_size, column->row_index);
         std::vector<std::string> decoded_points = PWLHWindow::decodePoints(point1_y, point2_y, x_coords);
         addPoints(window_size, decoded_points);
     #else
@@ -71,7 +75,7 @@ void DecoderPWLH::decodeWindowInt(int window_size){
     std::string value = decodeValueRaw();
 #if !MASK_MODE
     if (value == Constants::NO_DATA){
-        addNullPoints(window_size);
+        addNoDataPoints(window_size);
         return;
     }
 #endif
@@ -79,7 +83,7 @@ void DecoderPWLH::decodeWindowInt(int window_size){
         std::string point1_y = value;
         std::string point2_y = decodeValueRaw();
     #if !MASK_MODE
-        std::vector<int> x_coords = CoderUtils::createXCoordsVector(time_delta_vector, window_size, row_index);
+        std::vector<int> x_coords = CoderUtils::createXCoordsVector(time_delta_vector, window_size, column->row_index);
         std::vector<std::string> decoded_points = PWLHWindow::decodePointsIntegerMode(point1_y, point2_y, x_coords);
         addPoints(window_size, decoded_points);
     #else

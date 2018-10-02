@@ -2,6 +2,8 @@
 #ifndef CPP_PROJECT_CODER_SLIDE_FILTER_H
 #define CPP_PROJECT_CODER_SLIDE_FILTER_H
 
+#if MASK_MODE
+
 #include "coder_cols.h"
 #include "slide_filter_window.h"
 #include "SlideFiltersEntry.h"
@@ -40,5 +42,7 @@ public:
     void setCoderParams(int max_window_size_, std::vector<int> error_thresholds_vector_);
 //    void codeWindow(SlideFilterWindow & window, int window_length, std::string window_value);
 };
+
+#endif // MASK_MODE
 
 #endif //CPP_PROJECT_CODER_SLIDE_FILTER_H

@@ -60,6 +60,7 @@ int main(int argc, char *argv[]){
         if (action == "c") {   Scripts::codeCA(input_path, output_path, window_size, error_thresholds_vector); }
         else               { Scripts::decodeCA(input_path, output_path, window_size); }
     }
+#if MASK_MODE
     else if (coder_name == "CoderSF"){
         if (action == "c") {   Scripts::codeSF(input_path, output_path, window_size, error_thresholds_vector); }
         else               { Scripts::decodeSF(input_path, output_path, window_size); }
@@ -68,6 +69,7 @@ int main(int argc, char *argv[]){
         if (action == "c") {   Scripts::codeFR(input_path, output_path, window_size, error_thresholds_vector); }
         else               { Scripts::decodeFR(input_path, output_path, window_size); }
     }
+#endif
 
     return 0;
 }
