@@ -1473,32 +1473,59 @@ src/tests/tests.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests.cpp.s
 .PHONY : src/tests/tests.cpp.s
 
-src/tests/tests_coder.o: src/tests/tests_coder.cpp.o
+src/tests/tests_coders.o: src/tests/tests_coders.cpp.o
 
-.PHONY : src/tests/tests_coder.o
+.PHONY : src/tests/tests_coders.o
 
 # target to build an object file
-src/tests/tests_coder.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests_coder.cpp.o
-.PHONY : src/tests/tests_coder.cpp.o
+src/tests/tests_coders.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests_coders.cpp.o
+.PHONY : src/tests/tests_coders.cpp.o
 
-src/tests/tests_coder.i: src/tests/tests_coder.cpp.i
+src/tests/tests_coders.i: src/tests/tests_coders.cpp.i
 
-.PHONY : src/tests/tests_coder.i
+.PHONY : src/tests/tests_coders.i
 
 # target to preprocess a source file
-src/tests/tests_coder.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests_coder.cpp.i
-.PHONY : src/tests/tests_coder.cpp.i
+src/tests/tests_coders.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests_coders.cpp.i
+.PHONY : src/tests/tests_coders.cpp.i
 
-src/tests/tests_coder.s: src/tests/tests_coder.cpp.s
+src/tests/tests_coders.s: src/tests/tests_coders.cpp.s
 
-.PHONY : src/tests/tests_coder.s
+.PHONY : src/tests/tests_coders.s
 
 # target to generate assembly for a file
-src/tests/tests_coder.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests_coder.cpp.s
-.PHONY : src/tests/tests_coder.cpp.s
+src/tests/tests_coders.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests_coders.cpp.s
+.PHONY : src/tests/tests_coders.cpp.s
+
+src/tests/tests_coders_utils.o: src/tests/tests_coders_utils.cpp.o
+
+.PHONY : src/tests/tests_coders_utils.o
+
+# target to build an object file
+src/tests/tests_coders_utils.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests_coders_utils.cpp.o
+.PHONY : src/tests/tests_coders_utils.cpp.o
+
+src/tests/tests_coders_utils.i: src/tests/tests_coders_utils.cpp.i
+
+.PHONY : src/tests/tests_coders_utils.i
+
+# target to preprocess a source file
+src/tests/tests_coders_utils.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests_coders_utils.cpp.i
+.PHONY : src/tests/tests_coders_utils.cpp.i
+
+src/tests/tests_coders_utils.s: src/tests/tests_coders_utils.cpp.s
+
+.PHONY : src/tests/tests_coders_utils.s
+
+# target to generate assembly for a file
+src/tests/tests_coders_utils.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests_coders_utils.cpp.s
+.PHONY : src/tests/tests_coders_utils.cpp.s
 
 src/tests/tests_math_utils.o: src/tests/tests_math_utils.cpp.o
 
@@ -1740,9 +1767,12 @@ help:
 	@echo "... src/tests/tests.o"
 	@echo "... src/tests/tests.i"
 	@echo "... src/tests/tests.s"
-	@echo "... src/tests/tests_coder.o"
-	@echo "... src/tests/tests_coder.i"
-	@echo "... src/tests/tests_coder.s"
+	@echo "... src/tests/tests_coders.o"
+	@echo "... src/tests/tests_coders.i"
+	@echo "... src/tests/tests_coders.s"
+	@echo "... src/tests/tests_coders_utils.o"
+	@echo "... src/tests/tests_coders_utils.i"
+	@echo "... src/tests/tests_coders_utils.s"
 	@echo "... src/tests/tests_math_utils.o"
 	@echo "... src/tests/tests_math_utils.i"
 	@echo "... src/tests/tests_math_utils.s"

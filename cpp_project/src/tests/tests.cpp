@@ -11,7 +11,7 @@
 #include "bit_stream_reader.h"
 #include <cfloat>
 #include "tests_string_utils.h"
-#include "tests_coder.h"
+#include "tests_coders.h"
 #include "tests_math_utils.h"
 #include "tests_vector_utils.h"
 
@@ -22,7 +22,7 @@ void Tests::runAll() {
     TestsMathUtils::runAll();
     TestsStringUtils::runAll();
     TestsVectorUtils::runAll();
-    TestsCoder().runAll();
+    TestsCoders().runAll();
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -105,9 +105,9 @@ void Tests::testDatetimeUtils(){
 
 void Tests::testFloatCoder(){
     std::cout << "Tests::testFloatCoder" << std::endl;
-    Path coded_path = Path(TestsCoder::TEST_OUTPUT_PATH, "testFloat.code");
+    Path coded_path = Path(TestsCoders::TEST_OUTPUT_PATH, "testFloat.code");
 
-    std::cout << TestsCoder::TEST_OUTPUT_PATH;
+    std::cout << TestsCoders::TEST_OUTPUT_PATH;
     BitStreamWriter* bit_stream_writer = new BitStreamWriter(coded_path);
     float a = 0.238728932739; bit_stream_writer->pushFloat(a);
     float b = 0.2893232; bit_stream_writer->pushFloat(b);

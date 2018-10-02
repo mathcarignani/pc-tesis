@@ -150,11 +150,11 @@ set(CODER_SRC_FILES ${CODER_SRC_FILES0} ${CODER_SRC_FILES1} ${CODER_SRC_FILES2} 
 ### CODERS END #########################################################################################################
 
 ### TESTS BEGIN ########################################################################################################
-set(TESTS_HEAD_FILES0 ${TESTS_HEAD_DIR}/tests_vector_utils.h ${TESTS_HEAD_DIR}/tests_math_utils.h)
-set(TESTS_HEAD_FILES1 ${TESTS_HEAD_DIR}/tests_string_utils.h ${TESTS_HEAD_DIR}/tests_coder.h ${TESTS_HEAD_DIR}/tests.h)
+set(TESTS_HEAD_FILES0 ${TESTS_HEAD_DIR}/tests_vector_utils.h ${TESTS_HEAD_DIR}/tests_math_utils.h ${TESTS_HEAD_DIR}/tests_string_utils.h)
+set(TESTS_HEAD_FILES1 ${TESTS_HEAD_DIR}/tests_coders_utils.h ${TESTS_HEAD_DIR}/tests_coders.h ${TESTS_HEAD_DIR}/tests.h)
 
-set(TESTS_SRC_FILES0 ${TESTS_SRC_DIR}/tests_vector_utils.cpp ${TESTS_SRC_DIR}/tests_math_utils.cpp)
-set(TESTS_SRC_FILES1 ${TESTS_SRC_DIR}/tests_string_utils.cpp ${TESTS_SRC_DIR}/tests_coder.cpp ${TESTS_SRC_DIR}/tests.cpp)
+set(TESTS_SRC_FILES0 ${TESTS_SRC_DIR}/tests_vector_utils.cpp ${TESTS_SRC_DIR}/tests_math_utils.cpp ${TESTS_SRC_DIR}/tests_string_utils.cpp)
+set(TESTS_SRC_FILES1 ${TESTS_SRC_DIR}/tests_coders_utils.cpp ${TESTS_SRC_DIR}/tests_coders.cpp ${TESTS_SRC_DIR}/tests.cpp)
 ### TESTS END ##########################################################################################################
 
 set(OTHER_HEAD_FILES1 include/os_utils.h include/string_utils.h include/datetime_utils.h include/vector_utils.h)
