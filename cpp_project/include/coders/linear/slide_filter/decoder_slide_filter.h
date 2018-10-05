@@ -9,18 +9,22 @@
 #include "coder_utils.h"
 #include "SlideFiltersEntry.h"
 #include "slide_filter_window.h"
+#include "DynArray.h"
+#include "DataStream.h"
 
 class DecoderSlideFilter: public DecoderCols {
 
 private:
     int max_window_size_bit_length;
     Column* column;
-    SlideFilterWindow* m_pApproxData;
+    DynArray<SlideFiltersEntry>* m_pCompressData;
+    CDataStream* m_pApproxData;
 
     std::vector<std::string> decodeDataColumn() override;
+    void decodeEntries();
     SlideFiltersEntry* decodeEntry();
     SlideFiltersEntry* getAt(std::vector<SlideFiltersEntry*> & m_pCompressData, int position);
-    std::vector<DataItem> decompress();
+    void decompress();
 
 public:
     using DecoderCols::DecoderCols;

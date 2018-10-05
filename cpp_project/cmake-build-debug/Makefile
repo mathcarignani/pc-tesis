@@ -150,6 +150,33 @@ external/benchmarkLinux/Algorithms/PWLH/Control/LinearBucket.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/external/benchmarkLinux/Algorithms/PWLH/Control/LinearBucket.cpp.s
 .PHONY : external/benchmarkLinux/Algorithms/PWLH/Control/LinearBucket.cpp.s
 
+external/benchmarkLinux/DataManagementLayer/Data/DataStream.o: external/benchmarkLinux/DataManagementLayer/Data/DataStream.cpp.o
+
+.PHONY : external/benchmarkLinux/DataManagementLayer/Data/DataStream.o
+
+# target to build an object file
+external/benchmarkLinux/DataManagementLayer/Data/DataStream.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/external/benchmarkLinux/DataManagementLayer/Data/DataStream.cpp.o
+.PHONY : external/benchmarkLinux/DataManagementLayer/Data/DataStream.cpp.o
+
+external/benchmarkLinux/DataManagementLayer/Data/DataStream.i: external/benchmarkLinux/DataManagementLayer/Data/DataStream.cpp.i
+
+.PHONY : external/benchmarkLinux/DataManagementLayer/Data/DataStream.i
+
+# target to preprocess a source file
+external/benchmarkLinux/DataManagementLayer/Data/DataStream.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/external/benchmarkLinux/DataManagementLayer/Data/DataStream.cpp.i
+.PHONY : external/benchmarkLinux/DataManagementLayer/Data/DataStream.cpp.i
+
+external/benchmarkLinux/DataManagementLayer/Data/DataStream.s: external/benchmarkLinux/DataManagementLayer/Data/DataStream.cpp.s
+
+.PHONY : external/benchmarkLinux/DataManagementLayer/Data/DataStream.s
+
+# target to generate assembly for a file
+external/benchmarkLinux/DataManagementLayer/Data/DataStream.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/external/benchmarkLinux/DataManagementLayer/Data/DataStream.cpp.s
+.PHONY : external/benchmarkLinux/DataManagementLayer/Data/DataStream.cpp.s
+
 external/benchmarkLinux/DataStructures/DynArray/DynArray.o: external/benchmarkLinux/DataStructures/DynArray/DynArray.cpp.o
 
 .PHONY : external/benchmarkLinux/DataStructures/DynArray/DynArray.o
@@ -1620,6 +1647,9 @@ help:
 	@echo "... external/benchmarkLinux/Algorithms/PWLH/Control/LinearBucket.o"
 	@echo "... external/benchmarkLinux/Algorithms/PWLH/Control/LinearBucket.i"
 	@echo "... external/benchmarkLinux/Algorithms/PWLH/Control/LinearBucket.s"
+	@echo "... external/benchmarkLinux/DataManagementLayer/Data/DataStream.o"
+	@echo "... external/benchmarkLinux/DataManagementLayer/Data/DataStream.i"
+	@echo "... external/benchmarkLinux/DataManagementLayer/Data/DataStream.s"
 	@echo "... external/benchmarkLinux/DataStructures/DynArray/DynArray.o"
 	@echo "... external/benchmarkLinux/DataStructures/DynArray/DynArray.i"
 	@echo "... external/benchmarkLinux/DataStructures/DynArray/DynArray.s"

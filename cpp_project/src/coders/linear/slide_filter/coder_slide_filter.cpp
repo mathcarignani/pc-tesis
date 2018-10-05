@@ -36,17 +36,35 @@ void CoderSlideFilter::codeColumnAfter() {
 //        std::cout << data_item.timestamp << " => " << data_item.value << std::endl;
 //    }
     compress();
+    codeEntries();
+    delete m_pSFData;
+    delete m_pSFOutput;
+    entries_vector.clear();
 }
 
-void CoderSlideFilter::add(SlideFiltersEntry recording){
-    std::cout << "codeEntry" << std::endl;
-    std::cout << "recording.connToFollow " << recording.connToFollow << std::endl;
-    std::cout << "recording.timestamp " << recording.timestamp << std::endl;
-    std::cout << "recording.value " << recording.value << std::endl;
+void CoderSlideFilter::add(SlideFiltersEntry & recording){
+//    std::cout << "add" << std::endl;
+//    std::cout << "recording.connToFollow " << recording.connToFollow << std::endl;
+//    std::cout << "recording.timestamp " << recording.timestamp << std::endl;
+//    std::cout << "recording.value " << recording.value << std::endl;
 
-    codeBool(recording.connToFollow);
-    codeFloat(recording.timestamp);
-    codeFloat(recording.value);
+    SlideFiltersEntry* copy = new SlideFiltersEntry(recording);
+    entries_vector.push_back(copy);
+}
+
+void CoderSlideFilter::codeEntries(){
+    std::cout << "entries_vector.size() = " << entries_vector.size() << std::endl;
+    codeFloat(entries_vector.size());
+    for(int i=0; i < entries_vector.size(); i++){
+        codeEntry(entries_vector.at(i));
+    }
+}
+
+void CoderSlideFilter::codeEntry(SlideFiltersEntry* recording){
+    std::cout << recording->connToFollow << " " << recording->timestamp << " " << recording->value << std::endl;
+    codeBool(recording->connToFollow);
+    codeFloat(recording->timestamp);
+    codeFloat(recording->value);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
