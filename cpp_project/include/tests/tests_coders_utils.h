@@ -9,7 +9,7 @@
 class TestsCodersUtils {
 public:
     static std::string setAndWriteCoderName(std::string coder_name, CSVWriter* csv_writer);
-    static void writeBitsCSV(CSVWriter* csv_writer, Dataset dataset);
+    static void writeBitsCSV(CSVWriter* csv_writer, Dataset* dataset);
     static void writeStringCSV(CSVWriter* csv_writer, std::string mode, bool title);
     static Path codedFilePath(std::string folder, Path file_path, std::string coder_name);
     static Path decodedFilePath(std::string folder, Path file_path, std::string coder_name);

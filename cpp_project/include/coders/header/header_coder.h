@@ -13,7 +13,7 @@ class HeaderCoder {
 
 public:
     HeaderCoder(CSVReader* input_csv_, BitStreamWriter* output_file_);
-    Dataset codeHeader();
+    Dataset* codeHeader();
 
 private:
     CSVReader* input_csv;

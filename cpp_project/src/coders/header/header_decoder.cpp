@@ -12,7 +12,7 @@ HeaderDecoder::HeaderDecoder(BitStreamReader* input_file_, CSVWriter* output_csv
     output_csv = output_csv_;
 }
 
-Dataset HeaderDecoder::decodeHeader(){
+Dataset* HeaderDecoder::decodeHeader(){
     DatasetUtils* dataset_utils = new DatasetUtils("decode");
     std::string dataset_name = decodeDatasetName(*dataset_utils);
     decodeTimeUnit(*dataset_utils);
@@ -21,7 +21,7 @@ Dataset HeaderDecoder::decodeHeader(){
 
     std::vector<Range> ranges = dataset_utils->getRangeVector(dataset_name);
     std::vector<int> bits = dataset_utils->getBitsVector(dataset_name);
-    Dataset dataset = Dataset(ranges, bits, data_columns_count);
+    Dataset* dataset = new Dataset(ranges, bits, data_columns_count);
     return dataset;
 }
 

@@ -11,9 +11,9 @@ std::string TestsCodersUtils::setAndWriteCoderName(std::string coder_name, CSVWr
     return coder_name;
 }
 
-void TestsCodersUtils::writeBitsCSV(CSVWriter* csv_writer, Dataset dataset){
-    csv_writer->writeRow(VectorUtils::intVectorToStringVector(dataset.totalMaskBitsArray()));
-    csv_writer->writeRow(VectorUtils::intVectorToStringVector(dataset.totalBitsArray()));
+void TestsCodersUtils::writeBitsCSV(CSVWriter* csv_writer, Dataset* dataset){
+    csv_writer->writeRow(VectorUtils::intVectorToStringVector(dataset->totalMaskBitsArray()));
+    csv_writer->writeRow(VectorUtils::intVectorToStringVector(dataset->totalBitsArray()));
 }
 
 void TestsCodersUtils::writeStringCSV(CSVWriter* csv_writer, std::string mode, bool title){

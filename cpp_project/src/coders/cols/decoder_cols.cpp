@@ -7,12 +7,12 @@
 
 void DecoderCols::decodeDataRows(){
     std::vector<std::vector<std::string>> columns;
-    int total_columns = dataset.data_columns_count + 1;
+    int total_columns = dataset->data_columns_count + 1;
     for(column_index = 0; column_index < total_columns; column_index++) {
     #if COUT
         std::cout << "decode column_index " << column_index << std::endl;
     #endif
-        dataset.setColumn(column_index);
+        dataset->setColumn(column_index);
         std::vector<std::string> column = decodeColumn();
         columns.push_back(column);
     }

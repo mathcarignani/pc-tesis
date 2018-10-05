@@ -19,7 +19,7 @@ private:
 protected:
     BitStreamReader* input_file;
     CSVWriter* output_csv;
-    Dataset dataset;
+    Dataset* dataset;
     int data_columns_count;
     int data_rows_count;
 

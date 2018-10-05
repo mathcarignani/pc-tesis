@@ -18,7 +18,7 @@ void CoderSlideFilter::codeColumnBefore(){
     m_nBegin_Point = 0;
     int error_threshold = error_thresholds_vector.at(column_index);
     m_pSFData = new SlideFilterWindow(total_data_rows, error_threshold);
-    m_pSFOutput = new SlideFilterWindow(total_data_rows, error_threshold); // doesn't mat
+    m_pSFOutput = new SlideFilterWindow(this);
 }
 
 void CoderSlideFilter::codeColumnWhile(std::string csv_value){
@@ -199,7 +199,7 @@ void CoderSlideFilter::recording_mechanism(int& position)
     {
         //Create first recording
         double t = begin_curSeg.timestamp;
-        SlideFiltersEntry* sfe = &SlideFiltersEntry(m_curG.getValue(t), t , true);
+        SlideFiltersEntry* sfe = new SlideFiltersEntry(m_curG.getValue(t), t , true); // &SlideFiltersEntry(m_curG.getValue(t), t , true);
         //m_pSFOutput->getCompressData()->add(SlideFiltersEntry(m_curG.getValue(t), t , true));
         m_pSFOutput->getCompressData()->add(*sfe);
     }
@@ -215,11 +215,11 @@ void CoderSlideFilter::recording_mechanism(int& position)
         //m_curG cut m_prevG at invalid section
         DataItem end_prevSeg = m_pSFData->getAt(m_nBegin_Point - 1);
         double t = end_prevSeg.timestamp;
-        SlideFiltersEntry* sfe = &SlideFiltersEntry(m_prevG.getValue(t), t, existInter);
+        SlideFiltersEntry* sfe = new SlideFiltersEntry(m_prevG.getValue(t), t, existInter); // &SlideFiltersEntry(m_prevG.getValue(t), t, existInter);
         //m_pSFOutput->getCompressData()->add(SlideFiltersEntry(m_prevG.getValue(t), t, existInter));
         m_pSFOutput->getCompressData()->add(*sfe);
         t = begin_curSeg.timestamp;
-        sfe = &SlideFiltersEntry(m_curG.getValue(t), t, true);
+        sfe = new SlideFiltersEntry(m_curG.getValue(t), t, true); // &SlideFiltersEntry(m_curG.getValue(t), t, true);
         //m_pSFOutput->getCompressData()->add(SlideFiltersEntry(m_curG.getValue(t), t, true));
         m_pSFOutput->getCompressData()->add(*sfe);
     }
@@ -243,10 +243,10 @@ void CoderSlideFilter::recording_mechanism(int& position)
         DataItem item = m_pSFData->getAt(position);
         double t = preItem.timestamp;
         SlideFiltersEntry(m_curG.getValue(t), t, true);
-        SlideFiltersEntry* sfe = &SlideFiltersEntry(m_curG.getValue(t), t, true);
+        SlideFiltersEntry* sfe = new SlideFiltersEntry(m_curG.getValue(t), t, true); // &SlideFiltersEntry(m_curG.getValue(t), t, true);
         //m_pSFOutput->getCompressData()->add(SlideFiltersEntry(m_curG.getValue(t), t, true));
         m_pSFOutput->getCompressData()->add(*sfe);
-        sfe = &SlideFiltersEntry(item.value, item.timestamp, false);
+        sfe = new SlideFiltersEntry(item.value, item.timestamp, false); // &SlideFiltersEntry(item.value, item.timestamp, false);
         //m_pSFOutput->getCompressData()->add(SlideFiltersEntry(item.value, item.timestamp, false));
         m_pSFOutput->getCompressData()->add(*sfe);
         position++;
@@ -256,7 +256,7 @@ void CoderSlideFilter::recording_mechanism(int& position)
     {
         DataItem item = m_pSFData->getAt(position - 1);
         double t = item.timestamp;
-        SlideFiltersEntry* sfe = &SlideFiltersEntry(m_curG.getValue(t), t, false);
+        SlideFiltersEntry* sfe = new SlideFiltersEntry(m_curG.getValue(t), t, false); // &SlideFiltersEntry(m_curG.getValue(t), t, false);
         //m_pSFOutput->getCompressData()->add(SlideFiltersEntry(m_curG.getValue(t), t, false));
         m_pSFOutput->getCompressData()->add(*sfe);
     }

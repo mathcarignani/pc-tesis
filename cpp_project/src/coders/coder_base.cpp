@@ -19,31 +19,31 @@ void CoderBase::codeDataRowsCount(){
 // It also checks the minimum and maximum constraints.
 //
 int CoderBase::codeValue(std::string x){
-    if (Constants::isNoData(x)){ return dataset.nan(); }
+    if (Constants::isNoData(x)){ return dataset->nan(); }
 
     int x_int = StringUtils::stringToInt(x);
-    if (dataset.insideRange(x_int)) { return x_int + dataset.offset(); }
+    if (dataset->insideRange(x_int)) { return x_int + dataset->offset(); }
 
     throw std::invalid_argument(StringUtils::intToString(x_int));
 }
 
 void CoderBase::codeRaw(int value){
-    output_file->pushInt(value, dataset.getBits());
+    output_file->pushInt(value, dataset->getBits());
 }
 
 void CoderBase::codeBit(int bit){
-    dataset.addBits(1);
+    dataset->addBits(1);
     output_file->pushBit(bit);
 }
 
 void CoderBase::codeBool(bool bit){
-    dataset.addBits(1);
+    dataset->addBits(1);
     if (bit) { output_file->pushBit(1); }
     else     { output_file->pushBit(0); }
 }
 
 void CoderBase::codeInt(int value, int bits){
-    dataset.addBits(bits);
+    dataset->addBits(bits);
     output_file->pushInt(value, bits);
 }
 
@@ -61,7 +61,7 @@ void CoderBase::codeValueRaw(std::string x){
 
 void CoderBase::codeFloat(float x){
 //    std::cout << "codeFloat " << x << std::endl;
-    dataset.addBits(sizeof(float)*8);
+    dataset->addBits(sizeof(float)*8);
     output_file->pushFloat(x);
 }
 
@@ -72,7 +72,7 @@ void CoderBase::codeFile(){
 }
 
 void CoderBase::printBits(){
-    dataset.printBits();
+    dataset->printBits();
 }
 
 void CoderBase::close(){

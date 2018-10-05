@@ -9,7 +9,7 @@ input_path = datasets_csv_path() + "[1]irkis/"
 input_filename = "vwc_1202.dat.csv"
 
 output_path = python_project_path()
-output_filename = "vwc_1202.dat_CONSTANT_TIME.csv"
+output_filename = "vwc_1202.dat_CLEAN.csv"  # "vwc_1202.dat_CONSTANT_TIME.csv"
 
 
 def line_contains_nodata(line_):
@@ -22,7 +22,8 @@ def set_line_timestamp(line_, timestamp_):
 
 csv_reader = CSVReader(input_path, input_filename)
 csv_writer = CSVWriter(output_path, output_filename)
-timestamp = 0
+
+first_value = True
 while csv_reader.continue_reading:
     line = csv_reader.read_line()
 
@@ -31,13 +32,14 @@ while csv_reader.continue_reading:
         csv_writer.write_row(line)
         continue
 
-    # if line_contains_nodata(line):
-    #     # don't copy rows which contain nodata entries
-    #     continue
+    if line_contains_nodata(line):
+        # don't copy rows which contain nodata entries
+        continue
 
+    timestamp = 0 if first_value else 1
+    first_value = False
     line = set_line_timestamp(line, timestamp)
     csv_writer.write_row(line)
-    timestamp += 1
 
 csv_reader.close()
 csv_writer.close()

@@ -22,7 +22,7 @@ private:
     std::vector<Path> paths;
     std::vector<std::vector<int>> lossless, lossy;
     int win_size;
-    Dataset ds;
+    Dataset* ds;
     std::vector<int> errors_vector;
     std::string expected_root_folder;
     std::string output_root_folder;
