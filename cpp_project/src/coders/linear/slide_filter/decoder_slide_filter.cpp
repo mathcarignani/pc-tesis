@@ -1,11 +1,11 @@
 
+#include "decoder_slide_filter.h"
+
 #if MASK_MODE
 
-#include "decoder_slide_filter.h"
 #include "decoder_base.h"
 #include "math_utils.h"
 #include <cmath>
-#include "constants.h"
 #include "string_utils.h"
 
 void DecoderSlideFilter::setCoderParams(int max_window_size_){

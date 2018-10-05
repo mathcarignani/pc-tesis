@@ -3,6 +3,9 @@
 #define CPP_PROJECT_CODER_FR_H
 
 #include "coder_cols.h"
+
+#if MASK_MODE
+
 #include "fr_window.h"
 
 class CoderFR: public CoderCols {
@@ -25,5 +28,7 @@ public:
     void setCoderParams(int max_window_size_, std::vector<int> error_thresholds_vector_);
 
 };
+
+#endif // MASK_MODE
 
 #endif //CPP_PROJECT_CODER_FR_H

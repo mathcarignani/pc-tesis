@@ -1,7 +1,8 @@
 
+#include "decoder_fr.h"
+
 #if MASK_MODE
 
-#include "decoder_fr.h"
 #include "math_utils.h"
 #include "assert.h"
 #include "DataItem.h"

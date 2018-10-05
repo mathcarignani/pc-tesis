@@ -5,6 +5,7 @@
 #include "iostream"
 #include "dataset.h"
 #include "csv_writer.h"
+#include "constants.h"
 
 class TestsCoders {
 

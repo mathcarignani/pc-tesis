@@ -2,9 +2,10 @@
 #ifndef CPP_PROJECT_DECODER_FR_H
 #define CPP_PROJECT_DECODER_FR_H
 
+#include "decoder_cols.h"
+
 #if MASK_MODE
 
-#include "decoder_cols.h"
 #include "DataItem.h"
 #include "coder_utils.h"
 

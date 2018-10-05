@@ -2,9 +2,10 @@
 #ifndef CPP_PROJECT_DECODER_SLIDE_FILTER_H
 #define CPP_PROJECT_DECODER_SLIDE_FILTER_H
 
+#include "decoder_cols.h"
+
 #if MASK_MODE
 
-#include "decoder_cols.h"
 #include "coder_utils.h"
 #include "SlideFiltersEntry.h"
 #include "slide_filter_window.h"

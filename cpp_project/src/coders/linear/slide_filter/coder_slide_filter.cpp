@@ -1,7 +1,8 @@
 
+#include "coder_slide_filter.h"
+
 #if MASK_MODE
 
-#include "coder_slide_filter.h"
 #include "assert.h"
 #include "math_utils.h"
 #include <iomanip>

@@ -6,6 +6,7 @@
 #include "path.h"
 #include <vector>
 #include "dataset.h"
+#include "constants.h"
 
 class Scripts {
 
