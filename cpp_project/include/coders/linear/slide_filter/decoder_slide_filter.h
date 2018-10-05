@@ -17,16 +17,10 @@ private:
     Column* column;
     SlideFilterWindow* m_pApproxData;
 
-//    int current_window_size;
-//    std::string current_value;
-
     std::vector<std::string> decodeDataColumn() override;
     SlideFiltersEntry* decodeEntry();
     SlideFiltersEntry* getAt(std::vector<SlideFiltersEntry*> & m_pCompressData, int position);
     std::vector<DataItem> decompress();
-
-//    void decodeWindow(std::vector<std::string> & column);
-//    void createWindow(std::vector<std::string> & column, std::string previous_value);
 
 public:
     using DecoderCols::DecoderCols;

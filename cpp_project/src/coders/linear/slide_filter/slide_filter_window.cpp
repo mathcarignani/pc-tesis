@@ -4,13 +4,19 @@
 #include "iostream"
 #include "assert.h"
 
-SlideFilterWindow::SlideFilterWindow() {}
-
 SlideFilterWindow::SlideFilterWindow(int total_data_rows_, int error_threshold_){
     total_data_rows = total_data_rows_;
     data.reserve(total_data_rows);
     length = 0;
     error_threshold = error_threshold_;
+}
+
+SlideFilterWindow::SlideFilterWindow(CoderSlideFilter* coder_){
+    coder = coder_;
+}
+
+CoderSlideFilter* SlideFilterWindow::getCompressData(){
+    return coder;
 }
 
 void SlideFilterWindow::addDataItem(int timestamp, std::string value){
