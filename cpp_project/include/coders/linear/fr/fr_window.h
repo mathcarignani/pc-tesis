@@ -17,7 +17,6 @@ private:
     bool violatedConstraint(int first_index, int last_index);
 
 public:
-    FRWindow();
     FRWindow(int max_window_size_, int error_threshold_);
 
     void addDataItem(int timestamp, std::string value);

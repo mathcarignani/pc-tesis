@@ -21,7 +21,7 @@
 #include "assert.h"
 
 
-Dataset Scripts::codeBasic(Path input_path, Path output_path){
+Dataset* Scripts::codeBasic(Path input_path, Path output_path){
     CSVReader* csv_reader = new CSVReader(input_path);
     BitStreamWriter* bit_stream_writer = new BitStreamWriter(output_path);
     CoderBasic coder = CoderBasic(csv_reader, bit_stream_writer);
@@ -41,7 +41,7 @@ void Scripts::decodeBasic(Path input_path, Path output_path){
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Dataset Scripts::codePCA(Path input_path, Path output_path, int fixed_window_size, std::vector<int> error_thresholds_vector){
+Dataset* Scripts::codePCA(Path input_path, Path output_path, int fixed_window_size, std::vector<int> error_thresholds_vector){
     CSVReader* csv_reader = new CSVReader(input_path);
     BitStreamWriter* bit_stream_writer = new BitStreamWriter(output_path);
     CoderPCA coder = CoderPCA(csv_reader, bit_stream_writer);
@@ -63,7 +63,7 @@ void Scripts::decodePCA(Path input_path, Path output_path, int fixed_window_size
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Dataset Scripts::codeAPCA(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector){
+Dataset* Scripts::codeAPCA(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector){
     CSVReader* csv_reader = new CSVReader(input_path);
     BitStreamWriter* bit_stream_writer = new BitStreamWriter(output_path);
     CoderAPCA coder = CoderAPCA(csv_reader, bit_stream_writer);
@@ -85,7 +85,7 @@ void Scripts::decodeAPCA(Path input_path, Path output_path, int max_window_size)
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Dataset Scripts::codePWLH(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector, bool integer_mode){
+Dataset* Scripts::codePWLH(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector, bool integer_mode){
     CSVReader* csv_reader = new CSVReader(input_path);
     BitStreamWriter* bit_stream_writer = new BitStreamWriter(output_path);
     CoderPWLH coder = CoderPWLH(csv_reader, bit_stream_writer);
@@ -107,7 +107,7 @@ void Scripts::decodePWLH(Path input_path, Path output_path, int max_window_size,
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Dataset Scripts::codeCA(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector){
+Dataset* Scripts::codeCA(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector){
     CSVReader* csv_reader = new CSVReader(input_path);
     BitStreamWriter* bit_stream_writer = new BitStreamWriter(output_path);
     CoderCA coder = CoderCA(csv_reader, bit_stream_writer);
@@ -129,7 +129,8 @@ void Scripts::decodeCA(Path input_path, Path output_path, int max_window_size){
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Dataset Scripts::codeSF(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector){
+#if MASK_MODE
+Dataset* Scripts::codeSF(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector){
     CSVReader* csv_reader = new CSVReader(input_path);
     BitStreamWriter* bit_stream_writer = new BitStreamWriter(output_path);
     CoderSlideFilter coder = CoderSlideFilter(csv_reader, bit_stream_writer);
@@ -148,10 +149,12 @@ void Scripts::decodeSF(Path input_path, Path output_path, int max_window_size){
     decoder.decodeFile();
     decoder.close();
 }
+#endif
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Dataset Scripts::codeFR(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector){
+#if MASK_MODE
+Dataset* Scripts::codeFR(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector){
     CSVReader* csv_reader = new CSVReader(input_path);
     BitStreamWriter* bit_stream_writer = new BitStreamWriter(output_path);
     CoderFR coder = CoderFR(csv_reader, bit_stream_writer);
@@ -170,3 +173,4 @@ void Scripts::decodeFR(Path input_path, Path output_path, int max_window_size){
     decoder.decodeFile();
     decoder.close();
 }
+#endif

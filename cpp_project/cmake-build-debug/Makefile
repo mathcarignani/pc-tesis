@@ -150,6 +150,33 @@ external/benchmarkLinux/Algorithms/PWLH/Control/LinearBucket.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/external/benchmarkLinux/Algorithms/PWLH/Control/LinearBucket.cpp.s
 .PHONY : external/benchmarkLinux/Algorithms/PWLH/Control/LinearBucket.cpp.s
 
+external/benchmarkLinux/DataManagementLayer/Data/DataStream.o: external/benchmarkLinux/DataManagementLayer/Data/DataStream.cpp.o
+
+.PHONY : external/benchmarkLinux/DataManagementLayer/Data/DataStream.o
+
+# target to build an object file
+external/benchmarkLinux/DataManagementLayer/Data/DataStream.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/external/benchmarkLinux/DataManagementLayer/Data/DataStream.cpp.o
+.PHONY : external/benchmarkLinux/DataManagementLayer/Data/DataStream.cpp.o
+
+external/benchmarkLinux/DataManagementLayer/Data/DataStream.i: external/benchmarkLinux/DataManagementLayer/Data/DataStream.cpp.i
+
+.PHONY : external/benchmarkLinux/DataManagementLayer/Data/DataStream.i
+
+# target to preprocess a source file
+external/benchmarkLinux/DataManagementLayer/Data/DataStream.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/external/benchmarkLinux/DataManagementLayer/Data/DataStream.cpp.i
+.PHONY : external/benchmarkLinux/DataManagementLayer/Data/DataStream.cpp.i
+
+external/benchmarkLinux/DataManagementLayer/Data/DataStream.s: external/benchmarkLinux/DataManagementLayer/Data/DataStream.cpp.s
+
+.PHONY : external/benchmarkLinux/DataManagementLayer/Data/DataStream.s
+
+# target to generate assembly for a file
+external/benchmarkLinux/DataManagementLayer/Data/DataStream.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/external/benchmarkLinux/DataManagementLayer/Data/DataStream.cpp.s
+.PHONY : external/benchmarkLinux/DataManagementLayer/Data/DataStream.cpp.s
+
 external/benchmarkLinux/DataStructures/DynArray/DynArray.o: external/benchmarkLinux/DataStructures/DynArray/DynArray.cpp.o
 
 .PHONY : external/benchmarkLinux/DataStructures/DynArray/DynArray.o
@@ -1446,140 +1473,167 @@ src/string_utils.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/string_utils.cpp.s
 .PHONY : src/string_utils.cpp.s
 
-src/tests.o: src/tests.cpp.o
+src/tests/tests.o: src/tests/tests.cpp.o
 
-.PHONY : src/tests.o
-
-# target to build an object file
-src/tests.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests.cpp.o
-.PHONY : src/tests.cpp.o
-
-src/tests.i: src/tests.cpp.i
-
-.PHONY : src/tests.i
-
-# target to preprocess a source file
-src/tests.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests.cpp.i
-.PHONY : src/tests.cpp.i
-
-src/tests.s: src/tests.cpp.s
-
-.PHONY : src/tests.s
-
-# target to generate assembly for a file
-src/tests.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests.cpp.s
-.PHONY : src/tests.cpp.s
-
-src/tests_coder.o: src/tests_coder.cpp.o
-
-.PHONY : src/tests_coder.o
+.PHONY : src/tests/tests.o
 
 # target to build an object file
-src/tests_coder.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests_coder.cpp.o
-.PHONY : src/tests_coder.cpp.o
+src/tests/tests.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests.cpp.o
+.PHONY : src/tests/tests.cpp.o
 
-src/tests_coder.i: src/tests_coder.cpp.i
+src/tests/tests.i: src/tests/tests.cpp.i
 
-.PHONY : src/tests_coder.i
+.PHONY : src/tests/tests.i
 
 # target to preprocess a source file
-src/tests_coder.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests_coder.cpp.i
-.PHONY : src/tests_coder.cpp.i
+src/tests/tests.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests.cpp.i
+.PHONY : src/tests/tests.cpp.i
 
-src/tests_coder.s: src/tests_coder.cpp.s
+src/tests/tests.s: src/tests/tests.cpp.s
 
-.PHONY : src/tests_coder.s
+.PHONY : src/tests/tests.s
 
 # target to generate assembly for a file
-src/tests_coder.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests_coder.cpp.s
-.PHONY : src/tests_coder.cpp.s
+src/tests/tests.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests.cpp.s
+.PHONY : src/tests/tests.cpp.s
 
-src/tests_math_utils.o: src/tests_math_utils.cpp.o
+src/tests/tests_coders.o: src/tests/tests_coders.cpp.o
 
-.PHONY : src/tests_math_utils.o
+.PHONY : src/tests/tests_coders.o
 
 # target to build an object file
-src/tests_math_utils.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests_math_utils.cpp.o
-.PHONY : src/tests_math_utils.cpp.o
+src/tests/tests_coders.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests_coders.cpp.o
+.PHONY : src/tests/tests_coders.cpp.o
 
-src/tests_math_utils.i: src/tests_math_utils.cpp.i
+src/tests/tests_coders.i: src/tests/tests_coders.cpp.i
 
-.PHONY : src/tests_math_utils.i
+.PHONY : src/tests/tests_coders.i
 
 # target to preprocess a source file
-src/tests_math_utils.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests_math_utils.cpp.i
-.PHONY : src/tests_math_utils.cpp.i
+src/tests/tests_coders.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests_coders.cpp.i
+.PHONY : src/tests/tests_coders.cpp.i
 
-src/tests_math_utils.s: src/tests_math_utils.cpp.s
+src/tests/tests_coders.s: src/tests/tests_coders.cpp.s
 
-.PHONY : src/tests_math_utils.s
+.PHONY : src/tests/tests_coders.s
 
 # target to generate assembly for a file
-src/tests_math_utils.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests_math_utils.cpp.s
-.PHONY : src/tests_math_utils.cpp.s
+src/tests/tests_coders.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests_coders.cpp.s
+.PHONY : src/tests/tests_coders.cpp.s
 
-src/tests_string_utils.o: src/tests_string_utils.cpp.o
+src/tests/tests_coders_utils.o: src/tests/tests_coders_utils.cpp.o
 
-.PHONY : src/tests_string_utils.o
+.PHONY : src/tests/tests_coders_utils.o
 
 # target to build an object file
-src/tests_string_utils.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests_string_utils.cpp.o
-.PHONY : src/tests_string_utils.cpp.o
+src/tests/tests_coders_utils.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests_coders_utils.cpp.o
+.PHONY : src/tests/tests_coders_utils.cpp.o
 
-src/tests_string_utils.i: src/tests_string_utils.cpp.i
+src/tests/tests_coders_utils.i: src/tests/tests_coders_utils.cpp.i
 
-.PHONY : src/tests_string_utils.i
+.PHONY : src/tests/tests_coders_utils.i
 
 # target to preprocess a source file
-src/tests_string_utils.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests_string_utils.cpp.i
-.PHONY : src/tests_string_utils.cpp.i
+src/tests/tests_coders_utils.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests_coders_utils.cpp.i
+.PHONY : src/tests/tests_coders_utils.cpp.i
 
-src/tests_string_utils.s: src/tests_string_utils.cpp.s
+src/tests/tests_coders_utils.s: src/tests/tests_coders_utils.cpp.s
 
-.PHONY : src/tests_string_utils.s
+.PHONY : src/tests/tests_coders_utils.s
 
 # target to generate assembly for a file
-src/tests_string_utils.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests_string_utils.cpp.s
-.PHONY : src/tests_string_utils.cpp.s
+src/tests/tests_coders_utils.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests_coders_utils.cpp.s
+.PHONY : src/tests/tests_coders_utils.cpp.s
 
-src/tests_vector_utils.o: src/tests_vector_utils.cpp.o
+src/tests/tests_math_utils.o: src/tests/tests_math_utils.cpp.o
 
-.PHONY : src/tests_vector_utils.o
+.PHONY : src/tests/tests_math_utils.o
 
 # target to build an object file
-src/tests_vector_utils.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests_vector_utils.cpp.o
-.PHONY : src/tests_vector_utils.cpp.o
+src/tests/tests_math_utils.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests_math_utils.cpp.o
+.PHONY : src/tests/tests_math_utils.cpp.o
 
-src/tests_vector_utils.i: src/tests_vector_utils.cpp.i
+src/tests/tests_math_utils.i: src/tests/tests_math_utils.cpp.i
 
-.PHONY : src/tests_vector_utils.i
+.PHONY : src/tests/tests_math_utils.i
 
 # target to preprocess a source file
-src/tests_vector_utils.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests_vector_utils.cpp.i
-.PHONY : src/tests_vector_utils.cpp.i
+src/tests/tests_math_utils.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests_math_utils.cpp.i
+.PHONY : src/tests/tests_math_utils.cpp.i
 
-src/tests_vector_utils.s: src/tests_vector_utils.cpp.s
+src/tests/tests_math_utils.s: src/tests/tests_math_utils.cpp.s
 
-.PHONY : src/tests_vector_utils.s
+.PHONY : src/tests/tests_math_utils.s
 
 # target to generate assembly for a file
-src/tests_vector_utils.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests_vector_utils.cpp.s
-.PHONY : src/tests_vector_utils.cpp.s
+src/tests/tests_math_utils.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests_math_utils.cpp.s
+.PHONY : src/tests/tests_math_utils.cpp.s
+
+src/tests/tests_string_utils.o: src/tests/tests_string_utils.cpp.o
+
+.PHONY : src/tests/tests_string_utils.o
+
+# target to build an object file
+src/tests/tests_string_utils.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests_string_utils.cpp.o
+.PHONY : src/tests/tests_string_utils.cpp.o
+
+src/tests/tests_string_utils.i: src/tests/tests_string_utils.cpp.i
+
+.PHONY : src/tests/tests_string_utils.i
+
+# target to preprocess a source file
+src/tests/tests_string_utils.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests_string_utils.cpp.i
+.PHONY : src/tests/tests_string_utils.cpp.i
+
+src/tests/tests_string_utils.s: src/tests/tests_string_utils.cpp.s
+
+.PHONY : src/tests/tests_string_utils.s
+
+# target to generate assembly for a file
+src/tests/tests_string_utils.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests_string_utils.cpp.s
+.PHONY : src/tests/tests_string_utils.cpp.s
+
+src/tests/tests_vector_utils.o: src/tests/tests_vector_utils.cpp.o
+
+.PHONY : src/tests/tests_vector_utils.o
+
+# target to build an object file
+src/tests/tests_vector_utils.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests_vector_utils.cpp.o
+.PHONY : src/tests/tests_vector_utils.cpp.o
+
+src/tests/tests_vector_utils.i: src/tests/tests_vector_utils.cpp.i
+
+.PHONY : src/tests/tests_vector_utils.i
+
+# target to preprocess a source file
+src/tests/tests_vector_utils.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests_vector_utils.cpp.i
+.PHONY : src/tests/tests_vector_utils.cpp.i
+
+src/tests/tests_vector_utils.s: src/tests/tests_vector_utils.cpp.s
+
+.PHONY : src/tests/tests_vector_utils.s
+
+# target to generate assembly for a file
+src/tests/tests_vector_utils.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests_vector_utils.cpp.s
+.PHONY : src/tests/tests_vector_utils.cpp.s
 
 # Help Target
 help:
@@ -1593,6 +1647,9 @@ help:
 	@echo "... external/benchmarkLinux/Algorithms/PWLH/Control/LinearBucket.o"
 	@echo "... external/benchmarkLinux/Algorithms/PWLH/Control/LinearBucket.i"
 	@echo "... external/benchmarkLinux/Algorithms/PWLH/Control/LinearBucket.s"
+	@echo "... external/benchmarkLinux/DataManagementLayer/Data/DataStream.o"
+	@echo "... external/benchmarkLinux/DataManagementLayer/Data/DataStream.i"
+	@echo "... external/benchmarkLinux/DataManagementLayer/Data/DataStream.s"
 	@echo "... external/benchmarkLinux/DataStructures/DynArray/DynArray.o"
 	@echo "... external/benchmarkLinux/DataStructures/DynArray/DynArray.i"
 	@echo "... external/benchmarkLinux/DataStructures/DynArray/DynArray.s"
@@ -1737,21 +1794,24 @@ help:
 	@echo "... src/string_utils.o"
 	@echo "... src/string_utils.i"
 	@echo "... src/string_utils.s"
-	@echo "... src/tests.o"
-	@echo "... src/tests.i"
-	@echo "... src/tests.s"
-	@echo "... src/tests_coder.o"
-	@echo "... src/tests_coder.i"
-	@echo "... src/tests_coder.s"
-	@echo "... src/tests_math_utils.o"
-	@echo "... src/tests_math_utils.i"
-	@echo "... src/tests_math_utils.s"
-	@echo "... src/tests_string_utils.o"
-	@echo "... src/tests_string_utils.i"
-	@echo "... src/tests_string_utils.s"
-	@echo "... src/tests_vector_utils.o"
-	@echo "... src/tests_vector_utils.i"
-	@echo "... src/tests_vector_utils.s"
+	@echo "... src/tests/tests.o"
+	@echo "... src/tests/tests.i"
+	@echo "... src/tests/tests.s"
+	@echo "... src/tests/tests_coders.o"
+	@echo "... src/tests/tests_coders.i"
+	@echo "... src/tests/tests_coders.s"
+	@echo "... src/tests/tests_coders_utils.o"
+	@echo "... src/tests/tests_coders_utils.i"
+	@echo "... src/tests/tests_coders_utils.s"
+	@echo "... src/tests/tests_math_utils.o"
+	@echo "... src/tests/tests_math_utils.i"
+	@echo "... src/tests/tests_math_utils.s"
+	@echo "... src/tests/tests_string_utils.o"
+	@echo "... src/tests/tests_string_utils.i"
+	@echo "... src/tests/tests_string_utils.s"
+	@echo "... src/tests/tests_vector_utils.o"
+	@echo "... src/tests/tests_vector_utils.i"
+	@echo "... src/tests/tests_vector_utils.s"
 .PHONY : help
 
 

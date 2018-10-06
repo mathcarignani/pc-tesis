@@ -1,5 +1,8 @@
 
 #include "coder_fr.h"
+
+#if MASK_MODE
+
 #include "math_utils.h"
 #include "string_utils.h"
 #include "assert.h"
@@ -52,3 +55,5 @@ void CoderFR::codeItem(DataItem item, int index){
     if (index == 0) { return; }
     codeInt(item.timestamp, max_window_size_bit_length); // 1 <= index <= max_window_size
 }
+
+#endif // MASK_MODE

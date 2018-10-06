@@ -13,7 +13,7 @@ class HeaderDecoder {
 
 public:
     HeaderDecoder(BitStreamReader* input_file_, CSVWriter* output_csv_);
-    Dataset decodeHeader();
+    Dataset* decodeHeader();
 
 private:
     BitStreamReader* input_file;

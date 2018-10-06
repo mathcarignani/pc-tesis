@@ -26,7 +26,7 @@ void CoderPWLH::codeColumnBefore(){
 }
 
 void CoderPWLH::codeColumnWhile(std::string csv_value){
-    delta_sum += time_delta_vector[row_index];
+    delta_sum += time_delta_vector[row_index]; // >= 0
 #if MASK_MODE
     if (Constants::isNoData(csv_value)) { return; } // skip no_data
 #endif
@@ -43,7 +43,7 @@ void CoderPWLH::codeColumnAfter(){
 
 PWLHWindow* CoderPWLH::createWindow(){
     int error_threshold = error_thresholds_vector.at(column_index);
-    Range column_range = dataset.column_code.range;
+    Range column_range = dataset->column_code.range;
     return new PWLHWindow(max_window_size, error_threshold, column_range, integer_mode);
 }
 
@@ -59,16 +59,16 @@ void CoderPWLH::codeWindowDouble(PWLHWindow* window){
         return;
     }
 #endif
-    if (window->length > 1){
+    if (window->length > 1) {
         float point1_y = window->getPoint1Y();
         float point2_y = window->getPoint2Y();
         codeFloat(point1_y);
         codeFloat(point2_y);
+        return;
     }
-    else { // window.length == 1 => this code can only run the last time codeWindow is called
-        // IMPORTANT: window.constant_value_float is an int casted as a float
-        codeFloat(window->constant_value_float); // no need to code another value
-    }
+    // window.length == 1 => this code can only run the last time codeWindow is called
+    // IMPORTANT: window.constant_value_float is an int casted as a float
+    codeFloat(window->constant_value_float); // no need to code another value
 }
 
 void CoderPWLH::codeWindowInt(PWLHWindow* window){
@@ -83,8 +83,8 @@ void CoderPWLH::codeWindowInt(PWLHWindow* window){
         std::string point2_y = window->getPoint2YIntegerMode();
         codeValueRaw(point1_y);
         codeValueRaw(point2_y);
+        return;
     }
-    else { // window.length == 1 => this code can only run the last time codeWindow is called
-        codeValueRaw(window->constant_value); // no need to code another value
-    }
+    // window.length == 1 => this code can only run the last time codeWindow is called
+    codeValueRaw(window->constant_value); // no need to code another value
 }

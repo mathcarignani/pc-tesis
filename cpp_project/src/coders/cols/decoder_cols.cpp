@@ -7,12 +7,12 @@
 
 void DecoderCols::decodeDataRows(){
     std::vector<std::vector<std::string>> columns;
-    int total_columns = dataset.data_columns_count + 1;
+    int total_columns = dataset->data_columns_count + 1;
     for(column_index = 0; column_index < total_columns; column_index++) {
     #if COUT
         std::cout << "decode column_index " << column_index << std::endl;
     #endif
-        dataset.setColumn(column_index);
+        dataset->setColumn(column_index);
         std::vector<std::string> column = decodeColumn();
         columns.push_back(column);
     }
@@ -77,4 +77,16 @@ void DecoderCols::transposeMatrix(std::vector<std::vector<std::string>> columns,
         }
         output_csv->writeRowDecoder(row);
     }
+}
+
+std::vector<int> DecoderCols::createXCoordsVector(){
+    mask->reset();
+    std::vector<int> result;
+    int delta_sum = 1; // TODO: maybe this needs to be changed for coders other than Slide Filter
+    for(int i=0; i < mask->total_data + mask->total_no_data; i++){
+        delta_sum += time_delta_vector.at(i);
+        if (mask->isNoData()) { continue; } // ignore these values
+        result.push_back(delta_sum);
+    }
+    return result;
 }

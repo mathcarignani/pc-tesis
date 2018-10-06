@@ -4,8 +4,6 @@
 #include "iostream"
 #include "assert.h"
 
-SlideFilterWindow::SlideFilterWindow() {}
-
 SlideFilterWindow::SlideFilterWindow(int total_data_rows_, int error_threshold_){
     total_data_rows = total_data_rows_;
     data.reserve(total_data_rows);
@@ -13,8 +11,16 @@ SlideFilterWindow::SlideFilterWindow(int total_data_rows_, int error_threshold_)
     error_threshold = error_threshold_;
 }
 
+SlideFilterWindow::SlideFilterWindow(CoderSlideFilter* coder_){
+    coder = coder_;
+}
+
+CoderSlideFilter* SlideFilterWindow::getCompressData(){
+    return coder;
+}
+
 void SlideFilterWindow::addDataItem(int timestamp, std::string value){
-    int new_timestamp = (length == 0) ? 0 : data[length-1].timestamp + timestamp;
+    int new_timestamp = (length == 0) ? 1 : data[length-1].timestamp + timestamp;
     int value_int = StringUtils::stringToInt(value);
     data[length] = DataItem(value_int, new_timestamp);
 //    std::cout << "(length, value_int, new_timestamp) = (" << length << ", " << value_int << ", " << new_timestamp << ")" << std::endl;

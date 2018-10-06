@@ -5,12 +5,12 @@
 #include "string_utils.h"
 
 void CoderCols::codeDataRows(){
-    int total_columns = dataset.data_columns_count + 1;
+    int total_columns = dataset->data_columns_count + 1;
     for(column_index = 0; column_index < total_columns; column_index++) {
     #if COUT
         std::cout << "ccode column_index " << column_index << std::endl;
     #endif
-        dataset.setColumn(column_index);
+        dataset->setColumn(column_index);
         codeColumn();
     }
 }
@@ -35,7 +35,7 @@ void CoderCols::codeColumn() {
 // TODO: use a more appropriate lossless compression schema for coding the time delta column.
 //
 void CoderCols::codeTimeDeltaColumn(){
-    dataset.setMaskMode(false);
+    dataset->setMaskMode(false);
 
     goToFirstDataRow();
     while (input_csv->continue_reading){
@@ -51,7 +51,7 @@ void CoderCols::codeTimeDeltaColumn(){
 
 #if MASK_MODE
 int CoderCols::codeDataColumnNoDataMask(){
-    dataset.setMaskMode(true);
+    dataset->setMaskMode(true);
 
     bool burst_is_no_data = false;
     int burst_length = 0; // <= Constants::MASK_MAX_SIZE
@@ -88,7 +88,7 @@ int CoderCols::codeBurst(bool burst_is_no_data, int burst_length){
 #endif
 
 void CoderCols::codeDataColumn(){
-    dataset.setMaskMode(false);
+    dataset->setMaskMode(false);
 
     this->codeColumnBefore();
 

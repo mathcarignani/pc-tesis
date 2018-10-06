@@ -15,16 +15,16 @@ void DecoderBase::decodeDataRowsCount(){
 }
 
 std::string DecoderBase::decodeValue(int y){
-    if (y == dataset.nan()) { return Constants::NO_DATA; }
+    if (y == dataset->nan()) { return Constants::NO_DATA; }
 
-    y -= dataset.offset();
-    if (dataset.insideRange(y)) { return StringUtils::intToString(y); }
+    y -= dataset->offset();
+    if (dataset->insideRange(y)) { return StringUtils::intToString(y); }
 
     throw std::invalid_argument(StringUtils::intToString(y));
 }
 
 int DecoderBase::decodeRaw(){
-    return input_file->getInt(dataset.bits());
+    return input_file->getInt(dataset->bits());
 }
 
 bool DecoderBase::decodeBool(){

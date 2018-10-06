@@ -32,7 +32,7 @@ protected:
     void codeFloat(float x);
 
 public:
-    Dataset dataset;
+    Dataset* dataset;
     CoderBase(CSVReader* input_csv_, BitStreamWriter* output_file_);
     void codeFile();
     void printBits();

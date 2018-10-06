@@ -34,7 +34,7 @@ protected:
     void reset();
 #endif
 
-    static std::vector<int> createXCoordsVector(int window_size, int row_index_start);
+    std::vector<int> createXCoordsVector();
 
 public:
     using DecoderBase::DecoderBase;

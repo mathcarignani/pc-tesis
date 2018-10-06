@@ -16,6 +16,9 @@ def git_path():
 def cpp_project_path():
     return git_path() + "/cpp_project"
 
+def python_project_path():
+    return git_path() + "/dataset_parser"
+
 def cpp_executable_path():
     if ios():
         return cpp_project_path() + "/cmake-build-debug/cpp_project"
