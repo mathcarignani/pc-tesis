@@ -1,10 +1,9 @@
 import os
 import time
 import subprocess
-from auxi.os_utils import cpp_project_path
+from auxi.os_utils import cpp_executable_path
 
-
-EXE = cpp_project_path() + "/cmake-build-debug/cpp_project"
+EXE = cpp_executable_path()
 
 
 def execute(exe_str):

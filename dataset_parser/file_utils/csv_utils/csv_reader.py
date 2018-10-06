@@ -1,5 +1,6 @@
 import csv
 from auxi.progress_bar import ProgressBar
+from auxi.os_utils import ubuntu
 from file_utils.auxi import full_path
 
 
@@ -9,7 +10,7 @@ class CSVReader:
     def __init__(self, path, filename, progress=False, delimiter=','):
         self.path, self.filename = path, filename
         self.full_path = full_path(path, filename)
-        self.file = open(self.full_path, "r")
+        self.file = open_file()
         self.csv_reader = csv.reader(self.file, delimiter=delimiter)
         self.total_lines = self.total_lines_()
         self.continue_reading = True
@@ -45,7 +46,14 @@ class CSVReader:
         return previous_row
 
     def total_lines_(self):
-        return sum(1 for _ in csv.reader(open(self.full_path, "r")))
+        return sum(1 for _ in open_file())
+
+    def open_file():
+        return open(self.full_path, "r")
+        # if ubuntu():
+        #     return open(self.full_path, "rU", "utf-16")
+        # else:
+        #     return open(self.full_path, "r")
 
     def close(self):
         self.file.close()

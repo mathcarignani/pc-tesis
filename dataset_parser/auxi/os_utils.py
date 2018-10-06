@@ -16,6 +16,14 @@ def git_path():
 def cpp_project_path():
     return git_path() + "/cpp_project"
 
+def cpp_executable_path():
+    if ios():
+        return cpp_project_path() + "/cmake-build-debug/cpp_project"
+    elif ubuntu():
+        return cpp_project_path() + "/cmake-build-debug-ubuntu/cpp_project"
+    else:
+        raise(StandardError, "Invalid platform")
+
 def project_path():
     if ios():
         return "/Users/pablocerve/Documents/FING/Proyecto"
