@@ -26,7 +26,7 @@ void CoderPWLH::codeColumnBefore(){
 }
 
 void CoderPWLH::codeColumnWhile(std::string csv_value){
-    delta_sum += time_delta_vector[row_index];
+    delta_sum += time_delta_vector[row_index]; // >= 0
 #if MASK_MODE
     if (Constants::isNoData(csv_value)) { return; } // skip no_data
 #endif

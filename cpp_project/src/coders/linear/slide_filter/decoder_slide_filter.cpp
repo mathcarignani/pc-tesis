@@ -19,12 +19,13 @@ std::vector<std::string> DecoderSlideFilter::decodeDataColumn(){
     decodeEntries();
 //    std::cout << "m_pCompressData->size() = " << m_pCompressData->size() << std::endl;
 
-    decompress();
+    std::vector<int> x_coords_vector = createXCoordsVector();
+    decompress(x_coords_vector);
 
-//    std::cout << "m_pApproxData->size() = " << m_pApproxData->size() << std::endl;
-//    std::cout << "data_rows_count = " << data_rows_count << std::endl;
+    std::cout << "m_pApproxData->size() = " << m_pApproxData->size() << std::endl;
+    std::cout << "data_rows_count = " << data_rows_count << std::endl;
 
-    assert(m_pApproxData->size() == data_rows_count);
+    assert(m_pApproxData->size() == column->unprocessed_data_rows);
 
     int pos = 0;
     mask->reset();
@@ -88,7 +89,7 @@ SlideFiltersEntry* DecoderSlideFilter::getAt(std::vector<SlideFiltersEntry*> & m
 }
 
 // Calculate approximation data from model parameters
-void DecoderSlideFilter::decompress()
+void DecoderSlideFilter::decompress(std::vector<int> x_coords_vector)
 {
     m_pApproxData = new CDataStream();
     int size = m_pCompressData->size();
@@ -99,8 +100,14 @@ void DecoderSlideFilter::decompress()
     Line* l = NULL;
     DataItem inputEntry;
 
-    for(int i = 0; i < lastTimeStamp; i++)
+//    for(int i = 0; i < lastTimeStamp; i++)
+    int x_coords_vector_index = 0;
+    int i = 0;
+    while(i < lastTimeStamp)
     {
+        std::cout << "i = " << i << std::endl;
+        std::cout << "position = " << position << std::endl;
+
         //Read compressed data
         if (i >= timeStamp)
         {
@@ -108,6 +115,7 @@ void DecoderSlideFilter::decompress()
 
             if (slEntry1.connToFollow)//Connected
             {
+                std::cout << "Connected" << std::endl;
                 position++;
                 slEntry2 = m_pCompressData->getAt(position);
 
@@ -124,6 +132,7 @@ void DecoderSlideFilter::decompress()
             }
             else //Disconnected
             {
+                std::cout << "Disconnected" << std::endl;
                 inputEntry.timestamp = slEntry1.timestamp;
                 inputEntry.value = slEntry1.value;
                 m_pApproxData->add(inputEntry);
@@ -139,12 +148,20 @@ void DecoderSlideFilter::decompress()
             Point p1(slEntry1.value, slEntry1.timestamp);
             Point p2(slEntry2.value, slEntry2.timestamp);
             l = new Line(&p1, &p2);
+            std::cout << "New line" << std::endl;
+            std::cout << "p1=(" << slEntry1.timestamp << ", " << slEntry1.value << ")" << std::endl;
+            std::cout << "p2=(" << slEntry2.timestamp << ", " << slEntry2.value << ")" << std::endl;
         }
 
+        i++;
+        if (x_coords_vector[x_coords_vector_index] > i) { continue; }
+
+        x_coords_vector_index++;
         //Get point on line at each corresponding time
-        inputEntry.timestamp = i + 1;
+        inputEntry.timestamp = i;
         inputEntry.value = l->getValue(inputEntry.timestamp);
         m_pApproxData->add(inputEntry);
+        std::cout << "add(inputEntry) = (" << inputEntry.timestamp << ", " << inputEntry.value << ")" << std::endl;
     }
 
     delete l;

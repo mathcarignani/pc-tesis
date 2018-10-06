@@ -24,6 +24,7 @@ private:
 protected:
     int column_index = 0;
     int row_index = 0;
+    int delta_sum;
     std::vector<int> time_delta_vector;
 
 #if MASK_MODE

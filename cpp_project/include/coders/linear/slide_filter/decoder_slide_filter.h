@@ -24,7 +24,7 @@ private:
     void decodeEntries();
     SlideFiltersEntry* decodeEntry();
     SlideFiltersEntry* getAt(std::vector<SlideFiltersEntry*> & m_pCompressData, int position);
-    void decompress();
+    void decompress(std::vector<int> x_coords_vector);
 
 public:
     using DecoderCols::DecoderCols;

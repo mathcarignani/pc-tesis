@@ -17,8 +17,8 @@ const std::string TestsCoders::TEST_OUTPUT_PATH = OSUtils::CPP_PROJECT_PATH + "/
 void TestsCoders::testSideFilderCoder() {
     // Path file_path = Path(DATASETS_PATH + "/[1]irkis", "vwc_1202.dat.csv");
     Path file_path = Path(TEST_OUTPUT_PATH + "/sf", "vwc_1202.dat_CLEAN.csv");
-    std::vector<int> lossless{0,  0, 0, 0, 0, 0,  0, 0, 0, 0, 0};
-    std::vector<int>    lossy{0, 12, 3, 5, 2, 4, 10, 6, 4, 3, 2};
+    std::vector<int> lossless{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+    std::vector<int>    lossy{0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5};
 
     std::string coder_name = "CoderSF";
     Path output_code_path = TestsCodersUtils::codedFilePath(TEST_OUTPUT_PATH, file_path, coder_name);
@@ -30,6 +30,7 @@ void TestsCoders::testSideFilderCoder() {
     Scripts::codeSF(file_path, output_code_path, 5, lossless);
     Scripts::decodeSF(output_code_path, output_decode_path, 5);
     TestsCodersUtils::compareFiles(file_path, output_decode_path);
+    std::cout << "SAME FILE!!" << std::endl;
 }
 
 TestsCoders::TestsCoders(){
