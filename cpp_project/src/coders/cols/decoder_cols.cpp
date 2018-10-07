@@ -79,6 +79,7 @@ void DecoderCols::transposeMatrix(std::vector<std::vector<std::string>> columns,
     }
 }
 
+#if MASK_MODE
 std::vector<int> DecoderCols::createXCoordsVector(){
     mask->reset();
     std::vector<int> result;
@@ -90,3 +91,4 @@ std::vector<int> DecoderCols::createXCoordsVector(){
     }
     return result;
 }
+#endif // MASK_MODE

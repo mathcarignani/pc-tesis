@@ -32,9 +32,8 @@ protected:
     int total_no_data;
     bool isNoData();
     void reset();
-#endif
-
     std::vector<int> createXCoordsVector();
+#endif
 
 public:
     using DecoderBase::DecoderBase;

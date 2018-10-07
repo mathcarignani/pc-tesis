@@ -8,9 +8,6 @@
 #include "os_utils.h"
 #include "tests_coders_utils.h"
 
-#include "csv_reader.h"
-#include "csv_writer.h"
-
 // Set to 1 to set up the tests, then set to 0
 #define RECORD 0
 
@@ -18,37 +15,18 @@ const std::string TestsCoders::DATASETS_PATH = OSUtils::DATASETS_CSV_PATH;
 const std::string TestsCoders::TEST_OUTPUT_PATH = OSUtils::CPP_PROJECT_PATH + "/test_files";
 
 void TestsCoders::testSideFilderCoder() {
-    // open file
-    Path original = Path(DATASETS_PATH + "/[1]irkis", "vwc_1202.dat.csv");
-    Path copy = Path("/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/test_files" , "copy.csv");
+    // Path file_path = Path(DATASETS_PATH + "/[1]irkis", "vwc_1202.dat.csv");
+    Path file_path = Path(TEST_OUTPUT_PATH + "/sf", "vwc_1202.dat_CLEAN.csv");
+    std::vector<int> lossless{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+    std::vector<int>    lossy{0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5};
 
-    // copy file
-    CSVReader* reader = new CSVReader(original);
-    CSVWriter* writer = new CSVWriter(copy);
+    std::string coder_name = "CoderSF";
+    Path output_code_path = TestsCodersUtils::codedFilePath(TEST_OUTPUT_PATH, file_path, coder_name);
+    Path output_decode_path = TestsCodersUtils::decodedFilePath(TEST_OUTPUT_PATH, file_path, coder_name);
 
-    while (reader->continue_reading) {
-        std::vector<std::string> row = reader->readLineCSV();
-        writer->writeRowDecoder(row);
-    }
-    reader->close();
-    writer->close();
+    std::cout << output_code_path.full_path << std::endl;
+    std::cout << output_decode_path.full_path << std::endl;
 
-    // compare file
-    TestsCodersUtils::compareFiles(original, copy);
-
-
-//    // Path file_path = Path(DATASETS_PATH + "/[1]irkis", "vwc_1202.dat.csv");
-//    Path file_path = Path(TEST_OUTPUT_PATH + "/sf", "vwc_1202.dat_CLEAN.csv");
-//    std::vector<int> lossless{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-//    std::vector<int>    lossy{0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5};
-//
-//    std::string coder_name = "CoderSF";
-//    Path output_code_path = TestsCodersUtils::codedFilePath(TEST_OUTPUT_PATH, file_path, coder_name);
-//    Path output_decode_path = TestsCodersUtils::decodedFilePath(TEST_OUTPUT_PATH, file_path, coder_name);
-//
-//    std::cout << output_code_path.full_path << std::endl;
-//    std::cout << output_decode_path.full_path << std::endl;
-//
 //    Scripts::codeSF(file_path, output_code_path, 5, lossless);
 //    Scripts::decodeSF(output_code_path, output_decode_path, 5);
 //    TestsCodersUtils::compareFiles(file_path, output_decode_path);
