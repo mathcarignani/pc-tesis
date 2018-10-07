@@ -67,6 +67,7 @@
 					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/slide_filter"/>
 					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/fr"/>
 					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/dataset"/>
+					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/tests"/>
 					<Add directory="/usr/include/c++/5"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
 					<Add directory="/usr/include/c++/5/backward"/>
@@ -113,6 +114,7 @@
 					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/slide_filter"/>
 					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/fr"/>
 					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/dataset"/>
+					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/tests"/>
 					<Add directory="/usr/include/c++/5"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
 					<Add directory="/usr/include/c++/5/backward"/>
@@ -140,6 +142,12 @@
 			<Option target="cpp_project"/>
 		</Unit>
 		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/DataManagementLayer/Data/DataItem.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/DataManagementLayer/Data/DataStream.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/DataManagementLayer/Data/DataStream.h">
 			<Option target="cpp_project"/>
 		</Unit>
 		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/DataStructures/DynArray/DynArray.cpp">
@@ -298,9 +306,6 @@
 		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/file_utils/text/text_utils.h">
 			<Option target="cpp_project"/>
 		</Unit>
-		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/math_utils.h">
-			<Option target="cpp_project"/>
-		</Unit>
 		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/os_utils.h">
 			<Option target="cpp_project"/>
 		</Unit>
@@ -310,19 +315,22 @@
 		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/string_utils.h">
 			<Option target="cpp_project"/>
 		</Unit>
-		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/tests.h">
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/tests/tests.h">
 			<Option target="cpp_project"/>
 		</Unit>
-		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/tests_coder.h">
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/tests/tests_coders.h">
 			<Option target="cpp_project"/>
 		</Unit>
-		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/tests_math_utils.h">
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/tests/tests_coders_utils.h">
 			<Option target="cpp_project"/>
 		</Unit>
-		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/tests_string_utils.h">
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/tests/tests_math_utils.h">
 			<Option target="cpp_project"/>
 		</Unit>
-		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/tests_vector_utils.h">
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/tests/tests_string_utils.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/tests/tests_vector_utils.h">
 			<Option target="cpp_project"/>
 		</Unit>
 		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/vector_utils.h">
@@ -463,19 +471,22 @@
 		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/string_utils.cpp">
 			<Option target="cpp_project"/>
 		</Unit>
-		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/tests.cpp">
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/tests/tests.cpp">
 			<Option target="cpp_project"/>
 		</Unit>
-		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/tests_coder.cpp">
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/tests/tests_coders.cpp">
 			<Option target="cpp_project"/>
 		</Unit>
-		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/tests_math_utils.cpp">
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/tests/tests_coders_utils.cpp">
 			<Option target="cpp_project"/>
 		</Unit>
-		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/tests_string_utils.cpp">
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/tests/tests_math_utils.cpp">
 			<Option target="cpp_project"/>
 		</Unit>
-		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/tests_vector_utils.cpp">
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/tests/tests_string_utils.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/tests/tests_vector_utils.cpp">
 			<Option target="cpp_project"/>
 		</Unit>
 		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/CMakeLists.txt">

@@ -10,7 +10,7 @@ class CSVReader:
     def __init__(self, path, filename, progress=False, delimiter=','):
         self.path, self.filename = path, filename
         self.full_path = full_path(path, filename)
-        self.file = open_file()
+        self.file = self.open_file()
         self.csv_reader = csv.reader(self.file, delimiter=delimiter)
         self.total_lines = self.total_lines_()
         self.continue_reading = True
@@ -46,9 +46,10 @@ class CSVReader:
         return previous_row
 
     def total_lines_(self):
-        return sum(1 for _ in open_file())
+        print self.full_path
+        return sum(1 for _ in csv.reader(self.open_file()))
 
-    def open_file():
+    def open_file(self):
         return open(self.full_path, "r")
         # if ubuntu():
         #     return open(self.full_path, "rU", "utf-16")

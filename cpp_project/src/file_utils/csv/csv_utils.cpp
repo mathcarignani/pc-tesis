@@ -33,7 +33,8 @@ void CSVUtils::CopyCSV(Path input_path, Path output_path){
 void CSVUtils::CompareCSVLossless(Path path1, Path path2){
     CSVReader* csv_reader1 = new CSVReader(path1);
     CSVReader* csv_reader2 = new CSVReader(path2);
-//    assert(csv_reader1.total_lines == csv_reader2.total_lines);
+    std::cout << "File 1 = " << path1.full_path << std::endl;
+    std::cout << "File 2 = " << path2.full_path << std::endl;
     while (csv_reader1->continue_reading) {
         std::vector<std::string> row1 = csv_reader1->readLineCSV();
         std::vector<std::string> row2 = csv_reader2->readLineCSV();
@@ -41,6 +42,19 @@ void CSVUtils::CompareCSVLossless(Path path1, Path path2){
             std::cout << "current_line " << csv_reader1->current_line_count << std::endl;
             std::cout << "line1 = " << StringUtils::join(row1, ".") << std::endl;
             std::cout << "line2 = " << StringUtils::join(row2, ".") << std::endl;
+            std::cout << "line1.size() = " << row1.size() << std::endl;
+            std::cout << "line2.size() = " << row2.size() << std::endl;
+            assert(row1.size() == row2.size());
+            for(int i=0; i < row1.size(); i++){
+                if (row1.at(i) == row2.at(i)) { continue; }
+                std::cout << "i = " << i << std::endl;
+                std::cout << "row1.at(i).size() = " << row1.at(i).size() << std::endl;
+                std::cout << "row1.at(i) = " << row1.at(i) << std::endl;
+                std::cout << StringUtils::charToInt(row1.at(i).at(row1.at(i).size() - 1)) << std::endl;
+                std::cout << "row2.at(i).size() = " << row2.at(i).size() << std::endl;
+                std::cout << "row2.at(i) = " << row2.at(i) << std::endl;
+                std::cout << StringUtils::charToInt(row2.at(i).at(row2.at(i).size() - 1)) << std::endl;
+            }
             break;
         }
     }

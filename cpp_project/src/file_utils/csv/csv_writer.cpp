@@ -23,16 +23,15 @@ void CSVWriter::writeRow(std::vector<std::string> row){
     current_line_count++;
     std::string line = StringUtils::join(row, ",");
     file << line;
-    file << '\n';
+    file << '\n'; // LF
 }
 
 void CSVWriter::writeRowDecoder(std::vector<std::string> row){
     current_line_count++;
     std::string line = StringUtils::join(row, ",");
-    file << line; // << std::endl;
-    unsigned char b = 0xD;
-    file << b;
-    file << '\n';
+    file << line;
+    file << (unsigned char) 0xD; // CR
+    file << '\n'; // LF
 }
 
 void CSVWriter::close(){
