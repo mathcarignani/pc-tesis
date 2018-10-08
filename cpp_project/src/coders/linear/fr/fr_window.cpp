@@ -70,6 +70,11 @@ bool FRWindow::violatedConstraint(int first_index, int last_index){
     first_point = CAPoint(first_item);
     last_point = CAPoint(last_item);
 
+    if (first_point.x == last_point.x){
+        // the vertical line equation is x = first_point.x
+        return (first_index + 1 != last_index);
+    }
+
     CALine line = CALine(first_point, last_point);
     for(int i=first_index+1; i < last_index; i++){
         CAPoint point = CAPoint(data[i]);

@@ -6,6 +6,7 @@
 #include <iostream>
 #include "DataItem.h"
 #include "math_utils.h"
+#include "string_utils.h"
 
 class CAPoint {
 
@@ -36,9 +37,9 @@ public:
         return point.x == x && point.y == y;
     }
 
-//    void print(){
-//        std::cout << "(x,y)=(" << StringUtils::intToString(x) << "," << StringUtils::intToString(y) << ")";
-//    }
+    void print(){
+        std::cout << "(x,y)=(" << StringUtils::intToString(x) << "," << StringUtils::intToString(y) << ")" << std::endl;
+    }
 };
 
 class CALine {

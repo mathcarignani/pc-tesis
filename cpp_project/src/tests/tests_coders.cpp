@@ -108,20 +108,12 @@ void TestsCoders::runAll(){
             testCoderAPCA();
             testCoderPWLHInt();
             testCoderPWLH();
+            // TODO: fix CoderCA
+            // testCoderCA();
 
         #if MASK_MODE
-            // TODO: fix CoderCA
-            // testCoderCA();
-            // TODO: fix the FR coder so that it works for deltas equal to 0
-            if (!StringUtils::find(file_path.file_filename, "noaa_spc-hail.csv")) {
-                testCoderFR();
-            }
+            testCoderFR();
             // TODO: fix coder SF
-            // testCoderSF();
-        #else
-            // TODO: fix CoderCA
-            // testCoderCA();
-            // testCoderFR();
             // testCoderSF();
         #endif
         }

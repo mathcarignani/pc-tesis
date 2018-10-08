@@ -62,10 +62,12 @@ void DecoderFR::decodeWindow(int window_size){
             if (data_item.timestamp != window_size - 1) { // not the last data_item
                 DataItem new_data_item = data_items[data_item_index + 1];
                 if (new_data_item.timestamp != data_item.timestamp + 1) {
+                    int first_point_x_coord = x_coords[data_item.timestamp];
+                    int last_point_x_coord = x_coords[new_data_item.timestamp];
                     // we need to create a line because we will need to do a projection
                     // since there are points in between which were not decoded in data_items
-                    first_point = CAPoint(x_coords[data_item.timestamp], data_item.value);
-                    last_point = CAPoint(x_coords[new_data_item.timestamp], new_data_item.value);
+                    first_point = CAPoint(first_point_x_coord, data_item.value);
+                    last_point = CAPoint(last_point_x_coord, new_data_item.value);
                     line = CALine(first_point, last_point);
                 }
                 next_timestamp = new_data_item.timestamp;
