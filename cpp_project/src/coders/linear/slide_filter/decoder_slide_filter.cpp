@@ -19,7 +19,7 @@ std::vector<std::string> DecoderSlideFilter::decodeDataColumn(){
     decodeEntries();
 //    std::cout << "m_pCompressData->size() = " << m_pCompressData->size() << std::endl;
 
-    std::vector<int> x_coords_vector = createXCoordsVector();
+    std::vector<int> x_coords_vector = CoderUtils::createXCoordsVectorMaskMode(mask, time_delta_vector, 1);
     decompress(x_coords_vector);
 
     std::cout << "m_pApproxData->size() = " << m_pApproxData->size() << std::endl;

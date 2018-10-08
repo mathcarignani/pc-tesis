@@ -32,7 +32,6 @@ protected:
     int total_no_data;
     bool isNoData();
     void reset();
-    std::vector<int> createXCoordsVector();
 #endif
 
 public:

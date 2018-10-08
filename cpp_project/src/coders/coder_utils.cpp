@@ -31,3 +31,21 @@ std::vector<int> CoderUtils::createXCoordsVector(Mask* mask, std::vector<int> ti
     }
     return result;
 }
+
+#if MASK_MODE
+//
+// Returns a vector with the time deltas between no "nodata" values.
+// If there are "nodata" values in the middle, their time delta is still considered.
+//
+std::vector<int> CoderUtils::createXCoordsVectorMaskMode(Mask* mask, std::vector<int> time_delta_vector, int init_delta_sum){
+    mask->reset();
+    std::vector<int> result;
+    int delta_sum = init_delta_sum;
+    for(int i=0; i < mask->total_data + mask->total_no_data; i++){
+        delta_sum += time_delta_vector.at(i);
+        if (mask->isNoData()) { continue; } // ignore these values
+        result.push_back(delta_sum);
+    }
+    return result;
+}
+#endif // MASK_MODE

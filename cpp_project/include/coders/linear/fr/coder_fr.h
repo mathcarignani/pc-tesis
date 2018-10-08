@@ -20,6 +20,7 @@ private:
     void codeColumnWhile(std::string csv_value) override;
     void codeColumnAfter() override;
 
+    FRWindow* createWindow();
     void codeWindow();
     void codeItem(DataItem item, int index);
 

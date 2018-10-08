@@ -14,26 +14,30 @@ void CoderFR::setCoderParams(int max_window_size_, std::vector<int> error_thresh
 }
 
 void CoderFR::codeColumnBefore(){
-    int error_threshold = error_thresholds_vector.at(column_index);
-    window = new FRWindow(max_window_size, error_threshold);
+    delta_sum = 0;
+    window = createWindow();
 }
 
 void CoderFR::codeColumnWhile(std::string csv_value) {
-    // TODO: consider x_delta
+    delta_sum += time_delta_vector[row_index]; // >= 0
     if (Constants::isNoData(csv_value)) { return; } // skip no_data
-
-    int x_delta = time_delta_vector[row_index]; // >= 0
-    window->addDataItem(x_delta, csv_value);
+    window->addDataItem(delta_sum, csv_value);
     if (window->isFull()){
         codeWindow();
         window->clear();
     }
+    delta_sum = 0;
 }
 
 void CoderFR::codeColumnAfter() {
     if (window->isEmpty()) { return; }
     assert(!window->isFull());
     codeWindow();
+}
+
+FRWindow* CoderFR::createWindow(){
+    int error_threshold = error_thresholds_vector.at(column_index);
+    return new FRWindow(max_window_size, error_threshold);
 }
 
 void CoderFR::codeWindow(){
