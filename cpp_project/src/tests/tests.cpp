@@ -14,6 +14,7 @@
 #include "tests_coders.h"
 #include "tests_math_utils.h"
 #include "tests_vector_utils.h"
+#include "tests_line.h"
 
 void Tests::runAll() {
     testDatasetUtils();
@@ -22,6 +23,7 @@ void Tests::runAll() {
     TestsMathUtils::runAll();
     TestsStringUtils::runAll();
     TestsVectorUtils::runAll();
+    TestsLine::runAll();
     TestsCoders().runAll();
 }
 

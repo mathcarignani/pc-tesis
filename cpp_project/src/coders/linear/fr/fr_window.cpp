@@ -3,7 +3,7 @@
 #include "string_utils.h"
 #include "assert.h"
 #include <iostream>
-#include "ca_line.h"
+#include "Line.h"
 #include "math_utils.h"
 #include "vector_utils.h"
 
@@ -20,10 +20,8 @@ void FRWindow::clear(){
 
 void FRWindow::addDataItem(int timestamp, std::string value){
     assert(length <= max_window_size);
-//    std::cout << "value = " << value << std::endl;
     int new_timestamp = (length == 0) ? 0 : data[length-1].timestamp + timestamp;
     int value_int = StringUtils::stringToInt(value);
-//    std::cout << "(length, value_int, new_timestamp) = (" << length << ", " << value_int << ", " << new_timestamp << ")" << std::endl;
     data[length] = DataItem(value_int, new_timestamp);
     length++;
 }
@@ -66,19 +64,21 @@ bool FRWindow::violatedConstraint(int first_index, int last_index){
     first_item = data[first_index];
     last_item = data[last_index];
 
-    CAPoint first_point, last_point;
-    first_point = CAPoint(first_item);
-    last_point = CAPoint(last_item);
+    Point* first_point = new Point(first_item);
+    Point* last_point = new Point(last_item);
 
-    if (first_point.x == last_point.x){
+    if (first_point->x == last_point->x){
         // the vertical line equation is x = first_point.x
         return (first_index + 1 != last_index);
     }
 
-    CALine line = CALine(first_point, last_point);
+    Line* line = new Line(first_point, last_point);
+    Point* point;
     for(int i=first_index+1; i < last_index; i++){
-        CAPoint point = CAPoint(data[i]);
-        double dis = line.distance(point);
+        point = new Point(data[i]);
+        // TODO: create a Line instance method that runs the following two lines of code
+        double projection = line->getValue(point->x);
+        double dis = MathUtils::doubleAbsolute(point->y - projection);
         if (dis > error_threshold){
             return true;
         }

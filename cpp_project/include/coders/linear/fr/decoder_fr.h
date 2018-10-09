@@ -16,7 +16,7 @@ private:
     int max_window_size_bit_length;
 
     std::vector<std::string> decodeDataColumn() override;
-    void decodeWindow(int window_size);
+    void decodeWindow(int window_size, std::vector<int> x_coords);
     std::vector<DataItem> readDataItems(int window_size);
 
 public:

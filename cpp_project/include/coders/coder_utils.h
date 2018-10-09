@@ -27,6 +27,7 @@ public:
     int unprocessed_rows;
     int unprocessed_data_rows;
     int unprocessed_no_data_rows;
+    int processed_data_rows;
 
 #if MASK_MODE
     Column(int unprocessed_rows_, int total_data, int total_no_data){
@@ -35,11 +36,13 @@ public:
         unprocessed_data_rows = total_data;
         unprocessed_no_data_rows = total_no_data;
         assert(unprocessed_rows = unprocessed_data_rows + unprocessed_no_data_rows);
+        processed_data_rows = 0;
     }
 
     void addData(std::string value){
         addValue(value);
         unprocessed_data_rows--;
+        processed_data_rows++;
     }
 
     void addNoData(){

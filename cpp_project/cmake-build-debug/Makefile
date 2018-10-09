@@ -1554,6 +1554,33 @@ src/tests/tests_coders_utils.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests_coders_utils.cpp.s
 .PHONY : src/tests/tests_coders_utils.cpp.s
 
+src/tests/tests_line.o: src/tests/tests_line.cpp.o
+
+.PHONY : src/tests/tests_line.o
+
+# target to build an object file
+src/tests/tests_line.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests_line.cpp.o
+.PHONY : src/tests/tests_line.cpp.o
+
+src/tests/tests_line.i: src/tests/tests_line.cpp.i
+
+.PHONY : src/tests/tests_line.i
+
+# target to preprocess a source file
+src/tests/tests_line.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests_line.cpp.i
+.PHONY : src/tests/tests_line.cpp.i
+
+src/tests/tests_line.s: src/tests/tests_line.cpp.s
+
+.PHONY : src/tests/tests_line.s
+
+# target to generate assembly for a file
+src/tests/tests_line.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests_line.cpp.s
+.PHONY : src/tests/tests_line.cpp.s
+
 src/tests/tests_math_utils.o: src/tests/tests_math_utils.cpp.o
 
 .PHONY : src/tests/tests_math_utils.o
@@ -1803,6 +1830,9 @@ help:
 	@echo "... src/tests/tests_coders_utils.o"
 	@echo "... src/tests/tests_coders_utils.i"
 	@echo "... src/tests/tests_coders_utils.s"
+	@echo "... src/tests/tests_line.o"
+	@echo "... src/tests/tests_line.i"
+	@echo "... src/tests/tests_line.s"
 	@echo "... src/tests/tests_math_utils.o"
 	@echo "... src/tests/tests_math_utils.i"
 	@echo "... src/tests/tests_math_utils.s"
