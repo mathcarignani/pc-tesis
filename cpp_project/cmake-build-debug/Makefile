@@ -636,6 +636,60 @@ src/coders/constants.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/constants.cpp.s
 .PHONY : src/coders/constants.cpp.s
 
+src/coders/correlation/gamps/coder_gamps.o: src/coders/correlation/gamps/coder_gamps.cpp.o
+
+.PHONY : src/coders/correlation/gamps/coder_gamps.o
+
+# target to build an object file
+src/coders/correlation/gamps/coder_gamps.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/correlation/gamps/coder_gamps.cpp.o
+.PHONY : src/coders/correlation/gamps/coder_gamps.cpp.o
+
+src/coders/correlation/gamps/coder_gamps.i: src/coders/correlation/gamps/coder_gamps.cpp.i
+
+.PHONY : src/coders/correlation/gamps/coder_gamps.i
+
+# target to preprocess a source file
+src/coders/correlation/gamps/coder_gamps.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/correlation/gamps/coder_gamps.cpp.i
+.PHONY : src/coders/correlation/gamps/coder_gamps.cpp.i
+
+src/coders/correlation/gamps/coder_gamps.s: src/coders/correlation/gamps/coder_gamps.cpp.s
+
+.PHONY : src/coders/correlation/gamps/coder_gamps.s
+
+# target to generate assembly for a file
+src/coders/correlation/gamps/coder_gamps.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/correlation/gamps/coder_gamps.cpp.s
+.PHONY : src/coders/correlation/gamps/coder_gamps.cpp.s
+
+src/coders/correlation/gamps/decoder_gamps.o: src/coders/correlation/gamps/decoder_gamps.cpp.o
+
+.PHONY : src/coders/correlation/gamps/decoder_gamps.o
+
+# target to build an object file
+src/coders/correlation/gamps/decoder_gamps.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/correlation/gamps/decoder_gamps.cpp.o
+.PHONY : src/coders/correlation/gamps/decoder_gamps.cpp.o
+
+src/coders/correlation/gamps/decoder_gamps.i: src/coders/correlation/gamps/decoder_gamps.cpp.i
+
+.PHONY : src/coders/correlation/gamps/decoder_gamps.i
+
+# target to preprocess a source file
+src/coders/correlation/gamps/decoder_gamps.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/correlation/gamps/decoder_gamps.cpp.i
+.PHONY : src/coders/correlation/gamps/decoder_gamps.cpp.i
+
+src/coders/correlation/gamps/decoder_gamps.s: src/coders/correlation/gamps/decoder_gamps.cpp.s
+
+.PHONY : src/coders/correlation/gamps/decoder_gamps.s
+
+# target to generate assembly for a file
+src/coders/correlation/gamps/decoder_gamps.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/correlation/gamps/decoder_gamps.cpp.s
+.PHONY : src/coders/correlation/gamps/decoder_gamps.cpp.s
+
 src/coders/decoder_base.o: src/coders/decoder_base.cpp.o
 
 .PHONY : src/coders/decoder_base.o
@@ -1728,6 +1782,12 @@ help:
 	@echo "... src/coders/constants.o"
 	@echo "... src/coders/constants.i"
 	@echo "... src/coders/constants.s"
+	@echo "... src/coders/correlation/gamps/coder_gamps.o"
+	@echo "... src/coders/correlation/gamps/coder_gamps.i"
+	@echo "... src/coders/correlation/gamps/coder_gamps.s"
+	@echo "... src/coders/correlation/gamps/decoder_gamps.o"
+	@echo "... src/coders/correlation/gamps/decoder_gamps.i"
+	@echo "... src/coders/correlation/gamps/decoder_gamps.s"
 	@echo "... src/coders/decoder_base.o"
 	@echo "... src/coders/decoder_base.i"
 	@echo "... src/coders/decoder_base.s"

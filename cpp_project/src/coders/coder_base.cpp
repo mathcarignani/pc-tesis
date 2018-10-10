@@ -60,7 +60,6 @@ void CoderBase::codeValueRaw(std::string x){
 }
 
 void CoderBase::codeFloat(float x){
-//    std::cout << "codeFloat " << x << std::endl;
     dataset->addBits(sizeof(float)*8);
     output_file->pushFloat(x);
 }
