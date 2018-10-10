@@ -12,8 +12,8 @@ std::vector<std::string> DecoderAPCA::decodeDataColumn(){
     row_index = 0;
     int unprocessed_rows = data_rows_count;
 
-#if MASK_MODE
-    assert(total_no_data + total_data == data_rows_count);
+#if MASK_MODE && CHECKS
+    assert(mask->total_no_data + mask->total_data == data_rows_count);
 #endif
 
     while (unprocessed_rows > 0) {
@@ -34,6 +34,6 @@ void DecoderAPCA::decodeWindow(std::vector<std::string> & column){
     int window_size = input_file->getInt(max_window_size_bit_length);
     DecoderPCA::decodeConstantWindow(column, window_size);
 #if MASK_MODE
-    total_data -= window_size;
+    mask->total_data -= window_size;
 #endif
 }

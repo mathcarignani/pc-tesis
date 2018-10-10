@@ -14,7 +14,7 @@ void DecoderSlideFilter::setCoderParams(int max_window_size_){
 
 
 std::vector<std::string> DecoderSlideFilter::decodeDataColumn(){
-    column = new Column(data_rows_count, total_data, total_no_data);
+    column = new Column(data_rows_count, mask->total_data, mask->total_no_data);
     m_pCompressData = new DynArray<SlideFiltersEntry>();
     decodeEntries();
 //    std::cout << "m_pCompressData->size() = " << m_pCompressData->size() << std::endl;

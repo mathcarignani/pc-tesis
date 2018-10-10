@@ -28,8 +28,6 @@ protected:
 
 #if MASK_MODE
     Mask* mask;
-    int total_data;
-    int total_no_data;
     bool isNoData();
 #endif
 

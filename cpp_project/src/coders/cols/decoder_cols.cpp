@@ -46,8 +46,6 @@ std::vector<std::string> DecoderCols::decodeTimeDeltaColumn(){
 void DecoderCols::decodeDataColumnNoDataMask() {
     mask = new Mask();
     MaskDecoder::decode(this, mask, data_rows_count);
-    total_data = mask->total_data;
-    total_no_data = mask->total_no_data;
     mask->reset();
 }
 

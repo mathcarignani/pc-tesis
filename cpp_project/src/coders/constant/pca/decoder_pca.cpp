@@ -11,8 +11,8 @@ std::vector<std::string> DecoderPCA::decodeDataColumn(){
     row_index = 0;
     int unprocessed_rows = data_rows_count;
 
-#if MASK_MODE
-    assert(total_no_data + total_data == data_rows_count);
+#if MASK_MODE && CHECKS
+    assert(mask->total_no_data + mask->total_data == data_rows_count);
 #endif
 
     while (unprocessed_rows > 0) {
@@ -23,7 +23,7 @@ std::vector<std::string> DecoderPCA::decodeDataColumn(){
             continue;
         }
         int w_size = fixed_window_size;
-        if (total_data < w_size) { w_size = total_data; }
+        if (mask->total_data < w_size) { w_size = mask->total_data; }
         decodeWindow(column, w_size);
     #else
         int w_size = fixed_window_size;
@@ -40,7 +40,7 @@ void DecoderPCA::decodeWindow(std::vector<std::string> & column, int window_size
     if (fi){ decodeNonConstantWindow(column, window_size); }
     else {   decodeConstantWindow(column, window_size); }
 #if MASK_MODE
-    total_data -= window_size;
+    mask->total_data -= window_size;
 #endif
 }
 

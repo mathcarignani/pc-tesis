@@ -6,8 +6,8 @@ std::vector<std::string> DecoderBasic::decodeDataColumn(){
     std::vector<std::string> column;
     row_index = 0;
 
-#if MASK_MODE
-    assert(total_no_data + total_data == data_rows_count);
+#if MASK_MODE && CHECKS
+    assert(mask->total_no_data + mask->total_data == data_rows_count);
 #endif
 
     while (row_index < data_rows_count) {
