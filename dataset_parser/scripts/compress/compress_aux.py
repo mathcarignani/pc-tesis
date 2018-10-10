@@ -46,27 +46,27 @@ CODERS_ARRAY = [
         'decoder': DecoderBasic,
         'o_folder': 'basic'
     },
-    # {
-    #     'name': 'CoderPCA',
-    #     'coder': CoderPCA,
-    #     'decoder': DecoderPCA,
-    #     'o_folder': 'pca',
-    #     'params': {'fixed_window_size': WINDOW_SIZES}
-    # },
-    # {
-    #     'name': 'CoderAPCA',
-    #     'coder': CoderAPCA,
-    #     'decoder': DecoderAPCA,
-    #     'o_folder': 'apca',
-    #     'params': {'max_window_size': WINDOW_SIZES}
-    # },
-    # {
-    #     'name': 'CoderCA',
-    #     'coder': CoderCA,
-    #     'decoder': DecoderCA,
-    #     'o_folder': 'ca',
-    #     'params': {'max_window_size': WINDOW_SIZES}
-    # },
+    {
+        'name': 'CoderPCA',
+        'coder': CoderPCA,
+        'decoder': DecoderPCA,
+        'o_folder': 'pca',
+        'params': {'fixed_window_size': WINDOW_SIZES}
+    },
+    {
+        'name': 'CoderAPCA',
+        'coder': CoderAPCA,
+        'decoder': DecoderAPCA,
+        'o_folder': 'apca',
+        'params': {'max_window_size': WINDOW_SIZES}
+    },
+    {
+        'name': 'CoderCA',
+        'coder': CoderCA,
+        'decoder': DecoderCA,
+        'o_folder': 'ca',
+        'params': {'max_window_size': WINDOW_SIZES}
+    },
     {
         'name': 'CoderPWLH',
         'o_folder': 'pwlh',
@@ -76,10 +76,10 @@ CODERS_ARRAY = [
         'name': 'CoderPWLHint',
         'o_folder': 'pwlh-int',
         'params': {'max_window_size': WINDOW_SIZES}
+    },
+    {
+        'name': 'CoderFR',
+        'o_folder': 'fr',
+        'params': {'max_window_size': WINDOW_SIZES}
     }
-    # {
-    #     'name': 'CoderFR',
-    #     'o_folder': 'fr',
-    #     'params': {'max_window_size': WINDOW_SIZES}
-    # }
 ]

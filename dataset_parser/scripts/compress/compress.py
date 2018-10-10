@@ -23,7 +23,9 @@ def compress_decompress_compare(args):
     print "Comparing original and decompressed files..."
     csv_compare = CSVCompare(args.input_path, args.input_filename, args.output_path, args.deco_filename)
     same_file = csv_compare.compare(args.coder_params.get('error_threshold'), False)
-    assert same_file
+    if not same_file:
+        print "ERROR / ERROR / ERROR"
+    # assert same_file
 
     return [coder_info, columns_bits, column_mask_bits, same_file]
 

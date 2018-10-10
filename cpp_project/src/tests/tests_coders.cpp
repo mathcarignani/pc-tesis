@@ -9,7 +9,7 @@
 #include "tests_coders_utils.h"
 
 // Set to 1 to set up the tests, then set to 0
-#define RECORD 1
+#define RECORD 0
 
 const std::string TestsCoders::DATASETS_PATH = OSUtils::DATASETS_CSV_PATH;
 const std::string TestsCoders::TEST_OUTPUT_PATH = OSUtils::CPP_PROJECT_PATH + "/test_files";
