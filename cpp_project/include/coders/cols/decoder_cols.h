@@ -31,7 +31,6 @@ protected:
     int total_data;
     int total_no_data;
     bool isNoData();
-    void reset();
 #endif
 
 public:

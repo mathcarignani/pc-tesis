@@ -15,19 +15,12 @@ void CSVReader::constructor(std::string path, std::string filename){
     continue_reading = total_lines > 0;
 }
 
-CSVReader::CSVReader(){}
-
-CSVReader::CSVReader(std::string path, std::string filename){
-    constructor(path, filename);
-}
-
 CSVReader::CSVReader(Path path){
     constructor(path.file_path, path.file_filename);
 }
 
 std::vector<std::string> CSVReader::readLineCSV(){
     std::string current_line = readLine();
-//    std::cout << "current_line" << current_line << std::endl;
     std::vector<std::string> current_line_vector = StringUtils::splitByChar(current_line, ','); // split by the comma
     return current_line_vector;
 }
@@ -37,3 +30,7 @@ std::string CSVReader::readLineCSVWithIndex(int index){
     std::string col_value = StringUtils::splitByCharWithIndex(current_line, ',', index);
     return col_value;
 };
+
+void CSVReader::goToFirstDataRow(){
+    goToLine(4);
+}

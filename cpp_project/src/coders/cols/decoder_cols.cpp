@@ -1,9 +1,8 @@
 
 #include "decoder_cols.h"
-
 #include "assert.h"
 #include "string_utils.h"
-
+#include "mask_decoder.h"
 
 void DecoderCols::decodeDataRows(){
     std::vector<std::vector<std::string>> columns;
@@ -46,26 +45,14 @@ std::vector<std::string> DecoderCols::decodeTimeDeltaColumn(){
 #if MASK_MODE
 void DecoderCols::decodeDataColumnNoDataMask() {
     mask = new Mask();
-
-    int row_index = 0;
-    while (row_index < data_rows_count){
-        bool burst_is_no_data = decodeBool();
-        int burst_length = decodeInt(Constants::MASK_BITS) + 1; // 1<= burst_length <= Constants::MASK_MAX_SIZE
-        mask->add(burst_is_no_data, burst_length);
-        row_index += burst_length;
-    }
-    assert(row_index == data_rows_count);
+    MaskDecoder::decode(this, mask, data_rows_count);
     total_data = mask->total_data;
     total_no_data = mask->total_no_data;
-    reset();
+    mask->reset();
 }
 
 bool DecoderCols::isNoData(){
     return mask->isNoData();
-}
-
-void DecoderCols::reset(){
-    mask->reset();
 }
 #endif
 

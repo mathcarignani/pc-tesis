@@ -1095,6 +1095,60 @@ src/coders/linear/slide_filter/slide_filter_window.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/linear/slide_filter/slide_filter_window.cpp.s
 .PHONY : src/coders/linear/slide_filter/slide_filter_window.cpp.s
 
+src/coders/mask/mask_coder.o: src/coders/mask/mask_coder.cpp.o
+
+.PHONY : src/coders/mask/mask_coder.o
+
+# target to build an object file
+src/coders/mask/mask_coder.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/mask/mask_coder.cpp.o
+.PHONY : src/coders/mask/mask_coder.cpp.o
+
+src/coders/mask/mask_coder.i: src/coders/mask/mask_coder.cpp.i
+
+.PHONY : src/coders/mask/mask_coder.i
+
+# target to preprocess a source file
+src/coders/mask/mask_coder.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/mask/mask_coder.cpp.i
+.PHONY : src/coders/mask/mask_coder.cpp.i
+
+src/coders/mask/mask_coder.s: src/coders/mask/mask_coder.cpp.s
+
+.PHONY : src/coders/mask/mask_coder.s
+
+# target to generate assembly for a file
+src/coders/mask/mask_coder.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/mask/mask_coder.cpp.s
+.PHONY : src/coders/mask/mask_coder.cpp.s
+
+src/coders/mask/mask_decoder.o: src/coders/mask/mask_decoder.cpp.o
+
+.PHONY : src/coders/mask/mask_decoder.o
+
+# target to build an object file
+src/coders/mask/mask_decoder.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/mask/mask_decoder.cpp.o
+.PHONY : src/coders/mask/mask_decoder.cpp.o
+
+src/coders/mask/mask_decoder.i: src/coders/mask/mask_decoder.cpp.i
+
+.PHONY : src/coders/mask/mask_decoder.i
+
+# target to preprocess a source file
+src/coders/mask/mask_decoder.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/mask/mask_decoder.cpp.i
+.PHONY : src/coders/mask/mask_decoder.cpp.i
+
+src/coders/mask/mask_decoder.s: src/coders/mask/mask_decoder.cpp.s
+
+.PHONY : src/coders/mask/mask_decoder.s
+
+# target to generate assembly for a file
+src/coders/mask/mask_decoder.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/mask/mask_decoder.cpp.s
+.PHONY : src/coders/mask/mask_decoder.cpp.s
+
 src/dataset/column_code.o: src/dataset/column_code.cpp.o
 
 .PHONY : src/dataset/column_code.o
@@ -1833,6 +1887,12 @@ help:
 	@echo "... src/coders/linear/slide_filter/slide_filter_window.o"
 	@echo "... src/coders/linear/slide_filter/slide_filter_window.i"
 	@echo "... src/coders/linear/slide_filter/slide_filter_window.s"
+	@echo "... src/coders/mask/mask_coder.o"
+	@echo "... src/coders/mask/mask_coder.i"
+	@echo "... src/coders/mask/mask_coder.s"
+	@echo "... src/coders/mask/mask_decoder.o"
+	@echo "... src/coders/mask/mask_decoder.i"
+	@echo "... src/coders/mask/mask_decoder.s"
 	@echo "... src/dataset/column_code.o"
 	@echo "... src/dataset/column_code.i"
 	@echo "... src/dataset/column_code.s"

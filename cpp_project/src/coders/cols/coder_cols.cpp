@@ -3,6 +3,7 @@
 
 #include "assert.h"
 #include "string_utils.h"
+#include "mask_coder.h"
 
 void CoderCols::codeDataRows(){
     int total_columns = dataset->data_columns_count + 1;
@@ -17,7 +18,7 @@ void CoderCols::codeDataRows(){
 
 void CoderCols::goToFirstDataRow() {
     row_index = 0;
-    input_csv->goToLine(4); // first data row
+    input_csv->goToFirstDataRow();
 }
 
 void CoderCols::codeColumn() {
@@ -26,7 +27,7 @@ void CoderCols::codeColumn() {
         return;
     }
 #if MASK_MODE
-    total_data_rows = codeDataColumnNoDataMask();
+    total_data_rows = MaskCoder::code(this, dataset, input_csv, column_index);
 #endif
     codeDataColumn();
 }
@@ -48,44 +49,6 @@ void CoderCols::codeTimeDeltaColumn(){
         row_index++;
     }
 }
-
-#if MASK_MODE
-int CoderCols::codeDataColumnNoDataMask(){
-    dataset->setMaskMode(true);
-
-    bool burst_is_no_data = false;
-    int burst_length = 0; // <= Constants::MASK_MAX_SIZE
-    int total_data_rows = 0;
-
-    goToFirstDataRow();
-    while (input_csv->continue_reading) {
-        std::string csv_value = input_csv->readLineCSVWithIndex(column_index);
-        bool no_data = Constants::isNoData(csv_value);
-        if (row_index == 0){
-            burst_is_no_data = no_data;
-            burst_length = 1;
-        }
-        else if (no_data != burst_is_no_data || burst_length == Constants::MASK_MAX_SIZE){
-            total_data_rows += codeBurst(burst_is_no_data, burst_length);
-            burst_is_no_data = no_data;
-            burst_length = 1;
-        }
-        else {
-            burst_length++;
-        }
-        row_index++;
-    }
-    assert(burst_length > 0);
-    total_data_rows += codeBurst(burst_is_no_data, burst_length);
-    return total_data_rows;
-}
-
-int CoderCols::codeBurst(bool burst_is_no_data, int burst_length){
-    codeBool(burst_is_no_data);
-    codeInt(burst_length - 1, Constants::MASK_BITS); // 1<= burst_length <= Constants::MASK_MAX_SIZE
-    return ((burst_is_no_data) ? 0 : burst_length);
-}
-#endif
 
 void CoderCols::codeDataColumn(){
     dataset->setMaskMode(false);

@@ -25,18 +25,18 @@ protected:
     CSVReader* input_csv;
     BitStreamWriter* output_file;
 
-    void codeBit(int bit);
-    void codeBool(bool bit);
-    void codeInt(int value, int bits);
-    void codeValueRaw(std::string x);
-    void codeFloat(float x);
-
 public:
     Dataset* dataset;
     CoderBase(CSVReader* input_csv_, BitStreamWriter* output_file_);
     void codeFile();
     void printBits();
     void close();
+
+    void codeBit(int bit);
+    void codeBool(bool bit);
+    void codeInt(int value, int bits);
+    void codeValueRaw(std::string x);
+    void codeFloat(float x);
 };
 
 #endif //CPP_PROJECT_CODER_BASE_H
