@@ -59,6 +59,10 @@ public:
 
 	Point getIntersection(const Line& line);
 	bool isParallel(Line* line);
+
+    // New Methods
+    double getYDistanceToDot(Point* point);
+
 };
 
 #endif

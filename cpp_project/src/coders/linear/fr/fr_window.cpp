@@ -67,18 +67,15 @@ bool FRWindow::violatedConstraint(int first_index, int last_index){
     Point* first_point = new Point(first_item);
     Point* last_point = new Point(last_item);
 
-    if (first_point->x == last_point->x){
-        // the vertical line equation is x = first_point.x
-        return (first_index + 1 != last_index);
+    if (first_point->x == last_point->x){ // vertical line with equation x = first_point.x
+        return (first_index + 1 != last_index); // the constraint is violated if there are points in between
     }
 
     Line* line = new Line(first_point, last_point);
     Point* point;
     for(int i=first_index+1; i < last_index; i++){
         point = new Point(data[i]);
-        // TODO: create a Line instance method that runs the following two lines of code
-        double projection = line->getValue(point->x);
-        double dis = MathUtils::doubleAbsolute(point->y - projection);
+        double dis = line->getYDistanceToDot(point);
         if (dis > error_threshold){
             return true;
         }
