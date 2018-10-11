@@ -17,7 +17,7 @@ std::vector<std::string> DecoderPCA::decodeDataColumn(){
 
     while (unprocessed_rows > 0) {
     #if MASK_MODE
-        if (isNoData()) {
+        if (mask->isNoData()) {
             column.push_back(Constants::NO_DATA);
             row_index++; unprocessed_rows--;
             continue;
@@ -49,7 +49,7 @@ void DecoderPCA::decodeConstantWindow(std::vector<std::string> & column, int win
     int i = 0;
     while (i < window_size){
     #if MASK_MODE
-        if (i > 0 && isNoData()) { // always false in the first iteration
+        if (i > 0 && mask->isNoData()) { // always false in the first iteration
             column.push_back(Constants::NO_DATA);
             row_index++;
             continue;
@@ -65,7 +65,7 @@ void DecoderPCA::decodeNonConstantWindow(std::vector<std::string> & column, int 
     int i = 0;
     while (i < window_size){
     #if MASK_MODE
-        if (i > 0 && isNoData()) { // always false in the first iteration
+        if (i > 0 && mask->isNoData()) { // always false in the first iteration
             column.push_back(Constants::NO_DATA);
             row_index++;
             continue;

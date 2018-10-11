@@ -12,7 +12,7 @@ std::vector<std::string> DecoderBasic::decodeDataColumn(){
 
     while (row_index < data_rows_count) {
     #if MASK_MODE
-        if (isNoData()) {
+        if (mask->isNoData()) {
             column.push_back(Constants::NO_DATA);
             row_index++;
             continue;

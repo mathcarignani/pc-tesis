@@ -18,7 +18,7 @@ std::vector<std::string> DecoderAPCA::decodeDataColumn(){
 
     while (unprocessed_rows > 0) {
    #if MASK_MODE
-        if (isNoData()) {
+        if (mask->isNoData()) {
             column.push_back(Constants::NO_DATA);
             row_index++; unprocessed_rows--;
             continue;

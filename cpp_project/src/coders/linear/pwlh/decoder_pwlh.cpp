@@ -22,7 +22,7 @@ std::vector<std::string> DecoderPWLH::decodeDataColumn(){
 
     while (column->unprocessed_rows > 0){
     #if MASK_MODE
-        if (isNoData()) {
+        if (mask->isNoData()) {
             column->addNoData();
             continue;
         }
@@ -125,8 +125,8 @@ std::vector<int> DecoderPWLH::createXCoordsWithNoDataVector(int window_size){
         time_delta = (time_delta_index == 0) ? 0 : time_delta_vector.at(column->row_index + time_delta_index);
         current_sum += time_delta;
 
-        if (time_delta_index > 0 && isNoData()){
-            // isNoData() is always false in the first iteration
+        if (time_delta_index > 0 && mask->isNoData()){
+            // mask->isNoData() is always false in the first iteration
             result.push_back(-1);
             continue;
         }

@@ -13,9 +13,6 @@ private:
 
     std::vector<std::string> decodeColumn();
     std::vector<std::string> decodeTimeDeltaColumn();
-#if MASK_MODE
-    void decodeDataColumnNoDataMask();
-#endif
     void transposeMatrix(std::vector<std::vector<std::string>> columns, int total_columns);
 
     virtual std::vector<std::string> decodeDataColumn() = 0;
@@ -28,7 +25,6 @@ protected:
 
 #if MASK_MODE
     Mask* mask;
-    bool isNoData();
 #endif
 
 public:

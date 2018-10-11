@@ -5,7 +5,8 @@
 
 #include "assert.h"
 
-void MaskDecoder::decode(DecoderBase* decoder, Mask* mask, int data_rows_count){
+Mask* MaskDecoder::decode(DecoderBase* decoder, int data_rows_count){
+    Mask* mask = new Mask();
     int row_index = 0;
     Burst* burst = NULL;
     while (row_index < data_rows_count){
@@ -16,6 +17,8 @@ void MaskDecoder::decode(DecoderBase* decoder, Mask* mask, int data_rows_count){
         row_index += burst->length;
     }
     assert(row_index == data_rows_count);
+    mask->reset();
+    return mask;
 }
 
 #endif

@@ -21,7 +21,7 @@ void DecoderCols::decodeDataRows(){
 std::vector<std::string> DecoderCols::decodeColumn(){
     if (column_index == 0) { return decodeTimeDeltaColumn(); }
 #if MASK_MODE
-    decodeDataColumnNoDataMask();
+    mask = MaskDecoder::decode(this, data_rows_count);
 #endif
     return decodeDataColumn();
 }
@@ -41,18 +41,6 @@ std::vector<std::string> DecoderCols::decodeTimeDeltaColumn(){
     }
     return column;
 }
-
-#if MASK_MODE
-void DecoderCols::decodeDataColumnNoDataMask() {
-    mask = new Mask();
-    MaskDecoder::decode(this, mask, data_rows_count);
-    mask->reset();
-}
-
-bool DecoderCols::isNoData(){
-    return mask->isNoData();
-}
-#endif
 
 void DecoderCols::transposeMatrix(std::vector<std::vector<std::string>> columns, int total_columns){
     for(int row_index_ = 0; row_index_ < data_rows_count; row_index_++){

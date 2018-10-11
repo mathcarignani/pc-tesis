@@ -21,7 +21,7 @@ std::vector<std::string> DecoderFR::decodeDataColumn(){
 
     mask->reset();
     while (column->unprocessed_rows > 0){
-        if (isNoData()) {
+        if (mask->isNoData()) {
             column->addNoData();
             continue;
         }
@@ -53,8 +53,8 @@ void DecoderFR::decodeWindow(int window_size, std::vector<int> x_coords){
     int x_coords_offset = x_coords.at(x_coords_index_offset);
 
     while (i < window_size) {
-        if (i > 0 && isNoData()) {
-            // isNoData() is always false in the first iteration
+        if (i > 0 && mask->isNoData()) {
+            // mask->isNoData() is always false in the first iteration
             column->addNoData();
             continue;
         }
