@@ -1,13 +1,5 @@
 
 from auxi.os_utils import datasets_csv_path
-from coders.basic.coder_basic import CoderBasic
-from coders.basic.decoder_basic import DecoderBasic
-from coders.pca.coder_pca import CoderPCA
-from coders.pca.decoder_pca import DecoderPCA
-from coders.apca.coder_apca import CoderAPCA
-from coders.apca.decoder_apca import DecoderAPCA
-from coders.ca.coder_ca import CoderCA
-from coders.ca.decoder_ca import DecoderCA
 
 
 THRESHOLD_PERCENTAGES = [0, 1, 3, 5, 10, 15, 20, 30]
@@ -42,28 +34,20 @@ DATASETS_ARRAY = [
 CODERS_ARRAY = [
     {
         'name': 'CoderBasic',
-        'coder': CoderBasic,
-        'decoder': DecoderBasic,
         'o_folder': 'basic'
     },
     {
         'name': 'CoderPCA',
-        'coder': CoderPCA,
-        'decoder': DecoderPCA,
         'o_folder': 'pca',
         'params': {'fixed_window_size': WINDOW_SIZES}
     },
     {
         'name': 'CoderAPCA',
-        'coder': CoderAPCA,
-        'decoder': DecoderAPCA,
         'o_folder': 'apca',
         'params': {'max_window_size': WINDOW_SIZES}
     },
     {
         'name': 'CoderCA',
-        'coder': CoderCA,
-        'decoder': DecoderCA,
         'o_folder': 'ca',
         'params': {'max_window_size': WINDOW_SIZES}
     },
@@ -77,9 +61,9 @@ CODERS_ARRAY = [
         'o_folder': 'pwlh-int',
         'params': {'max_window_size': WINDOW_SIZES}
     },
-    {
-        'name': 'CoderFR',
-        'o_folder': 'fr',
-        'params': {'max_window_size': WINDOW_SIZES}
-    }
+    # {
+    #     'name': 'CoderFR',
+    #     'o_folder': 'fr',
+    #     'params': {'max_window_size': WINDOW_SIZES}
+    # }
 ]
