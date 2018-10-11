@@ -4,7 +4,7 @@
 
 #include "decoder_base.h"
 #include "mask.h"
-#include "coder_utils.h"
+#include "column.h"
 
 class DecoderCols: public DecoderBase {
 

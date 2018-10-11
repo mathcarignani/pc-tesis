@@ -3,10 +3,10 @@
 
 #if MASK_MODE
 
-#include "decoder_base.h"
 #include "math_utils.h"
 #include <cmath>
 #include "string_utils.h"
+#include "coder_utils.h"
 
 void DecoderSlideFilter::setCoderParams(int max_window_size_){
     max_window_size_bit_length = MathUtils::bitLength(max_window_size_);

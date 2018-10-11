@@ -6,7 +6,6 @@
 
 #if MASK_MODE
 
-#include "coder_utils.h"
 #include "SlideFiltersEntry.h"
 #include "slide_filter_window.h"
 #include "DynArray.h"

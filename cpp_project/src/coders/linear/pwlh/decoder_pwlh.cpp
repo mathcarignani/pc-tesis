@@ -7,7 +7,6 @@
 #include <vector_utils.h>
 #include "constants.h"
 #include "string_utils.h"
-#include "coder_utils.h"
 
 void DecoderPWLH::setCoderParams(int max_window_size_, bool integer_mode_){
     max_window_size_bit_length = MathUtils::bitLength(max_window_size_);

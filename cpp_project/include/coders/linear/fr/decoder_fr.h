@@ -7,7 +7,6 @@
 #if MASK_MODE
 
 #include "DataItem.h"
-#include "coder_utils.h"
 
 class DecoderFR: public DecoderCols {
 

@@ -3,11 +3,11 @@
 
 #if MASK_MODE
 
+#include "coder_utils.h"
 #include "math_utils.h"
 #include "assert.h"
 #include "DataItem.h"
 #include "string_utils.h"
-#include "coder_utils.h"
 #include "Line.h"
 
 void DecoderFR::setCoderParams(int max_window_size_){
