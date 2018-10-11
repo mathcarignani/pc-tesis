@@ -4,7 +4,7 @@
 #include <iostream>
 #include "dataset_utils.h"
 #include "assert.h"
-#include "coders/header/header_utils.h"
+#include "header_utils.h"
 #include <math.h>
 #include "string_utils.h"
 #include "bit_stream_writer.h"

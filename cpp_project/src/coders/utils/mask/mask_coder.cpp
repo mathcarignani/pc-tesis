@@ -33,7 +33,7 @@ int MaskCoder::code(CoderBase* coder, Dataset* dataset, CSVReader* input_csv, in
 
 int MaskCoder::codeBurst(CoderBase* coder, Burst* burst){
     coder->codeBool(burst->no_data);
-    coder->codeInt(burst->length - 1, Constants::MASK_BITS); // 1 <= burst_length <= Constants::MASK_MAX_SIZE
+    coder->codeInt(burst->length - 1, Constants::MASK_BITS); // 1 <= burst->length <= Constants::MASK_MAX_SIZE
     return (burst->no_data ? 0 : burst->length);
 }
 
