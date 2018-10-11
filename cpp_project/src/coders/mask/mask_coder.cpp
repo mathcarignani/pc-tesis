@@ -8,38 +8,33 @@
 int MaskCoder::code(CoderBase* coder, Dataset* dataset, CSVReader* input_csv, int column_index){
     dataset->setMaskMode(true);
 
-    bool burst_is_no_data = false;
-    int burst_length = 0; // <= Constants::MASK_MAX_SIZE
     int total_data_rows = 0;
-    bool first_entry = true;
+    Burst* burst = NULL;
 
     input_csv->goToFirstDataRow();
     while (input_csv->continue_reading) {
         std::string csv_value = input_csv->readLineCSVWithIndex(column_index);
         bool no_data = Constants::isNoData(csv_value);
-        if (first_entry){
-            first_entry = false;
-            burst_is_no_data = no_data;
-            burst_length = 1;
+        if (burst == NULL){ // first iteration
+            burst = new Burst(no_data);
         }
-        else if (no_data != burst_is_no_data || burst_length == Constants::MASK_MAX_SIZE){
-            total_data_rows += codeBurst(coder, burst_is_no_data, burst_length);
-            burst_is_no_data = no_data;
-            burst_length = 1;
+        else if (no_data != burst->no_data || burst->length == Constants::MASK_MAX_SIZE){
+            total_data_rows += codeBurst(coder, burst);
+            burst = new Burst(no_data);
         }
         else {
-            burst_length++;
+            burst->increaseLength();
         }
     }
-    assert(burst_length > 0);
-    total_data_rows += codeBurst(coder, burst_is_no_data, burst_length);
+    assert(burst->length > 0);
+    total_data_rows += codeBurst(coder, burst);
     return total_data_rows;
 }
 
-int MaskCoder::codeBurst(CoderBase* coder, bool burst_is_no_data, int burst_length){
-    coder->codeBool(burst_is_no_data);
-    coder->codeInt(burst_length - 1, Constants::MASK_BITS); // 1<= burst_length <= Constants::MASK_MAX_SIZE
-    return (burst_is_no_data ? 0 : burst_length);
+int MaskCoder::codeBurst(CoderBase* coder, Burst* burst){
+    coder->codeBool(burst->no_data);
+    coder->codeInt(burst->length - 1, Constants::MASK_BITS); // 1 <= burst_length <= Constants::MASK_MAX_SIZE
+    return (burst->no_data ? 0 : burst->length);
 }
 
 #endif

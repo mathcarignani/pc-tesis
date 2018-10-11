@@ -9,6 +9,7 @@
 #include "dataset.h"
 #include "csv_reader.h"
 #include "coder_base.h"
+#include "mask.h"
 
 class MaskCoder {
 
@@ -16,7 +17,7 @@ public:
     static int code(CoderBase* coder, Dataset* dataset, CSVReader* input_csv, int column_index);
 
 private:
-    static int codeBurst(CoderBase* coder, bool burst_is_no_data, int burst_length);
+    static int codeBurst(CoderBase* coder, Burst* burst);
 };
 
 #endif // MASK_MODE

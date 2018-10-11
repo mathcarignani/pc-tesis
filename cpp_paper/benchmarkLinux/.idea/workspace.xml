@@ -180,6 +180,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="45" y="23" width="1207" height="745" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2445194" />
       <window_info anchor="bottom" id="TODO" order="6" />

@@ -10,9 +10,18 @@ public:
     bool no_data;
     int length;
 
+    Burst(bool no_data_){
+        no_data = no_data_;
+        length = 1;
+    }
+
     Burst(bool no_data_, int length_){
         no_data = no_data_;
         length = length_;
+    }
+
+    void increaseLength(){
+        length++;
     }
 };
 
@@ -43,9 +52,9 @@ public:
         total_data = 0;
     }
 
-    void add(bool burst_is_no_data_, int burst_length_){
-        bursts.push_back(new Burst(burst_is_no_data_, burst_length_));
-        if (burst_is_no_data_) { total_no_data += burst_length_; } else { total_data += burst_length_; }
+    void add(Burst* burst){
+        bursts.push_back(burst);
+        if (burst->no_data) { total_no_data += burst->length; } else { total_data += burst->length; }
     }
 
     void reset(){

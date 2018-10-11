@@ -6,6 +6,7 @@
 
 #if MASK_MODE
 
+
 #endif // MASK_MODE
 
 #endif //CPP_PROJECT_CODER_GAMPS_H
