@@ -17,6 +17,7 @@ public:
     void runAll();
 
     static void testSideFilderCoder();
+    static void testGAMPS();
 
 private:
     std::vector<Path> paths;

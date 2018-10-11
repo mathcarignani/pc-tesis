@@ -636,6 +636,60 @@ src/coders/constants.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/constants.cpp.s
 .PHONY : src/coders/constants.cpp.s
 
+src/coders/correlation/gamps/coder_gamps.o: src/coders/correlation/gamps/coder_gamps.cpp.o
+
+.PHONY : src/coders/correlation/gamps/coder_gamps.o
+
+# target to build an object file
+src/coders/correlation/gamps/coder_gamps.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/correlation/gamps/coder_gamps.cpp.o
+.PHONY : src/coders/correlation/gamps/coder_gamps.cpp.o
+
+src/coders/correlation/gamps/coder_gamps.i: src/coders/correlation/gamps/coder_gamps.cpp.i
+
+.PHONY : src/coders/correlation/gamps/coder_gamps.i
+
+# target to preprocess a source file
+src/coders/correlation/gamps/coder_gamps.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/correlation/gamps/coder_gamps.cpp.i
+.PHONY : src/coders/correlation/gamps/coder_gamps.cpp.i
+
+src/coders/correlation/gamps/coder_gamps.s: src/coders/correlation/gamps/coder_gamps.cpp.s
+
+.PHONY : src/coders/correlation/gamps/coder_gamps.s
+
+# target to generate assembly for a file
+src/coders/correlation/gamps/coder_gamps.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/correlation/gamps/coder_gamps.cpp.s
+.PHONY : src/coders/correlation/gamps/coder_gamps.cpp.s
+
+src/coders/correlation/gamps/decoder_gamps.o: src/coders/correlation/gamps/decoder_gamps.cpp.o
+
+.PHONY : src/coders/correlation/gamps/decoder_gamps.o
+
+# target to build an object file
+src/coders/correlation/gamps/decoder_gamps.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/correlation/gamps/decoder_gamps.cpp.o
+.PHONY : src/coders/correlation/gamps/decoder_gamps.cpp.o
+
+src/coders/correlation/gamps/decoder_gamps.i: src/coders/correlation/gamps/decoder_gamps.cpp.i
+
+.PHONY : src/coders/correlation/gamps/decoder_gamps.i
+
+# target to preprocess a source file
+src/coders/correlation/gamps/decoder_gamps.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/correlation/gamps/decoder_gamps.cpp.i
+.PHONY : src/coders/correlation/gamps/decoder_gamps.cpp.i
+
+src/coders/correlation/gamps/decoder_gamps.s: src/coders/correlation/gamps/decoder_gamps.cpp.s
+
+.PHONY : src/coders/correlation/gamps/decoder_gamps.s
+
+# target to generate assembly for a file
+src/coders/correlation/gamps/decoder_gamps.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/correlation/gamps/decoder_gamps.cpp.s
+.PHONY : src/coders/correlation/gamps/decoder_gamps.cpp.s
+
 src/coders/decoder_base.o: src/coders/decoder_base.cpp.o
 
 .PHONY : src/coders/decoder_base.o
@@ -1040,6 +1094,60 @@ src/coders/linear/slide_filter/slide_filter_window.s: src/coders/linear/slide_fi
 src/coders/linear/slide_filter/slide_filter_window.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/linear/slide_filter/slide_filter_window.cpp.s
 .PHONY : src/coders/linear/slide_filter/slide_filter_window.cpp.s
+
+src/coders/mask/mask_coder.o: src/coders/mask/mask_coder.cpp.o
+
+.PHONY : src/coders/mask/mask_coder.o
+
+# target to build an object file
+src/coders/mask/mask_coder.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/mask/mask_coder.cpp.o
+.PHONY : src/coders/mask/mask_coder.cpp.o
+
+src/coders/mask/mask_coder.i: src/coders/mask/mask_coder.cpp.i
+
+.PHONY : src/coders/mask/mask_coder.i
+
+# target to preprocess a source file
+src/coders/mask/mask_coder.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/mask/mask_coder.cpp.i
+.PHONY : src/coders/mask/mask_coder.cpp.i
+
+src/coders/mask/mask_coder.s: src/coders/mask/mask_coder.cpp.s
+
+.PHONY : src/coders/mask/mask_coder.s
+
+# target to generate assembly for a file
+src/coders/mask/mask_coder.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/mask/mask_coder.cpp.s
+.PHONY : src/coders/mask/mask_coder.cpp.s
+
+src/coders/mask/mask_decoder.o: src/coders/mask/mask_decoder.cpp.o
+
+.PHONY : src/coders/mask/mask_decoder.o
+
+# target to build an object file
+src/coders/mask/mask_decoder.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/mask/mask_decoder.cpp.o
+.PHONY : src/coders/mask/mask_decoder.cpp.o
+
+src/coders/mask/mask_decoder.i: src/coders/mask/mask_decoder.cpp.i
+
+.PHONY : src/coders/mask/mask_decoder.i
+
+# target to preprocess a source file
+src/coders/mask/mask_decoder.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/mask/mask_decoder.cpp.i
+.PHONY : src/coders/mask/mask_decoder.cpp.i
+
+src/coders/mask/mask_decoder.s: src/coders/mask/mask_decoder.cpp.s
+
+.PHONY : src/coders/mask/mask_decoder.s
+
+# target to generate assembly for a file
+src/coders/mask/mask_decoder.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/mask/mask_decoder.cpp.s
+.PHONY : src/coders/mask/mask_decoder.cpp.s
 
 src/dataset/column_code.o: src/dataset/column_code.cpp.o
 
@@ -1728,6 +1836,12 @@ help:
 	@echo "... src/coders/constants.o"
 	@echo "... src/coders/constants.i"
 	@echo "... src/coders/constants.s"
+	@echo "... src/coders/correlation/gamps/coder_gamps.o"
+	@echo "... src/coders/correlation/gamps/coder_gamps.i"
+	@echo "... src/coders/correlation/gamps/coder_gamps.s"
+	@echo "... src/coders/correlation/gamps/decoder_gamps.o"
+	@echo "... src/coders/correlation/gamps/decoder_gamps.i"
+	@echo "... src/coders/correlation/gamps/decoder_gamps.s"
 	@echo "... src/coders/decoder_base.o"
 	@echo "... src/coders/decoder_base.i"
 	@echo "... src/coders/decoder_base.s"
@@ -1773,6 +1887,12 @@ help:
 	@echo "... src/coders/linear/slide_filter/slide_filter_window.o"
 	@echo "... src/coders/linear/slide_filter/slide_filter_window.i"
 	@echo "... src/coders/linear/slide_filter/slide_filter_window.s"
+	@echo "... src/coders/mask/mask_coder.o"
+	@echo "... src/coders/mask/mask_coder.i"
+	@echo "... src/coders/mask/mask_coder.s"
+	@echo "... src/coders/mask/mask_decoder.o"
+	@echo "... src/coders/mask/mask_decoder.i"
+	@echo "... src/coders/mask/mask_decoder.s"
 	@echo "... src/dataset/column_code.o"
 	@echo "... src/dataset/column_code.i"
 	@echo "... src/dataset/column_code.s"

@@ -16,7 +16,7 @@ void DecoderFR::setCoderParams(int max_window_size_){
 }
 
 std::vector<std::string> DecoderFR::decodeDataColumn(){
-    column = new Column(data_rows_count, total_data, total_no_data);
+    column = new Column(data_rows_count, mask->total_data, mask->total_no_data);
     std::vector<int> x_coords_vector = CoderUtils::createXCoordsVectorMaskMode(mask, time_delta_vector, 0);
 
     mask->reset();

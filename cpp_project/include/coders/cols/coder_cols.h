@@ -12,10 +12,6 @@ private:
 
     void goToFirstDataRow();
     void codeColumn();
-#if MASK_MODE
-    int codeDataColumnNoDataMask();
-    int codeBurst(bool burst_is_no_data, int burst_length);
-#endif
 
     virtual void codeColumnBefore() = 0;
     virtual void codeColumnWhile(std::string csv_value) = 0;

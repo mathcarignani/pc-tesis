@@ -114,4 +114,9 @@ bool Line::isParallel(Line *l)
 	return abs(this->slope - l->slope) < 0.0000000001;
 }
 
+double Line::getYDistanceToDot(Point* point){
+    double projection = this->getValue(point->x);
+    return abs(point->y - projection);
+}
+
 #endif

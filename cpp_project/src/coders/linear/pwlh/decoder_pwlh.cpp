@@ -16,7 +16,7 @@ void DecoderPWLH::setCoderParams(int max_window_size_, bool integer_mode_){
 
 std::vector<std::string> DecoderPWLH::decodeDataColumn(){
 #if MASK_MODE
-    column = new Column(data_rows_count, total_data, total_no_data);
+    column = new Column(data_rows_count, mask->total_data, mask->total_no_data);
 #else
     column = new Column(data_rows_count);
 #endif

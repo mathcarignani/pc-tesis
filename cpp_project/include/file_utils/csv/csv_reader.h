@@ -15,14 +15,14 @@ private:
     void constructor(std::string path, std::string filename);
 
 public:
-    CSVReader();
-    CSVReader(std::string path, std::string filename);
     CSVReader(Path path);
 
     // PRE: continue_reading
     std::vector<std::string> readLineCSV();
     // PRE: continue reading
     std::string readLineCSVWithIndex(int index);
+
+    void goToFirstDataRow();
 };
 
 #endif //CPP_PROJECT_CSV_READER_H

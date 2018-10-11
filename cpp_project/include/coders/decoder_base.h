@@ -20,18 +20,17 @@ protected:
     BitStreamReader* input_file;
     CSVWriter* output_csv;
     Dataset* dataset;
-    int data_columns_count;
     int data_rows_count;
-
-    bool decodeBool();
-    int decodeInt(int bits);
-    std::string decodeValueRaw();
-    float decodeFloat();
 
 public:
     DecoderBase(BitStreamReader* input_file_, CSVWriter* output_csv_);
     void decodeFile();
     void close();
+
+    bool decodeBool();
+    int decodeInt(int bits);
+    std::string decodeValueRaw();
+    float decodeFloat();
 };
 
 #endif //CPP_PROJECT_DECODER_BASE_H
