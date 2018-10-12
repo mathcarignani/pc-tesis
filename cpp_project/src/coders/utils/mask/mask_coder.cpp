@@ -5,12 +5,13 @@
 
 #include "assert.h"
 
-int MaskCoder::code(CoderBase* coder, Dataset* dataset, CSVReader* input_csv, int column_index){
-    dataset->setMaskMode(true);
+int MaskCoder::code(CoderBase* coder, int column_index){
+    coder->dataset->setMaskMode(true);
 
     int total_data_rows = 0;
     Burst* burst = NULL;
 
+    CSVReader* input_csv = coder->input_csv;
     input_csv->goToFirstDataRow();
     while (input_csv->continue_reading) {
         std::string csv_value = input_csv->readLineCSVWithIndex(column_index);

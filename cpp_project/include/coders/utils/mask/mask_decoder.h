@@ -12,7 +12,7 @@
 class MaskDecoder {
 
 public:
-    static Mask* decode(DecoderBase* decoder, int data_rows_count);
+    static Mask* decode(DecoderBase* decoder);
 
 };
 

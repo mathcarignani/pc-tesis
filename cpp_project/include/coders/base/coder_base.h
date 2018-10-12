@@ -19,14 +19,12 @@ private:
     //
     int codeValue(std::string x);
     void codeRaw(int value);
-//    virtual void raiseRangeError(int value) = 0;
-
-protected:
-    CSVReader* input_csv;
-    BitStreamWriter* output_file;
 
 public:
+    CSVReader* input_csv;
+    BitStreamWriter* output_file;
     Dataset* dataset;
+
     CoderBase(CSVReader* input_csv_, BitStreamWriter* output_file_);
     void codeFile();
     void printBits();

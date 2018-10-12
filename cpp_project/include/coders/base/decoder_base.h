@@ -20,9 +20,11 @@ protected:
     BitStreamReader* input_file;
     CSVWriter* output_csv;
     Dataset* dataset;
-    int data_rows_count;
 
 public:
+    int data_rows_count;
+    std::vector<int> time_delta_vector;
+
     DecoderBase(BitStreamReader* input_file_, CSVWriter* output_csv_);
     void decodeFile();
     void close();

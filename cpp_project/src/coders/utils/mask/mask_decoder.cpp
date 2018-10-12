@@ -5,18 +5,18 @@
 
 #include "assert.h"
 
-Mask* MaskDecoder::decode(DecoderBase* decoder, int data_rows_count){
+Mask* MaskDecoder::decode(DecoderBase* decoder){
     Mask* mask = new Mask();
     int row_index = 0;
     Burst* burst = NULL;
-    while (row_index < data_rows_count){
+    while (row_index < decoder->data_rows_count){
         bool no_data = decoder->decodeBool();
         int length = decoder->decodeInt(Constants::MASK_BITS) + 1; // 1 <= length <= Constants::MASK_MAX_SIZE
         burst = new Burst(no_data, length);
         mask->add(burst);
         row_index += burst->length;
     }
-    assert(row_index == data_rows_count);
+    assert(row_index == decoder->data_rows_count);
     mask->reset();
     return mask;
 }

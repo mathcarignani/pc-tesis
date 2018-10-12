@@ -3,6 +3,7 @@
 #include "assert.h"
 #include "string_utils.h"
 #include "mask_decoder.h"
+#include "time_delta_decoder.h"
 
 void DecoderCols::decodeDataRows(){
     std::vector<std::vector<std::string>> columns;
@@ -19,27 +20,11 @@ void DecoderCols::decodeDataRows(){
 }
 
 std::vector<std::string> DecoderCols::decodeColumn(){
-    if (column_index == 0) { return decodeTimeDeltaColumn(); }
+    if (column_index == 0) { return  TimeDeltaDecoder::decode(this); }
 #if MASK_MODE
-    mask = MaskDecoder::decode(this, data_rows_count);
+    mask = MaskDecoder::decode(this);
 #endif
     return decodeDataColumn();
-}
-
-//
-// TODO: use a more appropriate lossless compression schema for coding the time delta column.
-//
-std::vector<std::string> DecoderCols::decodeTimeDeltaColumn(){
-    std::vector<std::string> column;
-    for(int row_index = 0; row_index < data_rows_count; row_index++){
-        std::string value = decodeValueRaw();
-        column.push_back(value);
-
-        // add int value to the time_delta_vector
-        int value_int = StringUtils::stringToInt(value);
-        time_delta_vector.push_back(value_int);
-    }
-    return column;
 }
 
 void DecoderCols::transposeMatrix(std::vector<std::vector<std::string>> columns, int total_columns){

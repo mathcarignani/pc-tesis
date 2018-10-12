@@ -12,7 +12,6 @@ private:
     void decodeDataRows() override;
 
     std::vector<std::string> decodeColumn();
-    std::vector<std::string> decodeTimeDeltaColumn();
     void transposeMatrix(std::vector<std::vector<std::string>> columns, int total_columns);
 
     virtual std::vector<std::string> decodeDataColumn() = 0;
@@ -20,9 +19,7 @@ private:
 protected:
     int column_index = 0;
     int row_index = 0;
-    std::vector<int> time_delta_vector;
     Column* column;
-
 #if MASK_MODE
     Mask* mask;
 #endif

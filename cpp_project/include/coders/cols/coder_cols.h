@@ -10,7 +10,6 @@ class CoderCols: public CoderBase {
 private:
     void codeDataRows() override;
 
-    void goToFirstDataRow();
     void codeColumn();
 
     virtual void codeColumnBefore() = 0;
@@ -22,13 +21,11 @@ protected:
     int row_index = 0;
     int delta_sum;
     std::vector<int> time_delta_vector;
-
 #if MASK_MODE
     int total_data_rows;
 #endif
 
     void codeDataColumn();
-    void codeTimeDeltaColumn();
 
 public:
     using CoderBase::CoderBase;

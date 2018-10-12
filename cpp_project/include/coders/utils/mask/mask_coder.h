@@ -14,7 +14,7 @@
 class MaskCoder {
 
 public:
-    static int code(CoderBase* coder, Dataset* dataset, CSVReader* input_csv, int column_index);
+    static int code(CoderBase* coder, int column_index);
 
 private:
     static int codeBurst(CoderBase* coder, Burst* burst);
