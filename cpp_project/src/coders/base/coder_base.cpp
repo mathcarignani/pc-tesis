@@ -3,6 +3,8 @@
 
 #include "header_coder.h"
 #include "string_utils.h"
+#include "assert.h"
+#include <math.h>
 
 CoderBase::CoderBase(CSVReader* input_csv_, BitStreamWriter* output_file_){
    input_csv = input_csv_;
@@ -11,6 +13,9 @@ CoderBase::CoderBase(CSVReader* input_csv_, BitStreamWriter* output_file_){
 
 void CoderBase::codeDataRowsCount(){
     int data_rows_count = input_csv->total_lines - 4;
+#if CHECKS
+    assert(0 < data_rows_count && data_rows_count <= pow(2, 24) - 1);
+#endif
     output_file->pushInt(data_rows_count, 24); // 24 bits for the data rows count
 }
 
