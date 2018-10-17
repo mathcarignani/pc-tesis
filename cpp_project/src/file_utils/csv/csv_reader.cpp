@@ -25,12 +25,13 @@ std::vector<std::string> CSVReader::readLineCSV(){
     return current_line_vector;
 }
 
-std::string CSVReader::readLineCSVWithIndex(int index){
+std::string CSVReader::readLineCSVWithIndex(){
     std::string current_line = readLine();
-    std::string col_value = StringUtils::splitByCharWithIndex(current_line, ',', index);
+    std::string col_value = StringUtils::splitByCharWithIndex(current_line, ',', column_index);
     return col_value;
 };
 
-void CSVReader::goToFirstDataRow(){
+void CSVReader::goToFirstDataRow(int column_index_){
+    column_index = column_index_;
     goToLine(4);
 }

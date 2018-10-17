@@ -12,9 +12,9 @@ int MaskCoder::code(CoderBase* coder, int column_index){
     Burst* burst = NULL;
 
     CSVReader* input_csv = coder->input_csv;
-    input_csv->goToFirstDataRow();
+    input_csv->goToFirstDataRow(column_index);
     while (input_csv->continue_reading) {
-        std::string csv_value = input_csv->readLineCSVWithIndex(column_index);
+        std::string csv_value = input_csv->readLineCSVWithIndex();
         bool no_data = Constants::isNoData(csv_value);
         if (burst == NULL){ // first iteration
             burst = new Burst(no_data);

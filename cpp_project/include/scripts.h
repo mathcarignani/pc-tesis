@@ -32,10 +32,10 @@ public:
 
     static Dataset* codeFR(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector);
     static void decodeFR(Path input_path, Path output_path, int max_window_size);
+#endif
 
     static Dataset* codeGAMPS(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector);
     static void decodeGAMPS(Path input_path, Path output_path, int max_window_size);
-#endif
 };
 
 #endif //CPP_PROJECT_SCRIPTS_H

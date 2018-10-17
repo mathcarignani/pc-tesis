@@ -34,9 +34,9 @@ void CoderCols::codeDataColumn(){
     this->codeColumnBefore();
 
     row_index = 0;
-    input_csv->goToFirstDataRow();
+    input_csv->goToFirstDataRow(column_index);
     while (input_csv->continue_reading){
-        std::string csv_value = input_csv->readLineCSVWithIndex(column_index);
+        std::string csv_value = input_csv->readLineCSVWithIndex();
         this->codeColumnWhile(csv_value);
         row_index++;
     }

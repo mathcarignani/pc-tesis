@@ -10,18 +10,22 @@ class CoderAPCA: public CoderCols {
 private:
     int max_window_size;
     std::vector<int> error_thresholds_vector;
-    APCAWindow window;
+    APCAWindow* window;
 
     void codeColumnBefore() override;
     void codeColumnWhile(std::string csv_value) override;
     void codeColumnAfter() override;
 
-    APCAWindow createWindow();
-    void codeWindow(APCAWindow & window);
-
 public:
     using CoderCols::CoderCols;
     void setCoderParams(int max_window_size_, std::vector<int> error_thresholds_vector_);
+
+    //
+    // Wrapper methods which are also used by CoderGAMPS.
+    //
+    static void codeColumnWhile(CoderBase* coder, APCAWindow* window, std::string csv_value);
+    static void codeColumnAfter(CoderBase* coder, APCAWindow* window);
+    static void codeWindow(CoderBase* coder, APCAWindow* window);
 };
 
 #endif //CPP_PROJECT_CODER_APCA_H

@@ -10,9 +10,9 @@ std::vector<int> TimeDeltaCoder::code(CoderBase* coder){
     CSVReader* input_csv = coder->input_csv;
 
     std::vector<int> time_delta_vector{};
-    input_csv->goToFirstDataRow();
+    input_csv->goToFirstDataRow(0);
     while (input_csv->continue_reading){
-        std::string csv_value = input_csv->readLineCSVWithIndex(0);
+        std::string csv_value = input_csv->readLineCSVWithIndex();
         coder->codeValueRaw(csv_value); // same as CoderBasic
 
         // add int value to the time_delta_vector

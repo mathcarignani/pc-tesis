@@ -174,6 +174,7 @@ void Scripts::decodeFR(Path input_path, Path output_path, int max_window_size){
     decoder.decodeFile();
     decoder.close();
 }
+#endif
 
 Dataset* Scripts::codeGAMPS(Path input_path, Path output_path, int max_window_size, std::vector<int> error_thresholds_vector){
     CSVReader* csv_reader = new CSVReader(input_path);
@@ -189,10 +190,9 @@ Dataset* Scripts::codeGAMPS(Path input_path, Path output_path, int max_window_si
 void Scripts::decodeGAMPS(Path input_path, Path output_path, int max_window_size){
     BitStreamReader* bit_stream_reader = new BitStreamReader(input_path);
     CSVWriter* csv_writer = new CSVWriter(output_path);
-    DecoderFR decoder = DecoderFR(bit_stream_reader, csv_writer);
+    DecoderCA decoder = DecoderCA(bit_stream_reader, csv_writer);
     // DecoderGAMPS decoder = DecoderGAMPS(bit_stream_reader, csv_writer);
     decoder.setCoderParams(max_window_size);
     decoder.decodeFile();
     decoder.close();
 }
-#endif
