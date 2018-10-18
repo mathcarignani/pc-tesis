@@ -23,7 +23,6 @@ private:
     void construct(const char * file);
 
 public:
-    BitStreamWriter();
     BitStreamWriter(Path path);
 
     void pushBit(unsigned int bit);

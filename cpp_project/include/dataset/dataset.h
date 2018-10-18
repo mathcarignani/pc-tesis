@@ -7,16 +7,16 @@
 struct Dataset {
 
 private:
-
     int array_index;
     bool mask_mode;
 
 public:
-    ColumnCode column_code;
+    ColumnCode* column_code;
     int data_columns_count;
-    std::vector<ColumnCode> column_code_vector;
+    std::vector<ColumnCode*> column_code_vector;
 
-    Dataset(std::vector<Range> ranges, std::vector<int> bits, int data_columns_count_);
+    Dataset(std::vector<Range> ranges, int data_columns_count_);
+    void updateRangesGAMPS();
     void setColumn(int column_index);
     void setMaskMode(bool mask_mode_);
     void addBits(int bits);

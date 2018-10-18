@@ -22,6 +22,10 @@ struct Range {
         return (begin <= value && value <= end);
     }
 
+    bool operator == (const Range &range) const{
+        return (this->begin == range.begin && this->end == range.end);
+    }
+
 //    void print(){
 //        std::cout << "Range = [" << begin << "," << end << "]" << std::endl;
 //    }

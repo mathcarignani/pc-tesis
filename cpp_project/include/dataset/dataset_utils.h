@@ -32,7 +32,6 @@ public:
     std::string decodeTimeUnit(int time_unit_int);
 
     std::vector<Range> getRangeVector(std::string dataset_name);
-    std::vector<int> getBitsVector(std::string dataset_name);
     void close();
 
 };

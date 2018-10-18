@@ -55,6 +55,7 @@ void CoderGAMPS::codeColumnGroup(int group_index, int total_groups){
         dataset->setColumn(column_index);
         if (i == 0){ // code base signal
             base_column = codeBaseColumn(base_threshold);
+            dataset->updateRangesGAMPS();
         }
         else { // code ratio signal
             codeRatioColumn(ratio_threshold, base_column);
@@ -125,8 +126,8 @@ std::string CoderGAMPS::calculateDiff(std::string base_value, std::string ratio_
     if (Constants::isNoData(base_value) || Constants::isNoData(ratio_value)){
         return ratio_value;
     }
-    std::cout << "ratio_value = " << ratio_value << " | base_value = " << base_value << std::endl;
+//    std::cout << "ratio_value = " << ratio_value << " | base_value = " << base_value << std::endl;
     int diff = StringUtils::stringToInt(ratio_value) - StringUtils::stringToInt(base_value);
-    std::cout << "diff = " << diff << std::endl;
+//    std::cout << "diff = " << diff << std::endl;
     return StringUtils::intToString(diff);
 }

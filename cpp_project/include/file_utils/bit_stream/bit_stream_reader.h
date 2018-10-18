@@ -23,9 +23,6 @@ private:
     void construct(const char * file);
 
 public:
-    BitStreamReader();
-    BitStreamReader(const char * file);
-    BitStreamReader(std::string path, std::string filename);
     BitStreamReader(Path path);
 
     int getBit();

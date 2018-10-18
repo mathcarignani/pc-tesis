@@ -3,6 +3,7 @@
 #include "math_utils.h"
 #include <cassert>
 #include <iostream>
+#include <math.h>
 
 void TestsMathUtils::runAll(){
     bitLengthTest();
@@ -14,11 +15,17 @@ void TestsMathUtils::runAll(){
 
 void TestsMathUtils::bitLengthTest(){
     std::cout << "TestsMathUtils::bitLengthTest()..." << std::endl;
-    assert(MathUtils::bitLength(0) == 1);
-    assert(MathUtils::bitLength(1) == 1);
-    assert(MathUtils::bitLength(2) == 2);
-    assert(MathUtils::bitLength(3) == 2);
-    assert(MathUtils::bitLength(4) == 3);
+    assert(MathUtils::bitLength(0) == 1); // 0
+    assert(MathUtils::bitLength(1) == 1); // 1
+    assert(MathUtils::bitLength(2) == 2); // 10
+    assert(MathUtils::bitLength(3) == 2); // 11
+    assert(MathUtils::bitLength(4) == 3); // 100
+    assert(MathUtils::bitLength(5) == 3); // 101
+    assert(MathUtils::bitLength(6) == 3); // 110
+    assert(MathUtils::bitLength(7) == 3); // 111
+    assert(MathUtils::bitLength(8) == 4); // 1000
+    assert(MathUtils::bitLength(pow(2,10) - 1) == 10);
+    assert(MathUtils::bitLength(pow(2,10)) == 11);
 }
 
 void TestsMathUtils::doubleToIntTest(){

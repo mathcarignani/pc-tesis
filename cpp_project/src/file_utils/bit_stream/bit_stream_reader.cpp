@@ -7,17 +7,6 @@ void BitStreamReader::construct(const char * file){
     current = (unsigned char)getc(fp);
 }
 
-BitStreamReader::BitStreamReader(){}
-
-BitStreamReader::BitStreamReader(const char * file){
-    construct(file);
-}
-
-BitStreamReader::BitStreamReader(std::string path, std::string filename){
-    std::string full_path = path + "/" + filename;
-    construct(full_path.c_str());
-}
-
 BitStreamReader::BitStreamReader(Path path){
     construct(path.full_path.c_str());
 }

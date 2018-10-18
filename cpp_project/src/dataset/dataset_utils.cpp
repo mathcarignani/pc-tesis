@@ -58,19 +58,6 @@ std::vector<Range> DatasetUtils::getRangeVector(std::string dataset_name) {
     return result;
 }
 
-std::vector<int> DatasetUtils::getBitsVector(std::string dataset_name) {
-    std::string line = findLine(ALPHABETS_KEY, dataset_name);
-    std::string bits_str = StringUtils::splitByString(line, SEPARATOR)[2]; // "17,10,10,10"
-    std::vector<std::string> bits_vector_str = StringUtils::splitByString(bits_str, ","); // <"17", "10", "10", "10">
-    std::vector<int> result;
-    for (int i = 0; i < bits_vector_str.size(); i++){
-        std::string bit_str = bits_vector_str[i];
-        int bit = StringUtils::stringToInt(bit_str);
-        result.emplace_back(bit);
-    }
-    return result;
-}
-
 void DatasetUtils::close(){
     delete input_file;
 }

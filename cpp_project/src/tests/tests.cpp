@@ -15,6 +15,8 @@
 #include "tests_math_utils.h"
 #include "tests_vector_utils.h"
 #include "tests_line.h"
+#include "tests_header_coder.h"
+#include "tests_utils.h"
 
 void Tests::runAll() {
     testDatasetUtils();
@@ -24,6 +26,7 @@ void Tests::runAll() {
     TestsStringUtils::runAll();
     TestsVectorUtils::runAll();
     TestsLine::runAll();
+    TestsHeaderCoder().runAll();
     TestsCoders().runAll();
 }
 
@@ -51,10 +54,6 @@ void Tests::testDatasetUtils(){
         assert(range_vector[i].begin == expected_range_vector[i].begin);
         assert(range_vector[i].end == expected_range_vector[i].end);
     }
-
-    std::vector<int> bits_vector = dataset_utils.getBitsVector("SolarAnywhere");
-    std::vector<int> expected_bits_vector = {17,10,10,10};
-    assert(bits_vector == expected_bits_vector);
 
     dataset_utils.close();
 }
@@ -107,9 +106,9 @@ void Tests::testDatetimeUtils(){
 
 void Tests::testFloatCoder(){
     std::cout << "Tests::testFloatCoder" << std::endl;
-    Path coded_path = Path(TestsCoders::TEST_OUTPUT_PATH, "testFloat.code");
+    Path coded_path = Path(TestsUtils::OUTPUT_PATH, "testFloat.code");
 
-    std::cout << TestsCoders::TEST_OUTPUT_PATH;
+    std::cout << TestsUtils::OUTPUT_PATH;
     BitStreamWriter* bit_stream_writer = new BitStreamWriter(coded_path);
     float a = 0.238728932739; bit_stream_writer->pushFloat(a);
     float b = 0.2893232; bit_stream_writer->pushFloat(b);

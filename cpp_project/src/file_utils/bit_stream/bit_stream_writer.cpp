@@ -8,8 +8,6 @@ void BitStreamWriter::construct(const char * file){
     current = 0, offset = 0;
 }
 
-BitStreamWriter::BitStreamWriter(){}
-
 BitStreamWriter::BitStreamWriter(Path path){
     construct(path.full_path.c_str());
 }

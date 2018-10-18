@@ -5,24 +5,23 @@
 #include "constants.h"
 #include "scripts.h"
 #include "string_utils.h"
-#include "os_utils.h"
 #include "tests_coders_utils.h"
+#include "tests_utils.h"
 
 // Set to 1 to set up the tests, then set to 0
 #define RECORD 0
 
-const std::string TestsCoders::DATASETS_PATH = OSUtils::DATASETS_CSV_PATH;
-const std::string TestsCoders::TEST_OUTPUT_PATH = OSUtils::CPP_PROJECT_PATH + "/test_files";
+
 
 void TestsCoders::testSideFilderCoder() {
-//     Path file_path = Path(DATASETS_PATH + "/[1]irkis", "vwc_1202.dat.csv");
-    Path file_path = Path(TEST_OUTPUT_PATH + "/sf", "vwc_1202.dat_CLEAN.csv");
+//     Path file_path = Path(TestsUtils::IRKIS_PATH, "vwc_1202.dat.csv");
+    Path file_path = Path(TestsUtils::OUTPUT_PATH + "/sf", "vwc_1202.dat_CLEAN.csv");
     std::vector<int> lossless{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
     std::vector<int>    lossy{0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5};
 
     std::string coder_name = "CoderSF";
-    Path output_code_path = TestsCodersUtils::codedFilePath(TEST_OUTPUT_PATH, file_path, coder_name);
-    Path output_decode_path = TestsCodersUtils::decodedFilePath(TEST_OUTPUT_PATH, file_path, coder_name);
+    Path output_code_path = TestsCodersUtils::codedFilePath(TestsUtils::OUTPUT_PATH, file_path, coder_name);
+    Path output_decode_path = TestsCodersUtils::decodedFilePath(TestsUtils::OUTPUT_PATH, file_path, coder_name);
 
     std::cout << output_code_path.full_path << std::endl;
     std::cout << output_decode_path.full_path << std::endl;
@@ -34,13 +33,13 @@ void TestsCoders::testSideFilderCoder() {
 }
 
 void TestsCoders::testGAMPS() {
-     Path file_path = Path(DATASETS_PATH + "/[1]irkis", "vwc_1202.dat.csv");
+     Path file_path = Path(TestsUtils::IRKIS_PATH, "vwc_1202.dat.csv");
     std::vector<int> lossless{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
     std::vector<int>    lossy{0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5};
 
     std::string coder_name = "GAMPS";
-    Path output_code_path = TestsCodersUtils::codedFilePath(TEST_OUTPUT_PATH, file_path, coder_name);
-    Path output_decode_path = TestsCodersUtils::decodedFilePath(TEST_OUTPUT_PATH, file_path, coder_name);
+    Path output_code_path = TestsCodersUtils::codedFilePath(TestsUtils::OUTPUT_PATH, file_path, coder_name);
+    Path output_decode_path = TestsCodersUtils::decodedFilePath(TestsUtils::OUTPUT_PATH, file_path, coder_name);
 
     std::cout << output_code_path.full_path << std::endl;
     std::cout << output_decode_path.full_path << std::endl;
@@ -57,15 +56,15 @@ TestsCoders::TestsCoders(){
 }
 
 void TestsCoders::setDatasets(){
-    Path file1_path = Path(DATASETS_PATH + "/[1]irkis", "vwc_1202.dat.csv");
+    Path file1_path = Path(TestsUtils::IRKIS_PATH, "vwc_1202.dat.csv");
     std::vector<int> file1_lossless{0,  0, 0, 0, 0, 0,  0, 0, 0, 0, 0};
     std::vector<int>    file1_lossy{0, 12, 3, 5, 2, 4, 10, 6, 4, 3, 2};
 
-    Path file2_path = Path(DATASETS_PATH + "/[4]solar-anywhere/all", "solar-anywhere-2012.csv");
+    Path file2_path = Path(TestsUtils::SOLAR_ANYWHERE_PATH, "solar-anywhere-2012.csv");
     std::vector<int> file2_lossless{0,  0,  0, 0,  0,  0, 0,  0,  0, 0,  0,  0, 0,  0,  0, 0,  0,  0, 0,  0,  0, 0,  0,  0, 0,  0,  0, 0,  0,  0, 0,  0,  0, 0,  0,  0, 0};
     std::vector<int>    file2_lossy{0, 13, 14, 5, 13, 13, 5, 14, 14, 5, 13, 13, 5, 13, 13, 5, 14, 14, 5, 13, 13, 5, 13, 13, 5, 14, 14, 5, 14, 13, 5, 14, 14, 5, 14, 15, 5};
 
-    Path file3_path = Path(DATASETS_PATH + "/[6]noaa-spc-reports/hail", "noaa_spc-hail.csv");
+    Path file3_path = Path(TestsUtils::NOAA_SPC_HAIL_PATH, "noaa_spc-hail.csv");
     std::vector<int> file3_lossless{0,   0,   0,  0};
     std::vector<int>    file3_lossy{0, 143, 252, 16};
 
@@ -97,15 +96,15 @@ void TestsCoders::setModePaths(int i){
 }
 
 void TestsCoders::runAll(){
-    std::cout << "TestsCoder::run" << std::endl;
+    std::cout << "TestsCoder::runAll()" << std::endl;
     std::string mask_mode_folder = (MASK_MODE) ? "mask_mode_true" : "mask_mode_false";
 
-    expected_root_folder = TEST_OUTPUT_PATH + "/expected/" + mask_mode_folder;
+    expected_root_folder = TestsUtils::OUTPUT_PATH + "/expected/" + mask_mode_folder;
 
 #if RECORD
     output_root_folder = expected_root_folder;
 #else
-    output_root_folder = TEST_OUTPUT_PATH + "/output/" + mask_mode_folder;
+    output_root_folder = TestsUtils::OUTPUT_PATH + "/output/" + mask_mode_folder;
 #endif
 
     Path bits_csv_path = Path(output_root_folder, "bits-out.csv");

@@ -10,8 +10,7 @@
 class TestsCoders {
 
 public:
-    static const std::string DATASETS_PATH;
-    static const std::string TEST_OUTPUT_PATH;
+
 
     TestsCoders();
     void runAll();
