@@ -38,7 +38,7 @@ int main(int argc, char *argv[]){
 
     assert(StringUtils::stringInList(coder_name, coders_array));
     assert(argc >= 9);
-    int window_size = atoi(argv[7]); // fixed_window_size for PCA and max_window_size for other algorithms
+    int window_size = atoi(argv[7]); // window_size for PCA and window_size for other algorithms
     std::vector<int> error_thresholds_vector;
     for(int i=8; i < argc; i++){ error_thresholds_vector.push_back(atoi(argv[i])); }
 

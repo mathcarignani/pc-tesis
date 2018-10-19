@@ -38,7 +38,7 @@ public:
 //class SlideFilterWindow {
 //
 //private:
-//    int max_window_size;
+//    int window_size;
 //    int total_data_rows;
 //    int error_threshold;
 //    bool initialized;
@@ -51,7 +51,7 @@ public:
 //    bool updateUandLforConnectedSegment(Line& curU, Line& curL, Line prevG);
 //
 //public:
-//    int max_window_size_bit_length;
+//    int window_size_bit_length;
 //    int length;
 //
 //    int m_nBegin_Point;
@@ -64,7 +64,7 @@ public:
 //    Line m_prevG;// Previous segment
 //
 //    SlideFilterWindow();
-//    SlideFilterWindow(int max_window_size_, int error_threshold_, int total_data_rows_);
+//    SlideFilterWindow(int window_size_, int error_threshold_, int total_data_rows_);
 //    bool addValue(std::string x, int x_delta);
 //
 //    void printLine(std::string name, Line &line);

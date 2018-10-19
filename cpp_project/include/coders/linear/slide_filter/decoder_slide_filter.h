@@ -14,7 +14,6 @@
 class DecoderSlideFilter: public DecoderCols {
 
 private:
-    int max_window_size_bit_length;
     Column* column;
     DynArray<SlideFiltersEntry>* m_pCompressData;
     CDataStream* m_pApproxData;
@@ -27,7 +26,7 @@ private:
 
 public:
     using DecoderCols::DecoderCols;
-    void setCoderParams(int max_window_size_);
+    void setCoderParams(int window_size_);
 };
 
 #endif // MASK_MODE

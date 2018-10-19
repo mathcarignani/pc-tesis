@@ -9,8 +9,8 @@
 #include "string_utils.h"
 #include "coder_utils.h"
 
-void DecoderPWLH::setCoderParams(int max_window_size_, bool integer_mode_){
-    max_window_size_bit_length = MathUtils::bitLength(max_window_size_);
+void DecoderPWLH::setCoderParams(int window_size_, bool integer_mode_){
+    window_size_bit_length = MathUtils::bitLength(window_size_);
     integer_mode = integer_mode_;
 }
 
@@ -38,7 +38,7 @@ std::vector<std::string> DecoderPWLH::decodeDataColumn(){
 }
 
 void DecoderPWLH::decodeWindow(){
-    int window_size = input_file->getInt(max_window_size_bit_length);
+    int window_size = input_file->getInt(window_size_bit_length);
     integer_mode ? decodeWindowInt(window_size) : decodeWindowDouble(window_size);
 }
 

@@ -7,14 +7,18 @@
 class DecoderAPCA: public DecoderPCA {
 
 private:
-    int max_window_size_bit_length;
-
     std::vector<std::string> decodeDataColumn() override;
-    void decodeWindow(std::vector<std::string> & column);
+
 
 public:
     using DecoderPCA::DecoderPCA;
-    void setCoderParams(int max_window_size_);
+    void setCoderParams(int window_size_);
+
+    //
+    // Wrapper methods which are also used by DecoderGAMPS.
+    //
+    static std::vector<std::string> decodeDataColumn(DecoderBase* decoder);
+    static void decodeWindow(DecoderBase* decoder, std::vector<std::string> & column);
 };
 
 #endif //CPP_PROJECT_DECODER_APCA_H

@@ -10,14 +10,14 @@ class FRWindow {
 
 private:
     std::vector<DataItem> data;
-    int max_window_size;
+    int window_size;
     int error_threshold;
     int length;
     void getIndexes(std::vector<int> & array, int first_index, int last_index);
     bool violatedConstraint(int first_index, int last_index);
 
 public:
-    FRWindow(int max_window_size_, int error_threshold_);
+    FRWindow(int window_size_, int error_threshold_);
 
     void addDataItem(int timestamp, std::string value);
     bool isFull();

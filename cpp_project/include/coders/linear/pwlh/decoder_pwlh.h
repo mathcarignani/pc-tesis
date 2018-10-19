@@ -7,7 +7,6 @@
 class DecoderPWLH: public DecoderCols {
 
 private:
-    int max_window_size_bit_length;
     bool integer_mode;
 
     std::vector<std::string> decodeDataColumn() override;
@@ -25,7 +24,7 @@ private:
 
 public:
     using DecoderCols::DecoderCols;
-    void setCoderParams(int max_window_size_, bool integer_mode_);
+    void setCoderParams(int window_size_, bool integer_mode_);
 };
 
 #endif //CPP_PROJECT_DECODER_PWLH_H

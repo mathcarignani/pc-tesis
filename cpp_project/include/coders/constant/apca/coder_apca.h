@@ -8,7 +8,7 @@
 class CoderAPCA: public CoderCols {
 
 private:
-    int max_window_size;
+    int window_size;
     std::vector<int> error_thresholds_vector;
     APCAWindow* window;
 
@@ -18,7 +18,7 @@ private:
 
 public:
     using CoderCols::CoderCols;
-    void setCoderParams(int max_window_size_, std::vector<int> error_thresholds_vector_);
+    void setCoderParams(int window_size_, std::vector<int> error_thresholds_vector_);
 
     //
     // Wrapper methods which are also used by CoderGAMPS.

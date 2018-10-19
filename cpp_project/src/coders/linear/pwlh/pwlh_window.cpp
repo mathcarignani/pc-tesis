@@ -5,9 +5,9 @@
 #include "constants.h"
 
 
-PWLHWindow::PWLHWindow(int max_window_size_, int error_threshold_, Range range_, bool integer_mode_){
-    max_window_size = max_window_size_;
-    max_window_size_bit_length = MathUtils::bitLength(max_window_size);
+PWLHWindow::PWLHWindow(int window_size_, int error_threshold_, Range range_, bool integer_mode_){
+    window_size = window_size_;
+    window_size_bit_length = MathUtils::bitLength(window_size);
     error_threshold = error_threshold_;
     range = range_;
     bucket = new LinearBucket(error_threshold);
@@ -68,7 +68,7 @@ bool PWLHWindow::checkIntegerModeConstraint(int new_x_coord){
 }
 
 bool PWLHWindow::isFull(){
-    return length == max_window_size;
+    return length == window_size;
 }
 
 bool PWLHWindow::isEmpty(){

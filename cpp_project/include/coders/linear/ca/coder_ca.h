@@ -8,10 +8,10 @@
 class CoderCA: public CoderCols {
 
 private:
-    int max_window_size;
+    int window_size;
     std::vector<int> error_thresholds_vector;
     CAWindow window;
-    int max_window_size_bit_length; // same as window.max_window_size_bit_length
+    int window_size_bit_length; // same as window.window_size_bit_length
 
     void codeColumnBefore() override;
     void codeColumnWhile(std::string csv_value) override;
@@ -26,7 +26,7 @@ private:
 
 public:
     using CoderCols::CoderCols;
-    void setCoderParams(int max_window_size_, std::vector<int> error_thresholds_vector_);
+    void setCoderParams(int window_size_, std::vector<int> error_thresholds_vector_);
 
 };
 

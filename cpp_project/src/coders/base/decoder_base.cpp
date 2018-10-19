@@ -62,3 +62,13 @@ void DecoderBase::close(){
     delete input_file;
     delete output_csv;
 }
+
+void DecoderBase::transposeMatrix(int data_rows_count_, std::vector<std::vector<std::string>> columns, int total_columns){
+    for(int row_index_ = 0; row_index_ < data_rows_count_; row_index_++){
+        std::vector<std::string> row;
+        for(int column_index_ = 0; column_index_ < total_columns; column_index_++) {
+            row.push_back(columns[column_index_][row_index_]);
+        }
+        output_csv->writeRowDecoder(row);
+    }
+}

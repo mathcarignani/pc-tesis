@@ -2,8 +2,8 @@
 #include "decoder_pca.h"
 #include "assert.h"
 
-void DecoderPCA::setCoderParams(int fixed_window_size_){
-    fixed_window_size = fixed_window_size_;
+void DecoderPCA::setCoderParams(int window_size_){
+    window_size = window_size_;
 }
 
 std::vector<std::string> DecoderPCA::decodeDataColumn(){
@@ -22,11 +22,11 @@ std::vector<std::string> DecoderPCA::decodeDataColumn(){
             row_index++; unprocessed_rows--;
             continue;
         }
-        int w_size = fixed_window_size;
+        int w_size = window_size;
         if (mask->total_data < w_size) { w_size = mask->total_data; }
         decodeWindow(column, w_size);
     #else
-        int w_size = fixed_window_size;
+        int w_size = window_size;
         if (unprocessed_rows < w_size) { w_size = unprocessed_rows; }
         decodeWindow(column, w_size);
     #endif
@@ -38,26 +38,26 @@ std::vector<std::string> DecoderPCA::decodeDataColumn(){
 void DecoderPCA::decodeWindow(std::vector<std::string> & column, int window_size){
     int fi = input_file->getBit();
     if (fi){ decodeNonConstantWindow(column, window_size); }
-    else {   decodeConstantWindow(column, window_size); }
+    else {   decodeConstantWindow(this, column, window_size); }
 #if MASK_MODE
     mask->total_data -= window_size;
 #endif
 }
 
-void DecoderPCA::decodeConstantWindow(std::vector<std::string> & column, int window_size){
-    std::string constant = decodeValueRaw();
+void DecoderPCA::decodeConstantWindow(DecoderBase* decoder, std::vector<std::string> & column, int window_size){
+    std::string constant = decoder->decodeValueRaw();
     int i = 0;
     while (i < window_size){
     #if MASK_MODE
-        if (i > 0 && mask->isNoData()) { // always false in the first iteration
+        if (i > 0 && decoder->mask->isNoData()) { // always false in the first iteration
             column.push_back(Constants::NO_DATA);
-            row_index++;
+            decoder->row_index++;
             continue;
         }
     #endif
         column.push_back(constant);
         i++;
-        row_index++;
+        decoder->row_index++;
     }
 }
 

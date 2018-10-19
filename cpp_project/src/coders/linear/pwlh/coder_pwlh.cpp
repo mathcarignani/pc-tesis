@@ -4,8 +4,8 @@
 #include <cfloat>
 
 
-void CoderPWLH::setCoderParams(int max_window_size_, std::vector<int> error_thresholds_vector_, bool integer_mode_){
-    max_window_size = max_window_size_;
+void CoderPWLH::setCoderParams(int window_size_, std::vector<int> error_thresholds_vector_, bool integer_mode_){
+    window_size = window_size_;
     integer_mode = integer_mode_;
     if (integer_mode) {
         // substract 1 to every error_threshold > 0
@@ -44,11 +44,11 @@ void CoderPWLH::codeColumnAfter(){
 PWLHWindow* CoderPWLH::createWindow(){
     int error_threshold = error_thresholds_vector.at(column_index);
     Range column_range = dataset->column_code->range;
-    return new PWLHWindow(max_window_size, error_threshold, column_range, integer_mode);
+    return new PWLHWindow(window_size, error_threshold, column_range, integer_mode);
 }
 
 void CoderPWLH::codeWindow(PWLHWindow* window){
-    codeInt(window->length, window->max_window_size_bit_length);
+    codeInt(window->length, window->window_size_bit_length);
     (integer_mode) ? codeWindowInt(window) : codeWindowDouble(window);
 }
 

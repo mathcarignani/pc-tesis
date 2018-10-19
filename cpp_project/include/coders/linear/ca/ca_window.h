@@ -8,7 +8,7 @@
 class CAWindow {
 
 private:
-    int max_window_size;
+    int window_size;
     int error_threshold;
     CAPoint archived_value;
     CAPoint snapshot_value;
@@ -16,14 +16,14 @@ private:
     CALine s_max;
 
 public:
-    int max_window_size_bit_length;
+    int window_size_bit_length;
     int length;
     std::string constant_value;
     bool nan_window;
     int x_coord;
 
     CAWindow();
-    CAWindow(int max_window_size_, int error_threshold_);
+    CAWindow(int window_size_, int error_threshold_);
     bool isFull();
     bool isEmpty();
     void updateSMinAndSMax(CAPoint incoming_point);

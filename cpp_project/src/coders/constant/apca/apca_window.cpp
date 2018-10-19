@@ -5,11 +5,9 @@
 #include "math_utils.h"
 #include "iostream"
 
-APCAWindow::APCAWindow() {}
-
-APCAWindow::APCAWindow(int max_window_size_, int error_threshold_){
-    max_window_size = max_window_size_;
-    max_window_size_bit_length = MathUtils::bitLength(max_window_size);
+APCAWindow::APCAWindow(int window_size_, int error_threshold_){
+    window_size = window_size_;
+    window_size_bit_length = MathUtils::bitLength(window_size);
     error_threshold = error_threshold_;
     length = 0;
     min = 0;
@@ -54,7 +52,7 @@ bool APCAWindow::updateConstantValue(int new_min, int new_max){
 }
 
 bool APCAWindow::isFull(){
-    return length == max_window_size;
+    return length == window_size;
 }
 
 bool APCAWindow::isEmpty(){

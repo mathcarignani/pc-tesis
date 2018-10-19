@@ -7,11 +7,11 @@
 #include "math_utils.h"
 #include "vector_utils.h"
 
-FRWindow::FRWindow(int max_window_size_, int error_threshold_){
-    max_window_size = max_window_size_;
+FRWindow::FRWindow(int window_size_, int error_threshold_){
+    window_size = window_size_;
     error_threshold = error_threshold_;
     length = 0;
-    data.reserve(max_window_size_);
+    data.reserve(window_size_);
 }
 
 void FRWindow::clear(){
@@ -19,7 +19,7 @@ void FRWindow::clear(){
 }
 
 void FRWindow::addDataItem(int timestamp, std::string value){
-    assert(length <= max_window_size);
+    assert(length <= window_size);
     int new_timestamp = (length == 0) ? 0 : data[length-1].timestamp + timestamp;
     int value_int = StringUtils::stringToInt(value);
     data[length] = DataItem(value_int, new_timestamp);
@@ -27,7 +27,7 @@ void FRWindow::addDataItem(int timestamp, std::string value){
 }
 
 bool FRWindow::isFull(){
-    return length == max_window_size;
+    return length == window_size;
 }
 
 bool FRWindow::isEmpty(){

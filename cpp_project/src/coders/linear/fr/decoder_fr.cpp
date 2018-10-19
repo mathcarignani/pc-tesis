@@ -10,9 +10,9 @@
 #include "string_utils.h"
 #include "Line.h"
 
-void DecoderFR::setCoderParams(int max_window_size_){
-    max_window_size = max_window_size_;
-    max_window_size_bit_length = MathUtils::bitLength(max_window_size_);
+void DecoderFR::setCoderParams(int window_size_){
+    window_size = window_size_;
+    window_size_bit_length = MathUtils::bitLength(window_size_);
 }
 
 std::vector<std::string> DecoderFR::decodeDataColumn(){
@@ -26,7 +26,7 @@ std::vector<std::string> DecoderFR::decodeDataColumn(){
             continue;
         }
         int remaining_data = column->unprocessed_data_rows;
-        int w_size = (remaining_data < max_window_size) ? remaining_data : max_window_size;
+        int w_size = (remaining_data < window_size) ? remaining_data : window_size;
         decodeWindow(w_size, x_coords_vector);
     }
 
@@ -102,7 +102,7 @@ std::vector<DataItem> DecoderFR::readDataItems(int window_size){
             first_index = false;
         }
         else {
-            index = decodeInt(max_window_size_bit_length); // 1 <= index <= max_window_size
+            index = decodeInt(window_size_bit_length); // 1 <= index <= window_size
         }
         window.push_back(DataItem(value, index));
         if (index == window_size - 1) { break; }

@@ -7,7 +7,6 @@
 class DecoderCA: public DecoderCols {
 
 private:
-    int max_window_size_bit_length;
     int current_window_size;
     std::string current_value;
 
@@ -17,7 +16,7 @@ private:
 
 public:
     using DecoderCols::DecoderCols;
-    void setCoderParams(int max_window_size_);
+    void setCoderParams(int window_size_);
 };
 
 #endif //CPP_PROJECT_DECODER_CA_H

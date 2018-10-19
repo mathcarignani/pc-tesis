@@ -7,10 +7,10 @@
 #include "math_utils.h"
 #include <iomanip>
 
-void CoderSlideFilter::setCoderParams(int max_window_size_, std::vector<int> error_thresholds_vector_){
-    max_window_size = max_window_size_;
+void CoderSlideFilter::setCoderParams(int window_size_, std::vector<int> error_thresholds_vector_){
+    window_size = window_size_;
     error_thresholds_vector = error_thresholds_vector_;
-    max_window_size_bit_length = MathUtils::bitLength(max_window_size);
+    window_size_bit_length = MathUtils::bitLength(window_size);
 }
 
 void CoderSlideFilter::codeColumnBefore(){

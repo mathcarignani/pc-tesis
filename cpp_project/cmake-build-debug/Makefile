@@ -690,6 +690,33 @@ src/coders/correlation/gamps/decoder_gamps.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/correlation/gamps/decoder_gamps.cpp.s
 .PHONY : src/coders/correlation/gamps/decoder_gamps.cpp.s
 
+src/coders/correlation/gamps/gamps_utils.o: src/coders/correlation/gamps/gamps_utils.cpp.o
+
+.PHONY : src/coders/correlation/gamps/gamps_utils.o
+
+# target to build an object file
+src/coders/correlation/gamps/gamps_utils.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/correlation/gamps/gamps_utils.cpp.o
+.PHONY : src/coders/correlation/gamps/gamps_utils.cpp.o
+
+src/coders/correlation/gamps/gamps_utils.i: src/coders/correlation/gamps/gamps_utils.cpp.i
+
+.PHONY : src/coders/correlation/gamps/gamps_utils.i
+
+# target to preprocess a source file
+src/coders/correlation/gamps/gamps_utils.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/correlation/gamps/gamps_utils.cpp.i
+.PHONY : src/coders/correlation/gamps/gamps_utils.cpp.i
+
+src/coders/correlation/gamps/gamps_utils.s: src/coders/correlation/gamps/gamps_utils.cpp.s
+
+.PHONY : src/coders/correlation/gamps/gamps_utils.s
+
+# target to generate assembly for a file
+src/coders/correlation/gamps/gamps_utils.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/correlation/gamps/gamps_utils.cpp.s
+.PHONY : src/coders/correlation/gamps/gamps_utils.cpp.s
+
 src/coders/linear/ca/ca_window.o: src/coders/linear/ca/ca_window.cpp.o
 
 .PHONY : src/coders/linear/ca/ca_window.o
@@ -1950,6 +1977,9 @@ help:
 	@echo "... src/coders/correlation/gamps/decoder_gamps.o"
 	@echo "... src/coders/correlation/gamps/decoder_gamps.i"
 	@echo "... src/coders/correlation/gamps/decoder_gamps.s"
+	@echo "... src/coders/correlation/gamps/gamps_utils.o"
+	@echo "... src/coders/correlation/gamps/gamps_utils.i"
+	@echo "... src/coders/correlation/gamps/gamps_utils.s"
 	@echo "... src/coders/linear/ca/ca_window.o"
 	@echo "... src/coders/linear/ca/ca_window.i"
 	@echo "... src/coders/linear/ca/ca_window.s"

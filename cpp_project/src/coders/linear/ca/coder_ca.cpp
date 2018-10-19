@@ -2,15 +2,15 @@
 #include "coder_ca.h"
 #include "string_utils.h"
 
-void CoderCA::setCoderParams(int max_window_size_, std::vector<int> error_thresholds_vector_){
-    max_window_size = max_window_size_;
+void CoderCA::setCoderParams(int window_size_, std::vector<int> error_thresholds_vector_){
+    window_size = window_size_;
     error_thresholds_vector = error_thresholds_vector_;
 }
 
 void CoderCA::codeColumnBefore(){
     int error_threshold = error_thresholds_vector.at(column_index);
-    window = CAWindow(max_window_size, error_threshold);
-    max_window_size_bit_length = window.max_window_size_bit_length;
+    window = CAWindow(window_size, error_threshold);
+    window_size_bit_length = window.window_size_bit_length;
 }
 
 void CoderCA::codeColumnWhile(std::string csv_value){
@@ -125,6 +125,6 @@ void CoderCA::codeValueAndCreateNonNanWindow(CAWindow & window, std::string x, i
 void CoderCA::codeWindow(int window_length, std::string window_value){
 //    std::cout << "window.length = " << window_length << ", window.constant_value = " << window_value << std::endl;
     if (window_length == 0) { return; }
-    codeInt(window_length, max_window_size_bit_length);
+    codeInt(window_length, window_size_bit_length);
     codeValueRaw(window_value);
 }

@@ -8,7 +8,7 @@
 class APCAWindow {
 
 private:
-    int max_window_size;
+    int window_size;
     int error_threshold;
     int min;
     int max;
@@ -17,12 +17,11 @@ private:
 #endif
 
 public:
-    int max_window_size_bit_length;
+    int window_size_bit_length;
     int length;
     std::string constant_value;
 
-    APCAWindow();
-    APCAWindow(int max_window_size_, int error_threshold_);
+    APCAWindow(int window_size_, int error_threshold_);
     bool conditionHolds(std::string x);
     bool isFull();
     bool isEmpty();

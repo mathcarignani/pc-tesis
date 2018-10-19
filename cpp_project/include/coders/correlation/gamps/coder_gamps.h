@@ -2,36 +2,40 @@
 #ifndef CPP_PROJECT_CODER_GAMPS_H
 #define CPP_PROJECT_CODER_GAMPS_H
 
-#include "constants.h"
 #include "coder_base.h"
 #include "apca_window.h"
 
 class CoderGAMPS: public CoderBase {
 
 private:
-    void codeDataRows() override;
-    void codeTimeDeltaColumn();
-    void codeColumnGroups();
-    void codeColumnGroup(int group_index, int total_groups);
-    std::vector<int> calculateGroupParams(int group_index, int total_groups, int & base_threshold, int & ratio_threshold);
-    std::vector<std::string> codeBaseColumn(int error_threshold);
-    void codeRatioColumn(int error_threshold, std::vector<std::string> base_column);
-    std::string calculateDiff(std::string base_value, std::string ratio_value);
+    int window_size;
+    int window_size_bit_length;
+    std::vector<int> error_thresholds_vector;
 
-    int column_index = 0;
-    int row_index = 0;
+    int column_index;
+    int row_index;
     int delta_sum;
     std::vector<int> time_delta_vector;
     int total_data_rows;
     APCAWindow* window;
 
-    int max_window_size;
-    int max_window_size_bit_length;
-    std::vector<int> error_thresholds_vector;
+    void codeDataRows() override;
+    void codeTimeDeltaColumn();
+    void codeColumnGroups();
+    void codeColumnGroup(int group_index);
+
+    // TODO: merge these two methods into one
+    std::vector<std::string> codeBaseColumn(int error_threshold);
+    void codeRatioColumn(int error_threshold, std::vector<std::string> base_column);
+
+    void groupThresholds(std::vector<int> column_group_indexes, int & base_threshold, int & ratio_threshold);
+
+
+    static std::string calculateDiff(std::string base_value, std::string ratio_value);
 
 public:
     using CoderBase::CoderBase;
-    void setCoderParams(int max_window_size_, std::vector<int> error_thresholds_vector_);
+    void setCoderParams(int window_size_, std::vector<int> error_thresholds_vector_);
 
 };
 

@@ -8,7 +8,7 @@
 class CoderPWLH: public CoderCols {
 
 private:
-    int max_window_size;
+    int window_size;
     std::vector<int> error_thresholds_vector;
     bool integer_mode;
     PWLHWindow* window;
@@ -24,7 +24,7 @@ private:
 
 public:
     using CoderCols::CoderCols;
-    void setCoderParams(int max_window_size_, std::vector<int> error_thresholds_vector_, bool integer_mode_);
+    void setCoderParams(int window_size_, std::vector<int> error_thresholds_vector_, bool integer_mode_);
 };
 
 #endif //CPP_PROJECT_CODER_PWLH_H

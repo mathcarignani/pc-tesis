@@ -160,8 +160,8 @@ set(CODER_CA_SRC_FILES ${CODER_CA_SRC_DIR}/ca_window.cpp ${CODER_CA_SRC_DIR}/cod
 set(CODER_FR_HEAD_FILES ${CODER_FR_HEAD_DIR}/fr_window.h ${CODER_FR_HEAD_DIR}/coder_fr.h ${CODER_FR_HEAD_DIR}/decoder_fr.h)
 set(CODER_FR_SRC_FILES ${CODER_FR_SRC_DIR}/fr_window.cpp ${CODER_FR_SRC_DIR}/coder_fr.cpp ${CODER_FR_SRC_DIR}/decoder_fr.cpp)
 
-set(CODER_GAMPS_HEAD_FILES ${CODER_GAMPS_HEAD_DIR}/coder_gamps.h ${CODER_GAMPS_HEAD_DIR}/decoder_gamps.h)
-set(CODER_GAMPS_SRC_FILES ${CODER_GAMPS_SRC_DIR}/coder_gamps.cpp ${CODER_GAMPS_SRC_DIR}/decoder_gamps.cpp)
+set(CODER_GAMPS_HEAD_FILES ${CODER_GAMPS_HEAD_DIR}/gamps_utils.h ${CODER_GAMPS_HEAD_DIR}/coder_gamps.h ${CODER_GAMPS_HEAD_DIR}/decoder_gamps.h)
+set(CODER_GAMPS_SRC_FILES ${CODER_GAMPS_SRC_DIR}/gamps_utils.cpp ${CODER_GAMPS_SRC_DIR}/coder_gamps.cpp ${CODER_GAMPS_SRC_DIR}/decoder_gamps.cpp)
 
 set(CODER_HEAD_FILES0 ${CODERS_HEAD_DIR}/constants.h ${CODER_UTILS_HEAD_DIR}/coder_utils.h ${CODER_UTILS_HEAD_DIR}/column.h)
 set(CODER_HEAD_FILES1 ${CODER_HEADER_HEAD_FILES} ${CODER_MASK_HEAD_FILES} ${DATASET_HEAD_FILES} ${CODER_TIME_DELTA_HEAD_FILES})

@@ -25,6 +25,7 @@ public:
     int offset();
     int nan();
     bool insideRange(int value);
+    int dataColumnsGroupCount();
     void printBits();
     std::vector<int> totalMaskBitsArray();
     std::vector<int> totalBitsArray();

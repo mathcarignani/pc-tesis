@@ -6,7 +6,7 @@
 #include "csv_writer.h"
 #include "dataset.h"
 #include "constants.h"
-
+#include "mask.h"
 
 class DecoderBase {
 
@@ -17,13 +17,20 @@ private:
     int decodeRaw();
 
 protected:
-    BitStreamReader* input_file;
     CSVWriter* output_csv;
     Dataset* dataset;
 
+    void transposeMatrix(int data_rows_count_, std::vector<std::vector<std::string>> columns, int total_columns);
+
 public:
+    BitStreamReader* input_file;
     int data_rows_count;
     std::vector<int> time_delta_vector;
+    int window_size_bit_length;
+    int row_index;
+#if MASK_MODE
+    Mask* mask;
+#endif
 
     DecoderBase(BitStreamReader* input_file_, CSVWriter* output_csv_);
     void decodeFile();

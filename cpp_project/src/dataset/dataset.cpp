@@ -63,6 +63,10 @@ bool Dataset::insideRange(int value){
     return column_code->range.insideRange(value);
 }
 
+int Dataset::dataColumnsGroupCount(){
+    return column_code_vector.size() - 1; // -1 because of the time delta column
+}
+
 void Dataset::printBits(){
     for(int i=0; i<column_code_vector.size(); i++){
         std::cout << "total_mask_bits " << column_code_vector[i]->total_mask_bits << std::endl;

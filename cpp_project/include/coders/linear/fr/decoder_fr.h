@@ -11,8 +11,7 @@
 class DecoderFR: public DecoderCols {
 
 private:
-    int max_window_size;
-    int max_window_size_bit_length;
+    int window_size;
 
     std::vector<std::string> decodeDataColumn() override;
     void decodeWindow(int window_size, std::vector<int> x_coords);
@@ -20,7 +19,7 @@ private:
 
 public:
     using DecoderCols::DecoderCols;
-    void setCoderParams(int max_window_size_);
+    void setCoderParams(int window_size_);
 };
 
 #endif //MASK_MODE

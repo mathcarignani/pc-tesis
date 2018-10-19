@@ -11,14 +11,14 @@
 class PWLHWindow {
 
 private:
-    int max_window_size;
+    int window_size;
     int error_threshold;
     LinearBucket* bucket;
     Range range;
     bool integer_mode;
 
 public:
-    int max_window_size_bit_length;
+    int window_size_bit_length;
     int length;
     int x_coord;
     std::string constant_value;
@@ -29,7 +29,7 @@ public:
     bool nan_window;
 #endif
 
-    PWLHWindow(int max_window_size_, int error_threshold_, Range range_, bool integer_mode_);
+    PWLHWindow(int window_size_, int error_threshold_, Range range_, bool integer_mode_);
     bool conditionHolds(std::string x, int x_delta);
     bool checkIntegerModeConstraint(int new_x_coord);
     bool isFull();

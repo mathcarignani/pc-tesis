@@ -8,8 +8,8 @@
 #include "string_utils.h"
 #include "coder_utils.h"
 
-void DecoderSlideFilter::setCoderParams(int max_window_size_){
-    max_window_size_bit_length = MathUtils::bitLength(max_window_size_);
+void DecoderSlideFilter::setCoderParams(int window_size_){
+    window_size_bit_length = MathUtils::bitLength(window_size_);
 }
 
 

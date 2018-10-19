@@ -1,14 +1,14 @@
 
 #include "coder_apca.h"
 
-void CoderAPCA::setCoderParams(int max_window_size_, std::vector<int> error_thresholds_vector_){
-    max_window_size = max_window_size_;
+void CoderAPCA::setCoderParams(int window_size_, std::vector<int> error_thresholds_vector_){
+    window_size = window_size_;
     error_thresholds_vector = error_thresholds_vector_;
 }
 
 void CoderAPCA::codeColumnBefore(){
     int error_threshold = error_thresholds_vector.at(column_index);
-    window = new APCAWindow(max_window_size, error_threshold);
+    window = new APCAWindow(window_size, error_threshold);
 }
 
 void CoderAPCA::codeColumnWhile(std::string csv_value){
@@ -34,6 +34,6 @@ void CoderAPCA::codeColumnAfter(CoderBase* coder, APCAWindow* window){
 }
 
 void CoderAPCA::codeWindow(CoderBase* coder, APCAWindow* window){
-    coder->codeInt(window->length, window->max_window_size_bit_length);
+    coder->codeInt(window->length, window->window_size_bit_length);
     coder->codeValueRaw(window->constant_value);
 }

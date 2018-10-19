@@ -7,18 +7,17 @@
 class DecoderPCA: public DecoderCols {
 
 private:
-    int fixed_window_size;
+    int window_size;
 
     std::vector<std::string> decodeDataColumn() override;
     void decodeWindow(std::vector<std::string> & column, int window_size);
     void decodeNonConstantWindow(std::vector<std::string> & column, int window_size);
 
-protected:
-    void decodeConstantWindow(std::vector<std::string> & column, int window_size);
-
 public:
     using DecoderCols::DecoderCols;
-    void setCoderParams(int fixed_window_size_);
+    void setCoderParams(int window_size_);
+    static void decodeConstantWindow(DecoderBase* decoder, std::vector<std::string> & column, int window_size);
+
 };
 
 #endif //CPP_PROJECT_DECODER_PCA_H

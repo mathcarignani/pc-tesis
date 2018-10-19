@@ -7,9 +7,9 @@
 
 CAWindow::CAWindow() {}
 
-CAWindow::CAWindow(int max_window_size_, int error_threshold_){
-    max_window_size = max_window_size_;
-    max_window_size_bit_length = MathUtils::bitLength(max_window_size);
+CAWindow::CAWindow(int window_size_, int error_threshold_){
+    window_size = window_size_;
+    window_size_bit_length = MathUtils::bitLength(window_size);
     error_threshold = error_threshold_;
     createNanWindow();
     length = 0;
@@ -80,7 +80,7 @@ void CAWindow::updateLength(int new_length){
 }
 
 bool CAWindow::isFull(){
-    return length == max_window_size;
+    return length == window_size;
 }
 
 bool CAWindow::isEmpty(){
