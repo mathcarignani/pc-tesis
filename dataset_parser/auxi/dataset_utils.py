@@ -99,9 +99,10 @@ class DatasetUtils:
             elif reading_dataset or reading_time_unit or reading_alphabets:
                 split_line = line.split('=')
                 if len(split_line) == 2:
-                    self._add_key_value(split_line, reading_dataset)
-                elif len(split_line) == 3:
-                    self._add_alphabet_values(split_line)
+                    if reading_alphabets:
+                        self._add_alphabet_values(split_line)
+                    else:
+                        self._add_key_value(split_line, reading_dataset)
                 else:
                     reading_dataset, reading_time_unit, reading_alphabets = [False] * 3
 
@@ -115,21 +116,16 @@ class DatasetUtils:
 
     #
     # split_line examples:
-    # ["IRKIS", "[0,600]", "16"]
-    # ["ElNino", "[-9000,9000],[-18000,18000],[0,4000]", "15,16,12"]
+    # ["IRKIS", "[0,600]"]
+    # ["ElNino", "[-9000,9000],[-18000,18000],[0,4000]"]
     #
     def _add_alphabet_values(self, split_line):
-        dataset_name, min_max_array, bits_array = split_line
+        dataset_name, min_max_array = split_line
         min_max_array_split = min_max_array.split('],[')
-        bits_array_split = bits_array.split(',')
-
-        if len(min_max_array_split) != len(bits_array_split):
-            raise(StandardError, 'Both arrays (min_max_array and bits_array) must have the same length.')
 
         alphabet_values_array = []
         for idx, val in enumerate(min_max_array_split):
             min_value, max_value = val.replace("[", "").replace("]", "").split(",")
-            bits = bits_array_split[idx]
-            alphabet_values_array.append({'min': min_value, 'max': max_value, 'bits': bits})
+            alphabet_values_array.append({'min': min_value, 'max': max_value})
 
         self.constants['alphabets_dictionary'][dataset_name] = alphabet_values_array

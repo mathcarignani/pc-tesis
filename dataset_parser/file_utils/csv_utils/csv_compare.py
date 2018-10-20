@@ -31,6 +31,21 @@ class CSVCompare:
                 assert(error == "N" or (isinstance(error, int) and error >= 0))
         return error_thresholds
 
+    def _get_threshold(self, col_index):
+        if self.error_thresholds is None:
+           return 0
+        error_thresholds_len = len(self.error_thresholds)
+        if col_index < error_thresholds_len:
+            return self.error_thresholds[col_index]
+        else:  # GAMPS coder
+            data_columns_group_count = len(self.error_thresholds) - 1
+            if data_columns_group_count == 1:
+                index = 1
+            else:
+                index = col_index % data_columns_group_count
+                index = data_columns_group_count if index == 0 else index
+            return self.error_thresholds[index]
+
     def _print_result(self, same_file):
         if same_file:
             if self.error_thresholds is None:
@@ -105,7 +120,7 @@ class CSVCompare:
                 same_row_value = False
 
         else:
-            error = 0 if self.error_thresholds is None else self.error_thresholds[col_index]
+            error = self._get_threshold(col_index)
             assert(isinstance(error, int) and error >= 0)
 
             if error == 0:  # compare strings instead of int

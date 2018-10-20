@@ -34,8 +34,8 @@ void TestsCoders::testSideFilderCoder() {
 
 void TestsCoders::testGAMPS() {
      Path file_path = Path(TestsUtils::IRKIS_PATH, "vwc_1202.dat.csv");
-    std::vector<int> lossless{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-    std::vector<int>    lossy{0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5};
+    std::vector<int> lossless{0, 0};
+    std::vector<int>    lossy{0, 5};
 
     std::string coder_name = "GAMPS";
     Path output_code_path = TestsCodersUtils::codedFilePath(TestsUtils::OUTPUT_PATH, file_path, coder_name);
@@ -44,7 +44,7 @@ void TestsCoders::testGAMPS() {
     std::cout << output_code_path.full_path << std::endl;
     std::cout << output_decode_path.full_path << std::endl;
 
-    Scripts::codeGAMPS(file_path, output_code_path, 5, lossless);
+    Scripts::codeGAMPS(file_path, output_code_path, 5, lossy);
     Scripts::decodeGAMPS(output_code_path, output_decode_path, 5);
     TestsCodersUtils::compareFiles(file_path, output_decode_path);
     std::cout << "SAME FILE!!" << std::endl;

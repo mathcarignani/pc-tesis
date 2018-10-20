@@ -28,7 +28,7 @@ private:
     std::vector<std::string> codeBaseColumn(int error_threshold);
     void codeRatioColumn(int error_threshold, std::vector<std::string> base_column);
 
-    void groupThresholds(std::vector<int> column_group_indexes, int & base_threshold, int & ratio_threshold);
+    void groupThresholds(int threshold, int & base_threshold, int & ratio_threshold);
 
 
     static std::string calculateDiff(std::string base_value, std::string ratio_value);

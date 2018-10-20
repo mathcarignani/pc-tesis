@@ -62,27 +62,31 @@ def coder_params(args):
         return "CoderBasic"
     elif args.coder_name == "CoderPCA":
         error_thresholds = " ".join(str(i) for i in args.coder_params['error_threshold'])
-        string = "CoderPCA " + str(args.coder_params['fixed_window_size']) + " " + error_thresholds
+        string = "CoderPCA " + str(args.coder_params['window_size']) + " " + error_thresholds
         return string
     elif args.coder_name == "CoderAPCA":
         error_thresholds = " ".join(str(i) for i in args.coder_params['error_threshold'])
-        string = "CoderAPCA " + str(args.coder_params['max_window_size']) + " " + error_thresholds
+        string = "CoderAPCA " + str(args.coder_params['window_size']) + " " + error_thresholds
         return string
     elif args.coder_name == "CoderCA":
         error_thresholds = " ".join(str(i) for i in args.coder_params['error_threshold'])
-        string = "CoderCA " + str(args.coder_params['max_window_size']) + " " + error_thresholds
+        string = "CoderCA " + str(args.coder_params['window_size']) + " " + error_thresholds
         return string
     elif args.coder_name == "CoderPWLH":
         error_thresholds = " ".join(str(i) for i in args.coder_params['error_threshold'])
-        string = "CoderPWLH " + str(args.coder_params['max_window_size']) + " " + error_thresholds
+        string = "CoderPWLH " + str(args.coder_params['window_size']) + " " + error_thresholds
         return string
     elif args.coder_name == "CoderPWLHint":
         error_thresholds = " ".join(str(i) for i in args.coder_params['error_threshold'])
-        string = "CoderPWLHint " + str(args.coder_params['max_window_size']) + " " + error_thresholds
+        string = "CoderPWLHint " + str(args.coder_params['window_size']) + " " + error_thresholds
         return string
     elif args.coder_name == "CoderFR":
         error_thresholds = " ".join(str(i) for i in args.coder_params['error_threshold'])
-        string = "CoderFR " + str(args.coder_params['max_window_size']) + " " + error_thresholds
+        string = "CoderFR " + str(args.coder_params['window_size']) + " " + error_thresholds
+        return string
+    elif args.coder_name == "CoderGAMPS":
+        error_thresholds = " ".join(str(i) for i in args.coder_params['error_threshold'])
+        string = "CoderGAMPS " + str(args.coder_params['window_size']) + " " + error_thresholds
         return string
     else:
         print args.coder_name

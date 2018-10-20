@@ -27,7 +27,7 @@ int main(int argc, char *argv[]){
 
     std::string coder_name = argv[6];
     std::vector<std::string> coders_array{"CoderBasic", "CoderPCA", "CoderAPCA", "CoderPWLH",
-                                          "CoderPWLHint", "CoderCA", "CoderSF", "CoderFR"};
+                                          "CoderPWLHint", "CoderCA", "CoderSF", "CoderFR", "CoderGAMPS"};
 
     if (coder_name == "CoderBasic"){
         assert(argc == 7);
@@ -59,6 +59,10 @@ int main(int argc, char *argv[]){
     else if (coder_name == "CoderCA"){
         if (action == "c") {   Scripts::codeCA(input_path, output_path, window_size, error_thresholds_vector); }
         else               { Scripts::decodeCA(input_path, output_path, window_size); }
+    }
+    else if (coder_name == "CoderGAMPS"){
+        if (action == "c") {   Scripts::codeGAMPS(input_path, output_path, window_size, error_thresholds_vector); }
+        else               { Scripts::decodeGAMPS(input_path, output_path, window_size); }
     }
 #if MASK_MODE
     else if (coder_name == "CoderSF"){

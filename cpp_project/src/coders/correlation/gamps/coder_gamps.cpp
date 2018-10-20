@@ -29,6 +29,7 @@ void CoderGAMPS::codeTimeDeltaColumn(){
 }
 
 void CoderGAMPS::codeColumnGroups(){
+    assert(error_thresholds_vector.size() == dataset->dataColumnsGroupCount() + 1);
     for(int i=0; i < dataset->dataColumnsGroupCount(); i++){
     #if COUT
         std::cout << "ccode column group = " << i << std::endl;
@@ -42,7 +43,7 @@ void CoderGAMPS::codeColumnGroup(int group_index){
     VectorUtils::printIntVector(column_group_indexes);
 
     int base_threshold, ratio_threshold;
-    groupThresholds(column_group_indexes, base_threshold, ratio_threshold);
+    groupThresholds(error_thresholds_vector.at(group_index + 1), base_threshold, ratio_threshold);
     std::cout << "base_threshold = " << base_threshold << std::endl;
     std::cout << "ratio_threshold = " << ratio_threshold << std::endl;
 
@@ -66,20 +67,11 @@ void CoderGAMPS::codeColumnGroup(int group_index){
     }
 }
 
-void CoderGAMPS::groupThresholds(std::vector<int> column_group_indexes, int & base_threshold, int & ratio_threshold){
-    int max_threshold = 0;
-    for(int i=0; i < column_group_indexes.size(); i+=1){
-        int i_threshold = error_thresholds_vector.at(i);
-        max_threshold = (i_threshold > max_threshold ? i_threshold : max_threshold);
-    }
-    VectorUtils::printIntVector(error_thresholds_vector);
-    std::cout << "max_threshold = " << max_threshold << std::endl;
-
-    // calculate base_threshold and ratio_threshold
-    base_threshold = max_threshold / 2;
+void CoderGAMPS::groupThresholds(int threshold, int & base_threshold, int & ratio_threshold){
+    base_threshold = threshold / 2;
     ratio_threshold = base_threshold;
-    if (base_threshold + ratio_threshold < max_threshold) { base_threshold++; }
-    assert(base_threshold + ratio_threshold == max_threshold);
+    if (base_threshold + ratio_threshold < threshold) { base_threshold++; }
+    assert(base_threshold + ratio_threshold == threshold);
 }
 
 std::vector<std::string> CoderGAMPS::codeBaseColumn(int error_threshold){
@@ -124,8 +116,6 @@ void CoderGAMPS::codeRatioColumn(int error_threshold, std::vector<std::string> b
 std::string CoderGAMPS::calculateDiff(std::string base_value, std::string ratio_value){
     if (Constants::isNoData(base_value) || Constants::isNoData(ratio_value)) { return ratio_value; }
 
-//    std::cout << "ratio_value = " << ratio_value << " | base_value = " << base_value << std::endl;
     int diff = StringUtils::stringToInt(ratio_value) - StringUtils::stringToInt(base_value);
-//    std::cout << "diff = " << diff << std::endl;
     return StringUtils::intToString(diff);
 }

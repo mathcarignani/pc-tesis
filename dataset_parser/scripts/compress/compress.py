@@ -9,12 +9,12 @@ from auxi.os_utils import git_path
 from file_utils.csv_utils.csv_compare import CSVCompare
 from file_utils.csv_utils.csv_writer import CSVWriter
 from file_utils.csv_utils.csv_utils import CSVUtils
-from file_utils.bit_stream.utils import BitStreamUtils
 from scripts.utils import csv_files_filenames, create_folder
 from scripts.compress.calculate_std import calculate_file_stats, calculate_stds_percentages
 from scripts.compress.compress_aux import THRESHOLD_PERCENTAGES, CSV_PATH, DATASETS_ARRAY, CODERS_ARRAY
 from scripts.compress.compress_cpp import code_decode_cpp
 from scripts.compress.compress_args import CompressArgs
+from compress_gamps import gamps_group_thresholds
 
 
 def compress_decompress_compare(args):
@@ -101,16 +101,16 @@ def run_script_on_dataset(csv, datasets_path, dataset_dictionary, output_path):
 
     output_dataset_path = output_path + dataset_dictionary['o_folder']
     create_folder(output_dataset_path)
-    name = dataset_dictionary['name']
+    dataset_name = dataset_dictionary['name']
 
     for id1, input_filename in enumerate(csv_files_filenames(input_path)):
-        if name in ["NOAA-SST", "NOAA-ADCP"] and id1 >= 2:
+        if dataset_name in ["NOAA-SST", "NOAA-ADCP"] and id1 >= 2:
             return
         row = [dataset_dictionary['name']] if id1 == 0 else [None]
-        run_script_on_file(csv, id1, row, logger, input_path, input_filename, output_dataset_path)
+        run_script_on_file(dataset_name, csv, id1, row, logger, input_path, input_filename, output_dataset_path)
 
 
-def run_script_on_file(csv, id1, row, logger, input_path, input_filename, output_dataset_path):
+def run_script_on_file(dataset_name, csv, id1, row, logger, input_path, input_filename, output_dataset_path):
     base_values = None
     row_count = PrintUtils.separate(CSVUtils.csv_row_count(input_path, input_filename))
 
@@ -125,59 +125,74 @@ def run_script_on_file(csv, id1, row, logger, input_path, input_filename, output
             row = [None, input_filename, row_count]
         else:
             row = [None, None, None]
-        base_values = run_script_on_coder(csv, row, coder_dictionary, output_dataset_path, logger,
+        base_values = run_script_on_coder(dataset_name, csv, row, coder_dictionary, output_dataset_path, logger,
                                           input_path, input_filename, base_values, thresholds_hash)
 
 
-def run_script_on_coder(csv, row, coder_dictionary, output_dataset_path, logger, input_path, input_filename, base_values, thresholds_hash):
+def run_script_on_coder(dataset_name, csv, row, coder_dictionary, output_dataset_path, logger, input_path,
+                        input_filename, base_values, thresholds_hash):
     output_dataset_coder_path = output_dataset_path + '/' + coder_dictionary['o_folder']
     create_folder(output_dataset_coder_path)
 
     coder_name = coder_dictionary['name']
-    # CoderBasic - no params
     if coder_name == 'CoderBasic':
-        values = [coder_name] + [None] * 3
-        args = {
-            'logger': logger,
-            'coder': coder_dictionary.get('coder'),
-            'coder_name': coder_dictionary['name'],
-            'coder_params': {},
-            'decoder': coder_dictionary.get('decoder'),
-            'input_path': input_path,
-            'input_filename': input_filename,
-            'output_path': output_dataset_coder_path
-        }
-        compress_args = CompressArgs(args)
-        compression_values = compress_file(compress_args)
-        base_values = out_results(base_values, compression_values, row + values, csv)
+        base_values = run_script_on_basic_coder(logger, coder_dictionary, input_path, input_filename,
+                                                output_dataset_coder_path, base_values, row, csv)
     else:
-        # other coders
-        window_param_name = coder_dictionary['params'].keys()[0]  # there's a single key
-        window_sizes = coder_dictionary['params'][window_param_name]
-        percentages = thresholds_hash.keys()
+        if coder_name == 'CoderGAMPS':
+            thresholds_hash = gamps_group_thresholds(thresholds_hash, dataset_name)
+        run_script_of_other_coders(logger, coder_dictionary, input_path, input_filename,
+                                   output_dataset_coder_path, base_values, row, csv, thresholds_hash)
+    return base_values
 
-        for id3, percentage in enumerate(percentages):
-            error_thresold_array = thresholds_hash[percentage]
-            params = {'error_threshold': error_thresold_array}
-            for id4, window_size in enumerate(window_sizes):
-                values = [coder_name] if id3 == 0 and id4 == 0 else [None]
-                values += [percentage, params['error_threshold']] if id4 == 0 else [None, None]
-                values += [window_size]
 
-                params[window_param_name] = window_size
-                args = {
-                    'logger': logger,
-                    'coder': coder_dictionary.get('coder'),
-                    'coder_name': coder_dictionary['name'],
-                    'coder_params': params,
-                    'decoder': coder_dictionary.get('decoder'),
-                    'input_path': input_path,
-                    'input_filename': input_filename,
-                    'output_path': output_dataset_coder_path
-                }
-                compress_args = CompressArgs(args)
-                compression_values = compress_file(compress_args)
-                base_values = out_results(base_values, compression_values, row + values, csv)
+def run_script_on_basic_coder(logger, coder_dictionary, input_path, input_filename,
+                              output_dataset_coder_path, base_values, row, csv):
+    values = [coder_dictionary['name']] + [None] * 3
+    args = {
+        'logger': logger,
+        'coder': coder_dictionary.get('coder'),
+        'coder_name': coder_dictionary['name'],
+        'coder_params': {},
+        'decoder': coder_dictionary.get('decoder'),
+        'input_path': input_path,
+        'input_filename': input_filename,
+        'output_path': output_dataset_coder_path
+    }
+    compress_args = CompressArgs(args)
+    compression_values = compress_file(compress_args)
+    base_values = out_results(base_values, compression_values, row + values, csv)
+    return base_values
+
+
+def run_script_of_other_coders(logger, coder_dictionary, input_path, input_filename,
+                               output_dataset_coder_path, base_values, row, csv, thresholds_hash):
+    window_param_name = coder_dictionary['params'].keys()[0]  # there's a single key
+    window_sizes = coder_dictionary['params'][window_param_name]
+    percentages = thresholds_hash.keys()
+
+    for id3, percentage in enumerate(percentages):
+        error_thresold_array = thresholds_hash[percentage]
+        params = {'error_threshold': error_thresold_array}
+        for id4, window_size in enumerate(window_sizes):
+            values = [coder_dictionary['name']] if id3 == 0 and id4 == 0 else [None]
+            values += [percentage, params['error_threshold']] if id4 == 0 else [None, None]
+            values += [window_size]
+
+            params[window_param_name] = window_size
+            args = {
+                'logger': logger,
+                'coder': coder_dictionary.get('coder'),
+                'coder_name': coder_dictionary['name'],
+                'coder_params': params,
+                'decoder': coder_dictionary.get('decoder'),
+                'input_path': input_path,
+                'input_filename': input_filename,
+                'output_path': output_dataset_coder_path
+            }
+            compress_args = CompressArgs(args)
+            compression_values = compress_file(compress_args)
+            base_values = out_results(base_values, compression_values, row + values, csv)
     return base_values
 
 
@@ -202,16 +217,4 @@ def out_results(base_values, compression_values, row, csv):
     csv.write_row(row + values)
     return base_values
 
-
-def compare():
-    path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/output/[6]noaa-spc-reports/basic"
-    file1 = "noaa_spc-wind.c.cpp.csv"
-    file2 = "noaa_spc-wind.c.python.csv"
-    path1 = path + "/" + file1
-    path2 = path + "/" + file2
-    print file1 + " " + str(os.path.getsize(path1))
-    print file2 + " " + str(os.path.getsize(path2))
-    assert(BitStreamUtils.compare_files(path, file1, path, file2))
-
 script("results.csv")
-# compare()

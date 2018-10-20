@@ -80,14 +80,11 @@ void DecoderGAMPS::decodeRatioColumn(std::vector<std::string> base_column){
     mask = MaskDecoder::decode(this);
 #endif
     std::vector<std::string> diff_column = DecoderAPCA::decodeDataColumn(this);
-    std::cout << column_index << " " << diff_column.size() << std::endl;
     std::vector<std::string> ratio_column;
     for(int i=0; i < diff_column.size(); i++){
-        std::string diff = diff_column.at(i);
-        std::string ratio = calculateRatio(base_column.at(i), diff);
+        std::string ratio = calculateRatio(base_column.at(i), diff_column.at(i));
         ratio_column.push_back(ratio);
     }
-    std::cout << column_index << " " << diff_column.size() << std::endl;
     columns.at(column_index) = ratio_column;
 }
 
