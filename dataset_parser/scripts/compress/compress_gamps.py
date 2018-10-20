@@ -1,7 +1,7 @@
 
 from auxi.dataset_utils import DatasetUtils
 
-
+# TODO: improve method
 def gamps_group_thresholds(thresholds_hash, dataset_name):
     du = DatasetUtils('code')
     data_columns_group_count = len(du.constants['alphabets_dictionary'][dataset_name]) - 1  # minus time delta
@@ -15,8 +15,6 @@ def gamps_group_thresholds(thresholds_hash, dataset_name):
             for col_index, threshold in enumerate(thresholds_array):
                 if data_columns_group_count == 1 or ((col_index % data_columns_group_count) == group_id):
                     group_thresholds.append(threshold)
-
-            print group_thresholds
 
             group_threshold = "N"
             for threshold in group_thresholds:
