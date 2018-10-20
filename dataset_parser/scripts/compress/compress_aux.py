@@ -8,7 +8,7 @@ CSV_PATH = datasets_csv_path()
 MASK_MODE = False
 
 DATASETS_ARRAY = [
-    {'name': 'IRKIS', 'folder': "[1]irkis", 'logger': "irkis.log", 'o_folder': "[1]irkis"},
+    # {'name': 'IRKIS', 'folder': "[1]irkis", 'logger': "irkis.log", 'o_folder': "[1]irkis"},
     # {'name': 'NOAA-SST', 'folder': "[2]noaa-sst/months/2017", 'logger': "noaa-sst.log", 'o_folder': "[2]noaa-sst"},
     # {'name': 'NOAA-ADCP', 'folder': "[3]noaa-adcp/2015", 'logger': "noaa-adcp.log", 'o_folder': "[3]noaa-adcp"},
     {'name': 'SolarAnywhere', 'folder': "[4]solar-anywhere/all", 'logger': "solar-anywhere.log", 'o_folder': "[4]solar-anywhere"},
@@ -70,16 +70,16 @@ CODERS_ARRAY = [
 ]
 
 MASK_MODE_CODERS_ARRAY = [
-    {
-        'name': 'CoderFR',
-        'o_folder': 'fr',
-        'params': {'window_size': WINDOW_SIZES}
-    },
-    {
-        'name': 'CoderSF',
-        'o_folder': 'sf',
-        'params': {'window_size': WINDOW_SIZES}
-    }
+    # {
+    #     'name': 'CoderFR',
+    #     'o_folder': 'fr',
+    #     'params': {'window_size': WINDOW_SIZES}
+    # },
+    # {
+    #     'name': 'CoderSF',
+    #     'o_folder': 'sf',
+    #     'params': {'window_size': WINDOW_SIZES}
+    # }
 ]
 
 if MASK_MODE:

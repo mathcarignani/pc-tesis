@@ -53,7 +53,7 @@ void DecoderGAMPS::decodeColumnGroup(int group_index){
 #endif
     dataset->setColumn(column_index);
     std::vector<std::string> base_column = decodeBaseColumn();
-    dataset->updateRangesGAMPS();
+    dataset->updateRangesGAMPS(group_index);
 
     // decode ratio columns
     for(int i=1; i < column_group_indexes.size(); i++){

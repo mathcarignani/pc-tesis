@@ -16,7 +16,7 @@ public:
     std::vector<ColumnCode*> column_code_vector;
 
     Dataset(std::vector<Range> ranges, int data_columns_count_);
-    void updateRangesGAMPS();
+    void updateRangesGAMPS(int column_index);
     void setColumn(int column_index);
     void setMaskMode(bool mask_mode_);
     void addBits(int bits);

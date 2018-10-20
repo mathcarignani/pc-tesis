@@ -32,3 +32,10 @@ void ColumnCode::addBits(int bits_, bool mask_mode){
         total_bits += bits_;
     }
 }
+
+void ColumnCode::print(){
+    std::cout << "range = [" << range.begin << ", " << range.end << "]" << std::endl;
+    std::cout << "bits = " << bits << std::endl;
+    std::cout << "offset = " << offset << std::endl;
+    std::cout << "nan = " << nan << std::endl;
+}
