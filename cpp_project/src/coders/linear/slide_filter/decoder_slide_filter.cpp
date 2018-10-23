@@ -23,9 +23,10 @@ std::vector<std::string> DecoderSlideFilter::decodeDataColumn(){
     decompress(x_coords_vector);
 
     std::cout << "m_pApproxData->size() = " << m_pApproxData->size() << std::endl;
+    std::cout << "column->unprocessed_data_rows = " << column->unprocessed_data_rows << std::endl;
     std::cout << "data_rows_count = " << data_rows_count << std::endl;
 
-    assert(m_pApproxData->size() == column->unprocessed_data_rows);
+//    assert(m_pApproxData->size() == column->unprocessed_data_rows);
 
     int pos = 0;
     mask->reset();

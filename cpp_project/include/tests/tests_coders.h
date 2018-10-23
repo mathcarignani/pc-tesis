@@ -15,7 +15,8 @@ public:
     TestsCoders();
     void runAll();
 
-    static void testSideFilderCoder();
+    // TODO: remove
+    static void testSideFilder();
     static void testGAMPS();
 
 private:

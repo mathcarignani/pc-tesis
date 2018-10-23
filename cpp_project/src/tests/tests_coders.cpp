@@ -12,10 +12,10 @@
 #define RECORD 0
 
 
+void TestsCoders::testSideFilder() {
+//     Path file_path = Path(TestsUtils::OUTPUT_PATH + "/sf", "vwc_1202.dat.csv");
+    Path file_path = Path(TestsUtils::OUTPUT_PATH + "/sf", "vwc_1202.dat2.csv");
 
-void TestsCoders::testSideFilderCoder() {
-//     Path file_path = Path(TestsUtils::IRKIS_PATH, "vwc_1202.dat.csv");
-    Path file_path = Path(TestsUtils::OUTPUT_PATH + "/sf", "vwc_1202.dat_CLEAN.csv");
     std::vector<int> lossless{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
     std::vector<int>    lossy{0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5};
 
@@ -26,10 +26,10 @@ void TestsCoders::testSideFilderCoder() {
     std::cout << output_code_path.full_path << std::endl;
     std::cout << output_decode_path.full_path << std::endl;
 
-//    Scripts::codeSF(file_path, output_code_path, 5, lossless);
-//    Scripts::decodeSF(output_code_path, output_decode_path, 5);
-//    TestsCodersUtils::compareFiles(file_path, output_decode_path);
-//    std::cout << "SAME FILE!!" << std::endl;
+    Scripts::codeSF(file_path, output_code_path, 5, lossless);
+    Scripts::decodeSF(output_code_path, output_decode_path, 5);
+    TestsCodersUtils::compareFiles(file_path, output_decode_path);
+    std::cout << "SAME FILE!!" << std::endl;
 }
 
 void TestsCoders::testGAMPS() {

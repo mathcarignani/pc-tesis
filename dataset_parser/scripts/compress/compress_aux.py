@@ -52,16 +52,16 @@ CODERS_ARRAY = [
     #     'o_folder': 'ca',
     #     'params': {'window_size': WINDOW_SIZES}
     # },
-    # {
-    #     'name': 'CoderPWLH',
-    #     'o_folder': 'pwlh',
-    #     'params': {'window_size': WINDOW_SIZES}
-    # },
-    # {
-    #     'name': 'CoderPWLHint',
-    #     'o_folder': 'pwlh-int',
-    #     'params': {'window_size': WINDOW_SIZES}
-    # },
+    {
+        'name': 'CoderPWLH',
+        'o_folder': 'pwlh',
+        'params': {'window_size': WINDOW_SIZES}
+    },
+    {
+        'name': 'CoderPWLHint',
+        'o_folder': 'pwlh-int',
+        'params': {'window_size': WINDOW_SIZES}
+    },
     {
         'name': 'CoderGAMPS',
         'o_folder': 'gamps',

@@ -13,7 +13,8 @@ int main(int argc, char *argv[]){
 //    }
 
     if (argc <= 1) {
-        TestsCoders::testGAMPS();
+        TestsCoders::testSideFilder();
+//        TestsCoders::testGAMPS();
 //        Tests::runAll();
         return 0;
     }
