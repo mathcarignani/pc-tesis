@@ -1,0 +1,5784 @@
+
+RESULTS
+--------------------------(same file!)
+CoderBasic
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/basic/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 645,023
+-> 48.96% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 503,820
+-> 38.24% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 483,560
+-> 36.7% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 477,158
+-> 36.22% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 481,814
+-> 36.57% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 483,874
+-> 36.73% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 509,191
+-> 38.65% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 503,814
+-> 38.24% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 483,560
+-> 36.7% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 477,158
+-> 36.22% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 481,814
+-> 36.57% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 483,874
+-> 36.73% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 509,191
+-> 38.65% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 503,400
+-> 38.21% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 483,560
+-> 36.7% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 477,158
+-> 36.22% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 481,814
+-> 36.57% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 483,874
+-> 36.73% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 509,191
+-> 38.65% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 501,972
+-> 38.1% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 483,560
+-> 36.7% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 477,158
+-> 36.22% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 481,814
+-> 36.57% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 483,874
+-> 36.73% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 509,191
+-> 38.65% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 488,280
+-> 37.06% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 483,047
+-> 36.66% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 477,158
+-> 36.22% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 481,814
+-> 36.57% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 483,874
+-> 36.73% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 509,191
+-> 38.65% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 459,480
+-> 34.87% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 478,822
+-> 36.34% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 477,158
+-> 36.22% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 481,814
+-> 36.57% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 483,874
+-> 36.73% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 509,191
+-> 38.65% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 423,216
+-> 32.12% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 466,712
+-> 35.42% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 476,906
+-> 36.2% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 481,814
+-> 36.57% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 483,874
+-> 36.73% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 509,191
+-> 38.65% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 353,472
+-> 26.83% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 424,349
+-> 32.21% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 467,870
+-> 35.51% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 480,491
+-> 36.47% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 483,874
+-> 36.73% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 509,191
+-> 38.65% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 592,249
+-> 44.95% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 604,617
+-> 45.89% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 625,263
+-> 47.46% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 655,693
+-> 49.77% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 688,668
+-> 52.27% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 722,701
+-> 54.85% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 569,981
+-> 43.26% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 580,865
+-> 44.09% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 600,026
+-> 45.54% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 628,972
+-> 47.74% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 660,463
+-> 50.13% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 693,011
+-> 52.6% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 512,951
+-> 38.93% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 519,929
+-> 39.46% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 535,282
+-> 40.63% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 560,419
+-> 42.54% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 588,101
+-> 44.64% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 616,841
+-> 46.82% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 470,132
+-> 35.68% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 473,943
+-> 35.97% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 486,422
+-> 36.92% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 508,685
+-> 38.61% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 533,493
+-> 40.49% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 559,359
+-> 42.45% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 379,206
+-> 28.78% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 373,971
+-> 28.38% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 380,119
+-> 28.85% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 396,128
+-> 30.07% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 414,683
+-> 31.47% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 434,296
+-> 32.96% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 323,676
+-> 24.57% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 308,827
+-> 23.44% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 310,249
+-> 23.55% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 322,148
+-> 24.45% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 336,593
+-> 25.55% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 352,096
+-> 26.72% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 288,692
+-> 21.91% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 265,003
+-> 20.11% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 262,406
+-> 19.92% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 271,467
+-> 20.6% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 283,096
+-> 21.49% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 295,784
+-> 22.45% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 243,673
+-> 18.49% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 205,325
+-> 15.58% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 194,438
+-> 14.76% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 199,044
+-> 15.11% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 206,629
+-> 15.68% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 215,291
+-> 16.34% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 1,333,512
+-> 101.21% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 1,295,811
+-> 98.35% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 1,279,993
+-> 97.15% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 1,286,971
+-> 97.68% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 1,299,831
+-> 98.66% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 1,315,100
+-> 99.82% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 1,305,178
+-> 99.06% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 1,267,023
+-> 96.17% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 1,250,767
+-> 94.93% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 1,257,308
+-> 95.43% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 1,269,732
+-> 96.37% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 1,284,563
+-> 97.5% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 1,226,590
+-> 93.1% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 1,186,408
+-> 90.05% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 1,168,959
+-> 88.72% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 1,174,306
+-> 89.13% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 1,185,536
+-> 89.98% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 1,199,174
+-> 91.02% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 1,160,362
+-> 88.07% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 1,115,816
+-> 84.69% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 1,097,315
+-> 83.29% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 1,101,619
+-> 83.61% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 1,111,805
+-> 84.39% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 1,124,400
+-> 85.34% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 1,007,379
+-> 76.46% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 937,506
+-> 71.16% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 915,430
+-> 69.48% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 917,091
+-> 69.61% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 924,635
+-> 70.18% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 934,586
+-> 70.93% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 907,856
+-> 68.91% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 802,052
+-> 60.88% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 773,040
+-> 58.67% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 772,622
+-> 58.64% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 778,096
+-> 59.06% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 785,977
+-> 59.66% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 842,702
+-> 63.96% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 704,285
+-> 53.45% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 666,019
+-> 50.55% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 663,730
+-> 50.38% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 667,644
+-> 50.67% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 673,965
+-> 51.15% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 759,114
+-> 57.62% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 567,926
+-> 43.11% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 505,162
+-> 38.34% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 497,894
+-> 37.79% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 499,237
+-> 37.89% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 503,181
+-> 38.19% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 547,980
+-> 41.59% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 543,151
+-> 41.22% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 546,600
+-> 41.49% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 559,833
+-> 42.49% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 575,611
+-> 43.69% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 592,448
+-> 44.97% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 544,490
+-> 41.33% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 539,529
+-> 40.95% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 542,845
+-> 41.2% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 555,946
+-> 42.2% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 571,592
+-> 43.38% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 588,296
+-> 44.65% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 520,039
+-> 39.47% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 513,978
+-> 39.01% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 516,370
+-> 39.19% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 528,547
+-> 40.12% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 543,269
+-> 41.23% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 559,048
+-> 42.43% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 496,170
+-> 37.66% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 488,313
+-> 37.06% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 489,787
+-> 37.17% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 501,045
+-> 38.03% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 514,848
+-> 39.08% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 529,710
+-> 40.2% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 438,272
+-> 33.26% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 420,376
+-> 31.91% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 419,118
+-> 31.81% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 427,931
+-> 32.48% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 439,288
+-> 33.34% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 451,704
+-> 34.28% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 394,764
+-> 29.96% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 362,653
+-> 27.53% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 357,480
+-> 27.13% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 364,151
+-> 27.64% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 373,374
+-> 28.34% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 383,655
+-> 29.12% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 365,676
+-> 27.75% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 319,819
+-> 24.27% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 310,043
+-> 23.53% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 314,930
+-> 23.9% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 322,507
+-> 24.48% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 331,142
+-> 25.13% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 327,988
+-> 24.89% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 259,464
+-> 19.69% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 238,382
+-> 18.09% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 239,715
+-> 18.19% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 244,661
+-> 18.57% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 250,780
+-> 19.03% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 630,897
+-> 47.88% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 641,631
+-> 48.7% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 661,319
+-> 50.19% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 691,438
+-> 52.48% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 724,268
+-> 54.97% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 758,223
+-> 57.55% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 630,897
+-> 47.88% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 641,631
+-> 48.7% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 661,319
+-> 50.19% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 691,438
+-> 52.48% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 724,268
+-> 54.97% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 758,223
+-> 57.55% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 630,897
+-> 47.88% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 641,631
+-> 48.7% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 661,319
+-> 50.19% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 691,438
+-> 52.48% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 724,268
+-> 54.97% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 758,223
+-> 57.55% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 630,897
+-> 47.88% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 641,631
+-> 48.7% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 661,319
+-> 50.19% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 691,438
+-> 52.48% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 724,268
+-> 54.97% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 758,223
+-> 57.55% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 630,897
+-> 47.88% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 641,631
+-> 48.7% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 661,319
+-> 50.19% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 691,438
+-> 52.48% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 724,268
+-> 54.97% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 758,223
+-> 57.55% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 630,897
+-> 47.88% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 641,631
+-> 48.7% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 661,319
+-> 50.19% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 691,438
+-> 52.48% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 724,268
+-> 54.97% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 758,223
+-> 57.55% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 630,897
+-> 47.88% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 641,631
+-> 48.7% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 661,319
+-> 50.19% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 691,438
+-> 52.48% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 724,268
+-> 54.97% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 758,223
+-> 57.55% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 630,897
+-> 47.88% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 641,631
+-> 48.7% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 661,319
+-> 50.19% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 691,438
+-> 52.48% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 724,268
+-> 54.97% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201503.csv
+-> size (bytes): 1,317,537
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201503.c.cpp.csv
+-> size (bytes): 758,223
+-> 57.55% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderBasic
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/basic/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 645,023
+-> 48.13% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 521,700
+-> 38.93% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 504,256
+-> 37.63% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 498,974
+-> 37.23% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 504,746
+-> 37.66% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 507,931
+-> 37.9% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 538,742
+-> 40.2% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 521,700
+-> 38.93% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 504,256
+-> 37.63% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 498,974
+-> 37.23% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 504,746
+-> 37.66% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 507,931
+-> 37.9% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 538,742
+-> 40.2% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 521,382
+-> 38.9% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 504,256
+-> 37.63% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 498,974
+-> 37.23% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 504,746
+-> 37.66% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 507,931
+-> 37.9% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 538,742
+-> 40.2% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 520,638
+-> 38.85% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 504,256
+-> 37.63% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 498,974
+-> 37.23% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 504,746
+-> 37.66% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 507,931
+-> 37.9% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 538,742
+-> 40.2% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 511,716
+-> 38.18% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 504,013
+-> 37.61% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 498,974
+-> 37.23% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 504,746
+-> 37.66% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 507,931
+-> 37.9% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 538,742
+-> 40.2% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 491,478
+-> 36.67% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 502,096
+-> 37.46% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 498,974
+-> 37.23% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 504,746
+-> 37.66% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 507,931
+-> 37.9% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 538,742
+-> 40.2% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 462,288
+-> 34.49% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 495,913
+-> 37.0% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 498,794
+-> 37.22% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 504,746
+-> 37.66% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 507,931
+-> 37.9% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 538,742
+-> 40.2% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 394,938
+-> 29.47% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 468,481
+-> 34.96% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 496,526
+-> 37.05% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 504,305
+-> 37.63% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 507,931
+-> 37.9% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 538,742
+-> 40.2% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 614,591
+-> 45.86% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 631,599
+-> 47.13% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 655,946
+-> 48.94% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 688,862
+-> 51.4% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 724,008
+-> 54.02% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 760,081
+-> 56.71% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 594,745
+-> 44.38% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 610,429
+-> 45.55% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 633,453
+-> 47.27% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 665,046
+-> 49.62% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 698,869
+-> 52.15% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 733,619
+-> 54.74% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 545,486
+-> 40.7% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 557,849
+-> 41.62% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 577,586
+-> 43.1% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 605,894
+-> 45.21% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 636,430
+-> 47.49% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 667,894
+-> 49.83% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 504,741
+-> 37.66% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 514,179
+-> 38.37% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 531,187
+-> 39.63% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 556,765
+-> 41.54% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 584,572
+-> 43.62% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 613,306
+-> 45.76% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 413,888
+-> 30.88% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 415,261
+-> 30.98% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 426,044
+-> 31.79% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 445,437
+-> 33.24% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 467,059
+-> 34.85% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 489,609
+-> 36.53% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 357,011
+-> 26.64% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 350,385
+-> 26.14% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 356,790
+-> 26.62% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 372,107
+-> 27.76% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 389,656
+-> 29.07% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 408,131
+-> 30.45% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 312,932
+-> 23.35% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 297,769
+-> 22.22% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 300,166
+-> 22.4% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 312,140
+-> 23.29% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 326,357
+-> 24.35% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 341,501
+-> 25.48% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 259,382
+-> 19.35% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 229,063
+-> 17.09% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 224,146
+-> 16.72% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 231,536
+-> 17.28% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 241,263
+-> 18.0% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/apca/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 251,929
+-> 18.8% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 1,382,311
+-> 103.14% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 1,352,282
+-> 100.9% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 1,341,629
+-> 100.11% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 1,350,947
+-> 100.8% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 1,365,418
+-> 101.88% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 1,382,002
+-> 103.12% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 1,358,085
+-> 101.33% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 1,327,670
+-> 99.06% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 1,316,632
+-> 98.24% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 1,325,563
+-> 98.91% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 1,339,649
+-> 99.96% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 1,355,847
+-> 101.17% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 1,291,322
+-> 96.35% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 1,259,284
+-> 93.96% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 1,247,234
+-> 93.06% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 1,255,154
+-> 93.65% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 1,268,229
+-> 94.63% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 1,283,415
+-> 95.76% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 1,229,690
+-> 91.75% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 1,194,803
+-> 89.15% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 1,181,792
+-> 88.18% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 1,188,759
+-> 88.7% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 1,200,881
+-> 89.6% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 1,215,115
+-> 90.67% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 1,081,240
+-> 80.68% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 1,028,351
+-> 76.73% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 1,012,379
+-> 75.54% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 1,016,883
+-> 75.87% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 1,026,540
+-> 76.6% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 1,038,310
+-> 77.47% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 977,827
+-> 72.96% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 894,807
+-> 66.77% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 874,504
+-> 65.25% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 876,970
+-> 65.44% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 884,625
+-> 66.01% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 894,392
+-> 66.74% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 897,811
+-> 66.99% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 781,594
+-> 58.32% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 754,353
+-> 56.29% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 755,037
+-> 56.34% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 760,944
+-> 56.78% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 768,964
+-> 57.38% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 802,148
+-> 59.85% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 630,014
+-> 47.01% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 582,634
+-> 43.47% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 579,794
+-> 43.26% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 583,102
+-> 43.51% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLH
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 588,609
+-> 43.92% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 567,376
+-> 42.33% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 566,282
+-> 42.25% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 572,527
+-> 42.72% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 587,342
+-> 43.82% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 604,386
+-> 45.1% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 622,357
+-> 46.44% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 564,743
+-> 42.14% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 563,546
+-> 42.05% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 569,687
+-> 42.51% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 584,398
+-> 43.6% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 601,338
+-> 44.87% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 619,206
+-> 46.2% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 544,342
+-> 40.62% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 542,286
+-> 40.46% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 547,652
+-> 40.86% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 561,589
+-> 41.9% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 577,755
+-> 43.11% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 594,848
+-> 44.38% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 522,919
+-> 39.02% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 519,567
+-> 38.77% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 524,121
+-> 39.11% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 537,245
+-> 40.09% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 552,597
+-> 41.23% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 568,878
+-> 42.45% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 468,469
+-> 34.95% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 457,748
+-> 34.15% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 459,855
+-> 34.31% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 470,750
+-> 35.13% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 483,875
+-> 36.1% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 497,927
+-> 37.15% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 424,044
+-> 31.64% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 401,536
+-> 29.96% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 400,878
+-> 29.91% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 409,720
+-> 30.57% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 420,805
+-> 31.4% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 432,818
+-> 32.29% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 389,678
+-> 29.08% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 353,773
+-> 26.4% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 349,356
+-> 26.07% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 356,393
+-> 26.59% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 365,696
+-> 27.29% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 375,927
+-> 28.05% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 346,441
+-> 25.85% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 286,918
+-> 21.41% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 273,020
+-> 20.37% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 277,051
+-> 20.67% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 283,657
+-> 21.17% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPWLHint
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/pwlh-int/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 291,236
+-> 21.73% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 654,729
+-> 48.85% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 670,299
+-> 50.01% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 693,806
+-> 51.77% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 726,450
+-> 54.2% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 761,468
+-> 56.82% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 797,472
+-> 59.5% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 654,729
+-> 48.85% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 670,299
+-> 50.01% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 693,806
+-> 51.77% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 726,450
+-> 54.2% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 761,468
+-> 56.82% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 797,472
+-> 59.5% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 654,729
+-> 48.85% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 670,299
+-> 50.01% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 693,806
+-> 51.77% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 726,450
+-> 54.2% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 761,468
+-> 56.82% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 797,472
+-> 59.5% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 654,729
+-> 48.85% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 670,299
+-> 50.01% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 693,806
+-> 51.77% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 726,450
+-> 54.2% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 761,468
+-> 56.82% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 797,472
+-> 59.5% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 654,729
+-> 48.85% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 670,299
+-> 50.01% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 693,806
+-> 51.77% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 726,450
+-> 54.2% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 761,468
+-> 56.82% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 797,472
+-> 59.5% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 654,729
+-> 48.85% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 670,299
+-> 50.01% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 693,806
+-> 51.77% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 726,450
+-> 54.2% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 761,468
+-> 56.82% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 797,472
+-> 59.5% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 654,729
+-> 48.85% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 670,299
+-> 50.01% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 693,806
+-> 51.77% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 726,450
+-> 54.2% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 761,468
+-> 56.82% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 797,472
+-> 59.5% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 654,729
+-> 48.85% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 670,299
+-> 50.01% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 693,806
+-> 51.77% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 726,450
+-> 54.2% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 761,468
+-> 56.82% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[3]noaa-adcp/2015/noaa-adcp-201508.csv
+-> size (bytes): 1,340,211
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[3]noaa-adcp/gamps/noaa-adcp-201508.c.cpp.csv
+-> size (bytes): 797,472
+-> 59.5% of original
+

@@ -1,0 +1,3480 @@
+
+RESULTS
+--------------------------(same file!)
+CoderBasic
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/basic/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 430,547
+-> 32.43% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 435,698
+-> 32.82% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 433,124
+-> 32.63% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 431,580
+-> 32.51% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 431,065
+-> 32.47% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 430,808
+-> 32.45% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 430,679
+-> 32.44% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 315,442
+-> 23.76% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 372,392
+-> 28.05% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 417,708
+-> 31.46% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 429,007
+-> 32.32% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 430,412
+-> 32.42% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 430,679
+-> 32.44% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 182,538
+-> 13.75% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 225,386
+-> 16.98% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 329,628
+-> 24.83% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 394,217
+-> 29.69% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 423,482
+-> 31.9% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 428,291
+-> 32.26% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 144,242
+-> 10.87% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 157,724
+-> 11.88% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 255,228
+-> 19.23% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 347,863
+-> 26.2% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 408,038
+-> 30.74% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 423,117
+-> 31.87% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 119,322
+-> 8.99% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 98,684
+-> 7.43% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 150,300
+-> 11.32% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 248,001
+-> 18.68% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 348,440
+-> 26.25% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 397,247
+-> 29.92% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 113,738
+-> 8.57% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 82,106
+-> 6.18% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 104,364
+-> 7.86% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 173,815
+-> 13.09% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 277,556
+-> 20.91% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 353,467
+-> 26.62% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 111,770
+-> 8.42% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 76,418
+-> 5.76% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 82,188
+-> 6.19% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 132,753
+-> 10.0% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 223,304
+-> 16.82% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 312,473
+-> 23.54% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 110,266
+-> 8.31% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 71,936
+-> 5.42% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 64,428
+-> 4.85% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 93,357
+-> 7.03% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 156,974
+-> 11.82% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 238,843
+-> 17.99% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 491,808
+-> 37.05% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 516,707
+-> 38.92% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 541,606
+-> 40.8% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 566,505
+-> 42.67% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 591,404
+-> 44.55% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 616,302
+-> 46.42% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 209,387
+-> 15.77% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 199,599
+-> 15.03% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 203,238
+-> 15.31% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 211,559
+-> 15.94% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 220,278
+-> 16.59% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 229,035
+-> 17.25% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 140,462
+-> 10.58% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 107,294
+-> 8.08% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 94,448
+-> 7.11% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 94,742
+-> 7.14% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 97,470
+-> 7.34% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 100,806
+-> 7.59% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 127,471
+-> 9.6% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 87,619
+-> 6.6% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 67,911
+-> 5.12% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 64,830
+-> 4.88% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 65,241
+-> 4.91% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 67,011
+-> 5.05% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 120,223
+-> 9.06% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 75,914
+-> 5.72% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 49,838
+-> 3.75% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 42,946
+-> 3.23% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 40,735
+-> 3.07% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 40,770
+-> 3.07% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 118,736
+-> 8.94% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 73,359
+-> 5.53% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 45,355
+-> 3.42% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 36,907
+-> 2.78% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 33,444
+-> 2.52% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 32,592
+-> 2.45% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 118,242
+-> 8.91% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 72,567
+-> 5.47% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 43,866
+-> 3.3% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 34,754
+-> 2.62% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 30,623
+-> 2.31% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 29,145
+-> 2.2% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 117,890
+-> 8.88% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 71,924
+-> 5.42% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 42,672
+-> 3.21% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 32,911
+-> 2.48% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 28,185
+-> 2.12% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 26,058
+-> 1.96% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 526,286
+-> 39.64% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 551,691
+-> 41.56% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 577,095
+-> 43.47% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 602,499
+-> 45.38% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 627,904
+-> 47.3% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 653,308
+-> 49.21% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 525,600
+-> 39.59% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 550,968
+-> 41.5% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 576,336
+-> 43.41% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 601,705
+-> 45.32% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 627,073
+-> 47.23% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 652,441
+-> 49.15% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 500,100
+-> 37.67% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 524,191
+-> 39.48% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 548,284
+-> 41.3% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 572,377
+-> 43.11% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 596,470
+-> 44.93% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 620,563
+-> 46.74% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 475,541
+-> 35.82% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 498,383
+-> 37.54% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 521,246
+-> 39.26% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 544,109
+-> 40.99% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 566,971
+-> 42.71% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 589,834
+-> 44.43% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 430,741
+-> 32.45% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 451,071
+-> 33.98% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 471,678
+-> 35.53% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 492,285
+-> 37.08% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 512,891
+-> 38.63% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 533,498
+-> 40.19% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 392,257
+-> 29.55% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 410,127
+-> 30.89% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 428,765
+-> 32.3% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 447,420
+-> 33.7% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 466,074
+-> 35.11% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 484,729
+-> 36.51% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 358,870
+-> 27.03% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 373,934
+-> 28.17% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 390,795
+-> 29.44% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 407,720
+-> 30.71% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 424,646
+-> 31.99% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 441,572
+-> 33.26% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 305,175
+-> 22.99% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 314,427
+-> 23.68% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 328,218
+-> 24.72% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 342,291
+-> 25.78% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 356,369
+-> 26.84% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201710.csv
+-> size (bytes): 1,327,577
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201710.c.cpp.csv
+-> size (bytes): 370,448
+-> 27.9% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderBasic
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/basic/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 294,670
+-> 27.74% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 298,181
+-> 28.07% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 296,427
+-> 27.9% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 295,374
+-> 27.8% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 295,023
+-> 27.77% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 294,848
+-> 27.75% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 294,760
+-> 27.75% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 233,869
+-> 22.01% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 265,503
+-> 24.99% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 288,990
+-> 27.2% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 293,651
+-> 27.64% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 294,848
+-> 27.75% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 294,760
+-> 27.75% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 155,805
+-> 14.67% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 188,247
+-> 17.72% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 245,694
+-> 23.13% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 277,873
+-> 26.16% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 291,284
+-> 27.42% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 294,362
+-> 27.71% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 120,845
+-> 11.38% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 144,129
+-> 13.57% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 208,206
+-> 19.6% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 257,587
+-> 24.25% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 287,126
+-> 27.03% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 293,964
+-> 27.67% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 91,429
+-> 8.61% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 90,921
+-> 8.56% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 143,742
+-> 13.53% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 205,843
+-> 19.38% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 264,554
+-> 24.9% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 286,402
+-> 26.96% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 82,925
+-> 7.81% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 70,995
+-> 6.68% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 106,350
+-> 10.01% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 163,017
+-> 15.35% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 225,944
+-> 21.27% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 261,328
+-> 24.6% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 79,661
+-> 7.5% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 61,077
+-> 5.75% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 85,470
+-> 8.05% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 136,459
+-> 12.85% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 199,610
+-> 18.79% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 239,040
+-> 22.5% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 77,341
+-> 7.28% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 53,337
+-> 5.02% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 61,614
+-> 5.8% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 99,415
+-> 9.36% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 154,664
+-> 14.56% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/pca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 201,230
+-> 18.94% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 336,357
+-> 31.66% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 353,324
+-> 33.26% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 370,294
+-> 34.86% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 387,263
+-> 36.45% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 404,233
+-> 38.05% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 421,203
+-> 39.65% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 169,140
+-> 15.92% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 166,959
+-> 15.72% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 171,870
+-> 16.18% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 179,113
+-> 16.86% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 186,587
+-> 17.56% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 194,094
+-> 18.27% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 110,822
+-> 10.43% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 93,617
+-> 8.81% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 88,490
+-> 8.33% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 90,329
+-> 8.5% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 93,420
+-> 8.79% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 96,840
+-> 9.12% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 95,209
+-> 8.96% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 71,939
+-> 6.77% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 62,016
+-> 5.84% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 61,504
+-> 5.79% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 62,835
+-> 5.91% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 64,869
+-> 6.11% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 85,424
+-> 8.04% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 56,972
+-> 5.36% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 41,654
+-> 3.92% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 38,310
+-> 3.61% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 37,737
+-> 3.55% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 38,385
+-> 3.61% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 83,134
+-> 7.83% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 53,102
+-> 5.0% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 35,677
+-> 3.36% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 31,067
+-> 2.92% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 29,603
+-> 2.79% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 29,562
+-> 2.78% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 82,325
+-> 7.75% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 51,644
+-> 4.86% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 33,136
+-> 3.12% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 27,772
+-> 2.61% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 25,731
+-> 2.42% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 25,275
+-> 2.38% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 81,800
+-> 7.7% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 50,677
+-> 4.77% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 31,223
+-> 2.94% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 25,083
+-> 2.36% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 22,399
+-> 2.11% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderAPCA
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/apca/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 21,477
+-> 2.02% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 357,533
+-> 33.66% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 374,727
+-> 35.27% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 391,920
+-> 36.89% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 409,114
+-> 38.51% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 426,307
+-> 40.13% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 443,501
+-> 41.75% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 357,533
+-> 33.66% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 374,727
+-> 35.27% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 391,920
+-> 36.89% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 409,114
+-> 38.51% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 426,307
+-> 40.13% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 443,501
+-> 41.75% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 357,533
+-> 33.66% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 374,727
+-> 35.27% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 391,920
+-> 36.89% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 409,114
+-> 38.51% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 426,307
+-> 40.13% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 443,501
+-> 41.75% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 357,533
+-> 33.66% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 374,727
+-> 35.27% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 391,920
+-> 36.89% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 409,114
+-> 38.51% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 426,307
+-> 40.13% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 443,501
+-> 41.75% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 357,533
+-> 33.66% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 374,727
+-> 35.27% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 391,920
+-> 36.89% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 409,114
+-> 38.51% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 426,307
+-> 40.13% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 443,501
+-> 41.75% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 357,533
+-> 33.66% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 374,727
+-> 35.27% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 391,920
+-> 36.89% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 409,114
+-> 38.51% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 426,307
+-> 40.13% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 443,501
+-> 41.75% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 357,533
+-> 33.66% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 374,727
+-> 35.27% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 391,920
+-> 36.89% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 409,114
+-> 38.51% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 426,307
+-> 40.13% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 443,501
+-> 41.75% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 357,533
+-> 33.66% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 374,727
+-> 35.27% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 391,920
+-> 36.89% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 409,114
+-> 38.51% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 426,307
+-> 40.13% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+ORIGINAL FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/datasets-csv/[2]noaa-sst/months/2017/noaa-buoy-201703.csv
+-> size (bytes): 1,062,338
+COMPRESSED FILE:
+-> name: /home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[2]noaa-sst/gamps/noaa-buoy-201703.c.cpp.csv
+-> size (bytes): 443,501
+-> 41.75% of original
+
