@@ -58,6 +58,7 @@ def decode_cpp(args):
 
 
 def coder_params(args):
+    # TODO: simplify this method
     if args.coder_name == "CoderBasic":
         return "CoderBasic"
     elif args.coder_name == "CoderPCA":
