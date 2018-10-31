@@ -6,7 +6,7 @@ from file_utils.csv_utils.csv_writer import CSVWriter
 from scripts.compress.compress_aux import THRESHOLD_PERCENTAGES
 from auxi.os_utils import python_project_path
 
-input_path = python_project_path() + "/scripts/compress/output/all-mask-false"
+input_path = python_project_path() + "/scripts/compress/output/all-mask-true"
 
 window_index = 6
 
