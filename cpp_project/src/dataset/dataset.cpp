@@ -9,7 +9,7 @@ Dataset::Dataset(std::vector<Range> ranges, int data_columns_count_){
 
     for(int i=0; i < ranges.size(); i++){
         ColumnCode* new_column_code = new ColumnCode(ranges[i], i);
-        column_code_vector.emplace_back(new_column_code);
+        column_code_vector.push_back(new_column_code);
     }
     column_code = column_code_vector[0];
     data_columns_count = data_columns_count_;

@@ -5,13 +5,13 @@
 #include <iostream>
 
 void TestsStringUtils::runAll(){
-    splitByCharWithIndexTest();
-    charToIntTest();
-    intToCharTest();
+    std::cout << "  splitByCharWithIndexTest();" << std::endl; splitByCharWithIndexTest();
+    std::cout << "  charToIntTest();" << std::endl;            charToIntTest();
+    std::cout << "  intToCharTest();" << std::endl;            intToCharTest();
 }
 
 void TestsStringUtils::splitByCharWithIndexTest(){
-    std::cout << "TestsStringUtils::splitByCharWithIndexTest()..." << std::endl;
+
     std::string line = "60,N,N,N,N,N,N,N,N,N,N\r";
     assert(StringUtils::splitByCharWithIndex(line, ',', 0) == "60");
     assert(StringUtils::splitByCharWithIndex(line, ',', 1) == "N");
@@ -21,7 +21,6 @@ void TestsStringUtils::splitByCharWithIndexTest(){
 }
 
 void TestsStringUtils::charToIntTest(){
-    std::cout << "TestsStringUtils::charToIntTest()..." << std::endl;
     assert(StringUtils::charToInt('A') == 65);
     assert(StringUtils::charToInt('Z') == 90);
     assert(StringUtils::charToInt('a') == 97);
@@ -29,7 +28,6 @@ void TestsStringUtils::charToIntTest(){
 }
 
 void TestsStringUtils::intToCharTest(){
-    std::cout << "TestsStringUtils::intToCharTest()..." << std::endl;
     assert(StringUtils::intToChar(65) == 'A');
     assert(StringUtils::intToChar(90) == 'Z');
     assert(StringUtils::intToChar(97) == 'a');

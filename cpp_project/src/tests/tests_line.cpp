@@ -4,11 +4,10 @@
 #include <iostream>
 
 void TestsLine::runAll(){
-    getValueTest();
+    std::cout << "  getValueTest()" << std::endl; getValueTest();
 }
 
 void TestsLine::getValueTest(){
-    std::cout << "TestsLine::getValueTest()..." << std::endl;
     Line* line1 = new Line(new Point(430, 0), new Point(428, 2));
     assert(line1-> getValue(1) == 429);
 

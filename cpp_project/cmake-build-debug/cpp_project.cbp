@@ -350,10 +350,19 @@
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/tests/tests.h">
 			<Option target="cpp_project"/>
 		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/tests/tests_bit_stream.h">
+			<Option target="cpp_project"/>
+		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/tests/tests_coders.h">
 			<Option target="cpp_project"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/tests/tests_coders_utils.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/tests/tests_dataset_utils.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/tests/tests_datetime_utils.h">
 			<Option target="cpp_project"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/tests/tests_header_coder.h">
@@ -536,10 +545,19 @@
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/tests/tests.cpp">
 			<Option target="cpp_project"/>
 		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/tests/tests_bit_stream.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/tests/tests_coders.cpp">
 			<Option target="cpp_project"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/tests/tests_coders_utils.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/tests/tests_dataset_utils.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/tests/tests_datetime_utils.cpp">
 			<Option target="cpp_project"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/tests/tests_header_coder.cpp">

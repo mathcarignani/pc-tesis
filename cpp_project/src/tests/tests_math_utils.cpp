@@ -6,15 +6,14 @@
 #include <math.h>
 
 void TestsMathUtils::runAll(){
-    bitLengthTest();
-    doubleToIntTest();
-    intAbsoluteTest();
-    doubleAbsoluteTest();
-    halfTest();
+    std::cout << "  bitLengthTest();" << std::endl;      bitLengthTest();
+    std::cout << "  doubleToIntTest();" << std::endl;    doubleToIntTest();
+    std::cout << "  intAbsoluteTest();" << std::endl;    intAbsoluteTest();
+    std::cout << "  doubleAbsoluteTest();" << std::endl; doubleAbsoluteTest();
+    std::cout << "  halfTest();" << std::endl;           halfTest();
 }
 
 void TestsMathUtils::bitLengthTest(){
-    std::cout << "TestsMathUtils::bitLengthTest()..." << std::endl;
     assert(MathUtils::bitLength(0) == 1); // 0
     assert(MathUtils::bitLength(1) == 1); // 1
     assert(MathUtils::bitLength(2) == 2); // 10
@@ -29,7 +28,6 @@ void TestsMathUtils::bitLengthTest(){
 }
 
 void TestsMathUtils::doubleToIntTest(){
-    std::cout << "TestsMathUtils::bitLengthTest()..." << std::endl;
     double double1, double2, double3;
     double1 = -50; double2 = 0; double3 = 50;
     assert(MathUtils::doubleToInt(double1) == -50);
@@ -38,21 +36,18 @@ void TestsMathUtils::doubleToIntTest(){
 }
 
 void TestsMathUtils::intAbsoluteTest(){
-    std::cout << "TestsMathUtils::intAbsoluteTest()..." << std::endl;
     assert(MathUtils::intAbsolute(-50) == 50);
     assert(MathUtils::intAbsolute(0) == 0);
     assert(MathUtils::intAbsolute(50) == 50);
 }
 
 void TestsMathUtils::doubleAbsoluteTest(){
-    std::cout << "TestsMathUtils::doubleAbsoluteTest()..." << std::endl;
     assert(MathUtils::doubleAbsolute(-50.8) == 50.8);
     assert(MathUtils::doubleAbsolute(0) == 0);
     assert(MathUtils::doubleAbsolute(50.8) == 50.8);
 }
 
 void TestsMathUtils::halfTest(){
-    std::cout << "TestsMathUtils::halfTest()..." << std::endl;
     assert(MathUtils::half(0, 0) == 0);
     assert(MathUtils::half(0, 1) == 0);
     assert(MathUtils::half(1, 1) == 1);

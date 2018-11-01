@@ -26,10 +26,10 @@ void TestsCoders::testSideFilder() {
     std::cout << output_code_path.full_path << std::endl;
     std::cout << output_decode_path.full_path << std::endl;
 
-    Scripts::codeSF(file_path, output_code_path, 5, lossless);
-    Scripts::decodeSF(output_code_path, output_decode_path, 5);
-    TestsCodersUtils::compareFiles(file_path, output_decode_path);
-    std::cout << "SAME FILE!!" << std::endl;
+//    Scripts::codeSF(file_path, output_code_path, 5, lossless);
+//    Scripts::decodeSF(output_code_path, output_decode_path, 5);
+//    TestsCodersUtils::compareFiles(file_path, output_decode_path);
+//    std::cout << "SAME FILE!!" << std::endl;
 }
 
 void TestsCoders::testGAMPS() {
