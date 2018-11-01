@@ -12,10 +12,8 @@ CoderBase::CoderBase(CSVReader* input_csv_, BitStreamWriter* output_file_){
 }
 
 void CoderBase::codeDataRowsCount(){
-    int data_rows_count = input_csv->total_lines - 4;
-#if CHECKS
-    assert(0 < data_rows_count && data_rows_count <= pow(2, 24) - 1);
-#endif
+    int data_rows_count = input_csv->total_lines - HeaderCoder::HEADER_LINES;
+    assert(0 < data_rows_count && data_rows_count < pow(2, 24));
     output_file->pushInt(data_rows_count, 24); // 24 bits for the data rows count
 }
 
@@ -70,14 +68,24 @@ void CoderBase::codeFloat(float x){
 }
 
 void CoderBase::codeFile(){
+    codeCoderParams();
     dataset = HeaderCoder(input_csv, output_file).codeHeader();
     codeDataRowsCount();
     codeDataRows();
 }
 
+void CoderBase::codeCoderParameters(int coder_code, int window_size){
+    assert(0 <= coder_code && coder_code < pow(2, 8));
+    output_file->pushInt(coder_code, 8); // 8 bits for the coder_code
+
+    assert(1 <= window_size && window_size < pow(2, 8));
+    output_file->pushInt(window_size, 8); // 8 bits for the window_size
+}
+
 void CoderBase::printBits(){
     dataset->printBits();
 }
+
 
 void CoderBase::close(){
     delete input_csv;

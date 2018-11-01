@@ -32,6 +32,8 @@ public:
     Mask* mask;
 #endif
 
+    static DecoderBase* getDecoder(BitStreamReader* input_file, CSVWriter* output_csv);
+
     DecoderBase(BitStreamReader* input_file_, CSVWriter* output_csv_);
     void decodeFile();
     void close();

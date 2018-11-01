@@ -9,7 +9,7 @@
 #include "tests_utils.h"
 
 // Set to 1 to set up the tests, then set to 0
-#define RECORD 0
+#define RECORD 1
 
 
 void TestsCoders::testSideFilder() {
@@ -49,7 +49,7 @@ void TestsCoders::testGAMPS() {
     std::cout << output_decode_path.full_path << std::endl;
 
     Scripts::codeGAMPS(file_path, output_code_path, 5, lossless);
-    Scripts::decodeGAMPS(output_code_path, output_decode_path, 5);
+    Scripts::decode(output_code_path, output_decode_path);
     TestsCodersUtils::compareFiles(file_path, output_decode_path);
     std::cout << "SAME FILE!!" << std::endl;
 }
@@ -151,7 +151,7 @@ void TestsCoders::testCoderBasic(){
     ds = Scripts::codeBasic(file_path, output_code_path);
     TestsCodersUtils::writeBitsCSV(bits_csv, ds);
     TestsCodersUtils::compareFiles(output_code_path, expected_code_path);
-    Scripts::decodeBasic(output_code_path, output_decode_path);
+    Scripts::decode(output_code_path, output_decode_path);
     TestsCodersUtils::compareDecodedFiles(mode, file_path, output_decode_path, expected_path_str, coder_name);
 }
 
@@ -160,7 +160,7 @@ void TestsCoders::testCoderPCA(){
     ds = Scripts::codePCA(file_path, output_code_path, win_size, errors_vector);
     TestsCodersUtils::writeBitsCSV(bits_csv, ds);
     TestsCodersUtils::compareFiles(output_code_path, expected_code_path);
-    Scripts::decodePCA(output_code_path, output_decode_path, win_size);
+    Scripts::decode(output_code_path, output_decode_path);
     TestsCodersUtils::compareDecodedFiles(mode, file_path, output_decode_path, expected_path_str, coder_name);
 }
 
@@ -169,7 +169,7 @@ void TestsCoders::testCoderAPCA(){
     ds = Scripts::codeAPCA(file_path, output_code_path, win_size, errors_vector);
     TestsCodersUtils::writeBitsCSV(bits_csv, ds);
     TestsCodersUtils::compareFiles(output_code_path, expected_code_path);
-    Scripts::decodeAPCA(output_code_path, output_decode_path, win_size);
+    Scripts::decode(output_code_path, output_decode_path);
     TestsCodersUtils::compareDecodedFiles(mode, file_path, output_decode_path, expected_path_str, coder_name);
 }
 
@@ -178,7 +178,7 @@ void TestsCoders::testCoderPWLHInt(){
     ds = Scripts::codePWLH(file_path, output_code_path, win_size, errors_vector, true);
     TestsCodersUtils::writeBitsCSV(bits_csv, ds);
     TestsCodersUtils::compareFiles(output_code_path, expected_code_path);
-    Scripts::decodePWLH(output_code_path, output_decode_path, win_size, true);
+    Scripts::decode(output_code_path, output_decode_path);
     TestsCodersUtils::compareDecodedFiles(mode, file_path, output_decode_path, expected_path_str, coder_name);
 }
 
@@ -187,7 +187,7 @@ void TestsCoders::testCoderPWLH(){
     ds = Scripts::codePWLH(file_path, output_code_path, win_size, errors_vector, false);
     TestsCodersUtils::writeBitsCSV(bits_csv, ds);
     TestsCodersUtils::compareFiles(output_code_path, expected_code_path);
-    Scripts::decodePWLH(output_code_path, output_decode_path, win_size, false);
+    Scripts::decode(output_code_path, output_decode_path);
     TestsCodersUtils::compareDecodedFiles(mode, file_path, output_decode_path, expected_path_str, coder_name);
 }
 
@@ -196,7 +196,7 @@ void TestsCoders::testCoderCA(){
     ds = Scripts::codeCA(file_path, output_code_path, win_size, errors_vector);
     TestsCodersUtils::writeBitsCSV(bits_csv, ds);
     TestsCodersUtils::compareFiles(output_code_path, expected_code_path);
-    Scripts::decodeCA(output_code_path, output_decode_path, win_size);
+    Scripts::decode(output_code_path, output_decode_path);
     TestsCodersUtils::compareDecodedFiles(mode, file_path, output_decode_path, expected_path_str, coder_name);
 }
 
@@ -206,7 +206,7 @@ void TestsCoders::testCoderFR(){
     ds = Scripts::codeFR(file_path, output_code_path, win_size, errors_vector);
     TestsCodersUtils::writeBitsCSV(bits_csv, ds);
     TestsCodersUtils::compareFiles(output_code_path, expected_code_path);
-    Scripts::decodeFR(output_code_path, output_decode_path, win_size);
+    Scripts::decode(output_code_path, output_decode_path);
     TestsCodersUtils::compareDecodedFiles(mode, file_path, output_decode_path, expected_path_str, coder_name);
 }
 #endif
@@ -217,7 +217,7 @@ void TestsCoders::testCoderSF(){
     ds = Scripts::codeSF(file_path, output_code_path, win_size, errors_vector);
     TestsCodersUtils::writeBitsCSV(bits_csv, ds);
     TestsCodersUtils::compareFiles(output_code_path, expected_code_path);
-    Scripts::decodeSF(output_code_path, output_decode_path, win_size);
+    Scripts::decode(output_code_path, output_decode_path);
     TestsCodersUtils::compareDecodedFiles(mode, file_path, output_decode_path, expected_path_str, coder_name);
 }
 #endif

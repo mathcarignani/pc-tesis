@@ -14,6 +14,7 @@ class HeaderCoder {
 public:
     HeaderCoder(CSVReader* input_csv_, BitStreamWriter* output_file_);
     Dataset* codeHeader();
+    static const int HEADER_LINES; // number of lines used for the header in the .csv
 
 private:
     CSVReader* input_csv;

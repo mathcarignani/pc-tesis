@@ -19,6 +19,8 @@ private:
     int total_data_rows;
     APCAWindow* window;
 
+    void codeCoderParams() override;
+
     void codeDataRows() override;
     void codeTimeDeltaColumn();
     void codeColumnGroups();

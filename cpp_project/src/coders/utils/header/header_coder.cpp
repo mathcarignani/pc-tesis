@@ -7,6 +7,8 @@
 #include "header_utils.h"
 #include "vector_utils.h"
 
+const int HeaderCoder::HEADER_LINES = 4;
+
 HeaderCoder::HeaderCoder(CSVReader* input_csv_, BitStreamWriter* output_file_){
     input_csv = input_csv_;
     output_file = output_file_;

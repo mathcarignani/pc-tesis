@@ -13,6 +13,10 @@ void CoderFR::setCoderParams(int window_size_, std::vector<int> error_thresholds
     window_size_bit_length = MathUtils::bitLength(window_size);
 }
 
+void CoderFR::codeCoderParams(){
+    codeCoderParameters(23, window_size);
+}
+
 void CoderFR::codeColumnBefore(){
     delta_sum = 0;
     window = createWindow();

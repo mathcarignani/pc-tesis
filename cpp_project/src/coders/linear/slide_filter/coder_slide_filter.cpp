@@ -14,6 +14,10 @@ void CoderSlideFilter::setCoderParams(int window_size_, std::vector<int> error_t
     window_size_bit_length = MathUtils::bitLength(window_size);
 }
 
+void CoderSlideFilter::codeCoderParams(){
+    codeCoderParameters(24, window_size);
+}
+
 void CoderSlideFilter::codeColumnBefore(){
     m_nBegin_Point = 0;
     delta_sum = 0;

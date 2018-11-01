@@ -20,6 +20,11 @@ void CoderPWLH::setCoderParams(int window_size_, std::vector<int> error_threshol
     }
 }
 
+void CoderPWLH::codeCoderParams(){
+    int coder_code = integer_mode ? 21 : 20;
+    codeCoderParameters(coder_code, window_size);
+}
+
 void CoderPWLH::codeColumnBefore(){
     delta_sum = 0;
     window = createWindow();

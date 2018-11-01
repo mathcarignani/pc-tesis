@@ -6,6 +6,10 @@ void CoderAPCA::setCoderParams(int window_size_, std::vector<int> error_threshol
     error_thresholds_vector = error_thresholds_vector_;
 }
 
+void CoderAPCA::codeCoderParams(){
+    codeCoderParameters(11, window_size);
+}
+
 void CoderAPCA::codeColumnBefore(){
     int error_threshold = error_thresholds_vector.at(column_index);
     window = new APCAWindow(window_size, error_threshold);

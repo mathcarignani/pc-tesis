@@ -2,6 +2,10 @@
 #include "coder_basic.h"
 
 
+void CoderBasic::codeCoderParams(){
+    codeCoderParameters(0, 1);
+}
+
 void CoderBasic::codeColumnBefore() {}
 
 void CoderBasic::codeColumnWhile(std::string csv_value){

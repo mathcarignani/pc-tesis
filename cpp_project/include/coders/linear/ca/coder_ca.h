@@ -13,6 +13,8 @@ private:
     CAWindow window;
     int window_size_bit_length; // same as window.window_size_bit_length
 
+    void codeCoderParams() override;
+
     void codeColumnBefore() override;
     void codeColumnWhile(std::string csv_value) override;
     void codeColumnAfter() override;

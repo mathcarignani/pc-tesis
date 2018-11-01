@@ -4,6 +4,59 @@
 #include "header_decoder.h"
 #include "string_utils.h"
 
+// TODO: move this logic to a separate file
+#include "decoder_basic.h"
+#include "decoder_pca.h"
+#include "decoder_apca.h"
+#include "decoder_pwlh.h"
+#include "decoder_ca.h"
+#include "decoder_fr.h"
+#include "decoder_slide_filter.h"
+#include "decoder_gamps.h"
+
+
+DecoderBase* DecoderBase::getDecoder(BitStreamReader* input_file, CSVWriter* output_csv){
+    int coder_code = input_file->getInt(8); // 8 bits for the coder_code
+    int window_size = input_file->getInt(8); // 8 bits for the window_size
+
+    DecoderBase* decoder;
+
+    if (coder_code == 0) {
+        decoder = new DecoderBasic(input_file, output_csv);
+    }
+    else if (coder_code == 10){
+        decoder = new DecoderPCA(input_file, output_csv);
+        ((DecoderPCA*) decoder)->setCoderParams(window_size);
+    }
+    else if (coder_code == 11){
+        decoder = new DecoderAPCA(input_file, output_csv);
+        ((DecoderAPCA*) decoder)->setCoderParams(window_size);
+    }
+    else if (coder_code == 20 || coder_code == 21){
+        bool integer_mode = coder_code == 21;
+        decoder = new DecoderPWLH(input_file, output_csv);
+        ((DecoderPWLH*) decoder)->setCoderParams(window_size, integer_mode);
+    }
+    else if (coder_code == 22){
+        decoder = new DecoderCA(input_file, output_csv);
+        ((DecoderCA*) decoder)->setCoderParams(window_size);
+    }
+#if MASK_MODE
+    else if (coder_code == 23){
+        decoder = new DecoderFR(input_file, output_csv);
+        ((DecoderFR*) decoder)->setCoderParams(window_size);
+    }
+    else if (coder_code == 24){
+        decoder = new DecoderSlideFilter(input_file, output_csv);
+        ((DecoderSlideFilter*) decoder)->setCoderParams(window_size);
+    }
+#endif
+    else if (coder_code == 30){
+        decoder = new DecoderGAMPS(input_file, output_csv);
+        ((DecoderGAMPS*) decoder)->setCoderParams(window_size);
+    }
+    return decoder;
+}
 
 DecoderBase::DecoderBase(BitStreamReader* input_file_, CSVWriter* output_csv_){
     input_file = input_file_;

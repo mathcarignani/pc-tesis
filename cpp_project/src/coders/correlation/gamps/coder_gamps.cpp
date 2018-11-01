@@ -14,6 +14,10 @@ void CoderGAMPS::setCoderParams(int window_size_, std::vector<int> error_thresho
     window_size_bit_length = MathUtils::bitLength(window_size);
 }
 
+void CoderGAMPS::codeCoderParams(){
+    codeCoderParameters(30, window_size);
+}
+
 void CoderGAMPS::codeDataRows(){
     codeTimeDeltaColumn();
     codeColumnGroups();

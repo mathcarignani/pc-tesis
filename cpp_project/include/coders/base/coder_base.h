@@ -12,6 +12,7 @@ class CoderBase {
 
 private:
     void codeDataRowsCount();
+    virtual void codeCoderParams() = 0;
     virtual void codeDataRows() = 0;
     //
     // This method maps a value read in the csv file into an integer to be written in the output file.
@@ -27,6 +28,7 @@ public:
 
     CoderBase(CSVReader* input_csv_, BitStreamWriter* output_file_);
     void codeFile();
+    void codeCoderParameters(int coder_code, int window_size);
     void printBits();
     void close();
 

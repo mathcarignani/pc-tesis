@@ -23,6 +23,8 @@ int main(int argc, char *argv[]){
     std::string action = argv[1];
     assert(action == "c" or action == "d");
 
+    // TODO: improve the "d" scenario: the parameters are no longer needed
+
     Path input_path = Path(argv[2], argv[3]);
     Path output_path = Path(argv[4], argv[5]);
 
@@ -32,8 +34,8 @@ int main(int argc, char *argv[]){
 
     if (coder_name == "CoderBasic"){
         assert(argc == 7);
-        if (action == "c"){   Scripts::codeBasic(input_path, output_path); }
-        else              { Scripts::decodeBasic(input_path, output_path); }
+        if (action == "c"){ Scripts::codeBasic(input_path, output_path); }
+        else              { Scripts::decode(input_path, output_path); }
         return 0;
     }
 
@@ -44,35 +46,35 @@ int main(int argc, char *argv[]){
     for(int i=8; i < argc; i++){ error_thresholds_vector.push_back(atoi(argv[i])); }
 
     if (coder_name == "CoderPCA"){
-        if (action == "c") {   Scripts::codePCA(input_path, output_path, window_size, error_thresholds_vector); }
-        else               { Scripts::decodePCA(input_path, output_path, window_size); }
+        if (action == "c") { Scripts::codePCA(input_path, output_path, window_size, error_thresholds_vector); }
+        else               { Scripts::decode(input_path, output_path); }
     }
     else if (coder_name == "CoderAPCA"){
-        if (action == "c") {   Scripts::codeAPCA(input_path, output_path, window_size, error_thresholds_vector); }
-        else               { Scripts::decodeAPCA(input_path, output_path, window_size); }
+        if (action == "c") { Scripts::codeAPCA(input_path, output_path, window_size, error_thresholds_vector); }
+        else               { Scripts::decode(input_path, output_path); }
     }
     else if (coder_name == "CoderPWLH" || coder_name == "CoderPWLHint"){
         bool integer_mode = false;
         if (coder_name == "CoderPWLHint") { integer_mode = true; }
-        if (action == "c") {   Scripts::codePWLH(input_path, output_path, window_size, error_thresholds_vector, integer_mode); }
-        else               { Scripts::decodePWLH(input_path, output_path, window_size, integer_mode); }
+        if (action == "c") { Scripts::codePWLH(input_path, output_path, window_size, error_thresholds_vector, integer_mode); }
+        else               { Scripts::decode(input_path, output_path); }
     }
     else if (coder_name == "CoderCA"){
-        if (action == "c") {   Scripts::codeCA(input_path, output_path, window_size, error_thresholds_vector); }
-        else               { Scripts::decodeCA(input_path, output_path, window_size); }
+        if (action == "c") { Scripts::codeCA(input_path, output_path, window_size, error_thresholds_vector); }
+        else               { Scripts::decode(input_path, output_path); }
     }
     else if (coder_name == "CoderGAMPS"){
-        if (action == "c") {   Scripts::codeGAMPS(input_path, output_path, window_size, error_thresholds_vector); }
-        else               { Scripts::decodeGAMPS(input_path, output_path, window_size); }
+        if (action == "c") { Scripts::codeGAMPS(input_path, output_path, window_size, error_thresholds_vector); }
+        else               { Scripts::decode(input_path, output_path); }
     }
 #if MASK_MODE
     else if (coder_name == "CoderSF"){
-        if (action == "c") {   Scripts::codeSF(input_path, output_path, window_size, error_thresholds_vector); }
-        else               { Scripts::decodeSF(input_path, output_path, window_size); }
+        if (action == "c") { Scripts::codeSF(input_path, output_path, window_size, error_thresholds_vector); }
+        else               { Scripts::decode(input_path, output_path); }
     }
     else if (coder_name == "CoderFR"){
-        if (action == "c") {   Scripts::codeFR(input_path, output_path, window_size, error_thresholds_vector); }
-        else               { Scripts::decodeFR(input_path, output_path, window_size); }
+        if (action == "c") { Scripts::codeFR(input_path, output_path, window_size, error_thresholds_vector); }
+        else               { Scripts::decode(input_path, output_path); }
     }
 #endif
 
