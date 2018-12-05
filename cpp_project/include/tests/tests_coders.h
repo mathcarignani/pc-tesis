@@ -38,15 +38,7 @@ private:
     void setCoderPaths(std::string coder_name_);
     void setModePaths(int i);
     void testCoderBasic();
-    void testCoderPCA();
-    void testCoderAPCA();
-    void testCoderPWLHInt();
-    void testCoderPWLH();
-    void testCoderCA();
-#if MASK_MODE
-    void testCoderFR();
-    void testCoderSF();
-#endif
+    void testCoder(std::string coder_name);
 };
 
 #endif //CPP_PROJECT_TESTS_CODERS_H

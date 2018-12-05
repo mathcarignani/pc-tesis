@@ -48,7 +48,7 @@ void TestsCoders::testGAMPS() {
     std::cout << output_code_path.full_path << std::endl;
     std::cout << output_decode_path.full_path << std::endl;
 
-    Scripts::codeGAMPS(file_path, output_code_path, 5, lossless);
+    Scripts::code("CoderGAMPS", file_path, output_code_path, 5, lossless);
     Scripts::decode(output_code_path, output_decode_path);
     TestsCodersUtils::compareFiles(file_path, output_decode_path);
     std::cout << "SAME FILE!!" << std::endl;
@@ -126,17 +126,17 @@ void TestsCoders::runAll(){
             setModePaths(i);
 
             if (mode == "LOSSLESS"){ testCoderBasic(); }
-            testCoderPCA();
-            testCoderAPCA();
-            testCoderPWLHInt();
-            testCoderPWLH();
+            testCoder("CoderPCA");
+            testCoder("CoderAPCA");
+            testCoder("CoderPWLHInt");
+            testCoder("CoderPWLH");
             // TODO: fix CoderCA
-            // testCoderCA();
+            // testCoder("CoderCA");
 
         #if MASK_MODE
-            testCoderFR();
+            testCoder("CoderFR");
             // TODO: fix coder SF
-            // testCoderSF();
+            // testCoder("CoderSF");
         #endif
         }
     }
@@ -155,69 +155,11 @@ void TestsCoders::testCoderBasic(){
     TestsCodersUtils::compareDecodedFiles(mode, file_path, output_decode_path, expected_path_str, coder_name);
 }
 
-void TestsCoders::testCoderPCA(){
-    setCoderPaths("CoderPCA");
-    ds = Scripts::codePCA(file_path, output_code_path, win_size, errors_vector);
+void TestsCoders::testCoder(std::string coder_name){
+    setCoderPaths(coder_name);
+    ds = Scripts::code(coder_name, file_path, output_code_path, win_size, errors_vector);
     TestsCodersUtils::writeBitsCSV(bits_csv, ds);
     TestsCodersUtils::compareFiles(output_code_path, expected_code_path);
     Scripts::decode(output_code_path, output_decode_path);
     TestsCodersUtils::compareDecodedFiles(mode, file_path, output_decode_path, expected_path_str, coder_name);
 }
-
-void TestsCoders::testCoderAPCA(){
-    setCoderPaths("CoderAPCA");
-    ds = Scripts::codeAPCA(file_path, output_code_path, win_size, errors_vector);
-    TestsCodersUtils::writeBitsCSV(bits_csv, ds);
-    TestsCodersUtils::compareFiles(output_code_path, expected_code_path);
-    Scripts::decode(output_code_path, output_decode_path);
-    TestsCodersUtils::compareDecodedFiles(mode, file_path, output_decode_path, expected_path_str, coder_name);
-}
-
-void TestsCoders::testCoderPWLHInt(){
-    setCoderPaths("CoderPWLHInt");
-    ds = Scripts::codePWLH(file_path, output_code_path, win_size, errors_vector, true);
-    TestsCodersUtils::writeBitsCSV(bits_csv, ds);
-    TestsCodersUtils::compareFiles(output_code_path, expected_code_path);
-    Scripts::decode(output_code_path, output_decode_path);
-    TestsCodersUtils::compareDecodedFiles(mode, file_path, output_decode_path, expected_path_str, coder_name);
-}
-
-void TestsCoders::testCoderPWLH(){
-    setCoderPaths("CoderPWLH");
-    ds = Scripts::codePWLH(file_path, output_code_path, win_size, errors_vector, false);
-    TestsCodersUtils::writeBitsCSV(bits_csv, ds);
-    TestsCodersUtils::compareFiles(output_code_path, expected_code_path);
-    Scripts::decode(output_code_path, output_decode_path);
-    TestsCodersUtils::compareDecodedFiles(mode, file_path, output_decode_path, expected_path_str, coder_name);
-}
-
-void TestsCoders::testCoderCA(){
-    setCoderPaths("CoderCA");
-    ds = Scripts::codeCA(file_path, output_code_path, win_size, errors_vector);
-    TestsCodersUtils::writeBitsCSV(bits_csv, ds);
-    TestsCodersUtils::compareFiles(output_code_path, expected_code_path);
-    Scripts::decode(output_code_path, output_decode_path);
-    TestsCodersUtils::compareDecodedFiles(mode, file_path, output_decode_path, expected_path_str, coder_name);
-}
-
-#if MASK_MODE
-void TestsCoders::testCoderFR(){
-    setCoderPaths("CoderFR");
-    ds = Scripts::codeFR(file_path, output_code_path, win_size, errors_vector);
-    TestsCodersUtils::writeBitsCSV(bits_csv, ds);
-    TestsCodersUtils::compareFiles(output_code_path, expected_code_path);
-    Scripts::decode(output_code_path, output_decode_path);
-    TestsCodersUtils::compareDecodedFiles(mode, file_path, output_decode_path, expected_path_str, coder_name);
-}
-#endif
-
-#if MASK_MODE
-void TestsCoders::testCoderSF(){
-    setCoderPaths("CoderSF");
-    ds = Scripts::codeSF(file_path, output_code_path, win_size, errors_vector);
-    TestsCodersUtils::writeBitsCSV(bits_csv, ds);
-    TestsCodersUtils::compareFiles(output_code_path, expected_code_path);
-    Scripts::decode(output_code_path, output_decode_path);
-    TestsCodersUtils::compareDecodedFiles(mode, file_path, output_decode_path, expected_path_str, coder_name);
-}
-#endif

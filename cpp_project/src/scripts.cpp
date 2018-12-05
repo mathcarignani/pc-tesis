@@ -33,7 +33,7 @@ Dataset* Scripts::codeBasic(Path input_path, Path output_path){
     return coder->dataset;
 }
 
-Dataset* Scripts::codeOther(std::string coder_name, Path input_path, Path output_path,
+Dataset* Scripts::code(std::string coder_name, Path input_path, Path output_path,
                             int window_size, std::vector<int> error_thresholds_vector){
     if (coder_name == "CoderPCA"){
         return Scripts::codePCA(input_path, output_path, window_size, error_thresholds_vector);
@@ -41,8 +41,8 @@ Dataset* Scripts::codeOther(std::string coder_name, Path input_path, Path output
     else if (coder_name == "CoderAPCA"){
         return Scripts::codeAPCA(input_path, output_path, window_size, error_thresholds_vector);
     }
-    else if (coder_name == "CoderPWLH" || coder_name == "CoderPWLHint"){
-        bool integer_mode = coder_name == "CoderPWLHint";
+    else if (coder_name == "CoderPWLH" || coder_name == "CoderPWLHInt"){
+        bool integer_mode = coder_name == "CoderPWLHInt";
         return Scripts::codePWLH(input_path, output_path, window_size, error_thresholds_vector, integer_mode);
     }
     else if (coder_name == "CoderCA"){
@@ -55,10 +55,13 @@ Dataset* Scripts::codeOther(std::string coder_name, Path input_path, Path output
     else if (coder_name == "CoderSF"){
         return Scripts::codeSF(input_path, output_path, window_size, error_thresholds_vector);
     }
-    else { // if (coder_name == "CoderFR"){
+    else if (coder_name == "CoderFR") {
         return Scripts::codeFR(input_path, output_path, window_size, error_thresholds_vector);
     }
 #endif
+    else {
+        throw std::invalid_argument(coder_name);
+    }
 }
 
 Dataset* Scripts::codePCA(Path input_path, Path output_path, int window_size, std::vector<int> error_thresholds_vector){

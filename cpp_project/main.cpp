@@ -35,7 +35,7 @@ int main(int argc, char *argv[]){
     // action == "c"
     std::string coder_name = argv[6];
     std::vector<std::string> coders_array{"CoderBasic", "CoderPCA", "CoderAPCA", "CoderPWLH",
-                                          "CoderPWLHint", "CoderCA", "CoderSF", "CoderFR", "CoderGAMPS"};
+                                          "CoderPWLHInt", "CoderCA", "CoderSF", "CoderFR", "CoderGAMPS"};
 
     if (coder_name == "CoderBasic"){
         assert(argc == 7);
@@ -49,6 +49,6 @@ int main(int argc, char *argv[]){
     std::vector<int> error_thresholds_vector;
     for(int i=8; i < argc; i++){ error_thresholds_vector.push_back(atoi(argv[i])); }
 
-    Scripts::codeOther(coder_name, input_path, output_path, window_size, error_thresholds_vector);
+    Scripts::code(coder_name, input_path, output_path, window_size, error_thresholds_vector);
     return 0;
 }

@@ -14,8 +14,9 @@ public:
     static void decode(Path input_path, Path output_path);
 
     static Dataset* codeBasic(Path input_path, Path output_path);
-    static Dataset* codeOther(std::string coder_name, Path input_path, Path output_path, int window_size, std::vector<int> error_thresholds_vector);
+    static Dataset* code(std::string coder_name, Path input_path, Path output_path, int window_size, std::vector<int> error_thresholds_vector);
 
+private:
     static Dataset* codePCA(Path input_path, Path output_path, int window_size, std::vector<int> error_thresholds_vector);
     static Dataset* codeAPCA(Path input_path, Path output_path, int window_size, std::vector<int> error_thresholds_vector);
     static Dataset* codePWLH(Path input_path, Path output_path, int window_size, std::vector<int> error_thresholds_vector, bool integer_mode);

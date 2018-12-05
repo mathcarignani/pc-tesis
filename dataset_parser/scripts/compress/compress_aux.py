@@ -58,7 +58,7 @@ CODERS_ARRAY = [
         'params': {'window_size': WINDOW_SIZES}
     },
     {
-        'name': 'CoderPWLHint',
+        'name': 'CoderPWLHInt',
         'o_folder': 'pwlh-int',
         'params': {'window_size': WINDOW_SIZES}
     },
