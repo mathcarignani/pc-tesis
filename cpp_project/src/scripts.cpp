@@ -33,7 +33,33 @@ Dataset* Scripts::codeBasic(Path input_path, Path output_path){
     return coder->dataset;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Dataset* Scripts::codeOther(std::string coder_name, Path input_path, Path output_path,
+                            int window_size, std::vector<int> error_thresholds_vector){
+    if (coder_name == "CoderPCA"){
+        return Scripts::codePCA(input_path, output_path, window_size, error_thresholds_vector);
+    }
+    else if (coder_name == "CoderAPCA"){
+        return Scripts::codeAPCA(input_path, output_path, window_size, error_thresholds_vector);
+    }
+    else if (coder_name == "CoderPWLH" || coder_name == "CoderPWLHint"){
+        bool integer_mode = coder_name == "CoderPWLHint";
+        return Scripts::codePWLH(input_path, output_path, window_size, error_thresholds_vector, integer_mode);
+    }
+    else if (coder_name == "CoderCA"){
+        return Scripts::codeCA(input_path, output_path, window_size, error_thresholds_vector);
+    }
+    else if (coder_name == "CoderGAMPS"){
+        return Scripts::codeGAMPS(input_path, output_path, window_size, error_thresholds_vector);
+    }
+#if MASK_MODE
+    else if (coder_name == "CoderSF"){
+        return Scripts::codeSF(input_path, output_path, window_size, error_thresholds_vector);
+    }
+    else { // if (coder_name == "CoderFR"){
+        return Scripts::codeFR(input_path, output_path, window_size, error_thresholds_vector);
+    }
+#endif
+}
 
 Dataset* Scripts::codePCA(Path input_path, Path output_path, int window_size, std::vector<int> error_thresholds_vector){
     CSVReader* csv_reader = new CSVReader(input_path);
@@ -90,9 +116,7 @@ Dataset* Scripts::codeSF(Path input_path, Path output_path, int window_size, std
     coder->close();
     return coder->dataset;
 }
-#endif
 
-#if MASK_MODE
 Dataset* Scripts::codeFR(Path input_path, Path output_path, int window_size, std::vector<int> error_thresholds_vector){
     CSVReader* csv_reader = new CSVReader(input_path);
     BitStreamWriter* bit_stream_writer = new BitStreamWriter(output_path);

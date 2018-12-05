@@ -9,7 +9,7 @@
 #include "tests_utils.h"
 
 // Set to 1 to set up the tests, then set to 0
-#define RECORD 1
+#define RECORD 0
 
 
 void TestsCoders::testSideFilder() {

@@ -23,60 +23,32 @@ int main(int argc, char *argv[]){
     std::string action = argv[1];
     assert(action == "c" or action == "d");
 
-    // TODO: improve the "d" scenario: the parameters are no longer needed
-
     Path input_path = Path(argv[2], argv[3]);
     Path output_path = Path(argv[4], argv[5]);
 
+    if (action == "d"){
+        assert(argc == 6);
+        Scripts::decode(input_path, output_path);
+        return 0;
+    }
+
+    // action == "c"
     std::string coder_name = argv[6];
     std::vector<std::string> coders_array{"CoderBasic", "CoderPCA", "CoderAPCA", "CoderPWLH",
                                           "CoderPWLHint", "CoderCA", "CoderSF", "CoderFR", "CoderGAMPS"};
 
     if (coder_name == "CoderBasic"){
         assert(argc == 7);
-        if (action == "c"){ Scripts::codeBasic(input_path, output_path); }
-        else              { Scripts::decode(input_path, output_path); }
+        Scripts::codeBasic(input_path, output_path);
         return 0;
     }
 
     assert(StringUtils::stringInList(coder_name, coders_array));
     assert(argc >= 9);
-    int window_size = atoi(argv[7]); // window_size for PCA and window_size for other algorithms
+    int window_size = atoi(argv[7]);
     std::vector<int> error_thresholds_vector;
     for(int i=8; i < argc; i++){ error_thresholds_vector.push_back(atoi(argv[i])); }
 
-    if (coder_name == "CoderPCA"){
-        if (action == "c") { Scripts::codePCA(input_path, output_path, window_size, error_thresholds_vector); }
-        else               { Scripts::decode(input_path, output_path); }
-    }
-    else if (coder_name == "CoderAPCA"){
-        if (action == "c") { Scripts::codeAPCA(input_path, output_path, window_size, error_thresholds_vector); }
-        else               { Scripts::decode(input_path, output_path); }
-    }
-    else if (coder_name == "CoderPWLH" || coder_name == "CoderPWLHint"){
-        bool integer_mode = false;
-        if (coder_name == "CoderPWLHint") { integer_mode = true; }
-        if (action == "c") { Scripts::codePWLH(input_path, output_path, window_size, error_thresholds_vector, integer_mode); }
-        else               { Scripts::decode(input_path, output_path); }
-    }
-    else if (coder_name == "CoderCA"){
-        if (action == "c") { Scripts::codeCA(input_path, output_path, window_size, error_thresholds_vector); }
-        else               { Scripts::decode(input_path, output_path); }
-    }
-    else if (coder_name == "CoderGAMPS"){
-        if (action == "c") { Scripts::codeGAMPS(input_path, output_path, window_size, error_thresholds_vector); }
-        else               { Scripts::decode(input_path, output_path); }
-    }
-#if MASK_MODE
-    else if (coder_name == "CoderSF"){
-        if (action == "c") { Scripts::codeSF(input_path, output_path, window_size, error_thresholds_vector); }
-        else               { Scripts::decode(input_path, output_path); }
-    }
-    else if (coder_name == "CoderFR"){
-        if (action == "c") { Scripts::codeFR(input_path, output_path, window_size, error_thresholds_vector); }
-        else               { Scripts::decode(input_path, output_path); }
-    }
-#endif
-
+    Scripts::codeOther(coder_name, input_path, output_path, window_size, error_thresholds_vector);
     return 0;
 }
