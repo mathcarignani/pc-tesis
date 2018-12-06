@@ -21,7 +21,7 @@ void CoderPWLH::setCoderParams(int window_size_, std::vector<int> error_threshol
 }
 
 void CoderPWLH::codeCoderParams(){
-    int coder_code = integer_mode ? 21 : 20;
+    int coder_code = integer_mode ? Constants::CODER_PWLH_INT : Constants::CODER_PWLH;
     codeCoderParameters(coder_code, window_size);
 }
 

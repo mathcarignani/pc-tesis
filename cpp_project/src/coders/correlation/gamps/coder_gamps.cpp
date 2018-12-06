@@ -15,7 +15,7 @@ void CoderGAMPS::setCoderParams(int window_size_, std::vector<int> error_thresho
 }
 
 void CoderGAMPS::codeCoderParams(){
-    codeCoderParameters(30, window_size);
+    codeCoderParameters(Constants::CODER_GAMPS, window_size);
 }
 
 void CoderGAMPS::codeDataRows(){

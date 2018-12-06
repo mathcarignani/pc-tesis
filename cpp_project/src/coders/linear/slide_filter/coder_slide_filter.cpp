@@ -15,7 +15,7 @@ void CoderSlideFilter::setCoderParams(int window_size_, std::vector<int> error_t
 }
 
 void CoderSlideFilter::codeCoderParams(){
-    codeCoderParameters(24, window_size);
+    codeCoderParameters(Constants::CODER_SF, window_size);
 }
 
 void CoderSlideFilter::codeColumnBefore(){

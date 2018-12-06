@@ -7,7 +7,7 @@ void CoderAPCA::setCoderParams(int window_size_, std::vector<int> error_threshol
 }
 
 void CoderAPCA::codeCoderParams(){
-    codeCoderParameters(11, window_size);
+    codeCoderParameters(Constants::CODER_APCA, window_size);
 }
 
 void CoderAPCA::codeColumnBefore(){

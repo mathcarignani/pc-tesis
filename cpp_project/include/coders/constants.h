@@ -18,6 +18,16 @@ public:
     static const int MASK_BITS;
     static const int MASK_MAX_SIZE;
 
+    static const int CODER_BASIC; // 0
+    static const int CODER_PCA; // 10
+    static const int CODER_APCA; // 11
+    static const int CODER_PWLH; // 20
+    static const int CODER_PWLH_INT; // 21
+    static const int CODER_CA; // 22
+    static const int CODER_FR; // 23
+    static const int CODER_SF; // 24
+    static const int CODER_GAMPS; // 30
+
     static bool isNoData(std::string csv_value);
 };
 

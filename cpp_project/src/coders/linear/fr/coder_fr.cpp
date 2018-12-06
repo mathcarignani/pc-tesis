@@ -14,7 +14,7 @@ void CoderFR::setCoderParams(int window_size_, std::vector<int> error_thresholds
 }
 
 void CoderFR::codeCoderParams(){
-    codeCoderParameters(23, window_size);
+    codeCoderParameters(Constants::CODER_FR, window_size);
 }
 
 void CoderFR::codeColumnBefore(){

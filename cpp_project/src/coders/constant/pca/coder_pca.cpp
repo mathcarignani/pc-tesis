@@ -8,7 +8,7 @@ void CoderPCA::setCoderParams(int window_size_, std::vector<int> error_threshold
 }
 
 void CoderPCA::codeCoderParams(){
-    codeCoderParameters(10, window_size);
+    codeCoderParameters(Constants::CODER_PCA, window_size);
 }
 
 void CoderPCA::codeColumnBefore(){

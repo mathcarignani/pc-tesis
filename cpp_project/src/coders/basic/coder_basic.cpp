@@ -3,7 +3,7 @@
 
 
 void CoderBasic::codeCoderParams(){
-    codeCoderParameters(0, 1);
+    codeCoderParameters(Constants::CODER_BASIC, 1);
 }
 
 void CoderBasic::codeColumnBefore() {}
