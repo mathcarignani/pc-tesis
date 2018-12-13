@@ -9,7 +9,7 @@
 #include "tests_utils.h"
 
 // Set to 1 to set up the tests, then set to 0
-#define RECORD 0
+#define RECORD 1
 
 
 void TestsCoders::testSideFilder() {
@@ -148,8 +148,7 @@ void TestsCoders::runAll(){
             testCoder("CoderAPCA");
             testCoder("CoderPWLHInt");
             testCoder("CoderPWLH");
-            // TODO: fix CoderCA
-            // testCoder("CoderCA");
+             testCoder("CoderCA");
 
         #if MASK_MODE
             testCoder("CoderFR");
