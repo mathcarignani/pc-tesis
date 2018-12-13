@@ -3,16 +3,17 @@
 
 #if MASK_MODE
 
-std::vector<int> LinearCoderUtils::createXCoordsWithNoDataVectorCA(DecoderBase* decoder, int window_size, int row_index){
+std::vector<int> LinearCoderUtils::createXCoordsVectorCA(DecoderBase* decoder, int window_size, int row_index, int nodata_sum){
 #if CHECKS
     assert(window_size > 1);
 #endif
     std::vector<int> result;
-    int current_sum = 0;
+    result.push_back(0);
+
+    int current_sum = nodata_sum;
     int time_delta;
     int window_index = 1;
     int time_delta_index = row_index;
-    result.push_back(0);
     while(window_index < window_size){
         time_delta_index++;
         time_delta = decoder->time_delta_vector.at(time_delta_index);
@@ -29,16 +30,17 @@ std::vector<int> LinearCoderUtils::createXCoordsWithNoDataVectorCA(DecoderBase* 
     return result;
 }
 
-std::vector<int> LinearCoderUtils::createXCoordsWithNoDataVectorPWLH(DecoderBase* decoder, int window_size, int row_index){
+std::vector<int> LinearCoderUtils::createXCoordsVectorPWLH(DecoderBase* decoder, int window_size, int row_index){
 #if CHECKS
     assert(window_size > 1);
 #endif
     std::vector<int> result;
+    result.push_back(0);
+
     int current_sum = 0;
     int time_delta;
     int window_index = 1;
     int time_delta_index = row_index;
-    result.push_back(0);
     while(window_index < window_size){
         time_delta_index++;
         time_delta = decoder->time_delta_vector.at(time_delta_index);

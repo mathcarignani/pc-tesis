@@ -76,7 +76,7 @@ def remove_n_indexes(line, n_indexes):
 
 
 def compare_lines(line_1, line_2, current_line_count):
-    error_threshold = 5
+    error_threshold = 2
 
     if current_line_count < 4:
         # header rows should match
@@ -99,8 +99,8 @@ def compare_lines(line_1, line_2, current_line_count):
 
 def compare():
     test_files_path = cpp_project_path() + "/test_files"
-    csv_reader_1 = CSVReader(test_files_path + "/sf", "vwc_1202.dat_CLEAN.csv")
-    csv_reader_2 = CSVReader(test_files_path, "vwc_1202.dat_CLEAN.csv-CoderSF-Decode.csv")
+    csv_reader_1 = CSVReader(datasets_csv_path() + "[1]irkis/", "vwc_1202.dat.csv")
+    csv_reader_2 = CSVReader(test_files_path, "vwc_1202.dat.csv-CA-Decode.csv")
 
     while csv_reader_1.continue_reading:
         assert(csv_reader_1.current_line_count == csv_reader_2.current_line_count)

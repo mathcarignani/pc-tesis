@@ -55,32 +55,17 @@ bool CAWindow::conditionHolds(int x_delta, int x_int, std::string x){
 }
 
 void CAWindow::setWindow(int x_delta, int x_int, std::string x){
-//    std::cout << "x_delta " << x_delta << std::endl;
-//    std::cout << "x_int " << x_int << std::endl;
-//    std::cout << "x " << x << std::endl;
-
     assert(length == 0);
-//    std::cout << "a" << std::endl;
     int new_x_coord = x_coord + x_delta;
-//    std::cout << "b" << std::endl;
     Point* incoming_point = new Point(x_int, new_x_coord);
-
-//    std::cout << "1" << std::endl;
 
     increaseLength(); // = 1
     x_coord = new_x_coord;
     snapshot_value = incoming_point;
     constant_value = x;
 
-//    std::cout << "2" << std::endl;
-
-//    LineUtils::printPoint(archived_value);
-//    LineUtils::printPoint(snapshot_value);
-
     s_min = sMin(archived_value, snapshot_value, error_threshold);
     s_max = sMax(archived_value, snapshot_value, error_threshold);
-
-//    std::cout << "3" << std::endl;
 }
 
 void CAWindow::increaseLength(){
@@ -106,11 +91,3 @@ Line* CAWindow::sMax(Point* point1, Point* point2, int error_threshold){
     Line* line = new Line(point1, point_plus_threshold);
     return line;
 }
-
-//void CAWindow::printState(){
-//    std::cout << "archived_value = "; archived_value.print();
-//    std::cout << "constant_value = " << constant_value << std::endl;
-//    std::cout << "snapshot_value = "; snapshot_value.print(); std::cout << std::endl;
-//    std::cout << "s_min = "; s_min.print(); std::cout << std::endl;
-//    std::cout << "s_max = "; s_max.print(); std::cout << std::endl;
-//}

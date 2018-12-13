@@ -19,25 +19,25 @@ std::vector<std::string> DecoderCA::decodeDataColumn(){
 #else
     column = new Column(data_rows_count);
 #endif
-
+    int nodata_sum = 0;
     while (column->notFinished()){
     #if MASK_MODE
         if (mask->isNoData()) {
+            nodata_sum += time_delta_vector.at(column->row_index);
             column->addNoData();
             continue;
         }
     #endif
-        decodeWindow();
+        decodeWindow(nodata_sum);
+        nodata_sum = 0;
     }
-//    std::cout << "column" << std::endl;
 #if CHECKS
     column->assertAfter();
 #endif
     return column->column_vector;
 }
 
-void DecoderCA::decodeWindow(){
-//    std::cout << "BEGIN decodeWindow" << std::endl;
+void DecoderCA::decodeWindow(int nodata_sum){
     int window_size = input_file->getInt(window_size_bit_length);
     std::string value = decodeValueRaw();
 
@@ -48,20 +48,36 @@ void DecoderCA::decodeWindow(){
     }
 #endif
     if (window_size > 1){
+    #if MASK_MODE
+        decodeValues(window_size, value, nodata_sum);
+    #else
         decodeValues(window_size, value);
+    #endif
+
     }
     else {
         // window_size == 1
         column->addData(value);
     }
     archived_value = value;
-//    std::cout << "END decodeWindow" << std::endl;
 }
 
+#if MASK_MODE
+void DecoderCA::decodeValues(int window_size, std::string value, int nodata_sum){
+    std::vector<int> x_coords_with_nodata = LinearCoderUtils::createXCoordsVectorCA(this, window_size + 1, column->row_index-1, nodata_sum);
+    std::vector<int> x_coords = VectorUtils::removeOccurrences(x_coords_with_nodata, -1); // remove nodata
+    std::vector<std::string> decoded_points = LineUtils::decodePointsString(archived_value, value, x_coords);
+
+#if CHECKS
+    assert(decoded_points.at(0) == archived_value); // the first decoded point is equal to archived_value...
+    assert(x_coords_with_nodata.at(0) == 0);
+#endif
+    decoded_points.erase(decoded_points.begin()); // ...we must remove it
+    x_coords_with_nodata.erase(x_coords_with_nodata.begin());
+    LinearCoderUtils::addPointsWithNoData(column, window_size, decoded_points, x_coords_with_nodata);
+}
+#else
 void DecoderCA::decodeValues(int window_size, std::string value){
-//    std::cout << "BEGIN decodeValues" << std::endl;
-//    std::cout << "column->row_index " << column->row_index << std::endl;
-#if !MASK_MODE
     // column->row_index - 1 is the index of the archived_value
     // column->row_index - 1 + current_window_size + 1 = column->row_index + current_window_size is the index of the
     // last value to be decoded by this method
@@ -72,24 +88,9 @@ void DecoderCA::decodeValues(int window_size, std::string value){
     assert(x_coords.at(0) == 0);
 #endif
     decoded_points.erase(decoded_points.begin()); // ...we must remove it
-
     column->addDataVector(decoded_points);
-#else // MASK_MODE
-    std::vector<int> x_coords_with_nodata = LinearCoderUtils::createXCoordsWithNoDataVectorCA(this, window_size + 1, column->row_index-1);
-    std::vector<int> x_coords = VectorUtils::removeOccurrences(x_coords_with_nodata, -1); // remove nodata
-    std::vector<std::string> decoded_points = LineUtils::decodePointsString(archived_value, value, x_coords);
-//    VectorUtils::printIntVector(x_coords_with_nodata);
-//    VectorUtils::printIntVector(x_coords);
-//    VectorUtils::printStringVector(decoded_points);
-
-#if CHECKS
-    assert(decoded_points.at(0) == archived_value); // the first decoded point is equal to archived_value...
-    assert(x_coords_with_nodata.at(0) == 0);
-#endif
-    decoded_points.erase(decoded_points.begin()); // ...we must remove it
-    x_coords_with_nodata.erase(x_coords_with_nodata.begin());
-    LinearCoderUtils::addPointsWithNoData(column, window_size, decoded_points, x_coords_with_nodata);
-//    column->addDataVector(decoded_points);
-#endif // !MASK_MODE
-//    std::cout << "END decodeValues" << std::endl;
 }
+#endif // MASK_MODE
+
+
+

@@ -10,8 +10,12 @@ private:
     std::string archived_value;
 
     std::vector<std::string> decodeDataColumn() override;
-    void decodeWindow();
+    void decodeWindow(int nodata_sum);
+#if MASK_MODE
+    void decodeValues(int window_size, std::string value, int nodata_sum);
+#else
     void decodeValues(int window_size, std::string value);
+#endif
 
 public:
     using DecoderCols::DecoderCols;

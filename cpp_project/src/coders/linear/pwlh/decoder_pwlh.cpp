@@ -60,7 +60,7 @@ void DecoderPWLH::decodeWindowDouble(int window_size){
         std::vector<std::string> decoded_points = LineUtils::decodePoints(point1_y, point2_y, x_coords);
         column->addDataVector(decoded_points);
     #else
-        std::vector<int> x_coords_with_nodata = LinearCoderUtils::createXCoordsWithNoDataVectorPWLH(this, window_size, column->row_index);
+        std::vector<int> x_coords_with_nodata = LinearCoderUtils::createXCoordsVectorPWLH(this, window_size, column->row_index);
         std::vector<int> x_coords = VectorUtils::removeOccurrences(x_coords_with_nodata, -1); // remove nodata
         std::vector<std::string> decoded_points = LineUtils::decodePoints(point1_y, point2_y, x_coords);
         LinearCoderUtils::addPointsWithNoData(column, window_size, decoded_points, x_coords_with_nodata);
@@ -90,7 +90,7 @@ void DecoderPWLH::decodeWindowInt(int window_size){
         std::vector<std::string> decoded_points = LineUtils::decodePointsString(point1_y, point2_y, x_coords);
         column->addDataVector(decoded_points);
     #else
-        std::vector<int> x_coords_with_nodata = LinearCoderUtils::createXCoordsWithNoDataVectorPWLH(this, window_size, column->row_index);
+        std::vector<int> x_coords_with_nodata = LinearCoderUtils::createXCoordsVectorPWLH(this, window_size, column->row_index);
         std::vector<int> x_coords = VectorUtils::removeOccurrences(x_coords_with_nodata, -1); // remove nodata
         std::vector<std::string> decoded_points = LineUtils::decodePointsString(point1_y, point2_y, x_coords);
         LinearCoderUtils::addPointsWithNoData(column, window_size, decoded_points, x_coords_with_nodata);

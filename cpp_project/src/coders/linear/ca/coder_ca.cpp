@@ -17,7 +17,6 @@ void CoderCA::codeColumnBefore(){
 }
 
 void CoderCA::codeColumnWhile(std::string csv_value){
-//    std::cout << "csv_value = " << csv_value << std::endl;
     delta_sum += time_delta_vector[row_index]; // >= 0
 #if MASK_MODE
     if (Constants::isNoData(csv_value)) { return; } // skip no_data
@@ -57,8 +56,6 @@ void CoderCA::processValue(std::string x){
     int x_int = StringUtils::stringToInt(x);
 
     if (window->isEmpty()){
-//        std::cout << "window->isEmpty()" << std::endl;
-
         if (window->nan_window){ // this condition can only be true on the first iteration
             codeValueAndCreateNonNanWindow(x, x_int);
             return;
@@ -68,14 +65,12 @@ void CoderCA::processValue(std::string x){
             codeValueAndCreateNonNanWindow(x, x_int);
         }
         else {
-//            std::cout << "window->setWindow(delta_sum, x_int, x) = "  << std::endl;
             window->setWindow(delta_sum, x_int, x);
         }
         return;
     }
 
     if (window->isFull()){
-//        std::cout << "window->isFull()" << std::endl;
         codeWindow();
         codeValueAndCreateNonNanWindow(x, x_int);
         return;
@@ -90,7 +85,6 @@ void CoderCA::processValue(std::string x){
 #endif
 
     if (delta_sum == 0 || not window->conditionHolds(delta_sum, x_int, x)){
-//        std::cout << "(delta_sum == 0 || not window->conditionHolds(delta_sum, x_int, x))" << std::endl;
         codeWindow(); // code non-nan window
         codeValueAndCreateNonNanWindow(x, x_int);
     }
