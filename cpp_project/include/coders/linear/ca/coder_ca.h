@@ -10,8 +10,7 @@ class CoderCA: public CoderCols {
 private:
     int window_size;
     std::vector<int> error_thresholds_vector;
-    CAWindow window;
-    int window_size_bit_length; // same as window.window_size_bit_length
+    CAWindow* window;
 
     void codeCoderParams() override;
 
@@ -19,11 +18,11 @@ private:
     void codeColumnWhile(std::string csv_value) override;
     void codeColumnAfter() override;
 
-    CAWindow createWindow();
-    void codeOriginal(CAWindow & window, std::string x, int x_delta);
-    void code(CAWindow & window, std::string x, int x_delta);
+    CAWindow* createWindow();
+    void processValue(std::string x);
 
-    void codeValueAndCreateNonNanWindow(CAWindow & window, std::string x, int x_int);
+    void codeValueAndCreateNonNanWindow(std::string x, int x_int);
+    void codeWindow();
     void codeWindow(int window_length, std::string window_value);
 
 public:

@@ -39,10 +39,6 @@ public:
     float getPoint2Y();
     std::string getPoint1YIntegerMode();
     std::string getPoint2YIntegerMode();
-
-    static std::vector<std::string> decodePoints(float point1_y, float point2_y, std::vector<int> x_coords);
-    static std::vector<std::string> decodePointsIntegerMode(std::string point1_y, std::string point2_y, std::vector<int> x_coords);
-    static std::vector<std::string> projectPointsOntoLine(Line* line, std::vector<int> x_coords);
 };
 
 #endif //CPP_PROJECT_PWLH_WINDOW_H

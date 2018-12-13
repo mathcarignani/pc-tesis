@@ -20,7 +20,7 @@ std::vector<std::string> DecoderFR::decodeDataColumn(){
     std::vector<int> x_coords_vector = CoderUtils::createXCoordsVectorMaskMode(mask, time_delta_vector, 0);
 
     mask->reset();
-    while (column->unprocessed_rows > 0){
+    while (column->notFinished()){
         if (mask->isNoData()) {
             column->addNoData();
             continue;

@@ -30,7 +30,7 @@ std::vector<std::string> DecoderSlideFilter::decodeDataColumn(){
 
     int pos = 0;
     mask->reset();
-    while (column->unprocessed_rows > 0){
+    while (column->notFinished()){
         if (mask->isNoData()) {
             column->addNoData();
             continue;

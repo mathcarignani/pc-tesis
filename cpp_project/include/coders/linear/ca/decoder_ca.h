@@ -7,12 +7,11 @@
 class DecoderCA: public DecoderCols {
 
 private:
-    int current_window_size;
-    std::string current_value;
+    std::string archived_value;
 
     std::vector<std::string> decodeDataColumn() override;
-    void decodeWindow(std::vector<std::string> & column);
-    void createWindow(std::vector<std::string> & column, std::string previous_value);
+    void decodeWindow();
+    void decodeValues(int window_size, std::string value);
 
 public:
     using DecoderCols::DecoderCols;

@@ -54,6 +54,24 @@ void TestsCoders::testGAMPS() {
     std::cout << "SAME FILE!!" << std::endl;
 }
 
+void TestsCoders::testCA(){
+    Path file_path = Path(TestsUtils::IRKIS_PATH, "vwc_1202.dat.csv");
+    std::vector<int> lossless{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+    std::vector<int>    lossy{0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5};
+
+    std::string coder_name = "CA";
+    Path output_code_path = TestsCodersUtils::codedFilePath(TestsUtils::OUTPUT_PATH, file_path, coder_name);
+    Path output_decode_path = TestsCodersUtils::decodedFilePath(TestsUtils::OUTPUT_PATH, file_path, coder_name);
+
+    std::cout << output_code_path.full_path << std::endl;
+    std::cout << output_decode_path.full_path << std::endl;
+
+    Scripts::code("CoderCA", file_path, output_code_path, 5, lossless);
+    Scripts::decode(output_code_path, output_decode_path);
+    TestsCodersUtils::compareFiles(file_path, output_decode_path);
+    std::cout << "SAME FILE!!" << std::endl;
+}
+
 
 TestsCoders::TestsCoders(){
     setDatasets();

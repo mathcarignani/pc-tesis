@@ -61,7 +61,10 @@ public:
 	bool isParallel(Line* line);
 
     // New Methods
+	double getYProjection(Point* point);
     double getYDistanceToDot(Point* point);
+    bool pointIsAbove(Point* point);
+    bool pointIsBelow(Point* point);
 
 };
 

@@ -18,6 +18,7 @@ public:
     // TODO: remove
     static void testSideFilder();
     static void testGAMPS();
+    static void testCA();
 
 private:
     std::vector<Path> paths;

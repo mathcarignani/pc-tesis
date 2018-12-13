@@ -879,6 +879,33 @@ src/coders/linear/fr/fr_window.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/linear/fr/fr_window.cpp.s
 .PHONY : src/coders/linear/fr/fr_window.cpp.s
 
+src/coders/linear/linear_coder_utils.o: src/coders/linear/linear_coder_utils.cpp.o
+
+.PHONY : src/coders/linear/linear_coder_utils.o
+
+# target to build an object file
+src/coders/linear/linear_coder_utils.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/linear/linear_coder_utils.cpp.o
+.PHONY : src/coders/linear/linear_coder_utils.cpp.o
+
+src/coders/linear/linear_coder_utils.i: src/coders/linear/linear_coder_utils.cpp.i
+
+.PHONY : src/coders/linear/linear_coder_utils.i
+
+# target to preprocess a source file
+src/coders/linear/linear_coder_utils.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/linear/linear_coder_utils.cpp.i
+.PHONY : src/coders/linear/linear_coder_utils.cpp.i
+
+src/coders/linear/linear_coder_utils.s: src/coders/linear/linear_coder_utils.cpp.s
+
+.PHONY : src/coders/linear/linear_coder_utils.s
+
+# target to generate assembly for a file
+src/coders/linear/linear_coder_utils.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/linear/linear_coder_utils.cpp.s
+.PHONY : src/coders/linear/linear_coder_utils.cpp.s
+
 src/coders/linear/pwlh/coder_pwlh.o: src/coders/linear/pwlh/coder_pwlh.cpp.o
 
 .PHONY : src/coders/linear/pwlh/coder_pwlh.o
@@ -1554,6 +1581,33 @@ src/file_utils/text/text_utils.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/file_utils/text/text_utils.cpp.s
 .PHONY : src/file_utils/text/text_utils.cpp.s
 
+src/line_utils.o: src/line_utils.cpp.o
+
+.PHONY : src/line_utils.o
+
+# target to build an object file
+src/line_utils.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/line_utils.cpp.o
+.PHONY : src/line_utils.cpp.o
+
+src/line_utils.i: src/line_utils.cpp.i
+
+.PHONY : src/line_utils.i
+
+# target to preprocess a source file
+src/line_utils.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/line_utils.cpp.i
+.PHONY : src/line_utils.cpp.i
+
+src/line_utils.s: src/line_utils.cpp.s
+
+.PHONY : src/line_utils.s
+
+# target to generate assembly for a file
+src/line_utils.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/line_utils.cpp.s
+.PHONY : src/line_utils.cpp.s
+
 src/math_utils.o: src/math_utils.cpp.o
 
 .PHONY : src/math_utils.o
@@ -2079,6 +2133,9 @@ help:
 	@echo "... src/coders/linear/fr/fr_window.o"
 	@echo "... src/coders/linear/fr/fr_window.i"
 	@echo "... src/coders/linear/fr/fr_window.s"
+	@echo "... src/coders/linear/linear_coder_utils.o"
+	@echo "... src/coders/linear/linear_coder_utils.i"
+	@echo "... src/coders/linear/linear_coder_utils.s"
 	@echo "... src/coders/linear/pwlh/coder_pwlh.o"
 	@echo "... src/coders/linear/pwlh/coder_pwlh.i"
 	@echo "... src/coders/linear/pwlh/coder_pwlh.s"
@@ -2154,6 +2211,9 @@ help:
 	@echo "... src/file_utils/text/text_utils.o"
 	@echo "... src/file_utils/text/text_utils.i"
 	@echo "... src/file_utils/text/text_utils.s"
+	@echo "... src/line_utils.o"
+	@echo "... src/line_utils.i"
+	@echo "... src/line_utils.s"
 	@echo "... src/math_utils.o"
 	@echo "... src/math_utils.i"
 	@echo "... src/math_utils.s"

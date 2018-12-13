@@ -3,6 +3,8 @@
 #define CPP_PROJECT_MASK_H
 
 #include <vector>
+#include <iostream>
+#include <assert.h>
 
 class Burst {
 
@@ -37,6 +39,7 @@ private:
     int burst_length;
 
     void setBurst(int index){
+        assert(index < bursts.size());
         Burst* burst = bursts.at(index);
         burst_is_no_data = burst->no_data;
         burst_length = burst->length;
@@ -63,11 +66,13 @@ public:
     }
 
     bool isNoData(){
+//        std::cout << "BEGIN isNoData" << std::endl;
         if (burst_length == 0){
             current_index++;
             setBurst(current_index);
         }
         burst_length--;
+//        std::cout << "END isNoData" << std::endl;
         return burst_is_no_data;
     }
 };

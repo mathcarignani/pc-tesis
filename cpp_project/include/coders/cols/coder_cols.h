@@ -19,7 +19,7 @@ private:
 protected:
     int column_index = 0;
     int row_index = 0;
-    int delta_sum;
+    int delta_sum = 0;
     std::vector<int> time_delta_vector;
 #if MASK_MODE
     int total_data_rows;

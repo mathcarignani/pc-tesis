@@ -112,39 +112,3 @@ std::string PWLHWindow::getPoint1YIntegerMode(){
 std::string PWLHWindow::getPoint2YIntegerMode(){
     return StringUtils::doubleToString(p2.y);
 }
-
-std::vector<std::string> PWLHWindow::decodePoints(float point1_y, float point2_y, std::vector<int> x_coords){
-    int first_x_coord = x_coords.front();
-#if CHECKS
-    assert(first_x_coord == 0);
-#endif
-    Point p1 = Point(point1_y, first_x_coord);
-    Point p2 = Point(point2_y, x_coords.back());
-    Line* line = new Line(&p1, &p2);
-    return projectPointsOntoLine(line, x_coords);
-}
-
-std::vector<std::string> PWLHWindow::decodePointsIntegerMode(std::string point1_y, std::string point2_y, std::vector<int> x_coords){
-    int point1_y_int = StringUtils::stringToInt(point1_y);
-    int point2_y_int = StringUtils::stringToInt(point2_y);
-    int first_x_coord = x_coords.front();
-    int last_x_coord = x_coords.back();
-#if CHECKS
-    assert(first_x_coord == 0);
-#endif
-    Point p1 = Point(point1_y_int, first_x_coord);
-    Point p2 = Point(point2_y_int, last_x_coord);
-    Line* line = new Line(&p1, &p2);
-    return projectPointsOntoLine(line, x_coords);
-}
-
-std::vector<std::string> PWLHWindow::projectPointsOntoLine(Line* line, std::vector<int> x_coords){
-    int window_size = x_coords.size();
-    std::vector<std::string> res(window_size);
-    for (int i=0; i < window_size; i++){
-        int x_coord = x_coords.at(i);
-        double value = line->getValue(x_coord);
-        res[i] = StringUtils::doubleToString(value);
-    }
-    return res;
-}
