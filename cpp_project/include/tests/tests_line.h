@@ -11,7 +11,7 @@ public:
 
 private:
     static void getValueTest();
-
+    static void getYDistanceToDot();
 };
 
 #endif //CPP_PROJECT_TESTS_LINE_H

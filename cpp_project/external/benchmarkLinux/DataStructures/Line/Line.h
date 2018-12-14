@@ -58,7 +58,6 @@ public:
 	double getValue(double x);
 
 	Point getIntersection(const Line& line);
-	bool isParallel(Line* line);
 
     // New Methods
 	double getYProjection(Point* point);

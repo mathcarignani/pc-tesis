@@ -148,7 +148,7 @@ void TestsCoders::runAll(){
             testCoder("CoderAPCA");
             testCoder("CoderPWLHInt");
             testCoder("CoderPWLH");
-             testCoder("CoderCA");
+            testCoder("CoderCA");
 
         #if MASK_MODE
             testCoder("CoderFR");

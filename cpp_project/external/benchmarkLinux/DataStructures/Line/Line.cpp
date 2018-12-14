@@ -109,17 +109,16 @@ Point Line::getIntersection(const Line& other)
 	return interPoint;
 }
 
-bool Line::isParallel(Line *l)
-{
-	return abs(this->slope - l->slope) < 0.0000000001;
-}
+// New Methods
 
 double Line::getYProjection(Point* point){
 	return getValue(point->x);
 }
 
 double Line::getYDistanceToDot(Point* point){
-    return abs(point->y - getYProjection(point));
+    // using "abs" was working in mac but causing issues in ubuntu
+    double diff = point->y - getYProjection(point);
+    return (diff < 0) ? -diff : diff;
 }
 
 bool Line::pointIsAbove(Point* point){
