@@ -8,10 +8,6 @@ from file_utils.csv_utils.csv_writer import CSVWriter
 ########################################################################################################################
 
 
-def line_contains_nodata(line_):
-    return "N" in line_
-
-
 def set_line_timestamp(line_, timestamp_):
     line_[0] = timestamp_
     return line_
@@ -19,7 +15,7 @@ def set_line_timestamp(line_, timestamp_):
 
 def iterate(csv_reader, csv_writer):
     first_value = True
-    last_column = None
+    last_column = 2
 
     while csv_reader.continue_reading:
         line = csv_reader.read_line()
@@ -29,20 +25,18 @@ def iterate(csv_reader, csv_writer):
             if last_column and csv_reader.current_line_count == 4:
                 # column titles row
                 line = line[:last_column]
-
             csv_writer.write_row(line)
             continue
 
-        # data rows
-        # if line_contains_nodata(line):
-        #     # don't copy rows which contain nodata entries
-        #     continue
-
         # timestamp = 0 if first_value else 10
-        # first_value = False
         # line = set_line_timestamp(line, timestamp)
         if last_column:
             line = line[:last_column]
+
+            # data rows
+        # if "N" in line:
+        #     line[1] = "397"
+
         csv_writer.write_row(line)
 
 
@@ -51,7 +45,7 @@ def clean():
     input_filename = "vwc_1202.dat.csv"
 
     output_path = python_project_path()
-    output_filename = "vwc_1202.dat_CLEAN.csv"  # "vwc_1202.dat_CONSTANT_TIME.csv"
+    output_filename = "vwc_1202.dat-col6.csv"  # "vwc_1202.dat_CONSTANT_TIME.csv"
 
     csv_reader = CSVReader(input_path, input_filename)
     csv_writer = CSVWriter(output_path, output_filename)
@@ -76,7 +70,7 @@ def remove_n_indexes(line, n_indexes):
 
 
 def compare_lines(line_1, line_2, current_line_count):
-    error_threshold = 2
+    error_threshold = 5
 
     if current_line_count < 4:
         # header rows should match
@@ -92,7 +86,7 @@ def compare_lines(line_1, line_2, current_line_count):
     line_2_int = [int(item) for item in remove_n_indexes(line_2, line_2_N_indexes)]
 
     list_diff = [abs(x1 - x2) for (x1, x2) in zip(line_1_int, line_2_int)]
-    print [current_line_count] + list_diff
+    # print [current_line_count] + list_diff
     assert(list_diff[0] == 0)
     assert(max(list_diff) <= error_threshold)
 
@@ -100,7 +94,7 @@ def compare_lines(line_1, line_2, current_line_count):
 def compare():
     test_files_path = cpp_project_path() + "/test_files"
     csv_reader_1 = CSVReader(datasets_csv_path() + "[1]irkis/", "vwc_1202.dat.csv")
-    csv_reader_2 = CSVReader(test_files_path, "vwc_1202.dat.csv-CA-Decode.csv")
+    csv_reader_2 = CSVReader(test_files_path, "vwc_1202.dat.csv-CoderSF-Decode.csv")
 
     while csv_reader_1.continue_reading:
         assert(csv_reader_1.current_line_count == csv_reader_2.current_line_count)
@@ -111,6 +105,7 @@ def compare():
 
         compare_lines(line_1, line_2, current_line_count)
 
+    print "COMPARE SUCCESS!!"
     csv_reader_1.close()
     csv_reader_2.close()
 
