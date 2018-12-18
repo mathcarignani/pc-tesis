@@ -45,10 +45,8 @@ std::vector<int> CoderUtils::createXCoordsVectorMaskMode(Mask* mask, std::vector
     std::vector<int> result;
     int delta_sum = init_delta_sum;
     for(int i=0; i < mask->total_data + mask->total_no_data; i++){
-        std::cout << "A=" << time_delta_vector.at(i) << std::endl;
         delta_sum += time_delta_vector.at(i);
         if (mask->isNoData()) { continue; } // ignore these values
-        std::cout << "delta_sum=" << delta_sum << std::endl;
         result.push_back(delta_sum);
     }
     return result;

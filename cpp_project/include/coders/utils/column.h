@@ -27,7 +27,7 @@ public:
     }
 
     void addData(std::string value){
-        std::cout << "I=" << row_index << "-----------------------------> " << value << std::endl;
+//        std::cout << "I=" << row_index << "-----------------------------> " << value << std::endl;
         addValue(value);
     #if MASK_MODE
         unprocessed_data_rows--;
@@ -36,7 +36,7 @@ public:
     }
 
     void addNoData(){
-        std::cout << "I=" << row_index << "-----------------------------> N" << std::endl;
+//        std::cout << "I=" << row_index << "-----------------------------> N" << std::endl;
         addValue(Constants::NO_DATA);
     #if MASK_MODE
         unprocessed_no_data_rows--;
