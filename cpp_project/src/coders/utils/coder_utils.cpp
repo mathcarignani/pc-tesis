@@ -38,6 +38,9 @@ std::vector<int> CoderUtils::createXCoordsVector(Mask* mask, std::vector<int> ti
 // If there are "nodata" values in the middle, their time delta is still considered.
 //
 std::vector<int> CoderUtils::createXCoordsVectorMaskMode(Mask* mask, std::vector<int> time_delta_vector, int init_delta_sum){
+#if CHECKS
+    assert(time_delta_vector.size() == mask->total_data + mask->total_no_data);
+#endif
     mask->reset();
     std::vector<int> result;
     int delta_sum = init_delta_sum;

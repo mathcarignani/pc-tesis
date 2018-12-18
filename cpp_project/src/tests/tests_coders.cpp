@@ -13,8 +13,7 @@
 
 
 void TestsCoders::testSideFilder() {
-//     Path file_path = Path(TestsUtils::OUTPUT_PATH + "/sf", "vwc_1202.dat.csv");
-    Path file_path = Path(TestsUtils::OUTPUT_PATH + "/sf", "vwc_1202.dat2.csv");
+    Path file_path = Path(TestsUtils::OUTPUT_PATH + "/sf", "vwc_1202.dat.csv");
 
     std::vector<int> lossless{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
     std::vector<int>    lossy{0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5};
@@ -26,10 +25,10 @@ void TestsCoders::testSideFilder() {
     std::cout << output_code_path.full_path << std::endl;
     std::cout << output_decode_path.full_path << std::endl;
 
-//    Scripts::codeSF(file_path, output_code_path, 5, lossless);
-//    Scripts::decodeSF(output_code_path, output_decode_path, 5);
-//    TestsCodersUtils::compareFiles(file_path, output_decode_path);
-//    std::cout << "SAME FILE!!" << std::endl;
+    Scripts::code("CoderSF", file_path, output_code_path, 5, lossless);
+    Scripts::decode(output_code_path, output_decode_path);
+    TestsCodersUtils::compareFiles(file_path, output_decode_path);
+    std::cout << "SAME FILE!!" << std::endl;
 }
 
 void TestsCoders::testGAMPS() {
