@@ -166,7 +166,7 @@ void DecoderSlideFilter::decompress(std::vector<int> x_coords_vector)
         }
 
         i++;
-        if (x_coords_vector[x_coords_vector_index] > i + first_coord) { continue; }
+        if (x_coords_vector[x_coords_vector_index] >= i + first_coord) { continue; }
 
         std::cout << "VAL_POSITION = " << position << std::endl;
         std::cout << "VAL_I = " << i << std::endl;
