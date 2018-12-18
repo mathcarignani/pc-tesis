@@ -102,6 +102,7 @@ void DecoderSlideFilter::decompress(std::vector<int> x_coords_vector)
     int size = m_pCompressData->size();
     int position = 0;
     double timeStamp = 0;
+    int first_coord = x_coords_vector.at(0);
     int lastTimeStamp = m_pCompressData->getAt(m_pCompressData->size() - 1).timestamp;
     SlideFiltersEntry slEntry1, slEntry2;
     Line* l = NULL;
@@ -165,7 +166,7 @@ void DecoderSlideFilter::decompress(std::vector<int> x_coords_vector)
         }
 
         i++;
-        if (x_coords_vector[x_coords_vector_index] > i) { continue; }
+        if (x_coords_vector[x_coords_vector_index] > i + first_coord) { continue; }
 
         std::cout << "VAL_POSITION = " << position << std::endl;
         std::cout << "VAL_I = " << i << std::endl;

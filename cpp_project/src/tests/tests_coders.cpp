@@ -18,8 +18,8 @@ void TestsCoders::testSideFilder() {
 //    Path file_path = Path(TestsUtils::OUTPUT_PATH + "/sf", "vwc_1202.dat-2cols.csv");
 //    Path file_path = Path(TestsUtils::OUTPUT_PATH + "/sf", "vwc_1202.dat-2cols-397.csv");
 
-//    Path file_path = Path(TestsUtils::OUTPUT_PATH + "/sf", "vwc_1202.dat-2cols-2N.csv");
-    Path file_path = Path(TestsUtils::OUTPUT_PATH + "/sf", "vwc_1202.dat-2cols-2N-397.csv");
+    Path file_path = Path(TestsUtils::OUTPUT_PATH + "/sf", "vwc_1202.dat-2cols-2N.csv");
+//    Path file_path = Path(TestsUtils::OUTPUT_PATH + "/sf", "vwc_1202.dat-2cols-2N-397.csv");
 
     std::vector<int> lossless{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
     std::vector<int>    lossy{0, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5};
