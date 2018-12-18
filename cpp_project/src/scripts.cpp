@@ -35,33 +35,20 @@ Dataset* Scripts::codeBasic(Path input_path, Path output_path){
 
 Dataset* Scripts::code(std::string coder_name, Path input_path, Path output_path,
                             int window_size, std::vector<int> error_thresholds_vector){
-    if (coder_name == "CoderPCA"){
-        return Scripts::codePCA(input_path, output_path, window_size, error_thresholds_vector);
-    }
-    else if (coder_name == "CoderAPCA"){
-        return Scripts::codeAPCA(input_path, output_path, window_size, error_thresholds_vector);
-    }
-    else if (coder_name == "CoderPWLH" || coder_name == "CoderPWLHInt"){
+    if (coder_name == "CoderPCA")   return Scripts::codePCA(input_path, output_path, window_size, error_thresholds_vector);
+    if (coder_name == "CoderAPCA")  return Scripts::codeAPCA(input_path, output_path, window_size, error_thresholds_vector);
+    if (coder_name == "CoderCA")    return Scripts::codeCA(input_path, output_path, window_size, error_thresholds_vector);
+    if (coder_name == "CoderGAMPS") return Scripts::codeGAMPS(input_path, output_path, window_size, error_thresholds_vector);
+
+    if (coder_name == "CoderPWLH" || coder_name == "CoderPWLHInt"){
         bool integer_mode = coder_name == "CoderPWLHInt";
         return Scripts::codePWLH(input_path, output_path, window_size, error_thresholds_vector, integer_mode);
     }
-    else if (coder_name == "CoderCA"){
-        return Scripts::codeCA(input_path, output_path, window_size, error_thresholds_vector);
-    }
-    else if (coder_name == "CoderGAMPS"){
-        return Scripts::codeGAMPS(input_path, output_path, window_size, error_thresholds_vector);
-    }
 #if MASK_MODE
-    else if (coder_name == "CoderSF"){
-        return Scripts::codeSF(input_path, output_path, window_size, error_thresholds_vector);
-    }
-    else if (coder_name == "CoderFR") {
-        return Scripts::codeFR(input_path, output_path, window_size, error_thresholds_vector);
-    }
+    if (coder_name == "CoderSF") return Scripts::codeSF(input_path, output_path, window_size, error_thresholds_vector);
+    if (coder_name == "CoderFR") return Scripts::codeFR(input_path, output_path, window_size, error_thresholds_vector);
 #endif
-    else {
-        throw std::invalid_argument(coder_name);
-    }
+    throw std::invalid_argument(coder_name);
 }
 
 Dataset* Scripts::codePCA(Path input_path, Path output_path, int window_size, std::vector<int> error_thresholds_vector){
