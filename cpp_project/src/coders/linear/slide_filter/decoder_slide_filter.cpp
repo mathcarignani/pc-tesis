@@ -16,23 +16,24 @@ void DecoderSlideFilter::setCoderParams(int window_size_){
 
 std::vector<std::string> DecoderSlideFilter::decodeDataColumn(){
     column = new Column(data_rows_count, mask->total_data, mask->total_no_data);
-    m_pCompressData = new DynArray<SlideFiltersEntry>();
-//    std::cout << "decodeEntries" << std::endl;
-    decodeEntries();
 
-//    std::cout << "CoderUtils::createXCoordsVectorMaskMode" << std::endl;
-//    VectorUtils::printIntVector(time_delta_vector);
-    std::vector<int> x_coords_vector = CoderUtils::createXCoordsVectorMaskMode(mask, time_delta_vector, 1);
-//    VectorUtils::printIntVector(x_coords_vector);
+    if (mask->total_data > 0){
+        m_pCompressData = new DynArray<SlideFiltersEntry>();
+//        std::cout << "decodeEntries" << std::endl;
+        decodeEntries();
 
-//    std::cout << "decompress" << std::endl;
-    decompress(x_coords_vector);
+//        std::cout << "CoderUtils::createXCoordsVectorMaskMode" << std::endl;
+//        VectorUtils::printIntVector(time_delta_vector);
+        std::vector<int> x_coords_vector = CoderUtils::createXCoordsVectorMaskMode(mask, time_delta_vector, 1);
+//        VectorUtils::printIntVector(x_coords_vector);
 
-//    std::cout << "m_pApproxData->size() = " << m_pApproxData->size() << std::endl;
-//    std::cout << "column->unprocessed_data_rows = " << column->unprocessed_data_rows << std::endl;
-//    std::cout << "data_rows_count = " << data_rows_count << std::endl;
-
-//    assert(m_pApproxData->size() == column->unprocessed_data_rows);
+//        std::cout << "decompress" << std::endl;
+        decompress(x_coords_vector);
+//        std::cout << "m_pApproxData->size() = " << m_pApproxData->size() << std::endl;
+//        std::cout << "column->unprocessed_data_rows = " << column->unprocessed_data_rows << std::endl;
+//        std::cout << "data_rows_count = " << data_rows_count << std::endl;
+        assert(m_pApproxData->size() == column->unprocessed_data_rows);
+    }
 
     int pos = 0;
     mask->reset();
@@ -50,8 +51,10 @@ std::vector<std::string> DecoderSlideFilter::decodeDataColumn(){
         pos++;
     }
 
-    delete m_pCompressData;
-    delete m_pApproxData;
+    if (mask->total_data > 0){
+        delete m_pCompressData;
+        delete m_pApproxData;
+    }
     column->assertAfter();
     return column->column_vector;
 }

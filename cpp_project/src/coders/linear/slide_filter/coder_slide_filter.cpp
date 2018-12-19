@@ -30,19 +30,20 @@ void CoderSlideFilter::codeColumnWhile(std::string csv_value){
     delta_sum += time_delta_vector[row_index]; // >= 0
     if (Constants::isNoData(csv_value)) { return; } // skip no_data
 //    std::cout << "I=" << row_index << "-----------------------------> " << csv_value << std::endl;
-//    std::cout << "addDataItem(" << delta_sum << ", " << csv_value << ")" << std::endl;
     m_pSFData->addDataItem(delta_sum, csv_value);
     delta_sum = 0;
 }
 
 void CoderSlideFilter::codeColumnAfter() {
     assert(m_pSFData->length == total_data_rows);
-//    for(int i = 0; i < m_pSFData->length; i++){
-//        DataItem entry = m_pSFData->getAt(i);
-//        std::cout << entry.timestamp << " " << entry.value << std::endl;
-//    }
-    compress();
-    codeEntries();
+    if (total_data_rows > 0){
+        for(int i = 0; i < m_pSFData->length; i++){
+            DataItem entry = m_pSFData->getAt(i);
+//            std::cout << entry.timestamp << " " << entry.value << std::endl;
+        }
+        compress();
+        codeEntries();
+    }
     delete m_pSFData;
     delete m_pSFOutput;
     entries_vector.clear();
