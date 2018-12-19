@@ -59,4 +59,3 @@ void BitStreamUtils::removeFile(Path path){
     const char * file_path = path.full_path.c_str();
     remove(file_path);
 }
-

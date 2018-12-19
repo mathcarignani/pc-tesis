@@ -66,13 +66,11 @@ public:
     }
 
     bool isNoData(){
-//        std::cout << "BEGIN isNoData" << std::endl;
         if (burst_length == 0){
             current_index++;
             setBurst(current_index);
         }
         burst_length--;
-//        std::cout << "END isNoData" << std::endl;
         return burst_is_no_data;
     }
 };

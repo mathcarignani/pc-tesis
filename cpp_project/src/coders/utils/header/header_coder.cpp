@@ -77,9 +77,6 @@ int HeaderCoder::codeColumnNames(){
     int number_of_chars = column_names_str.size() - 1;
     int zeros_count = number_of_chars % 8 + 8;
 
-//    std::cout << "number_of_chars = " << number_of_chars << std::endl;
-//    std::cout << "zeros_count = " << zeros_count << std::endl;
-
     // code the number of chars in unary code
     for(int i=0; i < number_of_chars; i++) { output_file->pushBit(1); }
     for(int i=0; i < zeros_count; i++) { output_file->pushBit(0); }

@@ -95,7 +95,7 @@ std::string DecoderBase::decodeValueRaw(){
         coded_value = decodeValue(value);
     }
     catch( const std::invalid_argument& e ){
-        std::cout << e.what() << std::endl;
+        std::cout << "DecoderBase::decodeValueRaw: " << e.what() << std::endl;
         exit(-1);
     }
     return coded_value;

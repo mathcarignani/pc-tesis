@@ -10,26 +10,6 @@
 #include "vector_utils.h"
 #include "string_utils.h"
 
-void CSVUtils::CopyCSV(Path input_path, Path output_path){
-    CSVReader* csv_reader = new CSVReader(input_path);
-    CSVWriter* csv_writer = new CSVWriter(output_path);
-    while (csv_reader->continue_reading) {
-        std::vector<std::string> row = csv_reader->readLineCSV();
-        std::string row_str = StringUtils::join(row, ",");
-        std::vector<std::string> row_str_split = StringUtils::splitByString(row_str, ",");
-//        if (csv_reader.current_line_count == 2){
-//            std::cout << "row_str" << std::endl;
-//            std::cout << row_str.size() << std::endl;
-//            std::cout << row_str << std::endl;
-//            std::cout << "##################################" << std::endl;
-//            std::vector<std::string> row_str_split = {"TIME UNIT:", "minutes"};
-//        }
-        csv_writer->writeRow(row_str_split);
-    }
-    delete csv_reader;
-    delete csv_writer;
-}
-
 void CSVUtils::CompareCSVLossless(Path path1, Path path2){
     CSVReader* csv_reader1 = new CSVReader(path1);
     CSVReader* csv_reader2 = new CSVReader(path2);

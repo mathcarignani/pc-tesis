@@ -56,7 +56,7 @@ void CoderBase::codeValueRaw(std::string x){
         value = codeValue(x);
     }
     catch( const std::invalid_argument& e ){
-        std::cout << "STRING OUT OF DATASET RANGE = " << e.what() << std::endl;
+        std::cout << "CoderBase::codeValueRaw: " << e.what() << std::endl;
         exit(-1);
     }
     codeRaw(value);

@@ -8,8 +8,6 @@
 class CSVUtils {
 
 public:
-    static void CopyCSV(Path input_path, Path output_path);
-
     static void CompareCSVLossless(Path path1, Path path2);
 
 };
