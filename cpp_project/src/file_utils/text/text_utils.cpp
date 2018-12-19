@@ -4,7 +4,6 @@
 #include <fstream>
 #include <iostream>
 #include <vector>
-#include "assert.h"
 
 
 int TextUtils::lineCount(std::string path, std::string filename){
