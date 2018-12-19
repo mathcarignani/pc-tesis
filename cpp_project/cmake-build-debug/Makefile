@@ -1716,33 +1716,6 @@ src/tests/tests_dataset_utils.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests_dataset_utils.cpp.s
 .PHONY : src/tests/tests_dataset_utils.cpp.s
 
-src/tests/tests_datetime_utils.o: src/tests/tests_datetime_utils.cpp.o
-
-.PHONY : src/tests/tests_datetime_utils.o
-
-# target to build an object file
-src/tests/tests_datetime_utils.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests_datetime_utils.cpp.o
-.PHONY : src/tests/tests_datetime_utils.cpp.o
-
-src/tests/tests_datetime_utils.i: src/tests/tests_datetime_utils.cpp.i
-
-.PHONY : src/tests/tests_datetime_utils.i
-
-# target to preprocess a source file
-src/tests/tests_datetime_utils.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests_datetime_utils.cpp.i
-.PHONY : src/tests/tests_datetime_utils.cpp.i
-
-src/tests/tests_datetime_utils.s: src/tests/tests_datetime_utils.cpp.s
-
-.PHONY : src/tests/tests_datetime_utils.s
-
-# target to generate assembly for a file
-src/tests/tests_datetime_utils.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests_datetime_utils.cpp.s
-.PHONY : src/tests/tests_datetime_utils.cpp.s
-
 src/tests/tests_header_coder.o: src/tests/tests_header_coder.cpp.o
 
 .PHONY : src/tests/tests_header_coder.o
@@ -1797,60 +1770,6 @@ src/tests/tests_line.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests_line.cpp.s
 .PHONY : src/tests/tests_line.cpp.s
 
-src/tests/tests_math_utils.o: src/tests/tests_math_utils.cpp.o
-
-.PHONY : src/tests/tests_math_utils.o
-
-# target to build an object file
-src/tests/tests_math_utils.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests_math_utils.cpp.o
-.PHONY : src/tests/tests_math_utils.cpp.o
-
-src/tests/tests_math_utils.i: src/tests/tests_math_utils.cpp.i
-
-.PHONY : src/tests/tests_math_utils.i
-
-# target to preprocess a source file
-src/tests/tests_math_utils.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests_math_utils.cpp.i
-.PHONY : src/tests/tests_math_utils.cpp.i
-
-src/tests/tests_math_utils.s: src/tests/tests_math_utils.cpp.s
-
-.PHONY : src/tests/tests_math_utils.s
-
-# target to generate assembly for a file
-src/tests/tests_math_utils.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests_math_utils.cpp.s
-.PHONY : src/tests/tests_math_utils.cpp.s
-
-src/tests/tests_string_utils.o: src/tests/tests_string_utils.cpp.o
-
-.PHONY : src/tests/tests_string_utils.o
-
-# target to build an object file
-src/tests/tests_string_utils.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests_string_utils.cpp.o
-.PHONY : src/tests/tests_string_utils.cpp.o
-
-src/tests/tests_string_utils.i: src/tests/tests_string_utils.cpp.i
-
-.PHONY : src/tests/tests_string_utils.i
-
-# target to preprocess a source file
-src/tests/tests_string_utils.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests_string_utils.cpp.i
-.PHONY : src/tests/tests_string_utils.cpp.i
-
-src/tests/tests_string_utils.s: src/tests/tests_string_utils.cpp.s
-
-.PHONY : src/tests/tests_string_utils.s
-
-# target to generate assembly for a file
-src/tests/tests_string_utils.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests_string_utils.cpp.s
-.PHONY : src/tests/tests_string_utils.cpp.s
-
 src/tests/tests_utils.o: src/tests/tests_utils.cpp.o
 
 .PHONY : src/tests/tests_utils.o
@@ -1878,32 +1797,113 @@ src/tests/tests_utils.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests_utils.cpp.s
 .PHONY : src/tests/tests_utils.cpp.s
 
-src/tests/tests_vector_utils.o: src/tests/tests_vector_utils.cpp.o
+src/tests/utils/tests_datetime_utils.o: src/tests/utils/tests_datetime_utils.cpp.o
 
-.PHONY : src/tests/tests_vector_utils.o
+.PHONY : src/tests/utils/tests_datetime_utils.o
 
 # target to build an object file
-src/tests/tests_vector_utils.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests_vector_utils.cpp.o
-.PHONY : src/tests/tests_vector_utils.cpp.o
+src/tests/utils/tests_datetime_utils.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/utils/tests_datetime_utils.cpp.o
+.PHONY : src/tests/utils/tests_datetime_utils.cpp.o
 
-src/tests/tests_vector_utils.i: src/tests/tests_vector_utils.cpp.i
+src/tests/utils/tests_datetime_utils.i: src/tests/utils/tests_datetime_utils.cpp.i
 
-.PHONY : src/tests/tests_vector_utils.i
+.PHONY : src/tests/utils/tests_datetime_utils.i
 
 # target to preprocess a source file
-src/tests/tests_vector_utils.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests_vector_utils.cpp.i
-.PHONY : src/tests/tests_vector_utils.cpp.i
+src/tests/utils/tests_datetime_utils.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/utils/tests_datetime_utils.cpp.i
+.PHONY : src/tests/utils/tests_datetime_utils.cpp.i
 
-src/tests/tests_vector_utils.s: src/tests/tests_vector_utils.cpp.s
+src/tests/utils/tests_datetime_utils.s: src/tests/utils/tests_datetime_utils.cpp.s
 
-.PHONY : src/tests/tests_vector_utils.s
+.PHONY : src/tests/utils/tests_datetime_utils.s
 
 # target to generate assembly for a file
-src/tests/tests_vector_utils.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests_vector_utils.cpp.s
-.PHONY : src/tests/tests_vector_utils.cpp.s
+src/tests/utils/tests_datetime_utils.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/utils/tests_datetime_utils.cpp.s
+.PHONY : src/tests/utils/tests_datetime_utils.cpp.s
+
+src/tests/utils/tests_math_utils.o: src/tests/utils/tests_math_utils.cpp.o
+
+.PHONY : src/tests/utils/tests_math_utils.o
+
+# target to build an object file
+src/tests/utils/tests_math_utils.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/utils/tests_math_utils.cpp.o
+.PHONY : src/tests/utils/tests_math_utils.cpp.o
+
+src/tests/utils/tests_math_utils.i: src/tests/utils/tests_math_utils.cpp.i
+
+.PHONY : src/tests/utils/tests_math_utils.i
+
+# target to preprocess a source file
+src/tests/utils/tests_math_utils.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/utils/tests_math_utils.cpp.i
+.PHONY : src/tests/utils/tests_math_utils.cpp.i
+
+src/tests/utils/tests_math_utils.s: src/tests/utils/tests_math_utils.cpp.s
+
+.PHONY : src/tests/utils/tests_math_utils.s
+
+# target to generate assembly for a file
+src/tests/utils/tests_math_utils.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/utils/tests_math_utils.cpp.s
+.PHONY : src/tests/utils/tests_math_utils.cpp.s
+
+src/tests/utils/tests_string_utils.o: src/tests/utils/tests_string_utils.cpp.o
+
+.PHONY : src/tests/utils/tests_string_utils.o
+
+# target to build an object file
+src/tests/utils/tests_string_utils.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/utils/tests_string_utils.cpp.o
+.PHONY : src/tests/utils/tests_string_utils.cpp.o
+
+src/tests/utils/tests_string_utils.i: src/tests/utils/tests_string_utils.cpp.i
+
+.PHONY : src/tests/utils/tests_string_utils.i
+
+# target to preprocess a source file
+src/tests/utils/tests_string_utils.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/utils/tests_string_utils.cpp.i
+.PHONY : src/tests/utils/tests_string_utils.cpp.i
+
+src/tests/utils/tests_string_utils.s: src/tests/utils/tests_string_utils.cpp.s
+
+.PHONY : src/tests/utils/tests_string_utils.s
+
+# target to generate assembly for a file
+src/tests/utils/tests_string_utils.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/utils/tests_string_utils.cpp.s
+.PHONY : src/tests/utils/tests_string_utils.cpp.s
+
+src/tests/utils/tests_vector_utils.o: src/tests/utils/tests_vector_utils.cpp.o
+
+.PHONY : src/tests/utils/tests_vector_utils.o
+
+# target to build an object file
+src/tests/utils/tests_vector_utils.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/utils/tests_vector_utils.cpp.o
+.PHONY : src/tests/utils/tests_vector_utils.cpp.o
+
+src/tests/utils/tests_vector_utils.i: src/tests/utils/tests_vector_utils.cpp.i
+
+.PHONY : src/tests/utils/tests_vector_utils.i
+
+# target to preprocess a source file
+src/tests/utils/tests_vector_utils.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/utils/tests_vector_utils.cpp.i
+.PHONY : src/tests/utils/tests_vector_utils.cpp.i
+
+src/tests/utils/tests_vector_utils.s: src/tests/utils/tests_vector_utils.cpp.s
+
+.PHONY : src/tests/utils/tests_vector_utils.s
+
+# target to generate assembly for a file
+src/tests/utils/tests_vector_utils.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/utils/tests_vector_utils.cpp.s
+.PHONY : src/tests/utils/tests_vector_utils.cpp.s
 
 src/utils/datetime_utils.o: src/utils/datetime_utils.cpp.o
 
@@ -2226,27 +2226,27 @@ help:
 	@echo "... src/tests/tests_dataset_utils.o"
 	@echo "... src/tests/tests_dataset_utils.i"
 	@echo "... src/tests/tests_dataset_utils.s"
-	@echo "... src/tests/tests_datetime_utils.o"
-	@echo "... src/tests/tests_datetime_utils.i"
-	@echo "... src/tests/tests_datetime_utils.s"
 	@echo "... src/tests/tests_header_coder.o"
 	@echo "... src/tests/tests_header_coder.i"
 	@echo "... src/tests/tests_header_coder.s"
 	@echo "... src/tests/tests_line.o"
 	@echo "... src/tests/tests_line.i"
 	@echo "... src/tests/tests_line.s"
-	@echo "... src/tests/tests_math_utils.o"
-	@echo "... src/tests/tests_math_utils.i"
-	@echo "... src/tests/tests_math_utils.s"
-	@echo "... src/tests/tests_string_utils.o"
-	@echo "... src/tests/tests_string_utils.i"
-	@echo "... src/tests/tests_string_utils.s"
 	@echo "... src/tests/tests_utils.o"
 	@echo "... src/tests/tests_utils.i"
 	@echo "... src/tests/tests_utils.s"
-	@echo "... src/tests/tests_vector_utils.o"
-	@echo "... src/tests/tests_vector_utils.i"
-	@echo "... src/tests/tests_vector_utils.s"
+	@echo "... src/tests/utils/tests_datetime_utils.o"
+	@echo "... src/tests/utils/tests_datetime_utils.i"
+	@echo "... src/tests/utils/tests_datetime_utils.s"
+	@echo "... src/tests/utils/tests_math_utils.o"
+	@echo "... src/tests/utils/tests_math_utils.i"
+	@echo "... src/tests/utils/tests_math_utils.s"
+	@echo "... src/tests/utils/tests_string_utils.o"
+	@echo "... src/tests/utils/tests_string_utils.i"
+	@echo "... src/tests/utils/tests_string_utils.s"
+	@echo "... src/tests/utils/tests_vector_utils.o"
+	@echo "... src/tests/utils/tests_vector_utils.i"
+	@echo "... src/tests/utils/tests_vector_utils.s"
 	@echo "... src/utils/datetime_utils.o"
 	@echo "... src/utils/datetime_utils.i"
 	@echo "... src/utils/datetime_utils.s"

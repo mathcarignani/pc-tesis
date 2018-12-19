@@ -95,11 +95,14 @@ set(DATASET_SRC_DIR src/dataset)
 set(TESTS_HEAD_DIR include/tests)
 set(TESTS_SRC_DIR src/tests)
 
+set(TESTS_UTILS_HEAD_DIR include/tests/utils)
+set(TESTS_UTILS_SRC_DIR src/tests/utils)
+
 set(UTILS_HEAD_DIR include/utils)
 set(UTILS_SRC_DIR src/utils)
 
-set(HEAD_DIRS include ${FILE_UTILS_HEAD_DIR} ${BIT_STREAM_HEAD_DIR} ${TEXT_HEAD_DIR} ${CSV_HEAD_DIR} ${CODER_HEAD_DIRS} ${DATASET_HEAD_DIR} ${TESTS_HEAD_DIR} ${UTILS_HEAD_DIR})
-set(SRC_DIRS src ${BIT_STREAM_SRC_DIR} ${TEXT_SRC_DIR} ${CSV_SRC_DIR} ${CODER_SRC_DIRS} ${DATASET_SRC_DIR} ${TESTS_SRC_DIR} ${UTILS_SRC_DIR})
+set(HEAD_DIRS include ${FILE_UTILS_HEAD_DIR} ${BIT_STREAM_HEAD_DIR} ${TEXT_HEAD_DIR} ${CSV_HEAD_DIR} ${CODER_HEAD_DIRS} ${DATASET_HEAD_DIR} ${TESTS_HEAD_DIR} ${UTILS_HEAD_DIR} ${TESTS_UTILS_HEAD_DIR})
+set(SRC_DIRS src ${BIT_STREAM_SRC_DIR} ${TEXT_SRC_DIR} ${CSV_SRC_DIR} ${CODER_SRC_DIRS} ${DATASET_SRC_DIR} ${TESTS_SRC_DIR} ${UTILS_SRC_DIR} ${TESTS_UTILS_SRC_DIR})
 include_directories(${EXTERNAL_DIRS} ${HEAD_DIRS} ${SRC_DIR})
 
 ### EXTERNAL BEGIN #####################################################################################################
@@ -189,20 +192,22 @@ set(CODER_SRC_FILES ${CODER_SRC_FILES0} ${CODER_SRC_FILES1} ${CODER_SRC_FILES2} 
 ### CODERS END #########################################################################################################
 
 ### TESTS BEGIN ########################################################################################################
-set(TESTS_HEAD_FILES0 ${TESTS_HEAD_DIR}/tests_vector_utils.h ${TESTS_HEAD_DIR}/tests_math_utils.h ${TESTS_HEAD_DIR}/tests_string_utils.h)
-set(TESTS_HEAD_FILES1 ${TESTS_HEAD_DIR}/tests_line.h ${TESTS_HEAD_DIR}/tests_header_coder.h ${TESTS_HEAD_DIR}/tests_utils.h)
-set(TESTS_HEAD_FILES2 ${TESTS_HEAD_DIR}/tests_coders_utils.h ${TESTS_HEAD_DIR}/tests_coders.h)
-set(TESTS_HEAD_FILES3 ${TESTS_HEAD_DIR}/tests_dataset_utils.h ${TESTS_HEAD_DIR}/tests_datetime_utils.h)
-set(TESTS_HEAD_FILES4 ${TESTS_HEAD_DIR}/tests_bit_stream.h ${TESTS_HEAD_DIR}/tests.h)
+set(TESTS_UTILS_HEAD_FILES0 ${TESTS_UTILS_HEAD_DIR}/tests_datetime_utils.h ${TESTS_UTILS_HEAD_DIR}/tests_math_utils.h)
+set(TESTS_UTILS_HEAD_FILES1 ${TESTS_UTILS_HEAD_DIR}/tests_string_utils.h ${TESTS_UTILS_HEAD_DIR}/tests_vector_utils.h)
 
-set(TESTS_SRC_FILES0 ${TESTS_SRC_DIR}/tests_vector_utils.cpp ${TESTS_SRC_DIR}/tests_math_utils.cpp ${TESTS_SRC_DIR}/tests_string_utils.cpp)
-set(TESTS_SRC_FILES1 ${TESTS_SRC_DIR}/tests_line.cpp ${TESTS_SRC_DIR}/tests_header_coder.cpp ${TESTS_SRC_DIR}/tests_utils.cpp)
-set(TESTS_SRC_FILES2 ${TESTS_SRC_DIR}/tests_coders_utils.cpp ${TESTS_SRC_DIR}/tests_coders.cpp)
-set(TESTS_SRC_FILES3 ${TESTS_SRC_DIR}/tests_dataset_utils.cpp ${TESTS_SRC_DIR}/tests_datetime_utils.cpp)
-set(TESTS_SRC_FILES4 ${TESTS_SRC_DIR}/tests_bit_stream.cpp ${TESTS_SRC_DIR}/tests.cpp)
+set(TESTS_UTILS_SRC_FILES0 ${TESTS_UTILS_SRC_DIR}/tests_datetime_utils.cpp ${TESTS_UTILS_SRC_DIR}/tests_math_utils.cpp)
+set(TESTS_UTILS_SRC_FILES1 ${TESTS_UTILS_SRC_DIR}/tests_string_utils.cpp ${TESTS_UTILS_SRC_DIR}/tests_vector_utils.cpp)
 
-set(TESTS_HEAD_FILES ${TESTS_HEAD_FILES0} ${TESTS_HEAD_FILES1} ${TESTS_HEAD_FILES2} ${TESTS_HEAD_FILES3} ${TESTS_HEAD_FILES4})
-set(TESTS_SRC_FILES ${TESTS_SRC_FILES0} ${TESTS_SRC_FILES1} ${TESTS_SRC_FILES2} ${TESTS_SRC_FILES3} ${TESTS_SRC_FILES4})
+set(TESTS_HEAD_FILES0 ${TESTS_HEAD_DIR}/tests_line.h ${TESTS_HEAD_DIR}/tests_header_coder.h ${TESTS_HEAD_DIR}/tests_utils.h)
+set(TESTS_HEAD_FILES1 ${TESTS_HEAD_DIR}/tests_coders_utils.h ${TESTS_HEAD_DIR}/tests_coders.h)
+set(TESTS_HEAD_FILES2 ${TESTS_HEAD_DIR}/tests_dataset_utils.h ${TESTS_HEAD_DIR}/tests_bit_stream.h ${TESTS_HEAD_DIR}/tests.h)
+
+set(TESTS_SRC_FILES0 ${TESTS_SRC_DIR}/tests_line.cpp ${TESTS_SRC_DIR}/tests_header_coder.cpp ${TESTS_SRC_DIR}/tests_utils.cpp)
+set(TESTS_SRC_FILES1 ${TESTS_SRC_DIR}/tests_coders_utils.cpp ${TESTS_SRC_DIR}/tests_coders.cpp)
+set(TESTS_SRC_FILES2 ${TESTS_SRC_DIR}/tests_dataset_utils.cpp ${TESTS_SRC_DIR}/tests_bit_stream.cpp ${TESTS_SRC_DIR}/tests.cpp)
+
+set(TESTS_HEAD_FILES ${TESTS_HEAD_FILES0} ${TESTS_HEAD_FILES1} ${TESTS_HEAD_FILES2} ${TESTS_UTILS_HEAD_FILES0} ${TESTS_UTILS_HEAD_FILES1})
+set(TESTS_SRC_FILES ${TESTS_SRC_FILES0} ${TESTS_SRC_FILES1} ${TESTS_SRC_FILES2} ${TESTS_UTILS_SRC_FILES0} ${TESTS_UTILS_SRC_FILES1})
 ### TESTS END ##########################################################################################################
 
 ### UTILS BEGIN ########################################################################################################
