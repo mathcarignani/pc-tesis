@@ -1338,33 +1338,6 @@ src/dataset/dataset_utils.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/dataset/dataset_utils.cpp.s
 .PHONY : src/dataset/dataset_utils.cpp.s
 
-src/datetime_utils.o: src/datetime_utils.cpp.o
-
-.PHONY : src/datetime_utils.o
-
-# target to build an object file
-src/datetime_utils.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/datetime_utils.cpp.o
-.PHONY : src/datetime_utils.cpp.o
-
-src/datetime_utils.i: src/datetime_utils.cpp.i
-
-.PHONY : src/datetime_utils.i
-
-# target to preprocess a source file
-src/datetime_utils.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/datetime_utils.cpp.i
-.PHONY : src/datetime_utils.cpp.i
-
-src/datetime_utils.s: src/datetime_utils.cpp.s
-
-.PHONY : src/datetime_utils.s
-
-# target to generate assembly for a file
-src/datetime_utils.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/datetime_utils.cpp.s
-.PHONY : src/datetime_utils.cpp.s
-
 src/file_utils/bit_stream/bit_stream_reader.o: src/file_utils/bit_stream/bit_stream_reader.cpp.o
 
 .PHONY : src/file_utils/bit_stream/bit_stream_reader.o
@@ -1581,87 +1554,6 @@ src/file_utils/text/text_utils.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/file_utils/text/text_utils.cpp.s
 .PHONY : src/file_utils/text/text_utils.cpp.s
 
-src/line_utils.o: src/line_utils.cpp.o
-
-.PHONY : src/line_utils.o
-
-# target to build an object file
-src/line_utils.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/line_utils.cpp.o
-.PHONY : src/line_utils.cpp.o
-
-src/line_utils.i: src/line_utils.cpp.i
-
-.PHONY : src/line_utils.i
-
-# target to preprocess a source file
-src/line_utils.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/line_utils.cpp.i
-.PHONY : src/line_utils.cpp.i
-
-src/line_utils.s: src/line_utils.cpp.s
-
-.PHONY : src/line_utils.s
-
-# target to generate assembly for a file
-src/line_utils.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/line_utils.cpp.s
-.PHONY : src/line_utils.cpp.s
-
-src/math_utils.o: src/math_utils.cpp.o
-
-.PHONY : src/math_utils.o
-
-# target to build an object file
-src/math_utils.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/math_utils.cpp.o
-.PHONY : src/math_utils.cpp.o
-
-src/math_utils.i: src/math_utils.cpp.i
-
-.PHONY : src/math_utils.i
-
-# target to preprocess a source file
-src/math_utils.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/math_utils.cpp.i
-.PHONY : src/math_utils.cpp.i
-
-src/math_utils.s: src/math_utils.cpp.s
-
-.PHONY : src/math_utils.s
-
-# target to generate assembly for a file
-src/math_utils.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/math_utils.cpp.s
-.PHONY : src/math_utils.cpp.s
-
-src/os_utils.o: src/os_utils.cpp.o
-
-.PHONY : src/os_utils.o
-
-# target to build an object file
-src/os_utils.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/os_utils.cpp.o
-.PHONY : src/os_utils.cpp.o
-
-src/os_utils.i: src/os_utils.cpp.i
-
-.PHONY : src/os_utils.i
-
-# target to preprocess a source file
-src/os_utils.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/os_utils.cpp.i
-.PHONY : src/os_utils.cpp.i
-
-src/os_utils.s: src/os_utils.cpp.s
-
-.PHONY : src/os_utils.s
-
-# target to generate assembly for a file
-src/os_utils.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/os_utils.cpp.s
-.PHONY : src/os_utils.cpp.s
-
 src/scripts.o: src/scripts.cpp.o
 
 .PHONY : src/scripts.o
@@ -1688,33 +1580,6 @@ src/scripts.s: src/scripts.cpp.s
 src/scripts.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/scripts.cpp.s
 .PHONY : src/scripts.cpp.s
-
-src/string_utils.o: src/string_utils.cpp.o
-
-.PHONY : src/string_utils.o
-
-# target to build an object file
-src/string_utils.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/string_utils.cpp.o
-.PHONY : src/string_utils.cpp.o
-
-src/string_utils.i: src/string_utils.cpp.i
-
-.PHONY : src/string_utils.i
-
-# target to preprocess a source file
-src/string_utils.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/string_utils.cpp.i
-.PHONY : src/string_utils.cpp.i
-
-src/string_utils.s: src/string_utils.cpp.s
-
-.PHONY : src/string_utils.s
-
-# target to generate assembly for a file
-src/string_utils.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/string_utils.cpp.s
-.PHONY : src/string_utils.cpp.s
 
 src/tests/tests.o: src/tests/tests.cpp.o
 
@@ -2040,6 +1905,141 @@ src/tests/tests_vector_utils.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests_vector_utils.cpp.s
 .PHONY : src/tests/tests_vector_utils.cpp.s
 
+src/utils/datetime_utils.o: src/utils/datetime_utils.cpp.o
+
+.PHONY : src/utils/datetime_utils.o
+
+# target to build an object file
+src/utils/datetime_utils.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/utils/datetime_utils.cpp.o
+.PHONY : src/utils/datetime_utils.cpp.o
+
+src/utils/datetime_utils.i: src/utils/datetime_utils.cpp.i
+
+.PHONY : src/utils/datetime_utils.i
+
+# target to preprocess a source file
+src/utils/datetime_utils.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/utils/datetime_utils.cpp.i
+.PHONY : src/utils/datetime_utils.cpp.i
+
+src/utils/datetime_utils.s: src/utils/datetime_utils.cpp.s
+
+.PHONY : src/utils/datetime_utils.s
+
+# target to generate assembly for a file
+src/utils/datetime_utils.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/utils/datetime_utils.cpp.s
+.PHONY : src/utils/datetime_utils.cpp.s
+
+src/utils/line_utils.o: src/utils/line_utils.cpp.o
+
+.PHONY : src/utils/line_utils.o
+
+# target to build an object file
+src/utils/line_utils.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/utils/line_utils.cpp.o
+.PHONY : src/utils/line_utils.cpp.o
+
+src/utils/line_utils.i: src/utils/line_utils.cpp.i
+
+.PHONY : src/utils/line_utils.i
+
+# target to preprocess a source file
+src/utils/line_utils.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/utils/line_utils.cpp.i
+.PHONY : src/utils/line_utils.cpp.i
+
+src/utils/line_utils.s: src/utils/line_utils.cpp.s
+
+.PHONY : src/utils/line_utils.s
+
+# target to generate assembly for a file
+src/utils/line_utils.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/utils/line_utils.cpp.s
+.PHONY : src/utils/line_utils.cpp.s
+
+src/utils/math_utils.o: src/utils/math_utils.cpp.o
+
+.PHONY : src/utils/math_utils.o
+
+# target to build an object file
+src/utils/math_utils.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/utils/math_utils.cpp.o
+.PHONY : src/utils/math_utils.cpp.o
+
+src/utils/math_utils.i: src/utils/math_utils.cpp.i
+
+.PHONY : src/utils/math_utils.i
+
+# target to preprocess a source file
+src/utils/math_utils.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/utils/math_utils.cpp.i
+.PHONY : src/utils/math_utils.cpp.i
+
+src/utils/math_utils.s: src/utils/math_utils.cpp.s
+
+.PHONY : src/utils/math_utils.s
+
+# target to generate assembly for a file
+src/utils/math_utils.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/utils/math_utils.cpp.s
+.PHONY : src/utils/math_utils.cpp.s
+
+src/utils/os_utils.o: src/utils/os_utils.cpp.o
+
+.PHONY : src/utils/os_utils.o
+
+# target to build an object file
+src/utils/os_utils.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/utils/os_utils.cpp.o
+.PHONY : src/utils/os_utils.cpp.o
+
+src/utils/os_utils.i: src/utils/os_utils.cpp.i
+
+.PHONY : src/utils/os_utils.i
+
+# target to preprocess a source file
+src/utils/os_utils.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/utils/os_utils.cpp.i
+.PHONY : src/utils/os_utils.cpp.i
+
+src/utils/os_utils.s: src/utils/os_utils.cpp.s
+
+.PHONY : src/utils/os_utils.s
+
+# target to generate assembly for a file
+src/utils/os_utils.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/utils/os_utils.cpp.s
+.PHONY : src/utils/os_utils.cpp.s
+
+src/utils/string_utils.o: src/utils/string_utils.cpp.o
+
+.PHONY : src/utils/string_utils.o
+
+# target to build an object file
+src/utils/string_utils.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/utils/string_utils.cpp.o
+.PHONY : src/utils/string_utils.cpp.o
+
+src/utils/string_utils.i: src/utils/string_utils.cpp.i
+
+.PHONY : src/utils/string_utils.i
+
+# target to preprocess a source file
+src/utils/string_utils.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/utils/string_utils.cpp.i
+.PHONY : src/utils/string_utils.cpp.i
+
+src/utils/string_utils.s: src/utils/string_utils.cpp.s
+
+.PHONY : src/utils/string_utils.s
+
+# target to generate assembly for a file
+src/utils/string_utils.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/utils/string_utils.cpp.s
+.PHONY : src/utils/string_utils.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -2184,9 +2184,6 @@ help:
 	@echo "... src/dataset/dataset_utils.o"
 	@echo "... src/dataset/dataset_utils.i"
 	@echo "... src/dataset/dataset_utils.s"
-	@echo "... src/datetime_utils.o"
-	@echo "... src/datetime_utils.i"
-	@echo "... src/datetime_utils.s"
 	@echo "... src/file_utils/bit_stream/bit_stream_reader.o"
 	@echo "... src/file_utils/bit_stream/bit_stream_reader.i"
 	@echo "... src/file_utils/bit_stream/bit_stream_reader.s"
@@ -2211,21 +2208,9 @@ help:
 	@echo "... src/file_utils/text/text_utils.o"
 	@echo "... src/file_utils/text/text_utils.i"
 	@echo "... src/file_utils/text/text_utils.s"
-	@echo "... src/line_utils.o"
-	@echo "... src/line_utils.i"
-	@echo "... src/line_utils.s"
-	@echo "... src/math_utils.o"
-	@echo "... src/math_utils.i"
-	@echo "... src/math_utils.s"
-	@echo "... src/os_utils.o"
-	@echo "... src/os_utils.i"
-	@echo "... src/os_utils.s"
 	@echo "... src/scripts.o"
 	@echo "... src/scripts.i"
 	@echo "... src/scripts.s"
-	@echo "... src/string_utils.o"
-	@echo "... src/string_utils.i"
-	@echo "... src/string_utils.s"
 	@echo "... src/tests/tests.o"
 	@echo "... src/tests/tests.i"
 	@echo "... src/tests/tests.s"
@@ -2262,6 +2247,21 @@ help:
 	@echo "... src/tests/tests_vector_utils.o"
 	@echo "... src/tests/tests_vector_utils.i"
 	@echo "... src/tests/tests_vector_utils.s"
+	@echo "... src/utils/datetime_utils.o"
+	@echo "... src/utils/datetime_utils.i"
+	@echo "... src/utils/datetime_utils.s"
+	@echo "... src/utils/line_utils.o"
+	@echo "... src/utils/line_utils.i"
+	@echo "... src/utils/line_utils.s"
+	@echo "... src/utils/math_utils.o"
+	@echo "... src/utils/math_utils.i"
+	@echo "... src/utils/math_utils.s"
+	@echo "... src/utils/os_utils.o"
+	@echo "... src/utils/os_utils.i"
+	@echo "... src/utils/os_utils.s"
+	@echo "... src/utils/string_utils.o"
+	@echo "... src/utils/string_utils.i"
+	@echo "... src/utils/string_utils.s"
 .PHONY : help
 
 

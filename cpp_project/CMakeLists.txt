@@ -95,8 +95,11 @@ set(DATASET_SRC_DIR src/dataset)
 set(TESTS_HEAD_DIR include/tests)
 set(TESTS_SRC_DIR src/tests)
 
-set(HEAD_DIRS include ${FILE_UTILS_HEAD_DIR} ${BIT_STREAM_HEAD_DIR} ${TEXT_HEAD_DIR} ${CSV_HEAD_DIR} ${CODER_HEAD_DIRS} ${DATASET_HEAD_DIR} ${TESTS_HEAD_DIR})
-set(SRC_DIRS src ${BIT_STREAM_SRC_DIR} ${TEXT_SRC_DIR} ${CSV_SRC_DIR} ${CODER_SRC_DIRS} ${DATASET_SRC_DIR} ${TESTS_SRC_DIR})
+set(UTILS_HEAD_DIR include/utils)
+set(UTILS_SRC_DIR src/utils)
+
+set(HEAD_DIRS include ${FILE_UTILS_HEAD_DIR} ${BIT_STREAM_HEAD_DIR} ${TEXT_HEAD_DIR} ${CSV_HEAD_DIR} ${CODER_HEAD_DIRS} ${DATASET_HEAD_DIR} ${TESTS_HEAD_DIR} ${UTILS_HEAD_DIR})
+set(SRC_DIRS src ${BIT_STREAM_SRC_DIR} ${TEXT_SRC_DIR} ${CSV_SRC_DIR} ${CODER_SRC_DIRS} ${DATASET_SRC_DIR} ${TESTS_SRC_DIR} ${UTILS_SRC_DIR})
 include_directories(${EXTERNAL_DIRS} ${HEAD_DIRS} ${SRC_DIR})
 
 ### EXTERNAL BEGIN #####################################################################################################
@@ -202,13 +205,21 @@ set(TESTS_HEAD_FILES ${TESTS_HEAD_FILES0} ${TESTS_HEAD_FILES1} ${TESTS_HEAD_FILE
 set(TESTS_SRC_FILES ${TESTS_SRC_FILES0} ${TESTS_SRC_FILES1} ${TESTS_SRC_FILES2} ${TESTS_SRC_FILES3} ${TESTS_SRC_FILES4})
 ### TESTS END ##########################################################################################################
 
-set(OTHER_HEAD_FILES1 include/os_utils.h include/string_utils.h include/math_utils.h include/datetime_utils.h)
-set(OTHER_SRC_FILES1 src/os_utils.cpp src/string_utils.cpp src/math_utils.cpp src/datetime_utils.cpp )
+### UTILS BEGIN ########################################################################################################
+set(UTILS_HEAD_FILES0 ${UTILS_HEAD_DIR}/datetime_utils.h ${UTILS_HEAD_DIR}/line_utils.h ${UTILS_HEAD_DIR}/math_utils.h)
+set(UTILS_HEAD_FILES1 ${UTILS_HEAD_DIR}/os_utils.h ${UTILS_HEAD_DIR}/string_utils.h ${UTILS_HEAD_DIR}/vector_utils.h)
 
-set(OTHER_HEAD_FILES2 include/line_utils.h include/scripts.h include/vector_utils.h)
-set(OTHER_SRC_FILES2 src/line_utils.cpp src/scripts.cpp)
+set(UTILS_SRC_FILES0 ${UTILS_SRC_DIR}/datetime_utils.cpp ${UTILS_SRC_DIR}/line_utils.cpp ${UTILS_SRC_DIR}/math_utils.cpp)
+set(UTILS_SRC_FILES1 ${UTILS_SRC_DIR}/os_utils.cpp ${UTILS_SRC_DIR}/string_utils.cpp)
 
-set(HEAD_FILES ${EXTERNAL_HEAD_FILES} ${OTHER_HEAD_FILES1} ${FILE_UTILS_HEAD_FILES} ${DATASET_HEAD_FILES} ${CODER_HEAD_FILES} ${OTHER_HEAD_FILES2} ${TESTS_HEAD_FILES})
-set(SOURCE_FILES ${EXTERNAL_SRC_FILES} ${OTHER_SRC_FILES1} ${FILE_UTILS_SRC_FILES} ${CODER_SRC_FILES} ${OTHER_SRC_FILES2} ${TESTS_SRC_FILES})
+set(UTILS_HEAD_FILES ${UTILS_HEAD_FILES0} ${UTILS_HEAD_FILES1})
+set(UTILS_SRC_FILES ${UTILS_SRC_FILES0} ${UTILS_SRC_FILES1})
+### UTILS END ##########################################################################################################
+
+set(OTHER_HEAD_FILES include/scripts.h)
+set(OTHER_SRC_FILES src/scripts.cpp)
+
+set(HEAD_FILES ${EXTERNAL_HEAD_FILES} ${FILE_UTILS_HEAD_FILES} ${UTILS_HEAD_FILES} ${DATASET_HEAD_FILES} ${CODER_HEAD_FILES} ${OTHER_HEAD_FILES} ${TESTS_HEAD_FILES} )
+set(SOURCE_FILES ${EXTERNAL_SRC_FILES} ${FILE_UTILS_SRC_FILES} ${UTILS_SRC_FILES} ${CODER_SRC_FILES} ${OTHER_SRC_FILES} ${TESTS_SRC_FILES})
 
 add_executable(cpp_project ${HEAD_FILES} ${SOURCE_FILES} main.cpp)
