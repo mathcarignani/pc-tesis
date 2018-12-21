@@ -38,4 +38,6 @@ void LineUtils::printPoint(Point* point){
     std::cout << "(x, y) = (" << point->x << ", " << point->y << ")" << std::endl;
 }
 
-
+void LineUtils::printLine(Line* line){
+    std::cout << "(slope, intercept) = (" << line->getSlope() << ", " << line->getIntercept() << ")" << std::endl;
+}

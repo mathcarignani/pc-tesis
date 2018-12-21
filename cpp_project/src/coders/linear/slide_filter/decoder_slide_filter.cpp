@@ -8,6 +8,7 @@
 #include <cmath>
 #include "string_utils.h"
 #include "coder_utils.h"
+#include "line_utils.h"
 
 void DecoderSlideFilter::setCoderParams(int window_size_){
     window_size_bit_length = MathUtils::bitLength(window_size_);
@@ -45,9 +46,6 @@ std::vector<std::string> DecoderSlideFilter::decodeDataColumn(){
         DataItem data_item = m_pApproxData->getAt(pos);
         std::string value = StringUtils::doubleToString(data_item.value);
         column->addData(value);
-//        if (column->unprocessed_rows == 1){
-//            std::cout << "VALLL " << value << std::endl;
-//        }
         pos++;
     }
 
@@ -68,16 +66,13 @@ void DecoderSlideFilter::decodeEntries(){
 
 //        std::cout << "codeEntry" << std::endl;
 //        std::cout << entry->connToFollow << " " << entry->timestamp << " " << entry->value << std::endl;
-//        std::cout << "recording.connToFollow " << entry->connToFollow << std::endl;
-//        std::cout << "recording.timestamp " << entry->timestamp << std::endl;
-//        std::cout << "recording.value " << entry->value << std::endl;
     }
 }
 
 SlideFiltersEntry* DecoderSlideFilter::decodeEntry(){
     bool connToFollow = decodeBool();
-    float timestamp = decodeFloat();
-    float value = decodeFloat();
+    double timestamp = decodeDouble();
+    double value = decodeDouble();
     SlideFiltersEntry* recording = new SlideFiltersEntry(value, timestamp, connToFollow);
 //    std::cout << "decodeEntry" << std::endl;
 //    std::cout << "recording.connToFollow " << recording->connToFollow << std::endl;

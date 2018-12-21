@@ -42,6 +42,7 @@ public:
     int decodeInt(int bits);
     std::string decodeValueRaw();
     float decodeFloat();
+    double decodeDouble();
 };
 
 #endif //CPP_PROJECT_DECODER_BASE_H
