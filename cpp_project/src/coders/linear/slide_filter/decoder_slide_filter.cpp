@@ -63,8 +63,7 @@ void DecoderSlideFilter::decodeEntries(){
     for(int i=0; i < size; i++){
         SlideFiltersEntry* entry = decodeEntry();
         m_pCompressData->add(*entry);
-
-//        std::cout << "codeEntry" << std::endl;
+//        std::cout << "decodeEntry" << std::endl;
 //        std::cout << entry->connToFollow << " " << entry->timestamp << " " << entry->value << std::endl;
     }
 }
@@ -98,13 +97,22 @@ void DecoderSlideFilter::decompress(std::vector<int> x_coords_vector)
 {
     m_pApproxData = new CDataStream();
     int size = m_pCompressData->size();
+    SlideFiltersEntry slEntry1, slEntry2;
+    DataItem inputEntry;
+
+    if (size == 1){
+        slEntry1 = m_pCompressData->getAt(0);
+        inputEntry.timestamp = slEntry1.timestamp;
+        inputEntry.value = slEntry1.value;
+        m_pApproxData->add(inputEntry);
+        return;
+    }
+
     int position = 0;
     double timeStamp = 0;
     int first_coord = x_coords_vector.at(0);
     int lastTimeStamp = m_pCompressData->getAt(m_pCompressData->size() - 1).timestamp;
-    SlideFiltersEntry slEntry1, slEntry2;
     Line* l = NULL;
-    DataItem inputEntry;
 
 //    for(int i = 0; i < lastTimeStamp; i++)
     int x_coords_vector_index = 0;
