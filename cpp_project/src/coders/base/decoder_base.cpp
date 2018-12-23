@@ -105,6 +105,10 @@ float DecoderBase::decodeFloat(){
     return input_file->getFloat();
 }
 
+double DecoderBase::decodeDouble(){
+    return input_file->getDouble();
+}
+
 void DecoderBase::decodeFile(){
     dataset = HeaderDecoder(input_file, output_csv).decodeHeader();
     decodeDataRowsCount();

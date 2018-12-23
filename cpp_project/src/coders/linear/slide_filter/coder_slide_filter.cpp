@@ -7,6 +7,7 @@
 #include "assert.h"
 #include "math_utils.h"
 #include <iomanip>
+#include "coder_utils.h"
 
 void CoderSlideFilter::setCoderParams(int window_size_, std::vector<int> error_thresholds_vector_){
     window_size = window_size_;
@@ -27,33 +28,34 @@ void CoderSlideFilter::codeColumnBefore(){
 }
 
 void CoderSlideFilter::codeColumnWhile(std::string csv_value){
-    delta_sum += time_delta_vector[row_index]; // >= 0
-    if (Constants::isNoData(csv_value)) { return; } // skip no_data
+    int delta = time_delta_vector[row_index]; // >= 0
+    if (Constants::isNoData(csv_value)) {
+        delta_sum += delta; // delta >= 0
+        return; // skip no_data
+    }
+    delta_sum += CoderUtils::calculateDelta(delta, row_index);
 //    std::cout << "I=" << row_index << "-----------------------------> " << csv_value << std::endl;
-//    std::cout << "addDataItem(" << delta_sum << ", " << csv_value << ")" << std::endl;
     m_pSFData->addDataItem(delta_sum, csv_value);
     delta_sum = 0;
 }
 
 void CoderSlideFilter::codeColumnAfter() {
     assert(m_pSFData->length == total_data_rows);
-//    for(int i = 0; i < m_pSFData->length; i++){
-//        DataItem entry = m_pSFData->getAt(i);
-//        std::cout << entry.timestamp << " " << entry.value << std::endl;
-//    }
-    compress();
-    codeEntries();
+    if (total_data_rows > 0){
+//        for(int i = 0; i < m_pSFData->length; i++){
+//            DataItem entry = m_pSFData->getAt(i);
+//            std::cout << entry.timestamp << " " << entry.value << std::endl;
+//        }
+        compress();
+        codeEntries();
+    }
     delete m_pSFData;
     delete m_pSFOutput;
     entries_vector.clear();
 }
 
 void CoderSlideFilter::add(SlideFiltersEntry & recording){
-//    std::cout << "add" << std::endl;
-//    std::cout << "recording.connToFollow " << recording.connToFollow << std::endl;
-//    std::cout << "recording.timestamp " << recording.timestamp << std::endl;
-//    std::cout << "recording.value " << recording.value << std::endl;
-
+//    std::cout << recording.connToFollow << " " << recording.timestamp << " " << recording.value << std::endl;
     SlideFiltersEntry* copy = new SlideFiltersEntry(recording);
     entries_vector.push_back(copy);
 }
@@ -69,8 +71,8 @@ void CoderSlideFilter::codeEntries(){
 void CoderSlideFilter::codeEntry(SlideFiltersEntry* recording){
 //    std::cout << recording->connToFollow << " " << recording->timestamp << " " << recording->value << std::endl;
     codeBool(recording->connToFollow);
-    codeFloat(recording->timestamp);
-    codeFloat(recording->value);
+    codeDouble(recording->timestamp);
+    codeDouble(recording->value);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

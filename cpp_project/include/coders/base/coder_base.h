@@ -37,6 +37,7 @@ public:
     void codeInt(int value, int bits);
     void codeValueRaw(std::string x);
     void codeFloat(float x);
+    void codeDouble(double x);
 };
 
 #endif //CPP_PROJECT_CODER_BASE_H

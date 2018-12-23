@@ -8,6 +8,7 @@
 #include <cmath>
 #include "string_utils.h"
 #include "coder_utils.h"
+#include "line_utils.h"
 
 void DecoderSlideFilter::setCoderParams(int window_size_){
     window_size_bit_length = MathUtils::bitLength(window_size_);
@@ -16,23 +17,24 @@ void DecoderSlideFilter::setCoderParams(int window_size_){
 
 std::vector<std::string> DecoderSlideFilter::decodeDataColumn(){
     column = new Column(data_rows_count, mask->total_data, mask->total_no_data);
-    m_pCompressData = new DynArray<SlideFiltersEntry>();
-//    std::cout << "decodeEntries" << std::endl;
-    decodeEntries();
 
-//    std::cout << "CoderUtils::createXCoordsVectorMaskMode" << std::endl;
-//    VectorUtils::printIntVector(time_delta_vector);
-    std::vector<int> x_coords_vector = CoderUtils::createXCoordsVectorMaskMode(mask, time_delta_vector, 1);
-//    VectorUtils::printIntVector(x_coords_vector);
+    if (mask->total_data > 0){
+        m_pCompressData = new DynArray<SlideFiltersEntry>();
+//        std::cout << "decodeEntries" << std::endl;
+        decodeEntries();
 
-//    std::cout << "decompress" << std::endl;
-    decompress(x_coords_vector);
+//        std::cout << "CoderUtils::createXCoordsVectorMaskMode" << std::endl;
+//        VectorUtils::printIntVector(time_delta_vector);
+        std::vector<int> x_coords_vector = CoderUtils::createXCoordsVectorMaskModeSF(mask, time_delta_vector, 1);
+//        VectorUtils::printIntVector(x_coords_vector);
 
-//    std::cout << "m_pApproxData->size() = " << m_pApproxData->size() << std::endl;
-//    std::cout << "column->unprocessed_data_rows = " << column->unprocessed_data_rows << std::endl;
-//    std::cout << "data_rows_count = " << data_rows_count << std::endl;
-
-//    assert(m_pApproxData->size() == column->unprocessed_data_rows);
+//        std::cout << "decompress" << std::endl;
+        decompress(x_coords_vector);
+//        std::cout << "m_pApproxData->size() = " << m_pApproxData->size() << std::endl;
+//        std::cout << "column->unprocessed_data_rows = " << column->unprocessed_data_rows << std::endl;
+//        std::cout << "data_rows_count = " << data_rows_count << std::endl;
+        assert(m_pApproxData->size() == column->unprocessed_data_rows);
+    }
 
     int pos = 0;
     mask->reset();
@@ -44,14 +46,13 @@ std::vector<std::string> DecoderSlideFilter::decodeDataColumn(){
         DataItem data_item = m_pApproxData->getAt(pos);
         std::string value = StringUtils::doubleToString(data_item.value);
         column->addData(value);
-//        if (column->unprocessed_rows == 1){
-//            std::cout << "VALLL " << value << std::endl;
-//        }
         pos++;
     }
 
-    delete m_pCompressData;
-    delete m_pApproxData;
+    if (mask->total_data > 0){
+        delete m_pCompressData;
+        delete m_pApproxData;
+    }
     column->assertAfter();
     return column->column_vector;
 }
@@ -62,19 +63,15 @@ void DecoderSlideFilter::decodeEntries(){
     for(int i=0; i < size; i++){
         SlideFiltersEntry* entry = decodeEntry();
         m_pCompressData->add(*entry);
-
-//        std::cout << "codeEntry" << std::endl;
+//        std::cout << "decodeEntry" << std::endl;
 //        std::cout << entry->connToFollow << " " << entry->timestamp << " " << entry->value << std::endl;
-//        std::cout << "recording.connToFollow " << entry->connToFollow << std::endl;
-//        std::cout << "recording.timestamp " << entry->timestamp << std::endl;
-//        std::cout << "recording.value " << entry->value << std::endl;
     }
 }
 
 SlideFiltersEntry* DecoderSlideFilter::decodeEntry(){
     bool connToFollow = decodeBool();
-    float timestamp = decodeFloat();
-    float value = decodeFloat();
+    double timestamp = decodeDouble();
+    double value = decodeDouble();
     SlideFiltersEntry* recording = new SlideFiltersEntry(value, timestamp, connToFollow);
 //    std::cout << "decodeEntry" << std::endl;
 //    std::cout << "recording.connToFollow " << recording->connToFollow << std::endl;
@@ -100,13 +97,22 @@ void DecoderSlideFilter::decompress(std::vector<int> x_coords_vector)
 {
     m_pApproxData = new CDataStream();
     int size = m_pCompressData->size();
+    SlideFiltersEntry slEntry1, slEntry2;
+    DataItem inputEntry;
+
+    if (size == 1){
+        slEntry1 = m_pCompressData->getAt(0);
+        inputEntry.timestamp = slEntry1.timestamp;
+        inputEntry.value = slEntry1.value;
+        m_pApproxData->add(inputEntry);
+        return;
+    }
+
     int position = 0;
     double timeStamp = 0;
     int first_coord = x_coords_vector.at(0);
     int lastTimeStamp = m_pCompressData->getAt(m_pCompressData->size() - 1).timestamp;
-    SlideFiltersEntry slEntry1, slEntry2;
     Line* l = NULL;
-    DataItem inputEntry;
 
 //    for(int i = 0; i < lastTimeStamp; i++)
     int x_coords_vector_index = 0;

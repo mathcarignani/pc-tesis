@@ -46,9 +46,38 @@ std::vector<int> CoderUtils::createXCoordsVectorMaskMode(Mask* mask, std::vector
     int delta_sum = init_delta_sum;
     for(int i=0; i < mask->total_data + mask->total_no_data; i++){
         delta_sum += time_delta_vector.at(i);
-        if (mask->isNoData()) { continue; } // ignore these values
+        if (mask->isNoData()) { continue; } // skip no_data
         result.push_back(delta_sum);
     }
     return result;
 }
+
+//
+// Same as the previous method but converting 0 jumps to 1 jumps
+//
+std::vector<int> CoderUtils::createXCoordsVectorMaskModeSF(Mask* mask, std::vector<int> time_delta_vector, int init_delta_sum){
+#if CHECKS
+    assert(time_delta_vector.size() == mask->total_data + mask->total_no_data);
+#endif
+    mask->reset();
+    std::vector<int> result;
+    int delta_sum = init_delta_sum;
+    for(int i=0; i < mask->total_data + mask->total_no_data; i++){
+        int delta = time_delta_vector.at(i);
+        if (mask->isNoData()) {
+            delta_sum += delta; // delta >= 0
+            continue; // skip no_data
+        }
+        delta_sum += calculateDelta(delta, i);
+        result.push_back(delta_sum);
+    }
+    return result;
+}
+
+int CoderUtils::calculateDelta(int delta, int row_index){
+    // if row_index == 0 then delta = 0
+    // if row_index > 0 then delta >= 1
+    return ((delta == 0 && row_index != 0) ? 1 : delta);
+}
+
 #endif // MASK_MODE

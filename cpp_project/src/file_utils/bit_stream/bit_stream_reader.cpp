@@ -40,6 +40,16 @@ float BitStreamReader::getFloat(){
     return my_float.m_float;
 }
 
+double BitStreamReader::getDouble(){
+    Double my_double;
+    // receive bytes and assign them to the union bytes
+    for (int i=0; i < sizeof(double); i++){
+        my_double.m_bytes[i] = getInt(8);
+    }
+    // get the float back from the union
+    return my_double.m_double;
+}
+
 bool BitStreamReader::reachedEOF(){
     return feof(fp);
 }

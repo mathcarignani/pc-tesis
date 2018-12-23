@@ -17,6 +17,10 @@ private:
         float    m_float;
         uint8_t  m_bytes[sizeof(float)];
     };
+    union Double {
+        double   m_double;
+        uint8_t  m_bytes[sizeof(double)];
+    };
 
     FILE* fp;
     unsigned char current, offset;
@@ -30,6 +34,7 @@ public:
     unsigned int getInt(int bits);
 
     float getFloat();
+    double getDouble();
 
     bool reachedEOF();
 

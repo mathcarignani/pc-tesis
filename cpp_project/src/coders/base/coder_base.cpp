@@ -67,6 +67,11 @@ void CoderBase::codeFloat(float x){
     output_file->pushFloat(x);
 }
 
+void CoderBase::codeDouble(double x){
+    dataset->addBits(sizeof(double)*8);
+    output_file->pushDouble(x);
+}
+
 void CoderBase::codeFile(){
     codeCoderParams();
     dataset = HeaderCoder(input_csv, output_file).codeHeader();

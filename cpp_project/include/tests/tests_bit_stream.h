@@ -11,7 +11,9 @@ public:
     static void runAll();
 
 private:
+    static const std::string TESTS_BIT_STREAM_PATH;
     static void floatTest();
+    static void doubleTest();
 
 };
 
