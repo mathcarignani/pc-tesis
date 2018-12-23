@@ -141,8 +141,7 @@ void TestsCoders::runAll(){
 
         #if MASK_MODE
             testCoder("CoderFR");
-            // TODO: fix coder SF
-            // testCoder("CoderSF");
+            testCoder("CoderSF");
         #endif
         }
     }
