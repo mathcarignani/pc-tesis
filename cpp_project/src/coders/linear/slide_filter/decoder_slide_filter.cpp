@@ -25,7 +25,7 @@ std::vector<std::string> DecoderSlideFilter::decodeDataColumn(){
 
 //        std::cout << "CoderUtils::createXCoordsVectorMaskMode" << std::endl;
 //        VectorUtils::printIntVector(time_delta_vector);
-        std::vector<int> x_coords_vector = CoderUtils::createXCoordsVectorMaskMode(mask, time_delta_vector, 1);
+        std::vector<int> x_coords_vector = CoderUtils::createXCoordsVectorMaskModeSF(mask, time_delta_vector, 1);
 //        VectorUtils::printIntVector(x_coords_vector);
 
 //        std::cout << "decompress" << std::endl;

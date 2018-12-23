@@ -7,6 +7,7 @@
 #include "assert.h"
 #include "math_utils.h"
 #include <iomanip>
+#include "coder_utils.h"
 
 void CoderSlideFilter::setCoderParams(int window_size_, std::vector<int> error_thresholds_vector_){
     window_size = window_size_;
@@ -27,8 +28,12 @@ void CoderSlideFilter::codeColumnBefore(){
 }
 
 void CoderSlideFilter::codeColumnWhile(std::string csv_value){
-    delta_sum += time_delta_vector[row_index]; // >= 0
-    if (Constants::isNoData(csv_value)) { return; } // skip no_data
+    int delta = time_delta_vector[row_index]; // >= 0
+    if (Constants::isNoData(csv_value)) {
+        delta_sum += delta; // delta >= 0
+        return; // skip no_data
+    }
+    delta_sum += CoderUtils::calculateDelta(delta, row_index);
 //    std::cout << "I=" << row_index << "-----------------------------> " << csv_value << std::endl;
     m_pSFData->addDataItem(delta_sum, csv_value);
     delta_sum = 0;
