@@ -22,8 +22,15 @@ int BitStreamUtils::compare(Path path1, Path path2){
 }
 
 int BitStreamUtils::compareBytes(Path path1, Path path2){
-    BitStreamReader* reader1=new BitStreamReader(path1);
-    BitStreamReader* reader2=new BitStreamReader(path2);
+    BitStreamReader *reader1, *reader2;
+    try {
+        reader1=new BitStreamReader(path1);
+        reader2=new BitStreamReader(path2);
+    }
+    catch( const std::runtime_error& e ){
+        std::cout << e.what() << std::endl;
+        exit(-1);
+    }
 
     int cont=1; // first different bit
     bool diff = false;

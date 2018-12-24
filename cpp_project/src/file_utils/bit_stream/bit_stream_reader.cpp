@@ -3,6 +3,10 @@
 
 void BitStreamReader::construct(const char * file){
     fp = fopen(file, "rb");
+    if (fp == NULL){
+        std::string error_msg = "ERROR opening file ";
+        throw std::runtime_error(error_msg + file);
+    }
     offset = 0;
     current = (unsigned char)getc(fp);
 }

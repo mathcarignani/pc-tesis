@@ -47,7 +47,11 @@ void TestsCodersUtils::compareDecodedFiles(std::string mode, Path file_path, Pat
 }
 
 void TestsCodersUtils::compareFiles(Path path1, Path path2){
+    std::cout << path1.full_path << std::endl;
+    std::cout << path2.full_path << std::endl;
+
     int res = BitStreamUtils::compareBytes(path1, path2);
+    std::cout << "1" << std::endl;
     if (res !=0 ){
         std::cout << "FAILURE!" << std::endl;
         std::cout << "File 1 = " << path1.full_path << std::endl;
