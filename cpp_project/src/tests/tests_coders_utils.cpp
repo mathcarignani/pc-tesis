@@ -47,27 +47,22 @@ void TestsCodersUtils::compareDecodedFiles(std::string mode, Path file_path, Pat
 }
 
 void TestsCodersUtils::compareFiles(Path path1, Path path2){
-    std::cout << path1.full_path << std::endl;
-    std::cout << path2.full_path << std::endl;
-
     int res = BitStreamUtils::compareBytes(path1, path2);
-    std::cout << "1" << std::endl;
-    if (res !=0 ){
-        std::cout << "FAILURE!" << std::endl;
-        std::cout << "File 1 = " << path1.full_path << std::endl;
-        std::cout << "File 2 = " << path2.full_path << std::endl;
-        std::cout << "First diff byte = " << res << std::endl;
+    if (res == 0) { return; }
 
-        std::vector<std::string> filename1_split = StringUtils::splitByChar(path1.file_filename, '.');
-        std::vector<std::string> filename2_split = StringUtils::splitByChar(path2.file_filename, '.');
-        std::string file1_ext = filename1_split[filename1_split.size()-1];
-        std::string file2_ext = filename2_split[filename2_split.size()-1];
+    std::cout << "FAILURE!" << std::endl;
+    std::cout << "File 1 = " << path1.full_path << std::endl;
+    std::cout << "File 2 = " << path2.full_path << std::endl;
+    std::cout << "First diff byte = " << res << std::endl;
 
-        if (file1_ext == "csv" && file2_ext == "csv"){
-            std::cout << "Compare CSV..." << std::endl;
-            CSVUtils::CompareCSVLossless(path1, path2);
-        }
+    std::vector<std::string> filename1_split = StringUtils::splitByChar(path1.file_filename, '.');
+    std::vector<std::string> filename2_split = StringUtils::splitByChar(path2.file_filename, '.');
+    std::string file1_ext = filename1_split[filename1_split.size()-1];
+    std::string file2_ext = filename2_split[filename2_split.size()-1];
 
+    if (file1_ext == "csv" && file2_ext == "csv"){
+        std::cout << "Compare CSV..." << std::endl;
+        CSVUtils::CompareCSVLossless(path1, path2);
     }
     assert(res == 0);
 }
