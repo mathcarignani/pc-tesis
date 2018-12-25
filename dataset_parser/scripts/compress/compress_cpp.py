@@ -60,7 +60,7 @@ def decode_cpp(args):
 
 def coder_params(args):
     coder_names = ["CoderBasic", "CoderPCA", "CoderAPCA", "CoderPWLH",
-                   "CoderPWLHint", "CoderCA", "CoderSF", "CoderFR", "CoderGAMPS"]
+                   "CoderPWLHInt", "CoderCA", "CoderSF", "CoderFR", "CoderGAMPS"]
 
     if args.coder_name not in coder_names:
         print args.coder_name

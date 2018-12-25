@@ -20,18 +20,17 @@ def iterate(csv_reader, csv_writer):
     while csv_reader.continue_reading:
         line = csv_reader.read_line()
 
-        if csv_reader.current_line_count < 5:
-            # header rows
-            if last_column and csv_reader.current_line_count == 4:
-                # column titles row
-                line = line[:last_column]
+        if csv_reader.current_line_count < 5:  # header rows
+            if csv_reader.current_line_count == 4:  # column titles row
+                pass
+                # line = [line[0], line[121]]
             csv_writer.write_row(line)
             continue
 
-        # timestamp = 0 if first_value else 10
+        line[0] = "1" if line[0] == "0" else line[0]
         # line = set_line_timestamp(line, timestamp)
-        if last_column:
-            line = line[:last_column]
+        # if last_column:
+        #     line = line[:last_column]
 
             # data rows
         # if "N" in line:
@@ -41,11 +40,11 @@ def iterate(csv_reader, csv_writer):
 
 
 def clean():
-    input_path = datasets_csv_path() + "[1]irkis/"
-    input_filename = "vwc_1202.dat.csv"
+    input_path = cpp_project_path() + "/test_files/sf"
+    input_filename = "noaa_spc-hail.csv"
 
-    output_path = python_project_path()
-    output_filename = "vwc_1202.dat-col6.csv"  # "vwc_1202.dat_CONSTANT_TIME.csv"
+    output_path = cpp_project_path() + "/test_files/sf"
+    output_filename = "noaa_spc-hail-0to1.csv"
 
     csv_reader = CSVReader(input_path, input_filename)
     csv_writer = CSVWriter(output_path, output_filename)
@@ -111,5 +110,5 @@ def compare():
 
 ########################################################################################################################
 
-# clean()
-compare()
+clean()
+# compare()
