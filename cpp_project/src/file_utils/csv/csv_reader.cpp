@@ -8,10 +8,14 @@
 #include "text_utils.h"
 
 void CSVReader::constructor(std::string path, std::string filename){
-    total_lines = TextUtils::lineCount(path, filename);
     full_path = path + "/" + filename;
     file.open(full_path);
+    if (!file.is_open()){
+        std::cout << "Error opening file: " << full_path << std::endl;
+        exit(-1);
+    }
     current_line_count = 0;
+    total_lines = TextUtils::lineCount(path, filename);
     continue_reading = total_lines > 0;
 }
 
