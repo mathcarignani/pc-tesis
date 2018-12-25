@@ -1,8 +1,10 @@
 
 from auxi.dataset_utils import DatasetUtils
+import copy
 
 # TODO: improve method
-def gamps_group_thresholds(thresholds_hash, dataset_name):
+def gamps_group_thresholds(original_thresholds_hash, dataset_name):
+    thresholds_hash = copy.deepcopy(original_thresholds_hash)
     du = DatasetUtils('code')
     data_columns_group_count = len(du.constants['alphabets_dictionary'][dataset_name]) - 1  # minus time delta
     print "data_columns_group_count = " + str(data_columns_group_count)

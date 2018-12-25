@@ -33,40 +33,40 @@ DATASETS_ARRAY = [
 # ]
 
 CODERS_ARRAY = [
-    # {
-    #     'name': 'CoderBasic',
-    #     'o_folder': 'basic'
-    # },
-    # {
-    #     'name': 'CoderPCA',
-    #     'o_folder': 'pca',
-    #     'params': {'window_size': WINDOW_SIZES}
-    # },
-    # {
-    #     'name': 'CoderAPCA',
-    #     'o_folder': 'apca',
-    #     'params': {'window_size': WINDOW_SIZES}
-    # },
-    # {
-    #     'name': 'CoderCA',
-    #     'o_folder': 'ca',
-    #     'params': {'window_size': WINDOW_SIZES}
-    # },
-    # {
-    #     'name': 'CoderPWLH',
-    #     'o_folder': 'pwlh',
-    #     'params': {'window_size': WINDOW_SIZES}
-    # },
-    # {
-    #     'name': 'CoderPWLHInt',
-    #     'o_folder': 'pwlh-int',
-    #     'params': {'window_size': WINDOW_SIZES}
-    # },
-    # {
-    #     'name': 'CoderGAMPS',
-    #     'o_folder': 'gamps',
-    #     'params': {'window_size': WINDOW_SIZES}
-    # },
+    {
+        'name': 'CoderBasic',
+        'o_folder': 'basic'
+    },
+    {
+        'name': 'CoderPCA',
+        'o_folder': 'pca',
+        'params': {'window_size': WINDOW_SIZES}
+    },
+    {
+        'name': 'CoderAPCA',
+        'o_folder': 'apca',
+        'params': {'window_size': WINDOW_SIZES}
+    },
+    {
+        'name': 'CoderCA',
+        'o_folder': 'ca',
+        'params': {'window_size': WINDOW_SIZES}
+    },
+    {
+        'name': 'CoderPWLH',
+        'o_folder': 'pwlh',
+        'params': {'window_size': WINDOW_SIZES}
+    },
+    {
+        'name': 'CoderPWLHInt',
+        'o_folder': 'pwlh-int',
+        'params': {'window_size': WINDOW_SIZES}
+    },
+    {
+        'name': 'CoderGAMPS',
+        'o_folder': 'gamps',
+        'params': {'window_size': WINDOW_SIZES}
+    },
 ]
 
 MASK_MODE_CODERS_ARRAY = [
@@ -75,11 +75,11 @@ MASK_MODE_CODERS_ARRAY = [
         'o_folder': 'fr',
         'params': {'window_size': WINDOW_SIZES}
     },
-    # {
-    #     'name': 'CoderSF',
-    #     'o_folder': 'sf',
-    #     'params': {'window_size': WINDOW_SIZES}
-    # }
+    {
+        'name': 'CoderSF',
+        'o_folder': 'sf',
+        'params': {'window_size': WINDOW_SIZES}
+    }
 ]
 
 if MASK_MODE:
