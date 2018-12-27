@@ -78,7 +78,8 @@ void DecoderFR::decodeWindow(int window_size, std::vector<int> x_coords){
         }
         else {
             // project x_coord into the line
-            value = line->getValue(x_coords.at(x_coords_index_offset + i) - x_coords_offset);
+            double double_val = line->getValue(x_coords.at(x_coords_index_offset + i) - x_coords_offset);
+            value = MathUtils::doubleToInt(double_val);
         }
         push_value = StringUtils::intToString(value);
         column->addData(push_value);
