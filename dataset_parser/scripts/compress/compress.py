@@ -104,7 +104,7 @@ def run_script_on_dataset(csv, datasets_path, dataset_dictionary, output_path):
     dataset_name = dataset_dictionary['name']
 
     for id1, input_filename in enumerate(csv_files_filenames(input_path)):
-        if dataset_name in ["NOAA-SST", "NOAA-ADCP"] and id1 >= 2:
+        if dataset_name in ["NOAA-SST", "NOAA-ADCP"] and id1 >= 3:
             return
         row = [dataset_dictionary['name']] if id1 == 0 else [None]
         run_script_on_file(dataset_name, csv, id1, row, logger, input_path, input_filename, output_dataset_path)
