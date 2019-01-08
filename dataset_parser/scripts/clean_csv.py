@@ -4,6 +4,7 @@ sys.path.append('.')
 from auxi.os_utils import datasets_csv_path, python_project_path, cpp_project_path
 from file_utils.csv_utils.csv_reader import CSVReader
 from file_utils.csv_utils.csv_writer import CSVWriter
+from file_utils.text_utils.text_file_reader import TextFileReader
 
 ########################################################################################################################
 
@@ -110,5 +111,60 @@ def compare():
 
 ########################################################################################################################
 
-clean()
+
+def check_match(line1, line2):
+    values = ["Documents", "python scripts/compress/compress.py", "elapsed time"]
+    found_match = False
+    for value in values:
+        if not found_match and value in line1:
+            assert(value in line2)
+            found_match = True
+    return found_match
+
+
+def check_stds(line1, line2):
+    if line1 == line2:
+        print "-"
+        return
+
+    print "diff line"
+    values1 = line1[line1.find("[")+1:line1.find("]")].split(",")
+    values2 = line1[line1.find("[")+1:line1.find("]")].split(",")
+
+    for value in zip(values1, values2):
+        assert(value[0] == value[1])
+
+def compare_mac_ubuntu():
+    path = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-8/2-resultados-3-enero/"
+    reader1 = TextFileReader(path + "mac/mask-true", "full-output-mask-true.txt")
+    reader2 = TextFileReader(path + "ubuntu/mask-true", "full-output-mask-true.txt")
+
+    assert(reader1.total_lines == reader2.total_lines)
+
+    while reader1.continue_reading:
+        line1 = reader1.read_line()
+        line2 = reader2.read_line()
+
+        if check_match(line1, line2):
+            continue
+
+        if "stds" in line1:
+            assert("stds" in line2)
+            check_stds(line1, line2)
+            continue
+
+        if line1 != line2:
+            print line1
+            print line2
+        assert(line1 == line2)
+
+    print "COMPARE SUCCESS!!"
+    reader1.close()
+    reader2.close()
+
+
+########################################################################################################################
+
+# clean()
 # compare()
+compare_mac_ubuntu()
