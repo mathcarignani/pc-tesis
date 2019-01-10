@@ -1,11 +1,10 @@
-
-#include "mask_decoder.h"
+#include "burst_mask_decoder.h"
 
 #if MASK_MODE
 
 #include "assert.h"
 
-Mask* MaskDecoder::decode(DecoderBase* decoder){
+Mask* BurstMaskDecoder::decode(DecoderBase* decoder){
     Mask* mask = new Mask();
     int row_index = 0;
     Burst* burst = NULL;
@@ -21,5 +20,4 @@ Mask* MaskDecoder::decode(DecoderBase* decoder){
     return mask;
 }
 
-#endif
-
+#endif // MASK_MODE

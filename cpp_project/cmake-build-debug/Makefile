@@ -1149,59 +1149,59 @@ src/coders/utils/header/header_decoder.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/utils/header/header_decoder.cpp.s
 .PHONY : src/coders/utils/header/header_decoder.cpp.s
 
-src/coders/utils/mask/mask_coder.o: src/coders/utils/mask/mask_coder.cpp.o
+src/coders/utils/mask/burst/burst_mask_coder.o: src/coders/utils/mask/burst/burst_mask_coder.cpp.o
 
-.PHONY : src/coders/utils/mask/mask_coder.o
-
-# target to build an object file
-src/coders/utils/mask/mask_coder.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/utils/mask/mask_coder.cpp.o
-.PHONY : src/coders/utils/mask/mask_coder.cpp.o
-
-src/coders/utils/mask/mask_coder.i: src/coders/utils/mask/mask_coder.cpp.i
-
-.PHONY : src/coders/utils/mask/mask_coder.i
-
-# target to preprocess a source file
-src/coders/utils/mask/mask_coder.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/utils/mask/mask_coder.cpp.i
-.PHONY : src/coders/utils/mask/mask_coder.cpp.i
-
-src/coders/utils/mask/mask_coder.s: src/coders/utils/mask/mask_coder.cpp.s
-
-.PHONY : src/coders/utils/mask/mask_coder.s
-
-# target to generate assembly for a file
-src/coders/utils/mask/mask_coder.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/utils/mask/mask_coder.cpp.s
-.PHONY : src/coders/utils/mask/mask_coder.cpp.s
-
-src/coders/utils/mask/mask_decoder.o: src/coders/utils/mask/mask_decoder.cpp.o
-
-.PHONY : src/coders/utils/mask/mask_decoder.o
+.PHONY : src/coders/utils/mask/burst/burst_mask_coder.o
 
 # target to build an object file
-src/coders/utils/mask/mask_decoder.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/utils/mask/mask_decoder.cpp.o
-.PHONY : src/coders/utils/mask/mask_decoder.cpp.o
+src/coders/utils/mask/burst/burst_mask_coder.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/utils/mask/burst/burst_mask_coder.cpp.o
+.PHONY : src/coders/utils/mask/burst/burst_mask_coder.cpp.o
 
-src/coders/utils/mask/mask_decoder.i: src/coders/utils/mask/mask_decoder.cpp.i
+src/coders/utils/mask/burst/burst_mask_coder.i: src/coders/utils/mask/burst/burst_mask_coder.cpp.i
 
-.PHONY : src/coders/utils/mask/mask_decoder.i
+.PHONY : src/coders/utils/mask/burst/burst_mask_coder.i
 
 # target to preprocess a source file
-src/coders/utils/mask/mask_decoder.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/utils/mask/mask_decoder.cpp.i
-.PHONY : src/coders/utils/mask/mask_decoder.cpp.i
+src/coders/utils/mask/burst/burst_mask_coder.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/utils/mask/burst/burst_mask_coder.cpp.i
+.PHONY : src/coders/utils/mask/burst/burst_mask_coder.cpp.i
 
-src/coders/utils/mask/mask_decoder.s: src/coders/utils/mask/mask_decoder.cpp.s
+src/coders/utils/mask/burst/burst_mask_coder.s: src/coders/utils/mask/burst/burst_mask_coder.cpp.s
 
-.PHONY : src/coders/utils/mask/mask_decoder.s
+.PHONY : src/coders/utils/mask/burst/burst_mask_coder.s
 
 # target to generate assembly for a file
-src/coders/utils/mask/mask_decoder.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/utils/mask/mask_decoder.cpp.s
-.PHONY : src/coders/utils/mask/mask_decoder.cpp.s
+src/coders/utils/mask/burst/burst_mask_coder.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/utils/mask/burst/burst_mask_coder.cpp.s
+.PHONY : src/coders/utils/mask/burst/burst_mask_coder.cpp.s
+
+src/coders/utils/mask/burst/burst_mask_decoder.o: src/coders/utils/mask/burst/burst_mask_decoder.cpp.o
+
+.PHONY : src/coders/utils/mask/burst/burst_mask_decoder.o
+
+# target to build an object file
+src/coders/utils/mask/burst/burst_mask_decoder.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/utils/mask/burst/burst_mask_decoder.cpp.o
+.PHONY : src/coders/utils/mask/burst/burst_mask_decoder.cpp.o
+
+src/coders/utils/mask/burst/burst_mask_decoder.i: src/coders/utils/mask/burst/burst_mask_decoder.cpp.i
+
+.PHONY : src/coders/utils/mask/burst/burst_mask_decoder.i
+
+# target to preprocess a source file
+src/coders/utils/mask/burst/burst_mask_decoder.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/utils/mask/burst/burst_mask_decoder.cpp.i
+.PHONY : src/coders/utils/mask/burst/burst_mask_decoder.cpp.i
+
+src/coders/utils/mask/burst/burst_mask_decoder.s: src/coders/utils/mask/burst/burst_mask_decoder.cpp.s
+
+.PHONY : src/coders/utils/mask/burst/burst_mask_decoder.s
+
+# target to generate assembly for a file
+src/coders/utils/mask/burst/burst_mask_decoder.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/utils/mask/burst/burst_mask_decoder.cpp.s
+.PHONY : src/coders/utils/mask/burst/burst_mask_decoder.cpp.s
 
 src/coders/utils/time_delta/time_delta_coder.o: src/coders/utils/time_delta/time_delta_coder.cpp.o
 
@@ -2163,12 +2163,12 @@ help:
 	@echo "... src/coders/utils/header/header_decoder.o"
 	@echo "... src/coders/utils/header/header_decoder.i"
 	@echo "... src/coders/utils/header/header_decoder.s"
-	@echo "... src/coders/utils/mask/mask_coder.o"
-	@echo "... src/coders/utils/mask/mask_coder.i"
-	@echo "... src/coders/utils/mask/mask_coder.s"
-	@echo "... src/coders/utils/mask/mask_decoder.o"
-	@echo "... src/coders/utils/mask/mask_decoder.i"
-	@echo "... src/coders/utils/mask/mask_decoder.s"
+	@echo "... src/coders/utils/mask/burst/burst_mask_coder.o"
+	@echo "... src/coders/utils/mask/burst/burst_mask_coder.i"
+	@echo "... src/coders/utils/mask/burst/burst_mask_coder.s"
+	@echo "... src/coders/utils/mask/burst/burst_mask_decoder.o"
+	@echo "... src/coders/utils/mask/burst/burst_mask_decoder.i"
+	@echo "... src/coders/utils/mask/burst/burst_mask_decoder.s"
 	@echo "... src/coders/utils/time_delta/time_delta_coder.o"
 	@echo "... src/coders/utils/time_delta/time_delta_coder.i"
 	@echo "... src/coders/utils/time_delta/time_delta_coder.s"

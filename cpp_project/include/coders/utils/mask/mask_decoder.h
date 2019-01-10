@@ -2,17 +2,21 @@
 #ifndef CPP_PROJECT_MASK_DECODER_H
 #define CPP_PROJECT_MASK_DECODER_H
 
-#include "constants.h"
+#include "burst_mask_decoder.h"
 
 #if MASK_MODE
-
-#include "decoder_base.h"
-#include "mask.h"
 
 class MaskDecoder {
 
 public:
-    static Mask* decode(DecoderBase* decoder);
+    static Mask* decode(DecoderBase* decoder){
+    #if BURST_MODE
+        return BurstMaskDecoder::decode(decoder);
+    #else
+        // TODO
+        // return GolombMaskDecoder::decode(decoder);
+    #endif
+    }
 
 };
 

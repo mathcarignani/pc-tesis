@@ -2,22 +2,22 @@
 #ifndef CPP_PROJECT_MASK_CODER_H
 #define CPP_PROJECT_MASK_CODER_H
 
-#include "constants.h"
+#include "burst_mask_coder.h"
 
 #if MASK_MODE
-
-#include "dataset.h"
-#include "csv_reader.h"
-#include "coder_base.h"
-#include "mask.h"
 
 class MaskCoder {
 
 public:
-    static int code(CoderBase* coder, int column_index);
+    static int code(CoderBase* coder, int column_index){
+    #if BURST_MODE
+        return BurstMaskCoder::code(coder, column_index);
+    #else
+        // TODO
+        // return GolombMaskCoder::code(coder, column_index);
+    #endif
+    }
 
-private:
-    static int codeBurst(CoderBase* coder, Burst* burst);
 };
 
 #endif // MASK_MODE
