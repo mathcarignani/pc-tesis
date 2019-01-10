@@ -1,0 +1,36 @@
+#  FING - UDELAR                       #
+#  Proyecto de Grado 2015              #
+#  Codificación de señales multicanal  #
+#  Pablo Cerveñansky                   #
+########################################
+
+INSTRUCCIONES:
+
+(1) COMPILACIÓN
+
+Para compilar, ejecutar el siguiente comando:
+make
+
+
+(2) TESTS
+
+Para correr todos los tests (tiempo de ejecución aproximado: 2 minutos) ejecutar el siguiente comando:
+./app -test
+
+
+(3) EXPERIMENTOS
+
+Para correr los experimentos cuyos resultados presentamos en el capítulo 6.
+Estos dos comandos corren los experimentos de los códigos GolombBN y T (calculan parámetros, largo medio y tiempo de ejecución):
+./app -experimento -golomb_bn
+./app -experimento -t
+
+Este comando calcula la cota inferior de la entropía de la distribución binomial negativa (ver primer párrafo de la sección 6.3)
+y el largo medio del código de Huffman al que nos referimos en el segundo párrafo de la sección 6.3:
+./app -experimento -huffman
+
+
+(4) LIMPIAR
+
+Para borrar el ejecutable y los archivos objeto creados al compilar:
+make clean
