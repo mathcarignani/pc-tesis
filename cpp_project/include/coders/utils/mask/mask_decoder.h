@@ -9,14 +9,7 @@
 class MaskDecoder {
 
 public:
-    static Mask* decode(DecoderBase* decoder){
-    #if BURST_MODE
-        return BurstMaskDecoder::decode(decoder);
-    #else
-        // TODO
-        // return GolombMaskDecoder::decode(decoder);
-    #endif
-    }
+    static Mask* decode(DecoderBase* decoder);
 
 };
 

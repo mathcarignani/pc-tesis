@@ -15,36 +15,13 @@ private:
     bool burst_is_no_data;
     int burst_length;
 
-    void setBurst(int index){
-        assert(index < bursts.size());
-        Burst* burst = bursts.at(index);
-        burst_is_no_data = burst->no_data;
-        burst_length = burst->length;
-    }
+    void setBurst(int index);
 
 public:
-    BurstMask(): Mask(){
-        bursts.clear();
-    }
-
-    void add(Burst* burst){
-        bursts.push_back(burst);
-        if (burst->no_data) { total_no_data += burst->length; } else { total_data += burst->length; }
-    }
-
-    void reset(){
-        current_index = 0;
-        setBurst(0);
-    }
-
-    bool isNoData(){
-        if (burst_length == 0){
-            current_index++;
-            setBurst(current_index);
-        }
-        burst_length--;
-        return burst_is_no_data;
-    }
+    BurstMask();
+    void add(Burst* burst);
+    void reset();
+    bool isNoData();
 };
 
 #endif //CPP_PROJECT_BURST_MASK_H

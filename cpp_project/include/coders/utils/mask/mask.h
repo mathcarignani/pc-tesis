@@ -15,11 +15,7 @@ public:
     int total_no_data; // number of "nodata" entries
     int total_data; // number of non-"nodata" entries
 
-    Mask(){
-        total_no_data = 0;
-        total_data = 0;
-    }
-
+    Mask();
     virtual void reset() = 0;
     virtual bool isNoData() = 0;
 };
