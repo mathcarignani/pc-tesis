@@ -5,7 +5,7 @@
 #include "assert.h"
 
 Mask* BurstMaskDecoder::decode(DecoderBase* decoder){
-    Mask* mask = new Mask();
+    BurstMask* mask = new BurstMask();
     int row_index = 0;
     Burst* burst = NULL;
     while (row_index < decoder->data_rows_count){
@@ -17,7 +17,7 @@ Mask* BurstMaskDecoder::decode(DecoderBase* decoder){
     }
     assert(row_index == decoder->data_rows_count);
     mask->reset();
-    return mask;
+    return (Mask*) mask;
 }
 
 #endif // MASK_MODE

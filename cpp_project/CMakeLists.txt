@@ -141,7 +141,7 @@ set(CODER_HER_SRC_FILES ${CODER_HER_SRC_DIR}/header_coder.cpp ${CODER_HER_SRC_DI
 
 set(CODER_MASK_H_FILES ${CODER_MASK_H_DIR}/mask.h ${CODER_MASK_H_DIR}/mask_coder.h ${CODER_MASK_H_DIR}/mask_decoder.h)
 
-set(CODER_BURST_MASK_H_FILES ${CODER_BURST_MASK_H_DIR}/burst_mask.h ${CODER_BURST_MASK_H_DIR}/burst_mask_coder.h ${CODER_BURST_MASK_H_DIR}/burst_mask_decoder.h)
+set(CODER_BURST_MASK_H_FILES ${CODER_BURST_MASK_H_DIR}/burst.h ${CODER_BURST_MASK_H_DIR}/burst_mask.h ${CODER_BURST_MASK_H_DIR}/burst_mask_coder.h ${CODER_BURST_MASK_H_DIR}/burst_mask_decoder.h)
 set(CODER_BURST_MASK_SRC_FILES ${CODER_BURST_MASK_SRC_DIR}/burst_mask_coder.cpp ${CODER_BURST_MASK_SRC_DIR}/burst_mask_decoder.cpp)
 
 set(CODER_TIME_DELTA_H_FILES ${CODER_TIME_DELTA_H_DIR}/time_delta_coder.h ${CODER_TIME_DELTA_H_DIR}/time_delta_decoder.h)

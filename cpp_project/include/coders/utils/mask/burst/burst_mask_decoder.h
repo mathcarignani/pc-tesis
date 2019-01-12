@@ -6,7 +6,7 @@
 
 #if MASK_MODE
 
-#include "mask.h"
+#include "burst_mask.h"
 #include "decoder_base.h"
 
 class BurstMaskDecoder {
