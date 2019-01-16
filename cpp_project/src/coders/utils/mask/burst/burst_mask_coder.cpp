@@ -1,3 +1,4 @@
+
 #include "burst_mask_coder.h"
 
 #if MASK_MODE

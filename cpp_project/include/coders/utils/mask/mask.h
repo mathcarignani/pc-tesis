@@ -5,19 +5,30 @@
 #include <vector>
 #include <iostream>
 #include <assert.h>
+#include "burst.h"
 
 class Mask {
 
-protected:
-    int current_index; // iteration variable
+private:
+    // creation variables
+    std::vector<Burst*> bursts;
+
+    // iteration variables
+    int current_index;
+    bool burst_is_no_data;
+    int burst_length;
+
+    void setBurst(int index);
 
 public:
     int total_no_data; // number of "nodata" entries
     int total_data; // number of non-"nodata" entries
 
     Mask();
-    virtual void reset() = 0;
-    virtual bool isNoData() = 0;
+    void add(Burst* burst);
+    void add(bool no_data, int length);
+    void reset();
+    bool isNoData();
 };
 
 #endif //CPP_PROJECT_MASK_H

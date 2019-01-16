@@ -72,14 +72,14 @@ int HeaderCoder::codeColumnNames(){
     // Time Delta|T0N110W|T0N125W|T0N155W|...|T9N140W
     std::vector<std::string> current_line = input_csv->readLineCSV();
     current_line.erase(current_line.begin()); // remove "Time Delta"
-    int data_columns_count = current_line.size();
+    int data_columns_count = (int) current_line.size();
     std::string column_names_str = StringUtils::join(current_line, ",");
-    int number_of_chars = column_names_str.size() - 1;
+    int number_of_chars = (int) column_names_str.size() - 1;
     int zeros_count = number_of_chars % 8 + 8;
 
     // code the number of chars in unary code
-    for(int i=0; i < number_of_chars; i++) { output_file->pushBit(1); }
-    for(int i=0; i < zeros_count; i++) { output_file->pushBit(0); }
+    output_file->pushBits(1, number_of_chars);
+    output_file->pushBits(0, zeros_count);
     // code the chars (each char uses 1 byte)
     for(int i=0; i < number_of_chars; i++) {
         char character = column_names_str[i];

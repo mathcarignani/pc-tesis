@@ -13,28 +13,19 @@
 
 
 void TestsCoders::testSideFilder() {
-//    Path file_path = Path(TestsUtils::OUTPUT_PATH + "/sf", "noaa-buoy-201701.csv");
-//    std::vector<int> lossless{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-//                              0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+    Path file_path = Path(TestsUtils::IRKIS_PATH, "vwc_1202.dat.csv");
+    std::vector<int> lossless{0,  0, 0, 0, 0, 0,  0, 0, 0, 0, 0};
+    std::vector<int>    lossy{0, 12, 3, 5, 2, 4, 10, 6, 4, 3, 2};
 
-//    Path file_path = Path(TestsUtils::OUTPUT_PATH + "/sf", "noaa-adcp-201501.csv");
-//    std::vector<int> lossless(568, 0);
-
-//    Path file_path = Path(TestsUtils::OUTPUT_PATH + "/sf", "noaa-adcp-201501-1col.csv");
-//    std::vector<int> lossless{0, 0};
-
-    Path file_path = Path(TestsUtils::OUTPUT_PATH + "/sf", "noaa_spc-hail.csv");
-//    Path file_path = Path(TestsUtils::OUTPUT_PATH + "/sf", "noaa_spc-hail-0to1.csv");
-    std::vector<int> lossless(4, 0);
-
-    std::string coder_name = "CoderSF";
+    std::string coder_name = "CoderBasic";
     Path output_code_path = TestsCodersUtils::codedFilePath(TestsUtils::OUTPUT_PATH, file_path, coder_name);
     Path output_decode_path = TestsCodersUtils::decodedFilePath(TestsUtils::OUTPUT_PATH, file_path, coder_name);
 
     std::cout << output_code_path.full_path << std::endl;
     std::cout << output_decode_path.full_path << std::endl;
 
-    Scripts::code("CoderSF", file_path, output_code_path, 5, lossless);
+    Scripts::codeBasic(file_path, output_code_path);
+//    Scripts::code("CoderSF", file_path, output_code_path, 5, lossless);
     Scripts::decode(output_code_path, output_decode_path);
     TestsCodersUtils::compareFiles(file_path, output_decode_path);
     std::cout << "SAME FILE!!" << std::endl;
@@ -133,6 +124,7 @@ void TestsCoders::runAll(){
             setModePaths(i);
 
             if (mode == "LOSSLESS"){ testCoderBasic(); }
+
             testCoder("CoderPCA");
             testCoder("CoderAPCA");
             testCoder("CoderPWLHInt");

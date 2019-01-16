@@ -25,6 +25,7 @@ public:
     CSVReader* input_csv;
     BitStreamWriter* output_file;
     Dataset* dataset;
+    int data_rows_count;
 
     CoderBase(CSVReader* input_csv_, BitStreamWriter* output_file_);
     void codeFile();
@@ -35,6 +36,7 @@ public:
     void codeBit(int bit);
     void codeBool(bool bit);
     void codeInt(int value, int bits);
+    void codeUnary(int value);
     void codeValueRaw(std::string x);
     void codeFloat(float x);
     void codeDouble(double x);

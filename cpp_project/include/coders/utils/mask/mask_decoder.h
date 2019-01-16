@@ -3,6 +3,7 @@
 #define CPP_PROJECT_MASK_DECODER_H
 
 #include "burst_mask_decoder.h"
+#include "golomb_mask_decoder.h"
 
 #if MASK_MODE
 

@@ -88,6 +88,12 @@ int DecoderBase::decodeInt(int bits){
     return (input_file->getInt(bits));
 }
 
+int DecoderBase::decodeUnary(){
+    int value = 0;
+    while (!decodeBool()) { value++; }
+    return value;
+}
+
 std::string DecoderBase::decodeValueRaw(){
     int value = decodeRaw();
     std::string coded_value;

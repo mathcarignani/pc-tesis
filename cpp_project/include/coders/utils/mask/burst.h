@@ -14,6 +14,7 @@ public:
     }
 
     Burst(bool no_data_, int length_){
+        assert(length_ > 0);
         no_data = no_data_;
         length = length_;
     }

@@ -1,6 +1,6 @@
 
-#ifndef CPP_PROJECT_BURST_MASK_DECODER_H
-#define CPP_PROJECT_BURST_MASK_DECODER_H
+#ifndef CPP_PROJECT_GOLOMB_MASK_DECODER_H
+#define CPP_PROJECT_GOLOMB_MASK_DECODER_H
 
 #include "constants.h"
 
@@ -9,7 +9,7 @@
 #include "mask.h"
 #include "decoder_base.h"
 
-class BurstMaskDecoder {
+class GolombMaskDecoder {
 
 public:
     static Mask* decode(DecoderBase* decoder);
@@ -18,4 +18,4 @@ public:
 
 #endif // MASK_MODE
 
-#endif //CPP_PROJECT_BURST_MASK_DECODER_H
+#endif //CPP_PROJECT_GOLOMB_MASK_DECODER_H

@@ -7,8 +7,7 @@ Mask* MaskDecoder::decode(DecoderBase* decoder){
 #if BURST_MODE
     return BurstMaskDecoder::decode(decoder);
 #else
-    // TODO
-    // return GolombMaskDecoder::decode(decoder);
+    return GolombMaskDecoder::decode(decoder);
 #endif // BURST_MODE
 }
 

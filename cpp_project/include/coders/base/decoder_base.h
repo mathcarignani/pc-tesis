@@ -40,6 +40,7 @@ public:
 
     bool decodeBool();
     int decodeInt(int bits);
+    int decodeUnary();
     std::string decodeValueRaw();
     float decodeFloat();
     double decodeDouble();
