@@ -7,6 +7,7 @@ GolombDecoder::GolombDecoder(DecoderBase* decoder_){
 }
 
 void GolombDecoder::decode(Mask *mask){
+    no_data_majority = decoder->decodeBool();
     k = decoder->decodeUnary();
     l = (int) pow(2, k);
 
@@ -21,13 +22,12 @@ int GolombDecoder::decodeRunLength(Mask* mask, int remaining){
     int length = decodeLength();
 
     if (length > 0){
-        mask->add(true, length); // no-data burst
-        if (length == remaining) { // the last entry is no-data
+        mask->add(no_data_majority, length);
+        if (length == remaining) {
             return length;
         }
     }
-
-    mask->add(false, 1); // data entry
+    mask->add(!no_data_majority, 1);
     return length + 1;
 }
 

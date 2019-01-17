@@ -18,8 +18,7 @@ int GolombMaskCoder::code(CoderBase* coder, int column_index){
         coder->codeBool(no_data_burst);
     }
     else { // 0 < p < 1
-        double p = (double) total_data_rows / coder->data_rows_count;
-        GolombCoder* golomb_coder = new GolombCoder(coder, p);
+        GolombCoder* golomb_coder = new GolombCoder(coder, total_data_rows);
         golomb_coder->code(column_index);
     }
     return total_data_rows;

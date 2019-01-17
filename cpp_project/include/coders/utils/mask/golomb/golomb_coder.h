@@ -8,6 +8,7 @@ class GolombCoder {
 
 private:
     CoderBase* coder;
+    bool no_data_majority;
     double p; // success probability
     int l; // single integer which satisfies the equation: p**l + p**(l+1) <= 1 < p**l + p**(l-1)
     int k; // l=2**k
@@ -17,7 +18,7 @@ private:
     void codeRunLength(int length);
 
 public:
-    GolombCoder(CoderBase* coder_, double p_);
+    GolombCoder(CoderBase* coder_, int total_data_rows);
     void code(int column_index);
 
 };

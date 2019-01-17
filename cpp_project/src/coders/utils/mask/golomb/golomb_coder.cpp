@@ -3,12 +3,23 @@
 #include <math.h>
 #include <iostream>
 #include <stdlib.h>
+#include <assert.h>
 
 
-GolombCoder::GolombCoder(CoderBase* coder_, double p_){
+GolombCoder::GolombCoder(CoderBase* coder_, int total_data_rows){
     coder = coder_;
-    p = p_;
-    l = calculateL(p_);
+    int total_no_data_rows = coder->data_rows_count - total_data_rows;
+    no_data_majority = total_no_data_rows > total_data_rows;
+    if (no_data_majority){
+        p = (double) total_no_data_rows / coder->data_rows_count;
+    }
+    else {
+        p = (double) total_data_rows / coder->data_rows_count;
+    }
+#if CHECKS
+    assert(p > 0.5);
+#endif
+    l = calculateL(p);
     k = nearestK(l);
 }
 
@@ -38,23 +49,26 @@ int GolombCoder::nearestK(int & l){
 }
 
 void GolombCoder::code(int column_index){
+    coder->codeBool(no_data_majority);
     coder->codeUnary(k);
 
     CSVReader* input_csv = coder->input_csv;
     input_csv->goToFirstDataRow(column_index);
 
-    int no_data_count = 0;
+    int count = 0;
     while (input_csv->continue_reading) {
         std::string csv_value = input_csv->readLineCSVWithIndex();
-        if (Constants::isNoData(csv_value)){
-            no_data_count++;
+        bool no_data = Constants::isNoData(csv_value);
+        // TODO: use a while loop for each of the two scenarios
+        if ((no_data_majority && no_data) || (!no_data_majority && !no_data)){
+            count++;
             continue;
         }
-        codeRunLength(no_data_count);
-        no_data_count = 0;
+        codeRunLength(count);
+        count = 0;
     }
-    if (no_data_count > 0){ // the last entry is no-data
-        codeRunLength(no_data_count);
+    if (count > 0){
+        codeRunLength(count);
     }
 }
 
