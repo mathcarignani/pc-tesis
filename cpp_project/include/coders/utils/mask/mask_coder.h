@@ -2,7 +2,8 @@
 #ifndef CPP_PROJECT_MASK_CODER_H
 #define CPP_PROJECT_MASK_CODER_H
 
-#include "burst_mask_coder.h"
+#include "simple_mask_coder.h"
+#include "golomb_mask_coder.h"
 
 #if MASK_MODE
 

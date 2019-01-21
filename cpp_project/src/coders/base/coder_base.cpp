@@ -12,8 +12,10 @@ CoderBase::CoderBase(CSVReader* input_csv_, BitStreamWriter* output_file_){
 }
 
 void CoderBase::codeDataRowsCount(){
-    int data_rows_count = input_csv->total_lines - HeaderCoder::HEADER_LINES;
+    data_rows_count = input_csv->total_lines - HeaderCoder::HEADER_LINES;
+#if CHECKS
     assert(0 < data_rows_count && data_rows_count < pow(2, 24));
+#endif
     output_file->pushInt(data_rows_count, 24); // 24 bits for the data rows count
 }
 
@@ -48,6 +50,11 @@ void CoderBase::codeBool(bool bit){
 void CoderBase::codeInt(int value, int bits){
     dataset->addBits(bits);
     output_file->pushInt(value, bits);
+}
+
+void CoderBase::codeUnary(int value){
+    for(int i=0; i < value; i++) { codeBit(0); }
+    codeBit(1);
 }
 
 void CoderBase::codeValueRaw(std::string x){

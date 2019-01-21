@@ -1,10 +1,11 @@
-#include "burst_mask_coder.h"
+
+#include "simple_mask_coder.h"
 
 #if MASK_MODE
 
 #include "assert.h"
 
-int BurstMaskCoder::code(CoderBase* coder, int column_index){
+int SimpleMaskCoder::code(CoderBase* coder, int column_index){
     coder->dataset->setMaskMode(true);
 
     int total_data_rows = 0;
@@ -31,7 +32,7 @@ int BurstMaskCoder::code(CoderBase* coder, int column_index){
     return total_data_rows;
 }
 
-int BurstMaskCoder::codeBurst(CoderBase* coder, Burst* burst){
+int SimpleMaskCoder::codeBurst(CoderBase* coder, Burst* burst){
     coder->codeBool(burst->no_data);
     coder->codeInt(burst->length - 1, Constants::MASK_BITS); // 1 <= burst->length <= Constants::MASK_MAX_SIZE
     return (burst->no_data ? 0 : burst->length);

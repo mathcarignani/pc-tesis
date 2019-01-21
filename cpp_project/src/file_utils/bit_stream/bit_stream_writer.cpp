@@ -22,9 +22,16 @@ void BitStreamWriter::pushBit(unsigned int bit){
     }
 }
 
+void BitStreamWriter::pushBits(unsigned int bit, int times){
+    for(int i=0; i < times; i++) {
+        this->pushBit(bit);
+    }
+}
+
 void BitStreamWriter::pushInt(unsigned int x, int k){
-    for (int i = k-1; i >=0; i--)
+    for (int i = k-1; i >=0; i--) {
         this->pushBit( !!(x & (1 << i) ) );
+    }
 }
 
 void BitStreamWriter::pushFloat(float x){

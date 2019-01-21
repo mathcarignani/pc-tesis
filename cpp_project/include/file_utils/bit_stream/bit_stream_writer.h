@@ -30,6 +30,7 @@ public:
     BitStreamWriter(Path path);
 
     void pushBit(unsigned int bit);
+    void pushBits(unsigned int bit, int times);
 
     void pushInt(unsigned int x, int k);
 

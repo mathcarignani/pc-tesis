@@ -13,12 +13,6 @@ class CompressArgs:
         self.compressed_filename = self.input_filename.replace('.csv', '.c.csv')
         self.deco_filename = self.input_filename.replace('.csv', '.c.d.csv')
 
-    def code_python(self):
-        self.compressed_filename = self.input_filename.replace('.csv', '.c.python.csv')
-
-    def decode_python(self):
-        self.deco_filename = self.input_filename.replace('.csv', '.c.d.python.csv')
-
     def code_cpp(self):
         self.compressed_filename = self.input_filename.replace('.csv', '.c.cpp.csv')
 

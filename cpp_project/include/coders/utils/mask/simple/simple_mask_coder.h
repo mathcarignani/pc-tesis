@@ -1,15 +1,15 @@
 
-#ifndef CPP_PROJECT_BURST_MASK_CODER_H
-#define CPP_PROJECT_BURST_MASK_CODER_H
+#ifndef CPP_PROJECT_SIMPLE_MASK_CODER_H
+#define CPP_PROJECT_SIMPLE_MASK_CODER_H
 
 #include "constants.h"
 
 #if MASK_MODE
 
-#include "burst_mask.h"
+#include "mask.h"
 #include "coder_base.h"
 
-class BurstMaskCoder {
+class SimpleMaskCoder {
 
 private:
     static int codeBurst(CoderBase* coder, Burst* burst);
@@ -21,4 +21,4 @@ public:
 
 #endif // MASK_MODE
 
-#endif //CPP_PROJECT_BURST_MASK_CODER_H
+#endif //CPP_PROJECT_SIMPLE_MASK_CODER_H
