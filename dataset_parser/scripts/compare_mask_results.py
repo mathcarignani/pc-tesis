@@ -21,9 +21,12 @@ class CompareMaskResults:
         self.close()
 
     def open(self):
-        path = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-8/2-resultados-3-enero/mac/"
-        self.reader1 = CSVReader(path + "mask-true", "results-mask-true.csv")
-        self.reader2 = CSVReader(path + "mask-false", "results-mask-false.csv")
+        # path = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-8/2-resultados-3-enero/mac/"
+        # self.reader1 = CSVReader(path + "mask-true", "results-mask-true.csv")
+        # self.reader2 = CSVReader(path + "mask-false", "results-mask-false.csv")
+        path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/"
+        self.reader1 = CSVReader(path, "results_golomb_A.csv")
+        self.reader2 = CSVReader(path, "results_burst.csv")
         self.writer = CSVWriter(path, "comparison.csv")
 
     def copy_header(self):
@@ -43,7 +46,7 @@ class CompareMaskResults:
         if len(coder) > 0:
             if coder == "CoderBasic":
                 print self.current_file_data
-                self.current_file_data = {"name": filename, "TRUE": 0, "FALSE": 0, "SAME": 0}
+                self.current_file_data = {"name": filename, "C1": 0, "C2": 0, "SAME": 0}
             self.current_coder = coder
 
         if self.current_coder in ["CoderFR", "CoderSF"]:
@@ -77,7 +80,8 @@ class CompareMaskResults:
     @staticmethod
     def size_indexes(line1):
         length = len(line1)
-        index = 15
+        # index = 15  # Other columns - Size (total)
+        index = 14  # Other columns - Size (mask)
         res = []
         while index < length:
             res.append(index)
@@ -87,9 +91,9 @@ class CompareMaskResults:
     @staticmethod
     def result(value1, value2):
         if value1 < value2:
-            return ["TRUE", CompareMaskResults.percentage(value2, value1)]
+            return ["C1", CompareMaskResults.percentage(value2, value1)]
         elif value2 < value1:
-            return ["FALSE", CompareMaskResults.percentage(value1, value2)]
+            return ["C2", CompareMaskResults.percentage(value1, value2)]
         else:
             return ["SAME", 0]
 
