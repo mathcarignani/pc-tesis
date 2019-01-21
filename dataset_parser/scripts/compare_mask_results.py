@@ -24,10 +24,19 @@ class CompareMaskResults:
         # path = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-8/2-resultados-3-enero/mac/"
         # self.reader1 = CSVReader(path + "mask-true", "results-mask-true.csv")
         # self.reader2 = CSVReader(path + "mask-false", "results-mask-false.csv")
-        path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/"
-        self.reader1 = CSVReader(path, "results_golomb_A.csv")
-        self.reader2 = CSVReader(path, "results_burst.csv")
+        # self.writer = CSVWriter(path, "comparison2.csv")
+
+        path = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-8/2-resultados-3-enero/mac/"
+        self.reader1 = CSVReader(path + "mask-true", "results-mask-true.csv")
+        # self.reader2 = CSVReader(path + "mask-false", "results-mask-false.csv")
+        path = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-8/4-results_golomb_mask-20-enero/"
+        self.reader2 = CSVReader(path, "results.csv")
         self.writer = CSVWriter(path, "comparison.csv")
+
+        # path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/"
+        # self.reader1 = CSVReader(path, "results_golomb_A.csv")
+        # self.reader2 = CSVReader(path, "results_burst.csv")
+        # self.writer = CSVWriter(path, "comparison.csv")
 
     def copy_header(self):
         header = self.reader1.read_line()
@@ -49,8 +58,8 @@ class CompareMaskResults:
                 self.current_file_data = {"name": filename, "C1": 0, "C2": 0, "SAME": 0}
             self.current_coder = coder
 
-        if self.current_coder in ["CoderFR", "CoderSF"]:
-            return
+        # if self.current_coder in ["CoderFR", "CoderSF"]:
+        #     return
 
         # must compare two lines
         line2 = self.reader2.read_line()
@@ -80,8 +89,8 @@ class CompareMaskResults:
     @staticmethod
     def size_indexes(line1):
         length = len(line1)
-        # index = 15  # Other columns - Size (total)
-        index = 14  # Other columns - Size (mask)
+        index = 15  # Other columns - Size (total)
+        # index = 14  # Other columns - Size (mask)
         res = []
         while index < length:
             res.append(index)
