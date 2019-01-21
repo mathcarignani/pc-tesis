@@ -92,7 +92,6 @@ int Dataset::dataColumnsGroupCount(){
 }
 
 void Dataset::printBits(){
-    std::cout << "total_header_bits " << header_bits << std::endl;
     for(int i=0; i<column_code_vector.size(); i++){
         std::cout << "total_mask_bits " << column_code_vector[i]->total_mask_bits << std::endl;
         std::cout << "total_bits " << column_code_vector[i]->total_bits << std::endl;
