@@ -4,11 +4,11 @@
 #if MASK_MODE
 
 Mask* MaskDecoder::decode(DecoderBase* decoder){
-#if BURST_MODE
-    return BurstMaskDecoder::decode(decoder);
-#else
+#if GOLOMB_MODE
     return GolombMaskDecoder::decode(decoder);
-#endif // BURST_MODE
+#else
+    return SimpleMaskDecoder::decode(decoder);
+#endif // GOLOMB_MODE
 }
 
 #endif // MASK_MODE

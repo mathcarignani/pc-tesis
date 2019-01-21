@@ -124,7 +124,6 @@ void TestsCoders::runAll(){
             setModePaths(i);
 
             if (mode == "LOSSLESS"){ testCoderBasic(); }
-
             testCoder("CoderPCA");
             testCoder("CoderAPCA");
             testCoder("CoderPWLHInt");
