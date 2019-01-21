@@ -18,11 +18,12 @@ public:
     std::string full_path;
     int current_line_count = 0;
 
-    CSVWriter();
+    CSVWriter(); // TODO: remove this type of dummy methods from project
     CSVWriter(std::string path, std::string filename);
     CSVWriter(Path path);
 
     void writeRow(std::vector<std::string> row);
+    void writeRow(std::string str);
     void writeRowDecoder(std::vector<std::string> row);
     void close();
 };

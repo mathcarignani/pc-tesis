@@ -3,7 +3,7 @@
 #define CPP_PROJECT_HEADER_CODER_H
 
 #include <iostream>
-#include "bit_stream_writer.h"
+#include "coder_base.h"
 #include "csv_reader.h"
 #include "dataset.h"
 #include "dataset_utils.h"
@@ -12,13 +12,17 @@
 class HeaderCoder {
 
 public:
-    HeaderCoder(CSVReader* input_csv_, BitStreamWriter* output_file_);
-    Dataset* codeHeader();
+    HeaderCoder(CSVReader* input_csv_, BitStreamWriter* output_file_); // test_mode = true
+    HeaderCoder(CSVReader* input_csv_, CoderBase* coder_base_); // test_mode = false
+    void codeHeader(Dataset* dataset);
     static const int HEADER_LINES; // number of lines used for the header in the .csv
 
 private:
     CSVReader* input_csv;
     BitStreamWriter* output_file;
+    CoderBase* coder_base;
+    bool test_mode;
+
     std::string codeDatasetName(DatasetUtils & dataset_utils);
     void codeTimeUnit(DatasetUtils & dataset_utils);
     void codeFirstTimestamp();

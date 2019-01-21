@@ -6,8 +6,6 @@
 #include "assert.h"
 
 int SimpleMaskCoder::code(CoderBase* coder, int column_index){
-    coder->dataset->setMaskMode(true);
-
     int total_data_rows = 0;
     Burst* burst = NULL;
 

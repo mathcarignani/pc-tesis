@@ -1,13 +1,22 @@
 
 #include "bit_stream_utils.h"
 
-#include "bit_stream_reader.h"
 #include <iostream>
 #include <stdio.h>
 
+BitStreamReader* BitStreamUtils::open(Path path){
+    try {
+        return new BitStreamReader(path);
+    }
+    catch( const std::runtime_error& e ){
+        std::cout << e.what() << std::endl;
+        exit(-1);
+    }
+}
+
 int BitStreamUtils::compare(Path path1, Path path2){
-    BitStreamReader* reader1=new BitStreamReader(path1);
-    BitStreamReader* reader2=new BitStreamReader(path2);
+    BitStreamReader* reader1 = open(path1);
+    BitStreamReader* reader2 = open(path2);
 
     int cont=1; // first different bit
 
@@ -22,15 +31,8 @@ int BitStreamUtils::compare(Path path1, Path path2){
 }
 
 int BitStreamUtils::compareBytes(Path path1, Path path2){
-    BitStreamReader *reader1, *reader2;
-    try {
-        reader1=new BitStreamReader(path1);
-        reader2=new BitStreamReader(path2);
-    }
-    catch( const std::runtime_error& e ){
-        std::cout << e.what() << std::endl;
-        exit(-1);
-    }
+    BitStreamReader* reader1 = open(path1);
+    BitStreamReader* reader2 = open(path2);
 
     int cont=1; // first different bit
     bool diff = false;
@@ -49,9 +51,20 @@ int BitStreamUtils::compareBytes(Path path1, Path path2){
     return cont;
 }
 
+int BitStreamUtils::getSize(Path path){
+    int size = 0;
+    BitStreamReader* reader = open(path);
+    while (!reader->reachedEOF()){
+        reader->getInt(8);
+        size++;
+    }
+    delete reader;
+    return size;
+}
+
 void BitStreamUtils::printBytes(Path path){
     std::cout << "printBytes " << path.full_path << std::endl;
-    BitStreamReader* reader=new BitStreamReader(path);
+    BitStreamReader* reader = open(path);
     int cont = 1;
     int byte;
     while (!reader->reachedEOF()){

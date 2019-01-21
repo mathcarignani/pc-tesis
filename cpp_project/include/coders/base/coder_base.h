@@ -34,6 +34,7 @@ public:
     void close();
 
     void codeBit(int bit);
+    void codeBits(int bit, int times);
     void codeBool(bool bit);
     void codeInt(int value, int bits);
     void codeUnary(int value);

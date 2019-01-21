@@ -20,7 +20,8 @@ Dataset* HeaderDecoder::decodeHeader(){
     int data_columns_count = decodeColumnNames();
 
     std::vector<Range> ranges = dataset_utils->getRangeVector(dataset_name);
-    Dataset* dataset = new Dataset(ranges, data_columns_count);
+    Dataset* dataset = new Dataset();
+    dataset->setHeaderValues(ranges, data_columns_count);
     return dataset;
 }
 

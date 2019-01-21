@@ -9,6 +9,7 @@
 CoderBase::CoderBase(CSVReader* input_csv_, BitStreamWriter* output_file_){
    input_csv = input_csv_;
    output_file = output_file_;
+   dataset = new Dataset();
 }
 
 void CoderBase::codeDataRowsCount(){
@@ -16,7 +17,7 @@ void CoderBase::codeDataRowsCount(){
 #if CHECKS
     assert(0 < data_rows_count && data_rows_count < pow(2, 24));
 #endif
-    output_file->pushInt(data_rows_count, 24); // 24 bits for the data rows count
+    codeInt(data_rows_count, 24); // 24 bits for the data rows count
 }
 
 //
@@ -39,6 +40,11 @@ void CoderBase::codeRaw(int value){
 void CoderBase::codeBit(int bit){
     dataset->addBits(1);
     output_file->pushBit(bit);
+}
+
+void CoderBase::codeBits(int bit, int times){
+    dataset->addBits(times);
+    output_file->pushBits(bit, times);
 }
 
 void CoderBase::codeBool(bool bit){
@@ -81,23 +87,22 @@ void CoderBase::codeDouble(double x){
 
 void CoderBase::codeFile(){
     codeCoderParams();
-    dataset = HeaderCoder(input_csv, output_file).codeHeader();
+    HeaderCoder(input_csv, this).codeHeader(dataset);
     codeDataRowsCount();
     codeDataRows();
 }
 
 void CoderBase::codeCoderParameters(int coder_code, int window_size){
     assert(0 <= coder_code && coder_code < pow(2, 8));
-    output_file->pushInt(coder_code, 8); // 8 bits for the coder_code
+    codeInt(coder_code, 8); // 8 bits for the coder_code
 
     assert(1 <= window_size && window_size < pow(2, 8));
-    output_file->pushInt(window_size, 8); // 8 bits for the window_size
+    codeInt(window_size, 8); // 8 bits for the window_size
 }
 
 void CoderBase::printBits(){
     dataset->printBits();
 }
-
 
 void CoderBase::close(){
     delete input_csv;

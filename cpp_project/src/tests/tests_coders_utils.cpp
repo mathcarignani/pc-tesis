@@ -12,18 +12,20 @@ std::string TestsCodersUtils::setAndWriteCoderName(std::string coder_name, CSVWr
 }
 
 void TestsCodersUtils::writeBitsCSV(CSVWriter* csv_writer, Dataset* dataset){
-    csv_writer->writeRow(VectorUtils::intVectorToStringVector(dataset->totalMaskBitsArray()));
-    csv_writer->writeRow(VectorUtils::intVectorToStringVector(dataset->totalBitsArray()));
+    csv_writer->writeRow("TOTAL  = " + StringUtils::intToString(dataset->total_bits));
+    csv_writer->writeRow("header = " + StringUtils::intToString(dataset->header_bits));
+    csv_writer->writeRow("mask   = " + VectorUtils::intVectorToString(dataset->totalMaskBitsArray()));
+    csv_writer->writeRow("data   = " + VectorUtils::intVectorToString(dataset->totalBitsArray()));
 }
 
 void TestsCodersUtils::writeStringCSV(CSVWriter* csv_writer, std::string mode, bool title){
     std::cout << ">> " << mode << std::endl;
     if (title){
-        csv_writer->writeRow({""});
+        csv_writer->writeRow("");
     }
-    csv_writer->writeRow({""});
-    csv_writer->writeRow({mode});
-    csv_writer->writeRow({""});
+    csv_writer->writeRow("");
+    csv_writer->writeRow(mode);
+    csv_writer->writeRow("");
 }
 
 Path TestsCodersUtils::codedFilePath(std::string folder, Path file_path, std::string coder_name){
