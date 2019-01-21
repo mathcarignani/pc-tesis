@@ -24,6 +24,19 @@ private:
     }
 
 public:
+    static std::string intVectorToString(std::vector<int> int_vector){
+        int size = int_vector.size();
+        std::string res = "";
+        for(int i=0; i < size; i++){
+            std::string str = StringUtils::intToString(int_vector[i]);
+            if (i != size - 1){
+                str += ",";
+            }
+            res += str;
+        }
+        return res;
+    }
+
     static std::vector<std::string> intVectorToStringVector(std::vector<int> int_vector){
         int size = int_vector.size();
         std::vector<std::string> res(size);

@@ -7,8 +7,6 @@
 #include "golomb_coder.h"
 
 int GolombMaskCoder::code(CoderBase* coder, int column_index){
-    coder->dataset->setMaskMode(true);
-
     int total_data_rows = countTotalDataRows(coder, column_index);
     bool single_burst = total_data_rows == 0 || total_data_rows == coder->data_rows_count;
     coder->codeBool(single_burst);

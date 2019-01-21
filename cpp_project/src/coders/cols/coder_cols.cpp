@@ -19,18 +19,19 @@ void CoderCols::codeDataRows(){
 
 void CoderCols::codeColumn() {
     if (column_index == 0) {
+        dataset->setMode("DATA");
         time_delta_vector = TimeDeltaCoder::code(this);
         return;
     }
 #if MASK_MODE
+    dataset->setMode("MASK");
     total_data_rows = MaskCoder::code(this, column_index);
 #endif
+    dataset->setMode("DATA");
     codeDataColumn();
 }
 
 void CoderCols::codeDataColumn(){
-    dataset->setMaskMode(false);
-
     this->codeColumnBefore();
 
     row_index = 0;

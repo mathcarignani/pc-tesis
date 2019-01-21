@@ -37,8 +37,8 @@ private:
     void setDatasets();
     void setCoderPaths(std::string coder_name_);
     void setModePaths(int i);
-    void testCoderBasic();
     void testCoder(std::string coder_name);
+    void checkSize();
 };
 
 #endif //CPP_PROJECT_TESTS_CODERS_H

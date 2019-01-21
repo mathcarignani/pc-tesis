@@ -29,6 +29,7 @@ void CoderGAMPS::codeTimeDeltaColumn(){
     std::cout << "ccode column_index " << column_index << std::endl;
 #endif
     dataset->setColumn(column_index);
+    dataset->setMode("DATA");
     time_delta_vector = TimeDeltaCoder::code(this);
 }
 
@@ -80,11 +81,12 @@ void CoderGAMPS::groupThresholds(int threshold, int & base_threshold, int & rati
 
 std::vector<std::string> CoderGAMPS::codeBaseColumn(int error_threshold){
 #if MASK_MODE
+    dataset->setMode("MASK");
     total_data_rows = MaskCoder::code(this, column_index);
 #endif
     std::vector<std::string> column;
 
-    dataset->setMaskMode(false);
+    dataset->setMode("DATA");
     window = new APCAWindow(window_size, error_threshold);
 
     row_index = -1;
@@ -101,9 +103,10 @@ std::vector<std::string> CoderGAMPS::codeBaseColumn(int error_threshold){
 
 void CoderGAMPS::codeRatioColumn(int error_threshold, std::vector<std::string> base_column){
 #if MASK_MODE
+    dataset->setMode("MASK");
     total_data_rows = MaskCoder::code(this, column_index);
 #endif
-    dataset->setMaskMode(false);
+    dataset->setMode("DATA");
     window = new APCAWindow(window_size, error_threshold);
 
     row_index = -1;

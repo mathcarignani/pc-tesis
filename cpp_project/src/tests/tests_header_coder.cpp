@@ -94,7 +94,8 @@ void TestsHeaderCoder::testUpdateRangesGAMPS(){
 void TestsHeaderCoder::codeHeader(Path path){
     input_csv = new CSVReader(path);
     output_file = new BitStreamWriter(coded_file_path);
-    dataset = HeaderCoder(input_csv, output_file).codeHeader();
+    dataset = new Dataset();
+    HeaderCoder(input_csv, output_file).codeHeader(dataset);
     column_code_vector = dataset->column_code_vector;
     input_csv->close();
     output_file->close();

@@ -6,7 +6,6 @@
 // TODO: use a more appropriate lossless compression schema for coding the time delta column.
 //
 std::vector<int> TimeDeltaCoder::code(CoderBase* coder){
-    coder->dataset->setMaskMode(false);
     CSVReader* input_csv = coder->input_csv;
 
     std::vector<int> time_delta_vector{};

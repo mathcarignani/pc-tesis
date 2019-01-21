@@ -8,17 +8,21 @@ struct Dataset {
 
 private:
     int array_index;
+    bool header_mode;
     bool mask_mode;
 
 public:
     ColumnCode* column_code;
     int data_columns_count;
     std::vector<ColumnCode*> column_code_vector;
+    int total_bits;
+    int header_bits;
 
-    Dataset(std::vector<Range> ranges, int data_columns_count_);
+    Dataset();
+    void setHeaderValues(std::vector<Range> ranges, int data_columns_count_);
     void updateRangesGAMPS(int column_index);
     void setColumn(int column_index);
-    void setMaskMode(bool mask_mode_);
+    void setMode(std::string mode);
     void addBits(int bits);
     int getBits();
     int bits();

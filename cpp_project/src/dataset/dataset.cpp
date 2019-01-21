@@ -3,7 +3,13 @@
 #include "assert.h"
 
 
-Dataset::Dataset(std::vector<Range> ranges, int data_columns_count_){
+Dataset::Dataset(){
+    total_bits = 0;
+    header_bits = 0;
+    header_mode = true;
+}
+
+void Dataset::setHeaderValues(std::vector<Range> ranges, int data_columns_count_){
     assert(ranges.size() > 0);
     assert(ranges.size() <= data_columns_count_ + 1);
 
@@ -33,12 +39,31 @@ void Dataset::setColumn(int column_index){
     column_code = column_code_vector[array_index];
 }
 
-void Dataset::setMaskMode(bool mask_mode_){
-    mask_mode = mask_mode_;
+void Dataset::setMode(std::string mode){
+    if (mode.compare("DATA") == 0){
+        mask_mode = false;
+        header_mode = false;
+    }
+    else if (mode.compare("MASK") == 0){
+        mask_mode = true;
+        header_mode = false;
+    }
+    else if (mode.compare("HEADER") == 0){
+        header_mode = true; // mask_mode doesn't matter
+    }
+    else {
+        throw std::invalid_argument(mode);
+    }
 }
 
 void Dataset::addBits(int bits){
-    column_code_vector[array_index]->addBits(bits, mask_mode);
+    total_bits += bits;
+    if (header_mode){
+        header_bits += bits;
+    }
+    else {
+        column_code_vector[array_index]->addBits(bits, mask_mode);
+    }
 }
 
 int Dataset::getBits(){

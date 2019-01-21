@@ -26,6 +26,11 @@ void CSVWriter::writeRow(std::vector<std::string> row){
     file << '\n'; // LF
 }
 
+void CSVWriter::writeRow(std::string str){
+    std::vector<std::string> row{str};
+    writeRow(row);
+}
+
 void CSVWriter::writeRowDecoder(std::vector<std::string> row){
     current_line_count++;
     std::string line = StringUtils::join(row, ",");
@@ -37,15 +42,3 @@ void CSVWriter::writeRowDecoder(std::vector<std::string> row){
 void CSVWriter::close(){
     file.close();
 }
-
-
-//class CSVWriter {
-//
-//public:
-//
-//    CSVWriter(std::string path, std::string filename);
-//
-//    void writeRow(std::vector<std::string> row);
-//
-//    void close();
-//};

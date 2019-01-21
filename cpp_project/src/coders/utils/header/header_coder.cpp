@@ -10,11 +10,18 @@
 const int HeaderCoder::HEADER_LINES = 4;
 
 HeaderCoder::HeaderCoder(CSVReader* input_csv_, BitStreamWriter* output_file_){
+    test_mode = true;
     input_csv = input_csv_;
     output_file = output_file_;
 }
 
-Dataset* HeaderCoder::codeHeader(){
+HeaderCoder::HeaderCoder(CSVReader* input_csv_, CoderBase* coder_base_){
+    test_mode = false;
+    input_csv = input_csv_;
+    coder_base = coder_base_;
+}
+
+void HeaderCoder::codeHeader(Dataset* dataset){
     DatasetUtils dataset_utils = DatasetUtils("code");
     std::string dataset_name = codeDatasetName(dataset_utils); // 0.5 byte
     codeTimeUnit(dataset_utils); // 0.5 byte
@@ -22,8 +29,7 @@ Dataset* HeaderCoder::codeHeader(){
     int data_columns_count = codeColumnNames();
 
     std::vector<Range> ranges = dataset_utils.getRangeVector(dataset_name);
-    Dataset* dataset = new Dataset(ranges, data_columns_count);
-    return dataset;
+    dataset->setHeaderValues(ranges, data_columns_count);
 }
 
 std::string HeaderCoder::codeDatasetName(DatasetUtils & dataset_utils){
@@ -33,7 +39,10 @@ std::string HeaderCoder::codeDatasetName(DatasetUtils & dataset_utils){
     assert(current_line[0] == "DATASET:");
     std::string dataset_name = StringUtils::removeLastChar(current_line[1]);
     int dataset_int = dataset_utils.codeDatasetName(dataset_name);
-    output_file->pushInt(dataset_int, 4); // 4 bits for the dataset name
+
+    // 4 bits for the dataset name
+    test_mode ? output_file->pushInt(dataset_int, 4) : coder_base->codeInt(dataset_int, 4);
+
     return dataset_name;
 }
 
@@ -45,7 +54,9 @@ void HeaderCoder::codeTimeUnit(DatasetUtils & dataset_utils){
     assert(current_line[0] == "TIME UNIT:");
     std::string time_unit_name = StringUtils::removeLastChar(current_line[1]);
     int time_unit_int = dataset_utils.codeTimeUnit(time_unit_name);
-    output_file->pushInt(time_unit_int, 4); // 4 bits for the time unit
+
+    // 4 bits for the time unit
+    test_mode ? output_file->pushInt(time_unit_int, 4) : coder_base->codeInt(time_unit_int, 4);
 }
 
 void HeaderCoder::codeFirstTimestamp(){
@@ -55,7 +66,9 @@ void HeaderCoder::codeFirstTimestamp(){
     assert(current_line[0] == "FIRST TIMESTAMP:");
     std::string timestamp_str = StringUtils::removeLastChar(current_line[1]);
     long int seconds = codeTimestamp(timestamp_str);
-    output_file->pushInt(seconds, 32); // 32 bits for the timestamp
+
+    // 32 bits for the timestamp
+    test_mode ? output_file->pushInt(seconds, 32) : coder_base->codeInt(seconds, 32);
 }
 
 long int HeaderCoder::codeTimestamp(std::string timestamp_str){
@@ -78,13 +91,19 @@ int HeaderCoder::codeColumnNames(){
     int zeros_count = number_of_chars % 8 + 8;
 
     // code the number of chars in unary code
-    output_file->pushBits(1, number_of_chars);
-    output_file->pushBits(0, zeros_count);
+    if (test_mode){
+        output_file->pushBits(1, number_of_chars);
+        output_file->pushBits(0, zeros_count);
+    }
+    else {
+        coder_base->codeBits(1, number_of_chars);
+        coder_base->codeBits(0, zeros_count);
+    }
     // code the chars (each char uses 1 byte)
     for(int i=0; i < number_of_chars; i++) {
         char character = column_names_str[i];
         int char_as_int = StringUtils::charToInt(character);
-        output_file->pushInt(char_as_int, 8);
+        test_mode ? output_file->pushInt(char_as_int, 8) : coder_base->codeInt(char_as_int, 8);
     }
     return data_columns_count;
 }

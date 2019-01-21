@@ -7,6 +7,8 @@
 #include "string_utils.h"
 #include "tests_coders_utils.h"
 #include "tests_utils.h"
+#include "bit_stream_utils.h"
+#include <assert.h>
 
 // Set to 1 to set up the tests, then set to 0
 #define RECORD 0
@@ -123,7 +125,7 @@ void TestsCoders::runAll(){
             TestsCodersUtils::writeStringCSV(bits_csv, mode, false);
             setModePaths(i);
 
-            if (mode == "LOSSLESS"){ testCoderBasic(); }
+            if (mode == "LOSSLESS"){ testCoder("CoderBasic"); }
             testCoder("CoderPCA");
             testCoder("CoderAPCA");
             testCoder("CoderPWLHInt");
@@ -142,20 +144,23 @@ void TestsCoders::runAll(){
     TestsCodersUtils::compareFiles(expected_bits_csv_path, bits_csv_path);
 }
 
-void TestsCoders::testCoderBasic(){
-    setCoderPaths("CoderBasic");
-    ds = Scripts::codeBasic(file_path, output_code_path);
+void TestsCoders::testCoder(std::string coder_name){
+    setCoderPaths(coder_name);
+    if (coder_name == "CoderBasic"){
+        ds = Scripts::codeBasic(file_path, output_code_path);
+    }
+    else {
+        ds = Scripts::code(coder_name, file_path, output_code_path, win_size, errors_vector);
+    }
+    checkSize();
     TestsCodersUtils::writeBitsCSV(bits_csv, ds);
     TestsCodersUtils::compareFiles(output_code_path, expected_code_path);
     Scripts::decode(output_code_path, output_decode_path);
     TestsCodersUtils::compareDecodedFiles(mode, file_path, output_decode_path, expected_path_str, coder_name);
 }
 
-void TestsCoders::testCoder(std::string coder_name){
-    setCoderPaths(coder_name);
-    ds = Scripts::code(coder_name, file_path, output_code_path, win_size, errors_vector);
-    TestsCodersUtils::writeBitsCSV(bits_csv, ds);
-    TestsCodersUtils::compareFiles(output_code_path, expected_code_path);
-    Scripts::decode(output_code_path, output_decode_path);
-    TestsCodersUtils::compareDecodedFiles(mode, file_path, output_decode_path, expected_path_str, coder_name);
+void TestsCoders::checkSize(){
+    int total_bytes_1 = BitStreamUtils::getSize(output_code_path);
+    int total_bytes_2 = (ds->total_bits + 7) / 8; // round_up(ds->total_bits / 8)
+    assert(total_bytes_1 == total_bytes_2);
 }
