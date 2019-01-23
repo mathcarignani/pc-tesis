@@ -19,7 +19,7 @@ from compress_gamps import gamps_group_thresholds
 
 def compress_decompress_compare(args):
     print "Compressing and decompressing files..."
-    coder_info, columns_bits, column_mask_bits = code_decode_cpp(args)
+    coder_info, header_bits, columns_bits, column_mask_bits = code_decode_cpp(args)
     print "Comparing original and decompressed files..."
     csv_compare = CSVCompare(args.input_path, args.input_filename, args.output_path, args.deco_filename)
     same_file = csv_compare.compare(args.coder_params.get('error_threshold'), False)
@@ -27,17 +27,17 @@ def compress_decompress_compare(args):
         print "ERROR / ERROR / ERROR"
     assert same_file
 
-    return [coder_info, columns_bits, column_mask_bits, same_file]
+    return [coder_info, header_bits, columns_bits, column_mask_bits, same_file]
 
 
 def compress_file(args):
-    coder_info, columns_bits, column_mask_bits, same_file = compress_decompress_compare(args)
+    coder_info, header_bits, columns_bits, column_mask_bits, same_file = compress_decompress_compare(args)
 
     # print results
     input_file = args.input_path + "/" + args.input_filename
     compressed_file = args.output_path + "/" + args.compressed_filename
     compressed_size = print_results(coder_info, args.logger, input_file, compressed_file, same_file)
-    size_check(compressed_size, columns_bits, column_mask_bits)
+    size_check(compressed_size, header_bits, columns_bits, column_mask_bits)
     compression_values = []
     for i in range(0, len(columns_bits)):
         compression_values.append(columns_bits[i])
@@ -46,13 +46,16 @@ def compress_file(args):
     return [compressed_size] + compression_values
 
 
-def size_check(compressed_size, columns_bits, column_mask_bits):
-    columns_bytes = sum(columns_bits + column_mask_bits)/8
-    diff = compressed_size - columns_bytes
+def size_check(compressed_size, header_bits, columns_bits, column_mask_bits):
+    bits_sum = header_bits + sum(columns_bits + column_mask_bits)
+    bytes_sum = (bits_sum + 7) / 8
+    assert(compressed_size == bytes_sum)
+
+    header_bytes = (header_bits + 7) / 8
     max_header_size = 15000
-    if diff >= max_header_size:
-        print 'DIFF = %s' % diff
-    assert(diff < max_header_size)
+    if header_bytes >= max_header_size:
+        print 'header_bytes = %s' % header_bytes
+    assert(header_bytes < max_header_size)
 
 
 def print_results(coder_info, logger, input_file, compressed_file, same_file):

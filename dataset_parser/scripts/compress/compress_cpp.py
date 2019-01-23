@@ -13,25 +13,29 @@ def execute(exe_str):
     print ">>>>>>>>>>>>>>>>>>>>>>>>>>>> C++"
     column_bits = []
     column_mask_bits = []
+    header_bits = 0
     if print_mode:
         os.system(exe_str)
         print "<<<<<<<<<<<<<<<<<<<<<<<<<<<< C++"
-        return column_bits, column_mask_bits
+        return header_bits, column_bits, column_mask_bits
 
     sub = subprocess.Popen(exe_str.split(" "), stdout=subprocess.PIPE)
     stdout = sub.communicate()[0]
     stdout_list = stdout.split("\n")
     for line in stdout_list:
-        if "total_bits" in line:
+        if "header_bits" in line:
             print line
-            bits = int(line.replace("total_bits ", ""))
-            column_bits.append(bits)
+            header_bits = int(line.replace("header_bits ", ""))
         elif "total_mask_bits" in line:
             print line
             bits = int(line.replace("total_mask_bits ", ""))
             column_mask_bits.append(bits)
+        elif "total_bits" in line:
+            print line
+            bits = int(line.replace("total_bits ", ""))
+            column_bits.append(bits)
     print "<<<<<<<<<<<<<<<<<<<<<<<<<<<< C++"
-    return column_bits, column_mask_bits
+    return header_bits, column_bits, column_mask_bits
 
 
 def code_cpp(args):
@@ -41,10 +45,10 @@ def code_cpp(args):
     exe_str += " " + args.input_path + " " + args.input_filename
     exe_str += " " + args.output_path + " " + args.compressed_filename
     exe_str += " " + coder_params(args)
-    column_bits, column_mask_bits = execute(exe_str)
+    header_bits, column_bits, column_mask_bits = execute(exe_str)
     elapsed_time = time.time() - start_time
     print args.input_filename, "code_c++ - elapsed time =", round(elapsed_time, 2), "seconds"
-    return [args.coder_name, column_bits, column_mask_bits]
+    return [args.coder_name, header_bits, column_bits, column_mask_bits]
 
 
 def decode_cpp(args):
@@ -75,6 +79,6 @@ def coder_params(args):
 
 
 def code_decode_cpp(args):
-    coder_name, column_bits, column_mask_bits = code_cpp(args)
+    coder_name, header_bits, column_bits, column_mask_bits = code_cpp(args)
     decode_cpp(args)
-    return [coder_name, column_bits, column_mask_bits]
+    return [coder_name, header_bits, column_bits, column_mask_bits]
