@@ -22,12 +22,11 @@ void Dataset::setHeaderValues(std::vector<Range> ranges, int data_columns_count_
     array_index = 0;
 }
 
-void Dataset::updateRangesGAMPS(int group_index){
-    int column_code_vector_index = group_index + 1; // skip time delta column
-    ColumnCode* current_column_code = column_code_vector.at(column_code_vector_index);
+void Dataset::updateRangesGAMPS(int base_column_index){
+    ColumnCode* current_column_code = column_code_vector.at(base_column_index);
     int nan_minus_one = current_column_code->nan - 1;
     Range range = Range(-nan_minus_one, nan_minus_one);
-    current_column_code->updateRange(range, column_code_vector_index);
+    current_column_code->updateRange(range, base_column_index);
 }
 
 void Dataset::setColumn(int column_index){

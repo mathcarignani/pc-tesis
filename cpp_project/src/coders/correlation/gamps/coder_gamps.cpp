@@ -20,6 +20,7 @@ void CoderGAMPS::codeCoderParams(){
 
 void CoderGAMPS::codeDataRows(){
     codeTimeDeltaColumn();
+    codeMapping();
     codeColumnGroups();
 }
 
@@ -33,36 +34,84 @@ void CoderGAMPS::codeTimeDeltaColumn(){
     time_delta_vector = TimeDeltaCoder::code(this);
 }
 
-void CoderGAMPS::codeColumnGroups(){
-    assert(error_thresholds_vector.size() == dataset->dataColumnsGroupCount() + 1);
-    for(int i=0; i < dataset->dataColumnsGroupCount(); i++){
-    #if COUT
-        std::cout << "ccode column group = " << i << std::endl;
-    #endif
-        codeColumnGroup(i);
+void CoderGAMPS::calculateMappingTable(){
+    // TODO: implement this method
+
+    int base_columns_count = dataset->dataColumnsGroupCount();
+    std::cout << "base_columns_count = " << base_columns_count << std::endl;
+
+    std::vector<MapEntry*> mapping_vector;
+    std::vector<int> base_columns_indexes;
+    MapEntry* map_entry;
+
+    for(int i = 0; i < dataset->data_columns_count; i++){
+        std::vector<int> ratio_signals;
+        int column_index = i + 1;
+
+        if (i < base_columns_count){ // base column
+            std::cout << "base_column = " << column_index << std::endl;
+            base_columns_indexes.push_back(column_index);
+            for (int j = i + base_columns_count; j < dataset->data_columns_count; j += base_columns_count){
+                ratio_signals.push_back(j);
+            }
+            VectorUtils::printIntVector(ratio_signals);
+            map_entry = new MapEntry(column_index, column_index, ratio_signals);
+        }
+        else { // ratio column
+            std::cout << "ratio_column = " << column_index << std::endl;
+            int base_column_index = (i % base_columns_count) + 1;
+            std::cout << "base_index = " << base_column_index << std::endl;
+            map_entry = new MapEntry(column_index, base_column_index, ratio_signals);
+        }
+        mapping_vector.push_back(map_entry);
+    }
+    VectorUtils::printIntVector(base_columns_indexes);
+    mapping_table = new MappingTable(mapping_vector, base_columns_indexes);
+}
+
+void CoderGAMPS::codeMapping(){
+    calculateMappingTable();
+    int column_index_bit_length = MathUtils::bitLength(dataset->data_columns_count);
+    for (int i = 0; i < dataset->data_columns_count; i++){
+        std::cout << "size = " << mapping_table->mapping_vector.size() << std::endl;
+        MapEntry* map_entry = mapping_table->mapping_vector.at(i);
+        codeInt(map_entry->base_column_index - 1, column_index_bit_length);
+        std::cout << "codeInt(" << map_entry->base_column_index - 1 << ", " << column_index_bit_length << ")" << std::endl;
     }
 }
 
-void CoderGAMPS::codeColumnGroup(int group_index){
-    std::vector<int> column_group_indexes = GAMPSUtils::columnGroupIndexes(dataset, group_index);
-    VectorUtils::printIntVector(column_group_indexes);
+void CoderGAMPS::codeColumnGroups(){
+#if CHECKS
+    assert(error_thresholds_vector.size() - 1 == mapping_table->baseColumnsCount());
+#endif
+    for(int i=0; i < mapping_table->baseColumnsCount(); i++){
+        int base_column_index = mapping_table->base_columns_indexes.at(i);
+    #if COUT
+        std::cout << "base_column_index_code = " << base_column_index << std::endl;
+    #endif
+        codeColumnGroup(base_column_index);
+    }
+}
 
+void CoderGAMPS::codeColumnGroup(int base_column_index){
     int base_threshold, ratio_threshold;
-    groupThresholds(error_thresholds_vector.at(group_index + 1), base_threshold, ratio_threshold);
+    groupThresholds(error_thresholds_vector.at(base_column_index), base_threshold, ratio_threshold);
     std::cout << "base_threshold = " << base_threshold << std::endl;
     std::cout << "ratio_threshold = " << ratio_threshold << std::endl;
 
     // code base column
-    column_index = column_group_indexes.at(0);
+    column_index = base_column_index;
 #if COUT
     std::cout << "ccode column_index " << column_index << std::endl;
 #endif
     dataset->setColumn(column_index);
     std::vector<std::string> base_column = codeBaseColumn(base_threshold);
-    dataset->updateRangesGAMPS(group_index);
+    dataset->updateRangesGAMPS(base_column_index);
 
     // code ratio columns
-    for(int i=1; i < column_group_indexes.size(); i++){
+    std::vector<int> column_group_indexes = mapping_table->ratioSignals(base_column_index);
+    VectorUtils::printIntVector(column_group_indexes);
+    for(int i=0; i < column_group_indexes.size(); i++){
         column_index = column_group_indexes.at(i);
     #if COUT
         std::cout << "ccode column_index " << column_index << std::endl;

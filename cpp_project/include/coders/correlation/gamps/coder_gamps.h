@@ -4,6 +4,8 @@
 
 #include "coder_base.h"
 #include "apca_window.h"
+#include "structs.h"
+
 
 class CoderGAMPS: public CoderBase {
 
@@ -19,12 +21,16 @@ private:
     int total_data_rows;
     APCAWindow* window;
 
+    MappingTable* mapping_table;
+
     void codeCoderParams() override;
 
     void codeDataRows() override;
     void codeTimeDeltaColumn();
+    void calculateMappingTable();
+    void codeMapping();
     void codeColumnGroups();
-    void codeColumnGroup(int group_index);
+    void codeColumnGroup(int base_column_index);
 
     // TODO: merge these two methods into one
     std::vector<std::string> codeBaseColumn(int error_threshold);
