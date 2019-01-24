@@ -192,7 +192,7 @@ set(CODER_FR_H_FILES ${CODER_FR_H_DIR}/fr_window.h ${CODER_FR_H_DIR}/coder_fr.h 
 set(CODER_FR_SRC_FILES ${CODER_FR_SRC_DIR}/fr_window.cpp ${CODER_FR_SRC_DIR}/coder_fr.cpp ${CODER_FR_SRC_DIR}/decoder_fr.cpp)
 
 set(CODER_GAMPS_H_FILES ${CODER_GAMPS_H_DIR}/structs.h ${CODER_GAMPS_H_DIR}/coder_gamps.h ${CODER_GAMPS_H_DIR}/decoder_gamps.h)
-set(CODER_GAMPS_SRC_FILES ${CODER_GAMPS_SRC_DIR}/gamps_utils.cpp ${CODER_GAMPS_SRC_DIR}/coder_gamps.cpp ${CODER_GAMPS_SRC_DIR}/decoder_gamps.cpp)
+set(CODER_GAMPS_SRC_FILES ${CODER_GAMPS_SRC_DIR}/structs.cpp ${CODER_GAMPS_SRC_DIR}/gamps_utils.cpp ${CODER_GAMPS_SRC_DIR}/coder_gamps.cpp ${CODER_GAMPS_SRC_DIR}/decoder_gamps.cpp)
 
 set(CODER_H_FILES0 ${CODERS_H_DIR}/constants.h ${CODER_UTILS_H_DIR}/coder_utils.h ${CODER_UTILS_H_DIR}/column.h)
 set(CODER_H_FILES1 ${CODER_HER_H_FILES} ${CODER_MASK_H_FILES} ${CODER_SIMPLE_MASK_H_FILES} ${CODER_GOLOMB_MASK_H_FILES} ${DATASET_H_FILES})

@@ -465,6 +465,9 @@
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/correlation/gamps/gamps_utils.cpp">
 			<Option target="cpp_project"/>
 		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/correlation/gamps/structs.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/linear/ca/ca_window.cpp">
 			<Option target="cpp_project"/>
 		</Unit>

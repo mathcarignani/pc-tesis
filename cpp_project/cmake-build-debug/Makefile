@@ -717,6 +717,33 @@ src/coders/correlation/gamps/gamps_utils.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/correlation/gamps/gamps_utils.cpp.s
 .PHONY : src/coders/correlation/gamps/gamps_utils.cpp.s
 
+src/coders/correlation/gamps/structs.o: src/coders/correlation/gamps/structs.cpp.o
+
+.PHONY : src/coders/correlation/gamps/structs.o
+
+# target to build an object file
+src/coders/correlation/gamps/structs.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/correlation/gamps/structs.cpp.o
+.PHONY : src/coders/correlation/gamps/structs.cpp.o
+
+src/coders/correlation/gamps/structs.i: src/coders/correlation/gamps/structs.cpp.i
+
+.PHONY : src/coders/correlation/gamps/structs.i
+
+# target to preprocess a source file
+src/coders/correlation/gamps/structs.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/correlation/gamps/structs.cpp.i
+.PHONY : src/coders/correlation/gamps/structs.cpp.i
+
+src/coders/correlation/gamps/structs.s: src/coders/correlation/gamps/structs.cpp.s
+
+.PHONY : src/coders/correlation/gamps/structs.s
+
+# target to generate assembly for a file
+src/coders/correlation/gamps/structs.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/correlation/gamps/structs.cpp.s
+.PHONY : src/coders/correlation/gamps/structs.cpp.s
+
 src/coders/linear/ca/ca_window.o: src/coders/linear/ca/ca_window.cpp.o
 
 .PHONY : src/coders/linear/ca/ca_window.o
@@ -2304,6 +2331,9 @@ help:
 	@echo "... src/coders/correlation/gamps/gamps_utils.o"
 	@echo "... src/coders/correlation/gamps/gamps_utils.i"
 	@echo "... src/coders/correlation/gamps/gamps_utils.s"
+	@echo "... src/coders/correlation/gamps/structs.o"
+	@echo "... src/coders/correlation/gamps/structs.i"
+	@echo "... src/coders/correlation/gamps/structs.s"
 	@echo "... src/coders/linear/ca/ca_window.o"
 	@echo "... src/coders/linear/ca/ca_window.i"
 	@echo "... src/coders/linear/ca/ca_window.s"
