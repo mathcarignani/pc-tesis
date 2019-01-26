@@ -49,6 +49,8 @@
 					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/DataStructures/DynArray"/>
 					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/DataStructures/Line"/>
 					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/DataStructures/Polygon"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/Algorithms/GAMPS/Control"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/Algorithms/GAMPS/Data"/>
 					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/Algorithms/PWLH/Control"/>
 					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/Algorithms/SlideFilter/Data"/>
 					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include"/>
@@ -105,6 +107,8 @@
 					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/DataStructures/DynArray"/>
 					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/DataStructures/Line"/>
 					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/DataStructures/Polygon"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/Algorithms/GAMPS/Control"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/Algorithms/GAMPS/Data"/>
 					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/Algorithms/PWLH/Control"/>
 					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/Algorithms/SlideFilter/Data"/>
 					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include"/>
@@ -150,6 +154,30 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/Algorithms/GAMPS/Control/FacilityLocProb.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/Algorithms/GAMPS/Control/FacilityLocProb.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/Algorithms/GAMPS/Control/GAMPS_Computation.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/Algorithms/GAMPS/Control/GAMPS_Computation.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/Algorithms/GAMPS/Data/GAMPSInput.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/Algorithms/GAMPS/Data/GAMPSInput.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/Algorithms/GAMPS/Data/GAMPSOutput.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/Algorithms/GAMPS/Data/GAMPSOutput.h">
+			<Option target="cpp_project"/>
+		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/Algorithms/PWLH/Control/LinearBucket.cpp">
 			<Option target="cpp_project"/>
 		</Unit>
@@ -166,6 +194,15 @@
 			<Option target="cpp_project"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/DataManagementLayer/Data/DataStream.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/DataManagementLayer/Data/MultiDataStream.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/DataManagementLayer/Data/MultiDataStream.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/DataManagementLayer/Data/Output.h">
 			<Option target="cpp_project"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/DataStructures/DynArray/DynArray.cpp">
