@@ -6,14 +6,15 @@ set(CMAKE_CXX_STANDARD 11)
 ###############################
 
 set(BENCHMARK_DIR external/benchmarkLinux)
-set(PWLH_CONTROL_DIR external/benchmarkLinux/Algorithms/PWLH/Control)
-set(DATA_DIR external/benchmarkLinux/DataManagementLayer/Data)
-set(DYN_ARRAY_DIR external/benchmarkLinux/DataStructures/DynArray)
-set(LINE_DIR external/benchmarkLinux/DataStructures/Line)
-set(POLYGON_DIR external/benchmarkLinux/DataStructures/Polygon)
-set(SF_DATA_DIR external/benchmarkLinux/Algorithms/SlideFilter/Data)
+set(ALGORITHMS_DIR ${BENCHMARK_DIR}/Algorithms)
+set(PWLH_CONTROL_DIR ${ALGORITHMS_DIR}/PWLH/Control)
+set(SF_DATA_DIR ${ALGORITHMS_DIR}/SlideFilter/Data)
+set(DATA_DIR ${BENCHMARK_DIR}/DataManagementLayer/Data)
+set(DYN_ARRAY_DIR ${BENCHMARK_DIR}/DataStructures/DynArray)
+set(LINE_DIR ${BENCHMARK_DIR}/DataStructures/Line)
+set(POLYGON_DIR ${BENCHMARK_DIR}/DataStructures/Polygon)
 
-set(EXTERNAL_DIRS ${BENCHMARK_DIR} ${PWLH_CONTROL_DIR} ${DATA_DIR} ${DYN_ARRAY_DIR} ${LINE_DIR} ${POLYGON_DIR} ${SF_DATA_DIR})
+set(EXTERNAL_DIRS ${BENCHMARK_DIR} ${DATA_DIR} ${DYN_ARRAY_DIR} ${LINE_DIR} ${POLYGON_DIR} ${PWLH_CONTROL_DIR} ${SF_DATA_DIR})
 
 set(CODERS_H_DIR include/coders)
 set(CODERS_SRC_DIR src/coders)

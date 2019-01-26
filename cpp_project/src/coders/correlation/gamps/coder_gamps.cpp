@@ -163,6 +163,6 @@ void CoderGAMPS::codeRatioColumn(int error_threshold, std::vector<std::string> b
 
 std::string CoderGAMPS::calculateDiff(std::string base_value, std::string ratio_value){
     if (Constants::isNoData(base_value) || Constants::isNoData(ratio_value)) { return ratio_value; }
-    int diff = StringUtils::stringToInt(ratio_value) - StringUtils::stringToInt(base_value);
+    int diff = StringUtils::stringToInt(ratio_value) - StringUtils::stringToInt(base_value); // TODO: wrong! use division
     return StringUtils::intToString(diff);
 }
