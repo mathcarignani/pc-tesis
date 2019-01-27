@@ -154,15 +154,30 @@ void CoderGAMPS::codeRatioColumn(int error_threshold, std::vector<std::string> b
     input_csv->goToFirstDataRow(column_index);
     while (input_csv->continue_reading){
         row_index++;
-        std::string csv_value = input_csv->readLineCSVWithIndex();
-        std::string diff_value = calculateDiff(base_column.at(row_index), csv_value);
+        std::string ratio_value = input_csv->readLineCSVWithIndex();
+        std::string base_value = base_column.at(row_index);
+        std::string diff_value = calculateDiff(base_value, ratio_value);
         CoderAPCA::codeColumnWhile(this, window, diff_value);
     }
     CoderAPCA::codeColumnAfter(this, window);
 }
 
 std::string CoderGAMPS::calculateDiff(std::string base_value, std::string ratio_value){
-    if (Constants::isNoData(base_value) || Constants::isNoData(ratio_value)) { return ratio_value; }
-    int diff = StringUtils::stringToInt(ratio_value) - StringUtils::stringToInt(base_value); // TODO: wrong! use division
+    if (Constants::isNoData(base_value) || Constants::isNoData(ratio_value)) {
+        return ratio_value;
+    }
+    int int_ratio_value = StringUtils::stringToInt(ratio_value);
+    int int_base_value = StringUtils::stringToInt(base_value);
+    int diff = calculateDeltaSignal(int_ratio_value, int_base_value); // TODO: wrong! use division
     return StringUtils::intToString(diff);
+}
+
+int CoderGAMPS::calculateDeltaSignal(int vi_t, int vj_t){
+    return vi_t - vj_t;
+}
+
+double CoderGAMPS::calculateRatioSignal(int vi_t, int vj_t){
+    assert(vi_t > 0);
+    assert(vj_t > 0);
+    return (double) vi_t / vj_t;
 }
