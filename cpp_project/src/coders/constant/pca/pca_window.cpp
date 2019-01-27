@@ -4,6 +4,7 @@
 #include <iostream>
 #include <math_utils.h>
 #include "string_utils.h"
+#include "constant_coder_utils.h"
 
 PCAWindow::PCAWindow(int window_size_, int error_threshold_){
     window_size = window_size_;
@@ -24,7 +25,7 @@ void PCAWindow::updateMinAndMax(int x_int){
 }
 
 void PCAWindow::updateConstantValue(){
-    constant_value = calculateConstantValue(min, max);
+    constant_value = ConstantCoderUtils::calculateConstantValue(min, max);
 }
 
 void PCAWindow::addValue(std::string x){
@@ -63,7 +64,7 @@ void PCAWindow::addNonFirstValue(std::string x){
 
     int x_int = StringUtils::stringToInt(x);
     updateMinAndMax(x_int);
-    if (validThreshold(min, max, error_threshold)){
+    if (ConstantCoderUtils::validThreshold(min, max, error_threshold)){
         updateConstantValue();
     }
     else {
@@ -87,15 +88,4 @@ void PCAWindow::clearWindow(){
 
 std::string PCAWindow::getElement(int pos){
     return array->at(pos);
-}
-
-std::string PCAWindow::calculateConstantValue(int min, int max){
-    int constant = min + max;
-    if (constant != 0) { constant /= 2; }
-    return StringUtils::intToString(constant);
-}
-
-bool PCAWindow::validThreshold(int min, int max, int error_threshold){
-    int width = MathUtils::intAbsolute(max - min);
-    return width <= 2*error_threshold;
 }

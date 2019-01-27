@@ -156,6 +156,7 @@ void CoderGAMPS::codeRatioColumn(int error_threshold, std::vector<std::string> b
         row_index++;
         std::string ratio_value = input_csv->readLineCSVWithIndex();
         std::string base_value = base_column.at(row_index);
+
         std::string diff_value = calculateDiff(base_value, ratio_value);
         CoderAPCA::codeColumnWhile(this, window, diff_value);
     }
@@ -168,16 +169,21 @@ std::string CoderGAMPS::calculateDiff(std::string base_value, std::string ratio_
     }
     int int_ratio_value = StringUtils::stringToInt(ratio_value);
     int int_base_value = StringUtils::stringToInt(base_value);
-    int diff = calculateDeltaSignal(int_ratio_value, int_base_value); // TODO: wrong! use division
-    return StringUtils::intToString(diff);
+
+    std::string diff = calculateDeltaSignal(int_ratio_value, int_base_value);
+//    std::string diff = calculateRatioSignal(int_ratio_value, int_base_value);
+
+    return diff;
 }
 
-int CoderGAMPS::calculateDeltaSignal(int vi_t, int vj_t){
-    return vi_t - vj_t;
+std::string CoderGAMPS::calculateDeltaSignal(int vi_t, int vj_t){
+    int delta = vi_t - vj_t;
+    return StringUtils::intToString(delta);
 }
 
-double CoderGAMPS::calculateRatioSignal(int vi_t, int vj_t){
+std::string CoderGAMPS::calculateRatioSignal(int vi_t, int vj_t){
     assert(vi_t > 0);
     assert(vj_t > 0);
-    return (double) vi_t / vj_t;
+    double ratio = (double) vi_t / vj_t;
+    return StringUtils::doubleToString(ratio);
 }

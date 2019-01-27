@@ -38,10 +38,9 @@ private:
 
     void groupThresholds(int threshold, int & base_threshold, int & ratio_threshold);
 
-
     static std::string calculateDiff(std::string base_value, std::string ratio_value);
-    static int calculateDeltaSignal(int vi_t, int vj_t);
-    static double calculateRatioSignal(int vi_t, int vj_t);
+    static std::string calculateDeltaSignal(int vi_t, int vj_t);
+    static std::string calculateRatioSignal(int vi_t, int vj_t);
 
 public:
     using CoderBase::CoderBase;

@@ -62,6 +62,7 @@
 					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/base"/>
 					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/cols"/>
 					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/basic"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/constant"/>
 					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/constant/pca"/>
 					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/constant/apca"/>
 					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/pwlh"/>
@@ -120,6 +121,7 @@
 					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/base"/>
 					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/cols"/>
 					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/basic"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/constant"/>
 					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/constant/pca"/>
 					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/constant/apca"/>
 					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/pwlh"/>
@@ -251,6 +253,9 @@
 			<Option target="cpp_project"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/constant/apca/decoder_apca.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/constant/constant_coder_utils.h">
 			<Option target="cpp_project"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/constant/pca/coder_pca.h">

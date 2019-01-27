@@ -3,15 +3,15 @@
 #define CPP_PROJECT_APCA_WINDOW_H
 
 #include <string>
-#include "pca_window.h"
+#include "constants.h"
 
 class APCAWindow {
 
 private:
     int window_size;
     int error_threshold;
-    int min;
-    int max;
+    double min;
+    double max;
 #if !MASK_MODE
     bool nan_window;
 #endif
@@ -26,7 +26,7 @@ public:
     bool isFull();
     bool isEmpty();
     void addFirstValue(std::string x);
-    bool updateConstantValue(int new_min, int new_max);
+    bool updateConstantValue(double new_min, double new_max);
 };
 
 #endif //CPP_PROJECT_APCA_WINDOW_H

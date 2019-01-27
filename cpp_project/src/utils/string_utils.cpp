@@ -3,12 +3,30 @@
 #include "math_utils.h"
 #include <iostream>
 
+bool StringUtils::charInString(const char ch, const std::string & str){
+    return str.find(ch) != std::string::npos;
+}
+
+bool StringUtils::stringIsDouble(std::string & str){
+    return charInString('.', str);
+}
+
+double StringUtils::stringToDouble(std::string & str){
+    const char* c = str.c_str();
+    return atof(c);
+}
+
 int StringUtils::stringToInt(std::string & str){
     return std::stoi(str);
 }
 
-std::string StringUtils::intToString(int & integer){
-    return std::to_string(integer);
+std::string StringUtils::intToString(int & value){
+    return std::to_string(value);
+}
+
+std::string StringUtils::doubleToString(double d){
+    int d_int = MathUtils::doubleToInt(d);
+    return intToString(d_int);
 }
 
 std::string StringUtils::intToStringPos(int & integer, int size){
@@ -146,9 +164,4 @@ int StringUtils::charToInt(const char character){
 
 const char StringUtils::intToChar(const int integer){
     return (char) integer;
-}
-
-std::string StringUtils::doubleToString(double d){
-    int d_int = MathUtils::doubleToInt(d);
-    return intToString(d_int);
 }

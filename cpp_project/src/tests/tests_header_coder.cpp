@@ -70,21 +70,21 @@ void TestsHeaderCoder::testColumnCodeVector(){
 
 void TestsHeaderCoder::testUpdateRangesGAMPS(){
     codeHeader(Path(TestsUtils::IRKIS_PATH, "vwc_1202.dat.csv"));
-    dataset->updateRangesGAMPS(0);
+    dataset->updateRangesGAMPS(1);
     column_code_vector = dataset->column_code_vector;
     assert(column_code_vector.size() == 2);
     checkColumnCode(0, Range(0, 131071), 17, 0, -1);
     checkColumnCode(1, Range(-600, 600), 11, 600, 1201);
 
     codeHeader(Path(TestsUtils::NOAA_SST_PATH, "noaa-buoy-201701.csv"));
-    dataset->updateRangesGAMPS(0);
+    dataset->updateRangesGAMPS(1);
     column_code_vector = dataset->column_code_vector;
     assert(column_code_vector.size() == 2);
     checkColumnCode(0, Range(0, 131071), 17, 0, -1);
     checkColumnCode(1, Range(-40000, 40000), 17, 40000, 80001);
 
     codeHeader(Path(TestsUtils::NOAA_ADCP_PATH, "noaa-adcp-201501.csv"));
-    dataset->updateRangesGAMPS(0);
+    dataset->updateRangesGAMPS(1);
     column_code_vector = dataset->column_code_vector;
     assert(column_code_vector.size() == 2);
     checkColumnCode(0, Range(0, 131071), 17, 0, -1);

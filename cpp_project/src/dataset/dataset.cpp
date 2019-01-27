@@ -1,7 +1,7 @@
 
 #include "dataset.h"
 #include "assert.h"
-
+#include "constants.h"
 
 Dataset::Dataset(){
     total_bits = 0;
@@ -23,6 +23,9 @@ void Dataset::setHeaderValues(std::vector<Range> ranges, int data_columns_count_
 }
 
 void Dataset::updateRangesGAMPS(int base_column_index){
+#if CHECKS
+    assert(base_column_index > 0); // cannot be the delta time column
+#endif
     ColumnCode* current_column_code = column_code_vector.at(base_column_index);
     int nan_minus_one = current_column_code->nan - 1;
     Range range = Range(-nan_minus_one, nan_minus_one);

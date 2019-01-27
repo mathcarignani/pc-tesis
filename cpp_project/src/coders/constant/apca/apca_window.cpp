@@ -1,6 +1,7 @@
 
 #include "apca_window.h"
 
+#include "constant_coder_utils.h"
 #include "string_utils.h"
 #include "math_utils.h"
 #include "iostream"
@@ -30,23 +31,23 @@ bool APCAWindow::conditionHolds(std::string x){
         if (nan_window){ length++; return true;  }
         else {                     return false; }
     }
-    // x is an integer
+    // x is a double
     if (nan_window) { return false; }
 #endif
-    int x_int = StringUtils::stringToInt(x);
-    if (x_int < min) { return updateConstantValue(x_int, max); }
-    if (x_int > max) { return updateConstantValue(min, x_int); }
-    // min <= x_int <= max
+    double x_double = StringUtils::stringToDouble(x);
+    if (x_double < min) { return updateConstantValue(x_double, max); }
+    if (x_double > max) { return updateConstantValue(min, x_double); }
+    // min <= x_double <= max
     length++;
     return true;
 }
 
-bool APCAWindow::updateConstantValue(int new_min, int new_max){
-    if (!PCAWindow::validThreshold(new_min, new_max, error_threshold)) { return false; }
+bool APCAWindow::updateConstantValue(double new_min, double new_max){
+    if (!ConstantCoderUtils::validThreshold(new_min, new_max, error_threshold)) { return false; }
 
     // condition holds, update min, max and constant
     min = new_min; max = new_max;
-    constant_value = PCAWindow::calculateConstantValue(min, max);
+    constant_value = ConstantCoderUtils::calculateConstantValue(min, max);
     length++;
     return true;
 }
@@ -67,12 +68,12 @@ void APCAWindow::addFirstValue(std::string x){
         length = 1;
         return;
     }
-    // x is an integer
+    // x is a double
     nan_window = false;
 #endif
-    int x_int = StringUtils::stringToInt(x);
-    min = x_int;
-    max = x_int;
+    double x_double = StringUtils::stringToDouble(x);
+    min = x_double;
+    max = x_double;
     constant_value = x;
     length = 1;
 }
