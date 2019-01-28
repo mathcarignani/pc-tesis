@@ -8,6 +8,9 @@
 #include "coder_apca.h"
 #include "gamps_utils.h"
 
+#include "GAMPS.h"
+#include "GAMPSInput.h"
+
 void CoderGAMPS::setCoderParams(int window_size_, std::vector<int> error_thresholds_vector_){
     window_size = window_size_;
     error_thresholds_vector = error_thresholds_vector_;
@@ -20,9 +23,57 @@ void CoderGAMPS::codeCoderParams(){
 
 void CoderGAMPS::codeDataRows(){
     codeTimeDeltaColumn();
+
+
+    double epsilon = 5;
+
+    int column_count = 9;
+    CMultiDataStream* multiStream = new CMultiDataStream(column_count);
+    for(int i = 0; i < column_count; i++)
+    {
+        int col_index = i + 1;
+        std::cout << "Parsing column " << col_index << std::endl;
+
+        CDataStream* signal = getColumn(col_index);
+        multiStream->addSingleStream(signal);
+    }
+
+//    GAMPSInput* gamps_input = new GAMPSInput(multiStream);
+//    GAMPS* gamps = new GAMPS(5, gamps_input);
+//    gamps->compute();
+//    GAMPSOutput* gamps_output = gamps->getOutput();
+
+
 //    codeMapping();
 //    codeColumnGroups();
 }
+
+CDataStream* CoderGAMPS::getColumn(int column_index){
+    CDataStream* dataStream = new CDataStream();
+
+    std::string previous_csv_value = "0";
+
+    input_csv->goToFirstDataRow(column_index);
+    int timestamp = 0;
+
+    while (input_csv->continue_reading){
+        std::string csv_value = input_csv->readLineCSVWithIndex();
+
+        if (Constants::isNoData(csv_value)){
+            csv_value = previous_csv_value;
+        }
+
+        DataItem entry;
+        entry.value = StringUtils::stringToInt(csv_value);
+        entry.timestamp = timestamp;
+        dataStream->add(entry);
+        timestamp++;
+    }
+    assert(dataStream->size() == data_rows_count);
+    assert(timestamp == data_rows_count);
+    return dataStream;
+}
+
 
 void CoderGAMPS::codeTimeDeltaColumn(){
     column_index = 0;

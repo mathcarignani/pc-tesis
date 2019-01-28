@@ -6,6 +6,7 @@
 #include "apca_window.h"
 #include "structs.h"
 
+#include "DataStream.h"
 
 class CoderGAMPS: public CoderBase {
 
@@ -41,6 +42,9 @@ private:
 //    static std::string calculateDiff(std::string base_value, std::string ratio_value);
 //    static std::string calculateDeltaSignal(int vi_t, int vj_t);
 //    static std::string calculateRatioSignal(int vi_t, int vj_t);
+
+
+    CDataStream* getColumn(int column_index);
 
 public:
     using CoderBase::CoderBase;
