@@ -11,16 +11,16 @@ private:
     std::vector<std::vector<std::string>> columns;
     int column_index;
 
-    MappingTable* mapping_table;
+//    MappingTable* mapping_table;
 
     void decodeDataRows() override;
     void decodeTimeDeltaColumn();
-    void decodeMapping();
-    void decodeColumnGroups();
-    void decodeColumnGroup(int base_column_index);
-    std::vector<std::string> decodeBaseColumn();
-    void decodeRatioColumn(std::vector<std::string> base_column);
-    static std::string calculateRatio(std::string base_value, std::string diff_value);
+//    void decodeMapping();
+//    void decodeColumnGroups();
+//    void decodeColumnGroup(int base_column_index);
+//    std::vector<std::string> decodeBaseColumn();
+//    void decodeRatioColumn(std::vector<std::string> base_column);
+//    static std::string calculateRatio(std::string base_value, std::string diff_value);
 
 public:
     using DecoderBase::DecoderBase;

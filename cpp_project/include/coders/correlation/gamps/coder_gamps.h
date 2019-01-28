@@ -27,20 +27,20 @@ private:
 
     void codeDataRows() override;
     void codeTimeDeltaColumn();
-    void calculateMappingTable();
-    void codeMapping();
-    void codeColumnGroups();
-    void codeColumnGroup(int base_column_index);
+//    void calculateMappingTable();
+//    void codeMapping();
+//    void codeColumnGroups();
+//    void codeColumnGroup(int base_column_index);
 
     // TODO: merge these two methods into one
-    std::vector<std::string> codeBaseColumn(int error_threshold);
-    void codeRatioColumn(int error_threshold, std::vector<std::string> base_column);
+//    std::vector<std::string> codeBaseColumn(int error_threshold);
+//    void codeRatioColumn(int error_threshold, std::vector<std::string> base_column);
 
-    void groupThresholds(int threshold, int & base_threshold, int & ratio_threshold);
+//    void groupThresholds(int threshold, int & base_threshold, int & ratio_threshold);
 
-    static std::string calculateDiff(std::string base_value, std::string ratio_value);
-    static std::string calculateDeltaSignal(int vi_t, int vj_t);
-    static std::string calculateRatioSignal(int vi_t, int vj_t);
+//    static std::string calculateDiff(std::string base_value, std::string ratio_value);
+//    static std::string calculateDeltaSignal(int vi_t, int vj_t);
+//    static std::string calculateRatioSignal(int vi_t, int vj_t);
 
 public:
     using CoderBase::CoderBase;
