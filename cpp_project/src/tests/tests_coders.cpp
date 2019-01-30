@@ -34,9 +34,11 @@ void TestsCoders::testSideFilder() {
 }
 
 void TestsCoders::testGAMPS() {
-     Path file_path = Path(TestsUtils::IRKIS_PATH, "vwc_1202.dat.csv");
-     std::vector<int> lossless{0, 0};
-     std::vector<int>    lossy{0, 5};
+//    Path file_path = Path(TestsUtils::IRKIS_PATH, "vwc_1202.dat.csv");
+    Path file_path = Path(TestsUtils::OUTPUT_PATH, "vwc_1202.dat.csv");
+
+    std::vector<int> lossless{0, 0};
+    std::vector<int>    lossy{0, 5};
 
 //    Path file_path = Path(TestsUtils::NOAA_SPC_HAIL_PATH, "noaa_spc-hail.csv");
 //    std::vector<int> lossless{0, 0, 0, 0};

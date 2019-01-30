@@ -177,6 +177,33 @@ external/benchmarkLinux/Algorithms/GAMPS/Control/GAMPS_Computation.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/external/benchmarkLinux/Algorithms/GAMPS/Control/GAMPS_Computation.cpp.s
 .PHONY : external/benchmarkLinux/Algorithms/GAMPS/Control/GAMPS_Computation.cpp.s
 
+external/benchmarkLinux/Algorithms/GAMPS/Control/gamps.o: external/benchmarkLinux/Algorithms/GAMPS/Control/gamps.cpp.o
+
+.PHONY : external/benchmarkLinux/Algorithms/GAMPS/Control/gamps.o
+
+# target to build an object file
+external/benchmarkLinux/Algorithms/GAMPS/Control/gamps.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/external/benchmarkLinux/Algorithms/GAMPS/Control/gamps.cpp.o
+.PHONY : external/benchmarkLinux/Algorithms/GAMPS/Control/gamps.cpp.o
+
+external/benchmarkLinux/Algorithms/GAMPS/Control/gamps.i: external/benchmarkLinux/Algorithms/GAMPS/Control/gamps.cpp.i
+
+.PHONY : external/benchmarkLinux/Algorithms/GAMPS/Control/gamps.i
+
+# target to preprocess a source file
+external/benchmarkLinux/Algorithms/GAMPS/Control/gamps.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/external/benchmarkLinux/Algorithms/GAMPS/Control/gamps.cpp.i
+.PHONY : external/benchmarkLinux/Algorithms/GAMPS/Control/gamps.cpp.i
+
+external/benchmarkLinux/Algorithms/GAMPS/Control/gamps.s: external/benchmarkLinux/Algorithms/GAMPS/Control/gamps.cpp.s
+
+.PHONY : external/benchmarkLinux/Algorithms/GAMPS/Control/gamps.s
+
+# target to generate assembly for a file
+external/benchmarkLinux/Algorithms/GAMPS/Control/gamps.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/external/benchmarkLinux/Algorithms/GAMPS/Control/gamps.cpp.s
+.PHONY : external/benchmarkLinux/Algorithms/GAMPS/Control/gamps.cpp.s
+
 external/benchmarkLinux/Algorithms/GAMPS/Data/GAMPSInput.o: external/benchmarkLinux/Algorithms/GAMPS/Data/GAMPSInput.cpp.o
 
 .PHONY : external/benchmarkLinux/Algorithms/GAMPS/Data/GAMPSInput.o
@@ -2406,6 +2433,9 @@ help:
 	@echo "... external/benchmarkLinux/Algorithms/GAMPS/Control/GAMPS_Computation.o"
 	@echo "... external/benchmarkLinux/Algorithms/GAMPS/Control/GAMPS_Computation.i"
 	@echo "... external/benchmarkLinux/Algorithms/GAMPS/Control/GAMPS_Computation.s"
+	@echo "... external/benchmarkLinux/Algorithms/GAMPS/Control/gamps.o"
+	@echo "... external/benchmarkLinux/Algorithms/GAMPS/Control/gamps.i"
+	@echo "... external/benchmarkLinux/Algorithms/GAMPS/Control/gamps.s"
 	@echo "... external/benchmarkLinux/Algorithms/GAMPS/Data/GAMPSInput.o"
 	@echo "... external/benchmarkLinux/Algorithms/GAMPS/Data/GAMPSInput.i"
 	@echo "... external/benchmarkLinux/Algorithms/GAMPS/Data/GAMPSInput.s"

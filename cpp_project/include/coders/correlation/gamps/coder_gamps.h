@@ -7,6 +7,7 @@
 #include "structs.h"
 
 #include "DataStream.h"
+#include "GAMPSOutput.h"
 
 class CoderGAMPS: public CoderBase {
 
@@ -28,10 +29,14 @@ private:
 
     void codeDataRows() override;
     void codeTimeDeltaColumn();
-//    void calculateMappingTable();
-//    void codeMapping();
-//    void codeColumnGroups();
-//    void codeColumnGroup(int base_column_index);
+    GAMPSInput* getGAMPSInput();
+    void calculateMappingTable(GAMPSOutput* gamps_output);
+
+    void codeMapping();
+    void codeColumnGroups(GAMPSOutput* gamps_output);
+    void codeColumn(DynArray<GAMPSEntry>* temp);
+
+    void codeColumnGroup(int base_column_index);
 
     // TODO: merge these two methods into one
 //    std::vector<std::string> codeBaseColumn(int error_threshold);
