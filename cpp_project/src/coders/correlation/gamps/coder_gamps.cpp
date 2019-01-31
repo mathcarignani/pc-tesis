@@ -11,7 +11,6 @@
 void CoderGAMPS::setCoderParams(int window_size_, std::vector<int> error_thresholds_vector_){
     window_size = window_size_;
     error_thresholds_vector = error_thresholds_vector_;
-    window_size_bit_length = MathUtils::bitLength(window_size);
 }
 
 void CoderGAMPS::codeCoderParams(){

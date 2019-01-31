@@ -5,10 +5,7 @@
 #include "math_utils.h"
 #include "iostream"
 
-APCAWindow::APCAWindow(int window_size_, int error_threshold_){
-    window_size = window_size_;
-    window_size_bit_length = MathUtils::bitLength(window_size);
-    error_threshold = error_threshold_;
+APCAWindow::APCAWindow(int window_size_, int error_threshold_): Window(window_size_, error_threshold_){
     length = 0;
     min = 0;
     max = 0;

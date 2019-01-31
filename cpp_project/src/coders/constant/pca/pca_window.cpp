@@ -5,9 +5,7 @@
 #include <math_utils.h>
 #include "string_utils.h"
 
-PCAWindow::PCAWindow(int window_size_, int error_threshold_){
-    window_size = window_size_;
-    error_threshold = error_threshold_;
+PCAWindow::PCAWindow(int window_size_, int error_threshold_): Window(window_size_, error_threshold_){
     array = new std::vector<std::string>;
     length = 0;
     has_constant_value = true;

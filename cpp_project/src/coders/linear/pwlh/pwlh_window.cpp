@@ -5,10 +5,7 @@
 #include "constants.h"
 
 
-PWLHWindow::PWLHWindow(int window_size_, int error_threshold_, Range range_, bool integer_mode_){
-    window_size = window_size_;
-    window_size_bit_length = MathUtils::bitLength(window_size);
-    error_threshold = error_threshold_;
+PWLHWindow::PWLHWindow(int window_size_, int error_threshold_, Range range_, bool integer_mode_): Window(window_size_, error_threshold_){
     range = range_;
     bucket = new LinearBucket(error_threshold);
     length = 0; x_coord = 0;

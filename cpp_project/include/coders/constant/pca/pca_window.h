@@ -5,12 +5,11 @@
 #include <vector>
 #include <string>
 #include "constants.h"
+#include "window.h"
 
-class PCAWindow {
+class PCAWindow: public Window {
 
 private:
-    int window_size;
-    int error_threshold;
     int min;
     int max;
 #if !MASK_MODE
@@ -23,9 +22,7 @@ private:
     void updateConstantValue();
 
 public:
-    int length;
     bool has_constant_value;
-    std::string constant_value;
     std::vector<std::string> *array;
 
     PCAWindow(int window_size_, int error_threshold_);

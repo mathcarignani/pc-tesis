@@ -7,10 +7,7 @@
 #include <iostream>
 #include "line_utils.h"
 
-CAWindow::CAWindow(int window_size_, int error_threshold_){
-    window_size = window_size_;
-    window_size_bit_length = MathUtils::bitLength(window_size);
-    error_threshold = error_threshold_;
+CAWindow::CAWindow(int window_size_, int error_threshold_): Window(window_size_, error_threshold_){
     createNanWindow();
     length = 0;
 }

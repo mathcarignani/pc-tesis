@@ -4,12 +4,11 @@
 
 #include <string>
 #include "Line.h"
+#include "window.h"
 
-class CAWindow {
+class CAWindow: public Window {
 
 private:
-    int window_size;
-    int error_threshold;
     Point* archived_value;
     Point* snapshot_value;
     Line* s_min;
@@ -19,9 +18,6 @@ private:
     Line* sMax(Point* point1, Point* point2, int error_threshold);
 
 public:
-    int window_size_bit_length;
-    int length;
-    std::string constant_value;
     int x_coord;
     bool nan_window;
 

@@ -5,25 +5,22 @@
 #include "DataItem.h"
 #include <vector>
 #include <string>
+#include "window.h"
 
-class FRWindow {
+class FRWindow: public Window {
 
 private:
     std::vector<DataItem> data;
-    int window_size;
-    int error_threshold;
-    int length;
     void getIndexes(std::vector<int> & array, int first_index, int last_index);
     bool violatedConstraint(int first_index, int last_index);
 
 public:
     FRWindow(int window_size_, int error_threshold_);
-
     void addDataItem(int timestamp, std::string value);
     bool isFull();
     bool isEmpty();
     void clear();
     std::vector<DataItem> getItems();
-
 };
+
 #endif //CPP_PROJECT_FR_WINDOW_H
