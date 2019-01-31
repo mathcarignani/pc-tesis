@@ -23,22 +23,23 @@ void CoderGAMPS::codeCoderParams(){
 
 void CoderGAMPS::codeDataRows(){
     codeTimeDeltaColumn();
+    GAMPSOutput* gamps_output = getGAMPSOutput();
+    calculateMappingTable(gamps_output);
+    codeMapping();
+    codeColumnGroups(gamps_output);
+}
 
+GAMPSOutput* CoderGAMPS::getGAMPSOutput(){
     double epsilon = 1;
     GAMPSInput* gamps_input = getGAMPSInput();
     GAMPS* gamps = new GAMPS(epsilon, gamps_input);
     gamps->compute();
-    GAMPSOutput* gamps_output = gamps->getOutput();
-
-    calculateMappingTable(gamps_output);
-    codeMapping();
-    codeColumnGroups(gamps_output);
-    exit(1);
+    return gamps->getOutput();
 }
 
 GAMPSInput* CoderGAMPS::getGAMPSInput(){
-    CMultiDataStream* multiStream = new CMultiDataStream(dataset->data_columns_count - 1);
-    for(int i = 0; i < dataset->data_columns_count - 1; i++)
+    CMultiDataStream* multiStream = new CMultiDataStream(dataset->data_columns_count);
+    for(int i = 0; i < dataset->data_columns_count; i++)
     {
         int col_index = i + 1;
         std::cout << "Parsing column " << col_index << std::endl;
@@ -52,7 +53,7 @@ GAMPSInput* CoderGAMPS::getGAMPSInput(){
 
 void CoderGAMPS::calculateMappingTable(GAMPSOutput* gamps_output){
     std::vector<int> base_column_index_vector;
-    for (int i = 0; i < dataset->data_columns_count - 1; i++){
+    for (int i = 0; i < dataset->data_columns_count; i++){
         int val = gamps_output->getTgood()[i];
         int base_column_index = val + 1;
         base_column_index_vector.push_back(base_column_index);
@@ -104,7 +105,7 @@ void CoderGAMPS::codeMapping(){
     std::vector<int> base_column_index_vector = mapping_table->baseColumnIndexVector();
     int vector_to_code_size = base_column_index_vector.size();
 #if CHECKS
-    assert(vector_to_code_size == dataset->data_columns_count - 1);
+    assert(vector_to_code_size == dataset->data_columns_count);
 #endif
     int column_index_bit_length = MathUtils::bitLength(vector_to_code_size);
     for (int i = 0; i < vector_to_code_size; i++){
@@ -116,21 +117,20 @@ void CoderGAMPS::codeColumnGroups(GAMPSOutput* gamps_output){
     int base_count = 0;
     int ratio_count = 0;
 
-    for(int i = 0; i < dataset->data_columns_count - 1; i++){
+    DynArray<GAMPSEntry>* array;
+
+    for(int i = 0; i < dataset->data_columns_count; i++){
         if(gamps_output->getTgood()[i] == i){ // base signal
-            std::cout << "code base signal i = " << i << std::endl;
+            std::cout << "code base signal i = " << i + 1 << std::endl;
             DynArray<GAMPSEntry>** temp = gamps_output->getResultBaseSignal();
-            DynArray<GAMPSEntry>* array = temp[base_count];
-            codeColumn(array);
-            base_count++;
+            array = temp[base_count++];
         }
         else{ // ratio signal
-            std::cout << "code ratio signal i = " << i << std::endl;
+            std::cout << "code ratio signal i = " << i + 1 << std::endl;
             DynArray<GAMPSEntry>** temp = gamps_output->getResultRatioSignal();
-            DynArray<GAMPSEntry>* array = temp[ratio_count];
-            codeColumn(array);
-            ratio_count++;
+            array = temp[ratio_count++];
         }
+        codeColumn(array);
     }
 }
 
@@ -141,8 +141,8 @@ void CoderGAMPS::codeColumn(DynArray<GAMPSEntry>* array){
         std::cout << "entry.value = " << entry.value << std::endl;
         std::cout << "entry.endingTimestamp = " << entry.endingTimestamp << std::endl;
 
-        codeInt(window->length, window->window_size_bit_length);
-        coder->codeValueRaw(window->constant_value);
+        codeDouble(entry.value);
+        codeDouble(entry.endingTimestamp);
     }
 }
 

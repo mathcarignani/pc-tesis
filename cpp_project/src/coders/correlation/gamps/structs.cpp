@@ -58,6 +58,10 @@ std::vector<int> MappingTable::baseColumnIndexVector(){
     return res;
 }
 
+bool MappingTable::isBaseColumn(int column_index){
+    return mapping_vector.at(column_index - 1)->base_column_index == column_index;
+}
+
 int MappingTable::baseColumnsCount(){
     return base_columns_indexes.size();
 }

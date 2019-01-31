@@ -29,6 +29,7 @@ private:
 
     void codeDataRows() override;
     void codeTimeDeltaColumn();
+    GAMPSOutput* getGAMPSOutput();
     GAMPSInput* getGAMPSInput();
     void calculateMappingTable(GAMPSOutput* gamps_output);
 

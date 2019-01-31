@@ -27,6 +27,7 @@ public:
     MappingTable(std::vector<int> base_column_index_vector);
     std::vector<int> ratioSignals(int base_column_index);
     std::vector<int> baseColumnIndexVector();
+    bool isBaseColumn(int column_index);
     int baseColumnsCount();
     void print();
 };

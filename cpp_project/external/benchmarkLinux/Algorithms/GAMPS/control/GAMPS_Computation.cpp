@@ -372,6 +372,9 @@ void GAMPS_Computation:: computeOutput(DynArray<GAMPSEntry>** baseBucketList, Dy
 		}
 	}
 
+	std::cout << "baseCount = " << baseCount << std::endl;
+	std::cout << "ratioCount = " << ratioCount << std::endl;
+
 	m_pGampsOutput->setResultBaseSignal(resultBaseSignal);
 	m_pGampsOutput->setResultRatioSignal(resultRatioSignal);
 }

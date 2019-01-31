@@ -18,7 +18,10 @@ void DecoderGAMPS::decodeDataRows(){
     columns = std::vector<std::vector<std::string>> (total_columns);
 
     decodeTimeDeltaColumn();
-//    decodeMapping();
+    decodeMapping();
+
+    GAMPSOutput* gamps_output = decodeGAMPSOutput();
+    exit(1);
 //    decodeColumnGroups();
 
 //    transposeMatrix(data_rows_count, columns, total_columns);
@@ -34,17 +37,66 @@ void DecoderGAMPS::decodeTimeDeltaColumn(){
     columns.at(0) = column;
 }
 
-//void DecoderGAMPS::decodeMapping(){
-//    int column_index_bit_length = MathUtils::bitLength(dataset->data_columns_count);
-//    std::vector<int> base_column_index_vector;
-//    for (int i = 0; i < dataset->data_columns_count; i++){
-//        int base_column_index = decodeInt(column_index_bit_length) + 1;
-//        base_column_index_vector.push_back(base_column_index);
-//    }
-//    mapping_table = new MappingTable(base_column_index_vector);
-//    mapping_table->print();
-//}
-//
+void DecoderGAMPS::decodeMapping(){
+    int column_index_bit_length = MathUtils::bitLength(dataset->data_columns_count);
+    std::vector<int> base_column_index_vector;
+    for (int i = 0; i < dataset->data_columns_count; i++){
+        int base_column_index = decodeInt(column_index_bit_length) + 1;
+        base_column_index_vector.push_back(base_column_index);
+    }
+    mapping_table = new MappingTable(base_column_index_vector);
+    mapping_table->print();
+}
+
+GAMPSOutput* DecoderGAMPS::decodeGAMPSOutput(){
+    GAMPSOutput* gamps_output = new GAMPSOutput(NULL);
+
+    int base_columns_count = mapping_table->baseColumnsCount();
+    int ratio_columns_count = dataset->data_columns_count - base_columns_count;
+
+    DynArray<GAMPSEntry>** resultBaseSignal =  new DynArray<GAMPSEntry>*[base_columns_count];
+    DynArray<GAMPSEntry>** resultRatioSignal;
+    if (ratio_columns_count > 0){
+        resultRatioSignal = new DynArray<GAMPSEntry>*[ratio_columns_count];
+    }
+
+    int base_count = 0;
+    int ratio_count = 0;
+    DynArray<GAMPSEntry>* temp;
+    for (int i = 0; i < dataset->data_columns_count; i++){
+        temp = decodeColum();
+        if (mapping_table->isBaseColumn(i + 1)){
+            std::cout << "decode base signal i = " << i + 1 << std::endl;
+            resultBaseSignal[base_count++] = temp;
+        }
+        else {
+            std::cout << "decode ratio signal i = " << i + 1 << std::endl;
+            resultRatioSignal[ratio_count++] = temp;
+        }
+    }
+
+    gamps_output->setResultBaseSignal(resultBaseSignal);
+    gamps_output->setResultRatioSignal(resultRatioSignal);
+    return gamps_output;
+}
+
+DynArray<GAMPSEntry>* DecoderGAMPS::decodeColum(){
+    DynArray<GAMPSEntry>* array = new DynArray<GAMPSEntry>();
+    while (true) {
+        GAMPSEntry entry;
+        entry.value = decodeDouble();
+        entry.endingTimestamp = decodeDouble();
+        array->add(entry);
+
+        std::cout << "entry.value = " << entry.value << std::endl;
+        std::cout << "entry.endingTimestamp = " << entry.endingTimestamp << std::endl;
+
+        if (entry.endingTimestamp == 32){
+            return array;
+        }
+    }
+}
+
 //void DecoderGAMPS::decodeColumnGroups(){
 //    for(int i=0; i < mapping_table->baseColumnsCount(); i++){
 //        int base_column_index = mapping_table->base_columns_indexes.at(i);

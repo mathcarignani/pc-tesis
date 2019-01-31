@@ -4,6 +4,7 @@
 
 #include "decoder_base.h"
 #include "structs.h"
+#include "GAMPSOutput.h"
 
 class DecoderGAMPS: public DecoderBase {
 
@@ -11,11 +12,14 @@ private:
     std::vector<std::vector<std::string>> columns;
     int column_index;
 
-//    MappingTable* mapping_table;
+    MappingTable* mapping_table;
 
     void decodeDataRows() override;
     void decodeTimeDeltaColumn();
-//    void decodeMapping();
+    void decodeMapping();
+    GAMPSOutput* decodeGAMPSOutput();
+    DynArray<GAMPSEntry>* decodeColum();
+
 //    void decodeColumnGroups();
 //    void decodeColumnGroup(int base_column_index);
 //    std::vector<std::string> decodeBaseColumn();

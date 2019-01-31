@@ -13,7 +13,7 @@ private:
 
 public:
     ColumnCode* column_code;
-    int data_columns_count; // number of columns (including time delta)
+    int data_columns_count; // number of columns (excluding time delta)
     std::vector<ColumnCode*> column_code_vector;
     int total_bits;
     int header_bits;
