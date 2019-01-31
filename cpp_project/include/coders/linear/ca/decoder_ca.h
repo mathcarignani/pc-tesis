@@ -19,7 +19,6 @@ private:
 
 public:
     using DecoderCols::DecoderCols;
-    void setCoderParams(int window_size_);
 };
 
 #endif //CPP_PROJECT_DECODER_CA_H

@@ -45,7 +45,7 @@ public:
     std::string decodeValueRaw();
     float decodeFloat();
     double decodeDouble();
-    void setCoderParams(int window_size_);
+    void setWindowSize(int window_size_);
 };
 
 #endif //CPP_PROJECT_DECODER_BASE_H

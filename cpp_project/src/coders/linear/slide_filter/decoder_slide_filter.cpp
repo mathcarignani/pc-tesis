@@ -10,11 +10,6 @@
 #include "coder_utils.h"
 #include "line_utils.h"
 
-void DecoderSlideFilter::setCoderParams(int window_size_){
-    window_size_bit_length = MathUtils::bitLength(window_size_);
-}
-
-
 std::vector<std::string> DecoderSlideFilter::decodeDataColumn(){
     column = new Column(data_rows_count, mask->total_data, mask->total_no_data);
 
