@@ -15,6 +15,10 @@
 #include "decoder_gamps.h"
 
 
+void DecoderBase::setCoderParams(int window_size_){
+    window_size = window_size_;
+}
+
 DecoderBase* DecoderBase::getDecoder(BitStreamReader* input_file, CSVWriter* output_csv){
     int coder_code = input_file->getInt(8); // 8 bits for the coder_code
     int window_size = input_file->getInt(8); // 8 bits for the window_size

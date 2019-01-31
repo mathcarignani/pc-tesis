@@ -19,6 +19,7 @@ private:
 protected:
     CSVWriter* output_csv;
     Dataset* dataset;
+    int window_size;
 
     void transposeMatrix(int data_rows_count_, std::vector<std::vector<std::string>> columns, int total_columns);
 
@@ -44,6 +45,7 @@ public:
     std::string decodeValueRaw();
     float decodeFloat();
     double decodeDouble();
+    void setCoderParams(int window_size_);
 };
 
 #endif //CPP_PROJECT_DECODER_BASE_H
