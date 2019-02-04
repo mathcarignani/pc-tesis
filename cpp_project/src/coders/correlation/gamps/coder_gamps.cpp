@@ -92,7 +92,7 @@ std::vector<std::string> CoderGAMPS::codeBaseColumn(int error_threshold){
     input_csv->goToFirstDataRow(column_index);
     while (input_csv->continue_reading){
         row_index++;
-        std::string csv_value = input_csv->readLineCSVWithIndex();
+        std::string csv_value = input_csv->readNextValue();
         column.push_back(csv_value);
         CoderAPCA::codeColumnWhile(this, window, csv_value);
     }
@@ -112,7 +112,7 @@ void CoderGAMPS::codeRatioColumn(int error_threshold, std::vector<std::string> b
     input_csv->goToFirstDataRow(column_index);
     while (input_csv->continue_reading){
         row_index++;
-        std::string csv_value = input_csv->readLineCSVWithIndex();
+        std::string csv_value = input_csv->readNextValue();
         std::string diff_value = calculateDiff(base_column.at(row_index), csv_value);
         CoderAPCA::codeColumnWhile(this, window, diff_value);
     }
