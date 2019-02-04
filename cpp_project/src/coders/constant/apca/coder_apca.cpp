@@ -15,21 +15,21 @@ void CoderAPCA::codeColumnBefore(){
     window = new APCAWindow(window_size, error_threshold);
 }
 
-void CoderAPCA::codeColumnWhile(std::string csv_value){
-    codeColumnWhile(this, window, csv_value);
+void CoderAPCA::codeColumnWhile(int value){
+    codeColumnWhile(this, window, value);
 }
 
 void CoderAPCA::codeColumnAfter(){
     codeColumnAfter(this, window);
 }
 
-void CoderAPCA::codeColumnWhile(CoderBase* coder, APCAWindow* window, std::string csv_value){
+void CoderAPCA::codeColumnWhile(CoderBase* coder, APCAWindow* window, int value){
 #if MASK_MODE
-    if (Constants::isNoData(csv_value)) { return; } // skip no_data
+    if (Constants::isNoData(value)) { return; } // skip no_data
 #endif
-    if (!window->conditionHolds(csv_value)){
+    if (!window->conditionHolds(value)){
         codeWindow(coder, window);
-        window->addFirstValue(csv_value);
+        window->addFirstValue(value);
     }
 }
 

@@ -24,10 +24,10 @@ public:
     CAWindow(int window_size_, int error_threshold_);
     bool isFull();
     bool isEmpty();
-    void createNonNanWindow(std::string incoming_value_str, int incoming_value);
+    void createNonNanWindow(int incoming_value);
     void createNanWindow();
-    bool conditionHolds(int x_delta, int x_int, std::string x);
-    void setWindow(int x_delta, int x_int, std::string x);
+    bool conditionHolds(int value_delta, int value);
+    void setWindow(int value_delta, int value);
     void increaseLength();
     void printState();
 };

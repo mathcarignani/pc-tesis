@@ -6,7 +6,7 @@
 #include "string_utils.h"
 
 PCAWindow::PCAWindow(int window_size_, int error_threshold_): Window(window_size_, error_threshold_){
-    array = new std::vector<std::string>;
+    array = new std::vector<int>;
     length = 0;
     has_constant_value = true;
     min = 0;
@@ -25,42 +25,39 @@ void PCAWindow::updateConstantValue(){
     constant_value = calculateConstantValue(min, max);
 }
 
-void PCAWindow::addValue(std::string x){
-    if (isEmpty()) { addFirstValue(x);    }
-    else           { addNonFirstValue(x); }
-    array->push_back(x);
+void PCAWindow::addValue(int value){
+    if (isEmpty()) { addFirstValue(value);    }
+    else           { addNonFirstValue(value); }
+    array->push_back(value);
     length++;
 }
 
-void PCAWindow::addFirstValue(std::string x){
+void PCAWindow::addFirstValue(int value){
+    constant_value = value;
 #if !MASK_MODE
-    if (Constants::isNoData(x)){
+    if (Constants::isNoData(value)){
         nan_window = true;
-        constant_value = Constants::NO_DATA;
         return;
     }
-    // x is an integer
+    // value is an integer
     nan_window = false;
 #endif
-    int x_int = StringUtils::stringToInt(x);
-    min = x_int;
-    max = x_int;
-    constant_value = x;
+    min = value;
+    max = value;
 }
 
-void PCAWindow::addNonFirstValue(std::string x){
+void PCAWindow::addNonFirstValue(int value){
 #if !MASK_MODE
-    if (Constants::isNoData(x)){
+    if (Constants::isNoData(value)){
         if (!nan_window){ has_constant_value = false; }
         return;
     }
-    // x is an integer
+    // value is an integer
     if (nan_window) { has_constant_value = false; }
 #endif
     if (!has_constant_value) { return; }
 
-    int x_int = StringUtils::stringToInt(x);
-    updateMinAndMax(x_int);
+    updateMinAndMax(value);
     if (validThreshold(min, max, error_threshold)){
         updateConstantValue();
     }
@@ -83,14 +80,14 @@ void PCAWindow::clearWindow(){
     has_constant_value = true;
 }
 
-std::string PCAWindow::getElement(int pos){
+int PCAWindow::getElement(int pos){
     return array->at(pos);
 }
 
-std::string PCAWindow::calculateConstantValue(int min, int max){
+int PCAWindow::calculateConstantValue(int min, int max){
     int constant = min + max;
     if (constant != 0) { constant /= 2; }
-    return StringUtils::intToString(constant);
+    return constant;
 }
 
 bool PCAWindow::validThreshold(int min, int max, int error_threshold){

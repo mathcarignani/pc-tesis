@@ -25,13 +25,13 @@ private:
     void codeColumnGroup(int group_index);
 
     // TODO: merge these two methods into one
-    std::vector<std::string> codeBaseColumn(int error_threshold);
-    void codeRatioColumn(int error_threshold, std::vector<std::string> base_column);
+    std::vector<int> codeBaseColumn(int error_threshold);
+    void codeRatioColumn(int error_threshold, std::vector<int> base_column);
 
     void groupThresholds(int threshold, int & base_threshold, int & ratio_threshold);
 
 
-    static std::string calculateDiff(std::string base_value, std::string ratio_value);
+    static int calculateDiff(int base_value, int ratio_value);
 
 public:
     using CoderBase::CoderBase;

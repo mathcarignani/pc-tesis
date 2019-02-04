@@ -14,6 +14,8 @@ class CSVReader: public TextReader {
 private:
     void constructor(std::string path, std::string filename);
     int column_index;
+    // PRE: continue reading
+    std::string readLineCSVWithIndex();
 
 public:
     CSVReader(Path path);
@@ -21,7 +23,7 @@ public:
     // PRE: continue_reading
     std::vector<std::string> readLineCSV();
     // PRE: continue reading
-    std::string readLineCSVWithIndex();
+    std::string readNextValue();
 
     void goToFirstDataRow(int column_index_);
 };

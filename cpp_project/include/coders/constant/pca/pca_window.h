@@ -16,23 +16,23 @@ private:
     bool nan_window;
 #endif
 
-    void updateMinAndMax(int x_int);
-    void addNonFirstValue(std::string x); // PRE: !isFull() && !isEmpty()
-    void addFirstValue(std::string x); // PRE: isEmpty()
+    void updateMinAndMax(int value);
+    void addNonFirstValue(int value); // PRE: !isFull() && !isEmpty()
+    void addFirstValue(int value); // PRE: isEmpty()
     void updateConstantValue();
 
 public:
     bool has_constant_value;
-    std::vector<std::string> *array;
+    std::vector<int> *array;
 
     PCAWindow(int window_size_, int error_threshold_);
-    void addValue(std::string x); // PRE: !isFull()
+    void addValue(int value); // PRE: !isFull()
     bool isFull();
     bool isEmpty();
     void clearWindow();
-    std::string getElement(int pos); // PRE: pos < length
+    int getElement(int pos); // PRE: pos < length
 
-    static std::string calculateConstantValue(int min, int max);
+    static int calculateConstantValue(int min, int max);
     static bool validThreshold(int min, int max, int error_threshold);
 };
 

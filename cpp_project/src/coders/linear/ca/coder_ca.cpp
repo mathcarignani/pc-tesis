@@ -16,12 +16,12 @@ void CoderCA::codeColumnBefore(){
     window = new CAWindow(window_size, error_threshold);
 }
 
-void CoderCA::codeColumnWhile(std::string csv_value){
+void CoderCA::codeColumnWhile(int value){
     delta_sum += time_delta_vector[row_index]; // >= 0
 #if MASK_MODE
-    if (Constants::isNoData(csv_value)) { return; } // skip no_data
+    if (Constants::isNoData(value)) { return; } // skip no_data
 #endif
-    processValue(csv_value);
+    processValue(value);
     delta_sum = 0;
 }
 
@@ -30,9 +30,9 @@ void CoderCA::codeColumnAfter(){
 }
 
 
-void CoderCA::processValue(std::string x){
+void CoderCA::processValue(int value){
 #if !MASK_MODE
-    if (Constants::isNoData(x)){
+    if (Constants::isNoData(value)){
         if (window->isFull()){
             codeWindow();
             window->createNanWindow();
@@ -52,54 +52,51 @@ void CoderCA::processValue(std::string x){
         return;
     }
 #endif
-
-    int x_int = StringUtils::stringToInt(x);
-
     if (window->isEmpty()){
         if (window->nan_window){ // this condition can only be true on the first iteration
-            codeValueAndCreateNonNanWindow(x, x_int);
+            codeValueAndCreateNonNanWindow(value);
             return;
         }
 
         if (delta_sum == 0) {
-            codeValueAndCreateNonNanWindow(x, x_int);
+            codeValueAndCreateNonNanWindow(value);
         }
         else {
-            window->setWindow(delta_sum, x_int, x);
+            window->setWindow(delta_sum, value);
         }
         return;
     }
 
     if (window->isFull()){
         codeWindow();
-        codeValueAndCreateNonNanWindow(x, x_int);
+        codeValueAndCreateNonNanWindow(value);
         return;
     }
 
 #if !MASK_MODE
     if (window->nan_window){
         codeWindow(); // code nan window
-        codeValueAndCreateNonNanWindow(x, x_int);
+        codeValueAndCreateNonNanWindow(value);
         return;
     }
 #endif
 
-    if (delta_sum == 0 || not window->conditionHolds(delta_sum, x_int, x)){
+    if (delta_sum == 0 || not window->conditionHolds(delta_sum, value)){
         codeWindow(); // code non-nan window
-        codeValueAndCreateNonNanWindow(x, x_int);
+        codeValueAndCreateNonNanWindow(value);
     }
 }
 
-void CoderCA::codeValueAndCreateNonNanWindow(std::string x, int x_int){
-    codeWindow(1, x);
-    window->createNonNanWindow(x, x_int);
+void CoderCA::codeValueAndCreateNonNanWindow(int value){
+    codeWindow(1, value);
+    window->createNonNanWindow(value);
 }
 
 void CoderCA::codeWindow(){
     codeWindow(window->length, window->constant_value);
 }
 
-void CoderCA::codeWindow(int window_length, std::string window_value){
+void CoderCA::codeWindow(int window_length, int window_value){
     if (window_length == 0) { return; }
     codeInt(window_length, window->window_size_bit_length);
     codeValueRaw(window_value);

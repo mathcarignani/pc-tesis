@@ -24,13 +24,14 @@ void CoderBase::codeDataRowsCount(){
 // This method maps a value read in the csv file into an integer to be written in the output file.
 // It also checks the minimum and maximum constraints.
 //
-int CoderBase::codeValue(std::string x){
-    if (Constants::isNoData(x)){ return dataset->nan(); }
-
-    int x_int = StringUtils::stringToInt(x);
-    if (dataset->insideRange(x_int)) { return x_int + dataset->offset(); }
-
-    throw std::invalid_argument(StringUtils::intToString(x_int));
+int CoderBase::codeValue(int value){
+    if (Constants::isNoData(value)){
+        return dataset->nan();
+    }
+    if (dataset->insideRange(value - dataset->offset())){
+        return value;
+    }
+    throw std::invalid_argument(StringUtils::intToString(value));
 }
 
 void CoderBase::codeRaw(int value){
@@ -63,10 +64,9 @@ void CoderBase::codeUnary(int value){
     codeBit(1);
 }
 
-void CoderBase::codeValueRaw(std::string x){
-    int value;
+void CoderBase::codeValueRaw(int value){
     try {
-        value = codeValue(x);
+        value = codeValue(value);
     }
     catch( const std::invalid_argument& e ){
         std::cout << "CoderBase::codeValueRaw: " << e.what() << std::endl;
@@ -107,4 +107,19 @@ void CoderBase::printBits(){
 void CoderBase::close(){
     delete input_csv;
     delete output_file;
+}
+
+int CoderBase::mapStringToInt(std::string & csv_value){
+    if (Constants::isNoData(csv_value)){
+        return Constants::NO_DATA_INT;
+    }
+    int value = StringUtils::stringToInt(csv_value);
+#if CHECKS
+    assert(dataset->insideRange(value));
+#endif
+    value += dataset->offset();
+#if CHECKS
+    assert(value >= 0);
+#endif
+    return value;
 }

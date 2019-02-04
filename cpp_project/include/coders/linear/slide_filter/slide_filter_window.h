@@ -20,7 +20,7 @@ public:
     SlideFilterWindow(int total_data_rows_, int error_threshold_);
     SlideFilterWindow(CoderSlideFilter* coder_);
     CoderSlideFilter* getCompressData();
-    void addDataItem(int timestamp, std::string value);
+    void addDataItem(int timestamp, int value);
     int getDataLength();
     DataItem getAt(int pos);
     int getEsp();

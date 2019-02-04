@@ -14,15 +14,15 @@ private:
     void codeCoderParams() override;
 
     void codeColumnBefore() override;
-    void codeColumnWhile(std::string csv_value) override;
+    void codeColumnWhile(int value) override;
     void codeColumnAfter() override;
 
     CAWindow* createWindow();
-    void processValue(std::string x);
+    void processValue(int value);
 
-    void codeValueAndCreateNonNanWindow(std::string x, int x_int);
+    void codeValueAndCreateNonNanWindow(int value);
     void codeWindow();
-    void codeWindow(int window_length, std::string window_value);
+    void codeWindow(int window_length, int window_value);
 
 public:
     using CoderCols::CoderCols;

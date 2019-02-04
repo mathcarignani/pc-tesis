@@ -15,7 +15,7 @@ private:
     void codeCoderParams() override;
 
     void codeColumnBefore() override;
-    void codeColumnWhile(std::string csv_value) override;
+    void codeColumnWhile(int value) override;
     void codeColumnAfter() override;
 
     PWLHWindow* createWindow();

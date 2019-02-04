@@ -27,7 +27,7 @@ int GolombMaskCoder::countTotalDataRows(CoderBase* coder, int column_index){
     CSVReader* input_csv = coder->input_csv;
     input_csv->goToFirstDataRow(column_index);
     while (input_csv->continue_reading) {
-        std::string csv_value = input_csv->readLineCSVWithIndex();
+        std::string csv_value = input_csv->readNextValue();
         if (!Constants::isNoData(csv_value)) { total_data_rows++; }
     }
     return total_data_rows;

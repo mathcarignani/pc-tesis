@@ -16,11 +16,10 @@ void FRWindow::clear(){
     length = 0;
 }
 
-void FRWindow::addDataItem(int timestamp, std::string value){
+void FRWindow::addDataItem(int timestamp, int value){
     assert(length <= window_size);
     int new_timestamp = (length == 0) ? 0 : data[length-1].timestamp + timestamp;
-    int value_int = StringUtils::stringToInt(value);
-    data[length] = DataItem(value_int, new_timestamp);
+    data[length] = DataItem(value, new_timestamp);
     length++;
 }
 

@@ -14,26 +14,25 @@ APCAWindow::APCAWindow(int window_size_, int error_threshold_): Window(window_si
 #endif
 }
 
-bool APCAWindow::conditionHolds(std::string x){
+bool APCAWindow::conditionHolds(int value){
     if (isEmpty()){ // this condition is only true the first time this method is called
-        addFirstValue(x);
+        addFirstValue(value);
         return true;
     }
     else if (isFull()){
         return false;
     }
 #if !MASK_MODE
-    if (Constants::isNoData(x)){
+    if (Constants::isNoData(value)){
         if (nan_window){ length++; return true;  }
         else {                     return false; }
     }
-    // x is an integer
+    // value is an integer
     if (nan_window) { return false; }
 #endif
-    int x_int = StringUtils::stringToInt(x);
-    if (x_int < min) { return updateConstantValue(x_int, max); }
-    if (x_int > max) { return updateConstantValue(min, x_int); }
-    // min <= x_int <= max
+    if (value < min) { return updateConstantValue(value, max); }
+    if (value > max) { return updateConstantValue(min, value); }
+    // min <= value <= max
     length++;
     return true;
 }
@@ -56,20 +55,17 @@ bool APCAWindow::isEmpty(){
     return length == 0;
 }
 
-void APCAWindow::addFirstValue(std::string x){
+void APCAWindow::addFirstValue(int value){
+    constant_value = value;
+    length = 1;
 #if !MASK_MODE
-    if (Constants::isNoData(x)){
+    if (Constants::isNoData(value)){
         nan_window = true;
-        constant_value = Constants::NO_DATA;
-        length = 1;
         return;
     }
-    // x is an integer
+    // value is an integer
     nan_window = false;
 #endif
-    int x_int = StringUtils::stringToInt(x);
-    min = x_int;
-    max = x_int;
-    constant_value = x;
-    length = 1;
+    min = value;
+    max = value;
 }

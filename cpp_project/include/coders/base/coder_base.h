@@ -18,7 +18,8 @@ private:
     // This method maps a value read in the csv file into an integer to be written in the output file.
     // It also checks the minimum and maximum constraints.
     //
-    int codeValue(std::string x);
+
+    int codeValue(int value);
     void codeRaw(int value);
 
 protected:
@@ -36,12 +37,14 @@ public:
     void printBits();
     void close();
 
+    int mapStringToInt(std::string & csv_value);
+
     void codeBit(int bit);
     void codeBits(int bit, int times);
     void codeBool(bool bit);
     void codeInt(int value, int bits);
     void codeUnary(int value);
-    void codeValueRaw(std::string x);
+    void codeValueRaw(int value);
     void codeFloat(float x);
     void codeDouble(double x);
 };

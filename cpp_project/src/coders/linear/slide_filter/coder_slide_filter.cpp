@@ -26,15 +26,15 @@ void CoderSlideFilter::codeColumnBefore(){
     m_pSFOutput = new SlideFilterWindow(this);
 }
 
-void CoderSlideFilter::codeColumnWhile(std::string csv_value){
+void CoderSlideFilter::codeColumnWhile(int value){
     int delta = time_delta_vector[row_index]; // >= 0
-    if (Constants::isNoData(csv_value)) {
+    if (Constants::isNoData(value)) {
         delta_sum += delta; // delta >= 0
         return; // skip no_data
     }
     delta_sum += CoderUtils::calculateDelta(delta, row_index);
 //    std::cout << "I=" << row_index << "-----------------------------> " << csv_value << std::endl;
-    m_pSFData->addDataItem(delta_sum, csv_value);
+    m_pSFData->addDataItem(delta_sum, value);
     delta_sum = 0;
 }
 

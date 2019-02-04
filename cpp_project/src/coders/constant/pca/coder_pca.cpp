@@ -15,11 +15,11 @@ void CoderPCA::codeColumnBefore(){
     window = createWindow();
 }
 
-void CoderPCA::codeColumnWhile(std::string csv_value){
+void CoderPCA::codeColumnWhile(int value){
 #if MASK_MODE
-    if (Constants::isNoData(csv_value)) { return; } // skip no_data
+    if (Constants::isNoData(value)) { return; } // skip no_data
 #endif
-    window->addValue(csv_value);
+    window->addValue(value);
     if (window->isFull()) { codeWindow(window); }
 }
 
@@ -49,7 +49,7 @@ void CoderPCA::codeConstantWindow(PCAWindow* window){
 void CoderPCA::codeNonConstantWindow(PCAWindow* window){
     codeBit(1);
     for(int i=0; i < window->length; i++){
-        std::string csv_value = window->getElement(i);
-        codeValueRaw(csv_value);
+        int value = window->getElement(i);
+        codeValueRaw(value);
     }
 }

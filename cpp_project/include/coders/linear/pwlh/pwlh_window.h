@@ -26,15 +26,15 @@ public:
 #endif
 
     PWLHWindow(int window_size_, int error_threshold_, Range range_, bool integer_mode_);
-    bool conditionHolds(std::string x, int x_delta);
+    bool conditionHolds(int value, int value_delta);
     bool checkIntegerModeConstraint(int new_x_coord);
     bool isFull();
     bool isEmpty();
-    void addFirstValue(std::string x);
+    void addFirstValue(int value);
     float getPoint1Y();
     float getPoint2Y();
-    std::string getPoint1YIntegerMode();
-    std::string getPoint2YIntegerMode();
+    int getPoint1YIntegerMode();
+    int getPoint2YIntegerMode();
 };
 
 #endif //CPP_PROJECT_PWLH_WINDOW_H

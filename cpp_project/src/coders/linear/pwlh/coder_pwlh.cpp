@@ -30,14 +30,14 @@ void CoderPWLH::codeColumnBefore(){
     window = createWindow();
 }
 
-void CoderPWLH::codeColumnWhile(std::string csv_value){
+void CoderPWLH::codeColumnWhile(int value){
     delta_sum += time_delta_vector[row_index]; // >= 0
 #if MASK_MODE
-    if (Constants::isNoData(csv_value)) { return; } // skip no_data
+    if (Constants::isNoData(value)) { return; } // skip no_data
 #endif
-    if (!window->conditionHolds(csv_value, delta_sum)){
+    if (!window->conditionHolds(value, delta_sum)){
         codeWindow(window);
-        window->addFirstValue(csv_value);
+        window->addFirstValue(value);
     }
     delta_sum = 0;
 }
@@ -84,8 +84,8 @@ void CoderPWLH::codeWindowInt(PWLHWindow* window){
     }
 #endif
     if (window->length > 1){
-        std::string point1_y = window->getPoint1YIntegerMode();
-        std::string point2_y = window->getPoint2YIntegerMode();
+        int point1_y = window->getPoint1YIntegerMode();
+        int point2_y = window->getPoint2YIntegerMode();
         codeValueRaw(point1_y);
         codeValueRaw(point2_y);
         return;

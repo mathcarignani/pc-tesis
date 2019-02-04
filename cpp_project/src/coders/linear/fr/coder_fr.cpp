@@ -22,10 +22,10 @@ void CoderFR::codeColumnBefore(){
     window = createWindow();
 }
 
-void CoderFR::codeColumnWhile(std::string csv_value) {
+void CoderFR::codeColumnWhile(int value) {
     delta_sum += time_delta_vector[row_index]; // >= 0
-    if (Constants::isNoData(csv_value)) { return; } // skip no_data
-    window->addDataItem(delta_sum, csv_value);
+    if (Constants::isNoData(value)) { return; } // skip no_data
+    window->addDataItem(delta_sum, value);
     if (window->isFull()){
         codeWindow();
         window->clear();
@@ -57,8 +57,7 @@ void CoderFR::codeWindow(){
 
 void CoderFR::codeItem(DataItem item, int index){
     int value = (int) item.value;
-    std::string value_str = StringUtils::intToString(value);
-    codeValueRaw(value_str);
+    codeValueRaw(value);
     // we always code the value in the first index, so we don't have to code its index
     if (index == 0) { return; }
     codeInt(item.timestamp, window_size_bit_length); // 1 <= index <= window_size

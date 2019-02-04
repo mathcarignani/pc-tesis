@@ -14,7 +14,7 @@ private:
     void codeCoderParams() override;
 
     void codeColumnBefore() override;
-    void codeColumnWhile(std::string csv_value) override;
+    void codeColumnWhile(int value) override;
     void codeColumnAfter() override;
 
 public:
@@ -24,7 +24,7 @@ public:
     //
     // Wrapper methods which are also used by CoderGAMPS.
     //
-    static void codeColumnWhile(CoderBase* coder, APCAWindow* window, std::string csv_value);
+    static void codeColumnWhile(CoderBase* coder, APCAWindow* window, int value);
     static void codeColumnAfter(CoderBase* coder, APCAWindow* window);
     static void codeWindow(CoderBase* coder, APCAWindow* window);
 };

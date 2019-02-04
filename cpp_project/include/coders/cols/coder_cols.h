@@ -13,7 +13,7 @@ private:
     void codeColumn();
 
     virtual void codeColumnBefore() = 0;
-    virtual void codeColumnWhile(std::string csv_value) = 0;
+    virtual void codeColumnWhile(int value) = 0;
     virtual void codeColumnAfter() = 0;
 
 protected:

@@ -57,7 +57,7 @@ void CoderGAMPS::codeColumnGroup(int group_index){
     std::cout << "ccode column_index " << column_index << std::endl;
 #endif
     dataset->setColumn(column_index);
-    std::vector<std::string> base_column = codeBaseColumn(base_threshold);
+    std::vector<int> base_column = codeBaseColumn(base_threshold);
     dataset->updateRangesGAMPS(group_index);
 
     // code ratio columns
@@ -78,12 +78,12 @@ void CoderGAMPS::groupThresholds(int threshold, int & base_threshold, int & rati
     assert(base_threshold + ratio_threshold == threshold);
 }
 
-std::vector<std::string> CoderGAMPS::codeBaseColumn(int error_threshold){
+std::vector<int> CoderGAMPS::codeBaseColumn(int error_threshold){
 #if MASK_MODE
     dataset->setMode("MASK");
     total_data_rows = MaskCoder::code(this, column_index);
 #endif
-    std::vector<std::string> column;
+    std::vector<int> column;
 
     dataset->setMode("DATA");
     window = new APCAWindow(window_size, error_threshold);
@@ -92,15 +92,16 @@ std::vector<std::string> CoderGAMPS::codeBaseColumn(int error_threshold){
     input_csv->goToFirstDataRow(column_index);
     while (input_csv->continue_reading){
         row_index++;
-        std::string csv_value = input_csv->readLineCSVWithIndex();
-        column.push_back(csv_value);
-        CoderAPCA::codeColumnWhile(this, window, csv_value);
+        std::string csv_value = input_csv->readNextValue();
+        int value = mapStringToInt(csv_value);
+        column.push_back(value);
+        CoderAPCA::codeColumnWhile(this, window, value);
     }
     CoderAPCA::codeColumnAfter(this, window);
     return column;
 }
 
-void CoderGAMPS::codeRatioColumn(int error_threshold, std::vector<std::string> base_column){
+void CoderGAMPS::codeRatioColumn(int error_threshold, std::vector<int> base_column){
 #if MASK_MODE
     dataset->setMode("MASK");
     total_data_rows = MaskCoder::code(this, column_index);
@@ -112,17 +113,18 @@ void CoderGAMPS::codeRatioColumn(int error_threshold, std::vector<std::string> b
     input_csv->goToFirstDataRow(column_index);
     while (input_csv->continue_reading){
         row_index++;
-        std::string csv_value = input_csv->readLineCSVWithIndex();
-        std::string diff_value = calculateDiff(base_column.at(row_index), csv_value);
+        std::string csv_value = input_csv->readNextValue();
+        int value = mapStringToInt(csv_value);
+        int diff_value = calculateDiff(base_column.at(row_index), value);
         CoderAPCA::codeColumnWhile(this, window, diff_value);
     }
     CoderAPCA::codeColumnAfter(this, window);
 }
 
-std::string CoderGAMPS::calculateDiff(std::string base_value, std::string ratio_value){
+int CoderGAMPS::calculateDiff(int base_value, int ratio_value){
     if (Constants::isNoData(base_value) || Constants::isNoData(ratio_value)) { return ratio_value; }
 
-    int diff = StringUtils::stringToInt(ratio_value) - StringUtils::stringToInt(base_value);
+    int diff = ratio_value - base_value;
     // std::cout << "ratio_value = " << StringUtils::stringToInt(ratio_value) << " | base_value = " << StringUtils::stringToInt(base_value) << " | diff = " << diff << std::endl;
-    return StringUtils::intToString(diff);
+    return diff;
 }

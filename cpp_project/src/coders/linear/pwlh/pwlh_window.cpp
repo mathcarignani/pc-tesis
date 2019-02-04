@@ -18,29 +18,28 @@ PWLHWindow::PWLHWindow(int window_size_, int error_threshold_, Range range_, boo
 //
 // PRE: x_delta >= 0
 //
-bool PWLHWindow::conditionHolds(std::string x, int x_delta){
+bool PWLHWindow::conditionHolds(int value, int value_delta){
     if (isEmpty()){ // this condition is only true the first time this method is called
-        addFirstValue(x);
+        addFirstValue(value);
         return true;
     }
     else if (isFull()){
         return false;
     }
 #if !MASK_MODE
-    if (Constants::isNoData(x)){
+    if (Constants::isNoData(value)){
         if (nan_window){ length++; return true;  }
         else {                     return false; }
     }
 #endif
-    // x is an integer
+    // value is an integer
 #if !MASK_MODE
     if (nan_window) { return false; }
 #endif
-    if (x_delta == 0) { return false; } // when x_delta == 0 we need to create a new window
+    if (value_delta == 0) { return false; } // when value_delta == 0 we need to create a new window
 
-    int x_int = StringUtils::stringToInt(x);
-    int new_x_coord = x_coord + x_delta;
-    bucket->addPointMOD(new_x_coord, x_int);
+    int new_x_coord = x_coord + value_delta;
+    bucket->addPointMOD(new_x_coord, value);
 
     if (bucket->checkEpsConstraint() && checkIntegerModeConstraint(new_x_coord)){ // bucket is valid
         length++; x_coord = new_x_coord;
@@ -72,26 +71,25 @@ bool PWLHWindow::isEmpty(){
     return length == 0;
 }
 
-void PWLHWindow::addFirstValue(std::string x){
+void PWLHWindow::addFirstValue(int value){
     length = 1;
 #if !MASK_MODE
-    if (Constants::isNoData(x)){
+    if (Constants::isNoData(value)){
         nan_window = true;
-        constant_value = Constants::NO_DATA;
+        constant_value = Constants::NO_DATA_INT;
         constant_value_float = 0; // doesn't matter
         return;
     }
 #endif
-    // x is an integer
+    // value is an integer
 #if !MASK_MODE
     nan_window = false;
 #endif
     x_coord = 0;
-    int x_int = StringUtils::stringToInt(x);
     if (bucket->getSize() != 0) { bucket->resetBucket(); }
-    bucket->addPointMOD(0, (double) x_int); // should be the same as calling bucket->addPoint((double) x_int);
-    constant_value = x;
-    constant_value_float = (float) x_int;
+    bucket->addPointMOD(0, (double) value); // should be the same as calling bucket->addPoint((double) x_int);
+    constant_value = value;
+    constant_value_float = (float) value;
 }
 
 float PWLHWindow::getPoint1Y(){
@@ -102,10 +100,10 @@ float PWLHWindow::getPoint2Y(){
     return p2.y;
 }
 
-std::string PWLHWindow::getPoint1YIntegerMode(){
-    return StringUtils::doubleToString(p1.y);
+int PWLHWindow::getPoint1YIntegerMode(){
+    return MathUtils::doubleToInt(p1.y);
 }
 
-std::string PWLHWindow::getPoint2YIntegerMode(){
-    return StringUtils::doubleToString(p2.y);
+int PWLHWindow::getPoint2YIntegerMode(){
+    return MathUtils::doubleToInt(p2.y);
 }

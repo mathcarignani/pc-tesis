@@ -16,7 +16,7 @@ private:
 
 public:
     FRWindow(int window_size_, int error_threshold_);
-    void addDataItem(int timestamp, std::string value);
+    void addDataItem(int timestamp, int value);
     bool isFull();
     bool isEmpty();
     void clear();

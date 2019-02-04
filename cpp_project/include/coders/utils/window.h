@@ -13,7 +13,7 @@ protected:
 public:
     int window_size_bit_length;
     int length;
-    std::string constant_value;
+    int constant_value;
 
     Window(){};
 

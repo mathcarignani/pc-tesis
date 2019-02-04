@@ -16,10 +16,10 @@ private:
 
 public:
     APCAWindow(int window_size_, int error_threshold_);
-    bool conditionHolds(std::string x);
+    bool conditionHolds(int value);
     bool isFull();
     bool isEmpty();
-    void addFirstValue(std::string x);
+    void addFirstValue(int value);
     bool updateConstantValue(int new_min, int new_max);
 };
 

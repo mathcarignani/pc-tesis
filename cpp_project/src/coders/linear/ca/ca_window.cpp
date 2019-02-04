@@ -12,10 +12,10 @@ CAWindow::CAWindow(int window_size_, int error_threshold_): Window(window_size_,
     length = 0;
 }
 
-void CAWindow::createNonNanWindow(std::string incoming_value_str, int incoming_value){
+void CAWindow::createNonNanWindow(int incoming_value){
     nan_window = false;
     length = 0;
-    constant_value = incoming_value_str;
+    constant_value = incoming_value;
     x_coord = 0;
     archived_value = new Point(incoming_value, x_coord);
     snapshot_value = archived_value;
@@ -26,13 +26,13 @@ void CAWindow::createNonNanWindow(std::string incoming_value_str, int incoming_v
 void CAWindow::createNanWindow(){
     nan_window = true;
     length = 1;
-    constant_value = Constants::NO_DATA;
+    constant_value = Constants::NO_DATA_INT;
     // we don't use the rest of the values
 }
 
-bool CAWindow::conditionHolds(int x_delta, int x_int, std::string x){
-    int new_x_coord = x_coord + x_delta;
-    Point* incoming_point = new Point(x_int, new_x_coord);
+bool CAWindow::conditionHolds(int value_delta, int value){
+    int new_x_coord = x_coord + value_delta;
+    Point* incoming_point = new Point(value, new_x_coord);
 
     if (s_min->pointIsBelow(incoming_point) || s_max->pointIsAbove(incoming_point)){
         return false;
@@ -41,7 +41,7 @@ bool CAWindow::conditionHolds(int x_delta, int x_int, std::string x){
     increaseLength();
     x_coord = new_x_coord;
     snapshot_value = incoming_point;
-    constant_value = x;
+    constant_value = value;
 
     Line* s_min_new = sMin(archived_value, snapshot_value, error_threshold);
     Line* s_max_new = sMax(archived_value, snapshot_value, error_threshold);
@@ -51,15 +51,15 @@ bool CAWindow::conditionHolds(int x_delta, int x_int, std::string x){
     return true;
 }
 
-void CAWindow::setWindow(int x_delta, int x_int, std::string x){
+void CAWindow::setWindow(int value_delta, int value){
     assert(length == 0);
-    int new_x_coord = x_coord + x_delta;
-    Point* incoming_point = new Point(x_int, new_x_coord);
+    int new_x_coord = x_coord + value_delta;
+    Point* incoming_point = new Point(value, new_x_coord);
 
     increaseLength(); // = 1
     x_coord = new_x_coord;
     snapshot_value = incoming_point;
-    constant_value = x;
+    constant_value = value;
 
     s_min = sMin(archived_value, snapshot_value, error_threshold);
     s_max = sMax(archived_value, snapshot_value, error_threshold);
