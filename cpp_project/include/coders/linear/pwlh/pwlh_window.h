@@ -7,21 +7,17 @@
 #include "range.h"
 #include <vector>
 #include "constants.h"
+#include "window.h"
 
-class PWLHWindow {
+class PWLHWindow: public Window {
 
 private:
-    int window_size;
-    int error_threshold;
     LinearBucket* bucket;
-    Range range;
+    Range* range;
     bool integer_mode;
 
 public:
-    int window_size_bit_length;
-    int length;
     int x_coord;
-    std::string constant_value;
     float constant_value_float;
     Point p1;
     Point p2;
@@ -29,7 +25,7 @@ public:
     bool nan_window;
 #endif
 
-    PWLHWindow(int window_size_, int error_threshold_, Range range_, bool integer_mode_);
+    PWLHWindow(int window_size_, int error_threshold_, Range* range_, bool integer_mode_);
     bool conditionHolds(std::string x, int x_delta);
     bool checkIntegerModeConstraint(int new_x_coord);
     bool isFull();

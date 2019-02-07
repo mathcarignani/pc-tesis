@@ -5,19 +5,18 @@
 #include <string>
 #include <vector>
 #include "Line.h"
+#include "window.h"
 
 class CoderSlideFilter;
 
-class SlideFilterWindow {
+class SlideFilterWindow: public Window {
 
 private:
     std::vector<DataItem> data;
-    int error_threshold;
     int total_data_rows;
     CoderSlideFilter* coder;
 
 public:
-    int length;
     SlideFilterWindow(int total_data_rows_, int error_threshold_);
     SlideFilterWindow(CoderSlideFilter* coder_);
     CoderSlideFilter* getCompressData();
@@ -25,7 +24,6 @@ public:
     int getDataLength();
     DataItem getAt(int pos);
     int getEsp();
-
 };
 
 #endif //CPP_PROJECT_SLIDE_FILTER_WINDOW_H

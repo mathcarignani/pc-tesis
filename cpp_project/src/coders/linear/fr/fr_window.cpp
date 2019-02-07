@@ -7,9 +7,7 @@
 #include "math_utils.h"
 #include "vector_utils.h"
 
-FRWindow::FRWindow(int window_size_, int error_threshold_){
-    window_size = window_size_;
-    error_threshold = error_threshold_;
+FRWindow::FRWindow(int window_size_, int error_threshold_): Window(window_size_, error_threshold_){
     length = 0;
     data.reserve(window_size_);
 }

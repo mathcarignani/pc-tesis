@@ -8,8 +8,6 @@
 class CoderGAMPS: public CoderBase {
 
 private:
-    int window_size;
-    int window_size_bit_length;
     std::vector<int> error_thresholds_vector;
 
     int column_index;

@@ -5,6 +5,7 @@
 #include "string_utils.h"
 #include "mask_coder.h"
 #include "time_delta_coder.h"
+#include "coder_utils.h"
 
 void CoderCols::codeDataRows(){
     int total_columns = dataset->data_columns_count + 1;
@@ -37,8 +38,9 @@ void CoderCols::codeDataColumn(){
     row_index = 0;
     input_csv->goToFirstDataRow(column_index);
     while (input_csv->continue_reading){
-        std::string csv_value = input_csv->readLineCSVWithIndex();
-        this->codeColumnWhile(csv_value);
+        std::string csv_value = input_csv->readNextValue();
+        std::string mapped_value = CoderUtils::mapValue(csv_value, 0);
+        this->codeColumnWhile(mapped_value);
         row_index++;
     }
 

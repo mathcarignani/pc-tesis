@@ -1,6 +1,31 @@
 
 #include "coder_utils.h"
 #include <iostream>
+#include "string_utils.h"
+
+std::string CoderUtils::mapValue(std::string csv_value, int offset){
+    if (Constants::isNoData(csv_value)){
+        return csv_value;
+    }
+    int int_value = StringUtils::stringToInt(csv_value);
+    int_value += offset;
+//#if CHECKS
+//    assert(int_value >= 0);
+//#endif
+    return StringUtils::intToString(int_value);
+}
+
+std::string CoderUtils::unmapValue(std::string value, int offset){
+    if (Constants::isNoData(value)){
+        return value;
+    }
+    int int_value = StringUtils::stringToInt(value);
+//#if CHECKS
+//    assert(int_value >= 0);
+//#endif
+    int_value -= offset;
+    return StringUtils::intToString(int_value);
+}
 
 std::vector<int> CoderUtils::createXCoordsVector(std::vector<int> time_delta_vector, int window_size, int row_index){
     std::vector<int> result;

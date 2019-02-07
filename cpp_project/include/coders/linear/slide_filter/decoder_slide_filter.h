@@ -26,7 +26,6 @@ private:
 
 public:
     using DecoderCols::DecoderCols;
-    void setCoderParams(int window_size_);
 };
 
 #endif // MASK_MODE

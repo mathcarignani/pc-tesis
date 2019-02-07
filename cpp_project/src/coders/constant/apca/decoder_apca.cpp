@@ -3,10 +3,6 @@
 #include "assert.h"
 #include "math_utils.h"
 
-void DecoderAPCA::setCoderParams(int window_size_){
-    window_size_bit_length = MathUtils::bitLength(window_size_);
-}
-
 std::vector<std::string> DecoderAPCA::decodeDataColumn(){
     return decodeDataColumn(this);
 }

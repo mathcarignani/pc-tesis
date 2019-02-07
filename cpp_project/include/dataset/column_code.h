@@ -8,7 +8,7 @@
 class ColumnCode {
 
 public:
-    Range range;
+    Range* range;
     int bits;
     int offset;
     int nan;
@@ -16,8 +16,8 @@ public:
     int total_bits;
     int total_mask_bits;
 
-    ColumnCode(Range range_, int column_index);
-    void updateRange(Range range_, int column_index);
+    ColumnCode(Range* range_, int column_index);
+    void updateRange(Range* range_, int column_index);
     void addBits(int bits_, bool mask_mode);
     void print();
 };

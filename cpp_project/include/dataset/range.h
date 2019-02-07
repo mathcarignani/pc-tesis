@@ -8,11 +8,6 @@ struct Range {
     int begin;
     int end;
 
-    Range() {
-        begin = 0;
-        end = 1;
-    }
-
     Range(int b, int e) {
         begin = b;
         end = e;
@@ -23,7 +18,7 @@ struct Range {
     }
 
     bool operator == (const Range &range) const{
-        return (this->begin == range.begin && this->end == range.end);
+        return (begin == range.begin && end == range.end);
     }
 
     void print(){

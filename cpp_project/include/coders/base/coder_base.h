@@ -21,6 +21,9 @@ private:
     int codeValue(std::string x);
     void codeRaw(int value);
 
+protected:
+    int window_size;
+
 public:
     CSVReader* input_csv;
     BitStreamWriter* output_file;

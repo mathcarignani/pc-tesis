@@ -28,7 +28,7 @@ void HeaderCoder::codeHeader(Dataset* dataset){
     codeFirstTimestamp(); // 4 bytes
     int data_columns_count = codeColumnNames();
 
-    std::vector<Range> ranges = dataset_utils.getRangeVector(dataset_name);
+    std::vector<Range*> ranges = dataset_utils.getRangeVector(dataset_name);
     dataset->setHeaderValues(ranges, data_columns_count);
 }
 
