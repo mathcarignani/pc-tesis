@@ -31,9 +31,8 @@ public:
     std::string decodeDatasetName(int dataset_int);
     std::string decodeTimeUnit(int time_unit_int);
 
-    std::vector<Range> getRangeVector(std::string dataset_name);
+    std::vector<Range*> getRangeVector(std::string dataset_name);
     void close();
-
 };
 
 #endif //CPP_PROJECT_DATASET_UTILS_H

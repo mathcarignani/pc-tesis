@@ -26,12 +26,12 @@ void TestsDatasetUtils::decodeTest(){
 
 void TestsDatasetUtils::rangesTest(){
     DatasetUtils dataset_utils = DatasetUtils("code");
-    std::vector<Range> range_vector = dataset_utils.getRangeVector("SolarAnywhere");
-    std::vector<Range> expected_range_vector = {Range(0,131071), Range(0,1020), Range(0,970), Range(0,800)};
+    std::vector<Range*> range_vector = dataset_utils.getRangeVector("SolarAnywhere");
+    std::vector<Range*> expected_range_vector = {new Range(0,131071), new Range(0,1020), new Range(0,970), new Range(0,800)};
     assert(range_vector.size() == 4);
     for(int i = 0; i < range_vector.size(); i++){
-        assert(range_vector[i].begin == expected_range_vector[i].begin);
-        assert(range_vector[i].end == expected_range_vector[i].end);
+        assert(range_vector[i]->begin == expected_range_vector[i]->begin);
+        assert(range_vector[i]->end == expected_range_vector[i]->end);
     }
     dataset_utils.close();
 }

@@ -19,7 +19,7 @@ public:
     int header_bits;
 
     Dataset();
-    void setHeaderValues(std::vector<Range> ranges, int data_columns_count_);
+    void setHeaderValues(std::vector<Range*> ranges, int data_columns_count_);
     void updateRangesGAMPS(int column_index);
     void setColumn(int column_index);
     void setMode(std::string mode);
