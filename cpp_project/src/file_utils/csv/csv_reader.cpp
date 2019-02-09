@@ -29,7 +29,7 @@ std::vector<std::string> CSVReader::readLineCSV(){
     return current_line_vector;
 }
 
-std::string CSVReader::readLineCSVWithIndex(){
+std::string CSVReader::readNextValue(){
     std::string current_line = readLine();
     std::string col_value = StringUtils::splitByCharWithIndex(current_line, ',', column_index);
     return col_value;

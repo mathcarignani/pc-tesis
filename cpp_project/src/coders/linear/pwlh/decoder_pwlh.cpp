@@ -11,8 +11,7 @@
 #include "line_utils.h"
 #include "linear_coder_utils.h"
 
-void DecoderPWLH::setCoderParams(int window_size_, bool integer_mode_){
-    window_size_bit_length = MathUtils::bitLength(window_size_);
+void DecoderPWLH::setIntegerMode(bool integer_mode_){
     integer_mode = integer_mode_;
 }
 

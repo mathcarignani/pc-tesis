@@ -2,10 +2,6 @@
 #include "decoder_pca.h"
 #include "assert.h"
 
-void DecoderPCA::setCoderParams(int window_size_){
-    window_size = window_size_;
-}
-
 std::vector<std::string> DecoderPCA::decodeDataColumn(){
     std::vector<std::string> column;
     row_index = 0;

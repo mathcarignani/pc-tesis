@@ -5,6 +5,7 @@
 #include "string_utils.h"
 #include "assert.h"
 #include <math.h>
+#include "coders/utils/coder_utils.h"
 
 CoderBase::CoderBase(CSVReader* input_csv_, BitStreamWriter* output_file_){
    input_csv = input_csv_;
@@ -25,6 +26,8 @@ void CoderBase::codeDataRowsCount(){
 // It also checks the minimum and maximum constraints.
 //
 int CoderBase::codeValue(std::string x){
+    std::string unmapped_x = CoderUtils::unmapValue(x, 0);
+
     if (Constants::isNoData(x)){ return dataset->nan(); }
 
     int x_int = StringUtils::stringToInt(x);

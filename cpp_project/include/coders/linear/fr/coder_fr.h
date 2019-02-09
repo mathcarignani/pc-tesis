@@ -11,7 +11,6 @@
 class CoderFR: public CoderCols {
 
 private:
-    int window_size;
     int window_size_bit_length;
     std::vector<int> error_thresholds_vector;
     FRWindow* window;

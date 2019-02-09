@@ -4,12 +4,11 @@
 
 #include <string>
 #include "constants.h"
+#include "pca_window.h"
 
-class APCAWindow {
+class APCAWindow: public Window {
 
 private:
-    int window_size;
-    int error_threshold;
     double min;
     double max;
 #if !MASK_MODE
@@ -17,10 +16,6 @@ private:
 #endif
 
 public:
-    int window_size_bit_length;
-    int length;
-    std::string constant_value;
-
     APCAWindow(int window_size_, int error_threshold_);
     bool conditionHolds(std::string x);
     bool isFull();

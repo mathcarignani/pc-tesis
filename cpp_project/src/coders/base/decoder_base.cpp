@@ -13,7 +13,13 @@
 #include "decoder_fr.h"
 #include "decoder_slide_filter.h"
 #include "decoder_gamps.h"
+#include "math_utils.h"
 
+
+void DecoderBase::setWindowSize(int window_size_){
+    window_size = window_size_;
+    window_size_bit_length = MathUtils::bitLength(window_size);
+}
 
 DecoderBase* DecoderBase::getDecoder(BitStreamReader* input_file, CSVWriter* output_csv){
     int coder_code = input_file->getInt(8); // 8 bits for the coder_code
@@ -23,38 +29,35 @@ DecoderBase* DecoderBase::getDecoder(BitStreamReader* input_file, CSVWriter* out
 
     if (coder_code == 0) {
         decoder = new DecoderBasic(input_file, output_csv);
+        return decoder;
     }
-    else if (coder_code == 10){
+
+    if (coder_code == 10){
         decoder = new DecoderPCA(input_file, output_csv);
-        ((DecoderPCA*) decoder)->setCoderParams(window_size);
     }
     else if (coder_code == 11){
         decoder = new DecoderAPCA(input_file, output_csv);
-        ((DecoderAPCA*) decoder)->setCoderParams(window_size);
     }
     else if (coder_code == 20 || coder_code == 21){
-        bool integer_mode = coder_code == 21;
         decoder = new DecoderPWLH(input_file, output_csv);
-        ((DecoderPWLH*) decoder)->setCoderParams(window_size, integer_mode);
+        bool integer_mode = coder_code == 21;
+        ((DecoderPWLH*) decoder)->setIntegerMode(integer_mode);
     }
     else if (coder_code == 22){
         decoder = new DecoderCA(input_file, output_csv);
-        ((DecoderCA*) decoder)->setCoderParams(window_size);
     }
 #if MASK_MODE
     else if (coder_code == 23){
         decoder = new DecoderFR(input_file, output_csv);
-        ((DecoderFR*) decoder)->setCoderParams(window_size);
     }
     else if (coder_code == 24){
         decoder = new DecoderSlideFilter(input_file, output_csv);
-        ((DecoderSlideFilter*) decoder)->setCoderParams(window_size);
     }
 #endif
     else if (coder_code == 30){
         decoder = new DecoderGAMPS(input_file, output_csv);
-        ((DecoderGAMPS*) decoder)->setCoderParams(window_size);
     }
+    decoder->setWindowSize(window_size);
     return decoder;
 }
 

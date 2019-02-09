@@ -10,11 +10,6 @@
 #include "string_utils.h"
 #include "Line.h"
 
-void DecoderFR::setCoderParams(int window_size_){
-    window_size = window_size_;
-    window_size_bit_length = MathUtils::bitLength(window_size_);
-}
-
 std::vector<std::string> DecoderFR::decodeDataColumn(){
     column = new Column(data_rows_count, mask->total_data, mask->total_no_data);
     std::vector<int> x_coords_vector = CoderUtils::createXCoordsVectorMaskMode(mask, time_delta_vector, 0);

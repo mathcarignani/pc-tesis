@@ -11,6 +11,9 @@
 class CoderUtils {
 
 public:
+    static std::string mapValue(std::string csv_value, int offset);
+    static std::string unmapValue(std::string value, int offset);
+
     static std::vector<int> createXCoordsVector(std::vector<int> time_delta_vector, int window_size, int row_index);
     static std::vector<int> createXCoordsVector(Mask* mask, std::vector<int> time_delta_vector, int window_size);
 #if MASK_MODE

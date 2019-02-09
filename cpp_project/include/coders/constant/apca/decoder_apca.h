@@ -12,7 +12,6 @@ private:
 
 public:
     using DecoderPCA::DecoderPCA;
-    void setCoderParams(int window_size_);
 
     //
     // Wrapper methods which are also used by DecoderGAMPS.

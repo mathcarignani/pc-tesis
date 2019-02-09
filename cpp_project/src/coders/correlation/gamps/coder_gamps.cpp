@@ -14,7 +14,6 @@
 void CoderGAMPS::setCoderParams(int window_size_, std::vector<int> error_thresholds_vector_){
     window_size = window_size_;
     error_thresholds_vector = error_thresholds_vector_;
-    window_size_bit_length = MathUtils::bitLength(window_size);
 }
 
 void CoderGAMPS::codeCoderParams(){
@@ -71,7 +70,7 @@ CDataStream* CoderGAMPS::getColumn(int column_index){
     int timestamp = 0;
 
     while (input_csv->continue_reading){
-        std::string csv_value = input_csv->readLineCSVWithIndex();
+        std::string csv_value = input_csv->readNextValue();
 
         if (Constants::isNoData(csv_value)){
             csv_value = previous_csv_value;
@@ -237,7 +236,7 @@ void CoderGAMPS::codeColumn(DynArray<GAMPSEntry>* array){
 //    input_csv->goToFirstDataRow(column_index);
 //    while (input_csv->continue_reading){
 //        row_index++;
-//        std::string csv_value = input_csv->readLineCSVWithIndex();
+//        std::string csv_value = input_csv->readNextValue();
 //        column.push_back(csv_value);
 //        CoderAPCA::codeColumnWhile(this, window, csv_value);
 //    }
@@ -257,7 +256,7 @@ void CoderGAMPS::codeColumn(DynArray<GAMPSEntry>* array){
 //    input_csv->goToFirstDataRow(column_index);
 //    while (input_csv->continue_reading){
 //        row_index++;
-//        std::string ratio_value = input_csv->readLineCSVWithIndex();
+//        std::string ratio_value = input_csv->readNextValue();
 //        std::string base_value = base_column.at(row_index);
 //
 //        std::string diff_value = calculateDiff(base_value, ratio_value);

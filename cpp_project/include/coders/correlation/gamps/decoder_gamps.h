@@ -28,7 +28,6 @@ private:
 
 public:
     using DecoderBase::DecoderBase;
-    void setCoderParams(int window_size_);
 
 };
 

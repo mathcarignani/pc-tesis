@@ -9,10 +9,6 @@
 #include "line_utils.h"
 #include "linear_coder_utils.h"
 
-void DecoderCA::setCoderParams(int window_size_){
-    window_size_bit_length = MathUtils::bitLength(window_size_);
-}
-
 std::vector<std::string> DecoderCA::decodeDataColumn(){
 #if MASK_MODE
     column = new Column(data_rows_count, mask->total_data, mask->total_no_data);

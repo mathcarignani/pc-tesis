@@ -9,10 +9,6 @@
 #include "mask_decoder.h"
 #include "decoder_apca.h"
 
-void DecoderGAMPS::setCoderParams(int window_size_){
-    window_size_bit_length = MathUtils::bitLength(window_size_);
-}
-
 void DecoderGAMPS::decodeDataRows(){
     int total_columns = dataset->data_columns_count + 1;
     columns = std::vector<std::vector<std::string>> (total_columns);

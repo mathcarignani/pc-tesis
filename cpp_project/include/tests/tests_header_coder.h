@@ -20,7 +20,7 @@ private:
     ColumnCode* column_code;
 
     void codeHeader(Path path);
-    void checkColumnCode(int index, Range range, int bits, int offset, int nan);
+    void checkColumnCode(int index, Range* range, int bits, int offset, int nan);
 
     void testColumnCodeVector();
     void testUpdateRangesGAMPS();

@@ -42,18 +42,18 @@ std::string DatasetUtils::decodeTimeUnit(int time_unit_int){
     return StringUtils::splitByString(line, SEPARATOR)[0];
 }
 
-std::vector<Range> DatasetUtils::getRangeVector(std::string dataset_name) {
+std::vector<Range*> DatasetUtils::getRangeVector(std::string dataset_name) {
     std::string line = findLine(ALPHABETS_KEY, dataset_name);
     std::string ranges_str = StringUtils::splitByString(line, SEPARATOR)[1]; // "[0,131071],[2500,5000]"
     std::vector<std::string> ranges_str_split = StringUtils::splitByString(ranges_str, "],["); // <"[0,131071", "2500,5000]">
-    std::vector<Range> result;
+    std::vector<Range*> result;
     for (int i = 0; i < ranges_str_split.size(); i++){
         std::string range_str = StringUtils::removeChars(ranges_str_split[i], "[");
         range_str = StringUtils::removeChars(range_str, "]"); // "2500,5000"
         std::vector<std::string> ranges_vector_str = StringUtils::splitByString(range_str, ","); // <"2500", "5000">
         int min = StringUtils::stringToInt(ranges_vector_str[0]); // 2500
         int max = StringUtils::stringToInt(ranges_vector_str[1]); // 5000
-        result.emplace_back(Range(min, max));
+        result.emplace_back(new Range(min, max));
     }
     return result;
 }

@@ -9,7 +9,7 @@ Dataset::Dataset(){
     header_mode = true;
 }
 
-void Dataset::setHeaderValues(std::vector<Range> ranges, int data_columns_count_){
+void Dataset::setHeaderValues(std::vector<Range*> ranges, int data_columns_count_){
     assert(ranges.size() > 0);
     assert(ranges.size() <= data_columns_count_ + 1);
 
@@ -28,7 +28,7 @@ void Dataset::updateRangesGAMPS(int base_column_index){
 #endif
     ColumnCode* current_column_code = column_code_vector.at(base_column_index);
     int nan_minus_one = current_column_code->nan - 1;
-    Range range = Range(-nan_minus_one, nan_minus_one);
+    Range* range = new Range(-nan_minus_one, nan_minus_one);
     current_column_code->updateRange(range, base_column_index);
 }
 
@@ -86,7 +86,7 @@ int Dataset::nan(){
 }
 
 bool Dataset::insideRange(int value){
-    return column_code->range.insideRange(value);
+    return column_code->range->insideRange(value);
 }
 
 int Dataset::dataColumnsGroupCount(){

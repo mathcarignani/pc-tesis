@@ -8,7 +8,6 @@
 class CoderPWLH: public CoderCols {
 
 private:
-    int window_size;
     std::vector<int> error_thresholds_vector;
     bool integer_mode;
     PWLHWindow* window;
