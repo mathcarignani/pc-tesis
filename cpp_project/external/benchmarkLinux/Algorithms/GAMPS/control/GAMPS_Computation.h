@@ -32,6 +32,7 @@ private:
 	// compute output based on base signals and ratio signals
 	void computeOutput(DynArray<GAMPSEntry>** baseBucketList, DynArray<GAMPSEntry>** ratioBucketList);
 
+	void print(DynArray<GAMPSEntry>* array, int spaces);
 public:
 	GAMPS_Computation(GAMPSInput* gampsInput,double eps);
 	~GAMPS_Computation(void);

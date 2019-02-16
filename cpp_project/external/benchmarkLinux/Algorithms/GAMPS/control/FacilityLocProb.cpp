@@ -78,7 +78,8 @@ int FacilityLocProb::findOptimalSolution()
 			selectedSignal[maxReduceCostPos] = 1;
 			m_pTgood[maxReduceCostPos] = maxReduceCostPos;
 
-			for(int j = 0; j < m_nNumOfStream && (selectedSignal[j] == 0); j++)
+			// for(int j = 0; j < m_nNumOfStream && (selectedSignal[j] == 0); j++)
+			for(int j = m_nNumOfStream - 1; (j >= 0) && (selectedSignal[j] == 0); j--)
 			{
 				int delta = m_arrBaseCost[j] - m_pRatioCost[maxReduceCostPos]->getAt(j);
 				if(delta > 0)

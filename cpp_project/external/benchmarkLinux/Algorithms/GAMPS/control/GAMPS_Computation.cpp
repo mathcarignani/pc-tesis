@@ -379,4 +379,13 @@ void GAMPS_Computation:: computeOutput(DynArray<GAMPSEntry>** baseBucketList, Dy
 	m_pGampsOutput->setResultRatioSignal(resultRatioSignal);
 }
 
+void GAMPS_Computation::print(DynArray<GAMPSEntry>* array, int spaces){
+    int inputCount = array->size();
+    for (int i=0; i < inputCount; i++){
+        GAMPSEntry baseEntry = array->getAt(i);
+        for(int j=0; j < spaces; j++) { std::cout << "    "; }
+        std::cout << "ts = " << baseEntry.endingTimestamp << ", val = " << baseEntry.value << std::endl;
+    }
+}
+
 #endif
