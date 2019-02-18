@@ -43,8 +43,11 @@ public:
     int decodeInt(int bits);
     int decodeUnary();
     std::string decodeValueRaw();
+
     float decodeFloat();
     double decodeDouble();
+    int decodeInt();
+
     void setWindowSize(int window_size_);
 };
 

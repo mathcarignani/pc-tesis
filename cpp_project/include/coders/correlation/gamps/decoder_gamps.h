@@ -19,6 +19,8 @@ private:
     void decodeMapping();
     GAMPSOutput* decodeGAMPSOutput();
     DynArray<GAMPSEntry>* decodeColum();
+    void decodeColumnGroups(GAMPSOutput* gamps_output);
+    std::vector<std::string> getBaseColumn(DynArray<GAMPSEntry>* gamps_column);
 
 //    void decodeColumnGroups();
 //    void decodeColumnGroup(int base_column_index);

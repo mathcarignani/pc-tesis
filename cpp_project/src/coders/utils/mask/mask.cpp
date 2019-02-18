@@ -5,6 +5,7 @@ Mask::Mask(){
     total_no_data = 0;
     total_data = 0;
     bursts.clear();
+    current_burst = NULL;
 }
 
 void Mask::setBurst(int index){
@@ -21,6 +22,28 @@ void Mask::add(Burst* burst){
 
 void Mask::add(bool no_data, int length){
     add(new Burst(no_data, length));
+}
+
+void Mask::add(bool no_data){
+    if (current_burst == NULL){
+        current_burst = new Burst(no_data);
+        return;
+    }
+    bool same_burst = current_burst->no_data == no_data;
+    if (same_burst) {
+        current_burst->increaseLength();
+    }
+    else {
+        add(current_burst);
+        current_burst = new Burst(no_data);
+    }
+}
+
+void Mask::close(){
+#if CHECKS
+    assert(current_burst != NULL);
+#endif
+    add(current_burst);
 }
 
 void Mask::reset(){

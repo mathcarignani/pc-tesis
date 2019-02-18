@@ -8,6 +8,7 @@
 
 #include "DataStream.h"
 #include "GAMPSOutput.h"
+#include "mask.h"
 
 class CoderGAMPS: public CoderBase {
 
@@ -16,7 +17,6 @@ private:
 
     int column_index;
     int row_index;
-    int delta_sum;
     std::vector<int> time_delta_vector;
     int total_data_rows;
     APCAWindow* window;
@@ -27,28 +27,15 @@ private:
 
     void codeDataRows() override;
     void codeTimeDeltaColumn();
-    GAMPSOutput* getGAMPSOutput();
-    GAMPSInput* getGAMPSInput();
-    void calculateMappingTable(GAMPSOutput* gamps_output);
+    Mask* getNodataRowsMask();
+    GAMPSInput* getGAMPSInput(Mask* nodata_rows_mask);
+    GAMPSOutput* getGAMPSOutput(GAMPSInput* gamps_input);
 
-    void codeMapping();
+    void codeMappingTable(GAMPSOutput* gamps_output);
     void codeColumnGroups(GAMPSOutput* gamps_output);
     void codeColumn(DynArray<GAMPSEntry>* temp);
 
-    void codeColumnGroup(int base_column_index);
-
-    // TODO: merge these two methods into one
-//    std::vector<std::string> codeBaseColumn(int error_threshold);
-//    void codeRatioColumn(int error_threshold, std::vector<std::string> base_column);
-
-//    void groupThresholds(int threshold, int & base_threshold, int & ratio_threshold);
-
-//    static std::string calculateDiff(std::string base_value, std::string ratio_value);
-//    static std::string calculateDeltaSignal(int vi_t, int vj_t);
-//    static std::string calculateRatioSignal(int vi_t, int vj_t);
-
-
-    CDataStream* getColumn(int column_index);
+    CDataStream* getColumn(int column_index, Mask* nodata_rows_mask);
 
 public:
     using CoderBase::CoderBase;

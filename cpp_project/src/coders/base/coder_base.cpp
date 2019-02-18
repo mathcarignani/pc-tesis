@@ -88,6 +88,11 @@ void CoderBase::codeDouble(double x){
     output_file->pushDouble(x);
 }
 
+void CoderBase::codeInt(int x){
+    dataset->addBits(sizeof(int)*8);
+    output_file->pushInt(x);
+}
+
 void CoderBase::codeFile(){
     codeCoderParams();
     HeaderCoder(input_csv, this).codeHeader(dataset);
