@@ -7,7 +7,7 @@
 #include "vector_utils.h"
 #include "coder_apca.h"
 #include "gamps_utils.h"
-
+#include "coder_utils.h"
 #include "GAMPS.h"
 #include "GAMPSInput.h"
 
@@ -23,6 +23,20 @@ void CoderGAMPS::codeCoderParams(){
 
 void CoderGAMPS::codeDataRows(){
     codeTimeDeltaColumn();
+    codeOtherColumns();
+}
+
+void CoderGAMPS::codeTimeDeltaColumn(){
+    column_index = 0;
+#if COUT
+    std::cout << "ccode column_index " << column_index << std::endl;
+#endif
+    dataset->setColumn(column_index);
+    dataset->setMode("DATA");
+    time_delta_vector = TimeDeltaCoder::code(this);
+}
+
+void CoderGAMPS::codeOtherColumns(){
     Mask* nodata_rows_mask = getNodataRowsMask();
     GAMPSInput* gamps_input = getGAMPSInput(nodata_rows_mask);
     GAMPSOutput* gamps_output = getGAMPSOutput(gamps_input);
@@ -32,7 +46,7 @@ void CoderGAMPS::codeDataRows(){
 }
 
 GAMPSOutput* CoderGAMPS::getGAMPSOutput(GAMPSInput* gamps_input){
-    double epsilon = 100;
+    double epsilon = 1000;
     GAMPS* gamps = new GAMPS(epsilon, gamps_input);
     gamps->compute();
     return gamps->getOutput();
@@ -76,6 +90,7 @@ GAMPSInput* CoderGAMPS::getGAMPSInput(Mask* nodata_rows_mask){
 
         std::cout << "Parsing column " << col_index << std::endl;
 
+        dataset->setColumn(col_index);
         CDataStream* signal = getColumn(col_index, nodata_rows_mask);
         multiStream->addSingleStream(signal);
     }
@@ -91,22 +106,24 @@ CDataStream* CoderGAMPS::getColumn(int column_index, Mask* nodata_rows_mask){
     int previous_value = -1;
     int value;
 
+    std::cout << "getColumn " << column_index << std::endl;
+    std::cout << "dataset->offset() = " << dataset->offset() << std::endl;
+
     input_csv->goToFirstDataRow(column_index);
     while (input_csv->continue_reading){
         std::string csv_value = input_csv->readNextValue();
+        std::string mapped_value = CoderUtils::mapValue(csv_value, dataset->offset() + 1);
 
         if (nodata_rows_mask->isNoData()){ continue; } // skip nodata rows
 
         timestamp++;
 
-        if (Constants::isNoData(csv_value)){
+        if (Constants::isNoData(mapped_value)){
             if (previous_value == -1){ continue; }
             value = previous_value; // same as the last (no nodata) value
         }
         else {
-            value = StringUtils::stringToInt(csv_value);
-            assert(value > 0);
-
+            value = StringUtils::stringToInt(mapped_value);
             if (previous_value == -1 && timestamp > 0){ // the first rows of the column contained nodata values
                 // fill previous values
                 for(int i = 1; i < timestamp; i++){ dataStream->add(DataItem(value, i)); }
@@ -120,17 +137,6 @@ CDataStream* CoderGAMPS::getColumn(int column_index, Mask* nodata_rows_mask){
     assert(timestamp == dataStream->size());
     assert(timestamp == data_rows_count - nodata_rows_mask->total_no_data);
     return dataStream;
-}
-
-
-void CoderGAMPS::codeTimeDeltaColumn(){
-    column_index = 0;
-#if COUT
-    std::cout << "ccode column_index " << column_index << std::endl;
-#endif
-    dataset->setColumn(column_index);
-    dataset->setMode("DATA");
-    time_delta_vector = TimeDeltaCoder::code(this);
 }
 
 void CoderGAMPS::codeMappingTable(GAMPSOutput* gamps_output){

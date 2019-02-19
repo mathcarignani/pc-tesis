@@ -27,6 +27,8 @@ private:
 
     void codeDataRows() override;
     void codeTimeDeltaColumn();
+    void codeOtherColumns();
+
     Mask* getNodataRowsMask();
     GAMPSInput* getGAMPSInput(Mask* nodata_rows_mask);
     GAMPSOutput* getGAMPSOutput(GAMPSInput* gamps_input);
