@@ -28,24 +28,26 @@ class MappingTable {
 private:
     std::vector<int> getRatioColumns(std::vector<int> base_column_index_vector, int column_index);
 
-    int getColumnIndex(int data_columns_count, int gamps_col_index);
-    void addBaseColumnIndex(int base_column_index);
-
 public:
     std::vector<int> base_columns_indexes;
     std::vector<int> nodata_columns_indexes;
     std::vector<MapEntry*> mapping_vector;
+    int data_columns_count; // number of data columns (some of them can be nodata)
+    int gamps_columns_count; // number of data columns which contain at least an integer value, used in the GAMPS algorithm
 
+    // Only called in CoderGAMPS
     MappingTable();
-    MappingTable(std::vector<int> base_columns_indexes_, std::vector<MapEntry*> mapping_vector_);
+    void setNoDataColumnsIndexes(std::vector<bool> nodata_columns, int data_columns_count_);
+    void calculate(GAMPSOutput* gamps_output);
+    int getColumnIndex(int gamps_col_index);
 
-    void addNodataColumnIndex(int col_index);
+    // Only called in DecoderGAMPS
+    MappingTable(std::vector<int> vector);
+
+
+    void createBaseColumnIndex();
+
     bool isNodataColumnIndex(int col_index);
-
-    void calculate(int data_columns_count, GAMPSOutput* gamps_output);
-
-
-
     std::vector<int> ratioColumns(int base_column_index);
     std::vector<int> baseColumnIndexVector();
     bool isBaseColumn(int column_index);

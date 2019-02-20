@@ -15,8 +15,13 @@ private:
     MappingTable* mapping_table;
 
     void decodeDataRows() override;
+
     void decodeTimeDeltaColumn();
-    void decodeMapping();
+    void decodeMappingTable();
+    void decodeOtherColumns();
+    void decodeNoDataColumns();
+    void decodeGAMPSColumns();
+
     GAMPSOutput* decodeGAMPSOutput();
     DynArray<GAMPSEntry>* decodeColum();
     void decodeColumnGroups(GAMPSOutput* gamps_output);

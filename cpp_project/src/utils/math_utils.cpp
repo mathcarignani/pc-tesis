@@ -6,6 +6,12 @@
 //
 // SOURCE: https://stackoverflow.com/a/21192373/4547232
 //
+// Examples:
+// MathUtils::bitLength(0) == 1 // 0
+// MathUtils::bitLength(1) == 1 // 1
+// MathUtils::bitLength(2) == 2 // 10
+// MathUtils::bitLength(3) == 2 // 11
+// MathUtils::bitLength(4) == 3 // 100
 int MathUtils::bitLength(uint32_t value){
     int bits = 0;
     for (int bit_test = 16; bit_test > 0; bit_test >>= 1){

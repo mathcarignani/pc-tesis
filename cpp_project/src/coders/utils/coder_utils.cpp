@@ -7,11 +7,16 @@ std::string CoderUtils::mapValue(std::string csv_value, int offset){
     if (Constants::isNoData(csv_value)){
         return csv_value;
     }
-    int int_value = StringUtils::stringToInt(csv_value) + offset;
-#if CHECKS
-    assert(int_value > 0);
-#endif
+    int int_value = mapValueInt(csv_value, offset);
     return StringUtils::intToString(int_value);
+}
+
+int CoderUtils::mapValueInt(std::string csv_value, int offset){
+    int value = StringUtils::stringToInt(csv_value) + offset;
+#if CHECKS
+    assert(value > 0);
+#endif
+    return value;
 }
 
 std::string CoderUtils::unmapValue(std::string value, int offset){

@@ -24,20 +24,21 @@ private:
     MappingTable* mapping_table;
 
     void codeCoderParams() override;
-
     void codeDataRows() override;
+
     void codeTimeDeltaColumn();
-    void codeOtherColumns();
+    GAMPSOutput* processOtherColumns();
+    void codeMappingTable(GAMPSOutput* gamps_output);
+    void codeGAMPSColumns(GAMPSOutput* gamps_output);
 
     Mask* getNodataRowsMask();
     GAMPSInput* getGAMPSInput(Mask* nodata_rows_mask);
+    CDataStream* getColumn(int column_index, Mask* nodata_rows_mask);
     GAMPSOutput* getGAMPSOutput(GAMPSInput* gamps_input);
 
-    void codeMappingTable(GAMPSOutput* gamps_output);
-    void codeColumnGroups(GAMPSOutput* gamps_output);
     void codeColumn(DynArray<GAMPSEntry>* temp);
 
-    CDataStream* getColumn(int column_index, Mask* nodata_rows_mask);
+
 
 public:
     using CoderBase::CoderBase;

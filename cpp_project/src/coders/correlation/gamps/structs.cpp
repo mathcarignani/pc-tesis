@@ -1,5 +1,6 @@
 
 #include "structs.h"
+#include "constants.h"
 
 MapEntry::MapEntry(int column_index_, int base_column_index_, std::vector<int> ratio_columns_){
     column_index = column_index_;
@@ -26,10 +27,99 @@ void MapEntry::print(){
 
 MappingTable::MappingTable(){}
 
+void MappingTable::setNoDataColumnsIndexes(std::vector<bool> nodata_columns, int data_columns_count_){
+    for (int i = 0; i < nodata_columns.size(); i++){
+        int col_index = i + 1;
+        if (nodata_columns[i]) { // column with index col_index is a nodata column
+            nodata_columns_indexes.push_back(col_index);
+        }
+    }
+    data_columns_count = data_columns_count_;
+    gamps_columns_count = data_columns_count_ - nodata_columns_indexes.size();
+#if CHECKS
+    assert(data_columns_count > 0);
+    assert(gamps_columns_count > 0);
+#endif
+}
 
-MappingTable::MappingTable(std::vector<int> base_columns_indexes_, std::vector<MapEntry*> mapping_vector_){
-    base_columns_indexes = base_columns_indexes_;
-    mapping_vector = mapping_vector_;
+void MappingTable::calculate(GAMPSOutput* gamps_output){
+    int data_column_index = 0;
+    for(int i=1; i <= data_columns_count; i++){
+        MapEntry* map_entry;
+        std::vector<int> ratio_signals;
+
+        if (VectorUtils::vectorIncludesInt(nodata_columns_indexes, i)){
+            map_entry = new MapEntry(i, 0, ratio_signals);
+        }
+        else {
+            int base_index = gamps_output->getTgood()[data_column_index];
+            int base_index_mapped = getColumnIndex(base_index);
+
+            // add ratio signals
+            for(int j=0; j < gamps_columns_count; j++){
+                int base_j = gamps_output->getTgood()[j];
+                if (base_j != j && base_j == data_column_index){
+                    int j_index = getColumnIndex(j);
+                    ratio_signals.push_back(j_index);
+                }
+            }
+            map_entry = new MapEntry(i, base_index_mapped, ratio_signals);
+            data_column_index++;
+        }
+        mapping_vector.push_back(map_entry);
+    }
+    createBaseColumnIndex();
+}
+
+MappingTable::MappingTable(std::vector<int> vector){
+    for(int i = 0; i < vector.size(); i++){
+        MapEntry* map_entry;
+        std::vector<int> ratio_signals;
+
+        int col_index = i + 1;
+        int base_index = vector.at(i);
+
+        if (base_index == 0){ // nodata column
+            nodata_columns_indexes.push_back(col_index);
+        }
+        else { // data column
+            // add ratio signals
+            for (int j = 0; j < vector.size(); j++) {
+                int col_index_j = j + 1;
+                int base_index_j = vector.at(j);
+                if (col_index_j != col_index && base_index_j == col_index){
+                    ratio_signals.push_back(col_index_j);
+                }
+            }
+        }
+        map_entry = new MapEntry(col_index, base_index, ratio_signals);
+        mapping_vector.push_back(map_entry);
+    }
+    createBaseColumnIndex();
+    data_columns_count = vector.size();
+    gamps_columns_count = data_columns_count - nodata_columns_indexes.size();
+#if CHECKS
+    assert(data_columns_count > 0);
+    assert(gamps_columns_count > 0);
+#endif
+}
+
+void MappingTable::createBaseColumnIndex(){
+    for (int i = 0; i < mapping_vector.size(); i++){
+        int col_index = i + 1;
+        std::cout << "col_index = " << col_index << std::endl;
+        if (VectorUtils::vectorIncludesInt(base_columns_indexes, col_index)) { continue; }
+        for (int j = 0; j < mapping_vector.size(); j++){
+            std::cout << "  j = " << j << std::endl;
+            MapEntry* map_entry = mapping_vector.at(j);
+            std::cout << "  base_index = " << map_entry->base_column_index << std::endl;
+            if (map_entry->base_column_index == col_index && !VectorUtils::vectorIncludesInt(base_columns_indexes, col_index)){
+                std::cout << "  PUSH" << std::endl;
+                base_columns_indexes.push_back(col_index);
+                continue;
+            }
+        }
+    }
 }
 
 std::vector<int> MappingTable::getRatioColumns(std::vector<int> base_column_index_vector, int column_index){
@@ -44,46 +134,11 @@ std::vector<int> MappingTable::getRatioColumns(std::vector<int> base_column_inde
     return ratio_signals;
 }
 
-void MappingTable::addNodataColumnIndex(int col_index){
-    nodata_columns_indexes.push_back(col_index);
-}
-
 bool MappingTable::isNodataColumnIndex(int col_index){
     return VectorUtils::vectorIncludesInt(nodata_columns_indexes, col_index);
 }
 
-void MappingTable::calculate(int data_columns_count, GAMPSOutput* gamps_output){
-    int gamps_output_count = data_columns_count - nodata_columns_indexes.size();
-    assert(gamps_output_count > 0);
-    int data_column_index = 0;
-    for(int i=1; i <= data_columns_count; i++){
-        std::vector<int> ratio_signals;
-        MapEntry* map_entry;
-
-        if (VectorUtils::vectorIncludesInt(nodata_columns_indexes, i)){
-            map_entry = new MapEntry(i, 0, ratio_signals);
-        }
-        else {
-            int base_index = gamps_output->getTgood()[data_column_index];
-            int base_index_mapped = getColumnIndex(data_columns_count, base_index);
-
-            // add ratio signals
-            for(int j=0; j < gamps_output_count; j++){
-                int base_j = gamps_output->getTgood()[j];
-                int j_index = getColumnIndex(data_columns_count, j);
-                if (base_j != j && base_j == data_column_index){
-                    ratio_signals.push_back(j_index);
-                    addBaseColumnIndex(base_index_mapped);
-                }
-            }
-            map_entry = new MapEntry(i, base_index_mapped, ratio_signals);
-            data_column_index++;
-        }
-        mapping_vector.push_back(map_entry);
-    }
-}
-
-int MappingTable::getColumnIndex(int data_columns_count, int gamps_col_index){
+int MappingTable::getColumnIndex(int gamps_col_index){
     int data_column_index = 0;
 
     int i = 1;
@@ -97,12 +152,6 @@ int MappingTable::getColumnIndex(int data_columns_count, int gamps_col_index){
     return i;
 }
 
-void MappingTable::addBaseColumnIndex(int base_column_index){
-    if (!VectorUtils::vectorIncludesInt(base_columns_indexes, base_column_index)){
-        base_columns_indexes.push_back(base_column_index);
-    }
-}
-
 std::vector<int> MappingTable::ratioColumns(int base_column_index){
     return mapping_vector.at(base_column_index - 1)->ratio_columns;
 }
@@ -111,7 +160,7 @@ std::vector<int> MappingTable::baseColumnIndexVector(){
     std::vector<int> res;
     for (int i = 0; i < mapping_vector.size(); i++){
         MapEntry* map_entry = mapping_vector.at(i);
-        res.push_back(map_entry->base_column_index );
+        res.push_back(map_entry->base_column_index);
     }
     return res;
 }
