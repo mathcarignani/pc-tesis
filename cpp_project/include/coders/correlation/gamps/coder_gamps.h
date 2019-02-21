@@ -18,10 +18,9 @@ private:
     int column_index;
     int row_index;
     std::vector<int> time_delta_vector;
-    int total_data_rows;
-    APCAWindow* window;
 
     MappingTable* mapping_table;
+    Mask* nodata_rows_mask;
 
     void codeCoderParams() override;
     void codeDataRows() override;
@@ -31,14 +30,15 @@ private:
     void codeMappingTable(GAMPSOutput* gamps_output);
     void codeGAMPSColumns(GAMPSOutput* gamps_output);
 
-    Mask* getNodataRowsMask();
-    GAMPSInput* getGAMPSInput(Mask* nodata_rows_mask);
-    CDataStream* getColumn(int column_index, Mask* nodata_rows_mask);
+    void getNodataRowsMask();
+    GAMPSInput* getGAMPSInput();
+    CDataStream* getColumn(int column_index);
     GAMPSOutput* getGAMPSOutput(GAMPSInput* gamps_input);
 
-    void codeColumn(DynArray<GAMPSEntry>* temp);
+    void codeColumn(DynArray<GAMPSEntry>* column);
 
-
+    void update(DynArray<GAMPSEntry>* column, int & entry_index, GAMPSEntry & current_entry, int & remaining);
+    void codeWindow(APCAWindow* window);
 
 public:
     using CoderBase::CoderBase;

@@ -107,14 +107,10 @@ MappingTable::MappingTable(std::vector<int> vector){
 void MappingTable::createBaseColumnIndex(){
     for (int i = 0; i < mapping_vector.size(); i++){
         int col_index = i + 1;
-        std::cout << "col_index = " << col_index << std::endl;
         if (VectorUtils::vectorIncludesInt(base_columns_indexes, col_index)) { continue; }
         for (int j = 0; j < mapping_vector.size(); j++){
-            std::cout << "  j = " << j << std::endl;
             MapEntry* map_entry = mapping_vector.at(j);
-            std::cout << "  base_index = " << map_entry->base_column_index << std::endl;
             if (map_entry->base_column_index == col_index && !VectorUtils::vectorIncludesInt(base_columns_indexes, col_index)){
-                std::cout << "  PUSH" << std::endl;
                 base_columns_indexes.push_back(col_index);
                 continue;
             }

@@ -21,6 +21,7 @@ public:
     using CoderCols::CoderCols;
     void setCoderParams(int window_size_, std::vector<int> error_thresholds_vector_);
 
+    // TODO: no need to declar static since GAMPS doesnt use them
     //
     // Wrapper methods which are also used by CoderGAMPS.
     //

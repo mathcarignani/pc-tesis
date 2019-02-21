@@ -35,18 +35,18 @@ void CoderGAMPS::codeTimeDeltaColumn(){
 #endif
     dataset->setColumn(column_index);
     dataset->setMode("DATA");
-    time_delta_vector = TimeDeltaCoder::code(this);
+    TimeDeltaCoder::code(this);
 }
 
 GAMPSOutput* CoderGAMPS::processOtherColumns(){
-    Mask* nodata_rows_mask = getNodataRowsMask();
-    GAMPSInput* gamps_input = getGAMPSInput(nodata_rows_mask);
+    getNodataRowsMask();
+    GAMPSInput* gamps_input = getGAMPSInput();
     GAMPSOutput* gamps_output = getGAMPSOutput(gamps_input);
     return gamps_output;
 }
 
-Mask* CoderGAMPS::getNodataRowsMask(){
-    Mask* mask = new Mask();
+void CoderGAMPS::getNodataRowsMask(){
+    nodata_rows_mask = new Mask();
     std::vector<bool> nodata_columns(dataset->data_columns_count, true);
 
     input_csv->goToFirstDataRow(column_index);
@@ -60,14 +60,13 @@ Mask* CoderGAMPS::getNodataRowsMask(){
                 nodata_columns[i-1] = false;
             }
         }
-        mask->add(nodata_row);
+        nodata_rows_mask->add(nodata_row);
     }
-    mask->close();
+    nodata_rows_mask->close();
     mapping_table->setNoDataColumnsIndexes(nodata_columns, dataset->data_columns_count);
-    return mask;
 }
 
-GAMPSInput* CoderGAMPS::getGAMPSInput(Mask* nodata_rows_mask){
+GAMPSInput* CoderGAMPS::getGAMPSInput(){
     int data_columns_count = dataset->data_columns_count - mapping_table->nodata_columns_indexes.size();
     CMultiDataStream* multiStream = new CMultiDataStream(data_columns_count);
     for(int i = 0; i < dataset->data_columns_count; i++)
@@ -75,14 +74,14 @@ GAMPSInput* CoderGAMPS::getGAMPSInput(Mask* nodata_rows_mask){
         int col_index = i + 1;
         if (mapping_table->isNodataColumnIndex(col_index)) { continue; } // skip nodata columns
         dataset->setColumn(col_index);
-        CDataStream* signal = getColumn(col_index, nodata_rows_mask);
+        CDataStream* signal = getColumn(col_index);
         multiStream->addSingleStream(signal);
     }
     GAMPSInput* gamps_input = new GAMPSInput(multiStream);
     return gamps_input;
 }
 
-CDataStream* CoderGAMPS::getColumn(int column_index, Mask* nodata_rows_mask){
+CDataStream* CoderGAMPS::getColumn(int column_index){
     std::cout << "BEGIN getColumn" << std::endl;
     CDataStream* dataStream = new CDataStream();
 
@@ -154,31 +153,85 @@ void CoderGAMPS::codeGAMPSColumns(GAMPSOutput* gamps_output){
     DynArray<GAMPSEntry>** ratio_signals = gamps_output->getResultRatioSignal();
 
     for(int i = 0; i < mapping_table->gamps_columns_count; i++){
-        int col_index = mapping_table->getColumnIndex(i);
-        if (mapping_table->isBaseColumn(col_index)){ // base column
-            std::cout << "code base  signal i = " << col_index << std::endl;
+        column_index = mapping_table->getColumnIndex(i);
+        if (mapping_table->isBaseColumn(column_index)){ // base column
+            std::cout << "code base  signal i = " << column_index << std::endl;
             column = base_signals[base_count++];
         }
         else{ // ratio column
-            std::cout << "code ratio signal i = " << col_index << std::endl;
+            std::cout << "code ratio signal i = " << column_index << std::endl;
             column = ratio_signals[ratio_count++];
         }
-//        codeColumn(column);
+        codeColumn(column);
     }
 }
 
 void CoderGAMPS::codeColumn(DynArray<GAMPSEntry>* column){
+#if MASK_MODE
+    dataset->setMode("MASK");
+    int total_data_rows = MaskCoder::code(this, column_index);
+#endif
+    dataset->setMode("DATA");
 
+    int entry_index = 0;
+    GAMPSEntry current_entry = column->getAt(entry_index);
+    int remaining = current_entry.endingTimestamp;
 
+    APCAWindow* window = new APCAWindow(window_size, 0); // threshold will not be used
+    nodata_rows_mask->reset();
+    row_index = 0;
+    input_csv->goToFirstDataRow(column_index);
+    while (input_csv->continue_reading) {
+        std::string csv_value = input_csv->readNextValue();
 
+        bool no_data_row = nodata_rows_mask->isNoData();
+        bool no_data = Constants::isNoData(csv_value);
 
-    std::cout << "array->size() = " << column->size() << std::endl;
-    for(int i=0; i < column->size(); i++){
-        GAMPSEntry entry = column->getAt(i);
-        std::cout << "entry.value = " << entry.value << std::endl;
-        std::cout << "entry.endingTimestamp = " << entry.endingTimestamp << std::endl;
+    #if MASK_MODE
+        // skip no_data
+        if (no_data_row) { continue; }
+        else if (no_data) {
+            update(column, entry_index, current_entry, remaining);
+            continue;
+        }
+    #endif
+        csv_value = no_data ? csv_value : StringUtils::doubleToString(current_entry.value);
 
-        codeDouble(entry.value);
-        codeInt(entry.endingTimestamp); // TODO: code size instead of timestamp
+        if (!window->conditionHolds(csv_value)) {
+            codeWindow(window);
+            window->addFirstValue(csv_value);
+        }
+        if (!no_data_row){
+            update(column, entry_index, current_entry, remaining);
+        }
+
     }
+
+    if (!window->isEmpty()) {
+        codeWindow(window);
+    }
+}
+
+void CoderGAMPS::update(DynArray<GAMPSEntry>* column, int & entry_index, GAMPSEntry & current_entry, int & remaining){
+    remaining--;
+    if (remaining > 0){ return; }
+
+    entry_index++;
+    if (entry_index == column->size()) { return; }
+
+    int previous_last_timestamp = current_entry.endingTimestamp;
+    current_entry = column->getAt(entry_index);
+    remaining = current_entry.endingTimestamp - previous_last_timestamp;
+}
+
+void CoderGAMPS::codeWindow(APCAWindow* window){
+    std::cout << "-----------------------------------------" << std::endl;
+    codeInt(window->length, window->window_size_bit_length);
+    std::cout << "codeInt(" << window->length << ", " << window->window_size_bit_length << ");" << std::endl;
+
+    std::string constant_value = window->constant_value;
+    double value = Constants::isNoData(constant_value) ? 0 : StringUtils::stringToDouble(constant_value);
+    codeDouble(value);
+    std::cout << "codeDouble(" << value << ");" << std::endl;
+    std::cout << "-----------------------------------------" << std::endl;
 }
