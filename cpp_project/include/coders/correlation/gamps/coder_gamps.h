@@ -30,15 +30,17 @@ private:
     void codeMappingTable(GAMPSOutput* gamps_output);
     void codeGAMPSColumns(GAMPSOutput* gamps_output);
 
+
     void getNodataRowsMask();
     GAMPSInput* getGAMPSInput();
     CDataStream* getColumn(int column_index);
     GAMPSOutput* getGAMPSOutput(GAMPSInput* gamps_input);
 
-    void codeColumn(DynArray<GAMPSEntry>* column);
+    void codeGAMPSGroup(DynArray<GAMPSEntry>** signals, bool base_signals);
+    void codeGAMPSColumn(DynArray<GAMPSEntry>* column, bool base_column);
 
     void update(DynArray<GAMPSEntry>* column, int & entry_index, GAMPSEntry & current_entry, int & remaining);
-    void codeWindow(APCAWindow* window);
+    void codeWindow(APCAWindow* window, bool base_column);
 
 public:
     using CoderBase::CoderBase;

@@ -1,4 +1,5 @@
 
+#include <coders/utils/coder_utils.h>
 #include "decoder_gamps.h"
 #include "string_utils.h"
 #include "math_utils.h"
@@ -18,9 +19,6 @@ void DecoderGAMPS::decodeDataRows(){
     decodeNoDataColumns();
     decodeGAMPSColumns();
 
-//    GAMPSOutput* gamps_output = decodeGAMPSOutput();
-//    decodeColumnGroups(gamps_output);
-//
     transposeMatrix(data_rows_count, columns, total_columns);
 }
 
@@ -56,199 +54,113 @@ void DecoderGAMPS::decodeNoDataColumns(){
 }
 
 void DecoderGAMPS::decodeGAMPSColumns(){
-    std::vector<std::string> col(data_rows_count, Constants::NO_DATA);
+    std::cout << "std::vector<std::vector<double>> base_columns = decodeGAMPSGroup(true);" << std::endl;
+    std::vector<std::vector<double>> base_columns = decodeGAMPSGroup(true);
+    std::cout << "std::vector<std::vector<double>> ratio_columns = decodeGAMPSGroup(false);" << std::endl;
+    std::vector<std::vector<double>> ratio_columns = decodeGAMPSGroup(false);
 
+    for(int i=0; i < base_columns.size(); i++){
+        std::vector<double> base_column = base_columns.at(i);
+        std::vector<std::string> column;
+        column_index = mapping_table->base_columns_indexes.at(i);
+        std::cout << "decode base  signal i = " << column_index << std::endl;
+        assert(base_column.size() == data_rows_count);
+        for(int j = 0; j < base_column.size(); j++){
+            double value = base_column.at(j);
+            std::string constant = CoderUtils::unmapValueInt(value, dataset->offset() + 1);
+            column.push_back(constant);
+        }
+        assert(column.size() == data_rows_count);
+        VectorUtils::printDoubleVector(base_column);
+        VectorUtils::printStringVector(column);
+        columns.at(column_index) = column;
+    }
+
+    for(int i=0; i < ratio_columns.size(); i++){
+        std::vector<double> ratio_column = ratio_columns.at(i);
+        std::vector<std::string> column;
+        column_index = mapping_table->ratioColumnsIndexesAt(i);
+        std::cout << "decode ratio signal i = " << column_index << std::endl;
+        assert(ratio_column.size() == data_rows_count);
+        for(int j = 0; j < ratio_column.size(); j++){
+            double value = ratio_column.at(j);
+            std::string constant = CoderUtils::unmapValueInt(value, dataset->offset() + 1);
+            column.push_back(constant);
+        }
+        assert(column.size() == data_rows_count);
+        VectorUtils::printDoubleVector(ratio_column);
+        VectorUtils::printStringVector(column);
+        columns.at(column_index) = column;
+    }
+}
+
+std::vector<std::vector<double>> DecoderGAMPS::decodeGAMPSGroup(bool base_signals){
+    std::vector<std::vector<double>> columns;
+    std::vector<std::string> col;
     for(int i = 0; i < mapping_table->gamps_columns_count; i++){
-        int col_index = mapping_table->getColumnIndex(i);
-        if (mapping_table->isBaseColumn(col_index)){ // base column
-            std::cout << "decode base  signal i = " << col_index << std::endl;
-            // TODO
-        }
-        else{ // ratio column
-            std::cout << "decode ratio signal i = " << col_index << std::endl;
-            // TODO
-        }
-        columns.at(col_index) = col;
+        column_index = mapping_table->getColumnIndex(i);
+        dataset->setColumn(column_index);
+        bool base_column = mapping_table->isBaseColumn(column_index);
+        if (base_signals != base_column){ continue; }
+        std::cout << "decode " << (base_column ? "base " : "ratio") << " signal i = " << column_index << std::endl;
+        std::vector<double> column = decodeGAMPSColumn(base_column);
+        columns.push_back(column);
     }
+    return columns;
 }
 
+std::vector<double> DecoderGAMPS::decodeGAMPSColumn(bool base_column){
+    std::vector<double> column;
+    row_index = 0;
+    int unprocessed_rows = data_rows_count;
 
+#if MASK_MODE
+    Mask* mask = decoder->mask;
+#if CHECKS
+    assert(mask->total_no_data + mask->total_data == decoder->data_rows_count);
+#endif // END CHECKS
+#endif // END MASK_MODE
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-GAMPSOutput* DecoderGAMPS::decodeGAMPSOutput(){
-    std::cout << "decodeGAMPSOutput" << std::endl;
-    GAMPSOutput* gamps_output = new GAMPSOutput(NULL);
-
-    int base_columns_count = mapping_table->baseColumnsCount();
-    int ratio_columns_count = dataset->data_columns_count - base_columns_count;
-
-    DynArray<GAMPSEntry>** resultBaseSignal =  new DynArray<GAMPSEntry>*[base_columns_count];
-    DynArray<GAMPSEntry>** resultRatioSignal;
-    if (ratio_columns_count > 0){
-        resultRatioSignal = new DynArray<GAMPSEntry>*[ratio_columns_count];
+    while (unprocessed_rows > 0) {
+    #if MASK_MODE
+        if (mask->isNoData()) {
+            column.push_back(Constants::NO_DATA_DOUBLE);
+            decoder->row_index++; unprocessed_rows--;
+            continue;
+        }
+    #endif
+        decodeWindow(column, base_column);
+        unprocessed_rows = data_rows_count - row_index;
     }
-
-    int base_count = 0;
-    int ratio_count = 0;
-    DynArray<GAMPSEntry>* column;
-
-    for (int i = 0; i < dataset->data_columns_count; i++){
-        std::cout << "decodeColumn()" << std::endl;
-        column = decodeColum();
-        if (mapping_table->isBaseColumn(i + 1)){
-            std::cout << "decode base signal i = " << i + 1 << std::endl;
-            resultBaseSignal[base_count++] = column;
-        }
-        else {
-            std::cout << "decode ratio signal i = " << i + 1 << std::endl;
-            resultRatioSignal[ratio_count++] = column;
-        }
-    }
-
-    gamps_output->setResultBaseSignal(resultBaseSignal);
-    gamps_output->setResultRatioSignal(resultRatioSignal);
-    return gamps_output;
-}
-
-DynArray<GAMPSEntry>* DecoderGAMPS::decodeColum(){
-    DynArray<GAMPSEntry>* column = new DynArray<GAMPSEntry>();
-    while (true) {
-        GAMPSEntry entry;
-        entry.value = decodeDouble();
-        entry.endingTimestamp = decodeInt();
-        column->add(entry);
-
-        std::cout << "entry.value = " << entry.value << std::endl;
-        std::cout << "entry.endingTimestamp = " << entry.endingTimestamp << std::endl;
-
-        if (entry.endingTimestamp == time_delta_vector.size()){
-            return column;
-        }
-    }
-}
-
-void DecoderGAMPS::decodeColumnGroups(GAMPSOutput* gamps_output){
-    std::cout << "decodeColumnGroups" << std::endl;
-    int base_count = 0;
-    int ratio_count = 0;
-
-    std::vector<std::string> column;
-    DynArray<GAMPSEntry>* gamps_column;
-    DynArray<GAMPSEntry>** base_signals = gamps_output->getResultBaseSignal();
-    DynArray<GAMPSEntry>** ratio_signals = gamps_output->getResultRatioSignal();
-
-    for(int i = 0; i < dataset->data_columns_count; i++){
-        int col_index = i + 1;
-        if (mapping_table->isBaseColumn(col_index)){
-            std::cout << "decode base signal i = " << col_index << std::endl;
-            gamps_column = base_signals[base_count++];
-            column = getBaseColumn(gamps_column);
-        }
-        else {
-            exit(1);
-        }
-        columns.at(i + 1) = column;
-    }
-    std::cout << "END decodeColumnGroups" << std::endl;
-}
-
-std::vector<std::string> DecoderGAMPS::getBaseColumn(DynArray<GAMPSEntry>* gamps_column){
-    std::vector<std::string> column;
-
-    GAMPSEntry entry;
-    int entry_index = 0;
-    entry = gamps_column->getAt(entry_index);
-    int entry_ending_timestamp = entry.endingTimestamp;
-    double entry_value = entry.value;
-    int current_timestamp = 0;
-
-    while(current_timestamp < time_delta_vector.size()){
-        while (current_timestamp <= entry_ending_timestamp && current_timestamp < time_delta_vector.size()){
-            std::string value = StringUtils::doubleToString(entry_value);
-            std::cout << "timestamp, value = " << current_timestamp << ", " << value << std::endl;
-            column.push_back(value);
-            current_timestamp++;
-        }
-        if (current_timestamp == time_delta_vector.size()){
-            break;
-        }
-        entry_index++;
-        entry = gamps_column->getAt(entry_index);
-        entry_ending_timestamp = entry.endingTimestamp;
-        entry_value = entry.value;
-    }
-    std::cout << "column.size() = " << column.size() << std::endl;
-    std::cout << "data_rows_count = " << data_rows_count << std::endl;
-    assert(column.size() == data_rows_count);
     return column;
 }
 
-//void DecoderGAMPS::decodeColumnGroups(){
-//    for(int i=0; i < mapping_table->baseColumnsCount(); i++){
-//        int base_column_index = mapping_table->base_columns_indexes.at(i);
-//        decodeColumnGroup(base_column_index);
-//    }
-//}
+void DecoderGAMPS::decodeWindow(std::vector<double> & column, bool base_column){
+    std::cout << "-----------------------------------------" << std::endl;
+    int window_size = input_file->getInt(window_size_bit_length);
+    std::cout << "window_size = " << window_size << std::endl;
+    decodeConstantWindow(column, window_size, base_column);
+#if MASK_MODE
+    decoder->mask->total_data -= window_size;
+#endif
+    std::cout << "-----------------------------------------" << std::endl;
+}
 
-//void DecoderGAMPS::decodeColumnGroup(int base_column_index){
-//    // decode base column
-//    column_index = base_column_index;
-//#if COUT
-//    std::cout << "decode base column_index " << column_index << std::endl;
-//#endif
-//    dataset->setColumn(column_index);
-//    std::vector<std::string> base_column = decodeBaseColumn();
-//    dataset->updateRangesGAMPS(base_column_index);
-//
-//    // decode ratio columns
-//    std::vector<int> column_group_indexes = mapping_table->ratioSignals(base_column_index);
-//    for(int i=0; i < column_group_indexes.size(); i++){
-//        column_index = column_group_indexes.at(i);
-//    #if COUT
-//        std::cout << "decode ratio column_index " << column_index << std::endl;
-//    #endif
-//        dataset->setColumn(column_index);
-//        decodeRatioColumn(base_column);
-//    }
-//}
-
-//std::vector<std::string> DecoderGAMPS::decodeBaseColumn(){
-//#if MASK_MODE
-//    mask = MaskDecoder::decode(this);
-//#endif
-//    std::vector<std::string> base_column = DecoderAPCA::decodeDataColumn(this);
-//    columns.at(column_index) = base_column;
-//    return base_column;
-//}
-
-//void DecoderGAMPS::decodeRatioColumn(std::vector<std::string> base_column){
-//#if MASK_MODE
-//    mask = MaskDecoder::decode(this);
-//#endif
-//    std::vector<std::string> diff_column = DecoderAPCA::decodeDataColumn(this);
-//    std::vector<std::string> ratio_column;
-//    for(int i=0; i < diff_column.size(); i++){
-//        std::string ratio = calculateRatio(base_column.at(i), diff_column.at(i));
-//        ratio_column.push_back(ratio);
-//    }
-//    columns.at(column_index) = ratio_column;
-//}
-
-//std::string DecoderGAMPS::calculateRatio(std::string base_value, std::string diff){
-//    if (Constants::isNoData(base_value) || Constants::isNoData(diff)) { return diff; }
-//
-//    int ratio_value = StringUtils::stringToInt(diff) + StringUtils::stringToInt(base_value);
-//    return StringUtils::intToString(ratio_value);
-//}
+void DecoderGAMPS::decodeConstantWindow(std::vector<double> & column, int window_size, bool base_column){
+    // TODO: can use an integer for the base columns!
+    double constant = base_column ? decodeInt() : decodeDouble();
+    std::cout << "constant = " << constant << std::endl;
+    int i = 0;
+    while (i < window_size){
+    #if MASK_MODE
+        if (i > 0 && decoder->mask->isNoData()) { // always false in the first iteration
+            column.push_back(Constants::NO_DATA_DOUBLE);
+            decoder->row_index++;
+            continue;
+        }
+    #endif
+        column.push_back(constant);
+        i++;
+        row_index++;
+    }
+}

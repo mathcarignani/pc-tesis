@@ -19,6 +19,14 @@ int CoderUtils::mapValueInt(std::string csv_value, int offset){
     return value;
 }
 
+std::string CoderUtils::unmapValueInt(int value, int offset){
+    if (value == Constants::NO_DATA_DOUBLE){
+        return Constants::NO_DATA;
+    }
+    value -= offset;
+    return StringUtils::intToString(value);
+}
+
 std::string CoderUtils::unmapValue(std::string value, int offset){
     if (Constants::isNoData(value)){
         return value;

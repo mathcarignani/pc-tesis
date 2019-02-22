@@ -47,7 +47,10 @@ public:
 
     void createBaseColumnIndex();
 
+    int ratioColumnsIndexesAt(int index);
+
     bool isNodataColumnIndex(int col_index);
+
     std::vector<int> ratioColumns(int base_column_index);
     std::vector<int> baseColumnIndexVector();
     bool isBaseColumn(int column_index);

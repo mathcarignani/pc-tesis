@@ -50,6 +50,10 @@ public:
         printVector(vector);
     }
 
+    static void printDoubleVector(std::vector<double> vector){
+        printVector(vector);
+    }
+
     static void printStringVector(std::vector<std::string> vector){
         printVector(vector);
     }

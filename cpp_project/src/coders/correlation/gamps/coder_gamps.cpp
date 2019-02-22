@@ -145,28 +145,27 @@ void CoderGAMPS::codeMappingTable(GAMPSOutput* gamps_output){
 }
 
 void CoderGAMPS::codeGAMPSColumns(GAMPSOutput* gamps_output){
-    int base_count = 0;
-    int ratio_count = 0;
-
-    DynArray<GAMPSEntry>* column;
     DynArray<GAMPSEntry>** base_signals = gamps_output->getResultBaseSignal();
     DynArray<GAMPSEntry>** ratio_signals = gamps_output->getResultRatioSignal();
 
+    codeGAMPSGroup(base_signals, true);
+    codeGAMPSGroup(ratio_signals, false);
+}
+
+void CoderGAMPS::codeGAMPSGroup(DynArray<GAMPSEntry>** signals, bool base_signals){
+    DynArray<GAMPSEntry>* column;
+    int signal_index = 0;
     for(int i = 0; i < mapping_table->gamps_columns_count; i++){
         column_index = mapping_table->getColumnIndex(i);
-        if (mapping_table->isBaseColumn(column_index)){ // base column
-            std::cout << "code base  signal i = " << column_index << std::endl;
-            column = base_signals[base_count++];
-        }
-        else{ // ratio column
-            std::cout << "code ratio signal i = " << column_index << std::endl;
-            column = ratio_signals[ratio_count++];
-        }
-        codeColumn(column);
+        bool base_column = mapping_table->isBaseColumn(column_index);
+        if (base_signals != base_column){ continue; }
+        std::cout << "code " << (base_column ? "base " : "ratio") << " signal i = " << column_index << std::endl;
+        column = signals[signal_index++];
+        codeGAMPSColumn(column, base_column);
     }
 }
 
-void CoderGAMPS::codeColumn(DynArray<GAMPSEntry>* column){
+void CoderGAMPS::codeGAMPSColumn(DynArray<GAMPSEntry>* column, bool base_column){
 #if MASK_MODE
     dataset->setMode("MASK");
     int total_data_rows = MaskCoder::code(this, column_index);
@@ -198,7 +197,7 @@ void CoderGAMPS::codeColumn(DynArray<GAMPSEntry>* column){
         csv_value = no_data ? csv_value : StringUtils::doubleToString(current_entry.value);
 
         if (!window->conditionHolds(csv_value)) {
-            codeWindow(window);
+            codeWindow(window, base_column);
             window->addFirstValue(csv_value);
         }
         if (!no_data_row){
@@ -208,7 +207,7 @@ void CoderGAMPS::codeColumn(DynArray<GAMPSEntry>* column){
     }
 
     if (!window->isEmpty()) {
-        codeWindow(window);
+        codeWindow(window, base_column);
     }
 }
 
@@ -224,14 +223,21 @@ void CoderGAMPS::update(DynArray<GAMPSEntry>* column, int & entry_index, GAMPSEn
     remaining = current_entry.endingTimestamp - previous_last_timestamp;
 }
 
-void CoderGAMPS::codeWindow(APCAWindow* window){
+void CoderGAMPS::codeWindow(APCAWindow* window, bool base_column){
     std::cout << "-----------------------------------------" << std::endl;
     codeInt(window->length, window->window_size_bit_length);
     std::cout << "codeInt(" << window->length << ", " << window->window_size_bit_length << ");" << std::endl;
 
     std::string constant_value = window->constant_value;
-    double value = Constants::isNoData(constant_value) ? 0 : StringUtils::stringToDouble(constant_value);
-    codeDouble(value);
-    std::cout << "codeDouble(" << value << ");" << std::endl;
+    double value = Constants::isNoData(constant_value) ? Constants::NO_DATA_DOUBLE : StringUtils::stringToDouble(constant_value);
+    if (base_column){
+        codeInt(value);
+        std::cout << "codeInt(" << value << ");" << std::endl;
+    }
+    else { // ratio column
+        // TODO: move to an aux method... also create an analog decoding method
+        codeDouble(value);
+        std::cout << "codeDouble(" << value << ");" << std::endl;
+    }
     std::cout << "-----------------------------------------" << std::endl;
 }

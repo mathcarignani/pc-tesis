@@ -22,16 +22,11 @@ private:
     void decodeNoDataColumns();
     void decodeGAMPSColumns();
 
-    GAMPSOutput* decodeGAMPSOutput();
-    DynArray<GAMPSEntry>* decodeColum();
-    void decodeColumnGroups(GAMPSOutput* gamps_output);
-    std::vector<std::string> getBaseColumn(DynArray<GAMPSEntry>* gamps_column);
+    std::vector<std::vector<double>> decodeGAMPSGroup(bool base_signals);
+    std::vector<double> decodeGAMPSColumn(bool base_column);
 
-//    void decodeColumnGroups();
-//    void decodeColumnGroup(int base_column_index);
-//    std::vector<std::string> decodeBaseColumn();
-//    void decodeRatioColumn(std::vector<std::string> base_column);
-//    static std::string calculateRatio(std::string base_value, std::string diff_value);
+    void decodeWindow(std::vector<double> & column, bool base_column);
+    void decodeConstantWindow(std::vector<double> & column, int window_size, bool base_column);
 
 public:
     using DecoderBase::DecoderBase;

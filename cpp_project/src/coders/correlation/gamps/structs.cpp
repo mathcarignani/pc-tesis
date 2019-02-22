@@ -118,6 +118,18 @@ void MappingTable::createBaseColumnIndex(){
     }
 }
 
+int MappingTable::ratioColumnsIndexesAt(int index){
+    int ratio_index = 0;
+    for (int i = 0; i < mapping_vector.size(); i++){
+        int col_index = i + 1;
+        MapEntry* map_entry = mapping_vector.at(i);
+        if (map_entry->base_column_index != col_index && map_entry->base_column_index != 0){
+            if (index == ratio_index) { return col_index; }
+            ratio_index++;
+        }
+    }
+}
+
 std::vector<int> MappingTable::getRatioColumns(std::vector<int> base_column_index_vector, int column_index){
     std::vector<int> ratio_signals;
     for (int j = 0; j < base_column_index_vector.size(); j++){

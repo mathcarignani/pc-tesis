@@ -16,6 +16,8 @@ class Constants {
 public:
     static const std::string NO_DATA;
     static const char NO_DATA_CHAR;
+    static const double NO_DATA_DOUBLE;
+
     static const int MASK_BITS;
     static const int MASK_MAX_SIZE;
 
