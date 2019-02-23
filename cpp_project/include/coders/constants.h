@@ -32,6 +32,7 @@ public:
     static const int CODER_GAMPS; // 30
 
     static bool isNoData(std::string csv_value);
+    static bool isNoData(double value);
 };
 
 #endif //CPP_PROJECT_CONSTANTS_H

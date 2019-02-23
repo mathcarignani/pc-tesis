@@ -21,3 +21,7 @@ const int Constants::CODER_GAMPS = 30;
 bool Constants::isNoData(std::string csv_value) {
     return csv_value[0] == NO_DATA_CHAR;
 }
+
+bool Constants::isNoData(double value) {
+    return value == NO_DATA_DOUBLE;
+}

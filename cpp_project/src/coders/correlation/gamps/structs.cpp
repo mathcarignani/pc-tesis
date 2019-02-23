@@ -8,14 +8,26 @@ MapEntry::MapEntry(int column_index_, int base_column_index_, std::vector<int> r
     ratio_columns = ratio_columns_;
 }
 
+bool MapEntry::isNodataEntry(){
+    return base_column_index == 0;
+}
+
+bool MapEntry::isBaseColumn(){
+    return column_index == base_column_index;
+}
+
+bool MapEntry::isRatioColumn(){
+    return !(isNodataEntry() || isBaseColumn());
+}
+
 void MapEntry::print(){
     std::cout << "column_index = " << column_index;
-    if (base_column_index == 0) {
+    if (isNodataEntry()) {
         std::cout << " [nodata column]" << std::endl;
         return;
     }
     std::cout << ", base_column_index = " << base_column_index;
-    if (ratio_columns.size() > 0){
+    if (isBaseColumn()){
         std::cout << ", ratio_columns = "; VectorUtils::printIntVector(ratio_columns);
     }
     else{
@@ -120,14 +132,16 @@ void MappingTable::createBaseColumnIndex(){
 
 int MappingTable::ratioColumnsIndexesAt(int index){
     int ratio_index = 0;
+    int col_index = 0;
     for (int i = 0; i < mapping_vector.size(); i++){
-        int col_index = i + 1;
+        col_index = i + 1;
         MapEntry* map_entry = mapping_vector.at(i);
         if (map_entry->base_column_index != col_index && map_entry->base_column_index != 0){
-            if (index == ratio_index) { return col_index; }
+            if (index == ratio_index) { break; }
             ratio_index++;
         }
     }
+    return col_index;
 }
 
 std::vector<int> MappingTable::getRatioColumns(std::vector<int> base_column_index_vector, int column_index){
@@ -160,6 +174,18 @@ int MappingTable::getColumnIndex(int gamps_col_index){
     return i;
 }
 
+int MappingTable::getRatioGampsColumnIndex(int column_index){
+    int ratio_index = 0;
+    for (int i = 0; i < mapping_vector.size(); i++){
+        MapEntry* map_entry = mapping_vector.at(i);
+        if (map_entry->isRatioColumn()){
+            if (map_entry->column_index == column_index) { break; }
+            ratio_index++;
+        }
+    }
+    return ratio_index;
+}
+
 std::vector<int> MappingTable::ratioColumns(int base_column_index){
     return mapping_vector.at(base_column_index - 1)->ratio_columns;
 }
@@ -175,10 +201,6 @@ std::vector<int> MappingTable::baseColumnIndexVector(){
 
 bool MappingTable::isBaseColumn(int column_index){
     return mapping_vector.at(column_index - 1)->base_column_index == column_index;
-}
-
-int MappingTable::baseColumnsCount(){
-    return base_columns_indexes.size();
 }
 
 void MappingTable::print(){

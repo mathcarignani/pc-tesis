@@ -18,15 +18,17 @@ private:
 
     void decodeTimeDeltaColumn();
     void decodeMappingTable();
-    void decodeOtherColumns();
     void decodeNoDataColumns();
     void decodeGAMPSColumns();
 
-    std::vector<std::vector<double>> decodeGAMPSGroup(bool base_signals);
-    std::vector<double> decodeGAMPSColumn(bool base_column);
+    std::vector<std::string> decodeBaseColumn(std::vector<double> & base_column_double);
+    std::vector<std::string> decodeRatioColumn(std::vector<double> base_column_double);
 
-    void decodeWindow(std::vector<double> & column, bool base_column);
-    void decodeConstantWindow(std::vector<double> & column, int window_size, bool base_column);
+    std::vector<std::vector<double>> decodeGAMPSGroup(bool base_signals);
+    std::vector<double> decodeGAMPSColumn();
+
+    void decodeWindow(std::vector<double> & column);
+    void decodeConstantWindow(std::vector<double> & column, int window_size);
 
 public:
     using DecoderBase::DecoderBase;

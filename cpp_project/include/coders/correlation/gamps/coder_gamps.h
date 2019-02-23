@@ -36,11 +36,10 @@ private:
     CDataStream* getColumn(int column_index);
     GAMPSOutput* getGAMPSOutput(GAMPSInput* gamps_input);
 
-    void codeGAMPSGroup(DynArray<GAMPSEntry>** signals, bool base_signals);
-    void codeGAMPSColumn(DynArray<GAMPSEntry>* column, bool base_column);
+    void codeGAMPSColumn(DynArray<GAMPSEntry>* column);
 
     void update(DynArray<GAMPSEntry>* column, int & entry_index, GAMPSEntry & current_entry, int & remaining);
-    void codeWindow(APCAWindow* window, bool base_column);
+    void codeWindow(APCAWindow* window);
 
 public:
     using CoderBase::CoderBase;

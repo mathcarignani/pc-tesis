@@ -21,6 +21,9 @@ public:
     std::vector<int> ratio_columns;
 
     MapEntry(int column_index_, int base_column_index_, std::vector<int> ratio_columns_);
+    bool isNodataEntry();
+    bool isBaseColumn();
+    bool isRatioColumn();
     void print();
 };
 
@@ -40,6 +43,7 @@ public:
     void setNoDataColumnsIndexes(std::vector<bool> nodata_columns, int data_columns_count_);
     void calculate(GAMPSOutput* gamps_output);
     int getColumnIndex(int gamps_col_index);
+    int getRatioGampsColumnIndex(int column_index);
 
     // Only called in DecoderGAMPS
     MappingTable(std::vector<int> vector);
@@ -54,7 +58,6 @@ public:
     std::vector<int> ratioColumns(int base_column_index);
     std::vector<int> baseColumnIndexVector();
     bool isBaseColumn(int column_index);
-    int baseColumnsCount();
     void print();
 };
 
