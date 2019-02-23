@@ -12,12 +12,7 @@ private:
 
 public:
     using DecoderPCA::DecoderPCA;
-
-    //
-    // Wrapper methods which are also used by DecoderGAMPS.
-    //
-    static std::vector<std::string> decodeDataColumn(DecoderBase* decoder);
-    static void decodeWindow(DecoderBase* decoder, std::vector<std::string> & column);
+    void decodeWindow(std::vector<std::string> & column);
 };
 
 #endif //CPP_PROJECT_DECODER_APCA_H

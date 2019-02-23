@@ -16,28 +16,20 @@ void CoderAPCA::codeColumnBefore(){
 }
 
 void CoderAPCA::codeColumnWhile(std::string csv_value){
-    codeColumnWhile(this, window, csv_value);
-}
-
-void CoderAPCA::codeColumnAfter(){
-    codeColumnAfter(this, window);
-}
-
-void CoderAPCA::codeColumnWhile(CoderBase* coder, APCAWindow* window, std::string csv_value){
 #if MASK_MODE
     if (Constants::isNoData(csv_value)) { return; } // skip no_data
 #endif
     if (!window->conditionHolds(csv_value)){
-        codeWindow(coder, window);
+        codeWindow(window);
         window->addFirstValue(csv_value);
     }
 }
 
-void CoderAPCA::codeColumnAfter(CoderBase* coder, APCAWindow* window){
-    if (!window->isEmpty()){ codeWindow(coder, window); }
+void CoderAPCA::codeColumnAfter(){
+    if (!window->isEmpty()){ codeWindow(window); }
 }
 
-void CoderAPCA::codeWindow(CoderBase* coder, APCAWindow* window){
-    coder->codeInt(window->length, window->window_size_bit_length);
-    coder->codeValueRaw(window->constant_value);
+void CoderAPCA::codeWindow(APCAWindow* window){
+    codeInt(window->length, window->window_size_bit_length);
+    codeValueRaw(window->constant_value);
 }
