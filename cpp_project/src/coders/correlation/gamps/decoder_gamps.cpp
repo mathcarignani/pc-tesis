@@ -144,9 +144,9 @@ std::vector<double> DecoderGAMPS::decodeGAMPSColumn(){
     int unprocessed_rows = data_rows_count;
 
 #if MASK_MODE
-    Mask* mask = decoder->mask;
+    mask = MaskDecoder::decode(this);
 #if CHECKS
-    assert(mask->total_no_data + mask->total_data == decoder->data_rows_count);
+    assert(mask->total_no_data + mask->total_data == data_rows_count);
 #endif // END CHECKS
 #endif // END MASK_MODE
 
@@ -154,7 +154,7 @@ std::vector<double> DecoderGAMPS::decodeGAMPSColumn(){
     #if MASK_MODE
         if (mask->isNoData()) {
             column.push_back(Constants::NO_DATA_DOUBLE);
-            decoder->row_index++; unprocessed_rows--;
+            row_index++; unprocessed_rows--;
             continue;
         }
     #endif
@@ -170,7 +170,7 @@ void DecoderGAMPS::decodeWindow(std::vector<double> & column){
 //    std::cout << "window_size = " << window_size << std::endl;
     decodeConstantWindow(column, window_size);
 #if MASK_MODE
-    decoder->mask->total_data -= window_size;
+    mask->total_data -= window_size;
 #endif
 //    std::cout << "-----------------------------------------" << std::endl;
 }
@@ -181,9 +181,9 @@ void DecoderGAMPS::decodeConstantWindow(std::vector<double> & column, int window
     int i = 0;
     while (i < window_size){
     #if MASK_MODE
-        if (i > 0 && decoder->mask->isNoData()) { // always false in the first iteration
+        if (i > 0 && mask->isNoData()) { // always false in the first iteration
             column.push_back(Constants::NO_DATA_DOUBLE);
-            decoder->row_index++;
+            row_index++;
             continue;
         }
     #endif
