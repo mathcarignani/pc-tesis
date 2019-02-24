@@ -3,6 +3,7 @@
 
 #include "../../stdafx.h"
 #include "MultiDataStream.h"
+#include <cstring>
 
 CMultiDataStream::CMultiDataStream(int numOfStream)
 {

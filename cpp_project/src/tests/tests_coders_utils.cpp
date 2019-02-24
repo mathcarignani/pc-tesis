@@ -7,7 +7,7 @@
 
 std::string TestsCodersUtils::setAndWriteCoderName(std::string coder_name, CSVWriter* csv_writer){
     std::cout << ">> " << coder_name << std::endl;
-    csv_writer->writeRow({coder_name});
+    csv_writer->writeRow(coder_name);
     return coder_name;
 }
 
