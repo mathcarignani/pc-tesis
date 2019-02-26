@@ -56,7 +56,7 @@ void CoderFR::codeWindow(){
 }
 
 void CoderFR::codeItem(DataItem item, int index){
-    int value = MathUtls::doubleToInt(item.value);
+    int value = MathUtils::doubleToInt(item.value);
     std::string value_str = StringUtils::intToString(value);
     codeValueRaw(value_str);
     // we always code the value in the first index, so we don't have to code its index

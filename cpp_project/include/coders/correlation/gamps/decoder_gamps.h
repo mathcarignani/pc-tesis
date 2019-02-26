@@ -25,7 +25,6 @@ private:
     std::vector<std::string> decodeBaseColumn(std::vector<double> & base_column_double);
     std::vector<std::string> decodeRatioColumn(std::vector<double> base_column_double);
 
-    std::vector<std::vector<double>> decodeGAMPSGroup(bool base_signals);
     std::vector<double> decodeGAMPSColumn();
 
     void decodeWindow(std::vector<double> & column);

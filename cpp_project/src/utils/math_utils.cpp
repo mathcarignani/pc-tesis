@@ -24,7 +24,7 @@ int MathUtils::bitLength(uint32_t value){
 }
 
 int MathUtils::doubleToInt(double d){
-    int d_int = (int)std::round(d);
+    int d_int = (int)round(d);
     return d_int;
 }
 
