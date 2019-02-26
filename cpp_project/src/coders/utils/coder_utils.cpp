@@ -1,6 +1,7 @@
 
 #include "coder_utils.h"
 #include <iostream>
+#include <utils/math_utils.h>
 #include "string_utils.h"
 
 std::string CoderUtils::mapValue(std::string csv_value, int offset){
@@ -19,12 +20,13 @@ int CoderUtils::mapValueInt(std::string csv_value, int offset){
     return value;
 }
 
-std::string CoderUtils::unmapValueInt(int value, int offset){
+std::string CoderUtils::unmapValueInt(double value, int offset){
     if (value == Constants::NO_DATA_DOUBLE){
         return Constants::NO_DATA;
     }
     value -= offset;
-    return StringUtils::intToString(value);
+    int val_int = MathUtils::doubleToInt(value);
+    return StringUtils::intToString(val_int);
 }
 
 std::string CoderUtils::unmapValue(std::string value, int offset){

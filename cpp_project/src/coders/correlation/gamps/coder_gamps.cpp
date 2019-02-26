@@ -82,7 +82,7 @@ GAMPSInput* CoderGAMPS::getGAMPSInput(){
 }
 
 CDataStream* CoderGAMPS::getColumn(int column_index){
-    std::cout << "BEGIN getColumn" << std::endl;
+//    std::cout << "BEGIN getColumn" << std::endl;
     CDataStream* dataStream = new CDataStream();
 
     nodata_rows_mask->reset();
@@ -110,7 +110,7 @@ CDataStream* CoderGAMPS::getColumn(int column_index){
             }
             previous_value = current_value;
         }
-        std::cout << "add(DataItem(" << current_value << ", " << timestamp << ")" << std::endl;
+//        std::cout << "add(DataItem(" << current_value << ", " << timestamp << ")" << std::endl;
         dataStream->add(DataItem(current_value, timestamp));
     }
     assert(timestamp > 0);
@@ -230,14 +230,14 @@ void CoderGAMPS::update(DynArray<GAMPSEntry>* column, int & entry_index, GAMPSEn
 }
 
 void CoderGAMPS::codeWindow(APCAWindow* window){
-    std::cout << "-----------------------------------------" << std::endl;
+//    std::cout << "-----------------------------------------" << std::endl;
     codeInt(window->length, window->window_size_bit_length);
-    std::cout << "codeInt(" << window->length << ", " << window->window_size_bit_length << ");" << std::endl;
+//    std::cout << "codeInt(" << window->length << ", " << window->window_size_bit_length << ");" << std::endl;
 
     std::string constant_value = window->constant_value;
     double value = Constants::isNoData(constant_value) ? Constants::NO_DATA_DOUBLE : StringUtils::stringToDouble(constant_value);
     // TODO: move to an aux method... also create an analog decoding method
     codeDouble(value);
-    std::cout << "codeDouble(" << value << ");" << std::endl;
-    std::cout << "-----------------------------------------" << std::endl;
+//    std::cout << "codeDouble(" << value << ");" << std::endl;
+//    std::cout << "-----------------------------------------" << std::endl;
 }

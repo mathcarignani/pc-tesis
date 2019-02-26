@@ -25,8 +25,8 @@ std::string StringUtils::intToString(int & value){
 }
 
 std::string StringUtils::doubleToString(double d){
-    int d_int = MathUtils::doubleToInt(d);
-    return intToString(d_int);
+    std::string str = std::to_string(d);
+    return str;
 }
 
 std::string StringUtils::intToStringPos(int & integer, int size){

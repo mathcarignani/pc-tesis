@@ -21,6 +21,7 @@ private:
     void decodeNoDataColumns();
     void decodeGAMPSColumns();
 
+    std::vector<std::string> decodeBaseColumn();
     std::vector<std::string> decodeBaseColumn(std::vector<double> & base_column_double);
     std::vector<std::string> decodeRatioColumn(std::vector<double> base_column_double);
 
