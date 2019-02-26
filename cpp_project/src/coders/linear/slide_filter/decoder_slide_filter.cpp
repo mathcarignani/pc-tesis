@@ -39,7 +39,7 @@ std::vector<std::string> DecoderSlideFilter::decodeDataColumn(){
             continue;
         }
         DataItem data_item = m_pApproxData->getAt(pos);
-        std::string value = StringUtils::doubleToString(data_item.value);
+        std::string value = StringUtils::doubleToIntToString(data_item.value);
         column->addData(value);
         pos++;
     }

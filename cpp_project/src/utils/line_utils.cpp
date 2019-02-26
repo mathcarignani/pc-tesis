@@ -10,7 +10,7 @@ std::vector<std::string> LineUtils::projectPointsOntoLine(Line* line, std::vecto
     for (int i=0; i < window_size; i++){
         int x_coord = x_coords.at(i);
         double value = line->getValue(x_coord);
-        res[i] = StringUtils::doubleToString(value);
+        res[i] = StringUtils::doubleToIntToString(value);
     }
     return res;
 }

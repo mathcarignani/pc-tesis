@@ -16,6 +16,7 @@ public:
     static int stringToInt(std::string & str);
     static std::string intToString(int & value);
     static std::string doubleToString(double d);
+    static std::string doubleToIntToString(double d);
     static std::string intToStringPos(int & integer, int size);
     static bool stringInList(std::string & str, std::vector<std::string> arr);
     static bool find(std::string string, std::string string_to_find);

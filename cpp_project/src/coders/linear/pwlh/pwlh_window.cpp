@@ -103,9 +103,9 @@ float PWLHWindow::getPoint2Y(){
 }
 
 std::string PWLHWindow::getPoint1YIntegerMode(){
-    return StringUtils::doubleToString(p1.y);
+    return StringUtils::doubleToIntToString(p1.y);
 }
 
 std::string PWLHWindow::getPoint2YIntegerMode(){
-    return StringUtils::doubleToString(p2.y);
+    return StringUtils::doubleToIntToString(p2.y);
 }

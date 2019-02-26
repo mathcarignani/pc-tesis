@@ -25,6 +25,11 @@ std::string StringUtils::intToString(int & value){
 }
 
 std::string StringUtils::doubleToString(double d){
+    std::string str = std::to_string(d);
+    return str;
+}
+
+std::string StringUtils::doubleToIntToString(double d){
     int d_int = MathUtils::doubleToInt(d);
     std::string str = StringUtils::intToString(d_int);
     return str;
