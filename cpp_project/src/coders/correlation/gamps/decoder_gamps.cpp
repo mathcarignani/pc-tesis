@@ -34,7 +34,7 @@ void DecoderGAMPS::decodeTimeDeltaColumn(){
 
 void DecoderGAMPS::decodeMappingTable(){
     int vector_size = dataset->data_columns_count;
-    int column_index_bit_length = MathUtils::bitLength(vector_size - 1);
+    int column_index_bit_length = MathUtils::bitLength(vector_size);
     std::vector<int> vector;
     for (int i = 0; i < vector_size; i++){
         int base_column_index = decodeInt(column_index_bit_length);

@@ -137,7 +137,7 @@ void CoderGAMPS::codeMappingTable(GAMPSOutput* gamps_output){
 #if CHECKS
     assert(vector_size == dataset->data_columns_count);
 #endif
-    int column_index_bit_length = MathUtils::bitLength(vector_size - 1);
+    int column_index_bit_length = MathUtils::bitLength(vector_size);
     for (int i = 0; i < vector_size; i++){
 //        std::cout << "codeInt(" << vector.at(i) << ", " << column_index_bit_length << ");" << std::endl;
         codeInt(vector.at(i), column_index_bit_length);
