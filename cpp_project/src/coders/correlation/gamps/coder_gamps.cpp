@@ -75,6 +75,10 @@ void CoderGAMPS::setGAMPSInput(){
     {
         int col_index = i + 1;
         if (mapping_table->isNodataColumnIndex(col_index)) { continue; } // skip nodata columns
+
+        double error_threshold = error_thresholds_vector.at(col_index);
+        gamps_epsilons_vector.push_back(error_threshold);
+
         dataset->setColumn(col_index);
         CDataStream* signal = getColumn(col_index);
         multiStream->addSingleStream(signal);
@@ -122,9 +126,12 @@ CDataStream* CoderGAMPS::getColumn(int column_index){
 }
 
 GAMPSOutput* CoderGAMPS::getGAMPSOutput(GAMPSInput* gamps_input){
-    double epsilon = 0;
-    // TODO: instead of a single epsilon, pass a list of epsilons (one for each stream)
-    gamps = new GAMPS(epsilon, gamps_input);
+//    std::cout << "gamps_epsilons_vector" << std::endl;
+//    VectorUtils::printDoubleVector(gamps_epsilons_vector);
+#if CHECKS
+    assert(gamps_epsilons_vector.size() == gamps_input->getNumOfStream());
+#endif
+    gamps = new GAMPS(gamps_epsilons_vector, gamps_input);
     gamps->compute();
     return gamps->getOutput();
 }

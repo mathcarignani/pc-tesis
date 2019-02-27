@@ -6,10 +6,10 @@
 #include "../../../DataManagementLayer/Data/DataStream.h"
 #include "GAMPS_Computation.h"
 
-GAMPS_Computation::GAMPS_Computation(GAMPSInput* gampsInput,double eps)
+GAMPS_Computation::GAMPS_Computation(GAMPSInput* gampsInput,std::vector<double> gamps_epsilons_vector_)
 {
 	m_pInput = gampsInput;
-	m_dEps = eps;
+	gamps_epsilons_vector = gamps_epsilons_vector_;
 	m_pGampsOutput = new GAMPSOutput(gampsInput);
 }
 
@@ -48,9 +48,9 @@ CMultiDataStream* GAMPS_Computation::copyDataToTemp(CMultiDataStream* original)
 //            eps1: epsilon 1 which used to compress base signal by APCA
 //            c1: max ratio value
 //            c2: max value of base signal
-double GAMPS_Computation::computeEps2(double eps1, double c1, double c2)
+double GAMPS_Computation::computeEps2(double eps, double eps1, double c1, double c2)
 {
-	double eps2 = this->m_dEps - c1 * eps1;
+	double eps2 = eps - c1 * eps1;
 	eps2 = eps2 / (c2 + eps1);
 	return eps2;
 }
@@ -246,9 +246,10 @@ int GAMPS_Computation::statGroup(GAMPSInput* gampsInputList)
 		CDataStream* baseSignal = gampsInputList->getOriginalStreams()->getDataAt(j);
 
 		// calculate % eps
-		baseSignal->statistic();
-		eps = m_dEps * (baseSignal->getMax() - baseSignal->getMin());
-		eps1 = 0.4 * eps;
+		// baseSignal->statistic();
+		// eps = m_dEps * (baseSignal->getMax() - baseSignal->getMin());
+		// eps1 = 0.4 * eps;
+		eps1 = gamps_epsilons_vector.at(j);
 
 		DynArray<GAMPSEntry>* listBaseSignalBucket = compress_APCA(baseSignal,eps1);
 		listBucket[j] = listBaseSignalBucket;
@@ -264,7 +265,8 @@ int GAMPS_Computation::statGroup(GAMPSInput* gampsInputList)
 			double c1,c2;
 			DynArray<GAMPSEntry> *listComputeRatioSignal = this->computeRatioSignal(ratioSignal,baseSignal,c1,c2);
 
-			eps2 = this->computeEps2(eps1,c1,c2);
+			double eps = gamps_epsilons_vector.at(i);
+			eps2 = this->computeEps2(eps,eps1,c1,c2);
 			DynArray<GAMPSEntry> *listRatioBucket = this->compress_APCA(*listComputeRatioSignal,eps2);
 			int pos = j* numOfStream + i;
 			listRatioSignalBucket[pos] = listRatioBucket;

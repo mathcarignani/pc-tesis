@@ -3,19 +3,20 @@
 
 #include "../data/GAMPSInput.h"
 #include "../data/GAMPSOutput.h"
+#include <vector>
 
 class GAMPS_Computation
 {
 private:
 	GAMPSInput* m_pInput;
 	GAMPSOutput* m_pGampsOutput;
-	double m_dEps;
+	std::vector<double> gamps_epsilons_vector;
 
 	// duplicate original data
 	CMultiDataStream* copyDataToTemp(CMultiDataStream* original);
 
 	// calculate error tolerance for ratio signal
-	double computeEps2(double eps1, double c1, double c2);
+	double computeEps2(double eps, double eps1, double c1, double c2);
 
 	// apply APCA to compress original data with max error epsilon
 	DynArray<GAMPSEntry>*  compress_APCA(CDataStream* stream,double esp);
@@ -34,7 +35,7 @@ private:
 
 	void print(DynArray<GAMPSEntry>* array, int spaces);
 public:
-	GAMPS_Computation(GAMPSInput* gampsInput,double eps);
+	GAMPS_Computation(GAMPSInput* gampsInput,std::vector<double> gamps_epsilons_vector_);
 	~GAMPS_Computation(void);
 
 	// static group current input data

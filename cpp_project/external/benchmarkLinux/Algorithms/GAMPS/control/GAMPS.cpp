@@ -4,12 +4,12 @@
 #include "../../../stdafx.h"
 #include "GAMPS.h"
 
-GAMPS::GAMPS(double eps,GAMPSInput* data)
+GAMPS::GAMPS(std::vector<double> gamps_epsilons_vector_,GAMPSInput* data)
 {
-	m_dEps = eps;
+	gamps_epsilons_vector = gamps_epsilons_vector_;
 	m_pGampsInput = data;
 	m_nNumOfStream = data->getNumOfStream();
-	m_pGampsCompute = new GAMPS_Computation(m_pGampsInput,m_dEps);
+	m_pGampsCompute = new GAMPS_Computation(m_pGampsInput,gamps_epsilons_vector);
 }
 
 GAMPS::~GAMPS()

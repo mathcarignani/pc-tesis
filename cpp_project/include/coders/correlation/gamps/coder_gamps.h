@@ -20,6 +20,7 @@ private:
     int row_index;
     std::vector<int> time_delta_vector;
 
+    std::vector<double> gamps_epsilons_vector;
     GAMPSInput* gamps_input;
     GAMPS* gamps;
 

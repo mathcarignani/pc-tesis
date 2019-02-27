@@ -13,10 +13,10 @@ private:
 	GAMPS_Computation* m_pGampsCompute;
 
 	int m_nNumOfStream;
-	double m_dEps;
+	std::vector<double> gamps_epsilons_vector;
 
 public:
-	GAMPS(double e,GAMPSInput* data);
+	GAMPS(std::vector<double> gamps_epsilons_vector_,GAMPSInput* data);
 	~GAMPS(void);
 
 	// Execute GAMPS algorithm
