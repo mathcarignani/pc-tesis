@@ -26,6 +26,7 @@ void CoderGAMPS::codeDataRows(){
     GAMPSOutput* gamps_output = processOtherColumns();
     codeMappingTable(gamps_output);
     codeGAMPSColumns(gamps_output);
+    delete gamps_output;
 }
 
 void CoderGAMPS::codeTimeDeltaColumn(){
@@ -42,6 +43,7 @@ GAMPSOutput* CoderGAMPS::processOtherColumns(){
     getNodataRowsMask();
     GAMPSInput* gamps_input = getGAMPSInput();
     GAMPSOutput* gamps_output = getGAMPSOutput(gamps_input);
+    delete gamps_input;
     return gamps_output;
 }
 
