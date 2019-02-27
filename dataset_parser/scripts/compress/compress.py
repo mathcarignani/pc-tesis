@@ -142,8 +142,6 @@ def run_script_on_coder(dataset_name, csv, row, coder_dictionary, output_dataset
         base_values = run_script_on_basic_coder(logger, coder_dictionary, input_path, input_filename,
                                                 output_dataset_coder_path, base_values, row, csv)
     else:
-        if coder_name == 'CoderGAMPS':
-            thresholds_hash = gamps_group_thresholds(thresholds_hash, dataset_name)
         run_script_of_other_coders(logger, coder_dictionary, input_path, input_filename,
                                    output_dataset_coder_path, base_values, row, csv, thresholds_hash)
     return base_values
