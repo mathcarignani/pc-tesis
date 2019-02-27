@@ -8,7 +8,6 @@
 #include "coder_apca.h"
 #include "gamps_utils.h"
 #include "coder_utils.h"
-#include "GAMPS.h"
 #include "GAMPSInput.h"
 
 void CoderGAMPS::setCoderParams(int window_size_, std::vector<int> error_thresholds_vector_){
@@ -26,7 +25,9 @@ void CoderGAMPS::codeDataRows(){
     GAMPSOutput* gamps_output = processOtherColumns();
     codeMappingTable(gamps_output);
     codeGAMPSColumns(gamps_output);
-    delete gamps_output;
+    // free memory as in benchmarkLinux
+    delete gamps_input;
+//    delete gamps;
 }
 
 void CoderGAMPS::codeTimeDeltaColumn(){
@@ -41,9 +42,8 @@ void CoderGAMPS::codeTimeDeltaColumn(){
 
 GAMPSOutput* CoderGAMPS::processOtherColumns(){
     getNodataRowsMask();
-    GAMPSInput* gamps_input = getGAMPSInput();
+    setGAMPSInput();
     GAMPSOutput* gamps_output = getGAMPSOutput(gamps_input);
-    delete gamps_input;
     return gamps_output;
 }
 
@@ -68,7 +68,7 @@ void CoderGAMPS::getNodataRowsMask(){
     mapping_table->setNoDataColumnsIndexes(nodata_columns, dataset->data_columns_count);
 }
 
-GAMPSInput* CoderGAMPS::getGAMPSInput(){
+void CoderGAMPS::setGAMPSInput(){
     int data_columns_count = dataset->data_columns_count - mapping_table->nodata_columns_indexes.size();
     CMultiDataStream* multiStream = new CMultiDataStream(data_columns_count);
     for(int i = 0; i < dataset->data_columns_count; i++)
@@ -79,8 +79,7 @@ GAMPSInput* CoderGAMPS::getGAMPSInput(){
         CDataStream* signal = getColumn(col_index);
         multiStream->addSingleStream(signal);
     }
-    GAMPSInput* gamps_input = new GAMPSInput(multiStream);
-    return gamps_input;
+    gamps_input = new GAMPSInput(multiStream);
 }
 
 CDataStream* CoderGAMPS::getColumn(int column_index){
@@ -125,7 +124,7 @@ CDataStream* CoderGAMPS::getColumn(int column_index){
 GAMPSOutput* CoderGAMPS::getGAMPSOutput(GAMPSInput* gamps_input){
     double epsilon = 0;
     // TODO: instead of a single epsilon, pass a list of epsilons (one for each stream)
-    GAMPS* gamps = new GAMPS(epsilon, gamps_input);
+    gamps = new GAMPS(epsilon, gamps_input);
     gamps->compute();
     return gamps->getOutput();
 }

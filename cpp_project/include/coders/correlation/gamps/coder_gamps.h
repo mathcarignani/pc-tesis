@@ -8,6 +8,7 @@
 
 #include "DataStream.h"
 #include "GAMPSOutput.h"
+#include "GAMPS.h"
 #include "mask.h"
 
 class CoderGAMPS: public CoderBase {
@@ -18,6 +19,9 @@ private:
     int column_index;
     int row_index;
     std::vector<int> time_delta_vector;
+
+    GAMPSInput* gamps_input;
+    GAMPS* gamps;
 
     MappingTable* mapping_table;
     Mask* nodata_rows_mask;
@@ -32,7 +36,7 @@ private:
 
 
     void getNodataRowsMask();
-    GAMPSInput* getGAMPSInput();
+    void setGAMPSInput();
     CDataStream* getColumn(int column_index);
     GAMPSOutput* getGAMPSOutput(GAMPSInput* gamps_input);
 
