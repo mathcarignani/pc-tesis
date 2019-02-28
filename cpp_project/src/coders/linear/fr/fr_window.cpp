@@ -1,6 +1,6 @@
 
 #include "fr_window.h"
-#include "string_utils.h"
+#include "conversor.h"
 #include "assert.h"
 #include <iostream>
 #include "Line.h"
@@ -19,7 +19,7 @@ void FRWindow::clear(){
 void FRWindow::addDataItem(int timestamp, std::string value){
     assert(length <= window_size);
     int new_timestamp = (length == 0) ? 0 : data[length-1].timestamp + timestamp;
-    int value_int = StringUtils::stringToInt(value);
+    int value_int = Conversor::stringToInt(value);
     data[length] = DataItem(value_int, new_timestamp);
     length++;
 }

@@ -2,7 +2,7 @@
 #include "apca_window.h"
 
 #include "constant_coder_utils.h"
-#include "string_utils.h"
+#include "conversor.h"
 #include "math_utils.h"
 #include "iostream"
 
@@ -31,7 +31,7 @@ bool APCAWindow::conditionHolds(std::string x){
     // x is a double
     if (nan_window) { return false; }
 #endif
-    double x_double = StringUtils::stringToDouble(x);
+    double x_double = Conversor::stringToDouble(x);
     if (x_double < min) { return updateConstantValue(x_double, max); }
     if (x_double > max) { return updateConstantValue(min, x_double); }
     // min <= x_double <= max
@@ -68,7 +68,7 @@ void APCAWindow::addFirstValue(std::string x){
     // x is a double
     nan_window = false;
 #endif
-    double x_double = StringUtils::stringToDouble(x);
+    double x_double = Conversor::stringToDouble(x);
     min = x_double;
     max = x_double;
     constant_value = x;

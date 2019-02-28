@@ -1,42 +1,12 @@
 
 #include "string_utils.h"
 #include "math_utils.h"
+#include "conversor.h"
 #include <iostream>
 
-bool StringUtils::charInString(const char ch, const std::string & str){
-    return str.find(ch) != std::string::npos;
-}
-
-bool StringUtils::stringIsDouble(std::string & str){
-    return charInString('.', str);
-}
-
-double StringUtils::stringToDouble(std::string & str){
-    const char* c = str.c_str();
-    return atof(c);
-}
-
-int StringUtils::stringToInt(std::string & str){
-    return std::stoi(str);
-}
-
-std::string StringUtils::intToString(int & value){
-    return std::to_string(value);
-}
-
-std::string StringUtils::doubleToString(double d){
-    std::string str = std::to_string(d);
-    return str;
-}
-
-std::string StringUtils::doubleToIntToString(double d){
-    int d_int = MathUtils::doubleToInt(d);
-    std::string str = StringUtils::intToString(d_int);
-    return str;
-}
 
 std::string StringUtils::intToStringPos(int & integer, int size){
-    std::string str = intToString(integer);
+    std::string str = Conversor::intToString(integer);
     while (str.size() < size){ str = "0" + str; }
     return str;
 }
@@ -131,13 +101,6 @@ std::string StringUtils::join(std::vector<std::string> arr, std::string token){
     return str;
 }
 
-
-//std::string StringUtils::removeToken(std::string str, std::string token){
-////    current_line.erase(std::remove(current_line.begin(), current_line.end(), '\n'), current_line.end());
-//    char* new_str = str.erase(std::remove(str.begin(), str.end(), '\n'), str.end());
-//    return new_str;
-//}
-
 //
 // SOURCE: https://stackoverflow.com/a/5891683/4547232
 //
@@ -162,12 +125,4 @@ std::string StringUtils::removeLastChar(const std::string& source){
         result+=source[i];
     }
     return result;
-}
-
-int StringUtils::charToInt(const char character){
-    return (int) character;
-}
-
-const char StringUtils::intToChar(const int integer){
-    return (char) integer;
 }

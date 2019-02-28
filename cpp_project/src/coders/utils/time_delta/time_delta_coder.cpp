@@ -1,6 +1,6 @@
 
 #include "time_delta_coder.h"
-#include "string_utils.h"
+#include "conversor.h"
 #include "coder_utils.h"
 
 //
@@ -16,7 +16,7 @@ std::vector<int> TimeDeltaCoder::code(CoderBase* coder){
         coder->codeValueRaw(csv_value); // same as CoderBasic
 
         // add int value to the time_delta_vector
-        int csv_value_int = StringUtils::stringToInt(csv_value);
+        int csv_value_int = Conversor::stringToInt(csv_value);
         time_delta_vector.push_back(csv_value_int);
     }
     return time_delta_vector;

@@ -38,7 +38,7 @@ void DecoderGAMPS::decodeMappingTable(){
     std::vector<int> vector;
     for (int i = 0; i < vector_size; i++){
         int base_column_index = decodeInt(column_index_bit_length);
-        std::cout << "base_column_index = " << base_column_index << std::endl;
+        std::cout << "i = " << i << ", base_column_index = " << base_column_index << std::endl;
         vector.push_back(base_column_index);
     }
     mapping_table = new MappingTable(vector);

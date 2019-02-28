@@ -1,6 +1,7 @@
 
 #include "tests_string_utils.h"
 #include "string_utils.h"
+#include "conversor.h"
 #include <cassert>
 #include <iostream>
 
@@ -21,15 +22,15 @@ void TestsStringUtils::splitByCharWithIndexTest(){
 }
 
 void TestsStringUtils::charToIntTest(){
-    assert(StringUtils::charToInt('A') == 65);
-    assert(StringUtils::charToInt('Z') == 90);
-    assert(StringUtils::charToInt('a') == 97);
-    assert(StringUtils::charToInt('z') == 122);
+    assert(Conversor::charToInt('A') == 65);
+    assert(Conversor::charToInt('Z') == 90);
+    assert(Conversor::charToInt('a') == 97);
+    assert(Conversor::charToInt('z') == 122);
 }
 
 void TestsStringUtils::intToCharTest(){
-    assert(StringUtils::intToChar(65) == 'A');
-    assert(StringUtils::intToChar(90) == 'Z');
-    assert(StringUtils::intToChar(97) == 'a');
-    assert(StringUtils::intToChar(122) == 'z');
+    assert(Conversor::intToChar(65) == 'A');
+    assert(Conversor::intToChar(90) == 'Z');
+    assert(Conversor::intToChar(97) == 'a');
+    assert(Conversor::intToChar(122) == 'z');
 }

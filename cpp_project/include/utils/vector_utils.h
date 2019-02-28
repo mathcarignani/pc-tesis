@@ -3,7 +3,7 @@
 #define CPP_PROJECT_VECTOR_UTILS_H
 
 #include <sstream>
-#include "string_utils.h"
+#include "conversor.h"
 #include <cstring>
 #include <vector>
 #include <algorithm>
@@ -28,7 +28,7 @@ public:
         int size = int_vector.size();
         std::string res = "";
         for(int i=0; i < size; i++){
-            std::string str = StringUtils::intToString(int_vector[i]);
+            std::string str = Conversor::intToString(int_vector[i]);
             if (i != size - 1){
                 str += ",";
             }
@@ -41,7 +41,7 @@ public:
         int size = int_vector.size();
         std::vector<std::string> res(size);
         for(int i=0; i < size; i++){
-            res[i] = StringUtils::intToString(int_vector[i]);
+            res[i] = Conversor::intToString(int_vector[i]);
         }
         return res;
     }

@@ -123,140 +123,140 @@ cpp_project/fast:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/build
 .PHONY : cpp_project/fast
 
-external/benchmarkLinux/Algorithms/GAMPS/Control/FacilityLocProb.o: external/benchmarkLinux/Algorithms/GAMPS/Control/FacilityLocProb.cpp.o
+external/benchmarkLinux/Algorithms/GAMPS/control/FacilityLocProb.o: external/benchmarkLinux/Algorithms/GAMPS/control/FacilityLocProb.cpp.o
 
-.PHONY : external/benchmarkLinux/Algorithms/GAMPS/Control/FacilityLocProb.o
-
-# target to build an object file
-external/benchmarkLinux/Algorithms/GAMPS/Control/FacilityLocProb.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/external/benchmarkLinux/Algorithms/GAMPS/Control/FacilityLocProb.cpp.o
-.PHONY : external/benchmarkLinux/Algorithms/GAMPS/Control/FacilityLocProb.cpp.o
-
-external/benchmarkLinux/Algorithms/GAMPS/Control/FacilityLocProb.i: external/benchmarkLinux/Algorithms/GAMPS/Control/FacilityLocProb.cpp.i
-
-.PHONY : external/benchmarkLinux/Algorithms/GAMPS/Control/FacilityLocProb.i
-
-# target to preprocess a source file
-external/benchmarkLinux/Algorithms/GAMPS/Control/FacilityLocProb.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/external/benchmarkLinux/Algorithms/GAMPS/Control/FacilityLocProb.cpp.i
-.PHONY : external/benchmarkLinux/Algorithms/GAMPS/Control/FacilityLocProb.cpp.i
-
-external/benchmarkLinux/Algorithms/GAMPS/Control/FacilityLocProb.s: external/benchmarkLinux/Algorithms/GAMPS/Control/FacilityLocProb.cpp.s
-
-.PHONY : external/benchmarkLinux/Algorithms/GAMPS/Control/FacilityLocProb.s
-
-# target to generate assembly for a file
-external/benchmarkLinux/Algorithms/GAMPS/Control/FacilityLocProb.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/external/benchmarkLinux/Algorithms/GAMPS/Control/FacilityLocProb.cpp.s
-.PHONY : external/benchmarkLinux/Algorithms/GAMPS/Control/FacilityLocProb.cpp.s
-
-external/benchmarkLinux/Algorithms/GAMPS/Control/GAMPS_Computation.o: external/benchmarkLinux/Algorithms/GAMPS/Control/GAMPS_Computation.cpp.o
-
-.PHONY : external/benchmarkLinux/Algorithms/GAMPS/Control/GAMPS_Computation.o
+.PHONY : external/benchmarkLinux/Algorithms/GAMPS/control/FacilityLocProb.o
 
 # target to build an object file
-external/benchmarkLinux/Algorithms/GAMPS/Control/GAMPS_Computation.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/external/benchmarkLinux/Algorithms/GAMPS/Control/GAMPS_Computation.cpp.o
-.PHONY : external/benchmarkLinux/Algorithms/GAMPS/Control/GAMPS_Computation.cpp.o
+external/benchmarkLinux/Algorithms/GAMPS/control/FacilityLocProb.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/external/benchmarkLinux/Algorithms/GAMPS/control/FacilityLocProb.cpp.o
+.PHONY : external/benchmarkLinux/Algorithms/GAMPS/control/FacilityLocProb.cpp.o
 
-external/benchmarkLinux/Algorithms/GAMPS/Control/GAMPS_Computation.i: external/benchmarkLinux/Algorithms/GAMPS/Control/GAMPS_Computation.cpp.i
+external/benchmarkLinux/Algorithms/GAMPS/control/FacilityLocProb.i: external/benchmarkLinux/Algorithms/GAMPS/control/FacilityLocProb.cpp.i
 
-.PHONY : external/benchmarkLinux/Algorithms/GAMPS/Control/GAMPS_Computation.i
+.PHONY : external/benchmarkLinux/Algorithms/GAMPS/control/FacilityLocProb.i
 
 # target to preprocess a source file
-external/benchmarkLinux/Algorithms/GAMPS/Control/GAMPS_Computation.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/external/benchmarkLinux/Algorithms/GAMPS/Control/GAMPS_Computation.cpp.i
-.PHONY : external/benchmarkLinux/Algorithms/GAMPS/Control/GAMPS_Computation.cpp.i
+external/benchmarkLinux/Algorithms/GAMPS/control/FacilityLocProb.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/external/benchmarkLinux/Algorithms/GAMPS/control/FacilityLocProb.cpp.i
+.PHONY : external/benchmarkLinux/Algorithms/GAMPS/control/FacilityLocProb.cpp.i
 
-external/benchmarkLinux/Algorithms/GAMPS/Control/GAMPS_Computation.s: external/benchmarkLinux/Algorithms/GAMPS/Control/GAMPS_Computation.cpp.s
+external/benchmarkLinux/Algorithms/GAMPS/control/FacilityLocProb.s: external/benchmarkLinux/Algorithms/GAMPS/control/FacilityLocProb.cpp.s
 
-.PHONY : external/benchmarkLinux/Algorithms/GAMPS/Control/GAMPS_Computation.s
+.PHONY : external/benchmarkLinux/Algorithms/GAMPS/control/FacilityLocProb.s
 
 # target to generate assembly for a file
-external/benchmarkLinux/Algorithms/GAMPS/Control/GAMPS_Computation.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/external/benchmarkLinux/Algorithms/GAMPS/Control/GAMPS_Computation.cpp.s
-.PHONY : external/benchmarkLinux/Algorithms/GAMPS/Control/GAMPS_Computation.cpp.s
+external/benchmarkLinux/Algorithms/GAMPS/control/FacilityLocProb.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/external/benchmarkLinux/Algorithms/GAMPS/control/FacilityLocProb.cpp.s
+.PHONY : external/benchmarkLinux/Algorithms/GAMPS/control/FacilityLocProb.cpp.s
 
-external/benchmarkLinux/Algorithms/GAMPS/Control/gamps.o: external/benchmarkLinux/Algorithms/GAMPS/Control/gamps.cpp.o
+external/benchmarkLinux/Algorithms/GAMPS/control/GAMPS.o: external/benchmarkLinux/Algorithms/GAMPS/control/GAMPS.cpp.o
 
-.PHONY : external/benchmarkLinux/Algorithms/GAMPS/Control/gamps.o
+.PHONY : external/benchmarkLinux/Algorithms/GAMPS/control/GAMPS.o
 
 # target to build an object file
-external/benchmarkLinux/Algorithms/GAMPS/Control/gamps.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/external/benchmarkLinux/Algorithms/GAMPS/Control/gamps.cpp.o
-.PHONY : external/benchmarkLinux/Algorithms/GAMPS/Control/gamps.cpp.o
+external/benchmarkLinux/Algorithms/GAMPS/control/GAMPS.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/external/benchmarkLinux/Algorithms/GAMPS/control/GAMPS.cpp.o
+.PHONY : external/benchmarkLinux/Algorithms/GAMPS/control/GAMPS.cpp.o
 
-external/benchmarkLinux/Algorithms/GAMPS/Control/gamps.i: external/benchmarkLinux/Algorithms/GAMPS/Control/gamps.cpp.i
+external/benchmarkLinux/Algorithms/GAMPS/control/GAMPS.i: external/benchmarkLinux/Algorithms/GAMPS/control/GAMPS.cpp.i
 
-.PHONY : external/benchmarkLinux/Algorithms/GAMPS/Control/gamps.i
+.PHONY : external/benchmarkLinux/Algorithms/GAMPS/control/GAMPS.i
 
 # target to preprocess a source file
-external/benchmarkLinux/Algorithms/GAMPS/Control/gamps.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/external/benchmarkLinux/Algorithms/GAMPS/Control/gamps.cpp.i
-.PHONY : external/benchmarkLinux/Algorithms/GAMPS/Control/gamps.cpp.i
+external/benchmarkLinux/Algorithms/GAMPS/control/GAMPS.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/external/benchmarkLinux/Algorithms/GAMPS/control/GAMPS.cpp.i
+.PHONY : external/benchmarkLinux/Algorithms/GAMPS/control/GAMPS.cpp.i
 
-external/benchmarkLinux/Algorithms/GAMPS/Control/gamps.s: external/benchmarkLinux/Algorithms/GAMPS/Control/gamps.cpp.s
+external/benchmarkLinux/Algorithms/GAMPS/control/GAMPS.s: external/benchmarkLinux/Algorithms/GAMPS/control/GAMPS.cpp.s
 
-.PHONY : external/benchmarkLinux/Algorithms/GAMPS/Control/gamps.s
+.PHONY : external/benchmarkLinux/Algorithms/GAMPS/control/GAMPS.s
 
 # target to generate assembly for a file
-external/benchmarkLinux/Algorithms/GAMPS/Control/gamps.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/external/benchmarkLinux/Algorithms/GAMPS/Control/gamps.cpp.s
-.PHONY : external/benchmarkLinux/Algorithms/GAMPS/Control/gamps.cpp.s
+external/benchmarkLinux/Algorithms/GAMPS/control/GAMPS.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/external/benchmarkLinux/Algorithms/GAMPS/control/GAMPS.cpp.s
+.PHONY : external/benchmarkLinux/Algorithms/GAMPS/control/GAMPS.cpp.s
 
-external/benchmarkLinux/Algorithms/GAMPS/Data/GAMPSInput.o: external/benchmarkLinux/Algorithms/GAMPS/Data/GAMPSInput.cpp.o
+external/benchmarkLinux/Algorithms/GAMPS/control/GAMPS_Computation.o: external/benchmarkLinux/Algorithms/GAMPS/control/GAMPS_Computation.cpp.o
 
-.PHONY : external/benchmarkLinux/Algorithms/GAMPS/Data/GAMPSInput.o
+.PHONY : external/benchmarkLinux/Algorithms/GAMPS/control/GAMPS_Computation.o
 
 # target to build an object file
-external/benchmarkLinux/Algorithms/GAMPS/Data/GAMPSInput.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/external/benchmarkLinux/Algorithms/GAMPS/Data/GAMPSInput.cpp.o
-.PHONY : external/benchmarkLinux/Algorithms/GAMPS/Data/GAMPSInput.cpp.o
+external/benchmarkLinux/Algorithms/GAMPS/control/GAMPS_Computation.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/external/benchmarkLinux/Algorithms/GAMPS/control/GAMPS_Computation.cpp.o
+.PHONY : external/benchmarkLinux/Algorithms/GAMPS/control/GAMPS_Computation.cpp.o
 
-external/benchmarkLinux/Algorithms/GAMPS/Data/GAMPSInput.i: external/benchmarkLinux/Algorithms/GAMPS/Data/GAMPSInput.cpp.i
+external/benchmarkLinux/Algorithms/GAMPS/control/GAMPS_Computation.i: external/benchmarkLinux/Algorithms/GAMPS/control/GAMPS_Computation.cpp.i
 
-.PHONY : external/benchmarkLinux/Algorithms/GAMPS/Data/GAMPSInput.i
+.PHONY : external/benchmarkLinux/Algorithms/GAMPS/control/GAMPS_Computation.i
 
 # target to preprocess a source file
-external/benchmarkLinux/Algorithms/GAMPS/Data/GAMPSInput.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/external/benchmarkLinux/Algorithms/GAMPS/Data/GAMPSInput.cpp.i
-.PHONY : external/benchmarkLinux/Algorithms/GAMPS/Data/GAMPSInput.cpp.i
+external/benchmarkLinux/Algorithms/GAMPS/control/GAMPS_Computation.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/external/benchmarkLinux/Algorithms/GAMPS/control/GAMPS_Computation.cpp.i
+.PHONY : external/benchmarkLinux/Algorithms/GAMPS/control/GAMPS_Computation.cpp.i
 
-external/benchmarkLinux/Algorithms/GAMPS/Data/GAMPSInput.s: external/benchmarkLinux/Algorithms/GAMPS/Data/GAMPSInput.cpp.s
+external/benchmarkLinux/Algorithms/GAMPS/control/GAMPS_Computation.s: external/benchmarkLinux/Algorithms/GAMPS/control/GAMPS_Computation.cpp.s
 
-.PHONY : external/benchmarkLinux/Algorithms/GAMPS/Data/GAMPSInput.s
+.PHONY : external/benchmarkLinux/Algorithms/GAMPS/control/GAMPS_Computation.s
 
 # target to generate assembly for a file
-external/benchmarkLinux/Algorithms/GAMPS/Data/GAMPSInput.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/external/benchmarkLinux/Algorithms/GAMPS/Data/GAMPSInput.cpp.s
-.PHONY : external/benchmarkLinux/Algorithms/GAMPS/Data/GAMPSInput.cpp.s
+external/benchmarkLinux/Algorithms/GAMPS/control/GAMPS_Computation.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/external/benchmarkLinux/Algorithms/GAMPS/control/GAMPS_Computation.cpp.s
+.PHONY : external/benchmarkLinux/Algorithms/GAMPS/control/GAMPS_Computation.cpp.s
 
-external/benchmarkLinux/Algorithms/GAMPS/Data/GAMPSOutput.o: external/benchmarkLinux/Algorithms/GAMPS/Data/GAMPSOutput.cpp.o
+external/benchmarkLinux/Algorithms/GAMPS/data/GAMPSInput.o: external/benchmarkLinux/Algorithms/GAMPS/data/GAMPSInput.cpp.o
 
-.PHONY : external/benchmarkLinux/Algorithms/GAMPS/Data/GAMPSOutput.o
+.PHONY : external/benchmarkLinux/Algorithms/GAMPS/data/GAMPSInput.o
 
 # target to build an object file
-external/benchmarkLinux/Algorithms/GAMPS/Data/GAMPSOutput.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/external/benchmarkLinux/Algorithms/GAMPS/Data/GAMPSOutput.cpp.o
-.PHONY : external/benchmarkLinux/Algorithms/GAMPS/Data/GAMPSOutput.cpp.o
+external/benchmarkLinux/Algorithms/GAMPS/data/GAMPSInput.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/external/benchmarkLinux/Algorithms/GAMPS/data/GAMPSInput.cpp.o
+.PHONY : external/benchmarkLinux/Algorithms/GAMPS/data/GAMPSInput.cpp.o
 
-external/benchmarkLinux/Algorithms/GAMPS/Data/GAMPSOutput.i: external/benchmarkLinux/Algorithms/GAMPS/Data/GAMPSOutput.cpp.i
+external/benchmarkLinux/Algorithms/GAMPS/data/GAMPSInput.i: external/benchmarkLinux/Algorithms/GAMPS/data/GAMPSInput.cpp.i
 
-.PHONY : external/benchmarkLinux/Algorithms/GAMPS/Data/GAMPSOutput.i
+.PHONY : external/benchmarkLinux/Algorithms/GAMPS/data/GAMPSInput.i
 
 # target to preprocess a source file
-external/benchmarkLinux/Algorithms/GAMPS/Data/GAMPSOutput.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/external/benchmarkLinux/Algorithms/GAMPS/Data/GAMPSOutput.cpp.i
-.PHONY : external/benchmarkLinux/Algorithms/GAMPS/Data/GAMPSOutput.cpp.i
+external/benchmarkLinux/Algorithms/GAMPS/data/GAMPSInput.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/external/benchmarkLinux/Algorithms/GAMPS/data/GAMPSInput.cpp.i
+.PHONY : external/benchmarkLinux/Algorithms/GAMPS/data/GAMPSInput.cpp.i
 
-external/benchmarkLinux/Algorithms/GAMPS/Data/GAMPSOutput.s: external/benchmarkLinux/Algorithms/GAMPS/Data/GAMPSOutput.cpp.s
+external/benchmarkLinux/Algorithms/GAMPS/data/GAMPSInput.s: external/benchmarkLinux/Algorithms/GAMPS/data/GAMPSInput.cpp.s
 
-.PHONY : external/benchmarkLinux/Algorithms/GAMPS/Data/GAMPSOutput.s
+.PHONY : external/benchmarkLinux/Algorithms/GAMPS/data/GAMPSInput.s
 
 # target to generate assembly for a file
-external/benchmarkLinux/Algorithms/GAMPS/Data/GAMPSOutput.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/external/benchmarkLinux/Algorithms/GAMPS/Data/GAMPSOutput.cpp.s
-.PHONY : external/benchmarkLinux/Algorithms/GAMPS/Data/GAMPSOutput.cpp.s
+external/benchmarkLinux/Algorithms/GAMPS/data/GAMPSInput.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/external/benchmarkLinux/Algorithms/GAMPS/data/GAMPSInput.cpp.s
+.PHONY : external/benchmarkLinux/Algorithms/GAMPS/data/GAMPSInput.cpp.s
+
+external/benchmarkLinux/Algorithms/GAMPS/data/GAMPSOutput.o: external/benchmarkLinux/Algorithms/GAMPS/data/GAMPSOutput.cpp.o
+
+.PHONY : external/benchmarkLinux/Algorithms/GAMPS/data/GAMPSOutput.o
+
+# target to build an object file
+external/benchmarkLinux/Algorithms/GAMPS/data/GAMPSOutput.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/external/benchmarkLinux/Algorithms/GAMPS/data/GAMPSOutput.cpp.o
+.PHONY : external/benchmarkLinux/Algorithms/GAMPS/data/GAMPSOutput.cpp.o
+
+external/benchmarkLinux/Algorithms/GAMPS/data/GAMPSOutput.i: external/benchmarkLinux/Algorithms/GAMPS/data/GAMPSOutput.cpp.i
+
+.PHONY : external/benchmarkLinux/Algorithms/GAMPS/data/GAMPSOutput.i
+
+# target to preprocess a source file
+external/benchmarkLinux/Algorithms/GAMPS/data/GAMPSOutput.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/external/benchmarkLinux/Algorithms/GAMPS/data/GAMPSOutput.cpp.i
+.PHONY : external/benchmarkLinux/Algorithms/GAMPS/data/GAMPSOutput.cpp.i
+
+external/benchmarkLinux/Algorithms/GAMPS/data/GAMPSOutput.s: external/benchmarkLinux/Algorithms/GAMPS/data/GAMPSOutput.cpp.s
+
+.PHONY : external/benchmarkLinux/Algorithms/GAMPS/data/GAMPSOutput.s
+
+# target to generate assembly for a file
+external/benchmarkLinux/Algorithms/GAMPS/data/GAMPSOutput.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/external/benchmarkLinux/Algorithms/GAMPS/data/GAMPSOutput.cpp.s
+.PHONY : external/benchmarkLinux/Algorithms/GAMPS/data/GAMPSOutput.cpp.s
 
 external/benchmarkLinux/Algorithms/PWLH/Control/LinearBucket.o: external/benchmarkLinux/Algorithms/PWLH/Control/LinearBucket.cpp.o
 
@@ -2283,6 +2283,33 @@ src/tests/utils/tests_vector_utils.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/utils/tests_vector_utils.cpp.s
 .PHONY : src/tests/utils/tests_vector_utils.cpp.s
 
+src/utils/conversor.o: src/utils/conversor.cpp.o
+
+.PHONY : src/utils/conversor.o
+
+# target to build an object file
+src/utils/conversor.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/utils/conversor.cpp.o
+.PHONY : src/utils/conversor.cpp.o
+
+src/utils/conversor.i: src/utils/conversor.cpp.i
+
+.PHONY : src/utils/conversor.i
+
+# target to preprocess a source file
+src/utils/conversor.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/utils/conversor.cpp.i
+.PHONY : src/utils/conversor.cpp.i
+
+src/utils/conversor.s: src/utils/conversor.cpp.s
+
+.PHONY : src/utils/conversor.s
+
+# target to generate assembly for a file
+src/utils/conversor.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/utils/conversor.cpp.s
+.PHONY : src/utils/conversor.cpp.s
+
 src/utils/datetime_utils.o: src/utils/datetime_utils.cpp.o
 
 .PHONY : src/utils/datetime_utils.o
@@ -2427,21 +2454,21 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... cpp_project"
-	@echo "... external/benchmarkLinux/Algorithms/GAMPS/Control/FacilityLocProb.o"
-	@echo "... external/benchmarkLinux/Algorithms/GAMPS/Control/FacilityLocProb.i"
-	@echo "... external/benchmarkLinux/Algorithms/GAMPS/Control/FacilityLocProb.s"
-	@echo "... external/benchmarkLinux/Algorithms/GAMPS/Control/GAMPS_Computation.o"
-	@echo "... external/benchmarkLinux/Algorithms/GAMPS/Control/GAMPS_Computation.i"
-	@echo "... external/benchmarkLinux/Algorithms/GAMPS/Control/GAMPS_Computation.s"
-	@echo "... external/benchmarkLinux/Algorithms/GAMPS/Control/gamps.o"
-	@echo "... external/benchmarkLinux/Algorithms/GAMPS/Control/gamps.i"
-	@echo "... external/benchmarkLinux/Algorithms/GAMPS/Control/gamps.s"
-	@echo "... external/benchmarkLinux/Algorithms/GAMPS/Data/GAMPSInput.o"
-	@echo "... external/benchmarkLinux/Algorithms/GAMPS/Data/GAMPSInput.i"
-	@echo "... external/benchmarkLinux/Algorithms/GAMPS/Data/GAMPSInput.s"
-	@echo "... external/benchmarkLinux/Algorithms/GAMPS/Data/GAMPSOutput.o"
-	@echo "... external/benchmarkLinux/Algorithms/GAMPS/Data/GAMPSOutput.i"
-	@echo "... external/benchmarkLinux/Algorithms/GAMPS/Data/GAMPSOutput.s"
+	@echo "... external/benchmarkLinux/Algorithms/GAMPS/control/FacilityLocProb.o"
+	@echo "... external/benchmarkLinux/Algorithms/GAMPS/control/FacilityLocProb.i"
+	@echo "... external/benchmarkLinux/Algorithms/GAMPS/control/FacilityLocProb.s"
+	@echo "... external/benchmarkLinux/Algorithms/GAMPS/control/GAMPS.o"
+	@echo "... external/benchmarkLinux/Algorithms/GAMPS/control/GAMPS.i"
+	@echo "... external/benchmarkLinux/Algorithms/GAMPS/control/GAMPS.s"
+	@echo "... external/benchmarkLinux/Algorithms/GAMPS/control/GAMPS_Computation.o"
+	@echo "... external/benchmarkLinux/Algorithms/GAMPS/control/GAMPS_Computation.i"
+	@echo "... external/benchmarkLinux/Algorithms/GAMPS/control/GAMPS_Computation.s"
+	@echo "... external/benchmarkLinux/Algorithms/GAMPS/data/GAMPSInput.o"
+	@echo "... external/benchmarkLinux/Algorithms/GAMPS/data/GAMPSInput.i"
+	@echo "... external/benchmarkLinux/Algorithms/GAMPS/data/GAMPSInput.s"
+	@echo "... external/benchmarkLinux/Algorithms/GAMPS/data/GAMPSOutput.o"
+	@echo "... external/benchmarkLinux/Algorithms/GAMPS/data/GAMPSOutput.i"
+	@echo "... external/benchmarkLinux/Algorithms/GAMPS/data/GAMPSOutput.s"
 	@echo "... external/benchmarkLinux/Algorithms/PWLH/Control/LinearBucket.o"
 	@echo "... external/benchmarkLinux/Algorithms/PWLH/Control/LinearBucket.i"
 	@echo "... external/benchmarkLinux/Algorithms/PWLH/Control/LinearBucket.s"
@@ -2667,6 +2694,9 @@ help:
 	@echo "... src/tests/utils/tests_vector_utils.o"
 	@echo "... src/tests/utils/tests_vector_utils.i"
 	@echo "... src/tests/utils/tests_vector_utils.s"
+	@echo "... src/utils/conversor.o"
+	@echo "... src/utils/conversor.i"
+	@echo "... src/utils/conversor.s"
 	@echo "... src/utils/datetime_utils.o"
 	@echo "... src/utils/datetime_utils.i"
 	@echo "... src/utils/datetime_utils.s"

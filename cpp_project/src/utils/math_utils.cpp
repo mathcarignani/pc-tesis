@@ -23,11 +23,6 @@ int MathUtils::bitLength(uint32_t value){
     return bits + 1;
 }
 
-int MathUtils::doubleToInt(double d){
-    int d_int = (int)round(d);
-    return d_int;
-}
-
 int MathUtils::intAbsolute(int value){
     return std::abs(value);
 }

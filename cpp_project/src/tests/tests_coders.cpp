@@ -43,8 +43,8 @@ void TestsCoders::testGAMPS() {
 //    std::vector<int> lossless{0, 0};
 //    std::vector<int>    lossy{0, 5};
 
-    Path file_path = Path(TestsUtils::OUTPUT_PATH, "vwc_1202.dat.csv");
-    std::vector<int> lossless(11, 0);
+    Path file_path = Path(TestsUtils::OUTPUT_PATH, "el-nino.csv");
+    std::vector<int> lossless(547, 0);
 //    std::vector<int>    lossy{0, 5};
 
     std::string coder_name = "GAMPS";

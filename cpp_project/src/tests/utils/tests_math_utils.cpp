@@ -1,6 +1,7 @@
 
 #include "tests_math_utils.h"
 #include "math_utils.h"
+#include "conversor.h"
 #include <cassert>
 #include <iostream>
 #include <math.h>
@@ -30,9 +31,9 @@ void TestsMathUtils::bitLengthTest(){
 void TestsMathUtils::doubleToIntTest(){
     double double1, double2, double3;
     double1 = -50; double2 = 0; double3 = 50;
-    assert(MathUtils::doubleToInt(double1) == -50);
-    assert(MathUtils::doubleToInt(double2) == 0);
-    assert(MathUtils::doubleToInt(double3) == 50);
+    assert(Conversor::doubleToInt(double1) == -50);
+    assert(Conversor::doubleToInt(double2) == 0);
+    assert(Conversor::doubleToInt(double3) == 50);
 }
 
 void TestsMathUtils::intAbsoluteTest(){

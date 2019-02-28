@@ -2,7 +2,7 @@
 #include "coder_gamps.h"
 #include "mask_coder.h"
 #include "time_delta_coder.h"
-#include "math_utils.h"
+#include "conversor.h"
 #include "assert.h"
 #include "vector_utils.h"
 #include "coder_apca.h"
@@ -147,7 +147,7 @@ void CoderGAMPS::codeMappingTable(GAMPSOutput* gamps_output){
 #endif
     int column_index_bit_length = MathUtils::bitLength(vector_size);
     for (int i = 0; i < vector_size; i++){
-//        std::cout << "codeInt(" << vector.at(i) << ", " << column_index_bit_length << ");" << std::endl;
+        std::cout << "codeInt(" << vector.at(i) << ", " << column_index_bit_length << ");" << std::endl;
         codeInt(vector.at(i), column_index_bit_length);
     }
 }
@@ -208,7 +208,7 @@ void CoderGAMPS::codeGAMPSColumn(DynArray<GAMPSEntry>* column){
             continue;
         }
     #endif
-        csv_value = no_data ? csv_value : StringUtils::doubleToString(current_entry.value);
+        csv_value = no_data ? csv_value : Conversor::doubleToString(current_entry.value);
 
         if (!window->conditionHolds(csv_value)) {
             codeWindow(window);
@@ -243,7 +243,7 @@ void CoderGAMPS::codeWindow(APCAWindow* window){
 //    std::cout << "codeInt(" << window->length << ", " << window->window_size_bit_length << ");" << std::endl;
 
     std::string constant_value = window->constant_value;
-    double value = Constants::isNoData(constant_value) ? Constants::NO_DATA_DOUBLE : StringUtils::stringToDouble(constant_value);
+    double value = Constants::isNoData(constant_value) ? Constants::NO_DATA_DOUBLE : Conversor::stringToDouble(constant_value);
     // TODO: move to an aux method... also create an analog decoding method
     codeDouble(value);
 //    std::cout << "codeDouble(" << value << ");" << std::endl;

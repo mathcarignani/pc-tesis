@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <math_utils.h>
-#include "string_utils.h"
+#include "conversor.h"
 #include "constant_coder_utils.h"
 
 PCAWindow::PCAWindow(int window_size_, int error_threshold_): Window(window_size_, error_threshold_){
@@ -43,7 +43,7 @@ void PCAWindow::addFirstValue(std::string x){
     // x is an integer
     nan_window = false;
 #endif
-    int x_int = StringUtils::stringToInt(x);
+    int x_int = Conversor::stringToInt(x);
     min = x_int;
     max = x_int;
     constant_value = x;
@@ -60,7 +60,7 @@ void PCAWindow::addNonFirstValue(std::string x){
 #endif
     if (!has_constant_value) { return; }
 
-    int x_int = StringUtils::stringToInt(x);
+    int x_int = Conversor::stringToInt(x);
     updateMinAndMax(x_int);
     if (ConstantCoderUtils::validThreshold(min, max, error_threshold)){
         updateConstantValue();

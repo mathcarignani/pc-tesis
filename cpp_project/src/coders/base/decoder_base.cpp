@@ -2,7 +2,7 @@
 #include "decoder_base.h"
 
 #include "header_decoder.h"
-#include "string_utils.h"
+#include "conversor.h"
 
 // TODO: move this logic to a separate file
 #include "decoder_basic.h"
@@ -74,9 +74,9 @@ std::string DecoderBase::decodeValue(int y){
     if (y == dataset->nan()) { return Constants::NO_DATA; }
 
     y -= dataset->offset();
-    if (dataset->insideRange(y)) { return StringUtils::intToString(y); }
+    if (dataset->insideRange(y)) { return Conversor::intToString(y); }
 
-    throw std::invalid_argument(StringUtils::intToString(y));
+    throw std::invalid_argument(Conversor::intToString(y));
 }
 
 int DecoderBase::decodeRaw(){

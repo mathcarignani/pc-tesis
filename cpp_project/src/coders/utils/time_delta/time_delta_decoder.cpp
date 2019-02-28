@@ -1,6 +1,6 @@
 
 #include "time_delta_decoder.h"
-#include "string_utils.h"
+#include "conversor.h"
 
 //
 // TODO: use a more appropriate lossless compression schema for coding the time delta column.
@@ -13,7 +13,7 @@ std::vector<std::string> TimeDeltaDecoder::decode(DecoderBase* decoder){
         column.push_back(value);
 
         // add int value to the time_delta_vector
-        int value_int = StringUtils::stringToInt(value);
+        int value_int = Conversor::stringToInt(value);
         decoder->time_delta_vector.push_back(value_int);
     }
     return column;

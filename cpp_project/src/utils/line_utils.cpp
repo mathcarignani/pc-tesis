@@ -1,6 +1,6 @@
 
 #include "line_utils.h"
-#include "string_utils.h"
+#include "conversor.h"
 #include <assert.h>
 #include <iostream>
 
@@ -10,7 +10,7 @@ std::vector<std::string> LineUtils::projectPointsOntoLine(Line* line, std::vecto
     for (int i=0; i < window_size; i++){
         int x_coord = x_coords.at(i);
         double value = line->getValue(x_coord);
-        res[i] = StringUtils::doubleToIntToString(value);
+        res[i] = Conversor::doubleToIntToString(value);
     }
     return res;
 }
@@ -29,8 +29,8 @@ std::vector<std::string> LineUtils::decodePoints(float point1_y, float point2_y,
 }
 
 std::vector<std::string> LineUtils::decodePointsString(std::string point1_y, std::string point2_y, std::vector<int> x_coords){
-    int point1_y_int = StringUtils::stringToInt(point1_y);
-    int point2_y_int = StringUtils::stringToInt(point2_y);
+    int point1_y_int = Conversor::stringToInt(point1_y);
+    int point2_y_int = Conversor::stringToInt(point2_y);
     return decodePoints(point1_y_int, point2_y_int, x_coords);
 }
 
