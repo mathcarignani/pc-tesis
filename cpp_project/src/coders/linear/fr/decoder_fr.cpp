@@ -4,10 +4,9 @@
 #if MASK_MODE
 
 #include "coder_utils.h"
-#include "math_utils.h"
 #include "assert.h"
 #include "DataItem.h"
-#include "string_utils.h"
+#include "conversor.h"
 #include "Line.h"
 
 std::vector<std::string> DecoderFR::decodeDataColumn(){
@@ -74,9 +73,9 @@ void DecoderFR::decodeWindow(int window_size, std::vector<int> x_coords){
         else {
             // project x_coord into the line
             double double_val = line->getValue(x_coords.at(x_coords_index_offset + i) - x_coords_offset);
-            value = MathUtils::doubleToInt(double_val);
+            value = Conversor::doubleToInt(double_val);
         }
-        push_value = StringUtils::intToString(value);
+        push_value = Conversor::intToString(value);
         column->addData(push_value);
         i++;
     }
@@ -90,7 +89,7 @@ std::vector<DataItem> DecoderFR::readDataItems(int window_size){
     int index;
     while(true) {
         std::string value_str = decodeValueRaw();
-        int value = StringUtils::stringToInt(value_str);
+        int value = Conversor::stringToInt(value_str);
 
         if (first_index) {
             // we always code the value in the first index, so we don't have to code its index
