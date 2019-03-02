@@ -8,8 +8,6 @@
 class StringUtils {
 
 public:
-    static int stringToInt(std::string & str);
-    static std::string intToString(int & integer);
     static std::string intToStringPos(int & integer, int size);
     static bool stringInList(std::string & str, std::vector<std::string> arr);
     static bool find(std::string string, std::string string_to_find);
@@ -19,9 +17,7 @@ public:
     static std::string join(std::vector<std::string> arr, std::string token);
     static std::string removeChars(const std::string& source, const std::string& chars);
     static std::string removeLastChar(const std::string& source);
-    static int charToInt(const char character);
-    static const char intToChar(const int integer);
-    static std::string doubleToString(double d);
+
 };
 
 #endif //CPP_PROJECT_STRING_UTILS_H

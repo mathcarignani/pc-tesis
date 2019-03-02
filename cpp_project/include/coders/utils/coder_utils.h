@@ -12,6 +12,8 @@ class CoderUtils {
 
 public:
     static std::string mapValue(std::string csv_value, int offset);
+    static int mapValueInt(std::string csv_value, int offset);
+    static std::string unmapValueInt(double value, int offset);
     static std::string unmapValue(std::string value, int offset);
 
     static std::vector<int> createXCoordsVector(std::vector<int> time_delta_vector, int window_size, int row_index);

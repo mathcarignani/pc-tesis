@@ -4,16 +4,18 @@
 #include "bit_stream_utils.h"
 #include "csv_utils.h"
 #include "assert.h"
+#include "string_utils.h"
+
 
 std::string TestsCodersUtils::setAndWriteCoderName(std::string coder_name, CSVWriter* csv_writer){
     std::cout << ">> " << coder_name << std::endl;
-    csv_writer->writeRow({coder_name});
+    csv_writer->writeRow(coder_name);
     return coder_name;
 }
 
 void TestsCodersUtils::writeBitsCSV(CSVWriter* csv_writer, Dataset* dataset){
-    csv_writer->writeRow("TOTAL  = " + StringUtils::intToString(dataset->total_bits));
-    csv_writer->writeRow("header = " + StringUtils::intToString(dataset->header_bits));
+    csv_writer->writeRow("TOTAL  = " + Conversor::intToString(dataset->total_bits));
+    csv_writer->writeRow("header = " + Conversor::intToString(dataset->header_bits));
     csv_writer->writeRow("mask   = " + VectorUtils::intVectorToString(dataset->totalMaskBitsArray()));
     csv_writer->writeRow("data   = " + VectorUtils::intVectorToString(dataset->totalBitsArray()));
 }

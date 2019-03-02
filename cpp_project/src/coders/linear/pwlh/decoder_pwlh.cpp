@@ -4,9 +4,9 @@
 #include "math_utils.h"
 #include "pwlh_window.h"
 #include <cfloat>
-#include <vector_utils.h>
+#include "vector_utils.h"
 #include "constants.h"
-#include "string_utils.h"
+#include "conversor.h"
 #include "coder_utils.h"
 #include "line_utils.h"
 #include "linear_coder_utils.h"
@@ -68,7 +68,7 @@ void DecoderPWLH::decodeWindowDouble(int window_size){
     else {
         // window_size == 1 => this code can only run the last time decodeWindow is called
         int value_int = static_cast<int>(value);
-        std::string value_str = StringUtils::intToString(value_int);
+        std::string value_str = Conversor::intToString(value_int);
         column->addData(value_str);
     }
 }

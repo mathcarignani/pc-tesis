@@ -1,18 +1,12 @@
 
 #include "string_utils.h"
 #include "math_utils.h"
+#include "conversor.h"
 #include <iostream>
 
-int StringUtils::stringToInt(std::string & str){
-    return std::stoi(str);
-}
-
-std::string StringUtils::intToString(int & integer){
-    return std::to_string(integer);
-}
 
 std::string StringUtils::intToStringPos(int & integer, int size){
-    std::string str = intToString(integer);
+    std::string str = Conversor::intToString(integer);
     while (str.size() < size){ str = "0" + str; }
     return str;
 }
@@ -107,13 +101,6 @@ std::string StringUtils::join(std::vector<std::string> arr, std::string token){
     return str;
 }
 
-
-//std::string StringUtils::removeToken(std::string str, std::string token){
-////    current_line.erase(std::remove(current_line.begin(), current_line.end(), '\n'), current_line.end());
-//    char* new_str = str.erase(std::remove(str.begin(), str.end(), '\n'), str.end());
-//    return new_str;
-//}
-
 //
 // SOURCE: https://stackoverflow.com/a/5891683/4547232
 //
@@ -138,17 +125,4 @@ std::string StringUtils::removeLastChar(const std::string& source){
         result+=source[i];
     }
     return result;
-}
-
-int StringUtils::charToInt(const char character){
-    return (int) character;
-}
-
-const char StringUtils::intToChar(const int integer){
-    return (char) integer;
-}
-
-std::string StringUtils::doubleToString(double d){
-    int d_int = MathUtils::doubleToInt(d);
-    return intToString(d_int);
 }

@@ -6,6 +6,7 @@
 #include "datetime_utils.h"
 #include "header_utils.h"
 #include "vector_utils.h"
+#include "conversor.h"
 
 const int HeaderCoder::HEADER_LINES = 4;
 
@@ -102,7 +103,7 @@ int HeaderCoder::codeColumnNames(){
     // code the chars (each char uses 1 byte)
     for(int i=0; i < number_of_chars; i++) {
         char character = column_names_str[i];
-        int char_as_int = StringUtils::charToInt(character);
+        int char_as_int = Conversor::charToInt(character);
         test_mode ? output_file->pushInt(char_as_int, 8) : coder_base->codeInt(char_as_int, 8);
     }
     return data_columns_count;

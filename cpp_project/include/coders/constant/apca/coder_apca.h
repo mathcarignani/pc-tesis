@@ -20,13 +20,7 @@ private:
 public:
     using CoderCols::CoderCols;
     void setCoderParams(int window_size_, std::vector<int> error_thresholds_vector_);
-
-    //
-    // Wrapper methods which are also used by CoderGAMPS.
-    //
-    static void codeColumnWhile(CoderBase* coder, APCAWindow* window, std::string csv_value);
-    static void codeColumnAfter(CoderBase* coder, APCAWindow* window);
-    static void codeWindow(CoderBase* coder, APCAWindow* window);
+    void codeWindow(APCAWindow* window);
 };
 
 #endif //CPP_PROJECT_CODER_APCA_H

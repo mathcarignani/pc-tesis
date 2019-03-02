@@ -1,6 +1,6 @@
 
 #include "coder_ca.h"
-#include "string_utils.h"
+#include "conversor.h"
 
 void CoderCA::setCoderParams(int window_size_, std::vector<int> error_thresholds_vector_){
     window_size = window_size_;
@@ -53,7 +53,7 @@ void CoderCA::processValue(std::string x){
     }
 #endif
 
-    int x_int = StringUtils::stringToInt(x);
+    int x_int = Conversor::stringToInt(x);
 
     if (window->isEmpty()){
         if (window->nan_window){ // this condition can only be true on the first iteration

@@ -53,9 +53,10 @@ void GolombCoder::code(int column_index){
     coder->codeUnary(k);
 
     CSVReader* input_csv = coder->input_csv;
-    input_csv->goToFirstDataRow(column_index);
 
     int count = 0;
+
+    input_csv->goToFirstDataRow(column_index);
     while (input_csv->continue_reading) {
         std::string csv_value = input_csv->readNextValue();
         if (no_data_majority == Constants::isNoData(csv_value)){

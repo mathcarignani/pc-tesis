@@ -34,13 +34,18 @@ void TestsCoders::testSideFilder() {
 }
 
 void TestsCoders::testGAMPS() {
-//     Path file_path = Path(TestsUtils::IRKIS_PATH, "vwc_1202.dat.csv");
-//     std::vector<int> lossless{0, 0};
-//     std::vector<int>    lossy{0, 5};
+//    Path file_path = Path(TestsUtils::IRKIS_PATH, "vwc_1202.dat.csv");
+//    Path file_path = Path(TestsUtils::OUTPUT_PATH, "noaa-adcp-201501_2cols.csv");
+//    Path file_path = Path(TestsUtils::OUTPUT_PATH, "noaa-adcp-201501.csv");
+//    std::vector<int> lossless{0, 0};
 
-    Path file_path = Path(TestsUtils::NOAA_SPC_HAIL_PATH, "noaa_spc-hail.csv");
-    std::vector<int> lossless{0, 0, 0, 0};
-    std::vector<int>    lossy{0, 5};
+//    Path file_path = Path(TestsUtils::OUTPUT_PATH, "noaa_spc-tornado.csv");
+//    std::vector<int> lossless{0, 0};
+//    std::vector<int>    lossy{0, 5};
+
+    Path file_path = Path(TestsUtils::OUTPUT_PATH, "el-nino.csv");
+    std::vector<int> lossless(547, 0);
+//    std::vector<int>    lossy{0, 5};
 
     std::string coder_name = "GAMPS";
     Path output_code_path = TestsCodersUtils::codedFilePath(TestsUtils::OUTPUT_PATH, file_path, coder_name);

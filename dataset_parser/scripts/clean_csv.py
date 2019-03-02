@@ -23,12 +23,11 @@ def iterate(csv_reader, csv_writer):
 
         if csv_reader.current_line_count < 5:  # header rows
             if csv_reader.current_line_count == 4:  # column titles row
-                pass
-                # line = [line[0], line[121]]
+                line = [line[0], line[516], line[519]]
             csv_writer.write_row(line)
             continue
 
-        line[0] = "1" if line[0] == "0" else line[0]
+        line = [line[0], line[516], line[519]]
         # line = set_line_timestamp(line, timestamp)
         # if last_column:
         #     line = line[:last_column]
@@ -41,11 +40,11 @@ def iterate(csv_reader, csv_writer):
 
 
 def clean():
-    input_path = cpp_project_path() + "/test_files/sf"
-    input_filename = "noaa_spc-hail.csv"
+    input_path = cpp_project_path() + "/test_files"
+    input_filename = "noaa-adcp-201501.csv"
 
-    output_path = cpp_project_path() + "/test_files/sf"
-    output_filename = "noaa_spc-hail-0to1.csv"
+    output_path = cpp_project_path() + "/test_files"
+    output_filename = "noaa-adcp-201501_2cols.csv"
 
     csv_reader = CSVReader(input_path, input_filename)
     csv_writer = CSVWriter(output_path, output_filename)
@@ -165,6 +164,6 @@ def compare_mac_ubuntu():
 
 ########################################################################################################################
 
-# clean()
+clean()
 # compare()
-compare_mac_ubuntu()
+# compare_mac_ubuntu()

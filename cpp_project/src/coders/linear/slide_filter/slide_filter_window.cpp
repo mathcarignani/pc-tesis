@@ -1,6 +1,6 @@
 
 #include "slide_filter_window.h"
-#include "string_utils.h"
+#include "conversor.h"
 #include "iostream"
 #include "assert.h"
 
@@ -21,7 +21,7 @@ CoderSlideFilter* SlideFilterWindow::getCompressData(){
 
 void SlideFilterWindow::addDataItem(int timestamp, std::string value){
     int new_timestamp = (length == 0) ? 1 : data[length-1].timestamp + timestamp;
-    int value_int = StringUtils::stringToInt(value);
+    int value_int = Conversor::stringToInt(value);
     data[length] = DataItem(value_int, new_timestamp);
 //    std::cout << "(length, value_int, new_timestamp) = (" << length << ", " << value_int << ", " << new_timestamp << ")" << std::endl;
     length++;

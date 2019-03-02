@@ -3,7 +3,8 @@
 
 #include <iostream>
 #include <math_utils.h>
-#include "string_utils.h"
+#include "conversor.h"
+#include "constant_coder_utils.h"
 
 PCAWindow::PCAWindow(int window_size_, int error_threshold_): Window(window_size_, error_threshold_){
     array = new std::vector<std::string>;
@@ -22,7 +23,7 @@ void PCAWindow::updateMinAndMax(int x_int){
 }
 
 void PCAWindow::updateConstantValue(){
-    constant_value = calculateConstantValue(min, max);
+    constant_value = ConstantCoderUtils::calculateConstantValue(min, max);
 }
 
 void PCAWindow::addValue(std::string x){
@@ -42,7 +43,7 @@ void PCAWindow::addFirstValue(std::string x){
     // x is an integer
     nan_window = false;
 #endif
-    int x_int = StringUtils::stringToInt(x);
+    int x_int = Conversor::stringToInt(x);
     min = x_int;
     max = x_int;
     constant_value = x;
@@ -59,9 +60,9 @@ void PCAWindow::addNonFirstValue(std::string x){
 #endif
     if (!has_constant_value) { return; }
 
-    int x_int = StringUtils::stringToInt(x);
+    int x_int = Conversor::stringToInt(x);
     updateMinAndMax(x_int);
-    if (validThreshold(min, max, error_threshold)){
+    if (ConstantCoderUtils::validThreshold(min, max, error_threshold)){
         updateConstantValue();
     }
     else {
@@ -85,15 +86,4 @@ void PCAWindow::clearWindow(){
 
 std::string PCAWindow::getElement(int pos){
     return array->at(pos);
-}
-
-std::string PCAWindow::calculateConstantValue(int min, int max){
-    int constant = min + max;
-    if (constant != 0) { constant /= 2; }
-    return StringUtils::intToString(constant);
-}
-
-bool PCAWindow::validThreshold(int min, int max, int error_threshold){
-    int width = MathUtils::intAbsolute(max - min);
-    return width <= 2*error_threshold;
 }

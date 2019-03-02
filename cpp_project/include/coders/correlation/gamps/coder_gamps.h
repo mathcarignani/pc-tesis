@@ -4,6 +4,12 @@
 
 #include "coder_base.h"
 #include "apca_window.h"
+#include "structs.h"
+
+#include "DataStream.h"
+#include "GAMPSOutput.h"
+#include "GAMPS.h"
+#include "mask.h"
 
 class CoderGAMPS: public CoderBase {
 
@@ -12,26 +18,33 @@ private:
 
     int column_index;
     int row_index;
-    int delta_sum;
     std::vector<int> time_delta_vector;
-    int total_data_rows;
-    APCAWindow* window;
+
+    std::vector<double> gamps_epsilons_vector;
+    GAMPSInput* gamps_input;
+    GAMPS* gamps;
+
+    MappingTable* mapping_table;
+    Mask* nodata_rows_mask;
 
     void codeCoderParams() override;
-
     void codeDataRows() override;
+
     void codeTimeDeltaColumn();
-    void codeColumnGroups();
-    void codeColumnGroup(int group_index);
-
-    // TODO: merge these two methods into one
-    std::vector<std::string> codeBaseColumn(int error_threshold);
-    void codeRatioColumn(int error_threshold, std::vector<std::string> base_column);
-
-    void groupThresholds(int threshold, int & base_threshold, int & ratio_threshold);
+    GAMPSOutput* processOtherColumns();
+    void codeMappingTable(GAMPSOutput* gamps_output);
+    void codeGAMPSColumns(GAMPSOutput* gamps_output);
 
 
-    static std::string calculateDiff(std::string base_value, std::string ratio_value);
+    void getNodataRowsMask();
+    void setGAMPSInput();
+    CDataStream* getColumn(int column_index);
+    GAMPSOutput* getGAMPSOutput(GAMPSInput* gamps_input);
+
+    void codeGAMPSColumn(DynArray<GAMPSEntry>* column);
+
+    void update(DynArray<GAMPSEntry>* column, int & entry_index, GAMPSEntry & current_entry, int & remaining);
+    void codeWindow(APCAWindow* window);
 
 public:
     using CoderBase::CoderBase;

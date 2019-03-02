@@ -1,10 +1,11 @@
 
+#include <utils/conversor.h>
 #include "coder_fr.h"
 
 #if MASK_MODE
 
 #include "math_utils.h"
-#include "string_utils.h"
+#include "conversor.h"
 #include "assert.h"
 
 void CoderFR::setCoderParams(int window_size_, std::vector<int> error_thresholds_vector_){
@@ -56,8 +57,8 @@ void CoderFR::codeWindow(){
 }
 
 void CoderFR::codeItem(DataItem item, int index){
-    int value = (int) item.value;
-    std::string value_str = StringUtils::intToString(value);
+    int value = Conversor::doubleToInt(item.value);
+    std::string value_str = Conversor::intToString(value);
     codeValueRaw(value_str);
     // we always code the value in the first index, so we don't have to code its index
     if (index == 0) { return; }

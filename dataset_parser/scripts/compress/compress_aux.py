@@ -5,7 +5,7 @@ from auxi.os_utils import datasets_csv_path
 THRESHOLD_PERCENTAGES = [0, 1, 3, 5, 10, 15, 20, 30]
 WINDOW_SIZES = [5, 10, 25, 50, 100, 200]
 CSV_PATH = datasets_csv_path()
-MASK_MODE = True
+MASK_MODE = False
 
 DATASETS_ARRAY = [
     {'name': 'IRKIS', 'folder': "[1]irkis", 'logger': "irkis.log", 'o_folder': "[1]irkis"},
@@ -37,31 +37,31 @@ CODERS_ARRAY = [
         'name': 'CoderBasic',
         'o_folder': 'basic'
     },
-    {
-        'name': 'CoderPCA',
-        'o_folder': 'pca',
-        'params': {'window_size': WINDOW_SIZES}
-    },
-    {
-        'name': 'CoderAPCA',
-        'o_folder': 'apca',
-        'params': {'window_size': WINDOW_SIZES}
-    },
-    {
-        'name': 'CoderCA',
-        'o_folder': 'ca',
-        'params': {'window_size': WINDOW_SIZES}
-    },
-    {
-        'name': 'CoderPWLH',
-        'o_folder': 'pwlh',
-        'params': {'window_size': WINDOW_SIZES}
-    },
-    {
-        'name': 'CoderPWLHInt',
-        'o_folder': 'pwlh-int',
-        'params': {'window_size': WINDOW_SIZES}
-    },
+    # {
+    #     'name': 'CoderPCA',
+    #     'o_folder': 'pca',
+    #     'params': {'window_size': WINDOW_SIZES}
+    # },
+    # {
+    #     'name': 'CoderAPCA',
+    #     'o_folder': 'apca',
+    #     'params': {'window_size': WINDOW_SIZES}
+    # },
+    # {
+    #     'name': 'CoderCA',
+    #     'o_folder': 'ca',
+    #     'params': {'window_size': WINDOW_SIZES}
+    # },
+    # {
+    #     'name': 'CoderPWLH',
+    #     'o_folder': 'pwlh',
+    #     'params': {'window_size': WINDOW_SIZES}
+    # },
+    # {
+    #     'name': 'CoderPWLHInt',
+    #     'o_folder': 'pwlh-int',
+    #     'params': {'window_size': WINDOW_SIZES}
+    # },
     {
         'name': 'CoderGAMPS',
         'o_folder': 'gamps',

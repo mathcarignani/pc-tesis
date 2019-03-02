@@ -12,6 +12,7 @@ class Mask {
 private:
     // creation variables
     std::vector<Burst*> bursts;
+    Burst* current_burst;
 
     // iteration variables
     int current_index;
@@ -25,8 +26,15 @@ public:
     int total_data; // number of non-"nodata" entries
 
     Mask();
+
+    // Used in the mask decoders
     void add(Burst* burst);
     void add(bool no_data, int length);
+
+    // Used in the CoderGAMPS class
+    void add(bool no_data);
+    void close();
+
     void reset();
     bool isNoData();
 };

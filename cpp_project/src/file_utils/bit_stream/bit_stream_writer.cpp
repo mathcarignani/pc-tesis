@@ -44,9 +44,17 @@ void BitStreamWriter::pushFloat(float x){
 
 void BitStreamWriter::pushDouble(double x){
     Double my_double;
-    my_double.m_double = x; // assign a float to union
+    my_double.m_double = x; // assign a double to union
     for (int i=0; i < sizeof(double); i++){
         pushInt(my_double.m_bytes[i], 8); // get the 4 bytes
+    }
+}
+
+void BitStreamWriter::pushInt(int x){
+    Integer my_int;
+    my_int.m_int = x; // assign an int to union
+    for (int i=0; i < sizeof(int); i++){
+        pushInt(my_int.m_bytes[i], 8); // get the 4 bytes
     }
 }
 

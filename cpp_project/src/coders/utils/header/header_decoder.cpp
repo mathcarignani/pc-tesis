@@ -5,6 +5,7 @@
 #include "string_utils.h"
 #include "dataset_utils.h"
 #include "header_utils.h"
+#include "conversor.h"
 #include <vector>
 
 HeaderDecoder::HeaderDecoder(BitStreamReader* input_file_, CSVWriter* output_csv_){
@@ -66,7 +67,7 @@ int HeaderDecoder::decodeColumnNames(){
     std::string column_names = "";
     for(int i = 0; i < number_of_chars; i++){
         int char_as_int = input_file->getInt(8);
-        char character = StringUtils::intToChar(char_as_int);
+        char character = Conversor::intToChar(char_as_int);
         column_names += character;
     }
     std::vector<std::string> row = StringUtils::splitByString(column_names, ",");

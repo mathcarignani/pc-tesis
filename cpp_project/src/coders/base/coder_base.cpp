@@ -2,10 +2,10 @@
 #include "coder_base.h"
 
 #include "header_coder.h"
-#include "string_utils.h"
+#include "conversor.h"
 #include "assert.h"
 #include <math.h>
-#include "coders/utils/coder_utils.h"
+#include "coder_utils.h"
 
 CoderBase::CoderBase(CSVReader* input_csv_, BitStreamWriter* output_file_){
    input_csv = input_csv_;
@@ -30,10 +30,10 @@ int CoderBase::codeValue(std::string x){
 
     if (Constants::isNoData(x)){ return dataset->nan(); }
 
-    int x_int = StringUtils::stringToInt(x);
+    int x_int = Conversor::stringToInt(x);
     if (dataset->insideRange(x_int)) { return x_int + dataset->offset(); }
 
-    throw std::invalid_argument(StringUtils::intToString(x_int));
+    throw std::invalid_argument(Conversor::intToString(x_int));
 }
 
 void CoderBase::codeRaw(int value){
@@ -86,6 +86,11 @@ void CoderBase::codeFloat(float x){
 void CoderBase::codeDouble(double x){
     dataset->addBits(sizeof(double)*8);
     output_file->pushDouble(x);
+}
+
+void CoderBase::codeInt(int x){
+    dataset->addBits(sizeof(int)*8);
+    output_file->pushInt(x);
 }
 
 void CoderBase::codeFile(){

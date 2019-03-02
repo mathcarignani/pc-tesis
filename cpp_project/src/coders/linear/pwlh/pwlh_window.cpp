@@ -1,7 +1,6 @@
 
 #include "pwlh_window.h"
-#include "string_utils.h"
-#include "math_utils.h"
+#include "conversor.h"
 #include "constants.h"
 
 
@@ -38,7 +37,7 @@ bool PWLHWindow::conditionHolds(std::string x, int x_delta){
 #endif
     if (x_delta == 0) { return false; } // when x_delta == 0 we need to create a new window
 
-    int x_int = StringUtils::stringToInt(x);
+    int x_int = Conversor::stringToInt(x);
     int new_x_coord = x_coord + x_delta;
     bucket->addPointMOD(new_x_coord, x_int);
 
@@ -61,7 +60,7 @@ bool PWLHWindow::checkIntegerModeConstraint(int new_x_coord){
     if (!integer_mode){ return true; }
 
     // this constraint is only checked when running in integer mode
-    return range->insideRange(MathUtils::doubleToInt(p1.y)) && range->insideRange(MathUtils::doubleToInt(p2.y));
+    return range->insideRange(Conversor::doubleToInt(p1.y)) && range->insideRange(Conversor::doubleToInt(p2.y));
 }
 
 bool PWLHWindow::isFull(){
@@ -87,7 +86,7 @@ void PWLHWindow::addFirstValue(std::string x){
     nan_window = false;
 #endif
     x_coord = 0;
-    int x_int = StringUtils::stringToInt(x);
+    int x_int = Conversor::stringToInt(x);
     if (bucket->getSize() != 0) { bucket->resetBucket(); }
     bucket->addPointMOD(0, (double) x_int); // should be the same as calling bucket->addPoint((double) x_int);
     constant_value = x;
@@ -103,9 +102,9 @@ float PWLHWindow::getPoint2Y(){
 }
 
 std::string PWLHWindow::getPoint1YIntegerMode(){
-    return StringUtils::doubleToString(p1.y);
+    return Conversor::doubleToIntToString(p1.y);
 }
 
 std::string PWLHWindow::getPoint2YIntegerMode(){
-    return StringUtils::doubleToString(p2.y);
+    return Conversor::doubleToIntToString(p2.y);
 }

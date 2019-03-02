@@ -21,6 +21,10 @@ private:
         double   m_double;
         uint8_t  m_bytes[sizeof(double)];
     };
+    union Integer {
+        int   m_int;
+        uint8_t  m_bytes[sizeof(int)];
+    };
 
     FILE * fp;
     unsigned char current, offset;
@@ -36,6 +40,7 @@ public:
 
     void pushFloat(float x);
     void pushDouble(double x);
+    void pushInt(int x);
 
     void close();
 
