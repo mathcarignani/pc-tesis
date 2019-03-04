@@ -11,6 +11,7 @@
 #include "tests_bit_stream.h"
 #include "tests_dataset_utils.h"
 #include "tests_datetime_utils.h"
+#include "tests_estimator.h"
 
 void Tests::runAll() {
     std::cout << "TestsMathUtils::runAll();" << std::endl;     TestsMathUtils::runAll();
@@ -21,5 +22,6 @@ void Tests::runAll() {
     std::cout << "TestsDatasetUtils::runAll();" << std::endl;  TestsDatasetUtils::runAll();
     std::cout << "TestsBitStream::runAll();" << std::endl;     TestsBitStream::runAll();
     std::cout << "TestsHeaderCoder().runAll();" << std::endl;  TestsHeaderCoder().runAll();
+    std::cout << "TestsEstimator().runAll();" << std::endl;    TestsEstimator().runAll();
     std::cout << "TestsCoders().runAll();" << std::endl;       TestsCoders().runAll();
 }

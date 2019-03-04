@@ -14,9 +14,9 @@ int main(int argc, char *argv[]){
 
     if (argc <= 1) {
 //        TestsCoders::testSideFilder();
-        TestsCoders::testGAMPS();
+//        TestsCoders::testGAMPS();
 //        TestsCoders::testCA();
-//        Tests::runAll();
+        Tests::runAll();
         return 0;
     }
 

@@ -1338,6 +1338,33 @@ src/coders/utils/header/header_decoder.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/utils/header/header_decoder.cpp.s
 .PHONY : src/coders/utils/header/header_decoder.cpp.s
 
+src/coders/utils/mask/arithmetic/estimator.o: src/coders/utils/mask/arithmetic/estimator.cpp.o
+
+.PHONY : src/coders/utils/mask/arithmetic/estimator.o
+
+# target to build an object file
+src/coders/utils/mask/arithmetic/estimator.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/utils/mask/arithmetic/estimator.cpp.o
+.PHONY : src/coders/utils/mask/arithmetic/estimator.cpp.o
+
+src/coders/utils/mask/arithmetic/estimator.i: src/coders/utils/mask/arithmetic/estimator.cpp.i
+
+.PHONY : src/coders/utils/mask/arithmetic/estimator.i
+
+# target to preprocess a source file
+src/coders/utils/mask/arithmetic/estimator.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/utils/mask/arithmetic/estimator.cpp.i
+.PHONY : src/coders/utils/mask/arithmetic/estimator.cpp.i
+
+src/coders/utils/mask/arithmetic/estimator.s: src/coders/utils/mask/arithmetic/estimator.cpp.s
+
+.PHONY : src/coders/utils/mask/arithmetic/estimator.s
+
+# target to generate assembly for a file
+src/coders/utils/mask/arithmetic/estimator.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/utils/mask/arithmetic/estimator.cpp.s
+.PHONY : src/coders/utils/mask/arithmetic/estimator.cpp.s
+
 src/coders/utils/mask/golomb/golomb_coder.o: src/coders/utils/mask/golomb/golomb_coder.cpp.o
 
 .PHONY : src/coders/utils/mask/golomb/golomb_coder.o
@@ -2094,6 +2121,33 @@ src/tests/tests_dataset_utils.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests_dataset_utils.cpp.s
 .PHONY : src/tests/tests_dataset_utils.cpp.s
 
+src/tests/tests_estimator.o: src/tests/tests_estimator.cpp.o
+
+.PHONY : src/tests/tests_estimator.o
+
+# target to build an object file
+src/tests/tests_estimator.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests_estimator.cpp.o
+.PHONY : src/tests/tests_estimator.cpp.o
+
+src/tests/tests_estimator.i: src/tests/tests_estimator.cpp.i
+
+.PHONY : src/tests/tests_estimator.i
+
+# target to preprocess a source file
+src/tests/tests_estimator.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests_estimator.cpp.i
+.PHONY : src/tests/tests_estimator.cpp.i
+
+src/tests/tests_estimator.s: src/tests/tests_estimator.cpp.s
+
+.PHONY : src/tests/tests_estimator.s
+
+# target to generate assembly for a file
+src/tests/tests_estimator.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests_estimator.cpp.s
+.PHONY : src/tests/tests_estimator.cpp.s
+
 src/tests/tests_header_coder.o: src/tests/tests_header_coder.cpp.o
 
 .PHONY : src/tests/tests_header_coder.o
@@ -2589,6 +2643,9 @@ help:
 	@echo "... src/coders/utils/header/header_decoder.o"
 	@echo "... src/coders/utils/header/header_decoder.i"
 	@echo "... src/coders/utils/header/header_decoder.s"
+	@echo "... src/coders/utils/mask/arithmetic/estimator.o"
+	@echo "... src/coders/utils/mask/arithmetic/estimator.i"
+	@echo "... src/coders/utils/mask/arithmetic/estimator.s"
 	@echo "... src/coders/utils/mask/golomb/golomb_coder.o"
 	@echo "... src/coders/utils/mask/golomb/golomb_coder.i"
 	@echo "... src/coders/utils/mask/golomb/golomb_coder.s"
@@ -2673,6 +2730,9 @@ help:
 	@echo "... src/tests/tests_dataset_utils.o"
 	@echo "... src/tests/tests_dataset_utils.i"
 	@echo "... src/tests/tests_dataset_utils.s"
+	@echo "... src/tests/tests_estimator.o"
+	@echo "... src/tests/tests_estimator.i"
+	@echo "... src/tests/tests_estimator.s"
 	@echo "... src/tests/tests_header_coder.o"
 	@echo "... src/tests/tests_header_coder.i"
 	@echo "... src/tests/tests_header_coder.s"

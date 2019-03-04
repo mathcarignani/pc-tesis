@@ -10,8 +10,6 @@
 class TestsCoders {
 
 public:
-
-
     TestsCoders();
     void runAll();
 
