@@ -6,6 +6,7 @@ set(CMAKE_CXX_STANDARD 11)
 ###############################
 
 set(BENCHMARK_DIR external/benchmarkLinux)
+set(ARI_DIR external/ari)
 set(ALGORITHMS_DIR ${BENCHMARK_DIR}/Algorithms)
 set(GAMPS_CONTROL_DIR ${ALGORITHMS_DIR}/GAMPS/control)
 set(GAMPS_DATA_DIR ${ALGORITHMS_DIR}/GAMPS/data)
