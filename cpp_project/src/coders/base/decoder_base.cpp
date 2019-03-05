@@ -122,6 +122,10 @@ int DecoderBase::decodeInt(){
     return input_file->getInt();
 }
 
+void DecoderBase::completeByte(){
+    input_file->completeByte();
+}
+
 void DecoderBase::decodeFile(){
     dataset = HeaderDecoder(input_file, output_csv).decodeHeader();
     decodeDataRowsCount();

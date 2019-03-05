@@ -42,6 +42,8 @@ public:
     void pushDouble(double x);
     void pushInt(int x);
 
+    int completeByte();
+
     void close();
 
     ~BitStreamWriter();

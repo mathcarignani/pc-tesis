@@ -45,6 +45,7 @@ public:
     void codeFloat(float x);
     void codeDouble(double x);
     void codeInt(int x);
+    void completeByte();
 };
 
 #endif //CPP_PROJECT_CODER_BASE_H

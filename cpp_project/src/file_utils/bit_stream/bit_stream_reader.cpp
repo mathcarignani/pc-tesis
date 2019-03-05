@@ -65,6 +65,12 @@ int BitStreamReader::getInt(){
     return my_int.m_int;
 }
 
+void BitStreamReader::completeByte(){
+    while (offset > 0){
+        getBit();
+    }
+}
+
 bool BitStreamReader::reachedEOF(){
     return feof(fp);
 }

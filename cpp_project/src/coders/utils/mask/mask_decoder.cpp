@@ -4,11 +4,13 @@
 #if MASK_MODE
 
 Mask* MaskDecoder::decode(DecoderBase* decoder){
-#if GOLOMB_MODE
-    return GolombMaskDecoder::decode(decoder);
-#else
+#if MASK_MODE == 1
     return SimpleMaskDecoder::decode(decoder);
-#endif // GOLOMB_MODE
+#elif MASK_MODE == 2
+    return GolombMaskDecoder::decode(decoder);
+#elif MASK_MODE == 3
+    return ArithmeticMaskDecoder::decode(decoder);
+#endif
 }
 
 #endif // MASK_MODE

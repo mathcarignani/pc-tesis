@@ -58,6 +58,13 @@ void BitStreamWriter::pushInt(int x){
     }
 }
 
+int BitStreamWriter::completeByte(){
+    int remaining = offset;
+    if (offset > 0)
+        fputc(current,fp), offset = 0, current = 0;
+    return remaining;
+}
+
 void BitStreamWriter::close(){
     if (offset > 0)
         fputc(current,fp), offset = 0, current = 0;

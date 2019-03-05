@@ -41,6 +41,8 @@ public:
     double getDouble();
     int getInt();
 
+    void completeByte();
+
     bool reachedEOF();
 
     ~BitStreamReader();

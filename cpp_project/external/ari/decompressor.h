@@ -35,8 +35,11 @@ THE SOFTWARE.
 #include <iomanip>
 #endif
 
-#include "byteio.h"
-#include "bitio.h"
+//#include "byteio.h"
+//#include "bitio.h"
+#include "decoder_input.h"
+#include "decoder_output.h"
+#include "modelA.h"
 
 //
 // The arithmetic decompressor is a general purpose decompressor that
@@ -139,9 +142,10 @@ private :
 template<typename INPUT, typename OUTPUT, typename MODEL>
 int decompress(INPUT &source, OUTPUT &target, MODEL &model)
 {
-  input_bits<INPUT> in(source,MODEL::CODE_VALUE_BITS);
-  output_bytes<OUTPUT> out(target);
-  decompressor<input_bits<INPUT>, output_bytes<OUTPUT>, MODEL> d(in,out, model);
+//  input_bits<INPUT> in(source,MODEL::CODE_VALUE_BITS);
+//  output_bytes<OUTPUT> out(target);
+// decompressor<input_bits<INPUT>, output_bytes<OUTPUT>, MODEL> d(in,out, model);
+   decompressor<INPUT, OUTPUT, MODEL> d(source,target, model);
   return d();
 }
 

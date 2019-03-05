@@ -47,6 +47,7 @@ public:
     float decodeFloat();
     double decodeDouble();
     int decodeInt();
+    void completeByte();
 
     void setWindowSize(int window_size_);
 };

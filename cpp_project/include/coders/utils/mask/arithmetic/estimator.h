@@ -5,6 +5,8 @@
 class Estimator {
 
 private:
+    static const double DIV;
+
     // counters for when the last value read is data
     int m_data; // data count
     int n_data; // nodata count
@@ -20,6 +22,7 @@ private:
 public:
     Estimator();
     double estimateProbability(bool no_data_);
+    double estimateEOFProbability();
     void print();
 };
 

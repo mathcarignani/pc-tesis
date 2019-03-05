@@ -32,8 +32,11 @@ THE SOFTWARE.
 
 #include <stdexcept>
 
-#include "byteio.h"
-#include "bitio.h"
+//#include "byteio.h"
+//#include "bitio.h"
+#include "coder_input.h"
+#include "coder_output.h"
+#include "modelA.h"
 
 #ifdef LOG
 #include <iomanip>
@@ -157,9 +160,10 @@ private :
 template<typename INPUT, typename OUTPUT, typename MODEL>
 int compress(INPUT &source, OUTPUT &target, MODEL &model)
 {
-  input_bytes<INPUT> in(source);
-  output_bits<OUTPUT> out(target);
-  compressor<input_bytes<INPUT>, output_bits<OUTPUT>, MODEL> c(in,out, model);
+//  input_bytes<INPUT> in(source);
+//  output_bits<OUTPUT> out(target);
+//  compressor<input_bytes<INPUT>, output_bits<OUTPUT>, MODEL> c(in,out, model);
+  compressor<INPUT, OUTPUT, MODEL> c(source,target, model);
   return c();
 }
 

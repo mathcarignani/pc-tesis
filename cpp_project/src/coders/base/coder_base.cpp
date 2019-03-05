@@ -93,6 +93,11 @@ void CoderBase::codeInt(int x){
     output_file->pushInt(x);
 }
 
+void CoderBase::completeByte(){
+    int remaining = output_file->completeByte();
+    dataset->addBits(remaining);
+}
+
 void CoderBase::codeFile(){
     codeCoderParams();
     HeaderCoder(input_csv, this).codeHeader(dataset);

@@ -2,6 +2,8 @@
 #include "estimator.h"
 #include <iostream>
 
+const double Estimator::DIV = 1.0 / 3.0;
+
 Estimator::Estimator(){
     m_data = 0, n_data = 0;
     total_data = m_data + n_data;
@@ -17,16 +19,26 @@ double Estimator::estimateProbability(bool no_data_){
     int new_total;
     if (nodata){ // last value read is nodata
         new_total = ++total_nodata;
-        dividend = (no_data_? n_nodata++ : m_nodata++) + 0.5;
+        dividend = (no_data_? n_nodata++ : m_nodata++) + DIV;
     }
     else { // last value read is data
         new_total = ++total_data;
-        dividend = (no_data_? n_data++ : m_data++) + 0.5;
+        dividend = (no_data_? n_data++ : m_data++) + DIV;
     }
     double res = dividend / new_total;
     nodata = no_data_;
     return res;
 }
+
+double Estimator::estimateEOFProbability(){
+    if (nodata){
+
+    }
+    else {
+
+    }
+}
+
 
 void Estimator::print(){
     if (nodata){
