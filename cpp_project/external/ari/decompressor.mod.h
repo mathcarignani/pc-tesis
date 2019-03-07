@@ -87,7 +87,8 @@ public :
       CODE_VALUE scaled_value =  ((value - low + 1) * m_model.getCount() - 1 ) / range;
       int c;
       prob p = m_model.getChar( scaled_value, c );
-      if ( c == 256 )
+      // if ( c == 256 )
+      if (c == 2)
         break;
       m_output.putByte(c);
 #ifdef LOG
@@ -142,11 +143,11 @@ private :
 template<typename INPUT, typename OUTPUT, typename MODEL>
 int decompress(INPUT &source, OUTPUT &target, MODEL &model)
 {
-// input_bits<INPUT> in(source,MODEL::CODE_VALUE_BITS);
-// output_bytes<OUTPUT> out(target);
+//  input_bits<INPUT> in(source,MODEL::CODE_VALUE_BITS);
+//  output_bytes<OUTPUT> out(target);
 // decompressor<input_bits<INPUT>, output_bytes<OUTPUT>, MODEL> d(in,out, model);
-    decompressor<INPUT, OUTPUT, MODEL> d(source,target, model);
-    return d();
+   decompressor<INPUT, OUTPUT, MODEL> d(source,target, model);
+  return d();
 }
 
 #endif //#ifndef DECOMPESSOR_DOT_H

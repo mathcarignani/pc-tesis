@@ -122,8 +122,8 @@ int DecoderBase::decodeInt(){
     return input_file->getInt();
 }
 
-void DecoderBase::completeByte(){
-    input_file->completeByte();
+void DecoderBase::flushByte(){
+    input_file->flushByte();
 }
 
 void DecoderBase::decodeFile(){

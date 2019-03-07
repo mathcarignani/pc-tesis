@@ -28,6 +28,7 @@ private:
 
     FILE* fp;
     unsigned char current, offset;
+    bool current_unread;
     void construct(const char * file);
     void read();
 
@@ -42,7 +43,7 @@ public:
     double getDouble();
     int getInt();
 
-    void completeByte();
+    void flushByte();
 
     bool reachedEOF();
 

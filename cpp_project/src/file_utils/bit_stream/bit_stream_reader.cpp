@@ -19,9 +19,11 @@ BitStreamReader::BitStreamReader(Path path){
 void BitStreamReader::read(){
     current = (unsigned char)fgetc(fp);
     std::cout << "read = " << int(current) << std::endl;
+    current_unread = true;
 }
 
 int BitStreamReader::getBit(){
+    current_unread = false;
     int ans = !!(current & (1 << offset) );
     offset = (offset + 1) & 7;
 
@@ -70,7 +72,8 @@ int BitStreamReader::getInt(){
     return my_int.m_int;
 }
 
-void BitStreamReader::completeByte(){
+void BitStreamReader::flushByte(){
+    if (current_unread) return;
     while (offset > 0){
         getBit();
     }

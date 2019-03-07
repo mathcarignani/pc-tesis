@@ -7,7 +7,6 @@ DecoderOutput::DecoderOutput(Mask* mask_){
 }
 
 void DecoderOutput::putByte(int c){
-    std::cout << "DecoderOutput::putByte(" << c << ")" << std::endl;
     bool nodata = c == 1;
 
     if (row_index == 0){
@@ -20,6 +19,7 @@ void DecoderOutput::putByte(int c){
         mask->add(burst);
         burst = new Burst(nodata);
     }
+    std::cout << "[" << row_index << "] >>>>>>>>>>>>>>>>>>> DecoderOutput = " << c << std::endl;
     row_index++;
 }
 

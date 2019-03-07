@@ -63,7 +63,7 @@ void BitStreamWriter::pushInt(int x){
     }
 }
 
-int BitStreamWriter::completeByte(){
+int BitStreamWriter::flushByte(){
     int remaining = offset;
     if (offset > 0)
         write(), offset = 0, current = 0;

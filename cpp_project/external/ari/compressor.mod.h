@@ -74,8 +74,8 @@ public :
     CODE_VALUE high = MODEL::MAX_CODE;
     for ( ; ; ) {
       int c = m_input.getByte();
-      if ( c == -1 )
-        c = 256;
+//      if ( c == -1 )
+//        c = 256;
 #ifdef LOG
       log << std::hex << "0x" << std::setw(2) << std::setfill('0') << c;
       if ( c > 0x20 && c <= 0x7f )
@@ -121,7 +121,8 @@ public :
         high &= MODEL::MAX_CODE;
         low &= MODEL::MAX_CODE;
       }
-      if ( c == 256 ) //256 is the special EOF code
+      // if ( c == 256 ) //256 is the special EOF code
+      if ( c == 2 )
         break;
     }
     pending_bits++;
@@ -163,8 +164,8 @@ int compress(INPUT &source, OUTPUT &target, MODEL &model)
 //  input_bytes<INPUT> in(source);
 //  output_bits<OUTPUT> out(target);
 //  compressor<input_bytes<INPUT>, output_bits<OUTPUT>, MODEL> c(in,out, model);
-    compressor<INPUT, OUTPUT, MODEL> c(source,target, model);
-    return c();
+  compressor<INPUT, OUTPUT, MODEL> c(source,target, model);
+  return c();
 }
 
 #endif //#ifndef COMPRESSOR_DOT_H

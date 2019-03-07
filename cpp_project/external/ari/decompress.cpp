@@ -30,7 +30,7 @@ THE SOFTWARE.
 #include <iostream>
 #include <fstream>
 
-#include "modelA.h"
+#include "modelA.h.mod"
 #include "decompressor.h"
 
 int main(int argc, char* argv[])

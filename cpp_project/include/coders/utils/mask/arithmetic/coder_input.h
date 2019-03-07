@@ -11,6 +11,7 @@ private:
 
 public:
     int total_data_rows;
+    int total_rows;
 
     CoderInput(CSVReader* input_csv_, int column_index);
     int getByte();

@@ -32,7 +32,7 @@ THE SOFTWARE.
 #include <cstdio>
 #include <string>
 
-#include "modelA.h"
+#include "modelA.h.mod"
 #include "compressor.h"
 #include "decompressor.h"
 

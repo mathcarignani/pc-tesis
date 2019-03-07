@@ -51,7 +51,6 @@ void CoderBase::codeBits(int bit, int times){
 }
 
 void CoderBase::codeBool(bool bit){
-    std::cout << "codeBool(" << (bit ? "1" : "0") << ")" << std::endl;
     dataset->addBits(1);
     if (bit) { output_file->pushBit(1); }
     else     { output_file->pushBit(0); }
@@ -94,8 +93,8 @@ void CoderBase::codeInt(int x){
     output_file->pushInt(x);
 }
 
-void CoderBase::completeByte(){
-    int remaining = output_file->completeByte();
+void CoderBase::flushByte(){
+    int remaining = output_file->flushByte();
     dataset->addBits(remaining);
 }
 

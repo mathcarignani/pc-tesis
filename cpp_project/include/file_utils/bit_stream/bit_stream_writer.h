@@ -43,7 +43,7 @@ public:
     void pushDouble(double x);
     void pushInt(int x);
 
-    int completeByte();
+    int flushByte();
 
     void close();
 
