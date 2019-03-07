@@ -51,6 +51,7 @@ void CoderBase::codeBits(int bit, int times){
 }
 
 void CoderBase::codeBool(bool bit){
+    std::cout << "codeBool(" << (bit ? "1" : "0") << ")" << std::endl;
     dataset->addBits(1);
     if (bit) { output_file->pushBit(1); }
     else     { output_file->pushBit(0); }

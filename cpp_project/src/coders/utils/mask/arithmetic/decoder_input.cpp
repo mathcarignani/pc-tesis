@@ -1,10 +1,13 @@
 
 #include "decoder_input.h"
+#include <iostream>
 
 DecoderInput::DecoderInput(BitStreamReader* input_file_){
     input_file = input_file_;
 }
 
 int DecoderInput::get_bit(){
-    return input_file->getBit();
+    int bit = input_file->getBit();
+    std::cout << "DecoderInput::get_bit() => " << (bit ? "1" : "0") << std::endl;
+    return bit;
 }

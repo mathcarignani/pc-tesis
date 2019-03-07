@@ -1,6 +1,7 @@
 
 #include "coder_input.h"
 #include "constants.h"
+#include <iostream>
 
 CoderInput::CoderInput(CSVReader* input_csv_, int column_index){
     input_csv = input_csv_;
@@ -9,14 +10,16 @@ CoderInput::CoderInput(CSVReader* input_csv_, int column_index){
 }
 
 int CoderInput::getByte(){
+    int value = 2;
     if (input_csv->continue_reading){
         std::string csv_value = input_csv->readNextValue();
         if (Constants::isNoData(csv_value))
-            return 1;
+            value = 1;
         else {
             total_data_rows++;
-            return 0;
+            value = 0;
         }
     }
-    return -1;
+    std::cout << "CoderInput::getByte() => " << value << std::endl;
+    return value;
 }

@@ -16,12 +16,17 @@ BitStreamReader::BitStreamReader(Path path){
     construct(path.full_path.c_str());
 }
 
+void BitStreamReader::read(){
+    current = (unsigned char)fgetc(fp);
+    std::cout << "read = " << int(current) << std::endl;
+}
+
 int BitStreamReader::getBit(){
     int ans = !!(current & (1 << offset) );
     offset = (offset + 1) & 7;
 
     if (offset == 0){
-        current = (unsigned char)fgetc(fp);
+        read();
         if ( feof(fp) )
             current = 0;
     }

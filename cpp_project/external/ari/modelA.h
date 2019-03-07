@@ -51,12 +51,14 @@ struct modelA : public model_metrics<CODE_VALUE_, CODE_VALUE_BITS_, FREQUENCY_BI
   //
   // variables used by the model
   //
-  CODE_VALUE cumulative_frequency[258]; //Character a is defined by the range cumulative_frequency[a],
+  CODE_VALUE cumulative_frequency[4];
+  // CODE_VALUE cumulative_frequency[258]; //Character a is defined by the range cumulative_frequency[a],
                                         //cumulative_frequency[a+1], with cumulative_frequency[257]
                                         //containing the total count for the model. Note that entry
                                         //256 is the EOF.
   unsigned long long m_bytesProcessed;
-  static_assert( MAX_FREQ > 257, "Not enough code bits to represent the needed symbol library" );
+  // static_assert( MAX_FREQ > 257, "Not enough code bits to represent the needed symbol library" );
+  static_assert( MAX_FREQ > 3, "Not enough code bits to represent the needed symbol library" );
 
   modelA()
   {
@@ -64,7 +66,8 @@ struct modelA : public model_metrics<CODE_VALUE_, CODE_VALUE_BITS_, FREQUENCY_BI
   }
   void reset()
   {
-    for ( int i = 0 ; i < 258 ; i++ )
+    // for ( int i = 0 ; i < 258 ; i++ )
+    for ( int i = 0 ; i < 4 ; i++ )
       cumulative_frequency[i] = i;
     m_bytesProcessed = 0;
     m_frozen = false;
@@ -80,16 +83,19 @@ struct modelA : public model_metrics<CODE_VALUE_, CODE_VALUE_BITS_, FREQUENCY_BI
   }
   void inline update(int c)
   {
-    for ( int i = c + 1 ; i < 258 ; i++ )
+    // for ( int i = c + 1 ; i < 258 ; i++ )
+    for ( int i = c + 1 ; i < 4 ; i++ )
       cumulative_frequency[i]++;
-    if ( cumulative_frequency[257] >= MAX_FREQ ) {
+    // if ( cumulative_frequency[257] >= MAX_FREQ ) {
+    if ( cumulative_frequency[3] >= MAX_FREQ ) {
       m_frozen = true;
       frozen();
     }
   }
   prob getProbability(int c)
   {
-    prob p = { cumulative_frequency[c], cumulative_frequency[c+1], cumulative_frequency[257] };
+    // prob p = { cumulative_frequency[c], cumulative_frequency[c+1], cumulative_frequency[257] };
+    prob p = { cumulative_frequency[c], cumulative_frequency[c+1], cumulative_frequency[3] };
     if ( !m_frozen ) 
       update(c);
     pacify();
@@ -98,10 +104,12 @@ struct modelA : public model_metrics<CODE_VALUE_, CODE_VALUE_BITS_, FREQUENCY_BI
   prob getChar(CODE_VALUE scaled_value, int &c)
   {
     pacify();
-    for ( int i = 0 ; i < 257 ; i++ )
+    // for ( int i = 0 ; i < 257 ; i++ )
+    for ( int i = 0 ; i < 3 ; i++ )
       if ( scaled_value < cumulative_frequency[i+1] ) {
         c = i;
-        prob p = {cumulative_frequency[i], cumulative_frequency[i+1],cumulative_frequency[257]};
+        // prob p = {cumulative_frequency[i], cumulative_frequency[i+1],cumulative_frequency[257]};
+        prob p = {cumulative_frequency[i], cumulative_frequency[i+1],cumulative_frequency[3]};
         if ( !m_frozen)
           update(c);
         return p;
@@ -110,7 +118,8 @@ struct modelA : public model_metrics<CODE_VALUE_, CODE_VALUE_BITS_, FREQUENCY_BI
   }
   CODE_VALUE getCount()
   {
-    return cumulative_frequency[257];
+    // return cumulative_frequency[257];
+    return cumulative_frequency[3];
   }
   bool m_frozen;
 

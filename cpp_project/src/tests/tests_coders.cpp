@@ -16,7 +16,7 @@
 
 void TestsCoders::testSideFilder() {
     //    Path file_path = Path(TestsUtils::IRKIS_PATH, "vwc_1202.dat.csv");
-    Path file_path = Path(TestsUtils::OUTPUT_PATH, "vwc_1202.dat.csv");
+    Path file_path = Path(TestsUtils::OUTPUT_PATH, "vwc_1202-222.dat.csv");
     std::vector<int> lossless{0,  0, 0, 0, 0, 0,  0, 0, 0, 0, 0};
     std::vector<int>    lossy{0, 12, 3, 5, 2, 4, 10, 6, 4, 3, 2};
 

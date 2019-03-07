@@ -29,7 +29,7 @@ void CoderCols::codeColumn() {
     total_data_rows = MaskCoder::code(this, column_index);
 #endif
     dataset->setMode("DATA");
-    codeDataColumn();
+//    codeDataColumn();
 }
 
 void CoderCols::codeDataColumn(){

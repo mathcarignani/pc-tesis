@@ -87,7 +87,8 @@ public :
       CODE_VALUE scaled_value =  ((value - low + 1) * m_model.getCount() - 1 ) / range;
       int c;
       prob p = m_model.getChar( scaled_value, c );
-      if ( c == 256 )
+      // if ( c == 256 )
+      if (c == 2)
         break;
       m_output.putByte(c);
 #ifdef LOG

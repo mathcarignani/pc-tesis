@@ -7,6 +7,7 @@ DecoderOutput::DecoderOutput(Mask* mask_){
 }
 
 void DecoderOutput::putByte(int c){
+    std::cout << "DecoderOutput::putByte(" << c << ")" << std::endl;
     bool nodata = c == 1;
 
     if (row_index == 0){
