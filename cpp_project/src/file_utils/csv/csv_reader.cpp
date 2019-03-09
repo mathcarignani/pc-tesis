@@ -35,6 +35,12 @@ std::string CSVReader::readNextValue(){
     return col_value;
 };
 
+std::string CSVReader::readNextValue2(int col_index){
+    std::string current_line = readLine();
+    std::string col_value = StringUtils::splitByCharWithIndex(current_line, ',', col_index);
+    return col_value;
+};
+
 void CSVReader::goToFirstDataRow(int column_index_){
     column_index = column_index_;
     goToLine(4);

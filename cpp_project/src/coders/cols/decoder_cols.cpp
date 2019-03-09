@@ -22,7 +22,8 @@ void DecoderCols::decodeDataRows(){
 std::vector<std::string> DecoderCols::decodeColumn(){
     if (column_index == 0) { return  TimeDeltaDecoder::decode(this); }
 #if MASK_MODE
-    mask = MaskDecoder::decode(this);
+    if (column_index == 1)
+        mask = MaskDecoder::decode(this);
 #endif
     return decodeDataColumn();
 }

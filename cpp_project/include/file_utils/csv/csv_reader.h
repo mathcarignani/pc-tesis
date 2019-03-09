@@ -22,6 +22,7 @@ public:
     std::vector<std::string> readLineCSV();
     // PRE: continue reading
     std::string readNextValue();
+    std::string readNextValue2(int col_index);
 
     void goToFirstDataRow(int column_index_);
 };
