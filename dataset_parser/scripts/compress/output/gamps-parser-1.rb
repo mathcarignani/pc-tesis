@@ -1,7 +1,16 @@
 
-
 class Parser
     THRESHOLDS = [0, 1, 3, 5, 10, 15, 20, 30]
+    ios = true
+    if ios
+        FILENAME = "el-nino-gamps-cols-full-output.txt"
+        PATH = "/Users/pablocerve/Documents"
+        CPP = "cmake-build-debug"
+    else # ubuntu
+        FILENAME = "FULL-OUTPUT-PRINT-GAMPS.txt"
+        PATH = "/home/pablo/Documents"
+        CPP = "cmake-build-debug-ubuntu"
+    end
 
     def initialize()
         @count = 0
@@ -9,7 +18,7 @@ class Parser
         @last_filename = nil
         @last_threshold
 
-        File.open("FULL-OUTPUT-PRINT-GAMPS.txt", "r") do |file|
+        File.open(FILENAME, "r") do |file|
             file.each_line do |line|
                 process_line(line)
             end
@@ -19,8 +28,8 @@ class Parser
 
     def process_line(line)
         if line.include?("FING") and line.include?("scripts/compress")
-            line.slice! "/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug-ubuntu/cpp_project c /home/pablo/Documents/FING/Proyecto/datasets-csv/"
-            line.slice! "/home/pablo/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/"
+            line.slice! "#{PATH}/FING/Proyecto/pc-tesis/cpp_project/#{CPP}/cpp_project c #{PATH}/FING/Proyecto/datasets-csv/"
+            line.slice! "#{PATH}/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/"
             
             current_filename = line.split(" ")[1]
             if @filename == current_filename
