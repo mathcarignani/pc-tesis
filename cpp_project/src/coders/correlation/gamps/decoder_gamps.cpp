@@ -54,7 +54,6 @@ void DecoderGAMPS::decodeNoDataColumns(){
 }
 
 void DecoderGAMPS::decodeGAMPSColumns(){
-    std::cout << "DecoderGAMPS::decodeGAMPSColumns()" << std::endl;
     for(int i = 0; i < mapping_table->gamps_columns_count; i++){
         column_index = mapping_table->getColumnIndex(i);
         if (!mapping_table->isBaseColumn(column_index)){ continue; }

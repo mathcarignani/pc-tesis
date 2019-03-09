@@ -250,6 +250,7 @@ int GAMPS_Computation::statGroup(GAMPSInput* gampsInputList)
 		// eps = m_dEps * (baseSignal->getMax() - baseSignal->getMin());
 		// eps1 = 0.4 * eps;
 		eps1 = gamps_epsilons_vector.at(j);
+		std::cout << "j = " << j << " => eps1 = " << eps1 << std::endl;
 
 		DynArray<GAMPSEntry>* listBaseSignalBucket = compress_APCA(baseSignal,eps1);
 		listBucket[j] = listBaseSignalBucket;
@@ -267,6 +268,8 @@ int GAMPS_Computation::statGroup(GAMPSInput* gampsInputList)
 
 			double eps = gamps_epsilons_vector.at(i);
 			eps2 = this->computeEps2(eps,eps1,c1,c2);
+			std::cout << "    i = " << i << " => eps2 = " << eps2 << " = ";
+			std::cout << "computeEps2(" << eps << ", " << eps1 << ", " << c1 << ", " << c2 << ")" << std::endl;
 			DynArray<GAMPSEntry> *listRatioBucket = this->compress_APCA(*listComputeRatioSignal,eps2);
 			int pos = j* numOfStream + i;
 			listRatioSignalBucket[pos] = listRatioBucket;
@@ -373,10 +376,6 @@ void GAMPS_Computation:: computeOutput(DynArray<GAMPSEntry>** baseBucketList, Dy
 			resultRatioSignal[ratioCount++] =  temp;
 		}
 	}
-
-	std::cout << "baseCount = " << baseCount << std::endl;
-	std::cout << "ratioCount = " << ratioCount << std::endl;
-
 	m_pGampsOutput->setResultBaseSignal(resultBaseSignal);
 	m_pGampsOutput->setResultRatioSignal(resultRatioSignal);
 }

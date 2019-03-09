@@ -147,7 +147,6 @@ void CoderGAMPS::codeMappingTable(GAMPSOutput* gamps_output){
 #endif
     int column_index_bit_length = MathUtils::bitLength(vector_size);
     for (int i = 0; i < vector_size; i++){
-        std::cout << "codeInt(" << vector.at(i) << ", " << column_index_bit_length << ");" << std::endl;
         codeInt(vector.at(i), column_index_bit_length);
     }
 }
@@ -162,17 +161,15 @@ void CoderGAMPS::codeGAMPSColumns(GAMPSOutput* gamps_output){
         column_index = mapping_table->getColumnIndex(i);
         if (!mapping_table->isBaseColumn(column_index)){ continue; }
 
-        std::cout << "code base  signal i = " << column_index << std::endl;
-        std::cout << "base_index = " << base_index << std::endl;
+        std::cout << "code base signal i = " << column_index << " (base_index = " << base_index << ")" << std::endl;
         column = base_signals[base_index++];
         codeGAMPSColumn(column);
 
         std::vector<int> ratio_columns = mapping_table->ratioColumns(column_index);
         for (int j = 0; j < ratio_columns.size(); j++){
             column_index = ratio_columns.at(j);
-            std::cout << "    code ratio signal i = " << column_index << std::endl;
             int ratio_index = mapping_table->getRatioGampsColumnIndex(column_index);
-            std::cout << "    ratio_index = " << ratio_index << std::endl;
+            std::cout << "    code ratio signal i = " << column_index << " (ratio_index = " << ratio_index << std::endl;
             column = ratio_signals[ratio_index];
             codeGAMPSColumn(column);
         }
