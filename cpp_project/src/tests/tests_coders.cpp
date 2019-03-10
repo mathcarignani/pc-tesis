@@ -43,8 +43,8 @@ void TestsCoders::testGAMPS() {
 //    std::vector<int> lossless{0, 0};
 //    std::vector<int>    lossy{0, 5};
 
-    Path file_path = Path(TestsUtils::OUTPUT_PATH, "solar-anywhere-2011.csv");
-    std::vector<int> lossless(37, 0);
+    Path file_path = Path(TestsUtils::OUTPUT_PATH, "vwc_1203.dat.csv");
+    std::vector<int> lossless(10, 0);
 //    std::vector<int>    lossy{0, 5};
 
     std::string coder_name = "GAMPS";

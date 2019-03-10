@@ -69,8 +69,9 @@ void CoderGAMPS::getNodataRowsMask(){
             std::string csv_value = row.at(i);
             if (!Constants::isNoData(csv_value)){
                 nodata_row = false;
-                nodata_columns[j++] = false;
+                nodata_columns[j] = false;
             }
+            j++;
         }
         nodata_rows_mask->add(nodata_row);
     }
