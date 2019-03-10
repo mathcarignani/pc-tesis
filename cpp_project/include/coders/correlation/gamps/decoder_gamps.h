@@ -3,14 +3,19 @@
 #define CPP_PROJECT_DECODER_GAMPS_H
 
 #include "decoder_base.h"
-#include "structs.h"
+#include "mapping_table.h"
 #include "GAMPSOutput.h"
 
 class DecoderGAMPS: public DecoderBase {
 
 private:
+    bool limit_mode;
     std::vector<std::vector<std::string>> columns;
     int column_index;
+
+    int total_groups;
+    int group_index;
+    int total_group_columns; // total number of columns in a group (same for every group)
 
     MappingTable* mapping_table;
 
@@ -32,6 +37,7 @@ private:
 
 public:
     using DecoderBase::DecoderBase;
+    void setLimitMode(bool integer_mode_);
 
 };
 

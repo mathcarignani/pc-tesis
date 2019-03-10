@@ -1,41 +1,6 @@
 
-#include "structs.h"
-#include "constants.h"
-
-MapEntry::MapEntry(int column_index_, int base_column_index_, std::vector<int> ratio_columns_){
-    column_index = column_index_;
-    base_column_index = base_column_index_;
-    ratio_columns = ratio_columns_;
-}
-
-bool MapEntry::isNodataEntry(){
-    return base_column_index == 0;
-}
-
-bool MapEntry::isBaseColumn(){
-    return column_index == base_column_index;
-}
-
-bool MapEntry::isRatioColumn(){
-    return !(isNodataEntry() || isBaseColumn());
-}
-
-void MapEntry::print(){
-    std::cout << "column_index = " << column_index;
-    if (isNodataEntry()) {
-        std::cout << " [nodata column]" << std::endl;
-        return;
-    }
-    std::cout << ", base_column_index = " << base_column_index;
-    if (isBaseColumn()){
-        std::cout << ", ratio_columns = "; VectorUtils::printIntVector(ratio_columns);
-    }
-    else{
-        std::cout << std::endl;
-    }
-}
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#include "mapping_table.h"
+#include "vector_utils.h"
 
 MappingTable::MappingTable(){}
 
@@ -130,20 +95,6 @@ void MappingTable::createBaseColumnIndex(){
     }
 }
 
-int MappingTable::ratioColumnsIndexesAt(int index){
-    int ratio_index = 0;
-    int col_index = 0;
-    for (int i = 0; i < mapping_vector.size(); i++){
-        col_index = i + 1;
-        MapEntry* map_entry = mapping_vector.at(i);
-        if (map_entry->base_column_index != col_index && map_entry->base_column_index != 0){
-            if (index == ratio_index) { break; }
-            ratio_index++;
-        }
-    }
-    return col_index;
-}
-
 std::vector<int> MappingTable::getRatioColumns(std::vector<int> base_column_index_vector, int column_index){
     std::vector<int> ratio_signals;
     for (int j = 0; j < base_column_index_vector.size(); j++){
@@ -203,13 +154,26 @@ bool MappingTable::isBaseColumn(int column_index){
     return mapping_vector.at(column_index - 1)->base_column_index == column_index;
 }
 
-void MappingTable::print(){
+void MappingTable::print(int total_groups, int group_index){
     std::cout << "------------------------" << std::endl;
     std::cout << "MappingTable" << std::endl;
-    std::cout << "nodata_columns_indexes = "; VectorUtils::printIntVector(nodata_columns_indexes);
-    std::cout << "base_columns_indexes = "; VectorUtils::printIntVector(base_columns_indexes);
+    std::cout << "nodata_columns_indexes = "; printVector(nodata_columns_indexes, total_groups, group_index);
+    std::cout << "base_columns_indexes = "; printVector(base_columns_indexes, total_groups, group_index);
     for(int i=0; i < mapping_vector.size(); i++){
-        mapping_vector.at(i)->print();
+        mapping_vector.at(i)->print(total_groups, group_index);
     }
     std::cout << "------------------------" << std::endl;
+}
+
+void MappingTable::printVector(std::vector<int> columns_indexes, int total_groups, int group_index){
+    std::vector<int> mapped_vector;
+    for(int i=0; i < columns_indexes.size(); i++){
+        int mapped_value = mapIndex(columns_indexes.at(i), total_groups, group_index);
+        mapped_vector.push_back(mapped_value);
+    }
+    VectorUtils::printIntVector(mapped_vector);
+}
+
+int MappingTable::mapIndex(int table_index, int total_groups, int group_index){
+    return (table_index - 1) * total_groups + group_index;
 }

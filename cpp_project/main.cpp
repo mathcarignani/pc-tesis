@@ -36,7 +36,8 @@ int main(int argc, char *argv[]){
     // action == "c"
     std::string coder_name = argv[6];
     std::vector<std::string> coders_array{"CoderBasic", "CoderPCA", "CoderAPCA", "CoderPWLH",
-                                          "CoderPWLHInt", "CoderCA", "CoderSF", "CoderFR", "CoderGAMPS"};
+                                          "CoderPWLHInt", "CoderCA", "CoderSF", "CoderFR",
+                                          "CoderGAMPS", "CoderGAMPSLimit"};
 
     if (coder_name == "CoderBasic"){
         assert(argc == 7);

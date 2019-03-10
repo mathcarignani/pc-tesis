@@ -4,7 +4,7 @@
 
 #include "coder_base.h"
 #include "apca_window.h"
-#include "structs.h"
+#include "mapping_table.h"
 
 #include "DataStream.h"
 #include "GAMPSOutput.h"
@@ -15,6 +15,11 @@ class CoderGAMPS: public CoderBase {
 
 private:
     std::vector<int> error_thresholds_vector;
+    bool limit_mode;
+
+    int total_groups;
+    int group_index;
+    int total_group_columns; // total number of columns in a group (same for every group)
 
     int column_index;
     int row_index;
@@ -37,9 +42,9 @@ private:
 
 
     void getNodataRowsMask();
-    void setGAMPSInput();
+    GAMPSInput* getGAMPSInput();
     CDataStream* getColumn(int column_index);
-    GAMPSOutput* getGAMPSOutput(GAMPSInput* gamps_input);
+    GAMPSOutput* getGAMPSOutput();
 
     void codeGAMPSColumn(DynArray<GAMPSEntry>* column);
 
@@ -48,7 +53,7 @@ private:
 
 public:
     using CoderBase::CoderBase;
-    void setCoderParams(int window_size_, std::vector<int> error_thresholds_vector_);
+    void setCoderParams(int window_size_, std::vector<int> error_thresholds_vector_, bool limit_mode_);
 
 };
 

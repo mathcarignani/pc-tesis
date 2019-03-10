@@ -25,7 +25,8 @@ private:
     static Dataset* codeSF(Path input_path, Path output_path, int window_size, std::vector<int> error_thresholds_vector);
     static Dataset* codeFR(Path input_path, Path output_path, int window_size, std::vector<int> error_thresholds_vector);
 #endif
-    static Dataset* codeGAMPS(Path input_path, Path output_path, int window_size, std::vector<int> error_thresholds_vector);
+    static Dataset* codeGAMPS(Path input_path, Path output_path, int window_size,
+                              std::vector<int> error_thresholds_vector, bool limit_mode);
 };
 
 #endif //CPP_PROJECT_SCRIPTS_H

@@ -10,24 +10,33 @@
 #include "coder_utils.h"
 #include "GAMPSInput.h"
 
-void CoderGAMPS::setCoderParams(int window_size_, std::vector<int> error_thresholds_vector_){
+void CoderGAMPS::setCoderParams(int window_size_, std::vector<int> error_thresholds_vector_, bool limit_mode_){
     window_size = window_size_;
     error_thresholds_vector = error_thresholds_vector_;
-    mapping_table = new MappingTable();
+    limit_mode = limit_mode_;
 }
 
 void CoderGAMPS::codeCoderParams(){
-    codeCoderParameters(Constants::CODER_GAMPS, window_size);
+    int coder_code = limit_mode ? Constants::CODER_GAMPS_LIMIT : Constants::CODER_GAMPS;
+    codeCoderParameters(coder_code, window_size);
 }
 
 void CoderGAMPS::codeDataRows(){
     codeTimeDeltaColumn();
-    GAMPSOutput* gamps_output = processOtherColumns();
-    codeMappingTable(gamps_output);
-    codeGAMPSColumns(gamps_output);
-    // free memory as in benchmarkLinux
-    delete gamps_input;
-//    delete gamps;
+
+    total_groups = limit_mode ? dataset->dataColumnsGroupCount() : 1;
+    total_group_columns = dataset->data_columns_count / total_groups;
+    for(int i = 1; i <= total_groups; i++){
+        mapping_table = new MappingTable();
+        std::cout << "ccode group " << i << "/" << total_groups << std::endl;
+        group_index = i;
+        GAMPSOutput* gamps_output = processOtherColumns();
+        codeMappingTable(gamps_output);
+        codeGAMPSColumns(gamps_output);
+        // free memory as in benchmarkLinux
+        delete gamps_input;
+        // delete gamps;
+    }
 }
 
 void CoderGAMPS::codeTimeDeltaColumn(){
@@ -42,48 +51,46 @@ void CoderGAMPS::codeTimeDeltaColumn(){
 
 GAMPSOutput* CoderGAMPS::processOtherColumns(){
     getNodataRowsMask();
-    setGAMPSInput();
-    GAMPSOutput* gamps_output = getGAMPSOutput(gamps_input);
+    gamps_input = getGAMPSInput();
+    GAMPSOutput* gamps_output = getGAMPSOutput();
     return gamps_output;
 }
 
 void CoderGAMPS::getNodataRowsMask(){
     nodata_rows_mask = new Mask();
-    std::vector<bool> nodata_columns(dataset->data_columns_count, true);
+    std::vector<bool> nodata_columns(total_group_columns, true);
 
     input_csv->goToFirstDataRow(column_index);
     while (input_csv->continue_reading) {
         std::vector<std::string> row = input_csv->readLineCSV();
         bool nodata_row = true;
-        for(int i = 1; i < row.size(); i++){ // i = 1 to skip TimeDelta column
+        int j = 0;
+        for(int i = group_index; i < row.size(); i+=total_groups){ // i > 0 to skip TimeDelta column
             std::string csv_value = row.at(i);
             if (!Constants::isNoData(csv_value)){
                 nodata_row = false;
-                nodata_columns[i-1] = false;
+                nodata_columns[j++] = false;
             }
         }
         nodata_rows_mask->add(nodata_row);
     }
     nodata_rows_mask->close();
-    mapping_table->setNoDataColumnsIndexes(nodata_columns, dataset->data_columns_count);
+    mapping_table->setNoDataColumnsIndexes(nodata_columns, total_group_columns);
 }
 
-void CoderGAMPS::setGAMPSInput(){
-    int data_columns_count = dataset->data_columns_count - mapping_table->nodata_columns_indexes.size();
+GAMPSInput* CoderGAMPS::getGAMPSInput(){
+    gamps_epsilons_vector.clear();
+    int data_columns_count = total_group_columns - mapping_table->nodata_columns_indexes.size();
     CMultiDataStream* multiStream = new CMultiDataStream(data_columns_count);
-    for(int i = 0; i < dataset->data_columns_count; i++)
-    {
-        int col_index = i + 1;
-        if (mapping_table->isNodataColumnIndex(col_index)) { continue; } // skip nodata columns
-
-        double error_threshold = error_thresholds_vector.at(col_index);
-        gamps_epsilons_vector.push_back(error_threshold);
-
-        dataset->setColumn(col_index);
-        CDataStream* signal = getColumn(col_index);
+    int j = 1;
+    for(int i = group_index; i <= dataset->data_columns_count; i+=total_groups){
+        if (mapping_table->isNodataColumnIndex(j++)) { continue; } // skip nodata columns
+        gamps_epsilons_vector.push_back(error_thresholds_vector.at(i));
+        dataset->setColumn(i);
+        CDataStream* signal = getColumn(i);
         multiStream->addSingleStream(signal);
     }
-    gamps_input = new GAMPSInput(multiStream);
+    return new GAMPSInput(multiStream);
 }
 
 CDataStream* CoderGAMPS::getColumn(int column_index){
@@ -125,9 +132,7 @@ CDataStream* CoderGAMPS::getColumn(int column_index){
     return dataStream;
 }
 
-GAMPSOutput* CoderGAMPS::getGAMPSOutput(GAMPSInput* gamps_input){
-//    std::cout << "gamps_epsilons_vector" << std::endl;
-//    VectorUtils::printDoubleVector(gamps_epsilons_vector);
+GAMPSOutput* CoderGAMPS::getGAMPSOutput(){
 #if CHECKS
     assert(gamps_epsilons_vector.size() == gamps_input->getNumOfStream());
 #endif
@@ -138,16 +143,15 @@ GAMPSOutput* CoderGAMPS::getGAMPSOutput(GAMPSInput* gamps_input){
 
 void CoderGAMPS::codeMappingTable(GAMPSOutput* gamps_output){
     mapping_table->calculate(gamps_output);
-    mapping_table->print();
+    mapping_table->print(total_groups, group_index);
 
     std::vector<int> vector = mapping_table->baseColumnIndexVector();
     int vector_size = vector.size();
 #if CHECKS
-    assert(vector_size == dataset->data_columns_count);
+    assert(vector_size == total_group_columns);
 #endif
     int column_index_bit_length = MathUtils::bitLength(vector_size);
     for (int i = 0; i < vector_size; i++){
-        std::cout << "codeInt(" << vector.at(i) << ", " << column_index_bit_length << ");" << std::endl;
         codeInt(vector.at(i), column_index_bit_length);
     }
 }
@@ -159,20 +163,22 @@ void CoderGAMPS::codeGAMPSColumns(GAMPSOutput* gamps_output){
     DynArray<GAMPSEntry>* column;
     int base_index = 0;
     for(int i = 0; i < mapping_table->gamps_columns_count; i++){
-        column_index = mapping_table->getColumnIndex(i);
-        if (!mapping_table->isBaseColumn(column_index)){ continue; }
+        int table_index = mapping_table->getColumnIndex(i);
+        if (!mapping_table->isBaseColumn(table_index)){ continue; }
 
+        column_index = MappingTable::mapIndex(table_index, total_groups, group_index);
         std::cout << "code base  signal i = " << column_index << std::endl;
-        std::cout << "base_index = " << base_index << std::endl;
+        dataset->setColumn(column_index);
         column = base_signals[base_index++];
         codeGAMPSColumn(column);
 
-        std::vector<int> ratio_columns = mapping_table->ratioColumns(column_index);
+        std::vector<int> ratio_columns = mapping_table->ratioColumns(table_index);
         for (int j = 0; j < ratio_columns.size(); j++){
-            column_index = ratio_columns.at(j);
+            table_index = ratio_columns.at(j);
+            column_index = MappingTable::mapIndex(table_index, total_groups, group_index);
             std::cout << "    code ratio signal i = " << column_index << std::endl;
-            int ratio_index = mapping_table->getRatioGampsColumnIndex(column_index);
-            std::cout << "    ratio_index = " << ratio_index << std::endl;
+            dataset->setColumn(column_index);
+            int ratio_index = mapping_table->getRatioGampsColumnIndex(table_index);
             column = ratio_signals[ratio_index];
             codeGAMPSColumn(column);
         }
