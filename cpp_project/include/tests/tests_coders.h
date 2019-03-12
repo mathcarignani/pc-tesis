@@ -13,9 +13,7 @@ public:
     TestsCoders();
     void runAll();
 
-    // TODO: remove
-    static void testSideFilder();
-    static void testGAMPS();
+    static void testSingleCoder(); // TODO: remove
 
 private:
     std::vector<Path> paths;
