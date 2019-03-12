@@ -1,5 +1,8 @@
 
 #include "arithmetic_mask_coder.h"
+
+#if MASK_MODE == 3
+
 #include "compressor.h"
 #include "coder_input.h"
 #include "coder_output.h"
@@ -24,3 +27,5 @@ int ArithmeticMaskCoder::code(CoderBase *coder, int column_index){
 //        coder->codeBool(false);
     return input.total_data_rows;
 }
+
+#endif // MASK_MODE == 3

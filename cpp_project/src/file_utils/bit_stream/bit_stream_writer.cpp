@@ -14,7 +14,7 @@ BitStreamWriter::BitStreamWriter(Path path){
 
 void BitStreamWriter::write(){
     fputc(current,fp);
-    std::cout << "write = " << int(current) << std::endl;
+//    std::cout << "write = " << int(current) << std::endl;
 }
 
 void BitStreamWriter::pushBit(unsigned int bit){

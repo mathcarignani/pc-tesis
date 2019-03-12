@@ -18,7 +18,7 @@ BitStreamReader::BitStreamReader(Path path){
 
 void BitStreamReader::read(){
     current = (unsigned char)fgetc(fp);
-    std::cout << "read = " << int(current) << std::endl;
+//    std::cout << "read = " << int(current) << std::endl;
     current_unread = true;
 }
 

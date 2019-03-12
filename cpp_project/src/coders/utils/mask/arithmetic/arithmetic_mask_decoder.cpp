@@ -1,5 +1,8 @@
 
 #include "arithmetic_mask_decoder.h"
+
+#if MASK_MODE == 3
+
 #include "decompressor.h"
 #include "decoder_input.h"
 #include "decoder_output.h"
@@ -24,3 +27,5 @@ Mask* ArithmeticMaskDecoder::decode(DecoderBase* decoder){
 //    std::cout << "D << decoder->flushByte();" << std::endl;
     return mask;
 }
+
+#endif // MASK_MODE == 3

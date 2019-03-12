@@ -4,7 +4,7 @@
 
 #include "constants.h"
 
-#if MASK_MODE
+#if MASK_MODE == 3
 
 #include "mask.h"
 #include "decoder_base.h"
@@ -16,6 +16,6 @@ public:
 
 };
 
-#endif // MASK_MODE
+#endif // MASK_MODE == 3
 
 #endif //CPP_PROJECT_ARITHMETIC_MASK_DECODER_H

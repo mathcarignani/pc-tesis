@@ -7,7 +7,7 @@
 TestsEstimator::TestsEstimator(){ }
 
 void TestsEstimator::runAll(){
-    std::cout << "  testEstimateProbability()" << std::endl; testEstimateProbability();
+    std::cout << "  TODO: testEstimateProbability()" << std::endl; // testEstimateProbability();
 }
 
 void TestsEstimator::testEstimateProbability(){
