@@ -1,4 +1,3 @@
-
 # run on macOS
 class ColumnMaper
   COL_INDEXES = {
