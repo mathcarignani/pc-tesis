@@ -58,6 +58,10 @@ public:
         printVector(vector);
     }
 
+    static void printBoolVector(std::vector<bool> vector){
+        printVector(vector);
+    }
+
     static bool vectorIncludesInt(std::vector<int> int_vector, int element){
         return (std::find(int_vector.begin(), int_vector.end(), element) != int_vector.end());
     }

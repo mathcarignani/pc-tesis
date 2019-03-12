@@ -91,12 +91,12 @@ def calculate_folder_stats(input_path):
 
 
 def calculate_stds_percentages(stds, percentages):
-    res = {}
+    res = []
     for percentage in percentages:
         div_percentage = float(percentage) / 100
         row = ['N' if value == 'N' else int(round(value * div_percentage, 0)) for value in stds[1:]]
         row.insert(0, 0)  # the error threshold for the timedelta is always 0
-        res[percentage] = row
+        res.append({'percentage': percentage, 'values': row})
     return res
 
 

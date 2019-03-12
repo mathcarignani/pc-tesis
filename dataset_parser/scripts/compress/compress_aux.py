@@ -3,7 +3,9 @@ from auxi.os_utils import datasets_csv_path
 
 
 THRESHOLD_PERCENTAGES = [0, 1, 3, 5, 10, 15, 20, 30]
-WINDOW_SIZES = [5, 10, 25, 50, 100, 200]
+WINDOW_SIZES = [5, 10, 25, 50, 100, 200]  # TODO: use the sizes in the following line instead
+# WINDOW_SIZES = [4, 8, 16, 32, 64, 128, 256]
+
 CSV_PATH = datasets_csv_path()
 MASK_MODE = False
 
@@ -65,6 +67,11 @@ CODERS_ARRAY = [
     {
         'name': 'CoderGAMPS',
         'o_folder': 'gamps',
+        'params': {'window_size': WINDOW_SIZES}
+    },
+    {
+        'name': 'CoderGAMPSLimit',
+        'o_folder': 'gamps-limit',
         'params': {'window_size': WINDOW_SIZES}
     },
 ]

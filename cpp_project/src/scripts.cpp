@@ -38,8 +38,10 @@ Dataset* Scripts::code(std::string coder_name, Path input_path, Path output_path
     if (coder_name == "CoderPCA")   return Scripts::codePCA(input_path, output_path, window_size, error_thresholds_vector);
     if (coder_name == "CoderAPCA")  return Scripts::codeAPCA(input_path, output_path, window_size, error_thresholds_vector);
     if (coder_name == "CoderCA")    return Scripts::codeCA(input_path, output_path, window_size, error_thresholds_vector);
-    if (coder_name == "CoderGAMPS") return Scripts::codeGAMPS(input_path, output_path, window_size, error_thresholds_vector);
-
+    if (coder_name == "CoderGAMPS" || coder_name == "CoderGAMPSLimit"){
+        bool limit_mode = coder_name == "CoderGAMPSLimit";
+        return Scripts::codeGAMPS(input_path, output_path, window_size, error_thresholds_vector, limit_mode);
+    }
     if (coder_name == "CoderPWLH" || coder_name == "CoderPWLHInt"){
         bool integer_mode = coder_name == "CoderPWLHInt";
         return Scripts::codePWLH(input_path, output_path, window_size, error_thresholds_vector, integer_mode);
@@ -119,11 +121,12 @@ Dataset* Scripts::codeFR(Path input_path, Path output_path, int window_size, std
 }
 #endif
 
-Dataset* Scripts::codeGAMPS(Path input_path, Path output_path, int window_size, std::vector<int> error_thresholds_vector){
+Dataset* Scripts::codeGAMPS(Path input_path, Path output_path, int window_size,
+                            std::vector<int> error_thresholds_vector, bool limit_mode){
     CSVReader* csv_reader = new CSVReader(input_path);
     BitStreamWriter* bit_stream_writer = new BitStreamWriter(output_path);
     CoderGAMPS* coder = new CoderGAMPS(csv_reader, bit_stream_writer);
-    coder->setCoderParams(window_size, error_thresholds_vector);
+    coder->setCoderParams(window_size, error_thresholds_vector, limit_mode);
     coder->codeFile();
     coder->printBits();
     coder->close();

@@ -879,32 +879,59 @@ src/coders/correlation/gamps/gamps_utils.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/correlation/gamps/gamps_utils.cpp.s
 .PHONY : src/coders/correlation/gamps/gamps_utils.cpp.s
 
-src/coders/correlation/gamps/structs.o: src/coders/correlation/gamps/structs.cpp.o
+src/coders/correlation/gamps/map_entry.o: src/coders/correlation/gamps/map_entry.cpp.o
 
-.PHONY : src/coders/correlation/gamps/structs.o
+.PHONY : src/coders/correlation/gamps/map_entry.o
 
 # target to build an object file
-src/coders/correlation/gamps/structs.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/correlation/gamps/structs.cpp.o
-.PHONY : src/coders/correlation/gamps/structs.cpp.o
+src/coders/correlation/gamps/map_entry.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/correlation/gamps/map_entry.cpp.o
+.PHONY : src/coders/correlation/gamps/map_entry.cpp.o
 
-src/coders/correlation/gamps/structs.i: src/coders/correlation/gamps/structs.cpp.i
+src/coders/correlation/gamps/map_entry.i: src/coders/correlation/gamps/map_entry.cpp.i
 
-.PHONY : src/coders/correlation/gamps/structs.i
+.PHONY : src/coders/correlation/gamps/map_entry.i
 
 # target to preprocess a source file
-src/coders/correlation/gamps/structs.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/correlation/gamps/structs.cpp.i
-.PHONY : src/coders/correlation/gamps/structs.cpp.i
+src/coders/correlation/gamps/map_entry.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/correlation/gamps/map_entry.cpp.i
+.PHONY : src/coders/correlation/gamps/map_entry.cpp.i
 
-src/coders/correlation/gamps/structs.s: src/coders/correlation/gamps/structs.cpp.s
+src/coders/correlation/gamps/map_entry.s: src/coders/correlation/gamps/map_entry.cpp.s
 
-.PHONY : src/coders/correlation/gamps/structs.s
+.PHONY : src/coders/correlation/gamps/map_entry.s
 
 # target to generate assembly for a file
-src/coders/correlation/gamps/structs.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/correlation/gamps/structs.cpp.s
-.PHONY : src/coders/correlation/gamps/structs.cpp.s
+src/coders/correlation/gamps/map_entry.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/correlation/gamps/map_entry.cpp.s
+.PHONY : src/coders/correlation/gamps/map_entry.cpp.s
+
+src/coders/correlation/gamps/mapping_table.o: src/coders/correlation/gamps/mapping_table.cpp.o
+
+.PHONY : src/coders/correlation/gamps/mapping_table.o
+
+# target to build an object file
+src/coders/correlation/gamps/mapping_table.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/correlation/gamps/mapping_table.cpp.o
+.PHONY : src/coders/correlation/gamps/mapping_table.cpp.o
+
+src/coders/correlation/gamps/mapping_table.i: src/coders/correlation/gamps/mapping_table.cpp.i
+
+.PHONY : src/coders/correlation/gamps/mapping_table.i
+
+# target to preprocess a source file
+src/coders/correlation/gamps/mapping_table.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/correlation/gamps/mapping_table.cpp.i
+.PHONY : src/coders/correlation/gamps/mapping_table.cpp.i
+
+src/coders/correlation/gamps/mapping_table.s: src/coders/correlation/gamps/mapping_table.cpp.s
+
+.PHONY : src/coders/correlation/gamps/mapping_table.s
+
+# target to generate assembly for a file
+src/coders/correlation/gamps/mapping_table.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/correlation/gamps/mapping_table.cpp.s
+.PHONY : src/coders/correlation/gamps/mapping_table.cpp.s
 
 src/coders/linear/ca/ca_window.o: src/coders/linear/ca/ca_window.cpp.o
 
@@ -2754,9 +2781,12 @@ help:
 	@echo "... src/coders/correlation/gamps/gamps_utils.o"
 	@echo "... src/coders/correlation/gamps/gamps_utils.i"
 	@echo "... src/coders/correlation/gamps/gamps_utils.s"
-	@echo "... src/coders/correlation/gamps/structs.o"
-	@echo "... src/coders/correlation/gamps/structs.i"
-	@echo "... src/coders/correlation/gamps/structs.s"
+	@echo "... src/coders/correlation/gamps/map_entry.o"
+	@echo "... src/coders/correlation/gamps/map_entry.i"
+	@echo "... src/coders/correlation/gamps/map_entry.s"
+	@echo "... src/coders/correlation/gamps/mapping_table.o"
+	@echo "... src/coders/correlation/gamps/mapping_table.i"
+	@echo "... src/coders/correlation/gamps/mapping_table.s"
 	@echo "... src/coders/linear/ca/ca_window.o"
 	@echo "... src/coders/linear/ca/ca_window.i"
 	@echo "... src/coders/linear/ca/ca_window.s"

@@ -17,6 +17,7 @@ const int Constants::CODER_CA = 22;
 const int Constants::CODER_FR = 23;
 const int Constants::CODER_SF = 24;
 const int Constants::CODER_GAMPS = 30;
+const int Constants::CODER_GAMPS_LIMIT = 31;
 
 bool Constants::isNoData(std::string csv_value) {
     return csv_value[0] == NO_DATA_CHAR;

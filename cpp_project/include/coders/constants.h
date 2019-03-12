@@ -32,6 +32,7 @@ public:
     static const int CODER_FR; // 23
     static const int CODER_SF; // 24
     static const int CODER_GAMPS; // 30
+    static const int CODER_GAMPS_LIMIT; // 31
 
     static bool isNoData(std::string csv_value);
     static bool isNoData(double value);
