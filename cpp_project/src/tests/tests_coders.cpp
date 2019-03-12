@@ -14,27 +14,19 @@
 #define RECORD 0
 
 void TestsCoders::testSingleCoder() {
-//    Path file_path = Path(TestsUtils::IRKIS_PATH, "vwc_1202.dat.csv");
-//    Path file_path = Path(TestsUtils::OUTPUT_PATH, "noaa-adcp-201501_2cols.csv");
-//    Path file_path = Path(TestsUtils::OUTPUT_PATH, "noaa-adcp-201501.csv");
-//    std::vector<int> lossless{0, 0};
-
-//    Path file_path = Path(TestsUtils::OUTPUT_PATH, "noaa_spc-tornado.csv");
-//    std::vector<int> lossless{0, 0};
+    Path file_path = Path(TestsUtils::OUTPUT_PATH, "vwc_1202.dat-copy.csv");
+    std::vector<int> lossless(5, 0);
 //    std::vector<int>    lossy{0, 5};
 
-    Path file_path = Path(TestsUtils::OUTPUT_PATH, "vwc_1203.dat.csv");
-    std::vector<int> lossless(10, 0);
-//    std::vector<int>    lossy{0, 5};
-
-    std::string coder_name = "GAMPS";
+    std::string coder_name = "Basic";
     Path output_code_path = TestsCodersUtils::codedFilePath(TestsUtils::OUTPUT_PATH, file_path, coder_name);
     Path output_decode_path = TestsCodersUtils::decodedFilePath(TestsUtils::OUTPUT_PATH, file_path, coder_name);
 
     std::cout << output_code_path.full_path << std::endl;
     std::cout << output_decode_path.full_path << std::endl;
 
-    Scripts::code("CoderGAMPS", file_path, output_code_path, 5, lossless);
+//    Scripts::code("CoderGAMPS", file_path, output_code_path, 5, lossless);
+    Scripts::codeBasic(file_path, output_code_path);
     Scripts::decode(output_code_path, output_decode_path);
     TestsCodersUtils::compareFiles(file_path, output_decode_path);
     std::cout << "SAME FILE!!" << std::endl;

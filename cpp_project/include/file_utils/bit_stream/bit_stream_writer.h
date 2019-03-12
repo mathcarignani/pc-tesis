@@ -6,6 +6,7 @@
 #include <string>
 #include "path.h"
 
+#define DEBUG 1
 
 class BitStreamWriter {
 
@@ -28,6 +29,9 @@ private:
 
     FILE * fp;
     unsigned char current, offset;
+#if DEBUG
+    int current_byte;
+#endif
     void construct(const char * file);
     void write();
 

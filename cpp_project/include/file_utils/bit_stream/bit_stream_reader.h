@@ -6,6 +6,7 @@
 #include <string>
 #include "path.h"
 
+#define DEBUG 1
 
 class BitStreamReader {
 
@@ -28,7 +29,10 @@ private:
 
     FILE* fp;
     unsigned char current, offset;
+#if DEBUG
     bool current_unread;
+    int current_byte;
+#endif
     void construct(const char * file);
     void read();
 
@@ -36,6 +40,7 @@ public:
     BitStreamReader(Path path);
 
     int getBit();
+    int getBitOther();
 
     unsigned int getInt(int bits);
 

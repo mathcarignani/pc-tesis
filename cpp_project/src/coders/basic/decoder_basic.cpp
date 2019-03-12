@@ -19,6 +19,7 @@ std::vector<std::string> DecoderBasic::decodeDataColumn(){
         }
     #endif
         std::string value = decodeValueRaw();
+        std::cout << "codeValueRaw = " << value << std::endl;
         column.push_back(value);
         row_index++;
     }

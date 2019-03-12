@@ -9,7 +9,10 @@ void BitStreamReader::construct(const char * file){
         throw std::runtime_error(error_msg + file);
     }
     offset = 0;
-    current = (unsigned char)getc(fp);
+#if DEBUG
+    current_byte = 0;
+#endif
+    read();
 }
 
 BitStreamReader::BitStreamReader(Path path){
@@ -18,14 +21,20 @@ BitStreamReader::BitStreamReader(Path path){
 
 void BitStreamReader::read(){
     current = (unsigned char)fgetc(fp);
-//    std::cout << "read = " << int(current) << std::endl;
     current_unread = true;
 }
 
 int BitStreamReader::getBit(){
+    if (current_unread){
+        std::cout << "          (" << current_byte << ") read = " << int(current) << std::endl;
+#if DEBUG
+        current_byte++;
+        if (current_byte > 100) exit(1);
+#endif
+    }
     current_unread = false;
     int ans = !!(current & (1 << offset) );
-    offset = (offset + 1) & 7;
+    offset = (offset + 1) & 7; // 0111
 
     if (offset == 0){
         read();
@@ -34,6 +43,19 @@ int BitStreamReader::getBit(){
     }
     return ans;
 }
+
+//int BitStreamReader::getBitOther(){
+//    if (current_unread){
+//        std::cout << "          (" << current_byte << ") read = " << int(current) << std::endl;
+//#if DEBUG
+//        current_byte++;
+//        if (current_byte > 100) exit(1);
+//#endif
+//    }
+//    current_unread = false;
+//
+//
+//}
 
 unsigned int BitStreamReader::getInt(int bits){
     int ans = 0;

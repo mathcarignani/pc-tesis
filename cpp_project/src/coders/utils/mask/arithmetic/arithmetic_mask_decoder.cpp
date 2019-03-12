@@ -9,10 +9,6 @@
 #include "modelA.h"
 
 Mask* ArithmeticMaskDecoder::decode(DecoderBase* decoder){
-//    std::cout << "D >> decoder->flushByte();" << std::endl;
-//    std::cout << "decoder->flushByte();" << std::endl;
-//    decoder->flushByte();
-//    std::cout << "D >> decoder->flushByte();" << std::endl;
     Mask* mask = new Mask();
     DecoderInput input(decoder->input_file);
     DecoderOutput output(mask);
@@ -22,9 +18,6 @@ Mask* ArithmeticMaskDecoder::decode(DecoderBase* decoder){
 
     output.close();
     mask->reset();
-//    std::cout << "D << decoder->flushByte();" << std::endl;
-//    decoder->flushByte();
-//    std::cout << "D << decoder->flushByte();" << std::endl;
     return mask;
 }
 

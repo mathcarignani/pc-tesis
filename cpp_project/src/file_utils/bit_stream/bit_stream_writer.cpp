@@ -6,6 +6,9 @@
 void BitStreamWriter::construct(const char * file){
     fp = fopen(file,"w");
     current = 0, offset = 0;
+#if DEBUG
+    current_byte = 0;
+#endif
 }
 
 BitStreamWriter::BitStreamWriter(Path path){
@@ -14,7 +17,10 @@ BitStreamWriter::BitStreamWriter(Path path){
 
 void BitStreamWriter::write(){
     fputc(current,fp);
-//    std::cout << "write = " << int(current) << std::endl;
+#if DEBUG
+    std::cout << "          (" << current_byte << ") write = " << int(current) << std::endl;
+    current_byte++;
+#endif
 }
 
 void BitStreamWriter::pushBit(unsigned int bit){
