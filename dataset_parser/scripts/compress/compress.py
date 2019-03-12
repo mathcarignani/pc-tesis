@@ -120,7 +120,7 @@ def run_script_on_file(dataset_name, csv, id1, row, logger, input_path, input_fi
 
     # calculate error thresholds
     stds = calculate_file_stats(input_path, input_filename)
-    thresholds_hash = calculate_stds_percentages(stds, THRESHOLD_PERCENTAGES)
+    thresholds_array = calculate_stds_percentages(stds, THRESHOLD_PERCENTAGES)
 
     for id2, coder_dictionary in enumerate(CODERS_ARRAY):
         if id1 == 0 and id2 == 0:  # first row of dataset and file
@@ -130,11 +130,11 @@ def run_script_on_file(dataset_name, csv, id1, row, logger, input_path, input_fi
         else:
             row = [None, None, None]
         base_values = run_script_on_coder(dataset_name, csv, row, coder_dictionary, output_dataset_path, logger,
-                                          input_path, input_filename, base_values, thresholds_hash)
+                                          input_path, input_filename, base_values, thresholds_array)
 
 
 def run_script_on_coder(dataset_name, csv, row, coder_dictionary, output_dataset_path, logger, input_path,
-                        input_filename, base_values, thresholds_hash):
+                        input_filename, base_values, thresholds_array):
     output_dataset_coder_path = output_dataset_path + '/' + coder_dictionary['o_folder']
     create_folder(output_dataset_coder_path)
 
@@ -144,7 +144,7 @@ def run_script_on_coder(dataset_name, csv, row, coder_dictionary, output_dataset
                                                 output_dataset_coder_path, base_values, row, csv)
     else:
         run_script_of_other_coders(logger, coder_dictionary, input_path, input_filename,
-                                   output_dataset_coder_path, base_values, row, csv, thresholds_hash)
+                                   output_dataset_coder_path, base_values, row, csv, thresholds_array)
     return base_values
 
 
@@ -168,13 +168,13 @@ def run_script_on_basic_coder(logger, coder_dictionary, input_path, input_filena
 
 
 def run_script_of_other_coders(logger, coder_dictionary, input_path, input_filename,
-                               output_dataset_coder_path, base_values, row, csv, thresholds_hash):
+                               output_dataset_coder_path, base_values, row, csv, thresholds_array):
     window_param_name = coder_dictionary['params'].keys()[0]  # there's a single key
     window_sizes = coder_dictionary['params'][window_param_name]
-    percentages = thresholds_hash.keys()
 
-    for id3, percentage in enumerate(percentages):
-        error_thresold_array = thresholds_hash[percentage]
+    for id3, threshold_entry in enumerate(thresholds_array):
+        percentage = threshold_entry['percentage']
+        error_thresold_array = threshold_entry['values']
         params = {'error_threshold': error_thresold_array}
         for id4, window_size in enumerate(window_sizes):
             values = [coder_dictionary['name']] if id3 == 0 and id4 == 0 else [None]

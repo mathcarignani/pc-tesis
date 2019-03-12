@@ -54,8 +54,10 @@ DecoderBase* DecoderBase::getDecoder(BitStreamReader* input_file, CSVWriter* out
         decoder = new DecoderSlideFilter(input_file, output_csv);
     }
 #endif
-    else if (coder_code == 30){
+    else if (coder_code == 30 || coder_code == 31){
         decoder = new DecoderGAMPS(input_file, output_csv);
+        bool limit_mode = coder_code == 31;
+        ((DecoderGAMPS*) decoder)->setLimitMode(limit_mode);
     }
     decoder->setWindowSize(window_size);
     return decoder;

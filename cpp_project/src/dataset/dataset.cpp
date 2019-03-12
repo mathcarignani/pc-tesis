@@ -17,9 +17,9 @@ void Dataset::setHeaderValues(std::vector<Range*> ranges, int data_columns_count
         ColumnCode* new_column_code = new ColumnCode(ranges[i], i);
         column_code_vector.push_back(new_column_code);
     }
-    column_code = column_code_vector[0];
     data_columns_count = data_columns_count_;
     array_index = 0;
+    column_code = column_code_vector[array_index];
 }
 
 void Dataset::updateRangesGAMPS(int base_column_index){
@@ -64,7 +64,7 @@ void Dataset::addBits(int bits){
         header_bits += bits;
     }
     else {
-        column_code_vector[array_index]->addBits(bits, mask_mode);
+        column_code->addBits(bits, mask_mode);
     }
 }
 
@@ -94,11 +94,14 @@ int Dataset::dataColumnsGroupCount(){
 }
 
 void Dataset::printBits(){
+    int total = header_bits;
     std::cout << "header_bits " << header_bits << std::endl;
     for(int i=0; i<column_code_vector.size(); i++){
         std::cout << "total_mask_bits " << column_code_vector[i]->total_mask_bits << std::endl;
         std::cout << "total_bits " << column_code_vector[i]->total_bits << std::endl;
+        total += column_code_vector[i]->total_mask_bits + column_code_vector[i]->total_bits;
     }
+    std::cout << "SUM = " << total << std::endl;
 }
 
 std::vector<int> Dataset::totalMaskBitsArray(){

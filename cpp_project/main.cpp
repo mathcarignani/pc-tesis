@@ -14,9 +14,8 @@ int main(int argc, char *argv[]){
 
     if (argc <= 1) {
 //        TestsCoders::testSideFilder();
-//        TestsCoders::testGAMPS();
-//        TestsCoders::testCA();
-        Tests::runAll();
+        TestsCoders::testGAMPS();
+//        Tests::runAll();
         return 0;
     }
 
@@ -36,7 +35,8 @@ int main(int argc, char *argv[]){
     // action == "c"
     std::string coder_name = argv[6];
     std::vector<std::string> coders_array{"CoderBasic", "CoderPCA", "CoderAPCA", "CoderPWLH",
-                                          "CoderPWLHInt", "CoderCA", "CoderSF", "CoderFR", "CoderGAMPS"};
+                                          "CoderPWLHInt", "CoderCA", "CoderSF", "CoderFR",
+                                          "CoderGAMPS", "CoderGAMPSLimit"};
 
     if (coder_name == "CoderBasic"){
         assert(argc == 7);
