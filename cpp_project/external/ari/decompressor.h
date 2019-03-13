@@ -146,10 +146,10 @@ int decompress(INPUT &source, OUTPUT &target, MODEL &model)
 //    output_bytes<OUTPUT> out(target);
 //    decompressor<input_bits<INPUT>, output_bytes<OUTPUT>, MODEL> d(in,out, model);
 
-//    input_bits<INPUT> in(source,MODEL::CODE_VALUE_BITS);
-//    decompressor<input_bits<INPUT>, OUTPUT, MODEL> d(in,target, model);
+    input_bits<INPUT> in(source,MODEL::CODE_VALUE_BITS);
+    decompressor<input_bits<INPUT>, OUTPUT, MODEL> d(in,target, model);
 
-    decompressor<INPUT, OUTPUT, MODEL> d(source,target, model);
+//    decompressor<INPUT, OUTPUT, MODEL> d(source,target, model);
     return d();
 }
 

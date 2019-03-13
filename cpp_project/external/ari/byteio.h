@@ -79,7 +79,7 @@ public :
   {}
   void putByte(char c)
   {
-    std::cout << "          (??) write = " << int(c) << std::endl;
+    std::cout << "                    (??) write = " << int(c) << std::endl;
     putc(c,m_pFile);
   }
 private :
@@ -140,7 +140,9 @@ public :
   : m_pFile( pFile )
   {}
   int getByte() {
-    return getc(m_pFile);
+    int a = getc(m_pFile);
+    std::cout << "                    (??) read = " << a << std::endl;
+    return a;
   }
 private :
   FILE *m_pFile;

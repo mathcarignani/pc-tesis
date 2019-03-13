@@ -22,6 +22,8 @@ int ArithmeticMaskCoder::code(CoderBase *coder, int column_index){
 
     std::cout << "C1 >> coder->flushByte();" << std::endl;
     coder->flushByte(); // TODO: check that it doesn't do anything
+    coder->codeBit(0);
+    coder->flushByte();
     std::cout << "C1 >> coder->flushByte();" << std::endl;
 
     return input.total_data_rows;

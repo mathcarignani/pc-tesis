@@ -14,8 +14,12 @@ Mask* ArithmeticMaskDecoder::decode(DecoderBase* decoder){
     DecoderOutput output(mask);
     modelA<int, 16, 14> model;
 
-    // decompress(decoder->input_file->fp, output, model);
-    decompress(input, output, model);
+    std::cout << "D1 >> decoder->flushByte();" << std::endl;
+    decoder->flushByte();
+    std::cout << "D1 >> decoder->flushByte();" << std::endl;
+
+     decompress(decoder->input_file->fp, output, model);
+//    decompress(input, output, model);
 
     output.close();
     mask->reset();

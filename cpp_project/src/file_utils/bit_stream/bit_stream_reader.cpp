@@ -12,7 +12,7 @@ void BitStreamReader::construct(const char * file){
 #if DEBUG
     current_byte = 0;
 #endif
-    read();
+//    read();
 }
 
 BitStreamReader::BitStreamReader(Path path){
@@ -25,6 +25,12 @@ void BitStreamReader::read(){
 }
 
 int BitStreamReader::getBit(){
+    if (offset == 0){
+        read();
+        if ( feof(fp) )
+            current = 0;
+    }
+
     if (current_unread){
         std::cout << "          (" << current_byte << ") read = " << int(current) << std::endl;
 #if DEBUG
@@ -36,11 +42,6 @@ int BitStreamReader::getBit(){
     int ans = !!(current & (1 << offset) );
     offset = (offset + 1) & 7; // 0111
 
-    if (offset == 0){
-        read();
-        if ( feof(fp) )
-            current = 0;
-    }
     return ans;
 }
 
