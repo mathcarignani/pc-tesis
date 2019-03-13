@@ -22,20 +22,12 @@ void CoderCols::codeColumn() {
     if (column_index == 0) {
         dataset->setMode("DATA");
         time_delta_vector = TimeDeltaCoder::code(this);
-//        std::cout << "C2 << coder->flushByte();" << std::endl;
-//        flushByte();
-//        std::cout << "C2 << coder->flushByte();" << std::endl;
         return;
     }
 #if MASK_MODE
     dataset->setMode("MASK");
     std::cout << "MaskCoder::code();" << std::endl;
-
     total_data_rows = MaskCoder::code(this, column_index);
-
-    std::cout << "C1 >> coder->flushByte();" << std::endl;
-    flushByte();
-    std::cout << "C1 >> coder->flushByte();" << std::endl;
 #endif
 
     dataset->setMode("DATA");

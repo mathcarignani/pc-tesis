@@ -79,6 +79,7 @@ public :
   {}
   void putByte(char c)
   {
+    std::cout << "          (??) write = " << int(c) << std::endl;
     putc(c,m_pFile);
   }
 private :

@@ -22,25 +22,13 @@ void DecoderCols::decodeDataRows(){
 std::vector<std::string> DecoderCols::decodeColumn(){
     if (column_index == 0) {
         std::vector<std::string> vec = TimeDeltaDecoder::decode(this);
-//        std::cout << "D1 >> decoder->flushByte();" << std::endl;
-//        flushByte();
-//        std::cout << "D1 >> decoder->flushByte();" << std::endl;
         return vec;
     }
 #if MASK_MODE
     std::cout << "MaskCoder::decode();" << std::endl;
-
     mask = MaskDecoder::decode(this);
-//    std::cout << "D1 >> decoder->flushByte();" << std::endl;
-//    flushByte();
-//    std::cout << "D1 >> decoder->flushByte();" << std::endl;
 #endif
     std::cout << "decodeDataColumn();" << std::endl;
-
     std::vector<std::string> col = decodeDataColumn();
-//    std::cout << "D2 >> decoder->flushByte();" << std::endl;
-//    flushByte();
-//    std::cout << "D2 >> decoder->flushByte();" << std::endl;
-
     return col;
 }
