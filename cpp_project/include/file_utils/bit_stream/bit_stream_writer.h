@@ -27,7 +27,7 @@ private:
         uint8_t  m_bytes[sizeof(int)];
     };
 
-    FILE * fp;
+    // FILE * fp;
     unsigned char current, offset;
 #if DEBUG
     int current_byte;
@@ -36,6 +36,7 @@ private:
     void write();
 
 public:
+    FILE * fp;
     BitStreamWriter(Path path);
 
     void pushBit(unsigned int bit);

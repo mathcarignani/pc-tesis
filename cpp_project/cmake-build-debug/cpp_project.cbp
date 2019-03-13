@@ -160,6 +160,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/ari/bitio.h">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/ari/byteio.h">
+			<Option target="cpp_project"/>
+		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/ari/compressor.h">
 			<Option target="cpp_project"/>
 		</Unit>

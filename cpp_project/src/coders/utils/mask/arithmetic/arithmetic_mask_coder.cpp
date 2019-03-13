@@ -13,6 +13,7 @@ int ArithmeticMaskCoder::code(CoderBase *coder, int column_index){
     CoderOutput output(coder);
     modelA<int, 16, 14> model;
 
+    // compress(input, coder->output_file->fp, model);
     compress(input, output, model);
 
     return input.total_data_rows;

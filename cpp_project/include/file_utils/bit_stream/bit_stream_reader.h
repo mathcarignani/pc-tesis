@@ -27,7 +27,7 @@ private:
         uint8_t  m_bytes[sizeof(int)];
     };
 
-    FILE* fp;
+    // FILE* fp;
     unsigned char current, offset;
 #if DEBUG
     bool current_unread;
@@ -37,6 +37,7 @@ private:
     void read();
 
 public:
+    FILE* fp;
     BitStreamReader(Path path);
 
     int getBit();
