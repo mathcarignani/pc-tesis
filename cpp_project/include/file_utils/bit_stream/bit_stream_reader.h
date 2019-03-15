@@ -50,6 +50,7 @@ public:
     int getInt();
 
     void flushByte();
+    void forceFlushByte();
 
     bool reachedEOF();
 

@@ -128,6 +128,10 @@ void DecoderBase::flushByte(){
     input_file->flushByte();
 }
 
+void DecoderBase::forceFlushByte(){
+    input_file->forceFlushByte();
+}
+
 void DecoderBase::decodeFile(){
     dataset = HeaderDecoder(input_file, output_csv).decodeHeader();
     decodeDataRowsCount();

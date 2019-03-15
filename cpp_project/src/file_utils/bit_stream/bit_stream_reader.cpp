@@ -32,10 +32,10 @@ int BitStreamReader::getBit(){
     }
 
     if (current_unread){
-        std::cout << "          (" << current_byte << ") read = " << int(current) << std::endl;
+        std::cout << "                    (" << current_byte << ") read = " << int(current) << std::endl;
 #if DEBUG
         current_byte++;
-        if (current_byte > 100) exit(1);
+//        if (current_byte > 100) exit(1);
 #endif
     }
     current_unread = false;
@@ -100,6 +100,11 @@ void BitStreamReader::flushByte(){
     while (offset > 0){
         getBit();
     }
+}
+
+void BitStreamReader::forceFlushByte(){
+    assert(offset == 0);
+    read();
 }
 
 bool BitStreamReader::reachedEOF(){

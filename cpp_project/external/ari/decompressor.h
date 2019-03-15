@@ -75,6 +75,7 @@ public :
     std::ofstream log("decompressor.log");
     log << std::hex;
 #endif
+    bool stop_decoding = false;
     CODE_VALUE high = MODEL::MAX_CODE;
     CODE_VALUE low = 0;
     CODE_VALUE value = 0;
@@ -89,7 +90,11 @@ public :
       prob p = m_model.getChar( scaled_value, c );
       if ( c == 256 )
         break;
-      m_output.putByte(c);
+      stop_decoding = m_output.putByte(c);
+      if (stop_decoding){
+          std::cout << "break" << std::endl;
+          return 0;
+      }
 #ifdef LOG
       log << std::hex << "0x" << std::setw(2) << std::setfill('0') << c;
       if ( c > 0x20 && c <= 0x7f )
@@ -146,10 +151,10 @@ int decompress(INPUT &source, OUTPUT &target, MODEL &model)
 //    output_bytes<OUTPUT> out(target);
 //    decompressor<input_bits<INPUT>, output_bytes<OUTPUT>, MODEL> d(in,out, model);
 
-    input_bits<INPUT> in(source,MODEL::CODE_VALUE_BITS);
-    decompressor<input_bits<INPUT>, OUTPUT, MODEL> d(in,target, model);
+//    input_bits<INPUT> in(source,MODEL::CODE_VALUE_BITS);
+//    decompressor<input_bits<INPUT>, OUTPUT, MODEL> d(in,target, model);
 
-//    decompressor<INPUT, OUTPUT, MODEL> d(source,target, model);
+    decompressor<INPUT, OUTPUT, MODEL> d(source,target, model);
     return d();
 }
 

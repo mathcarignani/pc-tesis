@@ -48,6 +48,7 @@ public:
     double decodeDouble();
     int decodeInt();
     void flushByte();
+    void forceFlushByte();
 
     void setWindowSize(int window_size_);
 };

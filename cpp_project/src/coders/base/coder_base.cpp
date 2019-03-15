@@ -98,6 +98,12 @@ void CoderBase::flushByte(){
     dataset->addBits(remaining);
 }
 
+void CoderBase::forceFlushByte(){
+    int remaining = output_file->forceFlushByte();
+    assert(remaining == 8);
+    dataset->addBits(remaining);
+}
+
 void CoderBase::codeFile(){
     codeCoderParams();
     HeaderCoder(input_csv, this).codeHeader(dataset);

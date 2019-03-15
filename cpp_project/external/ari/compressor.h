@@ -121,8 +121,10 @@ public :
         high &= MODEL::MAX_CODE;
         low &= MODEL::MAX_CODE;
       }
-      if ( c == 256 ) //256 is the special EOF code
-        break;
+      if ( c == 256 ) { //256 is the special EOF code
+          std::cout << "break" << std::endl;
+          break;
+      }
     }
     pending_bits++;
     if ( low < MODEL::ONE_FOURTH )
@@ -164,10 +166,10 @@ int compress(INPUT &source, OUTPUT &target, MODEL &model)
 //    output_bits<OUTPUT> out(target);
 //    compressor<input_bytes<INPUT>, output_bits<OUTPUT>, MODEL> c(in,out, model);
 
-    output_bits<OUTPUT> out(target);
-    compressor<INPUT, output_bits<OUTPUT>, MODEL> c(source,out, model);
+//    output_bits<OUTPUT> out(target);
+//    compressor<INPUT, output_bits<OUTPUT>, MODEL> c(source,out, model);
 
-//    compressor<INPUT, OUTPUT, MODEL> c(source,target, model);
+    compressor<INPUT, OUTPUT, MODEL> c(source,target, model);
     return c();
 }
 

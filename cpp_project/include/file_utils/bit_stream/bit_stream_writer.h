@@ -49,6 +49,7 @@ public:
     void pushInt(int x);
 
     int flushByte();
+    int forceFlushByte();
 
     void close();
 

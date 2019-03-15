@@ -18,7 +18,7 @@ BitStreamWriter::BitStreamWriter(Path path){
 void BitStreamWriter::write(){
     fputc(current,fp);
 #if DEBUG
-    std::cout << "          (" << current_byte << ") write = " << int(current) << std::endl;
+    std::cout << "                    (" << current_byte << ") write = " << int(current) << std::endl;
     current_byte++;
 #endif
 }
@@ -71,9 +71,15 @@ void BitStreamWriter::pushInt(int x){
 
 int BitStreamWriter::flushByte(){
     int remaining = offset;
-    if (offset > 0)
+    if (remaining > 0)
         write(), offset = 0, current = 0;
     return remaining;
+}
+
+int BitStreamWriter::forceFlushByte(){
+    assert(offset == 0);
+    write(), offset = 0, current = 0;
+    return 8;
 }
 
 void BitStreamWriter::close(){
