@@ -59,3 +59,9 @@ bool Mask::isNoData(){
     burst_length--;
     return burst_is_no_data;
 }
+
+void Mask::print(){
+    std::cout << "Mask::print()" << std::endl;
+    std::cout << "total_no_data = " << total_no_data << std::endl;
+    std::cout << "total_data = " << total_data << std::endl;
+}

@@ -37,6 +37,8 @@ public:
 
     void reset();
     bool isNoData();
+
+    void print();
 };
 
 #endif //CPP_PROJECT_MASK_H

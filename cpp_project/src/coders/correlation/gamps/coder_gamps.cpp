@@ -76,6 +76,7 @@ void CoderGAMPS::getNodataRowsMask(){
         nodata_rows_mask->add(nodata_row);
     }
     nodata_rows_mask->close();
+    nodata_rows_mask->print();
     mapping_table->setNoDataColumnsIndexes(nodata_columns, total_group_columns);
 }
 
@@ -224,7 +225,6 @@ void CoderGAMPS::codeGAMPSColumn(DynArray<GAMPSEntry>* column){
         if (!no_data_row){
             update(column, entry_index, current_entry, remaining);
         }
-
     }
 
     if (!window->isEmpty()) {
