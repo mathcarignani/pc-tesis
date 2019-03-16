@@ -2283,6 +2283,33 @@ src/tests/utils/tests_vector_utils.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/utils/tests_vector_utils.cpp.s
 .PHONY : src/tests/utils/tests_vector_utils.cpp.s
 
+src/utils/conversor.o: src/utils/conversor.cpp.o
+
+.PHONY : src/utils/conversor.o
+
+# target to build an object file
+src/utils/conversor.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/utils/conversor.cpp.o
+.PHONY : src/utils/conversor.cpp.o
+
+src/utils/conversor.i: src/utils/conversor.cpp.i
+
+.PHONY : src/utils/conversor.i
+
+# target to preprocess a source file
+src/utils/conversor.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/utils/conversor.cpp.i
+.PHONY : src/utils/conversor.cpp.i
+
+src/utils/conversor.s: src/utils/conversor.cpp.s
+
+.PHONY : src/utils/conversor.s
+
+# target to generate assembly for a file
+src/utils/conversor.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/utils/conversor.cpp.s
+.PHONY : src/utils/conversor.cpp.s
+
 src/utils/datetime_utils.o: src/utils/datetime_utils.cpp.o
 
 .PHONY : src/utils/datetime_utils.o
@@ -2667,6 +2694,9 @@ help:
 	@echo "... src/tests/utils/tests_vector_utils.o"
 	@echo "... src/tests/utils/tests_vector_utils.i"
 	@echo "... src/tests/utils/tests_vector_utils.s"
+	@echo "... src/utils/conversor.o"
+	@echo "... src/utils/conversor.i"
+	@echo "... src/utils/conversor.s"
 	@echo "... src/utils/datetime_utils.o"
 	@echo "... src/utils/datetime_utils.i"
 	@echo "... src/utils/datetime_utils.s"

@@ -449,6 +449,9 @@
 		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/tests/utils/tests_vector_utils.h">
 			<Option target="cpp_project"/>
 		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/utils/conversor.h">
+			<Option target="cpp_project"/>
+		</Unit>
 		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/utils/datetime_utils.h">
 			<Option target="cpp_project"/>
 		</Unit>
@@ -672,6 +675,9 @@
 			<Option target="cpp_project"/>
 		</Unit>
 		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/tests/utils/tests_vector_utils.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/utils/conversor.cpp">
 			<Option target="cpp_project"/>
 		</Unit>
 		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/utils/datetime_utils.cpp">

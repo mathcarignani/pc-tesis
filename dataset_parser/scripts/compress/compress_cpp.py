@@ -7,7 +7,7 @@ EXE = cpp_executable_path()
 
 
 def execute(exe_str):
-    print_mode = False
+    print_mode = True
     print ">>>>>>>>>>>>>>>>>>>>>>>>>>>> C++"
     print exe_str
     print ">>>>>>>>>>>>>>>>>>>>>>>>>>>> C++"
@@ -19,21 +19,21 @@ def execute(exe_str):
         print "<<<<<<<<<<<<<<<<<<<<<<<<<<<< C++"
         return header_bits, column_bits, column_mask_bits
 
-    sub = subprocess.Popen(exe_str.split(" "), stdout=subprocess.PIPE)
-    stdout = sub.communicate()[0]
-    stdout_list = stdout.split("\n")
-    for line in stdout_list:
-        if "header_bits" in line:
-            print line
-            header_bits = int(line.replace("header_bits ", ""))
-        elif "total_mask_bits" in line:
-            print line
-            bits = int(line.replace("total_mask_bits ", ""))
-            column_mask_bits.append(bits)
-        elif "total_bits" in line:
-            print line
-            bits = int(line.replace("total_bits ", ""))
-            column_bits.append(bits)
+    # sub = subprocess.Popen(exe_str.split(" "), stdout=subprocess.PIPE)
+    # stdout = sub.communicate()[0]
+    # stdout_list = stdout.split("\n")
+    # for line in stdout_list:
+    #     if "header_bits" in line:
+    #         print line
+    #         header_bits = int(line.replace("header_bits ", ""))
+    #     elif "total_mask_bits" in line:
+    #         print line
+    #         bits = int(line.replace("total_mask_bits ", ""))
+    #         column_mask_bits.append(bits)
+    #     elif "total_bits" in line:
+    #         print line
+    #         bits = int(line.replace("total_bits ", ""))
+    #         column_bits.append(bits)
     print "<<<<<<<<<<<<<<<<<<<<<<<<<<<< C++"
     return header_bits, column_bits, column_mask_bits
 
