@@ -32,8 +32,8 @@ THE SOFTWARE.
 
 #include <stdexcept>
 
-#include "byteio.h"
-#include "bitio.h"
+//#include "byteio.h"
+//#include "bitio.h"
 #include "coder_input.h"
 #include "coder_output.h"
 #include "modelA.h"
@@ -75,7 +75,7 @@ public :
     for ( ; ; ) {
       int c = m_input.getByte();
       if ( c == -1 )
-        c = 256;
+        c = EOF_CODE;
 #ifdef LOG
       log << std::hex << "0x" << std::setw(2) << std::setfill('0') << c;
       if ( c > 0x20 && c <= 0x7f )
@@ -121,7 +121,7 @@ public :
         high &= MODEL::MAX_CODE;
         low &= MODEL::MAX_CODE;
       }
-      if ( c == 256 ) { //256 is the special EOF code
+      if ( c == EOF_CODE ) {
           std::cout << "break" << std::endl;
           break;
       }
@@ -163,13 +163,6 @@ private :
 template<typename INPUT, typename OUTPUT, typename MODEL>
 int compress(INPUT &source, OUTPUT &target, MODEL &model)
 {
-//    input_bytes<INPUT> in(source);
-//    output_bits<OUTPUT> out(target);
-//    compressor<input_bytes<INPUT>, output_bits<OUTPUT>, MODEL> c(in,out, model);
-
-//    output_bits<OUTPUT> out(target);
-//    compressor<INPUT, output_bits<OUTPUT>, MODEL> c(source,out, model);
-
     compressor<INPUT, OUTPUT, MODEL> c(source,target, model);
     return c();
 }

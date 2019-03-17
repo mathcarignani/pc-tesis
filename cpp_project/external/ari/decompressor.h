@@ -35,8 +35,8 @@ THE SOFTWARE.
 #include <iomanip>
 #endif
 
-#include "byteio.h"
-#include "bitio.h"
+//#include "byteio.h"
+//#include "bitio.h"
 #include "decoder_input.h"
 #include "decoder_output.h"
 #include "modelA.h"
@@ -90,7 +90,7 @@ public :
       CODE_VALUE scaled_value =  ((value - low + 1) * m_model.getCount() - 1 ) / range;
       int c;
       prob p = m_model.getChar( scaled_value, c );
-      if ( c == 256 )
+      if ( c == EOF_CODE )
         break;
       stop_decoding = m_output.putByte(c);
       if (stop_decoding){
@@ -149,13 +149,6 @@ private :
 template<typename INPUT, typename OUTPUT, typename MODEL>
 int decompress(INPUT &source, OUTPUT &target, MODEL &model)
 {
-//    input_bits<INPUT> in(source,MODEL::CODE_VALUE_BITS);
-//    output_bytes<OUTPUT> out(target);
-//    decompressor<input_bits<INPUT>, output_bytes<OUTPUT>, MODEL> d(in,out, model);
-
-//    input_bits<INPUT> in(source,MODEL::CODE_VALUE_BITS);
-//    decompressor<input_bits<INPUT>, OUTPUT, MODEL> d(in,target, model);
-
     decompressor<INPUT, OUTPUT, MODEL> d(source,target, model);
     return d();
 }

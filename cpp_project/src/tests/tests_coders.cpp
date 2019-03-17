@@ -14,7 +14,7 @@
 #define RECORD 0
 
 void TestsCoders::testSingleCoder() {
-    Path file_path = Path(TestsUtils::OUTPUT_PATH, "vwc_1202.dat.csv"); // "vwc_1202.dat-copy.csv"); // "vwc_1202-16.dat.csv");
+    Path file_path = Path(TestsUtils::OUTPUT_PATH, "vwc_1202.dat.csv"); // "vwc_1202.dat.csv" "vwc_1202.dat-copy.csv" "vwc_1202-16.dat.csv"
     std::vector<int> lossless(10, 0);
 //    std::vector<int>    lossy{0, 5};
 
