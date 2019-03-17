@@ -7,7 +7,7 @@
 // MASK_MODE == 1 => simple coder
 // MASK_MODE == 2 => golomb coder
 // MASK_MODE == 3 => arithmetic coder
-#define MASK_MODE 3
+#define MASK_MODE 1
 #define COUT 1
 #define CHECKS 1
 

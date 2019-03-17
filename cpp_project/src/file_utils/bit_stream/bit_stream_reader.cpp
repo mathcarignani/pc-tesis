@@ -12,7 +12,7 @@ void BitStreamReader::construct(const char * file){
 #if DEBUG
     current_byte = 0;
 #endif
-//    read();
+    read();
 }
 
 BitStreamReader::BitStreamReader(Path path){
@@ -22,7 +22,7 @@ BitStreamReader::BitStreamReader(Path path){
 void BitStreamReader::read(){
     current = (unsigned char)fgetc(fp);
     current_unread = true;
-    std::cout << "                    (" << current_byte << ") read = " << int(current) << std::endl;
+//    std::cout << "                    (" << current_byte << ") read = " << int(current) << std::endl;
     current_byte++;
 }
 
