@@ -18,7 +18,7 @@ BitStreamWriter::BitStreamWriter(Path path){
 void BitStreamWriter::write(){
     fputc(current,fp);
 #if DEBUG
-//    std::cout << "                    (" << current_byte << ") write = " << int(current) << std::endl;
+    std::cout << "                    (" << current_byte << ") write = " << int(current) << std::endl;
     current_byte++;
 #endif
 }
