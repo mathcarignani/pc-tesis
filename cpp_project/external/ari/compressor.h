@@ -139,6 +139,7 @@ public :
 
   inline void put_bit_plus_pending(bool bit, int &pending_bits)
   {
+//    std::cout << "put_bit_plus_pending(" << (bit ? "1" : "0") << ", " << pending_bits << ")" << std::endl;
     m_output.put_bit(bit);
     for ( int i = 0 ; i < pending_bits ; i++ )
       m_output.put_bit(!bit);

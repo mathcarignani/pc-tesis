@@ -22,41 +22,22 @@ BitStreamReader::BitStreamReader(Path path){
 void BitStreamReader::read(){
     current = (unsigned char)fgetc(fp);
     current_unread = true;
+    std::cout << "                    (" << current_byte << ") read = " << int(current) << std::endl;
+    current_byte++;
 }
 
 int BitStreamReader::getBit(){
+    current_unread = false;
+    int ans = !!(current & (1 << offset) );
+    offset = (offset + 1) & 7; // 0111
+
     if (offset == 0){
         read();
         if ( feof(fp) )
             current = 0;
     }
-
-    if (current_unread){
-        std::cout << "                    (" << current_byte << ") read = " << int(current) << std::endl;
-#if DEBUG
-        current_byte++;
-//        if (current_byte > 100) exit(1);
-#endif
-    }
-    current_unread = false;
-    int ans = !!(current & (1 << offset) );
-    offset = (offset + 1) & 7; // 0111
-
     return ans;
 }
-
-//int BitStreamReader::getBitOther(){
-//    if (current_unread){
-//        std::cout << "          (" << current_byte << ") read = " << int(current) << std::endl;
-//#if DEBUG
-//        current_byte++;
-//        if (current_byte > 100) exit(1);
-//#endif
-//    }
-//    current_unread = false;
-//
-//
-//}
 
 unsigned int BitStreamReader::getInt(int bits){
     int ans = 0;

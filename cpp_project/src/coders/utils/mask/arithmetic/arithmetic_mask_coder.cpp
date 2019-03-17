@@ -17,16 +17,10 @@ int ArithmeticMaskCoder::code(CoderBase *coder, int column_index){
     coder->flushByte();
     std::cout << "C1 >> coder->flushByte();" << std::endl;
 
-//    compress(input, coder->output_file->fp, model);
     compress(input, output, model);
 
     std::cout << "C1 >> coder->flushByte();" << std::endl;
-    coder->flushByte(); // TODO: check that it doesn't do anything
-    coder->forceFlushByte();
-//    if (column_index != 4){
-//        coder->codeBit(0);
-//        coder->flushByte();
-//    }
+    coder->flushByte();
     std::cout << "C1 >> coder->flushByte();" << std::endl;
 
     return input.total_data_rows;

@@ -26,7 +26,7 @@ void CoderCols::codeColumn() {
     }
 #if MASK_MODE
     dataset->setMode("MASK");
-    std::cout << "MaskCoder::code();" << std::endl;
+//    std::cout << "MaskCoder::code();" << std::endl;
     total_data_rows = MaskCoder::code(this, column_index);
 #endif
 

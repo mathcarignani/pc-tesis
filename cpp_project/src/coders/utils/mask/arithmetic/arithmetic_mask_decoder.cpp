@@ -18,12 +18,10 @@ Mask* ArithmeticMaskDecoder::decode(DecoderBase* decoder){
     decoder->flushByte();
     std::cout << "D1 >> decoder->flushByte();" << std::endl;
 
-//    decompress(decoder->input_file->fp, output, model);
     decompress(input, output, model);
 
     std::cout << "D1 >> decoder->flushByte();" << std::endl;
     decoder->flushByte();
-    decoder->forceFlushByte();
     std::cout << "D1 >> decoder->flushByte();" << std::endl;
 
     output.close();

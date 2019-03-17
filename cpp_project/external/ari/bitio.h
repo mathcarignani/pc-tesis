@@ -48,7 +48,7 @@ public :
       m_Output.putByte(m_NextByte);
   }
   void put_bit( bool val ) {
-    std::cout << "          (?) write bit = " << (val ? "1" : "0") << std::endl;
+//    std::cout << "          (?) write bit = " << (val ? "1" : "0") << std::endl;
     if ( val )
       m_NextByte |= m_Mask;
     m_Mask >>= 1;
@@ -88,7 +88,7 @@ public :
       m_LastMask = 0x80;
     } else
       m_LastMask >>= 1;
-    std::cout << "          (?) read bit = " << ((m_CurrentByte & m_LastMask) != 0 ? "1" : "0") << std::endl;
+//    std::cout << "          (?) read bit = " << ((m_CurrentByte & m_LastMask) != 0 ? "1" : "0") << std::endl;
     return (m_CurrentByte & m_LastMask) != 0;
   }
 
