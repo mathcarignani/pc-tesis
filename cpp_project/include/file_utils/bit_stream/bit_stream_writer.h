@@ -29,6 +29,7 @@ private:
 
     // FILE * fp;
     unsigned char current, offset;
+    bool print;
 #if DEBUG
     int current_byte;
 #endif
@@ -38,6 +39,7 @@ private:
 public:
     FILE * fp;
     BitStreamWriter(Path path);
+    BitStreamWriter(Path path, bool print_);
 
     void pushBit(unsigned int bit);
     void pushBits(unsigned int bit, int times);

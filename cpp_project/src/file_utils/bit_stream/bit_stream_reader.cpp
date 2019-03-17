@@ -16,13 +16,21 @@ void BitStreamReader::construct(const char * file){
 }
 
 BitStreamReader::BitStreamReader(Path path){
+    print = true;
+    construct(path.full_path.c_str());
+}
+
+BitStreamReader::BitStreamReader(Path path, bool print_){
+    print = print_;
     construct(path.full_path.c_str());
 }
 
 void BitStreamReader::read(){
     current = (unsigned char)fgetc(fp);
     current_unread = true;
-    std::cout << "                    (" << current_byte << ") read = " << int(current) << std::endl;
+    if (print){
+        std::cout << "                    (" << current_byte << ") read = " << int(current) << std::endl;
+    }
     current_byte++;
 }
 

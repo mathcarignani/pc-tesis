@@ -108,6 +108,8 @@ std::string DecoderBase::decodeValueRaw(){
     }
     catch( const std::invalid_argument& e ){
         std::cout << "DecoderBase::decodeValueRaw: " << e.what() << std::endl;
+        delete input_file;
+        delete output_csv;
         exit(-1);
     }
     return coded_value;

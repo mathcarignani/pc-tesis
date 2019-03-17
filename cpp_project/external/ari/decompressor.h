@@ -81,7 +81,9 @@ public :
     CODE_VALUE value = 0;
     for ( int i = 0 ; i < MODEL::CODE_VALUE_BITS ; i++ ) {
       value <<= 1;
-      value += m_input.get_bit() ? 1 : 0;
+      int bit = m_input.get_bit() ? 1 : 0;
+      value += bit;
+      std::cout << (bit ? "decompressor 1" : "decompressor 0") << std::endl;
     }
     for ( ; ; ) {
       CODE_VALUE range = high - low + 1;

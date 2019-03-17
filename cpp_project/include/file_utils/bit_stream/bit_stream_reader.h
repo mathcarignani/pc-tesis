@@ -29,6 +29,7 @@ private:
 
     // FILE* fp;
     unsigned char current, offset;
+    bool print;
     void construct(const char * file);
     void read();
 
@@ -40,6 +41,7 @@ public:
 #endif
 
     BitStreamReader(Path path);
+    BitStreamReader(Path path, bool print_);
 
     int getBit();
     int getBitOther();

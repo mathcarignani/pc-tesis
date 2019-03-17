@@ -12,13 +12,21 @@ void BitStreamWriter::construct(const char * file){
 }
 
 BitStreamWriter::BitStreamWriter(Path path){
+    print = true;
+    construct(path.full_path.c_str());
+}
+
+BitStreamWriter::BitStreamWriter(Path path, bool print_){
+    print = print_;
     construct(path.full_path.c_str());
 }
 
 void BitStreamWriter::write(){
     fputc(current,fp);
 #if DEBUG
-    std::cout << "                    (" << current_byte << ") write = " << int(current) << std::endl;
+    if (print){
+        std::cout << "                    (" << current_byte << ") write = " << int(current) << std::endl;
+    }
     current_byte++;
 #endif
 }

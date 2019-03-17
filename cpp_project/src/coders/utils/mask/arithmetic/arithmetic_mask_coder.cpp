@@ -26,6 +26,7 @@ int ArithmeticMaskCoder::code(CoderBase *coder, int column_index){
     CoderOutput output_coder(writer);
     modelA<int, 16, 14> model1;
     compress(input_coder, output_coder, model1);
+    // writer->flushByte();
     delete writer;
 
     // decompress with arithmetic decoder routine
@@ -36,6 +37,7 @@ int ArithmeticMaskCoder::code(CoderBase *coder, int column_index){
     modelA<int, 16, 14> model2;
     decompress(input_decoder, output_decoder, model2);
     int total_bytes = reader->current_byte;
+    if (reader->current_unread) { total_bytes--; }
     std::cout << "total_bytes = " << total_bytes << std::endl;
     delete reader;
 
@@ -45,6 +47,7 @@ int ArithmeticMaskCoder::code(CoderBase *coder, int column_index){
         int value = reader->getInt(8);
         coder->codeInt(value, 8);
     }
+    coder->flushByte();
 
 //    std::cout << "C1 >> coder->flushByte();" << std::endl;
 //    coder->flushByte();
