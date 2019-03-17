@@ -7,10 +7,10 @@
 class CoderOutput {
 
 private:
-    CoderBase* coder;
+    BitStreamWriter* writer;
 
 public:
-    CoderOutput(CoderBase* coder_);
+    CoderOutput(BitStreamWriter* writer_);
     void put_bit(bool bit);
 };
 

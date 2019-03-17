@@ -20,6 +20,10 @@ Mask* ArithmeticMaskDecoder::decode(DecoderBase* decoder){
 
     decompress(input, output, model);
 
+    std::cout << "D1 >> decoder->flushByte();" << std::endl;
+    decoder->flushByte();
+    std::cout << "D1 >> decoder->flushByte();" << std::endl;
+
     output.close();
     mask->reset();
     return mask;

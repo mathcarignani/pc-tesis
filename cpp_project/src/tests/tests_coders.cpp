@@ -15,7 +15,7 @@
 
 void TestsCoders::testSingleCoder() {
     Path file_path = Path(TestsUtils::OUTPUT_PATH, "vwc_1202.dat-copy.csv");
-    std::vector<int> lossless(5, 0);
+    std::vector<int> lossless(10, 0);
 //    std::vector<int>    lossy{0, 5};
 
     std::string coder_name = "Basic";
