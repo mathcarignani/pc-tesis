@@ -9,7 +9,7 @@ int MaskCoder::code(CoderBase* coder, int column_index){
 #elif MASK_MODE == 2
     return GolombMaskCoder::code(coder, column_index);
 #elif MASK_MODE == 3
-    return ArithmeticMaskCoder::code(coder, column_index);
+    return (new ArithmeticMaskCoder(coder, column_index))->code();
 #endif
 }
 

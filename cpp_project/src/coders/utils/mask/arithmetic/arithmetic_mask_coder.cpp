@@ -13,47 +13,62 @@
 #include "decoder_output.h"
 #include "decompressor.h"
 
-int ArithmeticMaskCoder::code(CoderBase *coder, int column_index){
+ArithmeticMaskCoder::ArithmeticMaskCoder(CoderBase* coder_, int column_index_){
+    coder = coder_;
+    column_index = column_index_;
+}
+
+int ArithmeticMaskCoder::code(){
     std::cout << "C1 >> coder->flushByte();" << std::endl;
     coder->flushByte();
     std::cout << "C1 >> coder->flushByte();" << std::endl;
 
-    // compress with arithmetic coder routine
-    Path path = Path(TestsUtils::OUTPUT_PATH, "algo.bin");
-    BitStreamWriter* writer = new BitStreamWriter(path);
+    Path path = Path(TestsUtils::OUTPUT_PATH, "temp.bin");
+    int total_data_rows = callCompress(path);
+    int total_bytes = callDecompress(path);
+    copyBytes(path, total_bytes); // only copy the necessary bytes
 
-    CoderInput input_coder(coder->input_csv, column_index);
-    CoderOutput output_coder(writer);
-    modelA<int, 16, 14> model1;
-    compress(input_coder, output_coder, model1);
+    std::cout << "C1 >> coder->flushByte();" << std::endl;
+    coder->flushByte();
+    std::cout << "C1 >> coder->flushByte();" << std::endl;
+
+    return total_data_rows;
+}
+
+int ArithmeticMaskCoder::callCompress(Path path){
+    CoderInput input(coder->input_csv, column_index);
+    BitStreamWriter* writer = new BitStreamWriter(path);
+    CoderOutput output(writer);
+    modelA<int, 16, 14> model;
+
+    compress(input, output, model);
+
     // writer->flushByte();
     delete writer;
+    return input.total_data_rows;
+}
 
-    // decompress with arithmetic decoder routine
+int ArithmeticMaskCoder::callDecompress(Path path){
     BitStreamReader* reader = new BitStreamReader(path);
-    DecoderInput input_decoder(reader);
+    DecoderInput input(reader);
     Mask* mask = new Mask();
-    DecoderOutput output_decoder(mask, coder->data_rows_count);
-    modelA<int, 16, 14> model2;
-    decompress(input_decoder, output_decoder, model2);
+    DecoderOutput output(mask, coder->data_rows_count);
+    modelA<int, 16, 14> model;
+
+    decompress(input, output, model);
+
     int total_bytes = reader->current_byte;
     if (reader->current_unread) { total_bytes--; }
-    std::cout << "total_bytes = " << total_bytes << std::endl;
     delete reader;
+    return total_bytes;
+}
 
-    // just copy the necessary bytes
-    reader = new BitStreamReader(path);
+void ArithmeticMaskCoder::copyBytes(Path path, int total_bytes){
+    BitStreamReader* reader = new BitStreamReader(path);
     for(int i=0; i < total_bytes; i++){
         int value = reader->getInt(8);
         coder->codeInt(value, 8);
     }
-    coder->flushByte();
-
-//    std::cout << "C1 >> coder->flushByte();" << std::endl;
-//    coder->flushByte();
-//    std::cout << "C1 >> coder->flushByte();" << std::endl;
-//    exit(1);
-    return input_coder.total_data_rows;
 }
 
 #endif // MASK_MODE == 3
