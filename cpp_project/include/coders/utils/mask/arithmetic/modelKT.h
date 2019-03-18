@@ -9,6 +9,7 @@
 #include <iostream>
 #include <stdexcept>
 #include "model_metrics.h"
+#include "modelA.h"
 
 template<typename CODE_VALUE_ = unsigned int,
         int CODE_VALUE_BITS_ = (std::numeric_limits<CODE_VALUE_>::digits + 3) / 2,
@@ -27,69 +28,37 @@ struct modelKT : public model_metrics<CODE_VALUE_, CODE_VALUE_BITS_, FREQUENCY_B
     //
     // variables used by the model
     //
-    CODE_VALUE cumulative_frequency[ARRAY_SIZE];
-    //Character a is defined by the range cumulative_frequency[a],
-    //cumulative_frequency[a+1], with cumulative_frequency[257]
-    //containing the total count for the model. Note that entry
-    //256 is the EOF.
-    unsigned long long m_bytesProcessed;
-    static_assert( MAX_FREQ > SYMBOL_COUNT, "Not enough code bits to represent the needed symbol library" );
+    modelA<int, 16, 14> model_data;
+    modelA<int, 16, 14> model_no_data;
+    bool no_data; // current state (false for data, true for no_data)
 
     modelKT()
     {
         reset();
+        no_data = true;
     }
     void reset()
     {
-        for ( int i = 0 ; i < ARRAY_SIZE ; i++ )
-            cumulative_frequency[i] = i;
-        m_bytesProcessed = 0;
-        m_frozen = false;
-    }
-    virtual inline void pacify()
-    {
-        if ( (++m_bytesProcessed % 1000) == 0 )
-            std::cout << m_bytesProcessed << "\r";
-    }
-    virtual void frozen()
-    {
-        std::cout << "Frozen at: " << m_bytesProcessed << "\n";
-    }
-    void inline update(int c)
-    {
-        for ( int i = c + 1 ; i < ARRAY_SIZE ; i++ )
-            cumulative_frequency[i]++;
-        if ( cumulative_frequency[SYMBOL_COUNT] >= MAX_FREQ ) {
-            m_frozen = true;
-            frozen();
-        }
+        model_data.reset();
+        model_no_data.reset();
     }
     prob getProbability(int c)
     {
-        prob p = { cumulative_frequency[c], cumulative_frequency[c+1], cumulative_frequency[SYMBOL_COUNT] };
-        if ( !m_frozen )
-            update(c);
-        pacify();
+        prob p = no_data ? model_no_data.getProbability(c) : model_data.getProbability(c);
+        no_data = c;
         return p;
     }
     prob getChar(CODE_VALUE scaled_value, int &c)
     {
-        pacify();
-        for ( int i = 0 ; i < SYMBOL_COUNT ; i++ )
-            if ( scaled_value < cumulative_frequency[i+1] ) {
-                c = i;
-                prob p = {cumulative_frequency[i], cumulative_frequency[i+1],cumulative_frequency[SYMBOL_COUNT]};
-                if ( !m_frozen)
-                    update(c);
-                return p;
-            }
-        throw std::logic_error("error");
+        prob p = no_data ? model_no_data.getChar(scaled_value, c) : model_data.getChar(scaled_value, c);
+        no_data = c;
+        return p;
     }
     CODE_VALUE getCount()
     {
-        return cumulative_frequency[SYMBOL_COUNT];
+        int count = no_data ? model_no_data.getCount() : model_data.getCount();
+        return count;
     }
-    bool m_frozen;
 
 };
 
