@@ -25,10 +25,8 @@ std::vector<std::string> DecoderCols::decodeColumn(){
         return vec;
     }
 #if MASK_MODE
-//    std::cout << "MaskCoder::decode();" << std::endl;
     mask = MaskDecoder::decode(this);
 #endif
-    // std::cout << "decodeDataColumn();" << std::endl;
     std::vector<std::string> col = decodeDataColumn();
     return col;
 }

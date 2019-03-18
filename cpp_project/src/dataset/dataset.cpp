@@ -97,9 +97,11 @@ void Dataset::printBits(){
     int total = header_bits;
     std::cout << "header_bits " << header_bits << std::endl;
     for(int i=0; i<column_code_vector.size(); i++){
-        std::cout << "total_mask_bits " << column_code_vector[i]->total_mask_bits << std::endl;
-        std::cout << "total_bits " << column_code_vector[i]->total_bits << std::endl;
-        total += column_code_vector[i]->total_mask_bits + column_code_vector[i]->total_bits;
+        int total_mask_bits = column_code_vector[i]->total_mask_bits;
+        int total_bits = column_code_vector[i]->total_bits;
+        std::cout << "total_mask_bits " << total_mask_bits << std::endl;
+        std::cout << "total_bits " << total_bits << std::endl;
+        total += total_mask_bits + total_bits;
     }
     std::cout << "SUM = " << total << std::endl;
 }

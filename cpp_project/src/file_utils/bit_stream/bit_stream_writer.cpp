@@ -70,16 +70,12 @@ void BitStreamWriter::pushInt(int x){
 }
 
 int BitStreamWriter::flushByte(){
-    int remaining = offset;
-    if (remaining > 0)
-        write(), offset = 0, current = 0;
-    return remaining;
-}
-
-int BitStreamWriter::forceFlushByte(){
-    assert(offset == 0);
+    if (offset == 0){
+        return 0;
+    }
+    int remaining = 8 - offset;
     write(), offset = 0, current = 0;
-    return 8;
+    return remaining;
 }
 
 void BitStreamWriter::close(){

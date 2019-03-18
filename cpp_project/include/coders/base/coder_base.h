@@ -46,7 +46,6 @@ public:
     void codeDouble(double x);
     void codeInt(int x);
     void flushByte();
-    void forceFlushByte();
 };
 
 #endif //CPP_PROJECT_CODER_BASE_H
