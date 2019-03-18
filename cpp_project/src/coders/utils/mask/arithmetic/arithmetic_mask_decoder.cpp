@@ -8,25 +8,33 @@
 #include "decoder_output.h"
 #include "modelKT.h"
 
-Mask* ArithmeticMaskDecoder::decode(DecoderBase* decoder){
-    std::cout << "D1 >> decoder->flushByte();" << std::endl;
-    decoder->flushByte();
-    std::cout << "D1 >> decoder->flushByte();" << std::endl;
+ArithmeticMaskDecoder::ArithmeticMaskDecoder(DecoderBase* decoder_){
+    decoder = decoder_;
+    mask = new Mask();
+}
 
-    Mask* mask = new Mask();
+Mask* ArithmeticMaskDecoder::decode(){
+    flush();
+    callDecompress();
+    flush();
+    mask->reset();
+    return mask;
+}
+
+void ArithmeticMaskDecoder::flush(){
+    // std::cout << "D1 >> decoder->flushByte();" << std::endl;
+    decoder->flushByte();
+    // std::cout << "D1 >> decoder->flushByte();" << std::endl;
+}
+
+void ArithmeticMaskDecoder::callDecompress(){
     DecoderInput input(decoder->input_file);
     DecoderOutput output(mask, decoder->data_rows_count);
     modelKT<int, 16, 14> model;
 
     decompress(input, output, model);
 
-    std::cout << "D1 >> decoder->flushByte();" << std::endl;
-    decoder->flushByte();
-    std::cout << "D1 >> decoder->flushByte();" << std::endl;
-
     output.close();
-    mask->reset();
-    return mask;
 }
 
 #endif // MASK_MODE == 3

@@ -81,7 +81,7 @@ public :
       value <<= 1;
       int bit = m_input.get_bit() ? 1 : 0;
       value += bit;
-      std::cout << (bit ? "decompressor 1" : "decompressor 0") << std::endl;
+      // std::cout << (bit ? "decompressor 1" : "decompressor 0") << std::endl;
     }
     for ( ; ; ) {
       CODE_VALUE range = high - low + 1;
@@ -92,7 +92,7 @@ public :
         break;
       stop_decoding = m_output.putByte(c);
       if (stop_decoding){
-          std::cout << "break" << std::endl;
+          // std::cout << "break" << std::endl;
           return 0;
       }
 #ifdef LOG

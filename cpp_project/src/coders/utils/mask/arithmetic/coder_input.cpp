@@ -21,7 +21,7 @@ int CoderInput::getByte(){
             value = 0;
         }
     }
-    std::cout << "[" << total_rows << "] >>>>>>>>>>>>>>>>>>> CoderInput = " << value << std::endl;
+    // std::cout << "[" << total_rows << "] >>>>>>>>>>>>>>>>>>> CoderInput = " << value << std::endl;
     total_rows++;
     return value;
 }

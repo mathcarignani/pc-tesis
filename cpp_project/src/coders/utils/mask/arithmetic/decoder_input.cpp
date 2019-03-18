@@ -7,7 +7,6 @@ DecoderInput::DecoderInput(BitStreamReader* input_file_){
 }
 
 int DecoderInput::get_bit(){
-    int bit = input_file->getBit(); // TODO: getBitOther();
-//    std::cout << "          (?) read bit = " << (bit ? "1" : "0") << std::endl;
+    int bit = input_file->getBit();
     return bit;
 }

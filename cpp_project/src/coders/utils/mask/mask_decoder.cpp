@@ -9,7 +9,7 @@ Mask* MaskDecoder::decode(DecoderBase* decoder){
 #elif MASK_MODE == 2
     return GolombMaskDecoder::decode(decoder);
 #elif MASK_MODE == 3
-    return ArithmeticMaskDecoder::decode(decoder);
+    return (new ArithmeticMaskDecoder(decoder))->decode();
 #endif
 }
 

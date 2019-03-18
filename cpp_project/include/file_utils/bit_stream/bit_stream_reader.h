@@ -6,7 +6,7 @@
 #include <string>
 #include "path.h"
 
-#define DEBUG 1
+#define PRINT_BSR 0
 
 class BitStreamReader {
 
@@ -29,22 +29,17 @@ private:
 
     // FILE* fp;
     unsigned char current, offset;
-    bool print;
     void construct(const char * file);
     void read();
 
 public:
     FILE* fp;
-#if DEBUG
     bool current_unread;
     int current_byte;
-#endif
 
     BitStreamReader(Path path);
-    BitStreamReader(Path path, bool print_);
 
     int getBit();
-    int getBitOther();
 
     unsigned int getInt(int bits);
 

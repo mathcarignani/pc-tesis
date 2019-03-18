@@ -20,7 +20,7 @@ bool DecoderOutput::putByte(int c){
         mask->add(burst);
         burst = new Burst(nodata);
     }
-    std::cout << "[" << row_index << "] >>>>>>>>>>>>>>>>>>> DecoderOutput = " << c << std::endl;
+    // std::cout << "[" << row_index << "] >>>>>>>>>>>>>>>>>>> DecoderOutput = " << c << std::endl;
     row_index++;
     data_rows_count--;
     return (data_rows_count == 0);

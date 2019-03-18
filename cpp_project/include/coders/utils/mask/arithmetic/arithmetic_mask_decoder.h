@@ -11,8 +11,16 @@
 
 class ArithmeticMaskDecoder {
 
+private:
+    DecoderBase* decoder;
+    Mask* mask;
+
+    void flush();
+    void callDecompress();
+
 public:
-    static Mask* decode(DecoderBase* decoder);
+    ArithmeticMaskDecoder(DecoderBase* decoder_);
+    Mask* decode();
 
 };
 

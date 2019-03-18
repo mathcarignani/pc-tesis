@@ -9,28 +9,20 @@ void BitStreamReader::construct(const char * file){
         throw std::runtime_error(error_msg + file);
     }
     offset = 0;
-#if DEBUG
     current_byte = 0;
-#endif
     read();
 }
 
 BitStreamReader::BitStreamReader(Path path){
-    print = true;
-    construct(path.full_path.c_str());
-}
-
-BitStreamReader::BitStreamReader(Path path, bool print_){
-    print = print_;
     construct(path.full_path.c_str());
 }
 
 void BitStreamReader::read(){
     current = (unsigned char)fgetc(fp);
     current_unread = true;
-    if (print){
-        std::cout << "                    (" << current_byte << ") read = " << int(current) << std::endl;
-    }
+#if PRINT_BSR
+    std::cout << "                    (" << current_byte << ") read = " << int(current) << std::endl;
+#endif
     current_byte++;
 }
 

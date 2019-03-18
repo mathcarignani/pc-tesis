@@ -12,14 +12,15 @@
 class ArithmeticMaskCoder {
 
 private:
+    CoderBase* coder;
+    int column_index;
+
+    void flush();
     int callCompress(Path path);
     int callDecompress(Path path);
     void copyBytes(Path path, int total_bytes);
 
 public:
-    CoderBase* coder;
-    int column_index;
-
     ArithmeticMaskCoder(CoderBase* coder_, int column_index_);
     int code();
 

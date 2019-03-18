@@ -120,7 +120,7 @@ public :
         low &= MODEL::MAX_CODE;
       }
       if ( c == EOF_CODE ) {
-          std::cout << "break" << std::endl;
+          // std::cout << "break" << std::endl;
           break;
       }
     }

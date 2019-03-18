@@ -95,7 +95,7 @@ struct modelA : public model_metrics<CODE_VALUE_, CODE_VALUE_BITS_, FREQUENCY_BI
   prob getProbability(int c)
   {
     prob p = { cumulative_frequency[c], cumulative_frequency[c+1], cumulative_frequency[SYMBOL_COUNT] };
-    if ( !m_frozen ) 
+    if ( !m_frozen )
       update(c);
     pacify();
     return p;

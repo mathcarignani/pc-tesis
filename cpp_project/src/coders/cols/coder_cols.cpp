@@ -31,7 +31,7 @@ void CoderCols::codeColumn() {
 #endif
 
     dataset->setMode("DATA");
-    std::cout << "codeDataColumn();" << std::endl;
+    // std::cout << "codeDataColumn();" << std::endl;
     codeDataColumn();
 }
 

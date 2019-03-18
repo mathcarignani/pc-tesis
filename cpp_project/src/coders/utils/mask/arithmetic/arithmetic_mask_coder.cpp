@@ -19,20 +19,19 @@ ArithmeticMaskCoder::ArithmeticMaskCoder(CoderBase* coder_, int column_index_){
 }
 
 int ArithmeticMaskCoder::code(){
-    std::cout << "C1 >> coder->flushByte();" << std::endl;
-    coder->flushByte();
-    std::cout << "C1 >> coder->flushByte();" << std::endl;
-
+    flush();
     Path path = Path(TestsUtils::OUTPUT_PATH, "temp.bin");
     int total_data_rows = callCompress(path);
     int total_bytes = callDecompress(path);
     copyBytes(path, total_bytes); // only copy the necessary bytes
-
-    std::cout << "C1 >> coder->flushByte();" << std::endl;
-    coder->flushByte();
-    std::cout << "C1 >> coder->flushByte();" << std::endl;
-
+    flush();
     return total_data_rows;
+}
+
+void ArithmeticMaskCoder::flush(){
+    // std::cout << "C1 >> coder->flushByte();" << std::endl;
+    coder->flushByte();
+    // std::cout << "C1 >> coder->flushByte();" << std::endl;
 }
 
 int ArithmeticMaskCoder::callCompress(Path path){
