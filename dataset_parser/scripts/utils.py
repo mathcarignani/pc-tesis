@@ -13,3 +13,9 @@ def create_folder(directory):
     if not os.path.exists(directory):
         os.makedirs(directory)
 
+
+def str_to_int(string):
+    string_split = string.split()
+    string = string_split[len(string_split) - 1]
+    string_int = int(string)
+    return string_int
