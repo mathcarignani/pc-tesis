@@ -32,11 +32,9 @@ THE SOFTWARE.
 
 #include <stdexcept>
 
-//#include "byteio.h"
-//#include "bitio.h"
 #include "coder_input.h"
 #include "coder_output.h"
-#include "modelA.h"
+#include "modelKT.h"
 
 #ifdef LOG
 #include <iomanip>

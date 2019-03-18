@@ -6,7 +6,7 @@
 #include "decompressor.h"
 #include "decoder_input.h"
 #include "decoder_output.h"
-#include "modelA.h"
+#include "modelKT.h"
 
 Mask* ArithmeticMaskDecoder::decode(DecoderBase* decoder){
     std::cout << "D1 >> decoder->flushByte();" << std::endl;
@@ -16,7 +16,7 @@ Mask* ArithmeticMaskDecoder::decode(DecoderBase* decoder){
     Mask* mask = new Mask();
     DecoderInput input(decoder->input_file);
     DecoderOutput output(mask, decoder->data_rows_count);
-    modelA<int, 16, 14> model;
+    modelKT<int, 16, 14> model;
 
     decompress(input, output, model);
 

@@ -35,11 +35,9 @@ THE SOFTWARE.
 #include <iomanip>
 #endif
 
-//#include "byteio.h"
-//#include "bitio.h"
 #include "decoder_input.h"
 #include "decoder_output.h"
-#include "modelA.h"
+#include "modelKT.h"
 
 //
 // The arithmetic decompressor is a general purpose decompressor that

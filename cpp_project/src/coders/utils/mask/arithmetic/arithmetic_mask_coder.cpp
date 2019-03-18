@@ -6,7 +6,7 @@
 #include "compressor.h"
 #include "coder_input.h"
 #include "coder_output.h"
-#include "modelA.h"
+#include "modelKT.h"
 
 #include "tests_utils.h"
 #include "decoder_input.h"
@@ -39,7 +39,7 @@ int ArithmeticMaskCoder::callCompress(Path path){
     CoderInput input(coder->input_csv, column_index);
     BitStreamWriter* writer = new BitStreamWriter(path);
     CoderOutput output(writer);
-    modelA<int, 16, 14> model;
+    modelKT<int, 16, 14> model;
 
     compress(input, output, model);
 
@@ -53,7 +53,7 @@ int ArithmeticMaskCoder::callDecompress(Path path){
     DecoderInput input(reader);
     Mask* mask = new Mask();
     DecoderOutput output(mask, coder->data_rows_count);
-    modelA<int, 16, 14> model;
+    modelKT<int, 16, 14> model;
 
     decompress(input, output, model);
 

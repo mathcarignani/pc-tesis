@@ -191,13 +191,12 @@ set(CODER_GOLOMB_MASK_SRC_FILES1 ${CODER_GOLOMB_MASK_SRC_DIR}/golomb_mask_coder.
 set(CODER_GOLOMB_MASK_SRC_FILES2 ${CODER_GOLOMB_MASK_SRC_DIR}/golomb_coder.cpp ${CODER_GOLOMB_MASK_SRC_DIR}/golomb_decoder.cpp)
 set(CODER_GOLOMB_MASK_SRC_FILES ${CODER_GOLOMB_MASK_SRC_FILES1} ${CODER_GOLOMB_MASK_SRC_FILES2})
 
-set(CODER_ARI_MASK_H_FILES1 ${CODER_ARI_MASK_H_DIR}/estimator.h ${CODER_ARI_MASK_H_DIR}/arithmetic_mask_coder.h ${CODER_ARI_MASK_H_DIR}/arithmetic_mask_decoder.h)
+set(CODER_ARI_MASK_H_FILES1 ${CODER_ARI_MASK_H_DIR}/modelKT.h ${CODER_ARI_MASK_H_DIR}/arithmetic_mask_coder.h ${CODER_ARI_MASK_H_DIR}/arithmetic_mask_decoder.h)
 set(CODER_ARI_MASK_H_FILES2 ${CODER_ARI_MASK_H_DIR}/coder_input.h ${CODER_ARI_MASK_H_DIR}/coder_output.h)
 set(CODER_ARI_MASK_H_FILES3 ${CODER_ARI_MASK_H_DIR}/decoder_input.h ${CODER_ARI_MASK_H_DIR}/decoder_output.h)
-set(CODER_ARI_MASK_H_FILES4 ${CODER_ARI_MASK_H_DIR}/model_class.h)
-set(CODER_ARI_MASK_H_FILES ${CODER_ARI_MASK_H_FILES1} ${CODER_ARI_MASK_H_FILES2} ${CODER_ARI_MASK_H_FILES3} ${CODER_ARI_MASK_H_FILES4})
+set(CODER_ARI_MASK_H_FILES ${CODER_ARI_MASK_H_FILES1} ${CODER_ARI_MASK_H_FILES2} ${CODER_ARI_MASK_H_FILES3})
 
-set(CODER_ARI_MASK_SRC_FILES1 ${CODER_ARI_MASK_SRC_DIR}/estimator.cpp ${CODER_ARI_MASK_SRC_DIR}/arithmetic_mask_coder.cpp ${CODER_ARI_MASK_SRC_DIR}/arithmetic_mask_decoder.cpp)
+set(CODER_ARI_MASK_SRC_FILES1 ${CODER_ARI_MASK_SRC_DIR}/arithmetic_mask_coder.cpp ${CODER_ARI_MASK_SRC_DIR}/arithmetic_mask_decoder.cpp)
 set(CODER_ARI_MASK_SRC_FILES2 ${CODER_ARI_MASK_SRC_DIR}/coder_input.cpp ${CODER_ARI_MASK_SRC_DIR}/coder_output.cpp)
 set(CODER_ARI_MASK_SRC_FILES3 ${CODER_ARI_MASK_SRC_DIR}/decoder_input.cpp ${CODER_ARI_MASK_SRC_DIR}/decoder_output.cpp)
 set(CODER_ARI_MASK_SRC_FILES ${CODER_ARI_MASK_SRC_FILES1} ${CODER_ARI_MASK_SRC_FILES2} ${CODER_ARI_MASK_SRC_FILES3})
@@ -273,12 +272,12 @@ set(TESTS_UTILS_SRC_FILES1 ${TESTS_UTILS_SRC_DIR}/tests_string_utils.cpp ${TESTS
 set(TESTS_H_FILES0 ${TESTS_H_DIR}/tests_line.h ${TESTS_H_DIR}/tests_header_coder.h ${TESTS_H_DIR}/tests_utils.h)
 set(TESTS_H_FILES1 ${TESTS_H_DIR}/tests_coders_utils.h ${TESTS_H_DIR}/tests_coders.h)
 set(TESTS_H_FILES2 ${TESTS_H_DIR}/tests_dataset_utils.h ${TESTS_H_DIR}/tests_bit_stream.h)
-set(TESTS_H_FILES3 ${TESTS_H_DIR}/tests.h ${TESTS_H_DIR}/tests_estimator.h)
+set(TESTS_H_FILES3 ${TESTS_H_DIR}/tests.h ${TESTS_H_DIR}/tests_modelKT.h)
 
 set(TESTS_SRC_FILES0 ${TESTS_SRC_DIR}/tests_line.cpp ${TESTS_SRC_DIR}/tests_header_coder.cpp ${TESTS_SRC_DIR}/tests_utils.cpp)
 set(TESTS_SRC_FILES1 ${TESTS_SRC_DIR}/tests_coders_utils.cpp ${TESTS_SRC_DIR}/tests_coders.cpp)
 set(TESTS_SRC_FILES2 ${TESTS_SRC_DIR}/tests_dataset_utils.cpp ${TESTS_SRC_DIR}/tests_bit_stream.cpp)
-set(TESTS_SRC_FILES3 ${TESTS_SRC_DIR}/tests.cpp ${TESTS_SRC_DIR}/tests_estimator.cpp)
+set(TESTS_SRC_FILES3 ${TESTS_SRC_DIR}/tests.cpp ${TESTS_SRC_DIR}/tests_modelKT.cpp)
 
 
 set(TESTS_H_FILES ${TESTS_H_FILES0} ${TESTS_H_FILES1} ${TESTS_H_FILES2} ${TESTS_H_FILES3} ${TESTS_UTILS_H_FILES0} ${TESTS_UTILS_H_FILES1})
