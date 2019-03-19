@@ -30,6 +30,6 @@ void CoderAPCA::codeColumnAfter(){
 }
 
 void CoderAPCA::codeWindow(APCAWindow* window){
-    codeInt(window->length, window->window_size_bit_length);
+    codeWindowLength((Window*) window);
     codeValueRaw(window->constant_value);
 }

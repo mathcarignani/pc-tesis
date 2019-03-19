@@ -245,14 +245,9 @@ void CoderGAMPS::update(DynArray<GAMPSEntry>* column, int & entry_index, GAMPSEn
 }
 
 void CoderGAMPS::codeWindow(APCAWindow* window){
-//    std::cout << "-----------------------------------------" << std::endl;
-    codeInt(window->length, window->window_size_bit_length);
-//    std::cout << "codeInt(" << window->length << ", " << window->window_size_bit_length << ");" << std::endl;
-
+    codeWindowLength((Window*) window);
     std::string constant_value = window->constant_value;
     double value = Constants::isNoData(constant_value) ? Constants::NO_DATA_DOUBLE : Conversor::stringToDouble(constant_value);
     // TODO: move to an aux method... also create an analog decoding method
     codeDouble(value);
-//    std::cout << "codeDouble(" << value << ");" << std::endl;
-//    std::cout << "-----------------------------------------" << std::endl;
 }

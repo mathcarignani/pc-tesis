@@ -34,7 +34,7 @@ std::vector<std::string> DecoderCA::decodeDataColumn(){
 }
 
 void DecoderCA::decodeWindow(int nodata_sum){
-    int window_size = input_file->getInt(window_size_bit_length);
+    int window_size = decodeWindowLength(window_size_bit_length);
     std::string value = decodeValueRaw();
 
 #if !MASK_MODE

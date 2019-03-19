@@ -61,6 +61,10 @@ void CoderBase::codeInt(int value, int bits){
     output_file->pushInt(value, bits);
 }
 
+void CoderBase::codeWindowLength(Window* window){
+    codeInt(window->length - 1, window->window_size_bit_length);
+}
+
 void CoderBase::codeUnary(int value){
     for(int i=0; i < value; i++) { codeBit(0); }
     codeBit(1);

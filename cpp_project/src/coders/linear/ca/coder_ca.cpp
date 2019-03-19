@@ -101,6 +101,6 @@ void CoderCA::codeWindow(){
 
 void CoderCA::codeWindow(int window_length, std::string window_value){
     if (window_length == 0) { return; }
-    codeInt(window_length, window->window_size_bit_length);
+    codeInt(window_length - 1, window->window_size_bit_length);
     codeValueRaw(window_value);
 }

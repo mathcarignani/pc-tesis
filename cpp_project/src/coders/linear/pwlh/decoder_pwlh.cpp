@@ -39,7 +39,7 @@ std::vector<std::string> DecoderPWLH::decodeDataColumn(){
 }
 
 void DecoderPWLH::decodeWindow(){
-    int window_size = input_file->getInt(window_size_bit_length);
+    int window_size = decodeWindowLength(window_size_bit_length);
     integer_mode ? decodeWindowInt(window_size) : decodeWindowDouble(window_size);
 }
 

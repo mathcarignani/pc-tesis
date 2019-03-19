@@ -97,7 +97,7 @@ std::vector<DataItem> DecoderFR::readDataItems(int window_size){
             first_index = false;
         }
         else {
-            index = decodeInt(window_size_bit_length); // 1 <= index <= window_size
+            index = decodeWindowLength(window_size_bit_length); // 1 <= index <= window_size
         }
         window.push_back(DataItem(value, index));
         if (index == window_size - 1) { break; }

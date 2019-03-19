@@ -20,7 +20,7 @@ public:
     Window(int window_size_, int error_threshold_){
         window_size = window_size_;
         error_threshold = error_threshold_;
-        window_size_bit_length = MathUtils::bitLength(window_size);
+        window_size_bit_length = MathUtils::windowSizeBitLength(window_size);
     }
 };
 
