@@ -1,6 +1,7 @@
 
 #include "bit_stream_reader.h"
 #include <iostream>
+#include "assert.h"
 
 void BitStreamReader::construct(const char * file){
     fp = fopen(file, "rb");
