@@ -104,9 +104,12 @@ std::string DecoderBase::decodeValueRaw(){
     std::string coded_value;
     try {
         coded_value = decodeValue(value);
+        // std::cout << "decodeValue(" << value << ") = " << coded_value << std::endl;
     }
     catch( const std::invalid_argument& e ){
         std::cout << "DecoderBase::decodeValueRaw: " << e.what() << std::endl;
+        delete input_file;
+        delete output_csv;
         exit(-1);
     }
     return coded_value;
@@ -122,6 +125,14 @@ double DecoderBase::decodeDouble(){
 
 int DecoderBase::decodeInt(){
     return input_file->getInt();
+}
+
+void DecoderBase::flushByte(){
+    input_file->flushByte();
+}
+
+void DecoderBase::forceFlushByte(){
+    input_file->forceFlushByte();
 }
 
 void DecoderBase::decodeFile(){

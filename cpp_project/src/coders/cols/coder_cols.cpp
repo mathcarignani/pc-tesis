@@ -42,6 +42,5 @@ void CoderCols::codeDataColumn(){
         this->codeColumnWhile(csv_value);
         row_index++;
     }
-
     this->codeColumnAfter();
 }

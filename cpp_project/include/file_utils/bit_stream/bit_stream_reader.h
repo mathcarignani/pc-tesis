@@ -6,6 +6,7 @@
 #include <string>
 #include "path.h"
 
+#define PRINT_BSR 0
 
 class BitStreamReader {
 
@@ -26,11 +27,16 @@ private:
         uint8_t  m_bytes[sizeof(int)];
     };
 
-    FILE* fp;
+    // FILE* fp;
     unsigned char current, offset;
     void construct(const char * file);
+    void read();
 
 public:
+    FILE* fp;
+    bool current_unread;
+    int current_byte;
+
     BitStreamReader(Path path);
 
     int getBit();
@@ -40,6 +46,9 @@ public:
     float getFloat();
     double getDouble();
     int getInt();
+
+    void flushByte();
+    void forceFlushByte();
 
     bool reachedEOF();
 

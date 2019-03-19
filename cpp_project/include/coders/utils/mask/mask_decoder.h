@@ -4,6 +4,7 @@
 
 #include "simple_mask_decoder.h"
 #include "golomb_mask_decoder.h"
+#include "arithmetic_mask_decoder.h"
 
 #if MASK_MODE
 

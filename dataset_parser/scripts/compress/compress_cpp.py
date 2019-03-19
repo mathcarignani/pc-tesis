@@ -2,6 +2,7 @@ import os
 import time
 import subprocess
 from auxi.os_utils import cpp_executable_path
+from scripts.utils import str_to_int
 
 EXE = cpp_executable_path()
 
@@ -24,19 +25,15 @@ def execute(exe_str):
     stdout_list = stdout.split("\n")
     for line in stdout_list:
         if "header_bits" in line:
-            print line
-            header_bits = int(line.replace("header_bits ", ""))
+            header_bits = str_to_int(line)
         elif "total_mask_bits" in line:
-            print line
-            bits = int(line.replace("total_mask_bits ", ""))
+            bits = str_to_int(line)
             column_mask_bits.append(bits)
         elif "total_bits" in line:
-            print line
-            bits = int(line.replace("total_bits ", ""))
+            bits = str_to_int(line)
             column_bits.append(bits)
     print "<<<<<<<<<<<<<<<<<<<<<<<<<<<< C++"
     return header_bits, column_bits, column_mask_bits
-
 
 def code_cpp(args):
     start_time = time.time()

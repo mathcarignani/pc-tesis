@@ -1,6 +1,7 @@
 
 #include "decoder_basic.h"
 #include "assert.h"
+#include "vector_utils.h"
 
 std::vector<std::string> DecoderBasic::decodeDataColumn(){
     std::vector<std::string> column;
@@ -19,8 +20,10 @@ std::vector<std::string> DecoderBasic::decodeDataColumn(){
         }
     #endif
         std::string value = decodeValueRaw();
+        // std::cout << "decodeValueRaw = " << value << std::endl;
         column.push_back(value);
         row_index++;
     }
+    // VectorUtils::printStringVector(column);
     return column;
 }

@@ -70,6 +70,7 @@ void CoderBase::codeValueRaw(std::string x){
     int value;
     try {
         value = codeValue(x);
+        // std::cout << "codeValue(" << x << ") = " << value << std::endl;
     }
     catch( const std::invalid_argument& e ){
         std::cout << "CoderBase::codeValueRaw: " << e.what() << std::endl;
@@ -91,6 +92,11 @@ void CoderBase::codeDouble(double x){
 void CoderBase::codeInt(int x){
     dataset->addBits(sizeof(int)*8);
     output_file->pushInt(x);
+}
+
+void CoderBase::flushByte(){
+    int remaining = output_file->flushByte();
+    dataset->addBits(remaining);
 }
 
 void CoderBase::codeFile(){

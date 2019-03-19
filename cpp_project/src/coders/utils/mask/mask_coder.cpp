@@ -4,11 +4,13 @@
 #if MASK_MODE
 
 int MaskCoder::code(CoderBase* coder, int column_index){
-#if GOLOMB_MODE
-    return GolombMaskCoder::code(coder, column_index);
-#else
+#if MASK_MODE == 1
     return SimpleMaskCoder::code(coder, column_index);
-#endif // GOLOMB_MODE
+#elif MASK_MODE == 2
+    return GolombMaskCoder::code(coder, column_index);
+#elif MASK_MODE == 3
+    return (new ArithmeticMaskCoder(coder, column_index))->code();
+#endif
 }
 
 #endif // MASK_MODE

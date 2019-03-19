@@ -128,11 +128,11 @@ def run_script_on_file(dataset_name, csv, id1, row, logger, input_path, input_fi
             row = [None, input_filename, row_count]
         else:
             row = [None, None, None]
-        base_values = run_script_on_coder(dataset_name, csv, row, coder_dictionary, output_dataset_path, logger,
+        base_values = run_script_on_coder(csv, row, coder_dictionary, output_dataset_path, logger,
                                           input_path, input_filename, base_values, thresholds_array)
 
 
-def run_script_on_coder(dataset_name, csv, row, coder_dictionary, output_dataset_path, logger, input_path,
+def run_script_on_coder(csv, row, coder_dictionary, output_dataset_path, logger, input_path,
                         input_filename, base_values, thresholds_array):
     output_dataset_coder_path = output_dataset_path + '/' + coder_dictionary['o_folder']
     create_folder(output_dataset_coder_path)

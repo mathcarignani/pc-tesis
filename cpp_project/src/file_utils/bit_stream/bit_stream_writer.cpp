@@ -6,10 +6,21 @@
 void BitStreamWriter::construct(const char * file){
     fp = fopen(file,"w");
     current = 0, offset = 0;
+#if PRINT_BSW
+    current_byte = 0;
+#endif
 }
 
 BitStreamWriter::BitStreamWriter(Path path){
     construct(path.full_path.c_str());
+}
+
+void BitStreamWriter::write(){
+    fputc(current,fp);
+#if PRINT_BSW
+    std::cout << "                    (" << current_byte << ") write = " << int(current) << std::endl;
+    current_byte++;
+#endif
 }
 
 void BitStreamWriter::pushBit(unsigned int bit){
@@ -17,7 +28,7 @@ void BitStreamWriter::pushBit(unsigned int bit){
     offset = (offset + 1) & 7;
 
     if (offset == 0){
-        fputc(current,fp);
+        write();
         current = 0;
     }
 }
@@ -58,9 +69,18 @@ void BitStreamWriter::pushInt(int x){
     }
 }
 
+int BitStreamWriter::flushByte(){
+    if (offset == 0){
+        return 0;
+    }
+    int remaining = 8 - offset;
+    write(), offset = 0, current = 0;
+    return remaining;
+}
+
 void BitStreamWriter::close(){
     if (offset > 0)
-        fputc(current,fp), offset = 0, current = 0;
+        write(), offset = 0, current = 0;
     fclose(fp);
 }
 

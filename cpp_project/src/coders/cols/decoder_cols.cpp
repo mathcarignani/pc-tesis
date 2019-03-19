@@ -20,9 +20,13 @@ void DecoderCols::decodeDataRows(){
 }
 
 std::vector<std::string> DecoderCols::decodeColumn(){
-    if (column_index == 0) { return  TimeDeltaDecoder::decode(this); }
+    if (column_index == 0) {
+        std::vector<std::string> vec = TimeDeltaDecoder::decode(this);
+        return vec;
+    }
 #if MASK_MODE
     mask = MaskDecoder::decode(this);
 #endif
-    return decodeDataColumn();
+    std::vector<std::string> col = decodeDataColumn();
+    return col;
 }

@@ -6,6 +6,7 @@
 #include <string>
 #include "path.h"
 
+#define PRINT_BSW 0
 
 class BitStreamWriter {
 
@@ -26,11 +27,16 @@ private:
         uint8_t  m_bytes[sizeof(int)];
     };
 
-    FILE * fp;
+    // FILE * fp;
     unsigned char current, offset;
+#if PRINT_BSW
+    int current_byte;
+#endif
     void construct(const char * file);
+    void write();
 
 public:
+    FILE * fp;
     BitStreamWriter(Path path);
 
     void pushBit(unsigned int bit);
@@ -41,6 +47,8 @@ public:
     void pushFloat(float x);
     void pushDouble(double x);
     void pushInt(int x);
+
+    int flushByte();
 
     void close();
 
