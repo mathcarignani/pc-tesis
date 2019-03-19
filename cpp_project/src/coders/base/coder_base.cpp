@@ -114,8 +114,8 @@ void CoderBase::codeCoderParameters(int coder_code, int window_size){
     assert(0 <= coder_code && coder_code < pow(2, 8));
     codeInt(coder_code, 8); // 8 bits for the coder_code
 
-    assert(1 <= window_size && window_size < pow(2, 8));
-    codeInt(window_size, 8); // 8 bits for the window_size
+    assert(1 <= window_size && window_size <= pow(2, 8));
+    codeInt(window_size - 1, 8); // 8 bits for the window_size
 }
 
 void CoderBase::printBits(){
