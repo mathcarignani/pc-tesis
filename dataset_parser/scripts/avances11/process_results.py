@@ -6,7 +6,7 @@ from file_utils.csv_utils.csv_writer import CSVWriter
 from scripts.compress.compress_aux import THRESHOLD_PERCENTAGES
 from auxi.os_utils import python_project_path
 
-input_path = python_project_path() + "/scripts/compress/output/all-mask-true"
+input_path = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-11/3-results/MASK_MODE_3-results-ubuntu"
 
 window_index = 6
 
@@ -16,8 +16,9 @@ column_indexes = {
     'NOAA-SST': [{'index': 16, 'name': 'SST'}],
     'NOAA-ADCP': [{'index': 16, 'name': 'Vel'}],
     'SolarAnywhere': [{'index': 16, 'name': 'GHI'}, {'index': 20, 'name': 'DNI'}, {'index': 24, 'name': 'DHI'}],
-    'ElNino': [{'index': 16, 'name': 'Lat'}, {'index': 20, 'name': 'Long'}, {'index': 24, 'name': 'Zonal Winds'}, {'index': 28, 'name': 'Merid. Winds'},
-               {'index': 32, 'name': 'Humidity'}, {'index': 36, 'name': 'AirTemp'}, {'index': 40, 'name': 'SST'}],
+    'ElNino': [{'index': 16, 'name': 'Lat'}, {'index': 20, 'name': 'Long'}, {'index': 24, 'name': 'Zonal Winds'},
+               {'index': 28, 'name': 'Merid. Winds'}, {'index': 32, 'name': 'Humidity'},
+               {'index': 36, 'name': 'AirTemp'}, {'index': 40, 'name': 'SST'}],
     'NOAA-SPC-hail': [{'index': 16, 'name': 'Lat'}, {'index': 20, 'name': 'Long'}, {'index': 24, 'name': 'Size'}],
     'NOAA-SPC-tornado': [{'index': 16, 'name': 'Lat'}, {'index': 20, 'name': 'Long'}],
     'NOAA-SPC-wind': [{'index': 16, 'name': 'Lat'}, {'index': 20, 'name': 'Long'}, {'index': 24, 'name': 'Speed'}]
@@ -96,11 +97,20 @@ class Script1Read(object):
         col_hash = {}
         for col in columns:
             index, col_name = col['index'], col['name']
-            percentage = float(line[index])
+            percentage = self.to_float(line[index])
             col_hash[col_name] = percentage
 
         window_params_hash = {'Window Param': window_param, 'Columns': col_hash}
         self.thresholds_hash['Window Params'].append(window_params_hash)
+
+    def to_float(self, value):
+        dot_count = value.count('.')
+        if dot_count == 2:
+            # 1.143.06
+            value = value.replace(".", "", 1)
+        elif dot_count > 2:
+            raise(StandardError, "ERROR: too many dots for a float")
+        return float(value)
 
 
 class Script1Write(object):
@@ -203,10 +213,10 @@ class Script1Write(object):
 
 class Script1(object):
     def __init__(self, input_filename, output_filename1, output_filename2):
-        hash = Script1Read(input_filename).get_hash()
-        Script1Write(output_filename1, output_filename2, hash).write()
+        hash_ = Script1Read(input_filename).get_hash()
+        Script1Write(output_filename1, output_filename2, hash_).write()
 
-Script1("results.csv", "results_process1.csv", "results_process2.csv")
+Script1("results-3-ubuntu.csv", "results-3-ubuntu_process1.csv", "results-3-ubuntu_process2.csv")
 
 
 
