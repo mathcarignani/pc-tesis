@@ -224,9 +224,7 @@ void CoderGAMPS::codeGAMPSColumn(DynArray<GAMPSEntry>* column){
         if (!no_data_row){
             update(column, entry_index, current_entry, remaining);
         }
-
     }
-
     if (!window->isEmpty()) {
         codeWindow(window);
     }
