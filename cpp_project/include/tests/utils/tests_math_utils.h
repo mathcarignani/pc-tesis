@@ -9,6 +9,7 @@ public:
 
 private:
     static void bitLengthTest();
+    static void windowSizeBitLengthTest();
     static void doubleToIntTest();
     static void intAbsoluteTest();
     static void doubleAbsoluteTest();

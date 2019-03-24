@@ -17,7 +17,7 @@ GolombCoder::GolombCoder(CoderBase* coder_, int total_data_rows){
         p = (double) total_data_rows / coder->data_rows_count;
     }
 #if CHECKS
-    assert(p > 0.5);
+    assert(p >= 0.5);
 #endif
     l = calculateL(p);
     k = nearestK(l);

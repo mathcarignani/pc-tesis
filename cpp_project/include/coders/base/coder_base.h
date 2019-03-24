@@ -7,6 +7,7 @@
 #include "csv_reader.h"
 #include "dataset.h"
 #include "constants.h"
+#include "window.h"
 
 class CoderBase {
 
@@ -40,6 +41,7 @@ public:
     void codeBits(int bit, int times);
     void codeBool(bool bit);
     void codeInt(int value, int bits);
+    void codeWindowLength(Window* window);
     void codeUnary(int value);
     void codeValueRaw(std::string x);
     void codeFloat(float x);

@@ -18,12 +18,12 @@
 
 void DecoderBase::setWindowSize(int window_size_){
     window_size = window_size_;
-    window_size_bit_length = MathUtils::bitLength(window_size);
+    window_size_bit_length = MathUtils::windowSizeBitLength(window_size);
 }
 
 DecoderBase* DecoderBase::getDecoder(BitStreamReader* input_file, CSVWriter* output_csv){
     int coder_code = input_file->getInt(8); // 8 bits for the coder_code
-    int window_size = input_file->getInt(8); // 8 bits for the window_size
+    int window_size = input_file->getInt(8) + 1; // 8 bits for the window_size
 
     DecoderBase* decoder;
 
@@ -93,6 +93,10 @@ int DecoderBase::decodeInt(int bits){
     return (input_file->getInt(bits));
 }
 
+int DecoderBase::decodeWindowLength(int window_size_bit_length){
+    return input_file->getInt(window_size_bit_length) + 1;
+}
+
 int DecoderBase::decodeUnary(){
     int value = 0;
     while (!decodeBool()) { value++; }
@@ -123,16 +127,8 @@ double DecoderBase::decodeDouble(){
     return input_file->getDouble();
 }
 
-int DecoderBase::decodeInt(){
-    return input_file->getInt();
-}
-
 void DecoderBase::flushByte(){
     input_file->flushByte();
-}
-
-void DecoderBase::forceFlushByte(){
-    input_file->forceFlushByte();
 }
 
 void DecoderBase::decodeFile(){

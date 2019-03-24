@@ -197,19 +197,15 @@ std::vector<double> DecoderGAMPS::decodeGAMPSColumn(){
 }
 
 void DecoderGAMPS::decodeWindow(std::vector<double> & column){
-//    std::cout << "-----------------------------------------" << std::endl;
-    int window_size = input_file->getInt(window_size_bit_length);
-//    std::cout << "window_size = " << window_size << std::endl;
+    int window_size = decodeWindowLength(window_size_bit_length);
     decodeConstantWindow(column, window_size);
 #if MASK_MODE
     mask->total_data -= window_size;
 #endif
-//    std::cout << "-----------------------------------------" << std::endl;
 }
 
 void DecoderGAMPS::decodeConstantWindow(std::vector<double> & column, int window_size){
     double constant = decodeDouble();
-//    std::cout << "constant = " << constant << std::endl;
     int i = 0;
     while (i < window_size){
     #if MASK_MODE

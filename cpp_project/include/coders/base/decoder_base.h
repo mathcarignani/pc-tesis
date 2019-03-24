@@ -41,14 +41,13 @@ public:
 
     bool decodeBool();
     int decodeInt(int bits);
+    int decodeWindowLength(int window_size_bit_length);
     int decodeUnary();
     std::string decodeValueRaw();
 
     float decodeFloat();
     double decodeDouble();
-    int decodeInt();
     void flushByte();
-    void forceFlushByte();
 
     void setWindowSize(int window_size_);
 };

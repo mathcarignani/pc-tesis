@@ -7,11 +7,12 @@
 #include <math.h>
 
 void TestsMathUtils::runAll(){
-    std::cout << "  bitLengthTest();" << std::endl;      bitLengthTest();
-    std::cout << "  doubleToIntTest();" << std::endl;    doubleToIntTest();
-    std::cout << "  intAbsoluteTest();" << std::endl;    intAbsoluteTest();
-    std::cout << "  doubleAbsoluteTest();" << std::endl; doubleAbsoluteTest();
-    std::cout << "  halfTest();" << std::endl;           halfTest();
+    std::cout << "  bitLengthTest();" << std::endl;           bitLengthTest();
+    std::cout << "  windowSizeBitLengthTest();" << std::endl; windowSizeBitLengthTest();
+    std::cout << "  doubleToIntTest();" << std::endl;         doubleToIntTest();
+    std::cout << "  intAbsoluteTest();" << std::endl;         intAbsoluteTest();
+    std::cout << "  doubleAbsoluteTest();" << std::endl;      doubleAbsoluteTest();
+    std::cout << "  halfTest();" << std::endl;                halfTest();
 }
 
 void TestsMathUtils::bitLengthTest(){
@@ -26,6 +27,22 @@ void TestsMathUtils::bitLengthTest(){
     assert(MathUtils::bitLength(8) == 4); // 1000
     assert(MathUtils::bitLength(pow(2,10) - 1) == 10);
     assert(MathUtils::bitLength(pow(2,10)) == 11);
+    assert(MathUtils::bitLength(pow(2,10) + 1) == 11);
+}
+
+void TestsMathUtils::windowSizeBitLengthTest(){
+    assert(MathUtils::windowSizeBitLength(2) == 1);
+    std::cout << MathUtils::windowSizeBitLength(3) << std::endl;
+    assert(MathUtils::windowSizeBitLength(3) == 2);
+    assert(MathUtils::windowSizeBitLength(4) == 2);
+    assert(MathUtils::windowSizeBitLength(5) == 3);
+    assert(MathUtils::windowSizeBitLength(6) == 3);
+    assert(MathUtils::windowSizeBitLength(7) == 3);
+    assert(MathUtils::windowSizeBitLength(8) == 3);
+    assert(MathUtils::windowSizeBitLength(9) == 4);
+    assert(MathUtils::windowSizeBitLength(pow(2,10) - 1) == 10);
+    assert(MathUtils::windowSizeBitLength(pow(2,10)) == 10);
+    assert(MathUtils::windowSizeBitLength(pow(2,10) + 1) == 11);
 }
 
 void TestsMathUtils::doubleToIntTest(){

@@ -11,7 +11,7 @@
 void CoderFR::setCoderParams(int window_size_, std::vector<int> error_thresholds_vector_){
     window_size = window_size_;
     error_thresholds_vector = error_thresholds_vector_;
-    window_size_bit_length = MathUtils::bitLength(window_size);
+    window_size_bit_length = MathUtils::windowSizeBitLength(window_size);
 }
 
 void CoderFR::codeCoderParams(){
@@ -62,7 +62,7 @@ void CoderFR::codeItem(DataItem item, int index){
     codeValueRaw(value_str);
     // we always code the value in the first index, so we don't have to code its index
     if (index == 0) { return; }
-    codeInt(item.timestamp, window_size_bit_length); // 1 <= index <= window_size
+    codeInt(item.timestamp - 1, window_size_bit_length); // 1 <= index <= window_size
 }
 
 #endif // MASK_MODE
