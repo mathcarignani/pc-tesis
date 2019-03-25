@@ -2,10 +2,6 @@
 #ifndef MODEL_KT_DOT_H
 #define MODEL_KT_DOT_H
 
-#define SYMBOL_COUNT 3 // original: 257
-#define ARRAY_SIZE 4 // original: 258
-#define EOF_CODE 2 // original: 256
-
 #include <iostream>
 #include <stdexcept>
 #include "model_metrics.h"

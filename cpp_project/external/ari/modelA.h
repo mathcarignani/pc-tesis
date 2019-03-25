@@ -30,9 +30,8 @@ THE SOFTWARE.
 #ifndef MODEL_A_DOT_H
 #define MODEL_A_DOT_H
 
-#define SYMBOL_COUNT 3 // original: 257
-#define ARRAY_SIZE 4 // original: 258
-#define EOF_CODE 2 // original: 256
+#define SYMBOL_COUNT 2 // original: 257
+#define ARRAY_SIZE 3 // original: 258
 
 #include <iostream>
 #include <stdexcept>
@@ -70,9 +69,9 @@ struct modelA : public model_metrics<CODE_VALUE_, CODE_VALUE_BITS_, FREQUENCY_BI
   void reset()
   {
     for ( int i = 0 ; i < ARRAY_SIZE ; i++ )
-      cumulative_frequency[i] = i;
+      cumulative_frequency[i] = i; // [0, 1, 2]
     m_bytesProcessed = 0;
-    m_frozen = false;
+    // m_frozen = false;
   }
   virtual inline void pacify()
   {
@@ -81,21 +80,27 @@ struct modelA : public model_metrics<CODE_VALUE_, CODE_VALUE_BITS_, FREQUENCY_BI
   }
   virtual void frozen()
   {
-    std::cout << "Frozen at: " << m_bytesProcessed << "\n";
+    // std::cout << "Frozen at: " << m_bytesProcessed << "\n";
+    // std::cout << "Before = "; printCumulativeFrequency(); std::cout << std::endl;
+    cumulative_frequency[SYMBOL_COUNT] /= 2;
+    if (cumulative_frequency[1] >= 3){
+        cumulative_frequency[1] = (cumulative_frequency[1] - 1) / 2;
+    }
+    // std::cout << "After = "; printCumulativeFrequency(); std::cout << std::endl;
   }
   void inline update(int c)
   {
-    for ( int i = c + 1 ; i < ARRAY_SIZE ; i++ )
-      cumulative_frequency[i]++;
+    cumulative_frequency[SYMBOL_COUNT] += 2;
+    if (c == 0) { cumulative_frequency[1] += 2; }
     if ( cumulative_frequency[SYMBOL_COUNT] >= MAX_FREQ ) {
-      m_frozen = true;
+      // m_frozen = true;
       frozen();
     }
   }
   prob getProbability(int c)
   {
     prob p = { cumulative_frequency[c], cumulative_frequency[c+1], cumulative_frequency[SYMBOL_COUNT] };
-    if ( !m_frozen )
+    // if ( !m_frozen )
       update(c);
     pacify();
     return p;
@@ -107,7 +112,7 @@ struct modelA : public model_metrics<CODE_VALUE_, CODE_VALUE_BITS_, FREQUENCY_BI
       if ( scaled_value < cumulative_frequency[i+1] ) {
         c = i;
         prob p = {cumulative_frequency[i], cumulative_frequency[i+1],cumulative_frequency[SYMBOL_COUNT]};
-        if ( !m_frozen)
+        // if ( !m_frozen)
           update(c);
         return p;
       }
@@ -117,7 +122,11 @@ struct modelA : public model_metrics<CODE_VALUE_, CODE_VALUE_BITS_, FREQUENCY_BI
   {
     return cumulative_frequency[SYMBOL_COUNT];
   }
-  bool m_frozen;
+  void printCumulativeFrequency(){
+      std::cout << "[" << cumulative_frequency[0] << ", " << cumulative_frequency[1] << ", ";
+      std::cout << cumulative_frequency[2] << "]";
+  }
+  // bool m_frozen;
 
 };
 

@@ -73,7 +73,6 @@ public :
     std::ofstream log("decompressor.log");
     log << std::hex;
 #endif
-    bool stop_decoding = false;
     CODE_VALUE high = MODEL::MAX_CODE;
     CODE_VALUE low = 0;
     CODE_VALUE value = 0;
@@ -88,9 +87,7 @@ public :
       CODE_VALUE scaled_value =  ((value - low + 1) * m_model.getCount() - 1 ) / range;
       int c;
       prob p = m_model.getChar( scaled_value, c );
-      if ( c == EOF_CODE )
-        break;
-      stop_decoding = m_output.putByte(c);
+      bool stop_decoding = m_output.putByte(c);
       if (stop_decoding){
           // std::cout << "break" << std::endl;
           return 0;
