@@ -109,7 +109,7 @@ def run_script_on_dataset(csv, datasets_path, dataset_dictionary, output_path):
     for id1, input_filename in enumerate(csv_files_filenames(input_path)):
         if dataset_name in ["NOAA-SST", "NOAA-ADCP"] and id1 >= 3:
             return
-        row = [dataset_dictionary['name']] if id1 == 0 else [None]
+        row = [dataset_name] if id1 == 0 else [None]
         run_script_on_file(dataset_name, csv, id1, row, logger, input_path, input_filename, output_dataset_path)
 
 
@@ -122,6 +122,11 @@ def run_script_on_file(dataset_name, csv, id1, row, logger, input_path, input_fi
     thresholds_array = calculate_stds_percentages(stds, THRESHOLD_PERCENTAGES)
 
     for id2, coder_dictionary in enumerate(CODERS_ARRAY):
+        
+        # Avoid "ElNino"/"GAMPSLimit" combination
+        if dataset_name == "ElNino" and coder_dictionary["name"] == "CoderGAMPSLimit":
+            continue
+
         if id1 == 0 and id2 == 0:  # first row of dataset and file
             row += [input_filename, row_count]
         elif id2 == 0:  # first row of file

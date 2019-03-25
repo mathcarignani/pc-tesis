@@ -6,7 +6,7 @@ THRESHOLD_PERCENTAGES = [0, 1, 3, 5, 10, 15, 20, 30]
 WINDOW_SIZES = [4, 8, 16, 32, 64, 128, 256]
 
 CSV_PATH = datasets_csv_path()
-MASK_MODE = True
+MASK_MODE = False
 
 DATASETS_ARRAY = [
     {'name': 'IRKIS', 'folder': "[1]irkis", 'logger': "irkis.log", 'o_folder': "[1]irkis"},
