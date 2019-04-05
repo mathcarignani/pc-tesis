@@ -4,7 +4,8 @@ sys.path.append('.')
 from file_utils.csv_utils.csv_reader import CSVReader
 from file_utils.csv_utils.csv_writer import CSVWriter
 
-path = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-11/2-mask123"
+# path = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-11/2-mask123"
+path = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-12/1-mask123"
 
 csv_reader = CSVReader(path, "mask123-numbers.csv")
 csv_writer = CSVWriter(path, "mask123-numbers-relative.csv")

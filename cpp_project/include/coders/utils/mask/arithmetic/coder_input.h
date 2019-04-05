@@ -14,7 +14,8 @@ public:
     int total_rows;
 
     CoderInput(CSVReader* input_csv_, int column_index);
-    int getByte();
+    int getByte(); // PRE: !eof()
+    bool eof();
 };
 
 #endif //CPP_PROJECT_INPUT_H

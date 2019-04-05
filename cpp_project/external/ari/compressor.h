@@ -72,8 +72,6 @@ public :
     CODE_VALUE high = MODEL::MAX_CODE;
     for ( ; ; ) {
       int c = m_input.getByte();
-      if ( c == -1 )
-        c = EOF_CODE;
 #ifdef LOG
       log << std::hex << "0x" << std::setw(2) << std::setfill('0') << c;
       if ( c > 0x20 && c <= 0x7f )
@@ -119,16 +117,13 @@ public :
         high &= MODEL::MAX_CODE;
         low &= MODEL::MAX_CODE;
       }
-      if ( c == EOF_CODE ) {
+      if (m_input.eof()) {
           // std::cout << "break" << std::endl;
           break;
       }
     }
     pending_bits++;
-    if ( low < MODEL::ONE_FOURTH )
-      put_bit_plus_pending(0, pending_bits);
-    else
-      put_bit_plus_pending(1, pending_bits);
+    put_bit_plus_pending(low >= MODEL::ONE_FOURTH, pending_bits);
 #ifdef LOG
     log.close();
 #endif
