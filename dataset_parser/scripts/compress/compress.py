@@ -12,7 +12,7 @@ from file_utils.csv_utils.csv_utils import CSVUtils
 from scripts.utils import csv_files_filenames, create_folder
 from scripts.compress.calculate_std import calculate_file_stats, calculate_stds_percentages
 from scripts.compress.compress_aux import THRESHOLD_PERCENTAGES, CSV_PATH, DATASETS_ARRAY, CODERS_ARRAY
-from scripts.compress.compress_cpp import code_decode_cpp
+from scripts.compress.compress_cpp import code_decode_cpp, code_cpp
 from scripts.compress.compress_args import CompressArgs
 from compress_gamps import gamps_group_thresholds
 
