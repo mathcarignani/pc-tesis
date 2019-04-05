@@ -14,7 +14,7 @@ private:
 
 public:
     DecoderOutput(Mask* mask_, int data_rows_count_);
-    bool putByte(int c);
+    int putByte(int c);
     void close();
 };
 

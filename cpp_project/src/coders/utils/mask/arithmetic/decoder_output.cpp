@@ -7,7 +7,7 @@ DecoderOutput::DecoderOutput(Mask* mask_, int data_rows_count_){
     row_index = 0;
 }
 
-bool DecoderOutput::putByte(int c){
+int DecoderOutput::putByte(int c){
     bool nodata = c == 1;
 
     if (row_index == 0){
@@ -23,7 +23,7 @@ bool DecoderOutput::putByte(int c){
     // std::cout << "[" << row_index << "] >>>>>>>>>>>>>>>>>>> DecoderOutput = " << c << std::endl;
     row_index++;
     data_rows_count--;
-    return (data_rows_count == 0);
+    return data_rows_count;
 }
 
 void DecoderOutput::close(){

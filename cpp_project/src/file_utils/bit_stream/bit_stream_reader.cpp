@@ -34,8 +34,10 @@ int BitStreamReader::getBit(){
 
     if (offset == 0){
         read();
-        if ( feof(fp) )
+        if ( feof(fp) ){
+            std::cout << "EOF" << std::endl;
             current = 0;
+        }
     }
     return ans;
 }

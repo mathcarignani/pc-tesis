@@ -24,6 +24,7 @@ public:
     ArithmeticMaskCoder(CoderBase* coder_, int column_index_);
     int code();
 
+    int byte_count;
 };
 
 #endif // MASK_MODE == 3

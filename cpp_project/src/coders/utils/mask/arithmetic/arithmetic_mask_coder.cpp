@@ -35,6 +35,7 @@ void ArithmeticMaskCoder::flush(){
 }
 
 int ArithmeticMaskCoder::callCompress(Path path){
+    std::cout << "callCompress" << std::endl;
     CoderInput input(coder->input_csv, column_index);
     BitStreamWriter* writer = new BitStreamWriter(path);
     CoderOutput output(writer);
@@ -43,13 +44,16 @@ int ArithmeticMaskCoder::callCompress(Path path){
     compress(input, output, model);
 
     // writer->flushByte();
+    byte_count = output.byte_count;
     delete writer;
     return input.total_data_rows;
 }
 
 int ArithmeticMaskCoder::callDecompress(Path path){
+    std::cout << "callDecompress" << std::endl;
     BitStreamReader* reader = new BitStreamReader(path);
     DecoderInput input(reader);
+    input.setByteCount(byte_count);
     Mask* mask = new Mask();
     DecoderOutput output(mask, coder->data_rows_count);
     modelKT<int, 16, 14> model;
@@ -63,6 +67,9 @@ int ArithmeticMaskCoder::callDecompress(Path path){
 }
 
 void ArithmeticMaskCoder::copyBytes(Path path, int total_bytes){
+    std::cout << "copyBytes" << std::endl;
+    int diff = total_bytes - byte_count;
+    std::cout << "difff = " << diff << ", byte_count = " << byte_count << ", decodedBytes = " << total_bytes << std::endl;
     BitStreamReader* reader = new BitStreamReader(path);
     for(int i=0; i < total_bytes; i++){
         int value = reader->getInt(8);

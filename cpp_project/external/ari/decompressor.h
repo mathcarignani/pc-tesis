@@ -87,7 +87,8 @@ public :
       CODE_VALUE scaled_value =  ((value - low + 1) * m_model.getCount() - 1 ) / range;
       int c;
       prob p = m_model.getChar( scaled_value, c );
-      bool stop_decoding = m_output.putByte(c);
+      int data_rows_count = m_output.putByte(c);
+      bool stop_decoding = data_rows_count == 0;
       if (stop_decoding){
           // std::cout << "break" << std::endl;
           return 0;
