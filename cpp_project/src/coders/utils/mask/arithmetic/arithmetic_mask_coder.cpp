@@ -21,7 +21,7 @@ ArithmeticMaskCoder::ArithmeticMaskCoder(CoderBase* coder_, int column_index_){
 int ArithmeticMaskCoder::code(){
     flush();
     CoderInput input(coder->input_csv, column_index);
-    CoderOutput output(coder->output_file);
+    CoderOutput output(coder);
     modelKT<int, 16, 14> model;
     compress(input, output, model);
     flush();

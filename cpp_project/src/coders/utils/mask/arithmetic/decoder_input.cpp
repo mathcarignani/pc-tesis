@@ -17,7 +17,9 @@ int DecoderInput::get_bit(){
     }
     else if (current_burst == bit){
         current_burst_count++;
-//        assert(current_burst_count <= 16);
+        if (previous_burst && current_burst_count == 16){
+//            std::cout << "THIS IS THE END..." << std::endl;
+        }
     }
     else { // current_burst != bit
         if (current_burst_count == 16) {
@@ -25,9 +27,6 @@ int DecoderInput::get_bit(){
                 previous_burst = true;
                 current_burst = bit;
                 current_burst_count = 1;
-            }
-            else {
-                std::cout << "THIS IS THE END..." << std::endl;
             }
         }
         else {
@@ -43,5 +42,6 @@ void DecoderInput::finish_decoding(){
     std::cout << "finish_decoding" << std::endl;
     while (!(previous_burst && current_burst_count == 16)){
         get_bit();
+//        std::cout << "current_burst_count = " << current_burst_count << std::endl;
     }
 }

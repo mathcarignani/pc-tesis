@@ -49,6 +49,9 @@ def compress_file(args):
 def size_check(compressed_size, header_bits, columns_bits, column_mask_bits):
     bits_sum = header_bits + sum(columns_bits + column_mask_bits)
     bytes_sum = (bits_sum + 7) / 8
+    if compressed_size != bytes_sum:
+        print "compressed_size " + str(compressed_size)
+        print "bytes_sum " + str(bytes_sum)
     assert(compressed_size == bytes_sum)
 
     header_bytes = (header_bits + 7) / 8
