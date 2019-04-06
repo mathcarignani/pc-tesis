@@ -125,10 +125,16 @@ public :
       }
     }
     pending_bits++;
-    if ( low < MODEL::ONE_FOURTH )
-      put_bit_plus_pending(0, pending_bits);
-    else
-      put_bit_plus_pending(1, pending_bits);
+    if ( low < MODEL::ONE_FOURTH ){
+        put_bit_plus_pending(0, pending_bits);
+        finish_coding(0);
+    }
+
+    else{
+        put_bit_plus_pending(1, pending_bits);
+        finish_coding(1);
+    }
+
 #ifdef LOG
     log.close();
 #endif
@@ -143,6 +149,15 @@ public :
       m_output.put_bit(!bit);
     pending_bits = 0;
   }
+
+  inline void finish_coding(bool bit){
+    int counter = 16;
+    for (int i = 0; i < counter; i++)
+        m_output.put_bit(bit);
+    for (int i = 0; i < counter; i++)
+        m_output.put_bit(!bit);
+  }
+
 private :
   OUTPUT &m_output;
   INPUT &m_input;
