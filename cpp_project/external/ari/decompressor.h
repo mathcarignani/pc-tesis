@@ -89,7 +89,7 @@ public :
       prob p = m_model.getChar( scaled_value, c );
       bool stop_decoding = m_output.putByte(c);
       if (stop_decoding){
-          // std::cout << "break" << std::endl;
+          m_input.finish_decoding();
           return 0;
       }
 #ifdef LOG

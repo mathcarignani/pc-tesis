@@ -123,7 +123,9 @@ public :
       }
     }
     pending_bits++;
-    put_bit_plus_pending(low >= MODEL::ONE_FOURTH, pending_bits);
+    bool bit = low >= MODEL::ONE_FOURTH;
+    put_bit_plus_pending(bit, pending_bits);
+    finish_coding(bit);
 #ifdef LOG
     log.close();
 #endif
@@ -138,6 +140,16 @@ public :
       m_output.put_bit(!bit);
     pending_bits = 0;
   }
+
+    inline void finish_coding(bool bit){
+        std::cout << "finish_coding" << std::endl;
+        int counter = 16;
+        for (int i = 0; i < counter; i++)
+            m_output.put_bit(bit);
+        for (int i = 0; i < counter; i++)
+            m_output.put_bit(!bit);
+    }
+
 private :
   OUTPUT &m_output;
   INPUT &m_input;
