@@ -6,6 +6,8 @@
 
 #if MASK_MODE == 3
 
+#define EOS_LENGTH 16 // used to mark the end of the stream
+
 #include "mask.h"
 #include "coder_base.h"
 
@@ -16,9 +18,6 @@ private:
     int column_index;
 
     void flush();
-    // int callCompress(Path path);
-    // int callDecompress(Path path);
-    // void copyBytes(Path path, int total_bytes);
 
 public:
     ArithmeticMaskCoder(CoderBase* coder_, int column_index_);
