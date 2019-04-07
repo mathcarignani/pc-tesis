@@ -123,7 +123,9 @@ public :
       }
     }
     pending_bits++;
-    put_bit_plus_pending(low >= MODEL::ONE_FOURTH, pending_bits);
+    bool bit = low >= MODEL::ONE_FOURTH;
+    put_bit_plus_pending(bit, pending_bits);
+    m_output.finishCoding(bit);
 #ifdef LOG
     log.close();
 #endif
@@ -132,12 +134,13 @@ public :
 
   inline void put_bit_plus_pending(bool bit, int &pending_bits)
   {
-//    std::cout << "put_bit_plus_pending(" << (bit ? "1" : "0") << ", " << pending_bits << ")" << std::endl;
+    // std::cout << "put_bit_plus_pending(" << (bit ? "1" : "0") << ", " << pending_bits << ")" << std::endl;
     m_output.put_bit(bit);
     for ( int i = 0 ; i < pending_bits ; i++ )
       m_output.put_bit(!bit);
     pending_bits = 0;
   }
+
 private :
   OUTPUT &m_output;
   INPUT &m_input;

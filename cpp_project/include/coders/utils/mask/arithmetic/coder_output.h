@@ -7,11 +7,12 @@
 class CoderOutput {
 
 private:
-    BitStreamWriter* writer;
+    CoderBase* coder;
 
 public:
-    CoderOutput(BitStreamWriter* writer_);
+    CoderOutput(CoderBase* coder_);
     void put_bit(bool bit);
+    void finishCoding(bool bit);
 };
 
 #endif //CPP_PROJECT_OUTPUT_H
