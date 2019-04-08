@@ -3,19 +3,32 @@
 #define CPP_PROJECT_INPUT_H
 
 #include "csv_reader.h"
+#include "coder_base.h"
 
 class CoderInput {
 
 private:
+    CoderBase* coder;
     CSVReader* input_csv;
+    Dataset* dataset;
+    int data_columns_count;
+    int column_index;
+
+    void setNextColumn(int col_index);
+    void endCurrentColumn();
 
 public:
     int total_data_rows;
     int total_rows;
+    std::vector<int> total_data_rows_vector;
 
-    CoderInput(CSVReader* input_csv_, int column_index);
+    // variables used by compressor.h
+    bool reset_model;
+    bool eof;
+
+    CoderInput(CoderBase* coder_, int data_columns_count_);
     int getByte(); // PRE: !eof()
-    bool eof();
+
 };
 
 #endif //CPP_PROJECT_INPUT_H

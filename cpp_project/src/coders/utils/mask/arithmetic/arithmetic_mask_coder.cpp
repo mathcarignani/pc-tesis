@@ -13,19 +13,19 @@
 #include "decoder_output.h"
 #include "decompressor.h"
 
-ArithmeticMaskCoder::ArithmeticMaskCoder(CoderBase* coder_, int column_index_){
+ArithmeticMaskCoder::ArithmeticMaskCoder(CoderBase* coder_, int data_columns_count_){
     coder = coder_;
-    column_index = column_index_;
+    data_columns_count = data_columns_count_;
 }
 
-int ArithmeticMaskCoder::code(){
+std::vector<int> ArithmeticMaskCoder::code(){
     flush();
-    CoderInput input(coder->input_csv, column_index);
+    CoderInput input(coder, data_columns_count);
     CoderOutput output(coder);
     modelKT<int, 16, 14> model;
     compress(input, output, model);
     flush();
-    return input.total_data_rows;
+    return input.total_data_rows_vector;
 }
 
 void ArithmeticMaskCoder::flush(){

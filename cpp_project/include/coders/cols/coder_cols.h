@@ -23,6 +23,9 @@ protected:
     std::vector<int> time_delta_vector;
 #if MASK_MODE
     int total_data_rows;
+#if MASK_MODE == 3
+    std::vector<int> total_data_rows_vector;
+#endif
 #endif
 
     void codeDataColumn();
