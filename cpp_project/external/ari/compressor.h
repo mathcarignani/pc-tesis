@@ -118,11 +118,11 @@ public :
         low &= MODEL::MAX_CODE;
       }
       if (m_input.reset_model){
-          std::cout << "reset" << std::endl;
+          // std::cout << "m_input.reset_model" << std::endl;
           m_model.reset();
       }
       else if (m_input.eof) {
-          std::cout << "break" << std::endl;
+          // std::cout << "m_input.eof" << std::endl;
           break;
       }
     }

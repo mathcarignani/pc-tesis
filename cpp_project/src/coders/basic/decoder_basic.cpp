@@ -14,13 +14,14 @@ std::vector<std::string> DecoderBasic::decodeDataColumn(){
     while (row_index < data_rows_count) {
     #if MASK_MODE
         if (mask->isNoData()) {
+            // std::cout << "row_index = " << row_index << std::endl;
             column.push_back(Constants::NO_DATA);
             row_index++;
             continue;
         }
     #endif
         std::string value = decodeValueRaw();
-        // std::cout << "decodeValueRaw = " << value << std::endl;
+        // std::cout << "row_index = " << row_index << " => decodeValueRaw = " << value << std::endl;
         column.push_back(value);
         row_index++;
     }

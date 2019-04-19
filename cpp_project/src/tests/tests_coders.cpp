@@ -27,9 +27,9 @@ void TestsCoders::testSingleCoder() {
 
 //    Scripts::code("CoderGAMPS", file_path, output_code_path, 5, lossless);
     Scripts::codeBasic(file_path, output_code_path);
-//    Scripts::decode(output_code_path, output_decode_path);
-//    TestsCodersUtils::compareFiles(file_path, output_decode_path);
-//    std::cout << "SAME FILE!!" << std::endl;
+    Scripts::decode(output_code_path, output_decode_path);
+    TestsCodersUtils::compareFiles(file_path, output_decode_path);
+    std::cout << "SAME FILE!!" << std::endl;
 }
 
 TestsCoders::TestsCoders(){

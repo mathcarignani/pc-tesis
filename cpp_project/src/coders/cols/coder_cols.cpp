@@ -16,7 +16,7 @@ void CoderCols::codeDataRows(){
 #if MASK_MODE == 3
     ArithmeticMaskCoder* amc = new ArithmeticMaskCoder(this, dataset->data_columns_count);
     total_data_rows_vector = amc->code();
-#endif
+#endif // MASK_MODE == 3
 
     for(column_index = 1; column_index < total_columns; column_index++) {
         codeColumn();
@@ -28,7 +28,6 @@ void CoderCols::codeColumn() {
     std::cout << "ccode column_index " << column_index << std::endl;
 #endif
     dataset->setColumn(column_index);
-
     if (column_index == 0) {
         dataset->setMode("DATA");
         time_delta_vector = TimeDeltaCoder::code(this);
@@ -36,12 +35,12 @@ void CoderCols::codeColumn() {
     }
 #if MASK_MODE
 #if MASK_MODE == 3
-    total_data_rows = total_data_rows_vector.at(column_index-1);
+    total_data_rows = total_data_rows_vector.at(column_index - 1);
 #else
     dataset->setMode("MASK");
     total_data_rows = MaskCoder::code(this, column_index);
-#endif
-#endif
+#endif // MASK_MODE == 3
+#endif // MASK_MODE
     dataset->setMode("DATA");
     codeDataColumn();
 }

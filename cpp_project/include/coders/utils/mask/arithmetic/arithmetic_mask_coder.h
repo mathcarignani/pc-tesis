@@ -18,9 +18,10 @@ private:
     int data_columns_count;
 
     void flush();
+    std::vector<int> callCompress();
 
 public:
-    ArithmeticMaskCoder(CoderBase* coder_, int total_columns_);
+    ArithmeticMaskCoder(CoderBase* coder_, int data_columns_count_);
     std::vector<int> code();
 
 };

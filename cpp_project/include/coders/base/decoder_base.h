@@ -31,7 +31,10 @@ public:
     int row_index;
 #if MASK_MODE
     Mask* mask;
-#endif
+#if MASK_MODE == 3
+    std::vector<Mask*> masks_vector;
+#endif // MASK_MODE == 3
+#endif // MASK_MODE
 
     static DecoderBase* getDecoder(BitStreamReader* input_file, CSVWriter* output_csv);
 

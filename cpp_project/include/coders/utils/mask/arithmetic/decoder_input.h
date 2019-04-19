@@ -15,7 +15,7 @@ private:
 public:
     DecoderInput(BitStreamReader* input_file_);
     int get_bit();
-    void finish_decoding();
+    void finishDecoding();
 };
 
 #endif //CPP_PROJECT_DECODER_INPUT_H

@@ -39,10 +39,9 @@ int DecoderInput::get_bit(){
     return bit;
 }
 
-void DecoderInput::finish_decoding(){
-    std::cout << "finish_decoding" << std::endl;
+void DecoderInput::finishDecoding(){
+    // std::cout << "finishDecoding" << std::endl;
     while (!(previous_burst && current_burst_count == EOS_LENGTH)){
         get_bit();
-//        std::cout << "current_burst_count = " << current_burst_count << std::endl;
     }
 }

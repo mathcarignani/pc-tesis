@@ -31,7 +31,7 @@ void CoderInput::endCurrentColumn(){
         setNextColumn(column_index + 1);
         reset_model = true;
     }
-    else {
+    else { // column_index == data_columns_count
         eof = true;
     }
 }
@@ -47,12 +47,10 @@ int CoderInput::getByte(){
         total_data_rows++;
         value = 0;
     }
-    // std::cout << "[" << total_rows << "] >>>>>>>>>>>>>>>>>>> CoderInput = " << value << std::endl;
     total_rows++;
 
     if (!input_csv->continue_reading){ // reached end of column
         endCurrentColumn();
     }
-
     return value;
 }

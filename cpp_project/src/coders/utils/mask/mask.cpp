@@ -1,5 +1,6 @@
 
 #include "mask.h"
+#include "constants.h"
 
 Mask::Mask(){
     total_no_data = 0;
@@ -44,6 +45,21 @@ void Mask::close(){
     assert(current_burst != NULL);
 #endif
     add(current_burst);
+}
+
+void Mask::print(){
+    std::cout << "Mask::print()" << std::endl;
+    std::cout << "total_data = " << total_data << std::endl;
+    std::cout << "total_no_data = " << total_no_data << std::endl;
+    std::cout << "total rows = " << total_data + total_no_data << std::endl;
+    int current_index = 0;
+    for(int i=0; i < bursts.size(); i++){
+        Burst* burst = bursts.at(i);
+        std::string str = burst->no_data ? "N" : "1";
+        int new_current_index = current_index + burst->length;
+        std::cout << "[" << current_index << ", " << new_current_index - 1 << "] => " << str << std::endl;
+        current_index = new_current_index;
+    }
 }
 
 void Mask::reset(){
