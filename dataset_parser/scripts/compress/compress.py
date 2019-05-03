@@ -14,7 +14,6 @@ from scripts.compress.calculate_std import calculate_file_stats, calculate_stds_
 from scripts.compress.compress_aux import THRESHOLD_PERCENTAGES, CSV_PATH, DATASETS_ARRAY, CODERS_ARRAY
 from scripts.compress.compress_cpp import code_decode_cpp
 from scripts.compress.compress_args import CompressArgs
-from compress_gamps import gamps_group_thresholds
 
 
 def compress_decompress_compare(args):
