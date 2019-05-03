@@ -82,11 +82,40 @@ struct modelA : public model_metrics<CODE_VALUE_, CODE_VALUE_BITS_, FREQUENCY_BI
   {
     // std::cout << "Frozen at: " << m_bytesProcessed << "\n";
     // std::cout << "Before = "; printCumulativeFrequency(); std::cout << std::endl;
+
+    // cumulative_frequency[SYMBOL_COUNT] is an even number >> 2
     cumulative_frequency[SYMBOL_COUNT] /= 2;
-    if (cumulative_frequency[1] >= 2){ // cumulative_frequency[1] must always be >= 1
-        cumulative_frequency[1] /= 2;
-    }
+
+    // cumulative_frequency[1] is an odd number >= 1
+    cumulative_frequency[1] = update_cumulative_freq(cumulative_frequency[1]);
+
     // std::cout << "After = "; printCumulativeFrequency(); std::cout << std::endl;
+  }
+  //
+  // PRE: value is an odd number >= 1
+  //
+  // update_cumulative_freq(value) returns the closes odd number to float(value/2).
+  //
+  // EXAMPLES:
+  // update_cumulative_freq(1) = 1
+  // update_cumulative_freq(3) = 1
+  // update_cumulative_freq(5) = 3
+  // update_cumulative_freq(7) = 3
+  // update_cumulative_freq(9) = 5
+  // update_cumulative_freq(11) = 5
+  // update_cumulative_freq(13) = 7
+  // update_cumulative_freq(15) = 7
+  //
+  int update_cumulative_freq(int value){
+      if (value == 1){
+          return 1;
+      }
+      // value >= 3
+      value /= 2;
+      if (value % 2 == 0){
+          value += 1;
+      }
+      return value;
   }
   void inline update(int c)
   {
