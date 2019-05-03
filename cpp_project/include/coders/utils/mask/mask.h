@@ -31,9 +31,11 @@ public:
     void add(Burst* burst);
     void add(bool no_data, int length);
 
-    // Used in the CoderGAMPS class
+    // Used by CoderGAMPS and DecoderOutput classes
     void add(bool no_data);
     void close();
+
+    void print();
 
     void reset();
     bool isNoData();

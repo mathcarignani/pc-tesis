@@ -9,13 +9,23 @@ class DecoderOutput {
 private:
     Mask* mask;
     Burst* burst;
-    int row_index;
+    int data_columns_count;
     int data_rows_count;
+    int column_index;
+    int row_index;
+
+    void setNextColumn(int col_index);
+    void endCurrentColumn();
 
 public:
-    DecoderOutput(Mask* mask_, int data_rows_count_);
-    bool putByte(int c);
-    void close();
+    std::vector<Mask*> masks_vector;
+
+    // variables used by decompressor.h
+    bool reset_model;
+    bool eof;
+
+    DecoderOutput(int data_columns_count_, int data_rows_count_);
+    void putByte(int c);
 };
 
 #endif //CPP_PROJECT_DECODER_OUTPUT_H

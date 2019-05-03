@@ -8,8 +8,6 @@ Mask* MaskDecoder::decode(DecoderBase* decoder){
     return SimpleMaskDecoder::decode(decoder);
 #elif MASK_MODE == 2
     return GolombMaskDecoder::decode(decoder);
-#elif MASK_MODE == 3
-    return (new ArithmeticMaskDecoder(decoder))->decode();
 #endif
 }
 

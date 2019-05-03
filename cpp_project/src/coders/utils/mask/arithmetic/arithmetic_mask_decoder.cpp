@@ -8,17 +8,16 @@
 #include "decoder_output.h"
 #include "modelKT.h"
 
-ArithmeticMaskDecoder::ArithmeticMaskDecoder(DecoderBase* decoder_){
+ArithmeticMaskDecoder::ArithmeticMaskDecoder(DecoderBase* decoder_, int data_columns_count_){
     decoder = decoder_;
-    mask = new Mask();
+    data_columns_count = data_columns_count_;
 }
 
-Mask* ArithmeticMaskDecoder::decode(){
+std::vector<Mask*> ArithmeticMaskDecoder::decode(){
     flush();
-    callDecompress();
+    std::vector<Mask*> masks_vector = callDecompress();
     flush();
-    mask->reset();
-    return mask;
+    return masks_vector;
 }
 
 void ArithmeticMaskDecoder::flush(){
@@ -27,14 +26,12 @@ void ArithmeticMaskDecoder::flush(){
     // std::cout << "D1 >> decoder->flushByte();" << std::endl;
 }
 
-void ArithmeticMaskDecoder::callDecompress(){
+std::vector<Mask*> ArithmeticMaskDecoder::callDecompress(){
     DecoderInput input(decoder->input_file);
-    DecoderOutput output(mask, decoder->data_rows_count);
+    DecoderOutput output(data_columns_count, decoder->data_rows_count);
     modelKT<int, 16, 14> model;
-
     decompress(input, output, model);
-
-    output.close();
+    return output.masks_vector;
 }
 
 #endif // MASK_MODE == 3

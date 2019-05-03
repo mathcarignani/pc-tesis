@@ -87,9 +87,14 @@ public :
       CODE_VALUE scaled_value =  ((value - low + 1) * m_model.getCount() - 1 ) / range;
       int c;
       prob p = m_model.getChar( scaled_value, c );
-      bool stop_decoding = m_output.putByte(c);
-      if (stop_decoding){
-          m_input.finish_decoding();
+      m_output.putByte(c);
+      if (m_output.reset_model){
+          // std::cout << "m_output.reset_model" << std::endl;
+          m_model.reset();
+      }
+      else if (m_output.eof){
+          // std::cout << "m_output.eof" << std::endl;
+          m_input.finishDecoding();
           return 0;
       }
 #ifdef LOG
