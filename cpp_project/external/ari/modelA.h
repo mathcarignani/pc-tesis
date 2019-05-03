@@ -83,8 +83,8 @@ struct modelA : public model_metrics<CODE_VALUE_, CODE_VALUE_BITS_, FREQUENCY_BI
     // std::cout << "Frozen at: " << m_bytesProcessed << "\n";
     // std::cout << "Before = "; printCumulativeFrequency(); std::cout << std::endl;
     cumulative_frequency[SYMBOL_COUNT] /= 2;
-    if (cumulative_frequency[1] >= 3){
-        cumulative_frequency[1] = (cumulative_frequency[1] - 1) / 2;
+    if (cumulative_frequency[1] >= 2){ // cumulative_frequency[1] must always be >= 1
+        cumulative_frequency[1] /= 2;
     }
     // std::cout << "After = "; printCumulativeFrequency(); std::cout << std::endl;
   }
