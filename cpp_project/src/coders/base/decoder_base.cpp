@@ -27,36 +27,36 @@ DecoderBase* DecoderBase::getDecoder(BitStreamReader* input_file, CSVWriter* out
 
     DecoderBase* decoder;
 
-    if (coder_code == 0) {
+    if (coder_code == Constants::CODER_BASIC) {
         decoder = new DecoderBasic(input_file, output_csv);
         return decoder;
     }
 
-    if (coder_code == 10){
+    if (coder_code == Constants::CODER_PCA){
         decoder = new DecoderPCA(input_file, output_csv);
     }
-    else if (coder_code == 11){
+    else if (coder_code == Constants::CODER_APCA){
         decoder = new DecoderAPCA(input_file, output_csv);
     }
-    else if (coder_code == 20 || coder_code == 21){
+    else if (coder_code == Constants::CODER_PWLH || coder_code == Constants::CODER_PWLH_INT){
         decoder = new DecoderPWLH(input_file, output_csv);
-        bool integer_mode = coder_code == 21;
+        bool integer_mode = coder_code == Constants::CODER_PWLH_INT;
         ((DecoderPWLH*) decoder)->setIntegerMode(integer_mode);
     }
-    else if (coder_code == 22){
+    else if (coder_code == Constants::CODER_CA){
         decoder = new DecoderCA(input_file, output_csv);
     }
 #if MASK_MODE
-    else if (coder_code == 23){
+    else if (coder_code == Constants::CODER_FR){
         decoder = new DecoderFR(input_file, output_csv);
     }
-    else if (coder_code == 24){
+    else if (coder_code == Constants::CODER_SF){
         decoder = new DecoderSlideFilter(input_file, output_csv);
     }
 #endif
-    else if (coder_code == 30 || coder_code == 31){
+    else if (coder_code == Constants::CODER_GAMPS || coder_code == Constants::CODER_GAMPS_LIMIT){
         decoder = new DecoderGAMPS(input_file, output_csv);
-        bool limit_mode = coder_code == 31;
+        bool limit_mode = coder_code == Constants::CODER_GAMPS_LIMIT;
         ((DecoderGAMPS*) decoder)->setLimitMode(limit_mode);
     }
     decoder->setWindowSize(window_size);
