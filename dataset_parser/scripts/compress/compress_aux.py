@@ -84,7 +84,7 @@ MASK_MODE_CODERS_ARRAY = [
     {
         'name': 'CoderSF',
         'o_folder': 'sf',
-        'params': {'window_size': [0]}  # window_size param doesn't matter
+        'params': {'window_size': [4]}  # window_size param doesn't matter
     }
 ]
 
