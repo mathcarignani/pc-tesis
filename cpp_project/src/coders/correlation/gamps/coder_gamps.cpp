@@ -24,18 +24,15 @@ void CoderGAMPS::codeCoderParams(){
 void CoderGAMPS::codeDataRows(){
     codeTimeDeltaColumn();
 
+#if MASK_MODE == 3
+    ArithmeticMaskCoder* amc = new ArithmeticMaskCoder(this, dataset->data_columns_count);
+    total_data_rows_vector = amc->code();
+#endif // MASK_MODE == 3
+
     total_groups = limit_mode ? dataset->dataColumnsGroupCount() : 1;
     total_group_columns = dataset->data_columns_count / total_groups;
-    for(int i = 1; i <= total_groups; i++){
-        mapping_table = new MappingTable();
-        std::cout << "ccode group " << i << "/" << total_groups << std::endl;
-        group_index = i;
-        GAMPSOutput* gamps_output = processOtherColumns();
-        codeMappingTable(gamps_output);
-        codeGAMPSColumns(gamps_output);
-        // free memory as in benchmarkLinux
-        delete gamps_input;
-        // delete gamps;
+    for(group_index = 1; group_index <= total_groups; group_index++){
+        codeGroup();
     }
 }
 
@@ -47,6 +44,19 @@ void CoderGAMPS::codeTimeDeltaColumn(){
     dataset->setColumn(column_index);
     dataset->setMode("DATA");
     TimeDeltaCoder::code(this);
+}
+
+void CoderGAMPS::codeGroup(){
+    mapping_table = new MappingTable();
+#if COUT
+    std::cout << "ccode group " << group_index << "/" << total_groups << std::endl;
+#endif
+    GAMPSOutput* gamps_output = processOtherColumns();
+    codeMappingTable(gamps_output);
+    codeGAMPSColumns(gamps_output);
+    // free memory as in benchmarkLinux
+    delete gamps_input;
+    // delete gamps;
 }
 
 GAMPSOutput* CoderGAMPS::processOtherColumns(){
@@ -123,7 +133,7 @@ CDataStream* CoderGAMPS::getColumn(int column_index){
             }
             previous_value = current_value;
         }
-//        std::cout << "add(DataItem(" << current_value << ", " << timestamp << ")" << std::endl;
+        // std::cout << "add(DataItem(" << current_value << ", " << timestamp << ")" << std::endl;
         dataStream->add(DataItem(current_value, timestamp));
     }
     assert(timestamp > 0);
@@ -144,7 +154,7 @@ GAMPSOutput* CoderGAMPS::getGAMPSOutput(){
 
 void CoderGAMPS::codeMappingTable(GAMPSOutput* gamps_output){
     mapping_table->calculate(gamps_output);
-    mapping_table->print(total_groups, group_index);
+    // mapping_table->print(total_groups, group_index);
 
     std::vector<int> vector = mapping_table->baseColumnIndexVector();
     int vector_size = vector.size();
@@ -168,7 +178,9 @@ void CoderGAMPS::codeGAMPSColumns(GAMPSOutput* gamps_output){
         if (!mapping_table->isBaseColumn(table_index)){ continue; }
 
         column_index = MappingTable::mapIndex(table_index, total_groups, group_index);
+    #if COUT
         std::cout << "code base  signal i = " << column_index << std::endl;
+    #endif
         dataset->setColumn(column_index);
         column = base_signals[base_index++];
         codeGAMPSColumn(column);
@@ -177,7 +189,9 @@ void CoderGAMPS::codeGAMPSColumns(GAMPSOutput* gamps_output){
         for (int j = 0; j < ratio_columns.size(); j++){
             table_index = ratio_columns.at(j);
             column_index = MappingTable::mapIndex(table_index, total_groups, group_index);
+        #if COUT
             std::cout << "    code ratio signal i = " << column_index << std::endl;
+        #endif
             dataset->setColumn(column_index);
             int ratio_index = mapping_table->getRatioGampsColumnIndex(table_index);
             column = ratio_signals[ratio_index];
@@ -188,9 +202,14 @@ void CoderGAMPS::codeGAMPSColumns(GAMPSOutput* gamps_output){
 
 void CoderGAMPS::codeGAMPSColumn(DynArray<GAMPSEntry>* column){
 #if MASK_MODE
+#if MASK_MODE == 3
+    total_data_rows_vector.at(column_index - 1);
+#else
     dataset->setMode("MASK");
-    int total_data_rows = MaskCoder::code(this, column_index);
-#endif
+    MaskCoder::code(this, column_index);
+#endif // MASK_MODE == 3
+#endif // MASK_MODE
+
     dataset->setMode("DATA");
 
     int entry_index = 0;

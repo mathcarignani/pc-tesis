@@ -78,6 +78,8 @@ void CoderBase::codeValueRaw(std::string x){
     }
     catch( const std::invalid_argument& e ){
         std::cout << "CoderBase::codeValueRaw: " << e.what() << std::endl;
+        delete input_csv;
+        delete output_file;
         exit(-1);
     }
     codeRaw(value);

@@ -22,6 +22,7 @@ private:
     void decodeDataRows() override;
 
     void decodeTimeDeltaColumn();
+    void decodeGroup();
     void decodeMappingTable();
     void decodeNoDataColumns();
     void decodeGAMPSColumns();

@@ -32,10 +32,15 @@ private:
     MappingTable* mapping_table;
     Mask* nodata_rows_mask;
 
+#if MASK_MODE == 3
+    std::vector<int> total_data_rows_vector;
+#endif // MASK_MODE == 3
+
     void codeCoderParams() override;
     void codeDataRows() override;
 
     void codeTimeDeltaColumn();
+    void codeGroup();
     GAMPSOutput* processOtherColumns();
     void codeMappingTable(GAMPSOutput* gamps_output);
     void codeGAMPSColumns(GAMPSOutput* gamps_output);
