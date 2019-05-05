@@ -13,7 +13,6 @@ class SlideFilterWindow;
 class CoderSlideFilter: public CoderCols {
 
 private:
-    int window_size_bit_length;
     std::vector<int> error_thresholds_vector;
     std::vector<SlideFiltersEntry*> entries_vector;
     SlideFilterWindow* m_pSFData;
