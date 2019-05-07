@@ -46,7 +46,6 @@ public:
     void codeValueRaw(std::string x);
     void codeFloat(float x);
     void codeDouble(double x);
-    void codeInt(int x);
     void flushByte();
 };
 
