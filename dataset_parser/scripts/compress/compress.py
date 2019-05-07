@@ -2,6 +2,7 @@ import sys
 sys.path.append('.')
 
 import os
+from datetime import datetime
 
 from auxi.logger import setup_logger
 from auxi.print_utils import PrintUtils
@@ -71,6 +72,7 @@ def print_results(coder_info, logger, input_file, compressed_file, same_file):
         logger.info("ERROR: DIFFERENT FILES!")
         # raise StandardError("ERROR: DIFFERENT FILES!")
     logger.info(coder_info)
+    logger.info("TIME: " + datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
     logger.info("ORIGINAL FILE:")
     logger.info("-> name: %s" % input_file)
     logger.info("-> size (bytes): %s" % "{:,}".format(input_size))
