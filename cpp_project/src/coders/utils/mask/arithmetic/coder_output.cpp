@@ -1,5 +1,8 @@
 
-#include "coders/utils/mask/arithmetic/coder_output.h"
+#include "coder_output.h"
+
+#if MASK_MODE == 3
+
 #include "tests_utils.h"
 #include "arithmetic_mask_coder.h"
 
@@ -22,3 +25,5 @@ void CoderOutput::finishCoding(bool bit){
         put_bit(!bit);
     }
 }
+
+#endif // MASK_MODE == 3

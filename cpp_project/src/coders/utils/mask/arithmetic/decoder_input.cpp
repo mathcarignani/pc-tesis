@@ -1,5 +1,8 @@
 
 #include "decoder_input.h"
+
+#if MASK_MODE == 3
+
 #include <iostream>
 #include "arithmetic_mask_coder.h"
 
@@ -45,3 +48,5 @@ void DecoderInput::finishDecoding(){
         get_bit();
     }
 }
+
+#endif // MASK_MODE == 3
