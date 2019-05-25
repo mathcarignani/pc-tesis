@@ -4,6 +4,7 @@ sys.path.append('.')
 # from file_utils.text_utils.text_file_reader import TextFileReader
 from file_utils.csv_utils.csv_reader import CSVReader
 from file_utils.csv_utils.csv_writer import CSVWriter
+from utils import calculate_percentage, to_int, print_absolute_diff
 
 path = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-11/3-results"
 
@@ -30,21 +31,6 @@ def remove_delta_data(line):
 ########################################################################################################################
 
 IGNORE_CODERS = ["CoderFR", "CoderSF"]
-
-
-def calculate_percentage(big, small):
-    return round((small / big) * 100, 2)
-
-
-def to_int(value):
-    return int(value.replace(".", ""))
-
-
-def print_absolute_diff(value0int, value3int):
-    if value0int > value3int:
-        return str(value0int - value3int)
-    else:
-        return str(value3int - value0int)
 
 
 def print_percentage_diff(value0, value3):

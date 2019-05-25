@@ -3,6 +3,7 @@ sys.path.append('.')
 
 from file_utils.csv_utils.csv_reader import CSVReader
 from file_utils.csv_utils.csv_writer import CSVWriter
+from scripts.avances11.utils import relative_diff
 
 # path = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-11/2-mask123"
 # path = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-12/1-mask123"
@@ -11,12 +12,6 @@ path = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-12/4-final"
 
 csv_reader = CSVReader(path, "mask123-numbers.csv")
 csv_writer = CSVWriter(path, "mask123-numbers-relative.csv")
-
-
-def relative_diff(big, small):
-    val = (float(big) / float(small))  # * 100
-    val = "%0.2f" % val  # + "%"
-    return val
 
 
 def read_values(line, x):

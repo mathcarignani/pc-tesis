@@ -20,14 +20,15 @@ void DecoderGAMPS::decodeDataRows(){
 
     decodeTimeDeltaColumn();
 
+#if MASK_MODE == 3
+    ArithmeticMaskDecoder* amd = new ArithmeticMaskDecoder(this, dataset->data_columns_count);
+    masks_vector = amd->decode();
+#endif // MASK_MODE == 3
+
     total_groups = limit_mode ? dataset->dataColumnsGroupCount() : 1;
     total_group_columns = dataset->data_columns_count / total_groups;
-    for (int i = 1; i <= total_groups; i++){
-        std::cout << "decode group " << i << "/" << total_groups << std::endl;
-        group_index = i;
-        decodeMappingTable();
-        decodeNoDataColumns();
-        decodeGAMPSColumns();
+    for (group_index = 1; group_index <= total_groups; group_index++){
+        decodeGroup();
     }
     transposeMatrix(data_rows_count, columns, total_columns);
 }
@@ -40,6 +41,15 @@ void DecoderGAMPS::decodeTimeDeltaColumn(){
     dataset->setColumn(column_index);
     std::vector<std::string> column = TimeDeltaDecoder::decode(this);
     columns.at(0) = column;
+}
+
+void DecoderGAMPS::decodeGroup(){
+#if COUT
+    std::cout << "decode group " << group_index << "/" << total_groups << std::endl;
+#endif
+    decodeMappingTable();
+    decodeNoDataColumns();
+    decodeGAMPSColumns();
 }
 
 void DecoderGAMPS::decodeMappingTable(){
@@ -69,7 +79,9 @@ void DecoderGAMPS::decodeGAMPSColumns(){
         if (!mapping_table->isBaseColumn(table_index)){ continue; }
 
         column_index = MappingTable::mapIndex(table_index, total_groups, group_index);
+    #if COUT
         std::cout << "decode base  signal i = " << column_index << std::endl;
+    #endif
         dataset->setColumn(column_index);
 
         std::vector<int> ratio_columns = mapping_table->ratioColumns(table_index);
@@ -88,7 +100,9 @@ void DecoderGAMPS::decodeGAMPSColumns(){
         for (int j = 0; j < ratio_columns.size(); j++){
             table_index = ratio_columns.at(j);
             column_index = MappingTable::mapIndex(table_index, total_groups, group_index);
+        #if COUT
             std::cout << "    decode ratio signal i = " << column_index << std::endl;
+        #endif
             dataset->setColumn(column_index);
             std::vector<std::string> ratio_column = decodeRatioColumn(base_column_double);
             columns.at(column_index) = ratio_column;
@@ -176,11 +190,12 @@ std::vector<double> DecoderGAMPS::decodeGAMPSColumn(){
     int unprocessed_rows = data_rows_count;
 
 #if MASK_MODE
+#if MASK_MODE == 3
+    mask = masks_vector.at(column_index - 1);
+#else
     mask = MaskDecoder::decode(this);
-#if CHECKS
-    assert(mask->total_no_data + mask->total_data == data_rows_count);
-#endif // END CHECKS
-#endif // END MASK_MODE
+#endif // MASK_MODE == 3
+#endif // MASK_MODE
 
     while (unprocessed_rows > 0) {
     #if MASK_MODE
