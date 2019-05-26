@@ -52,31 +52,40 @@ class SinglePlot(object):
             print self.windows
             raise Exception("ERROR: plot 1")
 
-    def plot(self, plt, first_graph, ylim):
-        # add ticks with the window values
+    def plot(self, ax, first_graph, ylim):
         x = list(xrange(len(self.current_plot)))
-        plt.xticks(x, [0] + self.windows)
 
+        # plot
         color = ['lightgreen' if item > 0 else 'red' for item in self.current_plot]
-        plt.scatter(x=x, y=self.current_plot, c=color)
-        plt.grid(True)
+        ax.scatter(x=x, y=self.current_plot, c=color)
+        ax.grid(True)
 
-        plt.title(self.algorithm)
-        plt.xlabel('Window Size')
+        # add ticks with the window values
+        xticklabels = ['']
+        for index, value in enumerate(self.windows):
+            power = index + 2
+            label = r"$2^{}$".format(power)
+            xticklabels.append(label)
+        ax.set_xticklabels(xticklabels)
+
+        ax.title.set_text(self.algorithm)
+        ax.set_xlabel('Window Size')
         if first_graph:
-            plt.ylabel('Relative Difference')
+            ax.set_ylabel('Relative Difference')
         else:
-            pass
+            ax.set_yticklabels([])
 
-        plt.xlim(left=-1, right=7)
-        plt.ylim(top=ylim, bottom=-ylim)
+        ax.set_xlim(left=-1, right=7)
+        ax.set_ylim(top=ylim, bottom=-ylim)
 
         # horizontal line on 0
-        plt.axhline(y=0, color='blue', linestyle='-')
+        ax.axhline(y=0, color='blue', linestyle='-')
 
 
 class Plotter(object):
-    def __init__(self):
+    def __init__(self, filename, column_index):
+        self.filename = filename
+        self.column_index = column_index
         self.plots = []
         self.single_plot = None
 
@@ -101,42 +110,29 @@ class Plotter(object):
     def plot(self):
         y_lim = self.y_lim()
         subplot_begin = 100 + 10*len(self.plots)
-        for index, single_plot in enumerate(self.plots):
-            subplot_index = subplot_begin+index+1
-            plt.subplot(subplot_index)
-            single_plot.plot(plt, index == 0, y_lim)
 
+        white_background = (1, 1, 1)
+        fig = plt.figure(figsize=(15, 8), facecolor=white_background)
+        fig.suptitle(self.filename + ' - col = ' + str(self.column_index), fontsize=20)
+        for index, single_plot in enumerate(self.plots):
+            ax = fig.add_subplot(subplot_begin+1+index)
+            single_plot.plot(ax, index == 0, y_lim)
+        fig.subplots_adjust(wspace=0.05)
+        # fig.set_tight_layout(True)
+        fig.subplots_adjust(left=0.06, right=0.98, top=0.88)
         plt.show()
 
 
-plotter = Plotter()
-plotter.begin_algorithm('PCA1')
-plotter.add_values(4, 779670, 759969)
-plotter.add_values(8, 988620, 838923)
-plotter.add_values(16, 1053306, 1054779)
-plotter.add_values(32, 1054368, 1053153)
-plotter.add_values(64, 1052724, 1051509)
-plotter.add_values(128, 1051908, 1050693)
-plotter.add_values(256, 1051500, 1050285)
-plotter.end_algorithm()
-plotter.begin_algorithm('PCA2')
-plotter.add_values(4, 779670, 759969)
-plotter.add_values(8, 988620, 838923)
-plotter.add_values(16, 1053306, 1054779)
-plotter.add_values(32, 1054368, 1053153)
-plotter.add_values(64, 1052724, 1051509)
-plotter.add_values(128, 1051908, 1050693)
-plotter.add_values(256, 1051500, 1050285)
-plotter.end_algorithm()
-plotter.begin_algorithm('PCA3')
-plotter.add_values(4, 779670, 759969)
-plotter.add_values(8, 988620, 838923)
-plotter.add_values(16, 1053306, 1054779)
-plotter.add_values(32, 1054368, 1053153)
-plotter.add_values(64, 1052724, 1051509)
-plotter.add_values(128, 1051908, 1050693)
-plotter.add_values(256, 1051500, 1050285)
-plotter.end_algorithm()
-
-
+plotter = Plotter('filename.csv', 1)
+for x in xrange(6):
+    coder = 'Coder ' + str(x + 1)
+    plotter.begin_algorithm(coder)
+    plotter.add_values(4, 779670, 759969)
+    plotter.add_values(8, 988620, 838923)
+    plotter.add_values(16, 1053306, 1054779)
+    plotter.add_values(32, 1054368, 1053153)
+    plotter.add_values(64, 1052724, 1051509)
+    plotter.add_values(128, 1051908, 1050693)
+    plotter.add_values(256, 1051500, 1050285)
+    plotter.end_algorithm()
 plotter.plot()
