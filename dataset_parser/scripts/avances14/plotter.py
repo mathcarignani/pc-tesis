@@ -6,6 +6,8 @@ import matplotlib.pyplot as plt
 
 
 class SinglePlot(object):
+    WINDOWS = [4, 8, 16, 32, 64, 128, 256]
+
     def __init__(self, algorithm):
         self.algorithm = algorithm
         self.values0 = []
@@ -48,25 +50,29 @@ class SinglePlot(object):
         return result
 
     def check_windows(self):
-        if self.windows != [4, 8, 16, 32, 64, 128, 256]:
+        if self.windows != self.WINDOWS:
             print self.windows
             raise Exception("ERROR: plot 1")
 
+    @classmethod
+    def xticklabels(cls):
+        xticklabels = ['']
+        for index, value in enumerate(cls.WINDOWS):
+            power = index + 2
+            label = r"$2^{}$".format(power)  # 2^power
+            xticklabels.append(label)
+        return xticklabels
+
     def plot(self, ax, first_graph, ylim):
-        x = list(xrange(len(self.current_plot)))
+
 
         # plot
         color = ['lightgreen' if item > 0 else 'red' for item in self.current_plot]
-        ax.scatter(x=x, y=self.current_plot, c=color)
+        x_axis = list(xrange(len(self.current_plot)))
+        ax.scatter(x=x_axis, y=self.current_plot, c=color)
         ax.grid(True)
 
-        # add ticks with the window values
-        xticklabels = ['']
-        for index, value in enumerate(self.windows):
-            power = index + 2
-            label = r"$2^{}$".format(power)
-            xticklabels.append(label)
-        ax.set_xticklabels(xticklabels)
+        ax.set_xticklabels(self.xticklabels())
 
         ax.title.set_text(self.algorithm)
         ax.set_xlabel('Window Size')
