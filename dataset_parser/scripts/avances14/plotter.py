@@ -18,29 +18,48 @@ class Plotter(object):
 
     def plot(self):
         white_background = (1, 1, 1)
-        figsize = (15, 30)
+        figsize = (20, 30)
         fig = plt.figure(figsize=figsize, facecolor=white_background)
         fig.suptitle(self.filename + ' - col = ' + str(self.column_index), fontsize=20)
 
+        y_lim = self.__y_lim()
         total_vertical_plots = len(self.row_plots)
-        for vertical_index, horizontal_plot in enumerate(self.row_plots):
-            y_lim = horizontal_plot.y_lim()
-            total_horizontal_plots = len(horizontal_plot.plots)  # the same in each iteration
-            for horizontal_index, single_plot in enumerate(horizontal_plot.plots):
+        for vertical_index, row_plot in enumerate(self.row_plots):
+            first_row = (vertical_index == 0)
+            # y_lim = row_plot.y_lim_row()
+            # total_horizontal_plots the same in each iteration
+            total_horizontal_plots = len(row_plot.plots) + 1  # +1 because of the stats plot
+            for horizontal_index, single_plot in enumerate(row_plot.plots):
                 current_subplot = total_horizontal_plots*vertical_index + horizontal_index + 1
                 ax = fig.add_subplot(total_vertical_plots, total_horizontal_plots, current_subplot)
                 extra = {
-                    'first_row': vertical_index == 0,
+                    'first_row': first_row,
                     'last_row': vertical_index == total_vertical_plots - 1,
                     'first_column': horizontal_index == 0,
-                    'last_column': horizontal_index == total_horizontal_plots - 1
+                    'last_column': False
                 }
-                single_plot.plot(ax, y_lim, horizontal_plot.error_threshold, extra)
+                single_plot.plot(ax, y_lim, extra)
+
+            current_subplot = total_horizontal_plots*vertical_index + total_horizontal_plots
+            ax = fig.add_subplot(total_vertical_plots, total_horizontal_plots, current_subplot)
+            extra = {'first_row': first_row, 'last_column': True}
+            row_plot.plot_stats(ax, y_lim, extra)
 
         # fig.subplots_adjust(wspace=0.05)
         # # fig.set_tight_layout(True)
         # fig.subplots_adjust(left=0.06, right=0.95, top=0.88)
 
         fig.subplots_adjust(hspace=0.1)
-        # plt.savefig(self.filename)
+        # plt.savefig(self.__fig_name())
         plt.show()
+
+    def __y_lim(self):
+        max_y_lim = 0
+        for row_plot in self.row_plots:
+            y_lim_row = row_plot.y_lim_row()
+            if y_lim_row > max_y_lim:
+                max_y_lim = y_lim_row
+        return max_y_lim
+
+    def __fig_name(self):
+        return self.filename + "-" + str(self.column_index) + ".png"

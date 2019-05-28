@@ -2,6 +2,7 @@ import sys
 sys.path.append('.')
 
 from scripts.avances14.single_plot import SinglePlot
+from scripts.avances11.utils import average
 
 
 class RowPlot(object):
@@ -9,6 +10,7 @@ class RowPlot(object):
         self.plots = []
         self.single_plot = None
         self.error_threshold = error_threshold
+        self.plot_values = []
 
     def begin_algorithm(self, algorithm):
         self.single_plot = SinglePlot(algorithm)
@@ -17,10 +19,20 @@ class RowPlot(object):
         self.single_plot.check_windows()
         self.plots.append(self.single_plot)
 
-    def add_values(self, window, value0, value3):
-        self.single_plot.add_values(window, value0, value3)
+    def plot_stats(self, ax, ylim, extra):
+        values = {
+            'max': max(self.plot_values),
+            'avg': average(self.plot_values),
+            'min': min(self.plot_values)
+        }
+        SinglePlot.plot_stats(ax, ylim, self.error_threshold, values, extra)
 
-    def y_lim(self):
+    def add_values(self, window, value0, value3):
+        plot_value = SinglePlot.plot_value(value0, value3)
+        self.single_plot.add_values(window, value0, value3, plot_value)
+        self.plot_values.append(plot_value)
+
+    def y_lim_row(self):
         max_y_lim = 0
         for single_plot in self.plots:
             ylim = single_plot.ylim()
