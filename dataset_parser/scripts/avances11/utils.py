@@ -25,3 +25,7 @@ def relative_diff(big, small):
     val = (float(big) / float(small))  # * 100
     val = "%0.2f" % val  # + "%"
     return val
+
+
+def average(lst):
+    return sum(lst) / len(lst)
