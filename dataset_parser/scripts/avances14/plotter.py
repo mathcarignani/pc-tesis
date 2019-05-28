@@ -45,13 +45,13 @@ class Plotter(object):
             extra = {'first_row': first_row, 'last_column': True}
             row_plot.plot_stats(ax, y_lim, extra)
 
-        # fig.subplots_adjust(wspace=0.05)
-        # # fig.set_tight_layout(True)
-        # fig.subplots_adjust(left=0.06, right=0.95, top=0.88)
-
+        fig.set_tight_layout(True)
         fig.subplots_adjust(hspace=0.1)
+
         # plt.savefig(self.__fig_name())
-        plt.show()
+        # plt.show()
+
+        return fig, plt
 
     def __y_lim(self):
         max_y_lim = 0
@@ -62,4 +62,4 @@ class Plotter(object):
         return max_y_lim
 
     def __fig_name(self):
-        return self.filename + "-" + str(self.column_index) + ".png"
+        return self.filename + "-" + str(self.column_index) + ".pdf"

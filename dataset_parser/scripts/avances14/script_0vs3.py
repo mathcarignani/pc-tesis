@@ -1,9 +1,14 @@
 import sys
 sys.path.append('.')
 
+from matplotlib.backends.backend_pdf import PdfPages
+
 from scripts.avances14.row_plot import RowPlot
 from scripts.avances14.plotter import Plotter
 from file_utils.csv_utils.csv_reader import CSVReader
+from scripts.compress.compress_aux import DATASETS_ARRAY, CSV_PATH
+from scripts.utils import csv_files_filenames
+
 
 class Script(object):
     ALGORITHMS = ["CoderPCA", "CoderAPCA", "CoderCA", "CoderPWLH", "CoderPWLHInt", "CoderGAMPSLimit"]
@@ -24,7 +29,7 @@ class Script(object):
         self.__goto_file_start()
 
     def run(self):
-        print "Running with filename: " + self.filename
+        print "FILENAME = " + self.filename + " - COLUMN_INDEX = " + str(self.column_index)
         self.plotter = Plotter(self.filename, 1)
         for threshold in self.THRESHOLD_PERCENTAGES:
             self.row_plot = RowPlot(threshold)
@@ -41,7 +46,7 @@ class Script(object):
                 self.row_plot.end_algorithm()
                 self.__goto_file_start()
             self.plotter.add_row_plot(self.row_plot)
-        self.plotter.plot()
+        return self.plotter.plot()
 
     def __find_combination(self, filename, algorithm, threshold):
         self.__find_next_line(self.INDEX_FILENAME, filename, False)
@@ -86,27 +91,25 @@ class Script(object):
         self.line = None
         self.line_count = 0
 
-script = Script("vwc_1202.dat.csv", 1)
-script.run()
+
+def add_to_pdf(pdf, filename, column_index):
+    script = Script(filename, column_index)
+    fig, plt = script.run()
+    pdf.savefig(fig)
+    plt.close()
 
 
+def create_pdf(dataset_id, dataset_dictionary):
+    input_path = CSV_PATH + dataset_dictionary['folder']
+    dataset_name = dataset_dictionary['name']
+    cols = dataset_dictionary['cols']
+    with PdfPages(str(dataset_id) + "-" + dataset_name + ".pdf") as pdf:
+        for id1, input_filename in enumerate(csv_files_filenames(input_path)):
+            if dataset_name in ["NOAA-SST", "NOAA-ADCP"] and id1 >= 3:
+                continue
+            for col_index in range(cols):
+                add_to_pdf(pdf, input_filename, col_index + 1)
 
 
-
-# plotter = Plotter('filename.png', 1)
-# for y in xrange(8):
-#     r_plot = RowPlot(y + 1)
-#     for x in xrange(6):
-#         c = 'Coder ' + str(x + 1)
-#         r_plot.begin_algorithm(c)
-#         r_plot.add_values(4, 779670, 759969)
-#         r_plot.add_values(8, 988620, 838923)
-#         r_plot.add_values(16, 1053306, 1054779)
-#         r_plot.add_values(32, 1054368, 1053153)
-#         r_plot.add_values(64, 1052724, 1051509)
-#         r_plot.add_values(128, 1051908, 1050693)
-#         r_plot.add_values(256, 1051500, 1050285)
-#         r_plot.end_algorithm()
-#     plotter.add_row_plot(r_plot)
-#
-# plotter.plot()
+for ds_id, ds_dict in enumerate(DATASETS_ARRAY):
+    create_pdf(ds_id, ds_dict)
