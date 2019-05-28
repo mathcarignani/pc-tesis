@@ -9,29 +9,31 @@ class Script(object):
     ALGORITHMS = ["CoderPCA", "CoderAPCA", "CoderCA", "CoderPWLH", "CoderPWLHInt", "CoderGAMPSLimit"]
     THRESHOLD_PERCENTAGES = [0, 1, 3, 5, 10, 15, 20, 30]
     WINDOW_SIZES = [4, 8, 16, 32, 64, 128, 256]
+    INDEX_FILENAME = 1
+    INDEX_ALGORITHM = 3
+    INDEX_THRESHOLD = 4
+    INDEX_WINDOW = 6
 
-    def __init__(self, filename):
+    def __init__(self, filename, column_index):
         path = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-13/3-0vs3"
         self.input_file = CSVReader(path, "0vs3.csv")
         self.filename = filename
+        self.column_index = column_index
         self.plotter = None
         self.row_plot = None
         self.__goto_file_start()
 
     def run(self):
+        print "Running with filename: " + self.filename
         self.plotter = Plotter(self.filename, 1)
         for threshold in self.THRESHOLD_PERCENTAGES:
-            print "threshold = " + str(threshold)
             self.row_plot = RowPlot(threshold)
 
             for algorithm in self.ALGORITHMS:
-                print "  algorithm = " + algorithm
-
                 self.row_plot.begin_algorithm(algorithm)
                 self.__find_combination(self.filename, algorithm, threshold)
 
                 for window_size in self.WINDOW_SIZES:
-                    print "    window_size = " + str(window_size)
                     self.__find_next_line(6, window_size, True)
                     window, value0, value3 = self.__parse_line_values()
                     self.row_plot.add_values(window, value0, value3)
@@ -42,9 +44,9 @@ class Script(object):
         self.plotter.plot()
 
     def __find_combination(self, filename, algorithm, threshold):
-        self.__find_next_line(1, filename, False)
-        self.__find_next_line(3, algorithm, False)
-        self.__find_next_line(4, threshold, True)
+        self.__find_next_line(self.INDEX_FILENAME, filename, False)
+        self.__find_next_line(self.INDEX_ALGORITHM, algorithm, False)
+        self.__find_next_line(self.INDEX_THRESHOLD, threshold, True)
 
     def __matching_line(self, index, value, is_integer):
         value_in_index = self.line[index]
@@ -58,8 +60,6 @@ class Script(object):
         self.line_count += 1
 
     def __find_next_line(self, index, value, is_integer):
-        print (index, value, is_integer)
-
         if self.line_count > 0 and self.__matching_line(index, value, is_integer):
             return True
 
@@ -67,15 +67,13 @@ class Script(object):
             self.__read_line()
             if self.__matching_line(index, value, is_integer):
                 return True
-        print "__find_next_line"
-        print (index, value, is_integer)
         raise Exception("ERROR: __find_next_line")
 
     def __parse_line_values(self):
-        window = int(self.line[6])
-        first_index = 7
-        value0 = self.__get_int(self.line[first_index])
-        value3 = self.__get_int(self.line[first_index + 7])
+        window = int(self.line[self.INDEX_WINDOW])
+        value0_index = self.INDEX_WINDOW + self.column_index
+        value0 = self.__get_int(self.line[value0_index])
+        value3 = self.__get_int(self.line[value0_index + 7])
         return window, value0, value3
 
     @classmethod
@@ -88,7 +86,7 @@ class Script(object):
         self.line = None
         self.line_count = 0
 
-script = Script("vwc_1202.dat.csv")
+script = Script("vwc_1202.dat.csv", 1)
 script.run()
 
 
