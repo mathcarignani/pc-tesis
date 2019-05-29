@@ -30,7 +30,7 @@ class Script(object):
 
     def run(self):
         print "FILENAME = " + self.filename + " - COLUMN_INDEX = " + str(self.column_index)
-        self.plotter = Plotter(self.filename, 1)
+        self.plotter = Plotter(self.filename, self.column_index)
         for threshold in self.THRESHOLD_PERCENTAGES:
             self.row_plot = RowPlot(threshold)
 
@@ -95,6 +95,7 @@ class Script(object):
 def add_to_pdf(pdf, filename, column_index):
     script = Script(filename, column_index)
     fig, plt = script.run()
+    # plt.show(); exit(0)  # uncomment to generate a single graph
     pdf.savefig(fig)
     plt.close()
 
@@ -103,7 +104,7 @@ def create_pdf(dataset_id, dataset_dictionary):
     input_path = CSV_PATH + dataset_dictionary['folder']
     dataset_name = dataset_dictionary['name']
     cols = dataset_dictionary['cols']
-    with PdfPages(str(dataset_id) + "-" + dataset_name + ".pdf") as pdf:
+    with PdfPages("scripts/avances14/graphs/" + str(dataset_id) + "-" + dataset_name + ".pdf") as pdf:
         for id1, input_filename in enumerate(csv_files_filenames(input_path)):
             if dataset_name in ["NOAA-SST", "NOAA-ADCP"] and id1 >= 3:
                 continue
@@ -112,4 +113,4 @@ def create_pdf(dataset_id, dataset_dictionary):
 
 
 for ds_id, ds_dict in enumerate(DATASETS_ARRAY):
-    create_pdf(ds_id, ds_dict)
+    create_pdf(ds_id + 1, ds_dict)
