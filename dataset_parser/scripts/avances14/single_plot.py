@@ -115,12 +115,16 @@ class SinglePlot(object):
 
     @classmethod
     def plot_value(cls, value0, value3):
-        if value0 == value3:
-            return 0
-        elif value0 > value3:  # map to positive
-            return float(value0) / float(value3) - 1
-        else:  # value3 > value0  # map to negative
-            return -float(value3) / float(value0) + 1
+        dividend = value0 - value3
+        value = float(dividend) / float(value0) if dividend != 0 else 0
+        return value
+    # def plot_value(cls, value0, value3):
+    #     if value0 == value3:
+    #         return 0
+    #     elif value0 > value3:  # map to positive
+    #         return float(value0) / float(value3) - 1
+    #     else:  # value3 > value0  # map to negative
+    #         return -float(value3) / float(value0) + 1
 
     def __check_window(self, window):
         if window != self.expected_window:
