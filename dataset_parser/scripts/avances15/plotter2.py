@@ -1,6 +1,7 @@
 import sys
 sys.path.append('.')
 
+import numpy as np
 import matplotlib.pyplot as plt
 from scripts.avances14.constants import Constants
 from scripts.avances14.single_plot import SinglePlot
@@ -18,62 +19,41 @@ class Plotter2(object):
     def plot(self):
         fig = self.plotter.create_fig(20, 10)
 
-        # collect data
-        for algorithm_index, algorithm in enumerate(Constants.ALGORITHMS):
-            column = Column(algorithm)
-            for row_index, row_plot in enumerate(self.plotter.row_plots):  # threshold row
-                single_plot = row_plot.plots[algorithm_index]  # algorithm
-                best_values = single_plot.best_values()
-                column.add_values(best_values)
-            column.close()
-            self.matrix.add_column(column)
-
-        y_min_bits, y_max_bits = self.matrix.ylims_total_bits_plot()
-        y_min_rel, y_max_rel = self.matrix.ylims_relative_difference_plot()
+        self.collect_data()
         
         # plot
         total_rows, total_columns = self.matrix.total_rows_columns()
-        for j, column in enumerate(self.matrix.columns):
-            first_column = (j == 0)
-            last_column = (j == total_columns - 1)
+        total_columns += 1  # stats column
+        # print (total_rows, total_columns)
+        # plot data
+        for col_j, column in enumerate(self.matrix.columns):
+            first_column = (col_j == 0)
+            last_column = (col_j == total_columns - 1)
 
-            for i, row in enumerate(column.rows()):
-                first_row = (i == 0)
-                last_row = (i == total_rows - 1)
+            for row_i in range(total_rows):
+                first_row = (row_i == 0)
+                last_row = (row_i == total_rows - 1)
 
-                current_subplot = i*total_columns + j + 1
+                current_subplot = row_i*total_columns + col_j + 1
                 # print(total_rows, total_columns, current_subplot)
                 ax = fig.add_subplot(total_rows, total_columns, current_subplot)
-                extra = {'first_column': first_column, 'first_row': first_row, 'last_row': last_row}
-                if i == 0:
-                    row.plot(ax, y_min_rel, y_max_rel, extra)
-                elif i == 1:
-                    row.plot(ax, y_min_bits, y_max_bits, extra)
-                else:  # last_row
-                    row.plot(ax, extra)
+                extra = {
+                    'first_column': first_column, 'last_column': last_column,
+                    'first_row': first_row, 'last_row': last_row
+                }
+                # if last_column:
+                #     row.plot(ax)
+                #     continue
+                column.plot(row_i, ax, extra)
 
-        # total_vertical_plots = len(self.row_plots)
-        # for vertical_index, row_plot in enumerate(self.row_plots):
-        #     first_row = (vertical_index == 0)
-        #     last_row = (vertical_index == total_vertical_plots - 1)
-        #     # total_horizontal_plots the same in each iteration
-        #     total_horizontal_plots = len(row_plot.plots) + 1  # +1 because of the stats plot
-        #     for horizontal_index, single_plot in enumerate(row_plot.plots):
-        #         first_column = (horizontal_index == 0)
-        #         current_subplot = total_horizontal_plots*vertical_index + horizontal_index + 1
-        #         ax = fig.add_subplot(total_vertical_plots, total_horizontal_plots, current_subplot)
-        #         extra = {
-        #             'first_row': first_row,
-        #             'last_row': last_row,
-        #             'first_column': first_column,
-        #             'last_column': False
-        #         }
-        #         single_plot.plot(ax, y_lim, extra)
-        #
-        #     current_subplot = total_horizontal_plots*vertical_index + total_horizontal_plots
-        #     ax = fig.add_subplot(total_vertical_plots, total_horizontal_plots, current_subplot)
-        #     extra = {'first_row': first_row, 'last_column': True}
-        #     row_plot.plot_stats(ax, y_lim, extra)
+        # plot stats
+        current_subplot = 1*total_columns + total_columns  # second row
+        ax = fig.add_subplot(total_rows, total_columns, current_subplot)
+        self.matrix.relative_difference_stats.plot(ax)
+
+        current_subplot = 2*total_columns + total_columns  # third row
+        ax = fig.add_subplot(total_rows, total_columns, current_subplot)
+        self.matrix.windows_stats.plot(ax)
 
         # fig.set_tight_layout(True)
         # fig.subplots_adjust(hspace=0.1)
@@ -81,26 +61,51 @@ class Plotter2(object):
         # plt.show()
         return fig, plt
 
+    def collect_data(self):
+        # collect data
+        for algorithm_index, algorithm in enumerate(Constants.ALGORITHMS):
+            column = Column(algorithm)
+            for row_index, row_plot in enumerate(self.plotter.row_plots):  # threshold row
+                single_plot = row_plot.plots[algorithm_index]  # algorithm
+                best_values = single_plot.best_values()
+                column.add_values(best_values)
+                self.matrix.add_values(best_values)
+            column.close()
+            self.matrix.add_column(column)
+        self.matrix.close()
 
 class Matrix(object):
     def __init__(self):
         self.columns = []
+        self.relative_difference_stats = RelativeDifferenceStats()
+        self.windows_stats = WindowsStats()
 
     def total_rows_columns(self):
         return len(self.columns[0].rows()), len(self.columns)
+
+    def add_values(self, best_values):
+        self.relative_difference_stats.add_values(best_values['value0']['min'], best_values['value3']['min'])
+        self.windows_stats.add_values(best_values['value0']['window'], best_values['value3']['window'])
 
     def add_column(self, column):
         self.columns.append(column)
 
     def close(self):
-        assert(len(self.columns) == 3)
-        
-    def ylims_total_bits_plot(self):
+        assert(len(self.columns) == 6)
+        self.relative_difference_stats.close()
+        self.windows_stats.close()
+
+        y_min_bits, y_max_bits = self.__ylims_total_bits_plot()
+        y_min_rel, y_max_rel = self.__ylims_relative_difference_plot()
+        for column in self.columns:
+            column.add_mins_maxs(y_min_bits, y_max_bits, y_min_rel, y_max_rel)
+
+    def __ylims_total_bits_plot(self):
         plots = [column.total_bits_plot for column in self.columns]
         total_min, total_max = self.__min_max(plots)
         return TotalBitsPlot.ylims(total_min, total_max)
         
-    def ylims_relative_difference_plot(self):
+    def __ylims_relative_difference_plot(self):
         plots = [column.relative_difference_plot for column in self.columns]
         total_min, total_max = self.__min_max(plots)
         return RelativeDifferencePlot.ylims(total_min, total_max)
@@ -117,16 +122,19 @@ class Matrix(object):
                 total_max = current_max if current_max > total_max else total_max
         return total_min, total_max
 
-    
+
 class Column(object):
     def __init__(self, algorithm):
         self.total_bits_plot = TotalBitsPlot(algorithm)
         self.relative_difference_plot = RelativeDifferencePlot(algorithm)
         self.windows_plot = WindowsPlot(algorithm)
+        self.stats_table = None
+        self.y_min_bits, self.y_max_bits, self.y_min_rel, self.y_max_rel = [None] * 4
 
     def add_values(self, best_values):
-        self.total_bits_plot.add_values(best_values['value0']['min'], best_values['value3']['min'])
-        self.relative_difference_plot.add_value(best_values['value0']['min'], best_values['value3']['min'])
+        value0, value3 = best_values['value0']['min'], best_values['value3']['min']
+        self.total_bits_plot.add_values(value0, value3)
+        self.relative_difference_plot.add_value(value0, value3)
         self.windows_plot.add_values(best_values['value0']['window'], best_values['value3']['window'])
 
     def close(self):
@@ -134,8 +142,22 @@ class Column(object):
         self.relative_difference_plot.close()
         self.windows_plot.close()
 
+    def add_mins_maxs(self, y_min_bits, y_max_bits, y_min_rel, y_max_rel):
+        self.y_min_bits = y_min_bits
+        self.y_max_bits = y_max_bits
+        self.y_min_rel = y_min_rel
+        self.y_max_rel = y_max_rel
+
     def rows(self):
-        return [self.relative_difference_plot, self.total_bits_plot, self.windows_plot]
+        return [self.total_bits_plot, self.relative_difference_plot, self.windows_plot]
+
+    def plot(self, row_i, ax, extra):
+        if row_i == 0:
+            self.total_bits_plot.plot(ax, self.y_min_bits, self.y_max_bits, extra)
+        elif row_i == 1:
+            self.relative_difference_plot.plot(ax, self.y_min_rel, self.y_max_rel, extra)
+        else:
+            self.windows_plot.plot(ax, extra)
 
 
 class TotalBitsPlot(object):
@@ -289,6 +311,8 @@ class WindowsPlot(object):
         ax.set_axisbelow(True)
         ax.set_xticklabels([''] + Constants.THRESHOLDS)
 
+        if extra['last_row']:
+            ax.set_xlabel('Error Threshold (%)')
         if extra['first_column']:
             ax.set_ylabel('Window Size')
             ax.set_yticklabels([''] + Constants.WINDOWS)
@@ -299,3 +323,67 @@ class WindowsPlot(object):
     @classmethod
     def __position(cls, window):
         return Constants.WINDOWS.index(window)
+
+
+class RelativeDifferenceStats(object):
+    def __init__(self):
+        self.total_results = 0
+        self.best0_results = 0
+        self.best3_results = 0
+        self.same_results = 0
+
+    def add_values(self, value0, value3):
+        self.total_results += 1
+        if value0 == value3:
+            self.same_results += 1
+        elif value0 < value3:
+            self.best0_results += 1
+        else:  # value3 < value0
+            self.best3_results += 1
+
+    def close(self):
+        assert(self.total_results == self.best0_results + self.best3_results + self.same_results)
+        assert(self.total_results == 6 * 8)
+
+    def plot(self, ax):
+        col_labels = ['BEST', '#', '%']
+        row_labels = ['MM=3', 'SAME', 'MM=0']
+        results = [self.best0_results, self.same_results, self.best3_results]
+        colors = [Plotter2.VALUE0_COLOR, Plotter2.VALUE_SAME, Plotter2.VALUE3_COLOR]
+        self.plot_aux(ax, col_labels, zip(results, row_labels, colors))
+
+    def plot_aux(self, ax, col_labels, zipped_values):
+        table_values, table_colors = [], []
+        for total, label, color in zipped_values:
+            percentage = self.percentage(self.total_results, total)
+            table_values.append([label, total, percentage])
+            cell_color = Constants.COLOR_WHITE if total == 0 else color
+            table_colors.append([cell_color, Constants.COLOR_WHITE, Constants.COLOR_WHITE])
+
+        # Draw table
+        the_table = ax.table(cellText=table_values, colWidths=[0.12, 0.1, 0.12], cellColours=table_colors,
+                             colLabels=col_labels,
+                             loc='center right')
+        # the_table.auto_set_font_size(True)
+        the_table.set_fontsize(14)
+        the_table.scale(3, 2)
+
+        # Removing ticks and spines enables you to get the figure only with table
+        ax.tick_params(axis='x', which='both', bottom=False, top=False, labelbottom=False)
+        ax.tick_params(axis='y', which='both', right=False, left=False, labelleft=False)
+
+        for pos in ['right', 'top', 'bottom', 'left']:
+            ax.spines[pos].set_visible(False)
+
+    @classmethod
+    def percentage(cls, total, value):
+        return round((float(100) / float(total)) * value, 2)
+
+
+class WindowsStats(RelativeDifferenceStats):
+    def plot(self, ax):
+        col_labels = ['BIG', '#', '%']
+        row_labels = ['MM=3', 'SAME', 'MM=0']
+        results = [self.best3_results, self.same_results, self.best0_results]
+        colors = [Plotter2.VALUE0_COLOR, Plotter2.VALUE_SAME, Plotter2.VALUE3_COLOR]
+        self.plot_aux(ax, col_labels, zip(results, row_labels, colors))
