@@ -74,6 +74,7 @@ class Plotter2(object):
             self.matrix.add_column(column)
         self.matrix.close()
 
+
 class Matrix(object):
     def __init__(self):
         self.columns = []
@@ -121,6 +122,14 @@ class Matrix(object):
                 total_min = current_min if current_min < total_min else total_min
                 total_max = current_max if current_max > total_max else total_max
         return total_min, total_max
+
+    @classmethod
+    def sorted(cls, array):
+        return all(array[i] <= array[i+1] for i in xrange(len(array)-1))
+
+    @classmethod
+    def sorted_dec(cls, array):
+        return all(array[i] >= array[i+1] for i in xrange(len(array)-1))
 
 
 class Column(object):
@@ -173,6 +182,7 @@ class TotalBitsPlot(object):
     def close(self):
         assert(len(self.values0) == len(Constants.THRESHOLDS))
         assert(len(self.values3) == len(Constants.THRESHOLDS))
+        self.__check_sorted()
     
     def min_max(self):
         return [min([min(self.values0), min(self.values3)]), max([max(self.values0), max(self.values3)])]
@@ -199,6 +209,10 @@ class TotalBitsPlot(object):
         else:
             ax.set_yticklabels([])
         RelativeDifferencePlot.set_lim(ax, ymin, ymax)
+
+    def __check_sorted(self):
+        assert(Matrix.sorted_dec(self.values0))
+        assert(Matrix.sorted_dec(self.values3))
 
     @classmethod
     def format_x_ticks(cls, ax):
@@ -235,7 +249,8 @@ class RelativeDifferencePlot(object):
 
         # scatter plot
         x_axis = list(xrange(len(self.values)))
-        ax.scatter(x=x_axis, y=self.values, c=Plotter2.VALUE3_COLOR)
+        colors = [self.__color_code(item) for item in self.values]
+        ax.scatter(x=x_axis, y=self.values, c=colors)
         ax.grid(b=True, color=Constants.COLOR_SILVER)
         ax.set_axisbelow(True)
 
@@ -272,6 +287,15 @@ class RelativeDifferencePlot(object):
 
         return total_min, total_max
 
+    @classmethod
+    def __color_code(cls, value):
+        if value > 0:
+            return Plotter2.VALUE3_COLOR
+        elif value < 0:
+            return Plotter2.VALUE0_COLOR
+        else:  # value == 0
+            return Plotter2.VALUE_SAME
+
 
 class WindowsPlot(object):
     def __init__(self, algorithm):
@@ -287,6 +311,7 @@ class WindowsPlot(object):
         total_thresholds = len(Constants.THRESHOLDS)
         assert(len(self.windows0) == total_thresholds)
         assert(len(self.windows3) == total_thresholds)
+        self.__check_sorted()
 
     def plot(self, ax, extra):
         # print self.algorithm + " Windows"
@@ -320,6 +345,11 @@ class WindowsPlot(object):
             ax.set_yticklabels([])
         ax.set_ylim(top=len(Constants.WINDOWS), bottom=-1)
 
+    def __check_sorted(self):
+        if self.algorithm != "CoderPCA":
+            assert(Matrix.sorted(self.windows0))
+            assert(Matrix.sorted(self.windows3))
+
     @classmethod
     def __position(cls, window):
         return Constants.WINDOWS.index(window)
@@ -347,7 +377,7 @@ class RelativeDifferenceStats(object):
 
     def plot(self, ax):
         col_labels = ['BEST', '#', '%']
-        row_labels = ['MM=3', 'SAME', 'MM=0']
+        row_labels = ['MM=0', 'SAME', 'MM=3']
         results = [self.best0_results, self.same_results, self.best3_results]
         colors = [Plotter2.VALUE0_COLOR, Plotter2.VALUE_SAME, Plotter2.VALUE3_COLOR]
         self.plot_aux(ax, col_labels, zip(results, row_labels, colors))
@@ -383,7 +413,7 @@ class RelativeDifferenceStats(object):
 class WindowsStats(RelativeDifferenceStats):
     def plot(self, ax):
         col_labels = ['BIG', '#', '%']
-        row_labels = ['MM=3', 'SAME', 'MM=0']
+        row_labels = ['MM=0', 'SAME', 'MM=3']
         results = [self.best3_results, self.same_results, self.best0_results]
         colors = [Plotter2.VALUE0_COLOR, Plotter2.VALUE_SAME, Plotter2.VALUE3_COLOR]
         self.plot_aux(ax, col_labels, zip(results, row_labels, colors))
