@@ -2,17 +2,10 @@ import sys
 sys.path.append('.')
 
 from scripts.avances11.utils import average
+from scripts.avances14.constants import Constants
 
 
 class SinglePlot(object):
-    WINDOWS = [4, 8, 16, 32, 64, 128, 256]
-    COLOR_SILVER = 'silver'
-    COLOR_BLUE = 'blue'
-    COLOR_RED = 'red'
-    COLOR_WHITE = 'white'
-    COLOR_GREEN = 'limegreen'
-    COLOR_WHEAT = 'wheat'
-    COLOR_BLACK = 'black'
 
     def __init__(self, algorithm):
         self.algorithm = algorithm
@@ -29,8 +22,19 @@ class SinglePlot(object):
         self.values3.append(value3)
         self.current_plot.append(plot_value)
 
+    def best_values(self):
+        assert(len(self.values0) == len(self.values3))
+        assert(len(self.values0) == len(Constants.WINDOWS))
+        value0_min, value3_min = min(self.values0), min(self.values3),
+        value0_min_index, value3_min_index = self.values0.index(value0_min), self.values3.index(value3_min)
+        res = {
+            'value0': {'min': value0_min, 'window': Constants.WINDOWS[value0_min_index]},
+            'value3': {'min': value3_min, 'window': Constants.WINDOWS[value3_min_index]},
+        }
+        return res
+
     def check_windows(self):
-        if self.windows != self.WINDOWS:
+        if self.windows != Constants.WINDOWS:
             raise Exception("ERROR: check_windows")
 
     def ylim(self):
@@ -42,7 +46,7 @@ class SinglePlot(object):
         color = [self.__color_code(item) for item in self.current_plot]
         x_axis = list(xrange(len(self.current_plot)))
         ax.scatter(x=x_axis, y=self.current_plot, c=color)
-        ax.grid(b=True, color=self.COLOR_SILVER)
+        ax.grid(b=True, color=Constants.COLOR_SILVER)
 
         if extra['first_row']:
             # only write the algorithm name in the first row
@@ -62,15 +66,15 @@ class SinglePlot(object):
         self.__set_lim(ax, ylim)
 
         # horizontal lines
-        self.__plot_horizontal_line(ax, 0, self.COLOR_SILVER)
+        self.__plot_horizontal_line(ax, 0, Constants.COLOR_SILVER)
         avg = average(self.current_plot)
         self.__plot_horizontal_line(ax, avg, self.__color_code(avg))
 
-        self.stats_box(ax, max(self.current_plot), avg, min(self.current_plot), self.COLOR_WHITE)
+        self.stats_box(ax, max(self.current_plot), avg, min(self.current_plot), Constants.COLOR_WHITE)
 
     @classmethod
     def plot_stats(cls, ax, ylim, error_threshold, values, extra):
-        ax.grid(b=True, color=cls.COLOR_SILVER)
+        ax.grid(b=True, color=Constants.COLOR_SILVER)
 
         if extra['first_row']:
             # only write 'STATS' in the first row
@@ -86,16 +90,16 @@ class SinglePlot(object):
         cls.__set_lim(ax, ylim)
 
         # horizontal lines
-        cls.__plot_horizontal_line(ax, 0, cls.COLOR_SILVER)
-        cls.__plot_horizontal_line(ax, values['max'], cls.COLOR_BLUE)
+        cls.__plot_horizontal_line(ax, 0, Constants.COLOR_SILVER)
+        cls.__plot_horizontal_line(ax, values['max'], Constants.COLOR_BLUE)
         cls.__plot_horizontal_line(ax, values['avg'], cls.__color_code(values['avg']))
-        cls.__plot_horizontal_line(ax, values['min'], cls.COLOR_BLUE)
+        cls.__plot_horizontal_line(ax, values['min'], Constants.COLOR_BLUE)
 
-        cls.stats_box(ax, values['max'], values['avg'], values['min'], cls.COLOR_WHEAT)
+        cls.stats_box(ax, values['max'], values['avg'], values['min'], Constants.COLOR_WHEAT)
 
     @classmethod
     def __set_lim(cls, ax, ylim):
-        ax.set_xlim(left=-1, right=7)
+        ax.set_xlim(left=-1, right=7)  # 7 windows
         ax.set_ylim(top=ylim, bottom=-ylim)
 
     @classmethod
@@ -107,20 +111,24 @@ class SinglePlot(object):
     @classmethod
     def __color_code(cls, value):
         if value > 0:
-            return cls.COLOR_GREEN
+            return Constants.COLOR_GREEN
         elif value < 0:
-            return cls.COLOR_RED
+            return Constants.COLOR_RED
         else:  # value == 0
-            return cls.COLOR_BLACK
+            return Constants.COLOR_BLACK
 
     @classmethod
     def plot_value(cls, value0, value3):
-        if value0 == value3:
-            return 0
-        elif value0 > value3:  # map to positive
-            return float(value0) / float(value3) - 1
-        else:  # value3 > value0  # map to negative
-            return -float(value3) / float(value0) + 1
+        dividend = value0 - value3
+        value = float(dividend) / float(value0) if dividend != 0 else 0
+        return value
+    # def plot_value(cls, value0, value3):
+    #     if value0 == value3:
+    #         return 0
+    #     elif value0 > value3:  # map to positive
+    #         return float(value0) / float(value3) - 1
+    #     else:  # value3 > value0  # map to negative
+    #         return -float(value3) / float(value0) + 1
 
     def __check_window(self, window):
         if window != self.expected_window:
@@ -131,7 +139,7 @@ class SinglePlot(object):
     @classmethod
     def __xticklabels(cls):
         xticklabels = ['']
-        for index, value in enumerate(cls.WINDOWS):
+        for index, value in enumerate(Constants.WINDOWS):
             power = index + 2
             label = r"$2^{}$".format(power)  # 2^power
             xticklabels.append(label)
