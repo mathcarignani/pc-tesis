@@ -4,13 +4,16 @@ sys.path.append('.')
 import numpy as np
 import matplotlib.pyplot as plt
 from scripts.avances14.constants import Constants
+from scripts.avances14.plot_utils import PlotUtils
 from scripts.avances14.single_plot import SinglePlot
+from scripts.avances11.utils import calculate_percentage
 
 
 class Plotter2(object):
     VALUE0_COLOR = Constants.COLOR_RED
     VALUE3_COLOR = Constants.COLOR_LIGHT_BLUE
     VALUE_SAME = Constants.COLOR_YELLOW
+    Y_DIFF = 0.05
 
     def __init__(self, plotter):
         self.plotter = plotter
@@ -18,7 +21,6 @@ class Plotter2(object):
 
     def plot(self):
         fig = self.plotter.create_fig(20, 10)
-
         self.collect_data()
         
         # plot
@@ -97,15 +99,21 @@ class Matrix(object):
         self.windows_stats.close()
 
         y_min_bits, y_max_bits = self.__ylims_total_bits_plot()
+        y_min_ratio, y_max_ratio = self.__ylims_compression_ratio_plot()
         y_min_rel, y_max_rel = self.__ylims_relative_difference_plot()
         for column in self.columns:
-            column.add_mins_maxs(y_min_bits, y_max_bits, y_min_rel, y_max_rel)
+            column.add_mins_maxs(y_min_bits, y_max_bits, y_min_rel, y_max_rel, y_min_ratio, y_max_ratio)
 
     def __ylims_total_bits_plot(self):
         plots = [column.total_bits_plot for column in self.columns]
         total_min, total_max = self.__min_max(plots)
         return TotalBitsPlot.ylims(total_min, total_max)
-        
+
+    def __ylims_compression_ratio_plot(self):
+        plots = [column.compression_ratio_plot for column in self.columns]
+        total_min, total_max = self.__min_max(plots)
+        return CompressionRatioPlot.ylims(total_min, total_max)
+
     def __ylims_relative_difference_plot(self):
         plots = [column.relative_difference_plot for column in self.columns]
         total_min, total_max = self.__min_max(plots)
@@ -135,35 +143,43 @@ class Matrix(object):
 class Column(object):
     def __init__(self, algorithm):
         self.total_bits_plot = TotalBitsPlot(algorithm)
+        self.compression_ratio_plot = CompressionRatioPlot(algorithm)
         self.relative_difference_plot = RelativeDifferencePlot(algorithm)
         self.windows_plot = WindowsPlot(algorithm)
         self.stats_table = None
-        self.y_min_bits, self.y_max_bits, self.y_min_rel, self.y_max_rel = [None] * 4
+        self.y_min_bits, self.y_max_bits, self.y_min_rel, self.y_max_rel, self.y_min_ratio, self.y_max_ratio = [None] * 6
 
     def add_values(self, best_values):
         value0, value3 = best_values['value0']['min'], best_values['value3']['min']
-        self.total_bits_plot.add_values(value0, value3)
+        basic_value0 = best_values['basic_value0']
+        self.total_bits_plot.add_values(value0, value3, basic_value0)
+        self.compression_ratio_plot.add_values(value0, value3, basic_value0)
         self.relative_difference_plot.add_value(value0, value3)
         self.windows_plot.add_values(best_values['value0']['window'], best_values['value3']['window'])
 
     def close(self):
         self.total_bits_plot.close()
+        self.compression_ratio_plot.close()
         self.relative_difference_plot.close()
         self.windows_plot.close()
 
-    def add_mins_maxs(self, y_min_bits, y_max_bits, y_min_rel, y_max_rel):
+    def add_mins_maxs(self, y_min_bits, y_max_bits, y_min_rel, y_max_rel, y_min_ratio, y_max_ratio):
         self.y_min_bits = y_min_bits
         self.y_max_bits = y_max_bits
         self.y_min_rel = y_min_rel
         self.y_max_rel = y_max_rel
+        self.y_min_ratio = y_min_ratio
+        self.y_max_ratio = y_max_ratio
 
     def rows(self):
-        return [self.total_bits_plot, self.relative_difference_plot, self.windows_plot]
+        return [self.total_bits_plot, self.compression_ratio_plot, self.relative_difference_plot, self.windows_plot]
 
     def plot(self, row_i, ax, extra):
         if row_i == 0:
             self.total_bits_plot.plot(ax, self.y_min_bits, self.y_max_bits, extra)
         elif row_i == 1:
+            self.compression_ratio_plot.plot(ax, self.y_min_ratio, self.y_max_ratio, extra)
+        elif row_i == 2:
             self.relative_difference_plot.plot(ax, self.y_min_rel, self.y_max_rel, extra)
         else:
             self.windows_plot.plot(ax, extra)
@@ -174,30 +190,39 @@ class TotalBitsPlot(object):
         self.algorithm = algorithm
         self.values0 = []
         self.values3 = []
-    
-    def add_values(self, value0, value3):
+        self.basic_value0 = None
+
+    def add_values(self, value0, value3, basic_value0):
+        self.basic_value0 = basic_value0 if self.basic_value0 is None else self.basic_value0
+        assert(self.basic_value0 == basic_value0)  # check that basic_value0 never changes
+
         self.values0.append(value0)
         self.values3.append(value3)
-    
+
     def close(self):
         assert(len(self.values0) == len(Constants.THRESHOLDS))
         assert(len(self.values3) == len(Constants.THRESHOLDS))
         self.__check_sorted()
-    
+
     def min_max(self):
         return [min([min(self.values0), min(self.values3)]), max([max(self.values0), max(self.values3)])]
 
     def plot(self, ax, ymin, ymax, extra):
-        # print self.algorithm + " Total Bits"
-        # print "self.values0 = " + str(self.values0)
-        # print "self.values3 = " + str(self.values3)
+        print self.algorithm + " Total Bits"
+        print "self.values0 = " + str(self.values0)
+        print "self.values3 = " + str(self.values3)
 
         # scatter plot
         x_axis = list(xrange(len(self.values0)))
-        ax.scatter(x=x_axis, y=self.values0, c=Plotter2.VALUE0_COLOR)
-        ax.scatter(x=x_axis, y=self.values3, c=Plotter2.VALUE3_COLOR)
+        ax.scatter(x=x_axis, y=self.values0, c=Plotter2.VALUE0_COLOR, zorder=self.values0)
+        ax.scatter(x=x_axis, y=self.values3, c=Plotter2.VALUE3_COLOR, zorder=self.values3)
         ax.grid(b=True, color=Constants.COLOR_SILVER)
         ax.set_axisbelow(True)
+
+        if ymax >= self.basic_value0:
+            PlotUtils.horizontal_line(ax, self.basic_value0, Constants.COLOR_SILVER)
+
+        RelativeDifferencePlot.set_lim(ax, ymin, ymax)
 
         if extra['first_row']:
             ax.title.set_text(self.algorithm)
@@ -208,7 +233,7 @@ class TotalBitsPlot(object):
             self.format_x_ticks(ax)
         else:
             ax.set_yticklabels([])
-        RelativeDifferencePlot.set_lim(ax, ymin, ymax)
+        PlotUtils.hide_ticks(ax)
 
     def __check_sorted(self):
         assert(Matrix.sorted_dec(self.values0))
@@ -225,7 +250,79 @@ class TotalBitsPlot(object):
         assert(total_max > 0)
 
         diff = total_max - total_min
-        return total_min - diff * 0.1, total_max + diff * 0.1
+        total_min = 0 if total_min > 0 else total_min - diff * Plotter2.Y_DIFF
+        return total_min - diff * Plotter2.Y_DIFF, total_max + diff * Plotter2.Y_DIFF
+
+
+class CompressionRatioPlot(object):
+    def __init__(self, algorithm):
+        self.algorithm = algorithm
+        self.values0 = []
+        self.values3 = []
+        self.basic_value0 = None
+
+    def add_values(self, value0, value3, basic_value0):
+        self.basic_value0 = basic_value0 if self.basic_value0 is None else self.basic_value0
+        assert(self.basic_value0 == basic_value0)  # check that basic_value0 never changes
+
+        value0 = calculate_percentage(basic_value0, value0, 5)
+        value3 = calculate_percentage(basic_value0, value3, 5)
+        self.values0.append(value0)
+        self.values3.append(value3)
+
+    def close(self):
+        assert(len(self.values0) == len(Constants.THRESHOLDS))
+        assert(len(self.values3) == len(Constants.THRESHOLDS))
+        self.__check_sorted()
+
+    def min_max(self):
+        return [min([min(self.values0), min(self.values3)]), max([max(self.values0), max(self.values3)])]
+
+    def plot(self, ax, ymin, ymax, extra):
+        print self.algorithm + " Compression Ratio"
+        print "self.values0 = " + str(self.values0)
+        print "self.values3 = " + str(self.values3)
+
+        # scatter plot
+        x_axis = list(xrange(len(self.values0)))
+        ax.scatter(x=x_axis, y=self.values0, c=Plotter2.VALUE0_COLOR, zorder=self.values0)
+        ax.scatter(x=x_axis, y=self.values3, c=Plotter2.VALUE3_COLOR, zorder=self.values3)
+        ax.grid(b=True, color=Constants.COLOR_SILVER)
+        ax.set_axisbelow(True)
+
+        if ymax >= 100:
+            PlotUtils.horizontal_line(ax, 100, Constants.COLOR_SILVER)
+
+        RelativeDifferencePlot.set_lim(ax, ymin, ymax)
+
+        if extra['first_row']:
+            ax.title.set_text(self.algorithm)
+        if not extra['last_row']:
+            ax.set_xticklabels([])
+        if extra['first_column']:
+            ax.set_ylabel('Compression Ratio (%)')
+            self.format_x_ticks(ax)
+        else:
+            ax.set_yticklabels([])
+        PlotUtils.hide_ticks(ax)
+
+    def __check_sorted(self):
+        assert(Matrix.sorted_dec(self.values0))
+        assert(Matrix.sorted_dec(self.values3))
+
+    @classmethod
+    def format_x_ticks(cls, ax):
+        ylabels = [format(label, ',.0f') for label in ax.get_yticks()]
+        ax.set_yticklabels(ylabels)
+
+    @classmethod
+    def ylims(cls, total_min, total_max):
+        assert(total_min > 0)
+        assert(total_max > 0)
+
+        diff = total_max - total_min
+        total_min = 0 if total_min > 0 else total_min - diff * Plotter2.Y_DIFF
+        return total_min, total_max + diff * Plotter2.Y_DIFF
 
 
 class RelativeDifferencePlot(object):
@@ -234,7 +331,7 @@ class RelativeDifferencePlot(object):
         self.values = []
 
     def add_value(self, value0, value3):
-        plot_value = SinglePlot.plot_value(value0, value3)
+        plot_value = 100 * SinglePlot.plot_value(value0, value3)
         self.values.append(plot_value)
 
     def close(self):
@@ -244,8 +341,8 @@ class RelativeDifferencePlot(object):
         return [min(self.values), max(self.values)]
 
     def plot(self, ax, ymin, ymax, extra):
-        # print self.algorithm + " Relative Difference"
-        # print "self.values = " + str(self.values)
+        print self.algorithm + " Relative Difference"
+        print "self.values = " + str(self.values)
 
         # scatter plot
         x_axis = list(xrange(len(self.values)))
@@ -254,15 +351,18 @@ class RelativeDifferencePlot(object):
         ax.grid(b=True, color=Constants.COLOR_SILVER)
         ax.set_axisbelow(True)
 
+        self.set_lim(ax, ymin, ymax)
+
         if extra['first_row']:
             ax.title.set_text(self.algorithm)
         if not extra['last_row']:
             ax.set_xticklabels([])
         if extra['first_column']:
-            ax.set_ylabel('Relative Difference')
+            ax.set_ylabel('Relative Difference (%)')
         else:
             ax.set_yticklabels([])
-        self.set_lim(ax, ymin, ymax)
+        PlotUtils.hide_ticks(ax)
+
 
     @classmethod
     def set_lim(cls, ax, ymin, ymax):
@@ -272,18 +372,18 @@ class RelativeDifferencePlot(object):
     @classmethod
     def ylims(cls, total_min, total_max):
         if total_max > 0:
-            total_max *= 1.1
+            total_max *= 1 + Plotter2.Y_DIFF
         elif total_max == 0:
-            total_max = 0.1
+            total_max = Plotter2.Y_DIFF
         else:  # total_max < 0
-            total_max *= 0.9
+            total_max *= 1 - Plotter2.Y_DIFF
 
         if total_min > 0:
-            total_min -= (total_max - total_min) * 0.1
+            total_min -= (total_max - total_min) * Plotter2.Y_DIFF
         elif total_min == 0:
-            total_min = - 0.1
+            total_min = - Plotter2.Y_DIFF
         else:  # total_min < 0
-            total_min *= 1.1
+            total_min *= 1 + Plotter2.Y_DIFF
 
         return total_min, total_max
 
@@ -336,6 +436,8 @@ class WindowsPlot(object):
         ax.set_axisbelow(True)
         ax.set_xticklabels([''] + Constants.THRESHOLDS)
 
+        ax.set_ylim(top=len(Constants.WINDOWS), bottom=-1)
+
         if extra['last_row']:
             ax.set_xlabel('Error Threshold (%)')
         if extra['first_column']:
@@ -343,7 +445,7 @@ class WindowsPlot(object):
             ax.set_yticklabels([''] + Constants.WINDOWS)
         else:
             ax.set_yticklabels([])
-        ax.set_ylim(top=len(Constants.WINDOWS), bottom=-1)
+        PlotUtils.hide_ticks(ax)
 
     def __check_sorted(self):
         if self.algorithm != "CoderPCA":

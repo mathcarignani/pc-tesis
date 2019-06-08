@@ -27,9 +27,9 @@ class RowPlot(object):
         }
         SinglePlot.plot_stats(ax, ylim, self.error_threshold, values, extra)
 
-    def add_values(self, window, value0, value3):
+    def add_values(self, window, value0, value3, basic_value0):
         plot_value = SinglePlot.plot_value(value0, value3)
-        self.single_plot.add_values(window, value0, value3, plot_value)
+        self.single_plot.add_values(window, value0, value3, plot_value, basic_value0)
         self.plot_values.append(plot_value)
 
     def y_lim_row(self):

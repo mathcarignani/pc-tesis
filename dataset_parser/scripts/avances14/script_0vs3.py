@@ -30,12 +30,12 @@ class Script(object):
 
             for algorithm in Constants.ALGORITHMS:
                 self.row_plot.begin_algorithm(algorithm)
-                self.__find_combination(self.filename, algorithm, threshold)
+                basic_value0 = self.__find_combination(self.filename, algorithm, threshold)
 
                 for window_size in Constants.WINDOWS:
-                    self.__find_next_line(6, window_size, True)
+                    self.__find_next_line(Constants.INDEX_WINDOW, window_size, True)
                     window, value0, value3 = self.__parse_line_values()
-                    self.row_plot.add_values(window, value0, value3)
+                    self.row_plot.add_values(window, value0, value3, basic_value0)
 
                 self.row_plot.end_algorithm()
                 self.__goto_file_start()
@@ -50,8 +50,11 @@ class Script(object):
 
     def __find_combination(self, filename, algorithm, threshold):
         self.__find_next_line(Constants.INDEX_FILENAME, filename, False)
+        basic_value0_index = self.__get_value0_index()
+        basic_value0 = self.__get_int(self.line[basic_value0_index])
         self.__find_next_line(Constants.INDEX_ALGORITHM, algorithm, False)
         self.__find_next_line(Constants.INDEX_THRESHOLD, threshold, True)
+        return basic_value0
 
     def __matching_line(self, index, value, is_integer):
         value_in_index = self.line[index]
@@ -76,10 +79,13 @@ class Script(object):
 
     def __parse_line_values(self):
         window = int(self.line[Constants.INDEX_WINDOW])
-        value0_index = Constants.INDEX_WINDOW + self.column_index
+        value0_index = self.__get_value0_index()
         value0 = self.__get_int(self.line[value0_index])
-        value3 = self.__get_int(self.line[value0_index + 7])
+        value3 = self.__get_int(self.line[value0_index + Constants.MAX_COLUMN_TYPES])
         return window, value0, value3
+
+    def __get_value0_index(self):
+        return Constants.INDEX_WINDOW + self.column_index
 
     @classmethod
     def __get_int(cls, string):
@@ -109,6 +115,7 @@ def create_pdf(dataset_id, dataset_dictionary):
     cols = dataset_dictionary['cols']
     with PdfPages("scripts/avances14/graphs/" + str(dataset_id) + "-" + dataset_name + ".pdf") as pdf:
         for id1, input_filename in enumerate(csv_files_filenames(input_path)):
+            # TODO: move the following if to a method and reuse
             if dataset_name in ["NOAA-SST", "NOAA-ADCP"] and id1 >= 3:
                 continue
             for col_index in range(cols):

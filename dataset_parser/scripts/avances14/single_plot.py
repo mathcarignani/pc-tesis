@@ -3,6 +3,7 @@ sys.path.append('.')
 
 from scripts.avances11.utils import average
 from scripts.avances14.constants import Constants
+from scripts.avances14.plot_utils import PlotUtils
 
 
 class SinglePlot(object):
@@ -11,25 +12,30 @@ class SinglePlot(object):
         self.algorithm = algorithm
         self.values0 = []
         self.values3 = []
+        self.basic_values0 = []
         self.current_plot = []
 
         self.windows = []
         self.expected_window = 4
 
-    def add_values(self, window, value0, value3, plot_value):
+    def add_values(self, window, value0, value3, plot_value, basic_value0):
         self.__check_window(window)
         self.values0.append(value0)
         self.values3.append(value3)
+        self.basic_values0.append(basic_value0)
         self.current_plot.append(plot_value)
 
     def best_values(self):
-        assert(len(self.values0) == len(self.values3))
-        assert(len(self.values0) == len(Constants.WINDOWS))
+        assert(len(Constants.WINDOWS) == len(self.values0))
+        assert(len(Constants.WINDOWS) == len(self.values3))
+        assert(len(Constants.WINDOWS) == len(self.basic_values0))
+        assert(len(set(self.basic_values0)) == 1)  # check that all the values in the list match
         value0_min, value3_min = min(self.values0), min(self.values3),
         value0_min_index, value3_min_index = self.values0.index(value0_min), self.values3.index(value3_min)
         res = {
             'value0': {'min': value0_min, 'window': Constants.WINDOWS[value0_min_index]},
             'value3': {'min': value3_min, 'window': Constants.WINDOWS[value3_min_index]},
+            'basic_value0': self.basic_values0[0]
         }
         return res
 
@@ -66,9 +72,9 @@ class SinglePlot(object):
         self.__set_lim(ax, ylim)
 
         # horizontal lines
-        self.__plot_horizontal_line(ax, 0, Constants.COLOR_SILVER)
+        PlotUtils.horizontal_line(ax, 0, Constants.COLOR_SILVER)
         avg = average(self.current_plot)
-        self.__plot_horizontal_line(ax, avg, self.__color_code(avg))
+        PlotUtils.horizontal_line(ax, avg, self.__color_code(avg))
 
         self.stats_box(ax, max(self.current_plot), avg, min(self.current_plot), Constants.COLOR_WHITE)
 
@@ -90,10 +96,10 @@ class SinglePlot(object):
         cls.__set_lim(ax, ylim)
 
         # horizontal lines
-        cls.__plot_horizontal_line(ax, 0, Constants.COLOR_SILVER)
-        cls.__plot_horizontal_line(ax, values['max'], Constants.COLOR_BLUE)
-        cls.__plot_horizontal_line(ax, values['avg'], cls.__color_code(values['avg']))
-        cls.__plot_horizontal_line(ax, values['min'], Constants.COLOR_BLUE)
+        PlotUtils.horizontal_line(ax, 0, Constants.COLOR_SILVER)
+        PlotUtils.horizontal_line(ax, values['max'], Constants.COLOR_BLUE)
+        PlotUtils.horizontal_line(ax, values['avg'], cls.__color_code(values['avg']))
+        PlotUtils.horizontal_line(ax, values['min'], Constants.COLOR_BLUE)
 
         cls.stats_box(ax, values['max'], values['avg'], values['min'], Constants.COLOR_WHEAT)
 
@@ -145,6 +151,3 @@ class SinglePlot(object):
             xticklabels.append(label)
         return xticklabels
 
-    @classmethod
-    def __plot_horizontal_line(cls, ax, y, color):
-        ax.axhline(y=y, color=color, linestyle='-', zorder=0)
