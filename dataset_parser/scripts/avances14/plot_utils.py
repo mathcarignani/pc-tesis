@@ -21,3 +21,11 @@ class PlotUtils(object):
         figure = plt.figure(figsize=(figsize_h, figsize_v), facecolor=white_background)
         figure.suptitle(fig_title, fontsize=20)
         return figure
+
+    @classmethod
+    def sorted(cls, array):
+        return all(array[i] <= array[i+1] for i in xrange(len(array)-1))
+
+    @classmethod
+    def sorted_dec(cls, array):
+        return all(array[i] >= array[i+1] for i in xrange(len(array)-1))
