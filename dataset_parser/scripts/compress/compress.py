@@ -15,6 +15,7 @@ from scripts.compress.calculate_std import calculate_file_stats, calculate_stds_
 from scripts.compress.compress_aux import THRESHOLD_PERCENTAGES, CSV_PATH, DATASETS_ARRAY, CODERS_ARRAY
 from scripts.compress.compress_cpp import code_decode_cpp
 from scripts.compress.compress_args import CompressArgs
+from scripts.compress.compress_aux import skip_file
 
 
 def compress_decompress_compare(args):
@@ -110,14 +111,14 @@ def run_script_on_dataset(csv, datasets_path, dataset_dictionary, output_path):
     create_folder(output_dataset_path)
     dataset_name = dataset_dictionary['name']
 
-    for id1, input_filename in enumerate(csv_files_filenames(input_path)):
-        if dataset_name in ["NOAA-SST", "NOAA-ADCP"] and id1 >= 3:
+    for file_index, input_filename in enumerate(csv_files_filenames(input_path)):
+        if skip_file(dataset_name, file_index):
             return
-        row = [dataset_dictionary['name']] if id1 == 0 else [None]
-        run_script_on_file(dataset_name, csv, id1, row, logger, input_path, input_filename, output_dataset_path)
+        row = [dataset_dictionary['name']] if file_index == 0 else [None]
+        run_script_on_file(csv, file_index, row, logger, input_path, input_filename, output_dataset_path)
 
 
-def run_script_on_file(dataset_name, csv, id1, row, logger, input_path, input_filename, output_dataset_path):
+def run_script_on_file(csv, id1, row, logger, input_path, input_filename, output_dataset_path):
     base_values = None
     row_count = PrintUtils.separate(CSVUtils.csv_row_count(input_path, input_filename))
 

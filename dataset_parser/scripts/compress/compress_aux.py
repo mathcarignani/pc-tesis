@@ -8,6 +8,14 @@ WINDOW_SIZES = [4, 8, 16, 32, 64, 128, 256]
 CSV_PATH = datasets_csv_path()
 MASK_MODE = False
 
+
+#
+# Returns true iff the file muset be skiped
+#
+def skip_file(dataset_name, file_index):
+    return dataset_name in ["NOAA-SST", "NOAA-ADCP"] and file_index >= 3
+
+
 DATASETS_ARRAY = [
     {'name': 'IRKIS', 'folder': "[1]irkis", 'logger': "irkis.log", 'o_folder': "[1]irkis", 'cols': 1},
     {'name': 'NOAA-SST', 'folder': "[2]noaa-sst/months/2017", 'logger': "noaa-sst.log", 'o_folder': "[2]noaa-sst", 'cols': 1},

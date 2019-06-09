@@ -1,7 +1,7 @@
 import sys
 sys.path.append('.')
 
-import numpy as np
+# import numpy as np
 import matplotlib.pyplot as plt
 from scripts.avances14.constants import Constants
 from scripts.avances14.plot_utils import PlotUtils
@@ -26,7 +26,7 @@ class Plotter2(object):
         # plot
         total_rows, total_columns = self.matrix.total_rows_columns()
         total_columns += 1  # stats column
-        # print (total_rows, total_columns)
+
         # plot data
         for col_j, column in enumerate(self.matrix.columns):
             first_column = (col_j == 0)
@@ -43,9 +43,6 @@ class Plotter2(object):
                     'first_column': first_column, 'last_column': last_column,
                     'first_row': first_row, 'last_row': last_row
                 }
-                # if last_column:
-                #     row.plot(ax)
-                #     continue
                 column.plot(row_i, ax, extra)
 
         # plot stats
@@ -57,10 +54,6 @@ class Plotter2(object):
         ax = fig.add_subplot(total_rows, total_columns, current_subplot)
         self.matrix.windows_stats.plot(ax)
 
-        # fig.set_tight_layout(True)
-        # fig.subplots_adjust(hspace=0.1)
-        # plt.savefig(self.__fig_name())
-        # plt.show()
         return fig, plt
 
     def collect_data(self):
@@ -208,9 +201,7 @@ class TotalBitsPlot(object):
         return [min([min(self.values0), min(self.values3)]), max([max(self.values0), max(self.values3)])]
 
     def plot(self, ax, ymin, ymax, extra):
-        print self.algorithm + " Total Bits"
-        print "self.values0 = " + str(self.values0)
-        print "self.values3 = " + str(self.values3)
+        self.__print()
 
         # scatter plot
         x_axis = list(xrange(len(self.values0)))
@@ -235,6 +226,11 @@ class TotalBitsPlot(object):
             ax.set_yticklabels([])
         PlotUtils.hide_ticks(ax)
 
+    def __print(self):
+        print self.algorithm + " Total Bits"
+        print "self.values0 = " + str(self.values0)
+        print "self.values3 = " + str(self.values3)
+
     def __check_sorted(self):
         assert(Matrix.sorted_dec(self.values0))
         assert(Matrix.sorted_dec(self.values3))
@@ -251,7 +247,7 @@ class TotalBitsPlot(object):
 
         diff = total_max - total_min
         total_min = 0 if total_min > 0 else total_min - diff * Plotter2.Y_DIFF
-        return total_min - diff * Plotter2.Y_DIFF, total_max + diff * Plotter2.Y_DIFF
+        return total_min, total_max + diff * Plotter2.Y_DIFF
 
 
 class CompressionRatioPlot(object):
@@ -279,9 +275,7 @@ class CompressionRatioPlot(object):
         return [min([min(self.values0), min(self.values3)]), max([max(self.values0), max(self.values3)])]
 
     def plot(self, ax, ymin, ymax, extra):
-        print self.algorithm + " Compression Ratio"
-        print "self.values0 = " + str(self.values0)
-        print "self.values3 = " + str(self.values3)
+        self.__print()
 
         # scatter plot
         x_axis = list(xrange(len(self.values0)))
@@ -305,6 +299,11 @@ class CompressionRatioPlot(object):
         else:
             ax.set_yticklabels([])
         PlotUtils.hide_ticks(ax)
+
+    def __print(self):
+        print self.algorithm + " Compression Ratio"
+        print "self.values0 = " + str(self.values0)
+        print "self.values3 = " + str(self.values3)
 
     def __check_sorted(self):
         assert(Matrix.sorted_dec(self.values0))
@@ -341,8 +340,7 @@ class RelativeDifferencePlot(object):
         return [min(self.values), max(self.values)]
 
     def plot(self, ax, ymin, ymax, extra):
-        print self.algorithm + " Relative Difference"
-        print "self.values = " + str(self.values)
+        self.__print()
 
         # scatter plot
         x_axis = list(xrange(len(self.values)))
@@ -363,6 +361,9 @@ class RelativeDifferencePlot(object):
             ax.set_yticklabels([])
         PlotUtils.hide_ticks(ax)
 
+    def __print(self):
+        print self.algorithm + " Relative Difference"
+        print "self.values = " + str(self.values)
 
     @classmethod
     def set_lim(cls, ax, ymin, ymax):
@@ -414,9 +415,7 @@ class WindowsPlot(object):
         self.__check_sorted()
 
     def plot(self, ax, extra):
-        # print self.algorithm + " Windows"
-        # print "self.windows0 = " + str(self.windows0)
-        # print "self.windows3 = " + str(self.windows3)
+        # self.__print()
 
         x_axis_0, y_axis_0, x_axis_3, y_axis_3, x_axis_same, y_axis_same = [], [], [], [], [], []
         for i, values in enumerate(zip(self.windows0, self.windows3)):
@@ -446,6 +445,11 @@ class WindowsPlot(object):
         else:
             ax.set_yticklabels([])
         PlotUtils.hide_ticks(ax)
+
+    def __print(self):
+        print self.algorithm + " Windows"
+        print "self.windows0 = " + str(self.windows0)
+        print "self.windows3 = " + str(self.windows3)
 
     def __check_sorted(self):
         if self.algorithm != "CoderPCA":

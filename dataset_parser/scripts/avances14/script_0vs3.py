@@ -10,6 +10,7 @@ from file_utils.csv_utils.csv_reader import CSVReader
 from scripts.compress.compress_aux import DATASETS_ARRAY, CSV_PATH
 from scripts.utils import csv_files_filenames
 from scripts.avances14.constants import Constants
+from scripts.compress.compress_aux import skip_file
 
 
 class Script(object):
@@ -42,11 +43,10 @@ class Script(object):
             self.plotter.add_row_plot(self.row_plot)
 
     def plot1(self):
-        return self.plotter.plot()
+        return self.plotter
 
     def plot2(self):
-        plotter2 = Plotter2(self.plotter)
-        return plotter2.plot()
+        return Plotter2(self.plotter)
 
     def __find_combination(self, filename, algorithm, threshold):
         self.__find_next_line(Constants.INDEX_FILENAME, filename, False)
@@ -98,29 +98,42 @@ class Script(object):
         self.line_count = 0
 
 
-def add_to_pdf(pdf, filename, column_index):
-    script = Script(filename, column_index)
-    script.run()
-    # fig, plt = script.plot1()
-    fig, plt = script.plot2()
+class PDFScript(object):
+    GRAPH_PATH = "scripts/avances14/graphs/"
 
-    # plt.show(); exit(0)  # uncomment to generate a single graph
-    pdf.savefig(fig)
-    plt.close()
+    def __init__(self):
+        for dataset_id, dataset_dictionary in enumerate(DATASETS_ARRAY):
+            self.__create_pdf_for_dataset(dataset_id + 1, dataset_dictionary)
 
+    def __create_pdf_for_dataset(self, dataset_id, dataset_dictionary):
+        input_path = CSV_PATH + dataset_dictionary['folder']
+        dataset_name = dataset_dictionary['name']
+        cols = dataset_dictionary['cols']
+        with PdfPages(self.__pdf_name(dataset_id, dataset_name)) as pdf:
+            self.__create_pdf_iteration(input_path, dataset_name, cols, pdf)
 
-def create_pdf(dataset_id, dataset_dictionary):
-    input_path = CSV_PATH + dataset_dictionary['folder']
-    dataset_name = dataset_dictionary['name']
-    cols = dataset_dictionary['cols']
-    with PdfPages("scripts/avances14/graphs/" + str(dataset_id) + "-" + dataset_name + ".pdf") as pdf:
-        for id1, input_filename in enumerate(csv_files_filenames(input_path)):
-            # TODO: move the following if to a method and reuse
-            if dataset_name in ["NOAA-SST", "NOAA-ADCP"] and id1 >= 3:
+    def __create_pdf_iteration(self, input_path, dataset_name, cols, pdf):
+        for file_index, input_filename in enumerate(csv_files_filenames(input_path)):
+            if skip_file(dataset_name, file_index):
                 continue
             for col_index in range(cols):
-                add_to_pdf(pdf, input_filename, col_index + 1)
+                self.__add_page_to_pdf(pdf, input_filename, col_index + 1)
 
+    @classmethod
+    def __pdf_name(cls, dataset_id, dataset_name):
+        return cls.GRAPH_PATH + str(dataset_id) + "-" + dataset_name + ".pdf"
 
-for ds_id, ds_dict in enumerate(DATASETS_ARRAY):
-    create_pdf(ds_id + 1, ds_dict)
+    @classmethod
+    def __add_page_to_pdf(cls, pdf, filename, column_index):
+        script = Script(filename, column_index)
+        script.run()
+
+        # plotter = script.plot1()
+        plotter = script.plot2()
+
+        fig, plt = plotter.plot()
+        # plt.show(); exit(0)  # uncomment to generate a single graph
+        pdf.savefig(fig)
+        plt.close()
+
+PDFScript()
