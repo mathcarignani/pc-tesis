@@ -123,6 +123,7 @@ class PDFScript(object):
                 plotter = self.__add_page_to_pdf(pdf, input_filename, col_index + 1)
                 self.plotter3.add_plotter(plotter)
         self.plotter3.close()
+        self.plotter3.plot()
 
     @classmethod
     def __pdf_name(cls, dataset_id, dataset_name):

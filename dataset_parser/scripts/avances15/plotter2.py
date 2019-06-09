@@ -20,7 +20,7 @@ class Plotter2(object):
         self.matrix = Matrix()
 
     def plot(self):
-        fig = self.plotter.create_fig(20, 10)
+        fig = PlotUtils.create_figure(20, 10, self.plotter.column_title())
         self.collect_data()
         
         # plot
@@ -46,11 +46,11 @@ class Plotter2(object):
                 column.plot(row_i, ax, extra)
 
         # plot stats
-        current_subplot = 1*total_columns + total_columns  # second row
+        current_subplot = 2*total_columns + total_columns  # third row
         ax = fig.add_subplot(total_rows, total_columns, current_subplot)
         self.matrix.relative_difference_stats.plot(ax)
 
-        current_subplot = 2*total_columns + total_columns  # third row
+        current_subplot = 3*total_columns + total_columns  # fourth row
         ax = fig.add_subplot(total_rows, total_columns, current_subplot)
         self.matrix.windows_stats.plot(ax)
 

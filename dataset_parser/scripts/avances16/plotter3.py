@@ -16,3 +16,6 @@ class Plotter3(object):
     def close(self):
         print "Plotter3 close"
         print len(self.plotter2_array)
+
+    def plot(self):
+        pass

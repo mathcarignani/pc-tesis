@@ -1,3 +1,8 @@
+import sys
+sys.path.append('.')
+
+import matplotlib.pyplot as plt
+
 
 class PlotUtils(object):
     @classmethod
@@ -9,3 +14,10 @@ class PlotUtils(object):
     def hide_ticks(cls, ax):
         # https://stackoverflow.com/a/29988431/4547232
         ax.tick_params(axis=u'both', which=u'both', length=0)
+
+    @classmethod
+    def create_figure(cls, figsize_h, figsize_v, fig_title):
+        white_background = (1, 1, 1)
+        figure = plt.figure(figsize=(figsize_h, figsize_v), facecolor=white_background)
+        figure.suptitle(fig_title, fontsize=20)
+        return figure
