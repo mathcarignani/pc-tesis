@@ -43,10 +43,10 @@ class Script(object):
                 self.__goto_file_start()
             self.plotter.add_row_plot(self.row_plot)
 
-    def plot1(self):
+    def plotter1(self):
         return self.plotter
 
-    def plot2(self):
+    def plotter2(self):
         return Plotter2(self.plotter)
 
     def __find_combination(self, filename, algorithm, threshold):
@@ -113,6 +113,7 @@ class PDFScript(object):
         cols = dataset_dictionary['cols']
         with PdfPages(self.__pdf_name(dataset_id, dataset_name)) as pdf:
             self.__create_pdf_iteration(input_path, dataset_name, cols, pdf)
+            # exit()
 
     def __create_pdf_iteration(self, input_path, dataset_name, cols, pdf):
         self.plotter3 = Plotter3(dataset_name)
@@ -143,7 +144,7 @@ class PDFScript(object):
 
     @classmethod
     def __plotter(cls, script):
-        # return script.plot1()
-        return script.plot2()
+        # return script.plotter1()
+        return script.plotter2()
 
 PDFScript()

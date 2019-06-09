@@ -16,8 +16,10 @@ class Plotter2(object):
 
     def plot(self):
         fig = PlotUtils.create_figure(20, 10, self.plotter.column_title())
-        self.collect_data()
-        
+        self.collect_data_plot()
+        return self.__plot(fig)
+
+    def __plot(self, fig):
         # plot
         total_rows, total_columns = self.matrix.total_rows_columns()
         total_columns += 1  # stats column
@@ -48,10 +50,9 @@ class Plotter2(object):
         current_subplot = 3*total_columns + total_columns  # fourth row
         ax = fig.add_subplot(total_rows, total_columns, current_subplot)
         self.matrix.windows_stats.plot(ax)
-
         return fig, plt
 
-    def collect_data(self):
+    def collect_data_plot(self):
         # collect data
         for algorithm_index, algorithm in enumerate(Constants.ALGORITHMS):
             column = Column(algorithm)
