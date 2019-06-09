@@ -201,7 +201,7 @@ class TotalBitsPlot(object):
         return [min([min(self.values0), min(self.values3)]), max([max(self.values0), max(self.values3)])]
 
     def plot(self, ax, ymin, ymax, extra):
-        self.__print()
+        # self.__print()
 
         # scatter plot
         x_axis = list(xrange(len(self.values0)))
@@ -275,7 +275,7 @@ class CompressionRatioPlot(object):
         return [min([min(self.values0), min(self.values3)]), max([max(self.values0), max(self.values3)])]
 
     def plot(self, ax, ymin, ymax, extra):
-        self.__print()
+        # self.__print()
 
         # scatter plot
         x_axis = list(xrange(len(self.values0)))
@@ -340,7 +340,7 @@ class RelativeDifferencePlot(object):
         return [min(self.values), max(self.values)]
 
     def plot(self, ax, ymin, ymax, extra):
-        self.__print()
+        # self.__print()
 
         # scatter plot
         x_axis = list(xrange(len(self.values)))

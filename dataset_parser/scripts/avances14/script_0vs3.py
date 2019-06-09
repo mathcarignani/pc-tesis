@@ -6,6 +6,7 @@ from matplotlib.backends.backend_pdf import PdfPages
 from scripts.avances14.row_plot import RowPlot
 from scripts.avances14.plotter import Plotter
 from scripts.avances15.plotter2 import Plotter2
+from scripts.avances16.plotter3 import Plotter3
 from file_utils.csv_utils.csv_reader import CSVReader
 from scripts.compress.compress_aux import DATASETS_ARRAY, CSV_PATH
 from scripts.utils import csv_files_filenames
@@ -102,6 +103,7 @@ class PDFScript(object):
     GRAPH_PATH = "scripts/avances14/graphs/"
 
     def __init__(self):
+        self.plotter3 = None
         for dataset_id, dataset_dictionary in enumerate(DATASETS_ARRAY):
             self.__create_pdf_for_dataset(dataset_id + 1, dataset_dictionary)
 
@@ -113,11 +115,14 @@ class PDFScript(object):
             self.__create_pdf_iteration(input_path, dataset_name, cols, pdf)
 
     def __create_pdf_iteration(self, input_path, dataset_name, cols, pdf):
+        self.plotter3 = Plotter3(dataset_name)
         for file_index, input_filename in enumerate(csv_files_filenames(input_path)):
             if skip_file(dataset_name, file_index):
                 continue
             for col_index in range(cols):
-                self.__add_page_to_pdf(pdf, input_filename, col_index + 1)
+                plotter = self.__add_page_to_pdf(pdf, input_filename, col_index + 1)
+                self.plotter3.add_plotter(plotter)
+        self.plotter3.close()
 
     @classmethod
     def __pdf_name(cls, dataset_id, dataset_name):
@@ -127,13 +132,17 @@ class PDFScript(object):
     def __add_page_to_pdf(cls, pdf, filename, column_index):
         script = Script(filename, column_index)
         script.run()
-
-        # plotter = script.plot1()
-        plotter = script.plot2()
-
+        plotter = cls.__plotter(script)
         fig, plt = plotter.plot()
+
         # plt.show(); exit(0)  # uncomment to generate a single graph
         pdf.savefig(fig)
         plt.close()
+        return plotter
+
+    @classmethod
+    def __plotter(cls, script):
+        # return script.plot1()
+        return script.plot2()
 
 PDFScript()
