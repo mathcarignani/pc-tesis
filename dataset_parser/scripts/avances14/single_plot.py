@@ -7,7 +7,6 @@ from scripts.avances14.plot_utils import PlotUtils
 
 
 class SinglePlot(object):
-
     def __init__(self, algorithm):
         self.algorithm = algorithm
         self.values0 = []
@@ -151,3 +150,21 @@ class SinglePlot(object):
             xticklabels.append(label)
         return xticklabels
 
+    ####################################################################################################################
+
+    @classmethod
+    def sum(cls, single_plot1, single_plot2):
+        assert(single_plot1.algorithm == single_plot2.algorithm)
+        single_plot = SinglePlot(single_plot1.algorithm)
+        values0 = cls.sum_arrays(single_plot1.values0, single_plot2.values0)
+        values3 = cls.sum_arrays(single_plot1.values3, single_plot2.values3)
+        basic_values0 = cls.sum_arrays(single_plot1.basic_values0, single_plot2.basic_values0)
+        for index, (value0, value3, basic_value0) in enumerate(zip(values0, values3, basic_values0)):
+            window = Constants.WINDOWS[index]
+            single_plot.add_values(window, value0, value3, 0, basic_value0)  # plot_value = 0, doesn't matter
+        return single_plot
+
+    @classmethod
+    def sum_arrays(cls, array1, array2):
+        assert(len(array1) == len(array2))
+        return [x + y for x, y in zip(array1, array2)]

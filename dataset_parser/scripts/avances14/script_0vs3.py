@@ -8,10 +8,9 @@ from scripts.avances14.plotter import Plotter
 from scripts.avances15.plotter2 import Plotter2
 from scripts.avances16.plotter3 import Plotter3
 from file_utils.csv_utils.csv_reader import CSVReader
-from scripts.compress.compress_aux import DATASETS_ARRAY, CSV_PATH
-from scripts.utils import csv_files_filenames
+from scripts.compress.compress_aux import DATASETS_ARRAY
 from scripts.avances14.constants import Constants
-from scripts.compress.compress_aux import skip_file
+from scripts.compress.compress_aux import dataset_csv_filenames
 
 
 class Script(object):
@@ -103,44 +102,49 @@ class PDFScript(object):
     GRAPH_PATH = "scripts/avances14/graphs/"
 
     def __init__(self):
-        self.plotter3 = None
         for dataset_id, dataset_dictionary in enumerate(DATASETS_ARRAY):
-            self.__create_pdf_for_dataset(dataset_id + 1, dataset_dictionary)
+            self.__create_pdfs_for_dataset(dataset_id + 1, dataset_dictionary)
 
-    def __create_pdf_for_dataset(self, dataset_id, dataset_dictionary):
-        input_path = CSV_PATH + dataset_dictionary['folder']
-        dataset_name = dataset_dictionary['name']
-        cols = dataset_dictionary['cols']
-        with PdfPages(self.__pdf_name(dataset_id, dataset_name)) as pdf:
-            self.__create_pdf_iteration(input_path, dataset_name, cols, pdf)
-            # exit()
+    def __create_pdfs_for_dataset(self, dataset_id, dataset_dictionary):
+        dataset_name, cols = dataset_dictionary['name'], dataset_dictionary['cols']
+        plotter3 = self.__create_pdf1(dataset_id, dataset_name, cols)
+        if plotter3.must_plot:
+            self.__create_pdf2(dataset_id, dataset_name, plotter3)
 
-    def __create_pdf_iteration(self, input_path, dataset_name, cols, pdf):
-        self.plotter3 = Plotter3(dataset_name)
-        for file_index, input_filename in enumerate(csv_files_filenames(input_path)):
-            if skip_file(dataset_name, file_index):
-                continue
+    def __create_pdf1(self, dataset_id, dataset_name, cols):
+        pdf_name = self.GRAPH_PATH + str(dataset_id) + "-" + dataset_name + ".pdf"
+        with PdfPages(pdf_name) as pdf:
+            plotter3 = self.__create_pdf_iteration(dataset_name, cols, pdf)
+            return plotter3
+
+    def __create_pdf2(self, dataset_id, dataset_name, plotter3):
+        pdf_name = self.GRAPH_PATH + "C" + str(dataset_id) + "-" + dataset_name + ".pdf"
+        with PdfPages(pdf_name) as pdf:
+            for plotter in plotter3.plotters():
+                self.__plot_and_save(pdf, plotter)
+
+    def __create_pdf_iteration(self, dataset_name, cols, pdf):
+        plotter3 = Plotter3(dataset_name)
+        for file_index, input_filename in enumerate(dataset_csv_filenames(dataset_name)):
             for col_index in range(cols):
-                plotter = self.__add_page_to_pdf(pdf, input_filename, col_index + 1)
-                self.plotter3.add_plotter(plotter)
-        self.plotter3.close()
-        self.plotter3.plot()
-
-    @classmethod
-    def __pdf_name(cls, dataset_id, dataset_name):
-        return cls.GRAPH_PATH + str(dataset_id) + "-" + dataset_name + ".pdf"
+                plotter2 = self.__add_page_to_pdf(pdf, input_filename, col_index + 1)
+                plotter3.add_plotter2(plotter2)
+        return plotter3
 
     @classmethod
     def __add_page_to_pdf(cls, pdf, filename, column_index):
         script = Script(filename, column_index)
         script.run()
         plotter = cls.__plotter(script)
-        fig, plt = plotter.plot()
+        cls.__plot_and_save(pdf, plotter)
+        return plotter
 
+    @classmethod
+    def __plot_and_save(cls, pdf, plotter):
+        fig, plt = plotter.plot()
         # plt.show(); exit(0)  # uncomment to generate a single graph
         pdf.savefig(fig)
         plt.close()
-        return plotter
 
     @classmethod
     def __plotter(cls, script):

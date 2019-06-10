@@ -10,12 +10,12 @@ from auxi.os_utils import git_path
 from file_utils.csv_utils.csv_compare import CSVCompare
 from file_utils.csv_utils.csv_writer import CSVWriter
 from file_utils.csv_utils.csv_utils import CSVUtils
-from scripts.utils import csv_files_filenames, create_folder
+from scripts.utils import create_folder
 from scripts.compress.calculate_std import calculate_file_stats, calculate_stds_percentages
 from scripts.compress.compress_aux import THRESHOLD_PERCENTAGES, CSV_PATH, DATASETS_ARRAY, CODERS_ARRAY
 from scripts.compress.compress_cpp import code_decode_cpp
 from scripts.compress.compress_args import CompressArgs
-from scripts.compress.compress_aux import skip_file
+from scripts.compress.compress_aux import dataset_csv_filenames
 
 
 def compress_decompress_compare(args):
@@ -111,9 +111,7 @@ def run_script_on_dataset(csv, datasets_path, dataset_dictionary, output_path):
     create_folder(output_dataset_path)
     dataset_name = dataset_dictionary['name']
 
-    for file_index, input_filename in enumerate(csv_files_filenames(input_path)):
-        if skip_file(dataset_name, file_index):
-            return
+    for file_index, input_filename in enumerate(dataset_csv_filenames(input_path, dataset_name)):
         row = [dataset_dictionary['name']] if file_index == 0 else [None]
         run_script_on_file(csv, file_index, row, logger, input_path, input_filename, output_dataset_path)
 

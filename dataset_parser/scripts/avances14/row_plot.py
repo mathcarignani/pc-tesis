@@ -39,3 +39,15 @@ class RowPlot(object):
             if ylim > max_y_lim:
                 max_y_lim = ylim
         return max_y_lim
+
+    ####################################################################################################################
+
+    @classmethod
+    def sum(cls, row_plot1, row_plot2):
+        assert(row_plot1.error_threshold == row_plot2.error_threshold)
+        assert(len(row_plot1.plots) == len(row_plot2.plots))
+        row_plot = RowPlot(row_plot1.error_threshold)
+        for single_plot1, single_plot2 in zip(row_plot1.plots, row_plot2.plots):
+            row_plot.single_plot = SinglePlot.sum(single_plot1, single_plot2)
+            row_plot.end_algorithm()
+        return row_plot

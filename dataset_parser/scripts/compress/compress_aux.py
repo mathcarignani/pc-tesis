@@ -1,5 +1,8 @@
+import sys
+sys.path.append('.')
 
 from auxi.os_utils import datasets_csv_path
+from scripts.utils import csv_files_filenames
 
 
 THRESHOLD_PERCENTAGES = [0, 1, 3, 5, 10, 15, 20, 30]
@@ -9,11 +12,20 @@ CSV_PATH = datasets_csv_path()
 MASK_MODE = False
 
 
-#
-# Returns true iff the file muset be skiped
-#
-def skip_file(dataset_name, file_index):
-    return dataset_name in ["NOAA-SST", "NOAA-ADCP"] and file_index >= 3
+def dataset_csv_filenames(dataset_name):
+    input_path = CSV_PATH + get_dataset_info(dataset_name)['folder']
+    filenames = csv_files_filenames(input_path)
+    if dataset_name in ["NOAA-SST", "NOAA-ADCP"]:
+        filenames = filenames[:3]  # only consider the first three files for these datasets
+    return filenames
+
+
+def get_dataset_info(dataset_name):
+    for dataset in DATASETS_ARRAY:
+        if dataset['name'] == dataset_name:
+            return dataset
+    print dataset_name
+    raise StandardError
 
 
 DATASETS_ARRAY = [

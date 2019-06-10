@@ -3,6 +3,7 @@ sys.path.append('.')
 
 import matplotlib.pyplot as plt
 from scripts.avances14.plot_utils import PlotUtils
+from scripts.avances14.row_plot import RowPlot
 
 
 class Plotter(object):
@@ -59,3 +60,15 @@ class Plotter(object):
 
     def __fig_name(self):
         return self.filename + "-" + str(self.column_index) + ".pdf"
+
+    ####################################################################################################################
+
+    @classmethod
+    def sum(cls, plotter1, plotter2):
+        # assert(plotter1.filename == plotter2.filename)
+        assert(len(plotter1.row_plots) == len(plotter2.row_plots))
+        plotter = Plotter(plotter1.filename, 0)  # column_index param doesn't matter
+        for row_plot1, row_plot2 in zip(plotter1.row_plots, plotter2.row_plots):
+            row_plot = RowPlot.sum(row_plot1, row_plot2)
+            plotter.add_row_plot(row_plot)
+        return plotter
