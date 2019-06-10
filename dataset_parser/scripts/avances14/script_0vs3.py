@@ -103,30 +103,48 @@ class PDFScript(object):
 
     def __init__(self):
         for dataset_id, dataset_dictionary in enumerate(DATASETS_ARRAY):
-            self.__create_pdfs_for_dataset(dataset_id + 1, dataset_dictionary)
+            self.dataset_id = dataset_id + 1
+            self.dataset_name, self.cols = dataset_dictionary['name'], dataset_dictionary['cols']
+            self.__create_pdfs_for_dataset()
 
-    def __create_pdfs_for_dataset(self, dataset_id, dataset_dictionary):
-        dataset_name, cols = dataset_dictionary['name'], dataset_dictionary['cols']
-        plotter3 = self.__create_pdf1(dataset_id, dataset_name, cols)
+    def __create_pdfs_for_dataset(self):
+        plotter3 = self.__create_pdf1()
         if plotter3.must_plot:
-            self.__create_pdf2(dataset_id, dataset_name, plotter3)
+            self.__create_pdf2(plotter3)
+            self.__create_pdf3(plotter3)
+            self.__create_pdf4(plotter3)
+        # exit()
 
-    def __create_pdf1(self, dataset_id, dataset_name, cols):
-        pdf_name = self.GRAPH_PATH + str(dataset_id) + "-" + dataset_name + ".pdf"
-        with PdfPages(pdf_name) as pdf:
-            plotter3 = self.__create_pdf_iteration(dataset_name, cols, pdf)
+    def __create_pdf1(self):
+        with PdfPages(self.__pdf_name("")) as pdf:
+            plotter3 = self.__create_pdf1_iteration(pdf)
             return plotter3
 
-    def __create_pdf2(self, dataset_id, dataset_name, plotter3):
-        pdf_name = self.GRAPH_PATH + "C" + str(dataset_id) + "-" + dataset_name + ".pdf"
-        with PdfPages(pdf_name) as pdf:
-            for plotter in plotter3.plotters():
+    def __create_pdf2(self, plotter3):
+        with PdfPages(self.__pdf_name("Global-")) as pdf:
+            for plotter in plotter3.global_plotters():
                 self.__plot_and_save(pdf, plotter)
 
-    def __create_pdf_iteration(self, dataset_name, cols, pdf):
-        plotter3 = Plotter3(dataset_name)
-        for file_index, input_filename in enumerate(dataset_csv_filenames(dataset_name)):
-            for col_index in range(cols):
+    def __create_pdf3(self, plotter3):
+        with PdfPages(self.__pdf_name("Globalvs0-")) as pdf:
+            for plotter in plotter3.compare_plotters_0():
+                print "i"
+                self.__plot_and_save(pdf, plotter)
+
+    def __create_pdf4(self, plotter3):
+        with PdfPages(self.__pdf_name("Globalvs3-")) as pdf:
+            for plotter in plotter3.compare_plotters_3():
+                print "i"
+                self.__plot_and_save(pdf, plotter)
+
+    def __pdf_name(self, extra):
+        print extra
+        return self.GRAPH_PATH + extra + str(self.dataset_id) + "-" + self.dataset_name + ".pdf"
+
+    def __create_pdf1_iteration(self, pdf):
+        plotter3 = Plotter3(self.dataset_name)
+        for file_index, input_filename in enumerate(dataset_csv_filenames(self.dataset_name)):
+            for col_index in range(self.cols):
                 plotter2 = self.__add_page_to_pdf(pdf, input_filename, col_index + 1)
                 plotter3.add_plotter2(plotter2)
         return plotter3
@@ -135,7 +153,8 @@ class PDFScript(object):
     def __add_page_to_pdf(cls, pdf, filename, column_index):
         script = Script(filename, column_index)
         script.run()
-        plotter = cls.__plotter(script)
+        # plotter = script.plotter1()
+        plotter = script.plotter2()
         cls.__plot_and_save(pdf, plotter)
         return plotter
 
@@ -145,10 +164,5 @@ class PDFScript(object):
         # plt.show(); exit(0)  # uncomment to generate a single graph
         pdf.savefig(fig)
         plt.close()
-
-    @classmethod
-    def __plotter(cls, script):
-        # return script.plotter1()
-        return script.plotter2()
 
 PDFScript()

@@ -22,3 +22,4 @@ class Constants(object):
     COLOR_WHEAT = 'wheat'
     COLOR_BLACK = 'black'
     COLOR_YELLOW = 'gold'
+    COLOR_GREEN_F = 'forestgreen'

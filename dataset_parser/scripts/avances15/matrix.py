@@ -13,6 +13,15 @@ class Matrix(object):
         self.relative_difference_stats = RelativeDifferenceStats()
         self.windows_stats = WindowsStats()
 
+    def set_colors(self, value0_color, value3_color, label0, label3):
+        for column in self.columns:
+            column.set_colors(value0_color, value3_color)
+        for column in [self.relative_difference_stats, self.windows_stats]:
+            column.set_colors_and_labels(value0_color, value3_color, label0, label3)
+
+    def empty(self):
+        return len(self.columns) == 0
+
     def total_rows_columns(self):
         return len(self.columns[0].rows()), len(self.columns)
 
@@ -24,7 +33,9 @@ class Matrix(object):
         self.columns.append(column)
 
     def close(self):
-        assert(len(self.columns) == 6)
+        if len(self.columns) != 6:
+            print "len(self.columns) = " + str(len(self.columns))
+            assert(len(self.columns) == 6)
         self.relative_difference_stats.close()
         self.windows_stats.close()
 
@@ -48,6 +59,10 @@ class Matrix(object):
         plots = [column.relative_difference_plot for column in self.columns]
         total_min, total_max = self.__min_max(plots)
         return RelativeDifferencePlot.ylims(total_min, total_max)
+
+    def print_values(self):
+        column = self.columns[0]
+        column.print_values()
 
     @classmethod
     def __min_max(cls, plots):

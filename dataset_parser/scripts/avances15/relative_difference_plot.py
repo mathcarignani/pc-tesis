@@ -4,13 +4,15 @@ sys.path.append('.')
 from scripts.avances14.constants import Constants
 from scripts.avances14.plot_utils import PlotUtils
 from scripts.avances14.single_plot import SinglePlot
+from scripts.avances15.common_plot import CommonPlot
 from scripts.avances15.plotter2_constants import Plotter2Constants
 
 
-class RelativeDifferencePlot(object):
+class RelativeDifferencePlot(CommonPlot):
     def __init__(self, algorithm):
         self.algorithm = algorithm
         self.values = []
+        super(RelativeDifferencePlot, self).__init__()
 
     def add_value(self, value0, value3):
         plot_value = 100 * SinglePlot.plot_value(value0, value3)
@@ -23,11 +25,11 @@ class RelativeDifferencePlot(object):
         return [min(self.values), max(self.values)]
 
     def plot(self, ax, ymin, ymax, extra):
-        # self.__print()
+        # self.print_values()
 
         # scatter plot
         x_axis = list(xrange(len(self.values)))
-        colors = [self.__color_code(item) for item in self.values]
+        colors = [self.color_code(item) for item in self.values]
         ax.scatter(x=x_axis, y=self.values, c=colors)
         ax.grid(b=True, color=Constants.COLOR_SILVER)
         ax.set_axisbelow(True)
@@ -44,7 +46,7 @@ class RelativeDifferencePlot(object):
             ax.set_yticklabels([])
         PlotUtils.hide_ticks(ax)
 
-    def __print(self):
+    def print_values(self):
         print self.algorithm + " Relative Difference"
         print "self.values = " + str(self.values)
 
@@ -70,12 +72,3 @@ class RelativeDifferencePlot(object):
             total_min *= 1 + Plotter2Constants.Y_DIFF
 
         return total_min, total_max
-
-    @classmethod
-    def __color_code(cls, value):
-        if value > 0:
-            return Plotter2Constants.VALUE3_COLOR
-        elif value < 0:
-            return Plotter2Constants.VALUE0_COLOR
-        else:  # value == 0
-            return Plotter2Constants.VALUE_SAME

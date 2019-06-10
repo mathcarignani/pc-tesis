@@ -16,6 +16,10 @@ class Column(object):
         self.stats_table = None
         self.y_min_bits, self.y_max_bits, self.y_min_rel, self.y_max_rel, self.y_min_ratio, self.y_max_ratio = [None] * 6
 
+    def set_colors(self, value0_color, value3_color):
+        for p in [self.total_bits_plot, self.compression_ratio_plot, self.relative_difference_plot, self.windows_plot]:
+            p.set_colors(value0_color, value3_color)
+
     def add_values(self, best_values):
         value0, value3 = best_values['value0']['min'], best_values['value3']['min']
         basic_value0 = best_values['basic_value0']
@@ -50,3 +54,10 @@ class Column(object):
             self.relative_difference_plot.plot(ax, self.y_min_rel, self.y_max_rel, extra)
         else:
             self.windows_plot.plot(ax, extra)
+
+    def print_values(self):
+        print "Column print_values"
+        print "self.total_bits_plot.print_values()"
+        self.total_bits_plot.print_values()
+        print "self.windows_plot.print_values()"
+        self.windows_plot.print_values()

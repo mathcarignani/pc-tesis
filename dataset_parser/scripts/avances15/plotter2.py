@@ -13,10 +13,18 @@ class Plotter2(object):
     def __init__(self, plotter):
         self.plotter = plotter
         self.matrix = Matrix()
+        self.init_with_matrix = False
+
+    def set_colors(self, value0_color, value3_color, label0, label3):
+        self.matrix.set_colors(value0_color, value3_color, label0, label3)
+
+    def set_matrix(self, matrix):
+        self.matrix = matrix
 
     def plot(self):
         fig = PlotUtils.create_figure(20, 10, self.plotter.column_title())
-        self.collect_data_plot()
+        if self.matrix.empty():
+            self.__collect_data_plot()
         return self.__plot(fig)
 
     def __plot(self, fig):
@@ -52,15 +60,18 @@ class Plotter2(object):
         self.matrix.windows_stats.plot(ax)
         return fig, plt
 
-    def collect_data_plot(self):
-        # collect data
+    def __collect_data_plot(self):
         for algorithm_index, algorithm in enumerate(Constants.ALGORITHMS):
             column = Column(algorithm)
             for row_index, row_plot in enumerate(self.plotter.row_plots):  # threshold row
                 single_plot = row_plot.plots[algorithm_index]  # algorithm
-                best_values = single_plot.best_values()
+                best_values = single_plot.best_values()  # get best values for <threshold, algorithm>
                 column.add_values(best_values)
                 self.matrix.add_values(best_values)
             column.close()
             self.matrix.add_column(column)
         self.matrix.close()
+
+    def print_values(self):
+        print "Plotter 2 - print_values"
+        self.matrix.print_values()

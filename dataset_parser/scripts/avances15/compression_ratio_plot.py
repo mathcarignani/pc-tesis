@@ -4,16 +4,18 @@ sys.path.append('.')
 from scripts.avances11.utils import calculate_percentage
 from scripts.avances14.constants import Constants
 from scripts.avances14.plot_utils import PlotUtils
+from scripts.avances15.common_plot import CommonPlot
 from scripts.avances15.plotter2_constants import Plotter2Constants
 from scripts.avances15.relative_difference_plot import RelativeDifferencePlot
 
 
-class CompressionRatioPlot(object):
+class CompressionRatioPlot(CommonPlot):
     def __init__(self, algorithm):
         self.algorithm = algorithm
         self.values0 = []
         self.values3 = []
         self.basic_value0 = None
+        super(CompressionRatioPlot, self).__init__()
 
     def add_values(self, value0, value3, basic_value0):
         self.basic_value0 = basic_value0 if self.basic_value0 is None else self.basic_value0
@@ -33,12 +35,13 @@ class CompressionRatioPlot(object):
         return [min([min(self.values0), min(self.values3)]), max([max(self.values0), max(self.values3)])]
 
     def plot(self, ax, ymin, ymax, extra):
-        # self.__print()
+        # self.print_values()
 
         # scatter plot
         x_axis = list(xrange(len(self.values0)))
-        ax.scatter(x=x_axis, y=self.values0, c=Plotter2Constants.VALUE0_COLOR, zorder=self.values0)
-        ax.scatter(x=x_axis, y=self.values3, c=Plotter2Constants.VALUE3_COLOR, zorder=self.values3)
+        colors0, colors3 = self.generate_colors()
+        ax.scatter(x=x_axis, y=self.values0, c=colors0, zorder=self.values0)
+        ax.scatter(x=x_axis, y=self.values3, c=colors3, zorder=self.values3)
         ax.grid(b=True, color=Constants.COLOR_SILVER)
         ax.set_axisbelow(True)
 
@@ -58,14 +61,15 @@ class CompressionRatioPlot(object):
             ax.set_yticklabels([])
         PlotUtils.hide_ticks(ax)
 
-    def __print(self):
+    def print_values(self):
         print self.algorithm + " Compression Ratio"
         print "self.values0 = " + str(self.values0)
         print "self.values3 = " + str(self.values3)
 
     def __check_sorted(self):
-        assert(PlotUtils.sorted_dec(self.values0))
-        assert(PlotUtils.sorted_dec(self.values3))
+        if self.additional_checks:
+            assert(PlotUtils.sorted_dec(self.values0))
+            assert(PlotUtils.sorted_dec(self.values3))
 
     @classmethod
     def format_x_ticks(cls, ax):

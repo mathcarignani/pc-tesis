@@ -2,15 +2,19 @@ import sys
 sys.path.append('.')
 
 from scripts.avances14.constants import Constants
+from scripts.avances15.common_plot import CommonPlot
 from scripts.avances15.plotter2_constants import Plotter2Constants
 
 
-class RelativeDifferenceStats(object):
+class RelativeDifferenceStats(CommonPlot):
     def __init__(self):
         self.total_results = 0
         self.best0_results = 0
         self.best3_results = 0
         self.same_results = 0
+        self.col_labels = ['BEST', '#', '%']
+        self.row_labels = ['MM=0', 'SAME', 'MM=3']
+        super(RelativeDifferenceStats, self).__init__()
 
     def add_values(self, value0, value3):
         self.total_results += 1
@@ -25,12 +29,19 @@ class RelativeDifferenceStats(object):
         assert(self.total_results == self.best0_results + self.best3_results + self.same_results)
         assert(self.total_results == 6 * 8)
 
+    def set_colors_and_labels(self, value0_color, value3_color, label0, label3):
+        super(RelativeDifferenceStats, self).set_colors(value0_color, value3_color)
+        self.row_labels[0] = label0 or self.row_labels[0]
+        self.row_labels[2] = label3 or self.row_labels[2]
+
+    def set_labels(self, col_labels, row_labels):
+        self.col_labels = col_labels
+        self.row_labels = row_labels
+
     def plot(self, ax):
-        col_labels = ['BEST', '#', '%']
-        row_labels = ['MM=0', 'SAME', 'MM=3']
         results = [self.best0_results, self.same_results, self.best3_results]
-        colors = [Plotter2Constants.VALUE0_COLOR, Plotter2Constants.VALUE_SAME, Plotter2Constants.VALUE3_COLOR]
-        self.plot_aux(ax, col_labels, zip(results, row_labels, colors))
+        colors = [self.value0_color, Plotter2Constants.VALUE_SAME, self.value3_color]
+        self.plot_aux(ax, self.col_labels, zip(results, self.row_labels, colors))
 
     def plot_aux(self, ax, col_labels, zipped_values):
         table_values, table_colors = [], []
@@ -61,9 +72,11 @@ class RelativeDifferenceStats(object):
 
 
 class WindowsStats(RelativeDifferenceStats):
+    def __init__(self):
+        super(WindowsStats, self).__init__()
+        self.set_labels(['BIG', '#', '%'], ['MM=0', 'SAME', 'MM=3'])
+
     def plot(self, ax):
-        col_labels = ['BIG', '#', '%']
-        row_labels = ['MM=0', 'SAME', 'MM=3']
         results = [self.best3_results, self.same_results, self.best0_results]
-        colors = [Plotter2Constants.VALUE0_COLOR, Plotter2Constants.VALUE_SAME, Plotter2Constants.VALUE3_COLOR]
-        self.plot_aux(ax, col_labels, zip(results, row_labels, colors))
+        colors = [self.value0_color, Plotter2Constants.VALUE_SAME, self.value3_color]
+        self.plot_aux(ax, self.col_labels, zip(results, self.row_labels, colors))
