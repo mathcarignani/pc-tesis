@@ -1,5 +1,8 @@
+import sys
+sys.path.append('.')
 
 from auxi.os_utils import datasets_csv_path
+from scripts.utils import csv_files_filenames
 
 
 THRESHOLD_PERCENTAGES = [0, 1, 3, 5, 10, 15, 20, 30]
@@ -7,6 +10,23 @@ WINDOW_SIZES = [4, 8, 16, 32, 64, 128, 256]
 
 CSV_PATH = datasets_csv_path()
 MASK_MODE = False
+
+
+def dataset_csv_filenames(dataset_name):
+    input_path = CSV_PATH + get_dataset_info(dataset_name)['folder']
+    filenames = csv_files_filenames(input_path)
+    if dataset_name in ["NOAA-SST", "NOAA-ADCP"]:
+        filenames = filenames[:3]  # only consider the first three files for these datasets
+    return filenames
+
+
+def get_dataset_info(dataset_name):
+    for dataset in DATASETS_ARRAY:
+        if dataset['name'] == dataset_name:
+            return dataset
+    print dataset_name
+    raise StandardError
+
 
 DATASETS_ARRAY = [
     {'name': 'IRKIS', 'folder': "[1]irkis", 'logger': "irkis.log", 'o_folder': "[1]irkis", 'cols': 1},

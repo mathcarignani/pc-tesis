@@ -3,7 +3,11 @@ sys.path.append('.')
 
 
 def calculate_percentage(big, small):
-    return round((float(small) / float(big)) * 100, 2)
+    return calculate_percentage(big, small, 2)
+
+
+def calculate_percentage(big, small, decimal_places):
+    return round((float(small) / float(big)) * 100, decimal_places)
 
 
 def to_int(value):

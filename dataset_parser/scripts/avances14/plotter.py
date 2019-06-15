@@ -2,6 +2,8 @@ import sys
 sys.path.append('.')
 
 import matplotlib.pyplot as plt
+from scripts.avances14.plot_utils import PlotUtils
+from scripts.avances14.row_plot import RowPlot
 
 
 class Plotter(object):
@@ -16,7 +18,7 @@ class Plotter(object):
         self.row_plots.append(row_plot)
 
     def plot(self):
-        fig = self.create_fig(20, 30)
+        fig = PlotUtils.create_figure(20, 30, self.column_title())
         y_lim = self.__y_lim()
         total_vertical_plots = len(self.row_plots)
         for vertical_index, row_plot in enumerate(self.row_plots):
@@ -43,15 +45,10 @@ class Plotter(object):
 
         fig.set_tight_layout(True)
         fig.subplots_adjust(hspace=0.1)
-        # plt.savefig(self.__fig_name())
-        # plt.show()
         return fig, plt
 
-    def create_fig(self, figsize_h, figsize_v):
-        white_background = (1, 1, 1)
-        fig = plt.figure(figsize=(figsize_h, figsize_v), facecolor=white_background)
-        fig.suptitle(self.filename + ' - col = ' + str(self.column_index), fontsize=20)
-        return fig
+    def column_title(self):
+        return self.filename + ' - col = ' + str(self.column_index)
 
     def __y_lim(self):
         max_y_lim = 0
@@ -63,3 +60,15 @@ class Plotter(object):
 
     def __fig_name(self):
         return self.filename + "-" + str(self.column_index) + ".pdf"
+
+    ####################################################################################################################
+
+    @classmethod
+    def sum(cls, plotter1, plotter2):
+        # assert(plotter1.filename == plotter2.filename)
+        assert(len(plotter1.row_plots) == len(plotter2.row_plots))
+        plotter = Plotter(plotter1.filename, 0)  # column_index param doesn't matter
+        for row_plot1, row_plot2 in zip(plotter1.row_plots, plotter2.row_plots):
+            row_plot = RowPlot.sum(row_plot1, row_plot2)
+            plotter.add_row_plot(row_plot)
+        return plotter

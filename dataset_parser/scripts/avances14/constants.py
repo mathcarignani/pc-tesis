@@ -11,6 +11,8 @@ class Constants(object):
     INDEX_THRESHOLD = 4
     INDEX_WINDOW = 6
 
+    MAX_COLUMN_TYPES = 7  # ElNino
+
     COLOR_SILVER = 'silver'
     COLOR_BLUE = 'blue'
     COLOR_LIGHT_BLUE = 'dodgerblue'
@@ -20,3 +22,4 @@ class Constants(object):
     COLOR_WHEAT = 'wheat'
     COLOR_BLACK = 'black'
     COLOR_YELLOW = 'gold'
+    COLOR_GREEN_F = 'forestgreen'

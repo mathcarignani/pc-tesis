@@ -6,10 +6,11 @@ from matplotlib.backends.backend_pdf import PdfPages
 from scripts.avances14.row_plot import RowPlot
 from scripts.avances14.plotter import Plotter
 from scripts.avances15.plotter2 import Plotter2
+from scripts.avances16.plotter3 import Plotter3
 from file_utils.csv_utils.csv_reader import CSVReader
-from scripts.compress.compress_aux import DATASETS_ARRAY, CSV_PATH
-from scripts.utils import csv_files_filenames
+from scripts.compress.compress_aux import DATASETS_ARRAY
 from scripts.avances14.constants import Constants
+from scripts.compress.compress_aux import dataset_csv_filenames
 
 
 class Script(object):
@@ -30,28 +31,30 @@ class Script(object):
 
             for algorithm in Constants.ALGORITHMS:
                 self.row_plot.begin_algorithm(algorithm)
-                self.__find_combination(self.filename, algorithm, threshold)
+                basic_value0 = self.__find_combination(self.filename, algorithm, threshold)
 
                 for window_size in Constants.WINDOWS:
-                    self.__find_next_line(6, window_size, True)
+                    self.__find_next_line(Constants.INDEX_WINDOW, window_size, True)
                     window, value0, value3 = self.__parse_line_values()
-                    self.row_plot.add_values(window, value0, value3)
+                    self.row_plot.add_values(window, value0, value3, basic_value0)
 
                 self.row_plot.end_algorithm()
                 self.__goto_file_start()
             self.plotter.add_row_plot(self.row_plot)
 
-    def plot1(self):
-        return self.plotter.plot()
+    def plotter1(self):
+        return self.plotter
 
-    def plot2(self):
-        plotter2 = Plotter2(self.plotter)
-        return plotter2.plot()
+    def plotter2(self):
+        return Plotter2(self.plotter)
 
     def __find_combination(self, filename, algorithm, threshold):
         self.__find_next_line(Constants.INDEX_FILENAME, filename, False)
+        basic_value0_index = self.__get_value0_index()
+        basic_value0 = self.__get_int(self.line[basic_value0_index])
         self.__find_next_line(Constants.INDEX_ALGORITHM, algorithm, False)
         self.__find_next_line(Constants.INDEX_THRESHOLD, threshold, True)
+        return basic_value0
 
     def __matching_line(self, index, value, is_integer):
         value_in_index = self.line[index]
@@ -76,10 +79,13 @@ class Script(object):
 
     def __parse_line_values(self):
         window = int(self.line[Constants.INDEX_WINDOW])
-        value0_index = Constants.INDEX_WINDOW + self.column_index
+        value0_index = self.__get_value0_index()
         value0 = self.__get_int(self.line[value0_index])
-        value3 = self.__get_int(self.line[value0_index + 7])
+        value3 = self.__get_int(self.line[value0_index + Constants.MAX_COLUMN_TYPES])
         return window, value0, value3
+
+    def __get_value0_index(self):
+        return Constants.INDEX_WINDOW + self.column_index
 
     @classmethod
     def __get_int(cls, string):
@@ -92,28 +98,71 @@ class Script(object):
         self.line_count = 0
 
 
-def add_to_pdf(pdf, filename, column_index):
-    script = Script(filename, column_index)
-    script.run()
-    # fig, plt = script.plot1()
-    fig, plt = script.plot2()
+class PDFScript(object):
+    GRAPH_PATH = "scripts/avances14/graphs/"
 
-    # plt.show(); exit(0)  # uncomment to generate a single graph
-    pdf.savefig(fig)
-    plt.close()
+    def __init__(self):
+        for dataset_id, dataset_dictionary in enumerate(DATASETS_ARRAY):
+            self.dataset_id = dataset_id + 1
+            self.dataset_name, self.cols = dataset_dictionary['name'], dataset_dictionary['cols']
+            self.__create_pdfs_for_dataset()
 
+    def __create_pdfs_for_dataset(self):
+        plotter3 = self.__create_pdf1()
+        if plotter3.must_plot:
+            self.__create_pdf2(plotter3)
+            self.__create_pdf3(plotter3)
+            self.__create_pdf4(plotter3)
+        # exit()
 
-def create_pdf(dataset_id, dataset_dictionary):
-    input_path = CSV_PATH + dataset_dictionary['folder']
-    dataset_name = dataset_dictionary['name']
-    cols = dataset_dictionary['cols']
-    with PdfPages("scripts/avances14/graphs/" + str(dataset_id) + "-" + dataset_name + ".pdf") as pdf:
-        for id1, input_filename in enumerate(csv_files_filenames(input_path)):
-            if dataset_name in ["NOAA-SST", "NOAA-ADCP"] and id1 >= 3:
-                continue
-            for col_index in range(cols):
-                add_to_pdf(pdf, input_filename, col_index + 1)
+    def __create_pdf1(self):
+        with PdfPages(self.__pdf_name("")) as pdf:
+            plotter3 = self.__create_pdf1_iteration(pdf)
+            return plotter3
 
+    def __create_pdf2(self, plotter3):
+        with PdfPages(self.__pdf_name("Global-")) as pdf:
+            for plotter in plotter3.global_plotters():
+                self.__plot_and_save(pdf, plotter)
 
-for ds_id, ds_dict in enumerate(DATASETS_ARRAY):
-    create_pdf(ds_id + 1, ds_dict)
+    def __create_pdf3(self, plotter3):
+        with PdfPages(self.__pdf_name("Globalvs0-")) as pdf:
+            for plotter in plotter3.compare_plotters_0():
+                print "i"
+                self.__plot_and_save(pdf, plotter)
+
+    def __create_pdf4(self, plotter3):
+        with PdfPages(self.__pdf_name("Globalvs3-")) as pdf:
+            for plotter in plotter3.compare_plotters_3():
+                print "i"
+                self.__plot_and_save(pdf, plotter)
+
+    def __pdf_name(self, extra):
+        print extra
+        return self.GRAPH_PATH + extra + str(self.dataset_id) + "-" + self.dataset_name + ".pdf"
+
+    def __create_pdf1_iteration(self, pdf):
+        plotter3 = Plotter3(self.dataset_name)
+        for file_index, input_filename in enumerate(dataset_csv_filenames(self.dataset_name)):
+            for col_index in range(self.cols):
+                plotter2 = self.__add_page_to_pdf(pdf, input_filename, col_index + 1)
+                plotter3.add_plotter2(plotter2)
+        return plotter3
+
+    @classmethod
+    def __add_page_to_pdf(cls, pdf, filename, column_index):
+        script = Script(filename, column_index)
+        script.run()
+        # plotter = script.plotter1()
+        plotter = script.plotter2()
+        cls.__plot_and_save(pdf, plotter)
+        return plotter
+
+    @classmethod
+    def __plot_and_save(cls, pdf, plotter):
+        fig, plt = plotter.plot()
+        # plt.show(); exit(0)  # uncomment to generate a single graph
+        pdf.savefig(fig)
+        plt.close()
+
+PDFScript()
