@@ -128,13 +128,13 @@ class PDFScript(object):
     def __create_pdf3(self, plotter3):
         with PdfPages(self.__pdf_name("Globalvs0-")) as pdf:
             for plotter in plotter3.compare_plotters_0():
-                print "i"
+                # print "i"
                 self.__plot_and_save(pdf, plotter)
 
     def __create_pdf4(self, plotter3):
         with PdfPages(self.__pdf_name("Globalvs3-")) as pdf:
             for plotter in plotter3.compare_plotters_3():
-                print "i"
+                # print "i"
                 self.__plot_and_save(pdf, plotter)
 
     def __pdf_name(self, extra):

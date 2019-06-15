@@ -49,7 +49,7 @@ class Plotter3(object):
 
             for algo_i, algorithm in enumerate(Constants.ALGORITHMS):
                 # print "algorithm = " + algorithm
-                new_column = Column(algorithm)
+                new_column = Column(algorithm, mode_str == "mode3")
                 column = plotter2.matrix.columns[algo_i]
                 tb_plot, ws_plot = column.total_bits_plot, column.windows_plot
 

@@ -9,13 +9,15 @@ from scripts.avances15.plotter2_constants import Plotter2Constants
 
 
 class RelativeDifferencePlot(CommonPlot):
-    def __init__(self, algorithm):
+    def __init__(self, algorithm, value3_smaller):
         self.algorithm = algorithm
+        self.value3_smaller = value3_smaller
         self.values = []
         super(RelativeDifferencePlot, self).__init__()
 
     def add_value(self, value0, value3):
-        plot_value = 100 * SinglePlot.plot_value(value0, value3)
+        values = (value0, value3) if self.value3_smaller else (value3, value0)
+        plot_value = 100*SinglePlot.plot_value(*values)
         self.values.append(plot_value)
 
     def close(self):
@@ -29,7 +31,7 @@ class RelativeDifferencePlot(CommonPlot):
 
         # scatter plot
         x_axis = list(xrange(len(self.values)))
-        colors = [self.color_code(item) for item in self.values]
+        colors = [self.color_code(item, self.value3_smaller) for item in self.values]
         ax.scatter(x=x_axis, y=self.values, c=colors)
         ax.grid(b=True, color=Constants.COLOR_SILVER)
         ax.set_axisbelow(True)
