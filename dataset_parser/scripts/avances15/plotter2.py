@@ -10,6 +10,9 @@ from scripts.avances15.matrix import Matrix
 
 
 class Plotter2(object):
+    FIGSIZE_H = 25
+    FIGSIZE_V = 10
+
     def __init__(self, plotter):
         self.plotter = plotter
         self.matrix = Matrix()
@@ -22,7 +25,7 @@ class Plotter2(object):
         self.matrix = matrix
 
     def plot(self):
-        fig = PlotUtils.create_figure(20, 10, self.plotter.column_title())
+        fig = PlotUtils.create_figure(Plotter2.FIGSIZE_H, Plotter2.FIGSIZE_V, self.plotter.column_title())
         if self.matrix.empty():
             self.__collect_data_plot()
         return self.__plot(fig)

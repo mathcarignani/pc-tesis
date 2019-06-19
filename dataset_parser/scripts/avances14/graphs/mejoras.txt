@@ -1,3 +1,0 @@
-Mejoras a las gráficas:
-(1) Saco la primera fila (total bits)
-(2) En las gráficas Globalvs0 ahora la Relative Difference siempre es mayor a 0.

@@ -3,6 +3,27 @@ sys.path.append('.')
 
 from matplotlib.backends.backend_pdf import PdfPages
 
+# import matplotlib.pyplot as plt
+# import matplotlib
+# matplotlib.rcParams['text.usetex']=True
+# matplotlib.rcParams['text.latex.unicode']=True
+#
+# string = r'z=${value}^{upper}_{lower}$'.format(
+#                 value='{' + str(0.27) + '}',
+#                 upper='{+' + str(0.01) + '}',
+#                 lower='{-' + str(0.01) + '}')
+# string = r'z=${value}^{upper}_{lower}$'.format(
+#                 value='{' + str(0.27) + '}',
+#                 upper='{+' + str(0.01) + '}',
+#                 lower='{-' + str(0.01) + '}')
+# print(string)
+#
+# fig = plt.figure(figsize=(3,1))
+# fig.text(0.1,0.5,string,size=24,va='center')
+# fig.savefig('issue5076.pdf')
+# fig.savefig('issue5076.png')
+# exit(1)
+
 from scripts.avances14.row_plot import RowPlot
 from scripts.avances14.plotter import Plotter
 from scripts.avances15.plotter2 import Plotter2
@@ -116,25 +137,27 @@ class PDFScript(object):
         # exit()
 
     def __create_pdf1(self):
+        print "pdf1"
         with PdfPages(self.__pdf_name("")) as pdf:
             plotter3 = self.__create_pdf1_iteration(pdf)
             return plotter3
 
     def __create_pdf2(self, plotter3):
+        print "pdf2"
         with PdfPages(self.__pdf_name("Global-")) as pdf:
             for plotter in plotter3.global_plotters():
                 self.__plot_and_save(pdf, plotter)
 
     def __create_pdf3(self, plotter3):
+        print "pdf3"
         with PdfPages(self.__pdf_name("Globalvs0-")) as pdf:
             for plotter in plotter3.compare_plotters_0():
-                # print "i"
                 self.__plot_and_save(pdf, plotter)
 
     def __create_pdf4(self, plotter3):
+        print "pdf4"
         with PdfPages(self.__pdf_name("Globalvs3-")) as pdf:
             for plotter in plotter3.compare_plotters_3():
-                # print "i"
                 self.__plot_and_save(pdf, plotter)
 
     def __pdf_name(self, extra):
