@@ -14,11 +14,11 @@ class CommonPlot(object):
         self.value0_color = value0_color or self.value0_color
         self.value3_color = value3_color or self.value3_color
 
-    def color_code(self, value):
+    def color_code(self, value, value3_smaller=True):
         if value > 0:
-            return self.value3_color
+            return self.value3_color if value3_smaller else self.value0_color
         elif value < 0:
-            return self.value0_color
+            return self.value0_color if value3_smaller else self.value3_color
         else:  # value == 0
             return Plotter2Constants.VALUE_SAME
 

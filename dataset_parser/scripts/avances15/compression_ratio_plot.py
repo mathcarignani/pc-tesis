@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import sys
 sys.path.append('.')
 
@@ -55,7 +58,9 @@ class CompressionRatioPlot(CommonPlot):
         if not extra['last_row']:
             ax.set_xticklabels([])
         if extra['first_column']:
-            ax.set_ylabel('Compression Ratio (%)')
+            ax.set_ylabel('Tasa de compresion (%)')
+            # ax.set_ylabel(r'Tasa de compresi\'{o}n (\%)')
+            # ax.set_ylabel('Compression Ratio (%)')
             self.format_x_ticks(ax)
         else:
             ax.set_yticklabels([])

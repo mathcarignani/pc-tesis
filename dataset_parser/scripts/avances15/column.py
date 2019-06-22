@@ -8,10 +8,10 @@ from scripts.avances15.windows_plot import WindowsPlot
 
 
 class Column(object):
-    def __init__(self, algorithm):
+    def __init__(self, algorithm, value3_smaller):
         self.total_bits_plot = TotalBitsPlot(algorithm)
         self.compression_ratio_plot = CompressionRatioPlot(algorithm)
-        self.relative_difference_plot = RelativeDifferencePlot(algorithm)
+        self.relative_difference_plot = RelativeDifferencePlot(algorithm, value3_smaller)
         self.windows_plot = WindowsPlot(algorithm)
         self.stats_table = None
         self.y_min_bits, self.y_max_bits, self.y_min_rel, self.y_max_rel, self.y_min_ratio, self.y_max_ratio = [None] * 6
@@ -43,14 +43,15 @@ class Column(object):
         self.y_max_ratio = y_max_ratio
 
     def rows(self):
-        return [self.total_bits_plot, self.compression_ratio_plot, self.relative_difference_plot, self.windows_plot]
+        # return [self.total_bits_plot, self.compression_ratio_plot, self.relative_difference_plot, self.windows_plot]
+        return [self.compression_ratio_plot, self.relative_difference_plot, self.windows_plot]
 
     def plot(self, row_i, ax, extra):
+        # if row_i == 0:
+        #     self.total_bits_plot.plot(ax, self.y_min_bits, self.y_max_bits, extra)
         if row_i == 0:
-            self.total_bits_plot.plot(ax, self.y_min_bits, self.y_max_bits, extra)
-        elif row_i == 1:
             self.compression_ratio_plot.plot(ax, self.y_min_ratio, self.y_max_ratio, extra)
-        elif row_i == 2:
+        elif row_i == 1:
             self.relative_difference_plot.plot(ax, self.y_min_rel, self.y_max_rel, extra)
         else:
             self.windows_plot.plot(ax, extra)

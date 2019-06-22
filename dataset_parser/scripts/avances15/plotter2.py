@@ -10,6 +10,9 @@ from scripts.avances15.matrix import Matrix
 
 
 class Plotter2(object):
+    FIGSIZE_H = 25
+    FIGSIZE_V = 10
+
     def __init__(self, plotter):
         self.plotter = plotter
         self.matrix = Matrix()
@@ -22,7 +25,7 @@ class Plotter2(object):
         self.matrix = matrix
 
     def plot(self):
-        fig = PlotUtils.create_figure(20, 10, self.plotter.column_title())
+        fig = PlotUtils.create_figure(Plotter2.FIGSIZE_H, Plotter2.FIGSIZE_V, self.plotter.column_title())
         if self.matrix.empty():
             self.__collect_data_plot()
         return self.__plot(fig)
@@ -51,18 +54,18 @@ class Plotter2(object):
                 column.plot(row_i, ax, extra)
 
         # plot stats
-        current_subplot = 2*total_columns + total_columns  # third row
+        current_subplot = (total_rows-2)*total_columns + total_columns  # second to last row
         ax = fig.add_subplot(total_rows, total_columns, current_subplot)
         self.matrix.relative_difference_stats.plot(ax)
 
-        current_subplot = 3*total_columns + total_columns  # fourth row
+        current_subplot = (total_rows-1)*total_columns + total_columns  # last row
         ax = fig.add_subplot(total_rows, total_columns, current_subplot)
         self.matrix.windows_stats.plot(ax)
         return fig, plt
 
     def __collect_data_plot(self):
         for algorithm_index, algorithm in enumerate(Constants.ALGORITHMS):
-            column = Column(algorithm)
+            column = Column(algorithm, True)
             for row_index, row_plot in enumerate(self.plotter.row_plots):  # threshold row
                 single_plot = row_plot.plots[algorithm_index]  # algorithm
                 best_values = single_plot.best_values()  # get best values for <threshold, algorithm>

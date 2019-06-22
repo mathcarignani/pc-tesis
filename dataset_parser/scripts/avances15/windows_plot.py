@@ -43,11 +43,10 @@ class WindowsPlot(CommonPlot):
         ax.scatter(x=x_axis_same, y=y_axis_same, c=Plotter2Constants.VALUE_SAME)
         ax.grid(b=True, color=Constants.COLOR_SILVER)
         ax.set_axisbelow(True)
-        ax.set_xticklabels([''] + Constants.THRESHOLDS)
-
         ax.set_ylim(top=len(Constants.WINDOWS), bottom=-1)
 
         if extra['last_row']:
+            ax.set_xticklabels([''] + Constants.THRESHOLDS)
             ax.set_xlabel('Error Threshold (%)')
         if extra['first_column']:
             ax.set_ylabel('Window Size')
