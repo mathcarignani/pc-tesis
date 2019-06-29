@@ -1,0 +1,38 @@
+
+\renewcommand{\listtablename}{Índice de tablas}
+
+\frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
+
+\setstretch{1.3} % Line spacing of 1.3
+
+% Define the page headers using the FancyHdr package and set up for one-sided printing
+\fancyhead{} % Clears all page headers and footers
+\rhead{\thepage} % Sets the right side header to show the page number
+\lhead{} % Clears the left side page header
+
+\pagestyle{fancy} % Finally, use the "fancy" page style to implement the FancyHdr headers
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % New command to make the lines in the title page
+
+% PDF meta-data
+\hypersetup{pdftitle={\ttitle}}
+\hypersetup{pdfsubject=\subjectname}
+\hypersetup{pdfauthor=\authornames}
+\hypersetup{pdfkeywords=\keywordnames}
+
+
+
+\theoremstyle{definition}
+\newtheorem{exmp}{Ejemplo}[section]
+
+\theoremstyle{definition}
+\newtheorem{defcion}{Definición}[section]
+
+\theoremstyle{definition}
+\newtheorem{teorema}{Teorema}[section]
+
+\theoremstyle{definition}
+\newtheorem{corolario}{Corolario}[section]
+
+\theoremstyle{definition}
+\newtheorem{propo}{Proposición}[section]

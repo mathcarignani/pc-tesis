@@ -1,0 +1,12 @@
+%----------------------------------------------------------------------------------------
+%	ABSTRACT PAGE
+%----------------------------------------------------------------------------------------
+
+\addtotoc{Resumen} % Add the "Abstract" page entry to the Contents
+
+\abstract{\addtocontents{toc}{\vspace{0.3em}} % Add a gap in the Contents, for aesthetics
+
+En este proyecto estudiamos la codificación de señales multicanal. Consideramos una señal (de audio, una imagen, etc.), compuesta por $n$ canales, sobre los que aplicamos funciones que reducen la cantidad de canales a $m$ ($m$ < $n$). En general existe correlación entre los canales de la señal original, y a su vez las funciones aplicadas al reducir los canales también inducen correlación entre los canales de la señal transformada. Como primer problema de estudio nos planteamos determinar si un algoritmo de compresión en el que el codificador conoce la señal original y las funciones de transformación puede sacar provecho de esta información para obtener mejores niveles de compresión de los que se pueden lograr con otro algoritmo cuyo codificador solamente tiene acceso a la señal transformada. Llegamos a la conclusión de que la información adicional que conoce el codificador no le sirve al primer algoritmo para comprimir la señal transformada con menos bits que el segundo algoritmo. Desde un punto de vista práctico, diseñamos e implementamos dos codificadores, llamados GolombBN y T, para la codificación de variables aleatorias con distribución binomial negativa. Esta distribución surge al sumar dos distribuciones geométricas con igual parámetro. La distribución geométrica es importante ya que aparece naturalmente para modelar variables que se codifican en compresores de, por ejemplo, audio e imágenes. El codificador GolombBN es una versión levemente modificada del codificador de Golomb, y su principal ventaja es que tiene una baja complejidad computacional, lo que le permite codificar con tiempos de ejecución muy cortos. La desventaja es que los largos medios de código obtenidos no están cerca del óptimo. El codificador T, en cambio, es bastante más complejo y requiere mayor tiempo de procesamiento, pero los largos medios de código obtenidos son significativamente menores. Por los datos experimentales obtenidos, pensamos que es o está muy cerca de ser un codificador óptimo para la distribución binomial negativa.
+
+}
+\clearpage
