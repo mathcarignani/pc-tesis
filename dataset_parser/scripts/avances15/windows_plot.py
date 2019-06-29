@@ -47,7 +47,7 @@ class WindowsPlot(CommonPlot):
 
         if extra['last_row']:
             ax.set_xticklabels([''] + Constants.THRESHOLDS)
-            ax.set_xlabel('Error Threshold (%)')
+            ax.set_xlabel(Constants.ERROR_THRE)
         if extra['first_column']:
             ax.set_ylabel('Window Size')
             ax.set_yticklabels([''] + Constants.WINDOWS)

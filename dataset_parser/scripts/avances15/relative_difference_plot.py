@@ -43,13 +43,11 @@ class RelativeDifferencePlot(CommonPlot):
         if not extra['last_row']:
             ax.set_xticklabels([])
         if extra['first_column']:
-            ax.set_ylabel('Diferencia relativa')
-            # ax.set_ylabel(r'\textit{DiferenciaRelativa}')
-            # ax.set_ylabel('Relative Difference (%)')
+            ax.set_ylabel(Constants.RELATIVE_DIFF)
         else:
             ax.set_yticklabels([])
         ax.set_xticklabels([''] + Constants.THRESHOLDS)
-        ax.set_xlabel('Error Threshold (%)')
+        ax.set_xlabel(Constants.ERROR_THRE)
         PlotUtils.hide_ticks(ax)
 
     def print_values(self):

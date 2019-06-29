@@ -184,6 +184,7 @@ class PDFScript(object):
     @classmethod
     def __plot_and_save(cls, pdf, plotter):
         fig, plt = plotter.plot()
+        plt.subplots_adjust(wspace=0.1)
         # plt.show(); exit(0)  # uncomment to generate a single graph
         pdf.savefig(fig)
         plt.close()

@@ -23,3 +23,7 @@ class Constants(object):
     COLOR_BLACK = 'black'
     COLOR_YELLOW = 'gold'
     COLOR_GREEN_F = 'forestgreen'
+
+    COMPRESSION_RATIO = r'Tasa de compresi$\acute{o}$n (%)' # 'Tasa de compresion (%)'
+    RELATIVE_DIFF = 'Diferencia relativa'
+    ERROR_THRE = 'Umbral de error (%)'

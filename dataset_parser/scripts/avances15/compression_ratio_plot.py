@@ -11,6 +11,14 @@ from scripts.avances15.common_plot import CommonPlot
 from scripts.avances15.plotter2_constants import Plotter2Constants
 from scripts.avances15.relative_difference_plot import RelativeDifferencePlot
 
+# To make the latex math text look like the other text
+# https://stackoverflow.com/a/27697390/4547232
+import matplotlib
+matplotlib.rcParams['mathtext.fontset'] = 'custom'
+matplotlib.rcParams['mathtext.rm'] = 'Bitstream Vera Sans'
+matplotlib.rcParams['mathtext.it'] = 'Bitstream Vera Sans'  # 'Bitstream Vera Sans:italic'
+matplotlib.rcParams['mathtext.bf'] = 'Bitstream Vera Sans'  # 'Bitstream Vera Sans:bold'
+
 
 class CompressionRatioPlot(CommonPlot):
     def __init__(self, algorithm):
@@ -58,9 +66,7 @@ class CompressionRatioPlot(CommonPlot):
         if not extra['last_row']:
             ax.set_xticklabels([])
         if extra['first_column']:
-            ax.set_ylabel('Tasa de compresion (%)')
-            # ax.set_ylabel(r'Tasa de compresi\'{o}n (\%)')
-            # ax.set_ylabel('Compression Ratio (%)')
+            ax.set_ylabel(Constants.COMPRESSION_RATIO)
             self.format_x_ticks(ax)
         else:
             ax.set_yticklabels([])

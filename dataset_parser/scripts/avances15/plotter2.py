@@ -10,8 +10,8 @@ from scripts.avances15.matrix import Matrix
 
 
 class Plotter2(object):
-    FIGSIZE_H = 25
-    FIGSIZE_V = 10
+    FIGSIZE_H = 15
+    FIGSIZE_V = 25
 
     def __init__(self, plotter):
         self.plotter = plotter
@@ -33,37 +33,49 @@ class Plotter2(object):
     def __plot(self, fig):
         # plot
         total_rows, total_columns = self.matrix.total_rows_columns()
-        total_columns += 1  # stats column
-
-        self.__plot_data(fig, total_rows, total_columns)
-        self.__plot_stats(fig, total_rows, total_columns)
+        # print "(total_rows, total_columns) = ", (total_rows, total_columns)
+        self.__plot_data(fig, total_rows)
+        self.__plot_stats(fig)
         return fig, plt
 
-    def __plot_data(self, fig, total_rows, total_columns):
+    @staticmethod
+    def __map_subplot(row_i, col_j):
+        val = row_i*6 + col_j + 1
+        if val in [1, 2, 3]:
+            pass
+        elif val in [4, 5, 6]:
+            val += 6
+        elif val in [7, 8, 9]:
+            val -= 3
+        elif val in [10, 11, 12]:
+            val += 3
+        elif val in [13, 14, 15]:
+            val -= 6
+        elif val in [16, 17, 18]:
+            pass
+        else:
+            raise(StandardError, "error => " + str(val))
+        extra = {
+            'first_column': val in [1, 4, 7, 10, 13, 16],
+            'last_column': val in [3, 6, 9, 12, 15, 18],
+            'first_row': val in [1, 2, 3, 10, 11, 12],
+            'last_row': val in [16, 17, 18]
+        }
+        return 7, 3, val, extra
+
+    def __plot_data(self, fig, total_rows):
         for col_j, column in enumerate(self.matrix.columns):
-            first_column = (col_j == 0)
-            last_column = (col_j == total_columns - 1)
-
             for row_i in range(total_rows):
-                first_row = (row_i == 0)
-                last_row = (row_i == total_rows - 1)
-
-                current_subplot = row_i*total_columns + col_j + 1
-                # print(total_rows, total_columns, current_subplot)
-                ax = fig.add_subplot(total_rows, total_columns, current_subplot)
-                extra = {
-                    'first_column': first_column, 'last_column': last_column,
-                    'first_row': first_row, 'last_row': last_row
-                }
+                row, col, current_subplot, extra = self.__map_subplot(row_i, col_j)
+                # print(row, col, current_subplot)
+                ax = fig.add_subplot(row, col, current_subplot)
                 column.plot(row_i, ax, extra)
 
-    def __plot_stats(self, fig, total_rows, total_columns):
-        current_subplot = (total_rows-2)*total_columns + total_columns  # second to last row
-        ax = fig.add_subplot(total_rows, total_columns, current_subplot)
+    def __plot_stats(self, fig):
+        ax = fig.add_subplot(7, 3, 19)
         self.matrix.relative_difference_stats.plot(ax)
 
-        current_subplot = (total_rows-1)*total_columns + total_columns  # last row
-        ax = fig.add_subplot(total_rows, total_columns, current_subplot)
+        ax = fig.add_subplot(7, 3, 20)
         self.matrix.windows_stats.plot(ax)
 
     def __collect_data_plot(self):
