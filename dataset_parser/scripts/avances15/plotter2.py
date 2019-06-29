@@ -35,7 +35,11 @@ class Plotter2(object):
         total_rows, total_columns = self.matrix.total_rows_columns()
         total_columns += 1  # stats column
 
-        # plot data
+        self.__plot_data(fig, total_rows, total_columns)
+        self.__plot_stats(fig, total_rows, total_columns)
+        return fig, plt
+
+    def __plot_data(self, fig, total_rows, total_columns):
         for col_j, column in enumerate(self.matrix.columns):
             first_column = (col_j == 0)
             last_column = (col_j == total_columns - 1)
@@ -53,7 +57,7 @@ class Plotter2(object):
                 }
                 column.plot(row_i, ax, extra)
 
-        # plot stats
+    def __plot_stats(self, fig, total_rows, total_columns):
         current_subplot = (total_rows-2)*total_columns + total_columns  # second to last row
         ax = fig.add_subplot(total_rows, total_columns, current_subplot)
         self.matrix.relative_difference_stats.plot(ax)
@@ -61,7 +65,6 @@ class Plotter2(object):
         current_subplot = (total_rows-1)*total_columns + total_columns  # last row
         ax = fig.add_subplot(total_rows, total_columns, current_subplot)
         self.matrix.windows_stats.plot(ax)
-        return fig, plt
 
     def __collect_data_plot(self):
         for algorithm_index, algorithm in enumerate(Constants.ALGORITHMS):
