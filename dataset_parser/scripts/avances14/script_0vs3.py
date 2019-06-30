@@ -3,27 +3,6 @@ sys.path.append('.')
 
 from matplotlib.backends.backend_pdf import PdfPages
 
-# import matplotlib.pyplot as plt
-# import matplotlib
-# matplotlib.rcParams['text.usetex']=True
-# matplotlib.rcParams['text.latex.unicode']=True
-#
-# string = r'z=${value}^{upper}_{lower}$'.format(
-#                 value='{' + str(0.27) + '}',
-#                 upper='{+' + str(0.01) + '}',
-#                 lower='{-' + str(0.01) + '}')
-# string = r'z=${value}^{upper}_{lower}$'.format(
-#                 value='{' + str(0.27) + '}',
-#                 upper='{+' + str(0.01) + '}',
-#                 lower='{-' + str(0.01) + '}')
-# print(string)
-#
-# fig = plt.figure(figsize=(3,1))
-# fig.text(0.1,0.5,string,size=24,va='center')
-# fig.savefig('issue5076.pdf')
-# fig.savefig('issue5076.png')
-# exit(1)
-
 from scripts.avances14.row_plot import RowPlot
 from scripts.avances14.plotter import Plotter
 from scripts.avances15.plotter2 import Plotter2
@@ -32,6 +11,14 @@ from file_utils.csv_utils.csv_reader import CSVReader
 from scripts.compress.compress_aux import DATASETS_ARRAY
 from scripts.avances14.constants import Constants
 from scripts.compress.compress_aux import dataset_csv_filenames
+
+
+def matching_line(line, index, value, is_integer):
+    value_in_index = line[index]
+    if len(value_in_index) == 0:
+        return False
+    value_to_compare = int(value_in_index) if is_integer else value_in_index
+    return value == value_to_compare
 
 
 class Script(object):
@@ -77,24 +64,17 @@ class Script(object):
         self.__find_next_line(Constants.INDEX_THRESHOLD, threshold, True)
         return basic_value0
 
-    def __matching_line(self, index, value, is_integer):
-        value_in_index = self.line[index]
-        if len(value_in_index) == 0:
-            return False
-        value_to_compare = int(value_in_index) if is_integer else value_in_index
-        return value == value_to_compare
-
     def __read_line(self):
         self.line = self.input_file.read_line()
         self.line_count += 1
 
     def __find_next_line(self, index, value, is_integer):
-        if self.line_count > 0 and self.__matching_line(index, value, is_integer):
+        if self.line_count > 0 and matching_line(self.line, index, value, is_integer):
             return True
 
         while self.input_file.continue_reading:
             self.__read_line()
-            if self.__matching_line(index, value, is_integer):
+            if matching_line(self.line, index, value, is_integer):
                 return True
         raise Exception("ERROR: __find_next_line")
 
@@ -189,4 +169,4 @@ class PDFScript(object):
         pdf.savefig(fig)
         plt.close()
 
-PDFScript()
+# PDFScript()
