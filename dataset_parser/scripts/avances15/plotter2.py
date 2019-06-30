@@ -10,7 +10,7 @@ from scripts.avances15.matrix import Matrix
 
 
 class Plotter2(object):
-    FIGSIZE_H = 15
+    FIGSIZE_H = 10
     FIGSIZE_V = 25
 
     def __init__(self, plotter):
