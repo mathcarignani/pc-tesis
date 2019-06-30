@@ -7,7 +7,7 @@ from scripts.compress.compress_aux import THRESHOLD_PERCENTAGES
 from auxi.os_utils import python_project_path
 
 # input_path = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-11/3-results/MASK_MODE_3-results-ubuntu"
-input_path = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-13/4-script1"
+input_path = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-13/2-complete"
 
 window_index = 6
 
@@ -218,7 +218,7 @@ class Script1(object):
         Script1Write(output_filename1, output_filename2, hash_).write()
 
 # Script1("results-3-ubuntu.csv", "results-3-ubuntu_process1.csv", "results-3-ubuntu_process2.csv")
-Script1("complete-mask-mode=3-remove.csv", "mask-mode=3_process1.csv", "mask-mode=3_process2.csv")
+Script1("complete-mask-mode=3.csv", "complete-mask-mode=3_process_1.csv", "complete-mask-mode=3_process_2.csv")
 
 
 
