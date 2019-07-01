@@ -67,68 +67,26 @@ En los datasets que tienen muchos gaps siempre se obtienen mejores tasas al util
 \input{chapter1/table-relative.tex}
 \vspace{-10pt}
 
-Observamos que, en los casos en los que se obtienen mejores tasas con el algoritmo $\NOmaskalgo$, la diferencia relativa siempre está cerca de 0. En la figura \ref{fig:diff-tornadp} vemos que la mejor diferencia relativa a favor de $\NOmaskalgo$ se obtiene para el tipo de dato ``Longitude" del dataset NOAA-SPC-tornado, con el codificador CoderAPCA-$\NOmaskalgo$ y umbral de error 30\%. Como se observa en la tabla \ref{tabla:rendimiento-relativ-NM-M}, dicho valor es~$-0,29$.
+Observamos que, en los casos en los que se obtienen mejores tasas con el algoritmo $\NOmaskalgo$, la diferencia relativa siempre está cerca de 0. En la figura \ref{fig:diff-tornado} vemos que la mejor diferencia relativa a favor de $\NOmaskalgo$ se obtiene para el tipo de dato ``Longitude" del dataset NOAA-SPC-tornado, con el codificador CoderAPCA-$\NOmaskalgo$ y umbral de error 30\%. Como se observa en la tabla \ref{tabla:rendimiento-relativ-NM-M}, dicho valor es~$-0,29$.
 
-Por otro lado, cuando se logran mejores tasas con el algoritmo $\maskalgo$ las diferencias relativas son mucho mayores, alcanzando un máximo de 50,60 para el tipo de dato ``VWC" del dataset NOAA-SST. En la figura \ref{fig:diff-noaasst} vemos que dicho resultado se obtiene con el codificador CoderPCA-$\maskalgo$ y umbral de error 30\%.
+Por otro lado, cuando se logran mejores tasas con el algoritmo $\maskalgo$ las diferencias relativas son mucho mayores, alcanzando un máximo de 50,60 para el tipo de dato ``VWC" del dataset NOAA-SST. En la figura \ref{fig:diff-sst} vemos que dicho resultado se obtiene con el codificador CoderPCA-$\maskalgo$ y umbral de error 30\%.
 
 Teniendo en cuenta los resultados presentados, si quisiéramos codificar un dataset que a priori supiéramos tiene muchos gaps, obviamente nos convendría utilizar el algoritmo $\maskalgo$. Pero aún si el dataset no tuviera gaps, la diferencia de rendimiento a favor del algoritmo $\NOmaskalgo$ sería despreciable. Como el algoritmo $\maskalgo$ es más robusto y funciona mejor en general, en las próximas secciones nos vamos a enfocar en su estudio.
 
+\begin{figure}
+\hspace{-35pt}
+\includegraphics[scale=0.35]{chapter1/7-NOAA-SPC-tornado-2.png}
+\hspace{+10pt}
+\caption{Tasa de compresión y Diferencia relativa\\para las distintas combinaciones <codificador, umbral de error>\\para el tipo de dato ``Longitude" del dataset Tornado.}
+\label{fig:diff-tornado}
+\end{figure}
+
+\begin{figure}
+\hspace{-35pt}
+\includegraphics[scale=0.35]{chapter1/Global-2-NOAA-SST.png}
+\hspace{+10pt}
+\caption{Tasa de compresión y Diferencia relativa\\para las distintas combinaciones <codificador, umbral>\\para el dataset SST.}
+\label{fig:diff-sst}
+\end{figure}
 
 
-
-\begin{sidewaysfigure}
-  \centering
-    \includegraphics[scale=0.47]{chapter1/7-NOAA-SPC-tornado-2.png}
-    \caption{Tasa de compresión y Diferencia relativa para las distintas combinaciones\\ <codificador, umbral> para el tipo de dato ``Longitude" del dataset NOAA-SPC-tornado.}
-  \label{fig:diff-tornadp}
-  \vspace{20pt}
-    \includegraphics[scale=0.47]{chapter1/Global-2-NOAA-SST.png}
-    \caption{Tasa de compresión y Diferencia relativa para las distintas combinaciones\\ <codificador, umbral> para el tipo de dato ``VWC" del dataset NOAA-SST.}
-  \label{fig:diff-noaasst}
-  \vspace{+25pt}
-\end{sidewaysfigure}
-
-
-
-\clearpage
-
-HECHO INFORME:
-
-- Elegir nomenclatura para los dos distintos modos de ejecución => CoderPCA-NM (sin máscara) y CoderPCA-M (con máscara).
-
-- Realizar un análisis cuantitativo para saber qué tanto mejor comprime el modo MM=0 en los pocos casos en los que funciona mejor que el modo MM=3. Vimos que esos casos se dan en los datasets con pocos o ningún gap, y la diferencia en las tasas de compresión es mínima. En cambio, cuando hay gaps en los datasets, la diferencia relativa de rendimiento a favor del modo MM=3 es mayor. Escribir un párrafo con dicho análisis, incluyendo alguna gráfica como ejemplo.
-
-- Agregar tabla con resumen de los datasets - ver AVANCES / DUDAS (13)
-
-% \clearpage
-\vspace{+20pt}
-
-TODO INFORME:
-
-- Poner las gráficas horizontales, 3 arriba y 3 abajo.
-
-- Vimos que en los datasets sin gaps, en general para todas las combinaciones <tipo de dato, algoritmo> la diferencia relativa no crece al aumentar el umbral de error. Escribir un párrafo explicando el por qué de este comportamiento.
-
-- Mencionar experimentos ventana local vs ventana global. (ver minuta de la reunión del lunes 10/06/2019).
-
-- Mencionar relación de compromiso entre el umbral y la tasa de compresión: al aumentar el umbral mejor la tasa de compresión (lógico).
-
-- Mencionar que CoderSlideFilter no tiene en cuenta el parámetro con el tamaño máximo de la ventana.
-
-- Agregar tabla con resumen de los algoritmos.
-
-- Subir todo el material complementario en un link (después referirlo en el informe)
-
-\clearpage
-
-TODO CÓDIGO:
-
-- Para los experimentos sin máscara no se están considerando los datos para los algoritmos CoderFractalRestampling y CoderSlideFilter.
-
-- Agregar tests para MM=3.
-
-- Al ejecutar los algoritmos GAMPS/GAMPSLimit sobre el dataset de "El Niño" (546 columnas) tengo problemas de memoria en Ubuntu, pero no en la Mac.
-
-- Universalizar algoritmo
-
-- Modificar GAMPS/GAMPSLimit para que utilice floats (4 bytes) en vez de doubles (8 bytes). De todas maneras, no creo que esto cambie los resultados de manera significativa, ya que aun si la cantidad de bits utilizados al codificar con GAMPS/GAMPSLimit fuera la mitad, en ningún caso superaría la tasa obtenida con el mejor codificador.
