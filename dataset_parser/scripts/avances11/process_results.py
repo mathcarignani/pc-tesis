@@ -6,8 +6,6 @@ from file_utils.csv_utils.csv_writer import CSVWriter
 from scripts.compress.compress_aux import THRESHOLD_PERCENTAGES
 from auxi.os_utils import python_project_path
 
-# input_path = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-11/3-results/MASK_MODE_3-results-ubuntu"
-input_path = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-13/2-complete"
 
 window_index = 6
 
@@ -41,7 +39,7 @@ def second_line():
 
 
 class Script1Read(object):
-    def __init__(self, input_filename):
+    def __init__(self, input_path, input_filename):
         self.csv_reader = CSVReader(input_path, input_filename)
         self.hash = {'Datasets': []}
         self.dataset_hash = None
@@ -213,12 +211,18 @@ class Script1Write(object):
 
 
 class Script1(object):
-    def __init__(self, input_filename, output_filename1, output_filename2):
-        hash_ = Script1Read(input_filename).get_hash()
+    def __init__(self, input_path, input_filename, output_filename1, output_filename2):
+        hash_ = Script1Read(input_path, input_filename).get_hash()
         Script1Write(output_filename1, output_filename2, hash_).write()
 
-# Script1("results-3-ubuntu.csv", "results-3-ubuntu_process1.csv", "results-3-ubuntu_process2.csv")
-Script1("complete-mask-mode=3.csv", "complete-mask-mode=3_process_1.csv", "complete-mask-mode=3_process_2.csv")
+# input_path = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-11/3-results/MASK_MODE_3-results-ubuntu"
+# Script1(input_path, "results-3-ubuntu.csv", "results-3-ubuntu_process1.csv", "results-3-ubuntu_process2.csv")
+
+# input_path = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-13/2-complete"
+# Script1(input_path, "complete-mask-mode=3.csv", "complete-mask-mode=3_process_1.csv", "complete-mask-mode=3_process_2.csv")
+
+input_path = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-18/3-global"
+Script1(input_path, "complete-mask-mode=3-global.csv", "complete-mask-mode=3-global_process_1.csv", "complete-mask-mode=3-global_process_2.csv")
 
 
 

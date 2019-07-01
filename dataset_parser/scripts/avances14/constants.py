@@ -10,6 +10,7 @@ class Constants(object):
     INDEX_ALGORITHM = 3
     INDEX_THRESHOLD = 4
     INDEX_WINDOW = 6
+    INDEX_CR_PERCENTAGE = 8
 
     MAX_COLUMN_TYPES = 7  # ElNino
 
