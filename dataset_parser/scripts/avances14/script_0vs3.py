@@ -12,14 +12,7 @@ from scripts.compress.compress_aux import DATASETS_ARRAY
 from scripts.avances14.constants import Constants
 from scripts.compress.compress_aux import dataset_csv_filenames
 from scripts.informe.results_constants import ResultsConstants
-
-
-def matching_line(line, index, value, is_integer):
-    value_in_index = line[index]
-    if len(value_in_index) == 0:
-        return False
-    value_to_compare = int(value_in_index) if is_integer else value_in_index
-    return value == value_to_compare
+from scripts.informe.results_reader import ResultsReader
 
 
 class Script(object):
@@ -70,12 +63,12 @@ class Script(object):
         self.line_count += 1
 
     def __find_next_line(self, index, value, is_integer):
-        if self.line_count > 0 and matching_line(self.line, index, value, is_integer):
+        if self.line_count > 0 and ResultsReader.matching_line(self.line, index, value, is_integer):
             return True
 
         while self.input_file.continue_reading:
             self.__read_line()
-            if matching_line(self.line, index, value, is_integer):
+            if ResultsReader.matching_line(self.line, index, value, is_integer):
                 return True
         raise Exception("ERROR: __find_next_line")
 
