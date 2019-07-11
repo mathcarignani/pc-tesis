@@ -21,11 +21,6 @@ class ResultsReader(object):
         self.line = self.input_file.read_line()
         return self.line
 
-    def __goto_file_start(self):
-        self.input_file.goto_row(0)
-        self.line = None
-        self.line_count = 0
-
     @staticmethod
     def matching_line(line, index, value, is_integer):
         value_in_index = line[index]
@@ -33,6 +28,11 @@ class ResultsReader(object):
             return False
         value_to_compare = int(value_in_index) if is_integer else value_in_index
         return value == value_to_compare
+
+    def __goto_file_start(self):
+        self.input_file.goto_row(0)
+        self.line = None
+        self.line_count = 0
 
     def find_dataset(self, dataset_name):
         self.__goto_file_start()

@@ -5,7 +5,6 @@ from scripts.compress.compress_aux import DATASETS_ARRAY, dataset_csv_filenames
 from file_utils.csv_utils.csv_writer import CSVWriter
 from scripts.avances14.constants import Constants
 from scripts.avances11.utils import calculate_percentage
-from scripts.informe.results_constants import ResultsConstants
 from scripts.informe.results_reader import ResultsReader
 
 
@@ -19,11 +18,11 @@ class GlobalizeResults(object):
         self.value = value
         self.number_of_rows = GlobalizeResults.NUMBER_OF_ROWS[value]
 
-        self.input_file_3 = ResultsReader('raw', value)
+        self.input_file_x = ResultsReader('raw', value)
         self.input_file_0 = ResultsReader('raw', 0)
 
         self.output_file = CSVWriter(output_path, output_file)
-        self.output_file.write_row(self.input_file_3.read_line_no_count())
+        self.output_file.write_row(self.input_file_x.read_line_no_count())
 
         for dataset_obj in DATASETS_ARRAY:
             self.__globalize_dataset(dataset_obj['name'])
@@ -54,8 +53,8 @@ class GlobalizeResults(object):
         assert(len(results_array_0[0]) == 1)
         line0 = self.__mask_results_lines(results_array_0)[0]
 
-        # MM=3 => CoderBasic, CoderPCA, CoderAPCA, etc.
-        self.input_file = self.input_file_3
+        # MM=0or3 => CoderBasic, CoderPCA, CoderAPCA, etc.
+        self.input_file = self.input_file_x
         results_array = self.__results_array(dataset_name, filenames, 1)
         print len(results_array[0])
         assert(len(results_array[0]) == self.number_of_rows)
@@ -64,7 +63,7 @@ class GlobalizeResults(object):
         line0_with_percentages = self.__set_percentages(line0, line0)
         self.output_file.write_row(line0_with_percentages)
         for index, line in enumerate(mask_results_lines):
-            if index > 0:  # Ignore MM=3 => CoderBasic
+            if index > 0:  # Ignore MM=0or3 => CoderBasic
                 line_with_percentages = self.__set_percentages(line, line0)
                 self.output_file.write_row(line_with_percentages)
 
