@@ -4,6 +4,7 @@ sys.path.append('.')
 from file_utils.csv_utils.csv_reader import CSVReader
 from file_utils.csv_utils.csv_writer import CSVWriter
 from scripts.compress.compress_aux import THRESHOLD_PERCENTAGES
+from scripts.informe.results_constants import ResultsConstants
 from auxi.os_utils import python_project_path
 
 
@@ -218,11 +219,11 @@ class Script1(object):
 # input_path = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-11/3-results/MASK_MODE_3-results-ubuntu"
 # Script1(input_path, "results-3-ubuntu.csv", "results-3-ubuntu_process1.csv", "results-3-ubuntu_process2.csv")
 
-# input_path = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-13/2-complete"
-# Script1(input_path, "complete-mask-mode=3.csv", "complete-mask-mode=3_process_1.csv", "complete-mask-mode=3_process_2.csv")
+# input_path, input_filename = ResultsConstants.get_path_and_filename('raw', 3)
+# Script1(input_path, input_filename, "complete-mask-mode=3_process_1.csv", "complete-mask-mode=3_process_2.csv")
 
-input_path = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-18/3-global"
-Script1(input_path, "complete-mask-mode=3-global.csv", "complete-mask-mode=3-global_process_1.csv", "complete-mask-mode=3-global_process_2.csv")
+input_path, input_filename = ResultsConstants.get_path_and_filename('global', 3)
+Script1(input_path, input_filename, "complete-mask-mode=3-global_process_1.csv", "complete-mask-mode=3-global_process_2.csv")
 
 
 

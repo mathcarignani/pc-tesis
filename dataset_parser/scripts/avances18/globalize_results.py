@@ -7,6 +7,7 @@ from file_utils.csv_utils.csv_reader import CSVReader
 from file_utils.csv_utils.csv_writer import CSVWriter
 from scripts.avances14.constants import Constants
 from scripts.avances11.utils import calculate_percentage
+from scripts.informe.results_constants import ResultsConstants
 
 
 class GlobalizeResults(object):
@@ -190,14 +191,13 @@ class GlobalizeResults(object):
         raise Exception("ERROR: __find_next_line")
 
 
-input_path = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-13/2-complete"
-output_path = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-18"
-
-input_file = "complete-mask-mode=3.csv"
-# input_file = "complete-mask-mode=0.csv"
 input_file_0 = "complete-mask-mode=0.csv"
 
+input_path, input_filename = ResultsConstants.get_path_and_filename('raw', 3)
+# input_path, input_filename = ResultsConstants.get_path_and_filename('raw', 0)
+
+output_path = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-18"
 output_file = "complete-mask-mode=3-global.csv"
 # output_file = "complete-mask-mode=0-global.csv"
 
-GlobalizeResults(input_path, input_file, input_file_0, output_path, output_file)
+GlobalizeResults(input_path, input_filename, input_file_0, output_path, output_file)

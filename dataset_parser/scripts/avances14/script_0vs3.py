@@ -11,6 +11,7 @@ from file_utils.csv_utils.csv_reader import CSVReader
 from scripts.compress.compress_aux import DATASETS_ARRAY
 from scripts.avances14.constants import Constants
 from scripts.compress.compress_aux import dataset_csv_filenames
+from scripts.informe.results_constants import ResultsConstants
 
 
 def matching_line(line, index, value, is_integer):
@@ -23,7 +24,7 @@ def matching_line(line, index, value, is_integer):
 
 class Script(object):
     def __init__(self, filename, column_index):
-        path = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-13/3-0vs3"
+        path = ResultsConstants.COMPARE_RESULTS_PATH
         self.input_file = CSVReader(path, "0vs3.csv")
         self.filename = filename
         self.column_index = column_index
