@@ -3,10 +3,10 @@ sys.path.append('.')
 
 from matplotlib.backends.backend_pdf import PdfPages
 
-from scripts.avances14.row_plot import RowPlot
-from scripts.avances14.plotter import Plotter
-from scripts.avances15.plotter2 import Plotter2
-from scripts.avances16.plotter3 import Plotter3
+from scripts.avances.avances14 import RowPlot
+from scripts.avances.avances14 import Plotter
+from scripts.avances.avances15 import Plotter2
+from scripts.avances.avances16.plotter3 import Plotter3
 from file_utils.csv_utils.csv_reader import CSVReader
 from scripts.compress.compress_aux import DATASETS_ARRAY
 from scripts.informe.plot.csv_constants import CSVConstants

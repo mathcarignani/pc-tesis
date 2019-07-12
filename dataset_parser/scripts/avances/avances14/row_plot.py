@@ -1,7 +1,7 @@
 import sys
 sys.path.append('.')
 
-from scripts.avances14.single_plot import SinglePlot
+from scripts.avances.avances14 import SinglePlot
 from scripts.informe.math_utils import MathUtils
 
 

@@ -3,9 +3,9 @@ sys.path.append('.')
 
 from scripts.informe.plot.plot_constants import PlotConstants
 from scripts.informe.plot.plot_utils import PlotUtils
-from scripts.avances14.single_plot import SinglePlot
-from scripts.avances15.common_plot import CommonPlot
-from scripts.avances15.plotter2_constants import Plotter2Constants
+from scripts.avances.avances14 import SinglePlot
+from scripts.avances.avances15.common_plot import CommonPlot
+from scripts.avances.avances15 import Plotter2Constants
 
 
 class RelativeDifferencePlot(CommonPlot):

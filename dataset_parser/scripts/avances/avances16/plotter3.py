@@ -2,11 +2,11 @@ import sys
 sys.path.append('.')
 
 from scripts.compress.compress_aux import dataset_csv_filenames, get_dataset_info
-from scripts.avances14.plotter import Plotter
+from scripts.avances.avances14 import Plotter
 from scripts.informe.plot.plot_constants import PlotConstants
-from scripts.avances15.column import Column
-from scripts.avances15.matrix import Matrix
-from scripts.avances15.plotter2 import Plotter2
+from scripts.avances.avances15 import Column
+from scripts.avances.avances15 import Matrix
+from scripts.avances.avances15 import Plotter2
 
 
 class Plotter3(object):

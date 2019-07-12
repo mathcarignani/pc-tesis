@@ -3,7 +3,7 @@ sys.path.append('.')
 
 from scripts.compress.compress_aux import DATASETS_ARRAY, dataset_csv_filenames
 from file_utils.csv_utils.csv_writer import CSVWriter
-from scripts.avances18.globalize_utils import GlobalizeUtils
+from scripts.avances.avances18.globalize_utils import GlobalizeUtils
 from scripts.informe.plot.csv_constants import CSVConstants
 from scripts.informe.results_reader import ResultsReader
 

@@ -3,7 +3,7 @@ sys.path.append('.')
 
 import matplotlib.pyplot as plt
 from scripts.informe.plot.plot_utils import PlotUtils
-from scripts.avances14.row_plot import RowPlot
+from scripts.avances.avances14 import RowPlot
 
 
 class Plotter(object):

@@ -5,8 +5,8 @@ sys.path.append('.')
 import matplotlib.pyplot as plt
 from scripts.informe.plot.plot_constants import PlotConstants
 from scripts.informe.plot.plot_utils import PlotUtils
-from scripts.avances15.column import Column
-from scripts.avances15.matrix import Matrix
+from scripts.avances.avances15 import Column
+from scripts.avances.avances15 import Matrix
 
 
 class Plotter2(object):

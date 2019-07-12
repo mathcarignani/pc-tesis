@@ -5,6 +5,7 @@ from scripts.informe.plot.csv_constants import CSVConstants
 from scripts.informe.math_utils import MathUtils
 from scripts.informe.results_reader import ResultsReader
 
+
 #
 # Methods used by the following scripts:
 # + avances18/globalize_results.py
