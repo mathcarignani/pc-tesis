@@ -4,9 +4,9 @@
 import sys
 sys.path.append('.')
 
-from scripts.avances11.utils import calculate_percentage
-from scripts.avances14.constants import Constants
-from scripts.avances14.plot_utils import PlotUtils
+from scripts.informe.math_utils import MathUtils
+from scripts.informe.plot.plot_constants import PlotConstants
+from scripts.informe.plot.plot_utils import PlotUtils
 from scripts.avances15.common_plot import CommonPlot
 from scripts.avances15.plotter2_constants import Plotter2Constants
 from scripts.avances15.relative_difference_plot import RelativeDifferencePlot
@@ -32,14 +32,14 @@ class CompressionRatioPlot(CommonPlot):
         self.basic_value0 = basic_value0 if self.basic_value0 is None else self.basic_value0
         assert(self.basic_value0 == basic_value0)  # check that basic_value0 never changes
 
-        value0 = calculate_percentage(basic_value0, value0, 5)
-        value3 = calculate_percentage(basic_value0, value3, 5)
+        value0 = MathUtils.calculate_percentage(basic_value0, value0, 5)
+        value3 = MathUtils.calculate_percentage(basic_value0, value3, 5)
         self.values0.append(value0)
         self.values3.append(value3)
 
     def close(self):
-        assert(len(self.values0) == len(Constants.THRESHOLDS))
-        assert(len(self.values3) == len(Constants.THRESHOLDS))
+        assert(len(self.values0) == len(PlotConstants.THRESHOLDS))
+        assert(len(self.values3) == len(PlotConstants.THRESHOLDS))
         self.__check_sorted()
 
     def min_max(self):
@@ -53,11 +53,11 @@ class CompressionRatioPlot(CommonPlot):
         colors0, colors3 = self.generate_colors()
         ax.scatter(x=x_axis, y=self.values0, c=colors0, zorder=self.values0)
         ax.scatter(x=x_axis, y=self.values3, c=colors3, zorder=self.values3)
-        ax.grid(b=True, color=Constants.COLOR_SILVER)
+        ax.grid(b=True, color=PlotConstants.COLOR_SILVER)
         ax.set_axisbelow(True)
 
         if ymax >= 100:
-            PlotUtils.horizontal_line(ax, 100, Constants.COLOR_SILVER)
+            PlotUtils.horizontal_line(ax, 100, PlotConstants.COLOR_SILVER)
 
         RelativeDifferencePlot.set_lim(ax, ymin, ymax)
 
@@ -66,7 +66,7 @@ class CompressionRatioPlot(CommonPlot):
         if not extra['last_row']:
             ax.set_xticklabels([])
         if extra['first_column']:
-            ax.set_ylabel(Constants.COMPRESSION_RATIO)
+            ax.set_ylabel(PlotConstants.COMPRESSION_RATIO)
             self.format_x_ticks(ax)
         else:
             ax.set_yticklabels([])

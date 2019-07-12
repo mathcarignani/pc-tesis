@@ -3,7 +3,7 @@ sys.path.append('.')
 
 from file_utils.csv_utils.csv_reader import CSVReader
 from file_utils.csv_utils.csv_writer import CSVWriter
-from scripts.avances11.utils import calculate_percentage, int_to_str, relative_diff
+from scripts.informe.math_utils import MathUtils
 
 path = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-13/"
 path_complete = path + "2-complete/"
@@ -144,14 +144,14 @@ class Compare0vs3(object):
         return self.complete_line(results0) + self.complete_line(results3)
 
     def append_results(self, best_list, worst_list, best, worst):
-        rel_diff = relative_diff(worst, best)
-        best_list.append(int_to_str(best) + " - B")
-        worst_list.append(int_to_str(worst) + " - W - " + str(rel_diff))
+        rel_diff = MathUtils.relative_diff(worst, best)
+        best_list.append(MathUtils.int_to_str(best) + " - B")
+        worst_list.append(MathUtils.int_to_str(worst) + " - W - " + str(rel_diff))
         return rel_diff
 
     def append_same_results(self, results0, results3, res):
-        results0.append(int_to_str(res) + " - S")
-        results3.append(int_to_str(res) + " - S")
+        results0.append(MathUtils.int_to_str(res) + " - S")
+        results3.append(MathUtils.int_to_str(res) + " - S")
 
     # complete so that results have length = 7
     def complete_line(self, results):

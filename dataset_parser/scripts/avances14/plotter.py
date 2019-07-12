@@ -2,7 +2,7 @@ import sys
 sys.path.append('.')
 
 import matplotlib.pyplot as plt
-from scripts.avances14.plot_utils import PlotUtils
+from scripts.informe.plot.plot_utils import PlotUtils
 from scripts.avances14.row_plot import RowPlot
 
 

@@ -3,7 +3,7 @@ sys.path.append('.')
 
 from file_utils.csv_utils.csv_reader import CSVReader
 from file_utils.csv_utils.csv_writer import CSVWriter
-from scripts.avances11.utils import relative_diff
+from scripts.informe.math_utils import MathUtils
 
 # path = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-11/2-mask123"
 # path = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-12/1-mask123"
@@ -36,9 +36,9 @@ def process_values(value1, value2, value3):
         smallest = value2
     else:
         smallest = value3
-    new_value1 = relative_diff(value1, smallest)
-    new_value2 = relative_diff(value2, smallest)
-    new_value3 = relative_diff(value3, smallest)
+    new_value1 = MathUtils.relative_diff(value1, smallest)
+    new_value2 = MathUtils.relative_diff(value2, smallest)
+    new_value3 = MathUtils.relative_diff(value3, smallest)
     return new_value1, new_value2, new_value3
 
 

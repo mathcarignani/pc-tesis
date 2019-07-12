@@ -25,6 +25,12 @@ class ResultsConstants(object):
     GLOBAL_MM_0_FILENAME = "complete-mask-mode=0-global.csv"
     GLOBAL_MM_3_FILENAME = "complete-mask-mode=3-global.csv"
 
+    #
+    # This csv file is the same as RAW_MM_3_FILENAME but using the CoderBasic from RAW_MM_0_FILENAME
+    #
+    RAW_MM_3_BASIC_CODER_PATH = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-19/use_basic_coder"
+    RAW_MM_3_BASIC_CODER_FILENAME = "complete-mask-mode=3-use_basic_coder.csv"
+
     @staticmethod
     def get_path_and_filename(file_key, file_value):
         ResultsConstants.check_input(file_key, file_value)
@@ -35,19 +41,25 @@ class ResultsConstants(object):
             filename = ResultsConstants.RAW_MM_0_FILENAME if file_value == 0 else ResultsConstants.RAW_MM_3_FILENAME
         elif file_key == 'compare':
             path = ResultsConstants.COMPARE_RESULTS_PATH
-            if file_value != 3:
-                ResultsConstants.raise_error(file_key, file_value)
             filename = ResultsConstants.COMPARE_MM_3_FILENAME
         elif file_key == 'global':
             path = ResultsConstants.GLOBAL_RESULTS_PATH
             filename = ResultsConstants.GLOBAL_MM_0_FILENAME if file_value == 0 else ResultsConstants.GLOBAL_MM_3_FILENAME
+        elif file_key == 'basic':
+            path = ResultsConstants.RAW_MM_3_BASIC_CODER_PATH
+            filename = ResultsConstants.RAW_MM_3_BASIC_CODER_FILENAME
+
         return path, filename
 
     @staticmethod
     def check_input(file_key, file_value):
-        if file_key not in ['raw', 'compare', 'global']:
-            ResultsConstants.raise_error(file_key, file_value)
-        if file_value not in [0, 3]:
+        if (
+           (file_key not in ['raw', 'compare', 'global', 'basic'])
+            or
+           (file_value not in [0, 3])
+            or
+           (file_key in ['compare', 'basic'] and file_value != 3)
+           ):
             ResultsConstants.raise_error(file_key, file_value)
 
     @staticmethod

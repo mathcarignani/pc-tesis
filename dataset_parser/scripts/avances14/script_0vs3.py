@@ -9,7 +9,8 @@ from scripts.avances15.plotter2 import Plotter2
 from scripts.avances16.plotter3 import Plotter3
 from file_utils.csv_utils.csv_reader import CSVReader
 from scripts.compress.compress_aux import DATASETS_ARRAY
-from scripts.avances14.constants import Constants
+from scripts.informe.plot.csv_constants import CSVConstants
+from scripts.informe.plot.plot_constants import PlotConstants
 from scripts.compress.compress_aux import dataset_csv_filenames
 from scripts.informe.results_constants import ResultsConstants
 from scripts.informe.results_reader import ResultsReader
@@ -17,8 +18,7 @@ from scripts.informe.results_reader import ResultsReader
 
 class Script(object):
     def __init__(self, filename, column_index):
-        path = ResultsConstants.COMPARE_RESULTS_PATH
-        self.input_file = CSVReader(path, "0vs3.csv")
+        self.input_file = CSVReader(ResultsConstants.COMPARE_RESULTS_PATH, "0vs3.csv")
         self.filename = filename
         self.column_index = column_index
         self.plotter = None
@@ -28,15 +28,15 @@ class Script(object):
     def run(self):
         print "FILENAME = " + self.filename + " - COLUMN_INDEX = " + str(self.column_index)
         self.plotter = Plotter(self.filename, self.column_index)
-        for threshold in Constants.THRESHOLDS:
+        for threshold in PlotConstants.THRESHOLDS:
             self.row_plot = RowPlot(threshold)
 
-            for algorithm in Constants.ALGORITHMS:
+            for algorithm in PlotConstants.ALGORITHMS:
                 self.row_plot.begin_algorithm(algorithm)
                 basic_value0 = self.__find_combination(self.filename, algorithm, threshold)
 
-                for window_size in Constants.WINDOWS:
-                    self.__find_next_line(Constants.INDEX_WINDOW, window_size, True)
+                for window_size in PlotConstants.WINDOWS:
+                    self.__find_next_line(CSVConstants.INDEX_WINDOW, window_size, True)
                     window, value0, value3 = self.__parse_line_values()
                     self.row_plot.add_values(window, value0, value3, basic_value0)
 
@@ -51,11 +51,11 @@ class Script(object):
         return Plotter2(self.plotter)
 
     def __find_combination(self, filename, algorithm, threshold):
-        self.__find_next_line(Constants.INDEX_FILENAME, filename, False)
+        self.__find_next_line(CSVConstants.INDEX_FILENAME, filename, False)
         basic_value0_index = self.__get_value0_index()
         basic_value0 = self.__get_int(self.line[basic_value0_index])
-        self.__find_next_line(Constants.INDEX_ALGORITHM, algorithm, False)
-        self.__find_next_line(Constants.INDEX_THRESHOLD, threshold, True)
+        self.__find_next_line(CSVConstants.INDEX_ALGORITHM, algorithm, False)
+        self.__find_next_line(CSVConstants.INDEX_THRESHOLD, threshold, True)
         return basic_value0
 
     def __read_line(self):
@@ -73,14 +73,14 @@ class Script(object):
         raise Exception("ERROR: __find_next_line")
 
     def __parse_line_values(self):
-        window = int(self.line[Constants.INDEX_WINDOW])
+        window = int(self.line[CSVConstants.INDEX_WINDOW])
         value0_index = self.__get_value0_index()
         value0 = self.__get_int(self.line[value0_index])
-        value3 = self.__get_int(self.line[value0_index + Constants.MAX_COLUMN_TYPES])
+        value3 = self.__get_int(self.line[value0_index + PlotConstants.MAX_COLUMN_TYPES])
         return window, value0, value3
 
     def __get_value0_index(self):
-        return Constants.INDEX_WINDOW + self.column_index
+        return CSVConstants.INDEX_WINDOW + self.column_index
 
     @classmethod
     def __get_int(cls, string):
@@ -163,4 +163,4 @@ class PDFScript(object):
         pdf.savefig(fig)
         plt.close()
 
-# PDFScript()
+PDFScript()

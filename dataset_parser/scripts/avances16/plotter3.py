@@ -3,7 +3,7 @@ sys.path.append('.')
 
 from scripts.compress.compress_aux import dataset_csv_filenames, get_dataset_info
 from scripts.avances14.plotter import Plotter
-from scripts.avances14.constants import Constants
+from scripts.informe.plot.plot_constants import PlotConstants
 from scripts.avances15.column import Column
 from scripts.avances15.matrix import Matrix
 from scripts.avances15.plotter2 import Plotter2
@@ -47,13 +47,13 @@ class Plotter3(object):
             # print "(file_index, column_type_i) = " + str((file_index, column_type_i))
             new_matrix = Matrix()
 
-            for algo_i, algorithm in enumerate(Constants.ALGORITHMS):
+            for algo_i, algorithm in enumerate(PlotConstants.ALGORITHMS):
                 # print "algorithm = " + algorithm
                 new_column = Column(algorithm, mode_str == "mode3")
                 column = plotter2.matrix.columns[algo_i]
                 tb_plot, ws_plot = column.total_bits_plot, column.windows_plot
 
-                for thre_i, threshold in enumerate(Constants.THRESHOLDS):  # threshold row
+                for thre_i, threshold in enumerate(PlotConstants.THRESHOLDS):  # threshold row
                     # print "threshold = " + str(threshold)
                     best_values = self.__generate_best_values(plotter2, ws_plot, tb_plot, column_type_i, algo_i, thre_i, mode_str)
                     # print "str(best_values)"
@@ -110,7 +110,7 @@ class Plotter3(object):
             values = row_algorithm_plot.values3
 
         # print "values = " + str(values)
-        best_global_window_index = Constants.WINDOWS.index(best_global_window)
+        best_global_window_index = PlotConstants.WINDOWS.index(best_global_window)
         return values[best_global_window_index]
 
     def __get_best_global_window(self, column_type_index, algorithm_index, threshold_index, mode_str):
@@ -131,8 +131,8 @@ class Plotter3(object):
     def __create_plotter2(cls, plotter, matrix, mode_str):
         plotter2 = Plotter2(plotter)
         plotter2.set_matrix(matrix)
-        value0_color = None if mode_str == 'mode0' else Constants.COLOR_GREEN_F
-        value3_color = None if mode_str == 'mode3' else Constants.COLOR_GREEN_F
+        value0_color = None if mode_str == 'mode0' else PlotConstants.COLOR_GREEN_F
+        value3_color = None if mode_str == 'mode3' else PlotConstants.COLOR_GREEN_F
         label0 = None if mode_str == 'mode0' else 'BGW'
         label3 = None if mode_str == 'mode3' else 'BGW'
         plotter2.set_colors(value0_color, value3_color, label0, label3)

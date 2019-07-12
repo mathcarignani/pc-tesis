@@ -2,15 +2,10 @@ import sys
 sys.path.append('.')
 
 
-class Constants(object):
+class PlotConstants(object):
     ALGORITHMS = ["CoderPCA", "CoderAPCA", "CoderCA", "CoderPWLH", "CoderPWLHInt", "CoderGAMPSLimit"]
     THRESHOLDS = [0, 1, 3, 5, 10, 15, 20, 30]
     WINDOWS = [4, 8, 16, 32, 64, 128, 256]
-    INDEX_FILENAME = 1
-    INDEX_ALGORITHM = 3
-    INDEX_THRESHOLD = 4
-    INDEX_WINDOW = 6
-    INDEX_CR_PERCENTAGE = 8
 
     MAX_COLUMN_TYPES = 7  # ElNino
 

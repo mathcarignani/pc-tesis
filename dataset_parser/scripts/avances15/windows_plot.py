@@ -1,8 +1,8 @@
 import sys
 sys.path.append('.')
 
-from scripts.avances14.constants import Constants
-from scripts.avances14.plot_utils import PlotUtils
+from scripts.informe.plot.plot_constants import PlotConstants
+from scripts.informe.plot.plot_utils import PlotUtils
 from scripts.avances15.common_plot import CommonPlot
 from scripts.avances15.plotter2_constants import Plotter2Constants
 
@@ -19,7 +19,7 @@ class WindowsPlot(CommonPlot):
         self.windows3.append(window3)
 
     def close(self):
-        total_thresholds = len(Constants.THRESHOLDS)
+        total_thresholds = len(PlotConstants.THRESHOLDS)
         assert(len(self.windows0) == total_thresholds)
         assert(len(self.windows3) == total_thresholds)
         self.__check_sorted()
@@ -41,16 +41,16 @@ class WindowsPlot(CommonPlot):
         ax.scatter(x=x_axis_0, y=y_axis_0, c=self.value0_color)
         ax.scatter(x=x_axis_3, y=y_axis_3, c=self.value3_color)
         ax.scatter(x=x_axis_same, y=y_axis_same, c=Plotter2Constants.VALUE_SAME)
-        ax.grid(b=True, color=Constants.COLOR_SILVER)
+        ax.grid(b=True, color=PlotConstants.COLOR_SILVER)
         ax.set_axisbelow(True)
-        ax.set_ylim(top=len(Constants.WINDOWS), bottom=-1)
+        ax.set_ylim(top=len(PlotConstants.WINDOWS), bottom=-1)
 
         if extra['last_row']:
-            ax.set_xticklabels([''] + Constants.THRESHOLDS)
-            ax.set_xlabel(Constants.ERROR_THRE)
+            ax.set_xticklabels([''] + PlotConstants.THRESHOLDS)
+            ax.set_xlabel(PlotConstants.ERROR_THRE)
         if extra['first_column']:
             ax.set_ylabel('Window Size')
-            ax.set_yticklabels([''] + Constants.WINDOWS)
+            ax.set_yticklabels([''] + PlotConstants.WINDOWS)
         else:
             ax.set_yticklabels([])
         PlotUtils.hide_ticks(ax)
@@ -67,4 +67,4 @@ class WindowsPlot(CommonPlot):
 
     @classmethod
     def __position(cls, window):
-        return Constants.WINDOWS.index(window)
+        return PlotConstants.WINDOWS.index(window)

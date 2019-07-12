@@ -1,8 +1,8 @@
 import sys
 sys.path.append('.')
 
-from scripts.avances14.constants import Constants
-from scripts.avances14.plot_utils import PlotUtils
+from scripts.informe.plot.plot_constants import PlotConstants
+from scripts.informe.plot.plot_utils import PlotUtils
 from scripts.avances15.common_plot import CommonPlot
 from scripts.avances15.plotter2_constants import Plotter2Constants
 from scripts.avances15.relative_difference_plot import RelativeDifferencePlot
@@ -24,8 +24,8 @@ class TotalBitsPlot(CommonPlot):
         self.values3.append(value3)
 
     def close(self):
-        assert(len(self.values0) == len(Constants.THRESHOLDS))
-        assert(len(self.values3) == len(Constants.THRESHOLDS))
+        assert(len(self.values0) == len(PlotConstants.THRESHOLDS))
+        assert(len(self.values3) == len(PlotConstants.THRESHOLDS))
         self.__check_sorted()
 
     def min_max(self):
@@ -39,11 +39,11 @@ class TotalBitsPlot(CommonPlot):
         colors0, colors3 = self.generate_colors()
         ax.scatter(x=x_axis, y=self.values0, c=colors0, zorder=self.values0)
         ax.scatter(x=x_axis, y=self.values3, c=colors3, zorder=self.values3)
-        ax.grid(b=True, color=Constants.COLOR_SILVER)
+        ax.grid(b=True, color=PlotConstants.COLOR_SILVER)
         ax.set_axisbelow(True)
 
         if ymax >= self.basic_value0:
-            PlotUtils.horizontal_line(ax, self.basic_value0, Constants.COLOR_SILVER)
+            PlotUtils.horizontal_line(ax, self.basic_value0, PlotConstants.COLOR_SILVER)
 
         RelativeDifferencePlot.set_lim(ax, ymin, ymax)
 

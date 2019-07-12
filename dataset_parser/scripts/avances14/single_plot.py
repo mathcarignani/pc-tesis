@@ -1,9 +1,9 @@
 import sys
 sys.path.append('.')
 
-from scripts.avances11.utils import average
-from scripts.avances14.constants import Constants
-from scripts.avances14.plot_utils import PlotUtils
+from scripts.informe.math_utils import MathUtils
+from scripts.informe.plot.plot_constants import PlotConstants
+from scripts.informe.plot.plot_utils import PlotUtils
 
 
 class SinglePlot(object):
@@ -25,21 +25,21 @@ class SinglePlot(object):
         self.current_plot.append(plot_value)
 
     def best_values(self):
-        assert(len(Constants.WINDOWS) == len(self.values0))
-        assert(len(Constants.WINDOWS) == len(self.values3))
-        assert(len(Constants.WINDOWS) == len(self.basic_values0))
+        assert(len(PlotConstants.WINDOWS) == len(self.values0))
+        assert(len(PlotConstants.WINDOWS) == len(self.values3))
+        assert(len(PlotConstants.WINDOWS) == len(self.basic_values0))
         assert(len(set(self.basic_values0)) == 1)  # check that all the values in the list match
         value0_min, value3_min = min(self.values0), min(self.values3),
         value0_min_index, value3_min_index = self.values0.index(value0_min), self.values3.index(value3_min)
         res = {
-            'value0': {'min': value0_min, 'window': Constants.WINDOWS[value0_min_index]},
-            'value3': {'min': value3_min, 'window': Constants.WINDOWS[value3_min_index]},
+            'value0': {'min': value0_min, 'window': PlotConstants.WINDOWS[value0_min_index]},
+            'value3': {'min': value3_min, 'window': PlotConstants.WINDOWS[value3_min_index]},
             'basic_value0': self.basic_values0[0]
         }
         return res
 
     def check_windows(self):
-        if self.windows != Constants.WINDOWS:
+        if self.windows != PlotConstants.WINDOWS:
             raise Exception("ERROR: check_windows")
 
     def ylim(self):
@@ -51,7 +51,7 @@ class SinglePlot(object):
         color = [self.__color_code(item) for item in self.current_plot]
         x_axis = list(xrange(len(self.current_plot)))
         ax.scatter(x=x_axis, y=self.current_plot, c=color)
-        ax.grid(b=True, color=Constants.COLOR_SILVER)
+        ax.grid(b=True, color=PlotConstants.COLOR_SILVER)
 
         if extra['first_row']:
             # only write the algorithm name in the first row
@@ -71,15 +71,15 @@ class SinglePlot(object):
         self.__set_lim(ax, ylim)
 
         # horizontal lines
-        PlotUtils.horizontal_line(ax, 0, Constants.COLOR_SILVER)
-        avg = average(self.current_plot)
+        PlotUtils.horizontal_line(ax, 0, PlotConstants.COLOR_SILVER)
+        avg = MathUtils.average(self.current_plot)
         PlotUtils.horizontal_line(ax, avg, self.__color_code(avg))
 
-        self.stats_box(ax, max(self.current_plot), avg, min(self.current_plot), Constants.COLOR_WHITE)
+        self.stats_box(ax, max(self.current_plot), avg, min(self.current_plot), PlotConstants.COLOR_WHITE)
 
     @classmethod
     def plot_stats(cls, ax, ylim, error_threshold, values, extra):
-        ax.grid(b=True, color=Constants.COLOR_SILVER)
+        ax.grid(b=True, color=PlotConstants.COLOR_SILVER)
 
         if extra['first_row']:
             # only write 'STATS' in the first row
@@ -95,12 +95,12 @@ class SinglePlot(object):
         cls.__set_lim(ax, ylim)
 
         # horizontal lines
-        PlotUtils.horizontal_line(ax, 0, Constants.COLOR_SILVER)
-        PlotUtils.horizontal_line(ax, values['max'], Constants.COLOR_BLUE)
+        PlotUtils.horizontal_line(ax, 0, PlotConstants.COLOR_SILVER)
+        PlotUtils.horizontal_line(ax, values['max'], PlotConstants.COLOR_BLUE)
         PlotUtils.horizontal_line(ax, values['avg'], cls.__color_code(values['avg']))
-        PlotUtils.horizontal_line(ax, values['min'], Constants.COLOR_BLUE)
+        PlotUtils.horizontal_line(ax, values['min'], PlotConstants.COLOR_BLUE)
 
-        cls.stats_box(ax, values['max'], values['avg'], values['min'], Constants.COLOR_WHEAT)
+        cls.stats_box(ax, values['max'], values['avg'], values['min'], PlotConstants.COLOR_WHEAT)
 
     @classmethod
     def __set_lim(cls, ax, ylim):
@@ -116,11 +116,11 @@ class SinglePlot(object):
     @classmethod
     def __color_code(cls, value):
         if value > 0:
-            return Constants.COLOR_GREEN
+            return PlotConstants.COLOR_GREEN
         elif value < 0:
-            return Constants.COLOR_RED
+            return PlotConstants.COLOR_RED
         else:  # value == 0
-            return Constants.COLOR_BLACK
+            return PlotConstants.COLOR_BLACK
 
     @classmethod
     def plot_value(cls, value0, value3):
@@ -144,7 +144,7 @@ class SinglePlot(object):
     @classmethod
     def __xticklabels(cls):
         xticklabels = ['']
-        for index, value in enumerate(Constants.WINDOWS):
+        for index, value in enumerate(PlotConstants.WINDOWS):
             power = index + 2
             label = r"$2^{}$".format(power)  # 2^power
             xticklabels.append(label)
@@ -160,7 +160,7 @@ class SinglePlot(object):
         values3 = cls.sum_arrays(single_plot1.values3, single_plot2.values3)
         basic_values0 = cls.sum_arrays(single_plot1.basic_values0, single_plot2.basic_values0)
         for index, (value0, value3, basic_value0) in enumerate(zip(values0, values3, basic_values0)):
-            window = Constants.WINDOWS[index]
+            window = PlotConstants.WINDOWS[index]
             single_plot.add_values(window, value0, value3, 0, basic_value0)  # plot_value = 0, doesn't matter
         return single_plot
 

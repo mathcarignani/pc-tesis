@@ -1,8 +1,8 @@
 import sys
 sys.path.append('.')
 
-from scripts.avances14.constants import Constants
-from scripts.avances14.plot_utils import PlotUtils
+from scripts.informe.plot.plot_constants import PlotConstants
+from scripts.informe.plot.plot_utils import PlotUtils
 from scripts.avances14.single_plot import SinglePlot
 from scripts.avances15.common_plot import CommonPlot
 from scripts.avances15.plotter2_constants import Plotter2Constants
@@ -21,7 +21,7 @@ class RelativeDifferencePlot(CommonPlot):
         self.values.append(plot_value)
 
     def close(self):
-        assert(len(self.values) == len(Constants.THRESHOLDS))
+        assert(len(self.values) == len(PlotConstants.THRESHOLDS))
 
     def min_max(self):
         return [min(self.values), max(self.values)]
@@ -33,7 +33,7 @@ class RelativeDifferencePlot(CommonPlot):
         x_axis = list(xrange(len(self.values)))
         colors = [self.color_code(item, self.value3_smaller) for item in self.values]
         ax.scatter(x=x_axis, y=self.values, c=colors)
-        ax.grid(b=True, color=Constants.COLOR_SILVER)
+        ax.grid(b=True, color=PlotConstants.COLOR_SILVER)
         ax.set_axisbelow(True)
 
         self.set_lim(ax, ymin, ymax)
@@ -43,11 +43,11 @@ class RelativeDifferencePlot(CommonPlot):
         if not extra['last_row']:
             ax.set_xticklabels([])
         if extra['first_column']:
-            ax.set_ylabel(Constants.RELATIVE_DIFF)
+            ax.set_ylabel(PlotConstants.RELATIVE_DIFF)
         else:
             ax.set_yticklabels([])
-        ax.set_xticklabels([''] + Constants.THRESHOLDS)
-        ax.set_xlabel(Constants.ERROR_THRE)
+        ax.set_xticklabels([''] + PlotConstants.THRESHOLDS)
+        ax.set_xlabel(PlotConstants.ERROR_THRE)
         PlotUtils.hide_ticks(ax)
 
     def print_values(self):

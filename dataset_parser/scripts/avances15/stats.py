@@ -1,7 +1,7 @@
 import sys
 sys.path.append('.')
 
-from scripts.avances14.constants import Constants
+from scripts.informe.plot.plot_constants import PlotConstants
 from scripts.avances15.common_plot import CommonPlot
 from scripts.avances15.plotter2_constants import Plotter2Constants
 
@@ -48,8 +48,8 @@ class RelativeDifferenceStats(CommonPlot):
         for total, label, color in zipped_values:
             percentage = self.percentage(self.total_results, total)
             table_values.append([label, total, percentage])
-            cell_color = Constants.COLOR_WHITE if total == 0 else color
-            table_colors.append([cell_color, Constants.COLOR_WHITE, Constants.COLOR_WHITE])
+            cell_color = PlotConstants.COLOR_WHITE if total == 0 else color
+            table_colors.append([cell_color, PlotConstants.COLOR_WHITE, PlotConstants.COLOR_WHITE])
 
         # Draw table
         the_table = ax.table(cellText=table_values, colWidths=[0.12, 0.1, 0.12], cellColours=table_colors,

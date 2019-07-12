@@ -2,7 +2,7 @@ import sys
 sys.path.append('.')
 
 from scripts.avances14.single_plot import SinglePlot
-from scripts.avances11.utils import average
+from scripts.informe.math_utils import MathUtils
 
 
 class RowPlot(object):
@@ -22,7 +22,7 @@ class RowPlot(object):
     def plot_stats(self, ax, ylim, extra):
         values = {
             'max': max(self.plot_values),
-            'avg': average(self.plot_values),
+            'avg': MathUtils.average(self.plot_values),
             'min': min(self.plot_values)
         }
         SinglePlot.plot_stats(ax, ylim, self.error_threshold, values, extra)
