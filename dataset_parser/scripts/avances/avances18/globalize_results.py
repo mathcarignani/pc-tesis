@@ -1,11 +1,13 @@
 import sys
 sys.path.append('.')
 
+import filecmp
+
 from scripts.compress.compress_aux import DATASETS_ARRAY, dataset_csv_filenames
 from file_utils.csv_utils.csv_writer import CSVWriter
 from scripts.avances.avances18.globalize_utils import GlobalizeUtils
 from scripts.informe.plot.csv_constants import CSVConstants
-from scripts.informe.results_reader import ResultsReader
+from scripts.informe.results_parsing.results_reader import ResultsReader
 
 
 #
@@ -18,15 +20,15 @@ class GlobalizeResults(object):
         self.value = value
         self.number_of_rows = GlobalizeResults.NUMBER_OF_ROWS[value]
 
-        self.input_file_x = ResultsReader('raw', value)
+        self.results_reader_x = ResultsReader('raw', value)
 
         # The CoderBasic lines have the same values (but not exactly the same format, i.e. "100" vs. "100.0")
         # in these two files, so we can use either one to get the CoderBasic MM=0 values:
-        self.input_file_coder_basic = ResultsReader('raw', 0)
-        # self.input_file_coder_basic = ResultsReader('basic', 3)
+        self.results_reader_coder_basic = ResultsReader('raw', 0)
+        # self.results_reader_coder_basic = ResultsReader('basic', 3)
 
         self.output_file = CSVWriter(output_path, output_file)
-        self.output_file.write_row(self.input_file_x.read_line_no_count())
+        self.output_file.write_row(self.results_reader_x.read_line_no_count())
 
         for dataset_obj in DATASETS_ARRAY:
             self.__globalize_dataset(dataset_obj['name'])
@@ -44,8 +46,8 @@ class GlobalizeResults(object):
     # single file, copy everything until another dataset starts
     #
     def __copy_dataset(self, dataset_name):
-        self.input_file.find_dataset(dataset_name)
-        ResultsReader.copy_until_change(self.input_file, self.output_file, 0)
+        self.results_reader.find_dataset(dataset_name)
+        ResultsReader.copy_until_change(self.results_reader, self.output_file, 0)
 
     #
     # multiple files, globalize results
@@ -61,14 +63,14 @@ class GlobalizeResults(object):
         GlobalizeUtils.write_other_coders_lines(self.output_file, coder_basic_line, other_coders_lines)
 
     def __get_coder_basic_line(self, dataset_name, filenames):
-        self.input_file = self.input_file_coder_basic
+        self.results_reader = self.results_reader_coder_basic
         results_array_0 = self.__results_array(dataset_name, filenames, CSVConstants.INDEX_ALGORITHM)
         assert(len(results_array_0[0]) == 1)
         return self.__mask_results_lines(results_array_0)[0]
 
     def __get_other_coders_lines(self, dataset_name, filenames):
-        self.input_file = self.input_file_x
-        results_array = self.__results_array(dataset_name, filenames, CSVConstants.INDEX_FILENAME)
+        self.results_reader = self.results_reader_x
+        results_array = self.__results_array(dataset_name, filenames)
         # print len(results_array[0])
         assert(len(results_array[0]) == self.number_of_rows)
         return self.__mask_results_lines(results_array)
@@ -97,15 +99,20 @@ class GlobalizeResults(object):
                 line1[index] += line2[index]
         return line1
 
-    def __results_array(self, dataset_name, filenames, change_index):
-        self.input_file.find_dataset(dataset_name)
+    def __results_array(self, dataset_name, filenames, change_index=CSVConstants.INDEX_FILENAME):
         results = []
         for filename in filenames:
-            self.input_file.find_filename(filename)
-            filename_results = ResultsReader.add_until_change(self.input_file, change_index)
+            filename_results = self.results_reader.filename_results(dataset_name, filename, change_index)
             results.append(filename_results)
         assert(len(results) == len(filenames))
         return results
+
+
+def compare_files(output_path, output_file):
+    compare = filecmp.cmp(output_path + "/" + output_file, output_path + "/3-global/" + output_file)
+    if compare:
+        print("SAME!")
+    assert compare
 
 
 def run(value):
@@ -113,6 +120,8 @@ def run(value):
     output_path = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-18"
     output_file = "complete-mask-mode=" + str(value) + "-global.csv"
     GlobalizeResults(value, output_path, output_file)
+    compare_files(output_path, output_file)
+
 
 run(0)
 run(3)

@@ -12,8 +12,8 @@ from scripts.compress.compress_aux import DATASETS_ARRAY
 from scripts.informe.plot.csv_constants import CSVConstants
 from scripts.informe.plot.plot_constants import PlotConstants
 from scripts.compress.compress_aux import dataset_csv_filenames
-from scripts.informe.results_constants import ResultsConstants
-from scripts.informe.results_reader import ResultsReader
+from scripts.informe.results_parsing.results_constants import ResultsConstants
+from scripts.informe.results_parsing.results_reader import ResultsReader
 
 
 class Script(object):

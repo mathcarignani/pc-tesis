@@ -4,9 +4,7 @@ sys.path.append('.')
 from file_utils.csv_utils.csv_reader import CSVReader
 from file_utils.csv_utils.csv_writer import CSVWriter
 from scripts.compress.compress_aux import THRESHOLD_PERCENTAGES
-from scripts.informe.results_constants import ResultsConstants
-from auxi.os_utils import python_project_path
-
+from scripts.informe.results_parsing.results_constants import ResultsConstants
 
 window_index = 6
 

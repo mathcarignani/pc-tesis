@@ -12,6 +12,7 @@ class CSVConstants(object):
     INDEX_WINDOW = 6
     INDEX_TOTAL_SIZE = 7
     INDEX_CR_PERCENTAGE = 8
+    INDEX_DELTA_PERCENTAGE = 12
 
     @staticmethod
     def check_lines(line1, line2):
@@ -26,3 +27,17 @@ class CSVConstants(object):
             return False
         else:
             return (index - CSVConstants.INDEX_CR_PERCENTAGE) % 4 == 0
+
+    @staticmethod
+    def is_column_percentage_index(index):
+        if index <= CSVConstants.INDEX_DELTA_PERCENTAGE:
+            return False
+        else:
+            return (index - CSVConstants.INDEX_DELTA_PERCENTAGE) % 4 == 0
+
+    @staticmethod
+    def is_column_index(index):
+        if index <= CSVConstants.INDEX_DELTA_PERCENTAGE:
+            return False
+        else:
+            return (index - (CSVConstants.INDEX_DELTA_PERCENTAGE - 1)) % 4 == 0
