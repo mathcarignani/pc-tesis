@@ -10,6 +10,7 @@ class ExperimentsUtils(object):
               'CoderFR', 'CoderSF', 'CoderGAMPS', 'CoderGAMPSLimit']
     ALGORITHMS = ["CoderPCA", "CoderAPCA", "CoderCA", "CoderPWLH", "CoderPWLHInt", "CoderGAMPSLimit"]
     CODERS_ONLY_MASK_MODE = ['CoderFR', 'CoderSF']
+    CODERS_NO_MASK_MODE = [item for item in CODERS if item not in CODERS_ONLY_MASK_MODE]
     THRESHOLDS = [0, 1, 3, 5, 10, 15, 20, 30]
     WINDOWS = [4, 8, 16, 32, 64, 128, 256]
 
@@ -25,6 +26,8 @@ class ExperimentsUtils(object):
         {'name': 'NOAA-SPC-tornado', 'folder': "[6]noaa-spc-reports/tornado", 'logger': "noaa-spc-tornado.log", 'o_folder': "[6]noaa-spc-reports", 'cols': 2},
         {'name': 'NOAA-SPC-wind', 'folder': "[6]noaa-spc-reports/wind", 'logger': "noaa-spc-wind.log", 'o_folder': "[6]noaa-spc-reports", 'cols': 3}
     ]
+
+    DATASET_NAMES = [obj['name'] for obj in DATASETS_ARRAY]
 
     # DATASET_ARRAY = [
     #     {'name': 'CO2', 'folder': "CO2", 'logger': "CO2.log", 'o_folder': "CO2"},

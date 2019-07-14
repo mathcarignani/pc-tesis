@@ -12,7 +12,7 @@ def test_results_to_pandas():
     results_reader = ResultsReader('global', 3)
     dataset_name = 'IRKIS'
     df = ResultsToPandas(results_reader).create_dataframe(dataset_name, 'Global')
-    PandasUtils(dataset_name, df)
+    PandasUtils(dataset_name, df, 3)
 
 
 test_results_to_pandas()

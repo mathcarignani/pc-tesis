@@ -11,9 +11,11 @@ class PandasUtils(object):
     FIXED_ROWS = ['coder', 'threshold', 'window']
     MAX_DIFF = 0.009
 
-    def __init__(self, dataset_name, df):
+    def __init__(self, dataset_name, df, mask_mode):
         self.dataset_name = dataset_name
         self.df = df
+        assert(mask_mode in [0, 3])
+        self.mask_mode = mask_mode
         self.data_columns_count = PandasUtils.__calculate_data_columns_count(df)
         self.__check_df()
         self.__calculate_percentage()
@@ -30,7 +32,10 @@ class PandasUtils(object):
 
         # check that data for every coder is included
         coders = self.df['coder'].unique()
-        np.testing.assert_array_equal(coders, ExperimentsUtils.CODERS)
+        if self.mask_mode == 0:
+            np.testing.assert_array_equal(coders, ExperimentsUtils.CODERS_NO_MASK_MODE)
+        else:  # self.mask_mode == 3:
+            np.testing.assert_array_equal(coders, ExperimentsUtils.CODERS)
 
         for coder in coders:
             self.__check_coder_rows_count(coder)
