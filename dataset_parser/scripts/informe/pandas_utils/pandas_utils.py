@@ -71,5 +71,17 @@ class PandasUtils(object):
             del self.df[aux_percentage_col_key]
             self.df.rename(columns={new_percentage_col_key: percentage_col_key})
 
-        print self.df
+    def best_values_for_threshold(self, coder_name, col_index):
+        data_column_key = ResultsToPandas.data_column_key(col_index)
+        coder_df = self.df.loc[self.df['coder'] == coder_name]
+        print coder_df
+        values = []
+        windows = []
+        percentages = []
 
+        for threshold in ExperimentsUtils.THRESHOLDS:
+            print threshold
+            threshold_df = coder_df.loc[coder_df['threshold'] == threshold]
+            print threshold_df
+            print "argmax"
+            print threshold_df[data_column_key].argmax()

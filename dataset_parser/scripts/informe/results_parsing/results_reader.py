@@ -109,9 +109,14 @@ class ResultsReader(object):
         no_rows = line[CSVConstants.INDEX_NO_ROWS]
         new_line.append(MathUtils.str_to_int(no_rows) if isinstance(no_rows, int) else '')
 
-        new_line += line[CSVConstants.INDEX_ALGORITHM:(CSVConstants.INDEX_THRESHOLD + 1)]  # Coder, %
+        new_line.append(line[CSVConstants.INDEX_ALGORITHM])  # Coder
+        threshold = line[CSVConstants.INDEX_THRESHOLD]
+        print 'thresholdA = ' + threshold
+        print 'thresholdB = ' + str(int(threshold) if len(threshold) > 0 else None)
+        new_line.append(int(threshold) if len(threshold) > 0 else None)  # %
         new_line.append('')  # Error Threshold
-        new_line.append(line[CSVConstants.INDEX_WINDOW])  # Window Param
+        window = line[CSVConstants.INDEX_WINDOW]
+        new_line.append(int(window) if len(window) > 0 else None)  # Window Param
 
         #    7         8             9                     10                  11                 12
         # Size (B), CR (%), Delta - Size (data), Delta - Size (mask), Delta - Size (total), Delta - CR (%), ...

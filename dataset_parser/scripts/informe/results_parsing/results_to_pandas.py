@@ -36,6 +36,8 @@ class ResultsToPandas(object):
         current['coder'] = line[CSVConstants.INDEX_ALGORITHM] or current['coder']
         current['threshold'] = line[CSVConstants.INDEX_THRESHOLD] or current['threshold']
         current['window'] = line[CSVConstants.INDEX_WINDOW] or current['window']
+        if line[CSVConstants.INDEX_THRESHOLD] == 0:
+            current['threshold'] = 0
 
     @staticmethod
     def __append_current(data_obj, current):

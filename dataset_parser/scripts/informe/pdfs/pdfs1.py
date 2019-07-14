@@ -86,13 +86,24 @@ class Plotter(object):
 
     def __add_plots(self, plot_types_array, coders_array):
         for plot_type in plot_types_array:
-            for coder in coders_array:
-                self.add_plot(self.current_subplot, plot_type, coder)
+            for coder_name in coders_array:
+                self.add_plot(self.current_subplot, plot_type, coder_name)
                 self.current_subplot += 1
 
-    def add_plot(self, current_subplot, plot_type, coder):
-        print str(current_subplot) + " - " + plot_type + " - " + coder
+    def add_plot(self, current_subplot, plot_type, coder_name):
+        print str(current_subplot) + " - " + plot_type + " - " + coder_name
+
+        if plot_type == 'compression':
+            self.add_compression_plot(coder_name)
+        elif plot_type == 'relative':
+            pass
+        else:  # plot_type == 'window'
+            pass
         # ax = self.fig.add_subplot(self.total_rows, self.total_columns, current_subplot)
+
+    def add_compression_plot(self, coder_name):
+        print self.panda_utils_0.best_values_for_threshold(coder_name, self.col_index + 1)
+
 
 
 
