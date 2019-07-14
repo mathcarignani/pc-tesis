@@ -1,6 +1,7 @@
 import sys
 sys.path.append('.')
 
+from scripts.compress.experiments_utils import ExperimentsUtils
 from scripts.informe.plot.plot_constants import PlotConstants
 from scripts.informe.plot.plot_utils import PlotUtils
 from scripts.avances.avances14 import SinglePlot
@@ -21,7 +22,7 @@ class RelativeDifferencePlot(CommonPlot):
         self.values.append(plot_value)
 
     def close(self):
-        assert(len(self.values) == len(PlotConstants.THRESHOLDS))
+        assert(len(self.values) == len(ExperimentsUtils.THRESHOLDS))
 
     def min_max(self):
         return [min(self.values), max(self.values)]
@@ -46,7 +47,7 @@ class RelativeDifferencePlot(CommonPlot):
             ax.set_ylabel(PlotConstants.RELATIVE_DIFF)
         else:
             ax.set_yticklabels([])
-        ax.set_xticklabels([''] + PlotConstants.THRESHOLDS)
+        ax.set_xticklabels([''] + ExperimentsUtils.THRESHOLDS)
         ax.set_xlabel(PlotConstants.ERROR_THRE)
         PlotUtils.hide_ticks(ax)
 

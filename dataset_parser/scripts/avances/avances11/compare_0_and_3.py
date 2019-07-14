@@ -5,7 +5,7 @@ sys.path.append('.')
 from file_utils.csv_utils.csv_reader import CSVReader
 from file_utils.csv_utils.csv_writer import CSVWriter
 from scripts.informe.math_utils import MathUtils
-from scripts.compress.compress_aux import ExperimentsConstants
+from scripts.compress.experiments_utils import ExperimentsUtils
 
 path = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-11/3-results"
 
@@ -91,7 +91,7 @@ def run():
     while csv_reader0.continue_reading:
         line3 = csv_reader3.read_line()
         coder = line3[3] or coder
-        if coder in ExperimentsConstants.CODERS_ONLY_MASK_MODE:
+        if coder in ExperimentsUtils.CODERS_ONLY_MASK_MODE:
             continue
         line0 = csv_reader0.read_line()
         new_line = process_line(line0, line3, count)

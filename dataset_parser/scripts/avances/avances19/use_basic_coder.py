@@ -3,7 +3,7 @@ sys.path.append('.')
 
 
 from scripts.avances.avances18.globalize_utils import GlobalizeUtils
-from scripts.compress.compress_aux import DATASETS_ARRAY, dataset_csv_filenames
+from scripts.compress.experiments_utils import ExperimentsUtils
 from file_utils.csv_utils.csv_writer import CSVWriter
 from scripts.informe.plot.csv_constants import CSVConstants
 from scripts.informe.results_parsing.results_reader import ResultsReader
@@ -20,11 +20,11 @@ class UseBasicCoder(object):
         self.output_file = CSVWriter(output_path, output_file)
         self.output_file.write_row(self.input_file_3.read_line_no_count())
 
-        for dataset_obj in DATASETS_ARRAY:
+        for dataset_obj in ExperimentsUtils.DATASETS_ARRAY:
             self.__use_basic_coder_dataset(dataset_obj['name'])
 
     def __use_basic_coder_dataset(self, dataset_name):
-        filenames = dataset_csv_filenames(dataset_name)
+        filenames = ExperimentsUtils.dataset_csv_filenames(dataset_name)
         for filename in filenames:
             self.__use_basic_coder_filename(filename)
 

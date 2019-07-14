@@ -3,7 +3,7 @@ sys.path.append('.')
 
 import filecmp
 
-from scripts.compress.compress_aux import DATASETS_ARRAY, dataset_csv_filenames
+from scripts.compress.experiments_utils import ExperimentsUtils
 from file_utils.csv_utils.csv_writer import CSVWriter
 from scripts.avances.avances18.globalize_utils import GlobalizeUtils
 from scripts.informe.plot.csv_constants import CSVConstants
@@ -30,11 +30,11 @@ class GlobalizeResults(object):
         self.output_file = CSVWriter(output_path, output_file)
         self.output_file.write_row(self.results_reader_x.read_line_no_count())
 
-        for dataset_obj in DATASETS_ARRAY:
+        for dataset_obj in ExperimentsUtils.DATASETS_ARRAY:
             self.__globalize_dataset(dataset_obj['name'])
 
     def __globalize_dataset(self, dataset_name):
-        filenames = dataset_csv_filenames(dataset_name)
+        filenames = ExperimentsUtils.dataset_csv_filenames(dataset_name)
         if len(filenames) == 1:
             print dataset_name + " - copy"  # there is a single file in the dataset, no need to merge anything
             self.__copy_dataset(dataset_name)

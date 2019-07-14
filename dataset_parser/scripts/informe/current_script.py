@@ -10,13 +10,14 @@ from scripts.informe.results_parsing.results_reader import ResultsReader
 
 def test_results_to_pandas():
     results_reader = ResultsReader('global', 3)
-    df = ResultsToPandas(results_reader).create_dataframe('IRKIS', 'Global')
+    dataset_name = 'IRKIS'
+    df = ResultsToPandas(results_reader).create_dataframe(dataset_name, 'Global')
 
-    PandasUtils(df)
+    PandasUtils(dataset_name, df)
 
     basic_coder_total = df.loc[df['coder'] == "CoderBasic"]['column_1'].iloc[0]
     df['new'] = 100 * (df['column_1'] / basic_coder_total)
-    print df
+    # print df
 
 
 test_results_to_pandas()

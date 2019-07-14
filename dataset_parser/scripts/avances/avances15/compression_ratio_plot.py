@@ -4,6 +4,7 @@
 import sys
 sys.path.append('.')
 
+from scripts.compress.experiments_utils import ExperimentsUtils
 from scripts.informe.math_utils import MathUtils
 from scripts.informe.plot.plot_constants import PlotConstants
 from scripts.informe.plot.plot_utils import PlotUtils
@@ -38,8 +39,8 @@ class CompressionRatioPlot(CommonPlot):
         self.values3.append(value3)
 
     def close(self):
-        assert(len(self.values0) == len(PlotConstants.THRESHOLDS))
-        assert(len(self.values3) == len(PlotConstants.THRESHOLDS))
+        assert(len(self.values0) == len(ExperimentsUtils.THRESHOLDS))
+        assert(len(self.values3) == len(ExperimentsUtils.THRESHOLDS))
         self.__check_sorted()
 
     def min_max(self):

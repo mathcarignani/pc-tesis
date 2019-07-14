@@ -1,7 +1,7 @@
 import sys
 sys.path.append('.')
 
-from scripts.compress.compress_aux import dataset_csv_filenames, get_dataset_info
+from scripts.compress.experiments_utils import ExperimentsUtils
 from scripts.avances.avances14 import Plotter
 from scripts.informe.plot.plot_constants import PlotConstants
 from scripts.avances.avances15 import Column
@@ -13,8 +13,8 @@ class Plotter3(object):
     def __init__(self, dataset_name):
         self.dataset_name = dataset_name
         self.plotter2_array = []  # one entry for each <file, column_type> combination
-        self.number_of_files = len(dataset_csv_filenames(self.dataset_name))
-        self.number_of_column_types = get_dataset_info(self.dataset_name)['cols']
+        self.number_of_files = len(ExperimentsUtils.dataset_csv_filenames(self.dataset_name))
+        self.number_of_column_types = ExperimentsUtils.get_dataset_data_columns_count(self.dataset_name)
         self.total_pages = self.number_of_files * self.number_of_column_types
         self.must_plot = self.number_of_files > 1
         self.plotter_array = []  # one entry for each column_type
@@ -47,13 +47,13 @@ class Plotter3(object):
             # print "(file_index, column_type_i) = " + str((file_index, column_type_i))
             new_matrix = Matrix()
 
-            for algo_i, algorithm in enumerate(PlotConstants.ALGORITHMS):
+            for algo_i, algorithm in enumerate(ExperimentsUtils.ALGORITHMS):
                 # print "algorithm = " + algorithm
                 new_column = Column(algorithm, mode_str == "mode3")
                 column = plotter2.matrix.columns[algo_i]
                 tb_plot, ws_plot = column.total_bits_plot, column.windows_plot
 
-                for thre_i, threshold in enumerate(PlotConstants.THRESHOLDS):  # threshold row
+                for thre_i, threshold in enumerate(ExperimentsUtils.THRESHOLDS):  # threshold row
                     # print "threshold = " + str(threshold)
                     best_values = self.__generate_best_values(plotter2, ws_plot, tb_plot, column_type_i, algo_i, thre_i, mode_str)
                     # print "str(best_values)"
@@ -110,7 +110,7 @@ class Plotter3(object):
             values = row_algorithm_plot.values3
 
         # print "values = " + str(values)
-        best_global_window_index = PlotConstants.WINDOWS.index(best_global_window)
+        best_global_window_index = ExperimentsUtils.WINDOWS.index(best_global_window)
         return values[best_global_window_index]
 
     def __get_best_global_window(self, column_type_index, algorithm_index, threshold_index, mode_str):

@@ -8,10 +8,9 @@ from scripts.avances.avances14 import Plotter
 from scripts.avances.avances15 import Plotter2
 from scripts.avances.avances16.plotter3 import Plotter3
 from file_utils.csv_utils.csv_reader import CSVReader
-from scripts.compress.compress_aux import DATASETS_ARRAY
 from scripts.informe.plot.csv_constants import CSVConstants
 from scripts.informe.plot.plot_constants import PlotConstants
-from scripts.compress.compress_aux import dataset_csv_filenames
+from scripts.compress.experiments_utils import ExperimentsUtils
 from scripts.informe.results_parsing.results_constants import ResultsConstants
 from scripts.informe.results_parsing.results_reader import ResultsReader
 
@@ -28,7 +27,7 @@ class Script(object):
     def run(self):
         print "FILENAME = " + self.filename + " - COLUMN_INDEX = " + str(self.column_index)
         self.plotter = Plotter(self.filename, self.column_index)
-        for threshold in PlotConstants.THRESHOLDS:
+        for threshold in ExperimentsUtils.THRESHOLDS:
             self.row_plot = RowPlot(threshold)
 
             for algorithm in PlotConstants.ALGORITHMS:
@@ -97,7 +96,7 @@ class PDFScript(object):
     GRAPH_PATH = "scripts/avances14/graphs/"
 
     def __init__(self):
-        for dataset_id, dataset_dictionary in enumerate(DATASETS_ARRAY):
+        for dataset_id, dataset_dictionary in enumerate(ExperimentsUtils.DATASETS_ARRAY):
             self.dataset_id = dataset_id + 1
             self.dataset_name, self.cols = dataset_dictionary['name'], dataset_dictionary['cols']
             self.__create_pdfs_for_dataset()
@@ -140,7 +139,7 @@ class PDFScript(object):
 
     def __create_pdf1_iteration(self, pdf):
         plotter3 = Plotter3(self.dataset_name)
-        for file_index, input_filename in enumerate(dataset_csv_filenames(self.dataset_name)):
+        for file_index, input_filename in enumerate(ExperimentsUtils.dataset_csv_filenames(self.dataset_name)):
             for col_index in range(self.cols):
                 plotter2 = self.__add_page_to_pdf(pdf, input_filename, col_index + 1)
                 plotter3.add_plotter2(plotter2)
