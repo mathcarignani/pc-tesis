@@ -5,7 +5,7 @@ from file_utils.csv_utils.csv_reader import CSVReader
 from file_utils.csv_utils.csv_writer import CSVWriter
 from scripts.informe.math_utils import MathUtils
 
-path = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-13/"
+path = "/Users/pablocerve/Documents/FING/Proyecto/results/avances/avances-13/"
 path_complete = path + "2-complete/"
 path_0vs3 = path + "3-0vs3/"
 

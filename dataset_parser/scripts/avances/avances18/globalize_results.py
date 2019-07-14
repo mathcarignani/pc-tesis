@@ -117,7 +117,7 @@ def compare_files(output_path, output_file):
 
 def run(value):
     print "run(" + str(value) + ")"
-    output_path = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-18"
+    output_path = "/Users/pablocerve/Documents/FING/Proyecto/results/avances/avances-18"
     output_file = "complete-mask-mode=" + str(value) + "-global.csv"
     GlobalizeResults(value, output_path, output_file)
     compare_files(output_path, output_file)

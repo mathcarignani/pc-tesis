@@ -3,7 +3,7 @@ sys.path.append('.')
 
 from scripts.informe.plot.plot_constants import PlotConstants
 from scripts.avances.avances15.common_plot import CommonPlot
-from scripts.avances.avances15 import Plotter2Constants
+from scripts.avances.avances15.plotter2_constants import Plotter2Constants
 
 
 class RelativeDifferenceStats(CommonPlot):

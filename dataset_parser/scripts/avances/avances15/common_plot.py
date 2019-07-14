@@ -1,7 +1,7 @@
 import sys
 sys.path.append('.')
 
-from scripts.avances.avances15 import Plotter2Constants
+from scripts.avances.avances15.plotter2_constants import Plotter2Constants
 
 
 class CommonPlot(object):

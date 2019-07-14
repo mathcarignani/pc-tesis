@@ -1,6 +1,7 @@
 import sys
 sys.path.append('.')
 
+from scripts.compress.experiments_utils import ExperimentsUtils
 from scripts.informe.math_utils import MathUtils
 from scripts.informe.plot.plot_constants import PlotConstants
 from scripts.informe.plot.plot_utils import PlotUtils
@@ -25,21 +26,21 @@ class SinglePlot(object):
         self.current_plot.append(plot_value)
 
     def best_values(self):
-        assert(len(PlotConstants.WINDOWS) == len(self.values0))
-        assert(len(PlotConstants.WINDOWS) == len(self.values3))
-        assert(len(PlotConstants.WINDOWS) == len(self.basic_values0))
+        assert(len(ExperimentsUtils.WINDOWS) == len(self.values0))
+        assert(len(ExperimentsUtils.WINDOWS) == len(self.values3))
+        assert(len(ExperimentsUtils.WINDOWS) == len(self.basic_values0))
         assert(len(set(self.basic_values0)) == 1)  # check that all the values in the list match
         value0_min, value3_min = min(self.values0), min(self.values3),
         value0_min_index, value3_min_index = self.values0.index(value0_min), self.values3.index(value3_min)
         res = {
-            'value0': {'min': value0_min, 'window': PlotConstants.WINDOWS[value0_min_index]},
-            'value3': {'min': value3_min, 'window': PlotConstants.WINDOWS[value3_min_index]},
+            'value0': {'min': value0_min, 'window': ExperimentsUtils.WINDOWS[value0_min_index]},
+            'value3': {'min': value3_min, 'window': ExperimentsUtils.WINDOWS[value3_min_index]},
             'basic_value0': self.basic_values0[0]
         }
         return res
 
     def check_windows(self):
-        if self.windows != PlotConstants.WINDOWS:
+        if self.windows != ExperimentsUtils.WINDOWS:
             raise Exception("ERROR: check_windows")
 
     def ylim(self):
@@ -144,7 +145,7 @@ class SinglePlot(object):
     @classmethod
     def __xticklabels(cls):
         xticklabels = ['']
-        for index, value in enumerate(PlotConstants.WINDOWS):
+        for index, value in enumerate(ExperimentsUtils.WINDOWS):
             power = index + 2
             label = r"$2^{}$".format(power)  # 2^power
             xticklabels.append(label)
@@ -160,7 +161,7 @@ class SinglePlot(object):
         values3 = cls.sum_arrays(single_plot1.values3, single_plot2.values3)
         basic_values0 = cls.sum_arrays(single_plot1.basic_values0, single_plot2.basic_values0)
         for index, (value0, value3, basic_value0) in enumerate(zip(values0, values3, basic_values0)):
-            window = PlotConstants.WINDOWS[index]
+            window = ExperimentsUtils.WINDOWS[index]
             single_plot.add_values(window, value0, value3, 0, basic_value0)  # plot_value = 0, doesn't matter
         return single_plot
 

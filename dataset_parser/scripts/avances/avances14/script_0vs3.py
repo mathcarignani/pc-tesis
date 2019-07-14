@@ -3,13 +3,13 @@ sys.path.append('.')
 
 from matplotlib.backends.backend_pdf import PdfPages
 
-from scripts.avances.avances14 import RowPlot
-from scripts.avances.avances14 import Plotter
-from scripts.avances.avances15 import Plotter2
+
+from scripts.avances.avances14.row_plot import RowPlot
+from scripts.avances.avances14.plotter import Plotter
+from scripts.avances.avances15.plotter2 import Plotter2
 from scripts.avances.avances16.plotter3 import Plotter3
 from file_utils.csv_utils.csv_reader import CSVReader
 from scripts.informe.plot.csv_constants import CSVConstants
-from scripts.informe.plot.plot_constants import PlotConstants
 from scripts.compress.experiments_utils import ExperimentsUtils
 from scripts.informe.results_parsing.results_constants import ResultsConstants
 from scripts.informe.results_parsing.results_reader import ResultsReader
@@ -30,11 +30,11 @@ class Script(object):
         for threshold in ExperimentsUtils.THRESHOLDS:
             self.row_plot = RowPlot(threshold)
 
-            for algorithm in PlotConstants.ALGORITHMS:
+            for algorithm in ExperimentsUtils.ALGORITHMS:
                 self.row_plot.begin_algorithm(algorithm)
                 basic_value0 = self.__find_combination(self.filename, algorithm, threshold)
 
-                for window_size in PlotConstants.WINDOWS:
+                for window_size in ExperimentsUtils.WINDOWS:
                     self.__find_next_line(CSVConstants.INDEX_WINDOW, window_size, True)
                     window, value0, value3 = self.__parse_line_values()
                     self.row_plot.add_values(window, value0, value3, basic_value0)
@@ -75,7 +75,7 @@ class Script(object):
         window = int(self.line[CSVConstants.INDEX_WINDOW])
         value0_index = self.__get_value0_index()
         value0 = self.__get_int(self.line[value0_index])
-        value3 = self.__get_int(self.line[value0_index + PlotConstants.MAX_COLUMN_TYPES])
+        value3 = self.__get_int(self.line[value0_index + ExperimentsUtils.MAX_COLUMN_TYPES])
         return window, value0, value3
 
     def __get_value0_index(self):
@@ -93,7 +93,7 @@ class Script(object):
 
 
 class PDFScript(object):
-    GRAPH_PATH = "scripts/avances14/graphs/"
+    GRAPH_PATH = "scripts/avances/avances14/graphs/"
 
     def __init__(self):
         for dataset_id, dataset_dictionary in enumerate(ExperimentsUtils.DATASETS_ARRAY):

@@ -4,7 +4,7 @@ sys.path.append('.')
 from file_utils.csv_utils.csv_reader import CSVReader
 from file_utils.csv_utils.csv_writer import CSVWriter
 
-path = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-13/"
+path = "/Users/pablocerve/Documents/FING/Proyecto/results/avances/avances-13/"
 path_raw = path + "1-raw/"
 path_raw_mac = path_raw + "mac/"
 path_raw_ubuntu = path_raw + "ubuntu/"

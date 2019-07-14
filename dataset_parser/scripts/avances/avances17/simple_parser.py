@@ -3,7 +3,7 @@ sys.path.append('.')
 
 from file_utils.text_utils.text_file_reader import TextFileReader
 
-path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/avances17"
+path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/avances/avances17"
 filename = "input.txt"
 
 reader = TextFileReader(path, filename)

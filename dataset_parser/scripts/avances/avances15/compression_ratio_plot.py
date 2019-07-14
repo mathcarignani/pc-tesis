@@ -9,8 +9,8 @@ from scripts.informe.math_utils import MathUtils
 from scripts.informe.plot.plot_constants import PlotConstants
 from scripts.informe.plot.plot_utils import PlotUtils
 from scripts.avances.avances15.common_plot import CommonPlot
-from scripts.avances.avances15 import Plotter2Constants
-from scripts.avances.avances15 import RelativeDifferencePlot
+from scripts.avances.avances15.plotter2_constants import Plotter2Constants
+from scripts.avances.avances15.relative_difference_plot import RelativeDifferencePlot
 
 # To make the latex math text look like the other text
 # https://stackoverflow.com/a/27697390/4547232

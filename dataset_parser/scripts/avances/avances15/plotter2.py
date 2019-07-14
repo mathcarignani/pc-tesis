@@ -3,10 +3,11 @@ sys.path.append('.')
 
 # import numpy as np
 import matplotlib.pyplot as plt
-from scripts.informe.plot.plot_constants import PlotConstants
+
+from scripts.compress.experiments_utils import ExperimentsUtils
 from scripts.informe.plot.plot_utils import PlotUtils
-from scripts.avances.avances15 import Column
-from scripts.avances.avances15 import Matrix
+from scripts.avances.avances15.column import Column
+from scripts.avances.avances15.matrix import Matrix
 
 
 class Plotter2(object):
@@ -79,7 +80,7 @@ class Plotter2(object):
         self.matrix.windows_stats.plot(ax)
 
     def __collect_data_plot(self):
-        for algorithm_index, algorithm in enumerate(PlotConstants.ALGORITHMS):
+        for algorithm_index, algorithm in enumerate(ExperimentsUtils.ALGORITHMS):
             column = Column(algorithm, True)
             for row_index, row_plot in enumerate(self.plotter.row_plots):  # threshold row
                 single_plot = row_plot.plots[algorithm_index]  # algorithm
