@@ -8,6 +8,9 @@ from scripts.informe.results_parsing.results_reader import ResultsReader
 
 
 class ResultsToPandas(object):
+    DATA_COLUMN_PREFIX = 'column_'
+    PERCENTAGE_PREFIX = 'percentage_'
+
     def __init__(self, results_reader):
         self.results_reader = results_reader
 
@@ -44,16 +47,24 @@ class ResultsToPandas(object):
         count = 1
         for index in range(len(line)):
             if CSVConstants.is_column_index(index):
-                key = ResultsToPandas.__check_key(data_obj, count, 'column')
+                key = ResultsToPandas.__check_key(data_obj, count, ResultsToPandas.DATA_COLUMN_PREFIX)
                 data_obj[key].append(line[index])
             elif CSVConstants.is_column_percentage_index(index):
-                key = ResultsToPandas.__check_key(data_obj, count, 'percentage')
+                key = ResultsToPandas.__check_key(data_obj, count, ResultsToPandas.PERCENTAGE_PREFIX)
                 data_obj[key].append(line[index])
                 count += 1
 
     @staticmethod
     def __check_key(data_obj, count, string):
-        key = string + '_' + str(count)
+        key = string + str(count)
         if key not in data_obj.keys():
             data_obj[key] = []
         return key
+
+    @staticmethod
+    def data_column_key(count):
+        return ResultsToPandas.DATA_COLUMN_PREFIX + str(count)
+
+    @staticmethod
+    def percentage_column_key(count):
+        return ResultsToPandas.PERCENTAGE_PREFIX + str(count)
