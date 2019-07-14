@@ -4,7 +4,8 @@ sys.path.append('.')
 # from file_utils.text_utils.text_file_reader import TextFileReader
 from file_utils.csv_utils.csv_reader import CSVReader
 from file_utils.csv_utils.csv_writer import CSVWriter
-from utils import calculate_percentage, to_int, print_absolute_diff
+from scripts.informe.math_utils import MathUtils
+from scripts.compress.compress_aux import ExperimentsConstants
 
 path = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-11/3-results"
 
@@ -30,8 +31,6 @@ def remove_delta_data(line):
 
 ########################################################################################################################
 
-IGNORE_CODERS = ["CoderFR", "CoderSF"]
-
 
 def print_percentage_diff(value0, value3):
     value0float, value3float = float(value0), float(value3)
@@ -39,12 +38,12 @@ def print_percentage_diff(value0, value3):
         if value3float == 0:
             return "AC"
         else:
-            return str(calculate_percentage(value0float, value3float)) + " % AC"
+            return str(MathUtils.calculate_percent(value0float, value3float)) + " % AC"
     elif value3float > value0float:
         if value0float == 0:
             return "NM"
         else:
-            return str(calculate_percentage(value3float, value0float)) + " % NM"
+            return str(MathUtils.calculate_percent(value3float, value0float)) + " % NM"
     else:  # equal
         return "="
 
@@ -62,8 +61,8 @@ def process_line(line0, line3, count):
     new_line = get_coder_params(line0)
 
     # Size (B) | CR (%)
-    size_bytes_0, size_bytes_3 = to_int(line0[7]), to_int(line3[7])
-    new_line.append(print_absolute_diff(size_bytes_0, size_bytes_3))
+    size_bytes_0, size_bytes_3 = MathUtils.str_to_int(line0[7]), MathUtils.str_to_int(line3[7])
+    new_line.append(MathUtils.print_absolute_diff(size_bytes_0, size_bytes_3))
     new_line.append(print_percentage_diff(size_bytes_0, size_bytes_3))
 
     after_delta0, after_delta3 = get_after_delta(line0), get_after_delta(line3)
@@ -75,8 +74,8 @@ def process_line(line0, line3, count):
             finished = True
             continue
         for i in [0, 1, 2]:
-            value0, value3 = to_int(after_delta0[current_index + i]), to_int(after_delta3[current_index + i])
-            new_line.append(print_absolute_diff(value0, value3))
+            value0, value3 = MathUtils.str_to_int(after_delta0[current_index + i]), MathUtils.str_to_int(after_delta3[current_index + i])
+            new_line.append(MathUtils.print_absolute_diff(value0, value3))
             new_line.append(print_percentage_diff(value0, value3))
         current_index += 4
     return new_line
@@ -92,7 +91,7 @@ def run():
     while csv_reader0.continue_reading:
         line3 = csv_reader3.read_line()
         coder = line3[3] or coder
-        if coder in IGNORE_CODERS:
+        if coder in ExperimentsConstants.CODERS_ONLY_MASK_MODE:
             continue
         line0 = csv_reader0.read_line()
         new_line = process_line(line0, line3, count)

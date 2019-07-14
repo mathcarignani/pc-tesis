@@ -12,7 +12,7 @@ from file_utils.csv_utils.csv_writer import CSVWriter
 from file_utils.csv_utils.csv_utils import CSVUtils
 from scripts.utils import create_folder
 from scripts.compress.calculate_std import calculate_file_stats, calculate_stds_percentages
-from scripts.compress.compress_aux import THRESHOLD_PERCENTAGES, CSV_PATH, DATASETS_ARRAY, CODERS_ARRAY
+from scripts.compress.compress_aux import ExperimentsConstants, CSV_PATH, DATASETS_ARRAY, CODERS_ARRAY
 from scripts.compress.compress_cpp import code_decode_cpp
 from scripts.compress.compress_args import CompressArgs
 from scripts.compress.compress_aux import dataset_csv_filenames
@@ -122,7 +122,7 @@ def run_script_on_file(csv, id1, row, logger, input_path, input_filename, output
 
     # calculate error thresholds
     stds = calculate_file_stats(input_path, input_filename)
-    thresholds_array = calculate_stds_percentages(stds, THRESHOLD_PERCENTAGES)
+    thresholds_array = calculate_stds_percentages(stds, ExperimentsConstants.THRESHOLDS)
 
     for id2, coder_dictionary in enumerate(CODERS_ARRAY):
         if id1 == 0 and id2 == 0:  # first row of dataset and file

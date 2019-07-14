@@ -5,7 +5,6 @@ import pandas as pd
 
 from scripts.informe.plot.csv_constants import CSVConstants
 from scripts.informe.results_parsing.results_reader import ResultsReader
-from scripts.informe.plot.plot_constants import PlotConstants
 
 
 class ResultsToPandas(object):
@@ -17,8 +16,6 @@ class ResultsToPandas(object):
         filename_results = ResultsReader.convert_lines(filename_results)
         data = self.__create_data(filename_results)
         df = pd.DataFrame(data)
-        print df
-        ResultsToPandas.__check_df(df)
         return df
 
     @staticmethod
@@ -60,16 +57,3 @@ class ResultsToPandas(object):
         if key not in data_obj.keys():
             data_obj[key] = []
         return key
-
-    @staticmethod
-    def __check_df(df):
-        # the rest of the coders have the same number of rows
-        number_of_combinations = len(PlotConstants.THRESHOLDS) * len(PlotConstants.WINDOWS)
-        for coder in df['coder'].unique():
-            rows, _ = df.loc[df['coder'] == coder].shape
-            if coder == 'CoderBasic':
-                assert(rows == 1)
-            elif coder == 'CoderSF':
-                assert(rows == len(PlotConstants.THRESHOLDS))
-            else:
-                assert(rows == number_of_combinations)

@@ -3,7 +3,7 @@ sys.path.append('.')
 
 from file_utils.csv_utils.csv_reader import CSVReader
 from file_utils.csv_utils.csv_writer import CSVWriter
-from scripts.compress.compress_aux import THRESHOLD_PERCENTAGES
+from scripts.compress.compress_aux import ExperimentsConstants
 from scripts.informe.results_parsing.results_constants import ResultsConstants
 
 window_index = 6
@@ -25,14 +25,14 @@ column_indexes = {
 
 def thresholds_array():
     array = []
-    for threshold in THRESHOLD_PERCENTAGES:
+    for threshold in ExperimentsConstants.THRESHOLDS:
         array += [None, None, str(threshold) + " (%)", None]
     return array
 
 
 def second_line():
     array = []
-    for _ in THRESHOLD_PERCENTAGES:
+    for _ in ExperimentsConstants.THRESHOLDS:
         array += [None, "Coder", "Win", "CR (%)"]
     return array
 
@@ -122,7 +122,7 @@ class Script1Write(object):
         self.coder_name = None
 
     def write(self):
-        row = ["Dataset", "Filename", "Column", "Coder"] + THRESHOLD_PERCENTAGES + [''] + THRESHOLD_PERCENTAGES
+        row = ["Dataset", "Filename", "Column", "Coder"] + ExperimentsConstants.THRESHOLDS + [''] + ExperimentsConstants.THRESHOLDS
         self.csv_writer1.write_row(row)
         self.csv_writer2.write_row(["Dataset", "Filename", "Column"] + thresholds_array())
         self.csv_writer2.write_row([None, None, None] + second_line())
@@ -203,7 +203,7 @@ class Script1Write(object):
 
     def print_line(self, column):
         array = []
-        for threshold in THRESHOLD_PERCENTAGES:
+        for threshold in ExperimentsConstants.THRESHOLDS:
             best_coder, best_percentage, best_window = self.get_best_values_for_threshold(threshold, column)
             array += [None, best_coder, best_window, best_percentage]
         self.csv_writer2.write_row([None, None, self.column_name] + array)

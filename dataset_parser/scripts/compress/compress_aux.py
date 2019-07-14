@@ -5,8 +5,16 @@ from auxi.os_utils import datasets_csv_path
 from scripts.utils import csv_files_filenames
 
 
-THRESHOLD_PERCENTAGES = [0, 1, 3, 5, 10, 15, 20, 30]
-WINDOW_SIZES = [4, 8, 16, 32, 64, 128, 256]
+class ExperimentsConstants(object):
+    CODERS = ['CoderBasic', 'CoderPCA', 'CoderAPCA', 'CoderCA', 'CoderPWLH', 'CoderPWLHInt',
+              'CoderFR', 'CoderSF', 'CoderGAMPS', 'CoderGAMPSLimit']
+    ALGORITHMS = ["CoderPCA", "CoderAPCA", "CoderCA", "CoderPWLH", "CoderPWLHInt", "CoderGAMPSLimit"]
+    CODERS_ONLY_MASK_MODE = ['CoderFR', 'CoderSF']
+    THRESHOLDS = [0, 1, 3, 5, 10, 15, 20, 30]
+    WINDOWS = [4, 8, 16, 32, 64, 128, 256]
+
+    MAX_COLUMN_TYPES = 7  # ElNino
+
 
 CSV_PATH = datasets_csv_path()
 MASK_MODE = False
@@ -61,37 +69,37 @@ CODERS_ARRAY = [
     # {
     #     'name': 'CoderPCA',
     #     'o_folder': 'pca',
-    #     'params': {'window_size': WINDOW_SIZES}
+    #     'params': {'window_size': ExperimentsConstants.WINDOWS}
     # },
     # {
     #     'name': 'CoderAPCA',
     #     'o_folder': 'apca',
-    #     'params': {'window_size': WINDOW_SIZES}
+    #     'params': {'window_size': ExperimentsConstants.WINDOWS}
     # },
     # {
     #     'name': 'CoderCA',
     #     'o_folder': 'ca',
-    #     'params': {'window_size': WINDOW_SIZES}
+    #     'params': {'window_size': ExperimentsConstants.WINDOWS}
     # },
     # {
     #     'name': 'CoderPWLH',
     #     'o_folder': 'pwlh',
-    #     'params': {'window_size': WINDOW_SIZES}
+    #     'params': {'window_size': ExperimentsConstants.WINDOWS}
     # },
     # {
     #     'name': 'CoderPWLHInt',
     #     'o_folder': 'pwlh-int',
-    #     'params': {'window_size': WINDOW_SIZES}
+    #     'params': {'window_size': ExperimentsConstants.WINDOWS}
     # },
     {
         'name': 'CoderGAMPS',
         'o_folder': 'gamps',
-        'params': {'window_size': WINDOW_SIZES}
+        'params': {'window_size': ExperimentsConstants.WINDOWS}
     },
     {
         'name': 'CoderGAMPSLimit',
         'o_folder': 'gamps-limit',
-        'params': {'window_size': WINDOW_SIZES}
+        'params': {'window_size': ExperimentsConstants.WINDOWS}
     },
 ]
 
@@ -99,7 +107,7 @@ MASK_MODE_CODERS_ARRAY = [
     # {
     #     'name': 'CoderFR',
     #     'o_folder': 'fr',
-    #     'params': {'window_size': WINDOW_SIZES}
+    #     'params': {'window_size': ExperimentsConstants.WINDOWS}
     # },
     # {
     #     'name': 'CoderSF',
