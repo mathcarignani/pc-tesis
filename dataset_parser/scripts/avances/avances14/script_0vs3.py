@@ -3,7 +3,6 @@ sys.path.append('.')
 
 from matplotlib.backends.backend_pdf import PdfPages
 
-
 from scripts.avances.avances14.row_plot import RowPlot
 from scripts.avances.avances14.plotter import Plotter
 from scripts.avances.avances15.plotter2 import Plotter2
@@ -103,11 +102,11 @@ class PDFScript(object):
 
     def __create_pdfs_for_dataset(self):
         plotter3 = self.__create_pdf1()
-        if plotter3.must_plot:
-            self.__create_pdf2(plotter3)
-            self.__create_pdf3(plotter3)
-            self.__create_pdf4(plotter3)
-        # exit()
+        # if plotter3.must_plot:
+        #     self.__create_pdf2(plotter3)
+        #     self.__create_pdf3(plotter3)
+        #     self.__create_pdf4(plotter3)
+        exit(1)
 
     def __create_pdf1(self):
         print "pdf1"

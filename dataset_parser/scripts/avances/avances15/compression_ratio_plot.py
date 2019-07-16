@@ -10,7 +10,7 @@ from scripts.informe.plot.plot_constants import PlotConstants
 from scripts.informe.plot.plot_utils import PlotUtils
 from scripts.avances.avances15.common_plot import CommonPlot
 from scripts.avances.avances15.plotter2_constants import Plotter2Constants
-from scripts.avances.avances15.relative_difference_plot import RelativeDifferencePlot
+from scripts.informe.results_parsing.results_to_pandas import ResultsToPandas
 
 # To make the latex math text look like the other text
 # https://stackoverflow.com/a/27697390/4547232
@@ -47,26 +47,30 @@ class CompressionRatioPlot(CommonPlot):
         return [min([min(self.values0), min(self.values3)]), max([max(self.values0), max(self.values3)])]
 
     def plot(self, ax, ymin, ymax, extra):
-        # self.print_values()
+        self.print_values()
+        print ymin, ymax
 
         # scatter plot
         x_axis = list(xrange(len(self.values0)))
         colors0, colors3 = self.generate_colors()
-        ax.scatter(x=x_axis, y=self.values0, c=colors0, zorder=self.values0)
-        ax.scatter(x=x_axis, y=self.values3, c=colors3, zorder=self.values3)
+        zorders0, zorders3 = self.__generate_zorders()
+        ax.scatter(x=x_axis, y=self.values0, c=colors0, zorder=zorders0)
+        ax.scatter(x=x_axis, y=self.values3, c=colors3, zorder=zorders3)
+        # ax.scatter(x=x_axis, y=self.values0, c=colors0)
+        # ax.scatter(x=x_axis, y=self.values3, c=colors3)
         ax.grid(b=True, color=PlotConstants.COLOR_SILVER)
         ax.set_axisbelow(True)
 
         if ymax >= 100:
             PlotUtils.horizontal_line(ax, 100, PlotConstants.COLOR_SILVER)
 
-        RelativeDifferencePlot.set_lim(ax, ymin, ymax)
+        CommonPlot.set_lim(ax, ymin, ymax)
 
-        if extra['first_row']:
+        if extra.get('first_row') or extra.get('show_title'):
             ax.title.set_text(self.algorithm)
-        if not extra['last_row']:
+        if not extra.get('last_row'):
             ax.set_xticklabels([])
-        if extra['first_column']:
+        if extra.get('first_column') or extra.get('show_ylabel'):
             ax.set_ylabel(PlotConstants.COMPRESSION_RATIO)
             self.format_x_ticks(ax)
         else:
@@ -77,6 +81,14 @@ class CompressionRatioPlot(CommonPlot):
         print self.algorithm + " Compression Ratio"
         print "self.values0 = " + str(self.values0)
         print "self.values3 = " + str(self.values3)
+
+    def __generate_zorders(self):
+        zorders0 = []
+        for index, value0 in enumerate(self.values0):
+            zorder0 = 1 if value0 > self.values3[index] else -1
+            zorders0.append(zorder0)
+        zorders3 = [-val for val in zorders0]
+        return zorders0, zorders3
 
     def __check_sorted(self):
         if self.additional_checks:
@@ -96,3 +108,52 @@ class CompressionRatioPlot(CommonPlot):
         diff = total_max - total_min
         total_min = 0 if total_min > 0 else total_min - diff * Plotter2Constants.Y_DIFF
         return total_min, total_max + diff * Plotter2Constants.Y_DIFF
+
+    ##############################################
+
+    @staticmethod
+    def create_plots(coders_array, panda_utils_0, panda_utils_3, col_index):
+        plots_obj = {}
+        total_min, total_max = sys.maxint, -sys.maxint
+        for coder_name in coders_array:
+            values0, min0, max0 = CompressionRatioPlot.get_values(coder_name, col_index, panda_utils_0)
+            values3, min3, max3 = CompressionRatioPlot.get_values(coder_name, col_index, panda_utils_3)
+            assert(len(values0) == len(values3))
+
+            min03, max03 = min([min0, min3]), max([max0, max3])
+            total_min = min03 if min03 < total_min else total_min
+            total_max = max03 if max03 > total_max else total_max
+
+            plot_instance = CompressionRatioPlot(coder_name)
+            plot_instance.set_values(values0, values3)
+            plots_obj[coder_name] = plot_instance
+
+        # calculate and set ymin and ymax
+        ymin, ymax = CompressionRatioPlot.ylims(total_min, total_max)
+        for coder in coders_array:
+            plots_obj[coder].set_ymin_ymax(ymin, ymax)
+
+        return plots_obj
+
+    @staticmethod
+    def get_values(coder_name, col_index, panda_utils):
+        percentage_column_key = ResultsToPandas.percentage_column_key(col_index)
+        df = panda_utils.min_value_for_each_threshold(coder_name, col_index)
+        values = df[percentage_column_key].values
+        df_min = df[percentage_column_key].min()
+        df_max = df[percentage_column_key].max()
+        return values, df_min, df_max
+
+    def set_values(self, values0, values3):
+        self.values0 = values0
+        self.values3 = values3
+        self.close()
+
+    def set_ymin_ymax(self, ymin, ymax):
+        self.ymin = ymin
+        self.ymax = ymax
+
+    def plot2(self, ax, extra):
+        self.plot(ax, self.ymin, self.ymax, extra)
+
+    ##############################################

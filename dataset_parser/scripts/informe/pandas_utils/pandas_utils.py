@@ -2,6 +2,7 @@ import sys
 sys.path.append('.')
 
 import numpy as np
+import pandas as pd
 from scripts.compress.experiments_utils import ExperimentsUtils
 from scripts.informe.results_parsing.results_to_pandas import ResultsToPandas
 
@@ -59,6 +60,8 @@ class PandasUtils(object):
             aux_percentage_col_key = 'aux_' + percentage_col_key
 
             basic_coder_total = self.df.loc[self.df['coder'] == "CoderBasic"][data_col_key].iloc[0]
+            print "basic_coder_total"
+            print basic_coder_total
             self.df[new_percentage_col_key] = 100 * (self.df[data_col_key] / basic_coder_total)
 
             # check that the difference between the values is small
@@ -69,19 +72,38 @@ class PandasUtils(object):
             # remove aux columns and keep the calculated values
             del self.df[percentage_col_key]
             del self.df[aux_percentage_col_key]
-            self.df.rename(columns={new_percentage_col_key: percentage_col_key})
+            self.df.rename(columns={new_percentage_col_key: percentage_col_key}, inplace=True)
 
-    def best_values_for_threshold(self, coder_name, col_index):
-        data_column_key = ResultsToPandas.data_column_key(col_index)
+    ####################################################################################################################
+
+    def min_value_for_every_coder(self, coders_array, column_index):
+        new_df = pd.DataFrame(columns=self.df.columns)
+        for coder_name in coders_array:
+            df = self.min_value_for_each_threshold(coder_name, column_index)
+            new_df = new_df.append(df, ignore_index=True)
+        return new_df
+
+    def min_value_for_each_threshold(self, coder_name, column_index):
+        data_column_key = ResultsToPandas.data_column_key(column_index)
         coder_df = self.df.loc[self.df['coder'] == coder_name]
-        print coder_df
-        values = []
-        windows = []
-        percentages = []
+        new_df = pd.DataFrame(columns=self.df.columns)
+        for index, threshold in enumerate(ExperimentsUtils.THRESHOLDS):
+            new_df.loc[index] = self.get_min_row(coder_df, data_column_key, threshold)
+        return new_df
 
-        for threshold in ExperimentsUtils.THRESHOLDS:
-            print threshold
-            threshold_df = coder_df.loc[coder_df['threshold'] == threshold]
-            print threshold_df
-            print "argmax"
-            print threshold_df[data_column_key].argmax()
+    #
+    # Given a coder_df, a column_key, and a threshold:
+    # it returns the row with the minimum value for that column for that <coder, threshold> combination
+    #
+    @staticmethod
+    def get_min_row(coder_df, column_key, threshold):
+        threshold_df = coder_df.loc[coder_df['threshold'] == threshold]
+        min_value_index = threshold_df[column_key].argmin()
+        min_value = threshold_df.loc[min_value_index][column_key]
+
+        min_value_rows_count = threshold_df[threshold_df[column_key] == min_value].count()[column_key]
+        assert(min_value_rows_count == 1)
+
+        min_value_row = threshold_df.loc[min_value_index]
+        print min_value_row.values
+        return min_value_row.values

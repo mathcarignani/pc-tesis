@@ -32,3 +32,8 @@ class CommonPlot(object):
                 colors0.append(self.value0_color)
                 colors3.append(self.value3_color)
         return colors0, colors3
+
+    @classmethod
+    def set_lim(cls, ax, ymin, ymax):
+        ax.set_xlim(left=-1, right=8)  # 8 thresholds
+        ax.set_ylim(bottom=ymin, top=ymax)

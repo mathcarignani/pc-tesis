@@ -111,8 +111,6 @@ class ResultsReader(object):
 
         new_line.append(line[CSVConstants.INDEX_ALGORITHM])  # Coder
         threshold = line[CSVConstants.INDEX_THRESHOLD]
-        print 'thresholdA = ' + threshold
-        print 'thresholdB = ' + str(int(threshold) if len(threshold) > 0 else None)
         new_line.append(int(threshold) if len(threshold) > 0 else None)  # %
         new_line.append('')  # Error Threshold
         window = line[CSVConstants.INDEX_WINDOW]

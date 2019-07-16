@@ -4,6 +4,7 @@ sys.path.append('.')
 from scripts.informe.plot.plot_constants import PlotConstants
 from scripts.avances.avances15.common_plot import CommonPlot
 from scripts.avances.avances15.plotter2_constants import Plotter2Constants
+from scripts.informe.results_parsing.results_to_pandas import ResultsToPandas
 
 
 class RelativeDifferenceStats(CommonPlot):
@@ -70,6 +71,25 @@ class RelativeDifferenceStats(CommonPlot):
     def percentage(cls, total, value):
         return round((float(100) / float(total)) * value, 2)
 
+    ##############################################
+
+    @staticmethod
+    def create_plot_common(coders_array, panda_utils_0, panda_utils_3, col_index, key, klass):
+        min_values_0 = panda_utils_0.min_value_for_every_coder(coders_array, col_index)[key]
+        min_values_3 = panda_utils_3.min_value_for_every_coder(coders_array, col_index)[key]
+
+        plot_instance = klass()
+        for value0, value3 in zip(min_values_0, min_values_3):
+            plot_instance.add_values(value0, value3)
+        plot_instance.close()
+        return plot_instance
+
+    @staticmethod
+    def create_plot(coders_array, panda_utils_0, panda_utils_3, col_index):
+        key = ResultsToPandas.data_column_key(col_index)
+        klass = RelativeDifferenceStats
+        return RelativeDifferenceStats.create_plot_common(coders_array, panda_utils_0, panda_utils_3, col_index, key, klass)
+
 
 class WindowsStats(RelativeDifferenceStats):
     def __init__(self):
@@ -80,3 +100,9 @@ class WindowsStats(RelativeDifferenceStats):
         results = [self.best3_results, self.same_results, self.best0_results]
         colors = [self.value0_color, Plotter2Constants.VALUE_SAME, self.value3_color]
         self.plot_aux(ax, self.col_labels, zip(results, self.row_labels, colors))
+
+    @staticmethod
+    def create_plot(coders_array, panda_utils_0, panda_utils_3, col_index):
+        key = 'window'
+        klass = WindowsStats
+        return RelativeDifferenceStats.create_plot_common(coders_array, panda_utils_0, panda_utils_3, col_index, key, klass)

@@ -7,6 +7,7 @@ from scripts.informe.plot.plot_utils import PlotUtils
 from scripts.avances.avances14.single_plot import SinglePlot
 from scripts.avances.avances15.common_plot import CommonPlot
 from scripts.avances.avances15.plotter2_constants import Plotter2Constants
+from scripts.avances.avances15.compression_ratio_plot import CompressionRatioPlot
 
 
 class RelativeDifferencePlot(CommonPlot):
@@ -37,13 +38,13 @@ class RelativeDifferencePlot(CommonPlot):
         ax.grid(b=True, color=PlotConstants.COLOR_SILVER)
         ax.set_axisbelow(True)
 
-        self.set_lim(ax, ymin, ymax)
+        CommonPlot.set_lim(ax, ymin, ymax)
 
-        if extra['first_row']:
+        if extra.get('first_row') or extra.get('show_title'):
             ax.title.set_text(self.algorithm)
-        if not extra['last_row']:
+        if not extra.get('last_row'):
             ax.set_xticklabels([])
-        if extra['first_column']:
+        if extra.get('first_column') or extra.get('show_ylabel'):
             ax.set_ylabel(PlotConstants.RELATIVE_DIFF)
         else:
             ax.set_yticklabels([])
@@ -62,11 +63,6 @@ class RelativeDifferencePlot(CommonPlot):
             print "max_value = " + str(max_value)
 
     @classmethod
-    def set_lim(cls, ax, ymin, ymax):
-        ax.set_xlim(left=-1, right=8)  # 8 thresholds
-        ax.set_ylim(bottom=ymin, top=ymax)
-
-    @classmethod
     def ylims(cls, total_min, total_max):
         if total_max > 0:
             total_max *= 1 + Plotter2Constants.Y_DIFF
@@ -83,3 +79,40 @@ class RelativeDifferencePlot(CommonPlot):
             total_min *= 1 + Plotter2Constants.Y_DIFF
 
         return total_min, total_max
+
+    ##############################################
+
+    @staticmethod
+    def create_plots(coders_array, panda_utils_0, panda_utils_3, col_index):
+        plots_obj = {}
+        total_min, total_max = sys.maxint, -sys.maxint
+        for coder_name in coders_array:
+            values0, _, _ = CompressionRatioPlot.get_values(coder_name, col_index, panda_utils_0)
+            values3, _, _ = CompressionRatioPlot.get_values(coder_name, col_index, panda_utils_3)
+            assert(len(values0) == len(values3))
+
+            plot_instance = RelativeDifferencePlot(coder_name, True)
+            for index, value0 in enumerate(values0):
+                plot_instance.add_value(value0, values3[index])
+            plot_instance.close()
+            plots_obj[coder_name] = plot_instance
+
+            coder_min, coder_max = plot_instance.min_max()
+            total_min = coder_min if coder_min < total_min else total_min
+            total_max = coder_max if coder_max > total_max else total_max
+
+        # calculate and set ymin and ymax
+        ymin, ymax = RelativeDifferencePlot.ylims(total_min, total_max)
+        for coder in coders_array:
+            plots_obj[coder].set_ymin_ymax(ymin, ymax)
+
+        return plots_obj
+
+    def set_ymin_ymax(self, ymin, ymax):
+        self.ymin = ymin
+        self.ymax = ymax
+
+    def plot2(self, ax, extra):
+        self.plot(ax, self.ymin, self.ymax, extra)
+
+    ##############################################

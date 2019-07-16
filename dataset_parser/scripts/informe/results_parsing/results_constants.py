@@ -45,7 +45,7 @@ class ResultsConstants(object):
         elif file_key == 'global':
             path = ResultsConstants.GLOBAL_RESULTS_PATH
             filename = ResultsConstants.GLOBAL_MM_0_FILENAME if file_value == 0 else ResultsConstants.GLOBAL_MM_3_FILENAME
-        elif file_key == 'basic':
+        elif file_key == 'raw_basic':
             path = ResultsConstants.RAW_MM_3_BASIC_CODER_PATH
             filename = ResultsConstants.RAW_MM_3_BASIC_CODER_FILENAME
 
@@ -54,11 +54,11 @@ class ResultsConstants(object):
     @staticmethod
     def check_input(file_key, file_value):
         if (
-           (file_key not in ['raw', 'compare', 'global', 'basic'])
+           (file_key not in ['raw', 'compare', 'global', 'raw_basic'])
             or
            (file_value not in [0, 3])
             or
-           (file_key in ['compare', 'basic'] and file_value != 3)
+           (file_key in ['compare', 'raw_basic'] and file_value != 3)
            ):
             ResultsConstants.raise_error(file_key, file_value)
 
