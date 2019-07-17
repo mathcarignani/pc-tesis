@@ -49,30 +49,36 @@ class PandasUtils(object):
             assert(rows == len(ExperimentsUtils.THRESHOLDS))
         else:
             # the rest of the coders have the same number of rows
-            assert(rows == self.NUMBER_OF_COMBINATIONS)
+            if rows != self.NUMBER_OF_COMBINATIONS:
+                print self.df.loc[self.df['coder'] == coder]
+                print coder
+                print rows
+                assert(rows == self.NUMBER_OF_COMBINATIONS)
+
 
     def __calculate_percentage(self):
         for value in range(1, self.data_columns_count + 1):  # [1, ... ]
             data_col_key = ResultsToPandas.data_column_key(value)
             percentage_col_key = ResultsToPandas.percentage_column_key(value)
 
-            new_percentage_col_key = 'new_' + percentage_col_key
-            aux_percentage_col_key = 'aux_' + percentage_col_key
-
             basic_coder_total = self.df.loc[self.df['coder'] == "CoderBasic"][data_col_key].iloc[0]
-            print "basic_coder_total"
-            print basic_coder_total
+            new_percentage_col_key = 'new_' + percentage_col_key
             self.df[new_percentage_col_key] = 100 * (self.df[data_col_key] / basic_coder_total)
 
-            # check that the difference between the values is small
-            self.df[aux_percentage_col_key] = self.df[new_percentage_col_key] - self.df[percentage_col_key]
-            max_absolute_value = self.df[aux_percentage_col_key].abs().max()
-            assert(max_absolute_value < self.MAX_DIFF)
+            self.__check_difference(percentage_col_key, new_percentage_col_key)
 
-            # remove aux columns and keep the calculated values
-            del self.df[percentage_col_key]
-            del self.df[aux_percentage_col_key]
+            # rename percentages column
             self.df.rename(columns={new_percentage_col_key: percentage_col_key}, inplace=True)
+
+    def __check_difference(self, percentage_col_key, new_percentage_col_key):
+        # check that the difference between the values is small
+        aux_percentage_col_key = 'aux_' + percentage_col_key
+        self.df[aux_percentage_col_key] = self.df[new_percentage_col_key] - self.df[percentage_col_key]
+        max_absolute_value = self.df[aux_percentage_col_key].abs().max()
+        assert(max_absolute_value < self.MAX_DIFF)
+        # remove aux columns
+        del self.df[percentage_col_key]
+        del self.df[aux_percentage_col_key]
 
     ####################################################################################################################
 
@@ -105,5 +111,4 @@ class PandasUtils(object):
         assert(min_value_rows_count == 1)
 
         min_value_row = threshold_df.loc[min_value_index]
-        print min_value_row.values
         return min_value_row.values

@@ -47,8 +47,7 @@ class CompressionRatioPlot(CommonPlot):
         return [min([min(self.values0), min(self.values3)]), max([max(self.values0), max(self.values3)])]
 
     def plot(self, ax, ymin, ymax, extra):
-        self.print_values()
-        print ymin, ymax
+        # self.print_values()
 
         # scatter plot
         x_axis = list(xrange(len(self.values0)))

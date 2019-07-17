@@ -34,6 +34,7 @@ class PDFS1(object):
 
     def create_pdfs(self):
         for dataset_id, self.dataset_name in enumerate(self.dataset_names):
+            print self.dataset_name
             self.dataset_id = dataset_id + 1
             self.created_pdfs_for_dataset()
 
@@ -43,7 +44,6 @@ class PDFS1(object):
             for self.filename in ExperimentsUtils.dataset_csv_filenames(self.dataset_name):
                 print self.filename
                 self.create_file_pages(pdf)
-        exit(1)
 
     def create_file_pages(self, pdf):
         panda_utils_0, panda_utils_3 = self.create_panda_utils()
@@ -62,10 +62,10 @@ class PDFS1(object):
     def create_page(self, pdf, panda_utils_0, panda_utils_3):
         plotter = Plotter(panda_utils_0, panda_utils_3, self.filename, self.col_index)
         fig, plt = plotter.create()
-        # plt.subplots_adjust(wspace=0.1)
+        plt.subplots_adjust(wspace=0.1)
         # plt_.show(); exit(0)  # uncomment to generate a single graph
         pdf.savefig(fig)
         plt.close()
 
-# PDFS1(['IRKIS']).create_pdfs()
-PDFS1(['NOAA-SPC-hail']).create_pdfs()
+PDFS1(['NOAA-SPC-wind']).create_pdfs()
+# PDFS1(None).create_pdfs()

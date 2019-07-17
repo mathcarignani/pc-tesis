@@ -114,23 +114,23 @@ class PDFScript(object):
             plotter3 = self.__create_pdf1_iteration(pdf)
             return plotter3
 
-    def __create_pdf2(self, plotter3):
-        print "pdf2"
-        with PdfPages(self.__pdf_name("Global-")) as pdf:
-            for plotter in plotter3.global_plotters():
-                self.__plot_and_save(pdf, plotter)
-
-    def __create_pdf3(self, plotter3):
-        print "pdf3"
-        with PdfPages(self.__pdf_name("Globalvs0-")) as pdf:
-            for plotter in plotter3.compare_plotters_0():
-                self.__plot_and_save(pdf, plotter)
-
-    def __create_pdf4(self, plotter3):
-        print "pdf4"
-        with PdfPages(self.__pdf_name("Globalvs3-")) as pdf:
-            for plotter in plotter3.compare_plotters_3():
-                self.__plot_and_save(pdf, plotter)
+    # def __create_pdf2(self, plotter3):
+    #     print "pdf2"
+    #     with PdfPages(self.__pdf_name("Global-")) as pdf:
+    #         for plotter in plotter3.global_plotters():
+    #             self.__plot_and_save(pdf, plotter)
+    #
+    # def __create_pdf3(self, plotter3):
+    #     print "pdf3"
+    #     with PdfPages(self.__pdf_name("Globalvs0-")) as pdf:
+    #         for plotter in plotter3.compare_plotters_0():
+    #             self.__plot_and_save(pdf, plotter)
+    #
+    # def __create_pdf4(self, plotter3):
+    #     print "pdf4"
+    #     with PdfPages(self.__pdf_name("Globalvs3-")) as pdf:
+    #         for plotter in plotter3.compare_plotters_3():
+    #             self.__plot_and_save(pdf, plotter)
 
     def __pdf_name(self, extra):
         print extra

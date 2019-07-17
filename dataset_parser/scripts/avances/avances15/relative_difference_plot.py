@@ -29,7 +29,7 @@ class RelativeDifferencePlot(CommonPlot):
         return [min(self.values), max(self.values)]
 
     def plot(self, ax, ymin, ymax, extra):
-        self.print_values()
+        # self.print_values()
 
         # scatter plot
         x_axis = list(xrange(len(self.values)))

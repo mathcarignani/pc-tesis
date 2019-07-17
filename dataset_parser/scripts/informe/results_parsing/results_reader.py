@@ -72,6 +72,8 @@ class ResultsReader(object):
             output_file.write_row(results_reader.line)
             results_reader.__read_line()
             first_line = False
+        if not results_reader.continue_reading():
+            output_file.write_row(results_reader.line)
 
     @staticmethod
     def add_until_change(results_reader, line_index):
@@ -81,6 +83,8 @@ class ResultsReader(object):
             lines_array.append(results_reader.line)
             results_reader.__read_line()
             first_line = False
+        if not results_reader.continue_reading():
+            lines_array.append(results_reader.line)
         return lines_array
 
     @staticmethod
@@ -121,7 +125,10 @@ class ResultsReader(object):
         #
         for index in range(CSVConstants.INDEX_TOTAL_SIZE, len(line)):
             if CSVConstants.is_percentage_index(index):
-                new_line.append(float(line[index]))
+                value = line[index]
+                if value.count('.') > 1:  # e.g. 1.145.49
+                    value = value.replace('.', '', 1)
+                new_line.append(float(value))
             else:
                 new_line.append(MathUtils.str_to_int(line[index]))
         return new_line

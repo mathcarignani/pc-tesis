@@ -45,7 +45,7 @@ class UseBasicCoder(object):
 
 
 def run():
-    output_path = "/Users/pablocerve/Documents/FING/Proyecto/results/avances/avances-19"
+    output_path = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-19"
     output_file = "complete-mask-mode=3-use_basic_coder.csv"
     UseBasicCoder(output_path, output_file)
 

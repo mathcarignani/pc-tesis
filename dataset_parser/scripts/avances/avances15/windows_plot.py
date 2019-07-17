@@ -46,14 +46,14 @@ class WindowsPlot(CommonPlot):
         ax.set_axisbelow(True)
         ax.set_ylim(top=len(ExperimentsUtils.WINDOWS), bottom=-1)
 
-        if extra.get('last_row'):
-            ax.set_xticklabels([''] + ExperimentsUtils.THRESHOLDS)
-            ax.set_xlabel(PlotConstants.ERROR_THRE)
         if extra.get('first_column') or extra.get('show_ylabel'):
             ax.set_ylabel('Window Size')
             ax.set_yticklabels([''] + ExperimentsUtils.WINDOWS)
         else:
             ax.set_yticklabels([])
+
+        ax.set_xticklabels([''] + ExperimentsUtils.THRESHOLDS)
+        ax.set_xlabel(PlotConstants.ERROR_THRE)
         PlotUtils.hide_ticks(ax)
 
     def print_values(self):

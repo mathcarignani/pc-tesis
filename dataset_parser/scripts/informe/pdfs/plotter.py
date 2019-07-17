@@ -40,7 +40,7 @@ class Plotter(object):
             [[None, 'relative_stats'],     [None, 'window_stats']]
         ]
         self.__add_plots(plots_matrix, plots_obj)
-        self.fig.set_tight_layout(True)
+        # self.fig.set_tight_layout(True)
         self.fig.subplots_adjust(hspace=0.1)
         return self.fig, plt
 
