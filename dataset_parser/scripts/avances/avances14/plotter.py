@@ -18,6 +18,7 @@ class Plotter(object):
         self.row_plots.append(row_plot)
 
     def plot(self):
+        exit(1) # this line is not executed
         fig = PlotUtils.create_figure(20, 30, self.column_title())
         y_lim = self.__y_lim()
         total_vertical_plots = len(self.row_plots)

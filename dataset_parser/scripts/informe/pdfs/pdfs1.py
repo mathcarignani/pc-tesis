@@ -13,13 +13,13 @@ from scripts.informe.pdfs.plotter import Plotter
 class PDFS1(object):
     PATH = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/informe/pdfs/pdfs1/"
 
-    # Para cada dataset:
-    #   Se crea un pdf.
-    #   Para cada archivo del dataset:
-    #       Para cada tipo de datos:
-    #           Se agrega al pdf una pagina con las siguientes graficas:
-    #               + tasa de compresion
-    #               + diferencia relativa
+    # For each dataset:
+    #   Create a pdf.
+    #   For each file in the dataset:
+    #       For each data type:
+    #           Add a pdf page with the following graphs:
+    #               + compression rate
+    #               + relative difference
     #               + window size
     #               + stats
     def __init__(self, datasets_names=None):

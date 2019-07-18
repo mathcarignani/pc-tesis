@@ -12,6 +12,9 @@ from scripts.informe.results_parsing.results_to_pandas import ResultsToPandas
 
 
 class Plotter(object):
+    FIGSIZE_H = 10
+    FIGSIZE_V = 25
+
     def __init__(self, panda_utils_0, panda_utils_3, filename, col_index):
         self.panda_utils_0 = panda_utils_0
         self.panda_utils_3 = panda_utils_3
@@ -20,7 +23,7 @@ class Plotter(object):
 
     def create(self):
         fig_title = self.filename + ' - col = ' + str(self.col_index)
-        self.fig = PlotUtils.create_figure(20, 30, fig_title)
+        self.fig = PlotUtils.create_figure(Plotter.FIGSIZE_H, Plotter.FIGSIZE_V, fig_title)
 
         coders_array = ['CoderPCA', 'CoderAPCA', 'CoderCA', 'CoderPWLH', 'CoderPWLHInt', 'CoderGAMPSLimit']
         plots_obj = {
@@ -41,7 +44,7 @@ class Plotter(object):
         ]
         self.__add_plots(plots_matrix, plots_obj)
         # self.fig.set_tight_layout(True)
-        self.fig.subplots_adjust(hspace=0.1)
+        # self.fig.subplots_adjust(hspace=0.1)
         return self.fig, plt
 
     def __add_plots(self, plots_matrix, plots_obj):
