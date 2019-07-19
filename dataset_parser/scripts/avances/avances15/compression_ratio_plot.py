@@ -10,7 +10,7 @@ from scripts.informe.plot.plot_constants import PlotConstants
 from scripts.informe.plot.plot_utils import PlotUtils
 from scripts.avances.avances15.common_plot import CommonPlot
 from scripts.avances.avances15.plotter2_constants import Plotter2Constants
-from scripts.informe.results_parsing.results_to_pandas import ResultsToPandas
+from scripts.informe.results_parsing.results_to_dataframe import ResultsToDataframe
 
 # To make the latex math text look like the other text
 # https://stackoverflow.com/a/27697390/4547232
@@ -136,7 +136,7 @@ class CompressionRatioPlot(CommonPlot):
 
     @staticmethod
     def get_values(coder_name, col_index, panda_utils):
-        percentage_column_key = ResultsToPandas.percentage_column_key(col_index)
+        percentage_column_key = ResultsToDataframe.percentage_column_key(col_index)
         df = panda_utils.min_value_for_each_threshold(coder_name, col_index)
         values = df[percentage_column_key].values
         df_min = df[percentage_column_key].min()

@@ -5,7 +5,7 @@ from matplotlib.backends.backend_pdf import PdfPages
 
 from scripts.compress.experiments_utils import ExperimentsUtils
 from scripts.informe.results_parsing.results_reader import ResultsReader
-from scripts.informe.results_parsing.results_to_pandas import ResultsToPandas
+from scripts.informe.results_parsing.results_to_dataframe import ResultsToDataframe
 from scripts.informe.pandas_utils.pandas_utils import PandasUtils
 from scripts.informe.pdfs.pdf_page import PdfPage
 
@@ -40,8 +40,9 @@ class PDFS1(object):
     #               + stats
     def __init__(self, datasets_names=None):
         self.dataset_names = datasets_names or ExperimentsUtils.DATASET_NAMES
-        self.results_reader_0 = ResultsReader('raw', 0)
-        self.results_reader_3 = ResultsReader('raw_basic', 3)
+        self.df_0 = ResultsToDataframe(ResultsReader('raw', 0)).create_full_df()
+        self.df_3 = ResultsToDataframe(ResultsReader('raw_basic', 3)).create_full_df()
+
         # iteration variables
         self.dataset_id = None
         self.dataset_name = None
@@ -65,10 +66,8 @@ class PDFS1(object):
 
     def create_pdf_pages(self):
         # create panda_utils
-        df_0 = ResultsToPandas(self.results_reader_0).create_dataframe(self.dataset_name, self.filename)
-        df_3 = ResultsToPandas(self.results_reader_3).create_dataframe(self.dataset_name, self.filename)
-        panda_utils_0 = PandasUtils(self.dataset_name, df_0, 0)
-        panda_utils_3 = PandasUtils(self.dataset_name, df_3, 3)
+        panda_utils_0 = PandasUtils(self.dataset_name, self.filename, self.df_0, 0)
+        panda_utils_3 = PandasUtils(self.dataset_name, self.filename, self.df_3, 3)
 
         for self.col_index in range(1, ExperimentsUtils.get_dataset_data_columns_count(self.dataset_name) + 1):
             self.create_pdf_page(panda_utils_0, panda_utils_3)
@@ -82,5 +81,6 @@ class PDFS1(object):
         self.pdf.savefig(fig)
         plt.close()
 
-PDFS1(['NOAA-SPC-wind']).create_pdfs()
-# PDFS1(None).create_pdfs()
+# PDFS1(['NOAA-SPC-wind']).create_pdfs()
+# PDFS1(['IRKIS']).create_pdfs()
+PDFS1(None).create_pdfs()

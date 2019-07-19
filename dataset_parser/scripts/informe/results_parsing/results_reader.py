@@ -28,9 +28,18 @@ class ResultsReader(object):
         self.line = None
         self.line_count = 0
 
-    def __find_filename_in_dataset(self, dataset_name, filename):
+    def full_results(self):
+        self.__goto_file_start()
+        self.__read_line()  # headers line
+        lines_array = []
+        while self.continue_reading():
+            self.__read_line()
+            lines_array.append(self.line)
+        return lines_array
+
+    def dataset_results(self, dataset_name, change_index=CSVConstants.INDEX_DATASET):
         self.find_dataset(dataset_name)
-        self.__find_next_line(CSVConstants.INDEX_FILENAME, filename, False)
+        return ResultsReader.add_until_change(self, change_index)
 
     def filename_results(self, dataset_name, filename, change_index=CSVConstants.INDEX_FILENAME):
         self.__find_filename_in_dataset(dataset_name, filename)
@@ -42,6 +51,10 @@ class ResultsReader(object):
 
     def find_filename(self, filename):
         self.__goto_file_start()
+        self.__find_next_line(CSVConstants.INDEX_FILENAME, filename, False)
+
+    def __find_filename_in_dataset(self, dataset_name, filename):
+        self.find_dataset(dataset_name)
         self.__find_next_line(CSVConstants.INDEX_FILENAME, filename, False)
 
     def continue_reading(self):

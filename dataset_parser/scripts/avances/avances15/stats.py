@@ -4,7 +4,7 @@ sys.path.append('.')
 from scripts.informe.plot.plot_constants import PlotConstants
 from scripts.avances.avances15.common_plot import CommonPlot
 from scripts.avances.avances15.plotter2_constants import Plotter2Constants
-from scripts.informe.results_parsing.results_to_pandas import ResultsToPandas
+from scripts.informe.results_parsing.results_to_dataframe import ResultsToDataframe
 
 
 class RelativeDifferenceStats(CommonPlot):
@@ -86,7 +86,7 @@ class RelativeDifferenceStats(CommonPlot):
 
     @staticmethod
     def create_plots(coders_array, panda_utils_0, panda_utils_3, col_index):
-        key = ResultsToPandas.data_column_key(col_index)
+        key = ResultsToDataframe.data_column_key(col_index)
         klass = RelativeDifferenceStats
         return RelativeDifferenceStats.create_plot_common(coders_array, panda_utils_0, panda_utils_3, col_index, key, klass)
 
