@@ -13,14 +13,13 @@ class PandasUtils(object):
     MAX_DIFF = 0.009
 
     def __init__(self, dataset_name, df, mask_mode):
+        assert(mask_mode in [0, 3])
         self.dataset_name = dataset_name
         self.df = df
-        assert(mask_mode in [0, 3])
         self.mask_mode = mask_mode
         self.data_columns_count = PandasUtils.__calculate_data_columns_count(df)
         self.__check_df()
         self.__calculate_percentage()
-        # print self.df
 
     @staticmethod
     def __calculate_data_columns_count(df):
@@ -33,35 +32,40 @@ class PandasUtils(object):
 
         # check that data for every coder is included
         coders = self.df['coder'].unique()
-        if self.mask_mode == 0:
-            np.testing.assert_array_equal(coders, ExperimentsUtils.CODERS_NO_MASK_MODE)
-        else:  # self.mask_mode == 3:
-            np.testing.assert_array_equal(coders, ExperimentsUtils.CODERS)
+        expected_coders = ExperimentsUtils.CODERS_NO_MASK_MODE if self.mask_mode == 0 else ExperimentsUtils.CODERS
+        np.testing.assert_array_equal(coders, expected_coders)
 
-        for coder in coders:
-            self.__check_coder_rows_count(coder)
+        # check that the rows count for each coder match
+        for coder_name in coders:
+            self.__check_coder_rows_count(coder_name)
 
-    def __check_coder_rows_count(self, coder):
-        rows, _ = self.df.loc[self.df['coder'] == coder].shape
-        if coder == 'CoderBasic':
-            assert(rows == 1)
-        elif coder == 'CoderSF':
-            assert(rows == len(ExperimentsUtils.THRESHOLDS))
+    def __check_coder_rows_count(self, coder_name):
+        rows_count = self.__coder_rows_count(coder_name)
+        if coder_name == 'CoderBasic':
+            assert(rows_count == 1)
+        elif coder_name == 'CoderSF':
+            assert(rows_count == len(ExperimentsUtils.THRESHOLDS))
         else:
             # the rest of the coders have the same number of rows
-            if rows != self.NUMBER_OF_COMBINATIONS:
-                print self.df.loc[self.df['coder'] == coder]
-                print coder
-                print rows
-                assert(rows == self.NUMBER_OF_COMBINATIONS)
+            if rows_count != self.NUMBER_OF_COMBINATIONS:
+                print self.__coder_df(coder_name)
+                print coder_name
+                print rows_count
+                assert(rows_count == self.NUMBER_OF_COMBINATIONS)
 
+    def __coder_rows_count(self, coder_name):
+        rows_count, _ = self.__coder_df(coder_name).shape
+        return rows_count
+
+    def __coder_df(self, coder_name):
+        return self.df.loc[self.df['coder'] == coder_name]
 
     def __calculate_percentage(self):
         for value in range(1, self.data_columns_count + 1):  # [1, ... ]
             data_col_key = ResultsToPandas.data_column_key(value)
             percentage_col_key = ResultsToPandas.percentage_column_key(value)
 
-            basic_coder_total = self.df.loc[self.df['coder'] == "CoderBasic"][data_col_key].iloc[0]
+            basic_coder_total = self.__coder_df("CoderBasic")[data_col_key].iloc[0]
             new_percentage_col_key = 'new_' + percentage_col_key
             self.df[new_percentage_col_key] = 100 * (self.df[data_col_key] / basic_coder_total)
 
@@ -71,7 +75,7 @@ class PandasUtils(object):
             self.df.rename(columns={new_percentage_col_key: percentage_col_key}, inplace=True)
 
     def __check_difference(self, percentage_col_key, new_percentage_col_key):
-        # check that the difference between the values is small
+        # check that the difference between the values is small (< self.MAX_DIFF)
         aux_percentage_col_key = 'aux_' + percentage_col_key
         self.df[aux_percentage_col_key] = self.df[new_percentage_col_key] - self.df[percentage_col_key]
         max_absolute_value = self.df[aux_percentage_col_key].abs().max()
@@ -91,7 +95,7 @@ class PandasUtils(object):
 
     def min_value_for_each_threshold(self, coder_name, column_index):
         data_column_key = ResultsToPandas.data_column_key(column_index)
-        coder_df = self.df.loc[self.df['coder'] == coder_name]
+        coder_df = self.__coder_df(coder_name)
         new_df = pd.DataFrame(columns=self.df.columns)
         for index, threshold in enumerate(ExperimentsUtils.THRESHOLDS):
             new_df.loc[index] = self.get_min_row(coder_df, data_column_key, threshold)
