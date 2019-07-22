@@ -47,7 +47,7 @@ class WindowsPlot(CommonPlot):
         ax.set_ylim(top=len(ExperimentsUtils.WINDOWS), bottom=-1)
 
         if extra.get('first_column') or extra.get('show_ylabel'):
-            ax.set_ylabel('Window Size')
+            ax.set_ylabel(PlotConstants.WINDOW_SIZE)
             ax.set_yticklabels([''] + ExperimentsUtils.WINDOWS)
         else:
             ax.set_yticklabels([])

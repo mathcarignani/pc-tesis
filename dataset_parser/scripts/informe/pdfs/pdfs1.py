@@ -6,6 +6,7 @@ from matplotlib.backends.backend_pdf import PdfPages
 from scripts.compress.experiments_utils import ExperimentsUtils
 from scripts.informe.results_parsing.results_reader import ResultsReader
 from scripts.informe.results_parsing.results_to_dataframe import ResultsToDataframe
+from scripts.informe.pandas_utils.pandas_methods import PandasMethods
 from scripts.informe.pandas_utils.pandas_utils import PandasUtils
 from scripts.informe.pdfs.pdf_page import PdfPage
 
@@ -38,10 +39,22 @@ class PDFS1(object):
     #               + relative difference
     #               + window size
     #               + stats
-    def __init__(self, datasets_names=None):
+    def __init__(self, global_mode=True, datasets_names=None):
+        self.global_mode = global_mode
+        if self.global_mode:
+            self.df_0 = ResultsToDataframe(ResultsReader('global', 0)).create_full_df()
+            self.df_3 = ResultsToDataframe(ResultsReader('global', 3)).create_full_df()
+            self.path = PDFS1.PATH + 'global/'
+        else:
+            self.df_0 = ResultsToDataframe(ResultsReader('raw', 0)).create_full_df()
+            self.df_3 = ResultsToDataframe(ResultsReader('raw', 3)).create_full_df()
+            self.path = PDFS1.PATH + 'local/'
+
+        # Move this to a new class
+        self.df_3 = PandasMethods.set_coder_basic(self.df_0, self.df_3)
+        PandasMethods.check_coder_basic_matches(self.df_0, self.df_3)
+
         self.dataset_names = datasets_names or ExperimentsUtils.DATASET_NAMES
-        self.df_0 = ResultsToDataframe(ResultsReader('raw', 0)).create_full_df()
-        self.df_3 = ResultsToDataframe(ResultsReader('raw_basic', 3)).create_full_df()
 
         # iteration variables
         self.dataset_id = None
@@ -57,9 +70,12 @@ class PDFS1(object):
             self.created_pdf_for_dataset()
 
     def created_pdf_for_dataset(self):
-        pdf_name = self.PATH + str(self.dataset_id) + "-" + self.dataset_name + ".pdf"
+        pdf_name = self.path + str(self.dataset_id) + "-" + self.dataset_name + ".pdf"
         with PdfPages(pdf_name) as self.pdf:
             dataset_filenames = ExperimentsUtils.dataset_csv_filenames(self.dataset_name)
+            if self.global_mode and len(dataset_filenames) > 1:
+                dataset_filenames = ['Global']
+
             for self.filename in dataset_filenames:
                 print self.filename
                 self.create_pdf_pages()
@@ -71,7 +87,6 @@ class PDFS1(object):
 
         for self.col_index in range(1, ExperimentsUtils.get_dataset_data_columns_count(self.dataset_name) + 1):
             self.create_pdf_page(panda_utils_0, panda_utils_3)
-            return
 
     def create_pdf_page(self, panda_utils_0, panda_utils_3):
         pdf_page = PdfPage(panda_utils_0, panda_utils_3, self.filename, self.col_index, self.FIGSIZE_H, self.FIGSIZE_V)
@@ -81,6 +96,7 @@ class PDFS1(object):
         self.pdf.savefig(fig)
         plt.close()
 
-# PDFS1(['NOAA-SPC-wind']).create_pdfs()
-# PDFS1(['IRKIS']).create_pdfs()
-PDFS1(None).create_pdfs()
+PDFS1(False).create_pdfs()
+PDFS1(True).create_pdfs()
+
+# PDFS1(True, ['NOAA-SPC-wind']).create_pdfs()

@@ -9,3 +9,10 @@ def inverse_dict(my_map):
 
 def number_of_bits(n):
     return len('{:b}'.format(n))
+
+
+#
+# https://stackoverflow.com/a/46914500/4547232
+#
+def assert_equal_lists(list1, list2):
+    assert all([a == b for a, b in zip(list1, list2)])

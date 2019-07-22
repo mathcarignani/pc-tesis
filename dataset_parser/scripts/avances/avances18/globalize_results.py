@@ -81,6 +81,7 @@ class GlobalizeResults(object):
         for index in range(number_of_rows):
             new_line = None
             for file_results in results_array:
+                # print file_results
                 file_results_line = file_results[index]
                 file_results_line = GlobalizeUtils.convert_line(file_results_line)
                 new_line = file_results_line if new_line is None else self.__merge_lines(new_line, file_results_line)
@@ -91,9 +92,9 @@ class GlobalizeResults(object):
     @staticmethod
     def __merge_lines(line1, line2):
         CSVConstants.check_lines(line1, line2)
-
+        skip_index = [CSVConstants.INDEX_WINDOW, CSVConstants.INDEX_THRESHOLD]
         for index in range(len(line1)):
-            if CSVConstants.is_percentage_index(index):
+            if CSVConstants.is_percentage_index(index) or index in skip_index:
                 pass
             elif isinstance(line1[index], int):
                 line1[index] += line2[index]
@@ -117,7 +118,7 @@ def compare_files(output_path, output_file):
 
 def run(value):
     print "run(" + str(value) + ")"
-    output_path = "/Users/pablocerve/Documents/FING/Proyecto/results/avances/avances-18"
+    output_path = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-18"
     output_file = "complete-mask-mode=" + str(value) + "-global.csv"
     GlobalizeResults(value, output_path, output_file)
     compare_files(output_path, output_file)
