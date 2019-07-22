@@ -1,0 +1,86 @@
+\newcommand{\coderBase}{\textit{CoderBase}}
+\newcommand{\decoderBase}{\textit{DecoderBase}}
+
+\newcommand{\archivo}{\textit{archivo}}
+\newcommand{\out}{\textit{out}}
+\newcommand{\columna}{\textit{columna}}
+\newcommand{\entrada}{\textit{entrada}}
+\newcommand{\valor}{\textit{valor}}
+
+\clearpage
+
+\setlength{\algomargin}{1em}
+\IncMargin{1em}
+\begin{figure}[h]
+\begin{algorithm}[H]
+\SetAlgoLined
+  \SetKwInOut{Input}{entrada}
+  \SetKwInOut{Output}{salida}
+\Indm  
+  \SetAlgoLined
+  \Input{
+            $\archivo \in \textit{Datasets}^{*}$: archivo csv a codificar\\
+        }
+  \Output{\coderBase(\archivo): archivo binario codificado con \coderBase}
+\Indp
+    $\out = \text{crear\_archivo\_binario}()$\\
+    \out.\text{codificar\_entero(\textit{CODER\_BASE}, 8)}\\
+    \out.\text{codificar\_header(\archivo)}\\
+    \out.\text{codificar\_entero(\archivo.\text{total\_filas\_de\_datos}(), 24)}\\
+    \ForEach{\columna \textnormal{ in \archivo.columnas}}{
+        \ForEach{\entrada \textnormal{ in} $\columna.\textnormal{entradas}$}{
+            \eIf{$\entrada = \textit{NO\_DATA}$\xspace}{
+                $\valor = \columna.\text{entero\_no\_data}$
+            }
+            {
+                $\valor = \entrada + \columna.\text{offset}$
+            }
+            \out.\text{codificar\_entero}(\valor, \columna.\text{total\_bits})\\
+        }
+    }
+    \out.\text{cerrar\_archivo}()
+\end{algorithm}
+\vspace{-15pt}
+\caption{Pseudocódigo de \coderBase.}
+\label{pseudoCoderBase}
+\end{figure}
+
+\setlength{\algomargin}{1em}
+\IncMargin{1em}
+\begin{figure}[h]
+\begin{algorithm}[H]
+\SetAlgoLined
+  \SetKwInOut{Input}{entrada}
+  \SetKwInOut{Output}{salida}
+\Indm  
+  \SetAlgoLined
+  \Input{\archivo: archivo binario codificado con \coderBase}
+  \Output{\decoderBase(\archivo): archivo csv decodificado con \decoderBase}
+\Indp
+    $\out = \text{crear\_archivo\_csv}()$\\
+    $\textit{codigo\_codificador} = \archivo.\text{decodificar\_entero}(8)$\\
+    \out.\text{decodificar\_header(\archivo)}\\
+    $\text{total\_filas\_de\_datos} = \archivo.\text{decodificar\_entero}(24)$\\
+    \eIf{\textit{codigo\_codificador} = \textit{CODER\_BASE}}{
+        \ForEach{\columna \textnormal{ in \out.columnas}}{
+            \ForEach{\entrada \textnormal{ in} $\columna.\textnormal{entradas}$}{
+                $\valor = \archivo.\text{decodificar\_entero}(\columna.\text{total\_bits})$\\
+                \eIf{$\valor = \columna.\text{entero\_no\_data}$\xspace}{
+                    \out.\text{escribir\_string}(\textit{NO\_DATA})\\
+                }
+                {
+                    \out.\text{escribir\_string}($\valor - \columna.\text{offset}$)\\
+                }
+            }
+        }
+    }
+    {
+    . . . \text{// si \archivo \ fue codificado con otro codificador}
+    }
+
+    \out.\text{cerrar\_archivo}()
+\end{algorithm}
+\vspace{-15pt}
+\caption{Pseudocódigo de \decoderBase.}
+\label{pseudoDecoderBase}
+\end{figure}
