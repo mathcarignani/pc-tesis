@@ -98,5 +98,4 @@ class PDFS1(object):
 
 PDFS1(False).create_pdfs()
 PDFS1(True).create_pdfs()
-
 # PDFS1(True, ['NOAA-SPC-wind']).create_pdfs()

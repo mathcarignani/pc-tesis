@@ -29,19 +29,26 @@ class WindowsPlot(CommonPlot):
         # self.print_values()
 
         x_axis_0, y_axis_0, x_axis_3, y_axis_3, x_axis_same, y_axis_same = [], [], [], [], [], []
-        for i, values in enumerate(zip(self.values0, self.values3)):
-            value0, value3 = values
-            pos_value0 = self.__position(value0)
-            if value0 == value3:
-                x_axis_same.append(i); y_axis_same.append(pos_value0)
-            else:
-                x_axis_0.append(i); y_axis_0.append(pos_value0)
+
+        if len(self.values0) > 0:
+            for i, values in enumerate(zip(self.values0, self.values3)):
+                value0, value3 = values
+                pos_value0 = self.__position(value0)
+                if value0 == value3:
+                    x_axis_same.append(i); y_axis_same.append(pos_value0)
+                else:
+                    x_axis_0.append(i); y_axis_0.append(pos_value0)
+                    pos_value3 = self.__position(value3)
+                    x_axis_3.append(i); y_axis_3.append(pos_value3)
+        else:
+            for i, value3 in enumerate(self.values3):
                 pos_value3 = self.__position(value3)
                 x_axis_3.append(i); y_axis_3.append(pos_value3)
 
         ax.scatter(x=x_axis_0, y=y_axis_0, c=self.value0_color)
         ax.scatter(x=x_axis_3, y=y_axis_3, c=self.value3_color)
         ax.scatter(x=x_axis_same, y=y_axis_same, c=Plotter2Constants.VALUE_SAME)
+
         ax.grid(b=True, color=PlotConstants.COLOR_SILVER)
         ax.set_axisbelow(True)
         ax.set_ylim(top=len(ExperimentsUtils.WINDOWS), bottom=-1)
@@ -76,9 +83,12 @@ class WindowsPlot(CommonPlot):
     def create_plots(coders_array, panda_utils_0, panda_utils_3, col_index):
         plots_obj = {}
         for coder_name in coders_array:
-            values0 = WindowsPlot.get_values(coder_name, col_index, panda_utils_0)
             values3 = WindowsPlot.get_values(coder_name, col_index, panda_utils_3)
-            assert(len(values0) == len(values3))
+            if panda_utils_0 is None:
+                values0 = []
+            else:
+                values0 = WindowsPlot.get_values(coder_name, col_index, panda_utils_0)
+                assert(len(values0) == len(values3))
 
             plot_instance = WindowsPlot(coder_name)
             plot_instance.set_values(values0, values3)
@@ -95,7 +105,8 @@ class WindowsPlot(CommonPlot):
     def set_values(self, values0, values3):
         self.values0 = values0
         self.values3 = values3
-        self.close()
+        if len(values0) > 0:
+            self.close()
 
     def plot2(self, ax, extra):
         self.plot(ax, extra)

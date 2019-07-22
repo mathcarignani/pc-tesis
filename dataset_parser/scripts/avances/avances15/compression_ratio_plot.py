@@ -50,13 +50,15 @@ class CompressionRatioPlot(CommonPlot):
         # self.print_values()
 
         # scatter plot
-        x_axis = list(xrange(len(self.values0)))
-        colors0, colors3 = self.generate_colors()
-        zorders0, zorders3 = self.__generate_zorders()
-        ax.scatter(x=x_axis, y=self.values0, c=colors0, zorder=zorders0)
-        ax.scatter(x=x_axis, y=self.values3, c=colors3, zorder=zorders3)
-        # ax.scatter(x=x_axis, y=self.values0, c=colors0)
-        # ax.scatter(x=x_axis, y=self.values3, c=colors3)
+        x_axis = list(xrange(len(self.values3)))
+        if len(self.values0) > 0:
+            colors0, colors3 = self.generate_colors()
+            zorders0, zorders3 = self.__generate_zorders()
+            ax.scatter(x=x_axis, y=self.values0, c=colors0, zorder=zorders0)
+            ax.scatter(x=x_axis, y=self.values3, c=colors3, zorder=zorders3)
+        else:
+            ax.scatter(x=x_axis, y=self.values3, c=self.value3_color)
+
         ax.grid(b=True, color=PlotConstants.COLOR_SILVER)
         ax.set_axisbelow(True)
 
@@ -65,7 +67,8 @@ class CompressionRatioPlot(CommonPlot):
 
         CommonPlot.set_lim(ax, ymin, ymax)
 
-        if extra.get('first_row') or extra.get('show_title'):
+        # TODO: improve
+        if True:
             ax.title.set_text(self.algorithm)
         if not extra.get('last_row'):
             ax.set_xticklabels([])
@@ -115,9 +118,13 @@ class CompressionRatioPlot(CommonPlot):
         plots_obj = {}
         total_min, total_max = sys.maxint, -sys.maxint
         for coder_name in coders_array:
-            values0, min0, max0 = CompressionRatioPlot.get_values(coder_name, col_index, panda_utils_0)
             values3, min3, max3 = CompressionRatioPlot.get_values(coder_name, col_index, panda_utils_3)
-            assert(len(values0) == len(values3))
+
+            if panda_utils_0 is None:
+                values0, min0, max0 = [], min3, max3
+            else:
+                values0, min0, max0 = CompressionRatioPlot.get_values(coder_name, col_index, panda_utils_0)
+                assert(len(values0) == len(values3))
 
             min03, max03 = min([min0, min3]), max([max0, max3])
             total_min = min03 if min03 < total_min else total_min
@@ -146,7 +153,8 @@ class CompressionRatioPlot(CommonPlot):
     def set_values(self, values0, values3):
         self.values0 = values0
         self.values3 = values3
-        self.close()
+        if len(values0) > 0:
+            self.close()
 
     def set_ymin_ymax(self, ymin, ymax):
         self.ymin = ymin
