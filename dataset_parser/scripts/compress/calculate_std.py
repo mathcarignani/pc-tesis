@@ -6,7 +6,7 @@ sys.path.append('.')
 from file_utils.csv_utils.csv_reader import CSVReader
 from file_utils.csv_utils.csv_writer import CSVWriter
 from scripts.utils import csv_files_filenames
-from scripts.compress.compress_aux import THRESHOLD_PERCENTAGES
+from scripts.compress.experiments_utils import ExperimentsUtils
 
 
 def calculate_stats(csv_reader, columns_count):
@@ -118,7 +118,7 @@ def irkis():
         row = ['N' if value == 'N' else round(value, 2) for value in std_array[1:]]
         csv_write.write_row([std_array[0]] + row)
 
-    for percentage in THRESHOLD_PERCENTAGES:
+    for percentage in ExperimentsUtils.THRESHOLDS:
         csv_write.write_row(["%s %%" % percentage])
         div_percentage = float(percentage) / 100
 

@@ -12,10 +12,9 @@ from file_utils.csv_utils.csv_writer import CSVWriter
 from file_utils.csv_utils.csv_utils import CSVUtils
 from scripts.utils import create_folder
 from scripts.compress.calculate_std import calculate_file_stats, calculate_stds_percentages
-from scripts.compress.compress_aux import THRESHOLD_PERCENTAGES, CSV_PATH, DATASETS_ARRAY, CODERS_ARRAY
+from scripts.compress.experiments_utils import ExperimentsUtils
 from scripts.compress.compress_cpp import code_decode_cpp
 from scripts.compress.compress_args import CompressArgs
-from scripts.compress.compress_aux import dataset_csv_filenames
 
 
 def compress_decompress_compare(args):
@@ -86,7 +85,7 @@ def print_results(coder_info, logger, input_file, compressed_file, same_file):
 
 
 def script(output_filename):
-    datasets_path = CSV_PATH
+    datasets_path = ExperimentsUtils.CSV_PATH
     # datasets_path = "/Users/pablocerve/Documents/FING/Proyecto/results/paper_csv/3-without-outliers/"
     output_path = git_path() + "/dataset_parser/scripts/compress/output/"
     # output_path = python_git_path() + "/dataset_parser/scripts/paper-output/"
@@ -97,7 +96,7 @@ def script(output_filename):
            'Other columns - Size (data)', 'Other columns - Size (mask)', 'Other columns - Size (total)', 'Other columns - CR (%)']
     csv.write_row(row)
 
-    for dataset_dictionary in DATASETS_ARRAY:
+    for dataset_dictionary in ExperimentsUtils.DATASETS_ARRAY:
         run_script_on_dataset(csv, datasets_path, dataset_dictionary, output_path)
     csv.close()
 
@@ -111,7 +110,7 @@ def run_script_on_dataset(csv, datasets_path, dataset_dictionary, output_path):
     create_folder(output_dataset_path)
     dataset_name = dataset_dictionary['name']
 
-    for file_index, input_filename in enumerate(dataset_csv_filenames(input_path, dataset_name)):
+    for file_index, input_filename in enumerate(ExperimentsUtils.dataset_csv_filenames(dataset_name)):
         row = [dataset_dictionary['name']] if file_index == 0 else [None]
         run_script_on_file(csv, file_index, row, logger, input_path, input_filename, output_dataset_path)
 
@@ -122,9 +121,9 @@ def run_script_on_file(csv, id1, row, logger, input_path, input_filename, output
 
     # calculate error thresholds
     stds = calculate_file_stats(input_path, input_filename)
-    thresholds_array = calculate_stds_percentages(stds, THRESHOLD_PERCENTAGES)
+    thresholds_array = calculate_stds_percentages(stds, ExperimentsUtils.THRESHOLDS)
 
-    for id2, coder_dictionary in enumerate(CODERS_ARRAY):
+    for id2, coder_dictionary in enumerate(ExperimentsUtils.CODERS_ARRAY):
         if id1 == 0 and id2 == 0:  # first row of dataset and file
             row += [input_filename, row_count]
         elif id2 == 0:  # first row of file

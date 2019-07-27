@@ -6,7 +6,7 @@ import math
 from matplotlib import pyplot as plt
 
 from file_utils.csv_utils.csv_reader import CSVReader
-from scripts.compress.compress_aux import CSV_PATH, DATASETS_ARRAY
+from scripts.compress.experiments_utils import ExperimentsUtils
 from scripts.utils import csv_files_filenames
 
 
@@ -54,11 +54,11 @@ def make_histogram(input_path, input_filename, column_index=0):
 
 
 def make_all_histograms():
-    for dataset_dictionary in DATASETS_ARRAY:
+    for dataset_dictionary in ExperimentsUtils.DATASETS_ARRAY:
         print dataset_dictionary['name']
         if "SPC" not in dataset_dictionary['name']:
             continue
-        input_path = CSV_PATH + dataset_dictionary['folder']
+        input_path = ExperimentsUtils.CSV_PATH + dataset_dictionary['folder']
         for input_filename in csv_files_filenames(input_path):
             print input_filename
             make_histogram(input_path, input_filename)
