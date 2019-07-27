@@ -51,7 +51,7 @@ class PandasMethods(object):
         assert(min_value_rows_count == 1)
 
         min_value_row = threshold_df.loc[min_value_index]
-        return min_value_row.values
+        return min_value_row
 
     #
     # Given a df, it returns a list with the names of every column
