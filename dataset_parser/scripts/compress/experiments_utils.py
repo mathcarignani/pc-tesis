@@ -52,6 +52,10 @@ class ExperimentsUtils(object):
         return filenames
 
     @staticmethod
+    def dataset_csv_files_count(dataset_name):
+        return len(ExperimentsUtils.dataset_csv_filenames(dataset_name))
+
+    @staticmethod
     def get_dataset_info(dataset_name):
         for dataset in ExperimentsUtils.DATASETS_ARRAY:
             if dataset['name'] == dataset_name:
