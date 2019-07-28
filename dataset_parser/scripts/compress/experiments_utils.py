@@ -27,6 +27,17 @@ class ExperimentsUtils(object):
         {'name': 'NOAA-SPC-wind', 'folder': "[6]noaa-spc-reports/wind", 'logger': "noaa-spc-wind.log", 'o_folder': "[6]noaa-spc-reports", 'cols': 3}
     ]
 
+    COLUMN_INDEXES = {
+        'IRKIS': ['VWC'],
+        'NOAA-SST': ['SST'],
+        'NOAA-ADCP': ['Vel'],
+        'SolarAnywhere': ['GHI', 'DNI', 'DHI'],
+        'ElNino': ['Lat', 'Long', 'Zonal Winds', 'Merid. Winds', 'Humidity', 'AirTemp', 'SST'],
+        'NOAA-SPC-hail': ['Lat', 'Long', 'Size'],
+        'NOAA-SPC-tornado': ['Lat', 'Long'],
+        'NOAA-SPC-wind': ['Lat', 'Long', 'Speed']
+    }
+
     DATASET_NAMES = [obj['name'] for obj in DATASETS_ARRAY]
 
     # DATASET_ARRAY = [
