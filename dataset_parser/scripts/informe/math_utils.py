@@ -34,6 +34,20 @@ class MathUtils(object):
         val = "%0.2f" % val  # + "%"
         return val
 
+    #
+    # This is the equation I have defined in the pdf. TODO: always use this equation
+    #
+    @staticmethod
+    def relative_difference(value1, value2, return_string=False):
+        if value1 == value2:
+            return 0
+        result = float(value1 - value2)  # in general, value1 > value2
+        result /= float(value1)
+        result *= 100
+        if not return_string:
+            return result
+        return "%0.2f" % result
+
     @staticmethod
     def average(lst):
         return sum(lst) / len(lst)

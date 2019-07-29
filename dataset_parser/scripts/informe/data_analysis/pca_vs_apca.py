@@ -1,6 +1,7 @@
 import sys
 sys.path.append('.')
 
+import numpy as np
 from auxi.os_utils import python_project_path
 from scripts.informe.results_parsing.results_reader import ResultsReader
 from scripts.informe.results_parsing.results_to_dataframe import ResultsToDataframe
@@ -53,9 +54,11 @@ class PCAvsAPCA(object):
         for self.col_index in range(1, ExperimentsUtils.get_dataset_data_columns_count(self.dataset_name) + 1):
             self.col_name = ExperimentsUtils.COLUMN_INDEXES[self.dataset_name][self.col_index - 1]
             self._print(self.col_name)
-            self.__coder_results('CoderAPCA', True)
-            self.__coder_results('CoderPCA')
-            self.__optimal_pca_results()
+            apca_results = self.__coder_results('CoderAPCA', True)
+            pca_results = self.__coder_results('CoderPCA')
+            pca_o_results = self.__pca_optimal_results()
+
+            self.__compare_and_write_results(apca_results, pca_results, pca_o_results)
 
     #
     # Get the best <Coder, Window> combination for each <Column, Threshold> combination
@@ -66,9 +69,9 @@ class PCAvsAPCA(object):
             row_df = self.panda_utils.min_value_for_threshold(coder_name, self.col_index, threshold)
             window, percentage, coder_name = ProcessResults.get_values(row_df, self.col_index)
             threshold_results += [coder_name.replace("Coder", ""), window, percentage]
-        self.output.write_row(threshold_results)
+        return threshold_results
 
-    def __optimal_pca_results(self):
+    def __pca_optimal_results(self):
         threshold_results = [None, None, None]
         for threshold in ExperimentsUtils.THRESHOLDS:
             windows = []
@@ -91,8 +94,57 @@ class PCAvsAPCA(object):
 
             windows = [int(window) for window in windows]
             percentage = MathUtils.calculate_percentage(total_basic, total_pca, 2)
-            threshold_results += ["PCA-O", str(windows), percentage]
-        self.output.write_row(threshold_results)
+            threshold_results += ["PCA-O", windows, percentage]
+        return threshold_results
+
+    def __compare_and_write_results(self, apca_results, pca_results, pca_o_results):
+        results_length = len(apca_results)
+        assert(len(pca_results) == results_length)
+        assert(len(pca_o_results) == results_length)
+
+        new_row = [None] * 3
+        single_file = False
+        for index in range(len(ExperimentsUtils.THRESHOLDS)):
+            coder_index = 3*(index + 1)  # 3, 6, 9, ...
+            assert(apca_results[coder_index] == 'APCA')
+            assert(pca_results[coder_index] == 'PCA')
+            assert(pca_o_results[coder_index] == 'PCA-O')
+
+            # compare PCA and PCA-O windows
+            pca_window, pca_o_windows = pca_results[coder_index + 1], pca_o_results[coder_index + 1]
+            pca_percentage, pca_o_percentage = pca_results[coder_index + 2], pca_o_results[coder_index + 2]
+            apca_percentage = apca_results[coder_index + 2]
+            if len(pca_o_windows) == 1:
+                single_file = True
+                assert(pca_o_windows[0] == pca_window)  # for single files, the windows and percentages should match
+                assert(pca_percentage == pca_o_percentage)
+                assert(apca_percentage != pca_percentage)
+                best = '+APCA' if apca_percentage < pca_percentage else '+PCA'
+                relative_difference = MathUtils.relative_difference(pca_percentage, apca_percentage, True)
+                new_row += [None, best, relative_difference]
+
+            else:  # len(pca_o_windows) > 1
+                unique_windows = np.unique(pca_o_windows)
+                if len(unique_windows) == 1:
+                    assert(unique_windows[0] == pca_window)
+                    assert(pca_percentage == pca_o_percentage)
+                    assert(apca_percentage != pca_percentage)
+                    best = '+APCA' if apca_percentage < pca_percentage else '+PCA'
+                    relative_difference = MathUtils.relative_difference(pca_percentage, apca_percentage, True)
+                    new_row += ['SW', best, relative_difference]
+                    pca_o_results[coder_index + 2] = None
+                else:
+                    assert(pca_percentage > pca_o_percentage)
+                    assert(apca_percentage != pca_o_percentage)
+                    best = '+APCA' if apca_percentage < pca_o_percentage else '+PCA-O'
+                    relative_difference = MathUtils.relative_difference(pca_o_percentage, apca_percentage, True)
+                    new_row += ['DW', best, relative_difference]
+
+        self.output.write_row(apca_results)
+        self.output.write_row(pca_results)
+        if not single_file:
+            self.output.write_row(pca_o_results)
+        self.output.write_row(new_row)
 
     def _print(self, value):
         if self.debug_mode:
