@@ -1,6 +1,7 @@
 import sys
 sys.path.append('.')
 
+from auxi.os_utils import python_project_path
 from scripts.informe.results_parsing.results_reader import ResultsReader
 from scripts.informe.results_parsing.results_to_dataframe import ResultsToDataframe
 from file_utils.csv_utils.csv_writer import CSVWriter
@@ -16,13 +17,13 @@ class ProcessResults(object):
     CODERS_ARRAY = ['CoderPCA', 'CoderAPCA', 'CoderCA', 'CoderPWLH', 'CoderPWLHInt', 'CoderFR', 'CoderSF',
                     # 'CoderGAMPS', => ignore this coder
                     'CoderGAMPSLimit']
-    PATH = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/informe/data_analysis/out_process_results"
+    PATH = python_project_path() + "/scripts/informe/data_analysis/out_process_results"
     MM = 3
 
     def __init__(self, global_mode):
         self.debug_mode = False
         self.global_mode = global_mode
-        key = 'global' if self.global_mode else 'raw'
+        key = 'global' if self.global_mode else 'raw_basic'
         self.results_reader = ResultsReader(key, ProcessResults.MM)
         self.df = ResultsToDataframe(self.results_reader).create_full_df()
         self.threshold_compare = ThresholdCompare(ResultsReader('raw', ProcessResults.MM))
@@ -70,12 +71,15 @@ class ProcessResults(object):
             self._print(self.coder_name)
             self.__coder_results()
 
+    #
+    # Get the best Window for each <Coder, Column, Threshold> combination
+    #
     def __coder_results(self):
         windows, percentages = [], []
         previous_window, previous_percentage = None, None
         for threshold in ExperimentsUtils.THRESHOLDS:
             row_df = self.panda_utils.min_value_for_threshold(self.coder_name, self.col_index, threshold)
-            window, percentage, _ = self.__get_values(row_df)
+            window, percentage, _ = ProcessResults.get_values(row_df, self.col_index)
 
             new_window, new_percentage = window, percentage
             if self.__same_result(threshold):
@@ -89,12 +93,15 @@ class ProcessResults(object):
 
         self.csv_writer_1.write_row(['', '', '', self.coder_name] + windows + [''] + percentages)
 
+    #
+    # Get the best <Coder, Window> combination for each <Column, Threshold> combination
+    #
     def __column_results_writer_2(self):
         previous_coder, previous_window, previous_percentage = None, None, None
         threshold_results = [None, None, self.col_name]
         for threshold in ExperimentsUtils.THRESHOLDS:
             row_df = self.panda_utils.min_value_for_threshold(None, self.col_index, threshold)
-            window, percentage, coder_name = self.__get_values(row_df)
+            window, percentage, coder_name = ProcessResults.get_values(row_df, self.col_index)
             coder_name = coder_name.replace("Coder", "")
 
             new_coder, new_window, new_percentage = coder_name, window, percentage
@@ -111,10 +118,6 @@ class ProcessResults(object):
         self.csv_writer_1.write_row(row)
         self.csv_writer_2.write_row(row)
 
-    def __parse_percentage(self, row_df):
-        percentage_key = ResultsToDataframe.percentage_column_key(self.col_index)
-        return round(row_df[percentage_key], 2)
-
     def __local_or_single_file(self):
         condition1 = not self.global_mode
         condition2 = self.global_mode and self.__single_file_dataset()
@@ -130,11 +133,17 @@ class ProcessResults(object):
         if self.debug_mode:
             print value
 
-    def __get_values(self, row_df):
+    @staticmethod
+    def get_values(row_df, col_index):
         window = int(row_df['window'])
-        percentage = self.__parse_percentage(row_df)
+        percentage = ProcessResults.parse_percentage(row_df, col_index)
         coder_name = row_df['coder']
         return window, percentage, coder_name
+
+    @staticmethod
+    def parse_percentage(row_df, col_index):
+        percentage_key = ResultsToDataframe.percentage_column_key(col_index)
+        return round(row_df[percentage_key], 2)
 
     @staticmethod
     def dataset_filenames(dataset_name, global_mode):
@@ -177,5 +186,9 @@ class Writer2(object):
             array += ["Coder", "Win", "CR (%)"]
         return [None, None, None] + array
 
-ProcessResults(True).process_results()
-ProcessResults(False).process_results()
+
+def run():
+    ProcessResults(True).process_results()
+    ProcessResults(False).process_results()
+
+# run()

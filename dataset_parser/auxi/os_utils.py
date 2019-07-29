@@ -1,6 +1,8 @@
 import platform
 
 
+# TODO: move these methods inside a class
+
 def ubuntu():
     return platform.system() == "Linux"
 

@@ -36,21 +36,16 @@ class GlobalizeResults(object):
     def __globalize_dataset(self, dataset_name):
         filenames = ExperimentsUtils.dataset_csv_filenames(dataset_name)
         if len(filenames) == 1:
-            print dataset_name + " - copy"  # there is a single file in the dataset, no need to merge anything
-            self.__copy_dataset(dataset_name)
+            print dataset_name + " - single file"
+            self.multiple_files = False
+            self.__merge_results(dataset_name, filenames)
         else:
-            print dataset_name + " - merge"
+            print dataset_name + " - multiple files"
+            self.multiple_files = True
             self.__merge_results(dataset_name, filenames)
 
     #
-    # single file, copy everything until another dataset starts
-    #
-    def __copy_dataset(self, dataset_name):
-        self.results_reader.find_dataset(dataset_name)
-        ResultsReader.copy_until_change(self.results_reader, self.output_file, 0)
-
-    #
-    # multiple files, globalize results
+    # globalize results
     #
     def __merge_results(self, dataset_name, filenames):
         # MM=0 => CoderBasic
@@ -83,7 +78,7 @@ class GlobalizeResults(object):
             for file_results in results_array:
                 # print file_results
                 file_results_line = file_results[index]
-                file_results_line = GlobalizeUtils.convert_line(file_results_line)
+                file_results_line = GlobalizeUtils.convert_line(file_results_line, self.multiple_files)
                 new_line = file_results_line if new_line is None else self.__merge_lines(new_line, file_results_line)
             new_lines.append(new_line)
         assert(len(new_lines) == number_of_rows)
@@ -113,7 +108,7 @@ def compare_files(output_path, output_file):
     compare = filecmp.cmp(output_path + "/" + output_file, output_path + "/3-global/" + output_file)
     if compare:
         print("SAME!")
-    assert compare
+    # assert compare
 
 
 def run(value):

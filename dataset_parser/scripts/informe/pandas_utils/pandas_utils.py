@@ -70,6 +70,9 @@ class PandasUtils(object):
         coder_df = PandasMethods.coder_df(self.df, coder_name) if coder_name is not None else self.df
         return PandasMethods.get_min_row(coder_df, data_column_key, threshold)
 
+    def coder_basic_df(self):
+        return PandasMethods.coder_df(self.df, 'CoderBasic').iloc[0]
+
 
 class PandasUtilsCheck(object):
     NUMBER_OF_COMBINATIONS = len(ExperimentsUtils.THRESHOLDS) * len(ExperimentsUtils.WINDOWS)
