@@ -78,6 +78,10 @@ class ExperimentsUtils(object):
     def get_dataset_data_columns_count(dataset_name):
         return ExperimentsUtils.get_dataset_info(dataset_name)['cols']
 
+    @staticmethod
+    def get_dataset_path(dataset_name):
+        return ExperimentsUtils.CSV_PATH + ExperimentsUtils.get_dataset_info(dataset_name)['folder']
+
     CSV_PATH = datasets_csv_path()
 
     MASK_MODE = False
