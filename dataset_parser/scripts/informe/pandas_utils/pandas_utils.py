@@ -61,8 +61,17 @@ class PandasUtils(object):
         coder_df = PandasMethods.coder_df(self.df, coder_name)
         new_df = pd.DataFrame(columns=self.df.columns)
         for index, threshold in enumerate(ExperimentsUtils.THRESHOLDS):
-            new_df.loc[index] = PandasMethods.get_min_row(coder_df, data_column_key, threshold)
+            new_df.loc[index] = PandasMethods.get_min_row(coder_df, data_column_key, threshold).values
         return new_df
+
+    def min_value_for_threshold(self, coder_name, column_index, threshold):
+        assert(threshold in ExperimentsUtils.THRESHOLDS)
+        data_column_key = ResultsToDataframe.data_column_key(column_index)
+        coder_df = PandasMethods.coder_df(self.df, coder_name) if coder_name is not None else self.df
+        return PandasMethods.get_min_row(coder_df, data_column_key, threshold)
+
+    def coder_basic_df(self):
+        return PandasMethods.coder_df(self.df, 'CoderBasic').iloc[0]
 
 
 class PandasUtilsCheck(object):

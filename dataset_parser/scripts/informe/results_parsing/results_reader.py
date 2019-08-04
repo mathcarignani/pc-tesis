@@ -42,7 +42,7 @@ class ResultsReader(object):
         return ResultsReader.add_until_change(self, change_index)
 
     def filename_results(self, dataset_name, filename, change_index=CSVConstants.INDEX_FILENAME):
-        self.__find_filename_in_dataset(dataset_name, filename)
+        self.find_filename_in_dataset(dataset_name, filename)
         return ResultsReader.add_until_change(self, change_index)
 
     def find_dataset(self, dataset_name):
@@ -53,7 +53,11 @@ class ResultsReader(object):
         self.__goto_file_start()
         self.__find_next_line(CSVConstants.INDEX_FILENAME, filename, False)
 
-    def __find_filename_in_dataset(self, dataset_name, filename):
+    def find_threshold(self, threshold):
+        # self.__goto_file_start()
+        self.__find_next_line(CSVConstants.INDEX_THRESHOLD, threshold, True)
+
+    def find_filename_in_dataset(self, dataset_name, filename):
         self.find_dataset(dataset_name)
         self.__find_next_line(CSVConstants.INDEX_FILENAME, filename, False)
 
