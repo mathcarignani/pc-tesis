@@ -17,19 +17,23 @@ OUT_PATH = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/sc
 
 
 class GZipCompare(object):
-    COMPRESS_PATH = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/informe/gzip_compare/c/"
+    COMPRESS_PATH = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/informe/gzip_compare/c"
+    FILENAME = {False: 'results.csv', True: 'results-t.csv'}  # use FILENAME[transpose]
 
-    def __init__(self, dataset_name, filename, col_index):
+    def __init__(self, dataset_name, filename, col_index, transpose=False):
         self.dataset_name = dataset_name
         self.filename = filename
         self.col_index = col_index  # 1, 2, 3, ...
+        self.transpose = transpose
+        transpose_str = "-t" if transpose else ""
+        self.compress_path = self.COMPRESS_PATH + transpose_str + "/"
 
         # set filenames
-        self.column_filename = filename + str(self.col_index) + ".csv"
-        self.compressed_filename = self.column_filename + ".tar.gz"
+        self.column_filename = filename + str(self.col_index) + transpose_str + ".csv"
+        self.compressed_filename = self.column_filename + transpose_str + ".tar.gz"
 
     def total_bits(self):
-        self.create_column_csv()
+        self.create_column_csv_transpose() if self.transpose else self.create_column_csv()
         self.compress_column_csv()
         total_bits = self.read_total_bits()
         self.remove_files()
@@ -38,7 +42,7 @@ class GZipCompare(object):
     def create_column_csv(self):
         dataset_columns_count = ExperimentsUtils.get_dataset_data_columns_count(self.dataset_name)
         reader = CSVReader(ExperimentsUtils.get_dataset_path(self.dataset_name), self.filename)
-        writer = CSVWriter(GZipCompare.COMPRESS_PATH, self.column_filename)
+        writer = CSVWriter(self.compress_path, self.column_filename)
         counter = 0
         while reader.continue_reading:
             row = reader.read_line()
@@ -55,29 +59,67 @@ class GZipCompare(object):
         reader.close()
         writer.close()
 
+    def create_column_csv_transpose(self):
+        dataset_columns_count = ExperimentsUtils.get_dataset_data_columns_count(self.dataset_name)
+        reader = CSVReader(ExperimentsUtils.get_dataset_path(self.dataset_name), self.filename)
+        writer = CSVWriter(self.compress_path, self.column_filename)
+
+        # (1) GET THE ROW INDEXES
+        row_indexes = []
+        counter = 0
+        while reader.continue_reading:
+            row = reader.read_line()
+            counter += 1
+            if counter < 5:  # (1) REMOVE HEADER
+                continue
+            row.pop(0)  # (2) IGNORE TIME DELTA
+            for i, value in enumerate(row):
+                # (3) APPEND VALUES FOR COLUMNS WITH THE MATCHING INDEX
+                if i % dataset_columns_count == (self.col_index - 1):
+                    row_indexes.append(i)
+            break
+        print row_indexes
+
+        # (2) WRITE THE FILES
+        for index in row_indexes:
+            reader.goto_row(0)
+            counter = 0
+            new_row = []
+            while reader.continue_reading:
+                row = reader.read_line()
+                counter += 1
+                if counter < 5:  # (1) REMOVE HEADER
+                    continue
+                row.pop(0)  # (2) IGNORE TIME DELTA
+                new_row.append(row[index])
+            writer.write_row(new_row)
+        reader.close()
+        writer.close()
+
     def compress_column_csv(self):
         #
         # tar cvf - input_file_path/input_filename | gzip -9 - > input_file_path/input_filename.tar.gz
         #
-        input_file_path = GZipCompare.COMPRESS_PATH + self.column_filename
-        output_file_path = GZipCompare.COMPRESS_PATH + self.compressed_filename
-        command = "tar cvf - " + input_file_path + " | gzip -1 - > " + output_file_path
+        input_file_path = self.compress_path + self.column_filename
+        output_file_path = self.compress_path + self.compressed_filename
+        command = "tar cvf - " + input_file_path + " | gzip -9 - > " + output_file_path
         os.system(command)
 
     def read_total_bits(self):
-        st = os.stat(GZipCompare.COMPRESS_PATH + self.compressed_filename)
+        st = os.stat(self.compress_path + self.compressed_filename)
         byte_size = st.st_size
         bits_size = byte_size*8
         return bits_size
 
     def remove_files(self):
-        os.remove(GZipCompare.COMPRESS_PATH + self.column_filename)
-        os.remove(GZipCompare.COMPRESS_PATH + self.compressed_filename)
+        os.remove(self.compress_path + self.column_filename)
+        os.remove(self.compress_path + self.compressed_filename)
 
 
 class ScriptGZipCompare(object):
-    def __init__(self):
-        self.output = CSVWriter(OUT_PATH, "results.csv")
+    def __init__(self, transpose=False):
+        self.transpose = transpose
+        self.output = CSVWriter(OUT_PATH, GZipCompare.FILENAME[transpose])
         self.debug_mode = True
 
         self.results_reader = ResultsReader('raw', 0)
@@ -112,7 +154,7 @@ class ScriptGZipCompare(object):
     def __columns_iteration(self):
         for self.col_index in range(1, ExperimentsUtils.get_dataset_data_columns_count(self.dataset_name) + 1):
             self.col_name = ExperimentsUtils.COLUMN_INDEXES[self.dataset_name][self.col_index - 1]
-            total_bits = GZipCompare(self.dataset_name, self.filename, self.col_index).total_bits()
+            total_bits = GZipCompare(self.dataset_name, self.filename, self.col_index, self.transpose).total_bits()
             total_bits_base = self.__get_total_bits_coder_base()
             self.results_hash[self.col_name]['total_bits'] += total_bits
             self.results_hash[self.col_name]['total_bits_base'] += total_bits_base
@@ -140,8 +182,8 @@ class ScriptGZipCompare(object):
 
 
 class GzipResultsParser(object):
-    def __init__(self):
-        self.input = CSVReader(OUT_PATH, "results.csv")
+    def __init__(self, transpose=False):
+        self.input = CSVReader(OUT_PATH, GZipCompare.FILENAME[transpose])
 
     def compression_ratio(self, dataset_name, filename, col_name):
         self.input.goto_row(0)
@@ -161,4 +203,5 @@ class GzipResultsParser(object):
 
 
 # ScriptGZipCompare().run()
+# ScriptGZipCompare(True).run()
 # GzipResultsParser().compression_ratio("NOAA-SPC-hail", "noaa_spc-hail.csv", "Lat")
