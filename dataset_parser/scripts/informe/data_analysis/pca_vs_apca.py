@@ -19,11 +19,12 @@ from scripts.informe.gzip_compare.gzip_compare import GzipResultsParser
 class PCAvsAPCA(object):
     PATH = python_project_path() + "/scripts/informe/data_analysis/out_apca_vs_pca"
     GZIP_MODE = True
+    THRESHOLD = 30
 
     def __init__(self):
         self.debug_mode = True
         if self.GZIP_MODE:
-            self.output = CSVWriter(PCAvsAPCA.PATH, 'pca_vs_apca_vs_gzip_vs_gzip_t.csv')
+            self.output = CSVWriter(PCAvsAPCA.PATH, 'pca_vs_apca_vs_gzip_t_' + str(self.THRESHOLD) + '.csv')
             self.gzip = GZip(self)
         else:
             self.output = CSVWriter(PCAvsAPCA.PATH, 'pca_vs_apca_vs_pca_o.csv')
@@ -79,7 +80,7 @@ class PCAvsAPCA(object):
     #
     def __coder_results(self, coder_name, first_row=False):
         threshold_results = [None, None, self.col_name if first_row else None]
-        thresholds = [0] if self.GZIP_MODE else ExperimentsUtils.THRESHOLDS
+        thresholds = [self.THRESHOLD] if self.GZIP_MODE else ExperimentsUtils.THRESHOLDS
         for threshold in thresholds:
             row_df = self.panda_utils.min_value_for_threshold(coder_name, self.col_index, threshold)
             window, percentage, coder_name = ProcessResults.get_values(row_df, self.col_index)
@@ -175,19 +176,21 @@ class PCAOptimalResults(object):
 class GZip(object):
     def __init__(self, apca_vs_pca_instance):
         self.a_vs_a = apca_vs_pca_instance
-        self.gzip_compare = GzipResultsParser()
+        # self.gzip_compare = GzipResultsParser()
         self.gzip_compare_t = GzipResultsParser(True)
 
     def run(self, apca_results, pca_results):
         apca_cr, pca_cr = apca_results[-1], pca_results[-1]
-        gzip_cr = self.gzip_compare.compression_ratio(self.a_vs_a.dataset_name, self.a_vs_a.filename, self.a_vs_a.col_name)
-        gzip_results = [None, None, None, 'GZIP', None, gzip_cr]
+        # gzip_cr = self.gzip_compare.compression_ratio(self.a_vs_a.dataset_name, self.a_vs_a.filename, self.a_vs_a.col_name)
+        # gzip_results = [None, None, None, 'GZIP', None, gzip_cr]
 
         gzip_cr_t = self.gzip_compare_t.compression_ratio(self.a_vs_a.dataset_name, self.a_vs_a.filename, self.a_vs_a.col_name)
         gzip_results_t = [None, None, None, 'GZIP-T', None, gzip_cr_t]
 
-        best_cr = min([apca_cr, pca_cr, gzip_cr, gzip_cr_t])
-        for array in [apca_results, pca_results, gzip_results, gzip_results_t]:
+        # best_cr = min([apca_cr, pca_cr, gzip_cr, gzip_cr_t])
+        best_cr = min([apca_cr, pca_cr, gzip_cr_t])
+        # for array in [apca_results, pca_results, gzip_results, gzip_results_t]:
+        for array in [apca_results, pca_results, gzip_results_t]:
             current_cr = array[-1]
             if current_cr != best_cr:
                 rel_diff = MathUtils.relative_difference(current_cr, best_cr, True)
@@ -195,7 +198,7 @@ class GZip(object):
 
         self.a_vs_a.output.write_row(apca_results)
         self.a_vs_a.output.write_row(pca_results)
-        self.a_vs_a.output.write_row(gzip_results)
+        # self.a_vs_a.output.write_row(gzip_results)
         self.a_vs_a.output.write_row(gzip_results_t)
 
 
