@@ -85,5 +85,5 @@ class PDFS2(object):
         self.pdf.savefig(fig)
         plt.close()
 
-PDFS2().create_pdfs()
+# PDFS2().create_pdfs()
 # PDFS2(['NOAA-SPC-wind']).create_pdfs()

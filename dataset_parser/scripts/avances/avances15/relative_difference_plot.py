@@ -33,7 +33,7 @@ class RelativeDifferencePlot(CommonPlot):
 
         # scatter plot
         x_axis = list(xrange(len(self.values)))
-        colors = [self.color_code(item, self.value3_smaller) for item in self.values]
+        colors = [self.get_color_code(item) for item in self.values]
         ax.scatter(x=x_axis, y=self.values, c=colors)
         ax.grid(b=True, color=PlotConstants.COLOR_SILVER)
         ax.set_axisbelow(True)
@@ -51,6 +51,15 @@ class RelativeDifferencePlot(CommonPlot):
         ax.set_xticklabels([''] + ExperimentsUtils.THRESHOLDS)
         ax.set_xlabel(PlotConstants.ERROR_THRE)
         PlotUtils.hide_ticks(ax)
+
+    @staticmethod
+    def get_color_code(value):
+        color = PlotConstants.COLOR_GRAY
+        if value > 50.59:
+            color = PlotConstants.COLOR_LIGHT_BLUE
+        elif value < -0.28:
+            color = PlotConstants.COLOR_RED
+        return color
 
     def print_values(self):
         print self.algorithm + " Relative Difference"

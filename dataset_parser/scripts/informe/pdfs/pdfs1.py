@@ -12,7 +12,6 @@ from scripts.informe.pdfs.pdf_page import PdfPage
 
 
 class PDFS1(object):
-    PATH = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/informe/pdfs/pdfs1/"
     FIGSIZE_H = 10
     FIGSIZE_V = 25
     WSPACE = 0.1
@@ -39,16 +38,16 @@ class PDFS1(object):
     #               + relative difference
     #               + window size
     #               + stats
-    def __init__(self, global_mode=True, datasets_names=None):
+    def __init__(self, path, global_mode=True, datasets_names=None):
         self.global_mode = global_mode
         if self.global_mode:
             self.df_0 = ResultsToDataframe(ResultsReader('global', 0)).create_full_df()
             self.df_3 = ResultsToDataframe(ResultsReader('global', 3)).create_full_df()
-            self.path = PDFS1.PATH + 'global/'
+            self.path = path + 'global/'
         else:
             self.df_0 = ResultsToDataframe(ResultsReader('raw', 0)).create_full_df()
             self.df_3 = ResultsToDataframe(ResultsReader('raw', 3)).create_full_df()
-            self.path = PDFS1.PATH + 'local/'
+            self.path = path + 'local/'
 
         # Move this to a new class
         self.df_3 = PandasMethods.set_coder_basic(self.df_0, self.df_3)
@@ -96,6 +95,6 @@ class PDFS1(object):
         self.pdf.savefig(fig)
         plt.close()
 
-PDFS1(False).create_pdfs()
-PDFS1(True).create_pdfs()
+# PDFS1(False).create_pdfs()
+# PDFS1(True).create_pdfs()
 # PDFS1(True, ['NOAA-SPC-wind']).create_pdfs()
