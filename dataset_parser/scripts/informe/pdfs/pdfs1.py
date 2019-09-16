@@ -13,21 +13,29 @@ from scripts.informe.pdfs.pdf_page import PdfPage
 
 class PDFS1(object):
     FIGSIZE_H = 10
-    FIGSIZE_V = 25
-    WSPACE = 0.1
+    FIGSIZE_V = 15  # 25
+    WSPACE = 0.1  # horizontal spacing between subplots
+    HSPACE = 0.3  # vertical spacing between subplots
     CODERS_ARRAY = ['CoderPCA', 'CoderAPCA', 'CoderCA', 'CoderPWLH', 'CoderPWLHInt', 'CoderGAMPSLimit']
-    PLOTS_ARRAY = ['compression', 'relative', 'window', 'relative_stats', 'window_stats']
+    PLOTS_ARRAY = ['compression', 'relative', 'window', 'relative_stats']  # , 'window_stats']
     PLOTS_MATRIX = [
         [['CoderPCA', 'compression'],  ['CoderAPCA', 'compression'],    ['CoderCA', 'compression']],
         [['CoderPCA', 'relative'],     ['CoderAPCA', 'relative'],       ['CoderCA', 'relative']],
-        [['CoderPCA', 'window'],       ['CoderAPCA', 'window'],         ['CoderCA', 'window']],
+        # [['CoderPCA', 'window'],       ['CoderAPCA', 'window'],         ['CoderCA', 'window']],
 
         [['CoderPWLH', 'compression'], ['CoderPWLHInt', 'compression'], ['CoderGAMPSLimit', 'compression']],
         [['CoderPWLH', 'relative'],    ['CoderPWLHInt', 'relative'],    ['CoderGAMPSLimit', 'relative']],
-        [['CoderPWLH', 'window'],      ['CoderPWLHInt', 'window'],      ['CoderGAMPSLimit', 'window']],
+        # [['CoderPWLH', 'window'],      ['CoderPWLHInt', 'window'],      ['CoderGAMPSLimit', 'window']],
 
-        [[None, 'relative_stats'],     [None, 'window_stats']]
+        # [[None, 'relative_stats'],     [None, 'window_stats']]
     ]
+    PLOT_OPTIONS = {
+        'compression': {'title': True},
+        'relative': {'title': False},
+        'window': None,
+        'relative_stats': None,
+        'window_stats': None
+    }
 
     # For each dataset:
     #   Create a pdf.
@@ -88,9 +96,9 @@ class PDFS1(object):
             self.create_pdf_page(panda_utils_0, panda_utils_3)
 
     def create_pdf_page(self, panda_utils_0, panda_utils_3):
-        pdf_page = PdfPage(panda_utils_0, panda_utils_3, self.filename, self.col_index, self.FIGSIZE_H, self.FIGSIZE_V)
+        pdf_page = PdfPage(panda_utils_0, panda_utils_3, self.filename, self.col_index, self.FIGSIZE_H, self.FIGSIZE_V, self.PLOT_OPTIONS)
         fig, plt = pdf_page.create(self.CODERS_ARRAY, self.PLOTS_ARRAY, self.PLOTS_MATRIX)
-        plt.subplots_adjust(wspace=PDFS1.WSPACE)
+        plt.subplots_adjust(wspace=PDFS1.WSPACE, hspace=PDFS1.HSPACE)
         # plt.show(); exit(0) # uncomment to show first page
         self.pdf.savefig(fig)
         plt.close()

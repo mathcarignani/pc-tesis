@@ -19,17 +19,21 @@ class PdfPage(object):
         'window_stats': WindowsStats
     }
 
-    def __init__(self, panda_utils_0, panda_utils_3, filename, col_index, figsize_h, figsize_v):
+    def __init__(self, panda_utils_0, panda_utils_3, filename, col_index, figsize_h, figsize_v, plots_options=None):
         self.panda_utils_0 = panda_utils_0
         self.panda_utils_3 = panda_utils_3
         self.filename = filename
         self.col_index = col_index
+        self.plots_options = plots_options
         self.fig = PlotUtils.create_figure(figsize_h, figsize_v, filename + ' - col = ' + str(col_index))
 
     def create(self, coders_array, plots_array, plots_matrix):
         plots_obj = {}
         for plot_key in plots_array:
-            plots_obj[plot_key] = PdfPage.PLOT_MAPPER[plot_key].create_plots(coders_array, self.panda_utils_0, self.panda_utils_3, self.col_index)
+            plot_options = self.plots_options and self.plots_options.get(plot_key)
+            plot_klass = PdfPage.PLOT_MAPPER[plot_key]
+            plots = plot_klass.create_plots(coders_array, self.panda_utils_0, self.panda_utils_3, self.col_index, plot_options)
+            plots_obj[plot_key] = plots
 
         self.__add_plots(plots_matrix, plots_obj)
         # self.fig.set_tight_layout(True)
