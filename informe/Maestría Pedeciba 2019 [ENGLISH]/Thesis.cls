@@ -78,11 +78,11 @@
 \ifxetex
   \usepackage{fontspec}
   \usepackage{polyglossia}
-  \setmainlanguage{spanish}
+  \setmainlanguage{english}
 \else
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
-  \usepackage[spanish]{babel}
+  \usepackage[english]{babel}
   \usepackage{lmodern}
 \fi
 
@@ -106,6 +106,7 @@
 \clubpenalty=9999                 % Almost no orphans at top of page.
 \interfootnotelinepenalty=9999    % Almost never break footnotes.
 \usepackage{fancyhdr}
+\renewcommand{\@chapapp}{Chapter}
 \lhead[\rm\thepage]{\fancyplain{}{\sl{\rightmark}}}
 \rhead[\fancyplain{}{\sl{\leftmark}}]{\rm\thepage}
 \chead{}\lfoot{}\rfoot{}\cfoot{}
@@ -154,7 +155,7 @@
 \usepackage{booktabs}
 \usepackage{rotating}
 \usepackage{listings}
-\usepackage{lstpatch}
+% \usepackage{lstpatch}
 \lstset{captionpos=b,
         frame=tb,
         basicstyle=\scriptsize\ttfamily,
@@ -197,7 +198,7 @@
 %	defined as \examname above so you cite it as \examname
 %----------------------------------------------------------------------------------------
 
-\thesistitle{Codificación de señales multicanal\\\vspace{20pt}con muestreo irregular} % Your thesis title - this is used in the title and abstract
+\thesistitle{Coding of Multichannel Signals\\\vspace{20pt}with Irregular Sampling} % Your thesis title - this is used in the title and abstract
 %-------------------------------------------------  
 \supervisor{Álvaro \textsc{Martin}} % You supervisor's name - this is used in the title page
 %-------------------------------------------------   

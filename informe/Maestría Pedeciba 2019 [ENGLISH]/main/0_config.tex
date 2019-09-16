@@ -48,6 +48,7 @@
 
 \usepackage{ifxetex}
 %\setmarginsrb{35mm}{20mm}{25mm}{15mm}{12pt}{11mm}{0pt}{11mm}
+
 \ifxetex
   \usepackage{fontspec}
   \usepackage{polyglossia}
@@ -60,7 +61,7 @@
 \fi
 
 \usepackage{amsthm}
-\renewcommand*{\proofname}{Demostración}
+\renewcommand*{\proofname}{Demonstration}
 
 %\usepackage{amsmath,bm,times}
 \newcommand{\mx}[1]{\mathbf{\bm{#1}}} % Matrix command
@@ -144,6 +145,7 @@
         
 \usepackage{blindtext}
 \usepackage[algosection,linesnumbered,boxed,spanish]{algorithm2e}
+
 \SetAlCapSkip{1em}
 
 \usepackage[square, numbers, comma, sort&compress]{natbib} % Use the natbib reference package - read up on this to edit the reference style; if you want text (e.g. Smith et al., 2012) for the in-text references (instead of numbers), remove 'numbers' 
@@ -154,7 +156,6 @@
 \renewcommand{\nomname}{Notación y abreviaciones}
 \renewcommand{\nomlabelwidth}{2.2cm}
 %\renewcommand{\eqdeclaration}[1]{, ecuación (#1)}
-\renewcommand{\pagedeclaration}[1]{, pág. #1.}
 %\renewcommand{\pagedeclaration}[1]{\unskip\dotfill\hyperpage{#1}}
 \RequirePackage{ifthen}
     \renewcommand{\nomgroup}[1]{%
@@ -180,3 +181,4 @@
 
 %\hypersetup{urlcolor=blue, colorlinks=true} % Colors hyperlinks in blue - change to black if annoying
 \title{\ttitle} % Defines the thesis title - don't touch this
+

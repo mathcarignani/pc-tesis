@@ -1,0 +1,210 @@
+% Chapter ?
+
+\chapter{Experimental Results} % Main chapter title
+
+\label{experiments} % For referencing the chapter elsewhere, use \ref{Chapter1} 
+
+\lhead{Chapter 3. \emph{Experimental Results}} % This is for the header on each page - perhaps a shortened title
+
+\newcommand{\maskalgo}{\textit{M}}
+\newcommand{\NOmaskalgo}{\textit{NM}}
+\newcommand{\coder}{\textit{c}}
+\newcommand{\difrelativa}{\textit{RD}}
+\newcommand{\tasacompresion}{\textit{CR}}
+\newcommand{\nmbits}{\NOmaskalgo_{\textit{S}}}
+\newcommand{\mbits}{\maskalgo_\textit{S}}
+\newcommand{\cmaskalgo}{$c_\maskalgo$}
+\newcommand{\cNOmaskalgo}{$c_\NOmaskalgo$}
+\newcommand{\ca}{\textit{CA}}
+\newcommand{\algo}{\textit{a}}
+
+
+
+
+In this chapter we present the experimental results of our project. The main goal of our experiments was to analize the performance of every one of the coders implemented in Chapter~\ref{coders}. To achieve that, we used them to code the different data types of the datasets introduced in Chapter~\ref{datasets}. In Section \ref{experiments:experiments} we give an overview of the performed experiments. In Section \ref{secX:rendimiento-relativo} we compare the relative performance of the coders with and without mask. In Section \ref{secX:codersmask} we compare the performance of the mask coders among each other, while in Section \ref{secX:gzip} we compare them with the gzip algorithm.
+
+
+
+
+
+
+
+
+
+
+
+\section{Experiments Overview}
+\label{experiments:experiments}
+The experiments consisted in coding every one of the data types of each dataset taking different parameter combinations. Specifically, we considered the following three parameters:
+\vspace{-8pt}
+\begin{itemize}
+    \item 15 coders: 
+        \vspace{-5pt}
+        \begin{itemize}
+            \item $\coderBase$
+            \item \textit{CoderPCA-NM} and \textit{CoderPCA-M}
+            \item \textit{CoderAPCA-NM} and \textit{CoderAPCA-M}
+            \item \textit{CoderCA-NM} and \textit{CoderCA-M}
+            \item \textit{CoderPWLH-NM} and \textit{CoderPWLH-M}
+            \item \textit{CoderPWLHInt-NM} and \textit{CoderPWLHInt-M}
+            \item \textit{CoderGampsLimit-NM} and \textit{CoderGampsLimit-M}
+            \item \textit{CoderFR-M}
+            \item \textit{CoderSF-M}
+        \end{itemize}
+    \item 7 window sizes: 4, 8, 16, 32, 64, 128 and 256
+    \item 8 error thresholds: 
+        \vspace{-5pt}
+        \begin{itemize}
+            \item 0 (lossless compression)
+            \item 1, 3, 5, 10, 15, 20 and 30 (lossy compression).
+        \end{itemize}
+\end{itemize}
+
+\vspace{+5pt}
+\newcommand{\footvalid}{Not every parameter combination makes sense (see final paragraph of the current section).}
+In what follows, we refer to these sets using the notations $C$, $W$ and $E$, respectively. Any valid\footnote{\footvalid} triplet $(c \in C, \ w \in W, \ e \in E)$ defines a specific \textit{coding algorithm (CA)}. The experiments consisted in separately coding each data type with each possible coding algorithm $\algo \in \ca$.
+
+It is important to point out that we are making an abuse of notation with the error threshold parameter, since when taking $e \in E$ the actual threshold we consider is the $e\%$ of the standard deviation for the data to be coded.
+    
+\newcommand{\cbits}{\coder_{\textit{S}}}
+\newcommand{\basebits}{\textit{Base}_{\textit{S}}}
+\newcommand{\footcoderbase}{According to our definition it is also a \textit{coding algorithm} (see first bullet point).}
+As explained in Section \ref{coders:base}, $\coderBase$ is a low complexity coder\footnote{\footcoderbase} which was implemented to facilitate the comparison of the performance of the remaining coders between each other. With that in mind, we calculated the compression rate obtained when coding each data type with each coding algorithm. Next, we define the compression rate.
+
+\begin{defcion}
+The \textit{compression rate (CR)} of a coding algorithm  $\algo \in \ca$ for a certain file $f$ is given by the following equation
+\vspace{-5pt}
+\begin{equation}
+\label{eq:tasa-compresion}
+\tasacompresion(\algo, f) = 100\times\frac{|\algo(f)|}{|\coderBase(f)|},
+\end{equation}
+where $|\algo(f)|$ and $|\coderBase(f)|$ are the sizes of the resulting files obtained when coding $f$ with $\algo$ and $\coderBase$, respectively.
+\end{defcion}
+
+The performance of algorithm~$\algo$ improves as $|\algo(f)|$ decreases. Thus, our main goals are to analyze which coding algorithms minimize (\ref{eq:tasa-compresion}) and how do the different parameters influence the result of this equation.
+
+\vspace{+5pt}
+Before continuing, we think it's important to make some additional clarifications regarding our experiments and the coding algorithms considered:
+
+\vspace{-8pt}
+\begin{itemize}
+    \item $\coderBase$ is the single coder that only allows to compress in lossless fashion (i.e. parameter $e$ is always 0).
+    \item $\coderBase$ and \textit{CoderSF-M} don't use a window (i.e. parameter $w$ is ignored) 
+    \item For \textit{CoderPCA-NM} and \textit{CoderPCA-M} the window size parameter determines a fixed window size, while for the remaing coders (except $\coderBase$ and \textit{CoderSF-M}) the window size is variable and the parameter specifies its maximum possible value.
+    \item We didn't implement no-mask versions of \textit{CoderFR-M} and \textit{CoderSF-M}. More details on this matter can be found in Sections \ref{coders:fr} and \ref{coders:sf}.
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+\clearpage
+\section{Relative Performance of the Coders}
+\label{secX:rendimiento-relativo}
+
+In this section we compare the performance of the coders with ($\maskalgo$) and without mask ($\NOmaskalgo$). We are only interested in comparing two algorithms between each other when their implementations arise from the same original algorithm but one uses a mask and the other one doesn't. Therefore, of the array of coders defined in Section \ref{experiments:experiments} we are going to compare:
+
+\vspace{-8pt}
+\begin{itemize}
+    \item \textit{CoderPCA-NM} and \textit{CoderPCA-M}
+    \item \textit{CoderAPCA-NM} and \textit{CoderAPCA-M}
+    \item \textit{CoderCA-NM} and \textit{CoderCA-M}
+    \item \textit{CoderPWLH-NM} and \textit{CoderPWLH-M}
+    \item \textit{CoderPWLHInt-NM} and \textit{CoderPWLHInt-M}
+    \item \textit{CoderGampsLimit-NM} and \textit{CoderGampsLimit-M}.
+\end{itemize}
+
+\vspace{+5pt}
+\begin{defcion}
+We define $C_\maskalgo$ as the subset of $C$ in which the coders use a mask and ${\ca}_\maskalgo$ as the set of coding algorithms in which parameter $c \in C_\maskalgo$. We define $C_\NOmaskalgo$ and ${\ca}_\NOmaskalgo$ in an analogue manner for the coders that don't use a mask.
+\end{defcion}
+
+To compare the performance of two coders, $c_\maskalgo \in C_\maskalgo$ and $c_\NOmaskalgo \in C_\NOmaskalgo$, when coding a certain file, we consider a pair of coding algorithms $\algo_\maskalgo \in {\ca}_\maskalgo$ and $\algo_\NOmaskalgo \in {\ca}_\NOmaskalgo$, with the same $w$ and $e$ but different $c$ parameters, and calculate the relative difference between each other, which we define next.
+
+\vspace{+5pt}
+\begin{defcion}
+The \textit{relative difference (RD)} between a pair of coding algorithms $\algo_\maskalgo \in {\ca}_\maskalgo$ and $\algo_\NOmaskalgo \in {\ca}_\NOmaskalgo$ for a certain file $f$ is given by the following equation
+\begin{equation}
+\label{eq:relative-difference}
+\difrelativa(\algo_\maskalgo, \algo_\NOmaskalgo, f)  =
+\begin{cases}
+100\times\frac{|\algo_\NOmaskalgo (f)| - |\algo_\maskalgo (f)|}{ |\algo_\NOmaskalgo (f)| }, \quad & \text{if } |\algo_\NOmaskalgo (f)| \ne |\algo_\maskalgo (f)|, \\
+0,                   & \text{if } |\algo_\NOmaskalgo (f)| = |\algo_\maskalgo (f)|,
+\end{cases}
+\end{equation}
+where $|\algo_\maskalgo(f)|$ and $|\algo_\NOmaskalgo(f)|$ are the sizes of the resulting files obtained when coding $f$ with $\algo_\maskalgo$ and $\algo_\NOmaskalgo$, respectively. 
+\end{defcion}
+
+Algorithm $\algo_\maskalgo$ \ achieves a better compression rate than algorithm $\algo_\NOmaskalgo$ \ when the result of equation (\ref{eq:relative-difference}) is positive. As the result increases, the relative performance of $\algo_\maskalgo$ \ improves with respect to $\algo_\NOmaskalgo$.
+
+When comparing the performance of a pair of coders \cmaskalgo \ and \cNOmaskalgo \ when coding a file with a given error threshold $e \in E$, we will only consider the window sizes $w_\maskalgo, w_\NOmaskalgo \in W$ for which the associated coding algorithms $\algo_\maskalgo = (c_\maskalgo, w_\maskalgo, e)$ and $\algo_\NOmaskalgo = (c_\NOmaskalgo, w_\NOmaskalgo, e)$ obtain the minimum compression rates. We refer to $w_\maskalgo$ and $w_\NOmaskalgo$ as the optimal window sizes and formally define them next.
+
+\newcommand{\footows}{This was never the case on our experiments.}
+\begin{defcion}
+The \textit{optimal window size (OWS)} of a coder $c \in C$ and threshold $e \in E$ for a certain file $f$ is given by the following equation
+\begin{equation}
+OWS(c, e, f) = w^{*} \in W \text{ such that } CR((c, w^{*}, e), f) = \min_{w \in W} \biggl\{ CR((c, w, e), f) \biggr\},
+\end{equation}
+where we take the smallest window in the event more than one value satisfies the equation\footnote{\footows}.
+\end{defcion}
+
+Table \ref{tabla:rendimiento-relativ-NM-M} illustrates the summary results obtained when comparing the relative performance of pairs of coders \cNOmaskalgo \ and \cmaskalgo \ for each dataset. In the third and fourth columns we display the percentage of the combinations  <$\coder \in C$, $e \in E$> for which each coding algorithm obtains the best compression rate. The last column shows the range for the relative difference values for said combinations.
+
+\vspace{+5pt}
+\input{chapters/Experiments/table-relative.tex}
+\vspace{-5pt}
+
+On datasets with many gaps RD is always positive, and so in every case we achieve better compression rates when using \cmaskalgo \ coders. On the other hand, on gapless datasets RD is always negative, which means that \cNOmaskalgo \ coders always perform better. On the dataset with few gaps, approximately on each half of the combinations the best results are obtained with different coders.
+
+We notice that in every case in which \cNOmaskalgo \ performs best the relative difference is close to zero. In the graphs in Figure \ref{fig:diff-tornado} we display the case in which \cNOmaskalgo \ obtains the most significant relative difference. This occurs for the ``Longitude" data type of the \datasettornado \ dataset, when comparing \textit{CoderAPCA-NM} and \textit{CoderAPCA-M} taking an error threshold equal to 30. In Table \ref{tabla:rendimiento-relativ-NM-M} we can verify that in such case the relative difference is -0.29.
+
+On the other hand, when \cmaskalgo \ performs best the relative difference reaches higher absolute values, with a maximum of 50.60 for the ``VWC" data type of the \datasetsst \ dataset. In the graphs in Figure~\ref{fig:diff-sst} we can observe that said result is obtained when comparing \textit{CoderPCA-NM} and \textit{CoderPCA-M} taking an error threshold equal to 30.
+
+The experimental results presented in this section suggest that if we were interested in coding a dataset with many gaps, we would benefit by using a \cmaskalgo \ algorithm. However, even if the dataset didn't have any gaps, the performance gain obtained by using a \cNOmaskalgo \ algorithm instead would be negligible. Since the \cmaskalgo \ algorithm is more robust and performs better in general, in the next sections we will focus on its study.
+
+\input{chapters/Experiments/figures-compression1.tex}
+
+
+
+
+
+
+
+
+
+
+
+\clearpage
+\section{Mask Coders Performance}
+\label{secX:codersmask}
+
+In this section we analyze the performance of every one of the mask coders implemented in Chapter \ref{coders}. Once again, the compression rate defined in equation (\ref{eq:tasa-compresion}) will be the metric we use for comparing the coders between each other.
+
+We considered the results obtained when coding the different data types of the datasets introduced in Chapter \ref{datasets}. For example, in Figure \ref{fig:mask-irkis} we can see the graphs obtained for the ``VWC" data type of the \datasetirkis \ dataset. For each <$\coder \in C$, $e \in E$> combination we plot two values: the window size which minimizes the compression rate and said compression rate.
+
+Easily, after observing the plots we noticed that in general the compression rate for coders \textit{CoderPWLH-M}, \textit{CoderGAMPSLimit-M} and \textit{CoderSF-M} was worst than the rest.
+
+Analyze the data and discard these 
+
+PONER OTRA GRAFICA DE OTRO TIPO DE DATO
+
+\clearpage
+\input{chapters/Experiments/figures-mask.tex}
+\clearpage
+
+
+
+
+
+
+
+\clearpage
+\section{Comparison with the gzip Algorithm}
+\label{secX:gzip}
