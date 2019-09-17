@@ -17,10 +17,11 @@ class ProcessResults(object):
     CODERS_ARRAY = ['CoderPCA', 'CoderAPCA', 'CoderCA', 'CoderPWLH', 'CoderPWLHInt', 'CoderFR', 'CoderSF',
                     # 'CoderGAMPS', => ignore this coder
                     'CoderGAMPSLimit']
-    PATH = python_project_path() + "/scripts/informe/data_analysis/out_process_results"
+    DEFAULT_PATH = python_project_path() + "/scripts/informe/data_analysis/out_process_results"
     MM = 3
 
-    def __init__(self, global_mode):
+    def __init__(self, global_mode, path=None):
+        self.path = path or self.DEFAULT_PATH
         self.debug_mode = False
         self.global_mode = global_mode
         key = 'global' if self.global_mode else 'raw_basic'
@@ -34,10 +35,10 @@ class ProcessResults(object):
 
     def __write_headers(self):
         extra_str = 'global' if self.global_mode else 'local'
-        self.csv_writer_1 = Writer1.filename(extra_str)
+        self.csv_writer_1 = Writer1.filename(self.path, extra_str)
         self.csv_writer_1.write_row(Writer1.first_row())
 
-        self.csv_writer_2 = Writer2.filename(extra_str)
+        self.csv_writer_2 = Writer2.filename(self.path, extra_str)
         self.csv_writer_2.write_row(Writer2.first_row())
         self.csv_writer_2.write_row(Writer2.second_row())
 
@@ -153,8 +154,8 @@ class ProcessResults(object):
 
 class Writer1(object):
     @staticmethod
-    def filename(extra_str):
-        return CSVWriter(ProcessResults.PATH, extra_str + '-process1.csv')
+    def filename(path, extra_str):
+        return CSVWriter(path, extra_str + '-process1.csv')
 
     @staticmethod
     def first_row():
@@ -165,8 +166,8 @@ class Writer1(object):
 
 class Writer2(object):
     @staticmethod
-    def filename(extra_str):
-        return CSVWriter(ProcessResults.PATH, extra_str + '-process2.csv')
+    def filename(path, extra_str):
+        return CSVWriter(path, extra_str + '-process2.csv')
 
     @staticmethod
     def first_row():
