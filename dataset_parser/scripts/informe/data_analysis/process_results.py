@@ -4,6 +4,7 @@ sys.path.append('.')
 from auxi.os_utils import python_project_path
 from scripts.informe.results_parsing.results_reader import ResultsReader
 from scripts.informe.results_parsing.results_to_dataframe import ResultsToDataframe
+from file_utils.text_utils.text_file_writer import TextFileWriter
 from file_utils.csv_utils.csv_writer import CSVWriter
 from scripts.compress.experiments_utils import ExperimentsUtils
 from scripts.informe.pandas_utils.pandas_utils import PandasUtils
@@ -32,6 +33,7 @@ class ProcessResults(object):
     def process_results(self):
         self.__write_headers()
         self.__datasets_iteration()
+        self.csv_writer_latex.print_end()
 
     def __write_headers(self):
         extra_str = 'global' if self.global_mode else 'local'
@@ -42,18 +44,20 @@ class ProcessResults(object):
         self.csv_writer_2.write_row(Writer2.first_row())
         self.csv_writer_2.write_row(Writer2.second_row())
 
+        self.csv_writer_latex = WriterLatex(self.path, extra_str)
+
     def __datasets_iteration(self):
         for dataset_id, self.dataset_name in enumerate(ExperimentsUtils.DATASET_NAMES):
             print self.dataset_name
             self._print(self.dataset_name)
-            self.__write_two_files([self.dataset_name])
+            self.__set_dataset(self.dataset_name)
             self.__filenames_iteration()
 
     def __filenames_iteration(self):
         dataset_filenames = ProcessResults.dataset_filenames(self.dataset_name, self.global_mode)
         for self.filename in dataset_filenames:
             self._print(self.filename)
-            self.__write_two_files(['', self.filename])
+            self.__set_filename(self.filename)
             self.__columns_iteration()
 
     def __columns_iteration(self):
@@ -114,6 +118,15 @@ class ProcessResults(object):
             threshold_results += [new_coder, new_window, new_percentage]
             previous_coder, previous_window, previous_percentage = coder_name, window, percentage
         self.csv_writer_2.write_row(threshold_results)
+        self.csv_writer_latex.set_threshold_results(threshold_results)
+
+    def __set_dataset(self, dataset_name):
+        self.__write_two_files([dataset_name])
+        self.csv_writer_latex.set_dataset(dataset_name)
+
+    def __set_filename(self, filename):
+        self.__write_two_files(['', filename])
+        self.csv_writer_latex.set_filename(filename)
 
     def __write_two_files(self, row):
         self.csv_writer_1.write_row(row)
@@ -186,6 +199,45 @@ class Writer2(object):
         for _ in ExperimentsUtils.THRESHOLDS:
             array += ["Coder", "Win", "CR (%)"]
         return [None, None, None] + array
+
+
+class WriterLatex(object):
+    def __init__(self, path, extra_str):
+        self.file = TextFileWriter(path, extra_str + '-process2-LATEX.txt')
+        self.print_start()
+
+    def write_line(self, line):
+        self.file.write_line(line)
+
+    def print_start(self):
+        count = len(ExperimentsUtils.THRESHOLDS)
+        self.write_line("\centering")
+        self.write_line(r"\begin{tabular}{| l | l " + ("| c | c | c |" * count) + "}")
+        self.write_line("\cline{3-" + str(count * 3 + 2)+ "}")
+        self.write_line(WriterLatex.threshold_line())
+        self.write_line("Dataset & Data Type" + (" & {c} & {w} & {CR}" * count) + r" \\\hline\hline")
+
+    def set_dataset(self, dataset_name):
+        print "set_dataset => " + dataset_name
+
+    def set_filename(self, filename):
+        print "set_filename => " + filename
+
+    def set_threshold_results(self, threshold_results):
+        print "set_threshold_results => " + str(threshold_results)
+
+    @staticmethod
+    def threshold_line():
+        line = "\multicolumn{1}{c}{}& \multicolumn{1}{c|}{} "
+        for thre in ExperimentsUtils.THRESHOLDS:
+            line += "& \multicolumn{3}{c|" + ("|" if thre != 30 else "") + "}{e = " + str(thre) + "} "
+        line += r"\\\hline"
+        return line
+
+    def print_end(self):
+        self.write_line("\end{tabular}")
+        self.write_line("\caption{Mask results overview.}")
+        self.write_line("\label{experiments:mask-results-overview}")
 
 
 def run():
