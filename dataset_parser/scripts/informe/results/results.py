@@ -24,4 +24,5 @@ PATH = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/script
 # 3.3 Mask Coders Performance
 #
 
-ProcessResults(True, PATH + '3.3/').process_results()
+ProcessResults(True, PATH + '3.3/', False).run()
+ProcessResults(True, PATH + '3.3/', True).run()

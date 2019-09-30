@@ -3,6 +3,7 @@ sys.path.append('.')
 
 from file_utils.text_utils.text_file_writer import TextFileWriter
 from scripts.compress.experiments_utils import ExperimentsUtils
+from scripts.informe.gzip_compare.gzip_results_parser import GzipResultsParser
 
 
 class WriterLatex(object):
@@ -17,7 +18,7 @@ class WriterLatex(object):
         'NOAA-SPC-tornado': '\datasettornado',
         'NOAA-SPC-wind': '\datasetwind'
     }
-    WINDOW_MAP = {4: 2, 8: 3, 16: 4, 32: 5, 64: 6, 128: 7, 256: 8}
+    WINDOW_MAP = {0: '', 4: 2, 8: 3, 16: 4, 32: 5, 64: 6, 128: 7, 256: 8}
     WITH_C = False
     COLOR_COMMANDS = {
         'PCA': "\cellcolor{cyan!20}",
@@ -26,11 +27,13 @@ class WriterLatex(object):
         'GZIP': "\cellcolor{orange!20}"
     }
 
-    def __init__(self, path, extra_str):
-        self.file = TextFileWriter(path, extra_str + '-process2-LATEX.txt')
+    def __init__(self, path, extra_str, with_gzip):
+        filename = extra_str + '-process2-LATEX' + ('2' if with_gzip else '1') + '.txt'
+        self.file = TextFileWriter(path, filename)
         self.__print_start()
-        self.current_dataset = None
-        self.current_filename = None
+        self.current_dataset, self.current_filename = None, None
+        self.last_dataset, self.last_filename = None, None
+        self.gzip_results_parser = GzipResultsParser(True) if with_gzip else None
 
     def __write_line(self, line):
         self.file.write_line(line)
@@ -56,13 +59,21 @@ class WriterLatex(object):
     def set_dataset(self, dataset_name):
         # print "set_dataset => " + dataset_name
         self.current_dataset = dataset_name
+        self.last_dataset = dataset_name
 
     def set_filename(self, filename):
         # print "set_filename => " + filename
         self.current_filename = filename
+        self.last_filename = filename
 
     def set_threshold_results(self, threshold_results):
         # [None, None, 'Lat', 'PCA', 256, 100.03, 'PCA', 256, 100.03, 'APCA', 4, 88.74, 'APCA', 4, 81.29, 'APCA', 4, 69.82, 'APCA', 8, 62.44, 'APCA', 8, 56.18, 'APCA', 8, 47.15]
+        col_name = threshold_results[2]
+        # print "col_name => " + col_name
+        if self.gzip_results_parser is not None:
+            gzip_cr = self.gzip_results_parser.compression_ratio(self.last_dataset, self.last_filename, col_name)
+            self.add_gzip_result(threshold_results, gzip_cr)
+
         # print "set_threshold_results => " + str(threshold_results)
         assert(len(threshold_results) == 3 + self.THRE_COUNT * 3)
 
@@ -100,6 +111,26 @@ class WriterLatex(object):
         self.__write_line(line)
 
     @staticmethod
+    def add_gzip_result(threshold_results, gzip_cr):
+        # [None, None, 'Lat', 'PCA', 256, 100.03, 'PCA', 256, 100.03, ... ]
+        current_index = 5
+        last_index = len(threshold_results) - 1
+        while current_index <= last_index:
+            coder = threshold_results[current_index - 2]
+            if coder == '=':
+                current_index += 3
+                continue
+
+            cr = threshold_results[current_index]
+            if gzip_cr < cr:
+                threshold_results[current_index] = gzip_cr
+                threshold_results[current_index - 1] = 0  # no window value
+                threshold_results[current_index - 2] = 'GZIP'
+            elif gzip_cr == cr:
+                raise StandardError
+            current_index += 3
+
+    @staticmethod
     def coder_style(coder):
         if coder not in ['PCA', 'APCA', 'FR', 'GZIP']:
             raise StandardError
@@ -120,6 +151,7 @@ class WriterLatex(object):
 
     def print_end(self):
         self.__write_line("\end{tabular}")
-        self.__write_line("\caption{Mask results overview.}")
-        self.__write_line("\label{experiments:mask-results-overview}")
+        extra = "2" if self.gzip_results_parser else "1"
+        self.__write_line("\caption{Mask results overview (" + extra + ").}")
+        self.__write_line("\label{experiments:mask-results-overview" + extra + "}")
         self.__write_line(r"\end{sidewaystable}")

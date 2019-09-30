@@ -21,17 +21,21 @@ class ProcessResults(object):
                     'CoderGAMPSLimit']
     DEFAULT_PATH = python_project_path() + "/scripts/informe/data_analysis/process_results/out_process_results"
     MM = 3  # MASK MODE
+    DEBUG_MODE = False
 
-    def __init__(self, global_mode, path=None):
-        self.path = path or self.DEFAULT_PATH
-        self.debug_mode = False
+    def __init__(self, global_mode, path=None, with_gzip=False):
+        # set script settings
         self.global_mode = global_mode
+        self.path = path or self.DEFAULT_PATH
+        self.with_gzip = with_gzip
+
+        # set other instances
         key = 'global' if self.global_mode else 'raw_basic'
         self.results_reader = ResultsReader(key, ProcessResults.MM)
         self.df = ResultsToDataframe(self.results_reader).create_full_df()
         self.threshold_compare = ThresholdCompare(ResultsReader('raw', ProcessResults.MM))
 
-    def process_results(self):
+    def run(self):
         self.__write_headers()
         self.__datasets_iteration()
         self.csv_writer_latex.print_end()
@@ -45,7 +49,7 @@ class ProcessResults(object):
         self.csv_writer_2.write_row(Writer2.first_row())
         self.csv_writer_2.write_row(Writer2.second_row())
 
-        self.csv_writer_latex = WriterLatex(self.path, extra_str)
+        self.csv_writer_latex = WriterLatex(self.path, extra_str, self.with_gzip)
 
     def __datasets_iteration(self):
         for dataset_id, self.dataset_name in enumerate(ExperimentsUtils.DATASET_NAMES):
@@ -145,7 +149,7 @@ class ProcessResults(object):
         return ExperimentsUtils.dataset_csv_files_count(self.dataset_name) == 1
 
     def _print(self, value):
-        if self.debug_mode:
+        if self.DEBUG_MODE:
             print value
 
     @staticmethod
