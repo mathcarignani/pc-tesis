@@ -22,35 +22,36 @@ class WriterLatex(object):
     COLOR_COMMANDS = {
         'PCA': "\cellcolor{cyan!20}",
         'APCA': "\cellcolor{green!20}",
-        'FR': "\cellcolor{yellow!25}"
+        'FR': "\cellcolor{yellow!25}",
+        'GZIP': "\cellcolor{orange!20}"
     }
 
     def __init__(self, path, extra_str):
         self.file = TextFileWriter(path, extra_str + '-process2-LATEX.txt')
-        self.print_start()
+        self.__print_start()
         self.current_dataset = None
         self.current_filename = None
 
-    def write_line(self, line):
+    def __write_line(self, line):
         self.file.write_line(line)
 
-    def print_start(self):
-        self.write_line(r"\begin{sidewaystable}[ht]")
-        self.print_commands()
-        self.write_line("\centering")
+    def __print_start(self):
+        self.__write_line(r"\begin{sidewaystable}[ht]")
+        self.__print_commands()
+        self.__write_line("\centering")
         c_list = "| c | c | c |" if self.WITH_C else "| c | c |"
         count = 3 if self.WITH_C else 2
-        self.write_line(r"\begin{tabular}{| l | l " + (c_list * self.THRE_COUNT) + "}")
-        self.write_line("\cline{3-" + str(self.THRE_COUNT * count + 2) + "}")
-        self.write_line(WriterLatex.threshold_line())
+        self.__write_line(r"\begin{tabular}{| l | l " + (c_list * self.THRE_COUNT) + "}")
+        self.__write_line("\cline{3-" + str(self.THRE_COUNT * count + 2) + "}")
+        self.__write_line(WriterLatex.threshold_line())
         ows_cr = r" & {\footnotesize OWS} & {\footnotesize CR}"
         columns = r" & {c}" + ows_cr if self.WITH_C else ows_cr
-        self.write_line("{Dataset} & {Data Type}" + (columns * self.THRE_COUNT) + r" \\\hline\hline")
+        self.__write_line("{Dataset} & {Data Type}" + (columns * self.THRE_COUNT) + r" \\\hline\hline")
 
-    def print_commands(self):
+    def __print_commands(self):
         for key, value in self.COLOR_COMMANDS.iteritems():
             command = r"\newcommand{" + self.command_key(key) + "}{" + value + "}"
-            self.write_line(command)
+            self.__write_line(command)
 
     def set_dataset(self, dataset_name):
         # print "set_dataset => " + dataset_name
@@ -63,7 +64,7 @@ class WriterLatex(object):
     def set_threshold_results(self, threshold_results):
         # [None, None, 'Lat', 'PCA', 256, 100.03, 'PCA', 256, 100.03, 'APCA', 4, 88.74, 'APCA', 4, 81.29, 'APCA', 4, 69.82, 'APCA', 8, 62.44, 'APCA', 8, 56.18, 'APCA', 8, 47.15]
         # print "set_threshold_results => " + str(threshold_results)
-        assert(len(threshold_results) == 3 * self.THRE_COUNT + 3)
+        assert(len(threshold_results) == 3 + self.THRE_COUNT * 3)
 
         dataset_str = ''
         if self.current_dataset is not None:
@@ -96,11 +97,11 @@ class WriterLatex(object):
                 assert(len(threshold_list) == 2)
             line_list += threshold_list
         line = ' & '.join(['{' + str(element) + '}' for element in line_list]) + r" \\\hline"
-        self.write_line(line)
+        self.__write_line(line)
 
     @staticmethod
     def coder_style(coder):
-        if coder not in ['PCA', 'APCA', 'FR']:
+        if coder not in ['PCA', 'APCA', 'FR', 'GZIP']:
             raise StandardError
         return WriterLatex.command_key(coder)
 
@@ -115,10 +116,10 @@ class WriterLatex(object):
 
     @staticmethod
     def command_key(key):
-        return '\c' + key.lower()  # cpca, capca, cfr
+        return '\c' + key.lower()  # cpca, capca, cfr, cgzip
 
     def print_end(self):
-        self.write_line("\end{tabular}")
-        self.write_line("\caption{Mask results overview.}")
-        self.write_line("\label{experiments:mask-results-overview}")
-        self.write_line(r"\end{sidewaystable}")
+        self.__write_line("\end{tabular}")
+        self.__write_line("\caption{Mask results overview.}")
+        self.__write_line("\label{experiments:mask-results-overview}")
+        self.__write_line(r"\end{sidewaystable}")
