@@ -3,7 +3,7 @@ sys.path.append('.')
 
 from scripts.informe.pdfs.pdfs1 import PDFS1
 from scripts.informe.pdfs.pdfs2 import PDFS2
-from scripts.informe.data_analysis.process_results import ProcessResults, WriterLatex
+from scripts.informe.data_analysis.process_results.process_results import ProcessResults
 
 #
 # python scripts/informe/results/results.py

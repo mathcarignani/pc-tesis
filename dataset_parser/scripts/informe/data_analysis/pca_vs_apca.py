@@ -7,7 +7,7 @@ from scripts.informe.results_parsing.results_reader import ResultsReader
 from scripts.informe.results_parsing.results_to_dataframe import ResultsToDataframe
 from scripts.informe.math_utils import MathUtils
 from file_utils.csv_utils.csv_writer import CSVWriter
-from scripts.informe.data_analysis.process_results import ProcessResults, Writer2
+from scripts.informe.data_analysis.process_results.process_results import ProcessResults, Writer2
 from scripts.compress.experiments_utils import ExperimentsUtils
 from scripts.informe.pandas_utils.pandas_utils import PandasUtils
 from scripts.informe.gzip_compare.gzip_compare import GzipResultsParser

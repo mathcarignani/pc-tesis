@@ -8,7 +8,7 @@ from file_utils.csv_utils.csv_writer import CSVWriter
 from scripts.informe.results_parsing.results_reader import ResultsReader
 from scripts.informe.results_parsing.results_to_dataframe import ResultsToDataframe
 from scripts.compress.experiments_utils import ExperimentsUtils
-from scripts.informe.data_analysis.process_results import ProcessResults
+from scripts.informe.data_analysis.process_results.process_results import ProcessResults
 from scripts.informe.math_utils import MathUtils
 from scripts.informe.pandas_utils.pandas_utils import PandasUtils
 
