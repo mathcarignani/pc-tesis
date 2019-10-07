@@ -22,8 +22,9 @@ matplotlib.rcParams['mathtext.bf'] = 'Bitstream Vera Sans'  # 'Bitstream Vera Sa
 
 
 class CompressionRatioPlot(CommonPlot):
-    def __init__(self, algorithm):
+    def __init__(self, algorithm, plot_options=None):
         self.algorithm = algorithm
+        self.plot_options = plot_options
         self.values0 = []
         self.values3 = []
         self.basic_value0 = None
@@ -66,9 +67,11 @@ class CompressionRatioPlot(CommonPlot):
             PlotUtils.horizontal_line(ax, 100, PlotConstants.COLOR_SILVER)
 
         CommonPlot.set_lim(ax, ymin, ymax)
+        self._labels(ax, extra)
 
+    def _labels(self, ax, extra):
         # TODO: improve
-        if True:
+        if self.plot_options['title']:
             ax.title.set_text(self.algorithm)
         if not extra.get('last_row'):
             ax.set_xticklabels([])
@@ -114,7 +117,7 @@ class CompressionRatioPlot(CommonPlot):
     ##############################################
 
     @staticmethod
-    def create_plots(coders_array, panda_utils_0, panda_utils_3, col_index):
+    def create_plots(coders_array, panda_utils_0, panda_utils_3, col_index, plot_options=None):
         plots_obj = {}
         total_min, total_max = sys.maxint, -sys.maxint
         for coder_name in coders_array:
@@ -130,7 +133,7 @@ class CompressionRatioPlot(CommonPlot):
             total_min = min03 if min03 < total_min else total_min
             total_max = max03 if max03 > total_max else total_max
 
-            plot_instance = CompressionRatioPlot(coder_name)
+            plot_instance = CompressionRatioPlot(coder_name, plot_options)
             plot_instance.set_values(values0, values3)
             plots_obj[coder_name] = plot_instance
 

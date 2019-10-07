@@ -2,7 +2,7 @@ import sys
 sys.path.append('.')
 
 import pandas as pd
-from scripts.informe.data_analysis.process_results import ProcessResults
+from scripts.informe.data_analysis.process_results.process_results import ProcessResults
 from scripts.compress.experiments_utils import ExperimentsUtils
 from file_utils.csv_utils.csv_writer import CSVWriter
 

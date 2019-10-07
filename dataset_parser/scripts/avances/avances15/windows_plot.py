@@ -9,8 +9,9 @@ from scripts.avances.avances15.plotter2_constants import Plotter2Constants
 
 
 class WindowsPlot(CommonPlot):
-    def __init__(self, algorithm):
+    def __init__(self, algorithm, plot_options=None):
         self.algorithm = algorithm
+        self.plot_options = plot_options
         self.values0 = []
         self.values3 = []
         super(WindowsPlot, self).__init__()
@@ -80,7 +81,7 @@ class WindowsPlot(CommonPlot):
     ##############################################
 
     @staticmethod
-    def create_plots(coders_array, panda_utils_0, panda_utils_3, col_index):
+    def create_plots(coders_array, panda_utils_0, panda_utils_3, col_index, plot_options=None):
         plots_obj = {}
         for coder_name in coders_array:
             values3 = WindowsPlot.get_values(coder_name, col_index, panda_utils_3)
@@ -90,7 +91,7 @@ class WindowsPlot(CommonPlot):
                 values0 = WindowsPlot.get_values(coder_name, col_index, panda_utils_0)
                 assert(len(values0) == len(values3))
 
-            plot_instance = WindowsPlot(coder_name)
+            plot_instance = WindowsPlot(coder_name, plot_options)
             plot_instance.set_values(values0, values3)
             plots_obj[coder_name] = plot_instance
 

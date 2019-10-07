@@ -8,17 +8,14 @@ from file_utils.csv_utils.csv_writer import CSVWriter
 from scripts.informe.results_parsing.results_reader import ResultsReader
 from scripts.informe.results_parsing.results_to_dataframe import ResultsToDataframe
 from scripts.compress.experiments_utils import ExperimentsUtils
-from scripts.informe.data_analysis.process_results import ProcessResults
+from scripts.informe.data_analysis.process_results.process_results import ProcessResults
 from scripts.informe.math_utils import MathUtils
 from scripts.informe.pandas_utils.pandas_utils import PandasUtils
-
-
-OUT_PATH = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/informe/gzip_compare/out"
+from scripts.informe.gzip_compare.gzip_common import GZipCommon
 
 
 class GZipCompare(object):
     COMPRESS_PATH = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/informe/gzip_compare/c"
-    FILENAME = {False: 'results.csv', True: 'results-t.csv'}  # use FILENAME[transpose]
 
     def __init__(self, dataset_name, filename, col_index, transpose=False):
         self.dataset_name = dataset_name
@@ -119,7 +116,7 @@ class GZipCompare(object):
 class ScriptGZipCompare(object):
     def __init__(self, transpose=False):
         self.transpose = transpose
-        self.output = CSVWriter(OUT_PATH, GZipCompare.FILENAME[transpose])
+        self.output = CSVWriter(GZipCommon.OUT_PATH, GZipCompare.FILENAME[transpose])
         self.debug_mode = True
 
         self.results_reader = ResultsReader('raw', 0)
@@ -179,27 +176,6 @@ class ScriptGZipCompare(object):
     def _print(self, value):
         if self.debug_mode:
             print value
-
-
-class GzipResultsParser(object):
-    def __init__(self, transpose=False):
-        self.input = CSVReader(OUT_PATH, GZipCompare.FILENAME[transpose])
-
-    def compression_ratio(self, dataset_name, filename, col_name):
-        self.input.goto_row(0)
-        self.__find_match(0, dataset_name)
-        self.__find_match(1, filename)
-        self.__find_match(2, col_name)
-        compression_ratio = float(self.line[3])
-        return compression_ratio
-
-    def __find_match(self, col_index, value):
-        while self.input.continue_reading:
-            line = self.input.read_line()
-            if line[col_index] == value:
-                self.line = line
-                return
-        raise(StandardError, "Reached EOF")
 
 
 # ScriptGZipCompare().run()

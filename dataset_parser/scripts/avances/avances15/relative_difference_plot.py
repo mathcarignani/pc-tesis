@@ -11,9 +11,10 @@ from scripts.avances.avances15.compression_ratio_plot import CompressionRatioPlo
 
 
 class RelativeDifferencePlot(CommonPlot):
-    def __init__(self, algorithm, value3_smaller):
+    def __init__(self, algorithm, value3_smaller, plot_options=None):
         self.algorithm = algorithm
         self.value3_smaller = value3_smaller
+        self.plot_options = plot_options
         self.values = []
         super(RelativeDifferencePlot, self).__init__()
 
@@ -33,14 +34,18 @@ class RelativeDifferencePlot(CommonPlot):
 
         # scatter plot
         x_axis = list(xrange(len(self.values)))
-        colors = [self.color_code(item, self.value3_smaller) for item in self.values]
+        colors = [self.get_color_code(item) for item in self.values]
         ax.scatter(x=x_axis, y=self.values, c=colors)
         ax.grid(b=True, color=PlotConstants.COLOR_SILVER)
         ax.set_axisbelow(True)
 
         CommonPlot.set_lim(ax, ymin, ymax)
+        self._labels(ax, extra)
 
-        if extra.get('first_row') or extra.get('show_title'):
+    def _labels(self, ax, extra):
+        if not(self.plot_options['title']):
+            pass
+        elif extra.get('first_row') or extra.get('show_title'):
             ax.title.set_text(self.algorithm)
         if not extra.get('last_row'):
             ax.set_xticklabels([])
@@ -51,6 +56,15 @@ class RelativeDifferencePlot(CommonPlot):
         ax.set_xticklabels([''] + ExperimentsUtils.THRESHOLDS)
         ax.set_xlabel(PlotConstants.ERROR_THRE)
         PlotUtils.hide_ticks(ax)
+
+    @staticmethod
+    def get_color_code(value):
+        color = PlotConstants.COLOR_GRAY
+        if value > 50.59:
+            color = PlotConstants.COLOR_LIGHT_BLUE
+        elif value < -0.28:
+            color = PlotConstants.COLOR_RED
+        return color
 
     def print_values(self):
         print self.algorithm + " Relative Difference"
@@ -83,7 +97,7 @@ class RelativeDifferencePlot(CommonPlot):
     ##############################################
 
     @staticmethod
-    def create_plots(coders_array, panda_utils_0, panda_utils_3, col_index):
+    def create_plots(coders_array, panda_utils_0, panda_utils_3, col_index, plot_options=None):
         plots_obj = {}
         total_min, total_max = sys.maxint, -sys.maxint
         for coder_name in coders_array:
@@ -91,7 +105,7 @@ class RelativeDifferencePlot(CommonPlot):
             values3, _, _ = CompressionRatioPlot.get_values(coder_name, col_index, panda_utils_3)
             assert(len(values0) == len(values3))
 
-            plot_instance = RelativeDifferencePlot(coder_name, True)
+            plot_instance = RelativeDifferencePlot(coder_name, True, plot_options)
             for index, value0 in enumerate(values0):
                 plot_instance.add_value(value0, values3[index])
             plot_instance.close()

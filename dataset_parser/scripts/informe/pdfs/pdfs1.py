@@ -12,23 +12,30 @@ from scripts.informe.pdfs.pdf_page import PdfPage
 
 
 class PDFS1(object):
-    PATH = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/informe/pdfs/pdfs1/"
     FIGSIZE_H = 10
-    FIGSIZE_V = 25
-    WSPACE = 0.1
+    FIGSIZE_V = 15  # 25
+    WSPACE = 0.1  # horizontal spacing between subplots
+    HSPACE = 0.3  # vertical spacing between subplots
     CODERS_ARRAY = ['CoderPCA', 'CoderAPCA', 'CoderCA', 'CoderPWLH', 'CoderPWLHInt', 'CoderGAMPSLimit']
-    PLOTS_ARRAY = ['compression', 'relative', 'window', 'relative_stats', 'window_stats']
+    PLOTS_ARRAY = ['compression', 'relative', 'window', 'relative_stats']  # , 'window_stats']
     PLOTS_MATRIX = [
         [['CoderPCA', 'compression'],  ['CoderAPCA', 'compression'],    ['CoderCA', 'compression']],
         [['CoderPCA', 'relative'],     ['CoderAPCA', 'relative'],       ['CoderCA', 'relative']],
-        [['CoderPCA', 'window'],       ['CoderAPCA', 'window'],         ['CoderCA', 'window']],
+        # [['CoderPCA', 'window'],       ['CoderAPCA', 'window'],         ['CoderCA', 'window']],
 
         [['CoderPWLH', 'compression'], ['CoderPWLHInt', 'compression'], ['CoderGAMPSLimit', 'compression']],
         [['CoderPWLH', 'relative'],    ['CoderPWLHInt', 'relative'],    ['CoderGAMPSLimit', 'relative']],
-        [['CoderPWLH', 'window'],      ['CoderPWLHInt', 'window'],      ['CoderGAMPSLimit', 'window']],
+        # [['CoderPWLH', 'window'],      ['CoderPWLHInt', 'window'],      ['CoderGAMPSLimit', 'window']],
 
-        [[None, 'relative_stats'],     [None, 'window_stats']]
+        # [[None, 'relative_stats'],     [None, 'window_stats']]
     ]
+    PLOT_OPTIONS = {
+        'compression': {'title': True},
+        'relative': {'title': False},
+        'window': None,
+        'relative_stats': None,
+        'window_stats': None
+    }
 
     # For each dataset:
     #   Create a pdf.
@@ -39,16 +46,16 @@ class PDFS1(object):
     #               + relative difference
     #               + window size
     #               + stats
-    def __init__(self, global_mode=True, datasets_names=None):
+    def __init__(self, path, global_mode=True, datasets_names=None):
         self.global_mode = global_mode
         if self.global_mode:
             self.df_0 = ResultsToDataframe(ResultsReader('global', 0)).create_full_df()
             self.df_3 = ResultsToDataframe(ResultsReader('global', 3)).create_full_df()
-            self.path = PDFS1.PATH + 'global/'
+            self.path = path + 'global/'
         else:
             self.df_0 = ResultsToDataframe(ResultsReader('raw', 0)).create_full_df()
             self.df_3 = ResultsToDataframe(ResultsReader('raw', 3)).create_full_df()
-            self.path = PDFS1.PATH + 'local/'
+            self.path = path + 'local/'
 
         # Move this to a new class
         self.df_3 = PandasMethods.set_coder_basic(self.df_0, self.df_3)
@@ -89,13 +96,13 @@ class PDFS1(object):
             self.create_pdf_page(panda_utils_0, panda_utils_3)
 
     def create_pdf_page(self, panda_utils_0, panda_utils_3):
-        pdf_page = PdfPage(panda_utils_0, panda_utils_3, self.filename, self.col_index, self.FIGSIZE_H, self.FIGSIZE_V)
+        pdf_page = PdfPage(panda_utils_0, panda_utils_3, self.filename, self.col_index, self.FIGSIZE_H, self.FIGSIZE_V, self.PLOT_OPTIONS)
         fig, plt = pdf_page.create(self.CODERS_ARRAY, self.PLOTS_ARRAY, self.PLOTS_MATRIX)
-        plt.subplots_adjust(wspace=PDFS1.WSPACE)
+        plt.subplots_adjust(wspace=PDFS1.WSPACE, hspace=PDFS1.HSPACE)
         # plt.show(); exit(0) # uncomment to show first page
         self.pdf.savefig(fig)
         plt.close()
 
-PDFS1(False).create_pdfs()
-PDFS1(True).create_pdfs()
+# PDFS1(False).create_pdfs()
+# PDFS1(True).create_pdfs()
 # PDFS1(True, ['NOAA-SPC-wind']).create_pdfs()
