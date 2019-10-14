@@ -1,25 +1,24 @@
 
 \begin{table}[h]
 \begin{center}
-    \begin{tabular}{| C{2.2cm} || C{2.3cm} | C{1.7cm} | C{1.7cm} | C{3.0cm} |}
+    \begin{tabular}{| C{2.2cm} || C{2.5cm} | C{4.2cm} | C{3.0cm} |}
     \hline
       \multicolumn{1}{|>{\centering\arraybackslash}m{2.2cm}||}{\textbf{Dataset}} 
-    & \multicolumn{1}{>{\centering\arraybackslash}m{2.3cm}|}{\textbf{Information}} 
-    & \multicolumn{1}{>{\centering\arraybackslash}m{1.7cm}|}{\textbf{Best $c_\NOmaskalgo$}}
-    & \multicolumn{1}{>{\centering\arraybackslash}m{1.7cm}|}{\textbf{Best $c_\maskalgo$}}
-    & \multicolumn{1}{>{\centering\arraybackslash}m{3.0cm}|}{\textbf{RD Range}}\\
+    & \multicolumn{1}{>{\centering\arraybackslash}m{2.5cm}|}{\textbf{Dataset Characterstic}} 
+    & \multicolumn{1}{>{\centering\arraybackslash}m{4.2cm}|}{\textbf{Cases where masking supersedes non-masking mode (\%)}}
+    & \multicolumn{1}{>{\centering\arraybackslash}m{3.0cm}|}{\textbf{Range of equation~(\ref{eq:relative-difference-apply})}}\\
     \hline
-    \datasetirkis   & Many gaps     & -       & $100\%$ & (0; 36.88]                    \\\hline
-    \datasetsst     & Many gaps     & -       & $100\%$ & (0; \textcolor{blue}{50.60}]  \\\hline
-    \datasetadcp    & Many gaps     & -       & $100\%$ & (0; 17.35]                    \\\hline
-    \datasetelnino  & Many gaps     & -       & $100\%$ & (0; 50.52]                    \\\hline
-    \datasetsolar   & Few gaps      & $49\%$  & $51\%$  & [-0.25; 1.77]                 \\\hline
-    \datasethail    & No gaps       & $100\%$ & -       & [-0.04; 0)                    \\\hline
-    \datasettornado & No gaps       & $100\%$ & -       & [\textcolor{red}{-0.29}; 0)   \\\hline
-    \datasetwind    & No gaps       & $100\%$ & -       & [-0.12; 0)                    \\\hline
+    \datasetirkis   & Many gaps     & 100 & (0; 36.88]                    \\\hline
+    \datasetsst     & Many gaps     & 100 & (0; \textcolor{blue}{50.60}]  \\\hline
+    \datasetadcp    & Many gaps     & 100 & (0; 17.35]                    \\\hline
+    \datasetelnino  & Many gaps     & 100 & (0; 50.52]                    \\\hline
+    \datasetsolar   & Few gaps      & 51  & [-0.25; 1.77]                 \\\hline
+    \datasethail    & No gaps       & 0   & [-0.04; 0)                    \\\hline
+    \datasettornado & No gaps       & 0   & [\textcolor{red}{-0.29}; 0)   \\\hline
+    \datasetwind    & No gaps       & 0   & [-0.12; 0)                    \\\hline
     \toprule[0.1mm]
     \end{tabular}
-    \caption{Relative performance of the $c_\NOmaskalgo$ and $c_\maskalgo$ coders. In the last column we highlighted the maximum relative difference values for \cmaskalgo \ (blue) and \cNOmaskalgo \ (red).} %\ref{tabla:rend}.}
+    \caption{Relative performance of $a_\maskalgo$ and $a_\NOmaskalgo$ for each $a \in A$. In the last column we highlight the maximum (blue) and minimum (red) values of equation~(\ref{eq:relative-difference-apply}).}
     \label{tabla:rendimiento-relativ-NM-M}
 \end{center}
 \end{table}

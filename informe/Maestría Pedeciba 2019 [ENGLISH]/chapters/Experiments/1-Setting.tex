@@ -1,0 +1,59 @@
+\section{Experimental Setting}
+\label{experiments:experiments}
+
+
+We evaluate the compression performance of all the coding algorithms presented in Chapter~\ref{coders} on the datasets described in Chapter~\ref{datasets}. For each algorithm we test both the masking and the non-masking mode (except for $\coderBase$, \textit{CoderFR} and \textit{CoderSF}, which only operate in non-masking mode).
+
+
+We also test several combinations of algorithm parameters. Specifically, for the algorithms that admit a window size parameter $w$ (every algorithm except $\coderBase$ and \textit{CoderSF}), we test all the values of $w$ in the set $W = \{4, 8, 16, 32, 64, 128, 256\}$. For the encoders that admit a lossy compression mode with a threshold parameter $e$ (every encoder except $\coderBase$), we test all the values of $e$ in the set $E= \{1, 3, 5, 10, 15, 20, 30\}$, where each threshold is expressed as a percentage fraction of the standard deviation of the data type being coded. For example, for a certain data type with a standard deviation of 20, taking $e=10$ implies that the lossy compression allows for a maximum sample distortion of 2.
+
+
+\vspace{+5pt}
+\begin{defcion}
+We refer to a specific combination of a coding algorithm and its parameter values as a \textit{coding algorithm instance (CAI)}. We define \textit{CI} as the set of all the CAIs obtained by combining each of the algorithms presented in Chapter~\ref{coders} with the parameter values (from $W$ and $E$) which are suitable for that algorithm.
+\end{defcion}
+
+
+We assess the compression performance of a CAI mainly through the compression ratio, which we define next. For that definition, we recall that $\coderBase$ is a trivial encoder that serves as a base ground for compression performance comparison.
+
+
+\clearpage
+
+
+\begin{defcion}
+Let $f$ be a file and let $z$ be a data type of a certain dataset introduced in Chapter~\ref{datasets}. We define $f_z$ as the subset of data of type $z$ from file $f$.
+\end{defcion}
+
+
+\vspace{+2pt}
+\begin{defcion}
+The \textit{compression ratio (CR)} of a CAI $\algo \in \ca$ for the data of type $z$ of a certain file $f$ is given by
+\vspace{-5pt}
+\begin{equation}
+\label{eq:compression-rate}
+\tasacompresion(\algo, f_z) = 100\times\frac{|\algo(f_z)|}{|\coderBase(f_z)|},
+\end{equation}
+where $|\algo(f_z)|$ and $|\coderBase(f_z)|$ are the sizes of the resulting files obtained when coding $f_z$ with $\algo$ and $\coderBase$, respectively.
+\end{defcion}
+
+
+The performance of $\algo$ improves as $|\algo(f_z)|$ decreases. Thus, our main goals are to analyze which CAIs minimize equation (\ref{eq:compression-rate}) for the different data types, and to study how do the coding algorithms and the values of their parameters influence the result of this equation.
+
+
+To compare the compression performance between a pair of CAIs we calculate the relative difference, which we define next. In general, it only makes sense to compare CAIs that have the same threshold parameter $e$.
+
+
+\vspace{+5pt}
+\begin{defcion}
+The \textit{relative difference (RD)} between a pair of CAIs $\algo_1, \algo_2 \in {\ca}$ for the data of type $z$ of a certain file $f$ is given by
+\vspace{-5pt}
+\begin{equation}
+\label{eq:relative-difference}
+\difrelativa(\algo_1, \algo_2, f_z)  =
+100\times\frac{|\algo_2 (f_z)| - |\algo_1 (f_z)|}{ |\algo_2 (f_z)| },
+\end{equation}
+where $|\algo_1(f_z)|$ and $|\algo_2(f_z)|$ are the sizes of the resulting files obtained when coding $f_z$ with $\algo_1$ and $\algo_2$, respectively. 
+\end{defcion}
+
+
+$\algo_1$ has a better performance than $\algo_2$ when the result of equation (\ref{eq:relative-difference}) is a positive value. As said value increases, the relative performance of $\algo_1$ with respect to $\algo_2$ improves.
