@@ -18,11 +18,11 @@ PATH = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/script
 #
 
 # PDFS1(PATH + '3.2/', False).create_pdfs()
-# PDFS1(PATH + '3.2/', True).create_pdfs()
+PDFS1(PATH + '3.2/', True).create_pdfs()
 
 #
 # 3.3 Mask Coders Performance
 #
 
-ProcessResults(True, PATH + '3.3/', False).run()
-ProcessResults(True, PATH + '3.3/', True).run()
+# ProcessResults(True, PATH + '3.3/', False).run()
+# ProcessResults(True, PATH + '3.3/', True).run()

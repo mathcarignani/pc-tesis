@@ -1,6 +1,7 @@
 import sys
 sys.path.append('.')
 
+from matplotlib.patches import Ellipse
 from scripts.compress.experiments_utils import ExperimentsUtils
 from scripts.informe.plot.plot_constants import PlotConstants
 from scripts.informe.plot.plot_utils import PlotUtils
@@ -35,9 +36,19 @@ class RelativeDifferencePlot(CommonPlot):
         # scatter plot
         x_axis = list(xrange(len(self.values)))
         colors = [self.get_color_code(item) for item in self.values]
-        ax.scatter(x=x_axis, y=self.values, c=colors)
+        ax.scatter(x=x_axis, y=self.values, c=colors, marker='x')
         ax.grid(b=True, color=PlotConstants.COLOR_SILVER)
         ax.set_axisbelow(True)
+        ax.legend()
+
+        # Add circle around the max and min value
+        maximum, minimum = max(self.values), min(self.values)
+        if maximum > 50.59:
+            circle = Ellipse((7, maximum), 1, 3.5, color=PlotConstants.COLOR_LIGHT_BLUE, fill=False)
+            ax.add_artist(circle)
+        elif min(self.values) < -0.28:
+            circle = Ellipse((7, minimum), 1, 0.02, color=PlotConstants.COLOR_RED, fill=False)
+            ax.add_artist(circle)
 
         CommonPlot.set_lim(ax, ymin, ymax)
         self._labels(ax, extra)
@@ -59,11 +70,11 @@ class RelativeDifferencePlot(CommonPlot):
 
     @staticmethod
     def get_color_code(value):
-        color = PlotConstants.COLOR_GRAY
-        if value > 50.59:
-            color = PlotConstants.COLOR_LIGHT_BLUE
-        elif value < -0.28:
-            color = PlotConstants.COLOR_RED
+        color = PlotConstants.COLOR_BLACK
+        # if value > 50.59:
+        #     color = PlotConstants.COLOR_LIGHT_BLUE
+        # elif value < -0.28:
+        #     color = PlotConstants.COLOR_RED
         return color
 
     def print_values(self):

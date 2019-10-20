@@ -55,11 +55,14 @@ class CompressionRatioPlot(CommonPlot):
         if len(self.values0) > 0:
             colors0, colors3 = self.generate_colors()
             zorders0, zorders3 = self.__generate_zorders()
-            ax.scatter(x=x_axis, y=self.values0, c=colors0, zorder=zorders0)
-            ax.scatter(x=x_axis, y=self.values3, c=colors3, zorder=zorders3)
+            label0, label3 = r'$a_{NM}$', r'$a_M$'
+            ax.scatter(x=x_axis, y=self.values0, c=colors0, zorder=zorders0, marker='x', label=label0)
+            ax.scatter(x=x_axis, y=self.values3, c=colors3, zorder=zorders3, marker='x', label=label3)
         else:
             ax.scatter(x=x_axis, y=self.values3, c=self.value3_color)
 
+        ax.legend(loc='upper right', bbox_to_anchor=(0.5, 0., 0.48, 0.95), fontsize='small', scatterpoints=1,
+                  handlelength=0.5)  # labelspacing=0.5, borderpad=0.7
         ax.grid(b=True, color=PlotConstants.COLOR_SILVER)
         ax.set_axisbelow(True)
 
