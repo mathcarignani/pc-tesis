@@ -17,13 +17,14 @@ PATH = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/script
 #
 
 # PDFS1(PATH + '3.2/', False).create_pdfs()
-PDFS1(PATH + '3.2/', True).create_pdfs()
+# PDFS1(PATH + '3.2/', True).create_pdfs()
 
 
 #
 # 3.3 Window Size Parameter
 #
-PDFS2(PATH + '3.3/').create_pdfs()
+PDFS2(PATH + '3.3/', False).create_pdfs()
+PDFS2(PATH + '3.3/', True).create_pdfs()
 
 
 
