@@ -23,8 +23,9 @@ PATH = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/script
 #
 # 3.3 Window Size Parameter
 #
-PDFS2(PATH + '3.3/', False).create_pdfs()
-PDFS2(PATH + '3.3/', True).create_pdfs()
+# PDFS2(PATH + '3.3/', False).create_pdfs()  # LOCAL
+# PDFS2(PATH + '3.3/', True).create_pdfs()  # GLOBAL
+PDFS3(PATH + '3.3/').create_pdfs()  # LOCAL (BEST LOCAL WINDOW VS. BEST GLOBAL WINDOW)
 
 
 

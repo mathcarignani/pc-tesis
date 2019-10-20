@@ -63,6 +63,14 @@ class ExperimentsUtils(object):
         return filenames
 
     @staticmethod
+    def datasets_with_multiple_files():
+        result = []
+        for name in ExperimentsUtils.DATASET_NAMES:
+            if len(ExperimentsUtils.dataset_csv_filenames(name)) > 1:
+                result.append(name)
+        return result
+
+    @staticmethod
     def dataset_csv_files_count(dataset_name):
         return len(ExperimentsUtils.dataset_csv_filenames(dataset_name))
 

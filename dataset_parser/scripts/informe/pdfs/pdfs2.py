@@ -6,7 +6,6 @@ from matplotlib.backends.backend_pdf import PdfPages
 from scripts.compress.experiments_utils import ExperimentsUtils
 from scripts.informe.results_parsing.results_reader import ResultsReader
 from scripts.informe.results_parsing.results_to_dataframe import ResultsToDataframe
-from scripts.informe.pandas_utils.pandas_methods import PandasMethods
 from scripts.informe.pandas_utils.pandas_utils import PandasUtils
 from scripts.informe.pdfs.pdf_page import PdfPage
 
@@ -49,11 +48,9 @@ class PDFS2(object):
     def __init__(self, path, global_mode=True, datasets_names=None):
         self.global_mode = global_mode
         if self.global_mode:
-            # self.df_0 = ResultsToDataframe(ResultsReader('global', 0)).create_full_df()
             self.df_3 = ResultsToDataframe(ResultsReader('global', 3)).create_full_df()
             self.path = path + 'global/'
         else:
-            # self.df_0 = ResultsToDataframe(ResultsReader('raw', 0)).create_full_df()
             self.df_3 = ResultsToDataframe(ResultsReader('raw', 3)).create_full_df()
             self.path = path + 'local/'
 
