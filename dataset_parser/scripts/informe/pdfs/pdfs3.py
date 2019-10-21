@@ -47,8 +47,9 @@ class PDFS3(object):
     #               + window size
     #               + stats
     def __init__(self, path, datasets_names=None):
+        self.df_3_local_1 = ResultsToDataframe(ResultsReader('raw', 3)).create_full_df()  # local with best local window
+        self.df_3_local_2 = ResultsToDataframe(ResultsReader('raw', 3)).create_full_df()  # local with best global window
         self.df_3_global = ResultsToDataframe(ResultsReader('global', 3)).create_full_df()
-        self.df_3_local = ResultsToDataframe(ResultsReader('raw', 3)).create_full_df()
         self.path = path + 'window/'
 
         self.dataset_names = datasets_names or ExperimentsUtils.datasets_with_multiple_files()
@@ -59,6 +60,7 @@ class PDFS3(object):
         self.filename = None
         self.pdf = None
         self.col_index = None
+        self.pd_utils_3_global = None
 
     def create_pdfs(self):
         for dataset_id, self.dataset_name in enumerate(self.dataset_names):
@@ -69,24 +71,45 @@ class PDFS3(object):
     def created_pdf_for_dataset(self):
         pdf_name = self.path + str(self.dataset_id) + "-" + self.dataset_name + ".pdf"
         with PdfPages(pdf_name) as self.pdf:
-            dataset_filenames = ExperimentsUtils.dataset_csv_filenames(self.dataset_name)
+            self.pd_utils_3_global = PandasUtils(self.dataset_name, 'Global', self.df_3_global, 3)
 
+            dataset_filenames = ExperimentsUtils.dataset_csv_filenames(self.dataset_name)
             for self.filename in dataset_filenames:
                 print self.filename
                 self.create_pdf_pages()
 
     def create_pdf_pages(self):
         # create panda_utils
-        # panda_utils_3_global = PandasUtils(self.dataset_name, self.filename, self.df_3_global, 0)
-
-        panda_utils_3_local = PandasUtils(self.dataset_name, self.filename, self.df_3_local, 3)
-        panda_utils_3_global = PandasUtils(self.dataset_name, self.filename, self.df_3_local, 3)
+        pd_utils_3_local_1 = PandasUtils(self.dataset_name, self.filename, self.df_3_local_1, 3)
+        pd_utils_3_local_2 = PandasUtils(self.dataset_name, self.filename, self.df_3_local_2, 3)
 
         for self.col_index in range(1, ExperimentsUtils.get_dataset_data_columns_count(self.dataset_name) + 1):
-            self.create_pdf_page(panda_utils_3_global, panda_utils_3_local)
+            mod_pd_utils_3_local_2 = self.set_global_window(pd_utils_3_local_2)
+            self.create_pdf_page(pd_utils_3_local_1, mod_pd_utils_3_local_2)
+            exit(1)
 
-    def create_pdf_page(self, panda_utils_0, panda_utils_3):
-        pdf_page = PdfPage(panda_utils_0, panda_utils_3, self.filename, self.col_index, self.FIGSIZE_H, self.FIGSIZE_V, self.PLOT_OPTIONS)
+    #
+    # In the local results, consider the best global window instead of the best local window
+    #
+    def set_global_window(self, pd_utils_3_local_2):
+        new_df = pd_utils_3_local_2.df
+
+        for coder_name in self.CODERS_ARRAY:
+            print coder_name
+            for threshold in ExperimentsUtils.THRESHOLDS:
+                # print threshold
+                best_global_window = self.pd_utils_3_global.min_value_for_threshold(coder_name, self.col_index, threshold)['window']
+                best_local_window = pd_utils_3_local_2.min_value_for_threshold(coder_name, self.col_index, threshold)['window']
+                if best_global_window != best_local_window:
+                    print str(threshold) + " - GLOBAL = " + str(best_global_window) + " - LOCAL = " + str(best_local_window)
+                    # remove every threshold value other than the one that uses the best global window
+                    index_names = new_df[(new_df['coder'] == coder_name) & (new_df['threshold'] == threshold) & (new_df['window'] != best_global_window)].index
+                    new_df.drop(index_names, inplace=True)
+        mod_pd_utils_3_local_2 = PandasUtils(self.dataset_name, self.filename, new_df, 3, False)
+        return mod_pd_utils_3_local_2
+
+    def create_pdf_page(self, pd_utils_3_local_1, pd_utils_3_local_2):
+        pdf_page = PdfPage(pd_utils_3_local_1, pd_utils_3_local_2, self.filename, self.col_index, self.FIGSIZE_H, self.FIGSIZE_V, self.PLOT_OPTIONS)
         fig, plt = pdf_page.create(self.CODERS_ARRAY, self.PLOTS_ARRAY, self.PLOTS_MATRIX)
         plt.subplots_adjust(wspace=PDFS3.WSPACE, hspace=PDFS3.HSPACE)
         # plt.show(); exit(0) # uncomment to show first page

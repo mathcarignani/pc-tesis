@@ -12,13 +12,14 @@ class PandasUtils(object):
     FIXED_ROWS = ResultsToDataframe.KEY_TO_INDEX.keys()
     MAX_DIFF = 0.009
 
-    def __init__(self, dataset_name, filename, df, mask_mode):
+    def __init__(self, dataset_name, filename, df, mask_mode, check=True):
         assert(mask_mode in [0, 3])
 
         self.df = PandasMethods.filename_df(df, filename, dataset_name)
         self.mask_mode = mask_mode
         self.data_columns_count = (len(self.df.columns) - len(PandasUtils.FIXED_ROWS)) / 2
-        PandasUtilsCheck(self).check_df(dataset_name)
+        if check:
+            PandasUtilsCheck(self).check_df(dataset_name)
         self.__calculate_percentage()
 
     def __calculate_percentage(self):
