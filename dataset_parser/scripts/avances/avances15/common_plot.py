@@ -22,10 +22,10 @@ class CommonPlot(object):
         else:  # value == 0
             return Plotter2Constants.VALUE_SAME
 
-    def generate_colors(self):
+    def generate_colors(self, can_be_equal=True):
         colors0, colors3 = [], []
         for value0, value3 in zip(self.values0, self.values3):
-            if value0 == value3:
+            if can_be_equal and value0 == value3:
                 colors0.append(Plotter2Constants.VALUE_SAME)
                 colors3.append(Plotter2Constants.VALUE_SAME)
             else:

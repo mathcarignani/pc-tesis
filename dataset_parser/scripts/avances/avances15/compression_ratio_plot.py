@@ -53,9 +53,9 @@ class CompressionRatioPlot(CommonPlot):
         # scatter plot
         x_axis = list(xrange(len(self.values3)))
         if len(self.values0) > 0:
-            colors0, colors3 = self.generate_colors()
+            colors0, colors3 = self.generate_colors(False)
             zorders0, zorders3 = self.__generate_zorders()
-            label0, label3 = r'$a_{NM}$', r'$a_M$'
+            label0, label3 = self.plot_options and self.plot_options.get('labels') or [r'$a_{NM}$', r'$a_M$']
             ax.scatter(x=x_axis, y=self.values0, c=colors0, zorder=zorders0, marker='x', label=label0)
             ax.scatter(x=x_axis, y=self.values3, c=colors3, zorder=zorders3, marker='x', label=label3)
         else:

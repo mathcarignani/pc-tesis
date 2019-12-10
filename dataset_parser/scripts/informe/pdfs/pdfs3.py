@@ -27,11 +27,11 @@ class PDFS3(object):
         [['CoderPWLH', 'relative'],    ['CoderPWLHInt', 'relative'],    ['CoderGAMPSLimit', 'relative']],
         [['CoderPWLH', 'window'],      ['CoderPWLHInt', 'window'],      ['CoderGAMPSLimit', 'window']],
 
-        [[None, 'relative_stats'],     [None, 'window_stats']]
+        [[None, 'relative_stats'],     [None, 'window_stats']]  # TODO: comment after debugging
     ]
     PLOT_OPTIONS = {
-        'compression': {'title': True},
-        'relative': {'title': False},
+        'compression': {'title': True, 'labels': [r'$local$', r'$global$']},
+        'relative': {'title': False, 'check_never_negative': True},
         'window': None,
         'relative_stats': None,
         'window_stats': None
@@ -85,7 +85,8 @@ class PDFS3(object):
 
         for self.col_index in range(1, ExperimentsUtils.get_dataset_data_columns_count(self.dataset_name) + 1):
             mod_pd_utils_3_local_2 = self.set_global_window(pd_utils_3_local_2)
-            self.create_pdf_page(pd_utils_3_local_1, mod_pd_utils_3_local_2)
+            # TODO: change order to make Relative Difference <= 0
+            self.create_pdf_page(mod_pd_utils_3_local_2, pd_utils_3_local_1)
             exit(1)
 
     #

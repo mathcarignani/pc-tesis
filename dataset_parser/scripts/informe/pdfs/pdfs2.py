@@ -30,8 +30,8 @@ class PDFS2(object):
         [[None, 'window_stats']]
     ]
     PLOT_OPTIONS = {
-        'compression': {'title': True},
-        'relative': {'title': False},
+        'compression': {'title': True, 'labels': [r'$a_{NM}$', r'$a_M$']},
+        'relative': {'title': False, 'add_min_max_circles': True},
         'window': None,
         'relative_stats': None,
         'window_stats': None

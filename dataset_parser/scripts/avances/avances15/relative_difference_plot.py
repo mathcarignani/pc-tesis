@@ -33,15 +33,27 @@ class RelativeDifferencePlot(CommonPlot):
     def plot(self, ax, ymin, ymax, extra):
         # self.print_values()
 
+        if self.plot_options and self.plot_options.get('check_never_negative'):
+            assert(min(self.values) >= 0)
+
         # scatter plot
         x_axis = list(xrange(len(self.values)))
-        colors = [self.get_color_code(item) for item in self.values]
+        colors = [self.get_color_code(_) for _ in self.values]
         ax.scatter(x=x_axis, y=self.values, c=colors, marker='x')
         ax.grid(b=True, color=PlotConstants.COLOR_SILVER)
         ax.set_axisbelow(True)
         ax.legend()
 
-        # Add circle around the max and min value
+        if self.plot_options and self.plot_options.get('add_min_max_circles'):
+            self._add_min_max_circles(ax)
+
+        CommonPlot.set_lim(ax, ymin, ymax)
+        self._labels(ax, extra)
+
+    #
+    # This method is used to make a circle between the max and min absulte
+    #
+    def _add_min_max_circles(self, ax):
         maximum, minimum = max(self.values), min(self.values)
         if maximum > 50.59:
             circle = Ellipse((7, maximum), 1, 3.5, color=PlotConstants.COLOR_LIGHT_BLUE, fill=False)
@@ -49,9 +61,6 @@ class RelativeDifferencePlot(CommonPlot):
         elif min(self.values) < -0.28:
             circle = Ellipse((7, minimum), 1, 0.02, color=PlotConstants.COLOR_RED, fill=False)
             ax.add_artist(circle)
-
-        CommonPlot.set_lim(ax, ymin, ymax)
-        self._labels(ax, extra)
 
     def _labels(self, ax, extra):
         if not(self.plot_options['title']):
@@ -69,13 +78,8 @@ class RelativeDifferencePlot(CommonPlot):
         PlotUtils.hide_ticks(ax)
 
     @staticmethod
-    def get_color_code(value):
-        color = PlotConstants.COLOR_BLACK
-        # if value > 50.59:
-        #     color = PlotConstants.COLOR_LIGHT_BLUE
-        # elif value < -0.28:
-        #     color = PlotConstants.COLOR_RED
-        return color
+    def get_color_code(_):
+        return PlotConstants.COLOR_BLACK
 
     def print_values(self):
         print self.algorithm + " Relative Difference"
