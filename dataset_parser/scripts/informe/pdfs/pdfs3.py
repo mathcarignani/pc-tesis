@@ -19,22 +19,22 @@ class PDFS3(object):
     CODERS_ARRAY = ['CoderPCA', 'CoderAPCA', 'CoderCA', 'CoderPWLH', 'CoderPWLHInt', 'CoderGAMPSLimit']
     PLOTS_ARRAY = ['compression', 'relative', 'window', 'relative_stats', 'window_stats']
     PLOTS_MATRIX = [
+        [['CoderPCA', 'window'],       ['CoderAPCA', 'window'],         ['CoderCA', 'window']],
         [['CoderPCA', 'compression'],  ['CoderAPCA', 'compression'],    ['CoderCA', 'compression']],
         [['CoderPCA', 'relative'],     ['CoderAPCA', 'relative'],       ['CoderCA', 'relative']],
-        [['CoderPCA', 'window'],       ['CoderAPCA', 'window'],         ['CoderCA', 'window']],
 
+        [['CoderPWLH', 'window'],      ['CoderPWLHInt', 'window'],      ['CoderGAMPSLimit', 'window']],
         [['CoderPWLH', 'compression'], ['CoderPWLHInt', 'compression'], ['CoderGAMPSLimit', 'compression']],
         [['CoderPWLH', 'relative'],    ['CoderPWLHInt', 'relative'],    ['CoderGAMPSLimit', 'relative']],
-        [['CoderPWLH', 'window'],      ['CoderPWLHInt', 'window'],      ['CoderGAMPSLimit', 'window']],
 
-        [[None, 'relative_stats'],     [None, 'window_stats']]  # TODO: comment after debugging
+        # [[None, 'relative_stats'],     [None, 'window_stats']]  # TODO: comment after debugging
     ]
     PLOT_OPTIONS = {
-        'compression': {'title': True, 'labels': [r'$local$', r'$global$']},
+        'window': {'title': True, 'labels': [r'$global$', r'$local$']},
+        'compression': {'title': False, 'labels': [r'$global$', r'$local$']},
         'relative': {'title': False, 'check_never_negative': True},
-        'window': None,
-        'relative_stats': None,
-        'window_stats': None
+        'relative_stats': {},
+        'window_stats': {}
     }
 
     # For each dataset:
@@ -87,7 +87,7 @@ class PDFS3(object):
             mod_pd_utils_3_local_2 = self.set_global_window(pd_utils_3_local_2)
             # TODO: change order to make Relative Difference <= 0
             self.create_pdf_page(mod_pd_utils_3_local_2, pd_utils_3_local_1)
-            exit(1)
+            # exit(1)
 
     #
     # In the local results, consider the best global window instead of the best local window

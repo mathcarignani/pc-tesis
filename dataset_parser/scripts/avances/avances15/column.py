@@ -46,15 +46,15 @@ class Column(object):
         # return [self.total_bits_plot, self.compression_ratio_plot, self.relative_difference_plot, self.windows_plot]
         return [self.compression_ratio_plot, self.relative_difference_plot, self.windows_plot]
 
-    def plot(self, row_i, ax, extra):
+    def plot(self, row_i, ax, extra_options={}):
         # if row_i == 0:
         #     self.total_bits_plot.plot(ax, self.y_min_bits, self.y_max_bits, extra)
         if row_i == 0:
-            self.compression_ratio_plot.plot(ax, self.y_min_ratio, self.y_max_ratio, extra)
+            self.compression_ratio_plot.plot(ax, self.y_min_ratio, self.y_max_ratio, extra_options)
         elif row_i == 1:
-            self.relative_difference_plot.plot(ax, self.y_min_rel, self.y_max_rel, extra)
+            self.relative_difference_plot.plot(ax, self.y_min_rel, self.y_max_rel, extra_options)
         else:
-            self.windows_plot.plot(ax, extra)
+            self.windows_plot.plot(ax, extra_options)
 
     def print_values(self):
         print "Column print_values"

@@ -22,9 +22,9 @@ matplotlib.rcParams['mathtext.bf'] = 'Bitstream Vera Sans'  # 'Bitstream Vera Sa
 
 
 class CompressionRatioPlot(CommonPlot):
-    def __init__(self, algorithm, plot_options=None):
+    def __init__(self, algorithm, options={}):
         self.algorithm = algorithm
-        self.plot_options = plot_options
+        self.options = options
         self.values0 = []
         self.values3 = []
         self.basic_value0 = None
@@ -47,15 +47,16 @@ class CompressionRatioPlot(CommonPlot):
     def min_max(self):
         return [min([min(self.values0), min(self.values3)]), max([max(self.values0), max(self.values3)])]
 
-    def plot(self, ax, ymin, ymax, extra):
+    def plot(self, ax, ymin, ymax, extra_options={}):
         # self.print_values()
+        extra_options.update(self.options); self.options = extra_options
 
         # scatter plot
         x_axis = list(xrange(len(self.values3)))
         if len(self.values0) > 0:
             colors0, colors3 = self.generate_colors(False)
             zorders0, zorders3 = self.__generate_zorders()
-            label0, label3 = self.plot_options and self.plot_options.get('labels') or [r'$a_{NM}$', r'$a_M$']
+            label0, label3 = self.options.get('labels') or [r'$a_{NM}$', r'$a_M$']  # TODO: move to pdfsX.py
             ax.scatter(x=x_axis, y=self.values0, c=colors0, zorder=zorders0, marker='x', label=label0)
             ax.scatter(x=x_axis, y=self.values3, c=colors3, zorder=zorders3, marker='x', label=label3)
         else:
@@ -70,15 +71,14 @@ class CompressionRatioPlot(CommonPlot):
             PlotUtils.horizontal_line(ax, 100, PlotConstants.COLOR_SILVER)
 
         CommonPlot.set_lim(ax, ymin, ymax)
-        self._labels(ax, extra)
+        self._labels(ax, self.options)
 
-    def _labels(self, ax, extra):
-        # TODO: improve
-        if self.plot_options['title']:
+    def _labels(self, ax, options):
+        if options['title']:
             ax.title.set_text(self.algorithm)
-        if not extra.get('last_row'):
+        if not options.get('last_row'):
             ax.set_xticklabels([])
-        if extra.get('first_column') or extra.get('show_ylabel'):
+        if options.get('first_column') or options.get('show_ylabel'):
             ax.set_ylabel(PlotConstants.COMPRESSION_RATIO)
             self.format_x_ticks(ax)
         else:
@@ -93,7 +93,7 @@ class CompressionRatioPlot(CommonPlot):
     def __generate_zorders(self):
         zorders0 = []
         for index, value0 in enumerate(self.values0):
-            zorder0 = 1 if value0 > self.values3[index] else -1
+            zorder0 = 1 if value0 >= self.values3[index] else -1
             zorders0.append(zorder0)
         zorders3 = [-val for val in zorders0]
         return zorders0, zorders3
@@ -120,7 +120,7 @@ class CompressionRatioPlot(CommonPlot):
     ##############################################
 
     @staticmethod
-    def create_plots(coders_array, panda_utils_0, panda_utils_3, col_index, plot_options=None):
+    def create_plots(coders_array, panda_utils_0, panda_utils_3, col_index, options={}):
         plots_obj = {}
         total_min, total_max = sys.maxint, -sys.maxint
         for coder_name in coders_array:
@@ -136,7 +136,7 @@ class CompressionRatioPlot(CommonPlot):
             total_min = min03 if min03 < total_min else total_min
             total_max = max03 if max03 > total_max else total_max
 
-            plot_instance = CompressionRatioPlot(coder_name, plot_options)
+            plot_instance = CompressionRatioPlot(coder_name, options)
             plot_instance.set_values(values0, values3)
             plots_obj[coder_name] = plot_instance
 
@@ -166,7 +166,7 @@ class CompressionRatioPlot(CommonPlot):
         self.ymin = ymin
         self.ymax = ymax
 
-    def plot2(self, ax, extra):
-        self.plot(ax, self.ymin, self.ymax, extra)
+    def plot2(self, ax, options):
+        self.plot(ax, self.ymin, self.ymax, options)
 
     ##############################################

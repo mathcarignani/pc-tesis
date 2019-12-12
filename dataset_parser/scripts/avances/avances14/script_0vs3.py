@@ -132,9 +132,9 @@ class PDFScript(object):
     #         for plotter in plotter3.compare_plotters_3():
     #             self.__plot_and_save(pdf, plotter)
 
-    def __pdf_name(self, extra):
-        print extra
-        return self.GRAPH_PATH + extra + str(self.dataset_id) + "-" + self.dataset_name + ".pdf"
+    def __pdf_name(self, extra_options=None):
+        print extra_options
+        return self.GRAPH_PATH + extra_options + str(self.dataset_id) + "-" + self.dataset_name + ".pdf"
 
     def __create_pdf1_iteration(self, pdf):
         plotter3 = Plotter3(self.dataset_name)

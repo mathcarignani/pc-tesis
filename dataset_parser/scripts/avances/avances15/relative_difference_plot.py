@@ -12,10 +12,10 @@ from scripts.avances.avances15.compression_ratio_plot import CompressionRatioPlo
 
 
 class RelativeDifferencePlot(CommonPlot):
-    def __init__(self, algorithm, value3_smaller, plot_options=None):
+    def __init__(self, algorithm, value3_smaller, options={}):
         self.algorithm = algorithm
         self.value3_smaller = value3_smaller
-        self.plot_options = plot_options
+        self.options = options
         self.values = []
         super(RelativeDifferencePlot, self).__init__()
 
@@ -30,10 +30,11 @@ class RelativeDifferencePlot(CommonPlot):
     def min_max(self):
         return [min(self.values), max(self.values)]
 
-    def plot(self, ax, ymin, ymax, extra):
+    def plot(self, ax, ymin, ymax, extra_options={}):
         # self.print_values()
+        extra_options.update(self.options); self.options = extra_options
 
-        if self.plot_options and self.plot_options.get('check_never_negative'):
+        if self.options.get('check_never_negative'):
             assert(min(self.values) >= 0)
 
         # scatter plot
@@ -44,11 +45,11 @@ class RelativeDifferencePlot(CommonPlot):
         ax.set_axisbelow(True)
         ax.legend()
 
-        if self.plot_options and self.plot_options.get('add_min_max_circles'):
+        if self.options.get('add_min_max_circles'):
             self._add_min_max_circles(ax)
 
         CommonPlot.set_lim(ax, ymin, ymax)
-        self._labels(ax, extra)
+        self._labels(ax, self.options)
 
     #
     # This method is used to make a circle between the max and min absulte
@@ -62,14 +63,14 @@ class RelativeDifferencePlot(CommonPlot):
             circle = Ellipse((7, minimum), 1, 0.02, color=PlotConstants.COLOR_RED, fill=False)
             ax.add_artist(circle)
 
-    def _labels(self, ax, extra):
-        if not(self.plot_options['title']):
+    def _labels(self, ax, options):
+        if not(options['title']):
             pass
-        elif extra.get('first_row') or extra.get('show_title'):
+        elif options.get('first_row') or options.get('show_title'):
             ax.title.set_text(self.algorithm)
-        if not extra.get('last_row'):
+        if not options.get('last_row'):
             ax.set_xticklabels([])
-        if extra.get('first_column') or extra.get('show_ylabel'):
+        if options.get('first_column') or options.get('show_ylabel'):
             ax.set_ylabel(PlotConstants.RELATIVE_DIFF)
         else:
             ax.set_yticklabels([])
@@ -112,7 +113,7 @@ class RelativeDifferencePlot(CommonPlot):
     ##############################################
 
     @staticmethod
-    def create_plots(coders_array, panda_utils_0, panda_utils_3, col_index, plot_options=None):
+    def create_plots(coders_array, panda_utils_0, panda_utils_3, col_index, options={}):
         plots_obj = {}
         total_min, total_max = sys.maxint, -sys.maxint
         for coder_name in coders_array:
@@ -120,7 +121,7 @@ class RelativeDifferencePlot(CommonPlot):
             values3, _, _ = CompressionRatioPlot.get_values(coder_name, col_index, panda_utils_3)
             assert(len(values0) == len(values3))
 
-            plot_instance = RelativeDifferencePlot(coder_name, True, plot_options)
+            plot_instance = RelativeDifferencePlot(coder_name, True, options)
             for index, value0 in enumerate(values0):
                 plot_instance.add_value(value0, values3[index])
             plot_instance.close()
@@ -141,7 +142,7 @@ class RelativeDifferencePlot(CommonPlot):
         self.ymin = ymin
         self.ymax = ymax
 
-    def plot2(self, ax, extra):
-        self.plot(ax, self.ymin, self.ymax, extra)
+    def plot2(self, ax, options):
+        self.plot(ax, self.ymin, self.ymax, options)
 
     ##############################################

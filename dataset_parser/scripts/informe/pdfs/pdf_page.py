@@ -30,9 +30,9 @@ class PdfPage(object):
     def create(self, coders_array, plots_array, plots_matrix):
         plots_obj = {}
         for plot_key in plots_array:
-            plot_options = self.plots_options and self.plots_options.get(plot_key)
+            options = self.plots_options and self.plots_options.get(plot_key)
             plot_klass = PdfPage.PLOT_MAPPER[plot_key]
-            plots = plot_klass.create_plots(coders_array, self.panda_utils_0, self.panda_utils_3, self.col_index, plot_options)
+            plots = plot_klass.create_plots(coders_array, self.panda_utils_0, self.panda_utils_3, self.col_index, options)
             plots_obj[plot_key] = plots
 
         self.__add_plots(plots_matrix, plots_obj)

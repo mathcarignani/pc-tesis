@@ -32,9 +32,9 @@ class PDFS1(object):
     PLOT_OPTIONS = {
         'compression': {'title': True},
         'relative': {'title': False},
-        'window': None,
-        'relative_stats': None,
-        'window_stats': None
+        'window': {},
+        'relative_stats': {},
+        'window_stats': {}
     }
 
     # For each dataset:

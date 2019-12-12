@@ -32,7 +32,7 @@ class TotalBitsPlot(CommonPlot):
     def min_max(self):
         return [min([min(self.values0), min(self.values3)]), max([max(self.values0), max(self.values3)])]
 
-    def plot(self, ax, ymin, ymax, extra):
+    def plot(self, ax, ymin, ymax, extra_options):
         # self.print_values()
 
         # scatter plot
@@ -48,11 +48,11 @@ class TotalBitsPlot(CommonPlot):
 
         RelativeDifferencePlot.set_lim(ax, ymin, ymax)
 
-        if extra['first_row']:
+        if extra_options['first_row']:
             ax.title.set_text(self.algorithm)
-        if not extra['last_row']:
+        if not extra_options['last_row']:
             ax.set_xticklabels([])
-        if extra['first_column']:
+        if extra_options['first_column']:
             ax.set_ylabel('Total Bits')
             self.format_x_ticks(ax)
         else:

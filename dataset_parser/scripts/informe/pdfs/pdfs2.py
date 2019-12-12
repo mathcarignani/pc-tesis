@@ -32,9 +32,9 @@ class PDFS2(object):
     PLOT_OPTIONS = {
         'compression': {'title': True, 'labels': [r'$a_{NM}$', r'$a_M$']},
         'relative': {'title': False, 'add_min_max_circles': True},
-        'window': None,
-        'relative_stats': None,
-        'window_stats': None
+        'window': {},
+        'relative_stats': {},
+        'window_stats': {}
     }
 
     # For each dataset:

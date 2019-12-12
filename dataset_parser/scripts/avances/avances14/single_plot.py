@@ -47,24 +47,24 @@ class SinglePlot(object):
         max_value = max([abs(value) for value in self.current_plot])  # 1.27
         return max_value * 1.1  # 1.397
 
-    def plot(self, ax, ylim, extra):
+    def plot(self, ax, ylim, extra_options={}):
         # scatter plot
         color = [self.__color_code(item) for item in self.current_plot]
         x_axis = list(xrange(len(self.current_plot)))
         ax.scatter(x=x_axis, y=self.current_plot, c=color)
         ax.grid(b=True, color=PlotConstants.COLOR_SILVER)
 
-        if extra['first_row']:
+        if extra_options['first_row']:
             # only write the algorithm name in the first row
             ax.title.set_text(self.algorithm)
 
-        if extra['last_row']:
+        if extra_options['last_row']:
             # only write window tick labels in the last row
             ax.set_xticklabels(self.__xticklabels())
         else:
             ax.set_xticklabels([])
 
-        if extra['first_column']:
+        if extra_options['first_column']:
             ax.set_ylabel('Relative Difference')
         else:
             ax.set_yticklabels([])
@@ -79,17 +79,17 @@ class SinglePlot(object):
         self.stats_box(ax, max(self.current_plot), avg, min(self.current_plot), PlotConstants.COLOR_WHITE)
 
     @classmethod
-    def plot_stats(cls, ax, ylim, error_threshold, values, extra):
+    def plot_stats(cls, ax, ylim, error_threshold, values, extra_options={}):
         ax.grid(b=True, color=PlotConstants.COLOR_SILVER)
 
-        if extra['first_row']:
+        if extra_options['first_row']:
             # only write 'STATS' in the first row
             ax.title.set_text("Threshold Stats")
 
         ax.set_xticklabels([])
         ax.set_yticklabels([])
 
-        if extra['last_column']:
+        if extra_options['last_column']:
             ax.yaxis.set_label_position("right")
             ax.set_ylabel('Error Thresold = {}%'.format(error_threshold))
 

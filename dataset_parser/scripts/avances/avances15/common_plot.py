@@ -6,8 +6,9 @@ from scripts.avances.avances15.plotter2_constants import Plotter2Constants
 
 class CommonPlot(object):
     def __init__(self):
-        self.value0_color = Plotter2Constants.VALUE0_COLOR
-        self.value3_color = Plotter2Constants.VALUE3_COLOR
+        # TODO: the following two values are exchanged
+        self.value0_color = Plotter2Constants.VALUE3_COLOR
+        self.value3_color = Plotter2Constants.VALUE0_COLOR
         self.additional_checks = False
 
     def set_colors(self, value0_color, value3_color):

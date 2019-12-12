@@ -19,13 +19,13 @@ class RowPlot(object):
         self.single_plot.check_windows()
         self.plots.append(self.single_plot)
 
-    def plot_stats(self, ax, ylim, extra):
+    def plot_stats(self, ax, ylim, extra_options={}):
         values = {
             'max': max(self.plot_values),
             'avg': MathUtils.average(self.plot_values),
             'min': min(self.plot_values)
         }
-        SinglePlot.plot_stats(ax, ylim, self.error_threshold, values, extra)
+        SinglePlot.plot_stats(ax, ylim, self.error_threshold, values, extra_options)
 
     def add_values(self, window, value0, value3, basic_value0):
         plot_value = SinglePlot.plot_value(value0, value3)
