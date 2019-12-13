@@ -39,6 +39,7 @@ class Plotter2(object):
         self.__plot_stats(fig)
         return fig, plt
 
+    # TODO: remove this method
     @staticmethod
     def __map_subplot(row_i, col_j):
         val = row_i*6 + col_j + 1

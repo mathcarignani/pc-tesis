@@ -31,26 +31,17 @@ class PDFS3(object):
     ]
     PLOT_OPTIONS = {
         'window': {'title': True, 'labels': [r'$global$', r'$local$']},
-        'compression': {'title': False, 'labels': [r'$global$', r'$local$']},
-        'relative': {'title': False, 'check_never_negative': True},
+        'compression': {'labels': [r'$global$', r'$local$']},
+        'relative': {'check_never_negative': True},
         'relative_stats': {},
         'window_stats': {}
     }
 
-    # For each dataset:
-    #   Create a pdf.
-    #   For each file in the dataset:
-    #       For each data type:
-    #           Add a pdf page with the following graphs:
-    #               + compression rate
-    #               + relative difference
-    #               + window size
-    #               + stats
     def __init__(self, path, datasets_names=None):
         self.df_3_local_1 = ResultsToDataframe(ResultsReader('raw', 3)).create_full_df()  # local with best local window
         self.df_3_local_2 = ResultsToDataframe(ResultsReader('raw', 3)).create_full_df()  # local with best global window
         self.df_3_global = ResultsToDataframe(ResultsReader('global', 3)).create_full_df()
-        self.path = path + 'window/'
+        self.path = path
 
         self.dataset_names = datasets_names or ExperimentsUtils.datasets_with_multiple_files()
 
@@ -66,9 +57,9 @@ class PDFS3(object):
         for dataset_id, self.dataset_name in enumerate(self.dataset_names):
             print self.dataset_name
             self.dataset_id = dataset_id + 1
-            self.created_pdf_for_dataset()
+            self.created_dataset_pdf_file()
 
-    def created_pdf_for_dataset(self):
+    def created_dataset_pdf_file(self):
         pdf_name = self.path + str(self.dataset_id) + "-" + self.dataset_name + ".pdf"
         with PdfPages(pdf_name) as self.pdf:
             self.pd_utils_3_global = PandasUtils(self.dataset_name, 'Global', self.df_3_global, 3)

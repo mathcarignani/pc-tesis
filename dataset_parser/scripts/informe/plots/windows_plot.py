@@ -4,8 +4,7 @@ sys.path.append('.')
 from scripts.compress.experiments_utils import ExperimentsUtils
 from scripts.informe.plot.plot_constants import PlotConstants
 from scripts.informe.plot.plot_utils import PlotUtils
-from scripts.avances.avances15.common_plot import CommonPlot
-from scripts.avances.avances15.plotter2_constants import Plotter2Constants
+from scripts.informe.plots.common_plot import CommonPlot
 
 
 class WindowsPlot(CommonPlot):
@@ -53,7 +52,7 @@ class WindowsPlot(CommonPlot):
         label0, label3 = self.options.get('labels')
         ax.scatter(x=x_axis_0, y=y_axis_0, c=self.value0_color, zorder=2, label=label0)  # global
         ax.scatter(x=x_axis_3, y=y_axis_3, c=self.value3_color, zorder=1, label=label3)
-        # ax.scatter(x=x_axis_same, y=y_axis_same, c=Plotter2Constants.VALUE_SAME)
+        # ax.scatter(x=x_axis_same, y=y_axis_same, c=PlotConstants.VALUE_SAME)
 
         ax.legend(loc='lower right', bbox_to_anchor=(0.5, 0., 0.48, 0.95), fontsize='small', scatterpoints=1,
                   handlelength=0.5)  # labelspacing=0.5, borderpad=0.7
@@ -64,20 +63,11 @@ class WindowsPlot(CommonPlot):
 
         self._labels(ax, self.options)
 
-        # ax.set_xticklabels([''] + ExperimentsUtils.THRESHOLDS)
-        # ax.set_xlabel(PlotConstants.ERROR_THRE)
-        PlotUtils.hide_ticks(ax)
-
     def _labels(self, ax, options):
-        if options['title']:
-            ax.title.set_text(self.algorithm)
-        if self.options.get('first_column') or self.options.get('show_ylabel'):
-            ax.set_ylabel(PlotConstants.WINDOW_SIZE)
-            ax.set_yticklabels([''] + ExperimentsUtils.WINDOWS)
-        else:
-            ax.set_yticklabels([])
-        if not options.get('last_row'):
-            ax.set_xticklabels([])
+        CommonPlot.label_title(ax, options, self.algorithm)
+        CommonPlot.label_y(ax, options, PlotConstants.WINDOW_SIZE, [''] + ExperimentsUtils.WINDOWS)
+        CommonPlot.label_x(ax, options, PlotConstants.ERROR_THRE, [''] + ExperimentsUtils.THRESHOLDS)
+        PlotUtils.hide_ticks(ax)
 
     def print_values(self):
         print self.algorithm + " Windows"

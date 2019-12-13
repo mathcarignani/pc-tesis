@@ -8,8 +8,7 @@ from scripts.compress.experiments_utils import ExperimentsUtils
 from scripts.informe.math_utils import MathUtils
 from scripts.informe.plot.plot_constants import PlotConstants
 from scripts.informe.plot.plot_utils import PlotUtils
-from scripts.avances.avances15.common_plot import CommonPlot
-from scripts.avances.avances15.plotter2_constants import Plotter2Constants
+from scripts.informe.plots.common_plot import CommonPlot
 from scripts.informe.results_parsing.results_to_dataframe import ResultsToDataframe
 
 # To make the latex math text look like the other text
@@ -56,7 +55,7 @@ class CompressionRatioPlot(CommonPlot):
         if len(self.values0) > 0:
             colors0, colors3 = self.generate_colors(False)
             zorders0, zorders3 = self.__generate_zorders()
-            label0, label3 = self.options.get('labels') or [r'$a_{NM}$', r'$a_M$']  # TODO: move to pdfsX.py
+            label0, label3 = self.options.get('labels')
             ax.scatter(x=x_axis, y=self.values0, c=colors0, zorder=zorders0, marker='x', label=label0)
             ax.scatter(x=x_axis, y=self.values3, c=colors3, zorder=zorders3, marker='x', label=label3)
         else:
@@ -74,15 +73,10 @@ class CompressionRatioPlot(CommonPlot):
         self._labels(ax, self.options)
 
     def _labels(self, ax, options):
-        if options['title']:
-            ax.title.set_text(self.algorithm)
-        if not options.get('last_row'):
-            ax.set_xticklabels([])
-        if options.get('first_column') or options.get('show_ylabel'):
-            ax.set_ylabel(PlotConstants.COMPRESSION_RATIO)
-            self.format_x_ticks(ax)
-        else:
-            ax.set_yticklabels([])
+        CommonPlot.label_title(ax, options, self.algorithm)
+        tick_labels = [format(label, ',.0f') for label in ax.get_yticks()]
+        CommonPlot.label_y(ax, options, PlotConstants.COMPRESSION_RATIO, tick_labels)
+        CommonPlot.label_x(ax, options, PlotConstants.ERROR_THRE, [''] + ExperimentsUtils.THRESHOLDS)
         PlotUtils.hide_ticks(ax)
 
     def print_values(self):
@@ -104,18 +98,13 @@ class CompressionRatioPlot(CommonPlot):
             assert(PlotUtils.sorted_dec(self.values3))
 
     @classmethod
-    def format_x_ticks(cls, ax):
-        ylabels = [format(label, ',.0f') for label in ax.get_yticks()]
-        ax.set_yticklabels(ylabels)
-
-    @classmethod
     def ylims(cls, total_min, total_max):
         assert(total_min > 0)
         assert(total_max > 0)
 
         diff = total_max - total_min
-        total_min = 0 if total_min > 0 else total_min - diff * Plotter2Constants.Y_DIFF
-        return total_min, total_max + diff * Plotter2Constants.Y_DIFF
+        total_min = 0 if total_min > 0 else total_min - diff * PlotConstants.Y_DIFF
+        return total_min, total_max + diff * PlotConstants.Y_DIFF
 
     ##############################################
 

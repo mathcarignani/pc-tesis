@@ -2,8 +2,7 @@ import sys
 sys.path.append('.')
 
 from scripts.informe.plot.plot_constants import PlotConstants
-from scripts.avances.avances15.common_plot import CommonPlot
-from scripts.avances.avances15.plotter2_constants import Plotter2Constants
+from scripts.informe.plots.common_plot import CommonPlot
 from scripts.informe.results_parsing.results_to_dataframe import ResultsToDataframe
 
 
@@ -42,7 +41,7 @@ class RelativeDifferenceStats(CommonPlot):
 
     def plot(self, ax):
         results = [self.best0_results, self.same_results, self.best3_results]
-        colors = [self.value0_color, Plotter2Constants.VALUE_SAME, self.value3_color]
+        colors = [self.value0_color, PlotConstants.VALUE_SAME, self.value3_color]
         self.plot_aux(ax, self.col_labels, zip(results, self.row_labels, colors))
 
     def plot_aux(self, ax, col_labels, zipped_values):
@@ -103,7 +102,7 @@ class WindowsStats(RelativeDifferenceStats):
 
     def plot(self, ax):
         results = [self.best3_results, self.same_results, self.best0_results]
-        colors = [self.value0_color, Plotter2Constants.VALUE_SAME, self.value3_color]
+        colors = [self.value0_color, PlotConstants.VALUE_SAME, self.value3_color]
         self.plot_aux(ax, self.col_labels, zip(results, self.row_labels, colors))
 
     @staticmethod

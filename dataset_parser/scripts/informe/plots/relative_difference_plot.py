@@ -6,9 +6,8 @@ from scripts.compress.experiments_utils import ExperimentsUtils
 from scripts.informe.plot.plot_constants import PlotConstants
 from scripts.informe.plot.plot_utils import PlotUtils
 from scripts.avances.avances14.single_plot import SinglePlot
-from scripts.avances.avances15.common_plot import CommonPlot
-from scripts.avances.avances15.plotter2_constants import Plotter2Constants
-from scripts.avances.avances15.compression_ratio_plot import CompressionRatioPlot
+from scripts.informe.plots.common_plot import CommonPlot
+from scripts.informe.plots.compression_ratio_plot import CompressionRatioPlot
 
 
 class RelativeDifferencePlot(CommonPlot):
@@ -52,30 +51,21 @@ class RelativeDifferencePlot(CommonPlot):
         self._labels(ax, self.options)
 
     #
-    # This method is used to make a circle between the max and min absulte
+    # This method is used to make a circle around the min/max values
     #
     def _add_min_max_circles(self, ax):
         maximum, minimum = max(self.values), min(self.values)
         if maximum > 50.59:
-            circle = Ellipse((7, maximum), 1, 3.5, color=PlotConstants.COLOR_LIGHT_BLUE, fill=False)
+            circle = Ellipse((7, maximum), 1, 3.5, color=PlotConstants.VALUE0_COLOR, fill=False)
             ax.add_artist(circle)
-        elif min(self.values) < -0.28:
-            circle = Ellipse((7, minimum), 1, 0.02, color=PlotConstants.COLOR_RED, fill=False)
+        if minimum < -0.28:
+            circle = Ellipse((7, minimum), 1, 0.02, color=PlotConstants.VALUE3_COLOR, fill=False)
             ax.add_artist(circle)
 
     def _labels(self, ax, options):
-        if not(options['title']):
-            pass
-        elif options.get('first_row') or options.get('show_title'):
-            ax.title.set_text(self.algorithm)
-        if not options.get('last_row'):
-            ax.set_xticklabels([])
-        if options.get('first_column') or options.get('show_ylabel'):
-            ax.set_ylabel(PlotConstants.RELATIVE_DIFF)
-        else:
-            ax.set_yticklabels([])
-        ax.set_xticklabels([''] + ExperimentsUtils.THRESHOLDS)
-        ax.set_xlabel(PlotConstants.ERROR_THRE)
+        CommonPlot.label_title(ax, options, self.algorithm)
+        CommonPlot.label_y(ax, options, PlotConstants.RELATIVE_DIFF)
+        CommonPlot.label_x(ax, options, PlotConstants.ERROR_THRE, [''] + ExperimentsUtils.THRESHOLDS)
         PlotUtils.hide_ticks(ax)
 
     @staticmethod
@@ -95,18 +85,18 @@ class RelativeDifferencePlot(CommonPlot):
     @classmethod
     def ylims(cls, total_min, total_max):
         if total_max > 0:
-            total_max *= 1 + Plotter2Constants.Y_DIFF
+            total_max *= 1 + PlotConstants.Y_DIFF
         elif total_max == 0:
-            total_max = Plotter2Constants.Y_DIFF
+            total_max = PlotConstants.Y_DIFF
         else:  # total_max < 0
-            total_max *= 1 - Plotter2Constants.Y_DIFF
+            total_max *= 1 - PlotConstants.Y_DIFF
 
         if total_min > 0:
-            total_min -= (total_max - total_min) * Plotter2Constants.Y_DIFF
+            total_min -= (total_max - total_min) * PlotConstants.Y_DIFF
         elif total_min == 0:
-            total_min = - Plotter2Constants.Y_DIFF
+            total_min = - PlotConstants.Y_DIFF
         else:  # total_min < 0
-            total_min *= 1 + Plotter2Constants.Y_DIFF
+            total_min *= 1 + PlotConstants.Y_DIFF
 
         return total_min, total_max
 

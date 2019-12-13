@@ -3,10 +3,10 @@ sys.path.append('.')
 
 import matplotlib.pyplot as plt
 
-from scripts.avances.avances15.compression_ratio_plot import CompressionRatioPlot
-from scripts.avances.avances15.relative_difference_plot import RelativeDifferencePlot
-from scripts.avances.avances15.windows_plot import WindowsPlot
-from scripts.avances.avances15.stats import RelativeDifferenceStats, WindowsStats
+from scripts.informe.plots.compression_ratio_plot import CompressionRatioPlot
+from scripts.informe.plots.relative_difference_plot import RelativeDifferencePlot
+from scripts.informe.plots.windows_plot import WindowsPlot
+from scripts.informe.plots.stats import RelativeDifferenceStats, WindowsStats
 from scripts.informe.plot.plot_utils import PlotUtils
 
 
@@ -19,7 +19,7 @@ class PdfPage(object):
         'window_stats': WindowsStats
     }
 
-    def __init__(self, panda_utils_0, panda_utils_3, filename, col_index, figsize_h, figsize_v, plots_options=None):
+    def __init__(self, panda_utils_0, panda_utils_3, filename, col_index, figsize_h, figsize_v, plots_options={}):
         self.panda_utils_0 = panda_utils_0
         self.panda_utils_3 = panda_utils_3
         self.filename = filename
@@ -30,7 +30,7 @@ class PdfPage(object):
     def create(self, coders_array, plots_array, plots_matrix):
         plots_obj = {}
         for plot_key in plots_array:
-            options = self.plots_options and self.plots_options.get(plot_key)
+            options = self.plots_options.get(plot_key) or {}
             plot_klass = PdfPage.PLOT_MAPPER[plot_key]
             plots = plot_klass.create_plots(coders_array, self.panda_utils_0, self.panda_utils_3, self.col_index, options)
             plots_obj[plot_key] = plots
@@ -54,10 +54,10 @@ class PdfPage(object):
         if coder_name is not None:
             plot_instance = plots_obj[plot_key][coder_name]
             extra = {
-                'show_title': row_index in [0, 3],
-                'last_row': row_index == (self.total_rows - 1),
+                # 'show_title': row_index in [0, 3],
+                # 'last_row': row_index == (self.total_rows - 1),
                 'show_ylabel': col_index == 0,
-                'last_column': col_index == (self.total_columns - 2)
+                # 'last_column': col_index == (self.total_columns - 2)
             }
             plot_instance.plot2(ax, extra)
         else:

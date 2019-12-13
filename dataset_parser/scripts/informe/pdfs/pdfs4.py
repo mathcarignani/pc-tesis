@@ -26,15 +26,6 @@ class PDFS4(object):
         [['CoderPWLHInt', 'window'],      ['CoderGAMPSLimit', 'window'],      ['CoderFR', 'window']]
     ]
 
-    # For each dataset:
-    #   Create a pdf.
-    #   For each file in the dataset:
-    #       For each data type:
-    #           Add a pdf page with the following graphs:
-    #               + compression rate
-    #               + relative difference
-    #               + window size
-    #               + stats
     def __init__(self, datasets_names=None):
         df_0 = ResultsToDataframe(ResultsReader('global', 0)).create_full_df()
         self.df_3 = ResultsToDataframe(ResultsReader('global', 3)).create_full_df()

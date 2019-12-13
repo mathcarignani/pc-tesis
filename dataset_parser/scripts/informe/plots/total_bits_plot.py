@@ -4,9 +4,8 @@ sys.path.append('.')
 from scripts.compress.experiments_utils import ExperimentsUtils
 from scripts.informe.plot.plot_constants import PlotConstants
 from scripts.informe.plot.plot_utils import PlotUtils
-from scripts.avances.avances15.common_plot import CommonPlot
-from scripts.avances.avances15.plotter2_constants import Plotter2Constants
-from scripts.avances.avances15.relative_difference_plot import RelativeDifferencePlot
+from scripts.informe.plots.common_plot import CommonPlot
+from scripts.informe.plots.relative_difference_plot import RelativeDifferencePlot
 
 
 class TotalBitsPlot(CommonPlot):
@@ -80,5 +79,5 @@ class TotalBitsPlot(CommonPlot):
         assert(total_max > 0)
 
         diff = total_max - total_min
-        total_min = 0 if total_min > 0 else total_min - diff * Plotter2Constants.Y_DIFF
-        return total_min, total_max + diff * Plotter2Constants.Y_DIFF
+        total_min = 0 if total_min > 0 else total_min - diff * PlotConstants.Y_DIFF
+        return total_min, total_max + diff * PlotConstants.Y_DIFF

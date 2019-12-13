@@ -1,10 +1,10 @@
 import sys
 sys.path.append('.')
 
-from scripts.avances.avances15.compression_ratio_plot import CompressionRatioPlot
-from scripts.avances.avances15.relative_difference_plot import RelativeDifferencePlot
-from scripts.avances.avances15.total_bits_plot import TotalBitsPlot
-from scripts.avances.avances15.windows_plot import WindowsPlot
+from scripts.informe.plots.compression_ratio_plot import CompressionRatioPlot
+from scripts.informe.plots.relative_difference_plot import RelativeDifferencePlot
+from scripts.informe.plots.total_bits_plot import TotalBitsPlot
+from scripts.informe.plots.windows_plot import WindowsPlot
 
 
 class Column(object):
