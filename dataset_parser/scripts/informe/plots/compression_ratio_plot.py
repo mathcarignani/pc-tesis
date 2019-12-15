@@ -21,22 +21,23 @@ matplotlib.rcParams['mathtext.bf'] = 'Bitstream Vera Sans'  # 'Bitstream Vera Sa
 
 
 class CompressionRatioPlot(CommonPlot):
-    def __init__(self, algorithm, options={}):
-        self.algorithm = algorithm
+    def __init__(self, information, options={}):
+        self.algorithm = information.get('algorithm')
+        self.filename = information.get('filename')
         self.options = options
         self.values0 = []
         self.values3 = []
         self.basic_value0 = None
         super(CompressionRatioPlot, self).__init__()
 
-    def add_values(self, value0, value3, basic_value0):
-        self.basic_value0 = basic_value0 if self.basic_value0 is None else self.basic_value0
-        assert(self.basic_value0 == basic_value0)  # check that basic_value0 never changes
-
-        value0 = MathUtils.calculate_percentage(basic_value0, value0, 5)
-        value3 = MathUtils.calculate_percentage(basic_value0, value3, 5)
-        self.values0.append(value0)
-        self.values3.append(value3)
+    # def add_values(self, value0, value3, basic_value0):
+    #     self.basic_value0 = basic_value0 if self.basic_value0 is None else self.basic_value0
+    #     assert(self.basic_value0 == basic_value0)  # check that basic_value0 never changes
+    #
+    #     value0 = MathUtils.calculate_percentage(basic_value0, value0, 5)
+    #     value3 = MathUtils.calculate_percentage(basic_value0, value3, 5)
+    #     self.values0.append(value0)
+    #     self.values3.append(value3)
 
     def close(self):
         assert(len(self.values0) == len(ExperimentsUtils.THRESHOLDS))
@@ -109,7 +110,7 @@ class CompressionRatioPlot(CommonPlot):
     ##############################################
 
     @staticmethod
-    def create_plots(coders_array, panda_utils_0, panda_utils_3, col_index, options={}):
+    def create_plots(coders_array, filename, panda_utils_0, panda_utils_3, col_index, options={}):
         plots_obj = {}
         total_min, total_max = sys.maxint, -sys.maxint
         for coder_name in coders_array:
@@ -125,7 +126,7 @@ class CompressionRatioPlot(CommonPlot):
             total_min = min03 if min03 < total_min else total_min
             total_max = max03 if max03 > total_max else total_max
 
-            plot_instance = CompressionRatioPlot(coder_name, options)
+            plot_instance = CompressionRatioPlot({'algorithm': coder_name, 'filename': filename}, options)
             plot_instance.set_values(values0, values3)
             plots_obj[coder_name] = plot_instance
 
@@ -149,8 +150,7 @@ class CompressionRatioPlot(CommonPlot):
     def set_values(self, values0, values3):
         self.values0 = values0
         self.values3 = values3
-        if len(values0) > 0:
-            self.close()
+        self.close()
 
     def set_ymin_ymax(self, ymin, ymax):
         self.ymin = ymin
@@ -158,5 +158,3 @@ class CompressionRatioPlot(CommonPlot):
 
     def plot2(self, ax, options):
         self.plot(ax, self.ymin, self.ymax, options)
-
-    ##############################################

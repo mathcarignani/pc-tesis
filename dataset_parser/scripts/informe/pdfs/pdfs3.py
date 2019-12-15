@@ -54,7 +54,7 @@ class PDFS3(object):
 
     def create_pdfs(self):
         for dataset_id, self.dataset_name in enumerate(self.dataset_names):
-            print self.dataset_name
+            # print self.dataset_name
             self.dataset_id = dataset_id + 1
             self.created_dataset_pdf_file()
 
@@ -64,7 +64,7 @@ class PDFS3(object):
             self.pd_utils_3_global = PandasUtils(self.dataset_name, 'Global', self.df_3_global, 3)
             dataset_filenames = ExperimentsUtils.dataset_csv_filenames(self.dataset_name)
             for self.filename in dataset_filenames:
-                print self.filename
+                # print self.filename
                 self.create_pdf_pages()
 
     def create_pdf_pages(self):
@@ -88,17 +88,13 @@ class PDFS3(object):
         new_df = pd_utils_3_local_2.df
 
         for coder_name in self.CODERS_ARRAY:
-            print "  " + coder_name
-            printed_coder_name = False
+            # print "  " + coder_name
             for threshold in ExperimentsUtils.THRESHOLDS:
                 # print threshold
                 best_global_window = self.pd_utils_3_global.min_value_for_threshold(coder_name, self.col_index, threshold)['window']
                 best_local_window = pd_utils_3_local_2.min_value_for_threshold(coder_name, self.col_index, threshold)['window']
                 if best_global_window != best_local_window:
-                    if not printed_coder_name:
-                        # print coder_name
-                        printed_coder_name = False
-                    print str(threshold) + " - GLOBAL = " + str(best_global_window) + " - LOCAL = " + str(best_local_window)
+                    # print str(threshold) + " - GLOBAL = " + str(best_global_window) + " - LOCAL = " + str(best_local_window)
                     # remove every threshold value other than the one that uses the best global window
                     index_names = new_df[(new_df['coder'] == coder_name) & (new_df['threshold'] == threshold) & (new_df['window'] != best_global_window)].index
                     new_df.drop(index_names, inplace=True)

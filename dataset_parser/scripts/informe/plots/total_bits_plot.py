@@ -9,8 +9,9 @@ from scripts.informe.plots.relative_difference_plot import RelativeDifferencePlo
 
 
 class TotalBitsPlot(CommonPlot):
-    def __init__(self, algorithm):
-        self.algorithm = algorithm
+    def __init__(self, information):
+        self.algorithm = information.get('algorithm')
+        self.filename = information.get('filename')
         self.values0 = []
         self.values3 = []
         self.basic_value0 = None

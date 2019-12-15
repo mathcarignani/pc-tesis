@@ -11,16 +11,15 @@ from scripts.informe.plots.compression_ratio_plot import CompressionRatioPlot
 
 
 class RelativeDifferencePlot(CommonPlot):
-    def __init__(self, algorithm, value3_smaller, options={}):
-        self.algorithm = algorithm
-        self.value3_smaller = value3_smaller
+    def __init__(self, information, options={}):
+        self.algorithm = information.get('algorithm')
+        self.filename = information.get('filename')
         self.options = options
         self.values = []
         super(RelativeDifferencePlot, self).__init__()
 
     def add_value(self, value0, value3):
-        values = (value0, value3) if self.value3_smaller else (value3, value0)
-        plot_value = 100*SinglePlot.plot_value(*values)
+        plot_value = 100*SinglePlot.plot_value(value0, value3)
         self.values.append(plot_value)
 
     def close(self):
@@ -30,7 +29,7 @@ class RelativeDifferencePlot(CommonPlot):
         return [min(self.values), max(self.values)]
 
     def plot(self, ax, ymin, ymax, extra_options={}):
-        # self.print_values()
+        self.print_values2()
         extra_options.update(self.options); self.options = extra_options
 
         if self.options.get('check_never_negative'):
@@ -75,12 +74,20 @@ class RelativeDifferencePlot(CommonPlot):
     def print_values(self):
         print self.algorithm + " Relative Difference"
         # print "self.values = " + str(self.values)
-        min_value = min(self.values)
-        max_value = max(self.values)
+        min_value, max_value = min(self.values), max(self.values)
         if min_value < 0:
             print "min_value = " + str(min_value)
         if max_value > 0:
             print "max_value = " + str(max_value)
+
+    def print_values2(self):
+        if max(self.values) == 0:
+            return
+        for i, value in enumerate(self.values):
+            if value == 0:
+                continue
+            threshold = ExperimentsUtils.THRESHOLDS[i]
+            print self.filename + "," + self.algorithm + "," + str(threshold) + "," + str(value)
 
     @classmethod
     def ylims(cls, total_min, total_max):
@@ -103,7 +110,7 @@ class RelativeDifferencePlot(CommonPlot):
     ##############################################
 
     @staticmethod
-    def create_plots(coders_array, panda_utils_0, panda_utils_3, col_index, options={}):
+    def create_plots(coders_array, filename, panda_utils_0, panda_utils_3, col_index, options={}):
         plots_obj = {}
         total_min, total_max = sys.maxint, -sys.maxint
         for coder_name in coders_array:
@@ -111,9 +118,8 @@ class RelativeDifferencePlot(CommonPlot):
             values3, _, _ = CompressionRatioPlot.get_values(coder_name, col_index, panda_utils_3)
             assert(len(values0) == len(values3))
 
-            plot_instance = RelativeDifferencePlot(coder_name, True, options)
-            for index, value0 in enumerate(values0):
-                plot_instance.add_value(value0, values3[index])
+            plot_instance = RelativeDifferencePlot({'algorithm': coder_name, 'filename': filename}, options)
+            plot_instance.set_values(values0, values3)
             plot_instance.close()
             plots_obj[coder_name] = plot_instance
 
@@ -128,11 +134,14 @@ class RelativeDifferencePlot(CommonPlot):
 
         return plots_obj
 
+    def set_values(self, values0, values3):
+        for index, value0 in enumerate(values0):
+            self.add_value(value0, values3[index])
+        self.close()
+
     def set_ymin_ymax(self, ymin, ymax):
         self.ymin = ymin
         self.ymax = ymax
 
     def plot2(self, ax, options):
         self.plot(ax, self.ymin, self.ymax, options)
-
-    ##############################################

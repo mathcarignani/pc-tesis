@@ -88,7 +88,7 @@ class RelativeDifferenceStats(CommonPlot):
         return plot_instance
 
     @staticmethod
-    def create_plots(coders_array, panda_utils_0, panda_utils_3, col_index, options={}):
+    def create_plots(coders_array, _, panda_utils_0, panda_utils_3, col_index, options={}):
         key = ResultsToDataframe.data_column_key(col_index)
         klass = RelativeDifferenceStats
         return RelativeDifferenceStats.create_plot_common(coders_array, panda_utils_0, panda_utils_3, col_index, key, klass, options)
@@ -106,7 +106,7 @@ class WindowsStats(RelativeDifferenceStats):
         self.plot_aux(ax, self.col_labels, zip(results, self.row_labels, colors))
 
     @staticmethod
-    def create_plots(coders_array, panda_utils_0, panda_utils_3, col_index, options={}):
+    def create_plots(coders_array, _, panda_utils_0, panda_utils_3, col_index, options={}):
         key = 'window'
         klass = WindowsStats
         return RelativeDifferenceStats.create_plot_common(coders_array, panda_utils_0, panda_utils_3, col_index, key, klass, options)

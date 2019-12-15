@@ -8,16 +8,13 @@ from scripts.informe.plots.common_plot import CommonPlot
 
 
 class WindowsPlot(CommonPlot):
-    def __init__(self, algorithm, options={}):
-        self.algorithm = algorithm
+    def __init__(self, information, options={}):
+        self.algorithm = information.get('algorithm')
+        self.filename = information.get('filename')
         self.options = options
         self.values0 = []
         self.values3 = []
         super(WindowsPlot, self).__init__()
-
-    def add_values(self, window0, window3):
-        self.values0.append(window0)
-        self.values3.append(window3)
 
     def close(self):
         total_thresholds = len(ExperimentsUtils.THRESHOLDS)
@@ -82,7 +79,7 @@ class WindowsPlot(CommonPlot):
     ##############################################
 
     @staticmethod
-    def create_plots(coders_array, panda_utils_0, panda_utils_3, col_index, options={}):
+    def create_plots(coders_array, filename, panda_utils_0, panda_utils_3, col_index, options={}):
         plots_obj = {}
         for coder_name in coders_array:
             values3 = WindowsPlot.get_values(coder_name, col_index, panda_utils_3)
@@ -92,7 +89,7 @@ class WindowsPlot(CommonPlot):
                 values0 = WindowsPlot.get_values(coder_name, col_index, panda_utils_0)
                 assert(len(values0) == len(values3))
 
-            plot_instance = WindowsPlot(coder_name, options)
+            plot_instance = WindowsPlot({'algorithm': coder_name, 'filename': filename}, options)
             plot_instance.set_values(values0, values3)
             plots_obj[coder_name] = plot_instance
 
@@ -107,10 +104,7 @@ class WindowsPlot(CommonPlot):
     def set_values(self, values0, values3):
         self.values0 = values0
         self.values3 = values3
-        if len(values0) > 0:
-            self.close()
+        self.close()
 
     def plot2(self, ax, options):
         self.plot(ax, options)
-
-    ##############################################
