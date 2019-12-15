@@ -28,7 +28,7 @@ class PDFS1(PDFSCommon):
     WSPACE = 0.1  # horizontal spacing between subplots
     HSPACE = 0.3  # vertical spacing between subplots
     CODERS_ARRAY = ['CoderPCA', 'CoderAPCA', 'CoderCA', 'CoderPWLH', 'CoderPWLHInt', 'CoderGAMPSLimit']
-    PLOTS_ARRAY = ['compression', 'relative', 'window', 'relative_stats']  # , 'window_stats']
+    PLOTS_ARRAY = ['compression', 'relative']  # , 'window', 'relative_stats']  # , 'window_stats']
     PLOTS_MATRIX = [
         [['CoderPCA', 'compression'],  ['CoderAPCA', 'compression'],    ['CoderCA', 'compression']],
         [['CoderPCA', 'relative'],     ['CoderAPCA', 'relative'],       ['CoderCA', 'relative']],

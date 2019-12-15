@@ -74,7 +74,7 @@ class RelativeDifferencePlot(CommonPlot):
 
     def print_values(self):
         print self.algorithm + " Relative Difference"
-        print "self.values = " + str(self.values)
+        # print "self.values = " + str(self.values)
         min_value = min(self.values)
         max_value = max(self.values)
         if min_value < 0:

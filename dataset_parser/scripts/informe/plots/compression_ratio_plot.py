@@ -139,6 +139,7 @@ class CompressionRatioPlot(CommonPlot):
     @staticmethod
     def get_values(coder_name, col_index, panda_utils):
         percentage_column_key = ResultsToDataframe.percentage_column_key(col_index)
+        # print panda_utils.df
         df = panda_utils.min_value_for_each_threshold(coder_name, col_index)
         values = df[percentage_column_key].values
         df_min = df[percentage_column_key].min()
