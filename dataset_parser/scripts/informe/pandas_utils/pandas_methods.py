@@ -57,12 +57,12 @@ class PandasMethods(object):
         thresholds = coder_df.threshold.unique()
         check_same = set(thresholds) == set([0, 1, 3, 5, 10, 15, 20, 30])
         if not check_same:
-            print thresholds
+            print(thresholds)
             assert(check_same)
         threshold_df = PandasMethods.threshold_df(coder_df, threshold)
         # print "threshold_df"
         # print threshold_df
-        min_value_index = threshold_df[column_key].argmin()
+        min_value_index = threshold_df[column_key].idxmin()
         min_value = threshold_df.loc[min_value_index][column_key]
 
         min_value_rows_count = threshold_df[threshold_df[column_key] == min_value].count()[column_key]

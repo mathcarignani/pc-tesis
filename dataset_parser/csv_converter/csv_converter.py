@@ -72,7 +72,7 @@ class CSVConverter:
             self.pandas_tools.add_row(self.timestamp, self.values)
         else:
             if self.previous_timestamp and self.previous_timestamp.day != self.timestamp.day:
-                print self.timestamp
+                print(self.timestamp)
             self.pandas_tools.add_row(self.timestamp, self.values, self.adcp)
 
         self.previous_timestamp, self.previous_values = self.timestamp, self.values

@@ -63,9 +63,9 @@ class WindowsPlot(CommonPlot):
         PlotUtils.hide_ticks(ax)
 
     def print_values(self):
-        print self.algorithm + " Windows"
-        print "self.values0 = " + str(self.values0)
-        print "self.values3 = " + str(self.values3)
+        print(self.algorithm + " Windows")
+        print("self.values0 = " + str(self.values0))
+        print("self.values3 = " + str(self.values3))
 
     def __check_sorted(self):
         if self.additional_checks and self.algorithm != "CoderPCA":

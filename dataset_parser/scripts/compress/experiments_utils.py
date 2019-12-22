@@ -10,7 +10,6 @@ class ExperimentsUtils(object):
               'CoderFR', 'CoderSF', 'CoderGAMPS', 'CoderGAMPSLimit']
     ALGORITHMS = ["CoderPCA", "CoderAPCA", "CoderCA", "CoderPWLH", "CoderPWLHInt", "CoderGAMPSLimit"]
     CODERS_ONLY_MASK_MODE = ['CoderFR', 'CoderSF']
-    CODERS_NO_MASK_MODE = [item for item in CODERS if item not in CODERS_ONLY_MASK_MODE]
     THRESHOLDS = [0, 1, 3, 5, 10, 15, 20, 30]
     WINDOWS = [4, 8, 16, 32, 64, 128, 256]
 
@@ -55,6 +54,10 @@ class ExperimentsUtils(object):
     # ]
 
     @staticmethod
+    def CODERS_NO_MASK_MODE():
+        return [item for item in ExperimentsUtils.CODERS if item not in ExperimentsUtils.CODERS_ONLY_MASK_MODE]
+
+    @staticmethod
     def dataset_csv_filenames(dataset_name):
         input_path = ExperimentsUtils.CSV_PATH + ExperimentsUtils.get_dataset_info(dataset_name)['folder']
         filenames = csv_files_filenames(input_path)
@@ -79,7 +82,7 @@ class ExperimentsUtils(object):
         for dataset in ExperimentsUtils.DATASETS_ARRAY:
             if dataset['name'] == dataset_name:
                 return dataset
-        print dataset_name
+        print(dataset_name)
         raise StandardError
 
     @staticmethod

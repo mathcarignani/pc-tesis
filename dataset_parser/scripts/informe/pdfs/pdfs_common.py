@@ -19,7 +19,7 @@ class PDFSCommon(object):
 
     def create_pdfs(self):
         for dataset_id, self.dataset_name in enumerate(self.dataset_names):
-            print self.dataset_name
+            print(self.dataset_name)
             self.dataset_id = dataset_id + 1
             self.created_dataset_pdf_file()
 
@@ -27,8 +27,9 @@ class PDFSCommon(object):
         pdf_name = self.path + str(self.dataset_id) + "-" + self.dataset_name + ".pdf"
         with PdfPages(pdf_name) as self.pdf:
             for self.filename in self.dataset_filenames():
-                print "  " + self.filename
+                print("  " + self.filename)
                 self.create_pdf_pages(self.pdf, self.dataset_name, self.filename)
+            exit(1)
 
     def dataset_filenames(self):
         filenames = ExperimentsUtils.dataset_csv_filenames(self.dataset_name)

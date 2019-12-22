@@ -5,11 +5,13 @@ import sys
 sys.path.append('.')
 
 from scripts.compress.experiments_utils import ExperimentsUtils
-from scripts.informe.math_utils import MathUtils
 from scripts.informe.plot.plot_constants import PlotConstants
 from scripts.informe.plot.plot_utils import PlotUtils
 from scripts.informe.plots.common_plot import CommonPlot
 from scripts.informe.results_parsing.results_to_dataframe import ResultsToDataframe
+# import matplotlib
+# fm = matplotlib.font_manager.json_load("/path/to/fontlist-v300.json")
+# fm.findfont("Bitstream Vera Sans", rebuild_if_missing=False)
 
 # To make the latex math text look like the other text
 # https://stackoverflow.com/a/27697390/4547232
@@ -52,19 +54,19 @@ class CompressionRatioPlot(CommonPlot):
         extra_options.update(self.options); self.options = extra_options
 
         # scatter plot
-        x_axis = list(xrange(len(self.values3)))
+        x_axis = list(range(len(self.values3)))
         if len(self.values0) > 0:
             colors0, colors3 = self.generate_colors(False)
-            zorders0, zorders3 = self.__generate_zorders()
+            # zorders0, zorders3 = self.__generate_zorders()
             label0, label3 = self.options.get('labels')
-            ax.scatter(x=x_axis, y=self.values0, c=colors0, zorder=zorders0, marker='x', label=label0)
-            ax.scatter(x=x_axis, y=self.values3, c=colors3, zorder=zorders3, marker='x', label=label3)
+            ax.scatter(x=x_axis, y=self.values0, c=colors0, zorder=1, marker='x', label=label0)
+            ax.scatter(x=x_axis, y=self.values3, c=colors3, zorder=0, marker='x', label=label3)
         else:
             ax.scatter(x=x_axis, y=self.values3, c=self.value3_color)
 
-        ax.legend(loc='upper right', bbox_to_anchor=(0.5, 0., 0.48, 0.95), fontsize='small', scatterpoints=1,
-                  handlelength=0.5)  # labelspacing=0.5, borderpad=0.7
-        ax.grid(b=True, color=PlotConstants.COLOR_SILVER)
+        ax.legend(loc='upper right', bbox_to_anchor=(0.5, 0., 0.48, 0.95), fontsize='small', edgecolor='black',
+                  scatterpoints=1, handlelength=1)  # labelspacing=0.5, borderpad=0.7
+        ax.grid(b=True, color=PlotConstants.COLOR_SILVER, linestyle='dotted')
         ax.set_axisbelow(True)
 
         if ymax >= 100:
@@ -81,17 +83,17 @@ class CompressionRatioPlot(CommonPlot):
         PlotUtils.hide_ticks(ax)
 
     def print_values(self):
-        print self.algorithm + " Compression Ratio"
-        print "self.values0 = " + str(self.values0)
-        print "self.values3 = " + str(self.values3)
+        print(self.algorithm + " Compression Ratio")
+        print("self.values0 = " + str(self.values0))
+        print("self.values3 = " + str(self.values3))
 
-    def __generate_zorders(self):
-        zorders0 = []
-        for index, value0 in enumerate(self.values0):
-            zorder0 = 1 if value0 >= self.values3[index] else -1
-            zorders0.append(zorder0)
-        zorders3 = [-val for val in zorders0]
-        return zorders0, zorders3
+    # def __generate_zorders(self):
+    #     zorders0 = []
+    #     for index, value0 in enumerate(self.values0):
+    #         zorder0 = 1 if value0 >= self.values3[index] else -1
+    #         zorders0.append(zorder0)
+    #     zorders3 = [-val for val in zorders0]
+    #     return zorders0, zorders3
 
     def __check_sorted(self):
         if self.additional_checks:
@@ -112,7 +114,7 @@ class CompressionRatioPlot(CommonPlot):
     @staticmethod
     def create_plots(coders_array, filename, panda_utils_0, panda_utils_3, col_index, options={}):
         plots_obj = {}
-        total_min, total_max = sys.maxint, -sys.maxint
+        total_min, total_max = sys.maxsize, -sys.maxsize
         for coder_name in coders_array:
             values3, min3, max3 = CompressionRatioPlot.get_values(coder_name, col_index, panda_utils_3)
 

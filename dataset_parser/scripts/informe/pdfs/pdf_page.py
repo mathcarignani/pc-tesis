@@ -51,7 +51,9 @@ class PdfPage(object):
 
     def __add_plot(self, matrix_entry, ax, plots_obj, row_index, col_index):
         coder_name, plot_key = matrix_entry
-        if coder_name is not None:
+        if coder_name == 'empty':
+            ax.set_visible(True)
+        elif coder_name is not None:
             plot_instance = plots_obj[plot_key][coder_name]
             extra = {
                 # 'show_title': row_index in [0, 3],

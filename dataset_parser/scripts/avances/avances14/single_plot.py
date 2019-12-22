@@ -50,7 +50,7 @@ class SinglePlot(object):
     def plot(self, ax, ylim, extra_options={}):
         # scatter plot
         color = [self.__color_code(item) for item in self.current_plot]
-        x_axis = list(xrange(len(self.current_plot)))
+        x_axis = list(range(len(self.current_plot)))
         ax.scatter(x=x_axis, y=self.current_plot, c=color)
         ax.grid(b=True, color=PlotConstants.COLOR_SILVER)
 

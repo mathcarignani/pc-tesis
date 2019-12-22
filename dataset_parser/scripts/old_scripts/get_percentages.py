@@ -10,7 +10,7 @@ def create_new_row(coder_basic_row, pwlh_row):
     row_length = len(coder_basic_row)  # 13
     new_row = []
 
-    for i in xrange(row_length):  # 1, 2, .., 12
+    for i in range(row_length):  # 1, 2, .., 12
         if i < initial or i % 2 != 0:
             new_row.append(pwlh_row[i])
         else:  # 8, 10, 12

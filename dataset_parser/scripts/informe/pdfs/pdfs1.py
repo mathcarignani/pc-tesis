@@ -8,6 +8,9 @@ from scripts.informe.pandas_utils.pandas_methods import PandasMethods
 from scripts.informe.pandas_utils.pandas_utils import PandasUtils
 from scripts.informe.pdfs.pdf_page import PdfPage
 from scripts.informe.pdfs.pdfs_common import PDFSCommon
+import matplotlib.pyplot as plt
+import matplotlib
+
 
 # PLOTS_MATRIX = [
 #     [['CoderPCA', 'compression'],  ['CoderAPCA', 'compression'],    ['CoderCA', 'compression']],
@@ -31,9 +34,11 @@ class PDFS1(PDFSCommon):
     PLOTS_ARRAY = ['compression', 'relative']  # , 'window', 'relative_stats']  # , 'window_stats']
     PLOTS_MATRIX = [
         [['CoderPCA', 'compression'],  ['CoderAPCA', 'compression'],    ['CoderCA', 'compression']],
+        # [['empty', 1], ['empty', 1], ['empty', 1]],
         [['CoderPCA', 'relative'],     ['CoderAPCA', 'relative'],       ['CoderCA', 'relative']],
-
+        # [['empty', 2], ['empty', 2], ['empty', 2]],
         [['CoderPWLH', 'compression'], ['CoderPWLHInt', 'compression'], ['CoderGAMPSLimit', 'compression']],
+        # [['empty', 3], ['empty', 3], ['empty', 3]],
         [['CoderPWLH', 'relative'],    ['CoderPWLHInt', 'relative'],    ['CoderGAMPSLimit', 'relative']]
     ]
     PLOT_OPTIONS = {
@@ -67,6 +72,17 @@ class PDFS1(PDFSCommon):
             self.create_pdf_page(pdf, filename, panda_utils_0, panda_utils_3)
 
     def create_pdf_page(self, pdf, filename, panda_utils_0, panda_utils_3):
+        # fig5 = plt.figure(constrained_layout=True)
+        # widths = [2, 3, 1.5]
+        # heights = [1, 3, 2]
+        # spec5 = fig5.add_gridspec(ncols=3, nrows=3, width_ratios=widths,
+        #                           height_ratios=heights)
+        # for row in range(3):
+        #     for col in range(3):
+        #         ax = fig5.add_subplot(spec5[row, col])
+        #         label = 'Width: {}\nHeight: {}'.format(widths[col], heights[row])
+        #         ax.annotate(label, (0.1, 0.5), xycoords='axes fraction', va='center')
+
         pdf_page = PdfPage(panda_utils_0, panda_utils_3, filename, self.col_index, self.FIGSIZE_H, self.FIGSIZE_V, self.PLOT_OPTIONS)
         fig, plt = pdf_page.create(self.CODERS_ARRAY, self.PLOTS_ARRAY, self.PLOTS_MATRIX)
         plt.subplots_adjust(wspace=PDFS1.WSPACE, hspace=PDFS1.HSPACE)

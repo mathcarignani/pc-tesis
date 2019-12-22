@@ -36,7 +36,7 @@ class TotalBitsPlot(CommonPlot):
         # self.print_values()
 
         # scatter plot
-        x_axis = list(xrange(len(self.values0)))
+        x_axis = list(range(len(self.values0)))
         colors0, colors3 = self.generate_colors()
         ax.scatter(x=x_axis, y=self.values0, c=colors0, zorder=self.values0)
         ax.scatter(x=x_axis, y=self.values3, c=colors3, zorder=self.values3)
@@ -60,9 +60,9 @@ class TotalBitsPlot(CommonPlot):
         PlotUtils.hide_ticks(ax)
 
     def print_values(self):
-        print self.algorithm + " Total Bits"
-        print "self.values0 = " + str(self.values0)
-        print "self.values3 = " + str(self.values3)
+        print(self.algorithm + " Total Bits")
+        print("self.values0 = " + str(self.values0))
+        print("self.values3 = " + str(self.values3))
 
     def __check_sorted(self):
         if self.additional_checks:

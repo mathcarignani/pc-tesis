@@ -70,6 +70,6 @@ class ResultsConstants(object):
 
     @staticmethod
     def raise_error(file_key, file_value):
-        print "file_key = " + str(file_key)
-        print "file_value = " + str(file_value)
+        print("file_key = " + str(file_key))
+        print("file_value = " + str(file_value))
         raise(StandardError, "ERROR: invalid combination of parameters")

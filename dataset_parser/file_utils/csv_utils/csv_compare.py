@@ -49,9 +49,9 @@ class CSVCompare:
     def _print_result(self, same_file):
         if same_file:
             if self.error_thresholds is None:
-                print "SAME FILES! - compared with all thresholds = 0."
+                print("SAME FILES! - compared with all thresholds = 0.")
             else:
-                print "SAME FILES! - compared with thresholds = ", self.error_thresholds
+                print("SAME FILES! - compared with thresholds = ", self.error_thresholds)
         else:
             pass
 
@@ -85,9 +85,9 @@ class CSVCompare:
         if row1 == row2:
             return True
         # the non-data rows must match exactly
-        print "Difference in the header rows"
-        print row1
-        print row2
+        print("Difference in the header rows")
+        print(row1)
+        print(row2)
         return False
 
     #
@@ -98,11 +98,11 @@ class CSVCompare:
     #
     def _compare_data_rows(self, row1, row2):
         if len(row1) != len(row2):
-            print "len(row1) = %s != %s = len(row2)" % (len(row1), len(row2))
+            print("len(row1) = %s != %s = len(row2)" % (len(row1), len(row2)))
             return False
 
         same_row = True
-        for col_index in xrange(len(row1)):
+        for col_index in range(len(row1)):
             value1, value2 = row1[col_index], row2[col_index]
             same_row_value = self._compare_values(value1, value2, col_index)
 
@@ -131,22 +131,22 @@ class CSVCompare:
                 # compare ints
                 abs_diff = abs(int(value1) - int(value2))
                 if abs_diff > error:
-                    print 'abs_diff', abs_diff, 'error_threshold', error
+                    print('abs_diff', abs_diff, 'error_threshold', error)
                     same_row_value = False
 
         return same_row_value
 
     def _print_idx_error(self, col_index, value1, value2):
-        print "row_count = %s, col_index = %s, value1 = '%s', value2 = '%s'" % (self.row_count, col_index, value1, value2)
+        print("row_count = %s, col_index = %s, value1 = '%s', value2 = '%s'" % (self.row_count, col_index, value1, value2))
 
     #
     # Returns true iff one file has more rows than the other.
     #
     def _only_one_file_ends(self):
         if not self.file1.continue_reading and self.file2.continue_reading:
-            print "file1 is shorter than file2"
+            print("file1 is shorter than file2")
             return True
         elif self.file1.continue_reading and not self.file2.continue_reading:
-            print "file2 is shorter than file1"
+            print("file2 is shorter than file1")
             return True
         return False

@@ -29,19 +29,19 @@ class RelativeDifferencePlot(CommonPlot):
         return [min(self.values), max(self.values)]
 
     def plot(self, ax, ymin, ymax, extra_options={}):
-        self.print_values2()
+        # self.print_values2()
         extra_options.update(self.options); self.options = extra_options
 
         if self.options.get('check_never_negative'):
             assert(min(self.values) >= 0)
 
         # scatter plot
-        x_axis = list(xrange(len(self.values)))
+        x_axis = list(range(len(self.values)))
         colors = [self.get_color_code(_) for _ in self.values]
         ax.scatter(x=x_axis, y=self.values, c=colors, marker='x')
-        ax.grid(b=True, color=PlotConstants.COLOR_SILVER)
+        ax.grid(b=True, color=PlotConstants.COLOR_SILVER, linestyle='dotted')
         ax.set_axisbelow(True)
-        ax.legend()
+        # ax.legend()
 
         if self.options.get('add_min_max_circles'):
             self._add_min_max_circles(ax)
@@ -72,13 +72,13 @@ class RelativeDifferencePlot(CommonPlot):
         return PlotConstants.COLOR_BLACK
 
     def print_values(self):
-        print self.algorithm + " Relative Difference"
+        print(self.algorithm + " Relative Difference")
         # print "self.values = " + str(self.values)
         min_value, max_value = min(self.values), max(self.values)
         if min_value < 0:
-            print "min_value = " + str(min_value)
+            print("min_value = " + str(min_value))
         if max_value > 0:
-            print "max_value = " + str(max_value)
+            print("max_value = " + str(max_value))
 
     def print_values2(self):
         if max(self.values) == 0:
@@ -87,7 +87,7 @@ class RelativeDifferencePlot(CommonPlot):
             if value == 0:
                 continue
             threshold = ExperimentsUtils.THRESHOLDS[i]
-            print self.filename + "," + self.algorithm + "," + str(threshold) + "," + str(value)
+            print(self.filename + "," + self.algorithm + "," + str(threshold) + "," + str(value))
 
     @classmethod
     def ylims(cls, total_min, total_max):
@@ -112,7 +112,7 @@ class RelativeDifferencePlot(CommonPlot):
     @staticmethod
     def create_plots(coders_array, filename, panda_utils_0, panda_utils_3, col_index, options={}):
         plots_obj = {}
-        total_min, total_max = sys.maxint, -sys.maxint
+        total_min, total_max = sys.maxsize, -sys.maxsize
         for coder_name in coders_array:
             values0, _, _ = CompressionRatioPlot.get_values(coder_name, col_index, panda_utils_0)
             values3, _, _ = CompressionRatioPlot.get_values(coder_name, col_index, panda_utils_3)

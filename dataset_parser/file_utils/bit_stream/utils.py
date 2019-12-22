@@ -14,19 +14,19 @@ class BitStreamUtils:
 
             if byte1 is None:
                 if byte2 is None:
-                    print 'SAME FILE!'
+                    print('SAME FILE!')
                     same_file = True
                 else:
-                    print 'Reached EOF of file 1. DIFF at byte', byte_count
+                    print('Reached EOF of file 1. DIFF at byte', byte_count)
                     same_file = False
                 break
             elif byte2 is None:
-                print 'Reached EOF of file 2. DIFF at byte', byte_count
+                print('Reached EOF of file 2. DIFF at byte', byte_count)
                 same_file = False
             else:
                 # print "byte", byte_count, byte1, byte2
                 if byte1 != byte2:
-                    print 'Difference at byte', byte_count
+                    print('Difference at byte', byte_count)
                     same_file = False
 
             if same_file is None:

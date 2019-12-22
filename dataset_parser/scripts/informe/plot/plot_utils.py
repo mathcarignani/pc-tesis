@@ -24,8 +24,8 @@ class PlotUtils(object):
 
     @classmethod
     def sorted(cls, array):
-        return all(array[i] <= array[i+1] for i in xrange(len(array)-1))
+        return all(array[i] <= array[i+1] for i in range(len(array)-1))
 
     @classmethod
     def sorted_dec(cls, array):
-        return all(array[i] >= array[i+1] for i in xrange(len(array)-1))
+        return all(array[i] >= array[i+1] for i in range(len(array)-1))
