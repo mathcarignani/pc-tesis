@@ -2,6 +2,7 @@ import sys
 sys.path.append('.')
 
 import matplotlib.pyplot as plt
+import matplotlib.gridspec as gridspec
 
 from scripts.informe.plots.compression_ratio_plot import CompressionRatioPlot
 from scripts.informe.plots.relative_difference_plot import RelativeDifferencePlot
@@ -19,13 +20,14 @@ class PdfPage(object):
         'window_stats': WindowsStats
     }
 
-    def __init__(self, panda_utils_0, panda_utils_3, filename, col_index, figsize_h, figsize_v, plots_options={}):
+    def __init__(self, panda_utils_0, panda_utils_3, filename, col_index, figsize, height_ratios, plots_options={}):
         self.panda_utils_0 = panda_utils_0
         self.panda_utils_3 = panda_utils_3
         self.filename = filename
         self.col_index = col_index
         self.plots_options = plots_options
-        self.fig = PlotUtils.create_figure(figsize_h, figsize_v, filename + ' - col = ' + str(col_index))
+        self.fig = PlotUtils.create_figure(figsize, filename + ' - col = ' + str(col_index))
+        self.height_ratios = height_ratios
 
     def create(self, coders_array, plots_array, plots_matrix):
         plots_obj = {}
@@ -36,24 +38,21 @@ class PdfPage(object):
             plots_obj[plot_key] = plots
 
         self.__add_plots(plots_matrix, plots_obj)
-        # self.fig.set_tight_layout(True)
-        # self.fig.subplots_adjust(hspace=0.1)
         return self.fig, plt
 
     def __add_plots(self, plots_matrix, plots_obj):
-        self.total_rows, self.total_columns = len(plots_matrix), len(plots_matrix[0])
-        current_subplot = 1
+        total_rows, total_columns = len(plots_matrix), len(plots_matrix[0])
+        spec = gridspec.GridSpec(ncols=total_columns, nrows=total_rows, figure=self.fig, height_ratios=self.height_ratios)
         for row_index, row in enumerate(plots_matrix):
+            if row is None:
+                continue
             for col_index, matrix_entry in enumerate(row):
-                ax = self.fig.add_subplot(self.total_rows, self.total_columns, current_subplot)
+                ax = self.fig.add_subplot(spec[row_index, col_index])
                 self.__add_plot(matrix_entry, ax, plots_obj, row_index, col_index)
-                current_subplot += 1
 
     def __add_plot(self, matrix_entry, ax, plots_obj, row_index, col_index):
         coder_name, plot_key = matrix_entry
-        if coder_name == 'empty':
-            ax.set_visible(True)
-        elif coder_name is not None:
+        if coder_name is not None:
             plot_instance = plots_obj[plot_key][coder_name]
             extra = {
                 # 'show_title': row_index in [0, 3],
@@ -65,3 +64,7 @@ class PdfPage(object):
         else:
             plot_instance = plots_obj[plot_key]
             plot_instance.plot(ax)
+
+    @staticmethod
+    def _invisible_plot(ax):
+        ax.set_visible(True)

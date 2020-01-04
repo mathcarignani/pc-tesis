@@ -8,8 +8,6 @@ from scripts.informe.pandas_utils.pandas_methods import PandasMethods
 from scripts.informe.pandas_utils.pandas_utils import PandasUtils
 from scripts.informe.pdfs.pdf_page import PdfPage
 from scripts.informe.pdfs.pdfs_common import PDFSCommon
-import matplotlib.pyplot as plt
-import matplotlib
 
 
 # PLOTS_MATRIX = [
@@ -26,37 +24,34 @@ import matplotlib
 
 
 class PDFS1(PDFSCommon):
-    FIGSIZE_H = 10
-    FIGSIZE_V = 15  # 25
-    WSPACE = 0.1  # horizontal spacing between subplots
-    HSPACE = 0.3  # vertical spacing between subplots
+    SUBPLOT_SPACING_W_H = (0.1, 0.05)
+    FIG_SIZE_H_V = (10, 14)
     CODERS_ARRAY = ['CoderPCA', 'CoderAPCA', 'CoderCA', 'CoderPWLH', 'CoderPWLHInt', 'CoderGAMPSLimit']
     PLOTS_ARRAY = ['compression', 'relative']  # , 'window', 'relative_stats']  # , 'window_stats']
     PLOTS_MATRIX = [
         [['CoderPCA', 'compression'],  ['CoderAPCA', 'compression'],    ['CoderCA', 'compression']],
-        # [['empty', 1], ['empty', 1], ['empty', 1]],
+        None,
         [['CoderPCA', 'relative'],     ['CoderAPCA', 'relative'],       ['CoderCA', 'relative']],
-        # [['empty', 2], ['empty', 2], ['empty', 2]],
+        None,
         [['CoderPWLH', 'compression'], ['CoderPWLHInt', 'compression'], ['CoderGAMPSLimit', 'compression']],
-        # [['empty', 3], ['empty', 3], ['empty', 3]],
+        None,
         [['CoderPWLH', 'relative'],    ['CoderPWLHInt', 'relative'],    ['CoderGAMPSLimit', 'relative']]
     ]
+    HEIGHT_RATIOS = [30, 0, 30, 10, 30, 0, 30]
     PLOT_OPTIONS = {
         'compression': {'title': True, 'labels': [r'$a_{NM}$', r'$a_M$']},
         'relative': {'add_min_max_circles': True, 'show_xlabel': True}
     }
 
     def __init__(self, path, global_mode=True, datasets_names=None):
-        if global_mode:
-            self.df_0 = ResultsToDataframe(ResultsReader('global', 0)).create_full_df()
-            self.df_3 = ResultsToDataframe(ResultsReader('global', 3)).create_full_df()
-            path += 'global/'
-        else:
-            self.df_0 = ResultsToDataframe(ResultsReader('raw', 0)).create_full_df()
-            self.df_3 = ResultsToDataframe(ResultsReader('raw', 3)).create_full_df()
-            path += 'local/'
+        assert(len(self.HEIGHT_RATIOS) == len(self.PLOTS_MATRIX))
 
-        # Move this to a new class
+        mode_rr_key, mode_path = ('global', 'global/') if global_mode else ('raw', 'local/')
+        self.df_0 = ResultsToDataframe(ResultsReader(mode_rr_key, 0)).create_full_df()
+        self.df_3 = ResultsToDataframe(ResultsReader(mode_rr_key, 3)).create_full_df()
+        path += mode_path
+
+        # TODO: Move this to a new class
         self.df_3 = PandasMethods.set_coder_basic(self.df_0, self.df_3)
         PandasMethods.check_coder_basic_matches(self.df_0, self.df_3)
 
@@ -64,7 +59,6 @@ class PDFS1(PDFSCommon):
         super(PDFS1, self).__init__(path, global_mode, datasets_names)
 
     def create_pdf_pages(self, pdf, dataset_name, filename):
-        # create panda_utils
         panda_utils_0 = PandasUtils(dataset_name, filename, self.df_0, 0)
         panda_utils_3 = PandasUtils(dataset_name, filename, self.df_3, 3)
 
@@ -72,21 +66,9 @@ class PDFS1(PDFSCommon):
             self.create_pdf_page(pdf, filename, panda_utils_0, panda_utils_3)
 
     def create_pdf_page(self, pdf, filename, panda_utils_0, panda_utils_3):
-        # fig5 = plt.figure(constrained_layout=True)
-        # widths = [2, 3, 1.5]
-        # heights = [1, 3, 2]
-        # spec5 = fig5.add_gridspec(ncols=3, nrows=3, width_ratios=widths,
-        #                           height_ratios=heights)
-        # for row in range(3):
-        #     for col in range(3):
-        #         ax = fig5.add_subplot(spec5[row, col])
-        #         label = 'Width: {}\nHeight: {}'.format(widths[col], heights[row])
-        #         ax.annotate(label, (0.1, 0.5), xycoords='axes fraction', va='center')
-
-        pdf_page = PdfPage(panda_utils_0, panda_utils_3, filename, self.col_index, self.FIGSIZE_H, self.FIGSIZE_V, self.PLOT_OPTIONS)
+        pdf_page = PdfPage(panda_utils_0, panda_utils_3, filename, self.col_index, self.FIG_SIZE_H_V, self.HEIGHT_RATIOS, self.PLOT_OPTIONS)
         fig, plt = pdf_page.create(self.CODERS_ARRAY, self.PLOTS_ARRAY, self.PLOTS_MATRIX)
-        plt.subplots_adjust(wspace=PDFS1.WSPACE, hspace=PDFS1.HSPACE)
-        # plt.show(); exit(0) # uncomment to show first page
+        plt.subplots_adjust(wspace=PDFS1.SUBPLOT_SPACING_W_H[0], hspace=PDFS1.SUBPLOT_SPACING_W_H[1])
         pdf.savefig(fig)
         plt.close()
 

@@ -42,7 +42,7 @@ class CommonPlot(object):
     @classmethod
     def label_title(cls, ax, options, title):
         if options.get('title'):
-            ax.title.set_text(title)
+            ax.set_title(title, fontsize=15)
 
     @classmethod
     def label_y(cls, ax, options, label, tick_labels=None):

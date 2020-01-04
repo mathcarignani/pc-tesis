@@ -16,9 +16,9 @@ class PlotUtils(object):
         ax.tick_params(axis=u'both', which=u'both', length=0)
 
     @classmethod
-    def create_figure(cls, figsize_h, figsize_v, fig_title):
+    def create_figure(cls, figsize, fig_title):
         white_background = (1, 1, 1)
-        figure = plt.figure(figsize=(figsize_h, figsize_v), facecolor=white_background)
+        figure = plt.figure(figsize=figsize, facecolor=white_background, constrained_layout=False)
         figure.suptitle(fig_title, fontsize=20)
         return figure
 
