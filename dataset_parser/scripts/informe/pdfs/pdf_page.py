@@ -1,7 +1,6 @@
 import sys
 sys.path.append('.')
 
-import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
 
 from scripts.informe.plots.compression_ratio_plot import CompressionRatioPlot
@@ -26,10 +25,10 @@ class PdfPage(object):
         self.filename = filename
         self.col_index = col_index
         self.plots_options = plots_options
-        self.fig = PlotUtils.create_figure(figsize, filename + ' - col = ' + str(col_index))
+        self.fig, self.plt = PlotUtils.create_figure(figsize, filename + ' - col = ' + str(col_index))
         self.height_ratios = height_ratios
 
-    def create(self, coders_array, plots_array, plots_matrix):
+    def create(self, coders_array, plots_array, plots_matrix): #, subplot_spacing_w_h):
         plots_obj = {}
         for plot_key in plots_array:
             options = self.plots_options.get(plot_key) or {}
@@ -38,7 +37,7 @@ class PdfPage(object):
             plots_obj[plot_key] = plots
 
         self.__add_plots(plots_matrix, plots_obj)
-        return self.fig, plt
+        return self.fig, self.plt
 
     def __add_plots(self, plots_matrix, plots_obj):
         total_rows, total_columns = len(plots_matrix), len(plots_matrix[0])
@@ -64,7 +63,3 @@ class PdfPage(object):
         else:
             plot_instance = plots_obj[plot_key]
             plot_instance.plot(ax)
-
-    @staticmethod
-    def _invisible_plot(ax):
-        ax.set_visible(True)

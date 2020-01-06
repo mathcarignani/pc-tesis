@@ -29,7 +29,6 @@ class PDFSCommon(object):
             for self.filename in self.dataset_filenames():
                 print("  " + self.filename)
                 self.create_pdf_pages(self.pdf, self.dataset_name, self.filename)
-            exit(1)
 
     def dataset_filenames(self):
         filenames = ExperimentsUtils.dataset_csv_filenames(self.dataset_name)

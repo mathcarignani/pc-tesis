@@ -67,8 +67,11 @@ class PDFS1(PDFSCommon):
 
     def create_pdf_page(self, pdf, filename, panda_utils_0, panda_utils_3):
         pdf_page = PdfPage(panda_utils_0, panda_utils_3, filename, self.col_index, self.FIG_SIZE_H_V, self.HEIGHT_RATIOS, self.PLOT_OPTIONS)
+
+        # IMPORTANT: resize before setting the labels to avoid this issue: https://stackoverflow.com/q/50395392/4547232
+        pdf_page.plt.subplots_adjust(wspace=PDFS1.SUBPLOT_SPACING_W_H[0], hspace=PDFS1.SUBPLOT_SPACING_W_H[1])
+
         fig, plt = pdf_page.create(self.CODERS_ARRAY, self.PLOTS_ARRAY, self.PLOTS_MATRIX)
-        plt.subplots_adjust(wspace=PDFS1.SUBPLOT_SPACING_W_H[0], hspace=PDFS1.SUBPLOT_SPACING_W_H[1])
         pdf.savefig(fig)
         plt.close()
 

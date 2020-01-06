@@ -87,14 +87,6 @@ class CompressionRatioPlot(CommonPlot):
         print("self.values0 = " + str(self.values0))
         print("self.values3 = " + str(self.values3))
 
-    # def __generate_zorders(self):
-    #     zorders0 = []
-    #     for index, value0 in enumerate(self.values0):
-    #         zorder0 = 1 if value0 >= self.values3[index] else -1
-    #         zorders0.append(zorder0)
-    #     zorders3 = [-val for val in zorders0]
-    #     return zorders0, zorders3
-
     def __check_sorted(self):
         if self.additional_checks:
             assert(PlotUtils.sorted_dec(self.values0))
