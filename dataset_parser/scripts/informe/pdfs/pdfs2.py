@@ -38,9 +38,7 @@ class PDFS2(PDFSCommon):
             self.df_3 = ResultsToDataframe(ResultsReader('raw', 3)).create_full_df()
             path += 'local/'
 
-        # Move this to a new class
         # self.df_3 = PandasMethods.set_coder_basic(self.df_0, self.df_3)
-        # PandasMethods.check_coder_basic_matches(self.df_0, self.df_3)
 
         self.col_index = None  # iteration variable
         super(PDFS2, self).__init__(path, global_mode, datasets_names)

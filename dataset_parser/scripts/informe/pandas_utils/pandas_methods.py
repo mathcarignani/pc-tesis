@@ -176,4 +176,6 @@ class PandasMethods(object):
 
                     # recalculate the percentages
                     df3.loc[df3_filename, percentage_col] = 100 * (df3.loc[df3_filename, col] / basic_coder_total)
+
+        PandasMethods.check_coder_basic_matches(df0, df3)
         return df3

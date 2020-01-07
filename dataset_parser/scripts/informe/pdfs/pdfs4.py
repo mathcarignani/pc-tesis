@@ -29,12 +29,8 @@ class PDFS4(object):
     def __init__(self, datasets_names=None):
         df_0 = ResultsToDataframe(ResultsReader('global', 0)).create_full_df()
         self.df_3 = ResultsToDataframe(ResultsReader('global', 3)).create_full_df()
-        self.path = PDFS4.PATH
-
-        # Move this to a new class
         self.df_3 = PandasMethods.set_coder_basic(df_0, self.df_3)
-        PandasMethods.check_coder_basic_matches(df_0, self.df_3)
-
+        self.path = PDFS4.PATH
         self.dataset_names = datasets_names or ExperimentsUtils.DATASET_NAMES
 
         # iteration variables
@@ -46,7 +42,7 @@ class PDFS4(object):
 
     def create_pdfs(self):
         for dataset_id, self.dataset_name in enumerate(self.dataset_names):
-            print self.dataset_name
+            print(self.dataset_name)
             self.dataset_id = dataset_id + 1
             self.created_pdf_for_dataset()
 
@@ -58,7 +54,7 @@ class PDFS4(object):
                 dataset_filenames = ['Global']
 
             for self.filename in dataset_filenames:
-                print self.filename
+                print(self.filename)
                 self.create_pdf_pages()
 
     def create_pdf_pages(self):
