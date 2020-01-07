@@ -70,6 +70,7 @@ class PDFS1(PDFSCommon):
 
         fig, plt = pdf_page.create(self.CODERS_ARRAY, self.PLOTS_ARRAY, self.PLOTS_MATRIX)
         pdf.savefig(fig)
+        plt.savefig(self.pdf_name.replace(".pdf", "-") + str(self.col_index) + ".png")
         plt.close()
 
 # PDFS1(False).create_pdfs()

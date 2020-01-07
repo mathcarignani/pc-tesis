@@ -19,7 +19,7 @@ class PlotUtils(object):
     def create_figure(cls, figsize, fig_title):
         white_background = (1, 1, 1)
         figure = plt.figure(figsize=figsize, facecolor=white_background) #, constrained_layout=False)
-        figure.suptitle(fig_title, fontsize=20)
+        # figure.suptitle(fig_title, fontsize=20)
         return figure, plt
 
     @classmethod

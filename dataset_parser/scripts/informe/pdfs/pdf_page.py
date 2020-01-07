@@ -3,22 +3,11 @@ sys.path.append('.')
 
 import matplotlib.gridspec as gridspec
 
-from scripts.informe.plots.compression_ratio_plot import CompressionRatioPlot
-from scripts.informe.plots.relative_difference_plot import RelativeDifferencePlot
-from scripts.informe.plots.windows_plot import WindowsPlot
-from scripts.informe.plots.stats import RelativeDifferenceStats, WindowsStats
+from scripts.informe.plot.plot_mapper import PlotMapper
 from scripts.informe.plot.plot_utils import PlotUtils
 
 
 class PdfPage(object):
-    PLOT_MAPPER = {
-        'compression': CompressionRatioPlot,
-        'relative': RelativeDifferencePlot,
-        'window': WindowsPlot,
-        'relative_stats': RelativeDifferenceStats,
-        'window_stats': WindowsStats
-    }
-
     def __init__(self, panda_utils_0, panda_utils_3, filename, pdf_instance):
         self.panda_utils_0 = panda_utils_0
         self.panda_utils_3 = panda_utils_3
@@ -32,7 +21,7 @@ class PdfPage(object):
         plots_obj = {}
         for plot_key in plots_array:
             options = self.plots_options.get(plot_key) or {}
-            plot_klass = PdfPage.PLOT_MAPPER[plot_key]
+            plot_klass = PlotMapper.map(plot_key)
             plots = plot_klass.create_plots(coders_array, self.filename, self.panda_utils_0, self.panda_utils_3, self.col_index, options)
             plots_obj[plot_key] = plots
 
