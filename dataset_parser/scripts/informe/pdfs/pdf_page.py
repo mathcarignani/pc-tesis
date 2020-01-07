@@ -19,14 +19,14 @@ class PdfPage(object):
         'window_stats': WindowsStats
     }
 
-    def __init__(self, panda_utils_0, panda_utils_3, filename, col_index, figsize, height_ratios, plots_options={}):
+    def __init__(self, panda_utils_0, panda_utils_3, filename, pdf_instance):
         self.panda_utils_0 = panda_utils_0
         self.panda_utils_3 = panda_utils_3
         self.filename = filename
-        self.col_index = col_index
-        self.plots_options = plots_options
-        self.fig, self.plt = PlotUtils.create_figure(figsize, filename + ' - col = ' + str(col_index))
-        self.height_ratios = height_ratios
+        self.col_index = pdf_instance.col_index
+        self.plots_options = pdf_instance.PLOT_OPTIONS or {}
+        self.fig, self.plt = PlotUtils.create_figure(pdf_instance.FIG_SIZE_H_V, filename + ' - col = ' + str(self.col_index))
+        self.height_ratios = pdf_instance.HEIGHT_RATIOS
 
     def create(self, coders_array, plots_array, plots_matrix): #, subplot_spacing_w_h):
         plots_obj = {}
