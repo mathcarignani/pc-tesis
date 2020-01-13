@@ -45,6 +45,7 @@ class PDFS1(PDFSCommon):
 
     def __init__(self, path, global_mode=True, datasets_names=None):
         assert(len(self.HEIGHT_RATIOS) == len(self.PLOTS_MATRIX))
+        self.global_mode = global_mode
 
         mode_rr_key, mode_path = ('global', 'global/') if global_mode else ('raw', 'local/')
         self.df_0 = ResultsToDataframe(ResultsReader(mode_rr_key, 0)).create_full_df()
@@ -70,7 +71,8 @@ class PDFS1(PDFSCommon):
 
         fig, plt = pdf_page.create(self.CODERS_ARRAY, self.PLOTS_ARRAY, self.PLOTS_MATRIX)
         pdf.savefig(fig)
-        plt.savefig(self.pdf_name.replace(".pdf", "-") + str(self.col_index) + ".png")
+        if self.global_mode:
+            plt.savefig(self.pdf_name.replace(".pdf", "-") + str(self.col_index) + ".png")
         plt.close()
 
 # PDFS1(False).create_pdfs()

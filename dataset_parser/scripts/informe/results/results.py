@@ -16,7 +16,7 @@ PATH = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/script
 # 3.2 Relative Performance of the Coders
 #
 
-# PDFS1(PATH + '3.2/', False).create_pdfs()  # LOCAL
+PDFS1(PATH + '3.2/', False).create_pdfs()  # LOCAL
 PDFS1(PATH + '3.2/', True).create_pdfs()  # GLOBAL
 
 
