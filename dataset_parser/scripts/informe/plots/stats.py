@@ -28,7 +28,7 @@ class RelativeDifferenceStats(CommonPlot):
 
     def close(self):
         assert(self.total_results == self.best0_results + self.best3_results + self.same_results)
-        assert(self.total_results == 6 * 8)
+        assert(self.total_results == 8 * 8)
 
     def set_colors_and_labels(self, value0_color, value3_color, label0, label3):
         super(RelativeDifferenceStats, self).set_colors(value0_color, value3_color)

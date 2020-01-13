@@ -57,7 +57,6 @@ class TotalBitsPlot(CommonPlot):
             self.format_x_ticks(ax)
         else:
             ax.set_yticklabels([])
-        PlotUtils.hide_ticks(ax)
 
     def print_values(self):
         print(self.algorithm + " Total Bits")

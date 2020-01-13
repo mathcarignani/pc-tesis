@@ -18,7 +18,8 @@ class WindowsPlot(CommonPlot):
 
     def close(self):
         total_thresholds = len(ExperimentsUtils.THRESHOLDS)
-        assert(len(self.values0) == total_thresholds)
+        if len(self.values0) > 0:
+            assert(len(self.values0) == total_thresholds)
         assert(len(self.values3) == total_thresholds)
         self.__check_sorted()
 
@@ -37,18 +38,18 @@ class WindowsPlot(CommonPlot):
                 x_axis_0.append(i); y_axis_0.append(pos_value0)
                 pos_value3 = self.__position(value3)
                 x_axis_3.append(i); y_axis_3.append(pos_value3)
+                label0, label3 = self.options.get('labels')
+                ax.scatter(x=x_axis_0, y=y_axis_0, c=self.value0_color, zorder=2, label=label0)  # global
+                ax.scatter(x=x_axis_3, y=y_axis_3, c=self.value3_color, zorder=1, label=label3)
+                # ax.scatter(x=x_axis_same, y=y_axis_same, c=PlotConstants.VALUE_SAME)
+
+                ax.legend(loc='lower right', bbox_to_anchor=(0.5, 0., 0.48, 0.95), fontsize='small', scatterpoints=1,
+                          handlelength=0.5)  # labelspacing=0.5, borderpad=0.7
         else:
             for i, value3 in enumerate(self.values3):
                 pos_value3 = self.__position(value3)
                 x_axis_3.append(i); y_axis_3.append(pos_value3)
-
-        label0, label3 = self.options.get('labels')
-        ax.scatter(x=x_axis_0, y=y_axis_0, c=self.value0_color, zorder=2, label=label0)  # global
-        ax.scatter(x=x_axis_3, y=y_axis_3, c=self.value3_color, zorder=1, label=label3)
-        # ax.scatter(x=x_axis_same, y=y_axis_same, c=PlotConstants.VALUE_SAME)
-
-        ax.legend(loc='lower right', bbox_to_anchor=(0.5, 0., 0.48, 0.95), fontsize='small', scatterpoints=1,
-                  handlelength=0.5)  # labelspacing=0.5, borderpad=0.7
+            ax.scatter(x=x_axis_3, y=y_axis_3, c=self.value3_color, zorder=1)
 
         ax.grid(b=True, color=PlotConstants.COLOR_SILVER)
         ax.set_axisbelow(True)

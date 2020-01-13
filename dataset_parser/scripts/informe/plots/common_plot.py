@@ -2,6 +2,7 @@ import sys
 sys.path.append('.')
 
 from scripts.informe.plot.plot_constants import PlotConstants
+from scripts.informe.plot.plot_utils import PlotUtils
 
 
 class CommonPlot(object):

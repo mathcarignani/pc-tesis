@@ -9,9 +9,6 @@ from scripts.informe.plot.plot_constants import PlotConstants
 from scripts.informe.plot.plot_utils import PlotUtils
 from scripts.informe.plots.common_plot import CommonPlot
 from scripts.informe.results_parsing.results_to_dataframe import ResultsToDataframe
-# import matplotlib
-# fm = matplotlib.font_manager.json_load("/path/to/fontlist-v300.json")
-# fm.findfont("Bitstream Vera Sans", rebuild_if_missing=False)
 
 # To make the latex math text look like the other text
 # https://stackoverflow.com/a/27697390/4547232
@@ -32,18 +29,11 @@ class CompressionRatioPlot(CommonPlot):
         self.basic_value0 = None
         super(CompressionRatioPlot, self).__init__()
 
-    # def add_values(self, value0, value3, basic_value0):
-    #     self.basic_value0 = basic_value0 if self.basic_value0 is None else self.basic_value0
-    #     assert(self.basic_value0 == basic_value0)  # check that basic_value0 never changes
-    #
-    #     value0 = MathUtils.calculate_percentage(basic_value0, value0, 5)
-    #     value3 = MathUtils.calculate_percentage(basic_value0, value3, 5)
-    #     self.values0.append(value0)
-    #     self.values3.append(value3)
-
     def close(self):
-        assert(len(self.values0) == len(ExperimentsUtils.THRESHOLDS))
-        assert(len(self.values3) == len(ExperimentsUtils.THRESHOLDS))
+        total_thresholds = len(ExperimentsUtils.THRESHOLDS)
+        if len(self.values0) > 0:
+            assert(len(self.values0) == total_thresholds)
+        assert(len(self.values3) == total_thresholds)
         self.__check_sorted()
 
     def min_max(self):
@@ -61,11 +51,13 @@ class CompressionRatioPlot(CommonPlot):
             label0, label3 = self.options.get('labels')
             ax.scatter(x=x_axis, y=self.values0, c=colors0, zorder=1, marker='x', label=label0)
             ax.scatter(x=x_axis, y=self.values3, c=colors3, zorder=0, marker='x', label=label3)
+            ax.legend(loc='upper right', bbox_to_anchor=(0.5, 0., 0.48, 0.95), fontsize='small', edgecolor='black',
+                      scatterpoints=1, handlelength=1)  # labelspacing=0.5, borderpad=0.7
         else:
-            ax.scatter(x=x_axis, y=self.values3, c=self.value3_color)
+            print("x_axis")
+            print(x_axis)
+            ax.scatter(x=x_axis, y=self.values3, c=self.value3_color, zorder=1, marker='x')
 
-        ax.legend(loc='upper right', bbox_to_anchor=(0.5, 0., 0.48, 0.95), fontsize='small', edgecolor='black',
-                  scatterpoints=1, handlelength=1)  # labelspacing=0.5, borderpad=0.7
         ax.grid(b=True, color=PlotConstants.COLOR_SILVER, linestyle='dotted')
         ax.set_axisbelow(True)
 

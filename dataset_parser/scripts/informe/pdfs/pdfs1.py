@@ -1,7 +1,6 @@
 import sys
 sys.path.append('.')
 
-from scripts.compress.experiments_utils import ExperimentsUtils
 from scripts.informe.results_parsing.results_reader import ResultsReader
 from scripts.informe.results_parsing.results_to_dataframe import ResultsToDataframe
 from scripts.informe.pandas_utils.pandas_methods import PandasMethods
@@ -60,7 +59,7 @@ class PDFS1(PDFSCommon):
         panda_utils_0 = PandasUtils(dataset_name, filename, self.df_0, 0)
         panda_utils_3 = PandasUtils(dataset_name, filename, self.df_3, 3)
 
-        for self.col_index in range(1, ExperimentsUtils.get_dataset_data_columns_count(dataset_name) + 1):
+        for self.col_index in self.column_indexes(dataset_name):
             self.create_pdf_page(pdf, filename, panda_utils_0, panda_utils_3)
 
     def create_pdf_page(self, pdf, filename, panda_utils_0, panda_utils_3):
@@ -74,7 +73,3 @@ class PDFS1(PDFSCommon):
         if self.global_mode:
             plt.savefig(self.pdf_name.replace(".pdf", "-") + str(self.col_index) + ".png")
         plt.close()
-
-# PDFS1(False).create_pdfs()
-# PDFS1(True).create_pdfs()
-# PDFS1(True, ['NOAA-SPC-wind']).create_pdfs()

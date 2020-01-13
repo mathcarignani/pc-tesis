@@ -16,7 +16,8 @@ class PDFS3(object):
     FIGSIZE_V = 15  # 25
     WSPACE = 0.1  # horizontal spacing between subplots
     HSPACE = 0.3  # vertical spacing between subplots
-    CODERS_ARRAY = ['CoderPCA', 'CoderAPCA', 'CoderCA', 'CoderPWLH', 'CoderPWLHInt', 'CoderGAMPSLimit', 'CoderFR', 'CoderSF']
+    CODERS_ARRAY = ['CoderPCA', 'CoderAPCA', 'CoderCA', 'CoderPWLH', 'CoderPWLHInt', 'CoderGAMPSLimit',
+                    'CoderFR', 'CoderSF']
     PLOTS_ARRAY = ['compression', 'relative', 'window']  # , 'relative_stats', 'window_stats']
     PLOTS_MATRIX = [
         [['CoderPCA', 'window'],       ['CoderAPCA', 'window'],         ['CoderCA', 'window'],              ['CoderFR', 'window']],
