@@ -39,6 +39,7 @@ class RelativeDifferencePlot(CommonPlot):
         x_axis = list(range(len(self.values)))
         colors = [self.get_color_code(_) for _ in self.values]
         ax.scatter(x=x_axis, y=self.values, c=colors, marker='x')
+        ax.set_xticks(x_axis)
         ax.grid(b=True, color=PlotConstants.COLOR_SILVER, linestyle='dotted')
         ax.set_axisbelow(True)
         # ax.legend()
@@ -64,7 +65,7 @@ class RelativeDifferencePlot(CommonPlot):
     def _labels(self, ax, options):
         CommonPlot.label_title(ax, options, self.algorithm)
         CommonPlot.label_y(ax, options, PlotConstants.RELATIVE_DIFF)
-        CommonPlot.label_x(ax, options, PlotConstants.ERROR_THRE, [''] + ExperimentsUtils.THRESHOLDS)
+        CommonPlot.label_x(ax, options, PlotConstants.ERROR_THRE, ExperimentsUtils.THRESHOLDS)
         PlotUtils.hide_ticks(ax)
 
     @staticmethod

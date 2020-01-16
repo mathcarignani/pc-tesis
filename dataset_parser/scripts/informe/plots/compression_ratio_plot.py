@@ -47,17 +47,15 @@ class CompressionRatioPlot(CommonPlot):
         x_axis = list(range(len(self.values3)))
         if len(self.values0) > 0:
             colors0, colors3 = self.generate_colors(False)
-            # zorders0, zorders3 = self.__generate_zorders()
             label0, label3 = self.options.get('labels')
             ax.scatter(x=x_axis, y=self.values0, c=colors0, zorder=1, marker='x', label=label0)
             ax.scatter(x=x_axis, y=self.values3, c=colors3, zorder=0, marker='x', label=label3)
             ax.legend(loc='upper right', bbox_to_anchor=(0.5, 0., 0.48, 0.95), fontsize='small', edgecolor='black',
                       scatterpoints=1, handlelength=1)  # labelspacing=0.5, borderpad=0.7
         else:
-            print("x_axis")
-            print(x_axis)
             ax.scatter(x=x_axis, y=self.values3, c=self.value3_color, zorder=1, marker='x')
 
+        ax.set_xticks(x_axis)
         ax.grid(b=True, color=PlotConstants.COLOR_SILVER, linestyle='dotted')
         ax.set_axisbelow(True)
 
@@ -71,7 +69,7 @@ class CompressionRatioPlot(CommonPlot):
         CommonPlot.label_title(ax, options, self.algorithm)
         tick_labels = [format(label, ',.0f') for label in ax.get_yticks()]
         CommonPlot.label_y(ax, options, PlotConstants.COMPRESSION_RATIO, tick_labels)
-        CommonPlot.label_x(ax, options, PlotConstants.ERROR_THRE, [''] + ExperimentsUtils.THRESHOLDS)
+        CommonPlot.label_x(ax, options, PlotConstants.ERROR_THRE, ExperimentsUtils.THRESHOLDS)
         PlotUtils.hide_ticks(ax)
 
     def print_values(self):

@@ -37,7 +37,6 @@ class CommonPlot(object):
 
     @classmethod
     def set_lim(cls, ax, ymin, ymax):
-        ax.set_xlim(left=-1, right=8)  # 8 thresholds
         ax.set_ylim(bottom=ymin, top=ymax)
 
     @classmethod
