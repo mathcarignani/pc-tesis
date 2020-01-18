@@ -13,7 +13,7 @@ class PdfPage(object):
         self.panda_utils_3 = panda_utils_3
         self.filename = filename
         self.col_index = pdf_instance.col_index
-        self.plots_options = pdf_instance.PLOT_OPTIONS or {}
+        self.plots_options = pdf_instance.plot_options() or pdf_instance.PLOT_OPTIONS or {}
         self.fig, self.plt = PlotUtils.create_figure(pdf_instance.FIG_SIZE_H_V, filename + ' - col = ' + str(self.col_index))
         self.height_ratios = pdf_instance.HEIGHT_RATIOS
 

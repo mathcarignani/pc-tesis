@@ -36,6 +36,9 @@ class PDFSCommon(object):
         filenames = ['Global'] if self.global_mode and len(filenames) > 1 else filenames
         return filenames
 
+    def plot_options(self):
+        return {}
+
     @staticmethod
     def column_indexes(dataset_name):
         return range(1, ExperimentsUtils.get_dataset_data_columns_count(dataset_name) + 1)

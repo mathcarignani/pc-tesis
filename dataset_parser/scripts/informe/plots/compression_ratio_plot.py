@@ -51,9 +51,9 @@ class CompressionRatioPlot(CommonPlot):
             ax.scatter(x=x_axis, y=self.values0, c=colors0, zorder=1, marker='x', label=label0)
             ax.scatter(x=x_axis, y=self.values3, c=colors3, zorder=0, marker='x', label=label3)
             ax.legend(loc='upper right', bbox_to_anchor=(0.5, 0., 0.48, 0.95), fontsize='small', edgecolor='black',
-                      scatterpoints=1, handlelength=1)  # labelspacing=0.5, borderpad=0.7
+                      scatterpoints=1, handlelength=1)
         else:
-            ax.scatter(x=x_axis, y=self.values3, c=self.value3_color, zorder=1, marker='x')
+            ax.scatter(x=x_axis, y=self.values3, zorder=1, marker='x', c=self.options['color'])
 
         ax.set_xticks(x_axis)
         ax.grid(b=True, color=PlotConstants.COLOR_SILVER, linestyle='dotted')

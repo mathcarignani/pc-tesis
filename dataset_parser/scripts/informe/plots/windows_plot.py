@@ -26,41 +26,37 @@ class WindowsPlot(CommonPlot):
     def plot(self, ax, extra_options={}):
         # self.print_values()
         extra_options.update(self.options); self.options = extra_options
-        x_axis_0, y_axis_0, x_axis_3, y_axis_3, x_axis_same, y_axis_same = [], [], [], [], [], []
+        x_axis_0, y_axis_0, x_axis_3, y_axis_3 = [], [], [], []
 
         if len(self.values0) > 0:
             for i, values in enumerate(zip(self.values0, self.values3)):
                 value0, value3 = values
                 pos_value0 = self.__position(value0)
-                # if value0 == value3:
-                #     x_axis_same.append(i); y_axis_same.append(pos_value0)
-                # else:
                 x_axis_0.append(i); y_axis_0.append(pos_value0)
                 pos_value3 = self.__position(value3)
                 x_axis_3.append(i); y_axis_3.append(pos_value3)
                 label0, label3 = self.options.get('labels')
                 ax.scatter(x=x_axis_0, y=y_axis_0, c=self.value0_color, zorder=2, label=label0)  # global
                 ax.scatter(x=x_axis_3, y=y_axis_3, c=self.value3_color, zorder=1, label=label3)
-                # ax.scatter(x=x_axis_same, y=y_axis_same, c=PlotConstants.VALUE_SAME)
-
                 ax.legend(loc='lower right', bbox_to_anchor=(0.5, 0., 0.48, 0.95), fontsize='small', scatterpoints=1,
-                          handlelength=0.5)  # labelspacing=0.5, borderpad=0.7
+                          handlelength=0.5)
         else:
             for i, value3 in enumerate(self.values3):
                 pos_value3 = self.__position(value3)
                 x_axis_3.append(i); y_axis_3.append(pos_value3)
-            ax.scatter(x=x_axis_3, y=y_axis_3, c=self.value3_color, zorder=1)
+            ax.scatter(x=x_axis_3, y=y_axis_3, zorder=1, marker='o', s=20, c=self.options['color'], edgecolor='black')
 
-        ax.grid(b=True, color=PlotConstants.COLOR_SILVER)
+        ax.set_xticks(x_axis_3)
+        ax.grid(b=True, color=PlotConstants.COLOR_SILVER, linestyle='dotted')
         ax.set_axisbelow(True)
+        ax.set_yticks(list(range(len(y_axis_3))))
         ax.set_ylim(top=len(ExperimentsUtils.WINDOWS), bottom=-1)
-
         self._labels(ax, self.options)
 
     def _labels(self, ax, options):
         CommonPlot.label_title(ax, options, self.algorithm)
-        CommonPlot.label_y(ax, options, PlotConstants.WINDOW_SIZE, [''] + ExperimentsUtils.WINDOWS)
-        CommonPlot.label_x(ax, options, PlotConstants.ERROR_THRE, [''] + ExperimentsUtils.THRESHOLDS)
+        CommonPlot.label_y(ax, options, PlotConstants.WINDOW_SIZE, ExperimentsUtils.WINDOWS)
+        CommonPlot.label_x(ax, options, PlotConstants.ERROR_THRE, ExperimentsUtils.THRESHOLDS)
         PlotUtils.hide_ticks(ax)
 
     def print_values(self):

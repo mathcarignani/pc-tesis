@@ -7,6 +7,7 @@ from scripts.informe.pandas_utils.pandas_methods import PandasMethods
 from scripts.informe.pandas_utils.pandas_utils import PandasUtils
 from scripts.informe.pdfs.pdf_page import PdfPage
 from scripts.informe.pdfs.pdfs_common import PDFSCommon
+from scripts.informe.plot.plot_constants import PlotConstants
 
 
 class PDFS2(PDFSCommon):
@@ -26,7 +27,7 @@ class PDFS2(PDFSCommon):
         None,
         [[None, 'window_stats']]
     ]
-    HEIGHT_RATIOS = [30, 0, 30, 10, 30, 0, 30, 10, 30]
+    HEIGHT_RATIOS = [30, 0, 30, 15, 30, 0, 30, 10, 20]
     PLOT_OPTIONS = {
         'compression': {'title': True, 'labels': [r'$a_{NM}$', r'$a_M$']},
         'window': {'show_xlabel': True},
@@ -45,12 +46,18 @@ class PDFS2(PDFSCommon):
         self.col_index = None  # iteration variable
         super(PDFS2, self).__init__(path, global_mode, datasets_names)
 
+    def plot_options(self):
+        options = self.PLOT_OPTIONS
+        color = PlotConstants.COLOR_LIGHT_BLUE if self.global_mode else PlotConstants.COLOR_RED
+        options['window']['color'] = color
+        options['compression']['color'] = color
+        return options
+
     def create_pdf_pages(self, pdf, dataset_name, filename):
         panda_utils_3 = PandasUtils(dataset_name, filename, self.df_3, 3)
 
         for self.col_index in self.column_indexes(dataset_name):
             self.create_pdf_page(pdf, filename, panda_utils_3)
-            exit(1)
 
     def create_pdf_page(self, pdf, filename, panda_utils_3):
         pdf_page = PdfPage(None, panda_utils_3, filename, self)
