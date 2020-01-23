@@ -9,27 +9,31 @@ from scripts.informe.results_parsing.results_to_dataframe import ResultsToDatafr
 from scripts.informe.pandas_utils.pandas_utils import PandasUtils
 from scripts.informe.pandas_utils.pandas_methods import PandasMethods
 from scripts.informe.pdfs.pdf_page import PdfPage
+from scripts.informe.pdfs.pdfs_common import PDFSCommon
 
 
-class PDFS3(object):
-    FIGSIZE_H = 10
-    FIGSIZE_V = 15  # 25
-    WSPACE = 0.1  # horizontal spacing between subplots
-    HSPACE = 0.3  # vertical spacing between subplots
+class PDFS3(PDFSCommon):
+    SUBPLOT_SPACING_W_H = (0.1, 0.05)
+    FIG_SIZE_H_V = (10, 14)
     CODERS_ARRAY = ['CoderPCA', 'CoderAPCA', 'CoderCA', 'CoderPWLH', 'CoderPWLHInt', 'CoderGAMPSLimit',
                     'CoderFR', 'CoderSF']
-    PLOTS_ARRAY = ['compression', 'relative', 'window']  # , 'relative_stats', 'window_stats']
+    PLOTS_ARRAY = ['compression', 'relative', 'window', 'relative_stats', 'window_stats']
     PLOTS_MATRIX = [
         [['CoderPCA', 'window'],       ['CoderAPCA', 'window'],         ['CoderCA', 'window'],              ['CoderFR', 'window']],
+        None,
         [['CoderPCA', 'compression'],  ['CoderAPCA', 'compression'],    ['CoderCA', 'compression'],         ['CoderFR', 'compression']],
+        None,
         [['CoderPCA', 'relative'],     ['CoderAPCA', 'relative'],       ['CoderCA', 'relative'],            ['CoderFR', 'relative']],
-
+        None,
         [['CoderPWLH', 'window'],      ['CoderPWLHInt', 'window'],      ['CoderGAMPSLimit', 'window'],      ['CoderSF', 'window']],
+        None,
         [['CoderPWLH', 'compression'], ['CoderPWLHInt', 'compression'], ['CoderGAMPSLimit', 'compression'], ['CoderSF', 'compression']],
-        [['CoderPWLH', 'relative'],    ['CoderPWLHInt', 'relative'],    ['CoderGAMPSLimit', 'relative'],    ['CoderSF', 'relative']]
-
-        # [[None, 'relative_stats'],     [None, 'window_stats']]  # TODO: comment after debugging
+        None,
+        [['CoderPWLH', 'relative'],    ['CoderPWLHInt', 'relative'],    ['CoderGAMPSLimit', 'relative'],    ['CoderSF', 'relative']],
+        None,
+        [[None, 'window_stats'], [None, 'relative_stats']]
     ]
+    HEIGHT_RATIOS = [30, 0, 30, 0, 30, 15, 30, 0, 30, 0, 30, 10, 20]
     PLOT_OPTIONS = {
         'window': {'title': True, 'labels': [r'$global$', r'$local$']},
         'compression': {'labels': [r'$global$', r'$local$']},
@@ -44,12 +48,13 @@ class PDFS3(object):
         self.path = path
 
         self.dataset_names = datasets_names or ExperimentsUtils.datasets_with_multiple_files()
+        self.global_mode = False
 
         # iteration variables
         self.dataset_id = None
         self.dataset_name = None
         self.filename = None
-        self.pdf = None
+        self.pdf_name = None
         self.col_index = None
         self.pd_utils_3_global = None
 
@@ -60,26 +65,24 @@ class PDFS3(object):
             self.created_dataset_pdf_file()
 
     def created_dataset_pdf_file(self):
-        pdf_name = self.path + str(self.dataset_id) + "-" + self.dataset_name + ".pdf"
-        with PdfPages(pdf_name) as self.pdf:
+        self.pdf_name = self.path + str(self.dataset_id) + "-" + self.dataset_name + ".pdf"
+        with PdfPages(self.pdf_name) as pdf:
             self.pd_utils_3_global = PandasUtils(self.dataset_name, 'Global', self.df_3_global, 3)
-            dataset_filenames = ExperimentsUtils.dataset_csv_filenames(self.dataset_name)
-            for self.filename in dataset_filenames:
-                # print self.filename
-                self.create_pdf_pages()
+            for self.filename in self.dataset_filenames():
+                print("  " + self.filename)
+                self.create_pdf_pages(pdf, self.dataset_name, self.filename)
 
-    def create_pdf_pages(self):
-        for self.col_index in range(1, ExperimentsUtils.get_dataset_data_columns_count(self.dataset_name) + 1):
-            # print self.col_index
+    def create_pdf_pages(self, pdf, dataset_name, filename):
+        for self.col_index in self.column_indexes(dataset_name):
             # create panda_utils. Must do it inside this block to prevent issue with many datatypes in a single dataset
             df_3_local_copy_1 = PandasMethods.copy(self.df_3_local)
             df_3_local_copy_2 = PandasMethods.copy(self.df_3_local)
-            pd_utils_3_local_1 = PandasUtils(self.dataset_name, self.filename, df_3_local_copy_1, 3)  # local with best LOCAL window
-            pd_utils_3_local_2 = PandasUtils(self.dataset_name, self.filename, df_3_local_copy_2, 3)  # local with best GLOBAL window
+            pd_utils_3_local_1 = PandasUtils(dataset_name, filename, df_3_local_copy_1, 3)  # local with best LOCAL window
+            pd_utils_3_local_2 = PandasUtils(dataset_name, filename, df_3_local_copy_2, 3)  # local with best GLOBAL window
 
             mod_pd_utils_3_local_2 = self.set_global_window(pd_utils_3_local_2)
             # TODO: change order to make Relative Difference <= 0
-            self.create_pdf_page(mod_pd_utils_3_local_2, pd_utils_3_local_1)
+            self.create_pdf_page(pdf, filename, mod_pd_utils_3_local_2, pd_utils_3_local_1)
             # exit(1)
 
     #
@@ -102,14 +105,12 @@ class PDFS3(object):
         mod_pd_utils_3_local_2 = PandasUtils(self.dataset_name, self.filename, new_df, 3, False)
         return mod_pd_utils_3_local_2
 
-    def create_pdf_page(self, pd_utils_3_local_1, pd_utils_3_local_2):
-        pdf_page = PdfPage(pd_utils_3_local_1, pd_utils_3_local_2, self.filename, self.col_index, self.FIGSIZE_H, self.FIGSIZE_V, self.PLOT_OPTIONS)
-        fig, plt = pdf_page.create(self.CODERS_ARRAY, self.PLOTS_ARRAY, self.PLOTS_MATRIX)
-        plt.subplots_adjust(wspace=PDFS3.WSPACE, hspace=PDFS3.HSPACE)
-        # plt.show(); exit(0) # uncomment to show first page
-        self.pdf.savefig(fig)
-        plt.close()
+    def create_pdf_page(self, pdf, filename, pd_utils_3_local_1, pd_utils_3_local_2):
+        pdf_page = PdfPage(pd_utils_3_local_1, pd_utils_3_local_2, filename, self)
 
-# PDFS1(False).create_pdfs()
-# PDFS1(True).create_pdfs()
-# PDFS1(True, ['NOAA-SPC-wind']).create_pdfs()
+        # IMPORTANT: resize before setting the labels to avoid this issue: https://stackoverflow.com/q/50395392/4547232
+        pdf_page.plt.subplots_adjust(wspace=PDFS3.SUBPLOT_SPACING_W_H[0], hspace=PDFS3.SUBPLOT_SPACING_W_H[1])
+
+        fig, plt = pdf_page.create(self.CODERS_ARRAY, self.PLOTS_ARRAY, self.PLOTS_MATRIX)
+        pdf.savefig(fig)
+        plt.close()

@@ -35,11 +35,11 @@ class WindowsPlot(CommonPlot):
                 x_axis_0.append(i); y_axis_0.append(pos_value0)
                 pos_value3 = self.__position(value3)
                 x_axis_3.append(i); y_axis_3.append(pos_value3)
-                label0, label3 = self.options.get('labels')
-                ax.scatter(x=x_axis_0, y=y_axis_0, c=self.value0_color, zorder=2, label=label0)  # global
-                ax.scatter(x=x_axis_3, y=y_axis_3, c=self.value3_color, zorder=1, label=label3)
-                ax.legend(loc='lower right', bbox_to_anchor=(0.5, 0., 0.48, 0.95), fontsize='small', scatterpoints=1,
-                          handlelength=0.5)
+            label0, label3 = self.options.get('labels')
+            ax.scatter(x=x_axis_0, y=y_axis_0, c=self.value0_color, zorder=2, label=label0, s=20, edgecolor='black')  # global
+            ax.scatter(x=x_axis_3, y=y_axis_3, c=self.value3_color, zorder=1, label=label3, s=20, edgecolor='black')
+            ax.legend(loc='upper right', bbox_to_anchor=(0.5, 0.1, 0.48, 0.92), fontsize='small', scatterpoints=1,
+                      handlelength=0.3, ncol=2, edgecolor='black')
         else:
             for i, value3 in enumerate(self.values3):
                 pos_value3 = self.__position(value3)
@@ -50,7 +50,9 @@ class WindowsPlot(CommonPlot):
         ax.grid(b=True, color=PlotConstants.COLOR_SILVER, linestyle='dotted')
         ax.set_axisbelow(True)
         ax.set_yticks(list(range(len(y_axis_3))))
-        ax.set_ylim(top=len(ExperimentsUtils.WINDOWS), bottom=-1)
+        top = len(ExperimentsUtils.WINDOWS)
+        top = top + 1 if len(self.values0) > 0 else top # +1 so that there's space for the legend
+        ax.set_ylim(top=top, bottom=-1)
         self._labels(ax, self.options)
 
     def _labels(self, ax, options):
