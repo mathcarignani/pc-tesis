@@ -36,8 +36,10 @@ class WindowsPlot(CommonPlot):
                 pos_value3 = self.__position(value3)
                 x_axis_3.append(i); y_axis_3.append(pos_value3)
             label0, label3 = self.options.get('labels')
-            ax.scatter(x=x_axis_0, y=y_axis_0, c=self.value0_color, zorder=2, label=label0, s=20, edgecolor='black')  # global
-            ax.scatter(x=x_axis_3, y=y_axis_3, c=self.value3_color, zorder=1, label=label3, s=20, edgecolor='black')
+            # ax.scatter(x=x_axis_0, y=y_axis_0, c=self.value0_color, zorder=2, label=label0, s=20, edgecolor='black')  # global
+            # ax.scatter(x=x_axis_3, y=y_axis_3, c=self.value3_color, zorder=1, label=label3, s=20, edgecolor='black')
+            ax.scatter(x=x_axis_0, y=y_axis_0, c=self.value0_color, zorder=1, label=label0, s=50, edgecolor='black')  # global
+            ax.scatter(x=x_axis_3, y=y_axis_3, c=self.value3_color, zorder=2, label=label3, s=10, edgecolor='black')
             ax.legend(loc='upper right', bbox_to_anchor=(0.5, 0.1, 0.48, 0.92), fontsize='small', scatterpoints=1,
                       handlelength=0.3, ncol=2, edgecolor='black')
         else:
