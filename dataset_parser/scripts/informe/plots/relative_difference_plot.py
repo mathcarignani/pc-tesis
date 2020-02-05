@@ -29,7 +29,7 @@ class RelativeDifferencePlot(CommonPlot):
         return [min(self.values), max(self.values)]
 
     def plot(self, ax, ymin, ymax, extra_options={}):
-        # self.print_values2()
+        self.print_values2()
         extra_options.update(self.options); self.options = extra_options
 
         if self.options.get('check_never_negative'):
@@ -84,11 +84,23 @@ class RelativeDifferencePlot(CommonPlot):
     def print_values2(self):
         if max(self.values) == 0:
             return
+        if self.filename == "vwc_1202.dat.csv" and self.algorithm == "CoderPCA":
+            print("Filename,Algorithm,Threshold,Value,,>1,>2,>5")
         for i, value in enumerate(self.values):
             if value == 0:
                 continue
             threshold = ExperimentsUtils.THRESHOLDS[i]
-            print(self.filename + "," + self.algorithm + "," + str(threshold) + "," + str(value))
+            str_value = str(value)
+            if value > 5:
+                extra_row = ['', '', str_value]
+            elif value > 2:
+                extra_row = ['', str_value, '']
+            elif value > 1:
+                extra_row = [str_value, '', '']
+            else:
+                extra_row = ['', '', '']
+            extra_row_str = ",".join(extra_row)
+            print(self.filename + "," + self.algorithm + "," + str(threshold) + "," + str_value + ",," + extra_row_str)
 
     @classmethod
     def ylims(cls, total_min, total_max):

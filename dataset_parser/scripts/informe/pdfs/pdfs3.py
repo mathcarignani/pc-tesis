@@ -69,7 +69,7 @@ class PDFS3(PDFSCommon):
         with PdfPages(self.pdf_name) as pdf:
             self.pd_utils_3_global = PandasUtils(self.dataset_name, 'Global', self.df_3_global, 3)
             for self.filename in self.dataset_filenames():
-                print("  " + self.filename)
+                # print("  " + self.filename)
                 self.create_pdf_pages(pdf, self.dataset_name, self.filename)
 
     def create_pdf_pages(self, pdf, dataset_name, filename):
