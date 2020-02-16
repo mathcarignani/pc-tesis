@@ -40,7 +40,8 @@ class WindowsPlot(CommonPlot):
             # ax.scatter(x=x_axis_3, y=y_axis_3, c=self.value3_color, zorder=1, label=label3, s=20, edgecolor='black')
             ax.scatter(x=x_axis_0, y=y_axis_0, c=self.value0_color, zorder=1, label=label0, s=50, edgecolor='black')  # global
             ax.scatter(x=x_axis_3, y=y_axis_3, c=self.value3_color, zorder=2, label=label3, s=10, edgecolor='black')
-            ax.legend(loc='upper right', bbox_to_anchor=(0.5, 0.1, 0.48, 0.92), fontsize='small', scatterpoints=1,
+            bbox_to_anchor = (0.45, 0.29, 0.55, 0.75) # (x0, y0, width, height)
+            ax.legend(loc='upper right', bbox_to_anchor=bbox_to_anchor, fontsize='small', scatterpoints=1,
                       handlelength=0.3, ncol=2, edgecolor='black')
         else:
             for i, value3 in enumerate(self.values3):
