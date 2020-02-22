@@ -39,6 +39,7 @@ class Plotter2(object):
         self.__plot_stats(fig)
         return fig, plt
 
+    # TODO: remove this method
     @staticmethod
     def __map_subplot(row_i, col_j):
         val = row_i*6 + col_j + 1
@@ -56,21 +57,21 @@ class Plotter2(object):
             pass
         else:
             raise(StandardError, "error => " + str(val))
-        extra = {
+        extra_options = {
             'first_column': val in [1, 4, 7, 10, 13, 16],
             'last_column': val in [3, 6, 9, 12, 15, 18],
             'first_row': val in [1, 2, 3, 10, 11, 12],
             'last_row': val in [16, 17, 18]
         }
-        return 7, 3, val, extra
+        return 7, 3, val, extra_options
 
     def __plot_data(self, fig, total_rows):
         for col_j, column in enumerate(self.matrix.columns):
             for row_i in range(total_rows):
-                row, col, current_subplot, extra = self.__map_subplot(row_i, col_j)
+                row, col, current_subplot, extra_options = self.__map_subplot(row_i, col_j)
                 # print(row, col, current_subplot)
                 ax = fig.add_subplot(row, col, current_subplot)
-                column.plot(row_i, ax, extra)
+                column.plot(row_i, ax, extra_options)
 
     def __plot_stats(self, fig):
         ax = fig.add_subplot(7, 3, 19)

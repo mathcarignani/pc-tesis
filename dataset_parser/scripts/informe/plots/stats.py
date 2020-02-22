@@ -2,14 +2,13 @@ import sys
 sys.path.append('.')
 
 from scripts.informe.plot.plot_constants import PlotConstants
-from scripts.avances.avances15.common_plot import CommonPlot
-from scripts.avances.avances15.plotter2_constants import Plotter2Constants
+from scripts.informe.plots.common_plot import CommonPlot
 from scripts.informe.results_parsing.results_to_dataframe import ResultsToDataframe
 
 
 class RelativeDifferenceStats(CommonPlot):
-    def __init__(self, plot_options=None):
-        self.plot_options = plot_options  # unused
+    def __init__(self, options={}):
+        self.options = options  # unused
         self.total_results = 0
         self.best0_results = 0
         self.best3_results = 0
@@ -29,7 +28,7 @@ class RelativeDifferenceStats(CommonPlot):
 
     def close(self):
         assert(self.total_results == self.best0_results + self.best3_results + self.same_results)
-        assert(self.total_results == 6 * 8)
+        assert(self.total_results == 8 * 8)
 
     def set_colors_and_labels(self, value0_color, value3_color, label0, label3):
         super(RelativeDifferenceStats, self).set_colors(value0_color, value3_color)
@@ -42,7 +41,7 @@ class RelativeDifferenceStats(CommonPlot):
 
     def plot(self, ax):
         results = [self.best0_results, self.same_results, self.best3_results]
-        colors = [self.value0_color, Plotter2Constants.VALUE_SAME, self.value3_color]
+        colors = [self.value0_color, PlotConstants.VALUE_SAME, self.value3_color]
         self.plot_aux(ax, self.col_labels, zip(results, self.row_labels, colors))
 
     def plot_aux(self, ax, col_labels, zipped_values):
@@ -75,36 +74,39 @@ class RelativeDifferenceStats(CommonPlot):
     ##############################################
 
     @staticmethod
-    def create_plot_common(coders_array, panda_utils_0, panda_utils_3, col_index, key, klass, plot_options=None):
-        min_values_0 = panda_utils_0.min_value_for_every_coder(coders_array, col_index)[key]
+    def create_plot_common(coders_array, panda_utils_0, panda_utils_3, col_index, key, klass, options={}):
         min_values_3 = panda_utils_3.min_value_for_every_coder(coders_array, col_index)[key]
+        if panda_utils_0 is None:
+            min_values_0 = min_values_3
+        else:
+            min_values_0 = panda_utils_0.min_value_for_every_coder(coders_array, col_index)[key]
 
-        plot_instance = klass(plot_options)
+        plot_instance = klass(options)
         for value0, value3 in zip(min_values_0, min_values_3):
             plot_instance.add_values(value0, value3)
         plot_instance.close()
         return plot_instance
 
     @staticmethod
-    def create_plots(coders_array, panda_utils_0, panda_utils_3, col_index, plot_options=None):
+    def create_plots(coders_array, _, panda_utils_0, panda_utils_3, col_index, options={}):
         key = ResultsToDataframe.data_column_key(col_index)
         klass = RelativeDifferenceStats
-        return RelativeDifferenceStats.create_plot_common(coders_array, panda_utils_0, panda_utils_3, col_index, key, klass, plot_options)
+        return RelativeDifferenceStats.create_plot_common(coders_array, panda_utils_0, panda_utils_3, col_index, key, klass, options)
 
 
 class WindowsStats(RelativeDifferenceStats):
-    def __init__(self, plot_options=None):
-        self.plot_options = plot_options  # unused
+    def __init__(self, options={}):
+        self.options = options  # unused
         super(WindowsStats, self).__init__()
         self.set_labels(['BIG', '#', '%'], ['MM=0', 'SAME', 'MM=3'])
 
     def plot(self, ax):
         results = [self.best3_results, self.same_results, self.best0_results]
-        colors = [self.value0_color, Plotter2Constants.VALUE_SAME, self.value3_color]
+        colors = [self.value0_color, PlotConstants.VALUE_SAME, self.value3_color]
         self.plot_aux(ax, self.col_labels, zip(results, self.row_labels, colors))
 
     @staticmethod
-    def create_plots(coders_array, panda_utils_0, panda_utils_3, col_index, plot_options=None):
+    def create_plots(coders_array, _, panda_utils_0, panda_utils_3, col_index, options={}):
         key = 'window'
         klass = WindowsStats
-        return RelativeDifferenceStats.create_plot_common(coders_array, panda_utils_0, panda_utils_3, col_index, key, klass, plot_options)
+        return RelativeDifferenceStats.create_plot_common(coders_array, panda_utils_0, panda_utils_3, col_index, key, klass, options)

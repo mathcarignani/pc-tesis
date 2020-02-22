@@ -1,0 +1,18 @@
+
+\newcommand{\commonfigurescomp}{Compression ratio and relative difference plots for $a_\maskalgo$ and $a_\NOmaskalgo$ for every\\coding algorithm $a \in A$, for the }
+
+\newcommand{\commonfigurescompmost}{\\In the relative difference plot for CoderPCA we marked with a blue circle the case\\in which $a_\maskalgo$ obtains the most significant relative difference (50.60\%).}
+
+\newcommand{\commonfigurescompleast}{\\In the relative difference plot for CoderAPCA we marked with a red circle the case\\in which $a_\NOmaskalgo$ obtains the most significant relative difference (-0.29\%).}
+
+\newcommand{\plotcommand}[5]{
+    \clearpage
+    \begin{figure}
+    \hspace{-90pt}
+    \includegraphics[clip,trim=0 3cm 0 3.5cm,height=23.5cm]{appendices/1-imagesPlots3.2/{#1}}
+    \hspace{+5pt}
+    \caption{\commonfigurescomp ``{#3}" data type of the {#2} dataset.{#4}}
+    {#5}
+    \end{figure}
+}
+

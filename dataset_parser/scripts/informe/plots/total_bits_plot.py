@@ -4,14 +4,14 @@ sys.path.append('.')
 from scripts.compress.experiments_utils import ExperimentsUtils
 from scripts.informe.plot.plot_constants import PlotConstants
 from scripts.informe.plot.plot_utils import PlotUtils
-from scripts.avances.avances15.common_plot import CommonPlot
-from scripts.avances.avances15.plotter2_constants import Plotter2Constants
-from scripts.avances.avances15.relative_difference_plot import RelativeDifferencePlot
+from scripts.informe.plots.common_plot import CommonPlot
+from scripts.informe.plots.relative_difference_plot import RelativeDifferencePlot
 
 
 class TotalBitsPlot(CommonPlot):
-    def __init__(self, algorithm):
-        self.algorithm = algorithm
+    def __init__(self, information):
+        self.algorithm = information.get('algorithm')
+        self.filename = information.get('filename')
         self.values0 = []
         self.values3 = []
         self.basic_value0 = None
@@ -32,11 +32,11 @@ class TotalBitsPlot(CommonPlot):
     def min_max(self):
         return [min([min(self.values0), min(self.values3)]), max([max(self.values0), max(self.values3)])]
 
-    def plot(self, ax, ymin, ymax, extra):
+    def plot(self, ax, ymin, ymax, extra_options):
         # self.print_values()
 
         # scatter plot
-        x_axis = list(xrange(len(self.values0)))
+        x_axis = list(range(len(self.values0)))
         colors0, colors3 = self.generate_colors()
         ax.scatter(x=x_axis, y=self.values0, c=colors0, zorder=self.values0)
         ax.scatter(x=x_axis, y=self.values3, c=colors3, zorder=self.values3)
@@ -48,21 +48,20 @@ class TotalBitsPlot(CommonPlot):
 
         RelativeDifferencePlot.set_lim(ax, ymin, ymax)
 
-        if extra['first_row']:
+        if extra_options['first_row']:
             ax.title.set_text(self.algorithm)
-        if not extra['last_row']:
+        if not extra_options['last_row']:
             ax.set_xticklabels([])
-        if extra['first_column']:
+        if extra_options['first_column']:
             ax.set_ylabel('Total Bits')
             self.format_x_ticks(ax)
         else:
             ax.set_yticklabels([])
-        PlotUtils.hide_ticks(ax)
 
     def print_values(self):
-        print self.algorithm + " Total Bits"
-        print "self.values0 = " + str(self.values0)
-        print "self.values3 = " + str(self.values3)
+        print(self.algorithm + " Total Bits")
+        print("self.values0 = " + str(self.values0))
+        print("self.values3 = " + str(self.values3))
 
     def __check_sorted(self):
         if self.additional_checks:
@@ -80,5 +79,5 @@ class TotalBitsPlot(CommonPlot):
         assert(total_max > 0)
 
         diff = total_max - total_min
-        total_min = 0 if total_min > 0 else total_min - diff * Plotter2Constants.Y_DIFF
-        return total_min, total_max + diff * Plotter2Constants.Y_DIFF
+        total_min = 0 if total_min > 0 else total_min - diff * PlotConstants.Y_DIFF
+        return total_min, total_max + diff * PlotConstants.Y_DIFF

@@ -26,7 +26,7 @@ class CSVReader:
         self.current_line_count = 0
         self.progress_bar = None
         self.previous_row = next(self.csv_reader, None)
-        for _ in xrange(row_number):
+        for _ in range(row_number):
             self.read_line()
 
     def goto_first_data_row(self):
@@ -46,7 +46,7 @@ class CSVReader:
         return previous_row
 
     def total_lines_(self):
-        print self.full_path
+        print(self.full_path)
         return sum(1 for _ in csv.reader(self.open_file()))
 
     def open_file(self):

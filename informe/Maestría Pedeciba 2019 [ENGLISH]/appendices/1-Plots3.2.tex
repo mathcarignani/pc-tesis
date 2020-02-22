@@ -1,0 +1,23 @@
+% Chapter ?
+
+\chapter{Plots: Global Compression Ratio and Relative Difference} % Main chapter title
+
+\label{plots32} % For referencing the chapter elsewhere, use \ref{Chapter1} 
+
+\lhead{Appendix ?. \emph{Plots 3.2}} % This is for the header on each page - perhaps a shortened title
+
+\newcommand{\printlist}[3]{%
+    \foreach \x [count=\xi] in {#3} {
+        \plotcommand{#1-\xi}{{#2}}{\x}{}{}
+    }%
+}
+
+\plotcommand{1-IRKIS-1}{\datasetirkis}{VWC}{}{}
+\plotcommand{2-NOAA-SST-1}{\datasetsst}{SST}{\commonfigurescompmost}{}
+\plotcommand{3-NOAA-ADCP-1}{\datasetadcp}{Vel}{}{}
+
+\printlist{4-SolarAnywhere}{\datasetsolar}{GHI, DNI, DHI}
+\printlist{5-ElNino}{\datasetelnino}{Lat, Long, Zonal Winds, Merid. Winds, Humidity, Air Temp., SST}
+\printlist{6-NOAA-SPC-hail}{\datasethail}{Lat, Long, Size}
+\printlist{7-NOAA-SPC-tornado}{\datasettornado}{Lat, Long}
+\printlist{8-NOAA-SPC-wind}{\datasetwind}{Lat, Long, Speed}

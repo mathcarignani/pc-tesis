@@ -1,6 +1,7 @@
 import sys
 sys.path.append('.')
 
+import pandas as pd
 from auxi.python_utils import assert_equal_lists
 from scripts.informe.results_parsing.results_to_dataframe import ResultsToDataframe
 
@@ -15,6 +16,13 @@ class PandasMethods(object):
         df = PandasMethods.dataset_df(df, dataset)
         df = df.dropna(axis=1, how='all')  # drop the columns where all elements are NaN
         return df
+
+    #
+    # Deep copy df
+    #
+    @staticmethod
+    def copy(df):
+        return pd.DataFrame.copy(df, deep=True)
 
     #
     # Given a df, it filters the rows which belong to a certain dataset
@@ -43,8 +51,18 @@ class PandasMethods(object):
     #
     @staticmethod
     def get_min_row(coder_df, column_key, threshold):
+        # print "coder_df"
+        # print threshold
+        # print coder_df
+        thresholds = coder_df.threshold.unique()
+        check_same = set(thresholds) == set([0, 1, 3, 5, 10, 15, 20, 30])
+        if not check_same:
+            print(thresholds)
+            assert(check_same)
         threshold_df = PandasMethods.threshold_df(coder_df, threshold)
-        min_value_index = threshold_df[column_key].argmin()
+        # print "threshold_df"
+        # print threshold_df
+        min_value_index = threshold_df[column_key].idxmin()
         min_value = threshold_df.loc[min_value_index][column_key]
 
         min_value_rows_count = threshold_df[threshold_df[column_key] == min_value].count()[column_key]
@@ -158,4 +176,6 @@ class PandasMethods(object):
 
                     # recalculate the percentages
                     df3.loc[df3_filename, percentage_col] = 100 * (df3.loc[df3_filename, col] / basic_coder_total)
+
+        PandasMethods.check_coder_basic_matches(df0, df3)
         return df3

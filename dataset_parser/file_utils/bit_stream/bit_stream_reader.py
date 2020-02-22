@@ -11,7 +11,7 @@ class BitStreamReader(object):
     # k is the number of bits we want to read
     def read_int(self, k):
         ans = 0
-        for i in xrange(k-1, -1, -1):
+        for i in range(k-1, -1, -1):
             if self.continue_reading:
                 bit = self.read_bit()
                 ans |= bit << i

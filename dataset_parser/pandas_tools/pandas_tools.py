@@ -26,7 +26,7 @@ class PandasTools:
         self.repeat_timestamp = repeat_timestamp
 
     def add_row(self, timestamp, row, adcp=False):
-        print timestamp
+        print(timestamp)
         data = [np.nan if x == PandasTools.NO_DATA else x for x in row]
         if adcp:
             # row = [depth, UCUR, VCUR, WCUR]

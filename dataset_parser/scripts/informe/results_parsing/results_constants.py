@@ -38,13 +38,19 @@ class ResultsConstants(object):
         path, filename = None, None
         if file_key == 'raw':
             path = ResultsConstants.RAW_RESULTS_PATH
-            filename = ResultsConstants.RAW_MM_0_FILENAME if file_value == 0 else ResultsConstants.RAW_MM_3_FILENAME
+            if file_value == 0:
+                filename = ResultsConstants.RAW_MM_0_FILENAME
+            else:
+                filename = ResultsConstants.RAW_MM_3_FILENAME
         # elif file_key == 'compare':
         #     path = ResultsConstants.COMPARE_RESULTS_PATH
         #     filename = ResultsConstants.COMPARE_MM_3_FILENAME
         elif file_key == 'global':
             path = ResultsConstants.GLOBAL_RESULTS_PATH
-            filename = ResultsConstants.GLOBAL_MM_0_FILENAME if file_value == 0 else ResultsConstants.GLOBAL_MM_3_FILENAME
+            if file_value == 0:
+                filename = ResultsConstants.GLOBAL_MM_0_FILENAME
+            else:
+                filename = ResultsConstants.GLOBAL_MM_3_FILENAME
         elif file_key == 'raw_basic':
             path = ResultsConstants.RAW_MM_3_BASIC_CODER_PATH
             filename = ResultsConstants.RAW_MM_3_BASIC_CODER_FILENAME
@@ -64,6 +70,6 @@ class ResultsConstants(object):
 
     @staticmethod
     def raise_error(file_key, file_value):
-        print "file_key = " + str(file_key)
-        print "file_value = " + str(file_value)
+        print("file_key = " + str(file_key))
+        print("file_value = " + str(file_value))
         raise(StandardError, "ERROR: invalid combination of parameters")

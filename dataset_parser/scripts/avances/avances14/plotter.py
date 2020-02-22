@@ -31,18 +31,18 @@ class Plotter(object):
                 first_column = (horizontal_index == 0)
                 current_subplot = total_horizontal_plots*vertical_index + horizontal_index + 1
                 ax = fig.add_subplot(total_vertical_plots, total_horizontal_plots, current_subplot)
-                extra = {
+                extra_options = {
                     'first_row': first_row,
                     'last_row': last_row,
                     'first_column': first_column,
                     'last_column': False
                 }
-                single_plot.plot(ax, y_lim, extra)
+                single_plot.plot(ax, y_lim, extra_options)
 
             current_subplot = total_horizontal_plots*vertical_index + total_horizontal_plots
             ax = fig.add_subplot(total_vertical_plots, total_horizontal_plots, current_subplot)
-            extra = {'first_row': first_row, 'last_column': True}
-            row_plot.plot_stats(ax, y_lim, extra)
+            extra_options = {'first_row': first_row, 'last_column': True}
+            row_plot.plot_stats(ax, y_lim, extra_options)
 
         fig.set_tight_layout(True)
         fig.subplots_adjust(hspace=0.1)

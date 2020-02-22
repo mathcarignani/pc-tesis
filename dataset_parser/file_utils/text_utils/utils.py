@@ -13,12 +13,12 @@ class Utils(object):
 
             if not fr1.continue_reading:
                 if not fr2.continue_reading:
-                    print 'SAME FILE!'
+                    print('SAME FILE!')
                 else:
-                    print 'Reached EOF of file 1. DIFF at line', line_count
+                    print('Reached EOF of file 1. DIFF at line', line_count)
                 break
             elif not fr2.continue_reading:
-                print 'Reached EOF of file 2. DIFF at line', line_count
+                print('Reached EOF of file 2. DIFF at line', line_count)
                 break
 
             line1 = fr1.read_line()
@@ -40,7 +40,7 @@ class Utils(object):
                 if diff > error_threshold:
                     error = True
             if error:
-                print 'DIFF: value1=', value1, 'value2=', value2, 'line=', line_count
+                print('DIFF: value1=', value1, 'value2=', value2, 'line=', line_count)
                 break
         fr1.close()
         fr2.close()

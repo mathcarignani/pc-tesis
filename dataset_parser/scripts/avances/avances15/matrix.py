@@ -1,10 +1,10 @@
 import sys
 sys.path.append('.')
 
-from scripts.avances.avances15.compression_ratio_plot import CompressionRatioPlot
-from scripts.avances.avances15.relative_difference_plot import RelativeDifferencePlot
-from scripts.avances.avances15.stats import RelativeDifferenceStats, WindowsStats
-from scripts.avances.avances15.total_bits_plot import TotalBitsPlot
+from scripts.informe.plots.compression_ratio_plot import CompressionRatioPlot
+from scripts.informe.plots.relative_difference_plot import RelativeDifferencePlot
+from scripts.informe.plots.stats import RelativeDifferenceStats, WindowsStats
+from scripts.informe.plots.total_bits_plot import TotalBitsPlot
 
 
 class Matrix(object):

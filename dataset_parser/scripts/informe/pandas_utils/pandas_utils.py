@@ -12,13 +12,14 @@ class PandasUtils(object):
     FIXED_ROWS = ResultsToDataframe.KEY_TO_INDEX.keys()
     MAX_DIFF = 0.009
 
-    def __init__(self, dataset_name, filename, df, mask_mode):
+    def __init__(self, dataset_name, filename, df, mask_mode, check=True):
         assert(mask_mode in [0, 3])
 
         self.df = PandasMethods.filename_df(df, filename, dataset_name)
         self.mask_mode = mask_mode
-        self.data_columns_count = (len(self.df.columns) - len(PandasUtils.FIXED_ROWS)) / 2
-        PandasUtilsCheck(self).check_df(dataset_name)
+        self.data_columns_count = int((len(self.df.columns) - len(PandasUtils.FIXED_ROWS)) / 2)
+        if check:
+            PandasUtilsCheck(self).check_df(dataset_name)
         self.__calculate_percentage()
 
     def __calculate_percentage(self):
@@ -89,7 +90,7 @@ class PandasUtilsCheck(object):
 
         # check that data for every coder is included
         coders = self.df['coder'].unique()
-        expected_coders = ExperimentsUtils.CODERS_NO_MASK_MODE if self.mask_mode == 0 else ExperimentsUtils.CODERS
+        expected_coders = ExperimentsUtils.CODERS_NO_MASK_MODE() if self.mask_mode == 0 else ExperimentsUtils.CODERS
         np.testing.assert_array_equal(coders, expected_coders)
 
         # check that the rows count for each coder match
@@ -105,10 +106,10 @@ class PandasUtilsCheck(object):
         else:
             # the rest of the coders have the same number of rows
             if rows_count != self.NUMBER_OF_COMBINATIONS:
-                print PandasMethods.coder_df(self.df, coder_name)
-                print coder_name
-                print self.NUMBER_OF_COMBINATIONS
-                print rows_count
+                print(PandasMethods.coder_df(self.df, coder_name))
+                print(coder_name)
+                print(self.NUMBER_OF_COMBINATIONS)
+                print(rows_count)
                 assert(rows_count == self.NUMBER_OF_COMBINATIONS)
     
     def __coder_rows_count(self, coder_name):

@@ -53,7 +53,7 @@ class ProcessResults(object):
 
     def __datasets_iteration(self):
         for dataset_id, self.dataset_name in enumerate(ExperimentsUtils.DATASET_NAMES):
-            print self.dataset_name
+            print(self.dataset_name)
             self._print(self.dataset_name)
             self.__set_dataset(self.dataset_name)
             self.__filenames_iteration()
@@ -150,7 +150,7 @@ class ProcessResults(object):
 
     def _print(self, value):
         if self.DEBUG_MODE:
-            print value
+            print(value)
 
     @staticmethod
     def get_values(row_df, col_index):
