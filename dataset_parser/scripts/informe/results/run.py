@@ -7,7 +7,7 @@ from scripts.informe.pdfs.pdfs3 import PDFS3
 from scripts.informe.data_analysis.process_results.process_results import ProcessResults
 
 #
-# python scripts/informe/results/results.py
+# python scripts/informe/results/run.py
 #
 PATH = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/informe/results/"
 
