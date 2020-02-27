@@ -1,5 +1,36 @@
 % Chapter ?
 
+\clearpage
+Un punteo de los cambios más importantes respecto a la versión anterior del informe:
+
+Section 3.1:
+\begin{itemize}
+\vspace{-10pt}
+\item Agregué la Definition 3.1.3. Eso me permitió acortar las definiciones de CR y RD, ya que en la versión anterior del informe después de cada ecuación ponía explícitamente qué significaba cada uno de los tamaños $|c(z,f)|$, etc.
+
+\item En la Section 3.2 los experimentos consideran siempre todos los archivos del dataset (nunca consideran un archivo en particular), pero en la Section 3.3 consideran archivos particulares (porque se toma la ventana óptima para cada archivo). En la versión anterior del informe las definiciones de CR y RD siempre eran función de un archivo particular, que en realidad no era del todo correcto para la forma en que se aplican en la Section 3.2, pero como todavía no había escrito la Section 3.3, se podía considerar un abuso de notación (i.e. podía considerar al dataset un archivo creado a partir de todos los archivos concatenados). Pero al escribir la Section 3.3 me pareció que tenía que pulir un poco más las definiciones de CR y RD para cada caso (archivo particular vs. dataset). Entonces al final de la Section 3.1 agregué unas definiciones nuevas en ese sentido. 
+\end{itemize}
+
+Section 3.2:
+\begin{itemize}
+\vspace{-10pt}
+\item No sé si el primer párrafo / definición quedan del todo claras. A lo mejor debería empezar definiendo A con la lista de algoritmos, en vez de definirlo de manera retroactiva.
+
+\item En esta Section y en las figuras a veces me refiero a los algoritmos como CoderABC. Creo que eso lo voy a cambiar por algoritmo ABC, y en las figuras el título de cada gráfica sería ABC.
+
+\item En el párrafo siguiente a la Definition 3.2.2 (OWS) dice que se calcula la diferencia relativa entre A y B "as defined in (3.5)". Dado que la definición de RD no es simétrica, a lo mejor estaría bueno poner explícitamente que estoy calculando RD(A,B,...). Puede que sea un poco redundante pero me parece mejor que quede más explícito.
+
+\item En algunos párrafos repito mucho la palabra variant, creo que debería intercambiarla un poco más por mode (lo hago en unos pocos casos).
+\end{itemize}
+
+Section 3.3:
+\vspace{-10pt}
+\begin{itemize}
+\item Quiero cambiar los colores de las gráficas, para que sean diferentes de los colores de las gráficas de la Section 3.2 y que se vean mejor los casos en los que coinciden los tamaños de las ventanas.
+\item Aplica el punto dos de la Section 3.2
+\end{itemize}
+
+
 \chapter{Experimental Results} % Main chapter title
 
 \label{experiments} % For referencing the chapter elsewhere, use \ref{Chapter1} 
@@ -21,7 +52,7 @@
 
 
 
-In this chapter we present our experimental results. The main goal of our experiments is to analyze the performance of each of the coding algorithms presented in Chapter~\ref{coders}, by encoding the various datasets introduced in Chapter~\ref{datasets}. In Section~\ref{experiments:experiments} we describe our experimental setting, defining the evaluated combinations of algorithms and parameter values, and the figures of merit used for comparison. In Section~\ref{secX:windows} we analyze how the window size parameter affects the performance of the algorithms. In Section~\ref{secX:codersmask} we compare the performance of the different algorithms among each other, while in Section~\ref{secX:gzip} we compare them with the gzip algorithm.
+In this chapter we present our experimental results. The main goal of our experiments is to analyze the performance of each of the coding algorithms presented in Chapter~\ref{coders}, by encoding the various datasets introduced in Chapter~\ref{datasets}. In Section~\ref{experiments:experiments} we describe our experimental setting, defining the evaluated combinations of algorithms and parameter values, and the figures of merit used for comparison. In Section~\ref{secX:rendimiento-relativo} we compare the compression performance of the masking and non-masking variants for each coding algorithm. In Section~\ref{secX:windows} we analyze how much does the window size parameter impacts the performance of the algorithms. In Section~\ref{secX:codersmask} we compare the performance of the different algorithms among each other, while in Section~\ref{secX:gzip} we compare them with the gzip algorithm.
 
 
 \input{chapters/Experiments/1-Setting.tex}

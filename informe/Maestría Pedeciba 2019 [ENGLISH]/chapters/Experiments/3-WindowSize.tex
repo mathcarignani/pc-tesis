@@ -3,38 +3,52 @@
 \section{Window Size Parameter}
 \label{secX:windows}
 
-In this section we analyze \textbf{how much does / the extent to which} the window size parameter affects the performance of the algorithms. We only consider the four datasets that consist of multiple files, i.e. \datasetirkis, \datasetsst, \datasetadcp \ and \datasetsolar. For every data type in each dataset file we compare the compression ratios obtained when using the optimal global window size and the optimal local window size (for that data type in that file). 
+In this section, we analyze the extent to which the window size parameter impacts the performance of the coding algorithms. We only consider the four datasets that consist of multiple files, i.e. \datasetirkis, \datasetsst, \datasetadcp \ and \datasetsolar. For each file, we compare the compression performance when using the optimal window size for the dataset, as defined in (\ref{eq:ows}), and the local optimal window size, defined next.
 
-For example, in Figure~\ref{fig:window-compare-1202} we display the compression ratio and relative difference plots obtained for the ``VWC" data type of the ``vwc\_1202.dat.csv" file. We can see, for instance, that in the CoderAPCA case both window size parameters match for every threshold parameter $e$, except 3 and 10. When $e=3$ the optimal global window size is larger, and when $e=10$ the optimal local window size is larger. In those cases the relative differences are 1.52 and 1.76, respectively. Notice that in every plot the relative difference is non-negative, which was expected, since the compression rate obtained when using the optimal global window will never be smaller than the compression rate obtained when using the optimal local window.
 
-Table~\ref{tabla:windows-comparison} summarizes the results obtained for each combination of algorithms, threshold parameters, data types and files, sorted by algorithm. In 88.7\% of the cases both window sizes match, and so the relative difference is 0. In the remaining cases, most of the times the relative difference is smaller than 1, and there are only six cases in which the relative difference is larger than 5.
+\newcommand{\lows}{\textit{LOWS}}
+\begin{defcion}
+The \textit{local optimal window size (\lows)} of a coding algorithm $a \in A$ and a threshold parameter $e \in E$, for the data type $z$ of a certain file $f$ is given by
+\begin{equation}
+\lows(a, e, z, f) = \argmin_{w\ \in \ W} \biggl\{ \tasacompresion(c_{<a, w, e>}, z, f) \biggr\},
+\end{equation}
+where we break ties in favor of the smallest window size.
+\end{defcion}
 
-\vspace{+10pt}
+
+For each data type $z$ of each dataset $d$, and each file $f \in F(d, z)$, coding algorithm $a \in A$ and threshold parameter $e \in E$, we calculate the relative difference between $c_{<a, w_{global}^{*}, e>}$ and $c_{<a, w_{local}^{*}, e>}$, as defined in~(\ref{eq:relative-difference}), where $w_{global}^{*}=OWS(a, e, z, d)$ and $w_{local}^{*}=LOWS(a, e, z, f)$. In what follows, we refer to $w_{global}^{*}$ and $w_{local}^{*}$ as the global and local window size, respectively.
+
+
+As an example, in Figures~\ref{fig:window-compare-1202} and~\ref{fig:window-compare-1203} we display the global and local window sizes and the relative difference, as a function of the threshold, obtained for the data type ``VWC", for two different files of the dataset \datasetirkis. Figure~\ref{fig:window-compare-1202} shows the results for the file ``vwc\_1202.dat.csv", while Figure~\ref{fig:window-compare-1203} shows the results for ``vwc\_1203.dat.csv". Observe that the global window sizes are repeated for every matching plot of both figures, which is expected, since both figures consider the same data type of the same dataset.
+
+
+In Figure~\ref{fig:window-compare-1202} we notice, for instance, that in the APCA algorithm case both window sizes match for every threshold parameter $e$, except 3 and 10. The global window is larger than the local window when $e=3$, but it is smaller when $e=10$. In those two cases the relative difference values are 1.52 and 1.76, respectively. We observe that the relative difference is non-negative in every plot, which makes sense, since the compression ratio obtained when using the global window cannot be lower than the compression ratio obtained when using the local window.
+
+
+\clearpage
+
+\threethreesingle{1-IRKIS-1-1}{VWC}{vwc\_1202.dat.csv}{\datasetirkis}{\label{fig:window-compare-1202}}{}
+\threethreesingle{1-IRKIS-2-1}{VWC}{vwc\_1203.dat.csv}{\datasetirkis}{\label{fig:window-compare-1203}}{\threethreemost}
+
+\clearpage
+
+
+NO LEER ESTA PARTE, TODAVÍA NO TERMINÉ.
+
+TODO:
+\vspace{-10pt}
+\begin{itemize}
+    \item Reescribir el párrafo que presenta a la tabla
+    \item Analizar los datos de la tabla
+    \item Escribir un párrafo final con conclusiones
+\end{itemize}
+
+Table~\ref{tabla:windows-comparison} summarizes the results obtained for each combination of algorithm, error threshold parameter, data type and file. In 88.7\% of the cases both window sizes match, and so the relative difference is 0. In the remaining cases, most of the times the relative difference is smaller than 1, and there are only six cases in which the relative difference is larger than 5.
+
+
+\vspace{+5pt}
 \input{chapters/Experiments/other/table-windows.tex}
 \vspace{-5pt}
 
+
 In Figure~\ref{fig:window-compare-1203} we display the plots obtained for the ``VWC" data type of the ``vwc\_1203.dat.csv" file. For CoderPCA and $e=15$ the relative difference is 10.68, which is the largest value obtained for all of the combinations. The next four largest relative differences (9.79, 9.22, 7.20, and 5.51) are also obtained with the CoderPCA algorithm. These results support the idea that the performance of the CoderPCA algorithm is more sensible to the window size parameter than the rest of the algorithms.
-
-\clearpage
-
-\begin{figure}
-\hspace{-70pt}
-\includegraphics[clip,trim=0 0 0 0,height=22.5cm]{chapters/Experiments/images/3.3/1202.png}
-\hspace{+5pt}
-\caption{Global vs. local OWS, compression ratio and relative difference plots for every\\coding algorithm $a \in A$, for the ``VWC" data type of the ``vwc\_1202.dat.csv" file of the \datasetirkis \ dataset.}
-\label{fig:window-compare-1202}
-\end{figure}
-
-
-\clearpage
-
-\begin{figure}
-\hspace{-70pt}
-\includegraphics[clip,trim=0 0 0 0,height=22.5cm]{chapters/Experiments/images/3.3/1203.png}
-\hspace{+5pt}
-\caption{Global vs. local OWS, compression ratio and relative difference plots for every\\coding algorithm $a \in A$, for the ``VWC" data type of the ``vwc\_1203.dat.csv" file of the \datasetirkis \ dataset.}
-\label{fig:window-compare-1203}
-\end{figure}
-
-
-\clearpage
