@@ -100,6 +100,7 @@ class RelativeDifferencePlot(CommonPlot):
             else:
                 extra_row = ['', '', '']
             extra_row_str = ",".join(extra_row)
+            # TODO: uncomment to print the window stats
             print(self.filename + "," + self.algorithm + "," + str(threshold) + "," + str_value + ",," + extra_row_str)
 
     @classmethod

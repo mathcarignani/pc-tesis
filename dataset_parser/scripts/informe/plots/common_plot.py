@@ -40,8 +40,10 @@ class CommonPlot(object):
 
     @classmethod
     def label_title(cls, ax, options, title):
-        if options.get('title'):
-            ax.set_title(title, fontsize=15)
+        title_options = options.get('title')
+        if title_options:
+            fontsize = title_options if isinstance(title_options, int) else 15
+            ax.set_title(title, fontsize=fontsize)
 
     @classmethod
     def label_y(cls, ax, options, label, tick_labels=None):

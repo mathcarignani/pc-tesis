@@ -31,7 +31,7 @@ class PDFS3(PDFSCommon):
     ]
     HEIGHT_RATIOS = [30, 0, 30, 15, 30, 0, 30] # [30, 0, 30, 20, 30, 0, 30, 20, 5]
     PLOT_OPTIONS = {
-        'window': {'title': True, 'labels': [r'$global$', r'$local$']},
+        'window': {'title': 12, 'labels': [r'$global$', r'$local$']},
         # 'compression': {'labels': [r'$global$', r'$local$']},
         'relative': {'check_never_negative': True, 'show_xlabel': True},
         # 'relative_stats': {},
@@ -64,7 +64,7 @@ class PDFS3(PDFSCommon):
         self.pdf_name = self.path + str(self.dataset_id) + "-" + self.dataset_name + ".pdf"
         with PdfPages(self.pdf_name) as pdf:
             self.pd_utils_3_global = PandasUtils(self.dataset_name, 'Global', self.df_3_global, 3)
-            for self.filename in self.dataset_filenames():
+            for self.filename_index, self.filename in enumerate(self.dataset_filenames()):
                 # print("  " + self.filename)
                 self.create_pdf_pages(pdf, self.dataset_name, self.filename)
 
@@ -109,4 +109,5 @@ class PDFS3(PDFSCommon):
 
         fig, plt = pdf_page.create(self.CODERS_ARRAY, self.PLOTS_ARRAY, self.PLOTS_MATRIX)
         pdf.savefig(fig)
+        plt.savefig(self.pdf_name.replace(".pdf", "-") + str(self.filename_index + 1) + "-" + str(self.col_index) + ".png")
         plt.close()
