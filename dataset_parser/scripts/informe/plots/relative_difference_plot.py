@@ -45,7 +45,9 @@ class RelativeDifferencePlot(CommonPlot):
         # ax.legend()
 
         if self.options.get('add_min_max_circles'):
-            self._add_min_max_circles(ax)
+            self.__add_min_max_circles(ax)
+        if self.options.get('add_max_circle'):
+            self.__add_max_circle(ax)
 
         CommonPlot.set_lim(ax, ymin, ymax)
         self._labels(ax, self.options)
@@ -60,6 +62,12 @@ class RelativeDifferencePlot(CommonPlot):
             ax.add_artist(circle)
         if minimum < -0.28:
             circle = Ellipse((7, minimum), 1, 0.02, color=PlotConstants.VALUE3_COLOR, fill=False)
+            ax.add_artist(circle)
+
+    def __add_max_circle(self, ax):
+        maximum = max(self.values) # 10.6830419509284
+        if 10.68 < maximum < 10.69:
+            circle = Ellipse((5, maximum), 1, 1, color=PlotConstants.VALUE0_COLOR, fill=False)
             ax.add_artist(circle)
 
     def _labels(self, ax, options):

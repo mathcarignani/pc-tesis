@@ -33,7 +33,7 @@ class PDFS3(PDFSCommon):
     PLOT_OPTIONS = {
         'window': {'title': 12, 'labels': [r'$global$', r'$local$']},
         # 'compression': {'labels': [r'$global$', r'$local$']},
-        'relative': {'check_never_negative': True, 'show_xlabel': True},
+        'relative': {'check_never_negative': True, 'show_xlabel': True, 'add_max_circle': True},
         # 'relative_stats': {},
         # 'window_stats': {}
     }
