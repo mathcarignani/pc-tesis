@@ -33,17 +33,7 @@ In Figure~\ref{fig:window-compare-1202} we notice, for instance, that in the APC
 \clearpage
 
 
-NO LEER ESTA PARTE, TODAVÍA NO TERMINÉ.
-
-TODO:
-\vspace{-10pt}
-\begin{itemize}
-    \item Reescribir el párrafo que presenta a la tabla
-    \item Analizar los datos de la tabla
-    \item Escribir un párrafo final con conclusiones
-\end{itemize}
-
-Table~\ref{tabla:windows-comparison} summarizes the results obtained for each combination of algorithm, error threshold parameter, data type and file. In 88.7\% of the cases both window sizes match, and so the relative difference is 0. In the remaining cases, most of the times the relative difference is smaller than 1, and there are only six cases in which the relative difference is larger than 5.
+We analyze the experimental results to evaluate how much does using the global instead of the local window reduces the compression performance of the coding algorithms. The experiments consider 1,400 CAIs, since there are 200 for each of the seven algorithms. In 1,242 (88.7\%) cases the global and local windows match, so the compression performance is not affected, i.e. RD is~0. In the remaining 158 (11.3\%) cases both windows do not match, so the CAI with the local window outperforms the CAI with the global window and RD is greater than 0. These results are summarized in Table~\ref{tabla:windows-comparison}, in which we aggregate them by algorithm and according to the range to which values taken by RD belong.
 
 
 \vspace{+5pt}
@@ -51,4 +41,7 @@ Table~\ref{tabla:windows-comparison} summarizes the results obtained for each co
 \vspace{-5pt}
 
 
-In Figure~\ref{fig:window-compare-1203} we display the plots obtained for the ``VWC" data type of the ``vwc\_1203.dat.csv" file. For CoderPCA and $e=15$ the relative difference is 10.68, which is the largest value obtained for all of the combinations. The next four largest relative differences (9.79, 9.22, 7.20, and 5.51) are also obtained with the CoderPCA algorithm. These results support the idea that the performance of the CoderPCA algorithm is more sensible to the window size parameter than the rest of the algorithms.
+Observing Table~\ref{tabla:windows-comparison} we notice that, not only in 88.7\% of the cases RD is equal to 0, but also, in 97.8\% of the cases RD is less than or equal to 2. This means that, for the vast majority of CAIs, either the global and local windows match or the compression performance is not affected considerably when they don't. This result suggests that we could always set the global window as the window size parameter without having a significant negative impact on the compression performance of the coding algorithm. This is meaningful, since calculating the LOWS for a file is both a time and computationally expensive process. Having a predefined global windows table would improve the compression technique.
+
+
+Furthermore, we notice that there are only 6 (0.4\%) cases in which the values taken by RD fall in the (5, 11] range. These are the cases in which the CAIs with the global window achieve the worst relative compression. The maximum value taken by RD (10.68\%) is obtained for the data type ``VWC" of the file ``vwc\_1203.dat.csv" of the dataset \datasetsst, with the PCA algorithm and error parameter $e=15$. In Figure~\ref{fig:window-compare-1203} we made a red circle around the marker associated to that maximum value. Note that in that case the global window is 16 and the local window is 8. The next four largest values taken by RD (9.79\%, 9.22\%, 7.20\% and 5.51\%) are also cases in which the algorithm is PCA. These results support the notion that the performance of the PCA algorithm is more sensible to the window size parameter than the rest of the algorithms.
