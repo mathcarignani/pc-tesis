@@ -1,0 +1,28 @@
+% Chapter ?
+\chapter{Plots: Window Size Parameter} % Main chapter title
+\label{plots33} % For referencing the chapter elsewhere, use \ref{Chapter1} 
+
+\lhead{Appendix ?. \emph{Plots 3.3}} % This is for the header on each page - perhaps a shortened title
+
+\newcommand{\threethreelist}[4]{%
+    \foreach \x [count=\xi] in {#4} {
+        \threethreesingle{#1-\xi}{\x}{{#3}}{{#2}}{}{}
+    }%
+}
+
+\newcommand{\threethreelistaux}[5]{%
+    \foreach \x [count=\xi] in {#5} {
+        \threethreesingle{#1-\xi-#2}{{#4}}{\x}{{#3}}{}{}
+    }%
+}
+
+\threethreelistaux{1-IRKIS}{1}{\datasetirkis}{VWC}{vwc\_1202.dat.csv, vwc\_1203.dat.csv, vwc\_1204.dat.csv, vwc\_1205.dat.csv, vwc\_222.smet.csv, vwc\_333.smet.csv, vwc\_SLF2.smet.csv}
+
+\threethreelistaux{2-NOAA-SST}{1}{\datasetsst}{SST}{noaa-buoy-201701.csv, noaa-buoy-201702.csv, noaa-buoy-201703.csv}
+
+\threethreelistaux{3-NOAA-ADCP}{1}{\datasetsst}{Velocity}{noaa-adcp-201501.csv, noaa-adcp-201502.csv, noaa-adcp-201503.csv}
+
+\threethreelist{4-SolarAnywhere-1}{\datasetsolar}{solar-anywhere-2011.csv}{GHI, DNI, DHI}
+\threethreelist{4-SolarAnywhere-2}{\datasetsolar}{solar-anywhere-2012.csv}{GHI, DNI, DHI}
+\threethreelist{4-SolarAnywhere-3}{\datasetsolar}{solar-anywhere-2013.csv}{GHI, DNI, DHI}
+\threethreelist{4-SolarAnywhere-4}{\datasetsolar}{solar-anywhere-2014.csv}{GHI, DNI, DHI}

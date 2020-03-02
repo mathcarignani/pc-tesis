@@ -2,27 +2,29 @@
 
 \begin{table}[h]
 \begin{center}
-    \begin{tabular}{| C{2.5cm} || C{1.5cm} | C{1.5cm} | C{1.5cm} | C{1.5cm} | C{1.5cm} |}
+    \begin{tabular}{| C{2.5cm} || C{2.2cm} | C{1.5cm} | C{1.5cm} | C{1.5cm} | C{1.5cm} |}
     \hline
-      \multicolumn{1}{|>{\centering\arraybackslash}m{2.5cm}||}{\textbf{Coder}} 
-    & \multicolumn{1}{>{\centering\arraybackslash}m{1.5cm}|}{\textbf{0}} 
+    \multicolumn{1}{|>{\centering\arraybackslash}m{2.5cm}||}{} 
+    & \multicolumn{5}{>{\centering\arraybackslash}m{9cm}|}{RD Range (\%)}\\
+    \hline
+      \multicolumn{1}{|>{\centering\arraybackslash}m{2.5cm}||}{\textbf{Algorithm}} 
+    & \multicolumn{1}{>{\centering\arraybackslash}m{2.2cm}|}{\textbf{0}} 
     & \multicolumn{1}{>{\centering\arraybackslash}m{1.5cm}|}{\textbf{(0,1]}}
     & \multicolumn{1}{>{\centering\arraybackslash}m{1.5cm}|}{\textbf{(1,2]}}
     & \multicolumn{1}{>{\centering\arraybackslash}m{1.5cm}|}{\textbf{(2,5]}}
-    & \multicolumn{1}{>{\centering\arraybackslash}m{1.5cm}|}{\textbf{>5}}\\
+    & \multicolumn{1}{>{\centering\arraybackslash}m{1.5cm}|}{\textbf{(5,11]}}\\
     \hline\hline
-    PCA         & 186   & 4    & 3  & 2   & 5      \\\hline
-    APCA        & 174   & 13   & 7  & 6   & 0      \\\hline
-    CA          & 172   & 16   & 6  & 6   & 0      \\\hline
-    FR          & 171   & 14   & 8  & 7   & 0      \\\hline
-    PWLH        & 184   & 13   & 3  & 0   & 0      \\\hline
-    PWLHInt     & 173   & 9    & 13 & 4   & 1      \\\hline
-    GAMPSLimit  & 182   & 16   & 2  & 0   & 0      \\\hline\hline
-    Total       & 1,242 & 85   & 42 & 25  & 6      \\\hline
-    \%          & 88.7  & 6.1  & 3  & 1.8 & 0.4    \\\hline
+    PCA         & 186 (93\%)     & 4 (2\%)     & 3 (1.5\%)  & 2 (1\%)   & 5 (2.5\%) \\\hline
+    APCA        & 174 (87\%)     & 13 (6.5\%)  & 7 (3.5\%)  & 6 (3\%)   & 0    \\\hline
+    CA          & 172 (86\%)     & 16 (8\%)    & 6 (3\%)    & 6 (3\%)   & 0    \\\hline
+    FR          & 171 (85.5\%)   & 14 (7\%)    & 8 (4\%)    & 7 (3.5\%) & 0    \\\hline
+    PWLH        & 184 (92\%)     & 13 (6.5\%)  & 3 (1.5\%)  & 0         & 0    \\\hline
+    PWLHInt     & 173 (86.5\%)   & 9 (4.5\%)   & 13 (6.5\%) & 4 (2\%)   & 1 (0.5\%) \\\hline
+    GAMPSLimit  & 182 (91\%)     & 16 (8\%)    & 2  (1\%)   & 0         & 0    \\\hline\hline
+    Total       & 1,242 (88.7\%) & 85 (6.1\%) & 42 (3\%) & 25 (1.8\%)   & 6 (0.4\%) \\\hline
     \toprule[0.1mm]
     \end{tabular}
-    \caption{TODO}
+    \caption{Relative performance of the global and local window variants of each CAI.\\The results are aggregated by algorithm and according to\\the range to which values taken by RD belong.}
     \label{tabla:windows-comparison}
 \end{center}
 \end{table}

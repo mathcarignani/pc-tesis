@@ -17,10 +17,10 @@ class PlotConstants(object):
     COLOR_YELLOW = 'gold'
     COLOR_GREEN_F = 'forestgreen'
 
-    COMPRESSION_RATIO = 'Compression ratio'  # r'Tasa de compresi$\acute{o}$n (%)'  # 'Tasa de compresion (%)'
-    RELATIVE_DIFF = 'Relative difference'  # 'Diferencia relativa'
-    ERROR_THRE = r'Error threshold $e$'  # 'Umbral de error (%)'
-    WINDOW_SIZE = r'Window size $w$'  # r'Tama$\tilde{n}$o de ventana'  # 'Tamaño de ventana'
+    COMPRESSION_RATIO = 'Compression ratio'
+    RELATIVE_DIFF = 'Relative difference'
+    ERROR_THRE = r'Threshold parameter $e$'
+    WINDOW_SIZE = r'Window parameter $w$'
 
     Y_DIFF = 0.05
     VALUE0_COLOR = COLOR_RED

@@ -14,32 +14,28 @@ from scripts.informe.pdfs.pdfs_common import PDFSCommon
 
 class PDFS3(PDFSCommon):
     SUBPLOT_SPACING_W_H = (0.1, 0.05)
-    FIG_SIZE_H_V = (10, 14)
+    FIG_SIZE_H_V = (10, 11)
     CODERS_ARRAY = ['CoderPCA', 'CoderAPCA', 'CoderCA', 'CoderPWLH', 'CoderPWLHInt', 'CoderGAMPSLimit',
-                    'CoderFR', 'CoderSF']
-    PLOTS_ARRAY = ['compression', 'relative', 'window', 'relative_stats', 'window_stats']
+                    'CoderFR'] # , 'CoderSF']
+    PLOTS_ARRAY = ['window', 'relative'] # ['compression', 'relative', 'window', 'relative_stats', 'window_stats']
     PLOTS_MATRIX = [
         [['CoderPCA', 'window'],       ['CoderAPCA', 'window'],         ['CoderCA', 'window'],              ['CoderFR', 'window']],
         None,
-        [['CoderPCA', 'compression'],  ['CoderAPCA', 'compression'],    ['CoderCA', 'compression'],         ['CoderFR', 'compression']],
+        [['CoderPCA', 'relative'],  ['CoderAPCA', 'relative'],    ['CoderCA', 'relative'],         ['CoderFR', 'relative']],
         None,
-        [['CoderPCA', 'relative'],     ['CoderAPCA', 'relative'],       ['CoderCA', 'relative'],            ['CoderFR', 'relative']],
+        [['CoderPWLH', 'window'],      ['CoderPWLHInt', 'window'],      ['CoderGAMPSLimit', 'window']], #,      ['CoderSF', 'window']],
         None,
-        [['CoderPWLH', 'window'],      ['CoderPWLHInt', 'window'],      ['CoderGAMPSLimit', 'window'],      ['CoderSF', 'window']],
-        None,
-        [['CoderPWLH', 'compression'], ['CoderPWLHInt', 'compression'], ['CoderGAMPSLimit', 'compression'], ['CoderSF', 'compression']],
-        None,
-        [['CoderPWLH', 'relative'],    ['CoderPWLHInt', 'relative'],    ['CoderGAMPSLimit', 'relative'],    ['CoderSF', 'relative']],
-        None,
-        [[None, 'window_stats'], [None, 'relative_stats']]
+        [['CoderPWLH', 'relative'], ['CoderPWLHInt', 'relative'], ['CoderGAMPSLimit', 'relative']], # , ['CoderSF', 'relative']],
+        # None,
+        # [[None, 'window_stats'], [None, 'relative_stats']]
     ]
-    HEIGHT_RATIOS = [30, 0, 30, 0, 30, 20, 30, 0, 30, 0, 30, 20, 5]
+    HEIGHT_RATIOS = [30, 0, 30, 15, 30, 0, 30] # [30, 0, 30, 20, 30, 0, 30, 20, 5]
     PLOT_OPTIONS = {
-        'window': {'title': True, 'labels': [r'$global$', r'$local$']},
-        'compression': {'labels': [r'$global$', r'$local$']},
-        'relative': {'check_never_negative': True, 'show_xlabel': True},
-        'relative_stats': {},
-        'window_stats': {}
+        'window': {'title': 12, 'labels': [r'$global$', r'$local$']},
+        # 'compression': {'labels': [r'$global$', r'$local$']},
+        'relative': {'check_never_negative': True, 'show_xlabel': True, 'add_max_circle': True},
+        # 'relative_stats': {},
+        # 'window_stats': {}
     }
 
     def __init__(self, path, datasets_names=None):
@@ -68,7 +64,7 @@ class PDFS3(PDFSCommon):
         self.pdf_name = self.path + str(self.dataset_id) + "-" + self.dataset_name + ".pdf"
         with PdfPages(self.pdf_name) as pdf:
             self.pd_utils_3_global = PandasUtils(self.dataset_name, 'Global', self.df_3_global, 3)
-            for self.filename in self.dataset_filenames():
+            for self.filename_index, self.filename in enumerate(self.dataset_filenames()):
                 # print("  " + self.filename)
                 self.create_pdf_pages(pdf, self.dataset_name, self.filename)
 
@@ -113,4 +109,5 @@ class PDFS3(PDFSCommon):
 
         fig, plt = pdf_page.create(self.CODERS_ARRAY, self.PLOTS_ARRAY, self.PLOTS_MATRIX)
         pdf.savefig(fig)
+        plt.savefig(self.pdf_name.replace(".pdf", "-") + str(self.filename_index + 1) + "-" + str(self.col_index) + ".png")
         plt.close()
