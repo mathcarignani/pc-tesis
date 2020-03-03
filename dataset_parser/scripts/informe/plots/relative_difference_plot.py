@@ -55,7 +55,7 @@ class RelativeDifferencePlot(CommonPlot):
     #
     # This method is used to make a circle around the min/max values
     #
-    def _add_min_max_circles(self, ax):
+    def __add_min_max_circles(self, ax):
         maximum, minimum = max(self.values), min(self.values)
         if maximum > 50.59:
             circle = Ellipse((7, maximum), 1, 3.5, color=PlotConstants.VALUE0_COLOR, fill=False)

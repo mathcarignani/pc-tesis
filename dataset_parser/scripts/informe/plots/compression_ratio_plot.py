@@ -48,8 +48,8 @@ class CompressionRatioPlot(CommonPlot):
         if len(self.values0) > 0:
             colors0, colors3 = self.generate_colors(False)
             label0, label3 = self.options.get('labels')
-            ax.scatter(x=x_axis, y=self.values0, c=colors0, zorder=1, marker='x', label=label0)
-            ax.scatter(x=x_axis, y=self.values3, c=colors3, zorder=0, marker='x', label=label3)
+            ax.scatter(x=x_axis, y=self.values0, c=colors0, zorder=0, marker='x', label=label0, s=36)
+            ax.scatter(x=x_axis, y=self.values3, c=colors3, zorder=1, marker='.', label=label3, s=10)
             ax.legend(loc='upper right', bbox_to_anchor=(0.5, 0., 0.48, 0.95), fontsize='small', edgecolor='black',
                       scatterpoints=1, handlelength=1)
         else:
