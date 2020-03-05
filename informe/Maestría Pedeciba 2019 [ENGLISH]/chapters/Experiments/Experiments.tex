@@ -1,3 +1,54 @@
+\clearpage
+Un punteo de los cambios más importantes respecto a la versión anterior del informe.
+
+
+\vspace{+5pt}
+\textbf{Cambios generales}:
+\vspace{-10pt}
+\begin{itemize}
+    \item Sustituyo todos los “CoderABC” por “ABC” (en el texto y en las gráficas)
+\end{itemize}
+
+
+\vspace{+5pt}
+\textbf{Cambios en las gráficas}:
+\vspace{-10pt}
+\begin{itemize}
+    \item Agrego (\%) después de Compression ratio y Relative difference
+    \item Cambié los markers en las gráficas de Compression ratio (Section 3.2) 
+    \item Cambié los markers y los colores en las gráficas de Window parameter (Section 3.3) 
+\end{itemize}
+
+
+\vspace{+5pt}
+\textbf{Introduction}:
+\vspace{-10pt}
+\begin{itemize}
+    \item Agrego una frase de conclusión para las Sections 3.2 y 3.3
+\end{itemize}
+
+
+\vspace{+5pt}
+\textbf{Section 3.2}:
+\vspace{-10pt}
+\begin{itemize}
+    \item Sustituyo todos los “mode” por “variant”
+    \item En las definiciones cambio “||” por “|”
+    \item DUDA: Párrafo “Table 3.1 summarizes…” - “Hacer lo mismo que en Tabla 3.2” ? - Si no entendí mal la idea es dar más detalles de qué significa cada columna de la tabla.
+    \item Reescribí la descripción abajo de las gráficas
+    \item El párrafo anterior a Table 3.1 lo moví a la misma página de la tabla. Por un lado me parece mejor que este párrafo esté en la misma página de la tabla (sino quedan las dos páginas de gráficas en el medio). Por otro lado no queda muy bien tanto espacio en blanco en la página anterior a las gráficas.
+\end{itemize}
+
+
+\vspace{+5pt}
+\textbf{Section 3.3}:
+\vspace{-10pt}
+\begin{itemize}
+    \item Las referencias $a \in A$ las debería cambiar. En vez de A (definido al comienzo de la Section 3.2) debería definir otro conjunto que incluye solamente las variantes con máscaras de A y el algoritmo FR (que solo tiene variante con máscara y que no había tenido en cuenta en las comparaciones de la Section 3.2).
+\end{itemize}
+
+
+
 % Chapter ?
 \chapter{Experimental Results} % Main chapter title
 
@@ -18,61 +69,8 @@
 \newcommand{\algo}{\textit{c}}
 
 
-
-
-In this chapter we present our experimental results. The main goal of our experiments is to analyze the performance of each of the coding algorithms presented in Chapter~\ref{coders}, by encoding the various datasets introduced in Chapter~\ref{datasets}. In Section~\ref{experiments:experiments} we describe our experimental setting, defining the evaluated combinations of algorithms and parameter values, and the figures of merit used for comparison. In Section~\ref{secX:rendimiento-relativo} we compare the compression performance of the masking and non-masking variants for each coding algorithm. In Section~\ref{secX:windows} we analyze how much does the window size parameter impacts the performance of the algorithms. In Section~\ref{secX:codersmask} we compare the performance of the different algorithms among each other, while in Section~\ref{secX:gzip} we compare them with the gzip algorithm.
-
-
+\input{chapters/Experiments/0-Intro}
 \input{chapters/Experiments/1-Setting.tex}
-
 \input{chapters/Experiments/2-Comparison.tex}
-
 \input{chapters/Experiments/3-WindowSize.tex}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\clearpage
-\section{Mask Coders Performance}
-\label{secX:codersmask}
-
-In this section we analyze the performance of every one of the mask coders implemented in Chapter \ref{coders}. Once again, the compression rate (equation~(\ref{eq:compression-rate})) and the relative difference (equation~(\ref{eq:relative-difference})) will be the metrics we use for comparing the coders between each other.
-
-We considered the results obtained when coding the different data types of the datasets introduced in Chapter \ref{datasets}. For example, in Figure \ref{fig:mask-irkis} we can see the graphs obtained for the ``VWC" data type of the \datasetirkis \ dataset. For each <$\coder \in C$, $e \in E$> combination we plot two values: the window size which minimizes the compression rate and said compression rate.
-
-Easily, after observing the plots we noticed that in general the compression rate for coders \textit{CoderPWLH-M}, \textit{CoderGAMPSLimit-M} and \textit{CoderSF-M} was worst than the rest.
-
-Analyze the data and discard these 
-
-PONER OTRA GRAFICA DE OTRO TIPO DE DATO
-
-\clearpage
-\input{chapters/Experiments/other/mask-results-overview1.tex}
-
-\clearpage
-\input{chapters/Experiments/other/mask-results-overview2.tex}
-
-
-\clearpage
-\input{chapters/Experiments/figures-mask.tex}
-\clearpage
-
-
-
-
-
-
-
-\clearpage
-\section{Comparison with the gzip Algorithm}
-\label{secX:gzip}
+\input{chapters/Experiments/4-Performance.tex}

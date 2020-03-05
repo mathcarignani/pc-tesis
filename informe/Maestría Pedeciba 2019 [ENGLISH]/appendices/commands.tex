@@ -2,10 +2,10 @@
 %%%%%%%%%%%%%%%% 3.2 %%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\threetwocommon}[4]{
-In the relative difference plot for algorithm {#1} we made a {#2} circle around the marker in which {#3} obtains the most significant relative difference ({#4}).
+In the relative difference plot for algorithm {#1} we made a {#2} circle around the marker with the {#3} value obtained for all of the tested CAIs ({#4}).
 }
-\newcommand{\threetwomost}{\threetwocommon{PCA}{red}{$a_\maskalgo$}{50.60\%}}
-\newcommand{\threetwoleast}{\threetwocommon{APCA}{blue}{$a_\NOmaskalgo$}{-0.29\%}}
+\newcommand{\threetwomost}{\threetwocommon{PCA}{red}{maximum}{50.60\%}}
+\newcommand{\threetwoleast}{\threetwocommon{APCA}{blue}{minimum}{-0.29\%}}
 
 \newcommand{\threetwosingle}[5]{
     \clearpage
@@ -13,7 +13,7 @@ In the relative difference plot for algorithm {#1} we made a {#2} circle around 
     \hspace{-90pt} % trim=left bottom right top
     \includegraphics[clip,trim=0 2.9cm 0 3.5cm,height=23.5cm]{appendices/1-imagesPlots3.2/{#1}}
     \hspace{+5pt}
-    \caption{Compression ratio and relative difference plots for every algorithm $a_\maskalgo, a_\NOmaskalgo \in~A$, for the data type ``{#3}" of the dataset {#2}.{#4}}
+    \caption{Compression ratio and relative difference plots for every pair of algorithm variants $a_\maskalgo, a_\NOmaskalgo \in A$, for the data type ``{#3}" of the dataset {#2}.{#4}}
     {#5}
     \end{figure}
 }
@@ -23,10 +23,10 @@ In the relative difference plot for algorithm {#1} we made a {#2} circle around 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\threethreecommon}[4]{
-\\In the relative difference plot for algorithm {#1} we made a {#2} circle around the marker in which {#3} obtains the most significant\\relative difference ({#4}).
+In the relative difference plot for algorithm {#1} we made a {#2} circle around the marker with the {#3} value obtained for all the tested CAIs ({#4}).
 }
 
-\newcommand{\threethreemost}{\threethreecommon{PCA}{red}{the CAI with the local window parameter}{10.68\%}}
+\newcommand{\threethreemost}{\threethreecommon{PCA}{red}{maximum}{10.68\%}}
 
 \newcommand{\threethreesingle}[6]{
     \clearpage
@@ -34,7 +34,7 @@ In the relative difference plot for algorithm {#1} we made a {#2} circle around 
     \hspace{-100pt} % trim=left bottom right top
     \includegraphics[clip,trim=0 1.8cm 0 2.5cm,height=19.5cm]{appendices/2-imagesPlots3.3/{#1}}
     \hspace{+5pt}
-    \caption{Global and local window sizes, and relative difference plots for every algorithm~$a~\in~A$, for the data type ``{#2}" of the file ``{#3}" of the dataset {#4}.{#6}}
+    \caption{Global and local window sizes, and relative difference plots for every algorithm, for the data type ``{#2}" of the file ``{#3}" of the dataset {#4}.{#6}}
     {#5}
     \end{figure}
 }
