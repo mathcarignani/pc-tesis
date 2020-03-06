@@ -39,6 +39,8 @@ class PDFS3(PDFSCommon):
     }
 
     def __init__(self, path, datasets_names=None):
+        assert(len(self.HEIGHT_RATIOS) == len(self.PLOTS_MATRIX))
+
         self.df_3_local = ResultsToDataframe(ResultsReader('raw', 3)).create_full_df()
         self.df_3_global = ResultsToDataframe(ResultsReader('global', 3)).create_full_df()
         self.path = path
