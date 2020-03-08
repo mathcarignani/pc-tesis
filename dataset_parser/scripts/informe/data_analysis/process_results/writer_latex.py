@@ -28,7 +28,9 @@ class WriterLatex(object):
     }
 
     def __init__(self, path, extra_str, with_gzip):
-        filename = extra_str + '-process2-LATEX' + ('2' if with_gzip else '1') + '.txt'
+        self.with_gzip = with_gzip
+        # filename = extra_str + '-process2-LATEX' + ('2' if with_gzip else '1') + '.txt'
+        filename = "table-results-" + ('2' if with_gzip else '1') + '.tex'
         self.file = TextFileWriter(path, filename)
         self.__print_start()
         self.current_dataset, self.current_filename = None, None
@@ -42,6 +44,7 @@ class WriterLatex(object):
         self.__write_line(r"\begin{sidewaystable}[ht]")
         self.__print_commands()
         self.__write_line("\centering")
+        self.__write_line("\legendstwo" if self.with_gzip else "\legendsone")  # call legend command
         c_list = "| c | c | c |" if self.WITH_C else "| c | c |"
         count = 3 if self.WITH_C else 2
         self.__write_line(r"\begin{tabular}{| l | l " + (c_list * self.THRE_COUNT) + "}")
@@ -52,7 +55,7 @@ class WriterLatex(object):
         self.__write_line("{Dataset} & {Data Type}" + (columns * self.THRE_COUNT) + r" \\\hline\hline")
 
     def __print_commands(self):
-        for key, value in self.COLOR_COMMANDS.iteritems():
+        for key, value in self.COLOR_COMMANDS.items():
             command = r"\newcommand{" + self.command_key(key) + "}{" + value + "}"
             self.__write_line(command)
 
@@ -127,13 +130,13 @@ class WriterLatex(object):
                 threshold_results[current_index - 1] = 0  # no window value
                 threshold_results[current_index - 2] = 'GZIP'
             elif gzip_cr == cr:
-                raise StandardError
+                raise ValueError
             current_index += 3
 
     @staticmethod
     def coder_style(coder):
         if coder not in ['PCA', 'APCA', 'FR', 'GZIP']:
-            raise StandardError
+            raise ValueError
         return WriterLatex.command_key(coder)
 
     @staticmethod

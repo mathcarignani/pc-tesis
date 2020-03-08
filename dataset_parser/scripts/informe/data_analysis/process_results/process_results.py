@@ -1,7 +1,6 @@
 import sys
 sys.path.append('.')
 
-from auxi.os_utils import python_project_path
 from scripts.informe.results_parsing.results_reader import ResultsReader
 from scripts.informe.results_parsing.results_to_dataframe import ResultsToDataframe
 from scripts.compress.experiments_utils import ExperimentsUtils
@@ -19,14 +18,13 @@ class ProcessResults(object):
     CODERS_ARRAY = ['CoderPCA', 'CoderAPCA', 'CoderCA', 'CoderPWLH', 'CoderPWLHInt', 'CoderFR', 'CoderSF',
                     # 'CoderGAMPS', => ignore this coder
                     'CoderGAMPSLimit']
-    DEFAULT_PATH = python_project_path() + "/scripts/informe/data_analysis/process_results/out_process_results"
     MM = 3  # MASK MODE
     DEBUG_MODE = False
 
-    def __init__(self, global_mode, path=None, with_gzip=False):
+    def __init__(self, global_mode, path, with_gzip=False):
         # set script settings
         self.global_mode = global_mode
-        self.path = path or self.DEFAULT_PATH
+        self.path = path
         self.with_gzip = with_gzip
 
         # set other instances
@@ -94,7 +92,8 @@ class ProcessResults(object):
             new_window, new_percentage = window, percentage
             if self.__same_result(threshold):
                 assert(threshold > 0); assert(window == previous_window); assert(percentage == previous_percentage)
-                new_window, new_percentage = '=', '='
+                # TODO: uncomment to show blank cells for a repeated experiment
+                # new_window, new_percentage = '=', '='
             elif self.coder_name == 'CoderSF':
                 new_window = ''  # CoderSF this coder doesn't have a window param
 
@@ -118,7 +117,8 @@ class ProcessResults(object):
             if self.__same_result(threshold):
                 assert(threshold > 0); assert(coder_name == previous_coder); assert(window == previous_window);
                 assert(percentage == previous_percentage)
-                new_coder, new_window, new_percentage = '=', '=', '='
+                # TODO: uncomment to show blank cells for a repeated experiment
+                # new_coder, new_window, new_percentage = '=', '=', '='
 
             threshold_results += [new_coder, new_window, new_percentage]
             previous_coder, previous_window, previous_percentage = coder_name, window, percentage
@@ -168,10 +168,3 @@ class ProcessResults(object):
     def dataset_filenames(dataset_name, global_mode):
         filenames = ExperimentsUtils.dataset_csv_filenames(dataset_name)
         return ['Global'] if global_mode and len(filenames) > 1 else filenames
-
-
-def run():
-    ProcessResults(True).process_results()
-    ProcessResults(False).process_results()
-
-# run()
