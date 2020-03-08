@@ -1,0 +1,33 @@
+
+\clearpage
+\section{Algorithms Performance}
+\label{secX:codersmask}
+
+
+In this section we compare the compression performance of the coding algorithms presented in Chapter~\ref{algo}, by encoding the various datasets introduced in Chapter~\ref{datasets}. We begin by comparing the encoders among each other and later we compare them with gzip, a popular lossless compression algorithm. Following the results obtained in Sections~\ref{secX:rendimiento-relativo} and~\ref{secX:windows}, we only compare the masking variants of the evaluated algorithms and, when doing so, we always use the global window. In this section, we consider the performance of the algorithms on datasets as a whole, rather than individual files, so we evaluate it using Definitions~\ref{eq:coding-size-dataset} and~\ref{def:relative-difference-dataset}.
+
+
+For each data type $z$ of each dataset $d$, and each coding algorithm $a \in A$ and threshold parameter $e \in E$, we calculate the compression ratio of $c_{<a, w_{global}^{*}, e>}$, as defined in (\ref{eq:compression-rate-dataset}), where $w_{global}^{*}=OWS(a, e, z, d)$ is the global window size.
+
+
+\vspace{+2pt}
+As an example, in Figures~\ref{fig:algo-per-1} and~\ref{fig:algo-per-2} we show the global window size and the compression ratio, as a function of the threshold, obtained for two data types of two different datasets. Figure~\ref{fig:algo-per-1} shows the results for the data type ``Velocity" of the dataset \datasetadcp, and Figure~\ref{fig:algo-per-2} shows the results for the data type ``Speed" of the dataset \datasetwind. 
+% In Figure~\ref{fig:diff-sst} we observe a large relative difference favoring the masking variant for all tested algorithms. On the other hand, in Figure~\ref{fig:diff-tornado} we observe that the non-masking variant outperforms the masking variant for all algorithms. We notice, however, that the relative difference is very small in the latter case.
+
+
+\clearpage
+
+\threefoursingle{3-NOAA-ADCP-1}{\datasetadcp}{Velocity}{\label{fig:algo-per-1}}{}
+\threefoursingle{8-NOAA-SPC-wind-3}{\datasetwind}{Speed}{\label{fig:algo-per-2}}{}
+
+\clearpage
+
+\input{chapters/Experiments/other/mask-results-overview1.tex}
+
+\clearpage
+
+Comparison with the gzip Algorithm
+
+\clearpage
+
+\input{chapters/Experiments/other/mask-results-overview2.tex}

@@ -1,12 +1,12 @@
 
 \begin{table}[h]
 \begin{center}
-    \begin{tabular}{| C{2.2cm} || C{2.5cm} | C{4.2cm} | C{3.0cm} |}
+    \begin{tabular}{| C{2.2cm} || C{2.5cm} | C{4.4cm} | C{3.0cm} |}
     \hline
       \multicolumn{1}{|>{\centering\arraybackslash}m{2.2cm}||}{\textbf{Dataset}} 
     & \multicolumn{1}{>{\centering\arraybackslash}m{2.5cm}|}{\textbf{Dataset Characterstic}} 
-    & \multicolumn{1}{>{\centering\arraybackslash}m{4.2cm}|}{\textbf{Cases where masking outperforms non-masking mode (\%)}}
-    & \multicolumn{1}{>{\centering\arraybackslash}m{3.0cm}|}{\textbf{RD Range}}\\
+    & \multicolumn{1}{>{\centering\arraybackslash}m{4.4cm}|}{\textbf{Cases where masking outperforms non-masking variant (\%)}}
+    & \multicolumn{1}{>{\centering\arraybackslash}m{3.0cm}|}{\textbf{RD (\%) Range}}\\
     \hline
     \datasetirkis   & Many gaps     & 100 & (0; 36.88]                    \\\hline
     \datasetsst     & Many gaps     & 100 & (0; \textcolor{red}{50.60}]  \\\hline
@@ -18,7 +18,7 @@
     \datasetwind    & No gaps       & 0   & [-0.12; 0)                    \\\hline
     \toprule[0.1mm]
     \end{tabular}
-    \caption{Relative performance of the masking and non-masking variants of each algorithm. In the last column we highlight the maximum (red) and minimum (blue) values taken by RD.}
+    \caption{Relative difference between the masking and non-masking variants of each algorithm. In the last column we highlight the maximum (red) and minimum (blue) values taken by RD.}
     \label{tabla:rendimiento-relativ-NM-M}
 \end{center}
 \end{table}

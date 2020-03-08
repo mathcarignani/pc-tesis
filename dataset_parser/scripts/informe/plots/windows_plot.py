@@ -27,8 +27,12 @@ class WindowsPlot(CommonPlot):
         # self.print_values()
         extra_options.update(self.options); self.options = extra_options
         x_axis_0, y_axis_0, x_axis_3, y_axis_3 = [], [], [], []
+        local_color, global_color = 'red', 'forestgreen'
 
-        if len(self.values0) > 0:
+        assert(len(self.values3) > 0)
+        two_sets = len(self.values0) > 0
+
+        if two_sets:
             for i, values in enumerate(zip(self.values0, self.values3)):
                 value0, value3 = values
                 pos_value0 = self.__position(value0)
@@ -36,8 +40,9 @@ class WindowsPlot(CommonPlot):
                 pos_value3 = self.__position(value3)
                 x_axis_3.append(i); y_axis_3.append(pos_value3)
             label0, label3 = self.options.get('labels')
-            ax.scatter(x=x_axis_3, y=y_axis_3, c=self.value3_color, zorder=2, label=label3, s=10, edgecolor='black')
-            ax.scatter(x=x_axis_0, y=y_axis_0, c=self.value0_color, zorder=1, label=label0, s=50, edgecolor='black')  # global
+            ax.scatter(x=x_axis_3, y=y_axis_3, c=local_color, zorder=2, marker='.', label=label3, s=20)
+            ax.scatter(x=x_axis_0, y=y_axis_0, c=global_color, zorder=1, marker='x', label=label0, s=36)
+            # legend
             bbox_to_anchor = (0.45, 0.26, 0.55, 0.75) # (x0, y0, width, height)
             ax.legend(loc='upper right', bbox_to_anchor=bbox_to_anchor, fontsize='small', scatterpoints=1,
                       handlelength=0.3, ncol=2, edgecolor='black')
@@ -45,14 +50,14 @@ class WindowsPlot(CommonPlot):
             for i, value3 in enumerate(self.values3):
                 pos_value3 = self.__position(value3)
                 x_axis_3.append(i); y_axis_3.append(pos_value3)
-            ax.scatter(x=x_axis_3, y=y_axis_3, zorder=1, marker='o', s=20, c=self.options['color'], edgecolor='black')
+            ax.scatter(x=x_axis_3, y=y_axis_3, c=global_color, zorder=1, marker='x', s=36)
 
         ax.set_xticks(x_axis_3)
         ax.grid(b=True, color=PlotConstants.COLOR_SILVER, linestyle='dotted')
         ax.set_axisbelow(True)
         ax.set_yticks(list(range(len(y_axis_3))))
         top = len(ExperimentsUtils.WINDOWS)
-        top = top + 1 if len(self.values0) > 0 else top # +1 so that there's space for the legend
+        top = top + 1 if two_sets else top # +1 so that there's space for the legend
         ax.set_ylim(top=top, bottom=-1)
         self._labels(ax, self.options)
 

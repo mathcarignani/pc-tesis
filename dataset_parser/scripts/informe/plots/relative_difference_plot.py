@@ -29,7 +29,7 @@ class RelativeDifferencePlot(CommonPlot):
         return [min(self.values), max(self.values)]
 
     def plot(self, ax, ymin, ymax, extra_options={}):
-        self.print_values2()
+        # self.print_values2()  # TODO: uncomment to print the window stats
         extra_options.update(self.options); self.options = extra_options
 
         if self.options.get('check_never_negative'):
@@ -55,7 +55,7 @@ class RelativeDifferencePlot(CommonPlot):
     #
     # This method is used to make a circle around the min/max values
     #
-    def _add_min_max_circles(self, ax):
+    def __add_min_max_circles(self, ax):
         maximum, minimum = max(self.values), min(self.values)
         if maximum > 50.59:
             circle = Ellipse((7, maximum), 1, 3.5, color=PlotConstants.VALUE0_COLOR, fill=False)
@@ -92,6 +92,7 @@ class RelativeDifferencePlot(CommonPlot):
     def print_values2(self):
         if max(self.values) == 0:
             return
+
         if self.filename == "vwc_1202.dat.csv" and self.algorithm == "CoderPCA":
             print("Filename,Algorithm,Threshold,Value,,>1,>2,>5")
         for i, value in enumerate(self.values):
@@ -108,7 +109,6 @@ class RelativeDifferencePlot(CommonPlot):
             else:
                 extra_row = ['', '', '']
             extra_row_str = ",".join(extra_row)
-            # TODO: uncomment to print the window stats
             print(self.filename + "," + self.algorithm + "," + str(threshold) + "," + str_value + ",," + extra_row_str)
 
     @classmethod

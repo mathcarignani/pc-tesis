@@ -43,20 +43,23 @@ class CompressionRatioPlot(CommonPlot):
         # self.print_values()
         extra_options.update(self.options); self.options = extra_options
 
+        assert(len(self.values3) > 0)
+        two_sets = len(self.values0) > 0
+
         # scatter plot
         x_axis = list(range(len(self.values3)))
-        if len(self.values0) > 0:
+        if two_sets:
             colors0, colors3 = self.generate_colors(False)
             label0, label3 = self.options.get('labels')
-            ax.scatter(x=x_axis, y=self.values0, c=colors0, zorder=1, marker='x', label=label0)
-            ax.scatter(x=x_axis, y=self.values3, c=colors3, zorder=0, marker='x', label=label3)
+            ax.scatter(x=x_axis, y=self.values0, c=colors0, zorder=1, marker='x', label=label0, s=36)
+            ax.scatter(x=x_axis, y=self.values3, c=colors3, zorder=2, marker='.', label=label3, s=10)
             ax.legend(loc='upper right', bbox_to_anchor=(0.5, 0., 0.48, 0.95), fontsize='small', edgecolor='black',
                       scatterpoints=1, handlelength=1)
         else:
-            ax.scatter(x=x_axis, y=self.values3, zorder=1, marker='x', c=self.options['color'])
+            ax.scatter(x=x_axis, y=self.values3, c=self.value3_color, zorder=1, marker='x', s=36)
 
         ax.set_xticks(x_axis)
-        ax.grid(b=True, color=PlotConstants.COLOR_SILVER, linestyle='dotted')
+        ax.grid(b=True, color=PlotConstants.COLOR_SILVER, linestyle='dotted', zorder=0)
         ax.set_axisbelow(True)
 
         if ymax >= 100:

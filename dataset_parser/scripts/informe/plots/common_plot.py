@@ -42,7 +42,8 @@ class CommonPlot(object):
     def label_title(cls, ax, options, title):
         title_options = options.get('title')
         if title_options:
-            fontsize = title_options if isinstance(title_options, int) else 15
+            fontsize = 15 if isinstance(title_options, bool) else title_options
+            title = title.replace("Coder", "")  # "CoderABC" => "ABC"
             ax.set_title(title, fontsize=fontsize)
 
     @classmethod

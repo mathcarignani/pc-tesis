@@ -39,6 +39,8 @@ class PDFS3(PDFSCommon):
     }
 
     def __init__(self, path, datasets_names=None):
+        assert(len(self.HEIGHT_RATIOS) == len(self.PLOTS_MATRIX))
+
         self.df_3_local = ResultsToDataframe(ResultsReader('raw', 3)).create_full_df()
         self.df_3_global = ResultsToDataframe(ResultsReader('global', 3)).create_full_df()
         self.path = path
@@ -56,7 +58,7 @@ class PDFS3(PDFSCommon):
 
     def create_pdfs(self):
         for dataset_id, self.dataset_name in enumerate(self.dataset_names):
-            # print self.dataset_name
+            # print(self.dataset_name)
             self.dataset_id = dataset_id + 1
             self.created_dataset_pdf_file()
 
@@ -88,9 +90,9 @@ class PDFS3(PDFSCommon):
         new_df = pd_utils_3_local_2.df
 
         for coder_name in self.CODERS_ARRAY:
-            # print "  " + coder_name
+            # print("  " + coder_name)
             for threshold in ExperimentsUtils.THRESHOLDS:
-                # print threshold
+                # print(threshold)
                 best_global_window = self.pd_utils_3_global.min_value_for_threshold(coder_name, self.col_index, threshold)['window']
                 best_local_window = pd_utils_3_local_2.min_value_for_threshold(coder_name, self.col_index, threshold)['window']
                 if best_global_window != best_local_window:
