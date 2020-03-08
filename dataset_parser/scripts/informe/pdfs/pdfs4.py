@@ -1,9 +1,6 @@
 import sys
 sys.path.append('.')
 
-from matplotlib.backends.backend_pdf import PdfPages
-
-from scripts.compress.experiments_utils import ExperimentsUtils
 from scripts.informe.results_parsing.results_reader import ResultsReader
 from scripts.informe.results_parsing.results_to_dataframe import ResultsToDataframe
 from scripts.informe.pandas_utils.pandas_methods import PandasMethods
@@ -19,19 +16,18 @@ class PDFS4(PDFSCommon):
                     'CoderFR', 'CoderSF']
     PLOTS_ARRAY = ['window', 'compression']
     PLOTS_MATRIX = [
-        [['CoderPCA', 'window'],       ['CoderAPCA', 'window'],         ['CoderCA', 'window'],               ['CoderFR', 'window']],
-        None,
         [['CoderPCA', 'compression'],  ['CoderAPCA', 'compression'],    ['CoderCA', 'compression'],          ['CoderFR', 'compression']],
         None,
-        [['CoderPWLH', 'window'],      ['CoderPWLHInt', 'window'],      ['CoderGAMPSLimit', 'window'],       ['CoderSF', 'window']],
+        [['CoderPCA', 'window'],       ['CoderAPCA', 'window'],         ['CoderCA', 'window'],               ['CoderFR', 'window']],
         None,
-        [['CoderPWLH', 'compression'], ['CoderPWLHInt', 'compression'], ['CoderGAMPSLimit', 'compression'],  ['CoderSF', 'compression']]
+        [['CoderPWLH', 'compression'], ['CoderPWLHInt', 'compression'], ['CoderGAMPSLimit', 'compression'],  ['CoderSF', 'compression']],
+        None,
+        [['CoderPWLH', 'window'],      ['CoderPWLHInt', 'window'],      ['CoderGAMPSLimit', 'window'],       ['CoderSF', 'window']]
     ]
     HEIGHT_RATIOS = [30, 0, 30, 15, 30, 0, 30]
     PLOT_OPTIONS = {
-        'window': {'title': 12, 'labels': [r'$global$', r'$local$']},
-        'compression': {'show_xlabel': True} # {'labels': [r'$global$', r'$local$']},
-        # 'relative': {'check_never_negative': True, 'show_xlabel': True, 'add_max_circle': True}
+        'compression': {'title': 12, 'circle_table_values': True},
+        'window': {'show_xlabel': True, 'circle_table_values': True}
     }
 
     def __init__(self, path, global_mode=True, datasets_names=None):
@@ -62,5 +58,5 @@ class PDFS4(PDFSCommon):
         fig, plt = pdf_page.create(self.CODERS_ARRAY, self.PLOTS_ARRAY, self.PLOTS_MATRIX)
         pdf.savefig(fig)
         if self.global_mode:
-            plt.savefig(self.pdf_name.replace(".pdf", "-") + str(self.col_index) + ".png")
+            plt.savefig(self.create_image_name(self.pdf_name, self.col_index), format='pdf')
         plt.close()

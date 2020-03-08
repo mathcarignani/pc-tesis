@@ -1,7 +1,6 @@
 import sys
 sys.path.append('.')
 
-from matplotlib.patches import Ellipse
 from scripts.compress.experiments_utils import ExperimentsUtils
 from scripts.informe.plot.plot_constants import PlotConstants
 from scripts.informe.plot.plot_utils import PlotUtils
@@ -45,30 +44,12 @@ class RelativeDifferencePlot(CommonPlot):
         # ax.legend()
 
         if self.options.get('add_min_max_circles'):
-            self.__add_min_max_circles(ax)
+            CommonPlot.add_min_max_circles(self.algorithm, self.options, ax, x_axis, self.values)
         if self.options.get('add_max_circle'):
-            self.__add_max_circle(ax)
+            CommonPlot.add_max_circle(self.algorithm, self.options, ax, x_axis, self.values)
 
         CommonPlot.set_lim(ax, ymin, ymax)
         self._labels(ax, self.options)
-
-    #
-    # This method is used to make a circle around the min/max values
-    #
-    def __add_min_max_circles(self, ax):
-        maximum, minimum = max(self.values), min(self.values)
-        if maximum > 50.59:
-            circle = Ellipse((7, maximum), 1, 3.5, color=PlotConstants.VALUE0_COLOR, fill=False)
-            ax.add_artist(circle)
-        if minimum < -0.28:
-            circle = Ellipse((7, minimum), 1, 0.02, color=PlotConstants.VALUE3_COLOR, fill=False)
-            ax.add_artist(circle)
-
-    def __add_max_circle(self, ax):
-        maximum = max(self.values) # 10.6830419509284
-        if 10.68 < maximum < 10.69:
-            circle = Ellipse((5, maximum), 1, 1, color=PlotConstants.VALUE0_COLOR, fill=False)
-            ax.add_artist(circle)
 
     def _labels(self, ax, options):
         CommonPlot.label_title(ax, options, self.algorithm)
