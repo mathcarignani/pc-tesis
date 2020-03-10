@@ -46,12 +46,12 @@ class WriterLatex(object):
         self.__write_line("\centering")
         self.__write_line("\legendstwo" if self.with_gzip else "\legendsone")  # call legend command
         c_list = "| c | c | c |" if self.WITH_C else "| c | c |"
-        count = 3 if self.WITH_C else 2
         self.__write_line(r"\begin{tabular}{| l | l " + (c_list * self.THRE_COUNT) + "}")
+        count = 3 if self.WITH_C else 2
         self.__write_line("\cline{3-" + str(self.THRE_COUNT * count + 2) + "}")
         self.__write_line(WriterLatex.threshold_line())
-        ows_cr = r" & {\footnotesize OWS} & {\footnotesize CR}"
-        columns = r" & {c}" + ows_cr if self.WITH_C else ows_cr
+        two_cols = self.two_columns(True)
+        columns = r" & {c}" + two_cols if self.WITH_C else two_cols
         self.__write_line("{Dataset} & {Data Type}" + (columns * self.THRE_COUNT) + r" \\\hline\hline")
 
     def __print_commands(self):
@@ -107,7 +107,7 @@ class WriterLatex(object):
                 cr = "\color{red}" + str(cr) if cr >= 100 else str(cr)
                 cr_with_style = coder_style + str(cr)
                 window_with_style = coder_style + str(window_x)
-                threshold_list = [window_with_style, cr_with_style]
+                threshold_list = self.two_columns(False, cr_with_style, window_with_style)
                 assert(len(threshold_list) == 2)
             line_list += threshold_list
         line = ' & '.join(['{' + str(element) + '}' for element in line_list]) + r" \\\hline"
@@ -154,7 +154,15 @@ class WriterLatex(object):
 
     def print_end(self):
         self.__write_line("\end{tabular}")
+        command = "\captiontwo" if self.gzip_results_parser else "\captionone"
+        self.__write_line("\caption{" + command + "}")
         extra = "2" if self.gzip_results_parser else "1"
-        self.__write_line("\caption{Mask results overview (" + extra + ").}")
         self.__write_line("\label{experiments:mask-results-overview" + extra + "}")
         self.__write_line(r"\end{sidewaystable}")
+
+    @staticmethod
+    def two_columns(header = False, cr = None, w = None):
+        if header:
+            return r" & {\footnotesize CR} & {\footnotesize w}"
+        else:
+            return [cr, w]
