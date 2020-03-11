@@ -27,15 +27,15 @@ class WriterLatex(object):
         'GZIP': "\cellcolor{orange!20}"
     }
 
-    def __init__(self, path, extra_str, with_gzip):
-        self.with_gzip = with_gzip
-        # filename = extra_str + '-process2-LATEX' + ('2' if with_gzip else '1') + '.txt'
-        filename = "table-results-" + ('2' if with_gzip else '1') + '.tex'
+    def __init__(self, path, extra_str, mode):
+        self.mode = mode
+        self.with_gzip = mode == 2
+        filename = "table-results-" + str(mode) + '.tex'
         self.file = TextFileWriter(path, filename)
         self.__print_start()
         self.current_dataset, self.current_filename = None, None
         self.last_dataset, self.last_filename = None, None
-        self.gzip_results_parser = GzipResultsParser(True) if with_gzip else None
+        self.gzip_results_parser = GzipResultsParser(True) if self.with_gzip else None
 
     def __write_line(self, line):
         self.file.write_line(line)

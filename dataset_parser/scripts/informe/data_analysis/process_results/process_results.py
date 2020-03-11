@@ -21,11 +21,17 @@ class ProcessResults(object):
     MM = 3  # MASK MODE
     DEBUG_MODE = False
 
-    def __init__(self, global_mode, path, with_gzip=False):
+    #
+    # mode=1 => consider every algorithm
+    # mode=2 => consider every algorithm + gzip
+    # mode=3 => only consider the PCA algorithm
+    # mode=4 => only consider the APCA algorithm
+    #
+    def __init__(self, global_mode, path, mode):
         # set script settings
         self.global_mode = global_mode
         self.path = path
-        self.with_gzip = with_gzip
+        self.mode = mode
 
         # set other instances
         key = 'global' if self.global_mode else 'raw_basic'
@@ -47,7 +53,7 @@ class ProcessResults(object):
         self.csv_writer_2.write_row(Writer2.first_row())
         self.csv_writer_2.write_row(Writer2.second_row())
 
-        self.csv_writer_latex = WriterLatex(self.path, extra_str, self.with_gzip)
+        self.csv_writer_latex = WriterLatex(self.path, extra_str, self.mode)
 
     def __datasets_iteration(self):
         for dataset_id, self.dataset_name in enumerate(ExperimentsUtils.DATASET_NAMES):
@@ -75,9 +81,16 @@ class ProcessResults(object):
 
     def __column_results_writer_1(self):
         self.csv_writer_1.write_row(['', '', self.col_name])
-        for self.coder_name in ProcessResults.CODERS_ARRAY:
+        for self.coder_name in self.__coders_array():
             self._print(self.coder_name)
             self.__coder_results()
+
+    def __coders_array(self):
+        if self.mode == 3:
+            return ['CoderPCA']
+        if self.mode == 4:
+            return ['CoderAPCA']
+        return ProcessResults.CODERS_ARRAY
 
     #
     # Get the best Window for each <Coder, Column, Threshold> combination
@@ -106,10 +119,11 @@ class ProcessResults(object):
     # Get the best <Coder, Window> combination for each <Column, Threshold> combination
     #
     def __column_results_writer_2(self):
+        coder = self.__coder()
         previous_coder, previous_window, previous_percentage = None, None, None
         threshold_results = [None, None, self.col_name]
         for threshold in ExperimentsUtils.THRESHOLDS:
-            row_df = self.panda_utils.min_value_for_threshold(None, self.col_index, threshold)
+            row_df = self.panda_utils.min_value_for_threshold(coder, self.col_index, threshold)
             window, percentage, coder_name = ProcessResults.get_values(row_df, self.col_index)
             coder_name = coder_name.replace("Coder", "")
 
@@ -124,6 +138,13 @@ class ProcessResults(object):
             previous_coder, previous_window, previous_percentage = coder_name, window, percentage
         self.csv_writer_2.write_row(threshold_results)
         self.csv_writer_latex.set_threshold_results(threshold_results)
+
+    def __coder(self):
+        if self.mode == 3:
+            return 'CoderPCA'
+        if self.mode == 4:
+            return 'CoderAPCA'
+        return None
 
     def __set_dataset(self, dataset_name):
         self.__write_two_files([dataset_name])

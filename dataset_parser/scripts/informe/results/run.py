@@ -34,8 +34,10 @@ PATH = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/script
 # 3.4 Mask Coders Performance
 #
 # PDFS4(PATH + '3.4/', True).create_pdfs()  # GLOBAL
-ProcessResults(True, PATH + '3.4/results1', False).run()
-ProcessResults(True, PATH + '3.4/results2', True).run()
+ProcessResults(True, PATH + '3.4/results1', 1).run()
+ProcessResults(True, PATH + '3.4/results2', 2).run()
+ProcessResults(True, PATH + '3.4/results3', 3).run()
+ProcessResults(True, PATH + '3.4/results4', 4).run()
 
 
 
