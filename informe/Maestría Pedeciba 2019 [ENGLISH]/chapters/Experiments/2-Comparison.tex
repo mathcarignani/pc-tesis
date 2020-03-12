@@ -41,19 +41,19 @@ For each data type $z$ of each dataset $d$, and each coding algorithm $a \in A$ 
 
 
 \vspace{+2pt}
-As an example, in Figures~\ref{fig:diff-sst} and~\ref{fig:diff-tornado} we show the compression ratio and relative difference, as a function of the error threshold, obtained for two data types of two different datasets. Figure~\ref{fig:diff-sst} shows the results for the data type ``VWC" of the dataset \datasetsst, and Figure~\ref{fig:diff-tornado} shows the results for the data type ``Longitude" of the dataset \datasettornado. In Figure~\ref{fig:diff-sst} we observe a large relative difference favoring the masking variant for all tested algorithms. On the other hand, in Figure~\ref{fig:diff-tornado} we observe that the non-masking variant outperforms the masking variant for all algorithms. We notice, however, that the relative difference is very small in the latter case.
+As an example, in Figures~\ref{fig:diff-sst} and~\ref{fig:diff-tornado} we show the compression ratio and relative difference, as a function of the error threshold, obtained for two data types of two different datasets. Figure~\ref{fig:diff-sst} shows the results for the data type ``SST" of the dataset \datasetsst, and Figure~\ref{fig:diff-tornado} shows the results for the data type ``Longitude" of the dataset \datasettornado. In Figure~\ref{fig:diff-sst} we observe a large relative difference favoring the masking variant for all tested algorithms. On the other hand, in Figure~\ref{fig:diff-tornado} we observe that the non-masking variant outperforms the masking variant for all algorithms. We notice, however, that the relative difference is very small in the latter case.
 
 
 \clearpage
 
 \input{appendices/commands.tex}
-\threetwosingle{2-NOAA-SST-1}{\datasetsst}{VWC}{\threetwomost}{\label{fig:diff-sst}}
+\threetwosingle{2-NOAA-SST-1}{\datasetsst}{SST}{\threetwomost}{\label{fig:diff-sst}}
 \threetwosingle{7-NOAA-SPC-tornado-2}{\datasettornado}{Longitude}{\threetwoleast}{\label{fig:diff-tornado}}
 
 \clearpage
 
-TODO: HACER LO MISMO QUE EN LA TABLE~\ref{tabla:windows-comparison}\\
-Table~\ref{tabla:rendimiento-relativ-NM-M} summarizes the results obtained for each dataset when comparing the relative difference between every pair of algorithm variants $a_\maskalgo, a_\NOmaskalgo \in A$. The second column outlines the amount of gaps in each dataset. The third column displays the percentage of tested CAIs in which $a_\maskalgo$ performs better than $a_\NOmaskalgo$. The last column shows the range for the values taken by the relative difference for those tested CAIs.
+
+We analyze the experimental results to compare the performance of the masking and non-masking variants of each algorithm. For each data type, we iterate through each algorithm $a \in A$, and each threshold parameter, and calculate the relative difference between the CAI with the masking variant $a_\maskalgo$ and the CAI with the non-masking variant $a_\NOmaskalgo$. Since we consider 8 threshold parameters and there are 6 algorithms, for each data type we compare a total of 48 pairs of CAIs. Table~\ref{tabla:rendimiento-relativ-NM-M} summarizes the results of these comparisons, aggregated by dataset.
 
 
 \vspace{+5pt}
@@ -61,7 +61,7 @@ Table~\ref{tabla:rendimiento-relativ-NM-M} summarizes the results obtained for e
 \vspace{-5pt}
 
 
-For every algorithm, on datasets with many gaps the masking variant always produces the best result, while on gapless datasets the non-masking variant always achieves the best result. On the dataset Solar, which presents few gaps, each variant is better than the other on approximately one half of the combinations of tested CAIs.
+For example, let's analyze the results of the dataset Tornado, in the 7th row. The second column shows that there are no gaps in any of the data types of the dataset (recall this information from Table~\ref{datasets:table:overview}). Since the dataset has two data types, we compare a total of $2\times48=144$ pairs of CAIs. The third column reveals that in none of these comparisons the masking variant $a_\maskalgo$ outperforms the non-masking variant $a_\NOmaskalgo$, i.e. the RD is always negative. The last column shows the range for the values taken by the RD for those tested CAIs.
 
 
 Observing the last column of Table~\ref{tabla:rendimiento-relativ-NM-M}, we notice that in every case in which the non-masking variant performs best, the relative difference is close to zero. The minimum value it takes is -0.29\%, which is obtained for the data type ``Longitude" of the dataset \datasettornado, with the APCA algorithm and error parameter $e=30$. In Figure~\ref{fig:diff-tornado} we made a blue circle around the marker associated to that minimum value. On the other hand, we also notice that for the datasets in which the masking variant performs best, the relative difference reaches higher absolute values. The maximum value (50.60\%) is obtained for the data type ``VWC" of the dataset \datasetsst, with the PCA algorithm and error parameter $e=30$. In Figure~\ref{fig:diff-sst} we made a red circle around the marker associated to that maximum value.
