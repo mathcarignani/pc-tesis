@@ -29,35 +29,12 @@ class WriterLatex(object):
 
     def __init__(self, path, extra_str, mode):
         self.mode = mode
-        self.with_gzip = mode == 2
         filename = "table-results-" + str(mode) + '.tex'
         self.file = TextFileWriter(path, filename)
         self.__print_start()
         self.current_dataset, self.current_filename = None, None
         self.last_dataset, self.last_filename = None, None
-        self.gzip_results_parser = GzipResultsParser(True) if self.with_gzip else None
-
-    def __write_line(self, line):
-        self.file.write_line(line)
-
-    def __print_start(self):
-        self.__write_line(r"\begin{sidewaystable}[ht]")
-        self.__print_commands()
-        self.__write_line("\centering")
-        self.__write_line("\legendstwo" if self.with_gzip else "\legendsone")  # call legend command
-        c_list = "| c | c | c |" if self.WITH_C else "| c | c |"
-        self.__write_line(r"\begin{tabular}{| l | l " + (c_list * self.THRE_COUNT) + "}")
-        count = 3 if self.WITH_C else 2
-        self.__write_line("\cline{3-" + str(self.THRE_COUNT * count + 2) + "}")
-        self.__write_line(WriterLatex.threshold_line())
-        two_cols = self.two_columns(True)
-        columns = r" & {c}" + two_cols if self.WITH_C else two_cols
-        self.__write_line("{Dataset} & {Data Type}" + (columns * self.THRE_COUNT) + r" \\\hline\hline")
-
-    def __print_commands(self):
-        for key, value in self.COLOR_COMMANDS.items():
-            command = r"\newcommand{" + self.command_key(key) + "}{" + value + "}"
-            self.__write_line(command)
+        self.gzip = GzipResultsParser(True) if self.mode == 2 else None
 
     def set_dataset(self, dataset_name):
         # print "set_dataset => " + dataset_name
@@ -73,8 +50,8 @@ class WriterLatex(object):
         # [None, None, 'Lat', 'PCA', 256, 100.03, 'PCA', 256, 100.03, 'APCA', 4, 88.74, 'APCA', 4, 81.29, 'APCA', 4, 69.82, 'APCA', 8, 62.44, 'APCA', 8, 56.18, 'APCA', 8, 47.15]
         col_name = threshold_results[2]
         # print "col_name => " + col_name
-        if self.gzip_results_parser is not None:
-            gzip_cr = self.gzip_results_parser.compression_ratio(self.last_dataset, self.last_filename, col_name)
+        if self.gzip is not None:
+            gzip_cr = self.gzip.compression_ratio(self.last_dataset, self.last_filename, col_name)
             self.add_gzip_result(threshold_results, gzip_cr)
 
         # print "set_threshold_results => " + str(threshold_results)
@@ -108,10 +85,32 @@ class WriterLatex(object):
                 cr_with_style = coder_style + str(cr)
                 window_with_style = coder_style + str(window_x)
                 threshold_list = self.two_columns(False, cr_with_style, window_with_style)
-                assert(len(threshold_list) == 2)
             line_list += threshold_list
         line = ' & '.join(['{' + str(element) + '}' for element in line_list]) + r" \\\hline"
         self.__write_line(line)
+
+    ####################################################################################################################
+
+    def __write_line(self, line):
+        self.file.write_line(line)
+
+    def __print_start(self):
+        self.__write_line(r"\begin{sidewaystable}[ht]")
+        self.__print_commands()
+        self.__write_line("\centering")
+        self.__write_line(self.__legend_for_mode())
+        self.__write_line(r"\begin{tabular}{| l | l " + (self.__c_list_for_mode() * self.THRE_COUNT) + "}")
+        self.__write_line("\cline{3-" + str(self.THRE_COUNT * self.__count_for_mode() + 2) + "}")
+        self.__write_line(self.threshold_line())
+        columns = self.two_columns(True)
+        if self.WITH_C:
+            columns = r" & {c}" + columns
+        self.__write_line("{Dataset} & {Data Type}" + (columns * self.THRE_COUNT) + r" \\\hline\hline")
+
+    def __print_commands(self):
+        for key, value in self.COLOR_COMMANDS.items():
+            command = r"\newcommand{" + self.command_key(key) + "}{" + value + "}"
+            self.__write_line(command)
 
     @staticmethod
     def add_gzip_result(threshold_results, gzip_cr):
@@ -139,10 +138,9 @@ class WriterLatex(object):
             raise ValueError
         return WriterLatex.command_key(coder)
 
-    @staticmethod
-    def threshold_line():
+    def threshold_line(self):
         line = "\multicolumn{1}{c}{}& \multicolumn{1}{c|}{} "
-        column = "& \multicolumn{" + ("3" if WriterLatex.WITH_C else "2") + "}{c|"
+        column = "& \multicolumn{" + str(self.__count_for_mode()) + "}{c|"
         for thre in ExperimentsUtils.THRESHOLDS:
             line += column + ("|" if thre != 30 else "") + "}{e = " + str(thre) + "} "
         line += r"\\\hline"
@@ -154,15 +152,58 @@ class WriterLatex(object):
 
     def print_end(self):
         self.__write_line("\end{tabular}")
-        command = "\captiontwo" if self.gzip_results_parser else "\captionone"
-        self.__write_line("\caption{" + command + "}")
-        extra = "2" if self.gzip_results_parser else "1"
-        self.__write_line("\label{experiments:mask-results-overview" + extra + "}")
+        self.__write_line("\caption{" + self.__caption_for_mode() + "}")
+        self.__write_line("\label{experiments:mask-results-overview" + self.__label_for_mode() + "}")
         self.__write_line(r"\end{sidewaystable}")
 
-    @staticmethod
-    def two_columns(header = False, cr = None, w = None):
+    def two_columns(self, header = False, cr = None, w = None):
+        if self.mode == 5:
+            if header:
+                return r" & {\footnotesize RD}"
+            else:
+                return [cr]
+
         if header:
             return r" & {\footnotesize CR} & {\footnotesize w}"
         else:
             return [cr, w]
+
+    def __caption_for_mode(self):
+        if self.gzip:
+            return "\captiontwo"
+        elif self.mode == 5:
+            return "\captionone"
+        else:
+            return "\captionone"
+
+    def __label_for_mode(self):
+        if self.gzip:
+            return "2"
+        elif self.mode == 5:
+            return "3"
+        else:
+            return "1"
+
+    def __c_list_for_mode(self):
+        if self.WITH_C:
+            return "| c | c | c |"
+        elif self.mode == 5:
+            return "| c |"
+        else:
+            return "| c | c |"
+
+    def __count_for_mode(self):
+        if self.WITH_C:
+            return 3
+        elif self.mode == 5:
+            return 1
+        else:
+            return 2
+
+    def __legend_for_mode(self):
+        if self.mode == 1:
+            return "\legendsone"
+        elif self.mode == 2:
+            return "\legendstwo"
+        else:
+            return "\legendsfive"

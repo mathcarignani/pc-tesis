@@ -69,7 +69,8 @@ class PandasUtils(object):
         assert(threshold in ExperimentsUtils.THRESHOLDS)
         data_column_key = ResultsToDataframe.data_column_key(column_index)
         coder_df = PandasMethods.coder_df(self.df, coder_name) if coder_name is not None else self.df
-        return PandasMethods.get_min_row(coder_df, data_column_key, threshold)
+        min_row = PandasMethods.get_min_row(coder_df, data_column_key, threshold)
+        return min_row
 
     def coder_basic_df(self):
         return PandasMethods.coder_df(self.df, 'CoderBasic').iloc[0]

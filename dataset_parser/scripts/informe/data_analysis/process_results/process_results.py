@@ -9,6 +9,7 @@ from scripts.informe.data_analysis.threshold_compare import ThresholdCompare
 from scripts.informe.data_analysis.process_results.writer1 import Writer1
 from scripts.informe.data_analysis.process_results.writer2 import Writer2
 from scripts.informe.data_analysis.process_results.writer_latex import WriterLatex
+from scripts.informe.math_utils import MathUtils
 
 
 #
@@ -26,6 +27,7 @@ class ProcessResults(object):
     # mode=2 => consider every algorithm + gzip
     # mode=3 => only consider the PCA algorithm
     # mode=4 => only consider the APCA algorithm
+    # mode=5 => PCA vs APCA
     #
     def __init__(self, global_mode, path, mode):
         # set script settings
@@ -122,18 +124,24 @@ class ProcessResults(object):
         coder = self.__coder()
         previous_coder, previous_window, previous_percentage = None, None, None
         threshold_results = [None, None, self.col_name]
+        window = 4  # default value
         for threshold in ExperimentsUtils.THRESHOLDS:
-            row_df = self.panda_utils.min_value_for_threshold(coder, self.col_index, threshold)
-            window, percentage, coder_name = ProcessResults.get_values(row_df, self.col_index)
-            coder_name = coder_name.replace("Coder", "")
+            if self.mode == 5:  # PCA vs APCA
+                row_df_pca = self.panda_utils.min_value_for_threshold('CoderPCA', self.col_index, threshold)
+                row_df_apca = self.panda_utils.min_value_for_threshold('CoderAPCA', self.col_index, threshold)
+                percentage, coder_name = ProcessResults.calculate_relative_diff(row_df_pca, row_df_apca, self.col_index)
+            else:
+                row_df = self.panda_utils.min_value_for_threshold(coder, self.col_index, threshold)
+                window, percentage, coder_name = ProcessResults.get_values(row_df, self.col_index)
+                coder_name = coder_name.replace("Coder", "")
+
+                if self.__same_result(threshold):
+                    assert(threshold > 0); assert(coder_name == previous_coder); assert(window == previous_window);
+                    assert(percentage == previous_percentage)
+                    # TODO: uncomment to show blank cells for a repeated experiment
+                    # new_coder, new_window, new_percentage = '=', '=', '='
 
             new_coder, new_window, new_percentage = coder_name, window, percentage
-            if self.__same_result(threshold):
-                assert(threshold > 0); assert(coder_name == previous_coder); assert(window == previous_window);
-                assert(percentage == previous_percentage)
-                # TODO: uncomment to show blank cells for a repeated experiment
-                # new_coder, new_window, new_percentage = '=', '=', '='
-
             threshold_results += [new_coder, new_window, new_percentage]
             previous_coder, previous_window, previous_percentage = coder_name, window, percentage
         self.csv_writer_2.write_row(threshold_results)
@@ -179,6 +187,14 @@ class ProcessResults(object):
         percentage = ProcessResults.parse_percentage(row_df, col_index)
         coder_name = row_df['coder']
         return window, percentage, coder_name
+
+    @staticmethod
+    def calculate_relative_diff(row_df_pca, row_df_apca, col_index):
+        data_column_key = ResultsToDataframe.data_column_key(col_index)
+        size_pca, size_apca = row_df_pca[data_column_key], row_df_apca[data_column_key]
+        relative_diff = MathUtils.relative_difference(size_pca, size_apca)
+        coder_name = 'PCA' if size_pca < size_apca else 'APCA'
+        return round(relative_diff, 2), coder_name
 
     @staticmethod
     def parse_percentage(row_df, col_index):
