@@ -140,7 +140,25 @@ class RelativeDifferencePlot(CommonPlot):
     def set_values(self, values0, values3):
         for index, value0 in enumerate(values0):
             self.add_value(value0, values3[index])
+        # TODO: uncomment to show stats for Table of Section 3.2 "Comparison of Masking and Non-Masking Variants"
+        # self.show_stats()
         self.close()
+
+    def show_stats(self):
+        pos_count = len(list(filter(lambda x: (x > 0), self.values)))
+        neg_count = len(list(filter(lambda x: (x < 0), self.values)))
+        zero_count = len(list(filter(lambda x: (x == 0), self.values)))
+        if zero_count > 0:
+            print("ERROR: RDs do not match in our experiments")
+            exit(1)
+        if neg_count == 0:
+            print("+++++++++++++++++++++++++++")
+        elif pos_count == 0:
+            print("---------------------------")
+        else:
+            print("RD > 0 => " + str(pos_count))
+            print("RD < 0 => " + str(neg_count))
+        print("===========================")
 
     def set_ymin_ymax(self, ymin, ymax):
         self.ymin = ymin
