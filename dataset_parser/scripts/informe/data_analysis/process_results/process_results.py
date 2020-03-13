@@ -124,12 +124,14 @@ class ProcessResults(object):
         coder = self.__coder()
         previous_coder, previous_window, previous_percentage = None, None, None
         threshold_results = [None, None, self.col_name]
-        window = 4  # default value
         for threshold in ExperimentsUtils.THRESHOLDS:
             if self.mode == 5:  # PCA vs APCA
                 row_df_pca = self.panda_utils.min_value_for_threshold('CoderPCA', self.col_index, threshold)
                 row_df_apca = self.panda_utils.min_value_for_threshold('CoderAPCA', self.col_index, threshold)
-                percentage, coder_name = ProcessResults.calculate_relative_diff(row_df_pca, row_df_apca, self.col_index)
+                relative_diff, coder_name = ProcessResults.calculate_relative_diff(row_df_pca, row_df_apca, self.col_index)
+                window = relative_diff
+                row_df = row_df_pca if coder_name == "PCA" else row_df_apca
+                _, percentage, _ = ProcessResults.get_values(row_df, self.col_index)
             else:
                 row_df = self.panda_utils.min_value_for_threshold(coder, self.col_index, threshold)
                 window, percentage, coder_name = ProcessResults.get_values(row_df, self.col_index)

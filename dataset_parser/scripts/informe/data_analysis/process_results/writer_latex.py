@@ -73,7 +73,8 @@ class WriterLatex(object):
                 line_list += ([" ", " ", " "] if self.WITH_C else [" ", " "])
                 continue
             coder_style = self.coder_style(coder)
-            window_x = self.WINDOW_MAP[threshold_results[index_begin + 1]]
+            window_value = threshold_results[index_begin + 1]
+            window_x = self.WINDOW_MAP[window_value] if self.mode != 5 else window_value
             cr = threshold_results[index_begin + 2]
             if self.WITH_C:
                 coder_with_style = coder_style + coder
@@ -157,16 +158,13 @@ class WriterLatex(object):
         self.__write_line(r"\end{sidewaystable}")
 
     def two_columns(self, header = False, cr = None, w = None):
-        if self.mode == 5:
-            if header:
-                return r" & {\footnotesize RD}"
-            else:
-                return [cr]
-
         if header:
-            return r" & {\footnotesize CR} & {\footnotesize w}"
-        else:
-            return [cr, w]
+            if self.mode == 5:
+                return r" & {\footnotesize CR} & {\footnotesize RD}"
+            else:
+                r" & {\footnotesize CR} & {\footnotesize w}"
+        return [cr, w]
+
 
     def __caption_for_mode(self):
         if self.gzip:
@@ -187,16 +185,12 @@ class WriterLatex(object):
     def __c_list_for_mode(self):
         if self.WITH_C:
             return "| c | c | c |"
-        elif self.mode == 5:
-            return "| c |"
         else:
             return "| c | c |"
 
     def __count_for_mode(self):
         if self.WITH_C:
             return 3
-        elif self.mode == 5:
-            return 1
         else:
             return 2
 
