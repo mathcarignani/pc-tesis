@@ -65,11 +65,11 @@ class PandasUtils(object):
             new_df.loc[index] = PandasMethods.get_min_row(coder_df, data_column_key, threshold).values
         return new_df
 
-    def min_value_for_threshold(self, coder_name, column_index, threshold):
+    def min_value_for_threshold(self, coder_name, column_index, threshold, nth=None):
         assert(threshold in ExperimentsUtils.THRESHOLDS)
         data_column_key = ResultsToDataframe.data_column_key(column_index)
         coder_df = PandasMethods.coder_df(self.df, coder_name) if coder_name is not None else self.df
-        min_row = PandasMethods.get_min_row(coder_df, data_column_key, threshold)
+        min_row = PandasMethods.get_min_row(coder_df, data_column_key, threshold, nth)
         return min_row
 
     def coder_basic_df(self):

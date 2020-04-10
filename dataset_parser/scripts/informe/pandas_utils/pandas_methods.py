@@ -47,13 +47,10 @@ class PandasMethods(object):
 
     #
     # Given a coder_df, a column_key, and a threshold:
-    # it returns the row with the minimum value for that column for that <coder, threshold> combination
+    # it returns the row with the (nth) minimum value for that column for that <coder, threshold> combination
     #
     @staticmethod
-    def get_min_row(coder_df, column_key, threshold):
-        # print "coder_df"
-        # print threshold
-        # print coder_df
+    def get_min_row(coder_df, column_key, threshold, nth=None):
         thresholds = coder_df.threshold.unique()
         # check_same = set(thresholds) == set([0, 1, 3, 5, 10, 15, 20, 30])
         check_same = set([0, 1, 3, 5, 10, 15, 20, 30]).issubset(set(thresholds))
@@ -61,15 +58,23 @@ class PandasMethods(object):
             print(thresholds)
             assert(check_same)
         threshold_df = PandasMethods.threshold_df(coder_df, threshold)
-        # print "threshold_df"
-        # print threshold_df
-        min_value_index = threshold_df[column_key].idxmin()
-        min_value = threshold_df.loc[min_value_index][column_key]
 
+        min_value_index = threshold_df[column_key].idxmin()
+        min_value_row = threshold_df.loc[min_value_index]
+
+        if nth:
+            # nth_min_values_df = threshold_df[column_key].nsmallest(nth)
+            # nth_min_value_index = nth_min_values_df.index[nth-1]
+            # min_value_index = nth_min_value_index
+            # min_value_row = threshold_df.loc[min_value_index]
+            best_coder = min_value_row.coder
+            threshold_df = threshold_df[threshold_df.coder != best_coder]
+            min_value_index = threshold_df[column_key].idxmin()
+            min_value_row = threshold_df.loc[min_value_index]
+
+        min_value = min_value_row[column_key]
         min_value_rows_count = threshold_df[threshold_df[column_key] == min_value].count()[column_key]
         assert(min_value_rows_count == 1)
-
-        min_value_row = threshold_df.loc[min_value_index]
         return min_value_row
 
     #

@@ -24,7 +24,10 @@ class WriterLatex(object):
         'PCA': "\cellcolor{cyan!20}",
         'APCA': "\cellcolor{green!20}",
         'FR': "\cellcolor{yellow!25}",
-        'GZIP': "\cellcolor{orange!20}"
+        'GZIP': "\cellcolor{orange!20}",
+        'PWLHInt': '\cellcolor{violet!25}',
+        'PWLH': '\cellcolor{violet!50}',
+        'CA': '\cellcolor{brown!20}'
     }
 
     def __init__(self, path, extra_str, mode):
@@ -133,9 +136,9 @@ class WriterLatex(object):
                 raise ValueError
             current_index += 3
 
-    @staticmethod
-    def coder_style(coder):
-        if coder not in ['PCA', 'APCA', 'FR', 'GZIP']:
+    def coder_style(self, coder):
+        if coder not in ['PCA', 'APCA', 'FR', 'GZIP', 'PWLHInt', 'CA', 'PWLH']:
+            print(coder)
             raise ValueError
         return WriterLatex.command_key(coder)
 
@@ -162,7 +165,7 @@ class WriterLatex(object):
             if self.mode == 5:
                 return r" & {\footnotesize CR} & {\footnotesize RD}"
             else:
-                r" & {\footnotesize CR} & {\footnotesize w}"
+                return r" & {\footnotesize CR} & {\footnotesize w}"
         return [cr, w]
 
 

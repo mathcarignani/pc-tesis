@@ -23,11 +23,12 @@ class ProcessResults(object):
     DEBUG_MODE = False
 
     #
-    # mode=1 => consider every algorithm
-    # mode=2 => consider every algorithm + gzip
-    # mode=3 => only consider the PCA algorithm
-    # mode=4 => only consider the APCA algorithm
-    # mode=5 => PCA vs APCA
+    # mode=1  => best algorithm, considering every algorithm
+    # mode=12 => second best algorithm, considering every algorithm
+    # mode=2  => best algorithm, considering every algorithm + gzip
+    # mode=3  => only consider the PCA algorithm
+    # mode=4  => only consider the APCA algorithm
+    # mode=5  => PCA vs APCA
     #
     def __init__(self, global_mode, path, mode):
         # set script settings
@@ -132,7 +133,12 @@ class ProcessResults(object):
                 window = relative_diff
                 row_df = row_df_pca if coder_name == "PCA" else row_df_apca
                 _, percentage, _ = ProcessResults.get_values(row_df, self.col_index)
-            else:
+            elif self.mode == 12: # second best algorithm
+                row_df = self.panda_utils.min_value_for_threshold(coder, self.col_index, threshold, 2)
+                window, percentage, coder_name = ProcessResults.get_values(row_df, self.col_index)
+                coder_name = coder_name.replace("Coder", "")
+
+            else: # best algorithm
                 row_df = self.panda_utils.min_value_for_threshold(coder, self.col_index, threshold)
                 window, percentage, coder_name = ProcessResults.get_values(row_df, self.col_index)
                 coder_name = coder_name.replace("Coder", "")
