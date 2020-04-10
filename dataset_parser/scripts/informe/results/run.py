@@ -18,7 +18,7 @@ PATH = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/script
 #
 
 # PDFS1(PATH + '3.2/', False).create_pdfs()  # LOCAL
-# PDFS1(PATH + '3.2/', True).create_pdfs()  # GLOBAL
+PDFS1(PATH + '3.2/', True).create_pdfs()  # GLOBAL
 
 
 #
@@ -33,9 +33,13 @@ PATH = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/script
 #
 # 3.4 Mask Coders Performance
 #
-PDFS4(PATH + '3.4/', True).create_pdfs()  # GLOBAL
-# ProcessResults(True, PATH + '3.3/', False).run()
-# ProcessResults(True, PATH + '3.3/', True).run()
+# PDFS4(PATH + '3.4/', True).create_pdfs()  # GLOBAL
+# ProcessResults(True, PATH + '3.4/results1', 1).run()
+ProcessResults(True, PATH + '3.4/results12', 12).run()
+# ProcessResults(True, PATH + '3.4/results2', 2).run()
+# ProcessResults(True, PATH + '3.4/results3', 3).run()
+# ProcessResults(True, PATH + '3.4/results4', 4).run()
+# ProcessResults(True, PATH + '3.4/results5', 5).run()
 
 
 

@@ -25,7 +25,7 @@ class PDFSCommon(object):
             self.created_dataset_pdf_file()
 
     def created_dataset_pdf_file(self):
-        self.pdf_name = self.path + str(self.dataset_id) + "-" + self.dataset_name + ".pdf"
+        self.pdf_name = self.create_pdf_name(self.path, self.dataset_id, self.dataset_name)
         with PdfPages(self.pdf_name) as self.pdf:
             for self.filename in self.dataset_filenames():
                 print("  " + self.filename)
@@ -42,3 +42,15 @@ class PDFSCommon(object):
     @staticmethod
     def column_indexes(dataset_name):
         return range(1, ExperimentsUtils.get_dataset_data_columns_count(dataset_name) + 1)
+
+
+    @staticmethod
+    def create_pdf_name(path, dataset_id, dataset_name):
+        name = "PDF-" + str(dataset_id) + "-" + dataset_name + ".pdf"  # "PDF-1-IRKIS.pdf"
+        return path + name
+
+    @staticmethod
+    def create_image_name(pdf_name, col_index):
+        filename = pdf_name.replace(".pdf", "-") + str(col_index) + ".pdf"
+        filename = filename.replace("PDF-", "")
+        return filename

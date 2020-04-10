@@ -71,5 +71,5 @@ class PDFS1(PDFSCommon):
         fig, plt = pdf_page.create(self.CODERS_ARRAY, self.PLOTS_ARRAY, self.PLOTS_MATRIX)
         pdf.savefig(fig)
         if self.global_mode:
-            plt.savefig(self.pdf_name.replace(".pdf", "-") + str(self.col_index) + ".png")
+            plt.savefig(self.create_image_name(self.pdf_name, self.col_index), format='pdf')
         plt.close()

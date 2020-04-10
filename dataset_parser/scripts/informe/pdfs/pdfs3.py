@@ -58,16 +58,16 @@ class PDFS3(PDFSCommon):
 
     def create_pdfs(self):
         for dataset_id, self.dataset_name in enumerate(self.dataset_names):
-            # print(self.dataset_name)
+            print(self.dataset_name)
             self.dataset_id = dataset_id + 1
             self.created_dataset_pdf_file()
 
     def created_dataset_pdf_file(self):
-        self.pdf_name = self.path + str(self.dataset_id) + "-" + self.dataset_name + ".pdf"
+        self.pdf_name = self.create_pdf_name(self.path, self.dataset_id, self.dataset_name)
         with PdfPages(self.pdf_name) as pdf:
             self.pd_utils_3_global = PandasUtils(self.dataset_name, 'Global', self.df_3_global, 3)
             for self.filename_index, self.filename in enumerate(self.dataset_filenames()):
-                # print("  " + self.filename)
+                print("  " + self.filename)
                 self.create_pdf_pages(pdf, self.dataset_name, self.filename)
 
     def create_pdf_pages(self, pdf, dataset_name, filename):
@@ -81,7 +81,6 @@ class PDFS3(PDFSCommon):
             mod_pd_utils_3_local_2 = self.set_global_window(pd_utils_3_local_2)
             # TODO: change order to make Relative Difference <= 0
             self.create_pdf_page(pdf, filename, mod_pd_utils_3_local_2, pd_utils_3_local_1)
-            # exit(1)
 
     #
     # In the local results, consider the best global window instead of the best local window
@@ -111,5 +110,11 @@ class PDFS3(PDFSCommon):
 
         fig, plt = pdf_page.create(self.CODERS_ARRAY, self.PLOTS_ARRAY, self.PLOTS_MATRIX)
         pdf.savefig(fig)
-        plt.savefig(self.pdf_name.replace(".pdf", "-") + str(self.filename_index + 1) + "-" + str(self.col_index) + ".png")
+        plt.savefig(self.create_image_name_(), format='pdf')
         plt.close()
+
+    def create_image_name_(self):
+        filename = self.pdf_name.replace(".pdf", "-") + str(self.filename_index + 1) + "-" + str(self.col_index) + ".pdf"
+        filename = filename.replace("PDF-", "")
+        return filename
+

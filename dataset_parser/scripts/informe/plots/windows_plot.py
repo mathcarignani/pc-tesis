@@ -26,6 +26,12 @@ class WindowsPlot(CommonPlot):
     def plot(self, ax, extra_options={}):
         # self.print_values()
         extra_options.update(self.options); self.options = extra_options
+
+        if self.algorithm == 'CoderSF':
+            CommonPlot.label_title(ax, self.options, self.algorithm)
+            ax.axis("off")
+            return
+
         x_axis_0, y_axis_0, x_axis_3, y_axis_3 = [], [], [], []
         local_color, global_color = 'red', 'forestgreen'
 
@@ -51,6 +57,8 @@ class WindowsPlot(CommonPlot):
                 pos_value3 = self.__position(value3)
                 x_axis_3.append(i); y_axis_3.append(pos_value3)
             ax.scatter(x=x_axis_3, y=y_axis_3, c=global_color, zorder=1, marker='x', s=36)
+            if self.options.get('circle_table_values'):
+                CommonPlot.circle_table_values(self.algorithm, self.options, ax, x_axis_3, y_axis_3)
 
         ax.set_xticks(x_axis_3)
         ax.grid(b=True, color=PlotConstants.COLOR_SILVER, linestyle='dotted')

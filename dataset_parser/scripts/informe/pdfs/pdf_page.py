@@ -12,6 +12,7 @@ class PdfPage(object):
         self.panda_utils_0 = panda_utils_0
         self.panda_utils_3 = panda_utils_3
         self.filename = filename
+        self.pdf_instance = pdf_instance
         self.col_index = pdf_instance.col_index
         self.plots_options = pdf_instance.plot_options() or pdf_instance.PLOT_OPTIONS or {}
         self.fig, self.plt = PlotUtils.create_figure(pdf_instance.FIG_SIZE_H_V, filename + ' - col = ' + str(self.col_index))
@@ -21,6 +22,7 @@ class PdfPage(object):
         plots_obj = {}
         for plot_key in plots_array:
             options = self.plots_options.get(plot_key) or {}
+            options['pdf_instance'] = self.pdf_instance
             plot_klass = PlotMapper.map(plot_key)
             plots = plot_klass.create_plots(coders_array, self.filename, self.panda_utils_0, self.panda_utils_3, self.col_index, options)
             plots_obj[plot_key] = plots

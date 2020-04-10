@@ -57,6 +57,8 @@ class CompressionRatioPlot(CommonPlot):
                       scatterpoints=1, handlelength=1)
         else:
             ax.scatter(x=x_axis, y=self.values3, c=self.value3_color, zorder=1, marker='x', s=36)
+            if self.options.get('circle_table_values'):
+                CommonPlot.circle_table_values(self.algorithm, self.options, ax, x_axis, self.values3)
 
         ax.set_xticks(x_axis)
         ax.grid(b=True, color=PlotConstants.COLOR_SILVER, linestyle='dotted', zorder=0)
@@ -81,9 +83,10 @@ class CompressionRatioPlot(CommonPlot):
         print("self.values3 = " + str(self.values3))
 
     def __check_sorted(self):
-        if self.additional_checks:
-            assert(PlotUtils.sorted_dec(self.values0))
-            assert(PlotUtils.sorted_dec(self.values3))
+        if not self.additional_checks:
+            return
+        assert(PlotUtils.sorted_dec(self.values0))
+        assert(PlotUtils.sorted_dec(self.values3))
 
     @classmethod
     def ylims(cls, total_min, total_max):
