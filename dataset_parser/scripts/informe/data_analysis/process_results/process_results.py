@@ -104,7 +104,6 @@ class ProcessResults(object):
         for threshold in ExperimentsUtils.THRESHOLDS:
             row_df = self.panda_utils.min_value_for_threshold(self.coder_name, self.col_index, threshold)
             window, percentage, _ = ProcessResults.get_values(row_df, self.col_index)
-
             new_window, new_percentage = window, percentage
             if self.__same_result(threshold):
                 assert(threshold > 0); assert(window == previous_window); assert(percentage == previous_percentage)
@@ -207,7 +206,7 @@ class ProcessResults(object):
     @staticmethod
     def parse_percentage(row_df, col_index):
         percentage_key = ResultsToDataframe.percentage_column_key(col_index)
-        return round(row_df[percentage_key], 2)
+        return round(row_df[percentage_key]/100, 2)
 
     @staticmethod
     def dataset_filenames(dataset_name, global_mode):

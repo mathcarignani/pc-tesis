@@ -18,7 +18,7 @@ PATH = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/script
 #
 
 # # PDFS1(PATH + '3.2/', False).create_pdfs()  # LOCAL
-PDFS1(PATH + '3.2/', True).create_pdfs()  # GLOBAL
+# PDFS1(PATH + '3.2/', True).create_pdfs()  # GLOBAL
 
 
 # #
@@ -26,15 +26,15 @@ PDFS1(PATH + '3.2/', True).create_pdfs()  # GLOBAL
 # #
 # # PDFS2(PATH + '3.3/', False).create_pdfs()  # LOCAL
 # # PDFS2(PATH + '3.3/', True).create_pdfs()  # GLOBAL
-PDFS3(PATH + '3.3/window/').create_pdfs()  # LOCAL (BEST LOCAL WINDOW VS. BEST GLOBAL WINDOW)
+# PDFS3(PATH + '3.3/window/').create_pdfs()  # LOCAL (BEST LOCAL WINDOW VS. BEST GLOBAL WINDOW)
 
 
 
 # #
 # # 3.4 Mask Coders Performance
 # #
-PDFS4(PATH + '3.4/pdf/', True).create_pdfs()  # GLOBAL
-# # ProcessResults(True, PATH + '3.4/results1', 1).run()
+# PDFS4(PATH + '3.4/pdf/', True).create_pdfs()  # GLOBAL
+ProcessResults(True, PATH + '3.4/results1', 1).run()
 # # ProcessResults(True, PATH + '3.4/results12', 12).run()
 # # ProcessResults(True, PATH + '3.4/results2', 2).run()
 # # ProcessResults(True, PATH + '3.4/results3', 3).run()
