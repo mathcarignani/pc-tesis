@@ -45,7 +45,7 @@ class ProcessResults(object):
     def run(self):
         self.__write_headers()
         self.__datasets_iteration()
-        self.csv_writer_latex.print_end()
+        self.csv_writer_latex.close()
 
     def __write_headers(self):
         extra_str = 'global' if self.global_mode else 'local'
@@ -152,7 +152,7 @@ class ProcessResults(object):
             threshold_results += [new_coder, new_window, new_percentage]
             previous_coder, previous_window, previous_percentage = coder_name, window, percentage
         self.csv_writer_2.write_row(threshold_results)
-        self.csv_writer_latex.set_threshold_results(threshold_results)
+        self.csv_writer_latex.save_threshold_results(threshold_results)
 
     def __coder(self):
         if self.mode == 3:
@@ -163,11 +163,11 @@ class ProcessResults(object):
 
     def __set_dataset(self, dataset_name):
         self.__write_two_files([dataset_name])
-        self.csv_writer_latex.set_dataset(dataset_name)
+        self.csv_writer_latex.save_dataset(dataset_name)
 
     def __set_filename(self, filename):
         self.__write_two_files(['', filename])
-        self.csv_writer_latex.set_filename(filename)
+        self.csv_writer_latex.save_filename(filename)
 
     def __write_two_files(self, row):
         self.csv_writer_1.write_row(row)
