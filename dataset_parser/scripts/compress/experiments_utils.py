@@ -31,7 +31,7 @@ class ExperimentsUtils(object):
         'NOAA-SST': ['SST'],
         'NOAA-ADCP': ['Vel'],
         'SolarAnywhere': ['GHI', 'DNI', 'DHI'],
-        'ElNino': ['Lat', 'Long', 'Zonal Winds', 'Merid. Winds', 'Humidity', 'AirTemp', 'SST'],
+        'ElNino': ['Lat', 'Long', 'Z. Wind', 'M. Wind', 'Humidity', 'AirTemp', 'SST'],
         'NOAA-SPC-hail': ['Lat', 'Long', 'Size'],
         'NOAA-SPC-tornado': ['Lat', 'Long'],
         'NOAA-SPC-wind': ['Lat', 'Long', 'Speed']

@@ -99,11 +99,11 @@ class WriterLatex(object):
         self.file.write_line(line)
 
     def __print_start(self):
-        self.__write_line(r"\begin{sidewaystable}[ht]")
+        self.__write_line(r"\begin{table}")
         self.__print_commands()
         self.__write_line("\centering")
         self.__write_line(self.__legend_for_mode())
-        self.__write_line(r"\begin{tabular}{| l | l " + (self.__c_list_for_mode() * self.THRE_COUNT) + "}")
+        self.__write_line(r"\hspace*{-2.1cm}\begin{tabular}{| l | l " + (self.__c_list_for_mode() * self.THRE_COUNT) + "}")
         self.__write_line("\cline{3-" + str(self.THRE_COUNT * self.__count_for_mode() + 2) + "}")
         self.__write_line(self.threshold_line())
         columns = self.two_columns(True)
@@ -158,7 +158,7 @@ class WriterLatex(object):
         self.__write_line("\end{tabular}")
         self.__write_line("\caption{" + self.__caption_for_mode() + "}")
         self.__write_line("\label{experiments:mask-results-overview" + self.__label_for_mode() + "}")
-        self.__write_line(r"\end{sidewaystable}")
+        self.__write_line(r"\end{table}")
 
     def two_columns(self, header = False, cr = None, w = None):
         if header:
