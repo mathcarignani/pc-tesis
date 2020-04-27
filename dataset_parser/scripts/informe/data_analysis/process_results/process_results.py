@@ -46,13 +46,8 @@ class ProcessResults(object):
 
     def __write_headers(self):
         extra_str = 'global' if self.global_mode else 'local'
-        self.csv_writer_1 = Writer1.filename(self.path, extra_str)
-        self.csv_writer_1.write_row(Writer1.first_row())
-
-        self.csv_writer_2 = Writer2.filename(self.path, extra_str)
-        self.csv_writer_2.write_row(Writer2.first_row())
-        self.csv_writer_2.write_row(Writer2.second_row())
-
+        self.csv_writer_1 = Writer1(self.path, extra_str)
+        self.csv_writer_2 = Writer2(self.path, extra_str)
         self.csv_writer_latex = WriterLatex(self.path, extra_str, self.mode)
 
     def __datasets_iteration(self):
@@ -80,7 +75,7 @@ class ProcessResults(object):
             self.__column_results_writer_2()
 
     def __column_results_writer_1(self):
-        self.csv_writer_1.write_row(['', '', self.col_name])
+        self.csv_writer_1.write_col_name(self.col_name)
         for self.coder_name in self.__coders_array():
             self._print(self.coder_name)
             self.__coder_results()
@@ -112,7 +107,7 @@ class ProcessResults(object):
             windows.append(new_window); percentages.append(new_percentage)
             previous_window, previous_percentage = window, percentage
 
-        self.csv_writer_1.write_row(['', '', '', self.coder_name] + windows + [''] + percentages)
+        self.csv_writer_1.write_data_row(self.coder_name, windows, percentages)
 
     #
     # Get the best <Coder, Window> combination for each <Column, Threshold> combination
@@ -148,6 +143,7 @@ class ProcessResults(object):
             new_coder, new_window, new_percentage = coder_name, window, percentage
             threshold_results += [new_coder, new_window, new_percentage]
             previous_coder, previous_window, previous_percentage = coder_name, window, percentage
+
         self.csv_writer_2.write_row(threshold_results)
         self.csv_writer_latex.set_threshold_results(threshold_results)
 
@@ -159,16 +155,14 @@ class ProcessResults(object):
         return None
 
     def __set_dataset(self, dataset_name):
-        self.__write_two_files([dataset_name])
+        self.csv_writer_1.write_dataset_name(dataset_name)
+        self.csv_writer_2.write_dataset_name(dataset_name)
         self.csv_writer_latex.set_dataset(dataset_name)
 
     def __set_filename(self, filename):
-        self.__write_two_files(['', filename])
+        self.csv_writer_1.write_filename(filename)
+        self.csv_writer_2.write_filename(filename)
         self.csv_writer_latex.set_filename(filename)
-
-    def __write_two_files(self, row):
-        self.csv_writer_1.write_row(row)
-        self.csv_writer_2.write_row(row)
 
     def __local_or_single_file(self):
         condition1 = not self.global_mode
