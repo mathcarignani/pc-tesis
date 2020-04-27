@@ -1,6 +1,7 @@
 import sys
 sys.path.append('.')
 
+import numpy as np
 from scripts.informe.results_parsing.results_reader import ResultsReader
 from scripts.informe.results_parsing.results_to_dataframe import ResultsToDataframe
 from scripts.compress.experiments_utils import ExperimentsUtils
@@ -13,7 +14,8 @@ from scripts.informe.math_utils import MathUtils
 
 
 class ProcessResults(object):
-    CODERS_ARRAY = ['CoderPCA', 'CoderAPCA', 'CoderCA', 'CoderPWLH', 'CoderPWLHInt', 'CoderFR', 'CoderSF',
+    CODERS_ARRAY = ['CoderBasic',
+                    'CoderPCA', 'CoderAPCA', 'CoderCA', 'CoderPWLH', 'CoderPWLHInt', 'CoderFR', 'CoderSF',
                     # 'CoderGAMPS', => ignore this coder
                     'CoderGAMPSLimit']
     MM = 3  # MASK MODE
@@ -103,8 +105,8 @@ class ProcessResults(object):
                 assert(percentage == previous_percentage); assert(total_bits == previous_total_bits)
                 # TODO: uncomment to show blank cells for a repeated experiment
                 # new_window, new_percentage, new_total_bits = '=', '=', '=
-            elif self.coder_name == 'CoderSF':
-                new_window = ''  # CoderSF this coder doesn't have a window param
+            elif self.coder_name in ['CoderBasic', 'CoderSF']:
+                new_window = ''  # these coders don't have a window param
 
             windows.append(new_window); percentages.append(new_percentage); total_bits_list.append(new_total_bits)
             previous_window, previous_percentage, previous_total_bits = window, percentage, total_bits
@@ -183,7 +185,7 @@ class ProcessResults(object):
 
     @staticmethod
     def get_values(row_df, col_index):
-        window = int(row_df['window'])
+        window = None if np.isnan(row_df['window']) else int(row_df['window'])
         percentage = ProcessResults.parse_percentage(row_df, col_index)
         total_bits = ProcessResults.parse_total_bits(row_df, col_index)
         coder_name = row_df['coder']

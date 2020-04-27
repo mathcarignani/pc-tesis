@@ -51,6 +51,12 @@ class PandasMethods(object):
     #
     @staticmethod
     def get_min_row(coder_df, column_key, threshold, nth=None):
+        if len(coder_df) == 1:  # and coder_df.loc[0].coder == 'CoderBasic':
+            assert(coder_df.coder.values[0] == 'CoderBasic')
+            min_value_index = coder_df.index.values[0]
+            min_value_row = coder_df.loc[min_value_index]
+            return min_value_row
+
         thresholds = coder_df.threshold.unique()
         # check_same = set(thresholds) == set([0, 1, 3, 5, 10, 15, 20, 30])
         check_same = set([0, 1, 3, 5, 10, 15, 20, 30]).issubset(set(thresholds))
