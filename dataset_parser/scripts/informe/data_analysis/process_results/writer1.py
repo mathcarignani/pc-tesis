@@ -12,7 +12,7 @@ class Writer1(object):
 
     def write_first_row(self):
         row = ["Dataset", "Filename", "Column", "Coder"]
-        row += ExperimentsUtils.THRESHOLDS + [''] + ExperimentsUtils.THRESHOLDS
+        row += ExperimentsUtils.THRESHOLDS + [''] + ExperimentsUtils.THRESHOLDS + [''] + ExperimentsUtils.THRESHOLDS
         self.file.write_row(row)
 
     def write_dataset_name(self, dataset_name):
@@ -24,8 +24,8 @@ class Writer1(object):
     def write_col_name(self, col_name):
         self.file.write_row(['', '', col_name])
 
-    def write_data_row(self, coder_name, windows, percentages):
-        self.file.write_row(['', '', '', coder_name] + windows + [''] + percentages)
+    def write_data_row(self, coder_name, windows, percentages, total_bits):
+        self.file.write_row(['', '', '', coder_name] + windows + [''] + percentages + [''] + total_bits)
 
     def write_row(self, row):
         self.file.write_row(row)

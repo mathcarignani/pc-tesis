@@ -91,23 +91,25 @@ class ProcessResults(object):
     # Get the best Window for each <Coder, Column, Threshold> combination
     #
     def __coder_results(self):
-        windows, percentages = [], []
-        previous_window, previous_percentage = None, None
+        windows, percentages, total_bits_list = [], [], []
+        previous_window, previous_percentage, previous_total_bits = None, None, None
         for threshold in ExperimentsUtils.THRESHOLDS:
             row_df = self.panda_utils.min_value_for_threshold(self.coder_name, self.col_index, threshold)
-            window, percentage, _ = ProcessResults.get_values(row_df, self.col_index)
-            new_window, new_percentage = window, percentage
+            window, percentage, _, total_bits = ProcessResults.get_values(row_df, self.col_index)
+            new_window, new_percentage, new_total_bits = window, percentage, total_bits
+
             if self.__same_result(threshold):
-                assert(threshold > 0); assert(window == previous_window); assert(percentage == previous_percentage)
+                assert(threshold > 0); assert(window == previous_window)
+                assert(percentage == previous_percentage); assert(total_bits == previous_total_bits)
                 # TODO: uncomment to show blank cells for a repeated experiment
-                # new_window, new_percentage = '=', '='
+                # new_window, new_percentage, new_total_bits = '=', '=', '=
             elif self.coder_name == 'CoderSF':
                 new_window = ''  # CoderSF this coder doesn't have a window param
 
-            windows.append(new_window); percentages.append(new_percentage)
-            previous_window, previous_percentage = window, percentage
+            windows.append(new_window); percentages.append(new_percentage); total_bits_list.append(new_total_bits)
+            previous_window, previous_percentage, previous_total_bits = window, percentage, total_bits
 
-        self.csv_writer_1.write_data_row(self.coder_name, windows, percentages)
+        self.csv_writer_1.write_data_row(self.coder_name, windows, percentages, total_bits_list)
 
     #
     # Get the best <Coder, Window> combination for each <Column, Threshold> combination
@@ -123,15 +125,15 @@ class ProcessResults(object):
                 relative_diff, coder_name = ProcessResults.calculate_relative_diff(row_df_pca, row_df_apca, self.col_index)
                 window = relative_diff
                 row_df = row_df_pca if coder_name == "PCA" else row_df_apca
-                _, percentage, _ = ProcessResults.get_values(row_df, self.col_index)
+                _, percentage, _, _ = ProcessResults.get_values(row_df, self.col_index)
             elif self.mode == 12: # second best algorithm
                 row_df = self.panda_utils.min_value_for_threshold(coder, self.col_index, threshold, 2)
-                window, percentage, coder_name = ProcessResults.get_values(row_df, self.col_index)
+                window, percentage, coder_name, _ = ProcessResults.get_values(row_df, self.col_index)
                 coder_name = coder_name.replace("Coder", "")
 
             else: # best algorithm
                 row_df = self.panda_utils.min_value_for_threshold(coder, self.col_index, threshold)
-                window, percentage, coder_name = ProcessResults.get_values(row_df, self.col_index)
+                window, percentage, coder_name, _ = ProcessResults.get_values(row_df, self.col_index)
                 coder_name = coder_name.replace("Coder", "")
 
                 if self.__same_result(threshold):
@@ -183,8 +185,9 @@ class ProcessResults(object):
     def get_values(row_df, col_index):
         window = int(row_df['window'])
         percentage = ProcessResults.parse_percentage(row_df, col_index)
+        total_bits = ProcessResults.parse_total_bits(row_df, col_index)
         coder_name = row_df['coder']
-        return window, percentage, coder_name
+        return window, percentage, coder_name, total_bits
 
     @staticmethod
     def calculate_relative_diff(row_df_pca, row_df_apca, col_index):
@@ -197,7 +200,14 @@ class ProcessResults(object):
     @staticmethod
     def parse_percentage(row_df, col_index):
         percentage_key = ResultsToDataframe.percentage_column_key(col_index)
-        return round(row_df[percentage_key]/100, 2)
+        percentage = round(row_df[percentage_key]/100, 2)
+        return percentage
+
+    @staticmethod
+    def parse_total_bits(row_df, col_index):
+        total_bits_key = ResultsToDataframe.data_column_key(col_index)
+        total_bits = row_df[total_bits_key]
+        return int(total_bits)
 
     @staticmethod
     def dataset_filenames(dataset_name, global_mode):
