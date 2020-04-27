@@ -81,6 +81,7 @@ class ProcessResults(object):
         for self.coder_name in self.__coders_array():
             self._print(self.coder_name)
             self.__coder_results()
+        self.csv_writer_1.write_data_rows()
 
     def __coders_array(self):
         if self.mode == 3:
@@ -111,7 +112,7 @@ class ProcessResults(object):
             windows.append(new_window); percentages.append(new_percentage); total_bits_list.append(new_total_bits)
             previous_window, previous_percentage, previous_total_bits = window, percentage, total_bits
 
-        self.csv_writer_1.write_data_row(self.coder_name, windows, percentages, total_bits_list)
+        self.csv_writer_1.save_data_row(self.coder_name, windows, percentages, total_bits_list)
 
     #
     # Get the best <Coder, Window> combination for each <Column, Threshold> combination
