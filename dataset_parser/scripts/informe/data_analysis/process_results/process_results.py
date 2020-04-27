@@ -12,9 +12,6 @@ from scripts.informe.data_analysis.process_results.writer_latex import WriterLat
 from scripts.informe.math_utils import MathUtils
 
 
-#
-# This script does the same as avances11/process_results.py but using pandas data handling.
-#
 class ProcessResults(object):
     CODERS_ARRAY = ['CoderPCA', 'CoderAPCA', 'CoderCA', 'CoderPWLH', 'CoderPWLHInt', 'CoderFR', 'CoderSF',
                     # 'CoderGAMPS', => ignore this coder
