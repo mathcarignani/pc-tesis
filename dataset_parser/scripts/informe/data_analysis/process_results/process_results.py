@@ -45,6 +45,7 @@ class ProcessResults(object):
         self.__write_headers()
         self.__datasets_iteration()
         self.csv_writer_latex.print_end()
+        self.csv_writer_1.show_data()
 
     def __write_headers(self):
         extra_str = 'global' if self.global_mode else 'local'
