@@ -31,7 +31,7 @@ class PDFS3(PDFSCommon):
     ]
     HEIGHT_RATIOS = [30, 0, 30, 15, 30, 0, 30] # [30, 0, 30, 20, 30, 0, 30, 20, 5]
     PLOT_OPTIONS = {
-        'window': {'title': 12, 'labels': [r'$global$', r'$local$']},
+        'window': {'title': 12, 'labels': [r'$OWS$', r'$LOWS$']},
         # 'compression': {'labels': [r'$global$', r'$local$']},
         'relative': {'check_never_negative': True, 'show_xlabel': True, 'add_max_circle': True},
         # 'relative_stats': {},
