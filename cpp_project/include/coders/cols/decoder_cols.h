@@ -2,10 +2,10 @@
 #ifndef CPP_PROJECT_DECODER_COLS_H
 #define CPP_PROJECT_DECODER_COLS_H
 
-#include "decoder_base.h"
+#include "decoder_common.h"
 #include "column.h"
 
-class DecoderCols: public DecoderBase {
+class DecoderCols: public DecoderCommon {
 
 private:
     void decodeDataRows() override;
@@ -18,7 +18,7 @@ protected:
     Column* column;
 
 public:
-    using DecoderBase::DecoderBase;
+    using DecoderCommon::DecoderCommon;
 
 };
 

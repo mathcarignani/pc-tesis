@@ -11,7 +11,7 @@
 class MaskDecoder {
 
 public:
-    static Mask* decode(DecoderBase* decoder);
+    static Mask* decode(DecoderCommon* decoder);
 
 };
 

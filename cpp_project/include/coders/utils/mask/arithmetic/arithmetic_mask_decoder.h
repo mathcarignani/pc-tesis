@@ -7,12 +7,12 @@
 #if MASK_MODE == 3
 
 #include "mask.h"
-#include "decoder_base.h"
+#include "decoder_common.h"
 
 class ArithmeticMaskDecoder {
 
 private:
-    DecoderBase* decoder;
+    DecoderCommon* decoder;
     int data_columns_count;
     Mask* mask;
 
@@ -20,7 +20,7 @@ private:
     std::vector<Mask*> callDecompress();
 
 public:
-    ArithmeticMaskDecoder(DecoderBase* decoder_, int data_columns_count_);
+    ArithmeticMaskDecoder(DecoderCommon* decoder_, int data_columns_count_);
     std::vector<Mask*> decode();
 
 };

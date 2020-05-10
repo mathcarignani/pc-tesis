@@ -236,10 +236,10 @@
 		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/stdafx.h">
 			<Option target="cpp_project"/>
 		</Unit>
-		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/base/coder_base.h">
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/base/coder_common.h">
 			<Option target="cpp_project"/>
 		</Unit>
-		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/base/decoder_base.h">
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/base/decoder_common.h">
 			<Option target="cpp_project"/>
 		</Unit>
 		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/basic/coder_basic.h">
@@ -470,10 +470,10 @@
 		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/main.cpp">
 			<Option target="cpp_project"/>
 		</Unit>
-		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/base/coder_base.cpp">
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/base/coder_common.cpp">
 			<Option target="cpp_project"/>
 		</Unit>
-		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/base/decoder_base.cpp">
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/base/decoder_common.cpp">
 			<Option target="cpp_project"/>
 		</Unit>
 		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/basic/coder_basic.cpp">

@@ -3,7 +3,7 @@
 #include "constants.h"
 #include <iostream>
 
-CoderInput::CoderInput(CoderBase* coder_, int data_columns_count_){
+CoderInput::CoderInput(CoderCommon* coder_, int data_columns_count_){
     coder = coder_;
     input_csv = coder->input_csv;
     dataset = coder->dataset;

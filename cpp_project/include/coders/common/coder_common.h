@@ -1,6 +1,6 @@
 
-#ifndef CPP_PROJECT_CODER_BASE_H
-#define CPP_PROJECT_CODER_BASE_H
+#ifndef CPP_PROJECT_CODER_COMMON_H
+#define CPP_PROJECT_CODER_COMMON_H
 
 #include <string>
 #include "bit_stream_writer.h"
@@ -9,7 +9,7 @@
 #include "constants.h"
 #include "window.h"
 
-class CoderBase {
+class CoderCommon {
 
 private:
     void codeDataRowsCount();
@@ -31,7 +31,7 @@ public:
     Dataset* dataset;
     int data_rows_count;
 
-    CoderBase(CSVReader* input_csv_, BitStreamWriter* output_file_);
+    CoderCommon(CSVReader* input_csv_, BitStreamWriter* output_file_);
     void codeFile();
     void codeCoderParameters(int coder_code, int window_size);
     void printBits();
@@ -49,4 +49,4 @@ public:
     void flushByte();
 };
 
-#endif //CPP_PROJECT_CODER_BASE_H
+#endif //CPP_PROJECT_CODER_COMMON_H

@@ -2,7 +2,7 @@
 #include "scripts.h"
 
 #include <iostream>
-#include "decoder_base.h"
+#include "decoder_common.h"
 #include "coder_basic.h"
 #include "coder_pca.h"
 #include "coder_apca.h"
@@ -18,7 +18,7 @@
 void Scripts::decode(Path input_path, Path output_path){
     BitStreamReader* bit_stream_reader = new BitStreamReader(input_path);
     CSVWriter* csv_writer = new CSVWriter(output_path);
-    DecoderBase* decoder = DecoderBase::getDecoder(bit_stream_reader, csv_writer);
+    DecoderCommon* decoder = DecoderCommon::getDecoder(bit_stream_reader, csv_writer);
     decoder->decodeFile();
     decoder->close();
 }

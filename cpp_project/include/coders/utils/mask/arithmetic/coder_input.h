@@ -3,12 +3,12 @@
 #define CPP_PROJECT_INPUT_H
 
 #include "csv_reader.h"
-#include "coder_base.h"
+#include "coder_common.h"
 
 class CoderInput {
 
 private:
-    CoderBase* coder;
+    CoderCommon* coder;
     CSVReader* input_csv;
     Dataset* dataset;
     int data_columns_count;
@@ -26,7 +26,7 @@ public:
     bool reset_model;
     bool eof;
 
-    CoderInput(CoderBase* coder_, int data_columns_count_);
+    CoderInput(CoderCommon* coder_, int data_columns_count_);
     int getByte(); // PRE: !eof()
 
 };

@@ -5,7 +5,7 @@
 //
 // TODO: use a more appropriate lossless compression schema for coding the time delta column.
 //
-std::vector<std::string> TimeDeltaDecoder::decode(DecoderBase* decoder){
+std::vector<std::string> TimeDeltaDecoder::decode(DecoderCommon* decoder){
     std::vector<std::string> column;
 
     for(int row_index = 0; row_index < decoder->data_rows_count; row_index++){

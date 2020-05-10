@@ -1,6 +1,6 @@
 
-#ifndef CPP_PROJECT_DECODER_BASE_H
-#define CPP_PROJECT_DECODER_BASE_H
+#ifndef CPP_PROJECT_DECODER_COMMON_H
+#define CPP_PROJECT_DECODER_COMMON_H
 
 #include "bit_stream_reader.h"
 #include "csv_writer.h"
@@ -8,7 +8,7 @@
 #include "constants.h"
 #include "mask.h"
 
-class DecoderBase {
+class DecoderCommon {
 
 private:
     void decodeDataRowsCount();
@@ -36,9 +36,9 @@ public:
 #endif // MASK_MODE == 3
 #endif // MASK_MODE
 
-    static DecoderBase* getDecoder(BitStreamReader* input_file, CSVWriter* output_csv);
+    static DecoderCommon* getDecoder(BitStreamReader* input_file, CSVWriter* output_csv);
 
-    DecoderBase(BitStreamReader* input_file_, CSVWriter* output_csv_);
+    DecoderCommon(BitStreamReader* input_file_, CSVWriter* output_csv_);
     void decodeFile();
     void close();
 
@@ -55,4 +55,4 @@ public:
     void setWindowSize(int window_size_);
 };
 
-#endif //CPP_PROJECT_DECODER_BASE_H
+#endif //CPP_PROJECT_DECODER_COMMON_H

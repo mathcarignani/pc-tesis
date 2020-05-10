@@ -40,7 +40,7 @@ void DecoderPCA::decodeWindow(std::vector<std::string> & column, int window_size
 #endif
 }
 
-void DecoderPCA::decodeConstantWindow(DecoderBase* decoder, std::vector<std::string> & column, int window_size){
+void DecoderPCA::decodeConstantWindow(DecoderCommon* decoder, std::vector<std::string> & column, int window_size){
     std::string constant = decoder->decodeValueRaw();
     int i = 0;
     while (i < window_size){

@@ -7,12 +7,12 @@
 #if MASK_MODE
 
 #include "mask.h"
-#include "decoder_base.h"
+#include "decoder_common.h"
 
 class SimpleMaskDecoder {
 
 public:
-    static Mask* decode(DecoderBase* decoder);
+    static Mask* decode(DecoderCommon* decoder);
 
 };
 

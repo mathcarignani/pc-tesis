@@ -4,7 +4,7 @@
 
 #include "assert.h"
 
-Mask* SimpleMaskDecoder::decode(DecoderBase* decoder){
+Mask* SimpleMaskDecoder::decode(DecoderCommon* decoder){
     Mask* mask = new Mask();
     int row_index = 0;
     Burst* burst = NULL;

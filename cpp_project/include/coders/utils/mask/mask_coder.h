@@ -11,7 +11,7 @@
 class MaskCoder {
 
 public:
-    static int code(CoderBase* coder, int column_index);
+    static int code(CoderCommon* coder, int column_index);
 
 };
 

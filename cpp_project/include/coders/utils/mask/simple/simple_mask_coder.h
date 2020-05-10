@@ -7,15 +7,15 @@
 #if MASK_MODE
 
 #include "mask.h"
-#include "coder_base.h"
+#include "coder_common.h"
 
 class SimpleMaskCoder {
 
 private:
-    static int codeBurst(CoderBase* coder, Burst* burst);
+    static int codeBurst(CoderCommon* coder, Burst* burst);
 
 public:
-    static int code(CoderBase* coder, int column_index);
+    static int code(CoderCommon* coder, int column_index);
 
 };
 

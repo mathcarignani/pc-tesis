@@ -6,7 +6,7 @@
 #include "assert.h"
 #include "golomb_coder.h"
 
-int GolombMaskCoder::code(CoderBase* coder, int column_index){
+int GolombMaskCoder::code(CoderCommon* coder, int column_index){
     int total_data_rows = countTotalDataRows(coder, column_index);
     bool single_burst = total_data_rows == 0 || total_data_rows == coder->data_rows_count;
     coder->codeBool(single_burst);
@@ -22,7 +22,7 @@ int GolombMaskCoder::code(CoderBase* coder, int column_index){
     return total_data_rows;
 }
 
-int GolombMaskCoder::countTotalDataRows(CoderBase* coder, int column_index){
+int GolombMaskCoder::countTotalDataRows(CoderCommon* coder, int column_index){
     int total_data_rows = 0;
     CSVReader* input_csv = coder->input_csv;
     input_csv->goToFirstDataRow(column_index);

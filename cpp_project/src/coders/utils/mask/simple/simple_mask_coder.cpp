@@ -5,7 +5,7 @@
 
 #include "assert.h"
 
-int SimpleMaskCoder::code(CoderBase* coder, int column_index){
+int SimpleMaskCoder::code(CoderCommon* coder, int column_index){
     int total_data_rows = 0;
     Burst* burst = NULL;
 
@@ -30,7 +30,7 @@ int SimpleMaskCoder::code(CoderBase* coder, int column_index){
     return total_data_rows;
 }
 
-int SimpleMaskCoder::codeBurst(CoderBase* coder, Burst* burst){
+int SimpleMaskCoder::codeBurst(CoderCommon* coder, Burst* burst){
     coder->codeBool(burst->no_data);
     coder->codeInt(burst->length - 1, Constants::MASK_BITS); // 1 <= burst->length <= Constants::MASK_MAX_SIZE
     return (burst->no_data ? 0 : burst->length);
