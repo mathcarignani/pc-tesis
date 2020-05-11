@@ -13,7 +13,7 @@ std::vector<int> TimeDeltaCoder::code(CoderCommon* coder){
     input_csv->goToFirstDataRow(0);
     while (input_csv->continue_reading){
         std::string csv_value = input_csv->readNextValue();
-        coder->codeValueRaw(csv_value); // same as CoderBasic
+        coder->codeValueRaw(csv_value); // same as CoderBase
 
         // add int value to the time_delta_vector
         int csv_value_int = Conversor::stringToInt(csv_value);

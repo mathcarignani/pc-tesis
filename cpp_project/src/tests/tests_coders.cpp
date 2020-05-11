@@ -18,7 +18,7 @@ void TestsCoders::testSingleCoder() {
     std::vector<int> lossless(10, 0);
 //    std::vector<int>    lossy{0, 5};
 
-    std::string coder_name = "Basic";
+    std::string coder_name = "Base";
     Path output_code_path = TestsCodersUtils::codedFilePath(TestsUtils::OUTPUT_PATH, file_path, coder_name);
     Path output_decode_path = TestsCodersUtils::decodedFilePath(TestsUtils::OUTPUT_PATH, file_path, coder_name);
 
@@ -26,7 +26,7 @@ void TestsCoders::testSingleCoder() {
     std::cout << output_decode_path.full_path << std::endl;
 
 //    Scripts::code("CoderGAMPS", file_path, output_code_path, 5, lossless);
-    Scripts::codeBasic(file_path, output_code_path);
+    Scripts::codeBase(file_path, output_code_path);
     Scripts::decode(output_code_path, output_decode_path);
     TestsCodersUtils::compareFiles(file_path, output_decode_path);
     std::cout << "SAME FILE!!" << std::endl;
@@ -102,7 +102,7 @@ void TestsCoders::runAll(){
             TestsCodersUtils::writeStringCSV(bits_csv, mode, false);
             setModePaths(i);
 
-            if (mode == "LOSSLESS"){ testCoder("CoderBasic"); }
+            if (mode == "LOSSLESS"){ testCoder("CoderBase"); }
             testCoder("CoderPCA");
             testCoder("CoderAPCA");
             testCoder("CoderPWLHInt");
@@ -123,8 +123,8 @@ void TestsCoders::runAll(){
 
 void TestsCoders::testCoder(std::string coder_name){
     setCoderPaths(coder_name);
-    if (coder_name == "CoderBasic"){
-        ds = Scripts::codeBasic(file_path, output_code_path);
+    if (coder_name == "CoderBase"){
+        ds = Scripts::codeBase(file_path, output_code_path);
     }
     else {
         ds = Scripts::code(coder_name, file_path, output_code_path, win_size, errors_vector);

@@ -23,7 +23,7 @@ public:
     static const int MASK_BITS;
     static const int MASK_MAX_SIZE;
 
-    static const int CODER_BASIC; // 0
+    static const int CODER_BASE; // 0
     static const int CODER_PCA; // 10
     static const int CODER_APCA; // 11
     static const int CODER_PWLH; // 20

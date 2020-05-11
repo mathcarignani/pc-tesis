@@ -1,10 +1,10 @@
 
-#ifndef CPP_PROJECT_CODER_BASIC_H
-#define CPP_PROJECT_CODER_BASIC_H
+#ifndef CPP_PROJECT_CODER_BASE_H
+#define CPP_PROJECT_CODER_BASE_H
 
 #include "coder_cols.h"
 
-class CoderBasic: public CoderCols {
+class CoderBase: public CoderCols {
 
 private:
     void codeCoderParams() override;
@@ -17,4 +17,4 @@ public:
     using CoderCols::CoderCols;
 };
 
-#endif //CPP_PROJECT_CODER_BASIC_H
+#endif //CPP_PROJECT_CODER_BASE_H

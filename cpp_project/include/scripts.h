@@ -13,7 +13,7 @@ class Scripts {
 public:
     static void decode(Path input_path, Path output_path);
 
-    static Dataset* codeBasic(Path input_path, Path output_path);
+    static Dataset* codeBase(Path input_path, Path output_path);
     static Dataset* code(std::string coder_name, Path input_path, Path output_path, int window_size, std::vector<int> error_thresholds_vector);
 
 private:

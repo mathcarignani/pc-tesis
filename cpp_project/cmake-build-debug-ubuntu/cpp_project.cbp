@@ -61,7 +61,7 @@
 					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders"/>
 					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/base"/>
 					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/cols"/>
-					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/basic"/>
+					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/base"/>
 					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/constant"/>
 					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/constant/pca"/>
 					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/constant/apca"/>
@@ -121,7 +121,7 @@
 					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders"/>
 					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/base"/>
 					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/cols"/>
-					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/basic"/>
+					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/base"/>
 					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/constant"/>
 					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/constant/pca"/>
 					<Add directory="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/constant/apca"/>
@@ -242,10 +242,10 @@
 		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/base/decoder_common.h">
 			<Option target="cpp_project"/>
 		</Unit>
-		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/basic/coder_basic.h">
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/base/coder_base.h">
 			<Option target="cpp_project"/>
 		</Unit>
-		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/basic/decoder_basic.h">
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/base/decoder_base.h">
 			<Option target="cpp_project"/>
 		</Unit>
 		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/cols/coder_cols.h">
@@ -476,10 +476,10 @@
 		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/base/decoder_common.cpp">
 			<Option target="cpp_project"/>
 		</Unit>
-		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/basic/coder_basic.cpp">
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/base/coder_base.cpp">
 			<Option target="cpp_project"/>
 		</Unit>
-		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/basic/decoder_basic.cpp">
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/base/decoder_base.cpp">
 			<Option target="cpp_project"/>
 		</Unit>
 		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/cols/coder_cols.cpp">

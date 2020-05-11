@@ -5,7 +5,7 @@
 #include "conversor.h"
 
 // TODO: move this logic to a separate file
-#include "decoder_basic.h"
+#include "decoder_base.h"
 #include "decoder_pca.h"
 #include "decoder_apca.h"
 #include "decoder_pwlh.h"
@@ -27,8 +27,8 @@ DecoderCommon* DecoderCommon::getDecoder(BitStreamReader* input_file, CSVWriter*
 
     DecoderCommon* decoder;
 
-    if (coder_code == Constants::CODER_BASIC) {
-        decoder = new DecoderBasic(input_file, output_csv);
+    if (coder_code == Constants::CODER_BASE) {
+        decoder = new DecoderBase(input_file, output_csv);
         return decoder;
     }
 

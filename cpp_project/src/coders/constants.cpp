@@ -8,7 +8,7 @@ const double Constants::NO_DATA_DOUBLE = 0;
 const int Constants::MASK_BITS = 8;
 const int Constants::MASK_MAX_SIZE = 256;
 
-const int Constants::CODER_BASIC = 0;
+const int Constants::CODER_BASE = 0;
 const int Constants::CODER_PCA = 10;
 const int Constants::CODER_APCA = 11;
 const int Constants::CODER_PWLH = 20;

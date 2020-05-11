@@ -5,7 +5,7 @@ vwc_1202.dat.csv
 
 LOSSLESS
 
-CoderBasic
+CoderBase
 TOTAL  = 1838492
 header = 818
 mask   = 0,11889
@@ -90,7 +90,7 @@ solar-anywhere-2012.csv
 
 LOSSLESS
 
-CoderBasic
+CoderBase
 TOTAL  = 3316161
 header = 2678
 mask   = 0,3780,3780,3780
@@ -175,7 +175,7 @@ noaa_spc-hail.csv
 
 LOSSLESS
 
-CoderBasic
+CoderBase
 TOTAL  = 889179
 header = 302
 mask   = 0,603,603,603

@@ -1,9 +1,9 @@
 
-#include "decoder_basic.h"
+#include "decoder_base.h"
 #include "assert.h"
 #include "vector_utils.h"
 
-std::vector<std::string> DecoderBasic::decodeDataColumn(){
+std::vector<std::string> DecoderBase::decodeDataColumn(){
     std::vector<std::string> column;
     row_index = 0;
 
