@@ -13,17 +13,14 @@ int main(int argc, char *argv[]){
 //    }
 
     if (argc <= 1) {
-    #if MASK_MODE == 0 || MASK_MODE == 1
+    #if MASK_MODE >= 0 && MASK_MODE <= 3
         TestsCoders::testSingleCoder();
         Tests::runAll();
         return 0;
     #else
-        // TODO:
-        // - Remove tests for MASK_MODE == 1
-        // - Add tests for MASK_MODE == 3
-        std::cout << "ERROR: MASK_MODE must be 0 or 1 for the tests to work" << std::endl;
+        std::cout << "ERROR: MASK_MODE must be 0, 1, 2, or 3 for the tests to work" << std::endl;
         return -1;
-    #endif // MASK_MODE == 0 or MASK_MODE == 1
+    #endif // MASK_MODE >= 0 && MASK_MODE <= 3
     }
 
     // argc > 1

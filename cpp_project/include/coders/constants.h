@@ -7,9 +7,10 @@
 // MASK_MODE == 1 => simple coder
 // MASK_MODE == 2 => golomb coder
 // MASK_MODE == 3 => arithmetic coder
-#define MASK_MODE 1
+#define MASK_MODE 2
 #define COUT 0
 #define CHECKS 1
+#define RECORD_TESTS 1 // Set to 1 to set up the tests, then set to 0
 
 #include <string>
 

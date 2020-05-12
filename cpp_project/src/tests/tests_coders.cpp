@@ -10,9 +10,6 @@
 #include "bit_stream_utils.h"
 #include <assert.h>
 
-// Set to 1 to set up the tests, then set to 0
-#define RECORD 0
-
 void TestsCoders::testSingleCoder() {
     Path file_path = Path(TestsUtils::OUTPUT_PATH, "vwc_1202.dat.csv"); // "vwc_1202.dat.csv" "vwc_1202.dat-copy.csv" "vwc_1202-16.dat.csv"
     std::vector<int> lossless(10, 0);
@@ -78,15 +75,23 @@ void TestsCoders::setModePaths(int i){
 
 void TestsCoders::runAll(){
     std::cout << "TestsCoder::runAll()" << std::endl;
-    std::string mask_mode_folder = (MASK_MODE) ? "mask_mode_true" : "mask_mode_false";
-
+    std::string mask_mode_folder;
+#if MASK_MODE == 0
+    mask_mode_folder = "mask_mode_0";
+#elif MASK_MODE == 1
+    mask_mode_folder = "mask_mode_1";
+#elif MASK_MODE == 2
+    mask_mode_folder = "mask_mode_2";
+#else
+    mask_mode_folder = "mask_mode_3";
+#endif
     expected_root_folder = TestsUtils::OUTPUT_PATH + "/expected/" + mask_mode_folder;
 
-#if RECORD
+#if RECORD_TESTS
     output_root_folder = expected_root_folder;
 #else
     output_root_folder = TestsUtils::OUTPUT_PATH + "/output/" + mask_mode_folder;
-#endif
+#endif // RECORD_TESTS
 
     Path bits_csv_path = Path(output_root_folder, "bits-out.csv");
     bits_csv = new CSVWriter(bits_csv_path);
@@ -109,7 +114,7 @@ void TestsCoders::runAll(){
             testCoder("CoderPWLH");
             testCoder("CoderCA");
 
-        #if MASK_MODE == 1
+        #if MASK_MODE > 0
             testCoder("CoderFR");
             testCoder("CoderSF");
         #endif
