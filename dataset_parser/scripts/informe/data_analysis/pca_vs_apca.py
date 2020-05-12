@@ -2,7 +2,7 @@ import sys
 sys.path.append('.')
 
 import numpy as np
-from auxi.os_utils import python_project_path
+from auxi.os_utils import OSUtils
 from scripts.informe.results_parsing.results_reader import ResultsReader
 from scripts.informe.results_parsing.results_to_dataframe import ResultsToDataframe
 from scripts.informe.math_utils import MathUtils
@@ -17,7 +17,7 @@ from scripts.informe.gzip_compare.gzip_results_parser import GzipResultsParser
 # This script is used to compare the results obtained from PCA and APCA coders
 #
 class PCAvsAPCA(object):
-    PATH = python_project_path() + "/scripts/informe/data_analysis/out_apca_vs_pca"
+    PATH = OSUtils.python_project_path() + "/scripts/informe/data_analysis/out_apca_vs_pca"
     GZIP_MODE = True
     THRESHOLD = 30
 

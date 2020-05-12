@@ -1,7 +1,7 @@
 import sys
 sys.path.append('.')
 
-from auxi.os_utils import datasets_csv_path, python_project_path, cpp_project_path
+from auxi.os_utils import OSUtils
 from file_utils.csv_utils.csv_reader import CSVReader
 from file_utils.csv_utils.csv_writer import CSVWriter
 from file_utils.text_utils.text_file_reader import TextFileReader
@@ -40,10 +40,10 @@ def iterate(csv_reader, csv_writer):
 
 
 def clean():
-    input_path = cpp_project_path() + "/test_files"
+    input_path = OSUtils.cpp_project_path() + "/test_files"
     input_filename = "noaa-adcp-201501.csv"
 
-    output_path = cpp_project_path() + "/test_files"
+    output_path = OSUtils.cpp_project_path() + "/test_files"
     output_filename = "noaa-adcp-201501_2cols.csv"
 
     csv_reader = CSVReader(input_path, input_filename)
@@ -91,8 +91,8 @@ def compare_lines(line_1, line_2, current_line_count):
 
 
 def compare():
-    test_files_path = cpp_project_path() + "/test_files"
-    csv_reader_1 = CSVReader(datasets_csv_path() + "[1]irkis/", "vwc_1202.dat.csv")
+    test_files_path = OSUtils.cpp_project_path() + "/test_files"
+    csv_reader_1 = CSVReader(OSUtils.datasets_csv_path() + "[1]irkis/", "vwc_1202.dat.csv")
     csv_reader_2 = CSVReader(test_files_path, "vwc_1202.dat.csv-CoderSF-Decode.csv")
 
     while csv_reader_1.continue_reading:

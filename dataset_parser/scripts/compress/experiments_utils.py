@@ -1,7 +1,7 @@
 import sys
 sys.path.append('.')
 
-from auxi.os_utils import datasets_csv_path
+from auxi.os_utils import OSUtils
 from scripts.utils import csv_files_filenames
 
 
@@ -98,7 +98,7 @@ class ExperimentsUtils(object):
         dataset_info = ExperimentsUtils.get_dataset_info(dataset_name)
         return dataset_info.get('short_name') or dataset_info.get('name')
 
-    CSV_PATH = datasets_csv_path()
+    CSV_PATH = OSUtils.datasets_csv_path()
 
     MASK_MODE = False
 

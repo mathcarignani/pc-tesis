@@ -1,10 +1,10 @@
 import os
 import time
 import subprocess
-from auxi.os_utils import cpp_executable_path
+from auxi.os_utils import OSUtils
 from scripts.utils import str_to_int
 
-EXE = cpp_executable_path()
+EXE = OSUtils.cpp_executable_path()
 
 
 def execute(exe_str):

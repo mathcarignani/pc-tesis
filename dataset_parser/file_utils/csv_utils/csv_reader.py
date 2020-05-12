@@ -1,6 +1,6 @@
 import csv
 from auxi.progress_bar import ProgressBar
-from auxi.os_utils import ubuntu
+from auxi.os_utils import OSUtils
 from file_utils.auxi import full_path
 
 
@@ -51,7 +51,7 @@ class CSVReader:
 
     def open_file(self):
         return open(self.full_path, "r")
-        # if ubuntu():
+        # if OSUtils.ubuntu():
         #     return open(self.full_path, "rU", "utf-16")
         # else:
         #     return open(self.full_path, "r")

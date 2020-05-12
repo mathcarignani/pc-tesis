@@ -1,38 +1,45 @@
 import platform
 
 
-# TODO: move these methods inside a class
+class OSUtils(object):
+    @staticmethod
+    def ubuntu():
+        return platform.system() == "Linux"
 
-def ubuntu():
-    return platform.system() == "Linux"
+    @staticmethod
+    def ios():
+        return platform.system() == "Darwin"
 
-def ios():
-    return platform.system() == "Darwin"
+    @staticmethod
+    def datasets_csv_path():
+        return OSUtils.project_path() + "/datasets-csv/"
 
-def datasets_csv_path():
-    return project_path() + "/datasets-csv/"
+    @staticmethod
+    def git_path():
+        return OSUtils.project_path() + "/pc-tesis"
 
-def git_path():
-    return project_path() + "/pc-tesis"
+    @staticmethod
+    def cpp_project_path():
+        return OSUtils.git_path() + "/cpp_project"
 
-def cpp_project_path():
-    return git_path() + "/cpp_project"
+    @staticmethod
+    def python_project_path():
+        return OSUtils.git_path() + "/dataset_parser"
 
-def python_project_path():
-    return git_path() + "/dataset_parser"
+    @staticmethod
+    def cpp_executable_path():
+        if OSUtils.ios():
+            return OSUtils.cpp_project_path() + "/cmake-build-debug/cpp_project"
+        elif OSUtils.ubuntu():
+            return OSUtils.cpp_project_path() + "/cmake-build-debug-ubuntu/cpp_project"
+        else:
+            raise SystemError("Invalid platform")
 
-def cpp_executable_path():
-    if ios():
-        return cpp_project_path() + "/cmake-build-debug/cpp_project"
-    elif ubuntu():
-        return cpp_project_path() + "/cmake-build-debug-ubuntu/cpp_project"
-    else:
-        raise(StandardError, "Invalid platform")
-
-def project_path():
-    if ios():
-        return "/Users/pablocerve/Documents/FING/Proyecto"
-    elif ubuntu():
-        return "/home/pablo/Documents/FING/Proyecto"
-    else:
-        raise(StandardError, "Invalid platform")
+    @staticmethod
+    def project_path():
+        if OSUtils.ios():
+            return "/Users/pablocerve/Documents/FING/Proyecto"
+        elif OSUtils.ubuntu():
+            return "/home/pablo/Documents/FING/Proyecto"
+        else:
+            raise SystemError("Invalid platform")
