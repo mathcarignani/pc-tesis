@@ -6,7 +6,7 @@ from scripts.utils import csv_files_filenames
 
 
 class ExperimentsUtils(object):
-    CODERS = ['CoderBasic', 'CoderPCA', 'CoderAPCA', 'CoderCA', 'CoderPWLH', 'CoderPWLHInt',
+    CODERS = ['CoderBase', 'CoderPCA', 'CoderAPCA', 'CoderCA', 'CoderPWLH', 'CoderPWLHInt',
               'CoderFR', 'CoderSF', 'CoderGAMPS', 'CoderGAMPSLimit']
     ALGORITHMS = ["CoderPCA", "CoderAPCA", "CoderCA", "CoderPWLH", "CoderPWLHInt", "CoderGAMPSLimit"]
     CODERS_ONLY_MASK_MODE = ['CoderFR', 'CoderSF']
@@ -104,8 +104,8 @@ class ExperimentsUtils(object):
 
     CODERS_ARRAY = [
         {
-            'name': 'CoderBasic',
-            'o_folder': 'basic'
+            'name': 'CoderBase',
+            'o_folder': 'base'
         },
         # {
         #     'name': 'CoderPCA',

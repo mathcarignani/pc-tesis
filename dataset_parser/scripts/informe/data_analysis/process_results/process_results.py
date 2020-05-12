@@ -14,7 +14,7 @@ from scripts.informe.math_utils import MathUtils
 
 
 class ProcessResults(object):
-    CODERS_ARRAY = ['CoderBasic',
+    CODERS_ARRAY = ['CoderBase',
                     'CoderPCA', 'CoderAPCA', 'CoderCA', 'CoderPWLH', 'CoderPWLHInt', 'CoderFR', 'CoderSF',
                     # 'CoderGAMPS', => ignore this coder
                     'CoderGAMPSLimit']
@@ -36,7 +36,7 @@ class ProcessResults(object):
         self.mode = mode
 
         # set other instances
-        key = 'global' if self.global_mode else 'raw_basic'
+        key = 'global' if self.global_mode else 'raw_base'
         self.results_reader = ResultsReader(key, ProcessResults.MM)
         self.df = ResultsToDataframe(self.results_reader).create_full_df()
         self.threshold_compare = ThresholdCompare(ResultsReader('raw', ProcessResults.MM))
@@ -107,7 +107,7 @@ class ProcessResults(object):
                 assert(percentage == previous_percentage); assert(total_bits == previous_total_bits)
                 # TODO: uncomment to show blank cells for a repeated experiment
                 # new_window, new_percentage, new_total_bits = '=', '=', '=
-            elif self.coder_name in ['CoderBasic', 'CoderSF']:
+            elif self.coder_name in ['CoderBase', 'CoderSF']:
                 new_window = ''  # these coders don't have a window param
 
             windows.append(new_window); percentages.append(new_percentage); total_bits_list.append(new_total_bits)

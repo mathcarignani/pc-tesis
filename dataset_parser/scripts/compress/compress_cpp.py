@@ -60,15 +60,15 @@ def decode_cpp(args):
 
 
 def coder_params(args):
-    coder_names = ["CoderBasic", "CoderPCA", "CoderAPCA", "CoderPWLH",
+    coder_names = ["CoderBase", "CoderPCA", "CoderAPCA", "CoderPWLH",
                    "CoderPWLHInt", "CoderCA", "CoderSF", "CoderFR", "CoderGAMPS", "CoderGAMPSLimit"]
 
     if args.coder_name not in coder_names:
         print args.coder_name
         raise(StandardError, "ERROR: Invalid coder name")
 
-    if args.coder_name == "CoderBasic":
-        return "CoderBasic"
+    if args.coder_name == "CoderBase":
+        return "CoderBase"
     else:
         error_thresholds = " ".join(str(i) for i in args.coder_params['error_threshold'])
         string = args.coder_name + " " + str(args.coder_params['window_size']) + " " + error_thresholds

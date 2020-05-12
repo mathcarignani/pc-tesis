@@ -119,7 +119,7 @@ def best_values():
         if count == 0:
             count += 1
             continue
-        if line[3] == "CoderBasic":
+        if line[3] == "CoderBase":
             count += 1
             continue
         percentage = line[8]

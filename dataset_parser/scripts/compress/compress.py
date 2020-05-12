@@ -140,8 +140,8 @@ def run_script_on_coder(csv, row, coder_dictionary, output_dataset_path, logger,
     create_folder(output_dataset_coder_path)
 
     coder_name = coder_dictionary['name']
-    if coder_name == 'CoderBasic':
-        base_values = run_script_on_basic_coder(logger, coder_dictionary, input_path, input_filename,
+    if coder_name == 'CoderBase':
+        base_values = run_script_on_base_coder(logger, coder_dictionary, input_path, input_filename,
                                                 output_dataset_coder_path, base_values, row, csv)
     else:
         run_script_of_other_coders(logger, coder_dictionary, input_path, input_filename,
@@ -149,7 +149,7 @@ def run_script_on_coder(csv, row, coder_dictionary, output_dataset_path, logger,
     return base_values
 
 
-def run_script_on_basic_coder(logger, coder_dictionary, input_path, input_filename,
+def run_script_on_base_coder(logger, coder_dictionary, input_path, input_filename,
                               output_dataset_coder_path, base_values, row, csv):
     values = [coder_dictionary['name']] + [None] * 3
     args = {

@@ -28,8 +28,8 @@ class PandasUtils(object):
             percentage_col_key = ResultsToDataframe.percentage_column_key(value)
             new_percentage_col_key = 'new_' + percentage_col_key
 
-            basic_coder_total = PandasMethods.coder_df(self.df, "CoderBasic")[data_col_key].iloc[0]
-            self.df[new_percentage_col_key] = 100 * (self.df[data_col_key] / basic_coder_total)
+            base_coder_total = PandasMethods.coder_df(self.df, "CoderBase")[data_col_key].iloc[0]
+            self.df[new_percentage_col_key] = 100 * (self.df[data_col_key] / base_coder_total)
             self.__check_difference(percentage_col_key, new_percentage_col_key)
 
             # rename percentages column
@@ -72,8 +72,8 @@ class PandasUtils(object):
         min_row = PandasMethods.get_min_row(coder_df, data_column_key, threshold, nth)
         return min_row
 
-    def coder_basic_df(self):
-        return PandasMethods.coder_df(self.df, 'CoderBasic').iloc[0]
+    def coder_base_df(self):
+        return PandasMethods.coder_df(self.df, 'CoderBase').iloc[0]
 
 
 class PandasUtilsCheck(object):
@@ -100,7 +100,7 @@ class PandasUtilsCheck(object):
 
     def __check_coder_rows_count(self, coder_name):
         rows_count = self.__coder_rows_count(coder_name)
-        if coder_name == 'CoderBasic':
+        if coder_name == 'CoderBase':
             assert(rows_count == 1)
         elif coder_name == 'CoderSF':
             assert(rows_count == len(ExperimentsUtils.THRESHOLDS))

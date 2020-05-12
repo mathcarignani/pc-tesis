@@ -26,7 +26,7 @@ class CompressionRatioPlot(CommonPlot):
         self.options = options
         self.values0 = []
         self.values3 = []
-        self.basic_value0 = None
+        self.base_value0 = None
         super(CompressionRatioPlot, self).__init__()
 
     def close(self):

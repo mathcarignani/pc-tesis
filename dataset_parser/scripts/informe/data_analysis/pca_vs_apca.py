@@ -33,8 +33,8 @@ class PCAvsAPCA(object):
         self.results_reader = ResultsReader('global', ProcessResults.MM)
         self.df = ResultsToDataframe(self.results_reader).create_full_df()
 
-        # self.results_reader_raw_0 = ResultsReader('raw_basic', 0)
-        self.results_reader_raw_3 = ResultsReader('raw_basic', 3)
+        # self.results_reader_raw_0 = ResultsReader('raw_base', 0)
+        self.results_reader_raw_3 = ResultsReader('raw_base', 3)
         # self.df_raw_0 = ResultsToDataframe(self.results_reader_raw_0).create_full_df()
         self.df_raw_3 = ResultsToDataframe(self.results_reader_raw_3).create_full_df()
 
@@ -105,7 +105,7 @@ class PCAOptimalResults(object):
         for threshold in ExperimentsUtils.THRESHOLDS:
             windows = []
             # TODO: move this logic to panda utils
-            total_pca, total_basic = 0, 0
+            total_pca, total_base = 0, 0
             for filename in ExperimentsUtils.dataset_csv_filenames(self.a_vs_a.dataset_name):
                 data_column_key = ResultsToDataframe.data_column_key(self.a_vs_a.col_index)
 
@@ -113,13 +113,13 @@ class PCAOptimalResults(object):
                 panda_utils_3 = PandasUtils(self.a_vs_a.dataset_name, filename, self.a_vs_a.df_raw_3, 3)
                 pca_df = panda_utils_3.min_value_for_threshold('CoderPCA', self.a_vs_a.col_index, threshold)
 
-                basic_df = panda_utils_3.coder_basic_df()
-                total_basic += basic_df[data_column_key]
+                base_df = panda_utils_3.coder_base_df()
+                total_base += base_df[data_column_key]
                 total_pca += pca_df[data_column_key]
                 windows.append(pca_df['window'])
 
             windows = [int(window) for window in windows]
-            percentage = MathUtils.calculate_percentage(total_basic, total_pca, 2)
+            percentage = MathUtils.calculate_percentage(total_base, total_pca, 2)
             threshold_results += ["PCA-O", windows, percentage]
         return threshold_results
 

@@ -57,8 +57,8 @@ def compare_lines_(line_pwlh, line_pwlh_int, line_count):
     # leave first 7 entries unchanged
     line = line_pwlh[:7]
 
-    # ['IRKIS', 'vwc_1202.dat.csv', '26.305', 'CoderBasic', '', '', '']
-    if line[3] == "CoderBasic":
+    # ['IRKIS', 'vwc_1202.dat.csv', '26.305', 'CoderBase', '', '', '']
+    if line[3] == "CoderBase":
         assert(line_pwlh == line_pwlh_int)
         del line[3]
         # ['IRKIS', 'vwc_1202.dat.csv', '26.305', '', '', '']
