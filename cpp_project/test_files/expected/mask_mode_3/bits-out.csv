@@ -1,0 +1,255 @@
+
+
+vwc_1202.dat.csv
+
+
+LOSSLESS
+
+CoderBase
+TOTAL  = 1830536
+header = 818
+mask   = 0,3928
+data   = 447190,1378600
+CoderPCA
+TOTAL  = 1431834
+header = 818
+mask   = 0,3928
+data   = 447190,979898
+CoderAPCA
+TOTAL  = 1129405
+header = 818
+mask   = 0,3928
+data   = 447190,677469
+CoderPWLHInt
+TOTAL  = 1454765
+header = 818
+mask   = 0,3928
+data   = 447190,1002829
+CoderPWLH
+TOTAL  = 3373209
+header = 818
+mask   = 0,3928
+data   = 447190,2921273
+CoderCA
+TOTAL  = 1520146
+header = 818
+mask   = 0,3928
+data   = 447190,1068210
+CoderFR
+TOTAL  = 1613640
+header = 818
+mask   = 0,3928
+data   = 447190,1161704
+CoderSF
+TOTAL  = 8675103
+header = 818
+mask   = 0,3928
+data   = 447190,8223167
+
+LOSSY
+
+CoderPCA
+TOTAL  = 765634
+header = 818
+mask   = 0,3928
+data   = 447190,313698
+CoderAPCA
+TOTAL  = 812452
+header = 818
+mask   = 0,3928
+data   = 447190,360516
+CoderPWLHInt
+TOTAL  = 1089969
+header = 818
+mask   = 0,3928
+data   = 447190,638033
+CoderPWLH
+TOTAL  = 2303114
+header = 818
+mask   = 0,3928
+data   = 447190,1851178
+CoderCA
+TOTAL  = 1054473
+header = 818
+mask   = 0,3928
+data   = 447190,602537
+CoderFR
+TOTAL  = 1092015
+header = 818
+mask   = 0,3928
+data   = 447190,640079
+CoderSF
+TOTAL  = 617763
+header = 818
+mask   = 0,3928
+data   = 447190,165827
+
+
+solar-anywhere-2012.csv
+
+
+LOSSLESS
+
+CoderBase
+TOTAL  = 3305136
+header = 2678
+mask   = 0,89,92,131
+data   = 148906,1051080,1051080,1051080
+CoderPCA
+TOTAL  = 2661448
+header = 2678
+mask   = 0,89,92,131
+data   = 148906,847184,815184,847184
+CoderAPCA
+TOTAL  = 2849123
+header = 2678
+mask   = 0,89,92,131
+data   = 148906,915928,872001,909298
+CoderPWLHInt
+TOTAL  = 2946859
+header = 2678
+mask   = 0,89,92,131
+data   = 148906,942078,913323,939562
+CoderPWLH
+TOTAL  = 8291693
+header = 2678
+mask   = 0,89,92,131
+data   = 148906,2743680,2659815,2736302
+CoderCA
+TOTAL  = 3219662
+header = 2678
+mask   = 0,89,92,131
+data   = 148906,1039090,993486,1035190
+CoderFR
+TOTAL  = 3230347
+header = 2678
+mask   = 0,89,92,131
+data   = 148906,1036832,1006516,1035103
+CoderSF
+TOTAL  = 20564976
+header = 2678
+mask   = 0,89,92,131
+data   = 148906,6770691,6472830,7169559
+
+LOSSY
+
+CoderPCA
+TOTAL  = 2461808
+header = 2678
+mask   = 0,89,92,131
+data   = 148906,774184,743104,792624
+CoderAPCA
+TOTAL  = 2397074
+header = 2678
+mask   = 0,89,92,131
+data   = 148906,772395,709163,763620
+CoderPWLHInt
+TOTAL  = 2754911
+header = 2678
+mask   = 0,89,92,131
+data   = 148906,874276,861869,866870
+CoderPWLH
+TOTAL  = 7222683
+header = 2678
+mask   = 0,89,92,131
+data   = 148906,2327117,2352909,2390761
+CoderCA
+TOTAL  = 2846471
+header = 2678
+mask   = 0,89,92,131
+data   = 148906,897208,885820,911547
+CoderFR
+TOTAL  = 2942462
+header = 2678
+mask   = 0,89,92,131
+data   = 148906,930518,914554,945494
+CoderSF
+TOTAL  = 15092409
+header = 2678
+mask   = 0,89,92,131
+data   = 148906,4683600,4843560,5413353
+
+
+noaa_spc-hail.csv
+
+
+LOSSLESS
+
+CoderBase
+TOTAL  = 887441
+header = 302
+mask   = 0,9,9,46
+data   = 290010,204708,221767,170590
+CoderPCA
+TOTAL  = 888837
+header = 302
+mask   = 0,9,9,46
+data   = 290010,208120,225179,165162
+CoderAPCA
+TOTAL  = 958067
+header = 302
+mask   = 0,9,9,46
+data   = 290010,251805,270000,145886
+CoderPWLHInt
+TOTAL  = 945558
+header = 302
+mask   = 0,9,9,46
+data   = 290010,231141,248297,175744
+CoderPWLH
+TOTAL  = 1944902
+header = 302
+mask   = 0,9,9,46
+data   = 290010,572081,572323,510122
+CoderCA
+TOTAL  = 1015232
+header = 302
+mask   = 0,9,9,46
+data   = 290010,255705,272864,196287
+CoderFR
+TOTAL  = 987885
+header = 302
+mask   = 0,9,9,46
+data   = 290010,245214,262500,189795
+CoderSF
+TOTAL  = 5773230
+header = 302
+mask   = 0,9,9,46
+data   = 290010,1898267,1887947,1696640
+
+LOSSY
+
+CoderPCA
+TOTAL  = 743537
+header = 302
+mask   = 0,9,9,46
+data   = 290010,152008,146711,154442
+CoderAPCA
+TOTAL  = 609363
+header = 302
+mask   = 0,9,9,46
+data   = 290010,104310,99952,114725
+CoderPWLHInt
+TOTAL  = 736184
+header = 302
+mask   = 0,9,9,46
+data   = 290010,147243,148914,149651
+CoderPWLH
+TOTAL  = 1428271
+header = 302
+mask   = 0,9,9,46
+data   = 290010,363561,342895,431439
+CoderCA
+TOTAL  = 827157
+header = 302
+mask   = 0,9,9,46
+data   = 290010,178320,176448,182013
+CoderFR
+TOTAL  = 820140
+header = 302
+mask   = 0,9,9,46
+data   = 290010,176499,175092,178173
+CoderSF
+TOTAL  = 3147435
+header = 302
+mask   = 0,9,9,46
+data   = 290010,864719,726560,1265780

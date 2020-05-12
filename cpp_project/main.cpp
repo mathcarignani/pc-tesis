@@ -7,20 +7,20 @@
 #include "string_utils.h"
 
 int main(int argc, char *argv[]){
+#if !(MASK_MODE >= 0 && MASK_MODE <= 3)
+    std::cout << "ERROR: MASK_MODE must be 0, 1, 2, or 3." << std::endl;
+    return -1;
+#endif //
+
 //    std::cout << "argc " << argc << std::endl;
 //    for (int i=0; i<argc; i++){
 //        std::cout << i << " " << argv[i] << std::endl;
 //    }
 
     if (argc <= 1) {
-    #if MASK_MODE >= 0 && MASK_MODE <= 3
         TestsCoders::testSingleCoder();
         Tests::runAll();
         return 0;
-    #else
-        std::cout << "ERROR: MASK_MODE must be 0, 1, 2, or 3 for the tests to work" << std::endl;
-        return -1;
-    #endif // MASK_MODE >= 0 && MASK_MODE <= 3
     }
 
     // argc > 1
