@@ -18,13 +18,13 @@ from scripts.compress.compress_args import CompressArgs
 
 
 def compress_decompress_compare(args):
-    print "Compressing and decompressing files..."
+    print("Compressing and decompressing files...")
     coder_info, header_bits, columns_bits, column_mask_bits = code_decode_cpp(args)
-    print "Comparing original and decompressed files..."
+    print("Comparing original and decompressed files...")
     csv_compare = CSVCompare(args.input_path, args.input_filename, args.output_path, args.deco_filename)
     same_file = csv_compare.compare(args.coder_params.get('error_threshold'), False)
     if not same_file:
-        print "ERROR / ERROR / ERROR"
+        print("ERROR / ERROR / ERROR")
     assert same_file
 
     return [coder_info, header_bits, columns_bits, column_mask_bits, same_file]
@@ -50,14 +50,14 @@ def size_check(compressed_size, header_bits, columns_bits, column_mask_bits):
     bits_sum = header_bits + sum(columns_bits + column_mask_bits)
     bytes_sum = (bits_sum + 7) / 8
     if compressed_size != bytes_sum:
-        print "compressed_size " + str(compressed_size)
-        print "bytes_sum " + str(bytes_sum)
+        print("compressed_size " + str(compressed_size))
+        print("bytes_sum " + str(bytes_sum))
     assert(compressed_size == bytes_sum)
 
     header_bytes = (header_bits + 7) / 8
     max_header_size = 15000
     if header_bytes >= max_header_size:
-        print 'header_bytes = %s' % header_bytes
+        print('header_bytes = %s' % header_bytes)
     assert(header_bytes < max_header_size)
 
 

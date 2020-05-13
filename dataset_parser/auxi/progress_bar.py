@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 # BASED ON: https://gist.github.com/aubricus/f91fb55dc6ba5557fbab06119420dd6a
 import sys
-import time
-
+from auxi.time_track import TimeTrack
 
 #
 # EXAMPLE USAGE:
@@ -22,7 +21,7 @@ class ProgressBar:
         self.suffix = suffix
         self.str_format = "{0:." + str(decimals) + "f}"
         self.bar_length = bar_length
-        self.start_time = time.time()
+        self.time_track = TimeTrack()
         self.current_line = 0
 
     def print_progress(self):
@@ -46,13 +45,13 @@ class ProgressBar:
         sys.stdout.flush()
 
     def _elapsed_and_remaining(self, percentage):
-        elapsed = time.time() - self.start_time
-        elapsed_s = time.strftime("%M:%S", time.gmtime(elapsed))
+        elapsed = self.time_track.elapsed()
+        elapsed_s = TimeTrack.time_str(elapsed)
 
         if elapsed < 5 or percentage < 0.05:  # less than 5 seconds or less than 5% processed
             remaining_s = "???"
         else:
             remaining = elapsed / percentage - elapsed
-            remaining_s = time.strftime("%M:%S", time.gmtime(remaining))
+            remaining_s = TimeTrack.time_str(remaining)
 
         return elapsed_s, remaining_s
