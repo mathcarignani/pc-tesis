@@ -1,4 +1,3 @@
-
 #include <datetime_utils.h>
 #include "scripts.h"
 #include "tests.h"
@@ -6,6 +5,18 @@
 #include "assert.h"
 #include "string_utils.h"
 
+//
+// USAGE - EXAMPLES:
+//
+// (1) Code with CoderBase (no window_size param, no err params)
+// exe_path c input_path input_filename output_path output_filename CoderBase
+//
+// (2) Code with CoderPCA
+// exe_path c input_path input_filename output_path output_filename CoderPCA window_size err1 err2 ... errN
+//
+// (3) Decode
+// exe_path d input_path input_filename output_path output_filename
+//
 int main(int argc, char *argv[]){
 #if !(MASK_MODE >= 0 && MASK_MODE <= 3)
     std::cout << "ERROR: MASK_MODE must be 0, 1, 2, or 3." << std::endl;
