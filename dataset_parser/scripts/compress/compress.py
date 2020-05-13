@@ -13,13 +13,13 @@ from file_utils.csv_utils.csv_utils import CSVUtils
 from scripts.utils import create_folder
 from scripts.compress.calculate_std import calculate_file_stats, calculate_stds_percentages
 from scripts.compress.experiments_utils import ExperimentsUtils
-from scripts.compress.compress_cpp import code_decode_cpp
+from scripts.compress.compress_cpp import CompressCPP
 from scripts.compress.compress_args import CompressArgs
 
 
 def compress_decompress_compare(args):
     print("Compressing and decompressing files...")
-    coder_info, header_bits, columns_bits, column_mask_bits = code_decode_cpp(args)
+    coder_info, header_bits, columns_bits, column_mask_bits = CompressCPP.code_decode_cpp(args)
     print("Comparing original and decompressed files...")
     csv_compare = CSVCompare(args.input_path, args.input_filename, args.output_path, args.deco_filename)
     same_file = csv_compare.compare(args.coder_params.get('error_threshold'), False)
