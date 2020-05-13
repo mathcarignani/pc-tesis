@@ -16,14 +16,14 @@ class ExperimentsUtils(object):
     MAX_COLUMN_TYPES = 7  # ElNino
 
     DATASETS_ARRAY = [
-        {'name': 'IRKIS', 'folder': "[1]irkis", 'logger': "irkis.log", 'o_folder': "[1]irkis", 'cols': 1},
-        {'name': 'NOAA-SST', 'short_name': 'SST', 'folder': "[2]noaa-sst/months/2017", 'logger': "noaa-sst.log", 'o_folder': "[2]noaa-sst", 'cols': 1},
-        {'name': 'NOAA-ADCP', 'short_name': 'ADCP', 'folder': "[3]noaa-adcp/2015", 'logger': "noaa-adcp.log", 'o_folder': "[3]noaa-adcp", 'cols': 1},
-        {'name': 'SolarAnywhere', 'short_name': 'Solar', 'folder': "[4]solar-anywhere/all", 'logger': "solar-anywhere.log", 'o_folder': "[4]solar-anywhere", 'cols': 3},
-        {'name': 'ElNino', 'folder': "[5]el-nino", 'logger': "el-nino.log", 'o_folder': "[5]el-nino", 'cols': 7},
-        {'name': 'NOAA-SPC-hail', 'short_name': 'Hail', 'folder': "[6]noaa-spc-reports/hail", 'logger': "noaa-spc-hail.log", 'o_folder': "[6]noaa-spc-reports", 'cols': 3},
-        {'name': 'NOAA-SPC-tornado',  'short_name': 'Tornado', 'folder': "[6]noaa-spc-reports/tornado", 'logger': "noaa-spc-tornado.log", 'o_folder': "[6]noaa-spc-reports", 'cols': 2},
-        {'name': 'NOAA-SPC-wind',  'short_name': 'Wind', 'folder': "[6]noaa-spc-reports/wind", 'logger': "noaa-spc-wind.log", 'o_folder': "[6]noaa-spc-reports", 'cols': 3}
+        {'name': 'IRKIS', 'folder': "[1]irkis", 'o_folder': "[1]irkis", 'cols': 1},
+        {'name': 'NOAA-SST', 'short_name': 'SST', 'folder': "[2]noaa-sst/months/2017", 'o_folder': "[2]noaa-sst", 'cols': 1},
+        {'name': 'NOAA-ADCP', 'short_name': 'ADCP', 'folder': "[3]noaa-adcp/2015", 'o_folder': "[3]noaa-adcp", 'cols': 1},
+        {'name': 'SolarAnywhere', 'short_name': 'Solar', 'folder': "[4]solar-anywhere/all", 'o_folder': "[4]solar-anywhere", 'cols': 3},
+        {'name': 'ElNino', 'folder': "[5]el-nino", 'o_folder': "[5]el-nino", 'cols': 7},
+        {'name': 'NOAA-SPC-hail', 'short_name': 'Hail', 'folder': "[6]noaa-spc-reports/hail", 'o_folder': "[6]noaa-spc-reports", 'cols': 3},
+        {'name': 'NOAA-SPC-tornado',  'short_name': 'Tornado', 'folder': "[6]noaa-spc-reports/tornado", 'o_folder': "[6]noaa-spc-reports", 'cols': 2},
+        {'name': 'NOAA-SPC-wind',  'short_name': 'Wind', 'folder': "[6]noaa-spc-reports/wind", 'o_folder': "[6]noaa-spc-reports", 'cols': 3}
     ]
 
     COLUMN_INDEXES = {
@@ -83,7 +83,7 @@ class ExperimentsUtils(object):
             if dataset['name'] == dataset_name:
                 return dataset
         print(dataset_name)
-        raise StandardError
+        raise KeyError
 
     @staticmethod
     def get_dataset_data_columns_count(dataset_name):

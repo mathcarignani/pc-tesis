@@ -103,7 +103,7 @@ def script(output_filename):
 
 def run_script_on_dataset(csv, datasets_path, dataset_dictionary, output_path):
     input_path = datasets_path + dataset_dictionary['folder']
-    logger_name = dataset_dictionary['logger']
+    logger_name = dataset_dictionary['name'].lower() + '.log'
     logger = setup_logger(logger_name, logger_name)
 
     output_dataset_path = output_path + dataset_dictionary['o_folder']
