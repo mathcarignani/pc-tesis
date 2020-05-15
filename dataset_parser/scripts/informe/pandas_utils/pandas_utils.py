@@ -91,7 +91,7 @@ class PandasUtilsCheck(object):
 
         # check that data for every coder is included
         coders = self.df['coder'].unique()
-        expected_coders = ExperimentsUtils.CODERS_NO_MASK_MODE() if self.mask_mode == 0 else ExperimentsUtils.CODERS
+        expected_coders = ExperimentsUtils.expected_coders(self.mask_mode)
         np.testing.assert_array_equal(coders, expected_coders)
 
         # check that the rows count for each coder match

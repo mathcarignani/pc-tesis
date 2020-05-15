@@ -18,7 +18,7 @@ class CompressCPP:
     def code_cpp(cls, args):
         time_track = TimeTrack()
         args.code_cpp()
-        exe_str = OSUtils.cpp_executable_path() + " c"
+        exe_str = OSUtils.cpp_executable_path() + " " + str(ExperimentsUtils.MASK_MODE) + " c"
         exe_str += " " + args.input_path + " " + args.input_filename
         exe_str += " " + args.output_path + " " + args.compressed_filename
         exe_str += " " + cls._coder_params(args)
@@ -30,7 +30,7 @@ class CompressCPP:
     def decode_cpp(cls, args):
         time_track = TimeTrack()
         args.decode_cpp()
-        exe_str = OSUtils.cpp_executable_path() + " d"
+        exe_str = OSUtils.cpp_executable_path() + " " + str(ExperimentsUtils.MASK_MODE) + " d"
         exe_str += " " + args.output_path + " " + args.compressed_filename
         exe_str += " " + args.output_path + " " + args.deco_filename
         cls._execute(exe_str)

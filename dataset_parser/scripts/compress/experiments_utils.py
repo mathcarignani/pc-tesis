@@ -6,8 +6,14 @@ from scripts.utils import csv_files_filenames
 
 
 class ExperimentsUtils(object):
+    #
+    # IMPORTANT: MASK_MODE should have the same value that the MASK_MODE macro used in the C++ code.
+    #
+    MASK_MODE = 0 # 3
+
     CODERS = ['CoderBase', 'CoderPCA', 'CoderAPCA', 'CoderCA', 'CoderPWLH', 'CoderPWLHInt',
               'CoderFR', 'CoderSF', 'CoderGAMPS', 'CoderGAMPSLimit']
+    # TODO: remove the ALGORITHMS list
     ALGORITHMS = ["CoderPCA", "CoderAPCA", "CoderCA", "CoderPWLH", "CoderPWLHInt", "CoderGAMPSLimit"]
     CODERS_ONLY_MASK_MODE = ['CoderFR', 'CoderSF']
     THRESHOLDS = [0, 1, 3, 5, 10, 15, 20, 30]
@@ -54,8 +60,11 @@ class ExperimentsUtils(object):
     # ]
 
     @staticmethod
-    def CODERS_NO_MASK_MODE():
-        return [item for item in ExperimentsUtils.CODERS if item not in ExperimentsUtils.CODERS_ONLY_MASK_MODE]
+    def expected_coders(mask_mode):
+        if mask_mode == 0:
+            return [item for item in ExperimentsUtils.CODERS if item not in ExperimentsUtils.CODERS_ONLY_MASK_MODE]
+        else:
+            return ExperimentsUtils.CODERS
 
     @staticmethod
     def dataset_csv_filenames(dataset_name):
@@ -69,7 +78,7 @@ class ExperimentsUtils(object):
     def datasets_with_multiple_files():
         result = []
         for name in ExperimentsUtils.DATASET_NAMES:
-            if len(ExperimentsUtils.dataset_csv_filenames(name)) > 1:
+            if ExperimentsUtils.dataset_csv_files_count(name) > 1:
                 result.append(name)
         return result
 
@@ -82,8 +91,7 @@ class ExperimentsUtils(object):
         for dataset in ExperimentsUtils.DATASETS_ARRAY:
             if dataset['name'] == dataset_name:
                 return dataset
-        print(dataset_name)
-        raise KeyError
+        raise(KeyError, "Invalid dataset_name: " + dataset_name)
 
     @staticmethod
     def get_dataset_data_columns_count(dataset_name):
@@ -100,8 +108,6 @@ class ExperimentsUtils(object):
 
     CSV_PATH = OSUtils.datasets_csv_path()
 
-    MASK_MODE = False
-
     CODERS_ARRAY = [
         {
             'name': 'CoderBase',
@@ -110,27 +116,27 @@ class ExperimentsUtils(object):
         # {
         #     'name': 'CoderPCA',
         #     'o_folder': 'pca',
-        #     'params': {'window_size': ExperimentsUtils.WINDOWS}
+        #     'params': {'window_size': WINDOWS}
         # },
         # {
         #     'name': 'CoderAPCA',
         #     'o_folder': 'apca',
-        #     'params': {'window_size': ExperimentsUtils.WINDOWS}
+        #     'params': {'window_size': WINDOWS}
         # },
         # {
         #     'name': 'CoderCA',
         #     'o_folder': 'ca',
-        #     'params': {'window_size': ExperimentsUtils.WINDOWS}
+        #     'params': {'window_size': WINDOWS}
         # },
         # {
         #     'name': 'CoderPWLH',
         #     'o_folder': 'pwlh',
-        #     'params': {'window_size': ExperimentsUtils.WINDOWS}
+        #     'params': {'window_size': WINDOWS}
         # },
         # {
         #     'name': 'CoderPWLHInt',
         #     'o_folder': 'pwlh-int',
-        #     'params': {'window_size': ExperimentsUtils.WINDOWS}
+        #     'params': {'window_size': WINDOWS}
         # },
         {
             'name': 'CoderGAMPS',
@@ -148,7 +154,7 @@ class ExperimentsUtils(object):
         # {
         #     'name': 'CoderFR',
         #     'o_folder': 'fr',
-        #     'params': {'window_size': ExperimentsUtils.WINDOWS}
+        #     'params': {'window_size': WINDOWS}
         # },
         # {
         #     'name': 'CoderSF',
@@ -157,5 +163,5 @@ class ExperimentsUtils(object):
         # }
     ]
 
-    if MASK_MODE:
+    if MASK_MODE > 0:
         CODERS_ARRAY += MASK_MODE_CODERS_ARRAY
