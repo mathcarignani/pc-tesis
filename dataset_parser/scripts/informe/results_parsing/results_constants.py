@@ -4,7 +4,7 @@ sys.path.append('.')
 
 class ResultsConstants(object):
     #
-    # These 2 csv files contain all the results returned by the compress.py script
+    # These 2 csv files contain all the results returned by the compress_script.py script
     #
     RAW_RESULTS_PATH = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-13/2-complete"
     RAW_MM_0_FILENAME = "complete-mask-mode=0.csv"
@@ -18,7 +18,7 @@ class ResultsConstants(object):
     # COMPARE_MM_3_FILENAME = "complete-mask-mode=3-remove.csv"
 
     # TODO: this files can be removed once we do everything with pandas
-    # These 2 csv files contain all the results returned by the compress.py script merged in a single file for
+    # These 2 csv files contain all the results returned by the compress_script.py script merged in a single file for
     # each dataset
     #
     GLOBAL_RESULTS_PATH = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-18/3-global"

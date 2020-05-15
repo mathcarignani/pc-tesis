@@ -112,7 +112,7 @@ def compare():
 
 
 def check_match(line1, line2):
-    values = ["Documents", "python scripts/compress/compress.py", "elapsed time"]
+    values = ["Documents", "python scripts/compress/compress_script.py", "elapsed time"]
     found_match = False
     for value in values:
         if not found_match and value in line1:

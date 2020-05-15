@@ -1,7 +1,7 @@
 import time
 
 class TimeTrack:
-    def __int__(self):
+    def __init__(self):
         self.start_time = time.time()
 
     def elapsed(self, figures=None):

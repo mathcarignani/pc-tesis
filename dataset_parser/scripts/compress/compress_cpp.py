@@ -45,8 +45,8 @@ class CompressCPP:
             cls._print_end()
             return header_bits, column_bits, column_mask_bits
 
-        sub = subprocess.Popen(exe_str.split(" "), stdout=subprocess.PIPE)
-        stdout = sub.communicate()[0]
+        result = subprocess.run(exe_str.split(" "), stdout=subprocess.PIPE)
+        stdout = result.stdout.decode('utf-8')
         stdout_list = stdout.split("\n")
         for line in stdout_list:
             if "header_bits" in line:

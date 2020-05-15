@@ -26,7 +26,7 @@ PATH = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/script
 # #
 # # PDFS2(PATH + '3.3/', False).create_pdfs()  # LOCAL
 # # PDFS2(PATH + '3.3/', True).create_pdfs()  # GLOBAL
-PDFS3(PATH + '3.3/window/').create_pdfs()  # LOCAL (BEST LOCAL WINDOW VS. BEST GLOBAL WINDOW)
+# PDFS3(PATH + '3.3/window/').create_pdfs()  # LOCAL (BEST LOCAL WINDOW VS. BEST GLOBAL WINDOW)
 
 
 
