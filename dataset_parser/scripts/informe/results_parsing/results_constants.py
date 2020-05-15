@@ -10,14 +10,14 @@ class ResultsConstants(object):
     RAW_MM_0_FILENAME = "complete-mask-mode=0.csv"
     RAW_MM_3_FILENAME = "complete-mask-mode=3.csv"
 
-    # TODO: this files can be removed once we do everything with pandas
+    # TODO: ALL of the following files can be removed once we do everything using pandas
+
     # This csv file contains the results for MM=3 but ignoring the coders which are not present when MM=0
     # (the rows in this file match the rows in RAW_MM_0_FILENAME)
     #
     # COMPARE_RESULTS_PATH = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-13/3-0vs3"
     # COMPARE_MM_3_FILENAME = "complete-mask-mode=3-remove.csv"
 
-    # TODO: this files can be removed once we do everything with pandas
     # These 2 csv files contain all the results returned by the compress_script.py script merged in a single file for
     # each dataset
     #
@@ -25,7 +25,6 @@ class ResultsConstants(object):
     GLOBAL_MM_0_FILENAME = "complete-mask-mode=0-global.csv"
     GLOBAL_MM_3_FILENAME = "complete-mask-mode=3-global.csv"
 
-    # TODO: this files can be removed once we do everything with pandas
     # This csv file is the same as RAW_MM_3_FILENAME but using the CoderBase from RAW_MM_0_FILENAME
     #
     RAW_MM_3_BASE_CODER_PATH = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-19/use_base_coder"

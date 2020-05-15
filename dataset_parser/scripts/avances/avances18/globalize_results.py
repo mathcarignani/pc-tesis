@@ -9,7 +9,8 @@ from scripts.avances.avances18.globalize_utils import GlobalizeUtils
 from scripts.informe.plot.csv_constants import CSVConstants
 from scripts.informe.results_parsing.results_reader import ResultsReader
 
-
+#
+# TODO: rewrite this script using pandas.
 #
 # Converts the results in "complete-mask-mode=N.csv" files so that the results of multiple files are merged
 #
