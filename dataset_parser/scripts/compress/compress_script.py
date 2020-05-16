@@ -79,8 +79,6 @@ class CompressScript:
                 self.row = [None, None, None]
             base_values = self._run_script_on_coder(base_values)
 
-        self.csv.close()
-
 
     def _run_script_on_coder(self, base_values):
         self.output_dataset_coder_path = self.output_dataset_path + '/' + self.coder_dictionary['o_folder']
