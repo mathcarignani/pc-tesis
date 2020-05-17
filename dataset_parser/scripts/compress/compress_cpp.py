@@ -18,10 +18,13 @@ class CompressCPP:
     def code_cpp(cls, args):
         time_track = TimeTrack()
         args.code_cpp()
-        exe_str = OSUtils.cpp_executable_path() + " " + str(ExperimentsUtils.MASK_MODE) + " c"
+
+        exe_str = cls._executable_path(args.coder_name)
+        exe_str += " c"
         exe_str += " " + args.input_path + " " + args.input_filename
         exe_str += " " + args.output_path + " " + args.compressed_filename
         exe_str += " " + cls._coder_params(args)
+
         header_bits, column_bits, column_mask_bits = cls._execute(exe_str)
         print(args.input_filename, "code_c++ - elapsed time =", time_track.elapsed(2), "seconds")
         return [args.coder_name, header_bits, column_bits, column_mask_bits]
@@ -30,9 +33,12 @@ class CompressCPP:
     def decode_cpp(cls, args):
         time_track = TimeTrack()
         args.decode_cpp()
-        exe_str = OSUtils.cpp_executable_path() + " " + str(ExperimentsUtils.MASK_MODE) + " d"
+
+        exe_str = cls._executable_path(args.coder_name)
+        exe_str += " d"
         exe_str += " " + args.output_path + " " + args.compressed_filename
         exe_str += " " + args.output_path + " " + args.deco_filename
+
         cls._execute(exe_str)
         print(args.compressed_filename, "decode_c++ - elapsed time =", time_track.elapsed(2), "seconds")
 
@@ -71,6 +77,15 @@ class CompressCPP:
         error_thresholds = " ".join(str(i) for i in args.coder_params['error_threshold'])
         string = args.coder_name + " " + str(args.coder_params['window_size']) + " " + error_thresholds
         return string
+
+    @staticmethod
+    def _executable_path(coder_name):
+        exe_str = OSUtils.cpp_executable_path()
+        if coder_name == "CoderBase":
+            # For CoderBase always run the executable for MASK_MODE = 0
+            exe_str += "_0"
+        exe_str += " " + str(ExperimentsUtils.MASK_MODE)
+        return exe_str
 
     @staticmethod
     def _print_exe(exe_str):
