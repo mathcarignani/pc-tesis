@@ -21,8 +21,8 @@ class CompressCPP:
 
         exe_str = cls._executable_path(args.coder_name)
         exe_str += " c"
-        exe_str += " " + args.input_path + " " + args.input_filename
-        exe_str += " " + args.output_path + " " + args.compressed_filename
+        exe_str += " " + args.input_path + "/" + args.input_filename
+        exe_str += " " + args.output_path + "/" + args.compressed_filename
         exe_str += " " + cls._coder_params(args)
 
         header_bits, column_bits, column_mask_bits = cls._execute(exe_str)
@@ -36,8 +36,8 @@ class CompressCPP:
 
         exe_str = cls._executable_path(args.coder_name)
         exe_str += " d"
-        exe_str += " " + args.output_path + " " + args.compressed_filename
-        exe_str += " " + args.output_path + " " + args.deco_filename
+        exe_str += " " + args.output_path + "/" + args.compressed_filename
+        exe_str += " " + args.output_path + "/" + args.deco_filename
 
         cls._execute(exe_str)
         print(args.compressed_filename, "decode_c++ - elapsed time =", time_track.elapsed(2), "seconds")
