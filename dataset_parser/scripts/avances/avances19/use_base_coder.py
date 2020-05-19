@@ -10,7 +10,7 @@ from scripts.informe.results_parsing.results_reader import ResultsReader
 
 
 #
-# TODO: remove? We are already doing this using pandas.
+# TODO: remove after checking that the output matches the output of the new script for MM=3
 #
 # Takes the Coder Base results for MM=0 and substitutes the Coder Base results in MM=3 (recalculating percentages)
 #

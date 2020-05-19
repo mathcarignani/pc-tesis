@@ -10,7 +10,7 @@ from scripts.informe.plot.csv_constants import CSVConstants
 from scripts.informe.results_parsing.results_reader import ResultsReader
 
 #
-# TODO: rewrite this script using pandas.
+# TODO: rewrite this script using pandas and check that both outputs match.
 #
 # Converts the results in "complete-mask-mode=N.csv" files so that the results of multiple files are merged
 #
@@ -37,11 +37,11 @@ class GlobalizeResults(object):
     def __globalize_dataset(self, dataset_name):
         filenames = ExperimentsUtils.dataset_csv_filenames(dataset_name)
         if len(filenames) == 1:
-            print dataset_name + " - single file"
+            print(dataset_name + " - single file")
             self.multiple_files = False
             self.__merge_results(dataset_name, filenames)
         else:
-            print dataset_name + " - multiple files"
+            print(dataset_name + " - multiple files")
             self.multiple_files = True
             self.__merge_results(dataset_name, filenames)
 
@@ -113,12 +113,12 @@ def compare_files(output_path, output_file):
 
 
 def run(value):
-    print "run(" + str(value) + ")"
+    print("run(" + str(value) + ")")
     output_path = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-18"
     output_file = "complete-mask-mode=" + str(value) + "-global.csv"
     GlobalizeResults(value, output_path, output_file)
     compare_files(output_path, output_file)
 
 
-run(0)
-run(3)
+# run(0)
+# run(3)
