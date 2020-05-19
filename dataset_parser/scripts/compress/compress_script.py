@@ -71,6 +71,9 @@ class CompressScript:
         self.thresholds_array = CalculateSTD.calculate_stds_percentages(stds, ExperimentsUtils.THRESHOLDS)
 
         for coder_index, self.coder_dictionary in enumerate(ExperimentsUtils.CODERS_ARRAY):
+            if self.input_filename == "el-nino.csv" and "GAMPS" in self.coder_dictionary['name']:
+                continue
+                
             if file_index == 0 and coder_index == 0:  # first row of dataset and file
                 self.row += [self.input_filename, row_count]
             elif coder_index == 0:  # first row of file

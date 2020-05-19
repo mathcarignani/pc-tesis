@@ -84,7 +84,9 @@ class CompressCPP:
         if coder_name == "CoderBase":
             # For CoderBase always run the executable for MASK_MODE = 0
             exe_str += "_0"
-        exe_str += " " + str(ExperimentsUtils.MASK_MODE)
+            exe_str += " " + "0"
+        else:
+            exe_str += " " + str(ExperimentsUtils.MASK_MODE)
         return exe_str
 
     @staticmethod
