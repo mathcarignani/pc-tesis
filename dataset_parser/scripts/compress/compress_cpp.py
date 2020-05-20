@@ -81,7 +81,7 @@ class CompressCPP:
     @staticmethod
     def _executable_path(coder_name):
         exe_str = OSUtils.cpp_executable_path()
-        if coder_name == "CoderBase":
+        if ExperimentsUtils.MASK_MODE != 0 and coder_name == "CoderBase":
             # For CoderBase always run the executable for MASK_MODE = 0
             exe_str += "_0"
             exe_str += " " + "0"
