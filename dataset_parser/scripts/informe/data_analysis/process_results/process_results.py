@@ -28,6 +28,8 @@ class ProcessResults(object):
     # mode=3  => only consider the PCA algorithm
     # mode=4  => only consider the APCA algorithm
     # mode=5  => PCA vs APCA
+    # mode=61 => RD(Best, CoderPWLHInt)
+    # mode=62 => RD(Best, CoderAPCA)
     #
     def __init__(self, global_mode, path, mode):
         # set script settings
@@ -70,6 +72,9 @@ class ProcessResults(object):
     def __columns_iteration(self):
         self.panda_utils = PandasUtils(self.dataset_name, self.filename, self.df, ProcessResults.MM)
         for self.col_index in range(1, ExperimentsUtils.get_dataset_data_columns_count(self.dataset_name) + 1):
+            # TODO: uncomment to IGNORE SPEED
+            # if self.dataset_name == 'NOAA-SPC-wind' and self.col_index == 3:
+            #     continue
             if self.__local_or_single_file():
                 self.threshold_compare.calculate_matching_thresholds(self.dataset_name, self.filename, self.col_index)
             self.col_name = ExperimentsUtils.COLUMN_INDEXES[self.dataset_name][self.col_index - 1]
@@ -140,11 +145,20 @@ class ProcessResults(object):
                 window, percentage, coder_name, _ = ProcessResults.get_values(row_df, self.col_index)
                 coder_name = coder_name.replace("Coder", "")
 
-                if self.__same_result(threshold):
-                    assert(threshold > 0); assert(coder_name == previous_coder); assert(window == previous_window);
-                    assert(percentage == previous_percentage)
-                    # TODO: uncomment to show blank cells for a repeated experiment
-                    # new_coder, new_window, new_percentage = '=', '=', '='
+                # if self.__same_result(threshold):
+                #     assert(threshold > 0); assert(coder_name == previous_coder); assert(window == previous_window);
+                #     assert(percentage == previous_percentage)
+                #     # TODO: uncomment to show blank cells for a repeated experiment
+                #     # new_coder, new_window, new_percentage = '=', '=', '='
+
+                if self.mode in [61, 62, 63]:
+                    compare_coder = "CoderPWLHInt" if self.mode == 61 else ("CoderAPCA" if self.mode == 62 else "CoderPCA")
+                    row_df_compare_coder = self.panda_utils.min_value_for_threshold(compare_coder, self.col_index, threshold)
+                    _, percentage_compare, _, _ = ProcessResults.get_values(row_df_compare_coder, self.col_index)
+                    relative_diff = ProcessResults.calculate_RD(row_df, row_df_compare_coder, self.col_index)
+
+                    percentage = percentage_compare
+                    window = relative_diff
 
             new_coder, new_window, new_percentage = coder_name, window, percentage
             threshold_results += [new_coder, new_window, new_percentage]
@@ -200,6 +214,13 @@ class ProcessResults(object):
         relative_diff = MathUtils.relative_difference(size_pca, size_apca)
         coder_name = 'PCA' if size_pca < size_apca else 'APCA'
         return round(relative_diff, 2), coder_name
+
+    @staticmethod
+    def calculate_RD(row_df_best, row_df_compare, col_index):
+        data_column_key = ResultsToDataframe.data_column_key(col_index)
+        size_best, size_compare = row_df_best[data_column_key], row_df_compare[data_column_key]
+        relative_diff = MathUtils.relative_difference(size_compare, size_best)
+        return round(relative_diff, 2)
 
     @staticmethod
     def parse_percentage(row_df, col_index):

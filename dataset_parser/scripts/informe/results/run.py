@@ -39,7 +39,9 @@ PATH = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/script
 # # ProcessResults(True, PATH + '3.4/results2', 2).run()
 # # ProcessResults(True, PATH + '3.4/results3', 3).run()
 # # ProcessResults(True, PATH + '3.4/results4', 4).run()
-# # ProcessResults(True, PATH + '3.4/results5', 5).run()
+ProcessResults(True, PATH + '3.4/results61', 61).run()
+ProcessResults(True, PATH + '3.4/results62', 62).run()
+ProcessResults(True, PATH + '3.4/results63', 63).run()
 
 
 

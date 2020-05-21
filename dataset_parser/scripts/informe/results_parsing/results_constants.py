@@ -27,8 +27,8 @@ class ResultsConstants(object):
 
     # This csv file is the same as RAW_MM_3_FILENAME but using the CoderBase from RAW_MM_0_FILENAME
     #
-    RAW_MM_3_BASE_CODER_PATH = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-19/use_base_coder"
-    RAW_MM_3_BASE_CODER_FILENAME = "complete-mask-mode=3-use_base_coder.csv"
+    # RAW_MM_3_BASE_CODER_PATH = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-19/use_base_coder"
+    # RAW_MM_3_BASE_CODER_FILENAME = "complete-mask-mode=3-use_base_coder.csv"
 
     @staticmethod
     def get_path_and_filename(file_key, file_value):
