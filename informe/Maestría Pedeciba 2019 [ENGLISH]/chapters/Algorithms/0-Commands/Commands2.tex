@@ -1,0 +1,115 @@
+\newcommand{\coderBase}{Base}
+\newcommand{\coderPCA}{PCA}
+\newcommand{\coderAPCA}{APCA}
+
+\newcommand{\intBase}{INT\_BASE}
+\newcommand{\intPCA}{INT\_PCA}
+\newcommand{\intAPCA}{INT\_APCA}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% CODER AND DECODER COMMANDS %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\eqqq}{$ == $}
+\newcommand{\andd}{\ \textbf{\upshape and}\ }
+\newcommand{\error}{\textit{err}}
+\newcommand{\file}{\textit{in}}
+\newcommand{\out}{\textit{out}}
+
+\newcommand{\win}{\textit{w}}
+\newcommand{\window}{\textit{win}}
+\newcommand{\windowVal}{\textit{win\_val}}
+\newcommand{\windowSize}{\window.\textnormal{size}}
+\newcommand{\windowMin}{\window.\textnormal{min}}
+\newcommand{\windowMax}{\window.\textnormal{max}}
+\newcommand{\windowCodeValue}{\window.\textit{code\_value}}
+
+\newcommand{\codeWindowVar}{\textit{code\_window}}
+
+\newcommand{\threshold}{\textit{e}}
+\newcommand{\column}{\textit{column}}
+\newcommand{\entry}{\textit{entry}}
+\newcommand{\valuev}{\textit{value}}
+\newcommand{\colOffset}{\column.\text{offset}}
+\newcommand{\plusOffset}[1]{{#1} + \colOffset}
+
+\newcommand{\nodatainteger}{\column.\textnormal{no\_data\_int}}
+\newcommand{\decodeint}{\text{decode\_integer}}
+\newcommand{\datarowscount}{\text{count\_data\_rows}}
+\newcommand{\closeFile}{\out.\text{close\_file}()}
+\newcommand{\noData}{\textit{NO\_DATA}}
+\newcommand{\totalBits}{\text{total\_bits}}
+\newcommand{\continueAlgo}{\textbf{continue}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% CODER COMMANDS %%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\cInputFile}{\file: csv data file to be coded}
+\newcommand{\cOutputFile}[1]{\out: binary file coded with algorithm #1}
+
+\newcommand{\cInputWindow}{\win: window size parameter}
+\newcommand{\cInputThreshold}{\threshold: threshold parameter}
+
+\newcommand{\codeInt}{\out.\text{code\_integer}}
+\newcommand{\codeBit}[1]{\out.\text{code\_bit}({#1})}
+
+\newcommand{\createBinary}{$\out = \text{new\_binary\_file}()$}
+\newcommand{\codeAlgoCode}[1]{\codeInt\text{(\textit{#1}, 8)}}
+\newcommand{\codeWindow}{$\codeInt(\win - 1, 8)$}
+\newcommand{\setCodeWindowFalse}{$\codeWindowVar = \textnormal{false}$}
+\newcommand{\setCodeWindowTrue}{$\codeWindowVar = \textnormal{true}$}
+\newcommand{\codeWindowSize}{$\codeInt(\windowSize - 1, \log _{2} \win)$}
+\newcommand{\codeWindowCodeValue}{$\codeInt(\windowCodeValue, \column.\totalBits)$}
+
+\newcommand{\codeHeader}{\out.\text{code\_header(\file.header)}}
+\newcommand{\codeDataRows}{\codeInt\text{(\file.\datarowscount(), 24)}}
+
+\newcommand{\forEachColumnCoder}{\column \textnormal{ in \file.columns}}
+\newcommand{\forEachEntryCoder}{\entry \textnormal{ in} $\column.\textnormal{entries}$}
+
+
+\newcommand{\setError}{$\error = \column.\text{error\_for\_threshold\_parameter}(\threshold)$}
+\newcommand{\createWindow}{$\window = \text{new\_window}()$}
+\newcommand{\windowPush}[1]{$\window.\text{push}({#1})$}
+\newcommand{\windowPushUndo}[1]{${#1} = \window.\text{unpush}()$}
+\newcommand{\windowNotFull}{\windowSize\ < \win}
+\newcommand{\windowFull}{\windowSize\ \eqqq\ \win}
+\newcommand{\windowEmpty}{\windowSize\ \eqqq\ \textnormal{0}}
+\newcommand{\windowNoData}{\window.\textnormal{all\_entries\_are\_no\_data}}
+\newcommand{\windowInt}{\window.\textnormal{all\_entries\_are\_integers}}
+
+
+\newcommand{\codeValueBase}{\codeInt(\valuev, \column.\totalBits)}
+\newcommand{\codeValuePCA}{\codeInt(\plusOffset{\valuev\ }, \column.\totalBits)}
+
+\newcommand{\validThre}{$|\windowMax - \windowMin| \leq 2*\error$}
+
+\newcommand{\ifNoDataCoder}[1]{${#1} \eqqq \noData$\xspace}
+
+\newcommand{\codeNoData}{\codeInt(\nodatainteger, \column.\totalBits)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% DECODER COMMANDS %%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\dinputfile}[1]{\file: binary file coded with algorithm #1}
+\newcommand{\doutputfile}{\out: decoded csv data file}
+
+\newcommand{\decodeInt}[1]{\file.\decodeint(#1)}
+
+\newcommand{\createcsv}{$\out = \text{new\_csv\_file}()$}
+\newcommand{\intCoder}{\textit{int\_algo}}
+\newcommand{\decodeAlgoCode}{$\intCoder = \decodeInt{8}$}
+\newcommand{\decodeWindow}{$\win = \decodeInt{8} + 1$}
+\newcommand{\decodeHeader}{\out.\text{decode\_header(\file)}}
+\newcommand{\decodeDataRows}{$\datarowscount = \file.\decodeint(24)$}
+
+\newcommand{\ifCoder}[1]{$\intCoder \eqqq  \textit{#1}$\xspace}
+
+\newcommand{\forEachColumnDecoder}{\column \textnormal{ in \out.columns}}
+\newcommand{\forEachEntryDecoder}{\forEachEntryCoder}
+
+\newcommand{\decodeValue}{$\valuev = \file.\text{decode\_integer}(\column.\totalBits)$}
+\newcommand{\ifNoDataDecoder}{$\valuev \eqqq \nodatainteger$\xspace}
+\newcommand{\writeString}[1]{\out.\text{write\_string}(#1)}
+\newcommand{\writeNoData}{\writeString{\noData}}
+
+\newcommand{\diffCoder}{. . . \text{// if \file \ was coded with a different algorithm}}

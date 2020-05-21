@@ -1,0 +1,64 @@
+\DontPrintSemicolon 
+\beginAlgorithm
+\inputAndOutput{\cInputFile, \cInputWindow, \cInputThreshold}{\cOutputFile{\coderAPCA}}
+\createBinary\\
+\codeAlgoCode{\intPCA}\\
+\codeWindow\\
+\codeHeader\\
+\codeDataRows\\
+\ForEach{\forEachColumnCoder}{
+    \setError\\
+    \createWindow\\
+    \ForEach{\forEachEntryCoder}{
+        \If{\windowEmpty}{
+            \windowPush{\entry}\\
+            \continueAlgo
+        }
+        \setCodeWindowFalse\\
+        \uIf{\windowFull}{
+            \setCodeWindowTrue
+        }
+        \uElseIf{\windowNoData}{
+            \uIf{\ifNoDataCoder{\entry}}{
+                \windowPush{\entry}
+            }
+            \Else{
+                \setCodeWindowTrue
+            }
+        }
+        \Else{ 
+            // \windowInt\\
+            \uIf{\ifNoDataCoder{\entry}}{
+                \setCodeWindowTrue
+            }
+            \Else{
+                \windowPush{\entry}\\
+                \uIf{\validThre}{
+                    $\valuev = \windowMin + \windowMax$\\
+                    \If{$\valuev \neq 0$}{
+                        $\valuev = \valuev /2$\\
+                    }
+                    $\windowCodeValue = \valuev$
+                }
+                \Else{
+                    \windowPushUndo{\entry}\\
+                    \setCodeWindowTrue
+                }
+            }
+        }
+        \If{\codeWindowVar}{
+            \codeWindowSize\\
+            \eIf{\windowNoData}{
+                $\valuev = \nodatainteger$
+            }
+            {
+                $\valuev = \plusOffset{\windowCodeValue}$
+            }
+            \codeValueBase\\
+            \createWindow\\
+            \windowPush{\entry}
+        }
+    }
+}
+\closeFile
+\EndAlgorithm{\coderAPCA}{\label{pseudoCoderAPCA}}

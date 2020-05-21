@@ -1,0 +1,19 @@
+\beginAlgorithm
+\inputAndOutput{\cInputFile}{\cOutputFile{\coderBase}}
+\createBinary\\
+\codeAlgoCode{\intBase}\\
+\codeHeader\\
+\codeDataRows\\
+\ForEach{\forEachColumnCoder}{
+    \ForEach{\forEachEntryCoder}{
+        \eIf{\ifNoDataCoder{\valuev}}{
+            $\valuev = \nodatainteger$
+        }
+        {
+            $\valuev = \plusOffset{\entry}$
+        }
+        \codeValueBase\\
+    }
+}
+\closeFile
+\EndAlgorithm{\coderBase}{\label{pseudoCoderBase}}

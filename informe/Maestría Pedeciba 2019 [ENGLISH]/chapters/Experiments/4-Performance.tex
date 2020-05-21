@@ -3,37 +3,30 @@
 \label{secX:codersmask}
 
 
-In this section we compare the compression performance of the coding algorithms presented in Chapter~\ref{algo}, by encoding the various datasets introduced in Chapter~\ref{datasets}. We begin by comparing the encoders among each other and later we compare them with gzip, a popular lossless compression algorithm. We analyze the performance of the algorithms on datasets as a whole, rather than individual files, so we always apply Definitions~\ref{eq:coding-size-dataset}--\ref{def:relative-difference-dataset}.
+In this section we compare the compression performance of the coding algorithms presented in Chapter~\ref{algo}, by encoding the various datasets introduced in Chapter~\ref{datasets}. We begin by comparing the encoders among each other and later we compare them with gzip, a popular lossless compression algorithm. We analyze the performance of the algorithms on complete datasets (not individual files), so we always apply definitions~\ref{eq:coding-size-dataset}--\ref{def:relative-difference-dataset}. Following the results obtained in sections~\ref{secX:rendimiento-relativo} and~\ref{secX:windows}, we only consider the masking variants of the evaluated algorithms, and we always use the \owsns.
 
 
-We consider the scenario in which the parameters of a CAI are adjusted in the most convenient way, so that the compression ratio is minimized. For this reason, following the results obtained in Sections~\ref{secX:rendimiento-relativo} and~\ref{secX:windows}, we only consider the masking variants of the evaluated algorithms, and we always use the global window.
-
-
-For each data type $z$ of each dataset $d$, and each coding algorithm $a \in A$ and threshold parameter $e \in E$, we calculate the compression ratio of $c_{<a, w_{global}^{*}, e>}$, as defined in (\ref{eq:compression-rate-dataset}), where $w_{global}^{*}=OWS(a, e, z, d)$ is the global window size. The following definition is useful for analyzing which CAI obtains the best compression result for a specific data type.
+For each data type $z$ of each dataset $d$, and each coding algorithm $a \in A$ and threshold parameter $e \in E$, we calculate the CR of $c_{<a, w_{global}^{*}, e>}$, as defined in (\ref{eq:compression-rate-dataset}), where $w_{global}^{*}=\owsns(a, e, z, d)$. The following definition is useful for analyzing which CAI obtains the best compression result for a specific data type.
 
 
 \begin{defcion}
 \label{eq:bestcai}
-Let $z$ be a data type of a certain dataset $d$. The \textit{best CAI} for a certain threshold parameter $e \in E$, is the CAI $c^{b}_{e} \in CI$ which minimizes the compression ratio, i.e.
-
-\hspace{+10pt}$c^{b}_{e} = c_{<a^{b}, w^{b}, e>} \text{ such that } \tasacompresion(c^{b}_{e}, z, d) \leq \tasacompresion(c_{<a, w, e>}, z, d) \text{ for every } a \in A$, $w \in W$.
-
-We denote $\tasacompresion(c^{b}_{e}, z, d)$ as the \textit{minimum CR}, $a^{b} \in A$ as the \textit{best algorithm}, and $w^{b} \in W$ as the \textit{best window parameter}.
+Let $z$ be a data type of a certain dataset $d$, and let $e \in E$ be a threshold parameter. The \textit{best CAI} for $z, d, e$ is the CAI $c^{b}_{e}$ that minimizes the CR among all CAIs from~CI.
 \end{defcion}
 
 
-Our experiments include a total of 21 data types, in 8 datasets. As an example, in Figure~\ref{fig:algo-per-1} we show the compression ratio and the window size parameter, as a function of the threshold, obtained for the data type ``SST" of the dataset \datasetelnino. For each threshold parameter $e \in E$, we made blue circles around the markers for the minimum CR value and the best window parameter (in the plots corresponding to the best algorithm). For instance, for $e=0$, the minimum CR is $32.91\%$, the best algorithm is PCA, and the best window parameter is 256. For the remaining seven threshold parameters, the blue circles indicate that the best algorithm is always APCA, and the best window parameter values range from 4 to 32.
+Our experiments include a total of 21 data types, in 8 datasets. As an example, in Figure~\ref{fig:algo-per-1} we show the CR and the OWS, as a function of the threshold, obtained for each algorithm for the data type ``SST" of the dataset \datasetelnino. For each threshold parameter $e \in E$, we use blue circles to highlight the markers for the minimum CR value and the best window size parameter (in the plots corresponding to the best algorithm). For instance, for $e=0$, the minimum CR is $0.33$, and the best algorithm is PCA with a window size equal to 256. For the remaining seven threshold parameters, the blue circles indicate that the best algorithm is always APCA with a window size ranging from 4 to 32.
 
 
 \clearpage
-\threefoursingle{5-ElNino-7}{\datasetelnino}{SST}{\ For each threshold parameter $e \in E$, we made blue circles around the markers for the minimum CR value and the best window parameter (in the plots corresponding to the best algorithm)}{\label{fig:algo-per-1}}
+\threefoursingle{5-ElNino-7}{\datasetelnino}{SST}{\ For each threshold parameter $e \in E$, we use blue circles to highlight the markers for the minimum CR value and the best window size parameter (in the plots corresponding to the best algorithm)}{\label{fig:algo-per-1}}
 \clearpage
 
 
-Table~\ref{experiments:mask-results-overview1} summarizes the compression performance results for each data type of each dataset, regarding the best CAI obtained for each threshold parameter. Each row contains information pertaining a certain data type. For example, the 13th row shows the results obtained for the data type ``SST" of the dataset \datasetelnino, which were analyzed through Figure~\ref{fig:algo-per-1} in the previous paragraph. For each threshold, the first column shows the minimum CR, the second column shows $\log_2$ of the best window parameter value, and the best algorithm is represented by a certain cell color. We use red font to mark the cases in which the minimum CR is greater than $100\%$. In these cases the best algorithm has a compression performance which is inferior to that of the trivial CAI, \textit{Base}.
+Table~\ref{experiments:mask-results-overview1} summarizes the compression performance results for each data type of each dataset. Each row contains information relative to certain data type. For example, the 13th row shows summarized results for the data type ``SST" of the dataset \datasetelnino, which were presented in more detail in Figure~\ref{fig:algo-per-1}. For each threshold, the first column shows the best (minimum) CR, and the second column shows the base-2 logarithm of the OWS for the best algorithm (the one that achieves this CR). The best algorithm itself is represented by a cell color code. We use red font to mark the cases in which the minimum CR is greater than $1$. In these cases, the best algorithm has a compression performance that is inferior to that of the trivial CAI, \textit{Base}.
 
 
-We observe that there are three algorithms (PCA, APCA, and FR) which are the best algorithm for at least one of the 168 possible data type and threshold parameter combinations. APCA is the best algorithm in exactly 134 combinations ($80\%$), including every case in which $e \geq 10$, and most of the cases in which $e \in [1, 3, 5]$. PCA is the best algorithm in 31 combinations ($18\%$), including most of the lossless cases, while FR is the best algorithm in only 3 combinations ($2\%$), all of them concerning data type ``Speed" of the dataset \datasetwind.
+We observe that there are three algorithms (PCA, APCA, and FR) that are best for at least one of the 168 possible data type and threshold parameter combinations. APCA is the best algorithm in exactly 134 combinations ($80\%$), including every case in which $e \geq 10$, and most of the cases in which $e \in [1, 3, 5]$. PCA is the best algorithm in 31 combinations ($18\%$), including most of the lossless cases, while FR is the best algorithm in only 3 combinations ($2\%$), all of them for data type ``Speed" of the dataset \datasetwind.
 
 
 \input{chapters/Experiments/other/table-results-0.tex}
@@ -42,15 +35,26 @@ We observe that there are three algorithms (PCA, APCA, and FR) which are the bes
 \clearpage
 
 TODO: Analize the RD between PCA and APCA (and FR?). Table with data in next page.
-% \clearpage
-% \input{chapters/Experiments/other/table-results-3.tex}
-% \clearpage
-% \input{chapters/Experiments/other/table-results-4.tex}
+\clearpage
+% \arrayrulecolor{blue}
+\input{chapters/Experiments/other/table-results-13.tex}
+\clearpage
+\input{chapters/Experiments/other/table-results-12.tex}
+\clearpage
+\input{chapters/Experiments/other/table-results-3.tex}
+\clearpage
+\input{chapters/Experiments/other/table-results-4.tex}
 \clearpage
 \input{chapters/Experiments/other/table-results-5.tex}
 \clearpage
+\input{chapters/Experiments/other/table-results-61.tex}
+\clearpage
+\input{chapters/Experiments/other/table-results-62.tex}
+\clearpage
+\input{chapters/Experiments/other/table-results-63.tex}
+\clearpage
 
-TODO: Comparison with the gzip Algorithm. Table with data in next page.
+TODO: Comparison with the algorithm gzip. Table with data in next page.
 
 \clearpage
 

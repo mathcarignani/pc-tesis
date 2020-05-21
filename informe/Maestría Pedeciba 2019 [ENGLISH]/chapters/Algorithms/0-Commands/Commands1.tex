@@ -1,0 +1,29 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% ALGORITHM COMMANDS %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\beginAlgorithm}{
+    \setlength{\algomargin}{1em}
+    \IncMargin{1em}
+    \begin{figure}[h]
+    \begin{algorithm}[H]
+    
+    \SetAlgoLined
+    \SetKwInOut{Input}{input}
+    \SetKwInOut{Output}{output}
+}
+
+\newcommand{\inputAndOutput}[2]{
+    \Indm  
+    \SetAlgoLined
+    \Input{#1}
+    \Output{#2}
+    \Indp
+}
+
+\newcommand{\EndAlgorithm}[2]{
+    \end{algorithm}
+    \vspace{-15pt}
+    \caption{Algorithm {#1} coder pseudocode.}
+    {#2}
+    \end{figure}
+}
