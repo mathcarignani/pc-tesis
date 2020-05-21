@@ -1,4 +1,5 @@
 import math
+# import statistics  # TODO: remove
 
 import sys
 sys.path.append('.')
@@ -14,8 +15,12 @@ class CalculateSTD:
     def calculate_file_stats(cls, input_path, input_filename):
         csv_reader = CSVReader(input_path, input_filename)
         print(input_path + '/' + input_filename)
+        # stds = cls._calculate_stds_python(csv_reader)  # TODO: remove
+        # print(stds)
         counts, means = cls._calculate_means(csv_reader)
         stds = cls._calculate_stds(csv_reader, counts, means)
+        # print(stds)  # TODO: remove
+        # exit(1)
         csv_reader.close()
         return stds
 
@@ -28,6 +33,26 @@ class CalculateSTD:
             row.insert(0, 0)  # the error threshold for the timedelta is always 0
             res.append({'percentage': percentage, 'values': row})
         return res
+
+    # TODO: remove
+    # @classmethod
+    # def _calculate_stds_python(cls, csv_reader):
+    #     csv_reader.goto_row(3)  # columns
+    #     columns_count = len(csv_reader.read_line())
+    #
+    #     list = []
+    #     while csv_reader.continue_reading:
+    #         line = csv_reader.read_line()
+    #         value = line[1]
+    #         if value == "N":
+    #             continue
+    #         else:
+    #             list.append(int(value))
+    #
+    #     print("Standard Deviation of sample is % s "
+    #             % (statistics.stdev(list)))
+    #     return statistics.stdev(list)
+
 
     @classmethod
     def _calculate_means(cls, csv_reader):
@@ -70,7 +95,7 @@ class CalculateSTD:
 
         stds = [0] * columns_count
         for i, summ in enumerate(summs):
-            stds[i] = 'N' if counts[i] == 0 else math.sqrt(summ // counts[i])
+            stds[i] = 'N' if counts[i] == 0 else math.sqrt(summ // counts[i]) # TODO: // in python 2 = / in python 3
 
         print('stds', stds)
         return stds
