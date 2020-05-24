@@ -31,12 +31,12 @@ class Script(object):
 
             for algorithm in ExperimentsUtils.ALGORITHMS:
                 self.row_plot.begin_algorithm(algorithm)
-                basic_value0 = self.__find_combination(self.filename, algorithm, threshold)
+                base_value0 = self.__find_combination(self.filename, algorithm, threshold)
 
                 for window_size in ExperimentsUtils.WINDOWS:
                     self.__find_next_line(CSVConstants.INDEX_WINDOW, window_size, True)
                     window, value0, value3 = self.__parse_line_values()
-                    self.row_plot.add_values(window, value0, value3, basic_value0)
+                    self.row_plot.add_values(window, value0, value3, base_value0)
 
                 self.row_plot.end_algorithm()
                 self.__goto_file_start()
@@ -50,11 +50,11 @@ class Script(object):
 
     def __find_combination(self, filename, algorithm, threshold):
         self.__find_next_line(CSVConstants.INDEX_FILENAME, filename, False)
-        basic_value0_index = self.__get_value0_index()
-        basic_value0 = self.__get_int(self.line[basic_value0_index])
+        base_value0_index = self.__get_value0_index()
+        base_value0 = self.__get_int(self.line[base_value0_index])
         self.__find_next_line(CSVConstants.INDEX_ALGORITHM, algorithm, False)
         self.__find_next_line(CSVConstants.INDEX_THRESHOLD, threshold, True)
-        return basic_value0
+        return base_value0
 
     def __read_line(self):
         self.line = self.input_file.read_line()

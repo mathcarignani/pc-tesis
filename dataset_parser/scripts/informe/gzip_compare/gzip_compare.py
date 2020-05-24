@@ -160,9 +160,9 @@ class ScriptGZipCompare(object):
 
     def __get_total_bits_coder_base(self):
             panda_utils = PandasUtils(self.dataset_name, self.filename, self.df, 0)
-            basic_df = panda_utils.coder_basic_df()
+            base_df = panda_utils.coder_base_df()
             data_column_key = ResultsToDataframe.data_column_key(self.col_index)
-            return basic_df[data_column_key]
+            return base_df[data_column_key]
 
     def __global_results(self):
         self.output.write_row(['', 'Global'])

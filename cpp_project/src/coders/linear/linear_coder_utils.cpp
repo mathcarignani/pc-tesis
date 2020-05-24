@@ -3,7 +3,7 @@
 
 #if MASK_MODE
 
-std::vector<int> LinearCoderUtils::createXCoordsVectorCA(DecoderBase* decoder, int window_size, int row_index, int nodata_sum){
+std::vector<int> LinearCoderUtils::createXCoordsVectorCA(DecoderCommon* decoder, int window_size, int row_index, int nodata_sum){
 #if CHECKS
     assert(window_size > 1);
 #endif
@@ -30,7 +30,7 @@ std::vector<int> LinearCoderUtils::createXCoordsVectorCA(DecoderBase* decoder, i
     return result;
 }
 
-std::vector<int> LinearCoderUtils::createXCoordsVectorPWLH(DecoderBase* decoder, int window_size, int row_index){
+std::vector<int> LinearCoderUtils::createXCoordsVectorPWLH(DecoderCommon* decoder, int window_size, int row_index){
 #if CHECKS
     assert(window_size > 1);
 #endif

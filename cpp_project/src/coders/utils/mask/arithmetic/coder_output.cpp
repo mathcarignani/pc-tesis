@@ -6,7 +6,7 @@
 #include "tests_utils.h"
 #include "arithmetic_mask_coder.h"
 
-CoderOutput::CoderOutput(CoderBase* coder_){
+CoderOutput::CoderOutput(CoderCommon* coder_){
     coder = coder_;
 }
 

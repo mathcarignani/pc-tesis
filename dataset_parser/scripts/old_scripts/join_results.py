@@ -35,7 +35,7 @@ def join12():
         line1 = results1.read_line()
         line2 = results2.read_line()
 
-        assert(line1[3] == "CoderBasic")
+        assert(line1[3] == "CoderBase")
         assert(line1 == line2)
 
         joined_results.write_row(line1)

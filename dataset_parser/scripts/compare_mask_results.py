@@ -53,7 +53,7 @@ class CompareMaskResults:
         filename, coder = line1[1], line1[3]
 
         if len(coder) > 0:
-            if coder == "CoderBasic":
+            if coder == "CoderBase":
                 print self.current_file_data
                 self.current_file_data = {"name": filename, "C1": 0, "C2": 0, "SAME": 0}
             self.current_coder = coder

@@ -1,4 +1,7 @@
-from csv_reader import CSVReader
+import sys
+sys.path.append('.')
+
+from file_utils.csv_utils.csv_reader import CSVReader
 
 
 class CSVCompare:

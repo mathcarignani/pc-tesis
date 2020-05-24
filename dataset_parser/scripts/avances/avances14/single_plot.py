@@ -12,30 +12,30 @@ class SinglePlot(object):
         self.algorithm = algorithm
         self.values0 = []
         self.values3 = []
-        self.basic_values0 = []
+        self.base_values0 = []
         self.current_plot = []
 
         self.windows = []
         self.expected_window = 4
 
-    def add_values(self, window, value0, value3, plot_value, basic_value0):
+    def add_values(self, window, value0, value3, plot_value, base_value0):
         self.__check_window(window)
         self.values0.append(value0)
         self.values3.append(value3)
-        self.basic_values0.append(basic_value0)
+        self.base_values0.append(base_value0)
         self.current_plot.append(plot_value)
 
     def best_values(self):
         assert(len(ExperimentsUtils.WINDOWS) == len(self.values0))
         assert(len(ExperimentsUtils.WINDOWS) == len(self.values3))
-        assert(len(ExperimentsUtils.WINDOWS) == len(self.basic_values0))
-        assert(len(set(self.basic_values0)) == 1)  # check that all the values in the list match
+        assert(len(ExperimentsUtils.WINDOWS) == len(self.base_values0))
+        assert(len(set(self.base_values0)) == 1)  # check that all the values in the list match
         value0_min, value3_min = min(self.values0), min(self.values3),
         value0_min_index, value3_min_index = self.values0.index(value0_min), self.values3.index(value3_min)
         res = {
             'value0': {'min': value0_min, 'window': ExperimentsUtils.WINDOWS[value0_min_index]},
             'value3': {'min': value3_min, 'window': ExperimentsUtils.WINDOWS[value3_min_index]},
-            'basic_value0': self.basic_values0[0]
+            'base_value0': self.base_values0[0]
         }
         return res
 
@@ -159,10 +159,10 @@ class SinglePlot(object):
         single_plot = SinglePlot(single_plot1.algorithm)
         values0 = cls.sum_arrays(single_plot1.values0, single_plot2.values0)
         values3 = cls.sum_arrays(single_plot1.values3, single_plot2.values3)
-        basic_values0 = cls.sum_arrays(single_plot1.basic_values0, single_plot2.basic_values0)
-        for index, (value0, value3, basic_value0) in enumerate(zip(values0, values3, basic_values0)):
+        base_values0 = cls.sum_arrays(single_plot1.base_values0, single_plot2.base_values0)
+        for index, (value0, value3, base_value0) in enumerate(zip(values0, values3, base_values0)):
             window = ExperimentsUtils.WINDOWS[index]
-            single_plot.add_values(window, value0, value3, 0, basic_value0)  # plot_value = 0, doesn't matter
+            single_plot.add_values(window, value0, value3, 0, base_value0)  # plot_value = 0, doesn't matter
         return single_plot
 
     @classmethod

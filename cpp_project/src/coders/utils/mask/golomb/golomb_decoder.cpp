@@ -2,7 +2,7 @@
 #include "golomb_decoder.h"
 #include <math.h>
 
-GolombDecoder::GolombDecoder(DecoderBase* decoder_){
+GolombDecoder::GolombDecoder(DecoderCommon* decoder_){
     decoder = decoder_;
 }
 

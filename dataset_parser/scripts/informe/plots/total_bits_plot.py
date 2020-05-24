@@ -14,12 +14,12 @@ class TotalBitsPlot(CommonPlot):
         self.filename = information.get('filename')
         self.values0 = []
         self.values3 = []
-        self.basic_value0 = None
+        self.base_value0 = None
         super(TotalBitsPlot, self).__init__()
 
-    def add_values(self, value0, value3, basic_value0):
-        self.basic_value0 = basic_value0 if self.basic_value0 is None else self.basic_value0
-        assert(self.basic_value0 == basic_value0)  # check that basic_value0 never changes
+    def add_values(self, value0, value3, base_value0):
+        self.base_value0 = base_value0 if self.base_value0 is None else self.base_value0
+        assert(self.base_value0 == base_value0)  # check that base_value0 never changes
 
         self.values0.append(value0)
         self.values3.append(value3)
@@ -43,8 +43,8 @@ class TotalBitsPlot(CommonPlot):
         ax.grid(b=True, color=PlotConstants.COLOR_SILVER)
         ax.set_axisbelow(True)
 
-        if ymax >= self.basic_value0:
-            PlotUtils.horizontal_line(ax, self.basic_value0, PlotConstants.COLOR_SILVER)
+        if ymax >= self.base_value0:
+            PlotUtils.horizontal_line(ax, self.base_value0, PlotConstants.COLOR_SILVER)
 
         RelativeDifferencePlot.set_lim(ax, ymin, ymax)
 

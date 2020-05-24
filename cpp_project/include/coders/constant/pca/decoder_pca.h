@@ -13,7 +13,7 @@ private:
 
 public:
     using DecoderCols::DecoderCols;
-    static void decodeConstantWindow(DecoderBase* decoder, std::vector<std::string> & column, int window_size);
+    static void decodeConstantWindow(DecoderCommon* decoder, std::vector<std::string> & column, int window_size);
 };
 
 #endif //CPP_PROJECT_DECODER_PCA_H

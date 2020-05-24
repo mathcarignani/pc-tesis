@@ -10,25 +10,22 @@
 #include "bit_stream_utils.h"
 #include <assert.h>
 
-// Set to 1 to set up the tests, then set to 0
-#define RECORD 0
-
 void TestsCoders::testSingleCoder() {
-    Path file_path = Path(TestsUtils::OUTPUT_PATH, "vwc_1202.dat.csv"); // "vwc_1202.dat.csv" "vwc_1202.dat-copy.csv" "vwc_1202-16.dat.csv"
-    std::vector<int> lossless(10, 0);
+//    Path file_path = Path(TestsUtils::OUTPUT_PATH, "vwc_1202.dat.csv"); // "vwc_1202.dat.csv" "vwc_1202.dat-copy.csv" "vwc_1202-16.dat.csv"
+//    std::vector<int> lossless(10, 0);
 //    std::vector<int>    lossy{0, 5};
-
-    std::string coder_name = "Basic";
-    Path output_code_path = TestsCodersUtils::codedFilePath(TestsUtils::OUTPUT_PATH, file_path, coder_name);
-    Path output_decode_path = TestsCodersUtils::decodedFilePath(TestsUtils::OUTPUT_PATH, file_path, coder_name);
-
-    std::cout << output_code_path.full_path << std::endl;
-    std::cout << output_decode_path.full_path << std::endl;
-
+//
+//    std::string coder_name = "Base";
+//    Path output_code_path = TestsCodersUtils::codedFilePath(TestsUtils::OUTPUT_PATH, file_path, coder_name);
+//    Path output_decode_path = TestsCodersUtils::decodedFilePath(TestsUtils::OUTPUT_PATH, file_path, coder_name);
+//
+//    std::cout << output_code_path.full_path << std::endl;
+//    std::cout << output_decode_path.full_path << std::endl;
+//
 //    Scripts::code("CoderGAMPS", file_path, output_code_path, 5, lossless);
-    Scripts::codeBasic(file_path, output_code_path);
-    Scripts::decode(output_code_path, output_decode_path);
-    TestsCodersUtils::compareFiles(file_path, output_decode_path);
+//    Scripts::codeBase(file_path, output_code_path);
+//    Scripts::decode(output_code_path, output_decode_path);
+//    TestsCodersUtils::compareFiles(file_path, output_decode_path);
     std::cout << "SAME FILE!!" << std::endl;
 }
 
@@ -78,15 +75,23 @@ void TestsCoders::setModePaths(int i){
 
 void TestsCoders::runAll(){
     std::cout << "TestsCoder::runAll()" << std::endl;
-    std::string mask_mode_folder = (MASK_MODE) ? "mask_mode_true" : "mask_mode_false";
-
+    std::string mask_mode_folder;
+#if MASK_MODE == 0
+    mask_mode_folder = "mask_mode_0";
+#elif MASK_MODE == 1
+    mask_mode_folder = "mask_mode_1";
+#elif MASK_MODE == 2
+    mask_mode_folder = "mask_mode_2";
+#else
+    mask_mode_folder = "mask_mode_3";
+#endif
     expected_root_folder = TestsUtils::OUTPUT_PATH + "/expected/" + mask_mode_folder;
 
-#if RECORD
+#if RECORD_TESTS
     output_root_folder = expected_root_folder;
 #else
     output_root_folder = TestsUtils::OUTPUT_PATH + "/output/" + mask_mode_folder;
-#endif
+#endif // RECORD_TESTS
 
     Path bits_csv_path = Path(output_root_folder, "bits-out.csv");
     bits_csv = new CSVWriter(bits_csv_path);
@@ -102,14 +107,14 @@ void TestsCoders::runAll(){
             TestsCodersUtils::writeStringCSV(bits_csv, mode, false);
             setModePaths(i);
 
-            if (mode == "LOSSLESS"){ testCoder("CoderBasic"); }
+            if (mode == "LOSSLESS"){ testCoder("CoderBase"); }
             testCoder("CoderPCA");
             testCoder("CoderAPCA");
             testCoder("CoderPWLHInt");
             testCoder("CoderPWLH");
             testCoder("CoderCA");
 
-        #if MASK_MODE == 1
+        #if MASK_MODE > 0
             testCoder("CoderFR");
             testCoder("CoderSF");
         #endif
@@ -119,12 +124,16 @@ void TestsCoders::runAll(){
     bits_csv->close();
     Path expected_bits_csv_path = Path(expected_root_folder, "bits-out.csv");
     TestsCodersUtils::compareFiles(expected_bits_csv_path, bits_csv_path);
+#if !RECORD_TESTS
+    // remove files that have already been compared and matched the expected
+    BitStreamUtils::removeFile(bits_csv_path);
+#endif // !RECORD_TESTS
 }
 
 void TestsCoders::testCoder(std::string coder_name){
     setCoderPaths(coder_name);
-    if (coder_name == "CoderBasic"){
-        ds = Scripts::codeBasic(file_path, output_code_path);
+    if (coder_name == "CoderBase"){
+        ds = Scripts::codeBase(file_path, output_code_path);
     }
     else {
         ds = Scripts::code(coder_name, file_path, output_code_path, win_size, errors_vector);
@@ -134,6 +143,11 @@ void TestsCoders::testCoder(std::string coder_name){
     TestsCodersUtils::compareFiles(output_code_path, expected_code_path);
     Scripts::decode(output_code_path, output_decode_path);
     TestsCodersUtils::compareDecodedFiles(mode, file_path, output_decode_path, expected_path_str, coder_name);
+#if !RECORD_TESTS
+    // remove files that have already been compared and matched the expected
+    BitStreamUtils::removeFile(output_code_path);
+    BitStreamUtils::removeFile(output_decode_path);
+#endif // !RECORD_TESTS
 }
 
 void TestsCoders::checkSize(){

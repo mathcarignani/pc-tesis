@@ -9,19 +9,19 @@
 #define EOS_LENGTH 16 // used to mark the end of the stream
 
 #include "mask.h"
-#include "coder_base.h"
+#include "coder_common.h"
 
 class ArithmeticMaskCoder {
 
 private:
-    CoderBase* coder;
+    CoderCommon* coder;
     int data_columns_count;
 
     void flush();
     std::vector<int> callCompress();
 
 public:
-    ArithmeticMaskCoder(CoderBase* coder_, int data_columns_count_);
+    ArithmeticMaskCoder(CoderCommon* coder_, int data_columns_count_);
     std::vector<int> code();
 
 };

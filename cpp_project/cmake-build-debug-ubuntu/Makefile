@@ -447,6 +447,60 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+src/coders/base/coder_common.o: src/coders/base/coder_common.cpp.o
+
+.PHONY : src/coders/base/coder_common.o
+
+# target to build an object file
+src/coders/base/coder_common.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/base/coder_common.cpp.o
+.PHONY : src/coders/base/coder_common.cpp.o
+
+src/coders/base/coder_common.i: src/coders/base/coder_common.cpp.i
+
+.PHONY : src/coders/base/coder_common.i
+
+# target to preprocess a source file
+src/coders/base/coder_common.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/base/coder_common.cpp.i
+.PHONY : src/coders/base/coder_common.cpp.i
+
+src/coders/base/coder_common.s: src/coders/base/coder_common.cpp.s
+
+.PHONY : src/coders/base/coder_common.s
+
+# target to generate assembly for a file
+src/coders/base/coder_common.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/base/coder_common.cpp.s
+.PHONY : src/coders/base/coder_common.cpp.s
+
+src/coders/base/decoder_common.o: src/coders/base/decoder_common.cpp.o
+
+.PHONY : src/coders/base/decoder_common.o
+
+# target to build an object file
+src/coders/base/decoder_common.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/base/decoder_common.cpp.o
+.PHONY : src/coders/base/decoder_common.cpp.o
+
+src/coders/base/decoder_common.i: src/coders/base/decoder_common.cpp.i
+
+.PHONY : src/coders/base/decoder_common.i
+
+# target to preprocess a source file
+src/coders/base/decoder_common.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/base/decoder_common.cpp.i
+.PHONY : src/coders/base/decoder_common.cpp.i
+
+src/coders/base/decoder_common.s: src/coders/base/decoder_common.cpp.s
+
+.PHONY : src/coders/base/decoder_common.s
+
+# target to generate assembly for a file
+src/coders/base/decoder_common.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/base/decoder_common.cpp.s
+.PHONY : src/coders/base/decoder_common.cpp.s
+
 src/coders/base/coder_base.o: src/coders/base/coder_base.cpp.o
 
 .PHONY : src/coders/base/coder_base.o
@@ -500,60 +554,6 @@ src/coders/base/decoder_base.s: src/coders/base/decoder_base.cpp.s
 src/coders/base/decoder_base.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/base/decoder_base.cpp.s
 .PHONY : src/coders/base/decoder_base.cpp.s
-
-src/coders/basic/coder_basic.o: src/coders/basic/coder_basic.cpp.o
-
-.PHONY : src/coders/basic/coder_basic.o
-
-# target to build an object file
-src/coders/basic/coder_basic.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/basic/coder_basic.cpp.o
-.PHONY : src/coders/basic/coder_basic.cpp.o
-
-src/coders/basic/coder_basic.i: src/coders/basic/coder_basic.cpp.i
-
-.PHONY : src/coders/basic/coder_basic.i
-
-# target to preprocess a source file
-src/coders/basic/coder_basic.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/basic/coder_basic.cpp.i
-.PHONY : src/coders/basic/coder_basic.cpp.i
-
-src/coders/basic/coder_basic.s: src/coders/basic/coder_basic.cpp.s
-
-.PHONY : src/coders/basic/coder_basic.s
-
-# target to generate assembly for a file
-src/coders/basic/coder_basic.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/basic/coder_basic.cpp.s
-.PHONY : src/coders/basic/coder_basic.cpp.s
-
-src/coders/basic/decoder_basic.o: src/coders/basic/decoder_basic.cpp.o
-
-.PHONY : src/coders/basic/decoder_basic.o
-
-# target to build an object file
-src/coders/basic/decoder_basic.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/basic/decoder_basic.cpp.o
-.PHONY : src/coders/basic/decoder_basic.cpp.o
-
-src/coders/basic/decoder_basic.i: src/coders/basic/decoder_basic.cpp.i
-
-.PHONY : src/coders/basic/decoder_basic.i
-
-# target to preprocess a source file
-src/coders/basic/decoder_basic.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/basic/decoder_basic.cpp.i
-.PHONY : src/coders/basic/decoder_basic.cpp.i
-
-src/coders/basic/decoder_basic.s: src/coders/basic/decoder_basic.cpp.s
-
-.PHONY : src/coders/basic/decoder_basic.s
-
-# target to generate assembly for a file
-src/coders/basic/decoder_basic.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/basic/decoder_basic.cpp.s
-.PHONY : src/coders/basic/decoder_basic.cpp.s
 
 src/coders/cols/coder_cols.o: src/coders/cols/coder_cols.cpp.o
 
@@ -2463,18 +2463,18 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... src/coders/base/coder_common.o"
+	@echo "... src/coders/base/coder_common.i"
+	@echo "... src/coders/base/coder_common.s"
+	@echo "... src/coders/base/decoder_common.o"
+	@echo "... src/coders/base/decoder_common.i"
+	@echo "... src/coders/base/decoder_common.s"
 	@echo "... src/coders/base/coder_base.o"
 	@echo "... src/coders/base/coder_base.i"
 	@echo "... src/coders/base/coder_base.s"
 	@echo "... src/coders/base/decoder_base.o"
 	@echo "... src/coders/base/decoder_base.i"
 	@echo "... src/coders/base/decoder_base.s"
-	@echo "... src/coders/basic/coder_basic.o"
-	@echo "... src/coders/basic/coder_basic.i"
-	@echo "... src/coders/basic/coder_basic.s"
-	@echo "... src/coders/basic/decoder_basic.o"
-	@echo "... src/coders/basic/decoder_basic.i"
-	@echo "... src/coders/basic/decoder_basic.s"
 	@echo "... src/coders/cols/coder_cols.o"
 	@echo "... src/coders/cols/coder_cols.i"
 	@echo "... src/coders/cols/coder_cols.s"

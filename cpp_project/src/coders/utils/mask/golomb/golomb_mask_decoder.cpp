@@ -6,7 +6,7 @@
 #include "assert.h"
 #include "golomb_decoder.h"
 
-Mask* GolombMaskDecoder::decode(DecoderBase* decoder){
+Mask* GolombMaskDecoder::decode(DecoderCommon* decoder){
     Mask* mask = new Mask();
 
     bool single_burst = decoder->decodeBool();

@@ -22,6 +22,14 @@ public:
         file_filename = file_filename_;
         full_path = file_path + '/' + file_filename;
     }
+
+    Path(std::string full_path_){
+        // SOURCE: http://www.cplusplus.com/reference/string/string/find_last_of/
+        std::size_t found = full_path_.find_last_of("/\\");
+        file_path = full_path_.substr(0, found);
+        file_filename = full_path_.substr(found + 1);
+        full_path = file_path + '/' + file_filename;
+    }
 };
 
 #endif //CPP_PROJECT_PATH_H

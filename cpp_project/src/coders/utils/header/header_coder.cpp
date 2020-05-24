@@ -16,10 +16,10 @@ HeaderCoder::HeaderCoder(CSVReader* input_csv_, BitStreamWriter* output_file_){
     output_file = output_file_;
 }
 
-HeaderCoder::HeaderCoder(CSVReader* input_csv_, CoderBase* coder_base_){
+HeaderCoder::HeaderCoder(CSVReader* input_csv_, CoderCommon* coder_common_){
     test_mode = false;
     input_csv = input_csv_;
-    coder_base = coder_base_;
+    coder_common = coder_common_;
 }
 
 void HeaderCoder::codeHeader(Dataset* dataset){
@@ -42,7 +42,7 @@ std::string HeaderCoder::codeDatasetName(DatasetUtils & dataset_utils){
     int dataset_int = dataset_utils.codeDatasetName(dataset_name);
 
     // 4 bits for the dataset name
-    test_mode ? output_file->pushInt(dataset_int, 4) : coder_base->codeInt(dataset_int, 4);
+    test_mode ? output_file->pushInt(dataset_int, 4) : coder_common->codeInt(dataset_int, 4);
 
     return dataset_name;
 }
@@ -57,7 +57,7 @@ void HeaderCoder::codeTimeUnit(DatasetUtils & dataset_utils){
     int time_unit_int = dataset_utils.codeTimeUnit(time_unit_name);
 
     // 4 bits for the time unit
-    test_mode ? output_file->pushInt(time_unit_int, 4) : coder_base->codeInt(time_unit_int, 4);
+    test_mode ? output_file->pushInt(time_unit_int, 4) : coder_common->codeInt(time_unit_int, 4);
 }
 
 void HeaderCoder::codeFirstTimestamp(){
@@ -69,7 +69,7 @@ void HeaderCoder::codeFirstTimestamp(){
     long int seconds = codeTimestamp(timestamp_str);
 
     // 32 bits for the timestamp
-    test_mode ? output_file->pushInt(seconds, 32) : coder_base->codeInt(seconds, 32);
+    test_mode ? output_file->pushInt(seconds, 32) : coder_common->codeInt(seconds, 32);
 }
 
 long int HeaderCoder::codeTimestamp(std::string timestamp_str){
@@ -97,14 +97,14 @@ int HeaderCoder::codeColumnNames(){
         output_file->pushBits(0, zeros_count);
     }
     else {
-        coder_base->codeBits(1, number_of_chars);
-        coder_base->codeBits(0, zeros_count);
+        coder_common->codeBits(1, number_of_chars);
+        coder_common->codeBits(0, zeros_count);
     }
     // code the chars (each char uses 1 byte)
     for(int i=0; i < number_of_chars; i++) {
         char character = column_names_str[i];
         int char_as_int = Conversor::charToInt(character);
-        test_mode ? output_file->pushInt(char_as_int, 8) : coder_base->codeInt(char_as_int, 8);
+        test_mode ? output_file->pushInt(char_as_int, 8) : coder_common->codeInt(char_as_int, 8);
     }
     return data_columns_count;
 }

@@ -5,15 +5,15 @@
 #include "constants.h"
 
 #if MASK_MODE == 3
-#include "coder_base.h"
+#include "coder_common.h"
 
 class CoderOutput {
 
 private:
-    CoderBase* coder;
+    CoderCommon* coder;
 
 public:
-    CoderOutput(CoderBase* coder_);
+    CoderOutput(CoderCommon* coder_);
     void put_bit(bool bit);
     void finishCoding(bool bit);
 };

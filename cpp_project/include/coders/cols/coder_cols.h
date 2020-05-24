@@ -2,10 +2,10 @@
 #ifndef CPP_PROJECT_CODER_COLS_H
 #define CPP_PROJECT_CODER_COLS_H
 
-#include "coder_base.h"
+#include "coder_common.h"
 #include "dataset.h"
 
-class CoderCols: public CoderBase {
+class CoderCols: public CoderCommon {
 
 private:
     void codeDataRows() override;
@@ -31,7 +31,7 @@ protected:
     void codeDataColumn();
 
 public:
-    using CoderBase::CoderBase;
+    using CoderCommon::CoderCommon;
 };
 
 #endif //CPP_PROJECT_CODER_COLS_H

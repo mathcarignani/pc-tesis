@@ -110,7 +110,7 @@ def compare_results(folder):
         results_line = results.read_line()
 
         coder_name = original_line[3]
-        if len(coder_name) > 0 and coder_name in ["Coder", "CoderBasic"]:
+        if len(coder_name) > 0 and coder_name in ["Coder", "CoderBase"]:
             assert(original_line == results_line)
             csv_writer.write_row(parse_line(original_line))
         else:
@@ -193,7 +193,7 @@ def compare_pca_results():
         results_line = results.read_line()
 
         coder_name = original_line[3]
-        if coder_name in ["Coder", "CoderBasic"]:
+        if coder_name in ["Coder", "CoderBase"]:
             # assert(original_line == results_line)
             csv_writer.write_row(parse_line(original_line))
         else:

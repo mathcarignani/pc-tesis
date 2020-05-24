@@ -1,6 +1,7 @@
 import sys
 sys.path.append('.')
 
+import numpy as np
 from scripts.informe.results_parsing.results_reader import ResultsReader
 from scripts.informe.results_parsing.results_to_dataframe import ResultsToDataframe
 from scripts.compress.experiments_utils import ExperimentsUtils
@@ -12,11 +13,9 @@ from scripts.informe.data_analysis.process_results.writer_latex import WriterLat
 from scripts.informe.math_utils import MathUtils
 
 
-#
-# This script does the same as avances11/process_results.py but using pandas data handling.
-#
 class ProcessResults(object):
-    CODERS_ARRAY = ['CoderPCA', 'CoderAPCA', 'CoderCA', 'CoderPWLH', 'CoderPWLHInt', 'CoderFR', 'CoderSF',
+    CODERS_ARRAY = ['CoderBase',
+                    'CoderPCA', 'CoderAPCA', 'CoderCA', 'CoderPWLH', 'CoderPWLHInt', 'CoderFR', 'CoderSF',
                     # 'CoderGAMPS', => ignore this coder
                     'CoderGAMPSLimit']
     MM = 3  # MASK MODE
@@ -29,6 +28,8 @@ class ProcessResults(object):
     # mode=3  => only consider the PCA algorithm
     # mode=4  => only consider the APCA algorithm
     # mode=5  => PCA vs APCA
+    # mode=61 => RD(Best, CoderPWLHInt)
+    # mode=62 => RD(Best, CoderAPCA)
     #
     def __init__(self, global_mode, path, mode):
         # set script settings
@@ -37,7 +38,7 @@ class ProcessResults(object):
         self.mode = mode
 
         # set other instances
-        key = 'global' if self.global_mode else 'raw_basic'
+        key = 'global' if self.global_mode else 'raw_base'
         self.results_reader = ResultsReader(key, ProcessResults.MM)
         self.df = ResultsToDataframe(self.results_reader).create_full_df()
         self.threshold_compare = ThresholdCompare(ResultsReader('raw', ProcessResults.MM))
@@ -46,16 +47,12 @@ class ProcessResults(object):
         self.__write_headers()
         self.__datasets_iteration()
         self.csv_writer_latex.print_end()
+        self.csv_writer_1.show_data()
 
     def __write_headers(self):
         extra_str = 'global' if self.global_mode else 'local'
-        self.csv_writer_1 = Writer1.filename(self.path, extra_str)
-        self.csv_writer_1.write_row(Writer1.first_row())
-
-        self.csv_writer_2 = Writer2.filename(self.path, extra_str)
-        self.csv_writer_2.write_row(Writer2.first_row())
-        self.csv_writer_2.write_row(Writer2.second_row())
-
+        self.csv_writer_1 = Writer1(self.path, extra_str)
+        self.csv_writer_2 = Writer2(self.path, extra_str)
         self.csv_writer_latex = WriterLatex(self.path, extra_str, self.mode)
 
     def __datasets_iteration(self):
@@ -75,6 +72,9 @@ class ProcessResults(object):
     def __columns_iteration(self):
         self.panda_utils = PandasUtils(self.dataset_name, self.filename, self.df, ProcessResults.MM)
         for self.col_index in range(1, ExperimentsUtils.get_dataset_data_columns_count(self.dataset_name) + 1):
+            # TODO: uncomment to IGNORE SPEED
+            # if self.dataset_name == 'NOAA-SPC-wind' and self.col_index == 3:
+            #     continue
             if self.__local_or_single_file():
                 self.threshold_compare.calculate_matching_thresholds(self.dataset_name, self.filename, self.col_index)
             self.col_name = ExperimentsUtils.COLUMN_INDEXES[self.dataset_name][self.col_index - 1]
@@ -83,10 +83,11 @@ class ProcessResults(object):
             self.__column_results_writer_2()
 
     def __column_results_writer_1(self):
-        self.csv_writer_1.write_row(['', '', self.col_name])
+        self.csv_writer_1.write_col_name(self.col_name)
         for self.coder_name in self.__coders_array():
             self._print(self.coder_name)
             self.__coder_results()
+        self.csv_writer_1.write_data_rows()
 
     def __coders_array(self):
         if self.mode == 3:
@@ -99,24 +100,25 @@ class ProcessResults(object):
     # Get the best Window for each <Coder, Column, Threshold> combination
     #
     def __coder_results(self):
-        windows, percentages = [], []
-        previous_window, previous_percentage = None, None
+        windows, percentages, total_bits_list = [], [], []
+        previous_window, previous_percentage, previous_total_bits = None, None, None
         for threshold in ExperimentsUtils.THRESHOLDS:
             row_df = self.panda_utils.min_value_for_threshold(self.coder_name, self.col_index, threshold)
-            window, percentage, _ = ProcessResults.get_values(row_df, self.col_index)
+            window, percentage, _, total_bits = ProcessResults.get_values(row_df, self.col_index)
+            new_window, new_percentage, new_total_bits = window, percentage, total_bits
 
-            new_window, new_percentage = window, percentage
             if self.__same_result(threshold):
-                assert(threshold > 0); assert(window == previous_window); assert(percentage == previous_percentage)
+                assert(threshold > 0); assert(window == previous_window)
+                assert(percentage == previous_percentage); assert(total_bits == previous_total_bits)
                 # TODO: uncomment to show blank cells for a repeated experiment
-                # new_window, new_percentage = '=', '='
-            elif self.coder_name == 'CoderSF':
-                new_window = ''  # CoderSF this coder doesn't have a window param
+                # new_window, new_percentage, new_total_bits = '=', '=', '=
+            elif self.coder_name in ['CoderBase', 'CoderSF']:
+                new_window = ''  # these coders don't have a window param
 
-            windows.append(new_window); percentages.append(new_percentage)
-            previous_window, previous_percentage = window, percentage
+            windows.append(new_window); percentages.append(new_percentage); total_bits_list.append(new_total_bits)
+            previous_window, previous_percentage, previous_total_bits = window, percentage, total_bits
 
-        self.csv_writer_1.write_row(['', '', '', self.coder_name] + windows + [''] + percentages)
+        self.csv_writer_1.save_data_row(self.coder_name, windows, percentages, total_bits_list)
 
     #
     # Get the best <Coder, Window> combination for each <Column, Threshold> combination
@@ -132,26 +134,36 @@ class ProcessResults(object):
                 relative_diff, coder_name = ProcessResults.calculate_relative_diff(row_df_pca, row_df_apca, self.col_index)
                 window = relative_diff
                 row_df = row_df_pca if coder_name == "PCA" else row_df_apca
-                _, percentage, _ = ProcessResults.get_values(row_df, self.col_index)
+                _, percentage, _, _ = ProcessResults.get_values(row_df, self.col_index)
             elif self.mode == 12: # second best algorithm
                 row_df = self.panda_utils.min_value_for_threshold(coder, self.col_index, threshold, 2)
-                window, percentage, coder_name = ProcessResults.get_values(row_df, self.col_index)
+                window, percentage, coder_name, _ = ProcessResults.get_values(row_df, self.col_index)
                 coder_name = coder_name.replace("Coder", "")
 
             else: # best algorithm
                 row_df = self.panda_utils.min_value_for_threshold(coder, self.col_index, threshold)
-                window, percentage, coder_name = ProcessResults.get_values(row_df, self.col_index)
+                window, percentage, coder_name, _ = ProcessResults.get_values(row_df, self.col_index)
                 coder_name = coder_name.replace("Coder", "")
 
-                if self.__same_result(threshold):
-                    assert(threshold > 0); assert(coder_name == previous_coder); assert(window == previous_window);
-                    assert(percentage == previous_percentage)
-                    # TODO: uncomment to show blank cells for a repeated experiment
-                    # new_coder, new_window, new_percentage = '=', '=', '='
+                # if self.__same_result(threshold):
+                #     assert(threshold > 0); assert(coder_name == previous_coder); assert(window == previous_window);
+                #     assert(percentage == previous_percentage)
+                #     # TODO: uncomment to show blank cells for a repeated experiment
+                #     # new_coder, new_window, new_percentage = '=', '=', '='
+
+                if self.mode in [61, 62, 63]:
+                    compare_coder = "CoderPWLHInt" if self.mode == 61 else ("CoderAPCA" if self.mode == 62 else "CoderPCA")
+                    row_df_compare_coder = self.panda_utils.min_value_for_threshold(compare_coder, self.col_index, threshold)
+                    _, percentage_compare, _, _ = ProcessResults.get_values(row_df_compare_coder, self.col_index)
+                    relative_diff = ProcessResults.calculate_RD(row_df, row_df_compare_coder, self.col_index)
+
+                    percentage = percentage_compare
+                    window = relative_diff
 
             new_coder, new_window, new_percentage = coder_name, window, percentage
             threshold_results += [new_coder, new_window, new_percentage]
             previous_coder, previous_window, previous_percentage = coder_name, window, percentage
+
         self.csv_writer_2.write_row(threshold_results)
         self.csv_writer_latex.set_threshold_results(threshold_results)
 
@@ -163,16 +175,14 @@ class ProcessResults(object):
         return None
 
     def __set_dataset(self, dataset_name):
-        self.__write_two_files([dataset_name])
+        self.csv_writer_1.write_dataset_name(dataset_name)
+        self.csv_writer_2.write_dataset_name(dataset_name)
         self.csv_writer_latex.set_dataset(dataset_name)
 
     def __set_filename(self, filename):
-        self.__write_two_files(['', filename])
+        self.csv_writer_1.write_filename(filename)
+        self.csv_writer_2.write_filename(filename)
         self.csv_writer_latex.set_filename(filename)
-
-    def __write_two_files(self, row):
-        self.csv_writer_1.write_row(row)
-        self.csv_writer_2.write_row(row)
 
     def __local_or_single_file(self):
         condition1 = not self.global_mode
@@ -191,10 +201,11 @@ class ProcessResults(object):
 
     @staticmethod
     def get_values(row_df, col_index):
-        window = int(row_df['window'])
+        window = None if np.isnan(row_df['window']) else int(row_df['window'])
         percentage = ProcessResults.parse_percentage(row_df, col_index)
+        total_bits = ProcessResults.parse_total_bits(row_df, col_index)
         coder_name = row_df['coder']
-        return window, percentage, coder_name
+        return window, percentage, coder_name, total_bits
 
     @staticmethod
     def calculate_relative_diff(row_df_pca, row_df_apca, col_index):
@@ -205,9 +216,23 @@ class ProcessResults(object):
         return round(relative_diff, 2), coder_name
 
     @staticmethod
+    def calculate_RD(row_df_best, row_df_compare, col_index):
+        data_column_key = ResultsToDataframe.data_column_key(col_index)
+        size_best, size_compare = row_df_best[data_column_key], row_df_compare[data_column_key]
+        relative_diff = MathUtils.relative_difference(size_compare, size_best)
+        return round(relative_diff, 2)
+
+    @staticmethod
     def parse_percentage(row_df, col_index):
         percentage_key = ResultsToDataframe.percentage_column_key(col_index)
-        return round(row_df[percentage_key], 2)
+        percentage = round(row_df[percentage_key]/100, 2)
+        return percentage
+
+    @staticmethod
+    def parse_total_bits(row_df, col_index):
+        total_bits_key = ResultsToDataframe.data_column_key(col_index)
+        total_bits = row_df[total_bits_key]
+        return int(total_bits)
 
     @staticmethod
     def dataset_filenames(dataset_name, global_mode):

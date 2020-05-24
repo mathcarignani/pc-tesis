@@ -2,7 +2,7 @@
 #ifndef CPP_PROJECT_CODER_GAMPS_H
 #define CPP_PROJECT_CODER_GAMPS_H
 
-#include "coder_base.h"
+#include "coder_common.h"
 #include "apca_window.h"
 #include "mapping_table.h"
 
@@ -11,7 +11,7 @@
 #include "GAMPS.h"
 #include "mask.h"
 
-class CoderGAMPS: public CoderBase {
+class CoderGAMPS: public CoderCommon {
 
 private:
     std::vector<int> error_thresholds_vector;
@@ -57,7 +57,7 @@ private:
     void codeWindow(APCAWindow* window);
 
 public:
-    using CoderBase::CoderBase;
+    using CoderCommon::CoderCommon;
     void setCoderParams(int window_size_, std::vector<int> error_thresholds_vector_, bool limit_mode_);
 
 };

@@ -2,11 +2,11 @@
 #ifndef CPP_PROJECT_DECODER_GAMPS_H
 #define CPP_PROJECT_DECODER_GAMPS_H
 
-#include "decoder_base.h"
+#include "decoder_common.h"
 #include "mapping_table.h"
 #include "GAMPSOutput.h"
 
-class DecoderGAMPS: public DecoderBase {
+class DecoderGAMPS: public DecoderCommon {
 
 private:
     bool limit_mode;
@@ -37,7 +37,7 @@ private:
     void decodeConstantWindow(std::vector<double> & column, int window_size);
 
 public:
-    using DecoderBase::DecoderBase;
+    using DecoderCommon::DecoderCommon;
     void setLimitMode(bool integer_mode_);
 
 };

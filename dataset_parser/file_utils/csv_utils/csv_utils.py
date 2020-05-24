@@ -1,5 +1,7 @@
+import sys
+sys.path.append('.')
 
-from csv_reader import CSVReader
+from file_utils.csv_utils.csv_reader import CSVReader
 
 
 class CSVUtils:

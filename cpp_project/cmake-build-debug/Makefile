@@ -501,60 +501,6 @@ src/coders/base/decoder_base.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/base/decoder_base.cpp.s
 .PHONY : src/coders/base/decoder_base.cpp.s
 
-src/coders/basic/coder_basic.o: src/coders/basic/coder_basic.cpp.o
-
-.PHONY : src/coders/basic/coder_basic.o
-
-# target to build an object file
-src/coders/basic/coder_basic.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/basic/coder_basic.cpp.o
-.PHONY : src/coders/basic/coder_basic.cpp.o
-
-src/coders/basic/coder_basic.i: src/coders/basic/coder_basic.cpp.i
-
-.PHONY : src/coders/basic/coder_basic.i
-
-# target to preprocess a source file
-src/coders/basic/coder_basic.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/basic/coder_basic.cpp.i
-.PHONY : src/coders/basic/coder_basic.cpp.i
-
-src/coders/basic/coder_basic.s: src/coders/basic/coder_basic.cpp.s
-
-.PHONY : src/coders/basic/coder_basic.s
-
-# target to generate assembly for a file
-src/coders/basic/coder_basic.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/basic/coder_basic.cpp.s
-.PHONY : src/coders/basic/coder_basic.cpp.s
-
-src/coders/basic/decoder_basic.o: src/coders/basic/decoder_basic.cpp.o
-
-.PHONY : src/coders/basic/decoder_basic.o
-
-# target to build an object file
-src/coders/basic/decoder_basic.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/basic/decoder_basic.cpp.o
-.PHONY : src/coders/basic/decoder_basic.cpp.o
-
-src/coders/basic/decoder_basic.i: src/coders/basic/decoder_basic.cpp.i
-
-.PHONY : src/coders/basic/decoder_basic.i
-
-# target to preprocess a source file
-src/coders/basic/decoder_basic.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/basic/decoder_basic.cpp.i
-.PHONY : src/coders/basic/decoder_basic.cpp.i
-
-src/coders/basic/decoder_basic.s: src/coders/basic/decoder_basic.cpp.s
-
-.PHONY : src/coders/basic/decoder_basic.s
-
-# target to generate assembly for a file
-src/coders/basic/decoder_basic.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/basic/decoder_basic.cpp.s
-.PHONY : src/coders/basic/decoder_basic.cpp.s
-
 src/coders/cols/coder_cols.o: src/coders/cols/coder_cols.cpp.o
 
 .PHONY : src/coders/cols/coder_cols.o
@@ -608,6 +554,60 @@ src/coders/cols/decoder_cols.s: src/coders/cols/decoder_cols.cpp.s
 src/coders/cols/decoder_cols.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/cols/decoder_cols.cpp.s
 .PHONY : src/coders/cols/decoder_cols.cpp.s
+
+src/coders/common/coder_common.o: src/coders/common/coder_common.cpp.o
+
+.PHONY : src/coders/common/coder_common.o
+
+# target to build an object file
+src/coders/common/coder_common.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/common/coder_common.cpp.o
+.PHONY : src/coders/common/coder_common.cpp.o
+
+src/coders/common/coder_common.i: src/coders/common/coder_common.cpp.i
+
+.PHONY : src/coders/common/coder_common.i
+
+# target to preprocess a source file
+src/coders/common/coder_common.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/common/coder_common.cpp.i
+.PHONY : src/coders/common/coder_common.cpp.i
+
+src/coders/common/coder_common.s: src/coders/common/coder_common.cpp.s
+
+.PHONY : src/coders/common/coder_common.s
+
+# target to generate assembly for a file
+src/coders/common/coder_common.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/common/coder_common.cpp.s
+.PHONY : src/coders/common/coder_common.cpp.s
+
+src/coders/common/decoder_common.o: src/coders/common/decoder_common.cpp.o
+
+.PHONY : src/coders/common/decoder_common.o
+
+# target to build an object file
+src/coders/common/decoder_common.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/common/decoder_common.cpp.o
+.PHONY : src/coders/common/decoder_common.cpp.o
+
+src/coders/common/decoder_common.i: src/coders/common/decoder_common.cpp.i
+
+.PHONY : src/coders/common/decoder_common.i
+
+# target to preprocess a source file
+src/coders/common/decoder_common.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/common/decoder_common.cpp.i
+.PHONY : src/coders/common/decoder_common.cpp.i
+
+src/coders/common/decoder_common.s: src/coders/common/decoder_common.cpp.s
+
+.PHONY : src/coders/common/decoder_common.s
+
+# target to generate assembly for a file
+src/coders/common/decoder_common.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/common/decoder_common.cpp.s
+.PHONY : src/coders/common/decoder_common.cpp.s
 
 src/coders/constant/apca/apca_window.o: src/coders/constant/apca/apca_window.cpp.o
 
@@ -2712,18 +2712,18 @@ help:
 	@echo "... src/coders/base/decoder_base.o"
 	@echo "... src/coders/base/decoder_base.i"
 	@echo "... src/coders/base/decoder_base.s"
-	@echo "... src/coders/basic/coder_basic.o"
-	@echo "... src/coders/basic/coder_basic.i"
-	@echo "... src/coders/basic/coder_basic.s"
-	@echo "... src/coders/basic/decoder_basic.o"
-	@echo "... src/coders/basic/decoder_basic.i"
-	@echo "... src/coders/basic/decoder_basic.s"
 	@echo "... src/coders/cols/coder_cols.o"
 	@echo "... src/coders/cols/coder_cols.i"
 	@echo "... src/coders/cols/coder_cols.s"
 	@echo "... src/coders/cols/decoder_cols.o"
 	@echo "... src/coders/cols/decoder_cols.i"
 	@echo "... src/coders/cols/decoder_cols.s"
+	@echo "... src/coders/common/coder_common.o"
+	@echo "... src/coders/common/coder_common.i"
+	@echo "... src/coders/common/coder_common.s"
+	@echo "... src/coders/common/decoder_common.o"
+	@echo "... src/coders/common/decoder_common.i"
+	@echo "... src/coders/common/decoder_common.s"
 	@echo "... src/coders/constant/apca/apca_window.o"
 	@echo "... src/coders/constant/apca/apca_window.i"
 	@echo "... src/coders/constant/apca/apca_window.s"

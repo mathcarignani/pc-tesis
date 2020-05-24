@@ -9,7 +9,8 @@ from scripts.avances.avances18.globalize_utils import GlobalizeUtils
 from scripts.informe.plot.csv_constants import CSVConstants
 from scripts.informe.results_parsing.results_reader import ResultsReader
 
-
+#
+# TODO: rewrite this script using pandas and check that both outputs match.
 #
 # Converts the results in "complete-mask-mode=N.csv" files so that the results of multiple files are merged
 #
@@ -22,10 +23,10 @@ class GlobalizeResults(object):
 
         self.results_reader_x = ResultsReader('raw', value)
 
-        # The CoderBasic lines have the same values (but not exactly the same format, i.e. "100" vs. "100.0")
-        # in these two files, so we can use either one to get the CoderBasic MM=0 values:
-        self.results_reader_coder_basic = ResultsReader('raw', 0)
-        # self.results_reader_coder_basic = ResultsReader('basic', 3)
+        # The CoderBase lines have the same values (but not exactly the same format, i.e. "100" vs. "100.0")
+        # in these two files, so we can use either one to get the CoderBase MM=0 values:
+        self.results_reader_coder_base = ResultsReader('raw', 0)
+        # self.results_reader_coder_base = ResultsReader('base', 3)
 
         self.output_file = CSVWriter(output_path, output_file)
         self.output_file.write_row(self.results_reader_x.read_line_no_count())
@@ -36,11 +37,11 @@ class GlobalizeResults(object):
     def __globalize_dataset(self, dataset_name):
         filenames = ExperimentsUtils.dataset_csv_filenames(dataset_name)
         if len(filenames) == 1:
-            print dataset_name + " - single file"
+            print(dataset_name + " - single file")
             self.multiple_files = False
             self.__merge_results(dataset_name, filenames)
         else:
-            print dataset_name + " - multiple files"
+            print(dataset_name + " - multiple files")
             self.multiple_files = True
             self.__merge_results(dataset_name, filenames)
 
@@ -48,17 +49,17 @@ class GlobalizeResults(object):
     # globalize results
     #
     def __merge_results(self, dataset_name, filenames):
-        # MM=0 => CoderBasic
-        coder_basic_line = self.__get_coder_basic_line(dataset_name, filenames)
-        coder_basic_line_with_percentages = ResultsReader.set_percentages(coder_basic_line, coder_basic_line)
-        self.output_file.write_row(coder_basic_line_with_percentages)
+        # MM=0 => CoderBase
+        coder_base_line = self.__get_coder_base_line(dataset_name, filenames)
+        coder_base_line_with_percentages = ResultsReader.set_percentages(coder_base_line, coder_base_line)
+        self.output_file.write_row(coder_base_line_with_percentages)
 
-        # MM=0or3 => CoderBasic, CoderPCA, CoderAPCA, etc.
+        # MM=0or3 => CoderBase, CoderPCA, CoderAPCA, etc.
         other_coders_lines = self.__get_other_coders_lines(dataset_name, filenames)
-        GlobalizeUtils.write_other_coders_lines(self.output_file, coder_basic_line, other_coders_lines)
+        GlobalizeUtils.write_other_coders_lines(self.output_file, coder_base_line, other_coders_lines)
 
-    def __get_coder_basic_line(self, dataset_name, filenames):
-        self.results_reader = self.results_reader_coder_basic
+    def __get_coder_base_line(self, dataset_name, filenames):
+        self.results_reader = self.results_reader_coder_base
         results_array_0 = self.__results_array(dataset_name, filenames, CSVConstants.INDEX_ALGORITHM)
         assert(len(results_array_0[0]) == 1)
         return self.__mask_results_lines(results_array_0)[0]
@@ -112,12 +113,12 @@ def compare_files(output_path, output_file):
 
 
 def run(value):
-    print "run(" + str(value) + ")"
+    print("run(" + str(value) + ")")
     output_path = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-18"
     output_file = "complete-mask-mode=" + str(value) + "-global.csv"
     GlobalizeResults(value, output_path, output_file)
     compare_files(output_path, output_file)
 
 
-run(0)
-run(3)
+# run(0)
+# run(3)

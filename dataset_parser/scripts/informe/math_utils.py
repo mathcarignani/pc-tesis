@@ -28,11 +28,11 @@ class MathUtils(object):
     def int_to_str(value):
         return "{:,}".format(value)
 
-    @staticmethod
-    def relative_diff(big, small):
-        val = (float(big) / float(small))  # * 100
-        val = "%0.2f" % val  # + "%"
-        return val
+    # @staticmethod
+    # def relative_diff(big, small):
+    #     val = (float(big) / float(small))  # * 100
+    #     val = "%0.2f" % val  # + "%"
+    #     return val
 
     #
     # This is the equation I have defined in the pdf. TODO: always use this equation

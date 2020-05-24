@@ -26,7 +26,7 @@ class CompressionRatioPlot(CommonPlot):
         self.options = options
         self.values0 = []
         self.values3 = []
-        self.basic_value0 = None
+        self.base_value0 = None
         super(CompressionRatioPlot, self).__init__()
 
     def close(self):
@@ -72,10 +72,23 @@ class CompressionRatioPlot(CommonPlot):
 
     def _labels(self, ax, options):
         CommonPlot.label_title(ax, options, self.algorithm)
-        tick_labels = [format(label, ',.0f') for label in ax.get_yticks()]
+        tick_labels = self.ytick_labels(ax)
         CommonPlot.label_y(ax, options, PlotConstants.COMPRESSION_RATIO, tick_labels)
         CommonPlot.label_x(ax, options, PlotConstants.ERROR_THRE, ExperimentsUtils.THRESHOLDS)
         PlotUtils.hide_ticks(ax)
+
+    @classmethod
+    def ytick_labels(cls, ax):
+        tick_labels = [format(label, ',.0f') for label in ax.get_yticks()]
+        new_tick_labels = []
+        for tick_label in tick_labels:
+            if tick_label == '0':
+                new_tick_label = '0'
+            else:
+                tick_label = tick_label.replace(",", "")
+                new_tick_label = str(float(tick_label) / 100) # '20' => '0.2'
+            new_tick_labels.append(new_tick_label)
+        return new_tick_labels
 
     def print_values(self):
         print(self.algorithm + " Compression Ratio")

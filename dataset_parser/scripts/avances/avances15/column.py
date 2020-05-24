@@ -22,9 +22,9 @@ class Column(object):
 
     def add_values(self, best_values):
         value0, value3 = best_values['value0']['min'], best_values['value3']['min']
-        basic_value0 = best_values['basic_value0']
-        self.total_bits_plot.add_values(value0, value3, basic_value0)
-        self.compression_ratio_plot.add_values(value0, value3, basic_value0)
+        base_value0 = best_values['base_value0']
+        self.total_bits_plot.add_values(value0, value3, base_value0)
+        self.compression_ratio_plot.add_values(value0, value3, base_value0)
         self.relative_difference_plot.add_value(value0, value3)
         self.windows_plot.add_values(best_values['value0']['window'], best_values['value3']['window'])
 

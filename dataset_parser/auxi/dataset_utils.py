@@ -2,7 +2,7 @@ import sys
 sys.path.append('../')
 
 from auxi.python_utils import inverse_dict
-from auxi.os_utils import git_path
+from auxi.os_utils import OSUtils
 from file_utils.text_utils.text_file_reader import TextFileReader
 
 
@@ -54,7 +54,7 @@ class DatasetUtils:
     #
     # path and filename to the CONSTANTS file
     #
-    PATH = git_path() + "/constants"
+    PATH = OSUtils.git_path() + "/constants"
     FILENAME = "CONSTANTS"  # "CONSTANTS"
 
     #

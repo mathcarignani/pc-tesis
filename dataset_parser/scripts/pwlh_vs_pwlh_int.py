@@ -1,12 +1,12 @@
 import sys
 sys.path.append('.')
 
-from auxi.os_utils import python_project_path
+from auxi.os_utils import OSUtils
 from file_utils.csv_utils.csv_reader import CSVReader
 from file_utils.csv_utils.csv_writer import CSVWriter
 
-mask_true_path = python_project_path() + "/scripts/compress/output/pwlh-vs-pwlhint-mask-true"
-mask_false_path = python_project_path() + "/scripts/compress/output/pwlh-vs-pwlhint-mask-false"
+mask_true_path = OSUtils.python_project_path() + "/scripts/compress/output/pwlh-vs-pwlhint-mask-true"
+mask_false_path = OSUtils.python_project_path() + "/scripts/compress/output/pwlh-vs-pwlhint-mask-false"
 path = mask_true_path
 
 pwlh_filename = "results-pwlh.csv"
@@ -57,8 +57,8 @@ def compare_lines_(line_pwlh, line_pwlh_int, line_count):
     # leave first 7 entries unchanged
     line = line_pwlh[:7]
 
-    # ['IRKIS', 'vwc_1202.dat.csv', '26.305', 'CoderBasic', '', '', '']
-    if line[3] == "CoderBasic":
+    # ['IRKIS', 'vwc_1202.dat.csv', '26.305', 'CoderBase', '', '', '']
+    if line[3] == "CoderBase":
         assert(line_pwlh == line_pwlh_int)
         del line[3]
         # ['IRKIS', 'vwc_1202.dat.csv', '26.305', '', '', '']

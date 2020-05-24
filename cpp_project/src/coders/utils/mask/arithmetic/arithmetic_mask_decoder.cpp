@@ -8,7 +8,7 @@
 #include "decoder_output.h"
 #include "modelKT.h"
 
-ArithmeticMaskDecoder::ArithmeticMaskDecoder(DecoderBase* decoder_, int data_columns_count_){
+ArithmeticMaskDecoder::ArithmeticMaskDecoder(DecoderCommon* decoder_, int data_columns_count_){
     decoder = decoder_;
     data_columns_count = data_columns_count_;
 }

@@ -1,0 +1,195 @@
+
+
+vwc_1202.dat.csv
+
+
+LOSSLESS
+
+CoderBase
+TOTAL  = 3078503
+header = 818
+mask   = 0,0
+data   = 447185,2630500
+CoderPCA
+TOTAL  = 1711353
+header = 818
+mask   = 0,0
+data   = 447185,1263350
+CoderAPCA
+TOTAL  = 1453436
+header = 818
+mask   = 0,0
+data   = 447185,1005433
+CoderPWLHInt
+TOTAL  = 1778631
+header = 818
+mask   = 0,0
+data   = 447185,1330628
+CoderPWLH
+TOTAL  = 4251827
+header = 818
+mask   = 0,0
+data   = 447185,3803824
+CoderCA
+TOTAL  = 1844359
+header = 818
+mask   = 0,0
+data   = 447185,1396356
+
+LOSSY
+
+CoderPCA
+TOTAL  = 1045913
+header = 818
+mask   = 0,0
+data   = 447185,597910
+CoderAPCA
+TOTAL  = 1136405
+header = 818
+mask   = 0,0
+data   = 447185,688402
+CoderPWLHInt
+TOTAL  = 1414324
+header = 818
+mask   = 0,0
+data   = 447185,966321
+CoderPWLH
+TOTAL  = 3183272
+header = 818
+mask   = 0,0
+data   = 447185,2735269
+CoderCA
+TOTAL  = 1379141
+header = 818
+mask   = 0,0
+data   = 447185,931138
+
+
+solar-anywhere-2012.csv
+
+
+LOSSLESS
+
+CoderBase
+TOTAL  = 3304821
+header = 2678
+mask   = 0,0,0,0
+data   = 148903,1051080,1051080,1051080
+CoderPCA
+TOTAL  = 2661133
+header = 2678
+mask   = 0,0,0,0
+data   = 148903,847184,815184,847184
+CoderAPCA
+TOTAL  = 2848808
+header = 2678
+mask   = 0,0,0,0
+data   = 148903,915928,872001,909298
+CoderPWLHInt
+TOTAL  = 2946544
+header = 2678
+mask   = 0,0,0,0
+data   = 148903,942078,913323,939562
+CoderPWLH
+TOTAL  = 8291378
+header = 2678
+mask   = 0,0,0,0
+data   = 148903,2743680,2659815,2736302
+CoderCA
+TOTAL  = 3219347
+header = 2678
+mask   = 0,0,0,0
+data   = 148903,1039090,993486,1035190
+
+LOSSY
+
+CoderPCA
+TOTAL  = 2461493
+header = 2678
+mask   = 0,0,0,0
+data   = 148903,774184,743104,792624
+CoderAPCA
+TOTAL  = 2396759
+header = 2678
+mask   = 0,0,0,0
+data   = 148903,772395,709163,763620
+CoderPWLHInt
+TOTAL  = 2754596
+header = 2678
+mask   = 0,0,0,0
+data   = 148903,874276,861869,866870
+CoderPWLH
+TOTAL  = 7222368
+header = 2678
+mask   = 0,0,0,0
+data   = 148903,2327117,2352909,2390761
+CoderCA
+TOTAL  = 2846156
+header = 2678
+mask   = 0,0,0,0
+data   = 148903,897208,885820,911547
+
+
+noaa_spc-hail.csv
+
+
+LOSSLESS
+
+CoderBase
+TOTAL  = 887370
+header = 302
+mask   = 0,0,0,0
+data   = 290003,204708,221767,170590
+CoderPCA
+TOTAL  = 888766
+header = 302
+mask   = 0,0,0,0
+data   = 290003,208120,225179,165162
+CoderAPCA
+TOTAL  = 957996
+header = 302
+mask   = 0,0,0,0
+data   = 290003,251805,270000,145886
+CoderPWLHInt
+TOTAL  = 945487
+header = 302
+mask   = 0,0,0,0
+data   = 290003,231141,248297,175744
+CoderPWLH
+TOTAL  = 1944831
+header = 302
+mask   = 0,0,0,0
+data   = 290003,572081,572323,510122
+CoderCA
+TOTAL  = 1015161
+header = 302
+mask   = 0,0,0,0
+data   = 290003,255705,272864,196287
+
+LOSSY
+
+CoderPCA
+TOTAL  = 743466
+header = 302
+mask   = 0,0,0,0
+data   = 290003,152008,146711,154442
+CoderAPCA
+TOTAL  = 609292
+header = 302
+mask   = 0,0,0,0
+data   = 290003,104310,99952,114725
+CoderPWLHInt
+TOTAL  = 736113
+header = 302
+mask   = 0,0,0,0
+data   = 290003,147243,148914,149651
+CoderPWLH
+TOTAL  = 1428200
+header = 302
+mask   = 0,0,0,0
+data   = 290003,363561,342895,431439
+CoderCA
+TOTAL  = 827086
+header = 302
+mask   = 0,0,0,0
+data   = 290003,178320,176448,182013

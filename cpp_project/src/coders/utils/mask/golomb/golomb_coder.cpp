@@ -6,7 +6,7 @@
 #include <assert.h>
 
 
-GolombCoder::GolombCoder(CoderBase* coder_, int total_data_rows){
+GolombCoder::GolombCoder(CoderCommon* coder_, int total_data_rows){
     coder = coder_;
     int total_no_data_rows = coder->data_rows_count - total_data_rows;
     no_data_majority = total_no_data_rows > total_data_rows;

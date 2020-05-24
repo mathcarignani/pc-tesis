@@ -7,9 +7,10 @@
 // MASK_MODE == 1 => simple coder
 // MASK_MODE == 2 => golomb coder
 // MASK_MODE == 3 => arithmetic coder
-#define MASK_MODE 3
+#define MASK_MODE 0
 #define COUT 1
 #define CHECKS 1
+#define RECORD_TESTS 0 // Set to 1 to set up the tests, then set to 0
 
 #include <string>
 
@@ -23,7 +24,7 @@ public:
     static const int MASK_BITS;
     static const int MASK_MAX_SIZE;
 
-    static const int CODER_BASIC; // 0
+    static const int CODER_BASE; // 0
     static const int CODER_PCA; // 10
     static const int CODER_APCA; // 11
     static const int CODER_PWLH; // 20
@@ -36,6 +37,9 @@ public:
 
     static bool isNoData(std::string csv_value);
     static bool isNoData(double value);
+
+    static bool validMaskMode();
+    static bool checkMaskMode(std::string mask_mode);
 };
 
 #endif //CPP_PROJECT_CONSTANTS_H

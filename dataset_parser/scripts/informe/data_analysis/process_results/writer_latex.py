@@ -77,7 +77,7 @@ class WriterLatex(object):
                 continue
             coder_style = self.coder_style(coder)
             window_value = threshold_results[index_begin + 1]
-            window_x = self.WINDOW_MAP[window_value] if self.mode != 5 else window_value
+            window_x = self.WINDOW_MAP[window_value] if not self.__without_window() else window_value
             cr = threshold_results[index_begin + 2]
             if self.WITH_C:
                 coder_with_style = coder_style + coder
@@ -99,11 +99,11 @@ class WriterLatex(object):
         self.file.write_line(line)
 
     def __print_start(self):
-        self.__write_line(r"\begin{sidewaystable}[ht]")
+        self.__write_line(r"\begin{table}")
         self.__print_commands()
         self.__write_line("\centering")
         self.__write_line(self.__legend_for_mode())
-        self.__write_line(r"\begin{tabular}{| l | l " + (self.__c_list_for_mode() * self.THRE_COUNT) + "}")
+        self.__write_line(r"\hspace*{-2.1cm}\begin{tabular}{| l | l " + (self.__c_list_for_mode() * self.THRE_COUNT) + "}")
         self.__write_line("\cline{3-" + str(self.THRE_COUNT * self.__count_for_mode() + 2) + "}")
         self.__write_line(self.threshold_line())
         columns = self.two_columns(True)
@@ -158,11 +158,11 @@ class WriterLatex(object):
         self.__write_line("\end{tabular}")
         self.__write_line("\caption{" + self.__caption_for_mode() + "}")
         self.__write_line("\label{experiments:mask-results-overview" + self.__label_for_mode() + "}")
-        self.__write_line(r"\end{sidewaystable}")
+        self.__write_line(r"\end{table}")
 
     def two_columns(self, header = False, cr = None, w = None):
         if header:
-            if self.mode == 5:
+            if self.__without_window():
                 return r" & {\footnotesize CR} & {\footnotesize RD}"
             else:
                 return r" & {\footnotesize CR} & {\footnotesize w}"
@@ -172,8 +172,12 @@ class WriterLatex(object):
     def __caption_for_mode(self):
         if self.gzip:
             return "\captiontwo"
-        elif self.mode == 5:
-            return "\captionone"
+        elif self.mode == 61:
+            return "CoderPWLHInt vs. BEST"
+        elif self.mode == 62:
+            return "CoderAPCA vs. BEST"
+        elif self.mode == 63:
+            return "CoderPCA vs. BEST"
         else:
             return "\captionone"
 
@@ -198,9 +202,12 @@ class WriterLatex(object):
             return 2
 
     def __legend_for_mode(self):
-        if self.mode == 1:
+        if self.mode in [1, 61, 62, 63]:
             return "\legendsone"
         elif self.mode == 2:
             return "\legendstwo"
         else:
             return "\legendsfive"
+
+    def __without_window(self):
+        return self.mode in [5, 61, 62, 63]

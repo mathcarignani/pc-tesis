@@ -7,15 +7,15 @@
 #if MASK_MODE
 
 #include "mask.h"
-#include "coder_base.h"
+#include "coder_common.h"
 
 class GolombMaskCoder {
 
 private:
-    static int countTotalDataRows(CoderBase* coder, int column_index);
+    static int countTotalDataRows(CoderCommon* coder, int column_index);
 
 public:
-    static int code(CoderBase* coder, int column_index);
+    static int code(CoderCommon* coder, int column_index);
 
 };
 

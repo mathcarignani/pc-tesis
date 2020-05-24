@@ -76,7 +76,7 @@ class Plotter3(object):
     def __generate_best_values(self, plotter2, ws_plot, tb_plot, column_type_i, algo_i, thre_i, mode_str):
         window0, window3 = ws_plot.windows0[thre_i], ws_plot.windows3[thre_i]
         value0, value3 = tb_plot.values0[thre_i], tb_plot.values3[thre_i]
-        basic_value0 = tb_plot.basic_value0
+        base_value0 = tb_plot.base_value0
 
         best_global_window = self.__get_best_global_window(column_type_i, algo_i, thre_i, mode_str)
         window_value = self.__get_window_value(plotter2, algo_i, thre_i, best_global_window, mode_str)
@@ -86,13 +86,13 @@ class Plotter3(object):
             return {
                 'value0': {'min': value0, 'window': window0},
                 'value3': {'min': window_value, 'window': best_global_window},
-                'basic_value0': basic_value0
+                'base_value0': base_value0
             }
         else:  # value3 remains unchanged
             return {
                 'value0': {'min': window_value, 'window': best_global_window},
                 'value3': {'min': value3, 'window': window3},
-                'basic_value0': basic_value0
+                'base_value0': base_value0
             }
 
     @classmethod

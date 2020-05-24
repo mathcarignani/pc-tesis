@@ -49,7 +49,7 @@ class PDFS1(PDFSCommon):
         mode_rr_key, mode_path = ('global', 'global/') if global_mode else ('raw', 'local/')
         self.df_0 = ResultsToDataframe(ResultsReader(mode_rr_key, 0)).create_full_df()
         self.df_3 = ResultsToDataframe(ResultsReader(mode_rr_key, 3)).create_full_df()
-        self.df_3 = PandasMethods.set_coder_basic(self.df_0, self.df_3)
+        self.df_3 = PandasMethods.set_coder_base(self.df_0, self.df_3)
         path += mode_path
 
         self.col_index = None  # iteration variable

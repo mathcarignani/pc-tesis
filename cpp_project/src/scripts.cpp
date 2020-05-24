@@ -2,8 +2,8 @@
 #include "scripts.h"
 
 #include <iostream>
-#include "decoder_base.h"
-#include "coder_basic.h"
+#include "decoder_common.h"
+#include "coder_base.h"
 #include "coder_pca.h"
 #include "coder_apca.h"
 #include "coder_pwlh.h"
@@ -18,15 +18,15 @@
 void Scripts::decode(Path input_path, Path output_path){
     BitStreamReader* bit_stream_reader = new BitStreamReader(input_path);
     CSVWriter* csv_writer = new CSVWriter(output_path);
-    DecoderBase* decoder = DecoderBase::getDecoder(bit_stream_reader, csv_writer);
+    DecoderCommon* decoder = DecoderCommon::getDecoder(bit_stream_reader, csv_writer);
     decoder->decodeFile();
     decoder->close();
 }
 
-Dataset* Scripts::codeBasic(Path input_path, Path output_path){
+Dataset* Scripts::codeBase(Path input_path, Path output_path){
     CSVReader* csv_reader = new CSVReader(input_path);
     BitStreamWriter* bit_stream_writer = new BitStreamWriter(output_path);
-    CoderBasic* coder = new CoderBasic(csv_reader, bit_stream_writer);
+    CoderBase* coder = new CoderBase(csv_reader, bit_stream_writer);
     coder->codeFile();
     coder->printBits();
     coder->close();

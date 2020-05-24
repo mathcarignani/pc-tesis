@@ -36,7 +36,7 @@ class PDFS4(PDFSCommon):
 
         df_0 = ResultsToDataframe(ResultsReader('global', 0)).create_full_df()
         self.df_3 = ResultsToDataframe(ResultsReader('global', 3)).create_full_df()
-        self.df_3 = PandasMethods.set_coder_basic(df_0, self.df_3)
+        self.df_3 = PandasMethods.set_coder_base(df_0, self.df_3)
 
         # iteration variables
         self.col_index = None  # iteration variable

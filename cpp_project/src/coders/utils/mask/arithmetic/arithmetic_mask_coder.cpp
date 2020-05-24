@@ -13,7 +13,7 @@
 #include "decoder_output.h"
 #include "decompressor.h"
 
-ArithmeticMaskCoder::ArithmeticMaskCoder(CoderBase* coder_, int data_columns_count_){
+ArithmeticMaskCoder::ArithmeticMaskCoder(CoderCommon* coder_, int data_columns_count_){
     coder = coder_;
     data_columns_count = data_columns_count_;
 }
