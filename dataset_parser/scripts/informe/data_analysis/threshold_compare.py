@@ -3,6 +3,7 @@ sys.path.append('.')
 
 from scripts.compress.experiments_utils import ExperimentsUtils
 from scripts.informe.plot.csv_constants import CSVConstants
+from pandas_tools.pandas_tools import PandasTools
 
 
 class ThresholdCompare(object):
@@ -78,4 +79,4 @@ class ThresholdCompare(object):
 
     @staticmethod
     def map_value(value):
-        return None if 'N' in value else int(value)
+        return None if PandasTools.NO_DATA in value else int(value)

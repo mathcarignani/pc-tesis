@@ -117,7 +117,7 @@ class Script:
     @classmethod
     def update_min_max_values(cls, min_max_values, values):
         for idx, val in enumerate(values):
-            if val != 'N':
+            if val != PandasTools.NO_DATA:
                 val = float(val)
                 if val > 0:
                     min_index, max_index = idx*2, idx*2 + 1

@@ -8,6 +8,7 @@ from file_utils.csv_utils.csv_reader import CSVReader
 from file_utils.csv_utils.csv_writer import CSVWriter
 from scripts.utils import csv_files_filenames
 from scripts.compress.experiments_utils import ExperimentsUtils
+from pandas_tools.pandas_tools import PandasTools
 
 
 class CalculateSTD:
@@ -29,7 +30,7 @@ class CalculateSTD:
         res = []
         for percentage in percentages:
             div_percentage = percentage / 100
-            row = ['N' if value == 'N' else int(round(value * div_percentage, 0)) for value in stds[1:]]
+            row = [PandasTools.NO_DATA if value == PandasTools.NO_DATA else int(round(value * div_percentage, 0)) for value in stds[1:]]
             row.insert(0, 0)  # the error threshold for the timedelta is always 0
             res.append({'percentage': percentage, 'values': row})
         return res
@@ -44,7 +45,7 @@ class CalculateSTD:
     #     while csv_reader.continue_reading:
     #         line = csv_reader.read_line()
     #         value = line[1]
-    #         if value == "N":
+    #         if value == PandasTools.NO_DATA:
     #             continue
     #         else:
     #             list.append(int(value))
@@ -63,7 +64,7 @@ class CalculateSTD:
         means = [0] * columns_count
         for i, total in enumerate(totals):
             count = float(counts[i])
-            means[i] = 'N' if count == 0 else total / count
+            means[i] = PandasTools.NO_DATA if count == 0 else total / count
         return counts, means
 
     @classmethod
@@ -76,7 +77,7 @@ class CalculateSTD:
         while csv_reader.continue_reading:
             line = csv_reader.read_line()
             for i, item in enumerate(line):
-                if item == 'N':
+                if item == PandasTools.NO_DATA:
                     continue
                 value = int(item)
                 totals[i] += value
@@ -95,7 +96,7 @@ class CalculateSTD:
 
         stds = [0] * columns_count
         for i, summ in enumerate(summs):
-            stds[i] = 'N' if counts[i] == 0 else math.sqrt(summ // counts[i]) # TODO: // in python 2 = / in python 3
+            stds[i] = PandasTools.NO_DATA if counts[i] == 0 else math.sqrt(summ // counts[i]) # TODO: // in python 2 = / in python 3
 
         print('stds', stds)
         return stds
@@ -106,7 +107,7 @@ class CalculateSTD:
         while csv_reader.continue_reading:
             line = csv_reader.read_line()
             for i, item in enumerate(line):
-                if item == 'N':
+                if item == PandasTools.NO_DATA:
                     continue
                 value = float(item)
                 value = (value - means[i]) ** 2
@@ -137,7 +138,7 @@ def irkis():
     csv_write.write_row(cols)
 
     for std_array in stds_arrays:
-        row = ['N' if value == 'N' else round(value, 2) for value in std_array[1:]]
+        row = [PandasTools.NO_DATA if value == PandasTools.NO_DATA else round(value, 2) for value in std_array[1:]]
         csv_write.write_row([std_array[0]] + row)
 
     for percentage in ExperimentsUtils.THRESHOLDS:
@@ -145,7 +146,7 @@ def irkis():
         div_percentage = float(percentage) / 100
 
         for std_array in stds_arrays:
-            row = ['N' if value == 'N' else round(value * div_percentage, 0) for value in std_array[1:]]
+            row = [PandasTools.NO_DATA if value == PandasTools.NO_DATA else round(value * div_percentage, 0) for value in std_array[1:]]
             csv_write.write_row([std_array[0]] + row)
 
     csv_write.close()

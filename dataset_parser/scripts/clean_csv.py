@@ -5,6 +5,7 @@ from auxi.os_utils import OSUtils
 from file_utils.csv_utils.csv_reader import CSVReader
 from file_utils.csv_utils.csv_writer import CSVWriter
 from file_utils.text_utils.text_file_reader import TextFileReader
+from pandas_tools.pandas_tools import PandasTools
 
 ########################################################################################################################
 
@@ -33,7 +34,7 @@ def iterate(csv_reader, csv_writer):
         #     line = line[:last_column]
 
             # data rows
-        # if "N" in line:
+        # if PandasTools.NO_DATA in line:
         #     line[1] = "397"
 
         csv_writer.write_row(line)
@@ -61,7 +62,7 @@ def clean():
 
 
 def get_n_indexes(line):
-    return [i for i, e in enumerate(line) if e == "N"]
+    return [i for i, e in enumerate(line) if e == PandasTools.NO_DATA]
 
 
 def remove_n_indexes(line, n_indexes):

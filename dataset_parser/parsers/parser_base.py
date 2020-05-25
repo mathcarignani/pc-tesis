@@ -1,5 +1,7 @@
+from pandas_tools.pandas_tools import PandasTools
+
 class ParserBase(object):
-    NO_DATA = "N"
+    NO_DATA = PandasTools.NO_DATA
 
     def __init__(self):
         self.parsing_header = True
