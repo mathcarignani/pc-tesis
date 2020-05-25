@@ -16,35 +16,49 @@ class CompressCPP:
 
     @classmethod
     def code_cpp(cls, args):
-        time_track = TimeTrack()
         args.code_cpp()
+        exe_str = cls._code_cpp_exe_str(args)
 
+        time_track = TimeTrack()
+        header_bits, column_bits, column_mask_bits = cls._execute(exe_str)
+        elapsed = time_track.elapsed(2)
+
+        print(args.input_filename, "code_c++ - elapsed time =", elapsed, "seconds")
+        return [args.coder_name, header_bits, column_bits, column_mask_bits]
+
+    @classmethod
+    def decode_cpp(cls, args):
+        args.decode_cpp()
+        exe_str = cls._decode_cpp_exe_str(args)
+
+        time_track = TimeTrack()
+        cls._execute(exe_str)
+        elapsed = time_track.elapsed(2)
+
+        print(args.compressed_filename, "decode_c++ - elapsed time =", elapsed, "seconds")
+
+    ####################################################################################################################
+
+    @classmethod
+    def _code_cpp_exe_str(cls, args):
         exe_str = cls._executable_path(args.coder_name)
         exe_str += " c"
         exe_str += " " + args.input_path + "/" + args.input_filename
         exe_str += " " + args.output_path + "/" + args.compressed_filename
         exe_str += " " + cls._coder_params(args)
-
-        header_bits, column_bits, column_mask_bits = cls._execute(exe_str)
-        print(args.input_filename, "code_c++ - elapsed time =", time_track.elapsed(2), "seconds")
-        return [args.coder_name, header_bits, column_bits, column_mask_bits]
+        return exe_str
 
     @classmethod
-    def decode_cpp(cls, args):
-        time_track = TimeTrack()
-        args.decode_cpp()
-
+    def _decode_cpp_exe_str(cls, args):
         exe_str = cls._executable_path(args.coder_name)
         exe_str += " d"
         exe_str += " " + args.output_path + "/" + args.compressed_filename
         exe_str += " " + args.output_path + "/" + args.deco_filename
-
-        cls._execute(exe_str)
-        print(args.compressed_filename, "decode_c++ - elapsed time =", time_track.elapsed(2), "seconds")
+        return exe_str
 
     @classmethod
     def _execute(cls, exe_str):
-        cls._print_exe(exe_str)
+        cls._print_begin(exe_str)
         header_bits, column_bits, column_mask_bits = 0, [], []
         if cls.PRINT_MODE:
             os.system(exe_str)
@@ -75,7 +89,8 @@ class CompressCPP:
             return "CoderBase"
 
         error_thresholds = " ".join(str(i) for i in args.coder_params['error_threshold'])
-        string = args.coder_name + " " + str(args.coder_params['window_size']) + " " + error_thresholds
+        window_size = str(args.coder_params['window_size'])
+        string = args.coder_name + " " + window_size + " " + error_thresholds
         return string
 
     @staticmethod
@@ -90,7 +105,7 @@ class CompressCPP:
         return exe_str
 
     @staticmethod
-    def _print_exe(exe_str):
+    def _print_begin(exe_str):
         print(">>>>>>>>>>>>>>>>>>>>>>>>>>>> C++")
         print(exe_str)
         print(">>>>>>>>>>>>>>>>>>>>>>>>>>>> C++")
