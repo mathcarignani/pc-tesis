@@ -3,14 +3,14 @@ sys.path.append('.')
 
 from file_utils.csv_utils.csv_reader import CSVReader
 from scripts.informe.plot.csv_constants import CSVConstants
-from scripts.informe.results_parsing.results_constants import ResultsConstants
+from scripts.informe.results_parsing.results_paths import ResultsPaths
 from scripts.informe.math_utils import MathUtils
 
 
 class ResultsReader(object):
     def __init__(self, file_key, file_value):
         if file_value in [0, 3]:
-            input_path, input_filename = ResultsConstants.get_path_and_filename(file_key, file_value)
+            input_path, input_filename = ResultsPaths.get_path_and_filename(file_key, file_value)
         else:
             input_path, input_filename = file_key, file_value
         self.input_file = CSVReader(input_path, input_filename)

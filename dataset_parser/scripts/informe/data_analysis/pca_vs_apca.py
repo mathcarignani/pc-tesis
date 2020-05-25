@@ -34,7 +34,7 @@ class PCAvsAPCA(object):
         self.df = ResultsToDataframe(self.results_reader).create_full_df()
 
         # self.results_reader_raw_0 = ResultsReader('raw_base', 0)
-        self.results_reader_raw_3 = ResultsReader('raw_base', 3)
+        self.results_reader_raw_3 = ResultsReader('raw_base', 3) # TODO: this line will fail
         # self.df_raw_0 = ResultsToDataframe(self.results_reader_raw_0).create_full_df()
         self.df_raw_3 = ResultsToDataframe(self.results_reader_raw_3).create_full_df()
 
