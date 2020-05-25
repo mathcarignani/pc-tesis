@@ -4,7 +4,6 @@ sys.path.append('.')
 from scripts.compress.experiments_utils import ExperimentsUtils
 from scripts.informe.plot.plot_constants import PlotConstants
 from scripts.informe.plot.plot_utils import PlotUtils
-from scripts.avances.avances14.single_plot import SinglePlot
 from scripts.informe.plots.common_plot import CommonPlot
 from scripts.informe.plots.compression_ratio_plot import CompressionRatioPlot
 
@@ -18,7 +17,7 @@ class RelativeDifferencePlot(CommonPlot):
         super(RelativeDifferencePlot, self).__init__()
 
     def add_value(self, value0, value3):
-        plot_value = 100*SinglePlot.plot_value(value0, value3)
+        plot_value = 100*CommonPlot.plot_value(value0, value3)
         self.values.append(plot_value)
 
     def close(self):

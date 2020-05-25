@@ -9,7 +9,6 @@ from scripts.informe.results_parsing.results_reader import ResultsReader
 #
 # Methods used by the following scripts:
 # + avances18/globalize_results.py
-# + avances19/use_base_coder.py
 #
 class GlobalizeUtils(object):
     @staticmethod
