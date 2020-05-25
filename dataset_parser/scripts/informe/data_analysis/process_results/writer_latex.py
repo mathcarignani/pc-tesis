@@ -5,7 +5,9 @@ from file_utils.text_utils.text_file_writer import TextFileWriter
 from scripts.compress.experiments_utils import ExperimentsUtils
 from scripts.informe.gzip_compare.gzip_results_parser import GzipResultsParser
 
-
+#
+# TODO: clean up the script after the Experiments chapter is written
+#
 class WriterLatex(object):
     THRE_COUNT = len(ExperimentsUtils.THRESHOLDS)
     DATASET_MAP = {
@@ -19,18 +21,17 @@ class WriterLatex(object):
         'NOAA-SPC-wind': '\datasetwind'
     }
     WINDOW_MAP = {0: '', 4: 2, 8: 3, 16: 4, 32: 5, 64: 6, 128: 7, 256: 8}
-    WITH_C = False
     COLOR_COMMANDS = {
-        'PCA': "\cellcolor{cyan!20}",
-        'APCA': "\cellcolor{green!20}",
-        'FR': "\cellcolor{yellow!25}",
-        'GZIP': "\cellcolor{orange!20}",
-        'PWLHInt': '\cellcolor{violet!25}',
-        'PWLH': '\cellcolor{violet!50}',
-        'CA': '\cellcolor{brown!20}'
+        'PCA': "cyan!20",
+        'APCA': "green!20",
+        'FR': "yellow!25",
+        'GZIP': "orange!20",
+        'PWLHInt': 'violet!25',
+        'PWLH': 'violet!50',
+        'CA': 'brown!20'
     }
 
-    def __init__(self, path, extra_str, mode):
+    def __init__(self, path, mode):
         self.mode = mode
         filename = "table-results-" + str(mode) + '.tex'
         self.file = TextFileWriter(path, filename)
@@ -57,7 +58,7 @@ class WriterLatex(object):
             gzip_cr = self.gzip.compression_ratio(self.last_dataset, self.last_filename, col_name)
             self.add_gzip_result(threshold_results, gzip_cr)
 
-        # print "set_threshold_results => " + str(threshold_results)
+        # print("set_threshold_results => " + str(threshold_results))
         assert(len(threshold_results) == 3 + self.THRE_COUNT * 3)
 
         dataset_str = ''
@@ -68,27 +69,14 @@ class WriterLatex(object):
         line_list = [dataset_str, threshold_results[2]]
         for i in range(self.THRE_COUNT):
             index_begin = 3 * (i + 1)  # 3, 6,  9, ...
-            # print threshold_results
-            # print index_begin
             coder = threshold_results[index_begin]
-            if coder == "=":
-                assert(threshold_results[index_begin:index_begin + 3] == ["=", "=", "="])
-                line_list += ([" ", " ", " "] if self.WITH_C else [" ", " "])
-                continue
-            coder_style = self.coder_style(coder)
+            coder_style = self._coder_style(coder)
             window_value = threshold_results[index_begin + 1]
             window_x = self.WINDOW_MAP[window_value] if not self.__without_window() else window_value
             cr = threshold_results[index_begin + 2]
-            if self.WITH_C:
-                coder_with_style = coder_style + coder
-                cr = "\cellcolor{red!10}" + str(cr) if cr >= 100 else str(cr)
-                threshold_list = [coder_with_style, window_x, cr]
-                assert(len(threshold_list) == 3)
-            else:
-                cr = "\color{red}" + str(cr) if cr >= 100 else str(cr)
-                cr_with_style = coder_style + str(cr)
-                window_with_style = coder_style + str(window_x)
-                threshold_list = self.two_columns(False, cr_with_style, window_with_style)
+            cr = format(cr, '.2f')
+            threshold_list = self.two_columns(False, coder_style + cr, coder_style + str(window_x))
+
             line_list += threshold_list
         line = ' & '.join(['{' + str(element) + '}' for element in line_list]) + r" \\\hline"
         self.__write_line(line)
@@ -107,13 +95,12 @@ class WriterLatex(object):
         self.__write_line("\cline{3-" + str(self.THRE_COUNT * self.__count_for_mode() + 2) + "}")
         self.__write_line(self.threshold_line())
         columns = self.two_columns(True)
-        if self.WITH_C:
-            columns = r" & {c}" + columns
         self.__write_line("{Dataset} & {Data Type}" + (columns * self.THRE_COUNT) + r" \\\hline\hline")
 
     def __print_commands(self):
         for key, value in self.COLOR_COMMANDS.items():
-            command = r"\newcommand{" + self.command_key(key) + "}{" + value + "}"
+            cell_color = "\cellcolor{" + value + "}"
+            command = r"\newcommand{" + self.command_key(key) + "}{" + cell_color + "}"
             self.__write_line(command)
 
     @staticmethod
@@ -122,11 +109,6 @@ class WriterLatex(object):
         current_index = 5
         last_index = len(threshold_results) - 1
         while current_index <= last_index:
-            coder = threshold_results[current_index - 2]
-            if coder == '=':
-                current_index += 3
-                continue
-
             cr = threshold_results[current_index]
             if gzip_cr < cr:
                 threshold_results[current_index] = gzip_cr
@@ -136,7 +118,8 @@ class WriterLatex(object):
                 raise ValueError
             current_index += 3
 
-    def coder_style(self, coder):
+    @staticmethod
+    def _coder_style(coder):
         if coder not in ['PCA', 'APCA', 'FR', 'GZIP', 'PWLHInt', 'CA', 'PWLH']:
             print(coder)
             raise ValueError
@@ -168,7 +151,6 @@ class WriterLatex(object):
                 return r" & {\footnotesize CR} & {\footnotesize w}"
         return [cr, w]
 
-
     def __caption_for_mode(self):
         if self.gzip:
             return "\captiontwo"
@@ -190,16 +172,10 @@ class WriterLatex(object):
             return "1"
 
     def __c_list_for_mode(self):
-        if self.WITH_C:
-            return "| c | c | c |"
-        else:
-            return "| c | c |"
+        return "| c | c |"
 
     def __count_for_mode(self):
-        if self.WITH_C:
-            return 3
-        else:
-            return 2
+        return 2
 
     def __legend_for_mode(self):
         if self.mode in [1, 61, 62, 63]:

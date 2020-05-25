@@ -53,7 +53,7 @@ class ProcessResults(object):
         extra_str = 'global' if self.global_mode else 'local'
         self.csv_writer_1 = Writer1(self.path, extra_str)
         self.csv_writer_2 = Writer2(self.path, extra_str)
-        self.csv_writer_latex = WriterLatex(self.path, extra_str, self.mode)
+        self.csv_writer_latex = WriterLatex(self.path, self.mode)
 
     def __datasets_iteration(self):
         for dataset_id, self.dataset_name in enumerate(ExperimentsUtils.DATASET_NAMES):
@@ -125,7 +125,6 @@ class ProcessResults(object):
     #
     def __column_results_writer_2(self):
         coder = self.__coder()
-        previous_coder, previous_window, previous_percentage = None, None, None
         threshold_results = [None, None, self.col_name]
         for threshold in ExperimentsUtils.THRESHOLDS:
             if self.mode == 5:  # PCA vs APCA
@@ -145,12 +144,6 @@ class ProcessResults(object):
                 window, percentage, coder_name, _ = ProcessResults.get_values(row_df, self.col_index)
                 coder_name = coder_name.replace("Coder", "")
 
-                # if self.__same_result(threshold):
-                #     assert(threshold > 0); assert(coder_name == previous_coder); assert(window == previous_window);
-                #     assert(percentage == previous_percentage)
-                #     # TODO: uncomment to show blank cells for a repeated experiment
-                #     # new_coder, new_window, new_percentage = '=', '=', '='
-
                 if self.mode in [61, 62, 63]:
                     compare_coder = "CoderPWLHInt" if self.mode == 61 else ("CoderAPCA" if self.mode == 62 else "CoderPCA")
                     row_df_compare_coder = self.panda_utils.min_value_for_threshold(compare_coder, self.col_index, threshold)
@@ -162,7 +155,6 @@ class ProcessResults(object):
 
             new_coder, new_window, new_percentage = coder_name, window, percentage
             threshold_results += [new_coder, new_window, new_percentage]
-            previous_coder, previous_window, previous_percentage = coder_name, window, percentage
 
         self.csv_writer_2.write_row(threshold_results)
         self.csv_writer_latex.set_threshold_results(threshold_results)
