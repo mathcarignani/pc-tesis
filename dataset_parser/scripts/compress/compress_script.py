@@ -44,6 +44,8 @@ class CompressScript:
         self.csv.write_row(row)
 
         for dataset_dictionary in ExperimentsUtils.DATASETS_ARRAY:
+            # if dataset_dictionary['name'] != "ElNino":
+            #     continue
             self._run_script_on_dataset(dataset_dictionary)
         self.csv.close()
 
@@ -71,8 +73,10 @@ class CompressScript:
         self.thresholds_array = CalculateSTD.calculate_stds_percentages(stds, ExperimentsUtils.THRESHOLDS)
 
         for coder_index, self.coder_dictionary in enumerate(ExperimentsUtils.CODERS_ARRAY):
-            if self.input_filename == "el-nino.csv" and "GAMPS" in self.coder_dictionary['name']:
-                continue
+            # if self.input_filename == "el-nino.csv" and "GAMPS" in self.coder_dictionary['name']:
+            #     continue
+            # if not("CoderBase" == self.coder_dictionary['name'] or "GAMPSLimit" in self.coder_dictionary['name']):
+            #     continue
                 
             if file_index == 0 and coder_index == 0:  # first row of dataset and file
                 self.row += [self.input_filename, row_count]
