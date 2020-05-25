@@ -12,9 +12,11 @@ from file_utils.csv_utils.csv_writer import CSVWriter
 from file_utils.csv_utils.csv_utils import CSVUtils
 from scripts.utils import create_folder
 from scripts.compress.calculate_std import CalculateSTD
+from scripts.compress.calculate_std_pandas import CalculateSTDPandas
 from scripts.compress.experiments_utils import ExperimentsUtils
 from scripts.compress.compress_cpp import CompressCPP
 from scripts.compress.compress_args import CompressArgs
+from pandas_tools.pandas_tools import PandasTools
 
 
 class CompressScript:
@@ -70,7 +72,45 @@ class CompressScript:
 
         # calculate error thresholds
         stds = CalculateSTD.calculate_file_stats(self.input_path, self.input_filename)
-        self.thresholds_array = CalculateSTD.calculate_stds_percentages(stds, ExperimentsUtils.THRESHOLDS)
+        stds_pandas = CalculateSTDPandas(self.input_path, self.input_filename).calculate_stds()
+
+        # print("stds = " + str(stds))
+        # print("stds_pandas = " + str(stds_pandas))
+
+        assert(len(stds) == len(stds_pandas))
+
+        diff = []
+        for index in range(len(stds)):
+            value = stds[index]
+            value_pandas = stds_pandas[index]
+
+            if index == 0:
+                continue
+
+            elif value == PandasTools.NO_DATA:
+                assert(value_pandas == PandasTools.NO_DATA)
+                diff.append(value)
+
+            else:
+                diff.append(value - value_pandas)
+
+        print("diff")
+        # print(diff)
+        minimum = min([10 if value == PandasTools.NO_DATA else value for value in diff])
+        print(minimum)
+        assert(abs(minimum) < pow(10, -10))
+
+        thresholds_array = CalculateSTD.calculate_stds_percentages(stds, ExperimentsUtils.THRESHOLDS)
+        thresholds_array_pandas = CalculateSTD.calculate_stds_percentages(stds_pandas, ExperimentsUtils.THRESHOLDS)
+
+        # print("thresholds_array")
+        # print(thresholds_array)
+        # print("thresholds_array_pandas")
+        # print(thresholds_array_pandas)
+
+        assert(thresholds_array == thresholds_array_pandas)
+
+        return
 
         for coder_index, self.coder_dictionary in enumerate(ExperimentsUtils.CODERS_ARRAY):
             # if self.input_filename == "el-nino.csv" and "GAMPS" in self.coder_dictionary['name']:

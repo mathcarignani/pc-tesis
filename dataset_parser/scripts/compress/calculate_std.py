@@ -96,7 +96,7 @@ class CalculateSTD:
 
         stds = [0] * columns_count
         for i, summ in enumerate(summs):
-            stds[i] = PandasTools.NO_DATA if counts[i] == 0 else math.sqrt(summ // counts[i]) # TODO: // in python 2 = / in python 3
+            stds[i] = PandasTools.NO_DATA if counts[i] == 0 else math.sqrt(summ / counts[i]) # TODO: // in python 2 = / in python 3
 
         print('stds', stds)
         return stds
