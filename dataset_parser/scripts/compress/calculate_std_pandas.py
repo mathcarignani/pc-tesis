@@ -2,7 +2,7 @@ import sys
 sys.path.append('.')
 
 import pandas as pd
-import numpy as np
+import math
 from pandas_tools.pandas_tools import PandasTools
 from scripts.compress.experiments_utils import ExperimentsUtils
 from scripts.compress.calculate_std_manual import CalculateSTDManual
@@ -53,7 +53,7 @@ class CalculateSTDPandas:
         #
         df_stds = df.std(ddof=0)
         stds = list(df_stds)
-        stds = [PandasTools.NO_DATA if np.isnan(value) else value for value in stds]
+        stds = [PandasTools.NO_DATA if math.isnan(value) else value for value in stds]
         return stds
 
 
