@@ -11,20 +11,19 @@ from file_utils.csv_utils.csv_compare import CSVCompare
 from file_utils.csv_utils.csv_writer import CSVWriter
 from file_utils.csv_utils.csv_utils import CSVUtils
 from scripts.utils import create_folder
-from scripts.compress.calculate_std_pandas import CalculateSTDPandas
+from scripts.compress.compress_utils import CompressUtils
 from scripts.compress.experiments_utils import ExperimentsUtils
 from scripts.compress.compress_cpp import CompressCPP
 from scripts.compress.compress_args import CompressArgs
 
 
 class CompressScript:
-    def __init__(self, output_filename):
-        self.datasets_path = ExperimentsUtils.CSV_PATH
-        self.output_path = OSUtils.git_path() + "/dataset_parser/scripts/compress/output/"
-        # self.datasets_path = "/Users/pablocerve/Documents/FING/Proyecto/results/paper_csv/3-without-outliers/"
-        # self.output_path = OSUtils.python_git_path() + "/dataset_parser/scripts/paper-output/"
+    COMPRESS_PATH = OSUtils.git_path() + "/dataset_parser/scripts/compress"
+    OUTPUT_PATH = COMPRESS_PATH + "/output/"
+    DATASETS_PATH = ExperimentsUtils.CSV_PATH
 
-        self.csv = CSVWriter(self.output_path, output_filename)
+    def __init__(self, output_filename):
+        self.csv = CSVWriter(self.OUTPUT_PATH, output_filename)
 
         # iteration vars
         self.logger = None
@@ -51,11 +50,11 @@ class CompressScript:
 
 
     def _run_script_on_dataset(self, dataset_dictionary):
-        self.input_path = self.datasets_path + dataset_dictionary['folder']
+        self.input_path = self.DATASETS_PATH + dataset_dictionary['folder']
         logger_name = dataset_dictionary['name'].lower() + '.log'
         self.logger = setup_logger(logger_name, logger_name)
 
-        self.output_dataset_path = self.output_path + dataset_dictionary['o_folder']
+        self.output_dataset_path = self.OUTPUT_PATH + dataset_dictionary['o_folder']
         create_folder(self.output_dataset_path)
         dataset_name = dataset_dictionary['name']
 
@@ -70,9 +69,8 @@ class CompressScript:
         row_count = PrintUtils.separate(CSVUtils.csv_row_count(self.input_path, self.input_filename))
 
         # calculate error thresholds
-        stds = CalculateSTDPandas(self.input_path, self.input_filename).calculate_stds()
-        self.thresholds_array = CalculateSTDPandas.calculate_error_thresholds(stds)
-
+        compress_utils = CompressUtils(self.COMPRESS_PATH, self.input_path, self.input_filename)
+        self.thresholds_array = compress_utils.get_thresholds_array()
         return
 
         for coder_index, self.coder_dictionary in enumerate(ExperimentsUtils.CODERS_ARRAY):

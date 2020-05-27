@@ -1,6 +1,6 @@
 #
 # TODO: remove this file after writing the thesis, since we only use it to check against the stds obtained by
-# the CalculateSTDPandas class
+# the CompressUtils class
 #
 import math
 

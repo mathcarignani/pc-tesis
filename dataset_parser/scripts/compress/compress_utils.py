@@ -3,37 +3,48 @@ sys.path.append('.')
 
 import pandas as pd
 import math
+import json
+
 from pandas_tools.pandas_tools import PandasTools
 from scripts.compress.experiments_utils import ExperimentsUtils
 from scripts.compress.calculate_std_manual import CalculateSTDManual
+from file_utils.text_utils.text_file_reader import TextFileReader
+from file_utils.text_utils.text_file_writer import TextFileWriter
 
-
-class CalculateSTDPandas:
+class CompressUtils:
     COMPARE = True
+    RECORD = False
+    STDS_FILENAME = 'STDEVs.txt'
 
-    def __init__(self, input_path, input_filename):
+    def __init__(self, script_path, input_path, input_filename):
+        self.script_path = script_path
         self.input_path = input_path
         self.input_filename = input_filename
         self.filename_path = input_path + "/" + input_filename
 
-    def calculate_stds(self):
+
+    def get_thresholds_array(self):
         stds = self._calculate_stds_pandas()
         if self.COMPARE:
-            self.compare_with_manual_std(stds)
-        return stds
+            self._compare_with_manual_std(stds)
+        thresholds_array = self._calculate_error_thresholds(stds)
+
+        if self.RECORD:
+            self._save_results(stds, thresholds_array)
+        else:
+            self._compare_results(stds, thresholds_array)
+        return thresholds_array
 
     #
     # Compare the stds obtained by pandas against the stds calculated manually.
     #
-    def compare_with_manual_std(self, stds):
+    def _compare_with_manual_std(self, stds):
         manual_stds = CalculateSTDManual.calculate_stds(self.input_path, self.input_filename)
-
         assert(len(stds) == len(manual_stds))
 
         diff = []
         for index in range(len(stds)):
             value, value_manual  = stds[index], manual_stds[index]
-
             if value == PandasTools.NO_DATA:
                 assert(value == value_manual)  # both values must be equal to PandasTools.NO_DATA
                 diff.append(value)
@@ -56,9 +67,8 @@ class CalculateSTDPandas:
         stds = [PandasTools.NO_DATA if math.isnan(value) else value for value in stds]
         return stds
 
-
-    @classmethod
-    def calculate_error_thresholds(cls, stds, param_e_list=ExperimentsUtils.THRESHOLDS):
+    @staticmethod
+    def _calculate_error_thresholds(stds, param_e_list=ExperimentsUtils.THRESHOLDS):
         percentages = [param / 100 for param in param_e_list] # [0.0, 0.01, 0.03, 0.05, 0.1, 0.15, 0.2, 0.3]
 
         res = []
@@ -74,3 +84,35 @@ class CalculateSTDPandas:
                     values.append(value)
             res.append({'percentage': percentage, 'values': values})
         return res
+
+    def _save_results(self, stds, thresholds_array):
+        writer = TextFileWriter(self.script_path, self.STDS_FILENAME, "a")  # "a" = append mode
+        writer.write_line(self.input_filename)  # vwc_1202.dat.csv
+        writer.write_line(json.dumps(stds)) # [0, 15.067395786326722, ... , 10.242778426186861]
+        writer.write_line(json.dumps(thresholds_array)) # [{"percentage": 0.0, "values": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}, ... , {"percentage": 0.3, "values": [0, 5, 6, 3, 4, 2, 3, 3, 2, 7, 3]}]
+        writer.write_line('')
+        writer.close()
+
+    def _compare_results(self, stds, thresholds_array):
+        reader = TextFileReader(self.script_path, self.STDS_FILENAME)
+        while reader.continue_reading:
+            if self.input_filename not in reader.read_line():
+                continue
+            self._compare_struct(reader.read_line(), stds)
+            self._compare_struct(reader.read_line(), thresholds_array)
+            return
+        raise Exception("ERROR: invalid filename: " + self.input_filename)
+
+    def _compare_struct(self, read_struct, calculated_struct):
+        read_struct = json.loads(read_struct)
+        if read_struct == calculated_struct:
+            return
+        print(self.input_filename)
+        print("read_struct")
+        print(read_struct)
+        print("calculated_struct")
+        print(calculated_struct)
+        assert(read_struct == calculated_struct)
+
+
+
