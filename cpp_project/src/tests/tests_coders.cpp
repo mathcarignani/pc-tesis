@@ -90,7 +90,7 @@ void TestsCoders::runAll(){
 #if RECORD_TESTS
     output_root_folder = expected_root_folder;
 #else
-    output_root_folder = TestsUtils::OUTPUT_PATH + "/output/" + mask_mode_folder;
+    output_root_folder = TestsUtils::OUTPUT_PATH + "/output/";
 #endif // RECORD_TESTS
 
     Path bits_csv_path = Path(output_root_folder, "bits-out.csv");
