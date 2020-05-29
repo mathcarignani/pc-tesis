@@ -6,8 +6,8 @@
 void BitStreamReader::construct(const char * file){
     fp = fopen(file, "rb");
     if (fp == NULL){
-        std::string error_msg = "ERROR opening file ";
-        throw std::runtime_error(error_msg + file);
+        std::cout << "BitStreamReader: Error opening file: " << file << std::endl;
+        exit(-1);
     }
     offset = 0;
     current_byte = 0;
