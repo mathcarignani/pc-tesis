@@ -1,5 +1,6 @@
 
 #include "tests_bit_stream.h"
+#include "bit_stream_utils.h"
 #include <cfloat>
 #include "assert.h"
 #include <iostream>
@@ -28,6 +29,7 @@ void TestsBitStream::floatTest(){
     float c_deco = bit_stream_reader->getFloat(); assert(c_deco - c < diff);
     float d_deco = bit_stream_reader->getFloat(); assert(d_deco == d);
     delete bit_stream_reader;
+    BitStreamUtils::removeFile(coded_path);
 }
 
 void TestsBitStream::doubleTest(){
@@ -46,4 +48,5 @@ void TestsBitStream::doubleTest(){
     double c_deco = bit_stream_reader->getDouble(); assert(c_deco - c < diff);
     double d_deco = bit_stream_reader->getDouble(); assert(d_deco == d);
     delete bit_stream_reader;
+    BitStreamUtils::removeFile(coded_path);
 }

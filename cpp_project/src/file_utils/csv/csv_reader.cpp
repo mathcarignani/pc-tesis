@@ -11,7 +11,7 @@ void CSVReader::constructor(std::string path, std::string filename){
     full_path = path + "/" + filename;
     file.open(full_path);
     if (!file.is_open()){
-        std::cout << "Error opening file: " << full_path << std::endl;
+        std::cout << "CSVReader: Error opening file: " << full_path << std::endl;
         exit(-1);
     }
     current_line_count = 0;

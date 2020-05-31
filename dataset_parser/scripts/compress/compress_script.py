@@ -71,12 +71,12 @@ class CompressScript:
         # calculate error thresholds
         compress_utils = CompressUtils(self.COMPRESS_PATH, self.input_path, self.input_filename)
         self.thresholds_array = compress_utils.get_thresholds_array()
-        return
+        # return
 
         for coder_index, self.coder_dictionary in enumerate(ExperimentsUtils.CODERS_ARRAY):
-            # if self.input_filename == "el-nino.csv" and "GAMPS" in self.coder_dictionary['name']:
-            #     continue
-            # if not("CoderBase" == self.coder_dictionary['name'] or "GAMPSLimit" in self.coder_dictionary['name']):
+            if self.input_filename == "el-nino.csv" and "CoderGAMPS" == self.coder_dictionary['name']:
+                continue
+            # if not("CoderBase" == self.coder_dictionary['name'] or "CoderGAMPSLimit" == self.coder_dictionary['name']):
             #     continue
                 
             if file_index == 0 and coder_index == 0:  # first row of dataset and file
