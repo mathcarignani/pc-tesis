@@ -43,8 +43,6 @@ class CompressScript:
         self.csv.write_row(row)
 
         for dataset_dictionary in ExperimentsUtils.DATASETS_ARRAY:
-            # if dataset_dictionary['name'] != "ElNino":
-            #     continue
             self._run_script_on_dataset(dataset_dictionary)
         self.csv.close()
 
@@ -52,7 +50,8 @@ class CompressScript:
     def _run_script_on_dataset(self, dataset_dictionary):
         self.input_path = self.DATASETS_PATH + dataset_dictionary['folder']
         logger_name = dataset_dictionary['name'].lower() + '.log'
-        self.logger = setup_logger(logger_name, logger_name)
+        logger_filename = self.OUTPUT_PATH + logger_name
+        self.logger = setup_logger(logger_name, logger_filename)
 
         self.output_dataset_path = self.OUTPUT_PATH + dataset_dictionary['o_folder']
         create_folder(self.output_dataset_path)
@@ -71,13 +70,14 @@ class CompressScript:
         # calculate error thresholds
         compress_utils = CompressUtils(self.COMPRESS_PATH, self.input_path, self.input_filename)
         self.thresholds_array = compress_utils.get_thresholds_array()
-        # return
 
         for coder_index, self.coder_dictionary in enumerate(ExperimentsUtils.CODERS_ARRAY):
-            if self.input_filename == "el-nino.csv" and "CoderGAMPS" == self.coder_dictionary['name']:
-                continue
-            # if not("CoderBase" == self.coder_dictionary['name'] or "CoderGAMPSLimit" == self.coder_dictionary['name']):
+            # TODO: uncomment in ubuntu
+            # if self.input_filename == "el-nino.csv" and self.coder_dictionary['name'] == "CoderGAMPS":
             #     continue
+            # TODO: uncomment in mac
+            if self.input_filename != "el-nino.csv" or self.coder_dictionary['name'] not in ["CoderBase", "CoderGAMPS"]:
+                continue
                 
             if file_index == 0 and coder_index == 0:  # first row of dataset and file
                 self.row += [self.input_filename, row_count]
