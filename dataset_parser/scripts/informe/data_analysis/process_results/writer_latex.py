@@ -4,6 +4,7 @@ sys.path.append('.')
 from file_utils.text_utils.text_file_writer import TextFileWriter
 from scripts.compress.experiments_utils import ExperimentsUtils
 from scripts.informe.gzip_compare.gzip_results_parser import GzipResultsParser
+from scripts.informe.data_analysis.process_results.latex_utils import LatexUtils
 
 #
 # TODO: clean up the script after the Experiments chapter is written
@@ -78,7 +79,7 @@ class WriterLatex(object):
             threshold_list = self.two_columns(False, coder_style + cr, coder_style + str(window_x))
 
             line_list += threshold_list
-        line = ' & '.join(['{' + str(element) + '}' for element in line_list]) + r" \\\hline"
+        line = LatexUtils.array_to_table_row(line_list)
         self.__write_line(line)
 
     ####################################################################################################################
@@ -138,10 +139,14 @@ class WriterLatex(object):
         return '\c' + key.lower()  # cpca, capca, cfr, cgzip
 
     def print_end(self):
-        self.__write_line("\end{tabular}")
-        self.__write_line("\caption{" + self.__caption_for_mode() + "}")
-        self.__write_line("\label{experiments:mask-results-overview" + self.__label_for_mode() + "}")
-        self.__write_line(r"\end{table}")
+        lines = [
+            r"\end{tabular}",
+            r"\caption{" + self.__caption_for_mode() + "}",
+            r"\label{experiments:mask-results-overview" + self.__label_for_mode() + "}",
+            r"\end{table}"
+        ]
+        for line in lines:
+            self.__write_line(line)
 
     def two_columns(self, header = False, cr = None, w = None):
         if header:

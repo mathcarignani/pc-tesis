@@ -4,7 +4,7 @@ sys.path.append('.')
 from file_utils.csv_utils.csv_writer import CSVWriter
 from scripts.compress.experiments_utils import ExperimentsUtils
 from scripts.informe.math_utils import MathUtils
-
+from scripts.informe.data_analysis.process_results.writer_min_max import WriterMinMax
 
 class Writer1(object):
     def __init__(self, path, extra_str):
@@ -12,6 +12,7 @@ class Writer1(object):
         self.write_first_row()
         self.data_rows = []
         self.data = {}
+        self.writer_min_max = WriterMinMax(path)
 
     def write_first_row(self):
         row = ["Dataset", "Filename", "Column", "Coder"]
@@ -49,13 +50,14 @@ class Writer1(object):
                 self.data[coder_name] = []
             self.data[coder_name].append(worst_relative_diff)
 
+        self.writer_min_max.save_data_rows(self.data_rows)
         self.data_rows = []
 
     def show_data(self):
-        print(self.data)
         for key in self.data:
             max_rd = max(self.data[key])
             print(self.format_rd(max_rd) + ' <= ' + key)
+        self.writer_min_max.show_data()
 
     def _calculate_relative_differences(self):
         for row in self.data_rows:
