@@ -9,7 +9,7 @@ class ExperimentsUtils(object):
     #
     # IMPORTANT: MASK_MODE should have the same value that the MASK_MODE macro used in the C++ code.
     #
-    MASK_MODE = 0 # 3
+    MASK_MODE = 3 # 3
 
     CODERS = ['CoderBase', 'CoderPCA', 'CoderAPCA', 'CoderCA', 'CoderPWLH', 'CoderPWLHInt',
               'CoderFR', 'CoderSF', 'CoderGAMPS', 'CoderGAMPSLimit']

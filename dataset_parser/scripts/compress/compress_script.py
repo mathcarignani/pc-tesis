@@ -234,6 +234,3 @@ class CompressScript:
                     values += [value]
         self.csv.write_row(row + values)
         return base_values
-
-
-CompressScript("results.csv").run()

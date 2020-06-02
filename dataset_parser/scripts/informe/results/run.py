@@ -6,17 +6,29 @@ from scripts.informe.pdfs.pdfs2 import PDFS2
 from scripts.informe.pdfs.pdfs3 import PDFS3
 from scripts.informe.pdfs.pdfs4 import PDFS4
 from scripts.informe.data_analysis.process_results.process_results import ProcessResults
+from scripts.compress.compress_script import CompressScript
+
+
+#
+# (0) Compile the CPP code in both modes so that the following executables are created:
+# cpp_project_0
+# cpp_project_3
+# TODO: change the name of the executables
+#
+
+#
+# (3.1) Experimental Setting
+# (1) Run the compress script for each mode, each execution creates a different results.csv file
+# CompressScript("results.csv").run()
+# TODO: make changes to pass the mode as an argument and output different modes to different folders (inside 3.1)
+#
+
 
 #
 # python scripts/informe/results/run.py
 #
 PATH = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/informe/results/"
 
-
-#
-# 3.1 Setting
-#
-# TODO: run compress.py
 
 #
 # 3.2 Relative Performance of the Coders
@@ -39,7 +51,7 @@ PATH = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/script
 # # 3.4 Mask Coders Performance
 # #
 # PDFS4(PATH + '3.4/pdf/', True).create_pdfs()  # GLOBAL
-ProcessResults(True, PATH + '3.4/results1', 1).run()
+# ProcessResults(True, PATH + '3.4/results1', 1).run()
 # # ProcessResults(True, PATH + '3.4/results12', 12).run()
 # # ProcessResults(True, PATH + '3.4/results2', 2).run()
 # # ProcessResults(True, PATH + '3.4/results3', 3).run()
