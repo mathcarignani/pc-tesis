@@ -70,6 +70,8 @@ class CompressScript:
         # calculate error thresholds
         compress_utils = CompressUtils(self.COMPRESS_PATH, self.input_path, self.input_filename)
         self.thresholds_array = compress_utils.get_thresholds_array()
+        # print(self.thresholds_array)
+        return
 
         for coder_index, self.coder_dictionary in enumerate(ExperimentsUtils.CODERS_ARRAY):
             # TODO: uncomment in ubuntu

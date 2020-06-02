@@ -72,7 +72,7 @@ class CompressUtils:
         percentages = [param / 100 for param in param_e_list] # [0.0, 0.01, 0.03, 0.05, 0.1, 0.15, 0.2, 0.3]
 
         res = []
-        for percentage in percentages:
+        for index, percentage in enumerate(percentages):
             stds[0] = 0  # the error threshold for the timedelta is always 0
 
             values = []
@@ -82,7 +82,7 @@ class CompressUtils:
                 else:
                     value = int(round(std * percentage, 0))
                     values.append(value)
-            res.append({'percentage': percentage, 'values': values})
+            res.append({'percentage': param_e_list[index], 'values': values})
         return res
 
     def _save_results(self, stds, thresholds_array):

@@ -19,7 +19,7 @@ from scripts.compress.compress_script import CompressScript
 #
 # (3.1) Experimental Setting
 # (1) Run the compress script for each mode, each execution creates a different results.csv file
-# CompressScript("results.csv").run()
+CompressScript("results.csv").run()
 # TODO: make changes to pass the mode as an argument and output different modes to different folders (inside 3.1)
 #
 
