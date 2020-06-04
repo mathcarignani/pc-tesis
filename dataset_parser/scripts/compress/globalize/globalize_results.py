@@ -8,6 +8,7 @@ from file_utils.csv_utils.csv_writer import CSVWriter
 from scripts.compress.globalize.globalize_utils import GlobalizeUtils
 from scripts.informe.plot.csv_constants import CSVConstants
 from scripts.informe.results_parsing.results_reader import ResultsReader
+from scripts.informe.results_parsing.results_paths import ResultsPaths
 
 #
 # Converts the results in "complete-mask-mode=N.csv" files so that the results of multiple files are merged
@@ -15,20 +16,21 @@ from scripts.informe.results_parsing.results_reader import ResultsReader
 class GlobalizeResults(object):
     NUMBER_OF_ROWS = {0: 393, 3: 457}
 
-    def __init__(self, value, output_path, output_file):
-        self.value = value
-        self.number_of_rows = GlobalizeResults.NUMBER_OF_ROWS[value]
+    def __init__(self, mode):
+        if mode not in [0, 3]:
+            print("mode = " + str(mode))
+            raise(ValueError, "ERROR: invalid parameters")
 
-        self.results_reader_x = ResultsReader('raw', value)
+        self.mode = mode
+        self.number_of_rows = GlobalizeResults.NUMBER_OF_ROWS[mode]
 
-        # The CoderBase lines have the same values (but not exactly the same format, i.e. "100" vs. "100.0")
-        # in these two files, so we can use either one to get the CoderBase MM=0 values:
-        self.results_reader_coder_base = ResultsReader('raw', 0)
-        # self.results_reader_coder_base = ResultsReader('base', 3)
+        self.results_reader = ResultsReader('local', mode)
 
-        self.output_file = CSVWriter(output_path, output_file)
-        self.output_file.write_row(self.results_reader_x.read_line_no_count())
+        output_path, output_filename = ResultsPaths.get_path_and_filename('global', mode)
+        self.output_file = CSVWriter(output_path, output_filename)
+        self.output_file.write_row(self.results_reader.read_line_no_count())
 
+    def run(self):
         for dataset_obj in ExperimentsUtils.DATASETS_ARRAY:
             self.__globalize_dataset(dataset_obj['name'])
 
@@ -37,11 +39,10 @@ class GlobalizeResults(object):
         if len(filenames) == 1:
             print(dataset_name + " - single file")
             self.multiple_files = False
-            self.__merge_results(dataset_name, filenames)
         else:
             print(dataset_name + " - multiple files")
             self.multiple_files = True
-            self.__merge_results(dataset_name, filenames)
+        self.__merge_results(dataset_name, filenames)
 
     #
     # globalize results
@@ -57,13 +58,11 @@ class GlobalizeResults(object):
         GlobalizeUtils.write_other_coders_lines(self.output_file, coder_base_line, other_coders_lines)
 
     def __get_coder_base_line(self, dataset_name, filenames):
-        self.results_reader = self.results_reader_coder_base
         results_array_0 = self.__results_array(dataset_name, filenames, CSVConstants.INDEX_ALGORITHM)
         assert(len(results_array_0[0]) == 1)
         return self.__mask_results_lines(results_array_0)[0]
 
     def __get_other_coders_lines(self, dataset_name, filenames):
-        self.results_reader = self.results_reader_x
         results_array = self.__results_array(dataset_name, filenames)
         # print len(results_array[0])
         assert(len(results_array[0]) == self.number_of_rows)
@@ -102,21 +101,9 @@ class GlobalizeResults(object):
         assert(len(results) == len(filenames))
         return results
 
-
-def compare_files(output_path, output_file):
-    compare = filecmp.cmp(output_path + "/" + output_file, output_path + "/3-global/" + output_file)
-    if compare:
-        print("SAME!")
-    # assert compare
-
-
-def run(value):
-    print("run(" + str(value) + ")")
-    output_path = "/Users/pablocerve/Documents/FING/Proyecto/results/avances-18"
-    output_file = "complete-mask-mode=" + str(value) + "-global.csv"
-    GlobalizeResults(value, output_path, output_file)
-    compare_files(output_path, output_file)
-
-
-# run(0)
-# run(3)
+    @staticmethod
+    def compare_files(path_1, filename_1, path2, filename_2):
+        compare = filecmp.cmp(path_1 + "/" + filename_1, path2 + "/" + filename_2)
+        if compare:
+            print("SAME!")
+        assert compare

@@ -7,13 +7,17 @@ from scripts.informe.pdfs.pdfs3 import PDFS3
 from scripts.informe.pdfs.pdfs4 import PDFS4
 from scripts.informe.data_analysis.process_results.process_results import ProcessResults
 from scripts.compress.compress_script import CompressScript
+from scripts.compress.globalize.globalize_results import GlobalizeResults
+
+
+# TODO: define paths
 
 
 #
 # (0) Compile the CPP code in both modes so that the following executables are created:
 # cpp_project_0
 # cpp_project_3
-# TODO: change the name of the executables
+# TODO: change the name of the executables to exe_mode_0 and exe_mode_3
 #
 
 #
@@ -22,6 +26,15 @@ from scripts.compress.compress_script import CompressScript
 # CompressScript("results.csv").run()
 # TODO: make changes to pass the mode as an argument and output different modes to different folders (inside 3.1)
 #
+# GlobalizeResults(0).run()
+# GlobalizeResults(3).run()
+
+
+
+
+
+
+
 
 
 #
