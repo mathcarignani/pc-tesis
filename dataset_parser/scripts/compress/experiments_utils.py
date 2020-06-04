@@ -13,8 +13,6 @@ class ExperimentsUtils(object):
     #
     MASK_MODE = 3 # 3
 
-    CODERS = ['CoderBase', 'CoderPCA', 'CoderAPCA', 'CoderCA', 'CoderPWLH', 'CoderPWLHInt',
-              'CoderFR', 'CoderSF', 'CoderGAMPS', 'CoderGAMPSLimit']
     # TODO: remove the ALGORITHMS list
     ALGORITHMS = ["CoderPCA", "CoderAPCA", "CoderCA", "CoderPWLH", "CoderPWLHInt", "CoderGAMPSLimit"]
     CODERS_ONLY_MASK_MODE = ['CoderFR', 'CoderSF']
@@ -152,6 +150,8 @@ class ExperimentsUtils(object):
         },
     ]
 
+    CODERS = [coder['name'] for coder in CODERS_ARRAY]
+
     MASK_MODE_CODERS_ARRAY = [
         {
             'name': 'CoderFR',
@@ -167,3 +167,4 @@ class ExperimentsUtils(object):
 
     if MASK_MODE > 0:
         CODERS_ARRAY += MASK_MODE_CODERS_ARRAY
+        CODERS += [coder['name'] for coder in MASK_MODE_CODERS_ARRAY]

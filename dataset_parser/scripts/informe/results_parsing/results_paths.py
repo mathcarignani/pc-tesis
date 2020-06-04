@@ -19,18 +19,17 @@ class ResultsPaths(object):
     GLOBAL_MM_3_FILENAME = "results-mm3-global.csv"  # GlobalizeResults(3).run()
 
     @staticmethod
-    def get_path_and_filename(file_key, file_mode):
-        ResultsPaths.check_input(file_key, file_mode)
-        path, filename = None, None
-        if file_key == 'local':
+    def get_path_and_filename(mode, mask_mode):
+        ResultsPaths.check_input(mode, mask_mode)
+        if mode == 'local':
             path = ResultsPaths.LOCAL_RESULTS_PATH
-            if file_mode == 0:
+            if mask_mode == 0:
                 filename = ResultsPaths.LOCAL_MM_0_FILENAME
             else:
                 filename = ResultsPaths.LOCAL_MM_3_FILENAME
-        elif file_key == 'global':
+        else: # mode == 'global':
             path = ResultsPaths.GLOBAL_RESULTS_PATH
-            if file_mode == 0:
+            if mask_mode == 0:
                 filename = ResultsPaths.GLOBAL_MM_0_FILENAME
             else:
                 filename = ResultsPaths.GLOBAL_MM_3_FILENAME
@@ -38,9 +37,9 @@ class ResultsPaths(object):
         return path, filename
 
     @staticmethod
-    def check_input(file_key, file_mode):
-        if file_key in ['local', 'global'] and file_mode in [0, 3]:
+    def check_input(mode, mask_mode):
+        if mode in ['local', 'global'] and mask_mode in [0, 3]:
             return
-        print("file_key = " + str(file_key))
-        print("file_value = " + str(file_mode))
+        print("mode = " + str(mode))
+        print("mask_mode = " + str(mask_mode))
         raise(ValueError, "ERROR: invalid parameters")

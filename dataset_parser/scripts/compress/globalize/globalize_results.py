@@ -16,17 +16,17 @@ from scripts.informe.results_parsing.results_paths import ResultsPaths
 class GlobalizeResults(object):
     NUMBER_OF_ROWS = {0: 393, 3: 457}
 
-    def __init__(self, mode):
-        if mode not in [0, 3]:
-            print("mode = " + str(mode))
+    def __init__(self, mask_mode):
+        if mask_mode not in [0, 3]:
+            print("mask_mode = " + str(mask_mode))
             raise(ValueError, "ERROR: invalid parameters")
 
-        self.mode = mode
-        self.number_of_rows = GlobalizeResults.NUMBER_OF_ROWS[mode]
+        self.mask_mode = mask_mode
+        self.number_of_rows = GlobalizeResults.NUMBER_OF_ROWS[mask_mode]
 
-        self.results_reader = ResultsReader('local', mode)
+        self.results_reader = ResultsReader('local', mask_mode)
 
-        output_path, output_filename = ResultsPaths.get_path_and_filename('global', mode)
+        output_path, output_filename = ResultsPaths.get_path_and_filename('global', mask_mode)
         self.output_file = CSVWriter(output_path, output_filename)
         self.output_file.write_row(self.results_reader.read_line_no_count())
 

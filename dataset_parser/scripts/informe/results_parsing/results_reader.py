@@ -10,11 +10,11 @@ from scripts.informe.math_utils import MathUtils
 # This class is used for parsing the results of the results.csv file, which is created when running compress_script.py
 #
 class ResultsReader(object):
-    def __init__(self, file_key, file_mode):
-        if file_mode in [0, 3]:
-            input_path, input_filename = ResultsPaths.get_path_and_filename(file_key, file_mode)
+    def __init__(self, mode, mask_mode):
+        if mask_mode in [0, 3]:
+            input_path, input_filename = ResultsPaths.get_path_and_filename(mode, mask_mode)
         else:
-            input_path, input_filename = file_key, file_mode
+            input_path, input_filename = mode, mask_mode
         self.input_file = CSVReader(input_path, input_filename)
 
     def read_line_no_count(self):

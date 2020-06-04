@@ -10,8 +10,11 @@ from scripts.compress.compress_script import CompressScript
 from scripts.compress.globalize.globalize_results import GlobalizeResults
 
 
-# TODO: define paths
+# python scripts/informe/results/run.py
 
+
+# TODO: define mode paths
+PATH = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/informe/results/"
 
 #
 # (0) Compile the CPP code in both modes so that the following executables are created:
@@ -22,33 +25,22 @@ from scripts.compress.globalize.globalize_results import GlobalizeResults
 
 #
 # (3.1) Experimental Setting
+#
 # (1) Run the compress script for each mode, each execution creates a different results.csv file
-# CompressScript("results.csv").run()
+# CompressScript("results.csv", 0).run()
+# CompressScript("results.csv", 0).run()
 # TODO: make changes to pass the mode as an argument and output different modes to different folders (inside 3.1)
 #
+# (2) Globalize the result files generated in step (1)
 # GlobalizeResults(0).run()
 # GlobalizeResults(3).run()
 
 
-
-
-
-
-
-
-
 #
-# python scripts/informe/results/run.py
+# (3.2) Relative Performance of the Coders
 #
-PATH = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/informe/results/"
-
-
-#
-# 3.2 Relative Performance of the Coders
-#
-
-# # PDFS1(PATH + '3.2/', False).create_pdfs()  # LOCAL
-# PDFS1(PATH + '3.2/', True).create_pdfs()  # GLOBAL
+# PDFS1(PATH + '3.2/', 'local').create_pdfs()
+# PDFS1(PATH + '3.2/', 'global').create_pdfs()
 
 
 # #
@@ -64,7 +56,10 @@ PATH = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/script
 # # 3.4 Mask Coders Performance
 # #
 # PDFS4(PATH + '3.4/pdf/', True).create_pdfs()  # GLOBAL
-# ProcessResults(True, PATH + '3.4/results1', 1).run()
+
+ProcessResults(True, PATH + '3.4/results1', 1).run()
+
+
 # # ProcessResults(True, PATH + '3.4/results12', 12).run()
 # # ProcessResults(True, PATH + '3.4/results2', 2).run()
 # # ProcessResults(True, PATH + '3.4/results3', 3).run()

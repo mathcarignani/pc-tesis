@@ -38,10 +38,10 @@ class ProcessResults(object):
         self.mode = mode
 
         # set other instances
-        key = 'global' if self.global_mode else 'raw_base'
+        key = 'global' if self.global_mode else 'local'
         self.results_reader = ResultsReader(key, ProcessResults.MM)
         self.df = ResultsToDataframe(self.results_reader).create_full_df()
-        self.threshold_compare = ThresholdCompare(ResultsReader('raw', ProcessResults.MM))
+        self.threshold_compare = ThresholdCompare(ResultsReader('local', ProcessResults.MM))
 
     def run(self):
         self.__write_headers()
