@@ -5,12 +5,10 @@ import filecmp
 
 from scripts.compress.experiments_utils import ExperimentsUtils
 from file_utils.csv_utils.csv_writer import CSVWriter
-from scripts.avances.avances18.globalize_utils import GlobalizeUtils
+from scripts.compress.globalize.globalize_utils import GlobalizeUtils
 from scripts.informe.plot.csv_constants import CSVConstants
 from scripts.informe.results_parsing.results_reader import ResultsReader
 
-#
-# TODO: rewrite this script using pandas and check that both outputs match.
 #
 # Converts the results in "complete-mask-mode=N.csv" files so that the results of multiple files are merged
 #
