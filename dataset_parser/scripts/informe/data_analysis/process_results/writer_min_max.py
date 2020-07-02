@@ -53,7 +53,9 @@ class WriterMinMax:
         output_rows = [first_row]
 
         for result in self.table_results:
-            coder_row = [result['coder_name'].replace('Coder', '')]
+            coder = result['coder_name'].replace('Coder', '')  # e.g. "PCA"
+            coder_style = LatexUtils.coder_style(coder)
+            coder_row = [coder_style + " " + coder]
             for idx, value in enumerate(result['coder_rds']):
                 rd_str = self._format_rd(value)
                 if value == best_rds[idx]:
@@ -89,9 +91,11 @@ class WriterMinMax:
 
     def _create_latex_file(self, filename, data_lines):
         output = TextFileWriter(self.path, filename)
+        output.write_line(r"\begin{table}[h]")
+        for line in LatexUtils.print_commands():
+            output.write_line(line)
         first_lines = [
-            r"\begin{table}",
-            r"\newcommand{\best}{\cellcolor{violet!20}}",
+            r"\newcommand{\best}{\cellcolor{violet!10}}",
             r"\centering"
             r"\hspace*{-2.1cm}\begin{tabular}{| l | c | c | c | c | c | c | c | c |}"
             r"\cline{2-9}"

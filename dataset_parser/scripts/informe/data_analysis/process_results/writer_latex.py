@@ -22,15 +22,6 @@ class WriterLatex(object):
         'NOAA-SPC-wind': '\datasetwind'
     }
     WINDOW_MAP = {0: '', 4: 2, 8: 3, 16: 4, 32: 5, 64: 6, 128: 7, 256: 8}
-    COLOR_COMMANDS = {
-        'PCA': "cyan!20",
-        'APCA': "green!20",
-        'FR': "yellow!25",
-        'GZIP': "orange!20",
-        'PWLHInt': 'violet!25',
-        'PWLH': 'violet!50',
-        'CA': 'brown!20'
-    }
 
     def __init__(self, path, mode):
         self.mode = mode
@@ -71,7 +62,7 @@ class WriterLatex(object):
         for i in range(self.THRE_COUNT):
             index_begin = 3 * (i + 1)  # 3, 6,  9, ...
             coder = threshold_results[index_begin]
-            coder_style = self._coder_style(coder)
+            coder_style = LatexUtils.coder_style(coder)
             window_value = threshold_results[index_begin + 1]
             window_x = self.WINDOW_MAP[window_value] if not self.__without_window() else window_value
             cr = threshold_results[index_begin + 2]
@@ -88,8 +79,9 @@ class WriterLatex(object):
         self.file.write_line(line)
 
     def __print_start(self):
-        self.__write_line(r"\begin{table}")
-        self.__print_commands()
+        self.__write_line(r"\begin{table}[h]")
+        for line in LatexUtils.print_commands():
+            self.__write_line(line)
         self.__write_line("\centering")
         self.__write_line(self.__legend_for_mode())
         self.__write_line(r"\hspace*{-2.1cm}\begin{tabular}{| l | l " + (self.__c_list_for_mode() * self.THRE_COUNT) + "}")
@@ -97,12 +89,6 @@ class WriterLatex(object):
         self.__write_line(self.threshold_line())
         columns = self.two_columns(True)
         self.__write_line("{Dataset} & {Data Type}" + (columns * self.THRE_COUNT) + r" \\\hline\hline")
-
-    def __print_commands(self):
-        for key, value in self.COLOR_COMMANDS.items():
-            cell_color = "\cellcolor{" + value + "}"
-            command = r"\newcommand{" + self.command_key(key) + "}{" + cell_color + "}"
-            self.__write_line(command)
 
     @staticmethod
     def add_gzip_result(threshold_results, gzip_cr):
@@ -119,12 +105,7 @@ class WriterLatex(object):
                 raise ValueError
             current_index += 3
 
-    @staticmethod
-    def _coder_style(coder):
-        if coder not in ['PCA', 'APCA', 'FR', 'GZIP', 'PWLHInt', 'CA', 'PWLH']:
-            print(coder)
-            raise ValueError
-        return WriterLatex.command_key(coder)
+
 
     def threshold_line(self):
         line = "\multicolumn{1}{c}{}& \multicolumn{1}{c|}{} "
@@ -133,10 +114,6 @@ class WriterLatex(object):
             line += column + ("|" if thre != 30 else "") + "}{e = " + str(thre) + "} "
         line += r"\\\hline"
         return line
-
-    @staticmethod
-    def command_key(key):
-        return '\c' + key.lower()  # cpca, capca, cfr, cgzip
 
     def print_end(self):
         lines = [

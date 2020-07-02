@@ -30,7 +30,7 @@ class PDFS4(PDFSCommon):
         'window': {'show_xlabel': True, 'circle_table_values': True}
     }
 
-    def __init__(self, path, mode=True, datasets_names=None):
+    def __init__(self, path, mode='global', datasets_names=None):
         assert(len(self.HEIGHT_RATIOS) == len(self.PLOTS_MATRIX))
         PDFSCommon.check_valid_mode(mode)
 

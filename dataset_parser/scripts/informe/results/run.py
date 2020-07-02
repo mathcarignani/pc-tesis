@@ -39,15 +39,15 @@ PATH = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/script
 #
 # (3.2) Relative Performance of the Coders
 #
-# PDFS1(PATH + '3.2/', 'local').create_pdfs()
-# PDFS1(PATH + '3.2/', 'global').create_pdfs()
+# PDFS1(PATH + '3.2/', 'local').create_pdfs() # TODO: delete line
+PDFS1(PATH + '3.2/', 'global').create_pdfs()
 
 
 # #
 # # 3.3 Window Size Parameter
 # #
-# # PDFS2(PATH + '3.3/', False).create_pdfs()  # LOCAL
-# # PDFS2(PATH + '3.3/', True).create_pdfs()  # GLOBAL
+# # PDFS2(PATH + '3.3/', 'local).create_pdfs()  # LOCAL - TODO: delete line
+# # PDFS2(PATH + '3.3/', 'global).create_pdfs()  # GLOBAL - TODO: delete line
 # PDFS3(PATH + '3.3/window/').create_pdfs()  # LOCAL (BEST LOCAL WINDOW VS. BEST GLOBAL WINDOW)
 
 
@@ -55,11 +55,10 @@ PATH = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/script
 # #
 # # 3.4 Mask Coders Performance
 # #
-# PDFS4(PATH + '3.4/pdf/', True).create_pdfs()  # GLOBAL
-
+# PDFS4(PATH + '3.4/pdf/', 'global').create_pdfs()  # GLOBAL
 ProcessResults(True, PATH + '3.4/results1', 1).run()
 
-
+# TODO: delete
 # # ProcessResults(True, PATH + '3.4/results12', 12).run()
 # # ProcessResults(True, PATH + '3.4/results2', 2).run()
 # # ProcessResults(True, PATH + '3.4/results3', 3).run()

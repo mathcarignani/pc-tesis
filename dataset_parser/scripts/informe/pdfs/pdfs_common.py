@@ -59,4 +59,4 @@ class PDFSCommon(object):
     def check_valid_mode(mode):
         if mode not in ['local', 'global']:
             print("mode = " + str(mode))
-            raise(ValueError, "ERROR: invalid parameters")
+            raise ValueError("ERROR: invalid parameters")
