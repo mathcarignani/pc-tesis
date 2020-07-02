@@ -61,7 +61,8 @@ class WriterMinMax:
                 if value == best_rds[idx]:
                     rd_str = self._format_best(rd_str)
                 coder_row.append(rd_str)
-            output_rows.append(coder_row)
+            if coder != 'Base':  # do not show CoderBase results
+                output_rows.append(coder_row)
 
         data_lines = [LatexUtils.array_to_table_row(row) for row in output_rows]
         return data_lines
@@ -95,7 +96,7 @@ class WriterMinMax:
         for line in LatexUtils.print_commands():
             output.write_line(line)
         first_lines = [
-            r"\newcommand{\best}{\cellcolor{violet!10}}",
+            r"\newcommand{\best}{\cellcolor{gray!30}}",
             r"\centering"
             r"\hspace*{-2.1cm}\begin{tabular}{| l | c | c | c | c | c | c | c | c |}"
             r"\cline{2-9}"

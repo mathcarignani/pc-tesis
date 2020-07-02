@@ -10,7 +10,10 @@ from scripts.compress.compress_script import CompressScript
 from scripts.compress.globalize.globalize_results import GlobalizeResults
 
 
-# python scripts/informe/results/run.py
+# TO RUN SCRIPT:
+# - Install Python 3.7.0
+# - Run "pip install -r requirements.txt"
+# - Run "python scripts/informe/results/run.py"
 
 
 # TODO: define mode paths
@@ -56,7 +59,7 @@ PDFS1(PATH + '3.2/', 'global').create_pdfs()
 # # 3.4 Mask Coders Performance
 # #
 # PDFS4(PATH + '3.4/pdf/', 'global').create_pdfs()  # GLOBAL
-ProcessResults(True, PATH + '3.4/results1', 1).run()
+ProcessResults(True, PATH + '3.4/results1', 1).run() # includes MinMax table
 
 # TODO: delete
 # # ProcessResults(True, PATH + '3.4/results12', 12).run()
