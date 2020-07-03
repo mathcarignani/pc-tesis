@@ -55,7 +55,7 @@ class WriterMinMax:
         for result in self.table_results:
             coder = result['coder_name'].replace('Coder', '')  # e.g. "PCA"
             coder_style = LatexUtils.coder_style(coder)
-            coder_row = [coder_style + " " + coder]
+            coder_row = [coder + coder_style]
             for idx, value in enumerate(result['coder_rds']):
                 rd_str = self._format_rd(value)
                 if value == best_rds[idx]:
@@ -98,9 +98,9 @@ class WriterMinMax:
         first_lines = [
             r"\newcommand{\best}{\cellcolor{gray!30}}",
             r"\centering"
-            r"\hspace*{-2.1cm}\begin{tabular}{| l | c | c | c | c | c | c | c | c |}"
+            r"\hspace*{0cm}\begin{tabular}{| l | c | c | c | c | c | c | c | c |}"
             r"\cline{2-9}"
-            r"\multicolumn{1}{c|}{}& \multicolumn{8}{c|}{MinMax (\%)}\\\hline"
+            r"\multicolumn{1}{c|}{}& \multicolumn{8}{c|}{maxRD (\%)}\\\hline"
         ]
         last_lines = [
             r"\end{tabular}",
