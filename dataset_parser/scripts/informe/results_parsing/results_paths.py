@@ -42,4 +42,4 @@ class ResultsPaths(object):
             return
         print("mode = " + str(mode))
         print("mask_mode = " + str(mask_mode))
-        raise(ValueError, "ERROR: invalid parameters")
+        raise ValueError('ERROR: invalid parameters')

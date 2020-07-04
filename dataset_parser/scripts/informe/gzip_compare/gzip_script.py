@@ -13,13 +13,13 @@ from scripts.informe.gzip_compare.gzip_common import GZipCommon
 from scripts.informe.gzip_compare.gzip_compare import GZipCompare
 
 
-class ScriptGZipCompare(object):
+class GZipScript(object):
     def __init__(self, transpose=False):
         self.transpose = transpose
-        self.output = CSVWriter(GZipCommon.OUT_PATH, GZipCompare.FILENAME[transpose])
+        self.output = CSVWriter(GZipCommon.OUT_PATH, GZipCommon.FILENAME[transpose])
         self.debug_mode = True
 
-        self.results_reader = ResultsReader('raw', 0)
+        self.results_reader = ResultsReader('local', 0)
         self.df = ResultsToDataframe(self.results_reader).create_full_df()
 
     def run(self):
@@ -29,7 +29,7 @@ class ScriptGZipCompare(object):
     def __datasets_iteration(self):
         for dataset_id, self.dataset_name in enumerate(ExperimentsUtils.DATASET_NAMES):
             self.results_hash = {}
-            print self.dataset_name
+            print(self.dataset_name)
             self._print(self.dataset_name)
             self.output.write_row([self.dataset_name])
             self.__filenames_iteration()
@@ -75,9 +75,8 @@ class ScriptGZipCompare(object):
 
     def _print(self, value):
         if self.debug_mode:
-            print value
+            print(value)
 
 
-# ScriptGZipCompare().run()
-# ScriptGZipCompare(True).run()
+
 # GzipResultsParser().compression_ratio("NOAA-SPC-hail", "noaa_spc-hail.csv", "Lat")

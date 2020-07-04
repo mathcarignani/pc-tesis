@@ -8,7 +8,7 @@ from scripts.informe.pdfs.pdfs4 import PDFS4
 from scripts.informe.data_analysis.process_results.process_results import ProcessResults
 from scripts.compress.compress_script import CompressScript
 from scripts.compress.globalize.globalize_results import GlobalizeResults
-
+from scripts.informe.gzip_compare.gzip_script import GZipScript
 
 # TO RUN SCRIPT:
 # - Install Python 3.7.0
@@ -43,7 +43,7 @@ PATH = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/script
 # (3.2) Relative Performance of the Coders
 #
 # PDFS1(PATH + '3.2/', 'local').create_pdfs() # TODO: delete line
-PDFS1(PATH + '3.2/', 'global').create_pdfs()
+# PDFS1(PATH + '3.2/', 'global').create_pdfs()
 
 
 # #
@@ -59,7 +59,12 @@ PDFS1(PATH + '3.2/', 'global').create_pdfs()
 # # 3.4 Mask Coders Performance
 # #
 # PDFS4(PATH + '3.4/pdf/', 'global').create_pdfs()  # GLOBAL
-ProcessResults(True, PATH + '3.4/results1', 1).run() # includes MinMax table
+# ProcessResults(True, PATH + '3.4/results1', 1).run() # includes MinMax table
+
+GZipScript().run()
+GZipScript(True).run()
+
+
 
 # TODO: delete
 # # ProcessResults(True, PATH + '3.4/results12', 12).run()

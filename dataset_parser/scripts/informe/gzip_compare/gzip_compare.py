@@ -69,7 +69,7 @@ class GZipCompare(object):
                 if i % dataset_columns_count == (self.col_index - 1):
                     row_indexes.append(i)
             break
-        print row_indexes
+        print(row_indexes)
 
         # (2) WRITE THE FILES
         for index in row_indexes:
