@@ -64,7 +64,7 @@ class WriterLatex(object):
             coder = threshold_results[index_begin]
             coder_style = LatexUtils.coder_style(coder)
             window_value = threshold_results[index_begin + 1]
-            window_x = self.WINDOW_MAP[window_value] if not self.__without_window() else window_value
+            window_x = self.WINDOW_MAP[window_value]
             cr = threshold_results[index_begin + 2]
             cr = format(cr, '.2f')
             threshold_list = self.two_columns(False, coder_style + cr, coder_style + str(window_x))
@@ -105,8 +105,6 @@ class WriterLatex(object):
                 raise ValueError
             current_index += 3
 
-
-
     def threshold_line(self):
         line = "\multicolumn{1}{c}{}& \multicolumn{1}{c|}{} "
         column = "& \multicolumn{" + str(self.__count_for_mode()) + "}{c|"
@@ -127,29 +125,18 @@ class WriterLatex(object):
 
     def two_columns(self, header = False, cr = None, w = None):
         if header:
-            if self.__without_window():
-                return r" & {\footnotesize CR} & {\footnotesize RD}"
-            else:
-                return r" & {\footnotesize CR} & {\footnotesize w}"
+            return r" & {\footnotesize CR} & {\footnotesize w}"
         return [cr, w]
 
     def __caption_for_mode(self):
         if self.gzip:
             return "\captiontwo"
-        elif self.mode == 61:
-            return "CoderPWLHInt vs. BEST"
-        elif self.mode == 62:
-            return "CoderAPCA vs. BEST"
-        elif self.mode == 63:
-            return "CoderPCA vs. BEST"
         else:
             return "\captionone"
 
     def __label_for_mode(self):
         if self.gzip:
             return "2"
-        elif self.mode == 5:
-            return "3"
         else:
             return "1"
 
@@ -160,12 +147,7 @@ class WriterLatex(object):
         return 2
 
     def __legend_for_mode(self):
-        if self.mode in [1, 61, 62, 63]:
+        if self.mode == 1:
             return "\legendsone"
-        elif self.mode == 2:
+        else:  # self.mode == 2:
             return "\legendstwo"
-        else:
-            return "\legendsfive"
-
-    def __without_window(self):
-        return self.mode in [5, 61, 62, 63]

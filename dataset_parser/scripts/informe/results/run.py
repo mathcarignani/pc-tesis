@@ -62,21 +62,9 @@ GZIP_PATH = INFORME_PATH + "/gzip_compare/out"
 # # 3.4 Mask Coders Performance
 # #
 # PDFS4(RESULTS_PATH + '3.4/pdf/', 'global').create_pdfs()  # GLOBAL
-# ProcessResults(True, RESULTS_PATH + '3.4/results1', 1).run() # includes MinMax table
+ProcessResults(True, RESULTS_PATH + '3.4/results1', 1).run()
 
-GZipScript(GZIP_PATH, 'results.csv', False).run()
-GZipScript(GZIP_PATH, 'results-t.csv', True).run()
+# GZipScript(GZIP_PATH, 'results.csv', False).run()
+# GZipScript(GZIP_PATH, 'results-t.csv', True).run()
 
-
-
-# TODO: delete
-# # ProcessResults(True, RESULTS_PATH + '3.4/results12', 12).run()
-# # ProcessResults(True, RESULTS_PATH + '3.4/results2', 2).run()
-# # ProcessResults(True, RESULTS_PATH + '3.4/results3', 3).run()
-# # ProcessResults(True, RESULTS_PATH + '3.4/results4', 4).run()
-# ProcessResults(True, RESULTS_PATH + '3.4/results61', 61).run()
-# ProcessResults(True, RESULTS_PATH + '3.4/results62', 62).run()
-# ProcessResults(True, RESULTS_PATH + '3.4/results63', 63).run()
-
-
-
+# ProcessResults(True, RESULTS_PATH + '3.4/results2', 2).run()

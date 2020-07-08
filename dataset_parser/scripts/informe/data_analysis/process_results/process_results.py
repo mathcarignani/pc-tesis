@@ -23,13 +23,7 @@ class ProcessResults(object):
 
     #
     # mode=1  => best algorithm, considering every algorithm
-    # mode=12 => second best algorithm, considering every algorithm
     # mode=2  => best algorithm, considering every algorithm + gzip
-    # mode=3  => only consider the PCA algorithm
-    # mode=4  => only consider the APCA algorithm
-    # mode=5  => PCA vs APCA
-    # mode=61 => RD(Best, CoderPWLHInt)
-    # mode=62 => RD(Best, CoderAPCA)
     #
     def __init__(self, global_mode, path, mode):
         # set script settings
@@ -90,11 +84,9 @@ class ProcessResults(object):
         self.csv_writer_1.write_data_rows()
 
     def __coders_array(self):
-        if self.mode == 3:
-            return ['CoderPCA']
-        if self.mode == 4:
-            return ['CoderAPCA']
-        return ProcessResults.CODERS_ARRAY
+        coders = ProcessResults.CODERS_ARRAY
+        coders = coders if self.mode == 1 else coders + ['gzip']
+        return coders
 
     #
     # Get the best Window for each <Coder, Column, Threshold> combination
@@ -124,47 +116,17 @@ class ProcessResults(object):
     # Get the best <Coder, Window> combination for each <Column, Threshold> combination
     #
     def __column_results_writer_2(self):
-        coder = self.__coder()
         threshold_results = [None, None, self.col_name]
         for threshold in ExperimentsUtils.THRESHOLDS:
-            if self.mode == 5:  # PCA vs APCA
-                row_df_pca = self.panda_utils.min_value_for_threshold('CoderPCA', self.col_index, threshold)
-                row_df_apca = self.panda_utils.min_value_for_threshold('CoderAPCA', self.col_index, threshold)
-                relative_diff, coder_name = ProcessResults.calculate_relative_diff(row_df_pca, row_df_apca, self.col_index)
-                window = relative_diff
-                row_df = row_df_pca if coder_name == "PCA" else row_df_apca
-                _, percentage, _, _ = ProcessResults.get_values(row_df, self.col_index)
-            elif self.mode == 12: # second best algorithm
-                row_df = self.panda_utils.min_value_for_threshold(coder, self.col_index, threshold, 2)
-                window, percentage, coder_name, _ = ProcessResults.get_values(row_df, self.col_index)
-                coder_name = coder_name.replace("Coder", "")
-
-            else: # best algorithm
-                row_df = self.panda_utils.min_value_for_threshold(coder, self.col_index, threshold)
-                window, percentage, coder_name, _ = ProcessResults.get_values(row_df, self.col_index)
-                coder_name = coder_name.replace("Coder", "")
-
-                if self.mode in [61, 62, 63]:
-                    compare_coder = "CoderPWLHInt" if self.mode == 61 else ("CoderAPCA" if self.mode == 62 else "CoderPCA")
-                    row_df_compare_coder = self.panda_utils.min_value_for_threshold(compare_coder, self.col_index, threshold)
-                    _, percentage_compare, _, _ = ProcessResults.get_values(row_df_compare_coder, self.col_index)
-                    relative_diff = ProcessResults.calculate_RD(row_df, row_df_compare_coder, self.col_index)
-
-                    percentage = percentage_compare
-                    window = relative_diff
+            row_df = self.panda_utils.min_value_for_threshold(None, self.col_index, threshold)
+            window, percentage, coder_name, _ = ProcessResults.get_values(row_df, self.col_index)
+            coder_name = coder_name.replace("Coder", "")
 
             new_coder, new_window, new_percentage = coder_name, window, percentage
             threshold_results += [new_coder, new_window, new_percentage]
 
         self.csv_writer_2.write_row(threshold_results)
         self.csv_writer_latex.set_threshold_results(threshold_results)
-
-    def __coder(self):
-        if self.mode == 3:
-            return 'CoderPCA'
-        if self.mode == 4:
-            return 'CoderAPCA'
-        return None
 
     def __set_dataset(self, dataset_name):
         self.csv_writer_1.write_dataset_name(dataset_name)
