@@ -3,7 +3,6 @@ sys.path.append('.')
 
 import pandas as pd
 from auxi.python_utils import assert_equal_lists
-from scripts.informe.results_parsing.results_to_dataframe import ResultsToDataframe
 
 
 class PandasMethods(object):
