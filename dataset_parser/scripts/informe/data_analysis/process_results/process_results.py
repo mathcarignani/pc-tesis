@@ -96,7 +96,8 @@ class ProcessResults(object):
         self.csv_writer_1.write_data_rows()
 
     def __coders_array(self):
-        coders = self.CODERS + ['CoderGZIP'] if self.with_gzip else self.CODERS
+        coders = ['CoderGZIP'] if self.with_gzip else []
+        coders += self.CODERS
         return coders
 
     #

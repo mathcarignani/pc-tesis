@@ -65,7 +65,6 @@ class WriterMinMax:
                 coder_row.append(rd_str)
             if coder != 'Base':  # do not show CoderBase results
                 output_rows.append(coder_row)
-
         data_lines = [LatexUtils.array_to_table_row(row) for row in output_rows]
         return data_lines
 
