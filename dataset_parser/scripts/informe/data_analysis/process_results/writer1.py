@@ -7,12 +7,12 @@ from scripts.informe.math_utils import MathUtils
 from scripts.informe.data_analysis.process_results.writer_min_max import WriterMinMax
 
 class Writer1(object):
-    def __init__(self, path, extra_str):
+    def __init__(self, path, extra_str, mode):
         self.file = CSVWriter(path, extra_str + '-process1.csv')
         self.write_first_row()
         self.data_rows = []
         self.data = {}
-        self.writer_min_max = WriterMinMax(path)
+        self.writer_min_max = WriterMinMax(path, mode)
 
     def write_first_row(self):
         row = ["Dataset", "Filename", "Column", "Coder"]

@@ -9,8 +9,9 @@ from scripts.informe.pandas_utils.pandas_methods import PandasMethods
 class PandasUtilsCheck(object):
     NUMBER_OF_COMBINATIONS = len(ExperimentsUtils.THRESHOLDS) * len(ExperimentsUtils.WINDOWS)
 
-    def __init__(self, pandas_utils):
+    def __init__(self, pandas_utils, with_gzip=False):
         self.pandas_utils = pandas_utils
+        self.with_gzip = with_gzip
         self.df = pandas_utils.df
         self.mask_mode = pandas_utils.mask_mode
         self.data_columns_count = pandas_utils.data_columns_count
@@ -22,6 +23,8 @@ class PandasUtilsCheck(object):
         # check that data for every coder is included
         coders = self.df['coder'].unique()
         expected_coders = ExperimentsUtils.expected_coders(self.mask_mode)
+        if self.with_gzip and 'CoderGZIP' not in expected_coders:
+            expected_coders.append('CoderGZIP')
         np.testing.assert_array_equal(coders, expected_coders)
 
         # check that the rows count for each coder match
@@ -32,7 +35,7 @@ class PandasUtilsCheck(object):
         rows_count = self.__coder_rows_count(coder_name)
         if coder_name == 'CoderBase':
             assert(rows_count == 1)
-        elif coder_name == 'CoderSF':
+        elif coder_name in ['CoderSF', 'CoderGZIP']:
             assert(rows_count == len(ExperimentsUtils.THRESHOLDS))
         else:
             # the rest of the coders have the same number of rows

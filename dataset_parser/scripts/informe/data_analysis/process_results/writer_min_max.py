@@ -6,8 +6,9 @@ from scripts.compress.experiments_utils import ExperimentsUtils
 from scripts.informe.data_analysis.process_results.latex_utils import LatexUtils
 
 class WriterMinMax:
-    def __init__(self, path):
+    def __init__(self, path, mode):
         self.path = path
+        self.mode = mode
         self.dataset_name = None
         self.filename = None
         self.data_rows_array = []
@@ -32,7 +33,8 @@ class WriterMinMax:
 
         best_rds = self._calculate_best_rd_for_each_threshold()
         data_lines = self._data_lines(best_rds)
-        self._create_latex_file("table-minmax.tex", data_lines)
+        filename = "table-minmax-" + str(self.mode) + ".tex"
+        self._create_latex_file(filename, data_lines)
 
     def _populate_data(self, coder_name):
         coder_rds = []

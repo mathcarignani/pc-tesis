@@ -12,16 +12,22 @@ class PandasUtils(object):
     FIXED_ROWS = ResultsToDataframe.KEY_TO_INDEX.keys()
     MAX_DIFF = 0.009
 
-    def __init__(self, dataset_name, filename, df, mask_mode, check=True):
+    def __init__(self, dataset_name, filename, df, mask_mode, check=True, with_gzip=False):
         assert(mask_mode in [0, 3])
 
         self.df = PandasMethods.filename_df(df, filename, dataset_name)
         self.mask_mode = mask_mode
         self.data_columns_count = int((len(self.df.columns) - len(PandasUtils.FIXED_ROWS)) / 2)
         if check:
-            PandasUtilsCheck(self).check_df(dataset_name)
+            PandasUtilsCheck(self, with_gzip).check_df(dataset_name)
         self.__calculate_percentage()
 
+    #
+    # For each data column 'column_x':
+    # - Create a new column 'new_percentage_x' with the CR value
+    # - Checks that |old column 'percentage_x' - new column 'new_percentage_x'| < MAX_DIFF
+    # - Overwrites the old column 'percentage_x' with the values from new column 'new_percentage_x'
+    #
     def __calculate_percentage(self):
         for value in range(1, self.data_columns_count + 1):  # [1, ... ]
             data_col_key = ResultsToDataframe.data_column_key(value)

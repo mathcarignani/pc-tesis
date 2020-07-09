@@ -1,7 +1,7 @@
 import sys
 sys.path.append('.')
 
-import numpy as np
+import pandas as pd
 from scripts.informe.results_parsing.results_reader import ResultsReader
 from scripts.informe.results_parsing.results_to_dataframe import ResultsToDataframe
 from scripts.compress.experiments_utils import ExperimentsUtils
@@ -11,13 +11,14 @@ from scripts.informe.data_analysis.process_results.writer1 import Writer1
 from scripts.informe.data_analysis.process_results.writer2 import Writer2
 from scripts.informe.data_analysis.process_results.writer_latex import WriterLatex
 from scripts.informe.math_utils import MathUtils
+from scripts.informe.gzip_compare.gzip_results_reader import GzipResultsReader
 
 
 class ProcessResults(object):
-    CODERS_ARRAY = ['CoderBase',
-                    'CoderPCA', 'CoderAPCA', 'CoderCA', 'CoderPWLH', 'CoderPWLHInt', 'CoderFR', 'CoderSF',
-                    # 'CoderGAMPS', => ignore this coder
-                    'CoderGAMPSLimit']
+    CODERS = ['CoderBase', 'CoderPCA', 'CoderAPCA', 'CoderCA', 'CoderPWLH', 'CoderPWLHInt', 'CoderFR', 'CoderSF',
+              # 'CoderGAMPS', => ignore this coder
+              'CoderGAMPSLimit']
+    CODERS_WITHOUT_WINDOW = ['CoderBase', 'CoderSF', 'CoderGZIP']
     MM = 3  # MASK MODE
     DEBUG_MODE = False
 
@@ -25,16 +26,17 @@ class ProcessResults(object):
     # mode=1  => best algorithm, considering every algorithm
     # mode=2  => best algorithm, considering every algorithm + gzip
     #
-    def __init__(self, global_mode, path, mode):
+    def __init__(self, global_mode, path, mode, gzip_path=None, gzip_filename=None):
         # set script settings
         self.global_mode = global_mode
         self.path = path
         self.mode = mode
+        self.with_gzip = mode == 2
 
         # set other instances
-        key = 'global' if self.global_mode else 'local'
-        self.results_reader = ResultsReader(key, ProcessResults.MM)
-        self.df = ResultsToDataframe(self.results_reader).create_full_df()
+        self.key = 'global' if self.global_mode else 'local'
+        self.results_reader = ResultsReader(self.key, ProcessResults.MM)
+        self.df = self.__set_df(gzip_path, gzip_filename)
         self.threshold_compare = ThresholdCompare(ResultsReader('local', ProcessResults.MM))
 
     def run(self):
@@ -43,9 +45,19 @@ class ProcessResults(object):
         self.csv_writer_latex.print_end()
         self.csv_writer_1.show_data()
 
+    def __set_df(self, gzip_path, gzip_filename):
+        if not self.with_gzip:
+            return ResultsToDataframe(self.results_reader).create_full_df()
+
+        assert(self.key == 'global')
+        assert gzip_path
+        assert gzip_filename
+        gzip_results_reader = GzipResultsReader(gzip_path, gzip_filename)
+        return ResultsToDataframe(self.results_reader).create_full_df(gzip_results_reader)
+
     def __write_headers(self):
         extra_str = 'global' if self.global_mode else 'local'
-        self.csv_writer_1 = Writer1(self.path, extra_str)
+        self.csv_writer_1 = Writer1(self.path, extra_str, self.mode)
         self.csv_writer_2 = Writer2(self.path, extra_str)
         self.csv_writer_latex = WriterLatex(self.path, self.mode)
 
@@ -64,7 +76,7 @@ class ProcessResults(object):
             self.__columns_iteration()
 
     def __columns_iteration(self):
-        self.panda_utils = PandasUtils(self.dataset_name, self.filename, self.df, ProcessResults.MM)
+        self.panda_utils = PandasUtils(self.dataset_name, self.filename, self.df, ProcessResults.MM, True, self.with_gzip)
         for self.col_index in range(1, ExperimentsUtils.get_dataset_data_columns_count(self.dataset_name) + 1):
             # TODO: uncomment to IGNORE SPEED
             # if self.dataset_name == 'NOAA-SPC-wind' and self.col_index == 3:
@@ -84,8 +96,7 @@ class ProcessResults(object):
         self.csv_writer_1.write_data_rows()
 
     def __coders_array(self):
-        coders = ProcessResults.CODERS_ARRAY
-        coders = coders if self.mode == 1 else coders + ['gzip']
+        coders = self.CODERS + ['CoderGZIP'] if self.with_gzip else self.CODERS
         return coders
 
     #
@@ -104,7 +115,7 @@ class ProcessResults(object):
                 assert(percentage == previous_percentage); assert(total_bits == previous_total_bits)
                 # TODO: uncomment to show blank cells for a repeated experiment
                 # new_window, new_percentage, new_total_bits = '=', '=', '=
-            elif self.coder_name in ['CoderBase', 'CoderSF']:
+            elif self.coder_name in self.CODERS_WITHOUT_WINDOW:
                 new_window = ''  # these coders don't have a window param
 
             windows.append(new_window); percentages.append(new_percentage); total_bits_list.append(new_total_bits)
@@ -155,7 +166,7 @@ class ProcessResults(object):
 
     @staticmethod
     def get_values(row_df, col_index):
-        window = None if np.isnan(row_df['window']) else int(row_df['window'])
+        window = None if pd.isnull(row_df['window']) else int(row_df['window'])
         percentage = ProcessResults.parse_percentage(row_df, col_index)
         total_bits = ProcessResults.parse_total_bits(row_df, col_index)
         coder_name = row_df['coder']

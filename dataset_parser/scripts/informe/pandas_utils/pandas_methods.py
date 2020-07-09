@@ -57,7 +57,6 @@ class PandasMethods(object):
             return min_value_row
 
         thresholds = coder_df.threshold.unique()
-        # check_same = set(thresholds) == set([0, 1, 3, 5, 10, 15, 20, 30])
         check_same = set([0, 1, 3, 5, 10, 15, 20, 30]).issubset(set(thresholds))
         if not check_same:
             print(thresholds)

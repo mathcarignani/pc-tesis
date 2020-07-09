@@ -4,17 +4,17 @@ sys.path.append('.')
 from file_utils.csv_utils.csv_reader import CSVReader
 
 
-class GzipResultsParser(object):
+class GzipResultsReader(object):
     def __init__(self, path, filename):
         self.input = CSVReader(path, filename)
 
-    def global_bits(self, dataset_name, col_name):
+    def gzip_and_base_bits(self, dataset_name, filename, column_name):
         self.input.goto_row(0)
         self.__find_match(0, dataset_name)
-        self.__find_match(1, 'Global')
-        self.__find_match(2, col_name)
-        bits_gzip = int(self.line[4])
-        return bits_gzip
+        self.__find_match(1, filename)  # filename can be 'Global'
+        self.__find_match(2, column_name)
+        gzip_bits, base_bits = int(self.line[4]), int(float(self.line[5]))
+        return gzip_bits, base_bits
 
     def __find_match(self, col_index, value):
         # print col_index, value
