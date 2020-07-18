@@ -5,6 +5,8 @@ import pandas as pd
 
 from scripts.informe.plot.csv_constants import CSVConstants
 from scripts.informe.results_parsing.results_reader import ResultsReader
+from scripts.compress.experiments_utils import ExperimentsUtils
+from scripts.informe.math_utils import MathUtils
 
 
 class ResultsToDataframe(object):
@@ -21,9 +23,14 @@ class ResultsToDataframe(object):
     def __init__(self, results_reader):
         self.results_reader = results_reader
 
-    def create_full_df(self):
+    def create_full_df(self, gzip_results_reader=None):
         lines = self.results_reader.full_results()
         df = self.__create_df(lines)
+
+        if gzip_results_reader is not None:
+            gzip_df = self.__create_gzip_df(df, gzip_results_reader)
+            df = df.append(gzip_df, ignore_index = True)
+
         # print df['dataset'].unique()
         # print df['filename'].unique()
         return df
@@ -53,8 +60,38 @@ class ResultsToDataframe(object):
     ####################################################################################################################
 
     @staticmethod
+    def __create_gzip_df(df, gzip_results_reader):
+        converted_lines = []
+        dataset_pairs = df[['dataset','filename']].drop_duplicates()
+        for index, row in dataset_pairs.iterrows():
+            new_line = ResultsToDataframe.__gzip_new_line(gzip_results_reader, row)
+            for threshold in ExperimentsUtils.THRESHOLDS:  # add one row for every threshold
+                threshold_line = new_line.copy()
+                threshold_line[4] = threshold
+                converted_lines.append(threshold_line)
+        gzip_df = ResultsToDataframe.__create_df_aux(converted_lines)
+        return gzip_df
+
+    @staticmethod
+    def __gzip_new_line(gzip_results_reader, row):
+        dataset_name, filename = row
+        new_line = [dataset_name, filename, None, 'CoderGZIP'] + [None] * 9
+        for column_name in ExperimentsUtils.COLUMN_INDEXES[dataset_name]:
+            gzip_bits, base_bits = gzip_results_reader.gzip_and_base_bits(dataset_name, filename, column_name)
+            percentage = MathUtils.calculate_percentage(base_bits, gzip_bits, 5)
+            new_line += [gzip_bits, 0, gzip_bits, percentage]
+        return new_line
+
+    ####################################################################################################################
+
+    @staticmethod
     def __create_df(lines):
         converted_lines = ResultsReader.convert_lines(lines)
+        df = ResultsToDataframe.__create_df_aux(converted_lines)
+        return df
+
+    @staticmethod
+    def __create_df_aux(converted_lines):
         data = ResultsToDataframe.__create_data(converted_lines)
         df = pd.DataFrame(data)
         return df

@@ -46,7 +46,7 @@ class CSVReader:
         return previous_row
 
     def total_lines_(self):
-        print(self.full_path)
+        # print(self.full_path)
         return sum(1 for _ in csv.reader(self.open_file()))
 
     def open_file(self):

@@ -35,6 +35,12 @@ class CommonPlot(object):
         return colors0, colors3
 
     @classmethod
+    def plot_value(cls, value0, value3):
+        dividend = value0 - value3
+        value = float(dividend) / float(value0) if dividend != 0 else 0
+        return value
+
+    @classmethod
     def set_lim(cls, ax, ymin, ymax):
         ax.set_ylim(bottom=ymin, top=ymax)
 

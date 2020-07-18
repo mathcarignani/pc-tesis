@@ -1,27 +1,33 @@
 import sys
 sys.path.append('.')
 
-import numpy as np
 import pandas as pd
 from scripts.compress.experiments_utils import ExperimentsUtils
 from scripts.informe.results_parsing.results_to_dataframe import ResultsToDataframe
 from scripts.informe.pandas_utils.pandas_methods import PandasMethods
+from scripts.informe.pandas_utils.pandas_utils_check import PandasUtilsCheck
 
 
 class PandasUtils(object):
     FIXED_ROWS = ResultsToDataframe.KEY_TO_INDEX.keys()
     MAX_DIFF = 0.009
 
-    def __init__(self, dataset_name, filename, df, mask_mode, check=True):
+    def __init__(self, dataset_name, filename, df, mask_mode, check=True, with_gzip=False):
         assert(mask_mode in [0, 3])
 
         self.df = PandasMethods.filename_df(df, filename, dataset_name)
         self.mask_mode = mask_mode
         self.data_columns_count = int((len(self.df.columns) - len(PandasUtils.FIXED_ROWS)) / 2)
         if check:
-            PandasUtilsCheck(self).check_df(dataset_name)
+            PandasUtilsCheck(self, with_gzip).check_df(dataset_name)
         self.__calculate_percentage()
 
+    #
+    # For each data column 'column_x':
+    # - Create a new column 'new_percentage_x' with the CR value
+    # - Checks that |old column 'percentage_x' - new column 'new_percentage_x'| < MAX_DIFF
+    # - Overwrites the old column 'percentage_x' with the values from new column 'new_percentage_x'
+    #
     def __calculate_percentage(self):
         for value in range(1, self.data_columns_count + 1):  # [1, ... ]
             data_col_key = ResultsToDataframe.data_column_key(value)
@@ -74,45 +80,3 @@ class PandasUtils(object):
 
     def coder_base_df(self):
         return PandasMethods.coder_df(self.df, 'CoderBase').iloc[0]
-
-
-class PandasUtilsCheck(object):
-    NUMBER_OF_COMBINATIONS = len(ExperimentsUtils.THRESHOLDS) * len(ExperimentsUtils.WINDOWS)
-
-    def __init__(self, pandas_utils):
-        self.pandas_utils = pandas_utils
-        self.df = pandas_utils.df
-        self.mask_mode = pandas_utils.mask_mode
-        self.data_columns_count = pandas_utils.data_columns_count
-        
-    def check_df(self, dataset_name):
-        # check that the number of data columns is ok
-        assert(self.data_columns_count == ExperimentsUtils.get_dataset_data_columns_count(dataset_name))
-
-        # check that data for every coder is included
-        coders = self.df['coder'].unique()
-        expected_coders = ExperimentsUtils.expected_coders(self.mask_mode)
-        np.testing.assert_array_equal(coders, expected_coders)
-
-        # check that the rows count for each coder match
-        for coder_name in coders:
-            self.__check_coder_rows_count(coder_name)
-
-    def __check_coder_rows_count(self, coder_name):
-        rows_count = self.__coder_rows_count(coder_name)
-        if coder_name == 'CoderBase':
-            assert(rows_count == 1)
-        elif coder_name == 'CoderSF':
-            assert(rows_count == len(ExperimentsUtils.THRESHOLDS))
-        else:
-            # the rest of the coders have the same number of rows
-            if rows_count != self.NUMBER_OF_COMBINATIONS:
-                print(PandasMethods.coder_df(self.df, coder_name))
-                print(coder_name)
-                print(self.NUMBER_OF_COMBINATIONS)
-                print(rows_count)
-                assert(rows_count == self.NUMBER_OF_COMBINATIONS)
-    
-    def __coder_rows_count(self, coder_name):
-        rows_count, _ = PandasMethods.coder_df(self.df, coder_name).shape
-        return rows_count

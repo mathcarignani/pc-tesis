@@ -5,13 +5,14 @@ import pandas as pd
 from scripts.informe.data_analysis.process_results.process_results import ProcessResults
 from scripts.compress.experiments_utils import ExperimentsUtils
 from file_utils.csv_utils.csv_writer import CSVWriter
+from pandas_tools.pandas_tools import PandasTools
 
 
 class DatasetAnalysis(object):
     @staticmethod
     def append_df(dataset_name, filename, col_index, col_name, column_df):
         filename_path = ExperimentsUtils.get_dataset_path(dataset_name) + "/" + filename
-        file_df = pd.read_csv(filename_path, skiprows=3, na_values='N')
+        file_df = pd.read_csv(filename_path, skiprows=3, na_values=PandasTools.NO_DATA)
         file_df.drop(['Time Delta'], axis=1, inplace=True)  # remove Time Delta column
 
         new_col_df = pd.DataFrame(columns=[col_name])

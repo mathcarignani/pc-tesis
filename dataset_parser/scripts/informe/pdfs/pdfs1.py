@@ -3,7 +3,6 @@ sys.path.append('.')
 
 from scripts.informe.results_parsing.results_reader import ResultsReader
 from scripts.informe.results_parsing.results_to_dataframe import ResultsToDataframe
-from scripts.informe.pandas_utils.pandas_methods import PandasMethods
 from scripts.informe.pandas_utils.pandas_utils import PandasUtils
 from scripts.informe.pdfs.pdf_page import PdfPage
 from scripts.informe.pdfs.pdfs_common import PDFSCommon
@@ -42,18 +41,15 @@ class PDFS1(PDFSCommon):
         'relative': {'add_min_max_circles': True, 'show_xlabel': True}
     }
 
-    def __init__(self, path, global_mode=True, datasets_names=None):
+    def __init__(self, path, mode='global', datasets_names=None):
         assert(len(self.HEIGHT_RATIOS) == len(self.PLOTS_MATRIX))
-        self.global_mode = global_mode
+        PDFSCommon.check_valid_mode(mode)
 
-        mode_rr_key, mode_path = ('global', 'global/') if global_mode else ('raw', 'local/')
-        self.df_0 = ResultsToDataframe(ResultsReader(mode_rr_key, 0)).create_full_df()
-        self.df_3 = ResultsToDataframe(ResultsReader(mode_rr_key, 3)).create_full_df()
-        self.df_3 = PandasMethods.set_coder_base(self.df_0, self.df_3)
-        path += mode_path
+        self.df_0 = ResultsToDataframe(ResultsReader(mode, 0)).create_full_df()
+        self.df_3 = ResultsToDataframe(ResultsReader(mode, 3)).create_full_df()
 
         self.col_index = None  # iteration variable
-        super(PDFS1, self).__init__(path, global_mode, datasets_names)
+        super(PDFS1, self).__init__(path + mode + "/", mode, datasets_names)
 
     def create_pdf_pages(self, pdf, dataset_name, filename):
         panda_utils_0 = PandasUtils(dataset_name, filename, self.df_0, 0)
@@ -70,6 +66,6 @@ class PDFS1(PDFSCommon):
 
         fig, plt = pdf_page.create(self.CODERS_ARRAY, self.PLOTS_ARRAY, self.PLOTS_MATRIX)
         pdf.savefig(fig)
-        if self.global_mode:
+        if self.mode == 'global':
             plt.savefig(self.create_image_name(self.pdf_name, self.col_index), format='pdf')
         plt.close()

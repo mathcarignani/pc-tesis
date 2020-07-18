@@ -2,6 +2,7 @@ import sys
 sys.path.append('.')
 
 from file_utils.csv_utils.csv_reader import CSVReader
+from pandas_tools.pandas_tools import PandasTools
 
 
 class CSVCompare:
@@ -31,7 +32,7 @@ class CSVCompare:
     def _check_error_thresholds(cls, error_thresholds):
         if error_thresholds is not None:
             for error in error_thresholds:
-                assert(error == "N" or (isinstance(error, int) and error >= 0))
+                assert(error == PandasTools.NO_DATA or (isinstance(error, int) and error >= 0))
         return error_thresholds
 
     def _get_threshold(self, col_index):
@@ -118,8 +119,8 @@ class CSVCompare:
     def _compare_values(self, value1, value2, col_index):
         same_row_value = True
 
-        if value1 == 'N' or value2 == 'N':  # both values must be 'N'
-            if value1 != 'N' or value2 != 'N':
+        if value1 == PandasTools.NO_DATA or value2 == PandasTools.NO_DATA:  # both values must be PandasTools.NO_DATA
+            if value1 != PandasTools.NO_DATA or value2 != PandasTools.NO_DATA:
                 same_row_value = False
 
         else:

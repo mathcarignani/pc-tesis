@@ -6,9 +6,9 @@ from scripts.compress.experiments_utils import ExperimentsUtils
 
 
 class PDFSCommon(object):
-    def __init__(self, path, global_mode, datasets_names=None):
+    def __init__(self, path, mode, datasets_names=None):
         self.path = path
-        self.global_mode = global_mode
+        self.mode = mode
         self.dataset_names = datasets_names or ExperimentsUtils.DATASET_NAMES
 
         # iteration variables
@@ -33,7 +33,7 @@ class PDFSCommon(object):
 
     def dataset_filenames(self):
         filenames = ExperimentsUtils.dataset_csv_filenames(self.dataset_name)
-        filenames = ['Global'] if self.global_mode and len(filenames) > 1 else filenames
+        filenames = ['Global'] if self.mode == 'global' and len(filenames) > 1 else filenames
         return filenames
 
     def plot_options(self):
@@ -54,3 +54,9 @@ class PDFSCommon(object):
         filename = pdf_name.replace(".pdf", "-") + str(col_index) + ".pdf"
         filename = filename.replace("PDF-", "")
         return filename
+
+    @staticmethod
+    def check_valid_mode(mode):
+        if mode not in ['local', 'global']:
+            print("mode = " + str(mode))
+            raise ValueError("ERROR: invalid parameters")

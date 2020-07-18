@@ -5,6 +5,10 @@
 
 void BitStreamWriter::construct(const char * file){
     fp = fopen(file,"w");
+    if (fp == NULL){
+        std::cout << "BitStreamWriter: Error creating file: " << file << std::endl;
+        exit(-1);
+    }
     current = 0, offset = 0;
 #if PRINT_BSW
     current_byte = 0;

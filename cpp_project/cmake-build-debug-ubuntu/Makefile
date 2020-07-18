@@ -447,60 +447,6 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-src/coders/base/coder_common.o: src/coders/base/coder_common.cpp.o
-
-.PHONY : src/coders/base/coder_common.o
-
-# target to build an object file
-src/coders/base/coder_common.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/base/coder_common.cpp.o
-.PHONY : src/coders/base/coder_common.cpp.o
-
-src/coders/base/coder_common.i: src/coders/base/coder_common.cpp.i
-
-.PHONY : src/coders/base/coder_common.i
-
-# target to preprocess a source file
-src/coders/base/coder_common.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/base/coder_common.cpp.i
-.PHONY : src/coders/base/coder_common.cpp.i
-
-src/coders/base/coder_common.s: src/coders/base/coder_common.cpp.s
-
-.PHONY : src/coders/base/coder_common.s
-
-# target to generate assembly for a file
-src/coders/base/coder_common.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/base/coder_common.cpp.s
-.PHONY : src/coders/base/coder_common.cpp.s
-
-src/coders/base/decoder_common.o: src/coders/base/decoder_common.cpp.o
-
-.PHONY : src/coders/base/decoder_common.o
-
-# target to build an object file
-src/coders/base/decoder_common.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/base/decoder_common.cpp.o
-.PHONY : src/coders/base/decoder_common.cpp.o
-
-src/coders/base/decoder_common.i: src/coders/base/decoder_common.cpp.i
-
-.PHONY : src/coders/base/decoder_common.i
-
-# target to preprocess a source file
-src/coders/base/decoder_common.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/base/decoder_common.cpp.i
-.PHONY : src/coders/base/decoder_common.cpp.i
-
-src/coders/base/decoder_common.s: src/coders/base/decoder_common.cpp.s
-
-.PHONY : src/coders/base/decoder_common.s
-
-# target to generate assembly for a file
-src/coders/base/decoder_common.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/base/decoder_common.cpp.s
-.PHONY : src/coders/base/decoder_common.cpp.s
-
 src/coders/base/coder_base.o: src/coders/base/coder_base.cpp.o
 
 .PHONY : src/coders/base/coder_base.o
@@ -608,6 +554,60 @@ src/coders/cols/decoder_cols.s: src/coders/cols/decoder_cols.cpp.s
 src/coders/cols/decoder_cols.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/cols/decoder_cols.cpp.s
 .PHONY : src/coders/cols/decoder_cols.cpp.s
+
+src/coders/common/coder_common.o: src/coders/common/coder_common.cpp.o
+
+.PHONY : src/coders/common/coder_common.o
+
+# target to build an object file
+src/coders/common/coder_common.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/common/coder_common.cpp.o
+.PHONY : src/coders/common/coder_common.cpp.o
+
+src/coders/common/coder_common.i: src/coders/common/coder_common.cpp.i
+
+.PHONY : src/coders/common/coder_common.i
+
+# target to preprocess a source file
+src/coders/common/coder_common.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/common/coder_common.cpp.i
+.PHONY : src/coders/common/coder_common.cpp.i
+
+src/coders/common/coder_common.s: src/coders/common/coder_common.cpp.s
+
+.PHONY : src/coders/common/coder_common.s
+
+# target to generate assembly for a file
+src/coders/common/coder_common.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/common/coder_common.cpp.s
+.PHONY : src/coders/common/coder_common.cpp.s
+
+src/coders/common/decoder_common.o: src/coders/common/decoder_common.cpp.o
+
+.PHONY : src/coders/common/decoder_common.o
+
+# target to build an object file
+src/coders/common/decoder_common.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/common/decoder_common.cpp.o
+.PHONY : src/coders/common/decoder_common.cpp.o
+
+src/coders/common/decoder_common.i: src/coders/common/decoder_common.cpp.i
+
+.PHONY : src/coders/common/decoder_common.i
+
+# target to preprocess a source file
+src/coders/common/decoder_common.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/common/decoder_common.cpp.i
+.PHONY : src/coders/common/decoder_common.cpp.i
+
+src/coders/common/decoder_common.s: src/coders/common/decoder_common.cpp.s
+
+.PHONY : src/coders/common/decoder_common.s
+
+# target to generate assembly for a file
+src/coders/common/decoder_common.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/common/decoder_common.cpp.s
+.PHONY : src/coders/common/decoder_common.cpp.s
 
 src/coders/constant/apca/apca_window.o: src/coders/constant/apca/apca_window.cpp.o
 
@@ -879,32 +879,59 @@ src/coders/correlation/gamps/gamps_utils.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/correlation/gamps/gamps_utils.cpp.s
 .PHONY : src/coders/correlation/gamps/gamps_utils.cpp.s
 
-src/coders/correlation/gamps/structs.o: src/coders/correlation/gamps/structs.cpp.o
+src/coders/correlation/gamps/map_entry.o: src/coders/correlation/gamps/map_entry.cpp.o
 
-.PHONY : src/coders/correlation/gamps/structs.o
+.PHONY : src/coders/correlation/gamps/map_entry.o
 
 # target to build an object file
-src/coders/correlation/gamps/structs.cpp.o:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/correlation/gamps/structs.cpp.o
-.PHONY : src/coders/correlation/gamps/structs.cpp.o
+src/coders/correlation/gamps/map_entry.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/correlation/gamps/map_entry.cpp.o
+.PHONY : src/coders/correlation/gamps/map_entry.cpp.o
 
-src/coders/correlation/gamps/structs.i: src/coders/correlation/gamps/structs.cpp.i
+src/coders/correlation/gamps/map_entry.i: src/coders/correlation/gamps/map_entry.cpp.i
 
-.PHONY : src/coders/correlation/gamps/structs.i
+.PHONY : src/coders/correlation/gamps/map_entry.i
 
 # target to preprocess a source file
-src/coders/correlation/gamps/structs.cpp.i:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/correlation/gamps/structs.cpp.i
-.PHONY : src/coders/correlation/gamps/structs.cpp.i
+src/coders/correlation/gamps/map_entry.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/correlation/gamps/map_entry.cpp.i
+.PHONY : src/coders/correlation/gamps/map_entry.cpp.i
 
-src/coders/correlation/gamps/structs.s: src/coders/correlation/gamps/structs.cpp.s
+src/coders/correlation/gamps/map_entry.s: src/coders/correlation/gamps/map_entry.cpp.s
 
-.PHONY : src/coders/correlation/gamps/structs.s
+.PHONY : src/coders/correlation/gamps/map_entry.s
 
 # target to generate assembly for a file
-src/coders/correlation/gamps/structs.cpp.s:
-	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/correlation/gamps/structs.cpp.s
-.PHONY : src/coders/correlation/gamps/structs.cpp.s
+src/coders/correlation/gamps/map_entry.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/correlation/gamps/map_entry.cpp.s
+.PHONY : src/coders/correlation/gamps/map_entry.cpp.s
+
+src/coders/correlation/gamps/mapping_table.o: src/coders/correlation/gamps/mapping_table.cpp.o
+
+.PHONY : src/coders/correlation/gamps/mapping_table.o
+
+# target to build an object file
+src/coders/correlation/gamps/mapping_table.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/correlation/gamps/mapping_table.cpp.o
+.PHONY : src/coders/correlation/gamps/mapping_table.cpp.o
+
+src/coders/correlation/gamps/mapping_table.i: src/coders/correlation/gamps/mapping_table.cpp.i
+
+.PHONY : src/coders/correlation/gamps/mapping_table.i
+
+# target to preprocess a source file
+src/coders/correlation/gamps/mapping_table.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/correlation/gamps/mapping_table.cpp.i
+.PHONY : src/coders/correlation/gamps/mapping_table.cpp.i
+
+src/coders/correlation/gamps/mapping_table.s: src/coders/correlation/gamps/mapping_table.cpp.s
+
+.PHONY : src/coders/correlation/gamps/mapping_table.s
+
+# target to generate assembly for a file
+src/coders/correlation/gamps/mapping_table.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/correlation/gamps/mapping_table.cpp.s
+.PHONY : src/coders/correlation/gamps/mapping_table.cpp.s
 
 src/coders/linear/ca/ca_window.o: src/coders/linear/ca/ca_window.cpp.o
 
@@ -1337,6 +1364,168 @@ src/coders/utils/header/header_decoder.s: src/coders/utils/header/header_decoder
 src/coders/utils/header/header_decoder.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/utils/header/header_decoder.cpp.s
 .PHONY : src/coders/utils/header/header_decoder.cpp.s
+
+src/coders/utils/mask/arithmetic/arithmetic_mask_coder.o: src/coders/utils/mask/arithmetic/arithmetic_mask_coder.cpp.o
+
+.PHONY : src/coders/utils/mask/arithmetic/arithmetic_mask_coder.o
+
+# target to build an object file
+src/coders/utils/mask/arithmetic/arithmetic_mask_coder.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/utils/mask/arithmetic/arithmetic_mask_coder.cpp.o
+.PHONY : src/coders/utils/mask/arithmetic/arithmetic_mask_coder.cpp.o
+
+src/coders/utils/mask/arithmetic/arithmetic_mask_coder.i: src/coders/utils/mask/arithmetic/arithmetic_mask_coder.cpp.i
+
+.PHONY : src/coders/utils/mask/arithmetic/arithmetic_mask_coder.i
+
+# target to preprocess a source file
+src/coders/utils/mask/arithmetic/arithmetic_mask_coder.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/utils/mask/arithmetic/arithmetic_mask_coder.cpp.i
+.PHONY : src/coders/utils/mask/arithmetic/arithmetic_mask_coder.cpp.i
+
+src/coders/utils/mask/arithmetic/arithmetic_mask_coder.s: src/coders/utils/mask/arithmetic/arithmetic_mask_coder.cpp.s
+
+.PHONY : src/coders/utils/mask/arithmetic/arithmetic_mask_coder.s
+
+# target to generate assembly for a file
+src/coders/utils/mask/arithmetic/arithmetic_mask_coder.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/utils/mask/arithmetic/arithmetic_mask_coder.cpp.s
+.PHONY : src/coders/utils/mask/arithmetic/arithmetic_mask_coder.cpp.s
+
+src/coders/utils/mask/arithmetic/arithmetic_mask_decoder.o: src/coders/utils/mask/arithmetic/arithmetic_mask_decoder.cpp.o
+
+.PHONY : src/coders/utils/mask/arithmetic/arithmetic_mask_decoder.o
+
+# target to build an object file
+src/coders/utils/mask/arithmetic/arithmetic_mask_decoder.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/utils/mask/arithmetic/arithmetic_mask_decoder.cpp.o
+.PHONY : src/coders/utils/mask/arithmetic/arithmetic_mask_decoder.cpp.o
+
+src/coders/utils/mask/arithmetic/arithmetic_mask_decoder.i: src/coders/utils/mask/arithmetic/arithmetic_mask_decoder.cpp.i
+
+.PHONY : src/coders/utils/mask/arithmetic/arithmetic_mask_decoder.i
+
+# target to preprocess a source file
+src/coders/utils/mask/arithmetic/arithmetic_mask_decoder.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/utils/mask/arithmetic/arithmetic_mask_decoder.cpp.i
+.PHONY : src/coders/utils/mask/arithmetic/arithmetic_mask_decoder.cpp.i
+
+src/coders/utils/mask/arithmetic/arithmetic_mask_decoder.s: src/coders/utils/mask/arithmetic/arithmetic_mask_decoder.cpp.s
+
+.PHONY : src/coders/utils/mask/arithmetic/arithmetic_mask_decoder.s
+
+# target to generate assembly for a file
+src/coders/utils/mask/arithmetic/arithmetic_mask_decoder.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/utils/mask/arithmetic/arithmetic_mask_decoder.cpp.s
+.PHONY : src/coders/utils/mask/arithmetic/arithmetic_mask_decoder.cpp.s
+
+src/coders/utils/mask/arithmetic/coder_input.o: src/coders/utils/mask/arithmetic/coder_input.cpp.o
+
+.PHONY : src/coders/utils/mask/arithmetic/coder_input.o
+
+# target to build an object file
+src/coders/utils/mask/arithmetic/coder_input.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/utils/mask/arithmetic/coder_input.cpp.o
+.PHONY : src/coders/utils/mask/arithmetic/coder_input.cpp.o
+
+src/coders/utils/mask/arithmetic/coder_input.i: src/coders/utils/mask/arithmetic/coder_input.cpp.i
+
+.PHONY : src/coders/utils/mask/arithmetic/coder_input.i
+
+# target to preprocess a source file
+src/coders/utils/mask/arithmetic/coder_input.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/utils/mask/arithmetic/coder_input.cpp.i
+.PHONY : src/coders/utils/mask/arithmetic/coder_input.cpp.i
+
+src/coders/utils/mask/arithmetic/coder_input.s: src/coders/utils/mask/arithmetic/coder_input.cpp.s
+
+.PHONY : src/coders/utils/mask/arithmetic/coder_input.s
+
+# target to generate assembly for a file
+src/coders/utils/mask/arithmetic/coder_input.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/utils/mask/arithmetic/coder_input.cpp.s
+.PHONY : src/coders/utils/mask/arithmetic/coder_input.cpp.s
+
+src/coders/utils/mask/arithmetic/coder_output.o: src/coders/utils/mask/arithmetic/coder_output.cpp.o
+
+.PHONY : src/coders/utils/mask/arithmetic/coder_output.o
+
+# target to build an object file
+src/coders/utils/mask/arithmetic/coder_output.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/utils/mask/arithmetic/coder_output.cpp.o
+.PHONY : src/coders/utils/mask/arithmetic/coder_output.cpp.o
+
+src/coders/utils/mask/arithmetic/coder_output.i: src/coders/utils/mask/arithmetic/coder_output.cpp.i
+
+.PHONY : src/coders/utils/mask/arithmetic/coder_output.i
+
+# target to preprocess a source file
+src/coders/utils/mask/arithmetic/coder_output.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/utils/mask/arithmetic/coder_output.cpp.i
+.PHONY : src/coders/utils/mask/arithmetic/coder_output.cpp.i
+
+src/coders/utils/mask/arithmetic/coder_output.s: src/coders/utils/mask/arithmetic/coder_output.cpp.s
+
+.PHONY : src/coders/utils/mask/arithmetic/coder_output.s
+
+# target to generate assembly for a file
+src/coders/utils/mask/arithmetic/coder_output.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/utils/mask/arithmetic/coder_output.cpp.s
+.PHONY : src/coders/utils/mask/arithmetic/coder_output.cpp.s
+
+src/coders/utils/mask/arithmetic/decoder_input.o: src/coders/utils/mask/arithmetic/decoder_input.cpp.o
+
+.PHONY : src/coders/utils/mask/arithmetic/decoder_input.o
+
+# target to build an object file
+src/coders/utils/mask/arithmetic/decoder_input.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/utils/mask/arithmetic/decoder_input.cpp.o
+.PHONY : src/coders/utils/mask/arithmetic/decoder_input.cpp.o
+
+src/coders/utils/mask/arithmetic/decoder_input.i: src/coders/utils/mask/arithmetic/decoder_input.cpp.i
+
+.PHONY : src/coders/utils/mask/arithmetic/decoder_input.i
+
+# target to preprocess a source file
+src/coders/utils/mask/arithmetic/decoder_input.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/utils/mask/arithmetic/decoder_input.cpp.i
+.PHONY : src/coders/utils/mask/arithmetic/decoder_input.cpp.i
+
+src/coders/utils/mask/arithmetic/decoder_input.s: src/coders/utils/mask/arithmetic/decoder_input.cpp.s
+
+.PHONY : src/coders/utils/mask/arithmetic/decoder_input.s
+
+# target to generate assembly for a file
+src/coders/utils/mask/arithmetic/decoder_input.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/utils/mask/arithmetic/decoder_input.cpp.s
+.PHONY : src/coders/utils/mask/arithmetic/decoder_input.cpp.s
+
+src/coders/utils/mask/arithmetic/decoder_output.o: src/coders/utils/mask/arithmetic/decoder_output.cpp.o
+
+.PHONY : src/coders/utils/mask/arithmetic/decoder_output.o
+
+# target to build an object file
+src/coders/utils/mask/arithmetic/decoder_output.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/utils/mask/arithmetic/decoder_output.cpp.o
+.PHONY : src/coders/utils/mask/arithmetic/decoder_output.cpp.o
+
+src/coders/utils/mask/arithmetic/decoder_output.i: src/coders/utils/mask/arithmetic/decoder_output.cpp.i
+
+.PHONY : src/coders/utils/mask/arithmetic/decoder_output.i
+
+# target to preprocess a source file
+src/coders/utils/mask/arithmetic/decoder_output.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/utils/mask/arithmetic/decoder_output.cpp.i
+.PHONY : src/coders/utils/mask/arithmetic/decoder_output.cpp.i
+
+src/coders/utils/mask/arithmetic/decoder_output.s: src/coders/utils/mask/arithmetic/decoder_output.cpp.s
+
+.PHONY : src/coders/utils/mask/arithmetic/decoder_output.s
+
+# target to generate assembly for a file
+src/coders/utils/mask/arithmetic/decoder_output.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/coders/utils/mask/arithmetic/decoder_output.cpp.s
+.PHONY : src/coders/utils/mask/arithmetic/decoder_output.cpp.s
 
 src/coders/utils/mask/golomb/golomb_coder.o: src/coders/utils/mask/golomb/golomb_coder.cpp.o
 
@@ -2148,6 +2337,33 @@ src/tests/tests_line.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests_line.cpp.s
 .PHONY : src/tests/tests_line.cpp.s
 
+src/tests/tests_modelKT.o: src/tests/tests_modelKT.cpp.o
+
+.PHONY : src/tests/tests_modelKT.o
+
+# target to build an object file
+src/tests/tests_modelKT.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests_modelKT.cpp.o
+.PHONY : src/tests/tests_modelKT.cpp.o
+
+src/tests/tests_modelKT.i: src/tests/tests_modelKT.cpp.i
+
+.PHONY : src/tests/tests_modelKT.i
+
+# target to preprocess a source file
+src/tests/tests_modelKT.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests_modelKT.cpp.i
+.PHONY : src/tests/tests_modelKT.cpp.i
+
+src/tests/tests_modelKT.s: src/tests/tests_modelKT.cpp.s
+
+.PHONY : src/tests/tests_modelKT.s
+
+# target to generate assembly for a file
+src/tests/tests_modelKT.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/tests_modelKT.cpp.s
+.PHONY : src/tests/tests_modelKT.cpp.s
+
 src/tests/tests_utils.o: src/tests/tests_utils.cpp.o
 
 .PHONY : src/tests/tests_utils.o
@@ -2282,6 +2498,33 @@ src/tests/utils/tests_vector_utils.s: src/tests/utils/tests_vector_utils.cpp.s
 src/tests/utils/tests_vector_utils.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/tests/utils/tests_vector_utils.cpp.s
 .PHONY : src/tests/utils/tests_vector_utils.cpp.s
+
+src/utils/conversor.o: src/utils/conversor.cpp.o
+
+.PHONY : src/utils/conversor.o
+
+# target to build an object file
+src/utils/conversor.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/utils/conversor.cpp.o
+.PHONY : src/utils/conversor.cpp.o
+
+src/utils/conversor.i: src/utils/conversor.cpp.i
+
+.PHONY : src/utils/conversor.i
+
+# target to preprocess a source file
+src/utils/conversor.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/utils/conversor.cpp.i
+.PHONY : src/utils/conversor.cpp.i
+
+src/utils/conversor.s: src/utils/conversor.cpp.s
+
+.PHONY : src/utils/conversor.s
+
+# target to generate assembly for a file
+src/utils/conversor.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp_project.dir/build.make CMakeFiles/cpp_project.dir/src/utils/conversor.cpp.s
+.PHONY : src/utils/conversor.cpp.s
 
 src/utils/datetime_utils.o: src/utils/datetime_utils.cpp.o
 
@@ -2463,12 +2706,6 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... src/coders/base/coder_common.o"
-	@echo "... src/coders/base/coder_common.i"
-	@echo "... src/coders/base/coder_common.s"
-	@echo "... src/coders/base/decoder_common.o"
-	@echo "... src/coders/base/decoder_common.i"
-	@echo "... src/coders/base/decoder_common.s"
 	@echo "... src/coders/base/coder_base.o"
 	@echo "... src/coders/base/coder_base.i"
 	@echo "... src/coders/base/coder_base.s"
@@ -2481,6 +2718,12 @@ help:
 	@echo "... src/coders/cols/decoder_cols.o"
 	@echo "... src/coders/cols/decoder_cols.i"
 	@echo "... src/coders/cols/decoder_cols.s"
+	@echo "... src/coders/common/coder_common.o"
+	@echo "... src/coders/common/coder_common.i"
+	@echo "... src/coders/common/coder_common.s"
+	@echo "... src/coders/common/decoder_common.o"
+	@echo "... src/coders/common/decoder_common.i"
+	@echo "... src/coders/common/decoder_common.s"
 	@echo "... src/coders/constant/apca/apca_window.o"
 	@echo "... src/coders/constant/apca/apca_window.i"
 	@echo "... src/coders/constant/apca/apca_window.s"
@@ -2511,9 +2754,12 @@ help:
 	@echo "... src/coders/correlation/gamps/gamps_utils.o"
 	@echo "... src/coders/correlation/gamps/gamps_utils.i"
 	@echo "... src/coders/correlation/gamps/gamps_utils.s"
-	@echo "... src/coders/correlation/gamps/structs.o"
-	@echo "... src/coders/correlation/gamps/structs.i"
-	@echo "... src/coders/correlation/gamps/structs.s"
+	@echo "... src/coders/correlation/gamps/map_entry.o"
+	@echo "... src/coders/correlation/gamps/map_entry.i"
+	@echo "... src/coders/correlation/gamps/map_entry.s"
+	@echo "... src/coders/correlation/gamps/mapping_table.o"
+	@echo "... src/coders/correlation/gamps/mapping_table.i"
+	@echo "... src/coders/correlation/gamps/mapping_table.s"
 	@echo "... src/coders/linear/ca/ca_window.o"
 	@echo "... src/coders/linear/ca/ca_window.i"
 	@echo "... src/coders/linear/ca/ca_window.s"
@@ -2562,6 +2808,24 @@ help:
 	@echo "... src/coders/utils/header/header_decoder.o"
 	@echo "... src/coders/utils/header/header_decoder.i"
 	@echo "... src/coders/utils/header/header_decoder.s"
+	@echo "... src/coders/utils/mask/arithmetic/arithmetic_mask_coder.o"
+	@echo "... src/coders/utils/mask/arithmetic/arithmetic_mask_coder.i"
+	@echo "... src/coders/utils/mask/arithmetic/arithmetic_mask_coder.s"
+	@echo "... src/coders/utils/mask/arithmetic/arithmetic_mask_decoder.o"
+	@echo "... src/coders/utils/mask/arithmetic/arithmetic_mask_decoder.i"
+	@echo "... src/coders/utils/mask/arithmetic/arithmetic_mask_decoder.s"
+	@echo "... src/coders/utils/mask/arithmetic/coder_input.o"
+	@echo "... src/coders/utils/mask/arithmetic/coder_input.i"
+	@echo "... src/coders/utils/mask/arithmetic/coder_input.s"
+	@echo "... src/coders/utils/mask/arithmetic/coder_output.o"
+	@echo "... src/coders/utils/mask/arithmetic/coder_output.i"
+	@echo "... src/coders/utils/mask/arithmetic/coder_output.s"
+	@echo "... src/coders/utils/mask/arithmetic/decoder_input.o"
+	@echo "... src/coders/utils/mask/arithmetic/decoder_input.i"
+	@echo "... src/coders/utils/mask/arithmetic/decoder_input.s"
+	@echo "... src/coders/utils/mask/arithmetic/decoder_output.o"
+	@echo "... src/coders/utils/mask/arithmetic/decoder_output.i"
+	@echo "... src/coders/utils/mask/arithmetic/decoder_output.s"
 	@echo "... src/coders/utils/mask/golomb/golomb_coder.o"
 	@echo "... src/coders/utils/mask/golomb/golomb_coder.i"
 	@echo "... src/coders/utils/mask/golomb/golomb_coder.s"
@@ -2652,6 +2916,9 @@ help:
 	@echo "... src/tests/tests_line.o"
 	@echo "... src/tests/tests_line.i"
 	@echo "... src/tests/tests_line.s"
+	@echo "... src/tests/tests_modelKT.o"
+	@echo "... src/tests/tests_modelKT.i"
+	@echo "... src/tests/tests_modelKT.s"
 	@echo "... src/tests/tests_utils.o"
 	@echo "... src/tests/tests_utils.i"
 	@echo "... src/tests/tests_utils.s"
@@ -2667,6 +2934,9 @@ help:
 	@echo "... src/tests/utils/tests_vector_utils.o"
 	@echo "... src/tests/utils/tests_vector_utils.i"
 	@echo "... src/tests/utils/tests_vector_utils.s"
+	@echo "... src/utils/conversor.o"
+	@echo "... src/utils/conversor.i"
+	@echo "... src/utils/conversor.s"
 	@echo "... src/utils/datetime_utils.o"
 	@echo "... src/utils/datetime_utils.i"
 	@echo "... src/utils/datetime_utils.s"

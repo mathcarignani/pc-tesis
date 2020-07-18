@@ -3,16 +3,18 @@ sys.path.append('.')
 
 from file_utils.csv_utils.csv_reader import CSVReader
 from scripts.informe.plot.csv_constants import CSVConstants
-from scripts.informe.results_parsing.results_constants import ResultsConstants
+from scripts.informe.results_parsing.results_paths import ResultsPaths
 from scripts.informe.math_utils import MathUtils
 
-
+#
+# This class is used for parsing the results of the results.csv file, which is created when running compress_script.py
+#
 class ResultsReader(object):
-    def __init__(self, file_key, file_value):
-        if file_value in [0, 3]:
-            input_path, input_filename = ResultsConstants.get_path_and_filename(file_key, file_value)
+    def __init__(self, mode, mask_mode):
+        if mask_mode in [0, 3]:
+            input_path, input_filename = ResultsPaths.get_path_and_filename(mode, mask_mode)
         else:
-            input_path, input_filename = file_key, file_value
+            input_path, input_filename = mode, mask_mode
         self.input_file = CSVReader(input_path, input_filename)
 
     def read_line_no_count(self):
@@ -143,8 +145,8 @@ class ResultsReader(object):
         for index in range(CSVConstants.INDEX_TOTAL_SIZE, len(line)):
             if CSVConstants.is_percentage_index(index):
                 value = line[index]
-                if value.count('.') > 1:  # e.g. 1.145.49
-                    value = value.replace('.', '', 1)
+                if value.count('.') > 1:  # e.g. "1.145.49"
+                    value = value.replace('.', '', 1)  # "1.145.49" => "1145.49"
                 new_line.append(float(value))
             else:
                 new_line.append(MathUtils.str_to_int(line[index]))

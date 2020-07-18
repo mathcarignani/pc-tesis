@@ -3,7 +3,6 @@ sys.path.append('.')
 
 import pandas as pd
 from auxi.python_utils import assert_equal_lists
-from scripts.informe.results_parsing.results_to_dataframe import ResultsToDataframe
 
 
 class PandasMethods(object):
@@ -58,7 +57,6 @@ class PandasMethods(object):
             return min_value_row
 
         thresholds = coder_df.threshold.unique()
-        # check_same = set(thresholds) == set([0, 1, 3, 5, 10, 15, 20, 30])
         check_same = set([0, 1, 3, 5, 10, 15, 20, 30]).issubset(set(thresholds))
         if not check_same:
             print(thresholds)
@@ -145,49 +143,3 @@ class PandasMethods(object):
                     assert(len(rows3) == 1)
                     value0, value3 = rows0.iloc[0], rows3.iloc[0]
                     assert(value0 == value3)
-
-    #
-    # For every CoderBase row in df3 it changes the values for the data columns with the values from df0.
-    # It also recalculates the percentages taking the new value as base.
-    #
-    @staticmethod
-    def set_coder_base(df0, df3):
-        datasets_df_0 = PandasMethods.datasets(df0)
-        datasets_df_3 = PandasMethods.datasets(df3)
-        assert_equal_lists(datasets_df_0, datasets_df_3)
-
-        column_names_0 = PandasMethods.data_column_names(df0)
-        column_names_3 = PandasMethods.data_column_names(df3)
-        assert_equal_lists(column_names_0, column_names_3)
-
-        for dataset in datasets_df_0:
-            filenames_df_0 = PandasMethods.filenames(df0, dataset)
-            filenames_df_3 = PandasMethods.filenames(df3, dataset)
-            assert_equal_lists(filenames_df_0, filenames_df_3)
-
-            for filename in filenames_df_0:
-                df0_filename = (df0['filename'] == filename) & (df0['dataset'] == dataset)
-                df3_filename = (df3['filename'] == filename) & (df3['dataset'] == dataset)
-                df0_filename_base = df0_filename & (df0['coder'] == 'CoderBase')
-                df3_filename_base = df3_filename & (df3['coder'] == 'CoderBase')
-
-                for index, col in enumerate(column_names_0):
-                    percentage_col = ResultsToDataframe.percentage_column_key(index + 1)
-
-                    total_base_df0 = len(df0.loc[df0_filename_base][col])
-                    total_base_df3 = len(df3.loc[df3_filename_base][col])
-                    assert(total_base_df0 == total_base_df3)
-
-                    if total_base_df0 == 0:
-                        continue
-                    assert(total_base_df0 == 1)
-
-                    # set the base coder value
-                    base_coder_total = df0.loc[df0_filename_base][col].iloc[0]
-                    df3.loc[df3_filename_base, col] = base_coder_total
-
-                    # recalculate the percentages
-                    df3.loc[df3_filename, percentage_col] = 100 * (df3.loc[df3_filename, col] / base_coder_total)
-
-        PandasMethods.check_coder_base_matches(df0, df3)
-        return df3

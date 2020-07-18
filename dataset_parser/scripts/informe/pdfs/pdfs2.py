@@ -33,22 +33,19 @@ class PDFS2(PDFSCommon):
         'window': {'show_xlabel': True},
     }
 
-    def __init__(self, path, global_mode=True, datasets_names=None):
+    def __init__(self, path, mode='global', datasets_names=None):
         assert(len(self.HEIGHT_RATIOS) == len(self.PLOTS_MATRIX))
-        self.global_mode = global_mode
+        PDFSCommon.check_valid_mode(mode)
 
-        mode_rr_key, mode_path = ('global', 'global/') if global_mode else ('raw', 'local/')
-        self.df_0 = ResultsToDataframe(ResultsReader(mode_rr_key, 0)).create_full_df()
-        self.df_3 = ResultsToDataframe(ResultsReader(mode_rr_key, 3)).create_full_df()
-        self.df_3 = PandasMethods.set_coder_base(self.df_0, self.df_3)
-        path += mode_path
+        self.df_0 = ResultsToDataframe(ResultsReader(mode, 0)).create_full_df()
+        self.df_3 = ResultsToDataframe(ResultsReader(mode, 3)).create_full_df()
 
         self.col_index = None  # iteration variable
-        super(PDFS2, self).__init__(path, global_mode, datasets_names)
+        super(PDFS2, self).__init__(path + mode + "/", mode, datasets_names)
 
     def plot_options(self):
         options = self.PLOT_OPTIONS
-        color = PlotConstants.COLOR_LIGHT_BLUE if self.global_mode else PlotConstants.COLOR_RED
+        color = PlotConstants.COLOR_LIGHT_BLUE if self.mode == 'global' else PlotConstants.COLOR_RED
         options['window']['color'] = color
         options['compression']['color'] = color
         return options
@@ -67,6 +64,6 @@ class PDFS2(PDFSCommon):
 
         fig, plt = pdf_page.create(self.CODERS_ARRAY, self.PLOTS_ARRAY, self.PLOTS_MATRIX)
         pdf.savefig(fig)
-        if self.global_mode:
+        if self.mode == 'global':
             plt.savefig(self.pdf_name.replace(".pdf", "-") + str(self.col_index) + ".png")
         plt.close()
