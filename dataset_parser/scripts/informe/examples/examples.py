@@ -6,6 +6,7 @@ sys.path.append('.')
 import matplotlib.pyplot as plt
 from scripts.informe.plot.plot_constants import PlotConstants
 
+plt.rcParams["mathtext.fontset"] = "cm"
 
 class Examples(object):
     LABEL_ORIG = 'original value'
@@ -19,9 +20,9 @@ class Examples(object):
     def __init__(self):
         pass
 
-    def common_pca_apca(self, original, plot_values, scatter_values, filename, title):
+    def common_pca_apca(self, original, plot_values, scatter_values, filename, algorithm):
         print(plt.rcParams["figure.figsize"]) # [6.4, 4.8]
-        plt.rcParams["figure.figsize"] = [6.4, 3.5]
+        plt.rcParams["figure.figsize"] = [8, 3.48]
         scatter_x = range(len(original))
         fig, ax = plt.subplots()
 
@@ -31,14 +32,14 @@ class Examples(object):
         # decoded values
         for index, s in enumerate(scatter_values):
             x_values = scatter_x[s['begin']:s['end'] + 1]
-            label = self.LABEL_DECO if index == 0 else None
+            label = self.encoded_label(algorithm) if index == 0 else None
             ax.scatter(x_values, s['y_values'], c=self.COLOR_DECO, marker='o', zorder=1, label=label)
 
         # decoded lines
         for p in plot_values:
             ax.plot(p['x_values'], p['y_values'], c=self.COLOR_DECO, zorder=1)
 
-        ax.set(xlabel=self.XLABEL, ylabel=self.YLABEL) # , title=title)
+        ax.set(xlabel=self.XLABEL, ylabel=self.YLABEL, title=self.title(algorithm))
         ax.grid(color=PlotConstants.COLOR_SILVER, linestyle='dotted')
         ax.set_axisbelow(True)
         ax.set_ylim(bottom=0, top=4.5)
@@ -67,7 +68,7 @@ class Examples(object):
             {'begin': 4, 'end': 7, 'y_values': [2] * 4},
             {'begin': 8, 'end': 11, 'y_values': original[8:12]},
         ]
-        self.common_pca_apca(original, plot_values, scatter_values, "1.pca.pdf", 'Algorithm PCA')
+        self.common_pca_apca(original, plot_values, scatter_values, "1.pca.pdf", 'PCA')
 
 
     def apca(self):
@@ -82,9 +83,14 @@ class Examples(object):
             {'begin': 8, 'end': 9, 'y_values': [3] * 2},
             {'begin': 10, 'end': 11, 'y_values': [1] * 2},
         ]
-        self.common_pca_apca(original, plot_values, scatter_values, "2.apca.pdf", 'Algorithm APCA')
+        self.common_pca_apca(original, plot_values, scatter_values, "2.apca.pdf", 'APCA')
 
+    def encoded_label(self, algorithm):
+        return self.LABEL_DECO # + " (" + algorithm + ")"
 
+    def title(self, algorithm, epsilon=1, window=4):
+        text = "Algorithm " + algorithm + " with " + r"$\epsilon = 1$" + " and " + r"$w = 4$"
+        return text
 
 
 Examples().pca()
