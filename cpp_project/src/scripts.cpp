@@ -14,6 +14,7 @@
 #include "csv_utils.h"
 #include "bit_stream_utils.h"
 #include "assert.h"
+#include "string_utils.h"
 
 void Scripts::decode(Path input_path, Path output_path){
     BitStreamReader* bit_stream_reader = new BitStreamReader(input_path);
@@ -35,6 +36,9 @@ Dataset* Scripts::codeBase(Path input_path, Path output_path){
 
 Dataset* Scripts::code(std::string coder_name, Path input_path, Path output_path,
                             int window_size, std::vector<int> error_thresholds_vector){
+    if (!StringUtils::find(coder_name, "Coder")){
+        coder_name = "Coder" + coder_name;
+    }
     if (coder_name == "CoderPCA")   return Scripts::codePCA(input_path, output_path, window_size, error_thresholds_vector);
     if (coder_name == "CoderAPCA")  return Scripts::codeAPCA(input_path, output_path, window_size, error_thresholds_vector);
     if (coder_name == "CoderCA")    return Scripts::codeCA(input_path, output_path, window_size, error_thresholds_vector);

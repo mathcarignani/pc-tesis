@@ -10,7 +10,10 @@ public:
     static void runAll();
 
 private:
+    static void commonTest(std::string input_filename, std::string coder_name, int window_size,
+                           std::vector<int> error_thresholds_vector);
     static void pcaTest();
+    static void apcaTest();
 
     static const std::string EXAMPLES_PATH;
     static const std::string EXPECTED_PATH;
