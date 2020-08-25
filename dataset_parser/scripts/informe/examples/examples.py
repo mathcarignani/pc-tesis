@@ -20,8 +20,8 @@ class Examples(object):
     def __init__(self):
         pass
 
-    def common_pca_apca(self, original, plot_values, scatter_values, filename, algorithm, epsilon=1, window=4):
-        print(plt.rcParams["figure.figsize"]) # [6.4, 4.8]
+    def common_pca_apca(self, original, decoded, plot_values, filename, algorithm, epsilon=1, window=4):
+        # print(plt.rcParams["figure.figsize"]) # [6.4, 4.8]
         plt.rcParams["figure.figsize"] = [8, 3.48]
         scatter_x = range(len(original))
         fig, ax = plt.subplots()
@@ -30,10 +30,7 @@ class Examples(object):
         ax.scatter(scatter_x, original, c=self.COLOR_ORIG, marker='x', zorder=2, label=self.LABEL_ORIG)
 
         # decoded values
-        for index, s in enumerate(scatter_values):
-            x_values = scatter_x[s['begin']:s['end'] + 1]
-            label = self.encoded_label(algorithm) if index == 0 else None
-            ax.scatter(x_values, s['y_values'], c=self.COLOR_DECO, marker='o', zorder=1, label=label)
+        ax.scatter(scatter_x, decoded, c=self.COLOR_DECO, marker='o', zorder=1, label=self.encoded_label(algorithm))
 
         # decoded lines
         for p in plot_values:
@@ -57,34 +54,6 @@ class Examples(object):
         fig.savefig(self.PATH + filename)
         # plt.show()
 
-    def pca(self):
-        original = [1, 1, 1, 1, 1, 2, 3, 3, 4, 2, 1, 1]
-        plot_values = [
-            {'x_values': [0,3], 'y_values': [1,1]},
-            {'x_values': [4,7], 'y_values': [2,2]}
-        ]
-        scatter_values = [
-            {'begin': 0, 'end': 3, 'y_values': [1] * 4},
-            {'begin': 4, 'end': 7, 'y_values': [2] * 4},
-            {'begin': 8, 'end': 11, 'y_values': original[8:12]},
-        ]
-        self.common_pca_apca(original, plot_values, scatter_values, "1.pca.pdf", 'PCA', 1, 4)
-
-
-    def apca(self):
-        original = [1, 1, 1, 1, 1, 2, 3, 3, 4, 2, 1, 1]
-        plot_values = [
-            {'x_values': [0,7], 'y_values': [2,2]},
-            {'x_values': [8,9], 'y_values': [3,3]},
-            {'x_values': [10,11], 'y_values': [1,1]}
-        ]
-        scatter_values = [
-            {'begin': 0, 'end': 7, 'y_values': [2] * 8},
-            {'begin': 8, 'end': 9, 'y_values': [3] * 2},
-            {'begin': 10, 'end': 11, 'y_values': [1] * 2},
-        ]
-        self.common_pca_apca(original, plot_values, scatter_values, "2.apca.pdf", 'APCA', 1, 256)
-
     def encoded_label(self, algorithm):
         return self.LABEL_DECO # + " (" + algorithm + ")"
 
@@ -94,6 +63,24 @@ class Examples(object):
         text = "Algorithm " + algorithm + " with " + epsilon + " and " + window
         return text
 
+    def pca(self):
+        original = [1, 1, 1, 1, 1, 2, 3, 3, 4, 2, 1, 1]
+        decoded =  [1, 1, 1, 1, 2, 2, 2, 2, 4, 2, 1, 1]
+        plot_values = [
+            {'x_values': [0,3], 'y_values': [1,1]},
+            {'x_values': [4,7], 'y_values': [2,2]}
+        ]
+        self.common_pca_apca(original, decoded, plot_values, "1.pca.pdf", 'PCA', 1, 4)
+
+    def apca(self):
+        original = [1, 1, 1, 1, 1, 2, 3, 3, 4, 2, 1, 1]
+        decoded =  [2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 1, 1]
+        plot_values = [
+            {'x_values': [0,7], 'y_values': [2,2]},
+            {'x_values': [8,9], 'y_values': [3,3]},
+            {'x_values': [10,11], 'y_values': [1,1]}
+        ]
+        self.common_pca_apca(original, decoded, plot_values, "2.apca.pdf", 'APCA', 1, 256)
 
 Examples().pca()
 Examples().apca()
