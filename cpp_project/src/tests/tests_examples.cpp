@@ -32,7 +32,7 @@ void TestsExamples::runAll(){
 
 void TestsExamples::commonTest(std::string input_filename, std::string coder_name,
                                int window_size, std::vector<int> error_thresholds_vector){
-    std::cout << "  commonTest(.." + coder_name + ")";
+    std::cout << "  commonTest(.." + coder_name + "..)" << std::endl;
     Path input_path = Path(EXAMPLES_PATH, input_filename);
     Path coded_path = TestsCodersUtils::codedFilePath(OUTPUT_PATH, input_path, coder_name);
 
