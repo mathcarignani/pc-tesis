@@ -13,9 +13,12 @@ class CAExample(object):
     LABEL_DECO = 'encoded value'
     COLOR_ORIG = 'navy'
     COLOR_DECO = 'orange'
+    COLOR_LINE = 'seagreen'
     YLABEL = 'value'
     XLABEL = 'time'
     PATH = '/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/informe/examples/ca/'
+    SMAX_MAR = 0.06
+    SMIN_MAR = 0.1
 
     def __init__(self):
         self.original = [1, 1, 1, 1, 1, 2, 3, 3, 4, 2, 1, 1]
@@ -24,98 +27,118 @@ class CAExample(object):
         self.plot_values = []
         self.plot_values_alpha = []
         self.xs, self.ys, self.words = [], [], []
-        self.ca1()
-        self.ca2()
-        self.ca3()
-        self.ca4()
-        self.ca5()
-        self.ca6()
-        self.ca7()
-        self.ca8()
 
-    def ca1(self):
+        self.index = 1
+        self.ca1("ca_1.pdf", 1)
+        self.index = 2
+        self.ca2("ca_2.pdf", 2)
+        self.ca3("ca_3.pdf", 3)
+        self.index = 4
+        self.ca4("ca_4.pdf", 7)
+        self.index = 5
+        self.ca5("ca_5.pdf", 8)
+        self.ca6("ca_6.pdf", 9)
+        self.index = 6
+        self.ca7("ca_7.pdf", 10)
+        self.index = 7
+        self.ca8("ca_8.pdf", 11)
+
+    def ca1(self, filename, number):
         self.decoded = self.copy_decoded[0:1]
         self.plot_values1 = [
             {'x_values': [0,2], 'y_values': [1,3]},
             {'x_values': [0,2], 'y_values': [1,-1]}
         ]
+        self.arrows = [{'x': 1, 'y': 1}]
         self.plot_values = self.plot_values1
-        self.xs = [0, 1, 1, 2]
+        self.xs = [0, 1, 1 + self.SMIN_MAR, 2 + self.SMAX_MAR]
         self.ys = [1, 1, 0, 3]
         self.words = ['A', 'S', 'SMin', 'SMax']
-        self.common("ca_1.pdf")
+        self.common(filename, number)
 
-    def ca2(self):
+    def ca2(self, filename, number):
+        self.arrows = []
         self.plot_values = list.copy(self.plot_values1)
         self.plot_values.append({'x_values': [0,5], 'y_values': [1,1], 'linestyle': '--'})
-        self.xs += [2, 5]
+        self.xs += [2, 5 + self.SMAX_MAR]
         self.ys += [1, 1-0.1]
         self.words += ['E1', 'SE1']
-        self.common("ca_2.pdf")
+        self.common(filename, number)
 
-    def ca3(self):
+    def ca3(self, filename, number):
+        self.arrows = [{'x': 2, 'y': 1}]
         self.plot_values = list.copy(self.plot_values1)
         [a.update({'alpha': 0.3}) for a in self.plot_values]
-        m = (1/2.0)
-        y_val = 3*m+1
+        m3 = (1/2.0)
+        y_val3 = 3*m3+1
         self.plot_values3 = [
-            {'x_values': [0,3], 'y_values': [1,y_val]},
-            {'x_values': [0,3], 'y_values': [1,-3*m+1]}
+            {'x_values': [0,3], 'y_values': [1,y_val3]},
+            {'x_values': [0,3], 'y_values': [1,-3*m3+1]}
         ]
         self.plot_values += self.plot_values3
-        self.xs = [0, 2, -0.5, 0.5, 2, 3]
-        self.ys = [1, 1, 0, 3, 0, y_val]
+        self.xs = [0, 2, -0.5, 0.5, 2 + self.SMIN_MAR, 3 + self.SMAX_MAR]
+        self.ys = [1, 1, 0, 3, 0, y_val3]
         self.words = ['A', 'S', 'SMinOld', 'SMaxOld', 'SMin', 'SMax']
-        self.common("ca_3.pdf")
+        self.common(filename, number)
 
-    def ca4(self):
+    def ca4(self, filename, number):
+        self.arrows = [{'x': 4, 'y': 1}]
+        mprev = (1/3.0)
         m4 = (1/4.0)
         y_val4 = 7*m4+1
+        plot_values_alpha = [
+            {'x_values': [0,5], 'y_values': [1,5*mprev+1], 'alpha': 0.3},
+            {'x_values': [0,3], 'y_values': [1,-3*mprev+1], 'alpha': 0.3}
+        ]
         self.plot_values3 = [
             {'x_values': [0,7], 'y_values': [1,y_val4]},
             {'x_values': [0,5], 'y_values': [1,-5*m4+1]}
         ]
-        self.plot_values = list.copy(self.plot_values3)
-        self.xs = [0, 4, 4, 7]
-        self.ys = [1, 1, 0, y_val4-0.1]
-        self.words = ['A', 'S', 'SMin', 'SMax']
-        self.common("ca_4.pdf")
+        self.plot_values = plot_values_alpha + self.plot_values3
+        self.xs = [0, 4, 4 + self.SMIN_MAR, 7 + self.SMAX_MAR, 1, 3.5]
+        self.ys = [1, 1, 0, y_val4-0.1, 0, 5*mprev+1]
+        self.words = ['A', 'S', 'SMin', 'SMax', 'SMinOld', 'SMaxOld']
+        self.common(filename, number)
 
-    def ca5(self):
+    def ca5(self, filename, number):
+        self.arrows = []
         m4 = (1/4.0)
         m5 = (1/5.0)
         y_val4 = 7*m4+1
         y_val5 = 7*m5+1
+        self.plot_values = list.copy(self.plot_values3)
         self.plot_values.append({'x_values': [0,7], 'y_values': [1,y_val5], 'linestyle': '--'})
-        self.xs = [0, 4, 4, 7,          5+0.1, 7]
-        self.ys = [1, 1, 0, y_val4-0.1, 2-0.3, y_val5-0.1]
+        self.xs = [0, 4, 4 + self.SMIN_MAR, 7 + self.SMAX_MAR, 5+0.1, 7 + self.SMAX_MAR]
+        self.ys = [1, 1, 0,               y_val4-0.1,      2-0.3, y_val5-0.1]
         self.words = ['A', 'S', 'SMin', 'SMax', 'E4', 'SE4']
-        self.common("ca_5.pdf")
+        self.common(filename, number)
 
-    def ca6(self):
+    def ca6(self, filename, number):
+        self.arrows = [{'x': 5, 'y': 2}]
         m4 = (1/4.0)
         y_val4 = 7*m4+1
         self.plot_values = list.copy(self.plot_values3)
         self.plot_values[1].update({'alpha': 0.3})
         self.plot_values.append({'x_values': [0,7], 'y_values': [1,1]})
-        self.xs = [0, 4, 7, 5+0.1, 7]
-        self.ys = [1, 0, y_val4-0.1, 2-0.3, 1-0.2]
-        self.words = ['A', 'SMinOld', 'SMax', 'S', 'SMin']
-        self.common("ca_6.pdf")
+        self.xs = [0, 4 + self.SMIN_MAR, 7 + self.SMAX_MAR, 5, 7 + self.SMAX_MAR]
+        self.ys = [1, 0, y_val4-0.1, 2-0.1, 1-0.2]
+        self.words = ['A', 'SMinOld', 'SMax=SMaxOld', 'S', 'SMin']
+        self.common(filename, number)
 
-    def ca7(self):
+    def ca7(self, filename, number):
+        self.arrows = []
         m4 = (1/4.0)
         y_val4 = 7*m4+1
         m7 = (2/6.0)
         yval = 7*m7+1
         del self.plot_values[1]
         self.plot_values.append({'x_values': [0,7], 'y_values': [1,yval], 'linestyle': '--'})
-        self.xs = [0, 7, 5+0.1, 7, 6, 7]
-        self.ys = [1, y_val4-0.1, 2-0.3, 1-0.2, 3, yval-0.1]
+        self.xs = [0, 7 + self.SMAX_MAR, 5, 7 + self.SMAX_MAR, 6, 7 + self.SMAX_MAR]
+        self.ys = [1, y_val4-0.1, 2-0.1, 1-0.2, 3+0.1, yval-0.1]
         self.words = ['A', 'SMax', 'S', 'SMin', 'E5', 'SE5']
-        self.common("ca_7.pdf")
+        self.common(filename, number)
 
-    def ca8(self):
+    def ca8(self, filename, number):
         self.decoded = self.copy_decoded[0:7]
         self.plot_values1 = [
             {'x_values': [0,5], 'y_values': [1,2], 'linestyle': '-'},
@@ -123,13 +146,15 @@ class CAExample(object):
             {'x_values': [6,7], 'y_values': [3,2]}
         ]
         self.plot_values = self.plot_values1
-        self.xs = [6, 7, 7, 7]
+        self.xs = [6, 7, 7 + self.SMAX_MAR, 7 + self.SMAX_MAR]
         self.ys = [3, 3, 2, 4]
         self.words = ['A', 'S', 'SMin', 'SMax']
-        self.common("ca_8.pdf")
+        self.common(filename, number)
 
-
-    def texts(self, ax, x, y, s):
+    def plot_texts(self, ax, x, y, s):
+        color = 'black'
+        if 'SM' in s or 'SE' in s:
+            color = self.COLOR_LINE
         if s in ['A', 'S']:
             x -= 0.35
             y -= 0.06
@@ -142,34 +167,63 @@ class CAExample(object):
                 y -= 0.08
             else: # 'SE1', 'SE2', etc.
                 pass
-        alpha = 0.3 if "Old" in s else 1
-        ax.text(x, y, s, fontsize=13, alpha=alpha)
+        alpha = 0.3 if "Old" in s and "=" not in s else 1
+        ax.text(x, y, s, fontsize=13, alpha=alpha, c=color)
 
-    def common(self, filename):
+    def plot_arrows(self, ax, plot):
+        x, y, dx, dy = plot['x'], plot['y'], 0, 1
+        hw = 0.1
+        hl = 0.1
+        epsilon = r"$\epsilon$"
+
+        ax.text(x + 0.1, y + 0.4, epsilon, fontsize=15, c=self.COLOR_LINE)
+        ax.text(x + 0.1, y - 0.55, epsilon, fontsize=15, c=self.COLOR_LINE)
+
+        m = 0.08 # don't touch the point
+        # arrows above the point
+        ax.arrow(x, y+m, dx, dy-2*m, head_width=hw, head_length=hl, color=self.COLOR_LINE, length_includes_head=True)
+        ax.arrow(x, y+dy-m, dx, -(dy-2*m), head_width=hw, head_length=hl, color=self.COLOR_LINE, length_includes_head=True)
+        # arrows below the point
+        ax.arrow(x, y-m, dx, -(dy-2*m), head_width=hw, head_length=hl, color=self.COLOR_LINE, length_includes_head=True)
+        ax.arrow(x, y-dy+m, dx, dy-2*m, head_width=hw, head_length=hl, color=self.COLOR_LINE, length_includes_head=True)
+
+    def plot_original_values(self, ax):
+        scatter_x_alpha = range(self.index, len(self.original))
+        original_alpha = self.original[self.index:len(self.original) + 1]
+        ax.scatter(scatter_x_alpha, original_alpha, c=self.COLOR_ORIG, marker='x', zorder=3, alpha=0.2)
+
+        scatter_x_black = range(self.index+1)
+        original_black = self.original[0:self.index+1]
+        ax.scatter(scatter_x_black, original_black, c=self.COLOR_ORIG, marker='x', zorder=3, label=self.LABEL_ORIG)
+
+    def common(self, filename, number):
         # print(plt.rcParams["figure.figsize"]) # [6.4, 4.8]
         plt.rcParams["figure.figsize"] = [8, 3.48]
         scatter_x = range(len(self.original))
         fig, ax = plt.subplots()
 
-        # original values
-        ax.scatter(scatter_x, self.original, c=self.COLOR_ORIG, marker='x', zorder=2, label=self.LABEL_ORIG)
+        self.plot_original_values(ax)
 
         # decoded values
         x_decoded = scatter_x[0:len(self.decoded)]
-        ax.scatter(x_decoded, self.decoded, c=self.COLOR_DECO, marker='o', zorder=1, label=self.encoded_label())
+        ax.scatter(x_decoded, self.decoded, c=self.COLOR_DECO, marker='o', zorder=2, label=self.encoded_label())
 
         # decoded lines
         for p in self.plot_values:
             alpha = p.get('alpha') or 1
             linestyle = p.get('linestyle') or ':'
-            ax.plot(p['x_values'], p['y_values'], c=self.COLOR_DECO, zorder=1, linestyle=linestyle, alpha=alpha)
+            color = self.COLOR_DECO if linestyle == '-' else self.COLOR_LINE
+            ax.plot(p['x_values'], p['y_values'], c=color, zorder=1, linestyle=linestyle, alpha=alpha)
 
         for index, x in enumerate(self.xs):
             y = self.ys[index]
             s = self.words[index]
-            self.texts(ax, x, y, s)
+            self.plot_texts(ax, x, y, s)
 
-        ax.set(xlabel=self.XLABEL, ylabel=self.YLABEL, title=self.title("APCA", 1, 256))
+        for plot in self.arrows:
+            self.plot_arrows(ax, plot)
+
+        ax.set(xlabel=self.XLABEL, ylabel=self.YLABEL, title=self.title("APCA", 1, 256, number))
         ax.grid(color=PlotConstants.COLOR_SILVER, linestyle='dotted')
         ax.set_axisbelow(True)
         ax.set_ylim(bottom=0, top=4.5)
@@ -179,24 +233,18 @@ class CAExample(object):
 
         labels = ['t' + str(index) for index in range(1, len(ax.get_xticklabels()))]
         ax.set_xticklabels(labels)
-
         ax.legend(loc='upper left')
-
-
         plt.tight_layout()
         fig.savefig(self.PATH + filename)
 
     def encoded_label(self):
         return self.LABEL_DECO
 
-    def title(self, algorithm, epsilon, window):
+    def title(self, algorithm, epsilon, window, number):
         epsilon = r"$\epsilon = {}$".format(epsilon)
         window = r"$w = {}$".format(window)
-        text = "Algorithm " + algorithm + " with " + epsilon
-        if window:
-            text += " and " + window
+        text = "Algorithm " + algorithm + " with " + epsilon + " and " + window + " - STEP " + str(number)
         return text
-
 
 
 CAExample()
