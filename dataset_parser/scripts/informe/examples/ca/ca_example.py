@@ -29,19 +29,19 @@ class CAExample(object):
         self.xs, self.ys, self.words = [], [], []
 
         self.index = 1
-        self.ca1("ca_1.pdf", 1)
+        self.ca1("ca1.pdf", 1)
         self.index = 2
-        self.ca2("ca_2.pdf", 2)
-        self.ca3("ca_3.pdf", 3)
+        self.ca2("ca2.pdf", 2)
+        self.ca3("ca3.pdf", 3)
         self.index = 4
-        self.ca4("ca_4.pdf", 7)
+        self.ca4("ca4.pdf", 7)
         self.index = 5
-        self.ca5("ca_5.pdf", 8)
-        self.ca6("ca_6.pdf", 9)
+        self.ca5("ca5.pdf", 8)
+        self.ca6("ca6.pdf", 9)
         self.index = 6
-        self.ca7("ca_7.pdf", 10)
+        self.ca7("ca7.pdf", 10)
         self.index = 7
-        self.ca8("ca_8.pdf", 11)
+        self.ca8("ca8.pdf", 11)
 
     def ca1(self, filename, number):
         self.decoded = self.copy_decoded[0:1]
