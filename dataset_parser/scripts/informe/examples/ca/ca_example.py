@@ -19,6 +19,8 @@ class CAExample(object):
     PATH = '/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/informe/examples/ca/'
     SMAX_MAR = 0.06
     SMIN_MAR = 0.1
+    LOW_ALPHA = 0.3
+    LOWER_ALPHA = 0.2
 
     def __init__(self):
         self.original = [1, 1, 1, 1, 1, 2, 3, 3, 4, 2, 1, 1]
@@ -68,7 +70,7 @@ class CAExample(object):
     def ca3(self, filename, number):
         self.arrows = [{'x': 2, 'y': 1}]
         self.plot_values = list.copy(self.plot_values1)
-        [a.update({'alpha': 0.3}) for a in self.plot_values]
+        [a.update({'alpha': self.LOW_ALPHA}) for a in self.plot_values]
         m3 = (1/2.0)
         y_val3 = 3*m3+1
         self.plot_values3 = [
@@ -87,8 +89,8 @@ class CAExample(object):
         m4 = (1/4.0)
         y_val4 = 7*m4+1
         plot_values_alpha = [
-            {'x_values': [0,5], 'y_values': [1,5*mprev+1], 'alpha': 0.3},
-            {'x_values': [0,3], 'y_values': [1,-3*mprev+1], 'alpha': 0.3}
+            {'x_values': [0,5], 'y_values': [1,5*mprev+1], 'alpha': self.LOW_ALPHA},
+            {'x_values': [0,3], 'y_values': [1,-3*mprev+1], 'alpha': self.LOW_ALPHA}
         ]
         self.plot_values3 = [
             {'x_values': [0,7], 'y_values': [1,y_val4]},
@@ -118,8 +120,11 @@ class CAExample(object):
         m4 = (1/4.0)
         y_val4 = 7*m4+1
         self.plot_values = list.copy(self.plot_values3)
-        self.plot_values[1].update({'alpha': 0.3})
-        self.plot_values.append({'x_values': [0,7], 'y_values': [1,1]})
+        self.plot_values[1].update({'alpha': self.LOW_ALPHA})
+        self.plot_values += [
+            {'x_values': [0,7], 'y_values': [1,1]},
+            {'x_values': [0,7], 'y_values': [1,7*(2/5.0)+1], 'alpha': self.LOW_ALPHA},
+        ]
         self.xs = [0, 4 + self.SMIN_MAR, 7 + self.SMAX_MAR, 5, 7 + self.SMAX_MAR]
         self.ys = [1, 0, y_val4-0.1, 2-0.1, 1-0.2]
         self.words = ['A', 'SMinOld', 'SMax=SMaxOld', 'S', 'SMin']
@@ -131,7 +136,7 @@ class CAExample(object):
         y_val4 = 7*m4+1
         m7 = (2/6.0)
         yval = 7*m7+1
-        del self.plot_values[1]
+        del self.plot_values[-1]
         self.plot_values.append({'x_values': [0,7], 'y_values': [1,yval], 'linestyle': '--'})
         self.xs = [0, 7 + self.SMAX_MAR, 5, 7 + self.SMAX_MAR, 6, 7 + self.SMAX_MAR]
         self.ys = [1, y_val4-0.1, 2-0.1, 1-0.2, 3+0.1, yval-0.1]
@@ -167,7 +172,7 @@ class CAExample(object):
                 y -= 0.08
             else: # 'SE1', 'SE2', etc.
                 pass
-        alpha = 0.3 if "Old" in s and "=" not in s else 1
+        alpha = self.LOW_ALPHA if "Old" in s and "=" not in s else 1
         ax.text(x, y, s, fontsize=13, alpha=alpha, c=color)
 
     def plot_arrows(self, ax, plot):
@@ -190,7 +195,7 @@ class CAExample(object):
     def plot_original_values(self, ax):
         scatter_x_alpha = range(self.index, len(self.original))
         original_alpha = self.original[self.index:len(self.original) + 1]
-        ax.scatter(scatter_x_alpha, original_alpha, c=self.COLOR_ORIG, marker='x', zorder=3, alpha=0.2)
+        ax.scatter(scatter_x_alpha, original_alpha, c=self.COLOR_ORIG, marker='x', zorder=3, alpha=self.LOWER_ALPHA)
 
         scatter_x_black = range(self.index+1)
         original_black = self.original[0:self.index+1]
