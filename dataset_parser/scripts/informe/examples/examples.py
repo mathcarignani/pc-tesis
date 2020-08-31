@@ -98,7 +98,8 @@ class Examples(object):
         original = [1, 1, 1, 1, 1, 2, 3, 3, 4, 2, 1, 1]
         decoded =  [0, 1, 1, 1, 2, 2, 3, 3, 3, 2, 1, 1]
         plot_values = [
-
+            {'x_values': [0,8], 'y_values': [0.25,3.25]},
+            {'x_values': [9,11], 'y_values': [1.75,0.75]}
         ]
         self.common(original, decoded, plot_values, "pwlh.pdf", 'PWLH', 1, 256)
 
