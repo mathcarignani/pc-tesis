@@ -5,6 +5,7 @@ sys.path.append('.')
 import numpy as np
 import matplotlib.pyplot as plt
 from scripts.informe.plot.plot_constants import PlotConstants
+from scripts.informe.examples.examples_common import ExamplesCommon
 
 plt.rcParams["mathtext.fontset"] = "cm"
 
@@ -146,6 +147,7 @@ class CAExample(object):
 
     def ca8(self, filename, step):
         self.decoded = self.copy_decoded[0:7]
+        self.arrows = [{'x': 7, 'y': 3}]
         self.plot_values1 = [
             {'x_values': [0,5], 'y_values': [1,2], 'linestyle': '-'},
             {'x_values': [6,7], 'y_values': [3,4]},
@@ -153,7 +155,7 @@ class CAExample(object):
         ]
         self.plot_values = self.plot_values1
         self.xs = [6, 7, 7 + self.SMAX_MAR, 7 + self.SMAX_MAR]
-        self.ys = [3, 3, 2, 4]
+        self.ys = [3, 3, 1.73, 4]
         self.words = ['A', 'S', 'SMin', 'SMax']
         self.common(filename, step)
 
@@ -175,23 +177,6 @@ class CAExample(object):
                 pass
         alpha = self.LOW_ALPHA if "Old" in s and "=" not in s else 1
         ax.text(x, y, s, fontsize=13, alpha=alpha, c=color)
-
-    def plot_arrows(self, ax, plot):
-        x, y, dx, dy = plot['x'], plot['y'], 0, 1
-        hw = 0.1
-        hl = 0.1
-        epsilon = r"$\epsilon$"
-
-        ax.text(x + 0.1, y + 0.4, epsilon, fontsize=15, c=self.COLOR_LINE)
-        ax.text(x + 0.1, y - 0.55, epsilon, fontsize=15, c=self.COLOR_LINE)
-
-        m = 0.08 # don't touch the point
-        # arrows above the point
-        ax.arrow(x, y+m, dx, dy-2*m, head_width=hw, head_length=hl, color=self.COLOR_LINE, length_includes_head=True)
-        ax.arrow(x, y+dy-m, dx, -(dy-2*m), head_width=hw, head_length=hl, color=self.COLOR_LINE, length_includes_head=True)
-        # arrows below the point
-        ax.arrow(x, y-m, dx, -(dy-2*m), head_width=hw, head_length=hl, color=self.COLOR_LINE, length_includes_head=True)
-        ax.arrow(x, y-dy+m, dx, dy-2*m, head_width=hw, head_length=hl, color=self.COLOR_LINE, length_includes_head=True)
 
     def plot_original_values(self, ax):
         scatter_x_alpha = range(self.index, len(self.original))
@@ -227,7 +212,7 @@ class CAExample(object):
             self.plot_texts(ax, x, y, s)
 
         for plot in self.arrows:
-            self.plot_arrows(ax, plot)
+            ExamplesCommon.plot_arrows(ax, plot, self.COLOR_LINE)
 
         ax.set(xlabel=self.XLABEL, ylabel=self.YLABEL, title=self.title("CA", 1, 256, step))
         ax.grid(color=PlotConstants.COLOR_SILVER, linestyle='dotted')
