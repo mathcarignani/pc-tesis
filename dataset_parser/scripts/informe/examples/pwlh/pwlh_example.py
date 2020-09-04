@@ -5,18 +5,15 @@ sys.path.append('.')
 import numpy as np
 import matplotlib.pyplot as plt
 from scripts.informe.plot.plot_constants import PlotConstants
+from scripts.informe.examples.examples_base import ExamplesBase
 import math
 
 plt.rcParams["mathtext.fontset"] = "cm"
 
-class PWLHExample(object):
-    LABEL_ORIG = 'original value'
-    LABEL_DECO = 'encoded value'
+class PWLHExample(ExamplesBase):
     COLOR_ORIG = 'navy'
     COLOR_DECO = 'orange'
     COLOR_LINE = 'seagreen'
-    YLABEL = 'value'
-    XLABEL = 'time'
     PATH = '/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/informe/examples/pwlh/'
     SMAX_MAR = 0.06
     SMIN_MAR = 0.1

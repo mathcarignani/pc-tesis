@@ -5,18 +5,11 @@ sys.path.append('.')
 import numpy as np
 import matplotlib.pyplot as plt
 from scripts.informe.plot.plot_constants import PlotConstants
-from scripts.informe.examples.examples_common import ExamplesCommon
+from scripts.informe.examples.examples_base import ExamplesBase
 
 plt.rcParams["mathtext.fontset"] = "cm"
 
-class CAExample(object):
-    LABEL_ORIG = 'original value'
-    LABEL_DECO = 'encoded value'
-    COLOR_ORIG = 'navy'
-    COLOR_DECO = 'orange'
-    COLOR_LINE = 'seagreen'
-    YLABEL = 'value'
-    XLABEL = 'time'
+class CAExample(ExamplesBase):
     PATH = '/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/informe/examples/ca/'
     SMAX_MAR = 0.06
     SMIN_MAR = 0.1
@@ -212,7 +205,7 @@ class CAExample(object):
             self.plot_texts(ax, x, y, s)
 
         for plot in self.arrows:
-            ExamplesCommon.plot_arrows(ax, plot, self.COLOR_LINE)
+            ExamplesBase.plot_arrows(ax, plot, self.COLOR_LINE)
 
         ax.set(xlabel=self.XLABEL, ylabel=self.YLABEL, title=self.title("CA", 1, 256, step))
         ax.grid(color=PlotConstants.COLOR_SILVER, linestyle='dotted')

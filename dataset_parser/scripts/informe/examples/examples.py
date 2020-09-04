@@ -5,18 +5,11 @@ sys.path.append('.')
 # import numpy as np
 import matplotlib.pyplot as plt
 from scripts.informe.plot.plot_constants import PlotConstants
-from scripts.informe.examples.examples_common import ExamplesCommon
+from scripts.informe.examples.examples_base import ExamplesBase
 
 plt.rcParams["mathtext.fontset"] = "cm"
 
-class Examples(object):
-    COLOR_LINE = 'seagreen'
-    LABEL_ORIG = 'original value'
-    LABEL_DECO = 'encoded value'
-    COLOR_ORIG = 'navy'
-    COLOR_DECO = 'orange'
-    YLABEL = 'value'
-    XLABEL = 'time'
+class Examples(ExamplesBase):
     PATH = '/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/informe/examples/all/'
 
     def __init__(self):
@@ -42,7 +35,7 @@ class Examples(object):
             ax.plot(p['x_values'], p['y_values'], c=self.COLOR_DECO, zorder=1)
 
         for plot in self.arrows:
-            ExamplesCommon.plot_arrows(ax, plot, self.COLOR_LINE, 0.3, 0.6)
+            ExamplesBase.plot_arrows(ax, plot, self.COLOR_LINE, 0.3, 0.6)
 
         ax.set(xlabel=self.XLABEL, ylabel=self.YLABEL, title=self.title(algorithm, epsilon, window))
         ax.grid(color=PlotConstants.COLOR_SILVER, linestyle='dotted')

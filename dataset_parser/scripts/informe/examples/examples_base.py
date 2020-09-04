@@ -2,9 +2,19 @@ import sys
 sys.path.append('.')
 
 
-class ExamplesCommon(object):
+class ExamplesBase(object):
     FONT_SIZE = 15
     EPSILON = r"$\epsilon$"
+    YLABEL = 'data'
+    XLABEL = 'timestamp'
+    LABEL_ORIG = 'original value'
+    LABEL_DECO = 'encoded value'
+    COLOR_ORIG = 'navy'
+    COLOR_DECO = 'orange'
+    COLOR_LINE = 'seagreen'
+
+    def __init__(self):
+        pass
 
     @classmethod
     def plot_arrows(cls, ax, plot, color, alpha=1, epsilon_alpha=1):
