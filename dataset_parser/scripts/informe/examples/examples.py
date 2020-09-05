@@ -77,19 +77,19 @@ class Examples(ExamplesBase):
     #     ]
     #     self.common("pca.pdf", 'PCA', 1, 4)
 
-    def apca(self):
-        self.decoded =  [2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 1, 1]
-        self.plot_values = [
-            {'x_values': [0,7], 'y_values': [2,2]},
-            {'x_values': [8,9], 'y_values': [3,3]},
-            {'x_values': [10,11], 'y_values': [1,1]}
-        ]
-        self.arrows = [
-            {'x': 0, 'y': 2, 'touch_above': True},
-            {'x': 8, 'y': 3, 'touch_below': True},
-            {'x': 10, 'y': 1, 'touch_above': True, 'touch_below': True}
-        ]
-        self.common("apca.pdf", 'APCA', 1, 256)
+    # def apca(self):
+    #     self.decoded =  [2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 1, 1]
+    #     self.plot_values = [
+    #         {'x_values': [0,7], 'y_values': [2,2]},
+    #         {'x_values': [8,9], 'y_values': [3,3]},
+    #         {'x_values': [10,11], 'y_values': [1,1]}
+    #     ]
+    #     self.arrows = [
+    #         {'x': 0, 'y': 2, 'touch_above': True},
+    #         {'x': 8, 'y': 3, 'touch_below': True},
+    #         {'x': 10, 'y': 1, 'touch_above': True, 'touch_below': True}
+    #     ]
+    #     self.common("apca.pdf", 'APCA', 1, 256)
 
     def ca(self):
         self.decoded =  [1, 1, 1, 2, 2, 2, 3, 4, 4, 2, 2, 1]
@@ -127,7 +127,7 @@ class Examples(ExamplesBase):
 
 
 # Examples().pca()
-Examples().apca()
+# Examples().apca()
 Examples().ca()
 Examples().pwlh()
 Examples().pwlh_int()
