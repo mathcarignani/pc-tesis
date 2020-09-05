@@ -65,17 +65,17 @@ class Examples(ExamplesBase):
             text += " and " + window
         return text
 
-    def pca(self):
-        self.decoded =  [1, 1, 1, 1, 2, 2, 2, 2, 4, 2, 1, 1]
-        self.plot_values = [
-            {'x_values': [0,3], 'y_values': [1,1]},
-            {'x_values': [4,7], 'y_values': [2,2]}
-        ]
-        self.arrows = [
-            {'x': 0, 'y': 1, 'touch_above': True, 'touch_below': True},
-            {'x': 4, 'y': 2, 'touch_above': True}
-        ]
-        self.common("pca.pdf", 'PCA', 1, 4)
+    # def pca(self):
+    #     self.decoded =  [1, 1, 1, 1, 2, 2, 2, 2, 4, 2, 1, 1]
+    #     self.plot_values = [
+    #         {'x_values': [0,3], 'y_values': [1,1]},
+    #         {'x_values': [4,7], 'y_values': [2,2]}
+    #     ]
+    #     self.arrows = [
+    #         {'x': 0, 'y': 1, 'touch_above': True, 'touch_below': True},
+    #         {'x': 4, 'y': 2, 'touch_above': True}
+    #     ]
+    #     self.common("pca.pdf", 'PCA', 1, 4)
 
     def apca(self):
         self.decoded =  [2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 1, 1]
@@ -126,7 +126,7 @@ class Examples(ExamplesBase):
 
 
 
-Examples().pca()
+# Examples().pca()
 Examples().apca()
 Examples().ca()
 Examples().pwlh()
