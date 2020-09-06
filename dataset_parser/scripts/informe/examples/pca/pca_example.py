@@ -6,8 +6,10 @@ from scripts.informe.examples.examples_base import ExamplesBase
 
 class PCAExample(ExamplesBase):
     def __init__(self):
+        super(PCAExample, self).__init__()
         self.path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/informe/examples/pca/"
         self.algorithm = "PCA"
+        self.window = 4
         self.original = [1, 1, 1, 1, 1, 2, 3, 3, 4, 2, 1, 1]
         self.decoded =  [1, 1, 1, 1, 2, 2, 2, 2, 4, 2, 1, 1]
         self.copy_decoded = list.copy(self.decoded)

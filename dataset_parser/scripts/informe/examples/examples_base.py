@@ -22,7 +22,7 @@ class ExamplesBase(object):
     INVISIBLE_ALPHA = 0.1
 
     def __init__(self):
-        pass
+        self.window = 256
 
     @classmethod
     def plot_patch(cls, ax, patch):
@@ -84,7 +84,7 @@ class ExamplesBase(object):
         for patch in self.patches:
             ExamplesBase.plot_patch(ax, patch)
 
-        ax.set(xlabel=self.XLABEL, ylabel=self.YLABEL, title=self.title(self.algorithm, 1, 256, step))
+        ax.set(xlabel=self.XLABEL, ylabel=self.YLABEL, title=self.title(self.algorithm, 1, step))
         ax.grid(color=PlotConstants.COLOR_SILVER, linestyle='dotted')
         ax.set_axisbelow(True)
         ax.set_ylim(bottom=0, top=4.5)
@@ -101,8 +101,8 @@ class ExamplesBase(object):
     def encoded_label(self):
         return self.LABEL_DECO
 
-    def title(self, algorithm, epsilon, window, step):
+    def title(self, algorithm, epsilon, step):
         epsilon = r"$\epsilon = {}$".format(epsilon)
-        window = r"$w = {}$".format(window)
+        window = r"$w = {}$".format(self.window)
         text = "Algorithm " + algorithm + " with " + epsilon + " and " + window + " - STEP " + str(step)
         return text

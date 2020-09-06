@@ -6,6 +6,7 @@ from scripts.informe.examples.examples_base import ExamplesBase
 
 class APCAExample(ExamplesBase):
     def __init__(self):
+        super(APCAExample, self).__init__()
         self.path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/informe/examples/apca/"
         self.algorithm = "APCA"
         self.original = [1, 1, 1, 1, 1, 2, 3, 3, 4, 2, 1, 1]
