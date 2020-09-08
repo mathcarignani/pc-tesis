@@ -4,7 +4,7 @@
 #include "constants.h"
 
 
-PWLHWindow::PWLHWindow(int window_size_, int error_threshold_, Range* range_, bool integer_mode_): Window(window_size_, error_threshold_){
+PWLHWindow::PWLHWindow(int window_size_, double error_threshold_, Range* range_, bool integer_mode_): Window(window_size_, error_threshold_){
     range = range_;
     bucket = new LinearBucket(error_threshold);
     length = 0; x_coord = 0;
@@ -46,6 +46,7 @@ bool PWLHWindow::conditionHolds(std::string x, int x_delta){
         return true;
     }
     // bucket is invalid
+    std::cout << "    bucket->removePoint();" << std::endl;
     bucket->removePoint();
     bucket->getAproximatedLineMOD(p1, p2, x_coord);
 #if CHECKS

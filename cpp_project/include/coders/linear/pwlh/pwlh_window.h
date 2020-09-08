@@ -25,7 +25,7 @@ public:
     bool nan_window;
 #endif
 
-    PWLHWindow(int window_size_, int error_threshold_, Range* range_, bool integer_mode_);
+    PWLHWindow(int window_size_, double error_threshold_, Range* range_, bool integer_mode_);
     bool conditionHolds(std::string x, int x_delta);
     bool checkIntegerModeConstraint(int new_x_coord);
     bool isFull();

@@ -42,6 +42,7 @@ DynArray<Point*>* CPolygon::getConvexHull()
 // Add new point to current polygon
 void CPolygon::addPoint(double time, double value)
 {
+	std::cout << "addPoint(" << time << ", " << value << ")" << std::endl;
 	Point* p = new Point(value, time);
 	allPoints.add(p);
 	partitionPoints();
@@ -51,6 +52,7 @@ void CPolygon::addPoint(double time, double value)
 // Remove last point (right-most) from allPoints
 void CPolygon::removePoint()
 {
+	std::cout << "removePoint()" << std::endl;
 	delete allPoints.getAt(allPoints.size() - 1);
 	allPoints.remove();
 	partitionPoints();
@@ -160,6 +162,17 @@ void CPolygon::updateConvexHull()
 		item = lowerHull.getAt(i);
 		convexHull.add(item);
 	}
+	// print convexHull
+	std::cout << "    CPolygon::updateConvexHull(); -- end" << std::endl;
+	std::cout << "    ";
+	int end_convex = convexHull.size();
+	for(int i = 0; i < end_convex; i++)
+	{
+		Point* point = convexHull.getAt(i);
+		std::cout << i << "_point=(" << point->x << ", " << point->y << ")  ";
+	}
+	std::cout << std::endl;
+
 }
 
 #endif

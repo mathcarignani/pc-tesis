@@ -35,6 +35,7 @@ void CoderPWLH::codeColumnWhile(std::string csv_value){
 #if MASK_MODE
     if (Constants::isNoData(csv_value)) { return; } // skip no_data
 #endif
+    std::cout << "csv_value = " << csv_value << std::endl;
     if (!window->conditionHolds(csv_value, delta_sum)){
         codeWindow(window);
         window->addFirstValue(csv_value);
@@ -47,7 +48,7 @@ void CoderPWLH::codeColumnAfter(){
 }
 
 PWLHWindow* CoderPWLH::createWindow(){
-    int error_threshold = error_thresholds_vector.at(column_index);
+    double error_threshold = 1.5; error_thresholds_vector.at(column_index);
     Range* column_range = dataset->column_code->range;
 //    column_range = new Range(column_range->begin + dataset->offset(), column_range->end + dataset->offset());
     return new PWLHWindow(window_size, error_threshold, column_range, integer_mode);
@@ -68,10 +69,13 @@ void CoderPWLH::codeWindowDouble(PWLHWindow* window){
     if (window->length > 1) {
         float point1_y = window->getPoint1Y();
         float point2_y = window->getPoint2Y();
+        std::cout << "  ***codeFloat(point1_y = " << point1_y << ")" << std::endl;
+        std::cout << "  ***codeFloat(point2_y = " << point2_y << ")" << std::endl;
         codeFloat(point1_y);
         codeFloat(point2_y);
         return;
     }
+    std::cout << "  ***codeFloat(constant = " << window->constant_value_float << ")" << std::endl;
     // window.length == 1 => this code can only run the last time codeWindow is called
     // IMPORTANT: window.constant_value_float is an int casted as a float
     codeFloat(window->constant_value_float); // no need to code another value
