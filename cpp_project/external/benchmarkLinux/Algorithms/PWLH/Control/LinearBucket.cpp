@@ -50,6 +50,7 @@ void LinearBucket::getAproximatedLine(Point &vertex1, Point &vertex2)
 
 void LinearBucket::getAproximatedLineMOD(Point &vertex1, Point &vertex2, int x_coord) ////////////////////////////// MOD
 {
+    std::cout << "        LinearBucket::getAproximatedLineMOD(...) BEGIN" << std::endl;
 	DynArray<Point*>* hull = polygon->getConvexHull();
 	int size = hull->size();
 	double minWidth = 0;
@@ -119,18 +120,26 @@ void LinearBucket::resetBucket()
 // Check if bucket is valid with respect to error tolerance
 bool LinearBucket::checkEpsConstraint()
 {
+	std::cout << "        LinearBucket::checkEpsConstraint() BEGIN" << std::endl;
 	DynArray<Point*>* hull = polygon->getConvexHull();
 	int size = hull->size();
 	if (size < 2)	return true;
 
-	double width = getMaxDisForEdge(hull->getAt(size - 1), hull->getAt(0));
+	double width; // = getMaxDisForEdge(hull->getAt(size - 1), hull->getAt(0));
+
 	for (int i = 1; i < size; i++)
 	{
 		width = getMaxDisForEdge(hull->getAt(i - 1), hull->getAt(i));
-		if (fabs(width) <= (2 * esp))
+		Point* p1 = hull->getAt(i - 1);
+		Point* p2 = hull->getAt(i);
+		std::cout << "            i = " << i << " - (" << p1->x << ", " << p1->y << ")<>(" << p2->x << "," << p2->y << ")  width = " << width << std::endl;
+		if (fabs(width) <= (2 * esp)){
+			std::cout << "            return true;" << std::endl;
 			return true;
-	}
+		}
 
+	}
+	std::cout << "            return false;" << std::endl;
 	return false;
 }
 
@@ -148,19 +157,25 @@ double LinearBucket::getDistance(Point *p, Line* l)
 //            double maxDis: max distance from any point in hull to the line created by vertex1, vertex2
 double LinearBucket::getMaxDisForEdge(Point *vertex1, Point *vertex2)
 {
+    std::cout << "            LinearBucket::getMaxDisForEdge(...) BEGIN" << std::endl;
 	Line l(vertex1, vertex2);
 	DynArray<Point*>* hull = polygon->getConvexHull();
 	int size = hull->size();
 	double maxDis = 0;
 	double distance = 0;
 
+	int max_i = 0;
 	for (int i = 0; i < size; i++)
 	{
 		distance = getDistance(hull->getAt(i), &l);
-		if (fabs(distance) > fabs(maxDis))
+		if (fabs(distance) > fabs(maxDis)){
+			max_i = i;
 			maxDis = distance;
-	}
+		}
 
+	}
+	Point* p = hull->getAt(max_i);
+	std::cout << "            max_point = (" << p->x << ", " << p->y << ")" << std::endl;
 	return maxDis;
 }
 
