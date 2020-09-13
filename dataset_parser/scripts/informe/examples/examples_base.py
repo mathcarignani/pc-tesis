@@ -63,7 +63,7 @@ class ExamplesBase(object):
         original_black = self.original[0:index+1]
         ax.scatter(scatter_x_black, original_black, c=self.COLOR_ORIG, marker='x', zorder=3, label=self.LABEL_ORIG)
 
-    def common(self, filename, step, index):
+    def common(self, filename, step, index, title=True):
         plt.rcParams["figure.figsize"] = [8, 3.48]
         scatter_x = range(len(self.original))
         fig, ax = plt.subplots()
@@ -84,7 +84,10 @@ class ExamplesBase(object):
         for patch in self.patches:
             ExamplesBase.plot_patch(ax, patch)
 
-        ax.set(xlabel=self.XLABEL, ylabel=self.YLABEL, title=self.title(self.algorithm, 1, step))
+        ax.set(xlabel=self.XLABEL, ylabel=self.YLABEL) #, title=title_str)
+        title_obj = plt.title(self.title(self.algorithm, 1, step))
+        plt.setp(title_obj, color='black' if title else 'white')
+
         ax.grid(color=PlotConstants.COLOR_SILVER, linestyle='dotted')
         ax.set_axisbelow(True)
         ax.set_ylim(bottom=0, top=4.5)

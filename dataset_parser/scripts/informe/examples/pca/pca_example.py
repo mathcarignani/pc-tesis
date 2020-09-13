@@ -17,14 +17,14 @@ class PCAExample(ExamplesBase):
         self.arrows = []
         self.patches = []
 
-        self.pca1("pca1.pdf", 0, 11)
+        self.pca1("pca1.pdf", 0, 11, False)
         self.pca2("pca2.pdf", 1, 3)
         self.pca3("pca3.pdf", 2, 7)
         self.pca4("pca4.pdf", 3, 11)
 
-    def pca1(self, filename, step, index):
+    def pca1(self, filename, step, index, title):
         self.decoded = []
-        self.common(filename, step, index)
+        self.common(filename, step, index, title)
 
     def pca2(self, filename, step, index):
         self.decoded = self.copy_decoded[0:4]
