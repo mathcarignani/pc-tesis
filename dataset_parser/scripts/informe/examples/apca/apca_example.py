@@ -16,8 +16,8 @@ class APCAExample(ExamplesBase):
         self.arrows = []
         self.patches = []
 
-        self.apca1("apca1.pdf", 1, 7)
-        self.apca2("apca2.pdf", 2, 9)
+        self.apca1("apca1.pdf", 1, 8)
+        self.apca2("apca2.pdf", 2, 10)
         self.apca3("apca3.pdf", 3, 11)
 
     def apca(self):
