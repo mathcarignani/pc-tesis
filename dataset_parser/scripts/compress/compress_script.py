@@ -76,8 +76,8 @@ class CompressScript:
             # if self.input_filename == "el-nino.csv" and self.coder_dictionary['name'] == "CoderGAMPS":
             #     continue
             # TODO: uncomment in mac
-            if self.input_filename != "el-nino.csv" or self.coder_dictionary['name'] not in ["CoderBase", "CoderGAMPS"]:
-                continue
+            # if self.input_filename != "el-nino.csv" or self.coder_dictionary['name'] not in ["CoderBase", "CoderGAMPS"]:
+            #     continue
                 
             if file_index == 0 and coder_index == 0:  # first row of dataset and file
                 self.row += [self.input_filename, row_count]

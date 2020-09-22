@@ -59,9 +59,9 @@ class Examples(ExamplesBase):
 
     def title(self, algorithm, epsilon, window):
         epsilon = r"$\epsilon = {}$".format(epsilon)
-        window = r"$w = {}$".format(window)
         text = "Algorithm " + algorithm + " with " + epsilon
         if window:
+            window = r"$w = {}$".format(window)
             text += " and " + window
         return text
 
@@ -115,13 +115,16 @@ class Examples(ExamplesBase):
 
     def sf(self):
         self.decoded =  [0, 1, 1, 2, 2, 2, 3, 3, 4, 3, 2, 0]
-        self.plot_values = []
-        self.common("sf.pdf", 'SF', 1, 256)
+        self.plot_values = [
+             {'x_values': [0,8], 'y_values': [0.27,3.72]},
+             {'x_values': [8,11], 'y_values': [3.72,0.386]},
+        ]
+        self.common("sf.pdf", 'SF', 1, None)
 
-    def fr(self):
-        self.decoded =  [1, 1, 1, 2, 2, 2, 3, 3, 4, 3, 2, 1]
-        self.plot_values = []
-        self.common("fr.pdf", 'FR', 1, None)
+    # def fr(self):
+    #     self.decoded =  [1, 1, 1, 2, 2, 2, 3, 3, 4, 3, 2, 1]
+    #     self.plot_values = []
+    #     self.common("fr.pdf", 'FR', 1, None)
 
 
 
@@ -132,4 +135,4 @@ Examples().ca()
 Examples().pwlh()
 Examples().pwlh_int()
 Examples().sf()
-Examples().fr()
+# Examples().fr()

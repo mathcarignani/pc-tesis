@@ -14,21 +14,38 @@ class ExamplesBase(object):
     XLABEL = 'timestamp'
     LABEL_ORIG = 'original value'
     LABEL_DECO = 'encoded value'
+    LABEL_DIS = 'displaced point'
     COLOR_ORIG = 'navy'
     COLOR_DECO = 'orange'
     COLOR_LINE = 'seagreen'
-    LOW_ALPHA = 0.3
-    LOWER_ALPHA = 0.2
-    INVISIBLE_ALPHA = 0.1
+    COLOR_DIS = 'red'
+    ALPHA_MED = 0.5
+    ALPHA_LOW = 0.3
+    ALPHA_LOWER = 0.2
+    ALPHA_INV = 0.1
 
     def __init__(self):
         self.window = 256
+        self.displaced_points = []
+        self.displaced_plot_values = []
 
     @classmethod
     def plot_patch(cls, ax, patch):
-        patch = mpl.patches.Rectangle(patch['point'], patch['w'], patch['h'],
-                                      color=cls.COLOR_LINE, zorder=0, alpha=cls.INVISIBLE_ALPHA)
+        if patch.get('polygon'):
+            patch = mpl.patches.Polygon(patch['points'],
+                                        color=cls.COLOR_LINE, zorder=0, alpha=cls.ALPHA_INV)
+        else:
+            patch = mpl.patches.Rectangle(patch['point'], patch['w'], patch['h'],
+                                          color=cls.COLOR_LINE, zorder=0, alpha=cls.ALPHA_INV)
         ax.add_patch(patch)
+
+    @classmethod
+    def plot_displaced_points(cls, ax, displaced_points):
+        x, y = [], []
+        for displaced_point in displaced_points:
+            x.append(displaced_point['x'])
+            y.append(displaced_point['y'])
+        ax.scatter(x, y, c=cls.COLOR_DIS, marker='o', zorder=2, alpha=cls.ALPHA_MED, label=cls.LABEL_DIS)
 
     @classmethod
     def plot_arrows(cls, ax, plot, color, alpha=1, epsilon_alpha=1):
@@ -39,7 +56,8 @@ class ExamplesBase(object):
         hw, hl = 0.1, 0.1
 
         # epsilon text
-        ax.text(x + 0.1, y + 0.4, cls.EPSILON, fontsize=cls.FONT_SIZE, c=c, alpha=epsilon_alpha)
+        if not plot.get('no_legend_above'):
+            ax.text(x + 0.1, y + 0.4, cls.EPSILON, fontsize=cls.FONT_SIZE, c=c, alpha=epsilon_alpha)
         ax.text(x + 0.1, y - 0.55, cls.EPSILON, fontsize=cls.FONT_SIZE, c=c, alpha=epsilon_alpha)
 
         m = 0 if plot.get('touch_all') else 0.08
@@ -57,7 +75,7 @@ class ExamplesBase(object):
     def plot_original_values(self, ax, index):
         scatter_x_alpha = range(index, len(self.original))
         original_alpha = self.original[index:len(self.original) + 1]
-        ax.scatter(scatter_x_alpha, original_alpha, c=self.COLOR_ORIG, marker='x', zorder=3, alpha=self.LOWER_ALPHA)
+        ax.scatter(scatter_x_alpha, original_alpha, c=self.COLOR_ORIG, marker='x', zorder=3, alpha=self.ALPHA_LOWER)
 
         scatter_x_black = range(index+1)
         original_black = self.original[0:index+1]
@@ -72,7 +90,7 @@ class ExamplesBase(object):
 
         # decoded values
         x_decoded = scatter_x[0:len(self.decoded)]
-        ax.scatter(x_decoded, self.decoded, c=self.COLOR_DECO, marker='o', zorder=2, label=self.encoded_label())
+        ax.scatter(x_decoded, self.decoded, c=self.COLOR_DECO, marker='o', zorder=2, label=self.LABEL_DECO)
 
         # decoded lines
         for p in self.plot_values:
@@ -83,6 +101,12 @@ class ExamplesBase(object):
 
         for patch in self.patches:
             ExamplesBase.plot_patch(ax, patch)
+
+        if len(self.displaced_points) > 0:
+            ExamplesBase.plot_displaced_points(ax, self.displaced_points)
+            for p in self.displaced_plot_values:
+                ax.plot(p['x_values'], p['y_values'], c=self.COLOR_DIS, zorder=1)
+
 
         ax.set(xlabel=self.XLABEL, ylabel=self.YLABEL) #, title=title_str)
         title_obj = plt.title(self.title(self.algorithm, 1, step))
@@ -100,9 +124,6 @@ class ExamplesBase(object):
         ax.legend(loc='upper left')
         plt.tight_layout()
         fig.savefig(self.path + filename)
-
-    def encoded_label(self):
-        return self.LABEL_DECO
 
     def title(self, algorithm, epsilon, step):
         epsilon = r"$\epsilon = {}$".format(epsilon)

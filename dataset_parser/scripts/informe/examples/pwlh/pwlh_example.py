@@ -231,7 +231,7 @@ class PWLHExample(ExamplesBase):
 
         # decoded values
         x_decoded = scatter_x[0:len(self.decoded)]
-        ax.scatter(x_decoded, self.decoded, c=self.COLOR_DECO, marker='o', zorder=2, label=self.encoded_label())
+        ax.scatter(x_decoded, self.decoded, c=self.COLOR_DECO, marker='o', zorder=2, label=self.LABEL_DECO)
 
         # decoded lines
         for p in self.plot_values:
@@ -258,9 +258,6 @@ class PWLHExample(ExamplesBase):
         ax.legend(loc='upper left')
         plt.tight_layout()
         fig.savefig(self.PATH + filename)
-
-    def encoded_label(self):
-        return self.LABEL_DECO
 
     def title(self, algorithm, epsilon, window, step):
         epsilon = r"$\epsilon = {}$".format(epsilon)

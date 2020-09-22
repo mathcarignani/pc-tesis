@@ -20,20 +20,6 @@ class APCAExample(ExamplesBase):
         self.apca2("apca2.pdf", 2, 10)
         self.apca3("apca3.pdf", 3, 11)
 
-    def apca(self):
-        self.decoded =  [2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 1, 1]
-        self.plot_values = [
-            {'x_values': [0,7], 'y_values': [2,2]},
-            {'x_values': [8,9], 'y_values': [3,3]},
-            {'x_values': [10,11], 'y_values': [1,1]}
-        ]
-        self.arrows = [
-            {'x': 0, 'y': 2, 'touch_above': True},
-            {'x': 8, 'y': 3, 'touch_below': True},
-            {'x': 10, 'y': 1, 'touch_above': True, 'touch_below': True}
-        ]
-        self.common("apca.pdf", 'APCA', 1, 256)
-
     def apca1(self, filename, step, index):
         self.decoded = self.copy_decoded[0:8]
         self.plot_values = [{'x_values': [0,7], 'y_values': [2,2]}]
