@@ -59,10 +59,14 @@ void CoderFR::codeWindow(){
 void CoderFR::codeItem(DataItem item, int index){
     int value = Conversor::doubleToInt(item.value);
     std::string value_str = Conversor::intToString(value);
+    std::cout << "CoderFR::codeItem(_, " << index << ")" << std::endl;
+    std::cout << "  codeValueRaw(" << value_str << ");" << std::endl;
     codeValueRaw(value_str);
     // we always code the value in the first index, so we don't have to code its index
     if (index == 0) { return; }
+
     codeInt(item.timestamp - 1, window_size_bit_length); // 1 <= index <= window_size
+    std::cout << "  codeInt(" << item.timestamp - 1 << ", " << window_size_bit_length << ");" << std::endl;
 }
 
 #endif // MASK_MODE

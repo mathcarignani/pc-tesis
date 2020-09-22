@@ -46,6 +46,7 @@ public:
 	Line(double slope, double intercept);
 	Line(Line* original);
 
+	void print();
 	void update(Point* point1, Point* point2);
 	void update(Point* point1, double slope);
 

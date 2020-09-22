@@ -45,7 +45,9 @@ void CoderSlideFilter::codeColumnAfter() {
 //            DataItem entry = m_pSFData->getAt(i);
 //            std::cout << entry.timestamp << " " << entry.value << std::endl;
 //        }
+        std::cout << "compress()" << std::endl;
         compress();
+        std::cout << "codeEntries()" << std::endl;
         codeEntries();
     }
     delete m_pSFData;
@@ -62,6 +64,7 @@ void CoderSlideFilter::add(SlideFiltersEntry & recording){
 void CoderSlideFilter::codeEntries(){
 //    std::cout << "entries_vector.size() = " << entries_vector.size() << std::endl;
     codeFloat(entries_vector.size());
+    std::cout << "codeFloat(" << entries_vector.size() << ");" << std::endl;
     for(int i=0; i < entries_vector.size(); i++){
         codeEntry(entries_vector.at(i));
     }
@@ -69,6 +72,10 @@ void CoderSlideFilter::codeEntries(){
 
 void CoderSlideFilter::codeEntry(SlideFiltersEntry* recording){
 //    std::cout << recording->connToFollow << " " << recording->timestamp << " " << recording->value << std::endl;
+    std::cout << "CoderSlideFilter::codeEntry(_);" << std::endl;
+    std::cout << "  codeBool(" << recording->connToFollow << ");" << std::endl;
+    std::cout << "  codeDouble(" << recording->timestamp << ");" << std::endl;
+    std::cout << "  codeDouble(" << recording->value << ");" << std::endl;
     codeBool(recording->connToFollow);
     codeDouble(recording->timestamp);
     codeDouble(recording->value);
@@ -79,9 +86,11 @@ void CoderSlideFilter::codeEntry(SlideFiltersEntry* recording){
 // compress raw data
 void CoderSlideFilter::compress()
 {
+    std::cout << "CoderSlideFilter::compress()" << std::endl;
     int inputSize = m_pSFData->getDataLength();
     if (inputSize == 1)
     {
+        std::cout << "  if (inputSize == 1)" << std::endl;
         DataItem item = m_pSFData->getAt(0);
         SlideFiltersEntry recording(item.value, item.timestamp, true);
         m_pSFOutput->getCompressData()->add(recording);
@@ -100,21 +109,25 @@ void CoderSlideFilter::compress()
     DataItem item;
     for (int i = 2; i <= inputSize; i++)
     {
+        std::cout << "  i = " << i << std::endl;
         //Read if it is not the end of the input
         if (i < inputSize)
         {
             item = m_pSFData->getAt(i);
             upperValue = m_curU.getValue(item.timestamp);
             lowerValue = m_curL.getValue(item.timestamp);
+            std::cout << "    if (i < inputSize) - upperValue = " << upperValue << " | lowerValue = " << lowerValue << std::endl;
         }
 
         //recording mechanism
         if ((i == inputSize) || (item.value - upperValue > eps) || (lowerValue - item.value > eps))
         {
+            std::cout << "    recording_mechanism(" << i << ");" << std::endl;
             recording_mechanism(i);
         }
         else //filtering mechanism
         {
+            std::cout << "    filtering_mechanism(" << i << ");" << std::endl;
             filtering_mechanism(i);
         }
     }
@@ -123,12 +136,17 @@ void CoderSlideFilter::compress()
 // Initialize upper bound and lower bound
 void CoderSlideFilter::initializeU_L(double t1, double v1, double t2, double v2, double eps)
 {
+    std::cout << "CoderSlideFilter::initializeU_L(" << t1 << ", " << v1 << ", " << t2 << "," << v2 << ");" << std::endl;
     Point top1(v1 + eps, t1);
     Point bottom1(v1 - eps, t1);
     Point top2(v2 + eps, t2);
     Point bottom2(v2- eps, t2);
     m_curL.update(&top1, &bottom2);
     m_curU.update(&bottom1, &top2);
+    std::cout << "m_curL:" << std::endl;
+    m_curL.print();
+    std::cout << "m_curU:" << std::endl;
+    m_curU.print();
 }
 
 // Update upper bound and lower bound
@@ -218,6 +236,12 @@ void CoderSlideFilter::recording_mechanism(int& position)
     DataItem begin_curSeg = m_pSFData->getAt(m_nBegin_Point);
 
     existInter = updateUandLforConnectedSegment(m_curU,m_curL,m_prevG);
+    std::cout << "updateUandLforConnectedSegment(m_curU,m_curL,m_prevG);" << std::endl;
+    std::cout << "m_curL:" << std::endl;
+    m_curL.print();
+    std::cout << "m_curU:" << std::endl;
+    m_curU.print();
+
     m_curG = getFittestLine_G(m_nBegin_Point, position, m_curU, m_curL);
 
     if (m_nBegin_Point == 0)
@@ -303,6 +327,7 @@ void CoderSlideFilter::filtering_mechanism(int position)
     //item is above L a distance which is larger than epsilon
     if (item.value - lowerValue > eps)
     {
+        std::cout << "      if (item.value - lowerValue > eps) = " << item.value << " - " << lowerValue << " > " << eps << ")" << std::endl;
         //Update L
         for (j = m_nBegin_Point; j < position; j++)
         {
@@ -321,6 +346,7 @@ void CoderSlideFilter::filtering_mechanism(int position)
     //item is under U a distance which is larger than epsilon
     if (upperValue - item.value > eps)
     {
+        std::cout << "      if (upperValue - item.value > eps) = " << upperValue << " - " << item.value << " > " << eps << ")" << std::endl;
         //Update U
         for (j = m_nBegin_Point; j < position; j++)
         {

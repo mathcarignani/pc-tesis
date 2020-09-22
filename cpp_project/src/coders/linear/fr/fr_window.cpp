@@ -47,14 +47,21 @@ std::vector<DataItem> FRWindow::getItems(){
 }
 
 void FRWindow::getIndexes(std::vector<int> & array, int first_index, int last_index){
-    if (!VectorUtils::vectorIncludesInt(array, first_index)) { array.push_back(first_index); }
+    std::cout << "FRWindow::getIndexes(_, " << first_index << ", " << last_index << ")" << std::endl;
+    if (!VectorUtils::vectorIncludesInt(array, first_index)) {
+        std::cout << "  array.push_back(first_index);" << std::endl;
+        array.push_back(first_index);
+    }
     if ((first_index + 1 < last_index) && violatedConstraint(first_index, last_index)) {
         // displace segment
         int half = MathUtils::half(first_index, last_index);
+        std::cout << "half = " << half << std::endl;
         getIndexes(array, first_index, half);
         getIndexes(array, half, last_index);
     }
-    if (!VectorUtils::vectorIncludesInt(array, last_index)) { array.push_back(last_index); }
+    if (!VectorUtils::vectorIncludesInt(array, last_index)) {
+        std::cout << "  array.push_back(last_index);" << std::endl;
+        array.push_back(last_index); }
 }
 
 bool FRWindow::violatedConstraint(int first_index, int last_index){

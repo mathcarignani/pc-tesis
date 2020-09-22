@@ -53,6 +53,10 @@ Line::Line(double slope, double intercept)
 	this->intercept = intercept;
 }
 
+void Line::print(){
+	std::cout << "  slope = " << slope << " | intercept = " << intercept << std::endl;
+}
+
 void Line::update(Point* point1, Point* point2)
 {
 	assert(point1 != NULL && point2 != NULL);

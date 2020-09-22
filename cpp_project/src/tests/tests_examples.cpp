@@ -8,23 +8,23 @@
 #include "bit_stream_utils.h"
 
 void TestsExamples::runAll(){
-    std::vector<int> vector_pca{0, 1};
-    commonTest("example1.csv", "PCA", 4, vector_pca);
+//    std::vector<int> vector_pca{0, 1};
+//    commonTest("example1.csv", "PCA", 4, vector_pca);
+//
+//    std::vector<int> vector_apca{0, 1};
+//    commonTest("example1.csv", "APCA", 256, vector_apca);
+//
+//    std::vector<int> vector_ca{0, 1};
+//    commonTest("example1.csv", "CA", 256, vector_ca);
+//
+//    std::vector<int> vector_pwlh{0, 1};
+//    commonTest("example1.csv", "PWLH", 256, vector_pwlh);
+//
+//    std::vector<int> vector_pwlhint{0, 1};
+//    commonTest("example1.csv", "PWLHInt", 256, vector_pwlhint);
 
-    std::vector<int> vector_apca{0, 1};
-    commonTest("example1.csv", "APCA", 256, vector_apca);
-
-    std::vector<int> vector_ca{0, 1};
-    commonTest("example1.csv", "CA", 256, vector_ca);
-
-    std::vector<int> vector_pwlh{0, 1};
-    commonTest("example1.csv", "PWLH", 256, vector_pwlh);
-
-    std::vector<int> vector_pwlhint{0, 1};
-    commonTest("example1.csv", "PWLHInt", 256, vector_pwlhint);
-
-    std::vector<int> vector_sf{0, 1};
-    commonTest("example1.csv", "SF", 256, vector_sf);
+//    std::vector<int> vector_sf{0, 1};
+//    commonTest("example1.csv", "SF", 256, vector_sf);
 
     std::vector<int> vector_fr{0, 1};
     commonTest("example1.csv", "FR", 256, vector_fr);
