@@ -28,6 +28,12 @@ void TestsExamples::runAll(){
 
     std::vector<int> vector_fr{0, 1};
     commonTest("example1.csv", "FR", 256, vector_fr);
+
+    std::vector<int> vector_gamps{0, 1, 1, 1};
+    commonTest("example2.csv", "GAMPS", 256, vector_gamps);
+
+    std::vector<int> vector_gampslimit{0, 1, 1, 1};
+    commonTest("example2.csv", "GAMPSLimit", 256, vector_gampslimit);
 }
 
 void TestsExamples::commonTest(std::string input_filename, std::string coder_name,
