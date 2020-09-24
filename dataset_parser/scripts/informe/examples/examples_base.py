@@ -107,8 +107,10 @@ class ExamplesBase(object):
             for p in self.displaced_plot_values:
                 ax.plot(p['x_values'], p['y_values'], c=self.COLOR_DIS, zorder=1)
 
+        self.common_extra(ax, fig, step, title, filename)
 
-        ax.set(xlabel=self.XLABEL, ylabel=self.YLABEL) #, title=title_str)
+    def common_extra(self, ax, fig, step, title, filename):
+        ax.set(xlabel=self.XLABEL, ylabel=self.YLABEL)
         title_obj = plt.title(self.title(self.algorithm, 1, step))
         plt.setp(title_obj, color='black' if title else 'white')
 
