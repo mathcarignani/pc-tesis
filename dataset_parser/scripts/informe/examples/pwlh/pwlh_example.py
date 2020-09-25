@@ -25,49 +25,41 @@ class PWLHExample(ExamplesBase):
         self.convex_hull_lines = []
         self.convex_hull_width = []
 
-        self.index = 0
-        self.pwlh1("pwlh1.pdf", 1)
-        self.index = 1
-        self.pwlh2("pwlh2.pdf", 2)
-        self.index = 4
-        self.pwlh3("pwlh3.pdf", 5)
-        self.index = 5
-        self.pwlh4("pwlh4.pdf", 6)
-        self.index = 6
-        self.pwlh5("pwlh5.pdf", 7)
-        self.index = 7
-        self.pwlh6("pwlh6.pdf", 8)
-        self.index = 8
-        self.pwlh7("pwlh7.pdf", 9)
-        self.index = 9
-        self.pwlh8("pwlh8.pdf", 10)
-        self.index = 9
-        self.pwlh9("pwlh9.pdf", 11)
+        self.pwlh1("pwlh1.pdf", 1, 0)
+        self.pwlh2("pwlh2.pdf", 2, 1)
+        self.pwlh3("pwlh3.pdf", 5, 4)
+        self.pwlh4("pwlh4.pdf", 6, 5)
+        self.pwlh5("pwlh5.pdf", 7, 6)
+        self.pwlh6("pwlh6.pdf", 8, 7)
+        self.pwlh7("pwlh7.pdf", 9, 8)
+        self.pwlh8("pwlh8.pdf", 10, 9)
+        self.pwlh9("pwlh9.pdf", 11, 9)
+        self.pwlh10("pwlh10.pdf", 12, 11)
 
 
-    def pwlh1(self, filename, step):
+    def pwlh1(self, filename, step, index):
         self.decoded = []
         self.convex_hull = [(0,1)]
         self.convex_hull_lines = []
-        self.common(filename, step)
+        self.common_pwlh(filename, step, index)
 
-    def pwlh2(self, filename, step):
+    def pwlh2(self, filename, step, index):
         self.convex_hull = [(0,1), (1,1)]
         self.convex_hull_lines = [{'x_values': [0,1], 'y_values': [1,1]}]
         self.xs = [0]
         self.ys = [0.65]
         self.words = [r"width$=0$"]
-        self.common(filename, step)
+        self.common_pwlh(filename, step, index)
 
-    def pwlh3(self, filename, step):
+    def pwlh3(self, filename, step, index):
         self.convex_hull = [(0,1), (4,1)]
         self.convex_hull_lines = [{'x_values': [0,4], 'y_values': [1,1]}]
         self.xs = [1.5]
         self.ys = [0.65]
         self.words = [r"width$=0$"]
-        self.common(filename, step)
+        self.common_pwlh(filename, step, index)
 
-    def pwlh4(self, filename, step):
+    def pwlh4(self, filename, step, index):
         self.convex_hull = [(0,1), (5,2), (4,1)]
         self.convex_hull_lines = [
             {'x_values': [0,4], 'y_values': [1,1]},
@@ -82,9 +74,9 @@ class PWLHExample(ExamplesBase):
         self.xs = [x - 0.7]
         self.ys = [y + 0.15]
         self.words = [self.width_text(str(round(real_distance, 1)))]
-        self.common(filename, step)
+        self.common_pwlh(filename, step, index)
 
-    def pwlh5(self, filename, step):
+    def pwlh5(self, filename, step, index):
         self.convex_hull = [(0,1), (6,3), (4,1)]
         self.convex_hull_lines = [
             {'x_values': [0,4], 'y_values': [1,1]},
@@ -99,9 +91,9 @@ class PWLHExample(ExamplesBase):
         self.xs = [x - 1.05]
         self.ys = [y + 0.15]
         self.words = [self.width_text(str(round(real_distance, 1)))]
-        self.common(filename, step)
+        self.common_pwlh(filename, step, index)
 
-    def pwlh6(self, filename, step):
+    def pwlh6(self, filename, step, index):
         self.convex_hull = [(0,1), (6,3), (7,3), (4,1)]
         self.convex_hull_lines = [
             {'x_values': [0,4], 'y_values': [1,1]},
@@ -109,9 +101,9 @@ class PWLHExample(ExamplesBase):
             {'x_values': [4,7], 'y_values': [1,3]},
             {'x_values': [6,7], 'y_values': [3,3]}
         ]
-        self.common(filename, step)
+        self.common_pwlh(filename, step, index)
 
-    def pwlh7(self, filename, step):
+    def pwlh7(self, filename, step, index):
         self.convex_hull = [(0,1), (8,4), (7,3), (4,1)]
         self.convex_hull_lines = [
             {'x_values': [0,4], 'y_values': [1,1]},
@@ -127,9 +119,9 @@ class PWLHExample(ExamplesBase):
         self.xs = [x - 1]
         self.ys = [y + 0.15]
         self.words = [self.width_text(str(round(real_distance, 1)))]
-        self.common(filename, step)
+        self.common_pwlh(filename, step, index)
 
-    def pwlh8(self, filename, step):
+    def pwlh8(self, filename, step, index):
         self.convex_hull = [(0,1), (8,4), (9,2), (4,1)]
 
         self.convex_hull_lines = [
@@ -174,9 +166,10 @@ class PWLHExample(ExamplesBase):
         self.ys.append(y - 0.35)
         self.words.append(r"width$=3$")
 
-        self.common(filename, step)
+        self.common_pwlh(filename, step, index)
 
-    def pwlh9(self, filename, step):
+    def pwlh9(self, filename, step, index):
+        self.encoded_points = [(0,0.25), (8,3.25)]
         self.convex_hull = [(9,2)]
         self.decoded = self.copy_decoded[0:9]
         self.plot_values = [{'x_values': [0,8], 'y_values': [0.25,3.25], 'linestyle': '-'}]
@@ -187,7 +180,32 @@ class PWLHExample(ExamplesBase):
         self.convex_hull_lines = []
         self.convex_hull_width = []
 
-        self.common(filename, step)
+        self.common_pwlh(filename, step, index)
+
+    def pwlh10(self, filename, step, index):
+        self.encoded_points += [(9,1.75), (11,0.75)]
+        self.convex_hull = []
+        self.decoded = self.copy_decoded[0:12]
+        self.plot_values += [{'x_values': [9,11], 'y_values': [1.75,0.75]}]
+
+        self.plot_values_alpha = []
+        self.xs, self.ys, self.words = [], [], []
+
+        self.convex_hull_lines = []
+        self.convex_hull_width = []
+
+        self.common_pwlh(filename, step, index)
+
+    def common_pwlh(self, filename, step, index):
+        ax, fig = self.common_1(index)
+
+        self.plot_convex_hull(ax)
+        for index, x in enumerate(self.xs):
+            y = self.ys[index]
+            s = self.words[index]
+            self.plot_texts(ax, x, y, s)
+
+        self.common_2(ax, fig, step, True, filename)
 
     @staticmethod
     def width_text(string):
@@ -203,6 +221,9 @@ class PWLHExample(ExamplesBase):
         ax.text(x, y, s, fontsize=fontsize, alpha=alpha, c=color)
 
     def plot_convex_hull(self, ax):
+        if len(self.convex_hull) == 0:
+            return
+
         x, y = [], []
         for point in self.convex_hull:
             point_x, point_y = point
@@ -216,35 +237,6 @@ class PWLHExample(ExamplesBase):
 
         for line in self.convex_hull_width:
             ax.plot(line['x_values'], line['y_values'], c=ExamplesBase.COLOR_LINE, zorder=3, linestyle=':', alpha=1)
-
-    def common(self, filename, step):
-        # print(plt.rcParams["figure.figsize"]) # [6.4, 4.8]
-        plt.rcParams["figure.figsize"] = [8, 3.48]
-        scatter_x = range(len(self.original))
-        fig, ax = plt.subplots()
-
-
-        self.plot_original_values(ax, self.index)
-
-        self.plot_convex_hull(ax)
-
-        # decoded values
-        x_decoded = scatter_x[0:len(self.decoded)]
-        ax.scatter(x_decoded, self.decoded, c=ExamplesBase.COLOR_DECO, marker='o', zorder=2, label=self.LABEL_DECO)
-
-        # decoded lines
-        for p in self.plot_values:
-            alpha = p.get('alpha') or 1
-            linestyle = p.get('linestyle') or ':'
-            color = ExamplesBase.COLOR_DECO if linestyle == '-' else ExamplesBase.COLOR_LINE
-            ax.plot(p['x_values'], p['y_values'], c=color, zorder=1, linestyle=linestyle, alpha=alpha)
-
-        for index, x in enumerate(self.xs):
-            y = self.ys[index]
-            s = self.words[index]
-            self.plot_texts(ax, x, y, s)
-
-        self.common_extra(ax, fig, step, True, filename)
 
     @staticmethod
     def calculate_intersection(line, point):
@@ -328,7 +320,6 @@ class PWLHExample(ExamplesBase):
         x = det(d, xdiff) / div
         y = det(d, ydiff) / div
         return x, y
-
 
 
 PWLHExample()

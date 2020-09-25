@@ -12,13 +12,15 @@ class ExamplesBase(object):
     EPSILON = r"$\epsilon$"
     YLABEL = 'data'
     XLABEL = 'timestamp'
-    LABEL_ORIG = 'original value'
-    LABEL_DECO = 'encoded value'
-    LABEL_DIS = 'displaced point'
+    LABEL_ORIG = 'original point'
+    LABEL_DECO = 'decoded point'
+    LABEL_ENCO = 'encoded point'
     COLOR_ORIG = 'navy'
     COLOR_DECO = 'orange'
+    COLOR_ENCO = 'red'
     COLOR_LINE = 'seagreen'
     COLOR_DIS = 'red'
+    ALPHA_HIGH = 1
     ALPHA_MED = 0.5
     ALPHA_LOW = 0.3
     ALPHA_LOWER = 0.2
@@ -26,8 +28,9 @@ class ExamplesBase(object):
 
     def __init__(self):
         self.window = 256
-        self.displaced_points = []
-        self.displaced_plot_values = []
+        self.encoded_points = []
+        self.patches = []
+        self.arrows = []
 
     @classmethod
     def plot_patch(cls, ax, patch):
@@ -38,14 +41,6 @@ class ExamplesBase(object):
             patch = mpl.patches.Rectangle(patch['point'], patch['w'], patch['h'],
                                           color=cls.COLOR_LINE, zorder=0, alpha=cls.ALPHA_INV)
         ax.add_patch(patch)
-
-    @classmethod
-    def plot_displaced_points(cls, ax, displaced_points):
-        x, y = [], []
-        for displaced_point in displaced_points:
-            x.append(displaced_point['x'])
-            y.append(displaced_point['y'])
-        ax.scatter(x, y, c=cls.COLOR_DIS, marker='o', zorder=2, alpha=cls.ALPHA_MED, label=cls.LABEL_DIS)
 
     @classmethod
     def plot_arrows(cls, ax, plot, color, alpha=1, epsilon_alpha=1):
@@ -75,26 +70,47 @@ class ExamplesBase(object):
     def plot_original_values(self, ax, index):
         scatter_x_alpha = range(index, len(self.original))
         original_alpha = self.original[index:len(self.original) + 1]
-        ax.scatter(scatter_x_alpha, original_alpha, c=self.COLOR_ORIG, marker='x', zorder=3, alpha=self.ALPHA_LOWER)
+        ax.scatter(scatter_x_alpha, original_alpha, c=self.COLOR_ORIG, marker='x', zorder=3, alpha=self.ALPHA_LOWER, s=25)
 
         scatter_x_black = range(index+1)
         original_black = self.original[0:index+1]
-        ax.scatter(scatter_x_black, original_black, c=self.COLOR_ORIG, marker='x', zorder=3, label=self.LABEL_ORIG)
+        ax.scatter(scatter_x_black, original_black, c=self.COLOR_ORIG, marker='x', zorder=3, label=self.LABEL_ORIG, s=25)
+
+    def plot_encoded_points(self, ax):
+        x, y = [], []
+        for point in self.encoded_points:
+            point_x, point_y = point
+            x.append(point_x)
+            y.append(point_y)
+        ax.scatter(x, y, zorder=3, alpha=1, label=self.LABEL_ENCO, facecolors='none', edgecolors=self.COLOR_ENCO, s=60)
 
     def common(self, filename, step, index, title=True):
-        plt.rcParams["figure.figsize"] = [8, 3.48]
-        scatter_x = range(len(self.original))
-        fig, ax = plt.subplots()
+        ax, fig = self.common_1(index)
+        self.common_2(ax, fig, step, title, filename)
 
+    def common_1(self, index):
+        plt.rcParams["figure.figsize"] = [8, 3.48]
+        fig, ax = plt.subplots()
         self.plot_original_values(ax, index)
 
+        return ax, fig
+
+    def common_2(self, ax, fig, step, title, filename):
+        if len(self.encoded_points) > 0:
+            self.plot_encoded_points(ax)
+
         # decoded values
+        scatter_x = range(len(self.original))
         x_decoded = scatter_x[0:len(self.decoded)]
-        ax.scatter(x_decoded, self.decoded, c=self.COLOR_DECO, marker='o', zorder=2, label=self.LABEL_DECO)
+        if len(x_decoded) > 0:
+            ax.scatter(x_decoded, self.decoded, c=self.COLOR_DECO, marker='o', zorder=2, label=self.LABEL_DECO)
 
         # decoded lines
         for p in self.plot_values:
-            ax.plot(p['x_values'], p['y_values'], c=self.COLOR_DECO, zorder=1)
+            alpha = p.get('alpha') or self.ALPHA_HIGH
+            linestyle = p.get('linestyle') or '-'
+            color = p.get('color') or self.COLOR_DECO
+            ax.plot(p['x_values'], p['y_values'], c=color, zorder=1, linestyle=linestyle, alpha=alpha)
 
         for plot in self.arrows:
             ExamplesBase.plot_arrows(ax, plot, self.COLOR_LINE)
@@ -102,14 +118,6 @@ class ExamplesBase(object):
         for patch in self.patches:
             ExamplesBase.plot_patch(ax, patch)
 
-        if len(self.displaced_points) > 0:
-            ExamplesBase.plot_displaced_points(ax, self.displaced_points)
-            for p in self.displaced_plot_values:
-                ax.plot(p['x_values'], p['y_values'], c=self.COLOR_DIS, zorder=1)
-
-        self.common_extra(ax, fig, step, title, filename)
-
-    def common_extra(self, ax, fig, step, title, filename):
         ax.set(xlabel=self.XLABEL, ylabel=self.YLABEL)
         title_obj = plt.title(self.title(self.algorithm, 1, step))
         plt.setp(title_obj, color='black' if title else 'white')

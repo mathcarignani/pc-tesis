@@ -27,22 +27,25 @@ class PCAExample(ExamplesBase):
         self.common(filename, step, index, title)
 
     def pca2(self, filename, step, index):
+        self.encoded_points = [(3,1)]
         self.decoded = self.copy_decoded[0:4]
         self.plot_values = [{'x_values': [0,3], 'y_values': [1,1]}]
-        self.arrows = [{'x': 0, 'y': 1, 'touch_above': True, 'touch_below': True}]
+        self.arrows = [{'x': 3, 'y': 1, 'touch_above': True, 'touch_below': True}]
         self.patches = [{'point': (0, 0), 'w': 3, 'h': 2}]
         self.common(filename, step, index)
 
     def pca3(self, filename, step, index):
+        self.encoded_points.append((7,2))
         self.decoded = self.copy_decoded[0:8]
         self.plot_values.append({'x_values': [4,7], 'y_values': [2,2]})
-        self.arrows = [{'x': 4, 'y': 2, 'touch_above': True}]
+        self.arrows = [{'x': 7, 'y': 2, 'touch_below': True}]
         self.patches = [{'point': (4, 1), 'w': 3, 'h': 2}]
         self.common(filename, step, index)
 
     def pca4(self, filename, step, index):
+        self.encoded_points += [(8,4), (9,2), (10,1), (11,1)]
         self.decoded = self.copy_decoded[0:12]
-        self.arrows = [{'x': 8, 'y': 2.5, 'touch_above': True, 'touch_below': True, 'touch_all': True}]
+        self.arrows = [{'x': 11, 'y': 2.5, 'touch_above': True, 'touch_below': True, 'touch_all': True}]
         self.patches = [{'point': (8, 1.5), 'w': 3, 'h': 2}]
         self.common(filename, step, index)
 

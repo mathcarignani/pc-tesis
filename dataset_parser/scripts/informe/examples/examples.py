@@ -65,49 +65,6 @@ class Examples(ExamplesBase):
             text += " and " + window
         return text
 
-    # def pca(self):
-    #     self.decoded =  [1, 1, 1, 1, 2, 2, 2, 2, 4, 2, 1, 1]
-    #     self.plot_values = [
-    #         {'x_values': [0,3], 'y_values': [1,1]},
-    #         {'x_values': [4,7], 'y_values': [2,2]}
-    #     ]
-    #     self.arrows = [
-    #         {'x': 0, 'y': 1, 'touch_above': True, 'touch_below': True},
-    #         {'x': 4, 'y': 2, 'touch_above': True}
-    #     ]
-    #     self.common("pca.pdf", 'PCA', 1, 4)
-
-    # def apca(self):
-    #     self.decoded =  [2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 1, 1]
-    #     self.plot_values = [
-    #         {'x_values': [0,7], 'y_values': [2,2]},
-    #         {'x_values': [8,9], 'y_values': [3,3]},
-    #         {'x_values': [10,11], 'y_values': [1,1]}
-    #     ]
-    #     self.arrows = [
-    #         {'x': 0, 'y': 2, 'touch_above': True},
-    #         {'x': 8, 'y': 3, 'touch_below': True},
-    #         {'x': 10, 'y': 1, 'touch_above': True, 'touch_below': True}
-    #     ]
-    #     self.common("apca.pdf", 'APCA', 1, 256)
-
-    def ca(self):
-        self.decoded =  [1, 1, 1, 2, 2, 2, 3, 4, 4, 2, 2, 1]
-        self.plot_values = [
-            {'x_values': [0,5], 'y_values': [1,2]},
-            {'x_values': [6,8], 'y_values': [3,4]},
-            {'x_values': [9,11], 'y_values': [2,1]}
-        ]
-        self.common("ca.pdf", 'CA', 1, 256)
-
-    def pwlh(self):
-        self.decoded =  [0, 1, 1, 1, 2, 2, 3, 3, 3, 2, 1, 1]
-        self.plot_values = [
-            {'x_values': [0,8], 'y_values': [0.25,3.25]},
-            {'x_values': [9,11], 'y_values': [1.75,0.75]}
-        ]
-        self.common("pwlh.pdf", 'PWLH', 1, 256)
-
     def pwlh_int(self):
         self.decoded =  [1, 1, 1, 1, 1, 2, 3, 3, 4, 2, 1, 1]
         self.plot_values = []
@@ -121,18 +78,6 @@ class Examples(ExamplesBase):
         ]
         self.common("sf.pdf", 'SF', 1, None)
 
-    # def fr(self):
-    #     self.decoded =  [1, 1, 1, 2, 2, 2, 3, 3, 4, 3, 2, 1]
-    #     self.plot_values = []
-    #     self.common("fr.pdf", 'FR', 1, None)
 
-
-
-
-# Examples().pca()
-# Examples().apca()
-Examples().ca()
-Examples().pwlh()
 Examples().pwlh_int()
 Examples().sf()
-# Examples().fr()
