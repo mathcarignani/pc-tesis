@@ -81,7 +81,7 @@ class PWLHExample(ExamplesBase):
         self.convex_hull_width = [{'x_values': [x,4], 'y_values': [y, 1]}]
         self.xs = [x - 0.7]
         self.ys = [y + 0.15]
-        self.words = [r"width$\approx" + str(round(real_distance, 1)) + r"$"]
+        self.words = [self.width_text(str(round(real_distance, 1)))]
         self.common(filename, step)
 
     def pwlh5(self, filename, step):
@@ -98,7 +98,7 @@ class PWLHExample(ExamplesBase):
         self.convex_hull_width = [{'x_values': [x,4], 'y_values': [y, 1]}]
         self.xs = [x - 1.05]
         self.ys = [y + 0.15]
-        self.words = [r"width$\approx" + str(round(real_distance, 1)) + r"$"]
+        self.words = [self.width_text(str(round(real_distance, 1)))]
         self.common(filename, step)
 
     def pwlh6(self, filename, step):
@@ -126,7 +126,7 @@ class PWLHExample(ExamplesBase):
         self.convex_hull_width = [{'x_values': [x,4], 'y_values': [y, 1]}]
         self.xs = [x - 1]
         self.ys = [y + 0.15]
-        self.words = [r"width$\approx" + str(round(real_distance, 1)) + r"$"]
+        self.words = [self.width_text(str(round(real_distance, 1)))]
         self.common(filename, step)
 
     def pwlh8(self, filename, step):
@@ -139,6 +139,7 @@ class PWLHExample(ExamplesBase):
             {'x_values': [4,9], 'y_values': [1,2]},
             {'x_values': [9,8], 'y_values': [2,4]},
             {'x_values': [9,7], 'y_values': [2,-7*(2/1)+20], 'alpha': ExamplesBase.ALPHA_LOW}, # continue line
+            {'x_values': [4,9], 'y_values': [1,1], 'alpha': ExamplesBase.ALPHA_LOW}, # continue line
         ]
         # intersections
         _, _, real_distance = PWLHExample.calculate_intersection([(0,1), (8*60,4)], (9*60,2))
@@ -147,7 +148,7 @@ class PWLHExample(ExamplesBase):
         self.convex_hull_width = [{'x_values': [x,9], 'y_values': [y, 2]}]
         self.xs = [x + 0.2]
         self.ys = [y - 0.3]
-        self.words = [r"width$\approx" + str(round(real_distance, 1)) + r"$"]
+        self.words = [self.width_text(str(round(real_distance, 1)))]
 
         _, _, real_distance = PWLHExample.calculate_intersection([(8*60,4), (9*60,2)], (0,1))
         assert(round(real_distance, 1) == 19)
@@ -155,7 +156,7 @@ class PWLHExample(ExamplesBase):
         self.convex_hull_width.append({'x_values': [x,0], 'y_values': [y, 1]})
         self.xs.append(6.5)
         self.ys.append(4.05)
-        self.words.append(r"width$\approx" + str(int(round(real_distance))) + r"$")
+        self.words.append(self.width_text(str(int(round(real_distance)))))
 
         _, _, real_distance = PWLHExample.calculate_intersection([(9*60,2), (4*60,1)], (8*60,4))
         assert(round(real_distance, 1) == 2.2)
@@ -163,7 +164,15 @@ class PWLHExample(ExamplesBase):
         self.convex_hull_width.append({'x_values': [x,8], 'y_values': [y, 4]})
         self.xs.append(x - 0.35)
         self.ys.append(y - 0.35)
-        self.words.append(r"width$\approx" + str(round(real_distance, 1)) + r"$")
+        self.words.append(self.width_text(str(round(real_distance, 1))))
+
+        _, _, real_distance = PWLHExample.calculate_intersection([(0,1),(4*60,1)],(8*60,4))
+        assert(round(real_distance, 1) == 3)
+        x, y, distance = PWLHExample.calculate_intersection([(0,1), (4,1)], (8,4))
+        self.convex_hull_width.append({'x_values': [x,8], 'y_values': [y, 4]})
+        self.xs.append(x - 0.6)
+        self.ys.append(y - 0.35)
+        self.words.append(r"width$=3$")
 
         self.common(filename, step)
 
@@ -179,6 +188,10 @@ class PWLHExample(ExamplesBase):
         self.convex_hull_width = []
 
         self.common(filename, step)
+
+    @staticmethod
+    def width_text(string):
+        return r"width$\approx" + string + r"$"
 
     def plot_texts(self, ax, x, y, s):
         color = 'black'
