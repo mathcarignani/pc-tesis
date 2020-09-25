@@ -19,7 +19,6 @@ class ExamplesBase(object):
     COLOR_DECO = 'orange'
     COLOR_ENCO = 'red'
     COLOR_LINE = 'seagreen'
-    COLOR_DIS = 'red'
     ALPHA_HIGH = 1
     ALPHA_MED = 0.5
     ALPHA_LOW = 0.3
@@ -96,14 +95,12 @@ class ExamplesBase(object):
         return ax, fig
 
     def common_2(self, ax, fig, step, title, filename):
-        if len(self.encoded_points) > 0:
-            self.plot_encoded_points(ax)
+        self.plot_encoded_points(ax)
 
         # decoded values
         scatter_x = range(len(self.original))
         x_decoded = scatter_x[0:len(self.decoded)]
-        if len(x_decoded) > 0:
-            ax.scatter(x_decoded, self.decoded, c=self.COLOR_DECO, marker='o', zorder=2, label=self.LABEL_DECO)
+        ax.scatter(x_decoded, self.decoded, c=self.COLOR_DECO, marker='o', zorder=2, label=self.LABEL_DECO)
 
         # decoded lines
         for p in self.plot_values:

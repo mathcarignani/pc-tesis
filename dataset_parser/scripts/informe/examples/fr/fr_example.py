@@ -6,6 +6,7 @@ from scripts.informe.examples.examples_base import ExamplesBase
 
 class FRExample(ExamplesBase):
     LABEL_DIS = 'displaced point'
+    COLOR_DIS = 'magenta'
                     
     def __init__(self):
         super(FRExample, self).__init__()
