@@ -29,7 +29,6 @@ public:
     bool conditionHolds(int x_delta, int x_int, std::string x);
     void setWindow(int x_delta, int x_int, std::string x);
     void increaseLength();
-    void printState();
 };
 
 #endif //CPP_PROJECT_WINDOW_CA_H

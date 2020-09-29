@@ -272,12 +272,12 @@ set(TESTS_UTILS_SRC_FILES1 ${TESTS_UTILS_SRC_DIR}/tests_string_utils.cpp ${TESTS
 set(TESTS_H_FILES0 ${TESTS_H_DIR}/tests_line.h ${TESTS_H_DIR}/tests_header_coder.h ${TESTS_H_DIR}/tests_utils.h)
 set(TESTS_H_FILES1 ${TESTS_H_DIR}/tests_coders_utils.h ${TESTS_H_DIR}/tests_coders.h)
 set(TESTS_H_FILES2 ${TESTS_H_DIR}/tests_dataset_utils.h ${TESTS_H_DIR}/tests_bit_stream.h)
-set(TESTS_H_FILES3 ${TESTS_H_DIR}/tests.h ${TESTS_H_DIR}/tests_modelKT.h)
+set(TESTS_H_FILES3 ${TESTS_H_DIR}/tests.h ${TESTS_H_DIR}/tests_modelKT.h ${TESTS_H_DIR}/tests_examples.h)
 
 set(TESTS_SRC_FILES0 ${TESTS_SRC_DIR}/tests_line.cpp ${TESTS_SRC_DIR}/tests_header_coder.cpp ${TESTS_SRC_DIR}/tests_utils.cpp)
 set(TESTS_SRC_FILES1 ${TESTS_SRC_DIR}/tests_coders_utils.cpp ${TESTS_SRC_DIR}/tests_coders.cpp)
 set(TESTS_SRC_FILES2 ${TESTS_SRC_DIR}/tests_dataset_utils.cpp ${TESTS_SRC_DIR}/tests_bit_stream.cpp)
-set(TESTS_SRC_FILES3 ${TESTS_SRC_DIR}/tests.cpp ${TESTS_SRC_DIR}/tests_modelKT.cpp)
+set(TESTS_SRC_FILES3 ${TESTS_SRC_DIR}/tests.cpp ${TESTS_SRC_DIR}/tests_modelKT.cpp ${TESTS_SRC_DIR}/tests_examples.cpp)
 
 
 set(TESTS_H_FILES ${TESTS_H_FILES0} ${TESTS_H_FILES1} ${TESTS_H_FILES2} ${TESTS_H_FILES3} ${TESTS_UTILS_H_FILES0} ${TESTS_UTILS_H_FILES1})

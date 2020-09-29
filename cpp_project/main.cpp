@@ -26,7 +26,7 @@ int main(int argc, char *argv[]){
 //    }
 
     if (argc <= 1) {
-        TestsCoders::testSingleCoder();
+//        TestsCoders::testSingleCoder();
         Tests::runAll();
         return 0;
     }

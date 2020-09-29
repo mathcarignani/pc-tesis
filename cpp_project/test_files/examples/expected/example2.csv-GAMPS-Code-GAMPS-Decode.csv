@@ -1,0 +1,16 @@
+DATASET:,EXAMPLE
+TIME UNIT:,minutes
+FIRST TIMESTAMP:,2010-10-01 00:00:00
+Time Delta,example1,example2,example3
+0,2,2,1
+60,2,2,2
+60,2,2,2
+60,2,2,2
+60,2,2,2
+60,2,2,2
+60,2,2,2
+60,2,2,2
+60,3,3,3
+60,3,3,3
+60,1,1,1
+60,1,1,1

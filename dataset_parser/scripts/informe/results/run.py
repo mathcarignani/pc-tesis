@@ -33,6 +33,7 @@ GZIP_PATH = INFORME_PATH + "/gzip_compare/out"
 # (3.1) Experimental Setting
 #
 # (1) Run the compress script for each mode, each execution creates a different results.csv file
+# CompressScript("results.csv").run()
 # CompressScript("results.csv", 0).run()
 # CompressScript("results.csv", 0).run()
 # TODO: make changes to pass the mode as an argument and output different modes to different folders (inside 3.1)
@@ -62,7 +63,7 @@ GZIP_PATH = INFORME_PATH + "/gzip_compare/out"
 # # 3.4 Mask Coders Performance
 # #
 # PDFS4(RESULTS_PATH + '3.4/pdf/', 'global').create_pdfs()  # GLOBAL
-ProcessResults(True, RESULTS_PATH + '3.4/results1', 1).run()
+# ProcessResults(True, RESULTS_PATH + '3.4/results1', 1).run()
 
 # GZipScript(GZIP_PATH, 'results.csv', False).run()
 # GZipScript(GZIP_PATH, 'results-t.csv', True).run()
