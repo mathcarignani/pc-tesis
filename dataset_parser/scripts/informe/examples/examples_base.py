@@ -12,9 +12,9 @@ class ExamplesBase(object):
     EPSILON = r"$\epsilon$"
     YLABEL = 'data'
     XLABEL = 'timestamp'
-    LABEL_ORIG = 'original point'
-    LABEL_DECO = 'decoded point'
-    LABEL_ENCO = 'encoded point'
+    LABEL_ORIG = 'sample value'
+    LABEL_DECO = 'decoded value'
+    LABEL_ENCO = 'encoded value'
     COLOR_ORIG = 'navy'
     COLOR_DECO = 'orange'
     COLOR_ENCO = 'red'
@@ -76,6 +76,8 @@ class ExamplesBase(object):
         ax.scatter(scatter_x_black, original_black, c=self.COLOR_ORIG, marker='x', zorder=3, label=self.LABEL_ORIG, s=25)
 
     def plot_encoded_points(self, ax):
+        if len(self.encoded_points) == 0:
+            return
         x, y = [], []
         for point in self.encoded_points:
             point_x, point_y = point
@@ -98,9 +100,10 @@ class ExamplesBase(object):
         self.plot_encoded_points(ax)
 
         # decoded values
-        scatter_x = range(len(self.original))
-        x_decoded = scatter_x[0:len(self.decoded)]
-        ax.scatter(x_decoded, self.decoded, c=self.COLOR_DECO, marker='o', zorder=2, label=self.LABEL_DECO)
+        if len(self.decoded) > 0:
+            scatter_x = range(len(self.original))
+            x_decoded = scatter_x[0:len(self.decoded)]
+            ax.scatter(x_decoded, self.decoded, c=self.COLOR_DECO, marker='o', zorder=2, label=self.LABEL_DECO)
 
         # decoded lines
         for p in self.plot_values:
