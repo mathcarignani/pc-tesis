@@ -13,6 +13,7 @@
 #define RECORD_TESTS 0 // Set to 1 to set up the tests, then set to 0
 
 #include <string>
+#include <vector>
 
 class Constants {
 
@@ -35,11 +36,15 @@ public:
     static const int CODER_GAMPS; // 30
     static const int CODER_GAMPS_LIMIT; // 31
 
+    static const std::vector<std::string> CODERS_VECTOR;
+
     static bool isNoData(std::string csv_value);
     static bool isNoData(double value);
 
     static bool validMaskMode();
     static bool checkMaskMode(std::string mask_mode);
+
+    static bool checkCoderName(std::string coder_name);
 };
 
 #endif //CPP_PROJECT_CONSTANTS_H

@@ -3,37 +3,30 @@
 #include "tests.h"
 #include "tests_coders.h"
 #include "assert.h"
-#include "string_utils.h"
 
 //
 // USAGE - EXAMPLES:
 //
 // (1) MASK_MODE == 0, Code with CoderBase (no window_size param, no err params)
-// exe_path 0 c input_path output_path CoderBase
+// exe_path NM c input_path output_path CoderBase
 //
 // (2) MASK_MODE == 3, Code with CoderPCA
-// exe_path 3 c input_path output_path CoderPCA window_size err1 err2 ... errN
+// exe_path M c input_path output_path CoderPCA window_size err1 err2 ... errN
 //
 // (3) MASK_MODE == 0, Decode
-// exe_path 0 d input_path output_path
+// exe_path NM d input_path output_path
 //
 int main(int argc, char *argv[]){
     assert(Constants::validMaskMode());
 
-//    std::cout << "argc " << argc << std::endl;
-//    for (int i=0; i<argc; i++){
-//        std::cout << i << " " << argv[i] << std::endl;
-//    }
-
     if (argc <= 1) {
-//        TestsCoders::testSingleCoder();
+        // TestsCoders::testSingleCoder();
         Tests::runAll();
         return 0;
     }
 
-    // argc > 1
     std::string mask_mode = argv[1];
-    assert(Constants::checkMaskMode(mask_mode));
+    Constants::checkMaskMode(mask_mode);
 
     std::string action = argv[2];
     assert(action == "c" or action == "d");
@@ -49,9 +42,7 @@ int main(int argc, char *argv[]){
 
     // action == "c"
     std::string coder_name = argv[5];
-    std::vector<std::string> coders_array{"CoderBase", "CoderPCA", "CoderAPCA", "CoderPWLH",
-                                          "CoderPWLHInt", "CoderCA", "CoderSF", "CoderFR",
-                                          "CoderGAMPS", "CoderGAMPSLimit"};
+    Constants::checkCoderName(coder_name);
 
     if (coder_name == "CoderBase"){
         assert(argc == 6);
@@ -59,12 +50,18 @@ int main(int argc, char *argv[]){
         return 0;
     }
 
-    assert(StringUtils::stringInList(coder_name, coders_array));
     assert(argc >= 8);
     int window_size = atoi(argv[6]);
+
     std::vector<int> error_thresholds_vector;
     for(int i=7; i < argc; i++){ error_thresholds_vector.push_back(atoi(argv[i])); }
 
     Scripts::code(coder_name, input_path, output_path, window_size, error_thresholds_vector);
     return 0;
 }
+
+//  TODO: remove
+//    std::cout << "argc " << argc << std::endl;
+//    for (int i=0; i<argc; i++){
+//        std::cout << i << " " << argv[i] << std::endl;
+//    }

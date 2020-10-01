@@ -1,6 +1,7 @@
 #include "constants.h"
 
 #include <iostream>
+#include "string_utils.h"
 
 const std::string Constants::NO_DATA = "N";
 const char Constants::NO_DATA_CHAR = 'N';
@@ -20,6 +21,10 @@ const int Constants::CODER_SF = 24;
 const int Constants::CODER_GAMPS = 30;
 const int Constants::CODER_GAMPS_LIMIT = 31;
 
+const std::vector<std::string> Constants::CODERS_VECTOR = {"CoderBase", "CoderPCA", "CoderAPCA", "CoderPWLH",
+                                                           "CoderPWLHInt", "CoderCA", "CoderSF", "CoderFR",
+                                                           "CoderGAMPS", "CoderGAMPSLimit"};
+
 bool Constants::isNoData(std::string csv_value) {
     return csv_value[0] == NO_DATA_CHAR;
 }
@@ -29,10 +34,10 @@ bool Constants::isNoData(double value) {
 }
 
 bool Constants::validMaskMode() {
-#if MASK_MODE >= 0 && MASK_MODE <= 3
+#if MASK_MODE == 0 || MASK_MODE == 3
     return true;
 #else
-    std::cout << "ERROR: MASK_MODE must be 0, 1, 2, or 3." << std::endl;
+    std::cout << "ERROR: MASK_MODE macro must be either 0 or 3." << std::endl;
     exit(1);
 #endif
 }
@@ -42,17 +47,17 @@ bool Constants::validMaskMode() {
 //
 bool Constants::checkMaskMode(std::string mask_mode) {
 #if MASK_MODE == 0
-    if (mask_mode == "0") { return true; }
-    std::cout << "ERROR: mask_mode must be 0." << std::endl;
-#elif MASK_MODE == 1
-    if (mask_mode == "1") { return true; }
-    std::cout << "ERROR: mask_mode must be 1." << std::endl;
-#elif MASK_MODE == 2
-    if (mask_mode == "2") { return true; }
-    std::cout << "ERROR: mask_mode must be 2." << std::endl;
+    if (mask_mode == "NM") { return true; }
+    std::cout << "ERROR: mask_mode must be NM." << std::endl;
 #elif MASK_MODE == 3
-    if (mask_mode == "3") { return true; }
-    std::cout << "ERROR: mask_mode must be 3." << std::endl;
+    if (mask_mode == "M") { return true; }
+    std::cout << "ERROR: mask_mode must be M." << std::endl;
 #endif
+    exit(1);
+}
+
+bool Constants::checkCoderName(std::string coder_name) {
+    if (StringUtils::stringInList(coder_name, CODERS_VECTOR)) { return true; }
+    std::cout << "ERROR: invalid coder_name: " << coder_name << std::endl;
     exit(1);
 }
