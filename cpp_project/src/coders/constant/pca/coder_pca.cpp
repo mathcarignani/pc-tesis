@@ -26,7 +26,7 @@ void CoderPCA::codeColumnWhile(std::string csv_value){
 void CoderPCA::codeColumnAfter(){
     if (!window->isEmpty()) {
         assert(!window->isFull());
-        codeNonConstantWindow(window);
+        codeWindow(window);
     }
 }
 
