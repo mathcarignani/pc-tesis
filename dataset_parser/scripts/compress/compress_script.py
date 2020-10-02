@@ -23,7 +23,9 @@ class CompressScript:
     DATASETS_PATH = ExperimentsUtils.CSV_PATH
 
     def __init__(self, output_filename, mask_mode):
-        self.csv = CSVWriter(self.OUTPUT_PATH, output_filename)
+        self.output_path = self.OUTPUT_PATH + datetime.now().strftime("%Y.%m.%d_%H.%M") + "/"
+        os.mkdir(self.output_path)
+        self.csv = CSVWriter(self.output_path, output_filename)
         self.mask_mode = mask_mode # "NM" or "M"
 
         # iteration vars
@@ -51,10 +53,10 @@ class CompressScript:
     def _run_script_on_dataset(self, dataset_dictionary):
         self.input_path = self.DATASETS_PATH + dataset_dictionary['folder']
         logger_name = dataset_dictionary['name'].lower() + '.log'
-        logger_filename = self.OUTPUT_PATH + logger_name
+        logger_filename = self.output_path + logger_name
         self.logger = setup_logger(logger_name, logger_filename)
 
-        self.output_dataset_path = self.OUTPUT_PATH + dataset_dictionary['o_folder']
+        self.output_dataset_path = self.output_path + dataset_dictionary['o_folder']
         create_folder(self.output_dataset_path)
         dataset_name = dataset_dictionary['name']
 

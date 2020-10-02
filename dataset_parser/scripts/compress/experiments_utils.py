@@ -109,11 +109,11 @@ class ExperimentsUtils(object):
             'name': 'CoderBase',
             'o_folder': 'base'
         },
-        {
-            'name': 'CoderPCA',
-            'o_folder': 'pca',
-            'params': {'window_size': WINDOWS}
-        },
+        # {
+        #     'name': 'CoderPCA',
+        #     'o_folder': 'pca',
+        #     'params': {'window_size': WINDOWS}
+        # },
         # {
         #     'name': 'CoderAPCA',
         #     'o_folder': 'apca',
@@ -129,11 +129,11 @@ class ExperimentsUtils(object):
         #     'o_folder': 'pwlh',
         #     'params': {'window_size': WINDOWS}
         # },
-        # {
-        #     'name': 'CoderPWLHInt',
-        #     'o_folder': 'pwlh-int',
-        #     'params': {'window_size': WINDOWS}
-        # },
+        {
+            'name': 'CoderPWLHInt',
+            'o_folder': 'pwlh-int',
+            'params': {'window_size': WINDOWS}
+        },
         # {
         #     'name': 'CoderGAMPS',
         #     'o_folder': 'gamps',

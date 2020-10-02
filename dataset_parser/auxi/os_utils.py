@@ -29,9 +29,9 @@ class OSUtils(object):
     @staticmethod
     def cpp_executable_path():
         if OSUtils.ios():
-            return OSUtils.cpp_project_path() + "/cmake-build-debug/cpp_project"
+            return OSUtils.cpp_project_path() + "/cmake-build-debug/run_variant"
         elif OSUtils.ubuntu():
-            return OSUtils.cpp_project_path() + "/cmake-build-debug-ubuntu/cpp_project"
+            return OSUtils.cpp_project_path() + "/cmake-build-debug-ubuntu/run_variant"
         else:
             raise SystemError("Invalid platform")
 
