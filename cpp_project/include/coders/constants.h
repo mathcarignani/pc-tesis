@@ -2,15 +2,17 @@
 #ifndef CPP_PROJECT_CONSTANTS_H
 #define CPP_PROJECT_CONSTANTS_H
 
+//
 // MASK_MODE == 0 => the algorithm needs to process the no_data values (NM)
+//
 // MASK_MODE  > 0 => the algorithm can assume there will be no no_data values
 // MASK_MODE == 1 => simple coder
 // MASK_MODE == 2 => golomb coder
 // MASK_MODE == 3 => arithmetic coder (M)
-#define MASK_MODE 3
+//
 #define COUT 1
 #define CHECKS 1
-#define RECORD_TESTS 1 // Set to 1 to set up the tests, then set to 0
+#define RECORD_TESTS 0 // Set to 1 to set up the tests, then set to 0
 
 #include <string>
 #include <vector>

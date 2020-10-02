@@ -195,6 +195,12 @@ cpp_project_BINARY_DIR:STATIC=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis
 //Value Computed by CMake
 cpp_project_SOURCE_DIR:STATIC=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project
 
+//Value Computed by CMake
+run_variant_BINARY_DIR:STATIC=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug
+
+//Value Computed by CMake
+run_variant_SOURCE_DIR:STATIC=/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project
+
 
 ########################
 # INTERNAL cache entries
