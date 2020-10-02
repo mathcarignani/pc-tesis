@@ -7,17 +7,7 @@
 void CoderPWLH::setCoderParams(int window_size_, std::vector<int> error_thresholds_vector_, bool integer_mode_){
     window_size = window_size_;
     integer_mode = integer_mode_;
-    if (integer_mode) {
-        // substract 1 to every error_threshold > 0
-        for (int i=0; i < error_thresholds_vector_.size(); i++){
-            int error_threshold = error_thresholds_vector_.at(i);
-            if (error_threshold > 0) { error_threshold = error_threshold - 1; }
-            error_thresholds_vector.push_back(error_threshold);
-        }
-    }
-    else { // double mode
-        error_thresholds_vector = error_thresholds_vector_;
-    }
+    error_thresholds_vector = error_thresholds_vector_;
 }
 
 void CoderPWLH::codeCoderParams(){
@@ -47,9 +37,9 @@ void CoderPWLH::codeColumnAfter(){
 }
 
 PWLHWindow* CoderPWLH::createWindow(){
-    int error_threshold = error_thresholds_vector.at(column_index);
+    float error_threshold = error_thresholds_vector.at(column_index);
+    if (integer_mode){ error_threshold -= 0.5; }
     Range* column_range = dataset->column_code->range;
-//    column_range = new Range(column_range->begin + dataset->offset(), column_range->end + dataset->offset());
     return new PWLHWindow(window_size, error_threshold, column_range, integer_mode);
 }
 
