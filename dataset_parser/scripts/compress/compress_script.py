@@ -22,8 +22,9 @@ class CompressScript:
     OUTPUT_PATH = COMPRESS_PATH + "/output/"
     DATASETS_PATH = ExperimentsUtils.CSV_PATH
 
-    def __init__(self, output_filename):
+    def __init__(self, output_filename, mask_mode):
         self.csv = CSVWriter(self.OUTPUT_PATH, output_filename)
+        self.mask_mode = mask_mode # "NM" or "M"
 
         # iteration vars
         self.logger = None
@@ -71,7 +72,9 @@ class CompressScript:
         compress_utils = CompressUtils(self.COMPRESS_PATH, self.input_path, self.input_filename)
         self.thresholds_array = compress_utils.get_thresholds_array()
 
-        for coder_index, self.coder_dictionary in enumerate(ExperimentsUtils.CODERS_ARRAY):
+        coders_array = ExperimentsUtils.coders_array(self.mask_mode)
+
+        for coder_index, self.coder_dictionary in enumerate(coders_array):
             # TODO: uncomment in ubuntu
             # if self.input_filename == "el-nino.csv" and self.coder_dictionary['name'] == "CoderGAMPS":
             #     continue
@@ -137,7 +140,8 @@ class CompressScript:
             'decoder': self.coder_dictionary.get('decoder'),
             'input_path': self.input_path,
             'input_filename': self.input_filename,
-            'output_path': self.output_dataset_coder_path
+            'output_path': self.output_dataset_coder_path,
+            'mask_mode': self.mask_mode
         }
         return args
 

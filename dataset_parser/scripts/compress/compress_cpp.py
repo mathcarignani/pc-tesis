@@ -41,7 +41,7 @@ class CompressCPP:
 
     @classmethod
     def _code_cpp_exe_str(cls, args):
-        exe_str = cls._executable_path(args.coder_name)
+        exe_str = cls._executable_path(args.coder_name, args.mask_mode)
         exe_str += " c"
         exe_str += " " + args.input_path + "/" + args.input_filename
         exe_str += " " + args.output_path + "/" + args.compressed_filename
@@ -50,7 +50,7 @@ class CompressCPP:
 
     @classmethod
     def _decode_cpp_exe_str(cls, args):
-        exe_str = cls._executable_path(args.coder_name)
+        exe_str = cls._executable_path(args.coder_name, args.mask_mode)
         exe_str += " d"
         exe_str += " " + args.output_path + "/" + args.compressed_filename
         exe_str += " " + args.output_path + "/" + args.deco_filename
@@ -82,9 +82,6 @@ class CompressCPP:
 
     @classmethod
     def _coder_params(cls, args):
-        if args.coder_name not in ExperimentsUtils.CODERS:
-            raise(KeyError, "ERROR: Invalid coder name " + args.coder_name)
-
         if args.coder_name == "CoderBase":
             return "CoderBase"
 
@@ -94,10 +91,9 @@ class CompressCPP:
         return string
 
     @staticmethod
-    def _executable_path(coder_name):
+    def _executable_path(coder_name, mask_mode):
         exe_str = OSUtils.cpp_executable_path()
-        mask_mode = 0 if coder_name == "CoderBase" else ExperimentsUtils.MASK_MODE
-        mask_mode = str(mask_mode)
+        mask_mode = "NM" if coder_name == "CoderBase" else mask_mode
         exe_str += "_" + mask_mode + " " + mask_mode
         return exe_str
 

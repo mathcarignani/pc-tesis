@@ -22,7 +22,7 @@ class PandasUtilsCheck(object):
 
         # check that data for every coder is included
         coders = self.df['coder'].unique()
-        expected_coders = ExperimentsUtils.expected_coders(self.mask_mode)
+        expected_coders = ExperimentsUtils.coders_names(self.mask_mode)
         if self.with_gzip and 'CoderGZIP' not in expected_coders:
             expected_coders.append('CoderGZIP')
         np.testing.assert_array_equal(coders, expected_coders)

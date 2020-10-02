@@ -6,15 +6,6 @@ from scripts.utils import csv_files_filenames
 
 
 class ExperimentsUtils(object):
-    #
-    # IMPORTANT: MASK_MODE should have the same value that the MASK_MODE macro used in the C++ code.
-    #
-    # TODO: pass MASK_MODE as a variable
-    #
-    MASK_MODE = 3 # 3
-
-    # TODO: remove the ALGORITHMS list
-    ALGORITHMS = ["CoderPCA", "CoderAPCA", "CoderCA", "CoderPWLH", "CoderPWLHInt", "CoderGAMPSLimit"]
     CODERS_ONLY_MASK_MODE = ['CoderFR', 'CoderSF']
     THRESHOLDS = [0, 1, 3, 5, 10, 15, 20, 30]
     WINDOWS = [4, 8, 16, 32, 64, 128, 256]
@@ -60,11 +51,16 @@ class ExperimentsUtils(object):
     # ]
 
     @staticmethod
-    def expected_coders(mask_mode):
-        if mask_mode == 0:
-            return [item for item in ExperimentsUtils.CODERS if item not in ExperimentsUtils.CODERS_ONLY_MASK_MODE]
-        else:
-            return ExperimentsUtils.CODERS
+    def coders_array(mask_mode):
+        coders = ExperimentsUtils.CODERS_ARRAY
+        if mask_mode == "M":
+            coders += ExperimentsUtils.MASK_MODE_CODERS_ARRAY
+        return coders
+
+    @staticmethod
+    def coders_names(mask_mode):
+        coders_array = ExperimentsUtils.coders_array(mask_mode)
+        return [coder['name'] for coder in coders_array]
 
     @staticmethod
     def dataset_csv_filenames(dataset_name):
@@ -113,11 +109,11 @@ class ExperimentsUtils(object):
             'name': 'CoderBase',
             'o_folder': 'base'
         },
-        # {
-        #     'name': 'CoderPCA',
-        #     'o_folder': 'pca',
-        #     'params': {'window_size': WINDOWS}
-        # },
+        {
+            'name': 'CoderPCA',
+            'o_folder': 'pca',
+            'params': {'window_size': WINDOWS}
+        },
         # {
         #     'name': 'CoderAPCA',
         #     'o_folder': 'apca',
@@ -133,11 +129,11 @@ class ExperimentsUtils(object):
         #     'o_folder': 'pwlh',
         #     'params': {'window_size': WINDOWS}
         # },
-        {
-            'name': 'CoderPWLHInt',
-            'o_folder': 'pwlh-int',
-            'params': {'window_size': WINDOWS}
-        },
+        # {
+        #     'name': 'CoderPWLHInt',
+        #     'o_folder': 'pwlh-int',
+        #     'params': {'window_size': WINDOWS}
+        # },
         # {
         #     'name': 'CoderGAMPS',
         #     'o_folder': 'gamps',
@@ -149,8 +145,6 @@ class ExperimentsUtils(object):
         #     'params': {'window_size': WINDOWS}
         # },
     ]
-
-    CODERS = [coder['name'] for coder in CODERS_ARRAY]
 
     MASK_MODE_CODERS_ARRAY = [
         # {
@@ -164,7 +158,3 @@ class ExperimentsUtils(object):
         #     'params': {'window_size': [4]}  # window_size param doesn't matter
         # }
     ]
-
-    if MASK_MODE > 0:
-        CODERS_ARRAY += MASK_MODE_CODERS_ARRAY
-        CODERS += [coder['name'] for coder in MASK_MODE_CODERS_ARRAY]

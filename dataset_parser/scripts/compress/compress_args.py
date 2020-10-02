@@ -13,6 +13,8 @@ class CompressArgs:
         self.compressed_filename = self.input_filename.replace('.csv', '.c.csv')
         self.deco_filename = self.input_filename.replace('.csv', '.c.d.csv')
 
+        self.mask_mode = args['mask_mode']
+
     def code_cpp(self):
         self.compressed_filename = self.input_filename.replace('.csv', '.c.cpp.csv')
 
