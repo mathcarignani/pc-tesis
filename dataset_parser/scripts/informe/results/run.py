@@ -26,16 +26,16 @@ GZIP_PATH = INFORME_PATH + "/gzip_compare/out"
 # (0) Compile the CPP code in both modes so that the following executables are created:
 # cpp_project_NM
 # cpp_project_M
-# TODO: change the name of the executables to exe_mode_0 and exe_mode_3
+# TODO: change the name of the executables to variant_NM.exe and variant_M.exe
 #
 
 #
 # (3.1) Experimental Setting
 #
 # (1) Run the compress script for each mode, each execution creates a different results.csv file
-CompressScript("results.csv", "NM").run()
-# CompressScript("results.csv", "M").run()
-# TODO: make changes to pass the mode as an argument and output different modes to different folders (inside 3.1)
+CompressScript("results_NM.csv", "NM").run()
+# CompressScript("results_M.csv", "M").run()
+
 #
 # (2) Globalize the result files generated in step (1)
 # GlobalizeResults("NM").run()
