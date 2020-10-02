@@ -3,6 +3,7 @@
 #define CPP_PROJECT_TESTS_EXAMPLES_H
 
 #include <iostream>
+#include <vector>
 
 
 class TestsExamples {
