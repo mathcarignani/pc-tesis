@@ -471,6 +471,9 @@
 		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/tests/tests_dataset_utils.h">
 			<Option target="cpp_project"/>
 		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/tests/tests_examples.h">
+			<Option target="cpp_project"/>
+		</Unit>
 		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/tests/tests_header_coder.h">
 			<Option target="cpp_project"/>
 		</Unit>
@@ -721,6 +724,9 @@
 			<Option target="cpp_project"/>
 		</Unit>
 		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/tests/tests_dataset_utils.cpp">
+			<Option target="cpp_project"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/tests/tests_examples.cpp">
 			<Option target="cpp_project"/>
 		</Unit>
 		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/tests/tests_header_coder.cpp">
