@@ -1,0 +1,2 @@
+/opt/clion-2018.1.2/bin/cmake/bin/cmake --build /home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug-ubuntu --target run_variant_NM -- -j 4
+/opt/clion-2018.1.2/bin/cmake/bin/cmake --build /home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug-ubuntu --target run_variant_M -- -j 4
