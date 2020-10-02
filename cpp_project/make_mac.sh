@@ -1,0 +1,2 @@
+/Applications/CLion.app/Contents/bin/cmake/bin/cmake --build /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug --target run_variant_NM -- -j 4
+/Applications/CLion.app/Contents/bin/cmake/bin/cmake --build /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug --target run_variant_M -- -j 4
