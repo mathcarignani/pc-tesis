@@ -75,7 +75,7 @@ class CompressScript:
         coders_array = ExperimentsUtils.coders_array(self.mask_mode)
 
         for coder_index, self.coder_dictionary in enumerate(coders_array):
-            if self._must_continue():
+            if self._skip_iteration():
                 continue
                 
             if file_index == 0 and coder_index == 0:  # first row of dataset and file
@@ -87,14 +87,14 @@ class CompressScript:
             base_values = self._run_script_on_coder(base_values)
 
 
-    def _must_continue(self):
+    def _skip_iteration(self):
         # TODO: uncomment in ubuntu
         # if self.input_filename == "el-nino.csv" and self.coder_dictionary['name'] == "CoderGAMPS":
         #     return True
         # TODO: uncomment in mac
         # if self.input_filename != "el-nino.csv" or self.coder_dictionary['name'] not in ["CoderBase", "CoderGAMPS"]:
         #     return True
-        return True
+        return False
 
 
     def _run_script_on_coder(self, base_values):
