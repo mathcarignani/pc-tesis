@@ -70,8 +70,8 @@ void CoderSlideFilter::codeEntries(){
 void CoderSlideFilter::codeEntry(SlideFiltersEntry* recording){
 //    std::cout << recording->connToFollow << " " << recording->timestamp << " " << recording->value << std::endl;
     codeBool(recording->connToFollow);
-    codeDouble(recording->timestamp);
-    codeDouble(recording->value);
+    codeFloat((float) recording->timestamp);
+    codeFloat((float) recording->value);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

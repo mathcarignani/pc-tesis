@@ -65,8 +65,8 @@ void DecoderSlideFilter::decodeEntries(){
 
 SlideFiltersEntry* DecoderSlideFilter::decodeEntry(){
     bool connToFollow = decodeBool();
-    double timestamp = decodeDouble();
-    double value = decodeDouble();
+    double timestamp = (double) decodeFloat();
+    double value = (double) decodeFloat();
     SlideFiltersEntry* recording = new SlideFiltersEntry(value, timestamp, connToFollow);
 //    std::cout << "decodeEntry" << std::endl;
 //    std::cout << "recording.connToFollow " << recording->connToFollow << std::endl;
