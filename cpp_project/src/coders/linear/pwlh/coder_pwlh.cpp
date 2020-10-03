@@ -38,7 +38,7 @@ void CoderPWLH::codeColumnAfter(){
 
 PWLHWindow* CoderPWLH::createWindow(){
     float error_threshold = error_thresholds_vector.at(column_index);
-    if (integer_mode){ error_threshold -= 0.5; }
+    if (integer_mode && error_threshold > 0){ error_threshold -= 0.5; }
     Range* column_range = dataset->column_code->range;
     return new PWLHWindow(window_size, error_threshold, column_range, integer_mode);
 }
