@@ -266,5 +266,5 @@ void CoderGAMPS::codeWindow(APCAWindow* window){
     std::string constant_value = window->constant_value;
     double value = Constants::isNoData(constant_value) ? Constants::NO_DATA_DOUBLE : Conversor::stringToDouble(constant_value);
     // TODO: move to an aux method... also create an analog decoding method
-    codeDouble(value);
+    codeFloat((float) value);
 }
