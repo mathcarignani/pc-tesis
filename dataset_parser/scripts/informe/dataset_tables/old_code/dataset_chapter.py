@@ -87,7 +87,7 @@ class DatasetAnalysis(object):
 
 
 class DatasetAnalysisScript(object):
-    OUT_PATH = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/informe/dataset_analysis/out"
+    OUT_PATH = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/informe/dataset_tables/out"
     COLUMNS = ["Dataset", "Column", "#Rows", None, "#N", "#N (%)", None, "Min", "Max", "Range", None, "Mean", "STD"]
 
     def __init__(self):
