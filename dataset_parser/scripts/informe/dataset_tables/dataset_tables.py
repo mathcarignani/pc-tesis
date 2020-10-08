@@ -17,7 +17,7 @@ class DatasetAnalysis(object):
         filenames = ExperimentsUtils.dataset_csv_filenames(dataset)
         path = ExperimentsUtils.get_dataset_path(dataset)
 
-        table = LatexTable('IRKIS.txt')
+        table = LatexTable('1-IRKIS-stats.tex')
 
         for filename in filenames: # filenames[0:1]:
             file_path = path + '/' + filename
@@ -27,7 +27,7 @@ class DatasetAnalysis(object):
             station = filename[pos1+1:pos2] # SLF2
 
             data['name'] = station
-            table.add_data(data)
+            table.add_data_irkis(data)
 
 
 DatasetAnalysis.generate_table_irkis()
