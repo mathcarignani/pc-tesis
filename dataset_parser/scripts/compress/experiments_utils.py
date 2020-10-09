@@ -129,21 +129,21 @@ class ExperimentsUtils(object):
         #     'o_folder': 'pwlh',
         #     'params': {'window_size': WINDOWS}
         # },
-        {
-            'name': 'CoderPWLHInt',
-            'o_folder': 'pwlh-int',
-            'params': {'window_size': WINDOWS}
-        },
+        # {
+        #     'name': 'CoderPWLHInt',
+        #     'o_folder': 'pwlh-int',
+        #     'params': {'window_size': WINDOWS}
+        # },
         # {
         #     'name': 'CoderGAMPS',
         #     'o_folder': 'gamps',
         #     'params': {'window_size': WINDOWS}
         # },
-        # {
-        #     'name': 'CoderGAMPSLimit',
-        #     'o_folder': 'gamps-limit',
-        #     'params': {'window_size': WINDOWS}
-        # },
+        {
+            'name': 'CoderGAMPSLimit',
+            'o_folder': 'gamps-limit',
+            'params': {'window_size': WINDOWS}
+        },
     ]
 
     MASK_MODE_CODERS_ARRAY = [

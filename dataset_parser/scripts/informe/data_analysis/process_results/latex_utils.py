@@ -31,6 +31,10 @@ class LatexUtils:
         return '\c' + key.lower()  # cpca, capca, cfr, cgzip
 
     @staticmethod
-    def array_to_table_row(array):
-        table_row = ' & '.join(['{' + str(element) + '}' for element in array]) + r" \\\hline"
+    def array_to_table_row(array, with_separator=True):
+        if with_separator:
+            table_row = ' & '.join(['{' + str(element) + '}' for element in array])
+        else:
+            table_row = ' & '.join([str(element) for element in array])
+        table_row += r" \\\hline"
         return table_row
