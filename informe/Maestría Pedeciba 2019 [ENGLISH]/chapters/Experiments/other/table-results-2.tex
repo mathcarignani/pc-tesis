@@ -1,36 +1,36 @@
-\begin{sidewaystable}[ht]
+\begin{table}[h]
 \newcommand{\cpca}{\cellcolor{cyan!20}}
 \newcommand{\capca}{\cellcolor{green!20}}
 \newcommand{\cfr}{\cellcolor{yellow!25}}
 \newcommand{\cgzip}{\cellcolor{orange!20}}
 \centering
 \legendstwo
-\begin{tabular}{| l | l | c | c || c | c || c | c || c | c || c | c || c | c || c | c || c | c |}
+\hspace*{-2.1cm}\begin{tabular}{| l | l | c | c || c | c || c | c || c | c || c | c || c | c || c | c || c | c |}
 \cline{3-18}
 \multicolumn{1}{c}{}& \multicolumn{1}{c|}{} & \multicolumn{2}{c||}{e = 0} & \multicolumn{2}{c||}{e = 1} & \multicolumn{2}{c||}{e = 3} & \multicolumn{2}{c||}{e = 5} & \multicolumn{2}{c||}{e = 10} & \multicolumn{2}{c||}{e = 15} & \multicolumn{2}{c||}{e = 20} & \multicolumn{2}{c|}{e = 30} \\\hline
 {Dataset} & {Data Type} & {\footnotesize CR} & {\footnotesize w} & {\footnotesize CR} & {\footnotesize w} & {\footnotesize CR} & {\footnotesize w} & {\footnotesize CR} & {\footnotesize w} & {\footnotesize CR} & {\footnotesize w} & {\footnotesize CR} & {\footnotesize w} & {\footnotesize CR} & {\footnotesize w} & {\footnotesize CR} & {\footnotesize w} \\\hline\hline
-{\datasetirkis} & {VWC} & {\cgzip13.44} & {\cgzip} & {\cgzip13.44} & {\cgzip} & {\capca12.37} & {\capca5} & {\capca6.77} & {\capca6} & {\capca3.07} & {\capca7} & {\capca2.22} & {\capca8} & {\capca1.71} & {\capca8} & {\capca1.21} & {\capca8} \\\hline
-{\datasetsst} & {SST} & {\cgzip52.06} & {\cgzip} & {\capca28.12} & {\capca3} & {\capca13.64} & {\capca5} & {\capca8.88} & {\capca6} & {\capca4.63} & {\capca7} & {\capca3.15} & {\capca8} & {\capca2.39} & {\capca8} & {\capca1.72} & {\capca8} \\\hline
-{\datasetadcp} & {Vel} & {\cgzip61.38} & {\cgzip} & {\cgzip61.38} & {\cgzip} & {\cgzip61.38} & {\cgzip} & {\capca61.07} & {\capca2} & {\capca48.44} & {\capca2} & {\capca40.9} & {\capca2} & {\capca34.9} & {\capca3} & {\capca25.93} & {\capca3} \\\hline
-{\datasetsolar} & {GHI} & {\cgzip69.01} & {\cgzip} & {\cgzip69.01} & {\cgzip} & {\cgzip69.01} & {\cgzip} & {\capca67.2} & {\capca4} & {\capca58.52} & {\capca4} & {\capca52.41} & {\capca4} & {\capca47.03} & {\capca4} & {\capca37.78} & {\capca4} \\\hline
-{} & {DNI} & {\cgzip66.88} & {\cgzip} & {\cgzip66.88} & {\cgzip} & {\capca65.75} & {\capca4} & {\capca61.37} & {\capca4} & {\capca53.98} & {\capca4} & {\capca48.55} & {\capca4} & {\capca43.36} & {\capca4} & {\capca35.66} & {\capca4} \\\hline
-{} & {DHI} & {\cgzip61.01} & {\cgzip} & {\cgzip61.01} & {\cgzip} & {\cgzip61.01} & {\cgzip} & {\cgzip61.01} & {\cgzip} & {\capca60.12} & {\capca4} & {\capca53.62} & {\capca4} & {\capca47.86} & {\capca4} & {\capca38.71} & {\capca4} \\\hline
-{\datasetelnino} & {Lat} & {\cgzip7.89} & {\cgzip} & {\cgzip7.89} & {\cgzip} & {\cgzip7.89} & {\cgzip} & {\cgzip7.89} & {\cgzip} & {\cgzip7.89} & {\cgzip} & {\cgzip7.89} & {\cgzip} & {\cgzip7.89} & {\cgzip} & {\capca5.76} & {\capca6} \\\hline
-{} & {Long} & {\cgzip7.1} & {\cgzip} & {\cgzip7.1} & {\cgzip} & {\cgzip7.1} & {\cgzip} & {\cgzip7.1} & {\cgzip} & {\cgzip7.1} & {\cgzip} & {\capca6.56} & {\capca6} & {\capca4.93} & {\capca7} & {\capca2.37} & {\capca8} \\\hline
-{} & {Zonal Winds} & {\cpca31.46} & {\cpca8} & {\cpca31.46} & {\cpca8} & {\cpca31.46} & {\cpca8} & {\cpca31.46} & {\cpca8} & {\capca27.36} & {\capca2} & {\capca23.5} & {\capca2} & {\capca20.54} & {\capca2} & {\capca16.44} & {\capca3} \\\hline
-{} & {Merid. Winds} & {\cpca31.46} & {\cpca8} & {\cpca31.46} & {\cpca8} & {\cpca31.46} & {\cpca8} & {\cpca31.46} & {\cpca8} & {\capca29.16} & {\capca2} & {\capca25.86} & {\capca2} & {\capca23.33} & {\capca2} & {\capca19.15} & {\capca2} \\\hline
-{} & {Humidity} & {\cpca23.1} & {\cpca8} & {\cpca23.1} & {\cpca8} & {\cpca23.1} & {\cpca8} & {\cpca23.1} & {\cpca8} & {\capca20.51} & {\capca2} & {\capca18.14} & {\capca2} & {\capca16.01} & {\capca2} & {\capca12.94} & {\capca2} \\\hline
-{} & {AirTemp} & {\cpca32.68} & {\cpca8} & {\cpca32.68} & {\cpca8} & {\capca30.33} & {\capca2} & {\capca27.39} & {\capca2} & {\capca22.42} & {\capca2} & {\capca19.24} & {\capca3} & {\capca16.76} & {\capca3} & {\capca13.31} & {\capca4} \\\hline
-{} & {SST} & {\cgzip32.43} & {\cgzip} & {\capca30.96} & {\capca2} & {\capca24.6} & {\capca2} & {\capca20.61} & {\capca2} & {\capca14.17} & {\capca3} & {\capca10.66} & {\capca4} & {\capca8.21} & {\capca4} & {\capca5.42} & {\capca5} \\\hline
-{\datasethail} & {Lat} & {\cpca\color{red}100.04} & {\cpca8} & {\cpca\color{red}100.04} & {\cpca8} & {\capca89.83} & {\capca2} & {\capca82.62} & {\capca2} & {\capca71.49} & {\capca2} & {\capca64.62} & {\capca3} & {\capca57.49} & {\capca3} & {\capca46.75} & {\capca3} \\\hline
-{} & {Long} & {\cpca\color{red}100.03} & {\cpca8} & {\cpca\color{red}100.03} & {\cpca8} & {\capca85.91} & {\capca2} & {\capca77.5} & {\capca2} & {\capca65.06} & {\capca2} & {\capca55.38} & {\capca3} & {\capca48.72} & {\capca3} & {\capca38.74} & {\capca4} \\\hline
-{} & {Size} & {\cgzip36.73} & {\cgzip} & {\cgzip36.73} & {\cgzip} & {\cgzip36.73} & {\cgzip} & {\cgzip36.73} & {\cgzip} & {\cgzip36.73} & {\cgzip} & {\cgzip36.73} & {\cgzip} & {\cgzip36.73} & {\cgzip} & {\cgzip36.73} & {\cgzip} \\\hline
-{\datasettornado} & {Lat} & {\cpca\color{red}100.05} & {\cpca8} & {\capca85.43} & {\capca2} & {\capca70.63} & {\capca2} & {\capca65.17} & {\capca2} & {\capca54.17} & {\capca3} & {\capca46.78} & {\capca3} & {\capca41.95} & {\capca4} & {\capca33.48} & {\capca4} \\\hline
-{} & {Long} & {\cpca\color{red}100.11} & {\cpca8} & {\capca82.12} & {\capca2} & {\capca65.09} & {\capca2} & {\capca57.66} & {\capca3} & {\capca45.55} & {\capca3} & {\capca39.88} & {\capca4} & {\capca34.84} & {\capca4} & {\capca28.41} & {\capca4} \\\hline
-{\datasetwind} & {Lat} & {\cpca\color{red}100.03} & {\cpca8} & {\cpca\color{red}100.03} & {\cpca8} & {\capca88.74} & {\capca2} & {\capca81.29} & {\capca2} & {\capca69.82} & {\capca2} & {\capca62.44} & {\capca3} & {\capca56.18} & {\capca3} & {\capca47.15} & {\capca3} \\\hline
-{} & {Long} & {\cpca\color{red}100.03} & {\cpca8} & {\capca95.41} & {\capca2} & {\capca80.29} & {\capca2} & {\capca73.21} & {\capca2} & {\capca62.06} & {\capca3} & {\capca54.33} & {\capca3} & {\capca48.52} & {\capca3} & {\capca39.73} & {\capca4} \\\hline
-{} & {Speed} & {\cfr65.49} & {\cfr4} & {\capca43.82} & {\capca3} & {\cfr25.9} & {\cfr6} & {\cfr16.79} & {\cfr7} & {\capca15.71} & {\capca5} & {\capca12.29} & {\capca6} & {\capca10.33} & {\capca6} & {\capca8.21} & {\capca6} \\\hline
+{\datasetirkis} & {VWC} & {\cgzip0.13} & {\cgzip} & {\cgzip0.13} & {\cgzip} & {\capca0.12} & {\capca5} & {\capca0.07} & {\capca6} & {\capca0.03} & {\capca7} & {\capca0.02} & {\capca8} & {\capca0.02} & {\capca8} & {\capca0.01} & {\capca8} \\\hline
+{\datasetsst} & {SST} & {\cgzip0.52} & {\cgzip} & {\capca0.28} & {\capca3} & {\capca0.14} & {\capca5} & {\capca0.09} & {\capca6} & {\capca0.05} & {\capca7} & {\capca0.03} & {\capca8} & {\capca0.02} & {\capca8} & {\capca0.02} & {\capca8} \\\hline
+{\datasetadcp} & {Vel} & {\cgzip0.61} & {\cgzip} & {\cgzip0.61} & {\cgzip} & {\cgzip0.61} & {\cgzip} & {\capca0.61} & {\capca2} & {\capca0.48} & {\capca2} & {\capca0.41} & {\capca2} & {\capca0.35} & {\capca3} & {\capca0.26} & {\capca3} \\\hline
+{\datasetsolar} & {GHI} & {\cgzip0.69} & {\cgzip} & {\cgzip0.69} & {\cgzip} & {\cgzip0.69} & {\cgzip} & {\capca0.67} & {\capca4} & {\capca0.59} & {\capca4} & {\capca0.52} & {\capca4} & {\capca0.47} & {\capca4} & {\capca0.38} & {\capca4} \\\hline
+{} & {DNI} & {\cgzip0.67} & {\cgzip} & {\cgzip0.67} & {\cgzip} & {\capca0.66} & {\capca4} & {\capca0.61} & {\capca4} & {\capca0.54} & {\capca4} & {\capca0.49} & {\capca4} & {\capca0.43} & {\capca4} & {\capca0.36} & {\capca4} \\\hline
+{} & {DHI} & {\cgzip0.61} & {\cgzip} & {\cgzip0.61} & {\cgzip} & {\cgzip0.61} & {\cgzip} & {\cgzip0.61} & {\cgzip} & {\capca0.60} & {\capca4} & {\capca0.54} & {\capca4} & {\capca0.48} & {\capca4} & {\capca0.39} & {\capca4} \\\hline
+{\datasetelnino} & {Lat} & {\cgzip0.08} & {\cgzip} & {\cgzip0.08} & {\cgzip} & {\cgzip0.08} & {\cgzip} & {\cgzip0.08} & {\cgzip} & {\cgzip0.08} & {\cgzip} & {\cgzip0.08} & {\cgzip} & {\cgzip0.08} & {\cgzip} & {\capca0.06} & {\capca6} \\\hline
+{} & {Long} & {\cgzip0.07} & {\cgzip} & {\cgzip0.07} & {\cgzip} & {\cgzip0.07} & {\cgzip} & {\cgzip0.07} & {\cgzip} & {\cgzip0.07} & {\cgzip} & {\capca0.07} & {\capca6} & {\capca0.05} & {\capca7} & {\capca0.02} & {\capca8} \\\hline
+{} & {Z. Wind} & {\cpca0.31} & {\cpca8} & {\cpca0.31} & {\cpca8} & {\cpca0.31} & {\cpca8} & {\cpca0.31} & {\cpca8} & {\capca0.27} & {\capca2} & {\capca0.24} & {\capca2} & {\capca0.21} & {\capca2} & {\capca0.16} & {\capca3} \\\hline
+{} & {M. Wind} & {\cpca0.31} & {\cpca8} & {\cpca0.31} & {\cpca8} & {\cpca0.31} & {\cpca8} & {\cpca0.31} & {\cpca8} & {\capca0.29} & {\capca2} & {\capca0.26} & {\capca2} & {\capca0.23} & {\capca2} & {\capca0.19} & {\capca2} \\\hline
+{} & {Humidity} & {\cpca0.23} & {\cpca8} & {\cpca0.23} & {\cpca8} & {\cpca0.23} & {\cpca8} & {\cpca0.23} & {\cpca8} & {\capca0.21} & {\capca2} & {\capca0.18} & {\capca2} & {\capca0.16} & {\capca2} & {\capca0.13} & {\capca2} \\\hline
+{} & {AirTemp} & {\cpca0.33} & {\cpca8} & {\cpca0.33} & {\cpca8} & {\capca0.30} & {\capca2} & {\capca0.27} & {\capca2} & {\capca0.22} & {\capca2} & {\capca0.19} & {\capca3} & {\capca0.17} & {\capca3} & {\capca0.13} & {\capca4} \\\hline
+{} & {SST} & {\cgzip0.32} & {\cgzip} & {\capca0.31} & {\capca2} & {\capca0.25} & {\capca2} & {\capca0.21} & {\capca2} & {\capca0.14} & {\capca3} & {\capca0.11} & {\capca4} & {\capca0.08} & {\capca4} & {\capca0.05} & {\capca5} \\\hline
+{\datasethail} & {Lat} & {\cpca1.00} & {\cpca8} & {\cpca1.00} & {\cpca8} & {\capca0.90} & {\capca2} & {\capca0.83} & {\capca2} & {\capca0.71} & {\capca2} & {\capca0.65} & {\capca3} & {\capca0.57} & {\capca3} & {\capca0.47} & {\capca3} \\\hline
+{} & {Long} & {\cpca1.00} & {\cpca8} & {\cpca1.00} & {\cpca8} & {\capca0.86} & {\capca2} & {\capca0.78} & {\capca2} & {\capca0.65} & {\capca2} & {\capca0.55} & {\capca3} & {\capca0.49} & {\capca3} & {\capca0.39} & {\capca4} \\\hline
+{} & {Size} & {\cgzip0.37} & {\cgzip} & {\cgzip0.37} & {\cgzip} & {\cgzip0.37} & {\cgzip} & {\cgzip0.37} & {\cgzip} & {\cgzip0.37} & {\cgzip} & {\cgzip0.37} & {\cgzip} & {\cgzip0.37} & {\cgzip} & {\cgzip0.37} & {\cgzip} \\\hline
+{\datasettornado} & {Lat} & {\cpca1.00} & {\cpca8} & {\capca0.85} & {\capca2} & {\capca0.71} & {\capca2} & {\capca0.65} & {\capca2} & {\capca0.54} & {\capca3} & {\capca0.47} & {\capca3} & {\capca0.42} & {\capca4} & {\capca0.33} & {\capca4} \\\hline
+{} & {Long} & {\cpca1.00} & {\cpca8} & {\capca0.82} & {\capca2} & {\capca0.65} & {\capca2} & {\capca0.58} & {\capca3} & {\capca0.46} & {\capca3} & {\capca0.40} & {\capca4} & {\capca0.35} & {\capca4} & {\capca0.28} & {\capca4} \\\hline
+{\datasetwind} & {Lat} & {\cpca1.00} & {\cpca8} & {\cpca1.00} & {\cpca8} & {\capca0.89} & {\capca2} & {\capca0.81} & {\capca2} & {\capca0.70} & {\capca2} & {\capca0.62} & {\capca3} & {\capca0.56} & {\capca3} & {\capca0.47} & {\capca3} \\\hline
+{} & {Long} & {\cpca1.00} & {\cpca8} & {\capca0.95} & {\capca2} & {\capca0.80} & {\capca2} & {\capca0.73} & {\capca2} & {\capca0.62} & {\capca3} & {\capca0.54} & {\capca3} & {\capca0.49} & {\capca3} & {\capca0.40} & {\capca4} \\\hline
+{} & {Speed} & {\cfr0.65} & {\cfr4} & {\capca0.44} & {\capca3} & {\cfr0.26} & {\cfr6} & {\cfr0.17} & {\cfr7} & {\capca0.16} & {\capca5} & {\capca0.12} & {\capca6} & {\capca0.10} & {\capca6} & {\capca0.08} & {\capca6} \\\hline
 \end{tabular}
 \caption{\captiontwo}
 \label{experiments:mask-results-overview2}
-\end{sidewaystable}
+\end{table}
