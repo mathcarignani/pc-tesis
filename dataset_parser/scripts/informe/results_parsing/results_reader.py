@@ -11,7 +11,7 @@ from scripts.informe.math_utils import MathUtils
 #
 class ResultsReader(object):
     def __init__(self, mode, mask_mode):
-        if mask_mode in [0, 3]:
+        if mask_mode in ["NM", "M"]:
             input_path, input_filename = ResultsPaths.get_path_and_filename(mode, mask_mode)
         else:
             input_path, input_filename = mode, mask_mode

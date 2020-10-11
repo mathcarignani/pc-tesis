@@ -22,8 +22,11 @@ class CompressScript:
     OUTPUT_PATH = COMPRESS_PATH + "/output/"
     DATASETS_PATH = ExperimentsUtils.CSV_PATH
 
-    def __init__(self, output_filename):
-        self.csv = CSVWriter(self.OUTPUT_PATH, output_filename)
+    def __init__(self, output_filename, mask_mode):
+        self.output_path = self.OUTPUT_PATH + datetime.now().strftime("%Y.%m.%d_%H.%M") + "/"
+        os.mkdir(self.output_path)
+        self.csv = CSVWriter(self.output_path, output_filename)
+        self.mask_mode = mask_mode # "NM" or "M"
 
         # iteration vars
         self.logger = None
@@ -50,10 +53,10 @@ class CompressScript:
     def _run_script_on_dataset(self, dataset_dictionary):
         self.input_path = self.DATASETS_PATH + dataset_dictionary['folder']
         logger_name = dataset_dictionary['name'].lower() + '.log'
-        logger_filename = self.OUTPUT_PATH + logger_name
+        logger_filename = self.output_path + logger_name
         self.logger = setup_logger(logger_name, logger_filename)
 
-        self.output_dataset_path = self.OUTPUT_PATH + dataset_dictionary['o_folder']
+        self.output_dataset_path = self.output_path + dataset_dictionary['o_folder']
         create_folder(self.output_dataset_path)
         dataset_name = dataset_dictionary['name']
 
@@ -71,13 +74,11 @@ class CompressScript:
         compress_utils = CompressUtils(self.COMPRESS_PATH, self.input_path, self.input_filename)
         self.thresholds_array = compress_utils.get_thresholds_array()
 
-        for coder_index, self.coder_dictionary in enumerate(ExperimentsUtils.CODERS_ARRAY):
-            # TODO: uncomment in ubuntu
-            # if self.input_filename == "el-nino.csv" and self.coder_dictionary['name'] == "CoderGAMPS":
-            #     continue
-            # TODO: uncomment in mac
-            # if self.input_filename != "el-nino.csv" or self.coder_dictionary['name'] not in ["CoderBase", "CoderGAMPS"]:
-            #     continue
+        coders_array = ExperimentsUtils.coders_array(self.mask_mode)
+
+        for coder_index, self.coder_dictionary in enumerate(coders_array):
+            if self._skip_iteration():
+                continue
                 
             if file_index == 0 and coder_index == 0:  # first row of dataset and file
                 self.row += [self.input_filename, row_count]
@@ -86,6 +87,16 @@ class CompressScript:
             else:
                 self.row = [None, None, None]
             base_values = self._run_script_on_coder(base_values)
+
+
+    def _skip_iteration(self):
+        # TODO: uncomment in ubuntu
+        # if self.input_filename == "el-nino.csv" and self.coder_dictionary['name'] == "CoderGAMPS":
+        #     return True
+        # TODO: uncomment in mac
+        # if self.input_filename != "el-nino.csv" or self.coder_dictionary['name'] not in ["CoderBase", "CoderGAMPS"]:
+        #     return True
+        return False
 
 
     def _run_script_on_coder(self, base_values):
@@ -137,7 +148,8 @@ class CompressScript:
             'decoder': self.coder_dictionary.get('decoder'),
             'input_path': self.input_path,
             'input_filename': self.input_filename,
-            'output_path': self.output_dataset_coder_path
+            'output_path': self.output_dataset_coder_path,
+            'mask_mode': self.mask_mode
         }
         return args
 

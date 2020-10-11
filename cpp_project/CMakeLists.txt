@@ -301,4 +301,16 @@ set(OTHER_SRC_FILES src/scripts.cpp)
 set(H_FILES ${EXTERNAL_H_FILES} ${FILE_UTILS_H_FILES} ${UTILS_H_FILES} ${DATASET_H_FILES} ${CODER_H_FILES} ${OTHER_H_FILES} ${TESTS_H_FILES} )
 set(SOURCE_FILES ${EXTERNAL_SRC_FILES} ${FILE_UTILS_SRC_FILES} ${UTILS_SRC_FILES} ${CODER_SRC_FILES} ${OTHER_SRC_FILES} ${TESTS_SRC_FILES})
 
-add_executable(cpp_project ${H_FILES} ${SOURCE_FILES} main.cpp)
+add_executable(run_variant_NM ${H_FILES} ${SOURCE_FILES} main.cpp)
+set_target_properties(
+        run_variant_NM
+        PROPERTIES
+        COMPILE_DEFINITIONS MASK_MODE=0
+)
+
+add_executable(run_variant_M ${H_FILES} ${SOURCE_FILES} main.cpp)
+set_target_properties(
+        run_variant_M
+        PROPERTIES
+        COMPILE_DEFINITIONS MASK_MODE=3
+)

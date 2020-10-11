@@ -220,7 +220,7 @@ void DecoderGAMPS::decodeWindow(std::vector<double> & column){
 }
 
 void DecoderGAMPS::decodeConstantWindow(std::vector<double> & column, int window_size){
-    double constant = decodeDouble();
+    double constant = (double) decodeFloat();
     int i = 0;
     while (i < window_size){
     #if MASK_MODE

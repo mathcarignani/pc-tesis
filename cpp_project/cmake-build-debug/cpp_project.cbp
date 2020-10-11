@@ -37,13 +37,14 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="cpp_project">
-				<Option output="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/cpp_project" prefix_auto="0" extension_auto="0"/>
+			<Target title="run_variant_M">
+				<Option output="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/run_variant_M" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add option="-DMASK_MODE=3"/>
 					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux"/>
 					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/ari"/>
 					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/DataManagementLayer/Data"/>
@@ -91,19 +92,20 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/Makefile&quot;  VERBOSE=1 cpp_project"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/Makefile&quot;  VERBOSE=1 run_variant_M"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="cpp_project/fast">
-				<Option output="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/cpp_project" prefix_auto="0" extension_auto="0"/>
+			<Target title="run_variant_M/fast">
+				<Option output="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/run_variant_M" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add option="-DMASK_MODE=3"/>
 					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux"/>
 					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/ari"/>
 					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/DataManagementLayer/Data"/>
@@ -151,7 +153,129 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/Makefile&quot;  VERBOSE=1 cpp_project/fast"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/Makefile&quot;  VERBOSE=1 run_variant_M/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="run_variant_NM">
+				<Option output="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/run_variant_NM" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DMASK_MODE=0"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/ari"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/DataManagementLayer/Data"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/DataStructures/DynArray"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/DataStructures/Line"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/DataStructures/Polygon"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/Algorithms/GAMPS/control"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/Algorithms/GAMPS/data"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/Algorithms/PWLH/Control"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/Algorithms/SlideFilter/Data"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/file_utils"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/file_utils/bit_stream"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/file_utils/text"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/file_utils/csv"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/common"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/cols"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/base"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/constant"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/constant/pca"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/constant/apca"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/pwlh"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/ca"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/slide_filter"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/fr"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/correlation/gamps"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/utils"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/utils/header"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/utils/mask"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/utils/mask/simple"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/utils/mask/golomb"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/utils/mask/arithmetic"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/utils/time_delta"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/dataset"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/tests"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/utils"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/tests/utils"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/Makefile&quot;  VERBOSE=1 run_variant_NM"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="run_variant_NM/fast">
+				<Option output="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/run_variant_NM" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DMASK_MODE=0"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/ari"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/DataManagementLayer/Data"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/DataStructures/DynArray"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/DataStructures/Line"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/DataStructures/Polygon"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/Algorithms/GAMPS/control"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/Algorithms/GAMPS/data"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/Algorithms/PWLH/Control"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/Algorithms/SlideFilter/Data"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/file_utils"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/file_utils/bit_stream"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/file_utils/text"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/file_utils/csv"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/common"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/cols"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/base"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/constant"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/constant/pca"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/constant/apca"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/pwlh"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/ca"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/slide_filter"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/fr"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/correlation/gamps"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/utils"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/utils/header"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/utils/mask"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/utils/mask/simple"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/utils/mask/golomb"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/utils/mask/arithmetic"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/utils/time_delta"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/dataset"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/tests"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/utils"/>
+					<Add directory="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/tests/utils"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/Makefile&quot;  VERBOSE=1 run_variant_NM/fast"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -159,613 +283,816 @@
 			</Target>
 		</Build>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/ari/compressor.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/ari/decompressor.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/ari/modelA.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/ari/model_metrics.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/Algorithms/GAMPS/control/FacilityLocProb.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/Algorithms/GAMPS/control/FacilityLocProb.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/Algorithms/GAMPS/control/GAMPS.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/Algorithms/GAMPS/control/GAMPS.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/Algorithms/GAMPS/control/GAMPS_Computation.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/Algorithms/GAMPS/control/GAMPS_Computation.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/Algorithms/GAMPS/data/GAMPSInput.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/Algorithms/GAMPS/data/GAMPSInput.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/Algorithms/GAMPS/data/GAMPSOutput.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/Algorithms/GAMPS/data/GAMPSOutput.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/Algorithms/PWLH/Control/LinearBucket.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/Algorithms/PWLH/Control/LinearBucket.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/Algorithms/SlideFilter/Data/SlideFiltersEntry.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/DataManagementLayer/Data/DataItem.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/DataManagementLayer/Data/DataStream.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/DataManagementLayer/Data/DataStream.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/DataManagementLayer/Data/MultiDataStream.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/DataManagementLayer/Data/MultiDataStream.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/DataManagementLayer/Data/Output.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/DataStructures/DynArray/DynArray.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/DataStructures/DynArray/DynArray.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/DataStructures/Line/Line.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/DataStructures/Line/Line.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/DataStructures/Polygon/CPolygon.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/DataStructures/Polygon/CPolygon.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/external/benchmarkLinux/stdafx.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/base/coder_base.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/base/decoder_base.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/cols/coder_cols.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/cols/decoder_cols.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/common/coder_common.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/common/decoder_common.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/constant/apca/apca_window.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/constant/apca/coder_apca.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/constant/apca/decoder_apca.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/constant/constant_coder_utils.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/constant/pca/coder_pca.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/constant/pca/decoder_pca.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/constant/pca/pca_window.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/constants.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/correlation/gamps/coder_gamps.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/correlation/gamps/decoder_gamps.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/correlation/gamps/gamps_utils.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/correlation/gamps/map_entry.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/correlation/gamps/mapping_table.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/ca/ca_window.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/ca/coder_ca.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/ca/decoder_ca.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/fr/coder_fr.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/fr/decoder_fr.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/fr/fr_window.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/linear_coder_utils.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/slide_filter/coder_slide_filter.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/slide_filter/decoder_slide_filter.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/linear/slide_filter/slide_filter_window.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/utils/coder_utils.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/utils/column.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/utils/header/header_coder.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/utils/header/header_decoder.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/utils/header/header_utils.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/utils/mask/arithmetic/arithmetic_mask_coder.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/utils/mask/arithmetic/arithmetic_mask_decoder.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/utils/mask/arithmetic/coder_input.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/utils/mask/arithmetic/coder_output.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/utils/mask/arithmetic/decoder_input.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/utils/mask/arithmetic/decoder_output.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/utils/mask/arithmetic/modelKT.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/utils/mask/burst.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/utils/mask/golomb/golomb_coder.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/utils/mask/golomb/golomb_decoder.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/utils/mask/golomb/golomb_mask_coder.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/utils/mask/golomb/golomb_mask_decoder.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/utils/mask/mask.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/utils/mask/mask_coder.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/utils/mask/mask_decoder.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/utils/mask/simple/simple_mask_coder.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/utils/mask/simple/simple_mask_decoder.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/utils/time_delta/time_delta_coder.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/utils/time_delta/time_delta_decoder.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/utils/window.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/dataset/column_code.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/dataset/dataset.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/dataset/dataset_utils.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/dataset/range.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/file_utils/bit_stream/bit_stream_reader.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/file_utils/bit_stream/bit_stream_utils.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/file_utils/bit_stream/bit_stream_writer.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/file_utils/csv/csv_reader.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/file_utils/csv/csv_utils.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/file_utils/csv/csv_writer.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/file_utils/path.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/file_utils/text/text_reader.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/file_utils/text/text_utils.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/scripts.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/tests/tests.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/tests/tests_bit_stream.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/tests/tests_coders.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/tests/tests_coders_utils.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/tests/tests_dataset_utils.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/tests/tests_examples.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/tests/tests_header_coder.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/tests/tests_line.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/tests/tests_modelKT.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/tests/tests_utils.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/tests/utils/tests_datetime_utils.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/tests/utils/tests_math_utils.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/tests/utils/tests_string_utils.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/tests/utils/tests_vector_utils.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/utils/conversor.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/utils/datetime_utils.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/utils/line_utils.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/utils/math_utils.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/utils/os_utils.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/utils/string_utils.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/include/utils/vector_utils.h">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/main.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/base/coder_base.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/base/decoder_base.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/cols/coder_cols.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/cols/decoder_cols.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/common/coder_common.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/common/decoder_common.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/constant/apca/apca_window.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/constant/apca/coder_apca.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/constant/apca/decoder_apca.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/constant/pca/coder_pca.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/constant/pca/decoder_pca.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/constant/pca/pca_window.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/constants.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/correlation/gamps/coder_gamps.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/correlation/gamps/decoder_gamps.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/correlation/gamps/gamps_utils.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/correlation/gamps/map_entry.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/correlation/gamps/mapping_table.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/linear/ca/ca_window.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/linear/ca/coder_ca.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/linear/ca/decoder_ca.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/linear/fr/coder_fr.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/linear/fr/decoder_fr.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/linear/fr/fr_window.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/linear/linear_coder_utils.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/linear/pwlh/coder_pwlh.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/linear/pwlh/decoder_pwlh.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/linear/pwlh/pwlh_window.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/linear/slide_filter/coder_slide_filter.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/linear/slide_filter/decoder_slide_filter.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/linear/slide_filter/slide_filter_window.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/utils/coder_utils.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/utils/header/header_coder.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/utils/header/header_decoder.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/utils/mask/arithmetic/arithmetic_mask_coder.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/utils/mask/arithmetic/arithmetic_mask_decoder.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/utils/mask/arithmetic/coder_input.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/utils/mask/arithmetic/coder_output.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/utils/mask/arithmetic/decoder_input.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/utils/mask/arithmetic/decoder_output.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/utils/mask/golomb/golomb_coder.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/utils/mask/golomb/golomb_decoder.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/utils/mask/golomb/golomb_mask_coder.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/utils/mask/golomb/golomb_mask_decoder.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/utils/mask/mask.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/utils/mask/mask_coder.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/utils/mask/mask_decoder.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/utils/mask/simple/simple_mask_coder.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/utils/mask/simple/simple_mask_decoder.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/utils/time_delta/time_delta_coder.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/utils/time_delta/time_delta_decoder.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/dataset/column_code.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/dataset/dataset.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/dataset/dataset_utils.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/bit_stream/bit_stream_reader.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/bit_stream/bit_stream_utils.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/bit_stream/bit_stream_writer.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/csv/csv_reader.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/csv/csv_utils.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/csv/csv_writer.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/text/text_reader.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/file_utils/text/text_utils.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/scripts.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/tests/tests.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/tests/tests_bit_stream.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/tests/tests_coders.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/tests/tests_coders_utils.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/tests/tests_dataset_utils.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/tests/tests_examples.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/tests/tests_header_coder.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/tests/tests_line.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/tests/tests_modelKT.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/tests/tests_utils.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/tests/utils/tests_datetime_utils.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/tests/utils/tests_math_utils.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/tests/utils/tests_string_utils.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/tests/utils/tests_vector_utils.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/utils/conversor.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/utils/datetime_utils.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/utils/line_utils.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/utils/math_utils.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/utils/os_utils.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/src/utils/string_utils.cpp">
-			<Option target="cpp_project"/>
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/cpp_project/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>

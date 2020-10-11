@@ -13,7 +13,7 @@ class PandasUtils(object):
     MAX_DIFF = 0.009
 
     def __init__(self, dataset_name, filename, df, mask_mode, check=True, with_gzip=False):
-        assert(mask_mode in [0, 3])
+        assert(mask_mode in ["NM", "M"])
 
         self.df = PandasMethods.filename_df(df, filename, dataset_name)
         self.mask_mode = mask_mode

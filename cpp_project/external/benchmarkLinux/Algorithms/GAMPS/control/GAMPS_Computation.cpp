@@ -332,7 +332,7 @@ int GAMPS_Computation::statGroup(GAMPSInput* gampsInputList)
 		}
 	}
 	delete[] ratioSignalCost;
-	delete baseBucketCost;
+	delete[] baseBucketCost;
 	delete[] listBucket;
 	delete[] listRatioSignalBucket;
 
