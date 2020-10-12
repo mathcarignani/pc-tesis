@@ -12,9 +12,10 @@ class ExamplesBase(object):
     EPSILON = r"$\epsilon$"
     YLABEL = 'data'
     XLABEL = 'timestamp'
-    LABEL_ORIG = 'sample value'
-    LABEL_DECO = 'decoded value'
-    LABEL_ENCO = 'encoded value'
+    LABEL_ORIG = 'sample'
+    LABEL_ENCO_DECO = 'encoded/decoded sample'
+    LABEL_DECO = 'decoded sample'
+    LABEL_ENCO = 'encoded point'
     COLOR_ORIG = 'navy'
     COLOR_DECO = 'orange'
     COLOR_ENCO = 'red'
@@ -103,7 +104,8 @@ class ExamplesBase(object):
         if len(self.decoded) > 0:
             scatter_x = range(len(self.original))
             x_decoded = scatter_x[0:len(self.decoded)]
-            ax.scatter(x_decoded, self.decoded, c=self.COLOR_DECO, marker='o', zorder=2, label=self.LABEL_DECO)
+            label = self.LABEL_DECO if len(self.encoded_points) > 0 else self.LABEL_ENCO_DECO
+            ax.scatter(x_decoded, self.decoded, c=self.COLOR_DECO, marker='o', zorder=2, label=label)
 
         # decoded lines
         for p in self.plot_values:
