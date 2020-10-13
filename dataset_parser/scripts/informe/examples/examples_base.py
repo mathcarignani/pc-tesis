@@ -31,6 +31,10 @@ class ExamplesBase(object):
         self.encoded_points = []
         self.patches = []
         self.arrows = []
+        self.plot_original = True
+        self.xlim_right = 12
+        self.figsize = [8, 3.48]
+        self.first_timestamp = 1
 
     @classmethod
     def plot_patch(cls, ax, patch):
@@ -68,6 +72,8 @@ class ExamplesBase(object):
         ax.arrow(x, y-dy+diff, dx, dy-m-diff, head_width=hw, head_length=hl, color=c, length_includes_head=True, alpha=a)
 
     def plot_original_values(self, ax, index):
+        if not self.plot_original:
+            return
         scatter_x_alpha = range(index, len(self.original))
         original_alpha = self.original[index:len(self.original) + 1]
         ax.scatter(scatter_x_alpha, original_alpha, c=self.COLOR_ORIG, marker='x', zorder=3, alpha=self.ALPHA_LOWER, s=25)
@@ -86,12 +92,26 @@ class ExamplesBase(object):
             y.append(point_y)
         ax.scatter(x, y, zorder=3, alpha=1, label=self.LABEL_ENCO, facecolors='none', edgecolors=self.COLOR_ENCO, s=60)
 
+    def plot_decoded_values(self, ax):
+        scatter_x = range(len(self.original))
+        x_decoded = scatter_x[0:len(self.decoded)]
+        label = self.LABEL_DECO if len(self.encoded_points) > 0 else self.LABEL_ENCO_DECO
+        ax.scatter(x_decoded, self.decoded, c=self.COLOR_DECO, marker='o', zorder=2, label=label)
+
+    def plot_decoded_lines(self, ax, p):
+        alpha = p.get('alpha') or self.ALPHA_HIGH
+        linestyle = p.get('linestyle') or '-'
+        color = p.get('color') or self.COLOR_DECO
+        if len(self.encoded_points) > 0:
+            color = self.COLOR_ENCO
+        ax.plot(p['x_values'], p['y_values'], c=color, zorder=1, linestyle=linestyle, alpha=alpha)
+
     def common(self, filename, step, index, title=True):
         ax, fig = self.common_1(index)
         self.common_2(ax, fig, step, title, filename)
 
     def common_1(self, index):
-        plt.rcParams["figure.figsize"] = [8, 3.48]
+        plt.rcParams["figure.figsize"] = self.figsize
         fig, ax = plt.subplots()
         self.plot_original_values(ax, index)
 
@@ -102,17 +122,11 @@ class ExamplesBase(object):
 
         # decoded values
         if len(self.decoded) > 0:
-            scatter_x = range(len(self.original))
-            x_decoded = scatter_x[0:len(self.decoded)]
-            label = self.LABEL_DECO if len(self.encoded_points) > 0 else self.LABEL_ENCO_DECO
-            ax.scatter(x_decoded, self.decoded, c=self.COLOR_DECO, marker='o', zorder=2, label=label)
+            self.plot_decoded_values(ax)
 
         # decoded lines
         for p in self.plot_values:
-            alpha = p.get('alpha') or self.ALPHA_HIGH
-            linestyle = p.get('linestyle') or '-'
-            color = p.get('color') or self.COLOR_DECO
-            ax.plot(p['x_values'], p['y_values'], c=color, zorder=1, linestyle=linestyle, alpha=alpha)
+            self.plot_decoded_lines(ax, p)
 
         for plot in self.arrows:
             ExamplesBase.plot_arrows(ax, plot, self.COLOR_LINE)
@@ -121,24 +135,27 @@ class ExamplesBase(object):
             ExamplesBase.plot_patch(ax, patch)
 
         ax.set(xlabel=self.XLABEL, ylabel=self.YLABEL)
-        title_obj = plt.title(self.title(self.algorithm, 1, step))
+
+        title_obj = plt.title(self.title(1, step))
         plt.setp(title_obj, color='black' if title else 'white')
 
         ax.grid(color=PlotConstants.COLOR_SILVER, linestyle='dotted')
         ax.set_axisbelow(True)
         ax.set_ylim(bottom=0, top=4.5)
-        ax.set_xlim(left=-1, right=12)
-        ax.set_xticks(range(0,13))
+        ax.set_xlim(left=-1, right=self.xlim_right)
+        ax.set_xticks(range(0,self.xlim_right + 1))
         ax.set_yticks(range(0,5))
 
-        labels = ['t' + str(index) for index in range(1, len(ax.get_xticklabels()))]
+        ft = self.first_timestamp
+        labels = ['t' + str(index) for index in range(ft, len(ax.get_xticklabels()) + ft - 1)]
+        print(labels)
         ax.set_xticklabels(labels)
         ax.legend(loc='upper left')
         plt.tight_layout()
         fig.savefig(self.path + filename)
 
-    def title(self, algorithm, epsilon, step):
+    def title(self, epsilon, step):
         epsilon = r"$\epsilon = {}$".format(epsilon)
         window = r"$w = {}$".format(self.window)
-        text = "Algorithm " + algorithm + " with " + epsilon + " and " + window + " - STEP " + str(step)
+        text = "Algorithm " + self.algorithm + " with " + epsilon + " and " + window + " - STEP " + str(step)
         return text
