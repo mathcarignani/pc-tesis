@@ -171,7 +171,7 @@ class PWLHExample(ExamplesBase):
     def pwlh9(self, filename, step, index):
         self.encoded_points = [(0,0.25), (8,3.25)]
         self.convex_hull = [(9,2)]
-        self.decoded = self.copy_decoded[0:9]
+        self.decoded = [] # self.copy_decoded[0:9]
         self.plot_values = [{'x_values': [0,8], 'y_values': [0.25,3.25], 'linestyle': '-'}]
 
         self.plot_values_alpha = []
