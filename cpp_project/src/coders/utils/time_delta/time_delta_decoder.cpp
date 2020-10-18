@@ -2,9 +2,6 @@
 #include "time_delta_decoder.h"
 #include "conversor.h"
 
-//
-// TODO: use a more appropriate lossless compression schema for coding the time delta column.
-//
 std::vector<std::string> TimeDeltaDecoder::decode(DecoderCommon* decoder){
     std::vector<std::string> column;
 
