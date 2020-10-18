@@ -61,7 +61,6 @@ void CoderSlideFilter::add(SlideFiltersEntry & recording){
 
 void CoderSlideFilter::codeEntries(){
 //    std::cout << "entries_vector.size() = " << entries_vector.size() << std::endl;
-    codeFloat(entries_vector.size());
     for(int i=0; i < entries_vector.size(); i++){
         codeEntry(entries_vector.at(i));
     }

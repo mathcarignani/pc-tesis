@@ -53,13 +53,17 @@ std::vector<std::string> DecoderSlideFilter::decodeDataColumn(){
 }
 
 void DecoderSlideFilter::decodeEntries(){
-    float size = decodeFloat();
-//    std::cout << "entries_vector.size() = " << size << std::endl;
-    for(int i=0; i < size; i++){
+    int last_timedelta = 0;
+    int td_size = (int) time_delta_vector.size();
+    for (int i=0; i < td_size; i++){ last_timedelta += time_delta_vector.at(i); }
+
+    int current_td = 0;
+    while(current_td < last_timedelta){
         SlideFiltersEntry* entry = decodeEntry();
         m_pCompressData->add(*entry);
-//        std::cout << "decodeEntry" << std::endl;
-//        std::cout << entry->connToFollow << " " << entry->timestamp << " " << entry->value << std::endl;
+        //        std::cout << "decodeEntry" << std::endl;
+        //        std::cout << entry->connToFollow << " " << entry->timestamp << " " << entry->value << std::endl;
+        current_td = (int) entry->timestamp;
     }
 }
 
