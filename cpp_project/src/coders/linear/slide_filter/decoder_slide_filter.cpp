@@ -52,19 +52,50 @@ std::vector<std::string> DecoderSlideFilter::decodeDataColumn(){
     return column->column_vector;
 }
 
-void DecoderSlideFilter::decodeEntries(){
-    int last_timedelta = 0;
-    int td_size = (int) time_delta_vector.size();
-    for (int i=0; i < td_size; i++){ last_timedelta += time_delta_vector.at(i); }
 
+int DecoderSlideFilter::calculateLastDataTimestamp(){
+    bool data_read = false;
+    int first_data_timestamp = 0;
+    int last_timestamp = 0;
+    int last_data_timestamp = 0;
+    int td_size = (int) time_delta_vector.size();
+    mask->reset();
+    for (int i=0; i < td_size; i++){
+        last_timestamp += time_delta_vector.at(i);
+        if (!mask->isNoData()) {
+            last_data_timestamp = last_timestamp;
+            if (!data_read){
+                first_data_timestamp = last_timestamp;
+                data_read = true;
+
+            }
+        }
+    }
+//    std::cout << "first_data_timestamp = " << first_data_timestamp << std::endl;
+//    std::cout << "last_timestamp = " << last_timestamp << std::endl;
+//    std::cout << "last_data_timestamp = " << last_data_timestamp << std::endl;
+    return last_data_timestamp - first_data_timestamp;
+}
+
+void DecoderSlideFilter::decodeEntries(){
+    int last_data_timestamp = calculateLastDataTimestamp();
     int current_td = 0;
-    while(current_td < last_timedelta){
+    while(current_td < last_data_timestamp){
         SlideFiltersEntry* entry = decodeEntry();
         m_pCompressData->add(*entry);
-        //        std::cout << "decodeEntry" << std::endl;
-        //        std::cout << entry->connToFollow << " " << entry->timestamp << " " << entry->value << std::endl;
+//        std::cout << "decodeEntry" << std::endl;
+//        std::cout << entry->connToFollow << " " << entry->timestamp << " " << entry->value << std::endl;
         current_td = (int) entry->timestamp;
     }
+
+//    float size = decodeFloat();
+////    std::cout << "entries_vector.size() = " << size << std::endl;
+//    for(int i=0; i < size; i++){
+//        SlideFiltersEntry* entry = decodeEntry();
+//        m_pCompressData->add(*entry);
+////        std::cout << "decodeEntry" << std::endl;
+////        std::cout << entry->connToFollow << " " << entry->timestamp << " " << entry->value << std::endl;
+//    }
 }
 
 SlideFiltersEntry* DecoderSlideFilter::decodeEntry(){

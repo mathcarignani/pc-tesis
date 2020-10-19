@@ -19,6 +19,7 @@ private:
     CDataStream* m_pApproxData;
 
     std::vector<std::string> decodeDataColumn() override;
+    int calculateLastDataTimestamp();
     void decodeEntries();
     SlideFiltersEntry* decodeEntry();
     SlideFiltersEntry* getAt(std::vector<SlideFiltersEntry*> & m_pCompressData, int position);
