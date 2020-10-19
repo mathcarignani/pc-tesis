@@ -37,7 +37,7 @@ class CAExample(ExamplesBase):
 
     def ca1(self, filename, step, index):
         self.encoded_points = [(0,1)]
-        self.decoded = self.copy_decoded[0:1]
+        self.decoded = [] # self.copy_decoded[0:1]
         self.plot_values1 = [
             {'x_values': [0,2], 'y_values': [1,3], 'color': self.COLOR_LINE, 'linestyle': ':'},
             {'x_values': [0,2], 'y_values': [1,-1], 'color': self.COLOR_LINE, 'linestyle': ':'}
@@ -56,7 +56,7 @@ class CAExample(ExamplesBase):
         self.plot_values.append({'x_values': [0,5], 'y_values': [1,1], 'color': self.COLOR_LINE, 'linestyle': '--'})
         self.xs += [2, 5 + self.SMAX_MAR]
         self.ys += [1, 1-0.1]
-        self.words += ['E1', 'SE1']
+        self.words += ['E3', 'SE3']
         self.common_ca(filename, step, index)
 
     def ca3(self, filename, step, index):
@@ -106,7 +106,7 @@ class CAExample(ExamplesBase):
         self.plot_values.append({'x_values': [0,7], 'y_values': [1,y_val5], 'color': self.COLOR_LINE, 'linestyle': '--'})
         self.xs = [0, 4, 4 + self.SMIN_MAR, 7 + self.SMAX_MAR, 5+0.1, 7 + self.SMAX_MAR]
         self.ys = [1, 1, 0,               y_val4-0.1,      2-0.3, y_val5-0.1]
-        self.words = ['A', 'S', 'SMin', 'SMax', 'E4', 'SE4']
+        self.words = ['A', 'S', 'SMin', 'SMax', 'E6', 'SE6']
         self.common_ca(filename, step, index)
 
     def ca6(self, filename, step, index):
@@ -135,12 +135,12 @@ class CAExample(ExamplesBase):
         self.plot_values.append({'x_values': [0,7], 'y_values': [1,yval], 'color': self.COLOR_LINE, 'linestyle': '--'})
         self.xs = [0, 7 + self.SMAX_MAR, 5, 7 + self.SMAX_MAR, 6, 7 + self.SMAX_MAR]
         self.ys = [1, y_val4-0.1, 2-0.1, 1-0.2, 3+0.1, yval-0.1]
-        self.words = ['A', 'SMax', 'S', 'SMin', 'E5', 'SE5']
+        self.words = ['A', 'SMax', 'S', 'SMin', 'E7', 'SE7']
         self.common_ca(filename, step, index)
 
     def ca8(self, filename, step, index):
         self.encoded_points += [(5,2), (6,3)]
-        self.decoded = self.copy_decoded[0:7]
+        self.decoded = [] # self.copy_decoded[0:7]
         self.arrows = [{'x': 7, 'y': 3}]
         self.plot_values1 = [
             {'x_values': [0,5], 'y_values': [1,2]},

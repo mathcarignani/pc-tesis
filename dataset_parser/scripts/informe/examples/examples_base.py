@@ -102,7 +102,7 @@ class ExamplesBase(object):
         alpha = p.get('alpha') or self.ALPHA_HIGH
         linestyle = p.get('linestyle') or '-'
         color = p.get('color') or self.COLOR_DECO
-        if len(self.encoded_points) > 0:
+        if len(self.encoded_points) > 0 and not p.get('color'):
             color = self.COLOR_ENCO
         ax.plot(p['x_values'], p['y_values'], c=color, zorder=1, linestyle=linestyle, alpha=alpha)
 
