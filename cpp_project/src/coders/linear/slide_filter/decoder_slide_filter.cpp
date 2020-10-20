@@ -80,7 +80,7 @@ int DecoderSlideFilter::calculateLastDataTimestamp(){
 void DecoderSlideFilter::decodeEntries(){
     int last_data_timestamp = calculateLastDataTimestamp();
     int current_td = 0;
-    while(current_td < last_data_timestamp){
+    while(current_td <= last_data_timestamp){
         SlideFiltersEntry* entry = decodeEntry();
         m_pCompressData->add(*entry);
 //        std::cout << "decodeEntry" << std::endl;
@@ -103,10 +103,10 @@ SlideFiltersEntry* DecoderSlideFilter::decodeEntry(){
     double timestamp = decodeDouble();
     double value = decodeDouble();
     SlideFiltersEntry* recording = new SlideFiltersEntry(value, timestamp, connToFollow);
-//    std::cout << "decodeEntry" << std::endl;
-//    std::cout << "recording.connToFollow " << recording->connToFollow << std::endl;
-//    std::cout << "recording.timestamp " << recording->timestamp << std::endl;
-//    std::cout << "recording.value " << recording->value << std::endl;
+    std::cout << "decodeEntry" << std::endl;
+    std::cout << "recording.connToFollow " << recording->connToFollow << std::endl;
+    std::cout << "recording.timestamp " << recording->timestamp << std::endl;
+    std::cout << "recording.value " << recording->value << std::endl;
     return recording;
 }
 
