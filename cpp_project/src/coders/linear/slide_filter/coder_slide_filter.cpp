@@ -33,7 +33,7 @@ void CoderSlideFilter::codeColumnWhile(std::string csv_value){
         return; // skip no_data
     }
     delta_sum += CoderUtils::calculateDelta(delta, row_index);
-    std::cout << "I=" << row_index << "----- " << delta_sum << " ------------------------> " << csv_value << std::endl;
+//    std::cout << "I=" << row_index << "----- " << delta_sum << " ------------------------> " << csv_value << std::endl;
     m_pSFData->addDataItem(delta_sum, csv_value);
     delta_sum = 0;
 }
@@ -68,7 +68,7 @@ void CoderSlideFilter::codeEntries(){
 }
 
 void CoderSlideFilter::codeEntry(SlideFiltersEntry* recording){
-    std::cout << recording->connToFollow << " " << recording->timestamp << " " << recording->value << std::endl;
+//    std::cout << recording->connToFollow << " " << (int) recording->timestamp << " " << recording->value << std::endl;
     codeBool(recording->connToFollow);
     codeDouble(recording->timestamp);
     codeDouble(recording->value);

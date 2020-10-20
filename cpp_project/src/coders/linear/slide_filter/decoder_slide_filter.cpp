@@ -59,9 +59,12 @@ int DecoderSlideFilter::calculateLastDataTimestamp(){
     int last_timestamp = 0;
     int last_data_timestamp = 0;
     int td_size = (int) time_delta_vector.size();
+    int zero_sum = -1; // -1 instead of 0, to avoid counting the first entry, which is always 0
     mask->reset();
     for (int i=0; i < td_size; i++){
-        last_timestamp += time_delta_vector.at(i);
+        int timestamp = time_delta_vector.at(i);
+        if (timestamp == 0){ zero_sum += 1; }
+        last_timestamp += timestamp;
         if (!mask->isNoData()) {
             last_data_timestamp = last_timestamp;
             if (!data_read){
@@ -74,6 +77,7 @@ int DecoderSlideFilter::calculateLastDataTimestamp(){
 //    std::cout << "first_data_timestamp = " << first_data_timestamp << std::endl;
 //    std::cout << "last_timestamp = " << last_timestamp << std::endl;
 //    std::cout << "last_data_timestamp = " << last_data_timestamp << std::endl;
+    last_data_timestamp += zero_sum;
     return last_data_timestamp - first_data_timestamp;
 }
 
@@ -87,15 +91,6 @@ void DecoderSlideFilter::decodeEntries(){
 //        std::cout << entry->connToFollow << " " << entry->timestamp << " " << entry->value << std::endl;
         current_td = (int) entry->timestamp;
     }
-
-//    float size = decodeFloat();
-////    std::cout << "entries_vector.size() = " << size << std::endl;
-//    for(int i=0; i < size; i++){
-//        SlideFiltersEntry* entry = decodeEntry();
-//        m_pCompressData->add(*entry);
-////        std::cout << "decodeEntry" << std::endl;
-////        std::cout << entry->connToFollow << " " << entry->timestamp << " " << entry->value << std::endl;
-//    }
 }
 
 SlideFiltersEntry* DecoderSlideFilter::decodeEntry(){
@@ -103,10 +98,10 @@ SlideFiltersEntry* DecoderSlideFilter::decodeEntry(){
     double timestamp = decodeDouble();
     double value = decodeDouble();
     SlideFiltersEntry* recording = new SlideFiltersEntry(value, timestamp, connToFollow);
-    std::cout << "decodeEntry" << std::endl;
-    std::cout << "recording.connToFollow " << recording->connToFollow << std::endl;
-    std::cout << "recording.timestamp " << recording->timestamp << std::endl;
-    std::cout << "recording.value " << recording->value << std::endl;
+//    std::cout << "decodeEntry" << std::endl;
+//    std::cout << "recording.connToFollow " << recording->connToFollow << std::endl;
+//    std::cout << "recording.timestamp " << recording->timestamp << std::endl;
+//    std::cout << "recording.value " << recording->value << std::endl;
     return recording;
 }
 
