@@ -113,16 +113,16 @@ class CompressionRatioPlot(CommonPlot):
     ##############################################
 
     @staticmethod
-    def create_plots(coders_array, filename, panda_utils_0, panda_utils_3, col_index, options={}):
+    def create_plots(coders_array, filename, panda_utils_NM, panda_utils_M, col_index, options={}):
         plots_obj = {}
         total_min, total_max = sys.maxsize, -sys.maxsize
         for coder_name in coders_array:
-            values3, min3, max3 = CompressionRatioPlot.get_values(coder_name, col_index, panda_utils_3)
+            values3, min3, max3 = CompressionRatioPlot.get_values(coder_name, col_index, panda_utils_M)
 
-            if panda_utils_0 is None:
+            if panda_utils_NM is None:
                 values0, min0, max0 = [], min3, max3
             else:
-                values0, min0, max0 = CompressionRatioPlot.get_values(coder_name, col_index, panda_utils_0)
+                values0, min0, max0 = CompressionRatioPlot.get_values(coder_name, col_index, panda_utils_NM)
                 assert(len(values0) == len(values3))
 
             min03, max03 = min([min0, min3]), max([max0, max3])

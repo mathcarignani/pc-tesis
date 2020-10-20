@@ -8,9 +8,9 @@ from scripts.informe.plot.plot_utils import PlotUtils
 
 
 class PdfPage(object):
-    def __init__(self, panda_utils_0, panda_utils_3, filename, pdf_instance):
-        self.panda_utils_0 = panda_utils_0
-        self.panda_utils_3 = panda_utils_3
+    def __init__(self, panda_utils_NM, panda_utils_M, filename, pdf_instance):
+        self.panda_utils_NM = panda_utils_NM
+        self.panda_utils_M = panda_utils_M
         self.filename = filename
         self.pdf_instance = pdf_instance
         self.col_index = pdf_instance.col_index
@@ -24,7 +24,7 @@ class PdfPage(object):
             options = self.plots_options.get(plot_key) or {}
             options['pdf_instance'] = self.pdf_instance
             plot_klass = PlotMapper.map(plot_key)
-            plots = plot_klass.create_plots(coders_array, self.filename, self.panda_utils_0, self.panda_utils_3, self.col_index, options)
+            plots = plot_klass.create_plots(coders_array, self.filename, self.panda_utils_NM, self.panda_utils_M, self.col_index, options)
             plots_obj[plot_key] = plots
 
         self.__add_plots(plots_matrix, plots_obj)

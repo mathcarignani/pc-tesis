@@ -19,7 +19,7 @@ class ProcessResults(object):
               # 'CoderGAMPS', => ignore this coder
               'CoderGAMPSLimit']
     CODERS_WITHOUT_WINDOW = ['CoderBase', 'CoderSF', 'CoderGZIP']
-    MM = 3  # MASK MODE
+    MM = "M"  # MASK MODE
     DEBUG_MODE = False
 
     #

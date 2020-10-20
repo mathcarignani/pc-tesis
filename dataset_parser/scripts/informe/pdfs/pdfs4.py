@@ -34,7 +34,7 @@ class PDFS4(PDFSCommon):
         assert(len(self.HEIGHT_RATIOS) == len(self.PLOTS_MATRIX))
         PDFSCommon.check_valid_mode(mode)
 
-        self.df_3 = ResultsToDataframe(ResultsReader('global', 3)).create_full_df()
+        self.df_M = ResultsToDataframe(ResultsReader('global', "M")).create_full_df()
 
         # iteration variables
         self.col_index = None  # iteration variable
@@ -42,13 +42,13 @@ class PDFS4(PDFSCommon):
 
     def create_pdf_pages(self, pdf, dataset_name, filename):
         # create panda_utils
-        panda_utils_3 = PandasUtils(self.dataset_name, self.filename, self.df_3, 3)
+        panda_utils_M = PandasUtils(self.dataset_name, self.filename, self.df_M, "M")
 
         for self.col_index in self.column_indexes(dataset_name):
-            self.create_pdf_page(pdf, filename, panda_utils_3)
+            self.create_pdf_page(pdf, filename, panda_utils_M)
 
-    def create_pdf_page(self, pdf, filename, panda_utils_3):
-        pdf_page = PdfPage(None, panda_utils_3, filename, self)
+    def create_pdf_page(self, pdf, filename, panda_utils_M):
+        pdf_page = PdfPage(None, panda_utils_M, filename, self)
 
         # IMPORTANT: resize before setting the labels to avoid this issue: https://stackoverflow.com/q/50395392/4547232
         pdf_page.plt.subplots_adjust(wspace=PDFS4.SUBPLOT_SPACING_W_H[0], hspace=PDFS4.SUBPLOT_SPACING_W_H[1])

@@ -74,12 +74,12 @@ class RelativeDifferenceStats(CommonPlot):
     ##############################################
 
     @staticmethod
-    def create_plot_common(coders_array, panda_utils_0, panda_utils_3, col_index, key, klass, options={}):
-        min_values_3 = panda_utils_3.min_value_for_every_coder(coders_array, col_index)[key]
-        if panda_utils_0 is None:
+    def create_plot_common(coders_array, panda_utils_NM, panda_utils_M, col_index, key, klass, options={}):
+        min_values_3 = panda_utils_M.min_value_for_every_coder(coders_array, col_index)[key]
+        if panda_utils_NM is None:
             min_values_0 = min_values_3
         else:
-            min_values_0 = panda_utils_0.min_value_for_every_coder(coders_array, col_index)[key]
+            min_values_0 = panda_utils_NM.min_value_for_every_coder(coders_array, col_index)[key]
 
         plot_instance = klass(options)
         for value0, value3 in zip(min_values_0, min_values_3):
@@ -88,10 +88,10 @@ class RelativeDifferenceStats(CommonPlot):
         return plot_instance
 
     @staticmethod
-    def create_plots(coders_array, _, panda_utils_0, panda_utils_3, col_index, options={}):
+    def create_plots(coders_array, _, panda_utils_NM, panda_utils_M, col_index, options={}):
         key = ResultsToDataframe.data_column_key(col_index)
         klass = RelativeDifferenceStats
-        return RelativeDifferenceStats.create_plot_common(coders_array, panda_utils_0, panda_utils_3, col_index, key, klass, options)
+        return RelativeDifferenceStats.create_plot_common(coders_array, panda_utils_NM, panda_utils_M, col_index, key, klass, options)
 
 
 class WindowsStats(RelativeDifferenceStats):
@@ -106,7 +106,7 @@ class WindowsStats(RelativeDifferenceStats):
         self.plot_aux(ax, self.col_labels, zip(results, self.row_labels, colors))
 
     @staticmethod
-    def create_plots(coders_array, _, panda_utils_0, panda_utils_3, col_index, options={}):
+    def create_plots(coders_array, _, panda_utils_NM, panda_utils_M, col_index, options={}):
         key = 'window'
         klass = WindowsStats
-        return RelativeDifferenceStats.create_plot_common(coders_array, panda_utils_0, panda_utils_3, col_index, key, klass, options)
+        return RelativeDifferenceStats.create_plot_common(coders_array, panda_utils_NM, panda_utils_M, col_index, key, klass, options)

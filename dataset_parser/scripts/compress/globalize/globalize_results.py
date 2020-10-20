@@ -5,7 +5,6 @@ import filecmp
 
 from scripts.compress.experiments_utils import ExperimentsUtils
 from file_utils.csv_utils.csv_writer import CSVWriter
-from scripts.compress.globalize.globalize_utils import GlobalizeUtils
 from scripts.informe.plot.csv_constants import CSVConstants
 from scripts.informe.results_parsing.results_reader import ResultsReader
 from scripts.informe.results_parsing.results_paths import ResultsPaths
@@ -14,7 +13,8 @@ from scripts.informe.results_parsing.results_paths import ResultsPaths
 # Converts the results in "complete-mask-mode=N.csv" files so that the results of multiple files are merged
 #
 class GlobalizeResults(object):
-    NUMBER_OF_ROWS = {"NM": 393, "M": 457}
+    # NUMBER_OF_ROWS = {"NM": 393, "M": 457}
+    NUMBER_OF_ROWS = {"NM": 393 - 7*8, "M": 457 - 7*8}
 
     def __init__(self, mask_mode):
         if mask_mode not in ["NM", "M"]:
@@ -42,30 +42,28 @@ class GlobalizeResults(object):
         else:
             print(dataset_name + " - multiple files")
             self.multiple_files = True
-        self.__merge_results(dataset_name, filenames)
+        self.__globalize_filenames(dataset_name, filenames)
 
-    #
-    # globalize results
-    #
-    def __merge_results(self, dataset_name, filenames):
-        # MM=0 => CoderBase
+    def __globalize_filenames(self, dataset_name, filenames):
+        # "NM" => CoderBase
         coder_base_line = self.__get_coder_base_line(dataset_name, filenames)
         coder_base_line_with_percentages = ResultsReader.set_percentages(coder_base_line, coder_base_line)
         self.output_file.write_row(coder_base_line_with_percentages)
 
-        # MM=0or3 => CoderBase, CoderPCA, CoderAPCA, etc.
+        # "M" => CoderBase, CoderPCA, CoderAPCA, etc.
         other_coders_lines = self.__get_other_coders_lines(dataset_name, filenames)
-        GlobalizeUtils.write_other_coders_lines(self.output_file, coder_base_line, other_coders_lines)
+        GlobalizeResults.write_other_coders_lines(self.output_file, coder_base_line, other_coders_lines)
 
     def __get_coder_base_line(self, dataset_name, filenames):
-        results_array_0 = self.__results_array(dataset_name, filenames, CSVConstants.INDEX_ALGORITHM)
-        assert(len(results_array_0[0]) == 1)
-        return self.__mask_results_lines(results_array_0)[0]
+        results_array = self.__results_array(dataset_name, filenames, CSVConstants.INDEX_ALGORITHM)
+        for entry in results_array:
+            assert(len(entry) == 1)
+        return self.__mask_results_lines(results_array)[0]
 
     def __get_other_coders_lines(self, dataset_name, filenames):
         results_array = self.__results_array(dataset_name, filenames)
-        # print len(results_array[0])
-        assert(len(results_array[0]) == self.number_of_rows)
+        for entry in results_array:
+            assert(len(entry) == self.number_of_rows)
         return self.__mask_results_lines(results_array)
 
     def __mask_results_lines(self, results_array):
@@ -76,7 +74,7 @@ class GlobalizeResults(object):
             for file_results in results_array:
                 # print file_results
                 file_results_line = file_results[index]
-                file_results_line = GlobalizeUtils.convert_line(file_results_line, self.multiple_files)
+                file_results_line = GlobalizeResults.convert_line(file_results_line, self.multiple_files)
                 new_line = file_results_line if new_line is None else self.__merge_lines(new_line, file_results_line)
             new_lines.append(new_line)
         assert(len(new_lines) == number_of_rows)
@@ -107,3 +105,19 @@ class GlobalizeResults(object):
         if compare:
             print("SAME!")
         assert compare
+
+    @staticmethod
+    def convert_line(line, global_mode=True):
+        new_line = ResultsReader.convert_line(line)
+        if global_mode:
+            filename = new_line[1]
+            new_filename = 'Global' if len(filename) > 0 else filename
+            new_line[1] = new_filename
+        return new_line
+
+    @staticmethod
+    def write_other_coders_lines(output_file, coder_base_line, other_coders_lines):
+        for index, line in enumerate(other_coders_lines):
+            if index > 0:  # Ignore CoderBase
+                line_with_percentages = ResultsReader.set_percentages(line, coder_base_line)
+                output_file.write_row(line_with_percentages)

@@ -21,6 +21,7 @@ class CompressScript:
     COMPRESS_PATH = OSUtils.git_path() + "/dataset_parser/scripts/compress"
     OUTPUT_PATH = COMPRESS_PATH + "/output/"
     DATASETS_PATH = ExperimentsUtils.CSV_PATH
+    MAX_HEADER_SIZE = 15000
 
     def __init__(self, output_filename, mask_mode):
         self.output_path = self.OUTPUT_PATH + datetime.now().strftime("%Y.%m.%d_%H.%M") + "/"
@@ -75,7 +76,6 @@ class CompressScript:
         self.thresholds_array = compress_utils.get_thresholds_array()
 
         coders_array = ExperimentsUtils.coders_array(self.mask_mode)
-
         for coder_index, self.coder_dictionary in enumerate(coders_array):
             if self._skip_iteration():
                 continue
@@ -113,7 +113,7 @@ class CompressScript:
 
     def _run_script_on_base_coder(self, base_values):
         values = [self.coder_dictionary['name']] + [None] * 3
-        compress_args = CompressArgs(self._compress_args())
+        compress_args = CompressArgs(self)
         compression_values = CompressScript._compress_file(compress_args)
         base_values = self._out_results(base_values, compression_values, self.row + values)
         return base_values
@@ -133,25 +133,10 @@ class CompressScript:
                 values += [window_size]
 
                 params[window_param_name] = window_size
-                compress_args = CompressArgs(self._compress_args(params))
+                compress_args = CompressArgs(self, params)
                 compression_values = CompressScript._compress_file(compress_args)
                 base_values = self._out_results(base_values, compression_values, self.row + values)
         return base_values
-
-
-    def _compress_args(self, coder_params={}):
-        args = {
-            'logger': self.logger,
-            'coder': self.coder_dictionary.get('coder'),
-            'coder_name': self.coder_dictionary['name'],
-            'coder_params': coder_params,
-            'decoder': self.coder_dictionary.get('decoder'),
-            'input_path': self.input_path,
-            'input_filename': self.input_filename,
-            'output_path': self.output_dataset_coder_path,
-            'mask_mode': self.mask_mode
-        }
-        return args
 
 
     @staticmethod
@@ -220,7 +205,7 @@ class CompressScript:
         assert(compressed_size == bytes_sum)
 
         header_bytes = (header_bits + 7) // 8
-        max_header_size = 15000
+        max_header_size = CompressScript.MAX_HEADER_SIZE
         if header_bytes >= max_header_size:
             print('header_bytes = %s' % header_bytes)
         assert(header_bytes < max_header_size)

@@ -19,11 +19,10 @@ from scripts.informe.gzip_compare.gzip_script import GZipScript
 # TODO: define mode paths
 ROOT_PATH = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis"
 INFORME_PATH = ROOT_PATH + "/dataset_parser/scripts/informe"
-RESULTS_PATH = INFORME_PATH + "/results/"
-GZIP_PATH = INFORME_PATH + "/gzip_compare/out"
+RESULTS_PATH = INFORME_PATH + "/results/10.2020/"
 
 #
-# (0) Run "sh make.sh" so that the following executables are created:
+# (0) Run "sh make_mac.sh" / "sh make_ubuntu.sh" so that the following executables are created:
 # run_variant_NM
 # run_variant_M
 #
@@ -33,7 +32,7 @@ GZIP_PATH = INFORME_PATH + "/gzip_compare/out"
 #
 # (1) Run the compress script for each mode, each execution creates a different results csv file
 # CompressScript("results_NM.csv", "NM").run()
-CompressScript("results_M.csv", "M").run()
+# CompressScript("results_M.csv", "M").run()
 
 #
 # (2) Globalize the result files generated in step (1)
@@ -44,17 +43,13 @@ CompressScript("results_M.csv", "M").run()
 #
 # (3.2) Relative Performance of the Coders
 #
-# PDFS1(RESULTS_PATH + '3.2/', 'local').create_pdfs() # TODO: delete line
 # PDFS1(RESULTS_PATH + '3.2/', 'global').create_pdfs()
 
 
 # #
 # # 3.3 Window Size Parameter
 # #
-# # PDFS2(RESULTS_PATH + '3.3/', 'local).create_pdfs()  # LOCAL - TODO: delete line
-# # PDFS2(RESULTS_PATH + '3.3/', 'global).create_pdfs()  # GLOBAL - TODO: delete line
 # PDFS3(RESULTS_PATH + '3.3/window/').create_pdfs()  # LOCAL (BEST LOCAL WINDOW VS. BEST GLOBAL WINDOW)
-
 
 
 # #
@@ -63,7 +58,7 @@ CompressScript("results_M.csv", "M").run()
 # PDFS4(RESULTS_PATH + '3.4/pdf/', 'global').create_pdfs()  # GLOBAL
 # ProcessResults(True, RESULTS_PATH + '3.4/results1', 1).run()
 
-# GZipScript(GZIP_PATH, 'results.csv', False).run()
-# GZipScript(GZIP_PATH, 'results-t.csv', True).run()
-
-# ProcessResults(True, RESULTS_PATH + '3.4/results2', 2).run()
+# gzip_path = RESULTS_PATH + '3.4/gzip/'
+# GZipScript(gzip_path, 'results.csv', False).run()
+# GZipScript(gzip_path, 'results-t.csv', True).run()
+# ProcessResults(True, RESULTS_PATH + '3.4/results2', 2, gzip_path, 'results-t.csv').run()

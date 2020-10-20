@@ -105,8 +105,8 @@ class WriterMinMax:
         ]
         last_lines = [
             r"\end{tabular}",
-            r"\caption{\captionminmax}",
-            r"\label{experiments:minmax}",
+            r"\caption{\captionminmaxone}" if self.mode == 1 else r"\caption{\captionminmaxtwo}",
+            r"\label{experiments:minmaxone}" if self.mode == 1 else r"\label{experiments:minmaxtwo}",
             r"\end{table}"
         ]
         for line in first_lines + data_lines + last_lines:

@@ -41,8 +41,8 @@ class PDFS3(PDFSCommon):
     def __init__(self, path, datasets_names=None):
         assert(len(self.HEIGHT_RATIOS) == len(self.PLOTS_MATRIX))
 
-        self.df_3_local = ResultsToDataframe(ResultsReader('local', 3)).create_full_df()
-        self.df_3_global = ResultsToDataframe(ResultsReader('global', 3)).create_full_df()
+        self.df_M_local = ResultsToDataframe(ResultsReader('local', "M")).create_full_df()
+        self.df_M_global = ResultsToDataframe(ResultsReader('global', "M")).create_full_df()
         self.path = path
 
         self.dataset_names = datasets_names or ExperimentsUtils.datasets_with_multiple_files()
@@ -65,7 +65,7 @@ class PDFS3(PDFSCommon):
     def created_dataset_pdf_file(self):
         self.pdf_name = self.create_pdf_name(self.path, self.dataset_id, self.dataset_name)
         with PdfPages(self.pdf_name) as pdf:
-            self.pd_utils_3_global = PandasUtils(self.dataset_name, 'Global', self.df_3_global, 3)
+            self.pd_utils_3_global = PandasUtils(self.dataset_name, 'Global', self.df_M_global, "M")
             for self.filename_index, self.filename in enumerate(self.dataset_filenames()):
                 print("  " + self.filename)
                 self.create_pdf_pages(pdf, self.dataset_name, self.filename)
@@ -73,10 +73,10 @@ class PDFS3(PDFSCommon):
     def create_pdf_pages(self, pdf, dataset_name, filename):
         for self.col_index in self.column_indexes(dataset_name):
             # create panda_utils. Must do it inside this block to prevent issue with many datatypes in a single dataset
-            df_3_local_copy_1 = PandasMethods.copy(self.df_3_local)
-            df_3_local_copy_2 = PandasMethods.copy(self.df_3_local)
-            pd_utils_3_local_1 = PandasUtils(dataset_name, filename, df_3_local_copy_1, 3)  # local with best LOCAL window
-            pd_utils_3_local_2 = PandasUtils(dataset_name, filename, df_3_local_copy_2, 3)  # local with best GLOBAL window
+            df_M_local_copy_1 = PandasMethods.copy(self.df_M_local)
+            df_M_local_copy_2 = PandasMethods.copy(self.df_M_local)
+            pd_utils_3_local_1 = PandasUtils(dataset_name, filename, df_M_local_copy_1, "M")  # local with best LOCAL window
+            pd_utils_3_local_2 = PandasUtils(dataset_name, filename, df_M_local_copy_2, "M")  # local with best GLOBAL window
 
             mod_pd_utils_3_local_2 = self.set_global_window(pd_utils_3_local_2)
             # TODO: change order to make Relative Difference <= 0
@@ -99,7 +99,7 @@ class PDFS3(PDFSCommon):
                     # remove every threshold value other than the one that uses the best global window
                     index_names = new_df[(new_df['coder'] == coder_name) & (new_df['threshold'] == threshold) & (new_df['window'] != best_global_window)].index
                     new_df.drop(index_names, inplace=True)
-        mod_pd_utils_3_local_2 = PandasUtils(self.dataset_name, self.filename, new_df, 3, False)
+        mod_pd_utils_3_local_2 = PandasUtils(self.dataset_name, self.filename, new_df, "M", False)
         return mod_pd_utils_3_local_2
 
     def create_pdf_page(self, pdf, filename, pd_utils_3_local_1, pd_utils_3_local_2):

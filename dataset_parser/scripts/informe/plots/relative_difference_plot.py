@@ -112,12 +112,12 @@ class RelativeDifferencePlot(CommonPlot):
     ##############################################
 
     @staticmethod
-    def create_plots(coders_array, filename, panda_utils_0, panda_utils_3, col_index, options={}):
+    def create_plots(coders_array, filename, panda_utils_NM, panda_utils_M, col_index, options={}):
         plots_obj = {}
         total_min, total_max = sys.maxsize, -sys.maxsize
         for coder_name in coders_array:
-            values0, _, _ = CompressionRatioPlot.get_values(coder_name, col_index, panda_utils_0)
-            values3, _, _ = CompressionRatioPlot.get_values(coder_name, col_index, panda_utils_3)
+            values0, _, _ = CompressionRatioPlot.get_values(coder_name, col_index, panda_utils_NM)
+            values3, _, _ = CompressionRatioPlot.get_values(coder_name, col_index, panda_utils_M)
             assert(len(values0) == len(values3))
 
             plot_instance = RelativeDifferencePlot({'algorithm': coder_name, 'filename': filename}, options)

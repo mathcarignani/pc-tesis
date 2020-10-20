@@ -19,9 +19,9 @@ class GZipScript(object):
         self.path = path
         self.transpose = transpose
         self.output = CSVWriter(path, filename)
-        self.debug_mode = True
+        self.debug_mode = False
 
-        self.results_reader = ResultsReader('local', 0)
+        self.results_reader = ResultsReader('local', "NM")
         self.df = ResultsToDataframe(self.results_reader).create_full_df()
 
     def run(self):
@@ -63,7 +63,7 @@ class GZipScript(object):
             self.output.write_row(['', '', self.col_name, compression_ratio, total_bits, total_bits_base, total_bytes])
 
     def __get_total_bits_coder_base(self):
-            panda_utils = PandasUtils(self.dataset_name, self.filename, self.df, 0)
+            panda_utils = PandasUtils(self.dataset_name, self.filename, self.df, "NM")
             base_df = panda_utils.coder_base_df()
             data_column_key = ResultsToDataframe.data_column_key(self.col_index)
             return base_df[data_column_key]

@@ -3,36 +3,30 @@ sys.path.append('.')
 
 
 class ResultsPaths(object):
-    PATH = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/informe/results/3.1/06.2020/"
+    PATH = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/informe/results/10.2020/3.1/"
     #
     # These 2 csv files contain all the results returned by the compress_script.py script
     #
-    LOCAL_RESULTS_PATH = PATH + "3-local"
-    LOCAL_FILENAME_NM = "results-mm0-local.csv"
-    LOCAL_FILENAME_M = "results-mm3-local.csv"
+    LOCAL_RESULTS_PATH = PATH + "1-local"
+    LOCAL_FILENAME_NM = "results_NM-local.csv"
+    LOCAL_FILENAME_M = "results_M-local.csv"
 
     #
     # These 2 csv files are created after running the GlobalizeResults scripts on the previous two files
     #
-    GLOBAL_RESULTS_PATH = PATH + "4-global"
-    GLOBAL_FILENAME_NM = "results-mm0-global.csv"  # GlobalizeResults(0).run()
-    GLOBAL_FILENAME_M = "results-mm3-global.csv"  # GlobalizeResults(3).run()
+    GLOBAL_RESULTS_PATH = PATH + "2-global"
+    GLOBAL_FILENAME_NM = "results_NM-global.csv"  # GlobalizeResults("NM").run()
+    GLOBAL_FILENAME_M = "results_M-global.csv"  # GlobalizeResults("M").run()
 
     @staticmethod
     def get_path_and_filename(mode, mask_mode):
         ResultsPaths.check_input(mode, mask_mode)
         if mode == 'local':
             path = ResultsPaths.LOCAL_RESULTS_PATH
-            if mask_mode == "NM":
-                filename = ResultsPaths.LOCAL_FILENAME_NM
-            else:
-                filename = ResultsPaths.LOCAL_FILENAME_M
+            filename = ResultsPaths.LOCAL_FILENAME_NM if mask_mode == "NM" else ResultsPaths.LOCAL_FILENAME_M
         else: # mode == 'global':
             path = ResultsPaths.GLOBAL_RESULTS_PATH
-            if mask_mode == "NM":
-                filename = ResultsPaths.GLOBAL_FILENAME_NM
-            else:
-                filename = ResultsPaths.GLOBAL_FILENAME_M
+            filename = ResultsPaths.GLOBAL_FILENAME_NM if mask_mode == "NM" else ResultsPaths.GLOBAL_FILENAME_M
 
         return path, filename
 

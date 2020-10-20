@@ -92,14 +92,14 @@ class WindowsPlot(CommonPlot):
     ##############################################
 
     @staticmethod
-    def create_plots(coders_array, filename, panda_utils_0, panda_utils_3, col_index, options={}):
+    def create_plots(coders_array, filename, panda_utils_NM, panda_utils_M, col_index, options={}):
         plots_obj = {}
         for coder_name in coders_array:
-            values3 = WindowsPlot.get_values(coder_name, col_index, panda_utils_3)
-            if panda_utils_0 is None:
+            values3 = WindowsPlot.get_values(coder_name, col_index, panda_utils_M)
+            if panda_utils_NM is None:
                 values0 = []
             else:
-                values0 = WindowsPlot.get_values(coder_name, col_index, panda_utils_0)
+                values0 = WindowsPlot.get_values(coder_name, col_index, panda_utils_NM)
                 assert(len(values0) == len(values3))
 
             plot_instance = WindowsPlot({'algorithm': coder_name, 'filename': filename}, options)
