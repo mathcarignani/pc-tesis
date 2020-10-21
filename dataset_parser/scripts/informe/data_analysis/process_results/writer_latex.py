@@ -10,16 +10,6 @@ from scripts.informe.data_analysis.process_results.latex_utils import LatexUtils
 #
 class WriterLatex(object):
     THRE_COUNT = len(ExperimentsUtils.THRESHOLDS)
-    DATASET_MAP = {
-        'IRKIS': '\datasetirkis',
-        'NOAA-SST': '\datasetsst',
-        'NOAA-ADCP': '\datasetadcp',
-        'SolarAnywhere': '\datasetsolar',
-        'ElNino': '\datasetelnino',
-        'NOAA-SPC-hail': '\datasethail',
-        'NOAA-SPC-tornado': '\datasettornado',
-        'NOAA-SPC-wind': '\datasetwind'
-    }
     WINDOW_MAP = {0: '', 4: 2, 8: 3, 16: 4, 32: 5, 64: 6, 128: 7, 256: 8}
 
     def __init__(self, path, mode):
@@ -47,7 +37,7 @@ class WriterLatex(object):
 
         dataset_str = ''
         if self.current_dataset is not None:
-            dataset_str = self.DATASET_MAP[self.current_dataset]
+            dataset_str = LatexUtils.get_dataset_key(self.current_dataset)
             self.current_dataset = None
 
         line_list = [dataset_str, threshold_results[2]]

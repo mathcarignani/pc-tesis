@@ -30,8 +30,7 @@ class RelativeDifferencePlot(CommonPlot):
         # self.print_values2()  # TODO: uncomment to print the window stats
         extra_options.update(self.options); self.options = extra_options
 
-        if self.options.get('check_never_negative'):
-            assert(min(self.values) >= 0)
+        self._check_values()
 
         # scatter plot
         x_axis = list(range(len(self.values)))
@@ -43,12 +42,19 @@ class RelativeDifferencePlot(CommonPlot):
         # ax.legend()
 
         if self.options.get('add_min_max_circles'):
-            CommonPlot.add_min_max_circles(self.algorithm, self.options, ax, x_axis, self.values)
+            action = self.options['pdf_instance'].check_min_max(self.algorithm, self.values) # "PlotMax"/"PlotMin"/None
+            CommonPlot.add_min_max_circles(ax, x_axis, self.values, action)
         if self.options.get('add_max_circle'):
             CommonPlot.add_max_circle(self.algorithm, self.options, ax, x_axis, self.values)
 
         CommonPlot.set_lim(ax, ymin, ymax)
         self._labels(ax, self.options)
+
+    def _check_values(self):
+        minimum = min(self.values)
+        if minimum < 0 and self.options.get('check_never_negative'):
+            raise(StandardError, "The values must be >= 0.")
+            assert(minimum >= 0)
 
     def _labels(self, ax, options):
         CommonPlot.label_title(ax, options, self.algorithm)

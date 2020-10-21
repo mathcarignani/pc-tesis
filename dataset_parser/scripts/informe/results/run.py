@@ -43,7 +43,9 @@ RESULTS_PATH = INFORME_PATH + "/results/10.2020/"
 #
 # (3.2) Relative Performance of the Coders
 #
-# PDFS1(RESULTS_PATH + '3.2/', 'global').create_pdfs()
+pdf1 = PDFS1(RESULTS_PATH + '3.2/', 'global')
+pdf1.create_pdfs()
+pdf1.create_latex_table(RESULTS_PATH + '3.2/')
 
 
 # #

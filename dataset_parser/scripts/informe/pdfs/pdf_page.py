@@ -38,18 +38,13 @@ class PdfPage(object):
                 continue
             for col_index, matrix_entry in enumerate(row):
                 ax = self.fig.add_subplot(spec[row_index, col_index])
-                self.__add_plot(matrix_entry, ax, plots_obj, row_index, col_index)
+                self.__add_plot(matrix_entry, ax, plots_obj, col_index)
 
-    def __add_plot(self, matrix_entry, ax, plots_obj, row_index, col_index):
+    def __add_plot(self, matrix_entry, ax, plots_obj, col_index):
         coder_name, plot_key = matrix_entry
         if coder_name is not None:
             plot_instance = plots_obj[plot_key][coder_name]
-            extra = {
-                # 'show_title': row_index in [0, 3],
-                # 'last_row': row_index == (self.total_rows - 1),
-                'show_ylabel': col_index == 0,
-                # 'last_column': col_index == (self.total_columns - 2)
-            }
+            extra = {'show_ylabel': col_index == 0}
             plot_instance.plot2(ax, extra)
         else:
             plot_instance = plots_obj[plot_key]

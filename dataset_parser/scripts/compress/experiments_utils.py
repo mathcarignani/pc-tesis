@@ -102,6 +102,15 @@ class ExperimentsUtils(object):
         dataset_info = ExperimentsUtils.get_dataset_info(dataset_name)
         return dataset_info.get('short_name') or dataset_info.get('name')
 
+    @staticmethod
+    def get_gaps_info(dataset_short_name):
+        if dataset_short_name in ["IRKIS", "SST", "ADCP", "ElNino"]:
+            return "Many gaps"
+        elif dataset_short_name in ["Solar"]:
+            return "Few gaps"
+        else:
+            return "No gaps"
+
     CSV_PATH = OSUtils.datasets_csv_path()
 
     CODERS_ARRAY = [

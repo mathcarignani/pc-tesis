@@ -1,4 +1,7 @@
+import sys
+sys.path.append('.')
 
+from scripts.compress.experiments_utils import ExperimentsUtils
 
 class LatexUtils:
     COLOR_COMMANDS = {
@@ -10,6 +13,25 @@ class LatexUtils:
         # 'PWLH': 'violet!50',
         # 'CA': 'brown!20'
     }
+
+    DATASET_MAP = {
+        'IRKIS': '\datasetirkis',
+        'SST': '\datasetsst',
+        'ADCP': '\datasetadcp',
+        'Solar': '\datasetsolar',
+        'ElNino': '\datasetelnino',
+        'Hail': '\datasethail',
+        'Tornado': '\datasettornado',
+        'Wind': '\datasetwind'
+    }
+
+    @staticmethod
+    def get_dataset_key(dataset_name):
+        key = LatexUtils.DATASET_MAP.get(dataset_name)
+        if key:
+            return key
+        short_name = ExperimentsUtils.get_dataset_short_name(dataset_name)
+        return LatexUtils.DATASET_MAP[short_name]
 
     @staticmethod
     def print_commands():

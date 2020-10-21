@@ -8,8 +8,8 @@ class ResultsPaths(object):
     # These 2 csv files contain all the results returned by the compress_script.py script
     #
     LOCAL_RESULTS_PATH = PATH + "1-local"
-    LOCAL_FILENAME_NM = "results_NM-local.csv"
-    LOCAL_FILENAME_M = "results_M-local.csv"
+    LOCAL_FILENAME_NM = "results_NM.csv"
+    LOCAL_FILENAME_M = "results_M.csv"
 
     #
     # These 2 csv files are created after running the GlobalizeResults scripts on the previous two files

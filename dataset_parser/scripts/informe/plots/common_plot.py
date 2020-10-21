@@ -50,6 +50,7 @@ class CommonPlot(object):
         if title_options:
             fontsize = 15 if isinstance(title_options, bool) else title_options
             title = title.replace("Coder", "")  # "CoderABC" => "ABC"
+            title = title.replace("GAMPSLimit", "GAMPS")
             ax.set_title(title, fontsize=fontsize)
 
     @classmethod
@@ -73,14 +74,10 @@ class CommonPlot(object):
     ####################################################################################################################
 
     @classmethod
-    def add_min_max_circles(cls, algorithm, options, ax, x_axis, y_axis):
-        dataset_name, col_index = options['pdf_instance'].dataset_name, options['pdf_instance'].col_index
-
-        if dataset_name == "NOAA-SST" and col_index == 1 and algorithm == "CoderPCA":
-            # 2-NOAA-SST-1.pdf
+    def add_min_max_circles(cls, ax, x_axis, y_axis, action):
+        if action == "PlotMax":
             color = PlotConstants.VALUE0_COLOR
-        elif dataset_name == "NOAA-SPC-tornado" and col_index == 2 and algorithm == "CoderAPCA":
-            # 7-NOAA-SPC-tornado-2.pdf
+        elif action == "PlotMin":
             color = PlotConstants.VALUE3_COLOR
         else:
             return
