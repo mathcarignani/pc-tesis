@@ -1,6 +1,7 @@
 import sys
 sys.path.append('.')
 
+import matplotlib.markers as mmarkers
 from scripts.informe.plot.plot_constants import PlotConstants
 
 
@@ -73,16 +74,20 @@ class CommonPlot(object):
 
     ####################################################################################################################
 
+    #
+    # SOURCE: https://stackoverflow.com/a/52303895/4547232
+    #
     @classmethod
-    def add_min_max_circles(cls, ax, x_axis, y_axis, action):
-        if action == "PlotMax":
-            color = PlotConstants.VALUE0_COLOR
-        elif action == "PlotMin":
-            color = PlotConstants.VALUE3_COLOR
-        else:
-            return
-        new_x_axis, values = x_axis[-1:], y_axis[-1:]  # last value
-        ax.scatter(x=new_x_axis, y=values, zorder=2, facecolors='none', edgecolors=color, s=200)
+    def change_scatter_markers(cls, sc, markers):
+        paths = []
+        for marker in markers:
+            if isinstance(marker, mmarkers.MarkerStyle):
+                marker_obj = marker
+            else:
+                marker_obj = mmarkers.MarkerStyle(marker)
+            path = marker_obj.get_path().transformed(marker_obj.get_transform())
+            paths.append(path)
+        sc.set_paths(paths)
 
     @classmethod
     def add_max_circle(cls, algorithm, options, ax, x_axis, y_axis):

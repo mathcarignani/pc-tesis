@@ -1,6 +1,9 @@
 import sys
 sys.path.append('.')
 
+import matplotlib.pyplot as plt
+
+
 from scripts.compress.experiments_utils import ExperimentsUtils
 from scripts.informe.plot.plot_constants import PlotConstants
 from scripts.informe.plot.plot_utils import PlotUtils
@@ -26,6 +29,19 @@ class RelativeDifferencePlot(CommonPlot):
     def min_max(self):
         return [min(self.values), max(self.values)]
 
+
+    @classmethod
+    def add_min_max_circles(cls, ax, x_axis, y_axis, action):
+        if action == "PlotMax":
+            color = PlotConstants.VALUE0_COLOR
+        elif action == "PlotMin":
+            color = PlotConstants.VALUE3_COLOR
+        else:
+            return
+        new_x_axis, values = x_axis[-1:], y_axis[-1:]  # last value
+        ax.scatter(x=new_x_axis, y=values, zorder=2, facecolors='none', edgecolors=color, s=200)
+
+
     def plot(self, ax, ymin, ymax, extra_options={}):
         # self.print_values2()  # TODO: uncomment to print the window stats
         extra_options.update(self.options); self.options = extra_options
@@ -33,17 +49,33 @@ class RelativeDifferencePlot(CommonPlot):
         self._check_values()
 
         # scatter plot
-        x_axis = list(range(len(self.values)))
-        colors = [self.get_color_code(_) for _ in self.values]
-        ax.scatter(x=x_axis, y=self.values, c=colors, marker='x')
+        size = len(self.values)
+        x_axis, y_axis = list(range(size)), self.values
+        colors = [PlotConstants.COLOR_BLACK] * size
+        facecolors, edgecolors = colors.copy(), colors.copy()
+        sizes = [plt.rcParams['lines.markersize'] ** 2] * size
+        markers = ['x'] * size
+
+        if self.options.get('add_min_max_circles'):
+            action = self.options['pdf_instance'].check_min_max(self.algorithm, self.values) # "PlotMax"/"PlotMin"/None
+            if action in ["PlotMin", "PlotMax"]:
+                color = PlotConstants.VALUE0_COLOR if action == "PlotMax" else PlotConstants.VALUE3_COLOR
+                colors.append('none')
+                facecolors[-1] = 'none'
+                sizes.append(200)
+                markers.append('o')
+                edgecolors.append(color)
+                x_axis.append(x_axis[-1])
+                y_axis.append(y_axis[-1])
+
+        sc = ax.scatter(x=x_axis, y=y_axis, c=colors, facecolors=facecolors, sizes=sizes, edgecolors=edgecolors)
+
+        CommonPlot.change_scatter_markers(sc, markers)
         ax.set_xticks(x_axis)
         ax.grid(b=True, color=PlotConstants.COLOR_SILVER, linestyle='dotted')
         ax.set_axisbelow(True)
         # ax.legend()
 
-        if self.options.get('add_min_max_circles'):
-            action = self.options['pdf_instance'].check_min_max(self.algorithm, self.values) # "PlotMax"/"PlotMin"/None
-            CommonPlot.add_min_max_circles(ax, x_axis, self.values, action)
         if self.options.get('add_max_circle'):
             CommonPlot.add_max_circle(self.algorithm, self.options, ax, x_axis, self.values)
 
@@ -61,10 +93,6 @@ class RelativeDifferencePlot(CommonPlot):
         CommonPlot.label_y(ax, options, PlotConstants.RELATIVE_DIFF)
         CommonPlot.label_x(ax, options, PlotConstants.ERROR_THRE, ExperimentsUtils.THRESHOLDS)
         PlotUtils.hide_ticks(ax)
-
-    @staticmethod
-    def get_color_code(_):
-        return PlotConstants.COLOR_BLACK
 
     def print_values(self):
         print(self.algorithm + " Relative Difference")
