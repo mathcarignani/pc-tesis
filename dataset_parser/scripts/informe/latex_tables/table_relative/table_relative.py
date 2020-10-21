@@ -7,11 +7,12 @@ import os
 from scripts.compress.experiments_utils import ExperimentsUtils
 from scripts.informe.data_analysis.process_results.latex_utils import LatexUtils
 from scripts.informe.math_utils import MathUtils
+from scripts.informe.latex_tables.table_common import TableCommon
 from file_utils.text_utils.text_file_reader import TextFileReader
 from file_utils.text_utils.text_file_writer import TextFileWriter
 
 
-class RangesTable(object):
+class TableRelative(object):
     FILENAME = "table-relative.tex"
 
     def __init__(self, datasets_data, path):
@@ -22,14 +23,15 @@ class RangesTable(object):
         reader = TextFileReader(os.path.dirname(__file__), '_begin.tex')
         self.writer.append_file(reader)
 
-        for name in ["IRKIS", "SST", "ADCP", "ElNino", "Solar", "Hail", "Tornado", "Wind"]:
-            self.add_dataset_line(name)
+        for name in TableCommon.DATASETS_ORDER:
+            line = self.generate_dataset_line(name)
+            self.writer.write_line(line)
 
         reader = TextFileReader(os.path.dirname(__file__), '_end.tex')
         self.writer.append_file(reader)
         self.writer.close()
 
-    def add_dataset_line(self, name):
+    def generate_dataset_line(self, name):
         data = self.datasets_data[name]
         dataset_key = LatexUtils.get_dataset_key(name)
         gaps_info = ExperimentsUtils.get_gaps_info(name)
@@ -39,11 +41,7 @@ class RangesTable(object):
         percentage = int(percentage) if int(percentage) == percentage else round(percentage, 1)
         outperform_str = str(data['positive']) + "/" + str(total) + " (" + str(percentage) + "\%)"
         range_str = self.range_str(data)
-        self.add_line([dataset_key, gaps_info, outperform_str, range_str])
-
-    def add_line(self, array):
-        line = "    " + " & ".join(array) + r" \\\hline"
-        self.writer.write_line(line)
+        return TableCommon.format_line([dataset_key, gaps_info, outperform_str, range_str])
 
     @staticmethod
     def range_str(data):
@@ -54,9 +52,9 @@ class RangesTable(object):
             max_str = "0"
 
         if data['info'] == "PlotMin":
-            min_str = RangesTable.color_value(min_str, 'blue')
+            min_str = TableRelative.color_value(min_str, 'blue')
         elif data['info'] == "PlotMax":
-            max_str = RangesTable.color_value(max_str, 'red')
+            max_str = TableRelative.color_value(max_str, 'red')
         return "[" + min_str + "; " + max_str + (")" if max_zero else "]")
 
     @staticmethod

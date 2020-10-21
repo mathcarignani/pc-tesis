@@ -7,20 +7,7 @@ from scripts.informe.pandas_utils.pandas_utils import PandasUtils
 from scripts.informe.pdfs.pdf_page import PdfPage
 from scripts.informe.pdfs.pdfs_common import PDFSCommon
 from scripts.compress.experiments_utils import ExperimentsUtils
-from scripts.informe.latex_tables.ranges_table.ranges_table import RangesTable
-
-
-# PLOTS_MATRIX = [
-#     [['CoderPCA', 'compression'],  ['CoderAPCA', 'compression'],    ['CoderCA', 'compression']],
-#     [['CoderPCA', 'relative'],     ['CoderAPCA', 'relative'],       ['CoderCA', 'relative']],
-#     # [['CoderPCA', 'window'],       ['CoderAPCA', 'window'],         ['CoderCA', 'window']],
-#
-#     [['CoderPWLH', 'compression'], ['CoderPWLHInt', 'compression'], ['CoderGAMPSLimit', 'compression']],
-#     [['CoderPWLH', 'relative'],    ['CoderPWLHInt', 'relative'],    ['CoderGAMPSLimit', 'relative']],
-#     # [['CoderPWLH', 'window'],      ['CoderPWLHInt', 'window'],      ['CoderGAMPSLimit', 'window']],
-#
-#     # [[None, 'relative_stats'],     [None, 'window_stats']]
-# ]
+from scripts.informe.latex_tables.table_relative.table_relative import TableRelative
 
 
 class PDFS1(PDFSCommon):
@@ -98,20 +85,20 @@ class PDFS1(PDFSCommon):
         expected_maximum = 50.77815044407712
         expected_minimum = -0.2898755656108619
 
-        result = None
+        result = [None, None]
         if self.dataset_name == "NOAA-SST" and algorithm == "CoderPCA":
             assert(maximum == expected_maximum)
-            result = "PlotMax"
+            result = ["PlotMax", maximum]
         else:
             assert(maximum < expected_maximum)
 
         if self.dataset_name == "NOAA-SPC-tornado" and algorithm == "CoderAPCA" and self.col_index == 2:
             assert(minimum == expected_minimum)
-            result = "PlotMin"
+            result = ["PlotMin", minimum]
         else:
             assert(minimum > expected_minimum)
 
-        data['info'] = result
+        data['info'] = result[0]
         self.latex_table_data[self.dataset_name].append(data)
         return result
 
@@ -135,4 +122,4 @@ class PDFS1(PDFSCommon):
                 'negative': negative, 'zero': zero, 'positive': positive, 'min': minimum, 'max': maximum, 'info': info
             }
 
-        RangesTable(datasets_data, path).create_table()
+        TableRelative(datasets_data, path).create_table()
