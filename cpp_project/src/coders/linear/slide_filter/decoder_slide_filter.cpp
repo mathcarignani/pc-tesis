@@ -136,7 +136,9 @@ void DecoderSlideFilter::decompress(std::vector<int> x_coords_vector)
     int position = 0;
     double timeStamp = 0;
     int first_coord = x_coords_vector.at(0);
-    int lastTimeStamp = m_pCompressData->getAt(m_pCompressData->size() - 1).timestamp;
+    int lastTimeStamp = calculateLastDataTimestamp() + 1;
+    std::cout << "lastTimeStamp = " << lastTimeStamp << std::endl;
+
     Line* l = NULL;
 
 //    for(int i = 0; i < lastTimeStamp; i++)
