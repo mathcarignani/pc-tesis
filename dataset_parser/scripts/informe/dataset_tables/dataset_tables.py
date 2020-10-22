@@ -7,10 +7,8 @@ from scripts.compress.experiments_utils import ExperimentsUtils
 from scripts.informe.dataset_tables.latex_table import LatexTable
 from scripts.informe.dataset_tables.pandas_analysis import PandasAnalysis
 
+# TODO: move to the latex_tables path
 class DatasetAnalysis(object):
-
-
-
     @staticmethod
     def generate_table_irkis():
         dataset = 'IRKIS'

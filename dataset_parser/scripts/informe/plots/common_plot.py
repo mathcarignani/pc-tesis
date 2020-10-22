@@ -1,6 +1,7 @@
 import sys
 sys.path.append('.')
 
+import matplotlib.pyplot as plt
 import matplotlib.markers as mmarkers
 from scripts.informe.plot.plot_constants import PlotConstants
 
@@ -103,3 +104,26 @@ class CommonPlot(object):
         else:
             return
         ax.scatter(x=new_x_axis, y=values, zorder=2, facecolors='none', edgecolors='blue', s=200)
+
+    @classmethod
+    def scatter_plot(cls, ax, x_axis, y_axis, size, color, opt={}):
+        colors = [color] * size
+        facecolors, edgecolors = colors.copy(), colors.copy()
+        sizes = [plt.rcParams['lines.markersize'] ** 2] * size
+        markers = ['x'] * size
+
+        if len(opt.keys()) > 0:
+            for idx, key in enumerate(opt['keys']):
+                value = opt['values'][idx]
+                value_color = PlotConstants.VALUE0_COLOR if key == "PlotMax" else PlotConstants.VALUE3_COLOR
+                index = y_axis.index(value)
+                colors = colors[:index] + ['none'] + colors[index:]
+                facecolors[index] = 'none'
+                sizes = sizes[:index] + [200] + sizes[index:]
+                markers = markers[:index] + ['o'] + markers[index:]
+                edgecolors = edgecolors[:index] + [value_color] + edgecolors[index:]
+                x_axis = x_axis[:index] + [x_axis[index]] + x_axis[index:]
+                y_axis = y_axis[:index] + [y_axis[index]] + y_axis[index:]
+
+        sc = ax.scatter(x=x_axis, y=y_axis, c=colors, facecolors=facecolors, sizes=sizes, edgecolors=edgecolors)
+        CommonPlot.change_scatter_markers(sc, markers)

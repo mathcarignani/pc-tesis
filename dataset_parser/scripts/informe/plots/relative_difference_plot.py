@@ -1,8 +1,6 @@
 import sys
 sys.path.append('.')
 
-import matplotlib.pyplot as plt
-
 
 from scripts.compress.experiments_utils import ExperimentsUtils
 from scripts.informe.plot.plot_constants import PlotConstants
@@ -46,34 +44,16 @@ class RelativeDifferencePlot(CommonPlot):
         # self.print_values2()  # TODO: uncomment to print the window stats
         extra_options.update(self.options); self.options = extra_options
 
-        # scatter plot
-        size = len(self.values)
-        x_axis, y_axis = list(range(size)), self.values
-        colors = [PlotConstants.COLOR_BLACK] * size
-        facecolors, edgecolors = colors.copy(), colors.copy()
-        sizes = [plt.rcParams['lines.markersize'] ** 2] * size
-        markers = ['x'] * size
+        y_axis = self.values
+        size = len(y_axis)
+        x_axis = list(range(size))
 
-        key, value = None, None
-        if self.options.get('check_pdf1'): # PDFS1
-            key, value = self.options['pdf_instance'].add_data(self.algorithm, y_axis) # "PlotMax"/"PlotMin"/None
-        elif self.options.get('check_pdf3'): # PDFS3
-            key, value = self.options['pdf_instance'].add_data(self.algorithm, y_axis) # "PlotMax"/None
+        opt = {}
+        if self.options.get('check_pdf1') or self.options.get('check_pdf3'): # PDFS1
+            opt = self.options['pdf_instance'].add_data(self.algorithm, y_axis) # "PlotMax"/"PlotMin"/None
 
-        if key in ["PlotMin", "PlotMax"]:
-            color = PlotConstants.VALUE0_COLOR if key == "PlotMax" else PlotConstants.VALUE3_COLOR
-            index = y_axis.index(value)
-            colors = colors[:index] + ['none'] + colors[index:]
-            facecolors[index] = 'none'
-            sizes = sizes[:index] + [200] + sizes[index:]
-            markers = markers[:index] + ['o'] + markers[index:]
-            edgecolors = edgecolors[:index] + [color] + edgecolors[index:]
-            x_axis = x_axis[:index] + [x_axis[index]] + x_axis[index:]
-            y_axis = y_axis[:index] + [y_axis[index]] + y_axis[index:]
+        CommonPlot.scatter_plot(ax, x_axis, y_axis, size, PlotConstants.COLOR_BLACK, opt)
 
-        sc = ax.scatter(x=x_axis, y=y_axis, c=colors, facecolors=facecolors, sizes=sizes, edgecolors=edgecolors)
-
-        CommonPlot.change_scatter_markers(sc, markers)
         ax.set_xticks(x_axis)
         ax.grid(b=True, color=PlotConstants.COLOR_SILVER, linestyle='dotted')
         ax.set_axisbelow(True)

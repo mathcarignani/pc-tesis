@@ -124,11 +124,11 @@ class PDFS3(PDFSCommon):
         # (1) Check that the maximum does not change and occurs in the expected dataset/coder
         expected_maximum = 10.598254581045069
 
-        result = [None, None]
+        result = {}
         if self.dataset_name == "IRKIS" and algorithm == "CoderPCA" and self.filename == "vwc_1203.dat.csv":
             assert(maximum == expected_maximum)
             assert(str(round(maximum, 2)) == "10.6")
-            result = ["PlotMax", maximum]
+            result = {'keys': ["PlotMax"], 'values': [maximum]}
         else:
             assert(maximum < expected_maximum)
 
