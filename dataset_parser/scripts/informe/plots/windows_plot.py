@@ -56,9 +56,12 @@ class WindowsPlot(CommonPlot):
             for i, value3 in enumerate(self.values3):
                 pos_value3 = self.__position(value3)
                 x_axis_3.append(i); y_axis_3.append(pos_value3)
-            ax.scatter(x=x_axis_3, y=y_axis_3, c=global_color, zorder=1, marker='x', s=36)
-            if self.options.get('circle_table_values'):
-                CommonPlot.circle_table_values(self.algorithm, self.options, ax, x_axis_3, y_axis_3)
+
+            x_axis = x_axis_3.copy()
+            y_axis = y_axis_3.copy()
+            size = len(x_axis)
+            opt = self.options['pdf_instance'].add_data('window', self.algorithm, y_axis)
+            CommonPlot.scatter_plot(ax, x_axis, y_axis, size, PlotConstants.COLOR_BLACK, opt)
 
         ax.set_xticks(x_axis_3)
         ax.grid(b=True, color=PlotConstants.COLOR_SILVER, linestyle='dotted')

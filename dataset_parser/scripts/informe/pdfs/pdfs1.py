@@ -27,7 +27,7 @@ class PDFS1(PDFSCommon):
     HEIGHT_RATIOS = [30, 0, 30, 10, 30, 0, 30]
     PLOT_OPTIONS = {
         'compression': {'title': True, 'labels': [r'$a_{NM}$', r'$a_M$']},
-        'relative': {'check_pdf1': True, 'show_xlabel': True}
+        'relative': {'add_data': True, 'show_xlabel': True}
     }
 
     def __init__(self, path, mode='global', datasets_names=None):
@@ -64,7 +64,10 @@ class PDFS1(PDFSCommon):
     ####################################################################################################################
     ####################################################################################################################
 
-    def add_data(self, algorithm, values):
+    def add_data(self, plot_name, algorithm, values):
+        if not self.PLOT_OPTIONS[plot_name].get('add_data'):
+            return {}
+
         minimum, maximum = min(values), max(values)
 
         # (1) Check that the minimum and maximum do not change and occur in the expected dataset/coder
@@ -75,20 +78,21 @@ class PDFS1(PDFSCommon):
         if self.dataset_name == "NOAA-SST" and algorithm == "CoderPCA":
             assert(maximum == expected_maximum)
             assert(str(round(maximum, 2)) == "50.78")
-            result = {'keys': ["PlotMax"], 'values': [maximum]}
+            result = {'keys': ["PlotMax"], 'indexes': [values.index(maximum)]}
         else:
             assert(maximum < expected_maximum)
 
         if self.dataset_name == "NOAA-SPC-tornado" and algorithm == "CoderAPCA" and self.col_index == 2:
             assert(minimum == expected_minimum)
             assert(str(round(minimum, 2)) == "-0.29")
-            result = {'keys': ["PlotMin"], 'values': [minimum]}
+            result = {'keys': ["PlotMin"], 'indexes': [values.index(minimum)]}
         else:
             assert(minimum > expected_minimum)
 
         # (2) Add information to the latex table structure
         negative, zero, positive = PDFS1.get_stats(values)
-        data = {'negative': negative, 'zero': zero, 'positive': positive, 'min': minimum, 'max': maximum, 'info': result[0]}
+        data = {'negative': negative, 'zero': zero, 'positive': positive, 'min': minimum, 'max': maximum,
+                'info': result['keys'][0] if result.get('keys') else None}
         if not self.latex_table_data.get(self.dataset_name):
             self.latex_table_data[self.dataset_name] = []
         self.latex_table_data[self.dataset_name].append(data)

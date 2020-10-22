@@ -39,6 +39,9 @@ class PDFSCommon(object):
     def plot_options(self):
         return {}
 
+    def add_data(self, plot_name, algorithm, values):
+        return {}
+
     @staticmethod
     def column_indexes(dataset_name):
         return range(1, ExperimentsUtils.get_dataset_data_columns_count(dataset_name) + 1)

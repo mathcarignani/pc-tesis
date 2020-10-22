@@ -36,26 +36,26 @@ RESULTS_PATH = INFORME_PATH + "/results/10.2020/"
 
 #
 # (2) Globalize the result files generated in step (1)
-# GlobalizeResults("NM").run()
-# GlobalizeResults("M").run()
+GlobalizeResults("NM").run()
+GlobalizeResults("M").run()
 
 
 #
 # (3.2) Relative Performance of the Coders
 #
-# pdf1_path = RESULTS_PATH + '3.2/'
-# pdf1 = PDFS1(pdf1_path, 'global')
-# pdf1.create_pdfs()
-# pdf1.create_latex_table(pdf1_path)
+pdf1_path = RESULTS_PATH + '3.2/'
+pdf1 = PDFS1(pdf1_path, 'global')
+pdf1.create_pdfs()
+pdf1.create_latex_table(pdf1_path)
 
 
 #
 # 3.3 Window Size Parameter
 #
-# pdf3_path = RESULTS_PATH + '3.3/'
-# pdf3 = PDFS3(pdf3_path + 'window/')
-# pdf3.create_pdfs()  # LOCAL (BEST LOCAL WINDOW VS. BEST GLOBAL WINDOW)
-# pdf3.create_latex_table(pdf3_path)
+pdf3_path = RESULTS_PATH + '3.3/'
+pdf3 = PDFS3(pdf3_path + 'window/')
+pdf3.create_pdfs()  # LOCAL (BEST LOCAL WINDOW VS. BEST GLOBAL WINDOW)
+pdf3.create_latex_table(pdf3_path)
 
 
 #
@@ -65,7 +65,7 @@ pdf4_path = RESULTS_PATH + '3.4/'
 PDFS4(pdf4_path + 'pdf/', 'global').create_pdfs()  # GLOBAL
 ProcessResults(True, pdf4_path + 'results1', 1).run()
 
-# gzip_path = pdf4_path + 'gzip/'
-# GZipScript(gzip_path, 'results.csv', False).run()
-# GZipScript(gzip_path, 'results-t.csv', True).run()
-# ProcessResults(True, pdf4_path 'results2', 2, gzip_path, 'results-t.csv').run()
+gzip_path = pdf4_path + 'gzip/'
+GZipScript(gzip_path, 'results.csv', False).run()
+GZipScript(gzip_path, 'results-t.csv', True).run()
+ProcessResults(True, pdf4_path + 'results2', 2, gzip_path, 'results-t.csv').run()

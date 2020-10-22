@@ -56,9 +56,11 @@ class CompressionRatioPlot(CommonPlot):
             ax.legend(loc='upper right', bbox_to_anchor=(0.5, 0., 0.48, 0.95), fontsize='small', edgecolor='black',
                       scatterpoints=1, handlelength=1)
         else:
-            ax.scatter(x=x_axis, y=self.values3, c=self.value3_color, zorder=1, marker='x', s=36)
-            if self.options.get('circle_table_values'):
-                CommonPlot.circle_table_values(self.algorithm, self.options, ax, x_axis, self.values3)
+            y_axis = self.values3
+            size = len(y_axis)
+            x_axis = list(range(size))
+            opt = self.options['pdf_instance'].add_data('compression', self.algorithm, y_axis)
+            CommonPlot.scatter_plot(ax, x_axis, y_axis, size, PlotConstants.COLOR_BLACK, opt)
 
         ax.set_xticks(x_axis)
         ax.grid(b=True, color=PlotConstants.COLOR_SILVER, linestyle='dotted', zorder=0)
@@ -90,10 +92,10 @@ class CompressionRatioPlot(CommonPlot):
             new_tick_labels.append(new_tick_label)
         return new_tick_labels
 
-    def print_values(self):
-        print(self.algorithm + " Compression Ratio")
-        print("self.values0 = " + str(self.values0))
-        print("self.values3 = " + str(self.values3))
+    # def print_values(self):
+    #     print(self.algorithm + " Compression Ratio")
+    #     print("self.values0 = " + str(self.values0))
+    #     print("self.values3 = " + str(self.values3))
 
     def __check_sorted(self):
         if not self.additional_checks:

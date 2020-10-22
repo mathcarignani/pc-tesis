@@ -29,7 +29,7 @@ class PDFS3(PDFSCommon):
     HEIGHT_RATIOS = [30, 0, 30, 15, 30, 0, 30]
     PLOT_OPTIONS = {
         'window': {'title': 12, 'labels': [r'$OWS$', r'$LOWS$']},
-        'relative': {'check_pdf3': True, 'show_xlabel': True}
+        'relative': {'add_data': True, 'show_xlabel': True}
     }
 
     def __init__(self, path, datasets_names=None):
@@ -113,12 +113,14 @@ class PDFS3(PDFSCommon):
         filename = filename.replace("PDF-", "")
         return filename
 
-
     ####################################################################################################################
     ####################################################################################################################
     ####################################################################################################################
 
-    def add_data(self, algorithm, values):
+    def add_data(self, plot_name, algorithm, values):
+        if not self.PLOT_OPTIONS[plot_name].get('add_data'):
+            return {}
+
         minimum, maximum = min(values), max(values)
         assert(minimum >= 0)
         # (1) Check that the maximum does not change and occurs in the expected dataset/coder
@@ -128,7 +130,7 @@ class PDFS3(PDFSCommon):
         if self.dataset_name == "IRKIS" and algorithm == "CoderPCA" and self.filename == "vwc_1203.dat.csv":
             assert(maximum == expected_maximum)
             assert(str(round(maximum, 2)) == "10.6")
-            result = {'keys': ["PlotMax"], 'values': [maximum]}
+            result = {'keys': ["PlotMax"], 'indexes': [values.index(maximum)]}
         else:
             assert(maximum < expected_maximum)
 

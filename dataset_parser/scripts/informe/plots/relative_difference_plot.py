@@ -27,19 +27,6 @@ class RelativeDifferencePlot(CommonPlot):
     def min_max(self):
         return [min(self.values), max(self.values)]
 
-
-    @classmethod
-    def add_min_max_circles(cls, ax, x_axis, y_axis, action):
-        if action == "PlotMax":
-            color = PlotConstants.VALUE0_COLOR
-        elif action == "PlotMin":
-            color = PlotConstants.VALUE3_COLOR
-        else:
-            return
-        new_x_axis, values = x_axis[-1:], y_axis[-1:]  # last value
-        ax.scatter(x=new_x_axis, y=values, zorder=2, facecolors='none', edgecolors=color, s=200)
-
-
     def plot(self, ax, ymin, ymax, extra_options={}):
         # self.print_values2()  # TODO: uncomment to print the window stats
         extra_options.update(self.options); self.options = extra_options
@@ -47,11 +34,7 @@ class RelativeDifferencePlot(CommonPlot):
         y_axis = self.values
         size = len(y_axis)
         x_axis = list(range(size))
-
-        opt = {}
-        if self.options.get('check_pdf1') or self.options.get('check_pdf3'): # PDFS1
-            opt = self.options['pdf_instance'].add_data(self.algorithm, y_axis) # "PlotMax"/"PlotMin"/None
-
+        opt = self.options['pdf_instance'].add_data('relative', self.algorithm, y_axis)
         CommonPlot.scatter_plot(ax, x_axis, y_axis, size, PlotConstants.COLOR_BLACK, opt)
 
         ax.set_xticks(x_axis)
@@ -76,27 +59,27 @@ class RelativeDifferencePlot(CommonPlot):
         if max_value > 0:
             print("max_value = " + str(max_value))
 
-    def print_values2(self):
-        if max(self.values) == 0:
-            return
-
-        if self.filename == "vwc_1202.dat.csv" and self.algorithm == "CoderPCA":
-            print("Filename,Algorithm,Threshold,Value,,>1,>2,>5")
-        for i, value in enumerate(self.values):
-            if value == 0:
-                continue
-            threshold = ExperimentsUtils.THRESHOLDS[i]
-            str_value = str(value)
-            if value > 5:
-                extra_row = ['', '', str_value]
-            elif value > 2:
-                extra_row = ['', str_value, '']
-            elif value > 1:
-                extra_row = [str_value, '', '']
-            else:
-                extra_row = ['', '', '']
-            extra_row_str = ",".join(extra_row)
-            print(self.filename + "," + self.algorithm + "," + str(threshold) + "," + str_value + ",," + extra_row_str)
+    # def print_values2(self):
+    #     if max(self.values) == 0:
+    #         return
+    #
+    #     if self.filename == "vwc_1202.dat.csv" and self.algorithm == "CoderPCA":
+    #         print("Filename,Algorithm,Threshold,Value,,>1,>2,>5")
+    #     for i, value in enumerate(self.values):
+    #         if value == 0:
+    #             continue
+    #         threshold = ExperimentsUtils.THRESHOLDS[i]
+    #         str_value = str(value)
+    #         if value > 5:
+    #             extra_row = ['', '', str_value]
+    #         elif value > 2:
+    #             extra_row = ['', str_value, '']
+    #         elif value > 1:
+    #             extra_row = [str_value, '', '']
+    #         else:
+    #             extra_row = ['', '', '']
+    #         extra_row_str = ",".join(extra_row)
+    #         print(self.filename + "," + self.algorithm + "," + str(threshold) + "," + str_value + ",," + extra_row_str)
 
     @classmethod
     def ylims(cls, total_min, total_max):

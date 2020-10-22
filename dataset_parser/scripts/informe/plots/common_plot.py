@@ -1,6 +1,7 @@
 import sys
 sys.path.append('.')
 
+import numpy as n
 import matplotlib.pyplot as plt
 import matplotlib.markers as mmarkers
 from scripts.informe.plot.plot_constants import PlotConstants
@@ -91,32 +92,18 @@ class CommonPlot(object):
         sc.set_paths(paths)
 
     @classmethod
-    def circle_table_values(cls, algorithm, options, ax, x_axis, y_axis):
-        dataset_name, col_index = options['pdf_instance'].dataset_name, options['pdf_instance'].col_index
-        if not(dataset_name == "ElNino" and col_index == 7):
-            return
-        # 5-ElNino-7.pdf
-        new_x_axis, values = x_axis[:], y_axis[:]  # copy lists by value
-        if algorithm == "CoderPCA":
-            new_x_axis, values = [new_x_axis[0]], [values[0]]  # first value
-        elif algorithm == "CoderAPCA":
-            new_x_axis, values = new_x_axis[1:], values[1:]  # every value except the first
-        else:
-            return
-        ax.scatter(x=new_x_axis, y=values, zorder=2, facecolors='none', edgecolors='blue', s=200)
-
-    @classmethod
-    def scatter_plot(cls, ax, x_axis, y_axis, size, color, opt={}):
+    def scatter_plot(cls, ax, x_axis, y_axis, size, color, opt=None):
+        x_axis = list(x_axis)
+        y_axis = list(y_axis)
         colors = [color] * size
         facecolors, edgecolors = colors.copy(), colors.copy()
         sizes = [plt.rcParams['lines.markersize'] ** 2] * size
         markers = ['x'] * size
 
-        if len(opt.keys()) > 0:
+        if opt and len(opt.keys()) > 0:
             for idx, key in enumerate(opt['keys']):
-                value = opt['values'][idx]
+                index = opt['indexes'][idx]
                 value_color = PlotConstants.VALUE0_COLOR if key == "PlotMax" else PlotConstants.VALUE3_COLOR
-                index = y_axis.index(value)
                 colors = colors[:index] + ['none'] + colors[index:]
                 facecolors[index] = 'none'
                 sizes = sizes[:index] + [200] + sizes[index:]
