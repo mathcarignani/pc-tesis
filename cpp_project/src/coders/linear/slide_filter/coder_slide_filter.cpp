@@ -62,6 +62,7 @@ void CoderSlideFilter::compress()
     int inputSize = m_pSFData->getDataLength();
     if (inputSize == 1)
     {
+        // TODO: code an integer
         DataItem item = m_pSFData->getAt(0);
         codeEntry(true, item.timestamp, item.value);
         m_nBegin_Point = 1;

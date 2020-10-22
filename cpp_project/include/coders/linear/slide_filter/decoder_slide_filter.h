@@ -15,7 +15,6 @@ class DecoderSlideFilter: public DecoderCols {
 
 private:
     Column* column;
-    CDataStream* m_pApproxData;
     int current_position;
     SlideFiltersEntry* lastDecodedEntry;
 
@@ -24,8 +23,7 @@ private:
     SlideFiltersEntry* decodeEntry();
     SlideFiltersEntry* getAt(int position);
     void addValue(DataItem data_item);
-    void addNoData();
-    void decompress(std::vector<int> x_coords_vector);
+    void decompress(std::vector<int> x_coords_vector, int lastTimeStamp);
 
 public:
     using DecoderCols::DecoderCols;
