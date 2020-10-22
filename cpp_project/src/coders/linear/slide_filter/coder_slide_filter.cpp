@@ -41,10 +41,6 @@ void CoderSlideFilter::codeColumnWhile(std::string csv_value){
 void CoderSlideFilter::codeColumnAfter() {
     assert(m_pSFData->length == total_data_rows);
     if (total_data_rows > 0){
-//        for(int i = 0; i < m_pSFData->length; i++){
-//            DataItem entry = m_pSFData->getAt(i);
-//            std::cout << entry.timestamp << " " << entry.value << std::endl;
-//        }
         compress();
     }
     delete m_pSFData;
@@ -196,11 +192,10 @@ Line CoderSlideFilter::getFittestLine_G(int beginPoint, int endPoint, Line curU,
 void CoderSlideFilter::recording_mechanism(int& position)
 {
     int inputSize = m_pSFData->getDataLength();
-    bool existInter = false;
-    Point ul = m_curU.getIntersection(m_curL);
+    m_curU.getIntersection(m_curL);
     DataItem begin_curSeg = m_pSFData->getAt(m_nBegin_Point);
 
-    existInter = updateUandLforConnectedSegment(m_curU,m_curL,m_prevG);
+    bool existInter = updateUandLforConnectedSegment(m_curU,m_curL,m_prevG);
     m_curG = getFittestLine_G(m_nBegin_Point, position, m_curU, m_curL);
 
     if (m_nBegin_Point == 0)
