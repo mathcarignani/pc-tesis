@@ -12,6 +12,7 @@
 
 std::vector<std::string> DecoderSlideFilter::decodeDataColumn(){
     column = new Column(data_rows_count, mask->total_data, mask->total_no_data);
+    int unprocessed_data_rows = column->unprocessed_data_rows;
 
     if (mask->total_data > 0){
 //        std::cout << "CoderUtils::createXCoordsVectorMaskMode" << std::endl;
@@ -24,26 +25,31 @@ std::vector<std::string> DecoderSlideFilter::decodeDataColumn(){
 //        std::cout << "m_pApproxData->size() = " << m_pApproxData->size() << std::endl;
 //        std::cout << "column->unprocessed_data_rows = " << column->unprocessed_data_rows << std::endl;
 //        std::cout << "data_rows_count = " << data_rows_count << std::endl;
-        assert(m_pApproxData->size() == column->unprocessed_data_rows);
+        assert(m_pApproxData->size() == unprocessed_data_rows);
     }
 
-    int pos = 0;
-    mask->reset();
-    while (column->notFinished()){
-        if (mask->isNoData()) {
-            column->addNoData();
-            continue;
-        }
-        DataItem data_item = m_pApproxData->getAt(pos);
-        std::string value = Conversor::doubleToIntToString(data_item.value);
-        column->addData(value);
-        pos++;
-    }
+//    std::cout << "************************************" << std::endl;
+//
+//    int pos = 0;
+//    mask->reset();
+//    column = new Column(data_rows_count, mask->total_data, mask->total_no_data);
+//    while (column->notFinished()){
+//        if (mask->isNoData()) {
+//            std::cout << ".";
+//            column->addNoData();
+//            continue;
+//        }
+//        DataItem data_item = m_pApproxData->getAt(pos);
+//        std::string value = Conversor::doubleToIntToString(data_item.value);
+//        std::cout << value << "-" << std::endl;
+//        column->addData(value);
+//        pos++;
+//    }
 
     if (mask->total_data > 0){
         delete m_pApproxData;
     }
-    column->assertAfter();
+//    column->assertAfter();
     return column->column_vector;
 }
 
@@ -96,6 +102,30 @@ SlideFiltersEntry* DecoderSlideFilter::getAt(int position){
     return lastDecodedEntry;
 }
 
+
+void DecoderSlideFilter::addValue(DataItem data_item){
+    m_pApproxData->add(data_item);
+
+//    while (column->notFinished()) {
+//    std::cout << "column->processed_data_rows = " << column->unprocessed_data_rows << std::endl;
+//    std::cout << "column->processed_data_rows = " << column->unprocessed_no_data_rows << std::endl;
+    while (mask->isNoData()) {
+//        std::cout << "ASASAS" << std::endl;
+        addNoData();
+    }
+//    }
+
+    std::string value = Conversor::doubleToIntToString(data_item.value);
+//    std::cout << value << "-" << std::endl;
+    column->addData(value);
+}
+
+void DecoderSlideFilter::addNoData(){
+//    std::cout << ".";
+    column->addNoData();
+}
+
+
 // Calculate approximation data from model parameters
 void DecoderSlideFilter::decompress(std::vector<int> x_coords_vector)
 {
@@ -103,21 +133,23 @@ void DecoderSlideFilter::decompress(std::vector<int> x_coords_vector)
     SlideFiltersEntry slEntry1, slEntry2;
     DataItem inputEntry;
 
+    int lastTimeStamp = calculateLastDataTimestamp() + 1;
+//    std::cout << "lastTimeStamp = " << lastTimeStamp << std::endl;
+
+    mask->reset();
     current_position = -1;
 
     if (x_coords_vector.size() == 1){
         slEntry1 = *getAt(0);
         inputEntry.timestamp = slEntry1.timestamp;
         inputEntry.value = slEntry1.value;
-        m_pApproxData->add(inputEntry);
+        addValue(inputEntry);
         return;
     }
 
     int position = 0;
     double timeStamp = 0;
     int first_coord = x_coords_vector.at(0);
-    int lastTimeStamp = calculateLastDataTimestamp() + 1;
-    std::cout << "lastTimeStamp = " << lastTimeStamp << std::endl;
 
     Line* l = NULL;
 
@@ -159,7 +191,7 @@ void DecoderSlideFilter::decompress(std::vector<int> x_coords_vector)
 //                std::cout << "    Disconnected" << std::endl;
                 inputEntry.timestamp = slEntry1.timestamp;
                 inputEntry.value = slEntry1.value;
-                m_pApproxData->add(inputEntry);
+                addValue(inputEntry);
 //                std::cout << "    add(inputEntry) = (" << inputEntry.timestamp << ", " << inputEntry.value << ") ********************************************************" << std::endl;
                 break;
             }
@@ -190,9 +222,16 @@ void DecoderSlideFilter::decompress(std::vector<int> x_coords_vector)
         //Get point on line at each corresponding time
         inputEntry.timestamp = i;
         inputEntry.value = l->getValue(inputEntry.timestamp);
-        m_pApproxData->add(inputEntry);
+        addValue(inputEntry);
+
 //        std::cout << "    add(inputEntry) = (" << inputEntry.timestamp << ", " << inputEntry.value << ") ********************************************************" << std::endl;
     }
+    while (column->notFinished()) {
+        if (mask->isNoData()) {
+            addNoData();
+        }
+    }
+    column->assertAfter();
 
     delete l;
 }

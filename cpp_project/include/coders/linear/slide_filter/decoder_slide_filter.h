@@ -23,6 +23,8 @@ private:
     int calculateLastDataTimestamp();
     SlideFiltersEntry* decodeEntry();
     SlideFiltersEntry* getAt(int position);
+    void addValue(DataItem data_item);
+    void addNoData();
     void decompress(std::vector<int> x_coords_vector);
 
 public:
