@@ -28,6 +28,13 @@ std::vector<std::string> DecoderSlideFilter::decodeDataColumn(){
         assert(m_pApproxData->size() == unprocessed_data_rows);
     }
 
+    while (column->notFinished()) {
+        if (mask->isNoData()) {
+            addNoData();
+        }
+    }
+//    column->assertAfter();
+//
 //    std::cout << "************************************" << std::endl;
 //
 //    int pos = 0;
@@ -35,13 +42,13 @@ std::vector<std::string> DecoderSlideFilter::decodeDataColumn(){
 //    column = new Column(data_rows_count, mask->total_data, mask->total_no_data);
 //    while (column->notFinished()){
 //        if (mask->isNoData()) {
-//            std::cout << ".";
+////            std::cout << ".";
 //            column->addNoData();
 //            continue;
 //        }
 //        DataItem data_item = m_pApproxData->getAt(pos);
 //        std::string value = Conversor::doubleToIntToString(data_item.value);
-//        std::cout << value << "-" << std::endl;
+////        std::cout << value << "-" << std::endl;
 //        column->addData(value);
 //        pos++;
 //    }
@@ -49,7 +56,7 @@ std::vector<std::string> DecoderSlideFilter::decodeDataColumn(){
     if (mask->total_data > 0){
         delete m_pApproxData;
     }
-//    column->assertAfter();
+    column->assertAfter();
     return column->column_vector;
 }
 
@@ -226,12 +233,6 @@ void DecoderSlideFilter::decompress(std::vector<int> x_coords_vector)
 
 //        std::cout << "    add(inputEntry) = (" << inputEntry.timestamp << ", " << inputEntry.value << ") ********************************************************" << std::endl;
     }
-    while (column->notFinished()) {
-        if (mask->isNoData()) {
-            addNoData();
-        }
-    }
-    column->assertAfter();
 
     delete l;
 }
