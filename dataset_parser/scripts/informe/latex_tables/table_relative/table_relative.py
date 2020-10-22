@@ -50,7 +50,6 @@ class TableRelative(object):
         max_zero = max_str == "-0.0"
         if max_zero:
             max_str = "0"
-
         if data['info'] == "PlotMin":
             assert(min_str == "-0.29")
             min_str = TableRelative.color_value(min_str, 'blue')

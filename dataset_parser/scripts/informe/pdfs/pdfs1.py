@@ -71,16 +71,16 @@ class PDFS1(PDFSCommon):
         expected_maximum = 50.77815044407712
         expected_minimum = -0.2898755656108619
 
-        result = [None, None]
         if self.dataset_name == "NOAA-SST" and algorithm == "CoderPCA":
             assert(maximum == expected_maximum)
-
+            assert(str(round(maximum, 2)) == "50.78")
             result = ["PlotMax", maximum]
         else:
             assert(maximum < expected_maximum)
 
         if self.dataset_name == "NOAA-SPC-tornado" and algorithm == "CoderAPCA" and self.col_index == 2:
             assert(minimum == expected_minimum)
+            assert(str(round(minimum, 2)) == "-0.29")
             result = ["PlotMin", minimum]
         else:
             assert(minimum > expected_minimum)
