@@ -14,7 +14,6 @@ class CoderSlideFilter: public CoderCols {
 
 private:
     std::vector<int> error_thresholds_vector;
-    std::vector<SlideFiltersEntry*> entries_vector;
     SlideFilterWindow* m_pSFData;
     SlideFilterWindow* m_pSFOutput;
 
@@ -31,9 +30,7 @@ private:
     void codeColumnWhile(std::string csv_value) override;
     void codeColumnAfter() override;
 
-    void add(SlideFiltersEntry & recording);
-    void codeEntries();
-    void codeEntry(SlideFiltersEntry* recording);
+    void codeEntry(bool connToFollow, double timestamp, double value);
 
     void compress();
     void initializeU_L(double t1, double v1, double t2, double v2, double eps);

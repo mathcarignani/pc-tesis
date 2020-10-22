@@ -15,10 +15,6 @@ SlideFilterWindow::SlideFilterWindow(CoderSlideFilter* coder_){
     coder = coder_;
 }
 
-CoderSlideFilter* SlideFilterWindow::getCompressData(){
-    return coder;
-}
-
 void SlideFilterWindow::addDataItem(int timestamp, std::string value){
     int new_timestamp = (length == 0) ? 1 : data[length-1].timestamp + timestamp;
     int value_int = Conversor::stringToInt(value);

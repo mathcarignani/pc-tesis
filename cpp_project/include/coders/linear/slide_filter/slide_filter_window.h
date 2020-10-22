@@ -19,7 +19,6 @@ private:
 public:
     SlideFilterWindow(int total_data_rows_, int error_threshold_);
     SlideFilterWindow(CoderSlideFilter* coder_);
-    CoderSlideFilter* getCompressData();
     void addDataItem(int timestamp, std::string value);
     int getDataLength();
     DataItem getAt(int pos);
