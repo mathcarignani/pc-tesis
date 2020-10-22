@@ -117,6 +117,21 @@ SlideFiltersEntry* DecoderSlideFilter::getAt(std::vector<SlideFiltersEntry*> & m
     return m_pCompressData.at(position);
 }
 
+SlideFiltersEntry* DecoderSlideFilter::getAt(int position){
+    SlideFiltersEntry sfe;
+    sfe = m_pCompressData->getAt(position);
+    lastDecodedEntry = &sfe;
+    return lastDecodedEntry;
+
+    if (current_position < position){
+        current_position = position;
+        SlideFiltersEntry sfe;
+        sfe = m_pCompressData->getAt(current_position);
+        lastDecodedEntry = &sfe;
+    }
+    return lastDecodedEntry;
+}
+
 // Calculate approximation data from model parameters
 void DecoderSlideFilter::decompress(std::vector<int> x_coords_vector)
 {
@@ -125,8 +140,10 @@ void DecoderSlideFilter::decompress(std::vector<int> x_coords_vector)
     SlideFiltersEntry slEntry1, slEntry2;
     DataItem inputEntry;
 
+    current_position = -1;
+
     if (size == 1){
-        slEntry1 = m_pCompressData->getAt(0);
+        slEntry1 = *getAt(0);
         inputEntry.timestamp = slEntry1.timestamp;
         inputEntry.value = slEntry1.value;
         m_pApproxData->add(inputEntry);
@@ -155,13 +172,13 @@ void DecoderSlideFilter::decompress(std::vector<int> x_coords_vector)
 //            std::cout << "VAL_TIMESTAMP = " << timeStamp << std::endl;
 //            std::cout << "----------------------------------------------------------" << std::endl;
 
-            slEntry1 = m_pCompressData->getAt(position);
+            slEntry1 = *getAt(position);
 
             if (slEntry1.connToFollow)//Connected
             {
 //                std::cout << "Connected" << std::endl;
                 position++;
-                slEntry2 = m_pCompressData->getAt(position);
+                slEntry2 = *getAt(position);
 
                 //Go back for second reading
                 if (slEntry2.connToFollow)
