@@ -55,7 +55,8 @@ class TableMinMax(object):
         output_rows = [first_row]
 
         for result in self.table_results:
-            coder = result['coder_name'].replace('Coder', '')  # e.g. "PCA"
+            coder = result['coder_name'].replace('Coder', '')  # "CoderPCA" => "PCA"
+            coder = coder.replace('Limit', '') # "GAMPSLimit" => "GAMPS"
             coder_style = LatexUtils.coder_style(coder)
             coder_row = [coder + coder_style]
             for idx, value in enumerate(result['coder_rds']):

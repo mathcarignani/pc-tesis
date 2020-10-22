@@ -61,7 +61,7 @@ class WindowsPlot(CommonPlot):
             y_axis = y_axis_3.copy()
             size = len(x_axis)
             opt = self.options['pdf_instance'].add_data('window', self.algorithm, y_axis)
-            CommonPlot.scatter_plot(ax, x_axis, y_axis, size, PlotConstants.COLOR_BLACK, opt)
+            CommonPlot.scatter_plot(ax, x_axis, y_axis, size, global_color, opt)
 
         ax.set_xticks(x_axis_3)
         ax.grid(b=True, color=PlotConstants.COLOR_SILVER, linestyle='dotted')

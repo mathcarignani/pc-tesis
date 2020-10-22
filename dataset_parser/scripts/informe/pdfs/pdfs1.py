@@ -8,6 +8,7 @@ from scripts.informe.pdfs.pdf_page import PdfPage
 from scripts.informe.pdfs.pdfs_common import PDFSCommon
 from scripts.compress.experiments_utils import ExperimentsUtils
 from scripts.informe.latex_tables.table_relative.table_relative import TableRelative
+from scripts.informe.plot.plot_constants import PlotConstants
 
 
 class PDFS1(PDFSCommon):
@@ -78,14 +79,14 @@ class PDFS1(PDFSCommon):
         if self.dataset_name == "NOAA-SST" and algorithm == "CoderPCA":
             assert(maximum == expected_maximum)
             assert(str(round(maximum, 2)) == "50.78")
-            result = {'keys': ["PlotMax"], 'indexes': [values.index(maximum)]}
+            result = {'keys': ["PlotMax"], 'indexes': [values.index(maximum)], 'color': PlotConstants.VALUE0_COLOR}
         else:
             assert(maximum < expected_maximum)
 
         if self.dataset_name == "NOAA-SPC-tornado" and algorithm == "CoderAPCA" and self.col_index == 2:
             assert(minimum == expected_minimum)
             assert(str(round(minimum, 2)) == "-0.29")
-            result = {'keys': ["PlotMin"], 'indexes': [values.index(minimum)]}
+            result = {'keys': ["PlotMin"], 'indexes': [values.index(minimum)], 'color': PlotConstants.VALUE3_COLOR}
         else:
             assert(minimum > expected_minimum)
 

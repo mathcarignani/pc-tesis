@@ -10,6 +10,7 @@ from scripts.informe.pandas_utils.pandas_methods import PandasMethods
 from scripts.informe.pdfs.pdf_page import PdfPage
 from scripts.informe.pdfs.pdfs_common import PDFSCommon
 from scripts.informe.latex_tables.table_windows.table_windows import TableWindows
+from scripts.informe.plot.plot_constants import PlotConstants
 
 
 class PDFS3(PDFSCommon):
@@ -130,7 +131,7 @@ class PDFS3(PDFSCommon):
         if self.dataset_name == "IRKIS" and algorithm == "CoderPCA" and self.filename == "vwc_1203.dat.csv":
             assert(maximum == expected_maximum)
             assert(str(round(maximum, 2)) == "10.6")
-            result = {'keys': ["PlotMax"], 'indexes': [values.index(maximum)]}
+            result = {'keys': ["PlotMax"], 'indexes': [values.index(maximum)], 'color': PlotConstants.VALUE0_COLOR}
         else:
             assert(maximum < expected_maximum)
 

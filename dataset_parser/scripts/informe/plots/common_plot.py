@@ -102,10 +102,11 @@ class CommonPlot(object):
 
         if opt and len(opt.keys()) > 0:
             for idx, key in enumerate(opt['keys']):
-                index = opt['indexes'][idx]
-                value_color = PlotConstants.VALUE0_COLOR if key == "PlotMax" else PlotConstants.VALUE3_COLOR
+                # shift the index a number of times equal to the number of values previously inserted
+                index = opt['indexes'][idx] + idx
+                value_color = opt.get('color')
                 colors = colors[:index] + ['none'] + colors[index:]
-                facecolors[index] = 'none'
+                facecolors.insert(index, 'none')
                 sizes = sizes[:index] + [200] + sizes[index:]
                 markers = markers[:index] + ['o'] + markers[index:]
                 edgecolors = edgecolors[:index] + [value_color] + edgecolors[index:]

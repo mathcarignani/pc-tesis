@@ -70,11 +70,11 @@ class PDFS4(PDFSCommon):
             return {}
 
         if algorithm == "CoderPCA":
-            return {'keys': ["PlotMax"], 'indexes': [0]}
+            return {'keys': ["PlotMax"], 'indexes': [0], 'color': 'blue'}
         elif algorithm == "CoderAPCA":
             size = len(values)
             array = list(range(1, size)) # [1, 2, ..., size-1]
-            result = {'keys': ["PlotMax"]*(size-1), 'indexes': array}
+            result = {'keys': ["PlotMax"]*(size-1), 'indexes': array, 'color': 'blue'}
             return result
         else:
             return {}

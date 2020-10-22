@@ -60,7 +60,7 @@ class CompressionRatioPlot(CommonPlot):
             size = len(y_axis)
             x_axis = list(range(size))
             opt = self.options['pdf_instance'].add_data('compression', self.algorithm, y_axis)
-            CommonPlot.scatter_plot(ax, x_axis, y_axis, size, PlotConstants.COLOR_BLACK, opt)
+            CommonPlot.scatter_plot(ax, x_axis, y_axis, size, self.value3_color, opt)
 
         ax.set_xticks(x_axis)
         ax.grid(b=True, color=PlotConstants.COLOR_SILVER, linestyle='dotted', zorder=0)

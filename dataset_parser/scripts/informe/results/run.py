@@ -36,8 +36,8 @@ RESULTS_PATH = INFORME_PATH + "/results/10.2020/"
 
 #
 # (2) Globalize the result files generated in step (1)
-GlobalizeResults("NM").run()
-GlobalizeResults("M").run()
+# GlobalizeResults("NM").run()
+# GlobalizeResults("M").run()
 
 
 #
@@ -63,9 +63,9 @@ pdf3.create_latex_table(pdf3_path)
 #
 pdf4_path = RESULTS_PATH + '3.4/'
 PDFS4(pdf4_path + 'pdf/', 'global').create_pdfs()  # GLOBAL
-ProcessResults(True, pdf4_path + 'results1', 1).run()
+# ProcessResults(True, pdf4_path + 'results1', 1).run()
 
-gzip_path = pdf4_path + 'gzip/'
-GZipScript(gzip_path, 'results.csv', False).run()
-GZipScript(gzip_path, 'results-t.csv', True).run()
-ProcessResults(True, pdf4_path + 'results2', 2, gzip_path, 'results-t.csv').run()
+# gzip_path = pdf4_path + 'gzip/'
+# GZipScript(gzip_path, 'results.csv', False).run()
+# GZipScript(gzip_path, 'results-t.csv', True).run()
+# ProcessResults(True, pdf4_path + 'results2', 2, gzip_path, 'results-t.csv').run()
