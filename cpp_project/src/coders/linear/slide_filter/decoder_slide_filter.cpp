@@ -14,14 +14,14 @@ std::vector<std::string> DecoderSlideFilter::decodeDataColumn(){
     column = new Column(data_rows_count, mask->total_data, mask->total_no_data);
 
     if (mask->total_data > 0){
-        m_pCompressData = new DynArray<SlideFiltersEntry>();
-//        std::cout << "decodeEntries" << std::endl;
-        decodeEntries();
-
 //        std::cout << "CoderUtils::createXCoordsVectorMaskMode" << std::endl;
 //        VectorUtils::printIntVector(time_delta_vector);
         std::vector<int> x_coords_vector = CoderUtils::createXCoordsVectorMaskModeSF(mask, time_delta_vector, 1);
 //        VectorUtils::printIntVector(x_coords_vector);
+
+        m_pCompressData = new DynArray<SlideFiltersEntry>();
+//        std::cout << "decodeEntries" << std::endl;
+        decodeEntries();
 
 //        std::cout << "decompress" << std::endl;
         decompress(x_coords_vector);
