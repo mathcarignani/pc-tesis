@@ -22,8 +22,7 @@ void CoderSlideFilter::codeColumnBefore(){
     m_nBegin_Point = 0;
     delta_sum = 0;
     int error_threshold = error_thresholds_vector.at(column_index);
-    m_pSFData = new SlideFilterWindow(total_data_rows, error_threshold);
-    m_pSFOutput = new SlideFilterWindow(this);
+    data = new SlideFilterWindow(total_data_rows, error_threshold);
 }
 
 void CoderSlideFilter::codeColumnWhile(std::string csv_value){
@@ -34,17 +33,16 @@ void CoderSlideFilter::codeColumnWhile(std::string csv_value){
     }
     delta_sum += CoderUtils::calculateDelta(delta, row_index);
 //    std::cout << "I=" << row_index << "----- " << delta_sum << " ------------------------> " << csv_value << std::endl;
-    m_pSFData->addDataItem(delta_sum, csv_value);
+    data->addDataItem(delta_sum, csv_value);
     delta_sum = 0;
 }
 
 void CoderSlideFilter::codeColumnAfter() {
-    assert(m_pSFData->length == total_data_rows);
+    assert(data->length == total_data_rows);
     if (total_data_rows > 0){
         compress();
     }
-    delete m_pSFData;
-    delete m_pSFOutput;
+    delete data;
 }
 
 void CoderSlideFilter::codeEntry(bool connToFollow, double timestamp, double value){
@@ -56,8 +54,37 @@ void CoderSlideFilter::codeEntry(bool connToFollow, double timestamp, double val
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+void CoderSlideFilter::compress(){
+    int inputSize = data->getDataLength();
+    int i = 0;
+
+    std::cout << "inputSize = " << inputSize << std::endl;
+    std::cout << "window_size = " << window_size << std::endl;
+    window_size = 1000000;
+
+    while(i < inputSize) {
+        int win_size = ((inputSize - i) < window_size) ? (inputSize - i) : window_size;
+        std::cout << "win_size = " << win_size << std::endl;
+        int error_threshold = error_thresholds_vector.at(column_index);
+        m_pSFData = new SlideFilterWindow(win_size, error_threshold);
+
+        int first_timestamp = data->getAt(i).timestamp;
+        for(int j = i; j < i + win_size; j++){
+            DataItem item2 = data->getAt(j);
+            m_pSFData->addDataItemTwo(item2.timestamp - first_timestamp, item2.value);
+        }
+        compressWindow();
+        delete m_pSFData;
+        i += win_size;
+    }
+
+//    m_pSFData = data;
+//    compressWindow();
+}
+
+
 // compress raw data
-void CoderSlideFilter::compress()
+void CoderSlideFilter::compressWindow()
 {
     int inputSize = m_pSFData->getDataLength();
     if (inputSize == 1)

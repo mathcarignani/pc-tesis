@@ -14,8 +14,8 @@ class CoderSlideFilter: public CoderCols {
 
 private:
     std::vector<int> error_thresholds_vector;
+    SlideFilterWindow* data;
     SlideFilterWindow* m_pSFData;
-    SlideFilterWindow* m_pSFOutput;
 
     int m_nBegin_Point;
 
@@ -33,6 +33,7 @@ private:
     void codeEntry(bool connToFollow, double timestamp, double value);
 
     void compress();
+    void compressWindow();
     void initializeU_L(double t1, double v1, double t2, double v2, double eps);
     bool updateUandLforConnectedSegment(Line& curU, Line& curL, Line prevG);
     Line getFittestLine_G(int beginPoint, int endPoint, Line curU, Line curL);
