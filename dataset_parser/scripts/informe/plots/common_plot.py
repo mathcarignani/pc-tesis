@@ -90,21 +90,6 @@ class CommonPlot(object):
         sc.set_paths(paths)
 
     @classmethod
-    def add_max_circle(cls, algorithm, options, ax, x_axis, y_axis):
-        dataset_name, col_index = options['pdf_instance'].dataset_name, options['pdf_instance'].col_index
-
-        if not(dataset_name == "IRKIS" and col_index == 1 and algorithm == "CoderPCA"):
-            return
-
-        maximum = max(y_axis) # 10.6830419509284
-        if not(10.68 < maximum < 10.69):
-            return
-
-        # 1-IRKIS-2-1.pdf
-        new_x_axis, values = [x_axis[5]], [y_axis[5]]
-        ax.scatter(x=new_x_axis, y=values, zorder=2, facecolors='none', edgecolors=PlotConstants.VALUE0_COLOR, s=200)
-
-    @classmethod
     def circle_table_values(cls, algorithm, options, ax, x_axis, y_axis):
         dataset_name, col_index = options['pdf_instance'].dataset_name, options['pdf_instance'].col_index
         if not(dataset_name == "ElNino" and col_index == 7):

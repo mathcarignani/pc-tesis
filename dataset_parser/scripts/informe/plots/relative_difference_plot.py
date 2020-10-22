@@ -46,8 +46,6 @@ class RelativeDifferencePlot(CommonPlot):
         # self.print_values2()  # TODO: uncomment to print the window stats
         extra_options.update(self.options); self.options = extra_options
 
-        self._check_values()
-
         # scatter plot
         size = len(self.values)
         x_axis, y_axis = list(range(size)), self.values
@@ -56,18 +54,22 @@ class RelativeDifferencePlot(CommonPlot):
         sizes = [plt.rcParams['lines.markersize'] ** 2] * size
         markers = ['x'] * size
 
-        if self.options.get('add_min_max_circles'):
-            key, value = self.options['pdf_instance'].check_min_max(self.algorithm, y_axis) # "PlotMax"/"PlotMin"/None
-            if key in ["PlotMin", "PlotMax"]:
-                color = PlotConstants.VALUE0_COLOR if key == "PlotMax" else PlotConstants.VALUE3_COLOR
-                index = y_axis.index(value)
-                colors = colors[:index] + ['none'] + colors[index:]
-                facecolors[index] = 'none'
-                sizes = sizes[:index] + [200] + sizes[index:]
-                markers = markers[:index] + ['o'] + markers[index:]
-                edgecolors = edgecolors[:index] + [color] + edgecolors[index:]
-                x_axis = x_axis[:index] + [x_axis[index]] + x_axis[index:]
-                y_axis = y_axis[:index] + [y_axis[index]] + y_axis[index:]
+        key, value = None, None
+        if self.options.get('check_pdf1'): # PDFS1
+            key, value = self.options['pdf_instance'].add_data(self.algorithm, y_axis) # "PlotMax"/"PlotMin"/None
+        elif self.options.get('check_pdf3'): # PDFS3
+            key, value = self.options['pdf_instance'].add_data(self.algorithm, y_axis) # "PlotMax"/None
+
+        if key in ["PlotMin", "PlotMax"]:
+            color = PlotConstants.VALUE0_COLOR if key == "PlotMax" else PlotConstants.VALUE3_COLOR
+            index = y_axis.index(value)
+            colors = colors[:index] + ['none'] + colors[index:]
+            facecolors[index] = 'none'
+            sizes = sizes[:index] + [200] + sizes[index:]
+            markers = markers[:index] + ['o'] + markers[index:]
+            edgecolors = edgecolors[:index] + [color] + edgecolors[index:]
+            x_axis = x_axis[:index] + [x_axis[index]] + x_axis[index:]
+            y_axis = y_axis[:index] + [y_axis[index]] + y_axis[index:]
 
         sc = ax.scatter(x=x_axis, y=y_axis, c=colors, facecolors=facecolors, sizes=sizes, edgecolors=edgecolors)
 
@@ -76,18 +78,8 @@ class RelativeDifferencePlot(CommonPlot):
         ax.grid(b=True, color=PlotConstants.COLOR_SILVER, linestyle='dotted')
         ax.set_axisbelow(True)
         # ax.legend()
-
-        if self.options.get('add_max_circle'):
-            CommonPlot.add_max_circle(self.algorithm, self.options, ax, x_axis, self.values)
-
         CommonPlot.set_lim(ax, ymin, ymax)
         self._labels(ax, self.options)
-
-    def _check_values(self):
-        minimum = min(self.values)
-        if minimum < 0 and self.options.get('check_never_negative'):
-            raise(StandardError, "The values must be >= 0.")
-            assert(minimum >= 0)
 
     def _labels(self, ax, options):
         CommonPlot.label_title(ax, options, self.algorithm)

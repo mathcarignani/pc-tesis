@@ -2,7 +2,6 @@ import sys
 sys.path.append('.')
 
 from matplotlib.backends.backend_pdf import PdfPages
-
 from scripts.compress.experiments_utils import ExperimentsUtils
 from scripts.informe.results_parsing.results_reader import ResultsReader
 from scripts.informe.results_parsing.results_to_dataframe import ResultsToDataframe
@@ -10,32 +9,27 @@ from scripts.informe.pandas_utils.pandas_utils import PandasUtils
 from scripts.informe.pandas_utils.pandas_methods import PandasMethods
 from scripts.informe.pdfs.pdf_page import PdfPage
 from scripts.informe.pdfs.pdfs_common import PDFSCommon
+from scripts.informe.latex_tables.table_windows.table_windows import TableWindows
 
 
 class PDFS3(PDFSCommon):
     SUBPLOT_SPACING_W_H = (0.1, 0.05)
     FIG_SIZE_H_V = (10, 11)
-    CODERS_ARRAY = ['CoderPCA', 'CoderAPCA', 'CoderCA', 'CoderPWLH', 'CoderPWLHInt', 'CoderGAMPSLimit',
-                    'CoderFR'] # , 'CoderSF']
-    PLOTS_ARRAY = ['window', 'relative'] # ['compression', 'relative', 'window', 'relative_stats', 'window_stats']
+    CODERS_ARRAY = ['CoderPCA', 'CoderAPCA', 'CoderCA', 'CoderPWLH', 'CoderPWLHInt', 'CoderGAMPSLimit', 'CoderFR']
+    PLOTS_ARRAY = ['window', 'relative']
     PLOTS_MATRIX = [
         [['CoderPCA', 'window'],       ['CoderAPCA', 'window'],         ['CoderCA', 'window'],              ['CoderFR', 'window']],
         None,
         [['CoderPCA', 'relative'],  ['CoderAPCA', 'relative'],    ['CoderCA', 'relative'],         ['CoderFR', 'relative']],
         None,
-        [['CoderPWLH', 'window'],      ['CoderPWLHInt', 'window'],      ['CoderGAMPSLimit', 'window']], #,      ['CoderSF', 'window']],
+        [['CoderPWLH', 'window'],      ['CoderPWLHInt', 'window'],      ['CoderGAMPSLimit', 'window']],
         None,
-        [['CoderPWLH', 'relative'], ['CoderPWLHInt', 'relative'], ['CoderGAMPSLimit', 'relative']], # , ['CoderSF', 'relative']],
-        # None,
-        # [[None, 'window_stats'], [None, 'relative_stats']]
+        [['CoderPWLH', 'relative'], ['CoderPWLHInt', 'relative'], ['CoderGAMPSLimit', 'relative']],
     ]
-    HEIGHT_RATIOS = [30, 0, 30, 15, 30, 0, 30] # [30, 0, 30, 20, 30, 0, 30, 20, 5]
+    HEIGHT_RATIOS = [30, 0, 30, 15, 30, 0, 30]
     PLOT_OPTIONS = {
         'window': {'title': 12, 'labels': [r'$OWS$', r'$LOWS$']},
-        # 'compression': {'labels': [r'$global$', r'$local$']},
-        'relative': {'check_never_negative': True, 'show_xlabel': True, 'add_max_circle': True},
-        # 'relative_stats': {},
-        # 'window_stats': {}
+        'relative': {'check_pdf3': True, 'show_xlabel': True}
     }
 
     def __init__(self, path, datasets_names=None):
@@ -55,6 +49,7 @@ class PDFS3(PDFSCommon):
         self.pdf_name = None
         self.col_index = None
         self.pd_utils_3_global = None
+        self.latex_table_data = {}
 
     def create_pdfs(self):
         for dataset_id, self.dataset_name in enumerate(self.dataset_names):
@@ -118,3 +113,54 @@ class PDFS3(PDFSCommon):
         filename = filename.replace("PDF-", "")
         return filename
 
+
+    ####################################################################################################################
+    ####################################################################################################################
+    ####################################################################################################################
+
+    def add_data(self, algorithm, values):
+        minimum, maximum = min(values), max(values)
+        assert(minimum >= 0)
+        # (1) Check that the maximum does not change and occurs in the expected dataset/coder
+        expected_maximum = 10.598254581045069
+
+        result = [None, None]
+        if self.dataset_name == "IRKIS" and algorithm == "CoderPCA" and self.filename == "vwc_1203.dat.csv":
+            assert(maximum == expected_maximum)
+            assert(str(round(maximum, 2)) == "10.6")
+            result = ["PlotMax", maximum]
+        else:
+            assert(maximum < expected_maximum)
+
+        # (2) Add information to the latex table structure
+        if not self.latex_table_data.get(algorithm):
+            self.latex_table_data[algorithm] = []
+        self.latex_table_data[algorithm].append({'values': values})
+
+        return result
+
+    def create_latex_table(self, path):
+        algorithms_data = {}
+        total = [0, 0, 0, 0, 0]
+        for algorithm, array in self.latex_table_data.items():
+            range_1, range_2, range_3, range_4, range_5 = 0, 0, 0, 0, 0
+            for dictionary in array:
+                for value in dictionary['values']:
+                    if value == 0:
+                        range_1 += 1
+                        total[0] += 1
+                    elif 0 < value <= 1:
+                        range_2 += 1
+                        total[1] += 1
+                    elif 1 < value <= 2:
+                        range_3 += 1
+                        total[2] += 1
+                    elif 2 < value <= 5:
+                        range_4 += 1
+                        total[3] += 1
+                    elif 5 < value <= 11:
+                        range_5 += 1
+                        total[4] += 1
+                algorithms_data[algorithm] = [range_1, range_2, range_3, range_4, range_5]
+        algorithms_data['Total'] = total
+        TableWindows(algorithms_data, path).create_table()

@@ -27,7 +27,7 @@ class PDFS1(PDFSCommon):
     HEIGHT_RATIOS = [30, 0, 30, 10, 30, 0, 30]
     PLOT_OPTIONS = {
         'compression': {'title': True, 'labels': [r'$a_{NM}$', r'$a_M$']},
-        'relative': {'add_min_max_circles': True, 'show_xlabel': True}
+        'relative': {'check_pdf1': True, 'show_xlabel': True}
     }
 
     def __init__(self, path, mode='global', datasets_names=None):
@@ -64,30 +64,17 @@ class PDFS1(PDFSCommon):
     ####################################################################################################################
     ####################################################################################################################
 
-    def check_min_max(self, algorithm, values):
+    def add_data(self, algorithm, values):
         minimum, maximum = min(values), max(values)
 
-        # (1) Add information to the latex table structure
-        negative, zero, positive = 0, 0, 0
-        for value in values:
-            if value < 0:
-                negative += 1
-            elif value == 0:
-                zero += 1
-            else:
-                positive += 1
-        data = {'negative': negative, 'zero': zero, 'positive': positive, 'min': minimum, 'max': maximum}
-
-        if not self.latex_table_data.get(self.dataset_name):
-            self.latex_table_data[self.dataset_name] = []
-
-        # (2) Check that the minimum and maximum do not change and occur in the expected dataset/coder
+        # (1) Check that the minimum and maximum do not change and occur in the expected dataset/coder
         expected_maximum = 50.77815044407712
         expected_minimum = -0.2898755656108619
 
         result = [None, None]
         if self.dataset_name == "NOAA-SST" and algorithm == "CoderPCA":
             assert(maximum == expected_maximum)
+
             result = ["PlotMax", maximum]
         else:
             assert(maximum < expected_maximum)
@@ -98,8 +85,13 @@ class PDFS1(PDFSCommon):
         else:
             assert(minimum > expected_minimum)
 
-        data['info'] = result[0]
+        # (2) Add information to the latex table structure
+        negative, zero, positive = PDFS1.get_stats(values)
+        data = {'negative': negative, 'zero': zero, 'positive': positive, 'min': minimum, 'max': maximum, 'info': result[0]}
+        if not self.latex_table_data.get(self.dataset_name):
+            self.latex_table_data[self.dataset_name] = []
         self.latex_table_data[self.dataset_name].append(data)
+
         return result
 
     def create_latex_table(self, path):
@@ -123,3 +115,12 @@ class PDFS1(PDFSCommon):
             }
 
         TableRelative(datasets_data, path).create_table()
+
+    @staticmethod
+    def get_stats(values):
+        negative, zero, positive = 0, 0, 0
+        for value in values:
+            negative = negative + 1 if value < 0 else negative
+            zero = zero + 1 if value == 0 else zero
+            positive = positive + 1 if value > 0 else positive
+        return [negative, zero, positive]
