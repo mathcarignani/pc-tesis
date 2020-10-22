@@ -24,7 +24,6 @@ private:
     int calculateLastDataTimestamp();
     void decodeEntries();
     SlideFiltersEntry* decodeEntry();
-    SlideFiltersEntry* getAt(std::vector<SlideFiltersEntry*> & m_pCompressData, int position);
     SlideFiltersEntry* getAt(int position);
     void decompress(std::vector<int> x_coords_vector);
 

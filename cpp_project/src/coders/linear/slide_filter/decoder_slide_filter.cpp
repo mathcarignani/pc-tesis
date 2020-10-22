@@ -105,29 +105,12 @@ SlideFiltersEntry* DecoderSlideFilter::decodeEntry(){
     return recording;
 }
 
-SlideFiltersEntry* DecoderSlideFilter::getAt(std::vector<SlideFiltersEntry*> & m_pCompressData, int position){
-//    std::cout << "position = " << position << std::endl;
-    int diff = position + 1 - m_pCompressData.size();
-
-    while(diff > 0){
-        SlideFiltersEntry* entry = decodeEntry();
-        m_pCompressData.push_back(entry);
-        diff--;
-    }
-    return m_pCompressData.at(position);
-}
-
 SlideFiltersEntry* DecoderSlideFilter::getAt(int position){
-    SlideFiltersEntry sfe;
-    sfe = m_pCompressData->getAt(position);
-    lastDecodedEntry = &sfe;
-    return lastDecodedEntry;
-
     if (current_position < position){
         current_position = position;
         SlideFiltersEntry sfe;
         sfe = m_pCompressData->getAt(current_position);
-        lastDecodedEntry = &sfe;
+        lastDecodedEntry = new SlideFiltersEntry(sfe);
     }
     return lastDecodedEntry;
 }
