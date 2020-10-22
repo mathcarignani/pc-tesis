@@ -3,12 +3,12 @@ sys.path.append('.')
 
 from file_utils.text_utils.text_file_writer import TextFileWriter
 from scripts.compress.experiments_utils import ExperimentsUtils
-from scripts.informe.data_analysis.process_results.latex_utils import LatexUtils
+from scripts.informe.latex_tables.latex_utils import LatexUtils
 
 #
 # TODO: clean up the script after the Experiments chapter is written
 #
-class WriterLatex(object):
+class TableCompression(object):
     THRE_COUNT = len(ExperimentsUtils.THRESHOLDS)
     WINDOW_MAP = {0: '', 4: 2, 8: 3, 16: 4, 32: 5, 64: 6, 128: 7, 256: 8}
 

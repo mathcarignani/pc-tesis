@@ -4,6 +4,8 @@ sys.path.append('.')
 from scripts.compress.experiments_utils import ExperimentsUtils
 
 class LatexUtils:
+    DATASETS_ORDER = ["IRKIS", "SST", "ADCP", "ElNino", "Solar", "Hail", "Tornado", "Wind"]
+
     COLOR_COMMANDS = {
         'PCA': "cyan!20",
         'APCA': "green!20",
@@ -60,3 +62,15 @@ class LatexUtils:
             table_row = ' & '.join([str(element) for element in array])
         table_row += r" \\\hline"
         return table_row
+
+    @staticmethod
+    def format_line(array):
+        return "    " + " & ".join(array) + r" \\\hline"
+
+    @classmethod
+    def thousands(cls, value):
+        return str('{0:,}'.format(value))
+
+    @classmethod
+    def round(cls, value):
+        return str(round(value, 1))

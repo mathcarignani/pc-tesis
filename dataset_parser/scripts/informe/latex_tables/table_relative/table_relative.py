@@ -5,9 +5,8 @@ sys.path.append('.')
 import os
 
 from scripts.compress.experiments_utils import ExperimentsUtils
-from scripts.informe.data_analysis.process_results.latex_utils import LatexUtils
+from scripts.informe.latex_tables.latex_utils import LatexUtils
 from scripts.informe.math_utils import MathUtils
-from scripts.informe.latex_tables.table_common import TableCommon
 from file_utils.text_utils.text_file_reader import TextFileReader
 from file_utils.text_utils.text_file_writer import TextFileWriter
 
@@ -23,7 +22,7 @@ class TableRelative(object):
         reader = TextFileReader(os.path.dirname(__file__), '_begin.tex')
         self.writer.append_file(reader)
 
-        for name in TableCommon.DATASETS_ORDER:
+        for name in LatexUtils.DATASETS_ORDER:
             line = self.generate_dataset_line(name)
             self.writer.write_line(line)
 
@@ -41,7 +40,7 @@ class TableRelative(object):
         percentage = int(percentage) if int(percentage) == percentage else round(percentage, 1)
         outperform_str = str(data['positive']) + "/" + str(total) + " (" + str(percentage) + "\%)"
         range_str = self.range_str(data)
-        return TableCommon.format_line([dataset_key, gaps_info, outperform_str, range_str])
+        return LatexUtils.format_line([dataset_key, gaps_info, outperform_str, range_str])
 
     @staticmethod
     def range_str(data):

@@ -5,7 +5,7 @@ sys.path.append('.')
 import os
 
 from scripts.informe.math_utils import MathUtils
-from scripts.informe.latex_tables.table_common import TableCommon
+from scripts.informe.latex_tables.latex_utils import LatexUtils
 from file_utils.text_utils.text_file_reader import TextFileReader
 from file_utils.text_utils.text_file_writer import TextFileWriter
 
@@ -45,7 +45,7 @@ class TableWindows(object):
             if value_str != "0":
                 value_str += " (" + str(percentage) + "\%)"
             line.append(value_str)
-        line = TableCommon.format_line(line)
+        line = LatexUtils.format_line(line)
         if name == "GAMPS":
             line += "\hline"
         return line

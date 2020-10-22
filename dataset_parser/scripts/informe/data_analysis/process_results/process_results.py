@@ -9,7 +9,7 @@ from scripts.informe.pandas_utils.pandas_utils import PandasUtils
 from scripts.informe.data_analysis.threshold_compare import ThresholdCompare
 from scripts.informe.data_analysis.process_results.writer1 import Writer1
 from scripts.informe.data_analysis.process_results.writer2 import Writer2
-from scripts.informe.data_analysis.process_results.writer_latex import WriterLatex
+from scripts.informe.latex_tables.table_compression.table_compression import TableCompression
 from scripts.informe.math_utils import MathUtils
 from scripts.informe.gzip_compare.gzip_results_reader import GzipResultsReader
 
@@ -42,7 +42,7 @@ class ProcessResults(object):
     def run(self):
         self.__write_headers()
         self.__datasets_iteration()
-        self.csv_writer_latex.print_end()
+        self.latex_table.print_end()
         self.csv_writer_1.show_data()
 
     def __set_df(self, gzip_path, gzip_filename):
@@ -59,7 +59,7 @@ class ProcessResults(object):
         extra_str = 'global' if self.global_mode else 'local'
         self.csv_writer_1 = Writer1(self.path, extra_str, self.mode)
         self.csv_writer_2 = Writer2(self.path, extra_str)
-        self.csv_writer_latex = WriterLatex(self.path, self.mode)
+        self.latex_table = TableCompression(self.path, self.mode)
 
     def __datasets_iteration(self):
         for dataset_id, self.dataset_name in enumerate(ExperimentsUtils.DATASET_NAMES):
@@ -138,17 +138,17 @@ class ProcessResults(object):
             threshold_results += [new_coder, new_window, new_percentage]
 
         self.csv_writer_2.write_row(threshold_results)
-        self.csv_writer_latex.set_threshold_results(threshold_results)
+        self.latex_table.set_threshold_results(threshold_results)
 
     def __set_dataset(self, dataset_name):
         self.csv_writer_1.write_dataset_name(dataset_name)
         self.csv_writer_2.write_dataset_name(dataset_name)
-        self.csv_writer_latex.set_dataset(dataset_name)
+        self.latex_table.set_dataset(dataset_name)
 
     def __set_filename(self, filename):
         self.csv_writer_1.write_filename(filename)
         self.csv_writer_2.write_filename(filename)
-        self.csv_writer_latex.set_filename(filename)
+        self.latex_table.set_filename(filename)
 
     def __local_or_single_file(self):
         condition1 = not self.global_mode

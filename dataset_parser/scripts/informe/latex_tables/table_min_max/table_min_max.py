@@ -3,9 +3,9 @@ sys.path.append('.')
 
 from file_utils.text_utils.text_file_writer import TextFileWriter
 from scripts.compress.experiments_utils import ExperimentsUtils
-from scripts.informe.data_analysis.process_results.latex_utils import LatexUtils
+from scripts.informe.latex_tables.latex_utils import LatexUtils
 
-class WriterMinMax:
+class TableMinMax(object):
     def __init__(self, path, mode):
         self.path = path
         self.mode = mode
