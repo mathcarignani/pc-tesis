@@ -19,10 +19,6 @@ std::vector<std::string> DecoderSlideFilter::decodeDataColumn(){
         std::vector<int> x_coords_vector = CoderUtils::createXCoordsVectorMaskModeSF(mask, time_delta_vector, 1);
 //        VectorUtils::printIntVector(x_coords_vector);
 
-        m_pCompressData = new DynArray<SlideFiltersEntry>();
-//        std::cout << "decodeEntries" << std::endl;
-        decodeEntries();
-
 //        std::cout << "decompress" << std::endl;
         decompress(x_coords_vector);
 //        std::cout << "m_pApproxData->size() = " << m_pApproxData->size() << std::endl;
@@ -45,7 +41,6 @@ std::vector<std::string> DecoderSlideFilter::decodeDataColumn(){
     }
 
     if (mask->total_data > 0){
-        delete m_pCompressData;
         delete m_pApproxData;
     }
     column->assertAfter();
@@ -81,18 +76,6 @@ int DecoderSlideFilter::calculateLastDataTimestamp(){
     return last_data_timestamp - first_data_timestamp;
 }
 
-void DecoderSlideFilter::decodeEntries(){
-    int last_data_timestamp = calculateLastDataTimestamp();
-    int current_td = 0;
-    while(current_td <= last_data_timestamp){
-        SlideFiltersEntry* entry = decodeEntry();
-        m_pCompressData->add(*entry);
-//        std::cout << "decodeEntry" << std::endl;
-//        std::cout << entry->connToFollow << " " << entry->timestamp << " " << entry->value << std::endl;
-        current_td = (int) entry->timestamp;
-    }
-}
-
 SlideFiltersEntry* DecoderSlideFilter::decodeEntry(){
     bool connToFollow = decodeBool();
     double timestamp = decodeDouble();
@@ -108,9 +91,7 @@ SlideFiltersEntry* DecoderSlideFilter::decodeEntry(){
 SlideFiltersEntry* DecoderSlideFilter::getAt(int position){
     if (current_position < position){
         current_position = position;
-        SlideFiltersEntry sfe;
-        sfe = m_pCompressData->getAt(current_position);
-        lastDecodedEntry = new SlideFiltersEntry(sfe);
+        lastDecodedEntry = decodeEntry();
     }
     return lastDecodedEntry;
 }
@@ -119,13 +100,12 @@ SlideFiltersEntry* DecoderSlideFilter::getAt(int position){
 void DecoderSlideFilter::decompress(std::vector<int> x_coords_vector)
 {
     m_pApproxData = new CDataStream();
-    int size = m_pCompressData->size();
     SlideFiltersEntry slEntry1, slEntry2;
     DataItem inputEntry;
 
     current_position = -1;
 
-    if (size == 1){
+    if (x_coords_vector.size() == 1){
         slEntry1 = *getAt(0);
         inputEntry.timestamp = slEntry1.timestamp;
         inputEntry.value = slEntry1.value;
