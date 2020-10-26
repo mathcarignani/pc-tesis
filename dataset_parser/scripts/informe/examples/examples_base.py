@@ -12,10 +12,7 @@ class ExamplesBase(object):
     EPSILON = r"$\epsilon$"
     YLABEL = 'data'
     XLABEL = 'timestamp'
-    LABEL_ORIG = 'sample'
     LABEL_ENCO_DECO = 'encoded/decoded sample'
-    LABEL_DECO = 'decoded sample'
-    LABEL_ENCO = 'encoded point'
     COLOR_ORIG = 'navy'
     COLOR_DECO = 'orange'
     COLOR_ENCO = 'red'
@@ -35,6 +32,10 @@ class ExamplesBase(object):
         self.xlim_right = 12
         self.figsize = [8, 3.48]
         self.first_timestamp = 1
+        self.label_orig = 'sample'
+        self.label_enco = 'encoded point'
+        self.label_deco = 'decoded sample'
+        self.epsilon = 1
 
     @classmethod
     def plot_patch(cls, ax, patch):
@@ -80,7 +81,7 @@ class ExamplesBase(object):
 
         scatter_x_black = range(index+1)
         original_black = self.original[0:index+1]
-        ax.scatter(scatter_x_black, original_black, c=self.COLOR_ORIG, marker='x', zorder=3, label=self.LABEL_ORIG, s=25)
+        ax.scatter(scatter_x_black, original_black, c=self.COLOR_ORIG, marker='x', zorder=3, label=self.label_orig, s=25)
 
     def plot_encoded_points(self, ax):
         if len(self.encoded_points) == 0:
@@ -90,12 +91,12 @@ class ExamplesBase(object):
             point_x, point_y = point
             x.append(point_x)
             y.append(point_y)
-        ax.scatter(x, y, zorder=3, alpha=1, label=self.LABEL_ENCO, facecolors='none', edgecolors=self.COLOR_ENCO, s=60)
+        ax.scatter(x, y, zorder=3, alpha=1, label=self.label_enco, facecolors='none', edgecolors=self.COLOR_ENCO, s=60)
 
     def plot_decoded_values(self, ax):
         scatter_x = range(len(self.original))
         x_decoded = scatter_x[0:len(self.decoded)]
-        label = self.LABEL_DECO if len(self.encoded_points) > 0 else self.LABEL_ENCO_DECO
+        label = self.label_deco if len(self.encoded_points) > 0 else self.LABEL_ENCO_DECO
         ax.scatter(x_decoded, self.decoded, c=self.COLOR_DECO, marker='o', zorder=2, label=label)
 
     def plot_decoded_lines(self, ax, p):
@@ -136,7 +137,7 @@ class ExamplesBase(object):
 
         ax.set(xlabel=self.XLABEL, ylabel=self.YLABEL)
 
-        title_obj = plt.title(self.title(1, step))
+        title_obj = plt.title(self.title(step))
         plt.setp(title_obj, color='black' if title else 'white')
 
         ax.grid(color=PlotConstants.COLOR_SILVER, linestyle='dotted')
@@ -154,8 +155,8 @@ class ExamplesBase(object):
         plt.tight_layout()
         fig.savefig(self.path + filename)
 
-    def title(self, epsilon, step):
-        epsilon = r"$\epsilon = {}$".format(epsilon)
+    def title(self, step):
+        epsilon = r"$\epsilon = {}$".format(self.epsilon)
         window = r"$w = {}$".format(self.window)
         text = "Algorithm " + self.algorithm + " with " + epsilon + " and " + window + " - STEP " + str(step)
         return text
