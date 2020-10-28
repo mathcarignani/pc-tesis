@@ -47,9 +47,9 @@ private:
 
 
     void getNodataRowsMask();
-    GAMPSInput* getGAMPSInput();
+    GAMPSInput* getGAMPSInput(int & m_dEps);
     CDataStream* getColumn(int column_index);
-    GAMPSOutput* getGAMPSOutput();
+    GAMPSOutput* getGAMPSOutput(int m_dEps);
 
     void codeGAMPSColumn(DynArray<GAMPSEntry>* column);
 

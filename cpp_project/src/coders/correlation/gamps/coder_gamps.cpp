@@ -61,8 +61,10 @@ void CoderGAMPS::codeGroup(){
 
 GAMPSOutput* CoderGAMPS::processOtherColumns(){
     getNodataRowsMask();
-    gamps_input = getGAMPSInput();
-    GAMPSOutput* gamps_output = getGAMPSOutput();
+    int m_dEps = -1;
+    gamps_input = getGAMPSInput(m_dEps);
+    std::cout << "m_dEps = " << m_dEps << std::endl;
+    GAMPSOutput* gamps_output = getGAMPSOutput(m_dEps);
     return gamps_output;
 }
 
@@ -89,14 +91,17 @@ void CoderGAMPS::getNodataRowsMask(){
     mapping_table->setNoDataColumnsIndexes(nodata_columns, total_group_columns);
 }
 
-GAMPSInput* CoderGAMPS::getGAMPSInput(){
+GAMPSInput* CoderGAMPS::getGAMPSInput(int & m_dEps){
     gamps_epsilons_vector.clear();
     int data_columns_count = total_group_columns - mapping_table->nodata_columns_indexes.size();
     CMultiDataStream* multiStream = new CMultiDataStream(data_columns_count);
     int j = 1;
     for(int i = group_index; i <= dataset->data_columns_count; i+=total_groups){
         if (mapping_table->isNodataColumnIndex(j++)) { continue; } // skip nodata columns
-        gamps_epsilons_vector.push_back(error_thresholds_vector.at(i));
+        int error_threshold = error_thresholds_vector.at(i);
+        if ((m_dEps == -1) || (m_dEps > error_threshold)){
+            m_dEps = error_threshold; // set m_dEps to be equal to the minim threshold of the group
+        }
         dataset->setColumn(i);
         CDataStream* signal = getColumn(i);
         multiStream->addSingleStream(signal);
@@ -143,12 +148,12 @@ CDataStream* CoderGAMPS::getColumn(int column_index){
     return dataStream;
 }
 
-GAMPSOutput* CoderGAMPS::getGAMPSOutput(){
+GAMPSOutput* CoderGAMPS::getGAMPSOutput(int m_dEps){
 #if CHECKS
     assert(gamps_epsilons_vector.size() == gamps_input->getNumOfStream());
 #endif
-    gamps = new GAMPS(gamps_epsilons_vector, gamps_input);
-    gamps->compute();
+    gamps = new GAMPS(gamps_input);
+    gamps->compute(m_dEps);
     return gamps->getOutput();
 }
 

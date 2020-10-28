@@ -28,18 +28,18 @@ private:
 	DynArray<GAMPSEntry>* computeRatioSignal(CDataStream* ratioSignal,CDataStream* baseSignal,double& c1, double& c2);
 
 	// static group given input data
-	int statGroup(GAMPSInput* listInputList);
+	int statGroup(GAMPSInput* listInputList, int m_dEps);
 
 	// compute output based on base signals and ratio signals
 	void computeOutput(DynArray<GAMPSEntry>** baseBucketList, DynArray<GAMPSEntry>** ratioBucketList);
 
 	void print(DynArray<GAMPSEntry>* array, int spaces);
 public:
-	GAMPS_Computation(GAMPSInput* gampsInput,std::vector<double> gamps_epsilons_vector_);
+	GAMPS_Computation(GAMPSInput* gampsInput);
 	~GAMPS_Computation(void);
 
 	// static group current input data
-	int statGroup();
+	int statGroup(int m_dEps);
 
 	GAMPSOutput* getGampsOutput();
 };

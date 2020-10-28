@@ -6,10 +6,9 @@
 #include "../../../DataManagementLayer/Data/DataStream.h"
 #include "GAMPS_Computation.h"
 
-GAMPS_Computation::GAMPS_Computation(GAMPSInput* gampsInput,std::vector<double> gamps_epsilons_vector_)
+GAMPS_Computation::GAMPS_Computation(GAMPSInput* gampsInput)
 {
 	m_pInput = gampsInput;
-	gamps_epsilons_vector = gamps_epsilons_vector_;
 	m_pGampsOutput = new GAMPSOutput(gampsInput);
 }
 
@@ -19,9 +18,9 @@ GAMPS_Computation::~GAMPS_Computation()
 }
 
 // static group current input data
-int GAMPS_Computation::statGroup()
+int GAMPS_Computation::statGroup(int m_dEps)
 {
-	return statGroup(this->m_pInput);
+	return statGroup(this->m_pInput, m_dEps);
 }
 
 GAMPSOutput* GAMPS_Computation::getGampsOutput()
@@ -202,8 +201,9 @@ DynArray<GAMPSEntry>* GAMPS_Computation::computeRatioSignal(CDataStream* compute
 		DataItem computeEntry = computeSignal->getAt(i);
 
 		// in case of baseEntry.value == 0
-		if (baseEntry.value < 1 && baseEntry.value > -1)
-			baseEntry.value =1;
+//		if (baseEntry.value < 1 && baseEntry.value > -1)
+//			baseEntry.value =1;
+        assert(baseEntry.value > 0);
 
 		double ratioValue = computeEntry.value / baseEntry.value;
 
@@ -229,7 +229,7 @@ DynArray<GAMPSEntry>* GAMPS_Computation::computeRatioSignal(CDataStream* compute
 // Parameter:
 //            gampsInputList: data need to be static grouped
 // Return	: (int)allocated memory of stat grouped result
-int GAMPS_Computation::statGroup(GAMPSInput* gampsInputList)
+int GAMPS_Computation::statGroup(GAMPSInput* gampsInputList, int m_dEps)
 {
 	// init
 	int numOfStream = gampsInputList->getNumOfStream();
@@ -247,9 +247,10 @@ int GAMPS_Computation::statGroup(GAMPSInput* gampsInputList)
 
 		// calculate % eps
 		// baseSignal->statistic();
-		// eps = m_dEps * (baseSignal->getMax() - baseSignal->getMin());
-		// eps1 = 0.4 * eps;
-		eps1 = gamps_epsilons_vector.at(j);
+		eps = m_dEps * (baseSignal->getMax() - baseSignal->getMin());
+		eps1 = 0.4 * eps;
+		std::cout << "eps1 = " << eps1 << std::endl;
+//		eps1 = gamps_epsilons_vector.at(j);
 
 		DynArray<GAMPSEntry>* listBaseSignalBucket = compress_APCA(baseSignal,eps1);
 		listBucket[j] = listBaseSignalBucket;
@@ -265,8 +266,9 @@ int GAMPS_Computation::statGroup(GAMPSInput* gampsInputList)
 			double c1,c2;
 			DynArray<GAMPSEntry> *listComputeRatioSignal = this->computeRatioSignal(ratioSignal,baseSignal,c1,c2);
 
-			double eps = gamps_epsilons_vector.at(i);
+//			double eps = gamps_epsilons_vector.at(i);
 			eps2 = this->computeEps2(eps,eps1,c1,c2);
+            std::cout << "eps2 = " << eps2 << std::endl;
 			DynArray<GAMPSEntry> *listRatioBucket = this->compress_APCA(*listComputeRatioSignal,eps2);
 			int pos = j* numOfStream + i;
 			listRatioSignalBucket[pos] = listRatioBucket;
