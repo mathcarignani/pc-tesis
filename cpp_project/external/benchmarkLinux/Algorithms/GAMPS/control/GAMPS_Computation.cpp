@@ -52,6 +52,10 @@ double GAMPS_Computation::computeEps2(double eps, double eps1, double c1, double
 {
 	double eps2 = eps - c1 * eps1;
 	eps2 = eps2 / (c2 + eps1);
+//	std::cout << "eps = " << eps << std::endl;
+//	std::cout << "eps1 = " << eps1 << std::endl;
+//	std::cout << "eps2 = " << eps2 << std::endl;
+//	std::cout << "********************" << eps2 << std::endl;
 	return eps2;
 }
 
@@ -151,6 +155,7 @@ DynArray<GAMPSEntry>* GAMPS_Computation::compress_APCA(DynArray<GAMPSEntry>& com
 		}
 		else
 		{
+			std::cout << "AAA" << std::endl;
 			currentMax = tempMax;
 			currentMin = tempMin;
 		}
@@ -184,8 +189,9 @@ DynArray<GAMPSEntry>* GAMPS_Computation::computeRatioSignal(CDataStream* compute
 	{
 		DataItem baseEntry = baseSignal->getAt(0);
 		DataItem computeEntry = computeSignal->getAt(0);
-		if (baseEntry.value < 1 && baseEntry.value > -1)
-			baseEntry.value =1;
+		assert(baseEntry.value > 0);
+//		if (baseEntry.value < 1 && baseEntry.value > -1)
+//			baseEntry.value =1;
 
 		double ratioValue = computeEntry.value / baseEntry.value;
 		GAMPSEntry ratioEntry;
@@ -246,11 +252,13 @@ int GAMPS_Computation::statGroup(GAMPSInput* gampsInputList)
 		CDataStream* baseSignal = gampsInputList->getOriginalStreams()->getDataAt(j);
 
 		// calculate % eps
-		// baseSignal->statistic();
+		 baseSignal->statistic();
 		// eps = m_dEps * (baseSignal->getMax() - baseSignal->getMin());
 		// eps1 = 0.4 * eps;
-		eps1 = gamps_epsilons_vector.at(j);
+		// eps1 is the error for the base signal
+		eps1 = 0.4 * gamps_epsilons_vector.at(j);
 
+		std::cout << "BASEEE => eps1 = " << eps1 << std::endl;
 		DynArray<GAMPSEntry>* listBaseSignalBucket = compress_APCA(baseSignal,eps1);
 		listBucket[j] = listBaseSignalBucket;
 
@@ -266,7 +274,9 @@ int GAMPS_Computation::statGroup(GAMPSInput* gampsInputList)
 			DynArray<GAMPSEntry> *listComputeRatioSignal = this->computeRatioSignal(ratioSignal,baseSignal,c1,c2);
 
 			double eps = gamps_epsilons_vector.at(i);
+            // eps is the error for the ratio signal
 			eps2 = this->computeEps2(eps,eps1,c1,c2);
+			std::cout << "RATIOOO => eps2 = " << eps2 << std::endl;
 			DynArray<GAMPSEntry> *listRatioBucket = this->compress_APCA(*listComputeRatioSignal,eps2);
 			int pos = j* numOfStream + i;
 			listRatioSignalBucket[pos] = listRatioBucket;

@@ -75,11 +75,12 @@ void CoderGAMPS::getNodataRowsMask(){
         std::vector<std::string> row = input_csv->readLineCSV();
         bool nodata_row = true;
         int j = 0;
+        // iterate through all the group values in the current row
         for(int i = group_index; i < row.size(); i+=total_groups){ // i > 0 to skip TimeDelta column
             std::string csv_value = row.at(i);
             if (!Constants::isNoData(csv_value)){
-                nodata_row = false;
-                nodata_columns[j] = false;
+                nodata_row = false; // in the current row there exists a group value which is an integer
+                nodata_columns[j] = false; // in the group column there exists a value which is an integer
             }
             j++;
         }
@@ -154,7 +155,7 @@ GAMPSOutput* CoderGAMPS::getGAMPSOutput(){
 
 void CoderGAMPS::codeMappingTable(GAMPSOutput* gamps_output){
     mapping_table->calculate(gamps_output);
-    // mapping_table->print(total_groups, group_index);
+    mapping_table->print(total_groups, group_index);
 
     std::vector<int> vector = mapping_table->baseColumnIndexVector();
     int vector_size = vector.size();
@@ -180,6 +181,7 @@ void CoderGAMPS::codeGAMPSColumns(GAMPSOutput* gamps_output){
         column_index = MappingTable::mapIndex(table_index, total_groups, group_index);
     #if COUT
         std::cout << "code base  signal i = " << column_index << std::endl;
+        std::cout << "*********************************************************************" << std::endl;
     #endif
         dataset->setColumn(column_index);
         column = base_signals[base_index++];
@@ -191,6 +193,7 @@ void CoderGAMPS::codeGAMPSColumns(GAMPSOutput* gamps_output){
             column_index = MappingTable::mapIndex(table_index, total_groups, group_index);
         #if COUT
             std::cout << "    code ratio signal i = " << column_index << std::endl;
+            std::cout << "*********************************************************************" << std::endl;
         #endif
             dataset->setColumn(column_index);
             int ratio_index = mapping_table->getRatioGampsColumnIndex(table_index);
@@ -200,7 +203,7 @@ void CoderGAMPS::codeGAMPSColumns(GAMPSOutput* gamps_output){
     }
 }
 
-void CoderGAMPS::codeGAMPSColumn(DynArray<GAMPSEntry>* column){
+void CoderGAMPS::codeGAMPSColumn(DynArray<GAMPSEntry>* gamps_entries){
 #if MASK_MODE
 #if MASK_MODE == 3
     total_data_rows_vector.at(column_index - 1);
@@ -213,16 +216,18 @@ void CoderGAMPS::codeGAMPSColumn(DynArray<GAMPSEntry>* column){
     dataset->setMode("DATA");
 
     int entry_index = 0;
-    GAMPSEntry current_entry = column->getAt(entry_index);
+    GAMPSEntry current_entry = gamps_entries->getAt(entry_index);
     int remaining = current_entry.endingTimestamp;
 
-    APCAWindow* window = new APCAWindow(window_size, 0); // threshold will not be used
+    APCAWindow* window = new APCAWindow(window_size, 0);
     nodata_rows_mask->reset();
-    row_index = 0;
+    row_index = -1;
     input_csv->goToFirstDataRow(column_index);
     while (input_csv->continue_reading) {
-        std::string csv_value = input_csv->readNextValue();
+        row_index += 1;
 
+        // this is the value read from the input csv file
+        std::string csv_value = input_csv->readNextValue();
         bool no_data_row = nodata_rows_mask->isNoData();
         bool no_data = Constants::isNoData(csv_value);
 
@@ -230,18 +235,22 @@ void CoderGAMPS::codeGAMPSColumn(DynArray<GAMPSEntry>* column){
         // skip no_data
         if (no_data_row) { continue; }
         else if (no_data) {
-            update(column, entry_index, current_entry, remaining);
+            update(gamps_entries, entry_index, current_entry, remaining);
             continue;
         }
     #endif
+        // this is the value read from gamps_entries (already coded via algorithm APCA)
         csv_value = no_data ? csv_value : Conversor::doubleToString(current_entry.value);
 
         if (!window->conditionHolds(csv_value)) {
+            // window->conditionHolds(csv_value) becomes false in two cases:
+            // (1) if the window is full
+            // (2) if csv_value is different from the values already added to the window
             codeWindow(window);
             window->addFirstValue(csv_value);
         }
         if (!no_data_row){
-            update(column, entry_index, current_entry, remaining);
+            update(gamps_entries, entry_index, current_entry, remaining);
         }
     }
     if (!window->isEmpty()) {
@@ -249,15 +258,15 @@ void CoderGAMPS::codeGAMPSColumn(DynArray<GAMPSEntry>* column){
     }
 }
 
-void CoderGAMPS::update(DynArray<GAMPSEntry>* column, int & entry_index, GAMPSEntry & current_entry, int & remaining){
+void CoderGAMPS::update(DynArray<GAMPSEntry>* gamps_entries, int & entry_index, GAMPSEntry & current_entry, int & remaining){
     remaining--;
     if (remaining > 0){ return; }
 
     entry_index++;
-    if (entry_index == column->size()) { return; }
+    if (entry_index == gamps_entries->size()) { return; }
 
     int previous_last_timestamp = current_entry.endingTimestamp;
-    current_entry = column->getAt(entry_index);
+    current_entry = gamps_entries->getAt(entry_index);
     remaining = current_entry.endingTimestamp - previous_last_timestamp;
 }
 
@@ -266,5 +275,6 @@ void CoderGAMPS::codeWindow(APCAWindow* window){
     std::string constant_value = window->constant_value;
     double value = Constants::isNoData(constant_value) ? Constants::NO_DATA_DOUBLE : Conversor::stringToDouble(constant_value);
     // TODO: move to an aux method... also create an analog decoding method
+//    std::cout << "codeFloat((float) " << value << ");" << std::endl;
     codeFloat((float) value);
 }

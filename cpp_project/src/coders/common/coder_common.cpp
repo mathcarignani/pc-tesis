@@ -62,6 +62,7 @@ void CoderCommon::codeInt(int value, int bits){
 }
 
 void CoderCommon::codeWindowLength(Window* window){
+//    std::cout << "codeInt(" << window->length - 1 << ", " << window->window_size_bit_length << ");" << std::endl;
     codeInt(window->length - 1, window->window_size_bit_length);
 }
 

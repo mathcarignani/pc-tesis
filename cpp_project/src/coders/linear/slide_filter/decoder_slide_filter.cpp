@@ -15,9 +15,8 @@ std::vector<std::string> DecoderSlideFilter::decodeDataColumn(){
 
     if (mask->total_data > 0){
         std::vector<int> x_coords_vector = CoderUtils::createXCoordsVectorMaskModeSF(mask, time_delta_vector, 1);
-        int lastTimeStamp = calculateLastDataTimestamp() + 1;
 //    std::cout << "lastTimeStamp = " << lastTimeStamp << std::endl;
-        decompress(x_coords_vector, lastTimeStamp);
+        decompress(x_coords_vector);
         assert(column->unprocessed_data_rows == 0);
     }
     while (column->notFinished()) {
@@ -84,9 +83,13 @@ void DecoderSlideFilter::addValue(DataItem data_item){
     column->addData(value);
 }
 
+void DecoderSlideFilter::decompress(std::vector<int> x_coords_vector){
+    int lastTimeStamp = calculateLastDataTimestamp() + 1;
+    decompressWindow(x_coords_vector, lastTimeStamp);
+}
 
 // Calculate approximation data from model parameters
-void DecoderSlideFilter::decompress(std::vector<int> x_coords_vector, int lastTimeStamp)
+void DecoderSlideFilter::decompressWindow(std::vector<int> x_coords_vector, int lastTimeStamp)
 {
     SlideFiltersEntry slEntry1, slEntry2;
     DataItem inputEntry;

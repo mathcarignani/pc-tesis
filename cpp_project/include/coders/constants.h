@@ -12,7 +12,7 @@
 //
 #define COUT 1
 #define CHECKS 0
-#define RECORD_TESTS 0 // Set to 1 to set up the tests, then set to 0
+#define RECORD_TESTS 1 // Set to 1 to set up the tests, then set to 0
 
 #include <string>
 #include <vector>

@@ -51,9 +51,9 @@ private:
     CDataStream* getColumn(int column_index);
     GAMPSOutput* getGAMPSOutput();
 
-    void codeGAMPSColumn(DynArray<GAMPSEntry>* column);
+    void codeGAMPSColumn(DynArray<GAMPSEntry>* gamps_entries);
 
-    void update(DynArray<GAMPSEntry>* column, int & entry_index, GAMPSEntry & current_entry, int & remaining);
+    void update(DynArray<GAMPSEntry>* gamps_entries, int & entry_index, GAMPSEntry & current_entry, int & remaining);
     void codeWindow(APCAWindow* window);
 
 public:

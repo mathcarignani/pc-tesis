@@ -60,7 +60,6 @@ void CoderSlideFilter::compress(){
 
     std::cout << "inputSize = " << inputSize << std::endl;
     std::cout << "window_size = " << window_size << std::endl;
-    window_size = 1000000;
 
     while(i < inputSize) {
         int win_size = ((inputSize - i) < window_size) ? (inputSize - i) : window_size;
