@@ -51,10 +51,12 @@ private:
     CDataStream* getColumn(int column_index);
     GAMPSOutput* getGAMPSOutput();
 
-    void codeGAMPSColumn(DynArray<GAMPSEntry>* column);
+    void codeGAMPSColumn(DynArray<GAMPSEntry>* column, bool base_window);
 
     void update(DynArray<GAMPSEntry>* column, int & entry_index, GAMPSEntry & current_entry, int & remaining);
-    void codeWindow(APCAWindow* window);
+    void codeWindow(APCAWindow* window, bool base_window);
+    int mapValue(std::string csv_value);
+    std::string unmapValue(std::string csv_value);
 
 public:
     using CoderCommon::CoderCommon;

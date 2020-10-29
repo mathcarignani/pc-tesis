@@ -12,7 +12,8 @@ private:
 
 public:
     using DecoderPCA::DecoderPCA;
-    void decodeWindow(std::vector<std::string> & column);
+    static std::vector<std::string> decodeDataColumn(DecoderCommon* decoder);
+    static void decodeWindow(DecoderCommon* decoder, std::vector<std::string> & column);
 };
 
 #endif //CPP_PROJECT_DECODER_APCA_H

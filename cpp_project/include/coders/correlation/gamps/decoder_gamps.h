@@ -27,14 +27,17 @@ private:
     void decodeNoDataColumns();
     void decodeGAMPSColumns();
 
-    std::vector<std::string> decodeBaseColumn();
+//    std::vector<std::string> decodeBaseColumn();
     std::vector<std::string> decodeBaseColumn(std::vector<double> & base_column_double);
     std::vector<std::string> decodeRatioColumn(std::vector<double> base_column_double);
 
-    std::vector<double> decodeGAMPSColumn();
+    std::vector<std::string> decodeGAMPSBaseColumn();
+//    void decodeWindowBaseColumn(std::vector<std::string> & column);
+//    void decodeConstantWindowBaseColumn(std::vector<std::string> & column, int window_size);
 
-    void decodeWindow(std::vector<double> & column);
-    void decodeConstantWindow(std::vector<double> & column, int window_size);
+    std::vector<double> decodeGAMPSRatioColumn();
+    void decodeWindowRatioColumn(std::vector<double> & column);
+    void decodeConstantWindowRatioColumn(std::vector<double> & column, int window_size);
 
 public:
     using DecoderCommon::DecoderCommon;
