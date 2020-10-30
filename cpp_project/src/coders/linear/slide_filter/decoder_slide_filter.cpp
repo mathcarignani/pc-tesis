@@ -15,9 +15,8 @@ std::vector<std::string> DecoderSlideFilter::decodeDataColumn(){
 
     if (mask->total_data > 0){
         std::vector<int> x_coords_vector = CoderUtils::createXCoordsVectorMaskModeSF(mask, time_delta_vector, 1);
-        int lastTimeStamp = calculateLastDataTimestamp() + 1;
 //    std::cout << "lastTimeStamp = " << lastTimeStamp << std::endl;
-        decompress(x_coords_vector, lastTimeStamp);
+        decompress(x_coords_vector);
         assert(column->unprocessed_data_rows == 0);
     }
     while (column->notFinished()) {
@@ -25,34 +24,6 @@ std::vector<std::string> DecoderSlideFilter::decodeDataColumn(){
     }
     column->assertAfter();
     return column->column_vector;
-}
-
-
-int DecoderSlideFilter::calculateLastDataTimestamp(){
-    bool data_read = false;
-    int first_data_timestamp = 0;
-    int last_timestamp = 0;
-    int last_data_timestamp = 0;
-    int td_size = (int) time_delta_vector.size();
-    int zero_sum = -1; // -1 instead of 0, to avoid counting the first entry, which is always 0
-    mask->reset();
-    for (int i=0; i < td_size; i++){
-        int timestamp = time_delta_vector.at(i);
-        if (timestamp == 0){ zero_sum += 1; }
-        last_timestamp += timestamp;
-        if (!mask->isNoData()) {
-            last_data_timestamp = last_timestamp;
-            if (!data_read){
-                first_data_timestamp = last_timestamp;
-                data_read = true;
-            }
-        }
-    }
-//    std::cout << "first_data_timestamp = " << first_data_timestamp << std::endl;
-//    std::cout << "last_timestamp = " << last_timestamp << std::endl;
-//    std::cout << "last_data_timestamp = " << last_data_timestamp << std::endl;
-    last_data_timestamp += zero_sum;
-    return last_data_timestamp - first_data_timestamp;
 }
 
 SlideFiltersEntry* DecoderSlideFilter::decodeEntry(){
@@ -79,23 +50,50 @@ SlideFiltersEntry* DecoderSlideFilter::getAt(int position){
 void DecoderSlideFilter::addValue(DataItem data_item){
     while (mask->isNoData()) {
         column->addNoData();
+        row_index++;
     }
     std::string value = Conversor::doubleToIntToString(data_item.value);
     column->addData(value);
+    row_index++;
 }
 
 
 // Calculate approximation data from model parameters
-void DecoderSlideFilter::decompress(std::vector<int> x_coords_vector, int lastTimeStamp)
+void DecoderSlideFilter::decompress(std::vector<int> x_coords_vector){
+#if CHECKS
+    assert(mask->total_no_data + mask->total_data == data_rows_count);
+#endif // END CHECKS
+    row_index = 0;
+    mask->reset();
+    window_size = 100000;
+
+    int unprocessed_rows = mask->total_data;
+    std::cout << "unprocessed_rows = " << unprocessed_rows << std::endl;
+    while (unprocessed_rows > 0) {
+        int current_window_size = (unprocessed_rows >= window_size) ? window_size : unprocessed_rows;
+        std::cout << "current_window_size = " << current_window_size << std::endl;
+        decompressWindow(x_coords_vector, current_window_size);
+
+        unprocessed_rows -= current_window_size;
+        if (unprocessed_rows > 0){
+            int first_timestamp = x_coords_vector[current_window_size - 1];
+            // remove the first current_window_size elements of the vector
+            x_coords_vector.erase(x_coords_vector.begin(), x_coords_vector.begin() + current_window_size);
+            for(int i = 0; i < x_coords_vector.size(); i++){
+                x_coords_vector[i] -= first_timestamp;
+            }
+        }
+    }
+}
+
+void DecoderSlideFilter::decompressWindow(std::vector<int> x_coords_vector, int current_window_size)
 {
     SlideFiltersEntry slEntry1, slEntry2;
     DataItem inputEntry;
 
-    mask->reset();
     current_position = -1;
 
     if (x_coords_vector.size() == 1){
-        // TODO: decode an integer
         slEntry1 = *getAt(0);
         inputEntry.timestamp = slEntry1.timestamp;
         inputEntry.value = slEntry1.value;
@@ -106,12 +104,13 @@ void DecoderSlideFilter::decompress(std::vector<int> x_coords_vector, int lastTi
     int position = 0;
     double timeStamp = 0;
     int first_coord = x_coords_vector.at(0);
+    std::cout << "first_coord = " << first_coord << std::endl;
 
     Line* l = NULL;
 
     int x_coords_vector_index = 0;
     int i = 0;
-    while(i < lastTimeStamp)
+    while (current_window_size > 0)
     {
         //Read compressed data
         if (i >= timeStamp)
@@ -147,6 +146,7 @@ void DecoderSlideFilter::decompress(std::vector<int> x_coords_vector, int lastTi
                 inputEntry.timestamp = slEntry1.timestamp;
                 inputEntry.value = slEntry1.value;
                 addValue(inputEntry);
+                current_window_size--;
 //                std::cout << "    add(inputEntry) = (" << inputEntry.timestamp << ", " << inputEntry.value << ") ********************************************************" << std::endl;
                 break;
             }
@@ -178,10 +178,12 @@ void DecoderSlideFilter::decompress(std::vector<int> x_coords_vector, int lastTi
         inputEntry.timestamp = i;
         inputEntry.value = l->getValue(inputEntry.timestamp);
         addValue(inputEntry);
+        current_window_size--;
 //        std::cout << "    add(inputEntry) = (" << inputEntry.timestamp << ", " << inputEntry.value << ") ********************************************************" << std::endl;
     }
-
     delete l;
+    std::cout << "timeStamp = " << timeStamp << std::endl;
+    std::cout << "lastDecodedEntry = (" << lastDecodedEntry->timestamp << ", " << lastDecodedEntry->value << ")" << std::endl;
 }
 
 #endif // MASK_MODE

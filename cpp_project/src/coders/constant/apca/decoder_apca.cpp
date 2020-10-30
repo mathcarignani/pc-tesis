@@ -13,7 +13,6 @@ std::vector<std::string> DecoderAPCA::decodeDataColumn(){
 std::vector<std::string> DecoderAPCA::decodeDataColumn(DecoderCommon* decoder){
     std::vector<std::string> column;
     decoder->row_index = 0;
-    int unprocessed_rows = decoder->data_rows_count;
 
 #if MASK_MODE
 #if CHECKS
@@ -21,6 +20,7 @@ std::vector<std::string> DecoderAPCA::decodeDataColumn(DecoderCommon* decoder){
 #endif // END CHECKS
 #endif // END MASK_MODE
 
+    int unprocessed_rows = decoder->data_rows_count;
     while (unprocessed_rows > 0) {
 #if MASK_MODE
         if (decoder->mask->isNoData()) {
