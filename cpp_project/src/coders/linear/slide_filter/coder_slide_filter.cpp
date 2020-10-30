@@ -19,7 +19,6 @@ void CoderSlideFilter::codeCoderParams(){
 }
 
 void CoderSlideFilter::codeColumnBefore(){
-    m_nBegin_Point = 0;
     delta_sum = 0;
     int error_threshold = error_thresholds_vector.at(column_index);
     data = new SlideFilterWindow(total_data_rows, error_threshold);
@@ -55,18 +54,16 @@ void CoderSlideFilter::codeEntry(bool connToFollow, double timestamp, double val
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void CoderSlideFilter::compress(){
-    std::cout << "CoderSlideFilter::compress BEGIN >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" << std::endl;
     int inputSize = data->getDataLength();
     int i = 0;
 
-    window_size = 100000;
-    std::cout << "inputSize = " << inputSize << std::endl;
+//    std::cout << "inputSize = " << inputSize << std::endl;
 //    std::cout << "window_size = " << window_size << std::endl;
     int error_threshold = error_thresholds_vector.at(column_index);
 
     while(i < inputSize) {
         int win_size = ((inputSize - i) < window_size) ? (inputSize - i) : window_size;
-        std::cout << "win_size = " << win_size << std::endl;
+//        std::cout << "win_size = " << win_size << std::endl;
 
         m_pSFData = new SlideFilterWindow(win_size, error_threshold);
         int first_timestamp = data->getAt(i).timestamp;
@@ -74,18 +71,12 @@ void CoderSlideFilter::compress(){
             DataItem item2 = data->getAt(j);
             int diff_timestamp = item2.timestamp - first_timestamp; // the first timestamp is always 0
             m_pSFData->addDataItemTwo(diff_timestamp, item2.value);
-            if (j == i){
-                std::cout << "first_timestamp = " << diff_timestamp << std::endl;
-            }
-            else if (j == i + win_size - 1){
-                std::cout << "last_timestamp = " << diff_timestamp << std::endl;
-            }
+//            std::cout << "  i=" << i << "  => (" << diff_timestamp << ", " << item2.value << ")" <<  std::endl;
         }
         compressWindow();
         delete m_pSFData;
         i += win_size;
     }
-    std::cout << "CoderSlideFilter::compress END <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<" << std::endl;
 //    m_pSFData = data;
 //    compressWindow();
 }
@@ -94,6 +85,8 @@ void CoderSlideFilter::compress(){
 // compress raw data
 void CoderSlideFilter::compressWindow()
 {
+    m_nBegin_Point = 0;
+//    std::cout << "compressWindow()" << std::endl;
     int inputSize = m_pSFData->getDataLength();
     if (inputSize == 1)
     {
@@ -278,7 +271,7 @@ void CoderSlideFilter::recording_mechanism(int& position)
         codeEntry(true, t, m_curG.getValue(t));
         codeEntry(false, item.timestamp, item.value);
         position++;
-        std::cout << "last_recording1 = (" << item.timestamp << ", " << item.value << ")" << std::endl;
+//        std::cout << "  last_recording1 = (" << item.timestamp << ", " << item.value << ")" << std::endl;
     }
         //position == inputSize --> Create last recording
     else
@@ -286,7 +279,7 @@ void CoderSlideFilter::recording_mechanism(int& position)
         DataItem item = m_pSFData->getAt(position - 1);
         double t = item.timestamp;
         codeEntry(false, t, m_curG.getValue(t));
-        std::cout << "last_recording2 = (" << item.timestamp << ", " << m_curG.getValue(t) << ")" << std::endl;
+//        std::cout << "  last_recording2 = (" << item.timestamp << ", " << m_curG.getValue(t) << ")" << std::endl;
     }
 }
 

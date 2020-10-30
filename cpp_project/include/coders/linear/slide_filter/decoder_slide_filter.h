@@ -23,7 +23,7 @@ private:
     SlideFiltersEntry* getAt(int position);
     void addValue(DataItem data_item);
     void decompress(std::vector<int> x_coords_vector);
-    void decompressWindow(std::vector<int> x_coords_vector, int current_window_size);
+    void decompressWindow(std::vector<int> x_coords_vector, int start_position, int current_window_size);
 
 public:
     using DecoderCols::DecoderCols;

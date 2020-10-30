@@ -35,6 +35,7 @@ int SlideFilterWindow::getDataLength() {
 }
 
 DataItem SlideFilterWindow::getAt(int pos) {
+//    std::cout << "  p=" << pos << "  => (" << data[pos].timestamp << ", " << data[pos].value << ")" <<  std::endl;
     return data[pos];
 }
 

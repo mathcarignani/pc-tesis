@@ -17,6 +17,7 @@ std::vector<std::string> DecoderSlideFilter::decodeDataColumn(){
         std::vector<int> x_coords_vector = CoderUtils::createXCoordsVectorMaskModeSF(mask, time_delta_vector, 1);
 //    std::cout << "lastTimeStamp = " << lastTimeStamp << std::endl;
         decompress(x_coords_vector);
+//        std::cout << "column->unprocessed_data_rows = " <<  column->unprocessed_data_rows << std::endl;
         assert(column->unprocessed_data_rows == 0);
     }
     while (column->notFinished()) {
@@ -39,9 +40,15 @@ SlideFiltersEntry* DecoderSlideFilter::decodeEntry(){
 }
 
 SlideFiltersEntry* DecoderSlideFilter::getAt(int position){
+//    std::cout << "      getAt(" << position << ")" << std::endl;
+//    std::cout << "      current_position = " << current_position << std::endl;
     if (current_position < position){
         current_position = position;
         lastDecodedEntry = decodeEntry();
+//        std::cout << "      +lastDecodedEntry = " << lastDecodedEntry->value << std::endl;
+    }
+    else{
+//        std::cout << "      -lastDecodedEntry = " << lastDecodedEntry->value << std::endl;
     }
     return lastDecodedEntry;
 }
@@ -50,10 +57,12 @@ SlideFiltersEntry* DecoderSlideFilter::getAt(int position){
 void DecoderSlideFilter::addValue(DataItem data_item){
     while (mask->isNoData()) {
         column->addNoData();
+//        std::cout << "    N" << std::endl;
         row_index++;
     }
     std::string value = Conversor::doubleToIntToString(data_item.value);
     column->addData(value);
+//    std::cout << "    " << value << std::endl;
     row_index++;
 }
 
@@ -65,46 +74,55 @@ void DecoderSlideFilter::decompress(std::vector<int> x_coords_vector){
 #endif // END CHECKS
     row_index = 0;
     mask->reset();
-    window_size = 100000;
 
     int unprocessed_rows = mask->total_data;
-    std::cout << "unprocessed_rows = " << unprocessed_rows << std::endl;
+    int start_position = 0;
+//    std::cout << "unprocessed_rows = " << unprocessed_rows << std::endl;
     while (unprocessed_rows > 0) {
         int current_window_size = (unprocessed_rows >= window_size) ? window_size : unprocessed_rows;
-        std::cout << "current_window_size = " << current_window_size << std::endl;
-        decompressWindow(x_coords_vector, current_window_size);
+//        std::cout << "current_window_size = " << current_window_size << std::endl;
+
+        int first_timestamp = x_coords_vector[0];
+        for(int i = 0; i < x_coords_vector.size(); i++){
+            x_coords_vector[i] -= first_timestamp - 1;
+//            if (i==0 || i == current_window_size - 1){
+//                std::cout << "i=" << i << " timestamp = " << x_coords_vector[i] << " ***" << std::endl;
+//            }
+//            else {
+//                std::cout << "i=" << i << " timestamp = " << x_coords_vector[i] << std::endl;
+//            }
+
+        }
+//        std::cout << "  start_position = " << start_position << std::endl;
+        decompressWindow(x_coords_vector, start_position, current_window_size);
+        start_position += current_window_size;
 
         unprocessed_rows -= current_window_size;
         if (unprocessed_rows > 0){
-            int first_timestamp = x_coords_vector[current_window_size - 1];
-            // remove the first current_window_size elements of the vector
             x_coords_vector.erase(x_coords_vector.begin(), x_coords_vector.begin() + current_window_size);
-            for(int i = 0; i < x_coords_vector.size(); i++){
-                x_coords_vector[i] -= first_timestamp;
-            }
         }
     }
 }
 
-void DecoderSlideFilter::decompressWindow(std::vector<int> x_coords_vector, int current_window_size)
+void DecoderSlideFilter::decompressWindow(std::vector<int> x_coords_vector, int start_position, int current_window_size)
 {
     SlideFiltersEntry slEntry1, slEntry2;
     DataItem inputEntry;
 
-    current_position = -1;
+    current_position = start_position-1;
 
     if (x_coords_vector.size() == 1){
-        slEntry1 = *getAt(0);
+        slEntry1 = *getAt(start_position);
         inputEntry.timestamp = slEntry1.timestamp;
         inputEntry.value = slEntry1.value;
         addValue(inputEntry);
         return;
     }
 
-    int position = 0;
+    int position = start_position;
     double timeStamp = 0;
     int first_coord = x_coords_vector.at(0);
-    std::cout << "first_coord = " << first_coord << std::endl;
+//    std::cout << "  first_coord = " << first_coord << std::endl;
 
     Line* l = NULL;
 
@@ -146,7 +164,6 @@ void DecoderSlideFilter::decompressWindow(std::vector<int> x_coords_vector, int 
                 inputEntry.timestamp = slEntry1.timestamp;
                 inputEntry.value = slEntry1.value;
                 addValue(inputEntry);
-                current_window_size--;
 //                std::cout << "    add(inputEntry) = (" << inputEntry.timestamp << ", " << inputEntry.value << ") ********************************************************" << std::endl;
                 break;
             }
@@ -182,8 +199,8 @@ void DecoderSlideFilter::decompressWindow(std::vector<int> x_coords_vector, int 
 //        std::cout << "    add(inputEntry) = (" << inputEntry.timestamp << ", " << inputEntry.value << ") ********************************************************" << std::endl;
     }
     delete l;
-    std::cout << "timeStamp = " << timeStamp << std::endl;
-    std::cout << "lastDecodedEntry = (" << lastDecodedEntry->timestamp << ", " << lastDecodedEntry->value << ")" << std::endl;
+//    std::cout << "  timeStamp = " << timeStamp << std::endl;
+//    std::cout << "  lastDecodedEntry = (" << lastDecodedEntry->timestamp << ", " << lastDecodedEntry->value << ")" << std::endl;
 }
 
 #endif // MASK_MODE
