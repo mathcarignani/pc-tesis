@@ -29,8 +29,12 @@ std::vector<std::string> DecoderSlideFilter::decodeDataColumn(){
 
 SlideFiltersEntry* DecoderSlideFilter::decodeEntry(){
     bool connToFollow = decodeBool();
-    double timestamp = decodeDouble();
-    double value = decodeDouble();
+    double timestamp = decodeFloat();
+    double value = decodeFloat();
+    if (column_index == 1){
+        std::cout.precision(17);
+        std::cout << "----- " << connToFollow << " " << timestamp << " " << value << std::endl;
+    }
     SlideFiltersEntry* recording = new SlideFiltersEntry(value, timestamp, connToFollow);
 //    std::cout << "decodeEntry" << std::endl;
 //    std::cout << "recording.connToFollow " << recording->connToFollow << std::endl;
@@ -62,7 +66,9 @@ void DecoderSlideFilter::addValue(DataItem data_item){
     }
     std::string value = Conversor::doubleToIntToString(data_item.value);
     column->addData(value);
-//    std::cout << "    " << value << std::endl;
+    if (column_index == 1) {
+        std::cout << "addValue = " << value << std::endl;
+    }
     row_index++;
 }
 
@@ -177,6 +183,9 @@ void DecoderSlideFilter::decompressWindow(std::vector<int> x_coords_vector, int 
             Point p1(slEntry1.value, slEntry1.timestamp);
             Point p2(slEntry2.value, slEntry2.timestamp);
             l = new Line(&p1, &p2);
+            if (column_index == 1){
+                std::cout << "LINE => (" << p1.x << ", " << p1.y << ") - (" << p2.x << ", " << p2.y << ")" << std::endl;
+            }
 //            std::cout << "    New line" << std::endl;
 //            std::cout << "    p1=(" << slEntry1.timestamp << ", " << slEntry1.value << ")" << std::endl;
 //            std::cout << "    p2=(" << slEntry2.timestamp << ", " << slEntry2.value << ")" << std::endl;
@@ -194,8 +203,13 @@ void DecoderSlideFilter::decompressWindow(std::vector<int> x_coords_vector, int 
         //Get point on line at each corresponding time
         inputEntry.timestamp = i;
         inputEntry.value = l->getValue(inputEntry.timestamp);
+        if (column_index == 1){
+            std::cout.precision(17);
+            std::cout << "  l->getValue(" << inputEntry.timestamp << ") = " << inputEntry.value << std::endl;
+        }
         addValue(inputEntry);
         current_window_size--;
+
 //        std::cout << "    add(inputEntry) = (" << inputEntry.timestamp << ", " << inputEntry.value << ") ********************************************************" << std::endl;
     }
     delete l;

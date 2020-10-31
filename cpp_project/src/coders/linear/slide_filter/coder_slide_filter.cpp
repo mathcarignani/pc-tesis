@@ -45,10 +45,13 @@ void CoderSlideFilter::codeColumnAfter() {
 }
 
 void CoderSlideFilter::codeEntry(bool connToFollow, double timestamp, double value){
-//    std::cout << connToFollow << " " << (int) timestamp << " " << value << std::endl;
+    if (column_index == 1){
+        std::cout.precision(17);
+        std::cout << "----- " << connToFollow << " " << (float) timestamp << " " << (float) value << std::endl;
+    }
     codeBool(connToFollow);
-    codeDouble(timestamp);
-    codeDouble(value);
+    codeFloat(timestamp);
+    codeFloat(value);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -132,6 +135,9 @@ void CoderSlideFilter::compressWindow()
 // Initialize upper bound and lower bound
 void CoderSlideFilter::initializeU_L(double t1, double v1, double t2, double v2, double eps)
 {
+    if (column_index == 1){
+        std::cout << "CoderSlideFilter::initializeU_L(" << t1 << ", " << v1 << ", " << t2 << ", " << v2 << ", " << eps << ")" << std::endl;
+    }
     Point top1(v1 + eps, t1);
     Point bottom1(v1 - eps, t1);
     Point top2(v2 + eps, t2);
@@ -143,6 +149,9 @@ void CoderSlideFilter::initializeU_L(double t1, double v1, double t2, double v2,
 // Update upper bound and lower bound
 bool CoderSlideFilter::updateUandLforConnectedSegment(Line& curU, Line& curL, Line prevG)
 {
+    if (column_index == 1){
+        std::cout << "CoderSlideFilter::updateUandLforConnectedSegment(...)" << std::endl;
+    }
     if (m_nBegin_Point ==0)
         return false;
 
@@ -192,6 +201,9 @@ bool CoderSlideFilter::updateUandLforConnectedSegment(Line& curU, Line& curL, Li
 // Find the fittest line in range of lower bound and upper bound
 Line CoderSlideFilter::getFittestLine_G(int beginPoint, int endPoint, Line curU, Line curL)
 {
+    if (column_index == 1){
+        std::cout << "CoderSlideFilter::getFittestLine_G(...)" << std::endl;
+    }
     Point ul = curU.getIntersection(curL);
     double numberator = 0;
     double denominator = 0;
@@ -215,12 +227,19 @@ Line CoderSlideFilter::getFittestLine_G(int beginPoint, int endPoint, Line curU,
     Line fittestLine;
     fittestLine.setSlope(fittestSlope);
     fittestLine.setIntercept(ul.y - (fittestSlope * ul.x));
+    if (column_index == 1){
+        std::cout << "fittestLine.setSlope(" << fittestSlope << ")" << std::endl;
+        std::cout << "fittestLine.setIntercept(" << ul.y - (fittestSlope * ul.x) << ")" << std::endl;
+    }
     return fittestLine;
 }
 
 // Generate line segments for the filtering intervals and update the latest-executed point
 void CoderSlideFilter::recording_mechanism(int& position)
 {
+    if (column_index == 1){
+        std::cout << "CoderSlideFilter::recording_mechanism(...)" << std::endl;
+    }
     int inputSize = m_pSFData->getDataLength();
     m_curU.getIntersection(m_curL);
     DataItem begin_curSeg = m_pSFData->getAt(m_nBegin_Point);
@@ -286,6 +305,9 @@ void CoderSlideFilter::recording_mechanism(int& position)
 // Adjust upper bound and lower bound with the arrival of each new data point at 'position'
 void CoderSlideFilter::filtering_mechanism(int position)
 {
+    if (column_index == 1){
+        std::cout << "CoderSlideFilter::filtering_mechanism(" << position << ")" << std::endl;
+    }
     DataItem item = m_pSFData->getAt(position);
     double upperValue = m_curU.getValue(item.timestamp);
     double lowerValue = m_curL.getValue(item.timestamp);
