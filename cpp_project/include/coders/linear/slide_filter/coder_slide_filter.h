@@ -30,11 +30,11 @@ private:
     void codeColumnWhile(std::string csv_value) override;
     void codeColumnAfter() override;
 
-    void codeEntry(bool connToFollow, double timestamp, double value);
+    void codeEntry(bool connToFollow, float timestamp, float value);
 
     void compress();
     void compressWindow();
-    void initializeU_L(double t1, double v1, double t2, double v2, double eps);
+    void initializeU_L(float t1, float v1, float t2, float v2, float eps);
     bool updateUandLforConnectedSegment(Line& curU, Line& curL, Line prevG);
     Line getFittestLine_G(int beginPoint, int endPoint, Line curU, Line curL);
     void recording_mechanism(int& position);

@@ -1,6 +1,7 @@
 #ifndef __Line_H
 #define __Line_H
 
+#include "iostream"
 #include "../../DataManagementLayer/Data/DataItem.h"
 
 // Add ----> debug
@@ -30,6 +31,10 @@ struct Point
 		x = input.timestamp;
 		y = input.value;
 	}
+
+	void print(){
+		std::cout << "Point: (" << x << ", " << y << ")" << std::endl;
+	}
 };
 
 
@@ -38,6 +43,8 @@ class Line
 private:
 	double slope;
 	double intercept;
+	Point* p1;
+	Point* p2;
 
 public:
 	Line();
@@ -57,6 +64,9 @@ public:
 
 	double getValue(double x);
 
+	Point getPoint1();
+	Point getPoint2();
+
 	Point getIntersection(const Line& line);
 
     // New Methods
@@ -64,6 +74,8 @@ public:
     double getYDistanceToDot(Point* point);
     bool pointIsAbove(Point* point);
     bool pointIsBelow(Point* point);
+
+    void print();
 
 };
 

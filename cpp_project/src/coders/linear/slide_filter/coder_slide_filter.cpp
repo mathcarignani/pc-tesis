@@ -44,7 +44,7 @@ void CoderSlideFilter::codeColumnAfter() {
     delete data;
 }
 
-void CoderSlideFilter::codeEntry(bool connToFollow, double timestamp, double value){
+void CoderSlideFilter::codeEntry(bool connToFollow, float timestamp, float value){
     if (column_index == 1){
         std::cout.precision(17);
         std::cout << "----- " << connToFollow << " " << (float) timestamp << " " << (float) value << std::endl;
@@ -100,13 +100,15 @@ void CoderSlideFilter::compressWindow()
     }
 
     // Initialize upper bound and lower bound
-    double eps = m_pSFData->getEsp();
+//    double eps = m_pSFData->getEsp();
+    float eps = m_pSFData->getEsp();
     DataItem item1 = m_pSFData->getAt(0);
     DataItem item2 = m_pSFData->getAt(1);
     initializeU_L(item1.timestamp, item1.value, item2.timestamp, item2.value, eps);
 
     //Read the input
-    double upperValue, lowerValue;
+//    double upperValue, lowerValue;
+    float upperValue, lowerValue;
     DataItem item;
     for (int i = 2; i <= inputSize; i++)
     {
@@ -133,10 +135,11 @@ void CoderSlideFilter::compressWindow()
 }
 
 // Initialize upper bound and lower bound
-void CoderSlideFilter::initializeU_L(double t1, double v1, double t2, double v2, double eps)
+//void CoderSlideFilter::initializeU_L(double t1, double v1, double t2, double v2, double eps)
+void CoderSlideFilter::initializeU_L(float t1, float v1, float t2, float v2, float eps)
 {
     if (column_index == 1){
-        std::cout << "CoderSlideFilter::initializeU_L(" << t1 << ", " << v1 << ", " << t2 << ", " << v2 << ", " << eps << ")" << std::endl;
+        std::cout << "CoderSlideFilter::initializeU_L((" << t1 << ", " << v1 << "), (" << t2 << ", " << v2 << "), " << eps << ")" << std::endl;
     }
     Point top1(v1 + eps, t1);
     Point bottom1(v1 - eps, t1);
@@ -151,11 +154,20 @@ bool CoderSlideFilter::updateUandLforConnectedSegment(Line& curU, Line& curL, Li
 {
     if (column_index == 1){
         std::cout << "CoderSlideFilter::updateUandLforConnectedSegment(...)" << std::endl;
+        std::cout << "    curU: ";
+        curU.print();
+        std::cout << "    curL: ";
+        curL.print();
+        std::cout << "    prevG: ";
+        prevG.print();
     }
     if (m_nBegin_Point ==0)
         return false;
 
     Point ul = curU.getIntersection(&curL);
+    if (column_index == 1){
+        ul.print();
+    }
     DataItem preItem= m_pSFData->getAt(m_nBegin_Point - 1);
     DataItem firstItem = m_pSFData->getAt(m_nBegin_Point);
 
@@ -164,15 +176,28 @@ bool CoderSlideFilter::updateUandLforConnectedSegment(Line& curU, Line& curL, Li
     Point beta(prevG.getValue(firstItem.timestamp), firstItem.timestamp);
     Line alpha_ul(&ul,&alpha);
     Line beta_ul(&ul, &beta);
+    if (column_index == 1){
+        alpha.print();
+        beta.print();
+        alpha_ul.print();
+        beta_ul.print();
+    }
 
-    double minSlope, maxSlope;
+//    double minSlope, maxSlope;
+    float minSlope, maxSlope;
     if (alpha_ul.getSlope() < beta_ul.getSlope())
     {
+        if (column_index == 1){
+            std::cout << "    alpha_ul.getSlope() < beta_ul.getSlope()" << std::endl;
+        }
         minSlope = alpha_ul.getSlope();
         maxSlope = beta_ul.getSlope();
     }
     else
     {
+        if (column_index == 1){
+            std::cout << "    ELSE alpha_ul.getSlope() < beta_ul.getSlope()" << std::endl;
+        }
         maxSlope = alpha_ul.getSlope();
         minSlope = beta_ul.getSlope();
     }
@@ -181,17 +206,29 @@ bool CoderSlideFilter::updateUandLforConnectedSegment(Line& curU, Line& curL, Li
     bool isConnected = false;
     if (minSlope < curU.getSlope() && maxSlope > curL.getSlope())
     {
+
         Point ul = curU.getIntersection(&curL);
         isConnected = true;
+        if (column_index == 1){
+            std::cout << "    " << minSlope << " < " << curU.getSlope() << std::endl;
+            std::cout << "    " << maxSlope << " > " << curL.getSlope() << std::endl;
+            std::cout << "    isConnected = true;" << std::endl;
+            ul.print();
+        }
 
         // Update bounds
         if (maxSlope < curU.getSlope())
         {
             curU.update(&ul,maxSlope);
+            std::cout << "    curU: ";
+            curU.print();
+
         }
         if (minSlope > curL.getSlope())
         {
             curL.update(&ul,minSlope);
+            std::cout << "    curL: ";
+            curL.print();
         }
     }
 
@@ -203,33 +240,58 @@ Line CoderSlideFilter::getFittestLine_G(int beginPoint, int endPoint, Line curU,
 {
     if (column_index == 1){
         std::cout << "CoderSlideFilter::getFittestLine_G(...)" << std::endl;
+        std::cout << "    curU: ";
+        curU.print();
+        std::cout << "    curL: ";
+        curL.print();
+
     }
     Point ul = curU.getIntersection(curL);
-    double numberator = 0;
-    double denominator = 0;
+    if (column_index == 1){
+        std::cout << "    ul = (" << ul.x << ", " << ul.y << ")" << std::endl;
+    }
+//    double numberator = 0;
+//    double denominator = 0;
+    float numberator = 0;
+    float denominator = 0;
 
     for (int j = beginPoint + 1; j < endPoint;  j++)
     {
         DataItem item = m_pSFData->getAt(j);
+        if (column_index == 1){
+            std::cout << "    item = (" << item.timestamp << ", " << item.value << ")" << std::endl;
+        }
         numberator += (item.value - ul.y) * (item.timestamp - ul.x);
         denominator += (item.timestamp - ul.x) * (item.timestamp - ul.x);
     }
 
-    double fraction = numberator / denominator;
-    double slopeU = curU.getSlope();
-    double slopeL = curL.getSlope();
+//    double fraction = numberator / denominator;
+//    double slopeU = curU.getSlope();
+//    double slopeL = curL.getSlope();
+    float fraction = numberator / denominator;
+    float slopeU = curU.getSlope();
+    float slopeL = curL.getSlope();
+    if (column_index == 1){
+        std::cout.precision(17);
+        std::cout << "    numberator = " << numberator << std::endl;
+        std::cout << "    denominator = " << denominator << std::endl;
+        std::cout << "    fraction = " << fraction << std::endl;
+        std::cout << "    slopeU = " << slopeU << std::endl;
+        std::cout << "    slopeL = " << slopeL << std::endl;
+    }
 
     // Get fittest slope in range of lower and upper bounds
-    double fittestSlope = fraction > slopeU ? slopeU : fraction;
+//    double fittestSlope = fraction > slopeU ? slopeU : fraction;
+    float fittestSlope = fraction > slopeU ? slopeU : fraction;
     fittestSlope = fittestSlope > slopeL ? fittestSlope : slopeL;
 
     // Create fittest line
     Line fittestLine;
     fittestLine.setSlope(fittestSlope);
-    fittestLine.setIntercept(ul.y - (fittestSlope * ul.x));
+    fittestLine.setIntercept(ul.y - fittestSlope * ul.x);
     if (column_index == 1){
-        std::cout << "fittestLine.setSlope(" << fittestSlope << ")" << std::endl;
-        std::cout << "fittestLine.setIntercept(" << ul.y - (fittestSlope * ul.x) << ")" << std::endl;
+        std::cout << "    fittestLine.setSlope(" << fittestSlope << ")" << std::endl;
+        std::cout << "    fittestLine.setIntercept(" << ul.y - (fittestSlope * ul.x) << ")" << std::endl;
     }
     return fittestLine;
 }
@@ -241,29 +303,62 @@ void CoderSlideFilter::recording_mechanism(int& position)
         std::cout << "CoderSlideFilter::recording_mechanism(...)" << std::endl;
     }
     int inputSize = m_pSFData->getDataLength();
-    m_curU.getIntersection(m_curL);
+////    m_curU.getIntersection(m_curL);
+//    Point a = m_curU.getIntersection(m_curL);
+//    if (column_index == 1) std::cout << "a = (" << a.x << ", " << a.y << ")" << std::endl;
     DataItem begin_curSeg = m_pSFData->getAt(m_nBegin_Point);
 
     bool existInter = updateUandLforConnectedSegment(m_curU,m_curL,m_prevG);
+
     m_curG = getFittestLine_G(m_nBegin_Point, position, m_curU, m_curL);
+
+//    double t, eps;
+    float t, eps;
+    bool coded_entry = false;
 
     if (m_nBegin_Point == 0)
     {
+        if (column_index == 1) std::cout << "    Create first recording" << std::endl;
         //Create first recording
-        double t = begin_curSeg.timestamp;
+        t = begin_curSeg.timestamp;
         codeEntry(true, t, m_curG.getValue(t));
+        coded_entry = true;
     }
     else if (existInter)
     {
+        if (column_index == 1) std::cout << "    m_curG cut m_prevG at valid section" << std::endl;
         //m_curG cut m_prevG at valid section
         Point inter = m_curG.getIntersection(m_prevG);
+
+        // check if the decoder is able to reconstruct the original value
+        if (m_pSFData->getEsp() == 0){
+            Point p2 = m_curL.getPoint2();
+            Point p2_float = Point((float) p2.y, (float) p2.x);
+
+            Point inter_float = Point((float) inter.y, (float) inter.x);
+
+            Line decodedLine(&inter_float, &p2_float);
+            Point p1 = m_curU.getPoint1();
+
+            int projection = (int) decodedLine.getValue(p1.x);
+            if ((column_index == 1) && (projection !=  (int) p1.y)){
+                std::cout << "DIFF" << std::endl;
+                decodedLine.print();
+                p1.print();
+                std::cout << "projection = " << projection << std::endl;
+                std::cout << "p1.y = " << p1.y << std::endl;
+                std::cout << "(int) p1.y = " << (int) p1.y << std::endl;
+            }
+        }
         codeEntry(existInter, inter.x, inter.y);
+        coded_entry = true;
     }
-    else
+    if (!coded_entry)
     {
+        if (column_index == 1) std::cout << "    m_curG cut m_prevG at invalid section" << std::endl;
         //m_curG cut m_prevG at invalid section
         DataItem end_prevSeg = m_pSFData->getAt(m_nBegin_Point - 1);
-        double t = end_prevSeg.timestamp;
+        t = end_prevSeg.timestamp;
         codeEntry(existInter, t, m_prevG.getValue(t));
         t = begin_curSeg.timestamp;
         codeEntry(true, t, m_curG.getValue(t));
@@ -271,22 +366,24 @@ void CoderSlideFilter::recording_mechanism(int& position)
 
     if (position < inputSize -1)
     {
+        if (column_index == 1) std::cout << "    Create new interval by two points" << std::endl;
         //Create new interval by two points
         m_nBegin_Point = position;
         DataItem curItem = m_pSFData->getAt(position);
         position++;
         DataItem nextItem = m_pSFData->getAt(position);
-        double eps = m_pSFData->getEsp();
+        eps = m_pSFData->getEsp();
         initializeU_L(curItem.timestamp, curItem.value, nextItem.timestamp, nextItem.value, eps);
         m_prevG = m_curG;
     }
     //if last interval has only one point --> Create last recording and finish compressing
     else if (position == (inputSize - 1))
     {
+        if (column_index == 1) std::cout << "    Create last recording and finish compressing" << std::endl;
         m_nBegin_Point = position;
         DataItem preItem = m_pSFData->getAt(m_nBegin_Point - 1);
         DataItem item = m_pSFData->getAt(position);
-        double t = preItem.timestamp;
+        t = preItem.timestamp;
         codeEntry(true, t, m_curG.getValue(t));
         codeEntry(false, item.timestamp, item.value);
         position++;
@@ -295,8 +392,9 @@ void CoderSlideFilter::recording_mechanism(int& position)
         //position == inputSize --> Create last recording
     else
     {
+        if (column_index == 1) std::cout << "    Create last recording" << std::endl;
         DataItem item = m_pSFData->getAt(position - 1);
-        double t = item.timestamp;
+        t = item.timestamp;
         codeEntry(false, t, m_curG.getValue(t));
 //        std::cout << "  last_recording2 = (" << item.timestamp << ", " << m_curG.getValue(t) << ")" << std::endl;
     }
@@ -309,11 +407,14 @@ void CoderSlideFilter::filtering_mechanism(int position)
         std::cout << "CoderSlideFilter::filtering_mechanism(" << position << ")" << std::endl;
     }
     DataItem item = m_pSFData->getAt(position);
-    double upperValue = m_curU.getValue(item.timestamp);
-    double lowerValue = m_curL.getValue(item.timestamp);
+//    double upperValue = m_curU.getValue(item.timestamp);
+//    double lowerValue = m_curL.getValue(item.timestamp);
+    float upperValue = m_curU.getValue(item.timestamp);
+    float lowerValue = m_curL.getValue(item.timestamp);
     int j;
 
-    double eps = m_pSFData->getEsp();
+//    double eps = m_pSFData->getEsp();
+    float eps = m_pSFData->getEsp();
     Point top(item.value + eps, item.timestamp);
     Point bottom(item.value - eps, item.timestamp);
     DataItem tmpItem;
