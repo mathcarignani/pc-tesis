@@ -47,8 +47,8 @@ void CoderSlideFilter::codeColumnAfter() {
 void CoderSlideFilter::codeEntry(bool connToFollow, double timestamp, double value){
 //    std::cout << connToFollow << " " << (int) timestamp << " " << value << std::endl;
     codeBool(connToFollow);
-    codeDouble(timestamp);
-    codeDouble(value);
+    codeFloat(timestamp);
+    codeFloat(value);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -234,7 +234,7 @@ void CoderSlideFilter::recording_mechanism(int& position)
         double t = begin_curSeg.timestamp;
         codeEntry(true, t, m_curG.getValue(t));
     }
-    else if (existInter)
+    else if (existInter && m_pSFData->getEsp() > 0)
     {
         //m_curG cut m_prevG at valid section
         Point inter = m_curG.getIntersection(m_prevG);

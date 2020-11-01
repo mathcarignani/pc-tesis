@@ -29,8 +29,8 @@ std::vector<std::string> DecoderSlideFilter::decodeDataColumn(){
 
 SlideFiltersEntry* DecoderSlideFilter::decodeEntry(){
     bool connToFollow = decodeBool();
-    double timestamp = decodeDouble();
-    double value = decodeDouble();
+    double timestamp = decodeFloat();
+    double value = decodeFloat();
     SlideFiltersEntry* recording = new SlideFiltersEntry(value, timestamp, connToFollow);
 //    std::cout << "decodeEntry" << std::endl;
 //    std::cout << "recording.connToFollow " << recording->connToFollow << std::endl;
