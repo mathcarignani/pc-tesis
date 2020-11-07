@@ -2,13 +2,12 @@ import sys
 sys.path.append('.')
 
 
-
 from scripts.compress.experiments_utils import ExperimentsUtils
-from scripts.informe.dataset_tables.latex_table import LatexTable
-from scripts.informe.dataset_tables.pandas_analysis import PandasAnalysis
+from scripts.informe.latex_tables.table_datasets.latex_table import LatexTable
+from scripts.informe.latex_tables.table_datasets.pandas_analysis import PandasAnalysis
 
 # TODO: move to the latex_tables path
-class DatasetAnalysis(object):
+class TableDatasets(object):
     @staticmethod
     def generate_table_irkis():
         dataset = 'IRKIS'
@@ -28,4 +27,4 @@ class DatasetAnalysis(object):
             table.add_data_irkis(data)
 
 
-DatasetAnalysis.generate_table_irkis()
+TableDatasets.generate_table_irkis()
