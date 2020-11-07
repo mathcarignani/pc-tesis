@@ -22,6 +22,8 @@ class ExamplesBase(object):
     ALPHA_LOW = 0.3
     ALPHA_LOWER = 0.2
     ALPHA_INV = 0.1
+    SMAX_MAR = 0.06
+    SMIN_MAR = 0.1
 
     def __init__(self):
         self.window = 256
@@ -35,6 +37,7 @@ class ExamplesBase(object):
         self.label_orig = 'sample'
         self.label_enco = 'encoded point'
         self.label_deco = 'decoded sample'
+        self.xs, self.yx, self.words = [], [], []
         self.epsilon = 1
 
     @classmethod
@@ -56,21 +59,26 @@ class ExamplesBase(object):
         hw, hl = 0.1, 0.1
 
         # epsilon text
-        if not plot.get('no_legend_above'):
-            ax.text(x + 0.1, y + 0.4, cls.EPSILON, fontsize=cls.FONT_SIZE, c=c, alpha=epsilon_alpha)
-        ax.text(x + 0.1, y - 0.55, cls.EPSILON, fontsize=cls.FONT_SIZE, c=c, alpha=epsilon_alpha)
+        left = -0.35 if plot.get('left') else 0
+        x_coord = x + 0.1 + left
+        if not plot.get('no_legend_above') and not plot.get('only_below') :
+            ax.text(x_coord, y + 0.4, cls.EPSILON, fontsize=cls.FONT_SIZE, c=c, alpha=epsilon_alpha)
+        if not plot.get('only_above'):
+            ax.text(x_coord, y - 0.55, cls.EPSILON, fontsize=cls.FONT_SIZE, c=c, alpha=epsilon_alpha)
 
         m = 0 if plot.get('touch_all') else 0.08
 
         # arrows above the point
-        diff = 0 if plot.get('touch_above') else m
-        ax.arrow(x, y+m, dx, dy-m-diff, head_width=hw, head_length=hl, color=c, length_includes_head=True, alpha=a)
-        ax.arrow(x, y+dy-diff, dx, -(dy-m-diff), head_width=hw, head_length=hl, color=c, length_includes_head=True, alpha=a)
+        if not plot.get('only_below'):
+            diff = 0 if plot.get('touch_above') else m
+            ax.arrow(x, y+m, dx, dy-m-diff, head_width=hw, head_length=hl, color=c, length_includes_head=True, alpha=a)
+            ax.arrow(x, y+dy-diff, dx, -(dy-m-diff), head_width=hw, head_length=hl, color=c, length_includes_head=True, alpha=a)
 
         # arrows below the point
-        diff = 0 if plot.get('touch_below') else m
-        ax.arrow(x, y-m, dx, -(dy-m-diff), head_width=hw, head_length=hl, color=c, length_includes_head=True, alpha=a)
-        ax.arrow(x, y-dy+diff, dx, dy-m-diff, head_width=hw, head_length=hl, color=c, length_includes_head=True, alpha=a)
+        if not plot.get('only_above'):
+            diff = 0 if plot.get('touch_below') else m
+            ax.arrow(x, y-m, dx, -(dy-m-diff), head_width=hw, head_length=hl, color=c, length_includes_head=True, alpha=a)
+            ax.arrow(x, y-dy+diff, dx, dy-m-diff, head_width=hw, head_length=hl, color=c, length_includes_head=True, alpha=a)
 
     def plot_original_values(self, ax, index):
         if not self.plot_original:

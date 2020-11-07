@@ -10,9 +10,6 @@ from scripts.informe.examples.examples_base import ExamplesBase
 plt.rcParams["mathtext.fontset"] = "cm"
 
 class CAExample(ExamplesBase):
-    SMAX_MAR = 0.06
-    SMIN_MAR = 0.1
-
     def __init__(self):
         super(CAExample, self).__init__()
         self.path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/informe/examples/ca/"
