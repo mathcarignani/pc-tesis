@@ -43,6 +43,22 @@ class LatexTable(object):
         table_row = LatexUtils.array_to_table_row(array, False)
         self.file.write_line(table_row)
 
+    def add_data_adcp(self, data):
+        array = [
+            data['name'],
+            LatexUtils.thousands(data['rows']),
+            LatexUtils.thousands(data['columns']),
+            LatexUtils.thousands(data['total_entries']),
+            LatexTable.nan_total(data),
+            int(data['min']),
+            LatexUtils.thousands(int(data['max'])),
+            LatexUtils.thousands(int(data['median'])),
+            LatexUtils.round_thousands(data['mean']),
+            LatexUtils.round_thousands(data['stdev'])
+        ]
+        table_row = LatexUtils.array_to_table_row(array, False)
+        self.file.write_line(table_row)
+
     @classmethod
     def nan_total(cls, data):
         return LatexUtils.thousands(data['nan_total']) + " (" + LatexUtils.round(data['nan_percentage']) + ")"

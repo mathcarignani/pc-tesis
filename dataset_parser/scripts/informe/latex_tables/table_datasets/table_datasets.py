@@ -15,11 +15,9 @@ class TableDatasets(object):
 
         for filename in filenames: # filenames[0:1]:
             data = TableDatasets.get_data(path, filename)
-
             pos1, pos2 = filename.find('_'), filename.find('.') # vwc_SLF2.smet.csv
             station = filename[pos1+1:pos2] # SLF2
             data['name'] = station
-
             table.add_data_irkis(data)
 
     @staticmethod
@@ -29,10 +27,18 @@ class TableDatasets(object):
 
         for idx, filename in enumerate(filenames):
             data = TableDatasets.get_data(path, filename)
-
             data['name'] = '0' + str(idx + 1) + '-2017'
-
             table.add_data_sst(data)
+
+    @staticmethod
+    def generate_table_adcp():
+        filenames, path = TableDatasets.get_filenames_and_path('NOAA-ADCP')
+        table = LatexTable('3-ADCP-stats.tex')
+
+        for idx, filename in enumerate(filenames):
+            data = TableDatasets.get_data(path, filename)
+            data['name'] = '0' + str(idx + 1) + '-2015'
+            table.add_data_adcp(data)
 
 
     @staticmethod
@@ -49,3 +55,6 @@ class TableDatasets(object):
 
 TableDatasets.generate_table_irkis()
 TableDatasets.generate_table_sst()
+TableDatasets.generate_table_adcp()
+
+
