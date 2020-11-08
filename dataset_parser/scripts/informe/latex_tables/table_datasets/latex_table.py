@@ -59,17 +59,39 @@ class LatexTable(object):
         table_row = LatexUtils.array_to_table_row(array, False)
         self.file.write_line(table_row)
 
+    def add_data_elnino(self, data):
+        assert(LatexUtils.thousands(data['rows']) == "6,371")
+        assert(LatexUtils.thousands(data['columns']) == "78")
+        assert(LatexUtils.thousands(data['total_entries']) == "496,938")
+        array = [
+            data['name'],
+            LatexTable.nan_total(data),
+            self.add_spaces_elnino(LatexUtils.thousands(int(data['min'])), "-18,000"),
+            self.add_spaces_elnino(LatexUtils.thousands(int(data['max'])), "17,108"),
+            self.add_spaces_elnino(LatexUtils.thousands(int(data['median'])), "-11,126"),
+            self.add_spaces_elnino(LatexUtils.round_thousands(data['mean']), "-5,402.5"),
+            self.add_spaces_elnino(LatexUtils.round_thousands(data['stdev']), "13,536.4")
+        ]
+        table_row = LatexUtils.array_to_table_row(array, False)
+        self.file.write_line(table_row)
+
     @classmethod
     def nan_total(cls, data):
         return LatexUtils.thousands(data['nan_total']) + " (" + LatexUtils.round(data['nan_percentage']) + ")"
 
     @classmethod
     def add_spaces(cls, string, expected):
-        print(string)
-        print(expected)
         assert(len(string) <= len(expected))
         expected_length = len(expected) # "224,287 (85.3)" => 14
         spaces = "\ " * 2 * (expected_length - len(string))
+        return spaces + string
+
+    @classmethod
+    def add_spaces_elnino(cls, string, expected):
+        assert(len(string) <= len(expected))
+        expected_length = len(expected) # "224,287 (85.3)" => 14
+        spaces = "\ " * 1 * (expected_length - len(string))
+        spaces = spaces + "\ " if len(string) != len(expected) else spaces
         return spaces + string
 
     def close(self):
