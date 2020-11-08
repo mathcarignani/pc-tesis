@@ -26,6 +26,8 @@ class PandasAnalysis(object):
             new_df = df.copy(deep=False)
             name = new_df.columns.tolist()[col_index] # 1_AirTemp
             common_name = name[2:len(name)] # AirTemp
+            if "GHI" in common_name or "DNI" in common_name or "DHI" in common_name:
+                common_name = common_name[2:len(name)] # AirTemp
             print(name)
             print(common_name)
             new_df = new_df.filter(like=common_name)
