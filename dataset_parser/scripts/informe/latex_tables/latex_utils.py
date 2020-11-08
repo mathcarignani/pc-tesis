@@ -74,3 +74,8 @@ class LatexUtils:
     @classmethod
     def round(cls, value):
         return str(round(value, 1))
+
+    @classmethod
+    def round_thousands(cls, value):
+        rounded = round(value, 1)
+        return str('{0:,}'.format(rounded))
