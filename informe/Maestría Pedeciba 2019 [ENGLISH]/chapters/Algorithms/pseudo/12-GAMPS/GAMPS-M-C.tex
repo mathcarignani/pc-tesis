@@ -1,0 +1,33 @@
+
+
+\newcommand{\columnsInput}{\columns: columns of the csv data file to be encoded}
+\newcommand{\colGroup}{\textit{cols\_group}}
+
+\newcommand{\forEachGroup}{\textnormal{subset of columns,} \colGroup\commaa}
+\newcommand{\ratioColumns}{\textit{ratio\_cols}}
+\newcommand{\baseColumn}{\textit{base\_col}}
+\newcommand{\ratioColumn}{\textit{ratio\_col}}
+\newcommand{\ratioColumnT}{\textit{trans\_ratio\_col}}
+
+
+\newcommand{\forEachRatio}{\textnormal{column in \ratioColumns,} \ratioColumn\commaa}
+\newcommand{\gampsSize}{$\ceil{\log _{2}|\columns|}$}
+\newcommand{\gampsSizeAux}[1]{\ceil{\log _{2}{#1}}}
+
+\beginAlgorithm
+\onlyInput{\columnsInput\\\cOutputFile{GAMPS}\\\cInputThreshold\\\cInputWindowAPCA}
+Group \columns\ into disjoint subsets of similar columns, where in each subset, a single base column is defined (to be encoded with maximum error threshold parameter \epsilonB), and the rest of columns in the subset are considered ratio columns (to be encoded with maximum error threshold parameter \epsilonR)
+
+Encode the number of subsets using \gampsSize\ bits\\
+\ForEach{\forEachGroup}{
+    Let \baseColumn\ be the base column in \colGroup\\
+    Let \ratioColumns\ be the ratio columns in \colGroup\\
+    Encode the index of \baseColumn, the number of ratio columns, and the index of each column in \ratioColumns, using \gampsSize\ bits in every case\\
+    Encode \baseColumn\ by calling the coding routine for variant \maskalgo\ of algorithm APCA with parameters \baseColumn, \out, \epsilonB, \win\ // routine in Figure~\ref{pseudoCoderAPCAM}\\
+    
+    \ForEach{\forEachRatio}{
+        Let \ratioColumnT\ be obtained by applying the following simple linear transform $\ratioColumn/\baseColumn$\\
+        Encode \ratioColumnT\ by calling the coding routine for variant \maskalgo\ of algorithm APCA with parameters \ratioColumnT, \out, \epsilonR, \win\ // routine in Figure~\ref{pseudoCoderAPCAM}\\
+    }
+}
+\EndAlgorithmVariant{Coding}{\coderGAMPS}{\maskalgo}{\label{pseudoCoderGAMPS}}

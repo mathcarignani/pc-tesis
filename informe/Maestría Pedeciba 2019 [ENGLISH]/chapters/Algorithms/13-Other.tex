@@ -1,0 +1,17 @@
+
+\clearpage
+
+\section{Other}
+\label{algo:other}
+
+
+EL SIGUIENTE PÁRRAFO ESTABA ORIGINALMENTE EN LA SECTION~\ref{algo:details}
+
+
+All the algorithms are implemented in C++. Our implementations of algorithms PWLH \cite{coder:pwlh}, SF \cite{coder:sf} and GAMPS \cite{coder:gamps} reuse part of the source code from the framework cited in \cite{AnEva2013}\footnote{The framework is available for download in the following website: http://lsirwww.epfl.ch/benchmark/}. The implementations of the remaining algorithms \cite{coder:pca, coder:apca, coder:ca, coder:fr} are entirely ours. 
+
+
+EL SIGUIENTE PÁRRAFO ESTABA ORIGINALMENTE EN LA SECTION~\ref{algo:maskmodes}
+
+
+The version of the AC algorithm we used in our project is the CACM87 implementation \cite{arcodingcomp, ac1}. It is written in C and it is one of the most standard implementations. One of its advantages is that it allows to effortlessly set a custom model for the source. However, we had to overcome a minor obstacle to make it work within our scheme. In the CACM87 implementation, the coder closes the encoded file after it has encoded the last symbol. This implies that the decoder recognizes that there are no more symbols left to decode once it reads the last byte of the encoded file. But this is not the case in our masking variant scheme, since after the AC coder has encoded the position of all the gaps in the data, our coding algorithm still has to encode all the data values before closing the encoded file (recall lines 7-9 in Figure~\ref{pseudoCodeCommon}). The problem materialized in the decoding process, because after the AC decoder had decoded the last byte corresponding to the position of the gaps (i.e. the last byte encoded by the AC coder), our decoding algorithm would occasionally continue processing bytes corresponding to the encoded data values, which naturally resulted in an error. The solution we found was to flush the current byte in the stream, before and after executing the AC algorithm, both in the coding and the decoding routines.

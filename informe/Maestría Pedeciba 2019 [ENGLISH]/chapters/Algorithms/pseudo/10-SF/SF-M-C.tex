@@ -1,0 +1,67 @@
+
+
+\newcommand{\prevPoint}{\incoming_{\textit{last}}}
+\newcommand{\firstPoint}{\incoming_{\textit{first}}}
+
+\newcommand{\newRayOne}{Let \smin\ be the ray with initial point $(\pointP.\xx, \pointP.\yy+\maxerror)$, through point $(\point.\xx, \point.\yy-\maxerror)$}
+\newcommand{\newRayTwo}{Let \smax\ be the ray with initial point $(\pointP.\xx, \pointP.\yy-\maxerror)$, through point $(\point.\xx, \point.\yy+\maxerror)$}
+
+\newcommand{\slopeCond}{$\slope(\smin)\leq \slope(\lineSeg) \leq \slope(\smax)$}
+
+\newcommand{\lineSeg}{\textit{s}}
+\newcommand{\validCondSF}{$\EseE \in \segmentSet$}
+\newcommand{\AddPointSF}{\createWindow, then add \point\ to \window}
+% \newcommand{\notLastPoint}{\point \textnormal{ is not the last point}}
+
+\beginAlgorithm
+\onlyInput{\columnInput\\\cOutputFile{SF}\\\cInputThreshold\\\cInputWindowAPCA\\\inputTSCol}
+\createWindow\\
+\ForEach{\forEachEntryCoder}{
+    \obtainTS\\
+    \letPoint\\
+    \uIf{\windowEmpty}{
+        \AddPoint, then \continueAlgo\\
+    }
+    \ElseIf{$|\window| == 1$}{
+        Let \pointP\ be the single point in $\window$\\
+        \newRayOne\\
+        \newRayTwo\\
+        \AddPoint, then \continueAlgo\\
+    }
+    Let \snapshot\ be the point of intersection of \smin\ and \smax\\
+    Let \EseE\ be a segment with endpoint \snapshot\ that passes through point \incoming\\
+    Let \segmentSet\ be the set that includes every line segment \lineSeg\ that passes through point \snapshot\ and satisfies the following condition: \slopeCond\\
+    
+    \If{\validCondSF \andd \windowNotFullOne\ }{
+        Update \smin\ and \smax\\
+        \AddPoint, then \continueAlgo\\
+    }
+    
+    \uIf{\textnormal{no window has been encoded}}{
+        \segment\ = EncodeWindow($\window$, \segmentSet) // routine shown in Figure~\ref{sfUncoM}\\
+    }
+    
+    \Else{
+        Let $\segment \in\segmentSet$ be the line segment that approximates the data points in $\window$, and can be connected to $\segmentLast$\\
+        \uIf{\segment \textnormal{ exists}}{
+            Let \pointP\ be the point of intersection of $\segmentLast$ and \segment\\
+            EncodePoint(\pointP, \out, true) // routine shown in Figure~\ref{sfPointM}\\
+        }
+        \Else{
+            Let \pointP\ be the last endpoint of $\segmentLast$\\
+            EncodePoint(\pointP, \out, false) // routine shown in Figure~\ref{sfPointM}\\
+            \segment\ = EncodeWindow($\window$, \segmentSet) // routine shown in Figure~\ref{sfUncoM}
+        }
+    }
+    Save \segment\ as $\segmentLast$\\
+    \AddPointSF\\
+}
+% \uIf{$|\window| == 1$}{
+%     \encodeWindowSizee\\
+%     Let \valuev\ be the y-coordinate of the single point in \window\\
+%     \encodeSpecific{$\valuev$}\\
+% }
+% \ElseIf{$|\window| > 1$}{
+%     \encodeWindowPWLH\\
+\EndAlgorithmVariant{Coding}{\coderSF}{\maskalgo}{\label{pseudoCoderSF}}
+

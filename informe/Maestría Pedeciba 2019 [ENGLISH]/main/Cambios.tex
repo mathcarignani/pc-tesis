@@ -1,0 +1,155 @@
+\newcommand{\wglobal}{\textit{global}}
+\newcommand{\wlocal}{\textit{local}}
+\newcommand{\WGlobal}{$w_{\wglobal}^{*}$}
+\newcommand{\WLocal}{$w_{\wlocal}^{*}$}
+
+
+
+% \clearpage
+% \textbf{Cambios de la versión anterior (12/3/2020) a esta versión (13/7/2020)}
+
+
+% \vspace{+5pt}
+% \textbf{Cambios de notación}:
+% \vspace{-10pt}
+% \begin{itemize}
+%     \item Después de definir compression ratio (CR) y relative difference (RD), nunca más uso las palabras completas, ni en el texto ni en las gráficas
+%     \item Cambié referencias a global window y local window por OWS y LOWS, respectivamente
+%     \item Cambié las ocurrencias de “ABC algorithm” por “algorithm ABC”
+%     \item Cambié la definición de CR (antes lo definía como porcentaje). Al hacer este cambio, disminuyó la cantidad de cifras, y las gráficas que antes solamente entraban verticales ahora entran horizontales. Además, en la gráficas un CR que antes era "100.04" ahora es "1.00", entonces ya no tiene sentido marcar con rojo (como antes) los casos en los que CR > 100, que son los casos en los que el algorithm Base comprime mejor que los demás.
+% \end{itemize}
+
+
+% \textbf{Mejoras fuera del informe}:
+% \vspace{-10pt}
+% \begin{itemize}
+%     \item Cambios menores en el código C++: simplifiqué el pasaje de argumentos al ejecutable, agregué tests nuevos, etc.
+%     \item Volví a ejecutar todos los experimentos. Desde que había actualizado la versión de python a 3.7 nunca los había corrido de nuevo, así que aproveché para mejorar bastante código y corrí todo de nuevo para chequear que siguiera funcionando igual.
+%     \item Mejoré los scripts que analizan los datos de los experimentos con pandas, ahora todas las gráficas y tablas que muestro en latex se generan en python.
+% \end{itemize}
+
+
+% \textbf{Cosas a mejorar sobre las que tengo dudas}:
+% \vspace{-10pt}
+% \begin{itemize}
+%     \item Introducción del Chapter 3, comentarios de la versión anterior que todavía no apliqué: "decir más preciso", "evitar terminos no definidos"
+%     \item Todavía no he terminado de resolver el tema de la nomenclatura de los algoritmos, variantes, etc. Por lo menos tengo identificados 4 conjuntos de algoritmos, que a lo mejor debería definir explícitamente en cada sección:
+%     \begin{itemize}
+%         \item Conjunto3.2 = \{PCA, APCA, CA, PWLH, PWLHInt, GAMPSLimit\}. Estos son los algoritmos de los que comparo las variantes con (M) y sin máscara (NM) en la Sección 3.2
+%         \item A = Conjunto3.2 $\cup$ \{GAMPS, FR, SF, Base\}. Estos son todos los algoritmos que se presentan en el Capítulo 2 - Algorithms. GAMPS ya se descarta en ese capítulo (GAMPSLimit siempre funciona mejor porque vimos que agrupa mejor las señales) y no se tiene en cuenta en el capítulo experimental.
+%         \item Conjunto3.3 = Conjunto3.2-M $\cup$ \{FR\}. Estos son todos los algoritmos sobre los que analizo el parámetro tamaño de ventana en la Sección 3.3. La primera parte de la unión solamente tiene en cuenta las variantes M, porque al final de la Sección 3.2 se descartan las variantes NM. Se agrega FR, que tiene parámetro tamaño de ventana, pero no se tenía en cuenta en Conjunto3.2 porque solamente tiene variante M.
+%         \item Conjunto 3.4 = Conjunto3.3 $\cup$ \{SF\}. Estos son los algoritmos que comparo en la Sección 3.4. Se agrega SF, que solamente tiene variable M, pero no se tenía en cuenta en el Conjunto3.3 porque no tiene parámetro tamaño de ventana.
+%     \end{itemize}
+% \end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% \clearpage
+% \textbf{Cambios de la versión anterior (13/7/2020) a esta versión (9/9/2020) }
+
+
+% \vspace{+5pt}
+% \textbf{Chapter 1: Datasets}
+% \vspace{-10pt}
+% \begin{itemize}
+%     \item Agregué una introducción especificando lo que va a ir en cada section.
+%     \item En la Section~\ref{datasets:over} agregué una tabla con los datasets. Incluye la columna Dataset Characteristic, que también se muestra en la Tabla~\ref{tabla:rendimiento-relativ-NM-M} del Chapter~\ref{experiments}. Creo que está bueno que esa misma información haya sido mostrada antes en el informe (y de la misma manera) cuando se presentan los datasets.
+% \end{itemize}
+
+
+% \textbf{Chapter 2: Algorithms}
+% \vspace{-10pt}
+% \begin{itemize}
+%     \item Agregué una introducción especificando lo que va a ir en cada section.
+%     \item En la Section~\ref{algo:overview} agregué una tabla con los algoritmos. Creo que ayuda a entender el tema de los distintos conjuntos de algoritmos y variantes que se definen en el Chapter~\ref{experiments}.
+%     \item En Section~\ref{algo:details} agregué el pseudocódigo genérico para todos los algoritmos de modelo constante y lineal. El algoritmo GAMPS también considera la correlación entre columnas, así que el pseudocódigo es diferente a los demás (todavía no lo hice, lo pensaba poner en la section de GAMPS).
+%     \item Además de las primeras dos secciones, las secciones de Base y PCA (\ref{algo:base} y \ref{algo:pca}) también están prontas para leer.
+%     \item En las secciones de APCA, CA y PWLH (\ref{algo:apca}, \ref{algo:ca} y \ref{algo:pwlh}) agregué el pseudocódigo del codificador con máscara y las imágenes del paso a paso del ejemplo. Todavía me falta escribir. No estoy seguro de que sea necesario agregar los pseudocódigos del decodificador con máscara. Tampoco sé si es necesario agregar los pseudocódigos del codificador y decodificador sin máscara en cada caso (ya lo hice con el algoritmo PCA y las diferencias son similares), a lo mejor alcanza con escribir un comentario en cada caso y listo.
+%     \item En las secciones de SF y FR (\ref{algo:sf} y \ref{algo:fr}) solamente agregué la imagen con la gráfica del último paso del ejemplo (Notar que para todos los algoritmos del capítulo, el ejemplo de 12 valores devuelve algo distinto al ser decodificado). Me falta todo el resto.
+%     \item En la sección de GAMPS (\ref{algo:gamps}) es la única en donde todavía no he escrito nada. Tengo que pensar otro ejemplo ya que este algoritmo codifica más de una columna del csv en paralelo.
+% \end{itemize}
+
+
+
+
+% \textbf{Chapter 3: Experimental Results}
+% \vspace{-10pt}
+% \begin{itemize}
+%     \item Introducción: Hice las correcciones marcadas y la separé en párrafos. Marqué un par de dudas con negrita.
+%     \item Al principio de la Section~\ref{experiments:experiments} agregué varias definiciones en un párrafo. No estoy seguro si debería hacer definiciones formales o si está bien que estén todas juntas en un párrafo.
+%     \item En las leyendas de las figuras~\ref{fig:window-compare-1202} y~\ref{fig:window-compare-1203} está bien poner LOWS y OWS, o debería poner \WGlobal y \WLocal?
+%     \item En todas las figuras después de la Section~\ref{secX:rendimiento-relativo} creo que debería poner $\text{PCA}_\textit{M}$, $\text{APCA}_\textit{M}$, etc. en vez de PCA, APCA, etc.
+%     \item Agregué la Section~\ref{secX:conclu} con conclusiones. Algunas cosas quedaron similares a la introducción, pero intenté de que nunca hubiera dos frases iguales.
+%     \item Agregué la Section~\ref{secX:future} con un punteo de ideas de trabajo futuro. Conclusions and Future Work debería ser un capítulo aparte?
+% \end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% \clearpage
+% \textbf{Cambios de la versión anterior (9/9/2020) a esta versión (1/10/2020) }
+
+% \begin{itemize}
+% \item Agregué los índices al principio del pdf (incluyendo Table of Contents, para mejorar la navegación)
+% \end{itemize}
+
+% \vspace{+5pt}
+% \textbf{Chapter 2: Algorithms}
+% \vspace{-10pt}
+% \begin{itemize}
+%     \item Hice las mejores sugeridas en las sections~\ref{algo:overview} (Introduction), \ref{algo:details} (Implementation details), \ref{algo:base} (Algorithm Base) y \ref{algo:pca} (Algorithm PCA).
+%     \item Teniendo en cuenta las mejoras sugeridas para la Section~\ref{algo:pca} (Algorithm PCA), reescribí la Section~\ref{algo:apca} (Algorithm APCA). El Chapter 2 está pronto para leer hasta la Section~\ref{algo:apca} inclusive .
+%     \item Hice una Section~\ref{algo:other} nueva, con algunos párrafos que no estoy seguro dónde ponerlos.
+%     \item En las gráficas de los ejemplos antes tenía dos leyendas: sample value y encoded value. Agregué decoded value. Creo que en los ejemplos queda claro qué significa cada cosa (especialmente en el ejemplo de PWLH - ver Figure~\ref{example:pwlh:10}, donde para cierto timestamp, un encoded value float no necesariamente coincide con el decoded value entero), pero quizás debería agregar una explicación en algún lado. Cuando eran dos leyendas había una explicación pero me sugeriste borrarla.
+%     \item Pregunta de estilo. Los comienzos de las secciones Example de PCA y APCA (\ref{algo:pca:example} y \ref{algo:apca:example}) son muy similares. ¿Está mal repetir el texto de forma tan similar o puedo comenzar el resto de secciones Example (de cada algoritmo) de la misma manera?
+%     \item En la Section~\ref{algo:pca} (Algorithm PCA), agregué la Subsection~\ref{algo:pca:nmvariant}, en donde explico algunos detalles de la NM variant del algoritmo. Agregué el pseudocódigo de la rutina de codificación, pero la rutina de decodificación las expliqué solo con palabras, creo que es suficiente. 
+%     \item En la Section~\ref{algo:apca} (Algorithm APCA), agregué la Subsection~\ref{algo:apca:nmvariant}, pero en este caso los detalles de la NM variant los expliqué con palabras, sin agregar ningún pseudocódigo. Me parece que con tener los pseudocódigos de las dos rutinas de codificación (M y NM variants), aunque sea para un único algoritmo (PCA), basta para entender bien el tipo de diferencias que hay en el código de las dos variantes de cada algoritmo. Y creo que en el resto de algoritmos alcanza con tener el pseudocódigo de la rutina de codificación de la M variant y hacer algunos comentarios de la NM variant pero sin agregar pseudocódigo (igual que como hice con APCA). 
+%     \item Las rutinas de decodificación para los algoritmos de modelo lineal (los que codifican los valores de una ventana con una función lineal) son bastante similiares en todos los casos (PWLH, SF, CA y FR). En general decodifican un par de puntos (x0,y0) y (xn,yn), y sustituyen xi (x0<xi<xn) en la ecuación del segmento de recta (definido por los puntos) para obtener los valores de y1,..,yn-1. Creo que alcanza con tener el pseudocódigo de la rutina de decodificación para uno solo de estos algoritmos. Con el resto hay diferencias menores, que se pueden explicar con palabras.
+% \end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% TODO: remove red
+\newcommand{\column}{\textit{column}}
+\newcommand{\totalBits}{\text{total\_bits}}
+\newcommand{\colTotBits}{\color{red}\column.\totalBits \color{black}}
+
+\clearpage
+\textbf{Cambios de la versión anterior (9/10/2020) a esta versión (9/10/2020) }
+
+\begin{itemize}
+\item Terminé el Chapter~\ref{datasets} (Datasets) y el Chapter~\ref{algo} (Algorithms), ya estarían prontos para leer.
+\item En Chapter~\ref{algo} (Algorithms), en varios lugares quedó la referencia a $\colTotBits$. $\colTotBits$ representa el número fijo de bits, que depende del tipo de datos de la columna, que utilizo para codificar un sample. Debería cambiarlo por alguna otra cosa.
+\item En Chapter~\ref{experiments} (Experimental Results), tengo que hacer algunos cambios en las gráficas porque ahora el algoritmo SF soporta el parámetro del tamaño de ventana. Además, las gráficas de CR van a quedar mejores porque el algoritmo SF ahora codifica floats en vez de doubles, así que todas las gráficas van a quedar más a escala (antes los resultados de CR del algoritmo SF siempre eran mucho peores).
+\end{itemize}

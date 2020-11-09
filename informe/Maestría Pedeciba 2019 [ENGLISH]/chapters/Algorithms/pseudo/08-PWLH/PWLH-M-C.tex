@@ -1,0 +1,39 @@
+
+
+\newcommand{\hull}{\textit{hull}}
+
+\newcommand{\encodeWindowPWLH}{EncodeWindow(\window, \out, \win) // routine shown in Figure~\ref{pwlhWindowM}}
+
+\newcommand{\tentry}{$t_\entry$}
+
+\newcommand{\AddPoint}{Add \point\ to \window}
+\newcommand{\validHull}{\textit{valid\_hull}}
+\newcommand{\obtainTS}{Obtain timestamp for \entry, \tentry, from \tscol}
+
+\newcommand{\letPointCoor}[3]{Let {#1}\ be the point with coordinates ({#2}, {#3})}
+\newcommand{\letPoint}{\letPointCoor{\point}{\tentry}{\entry}}
+
+\beginAlgorithm
+\onlyInput{\columnInput\\\cOutputFile{PWLH}\\\cInputThreshold\\\cInputWindowAPCA\\\inputTSCol}
+\createWindow\\
+\ForEach{\forEachEntryCoder}{
+    \obtainTS\\
+    \letPoint\\
+    Let \hull\ be the convex hull of the set that consists of every point in \window, plus \point\\
+    Let \validHull\ be true iff there exists an edge in \hull\ for which the maximum distance from any of the points in \hull\ to said edge is less than or equal to $2*\maxerror$\\
+    \If{\nott\,\validHull \orr \windowFull\ }{
+        \encodeWindowPWLH\\
+        \createWindow\\
+    }
+    \AddPoint\\
+}
+\uIf{$|\window| == 1$}{
+    \encodeWindowSizee\\
+    Let \valuev\ be the y-coordinate of the single point in \window\\
+    \encodeSpecific{$\valuev$}\\
+}
+\ElseIf{$|\window| > 1$}{
+    \encodeWindowPWLH\\
+}
+\EndAlgorithmVariant{Coding}{\coderPWLH}{\maskalgo}{\label{pseudoCoderPWLHM}}
+

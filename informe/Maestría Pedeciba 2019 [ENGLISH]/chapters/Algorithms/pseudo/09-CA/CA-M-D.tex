@@ -1,0 +1,28 @@
+
+
+\newcommand{\tvaluev}{$t_\valuev$}
+
+\beginAlgorithm
+\onlyInput{\dinputfile{CA}\\\doutputfile\\\cInputWindowAPCA\\\cInputColSize\\\inputTSCol}
+\nEqZero\\
+\While{\whileColumnNotDecoded}{
+    \decodeWindowwSize\\
+    \decodeSpecific{\valuev}\\
+    Obtain timestamp for $\valuev$, \tvaluev, from \tscol\\
+    \uIf{$\sizee \eqqq 1$}{
+        \letPointCoor{\archived}{\tvaluev}{\valuev}\\
+        Output $\valuev$ to \out\\
+    }
+    \Else{
+        \letPointCoor{\snapshot}{\tvaluev}{\valuev}\\
+        $\decodedSamplesTwo =  \decodeSegment$(\tscol, \archived.\xx, \snapshot.\xx, \archived.\yy, \snapshot.\yy) // routine in Figure~\ref{pseudoDecoLinear}\\
+        \ForEach{\forEachEntryDecoded}{
+            Output $\valuev$ to \out
+        }
+        
+    }
+    \addNToSize\\
+}
+\EndAlgorithmVariant{Decoding}{\coderCA}{\maskalgo}{\label{pseudoDecoderCA}}
+
+
