@@ -97,6 +97,10 @@ int DecoderCommon::decodeWindowLength(int window_size_bit_length){
     return input_file->getInt(window_size_bit_length) + 1;
 }
 
+int DecoderCommon::decodeWindowLength(){
+    return decodeWindowLength(window_size_bit_length);
+}
+
 int DecoderCommon::decodeUnary(){
     int value = 0;
     while (!decodeBool()) { value++; }

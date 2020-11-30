@@ -15,14 +15,15 @@ class DecoderSlideFilter: public DecoderCols {
 
 private:
     Column* column;
-    DynArray<SlideFiltersEntry>* m_pCompressData;
-    CDataStream* m_pApproxData;
+    int current_position;
+    SlideFiltersEntry* lastDecodedEntry;
 
     std::vector<std::string> decodeDataColumn() override;
-    void decodeEntries();
     SlideFiltersEntry* decodeEntry();
-    SlideFiltersEntry* getAt(std::vector<SlideFiltersEntry*> & m_pCompressData, int position);
+    SlideFiltersEntry* getAt(int position);
+    void addValue(DataItem data_item);
     void decompress(std::vector<int> x_coords_vector);
+    void decompressWindow(std::vector<int> x_coords_vector, int start_position, int current_window_size);
 
 public:
     using DecoderCols::DecoderCols;

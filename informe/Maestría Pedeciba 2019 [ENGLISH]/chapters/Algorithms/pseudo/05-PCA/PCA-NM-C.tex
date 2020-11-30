@@ -1,0 +1,32 @@
+
+
+\beginAlgorithm
+\onlyInput{\columnInput\\\cOutputFile{PCA}\\\cInputThreshold\\\cInputWindowPCA}
+Parse \column\ into consecutive non-overlapping windows of size $\win$, except possibly for the last window that may consist of fewer samples\\
+\ForEach{\forEachWindowPCA}{
+    \uIf{\textnormal{every entry in \window\ is equal to \noData}}{
+        \codeBit{0}\\
+        \encodeSpecific{$\nodata$}\\
+    }
+    \Else{
+        \calculateMinMax, resp.\\
+        \uIf{\textnormal{every entry in \window\ is different from \noData}\andd \validThreTwo}{
+            \codeBit{0}\\
+            \calculateMidrangeTwo\\
+            \encodeSpecific{$\midrange$}
+        }
+        \Else{
+            \codeBit{1}\\
+            \ForEach{\eachEntryInWindow}{
+                \eIf{\ifNoDataCoder{\entry}}{
+                    $\valuev = \nodata$\\
+                }
+                {
+                    $\valuev = \entry$\\
+                }
+                \encodeSpecific{$\valuev$}\\
+            }
+        }
+    }
+}
+\EndAlgorithmVariant{Coding}{\coderPCA}{\NOmaskalgo}{\label{pseudoCoderPCANM}}

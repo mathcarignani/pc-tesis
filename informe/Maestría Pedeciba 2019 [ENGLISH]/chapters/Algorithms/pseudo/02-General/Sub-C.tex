@@ -1,0 +1,29 @@
+
+
+\newcommand{\forEachColumnCoder}{\column \textnormal{ in \file.\dataColumns}}
+
+\beginAlgorithm
+\inputAndOutput{\cInputFile\\ \cInputVariant\\ \cInputThresholdOpt\\ \cInputWindowOpt}{\cOutputFileA}
+Create output file \out\\
+Encode an algorithm identification key, and parameter \win\ (if applies)\\
+Encode the header of the input file\\
+Encode the number of rows and columns in the input file\\
+Encode the timestamps column using a lossless code\\
+\If{\maskMode}{
+Encode gap locations\\
+}
+\uIf{\textnormal{it is a Constant or Linear model algorithm}}{
+    Encode each signal column of the input file separately, using a coding routine for a specific algorithm (i.e. Base, PCA, APCA, PWLH, PWLHInt, CA, SF, FR)
+}
+\ElseIf{\textnormal{it is a Correlation model algorithm}}{
+    Group the signal columns of the input file into disjoint subsets, then encode each subset independently, using a coding routine for a specific algorithm (i.e. GAMPS)
+}
+
+\EndPseudo{General encoding coding scheme for every algorithm.}{\label{pseudoCodeCommon}}
+
+
+\newcommand{\encodedColumns}{\text{encoded\_columns}}
+\newcommand{\forEachColumnDecoder}{\encodedColumn \textnormal{ in \file.\encodedColumns}}
+\newcommand{\whileFileLeftToDecode}{$\notCond\ \file.\textnormal{reached\_eof?}$}
+
+\newcommand{\decodeColParams}{\file, \out, \win, \textit{\tsColumn}}

@@ -1,0 +1,16 @@
+
+\section{Dataset IRKIS}
+\label{datasets:irkis}
+
+
+Dataset IRKIS \cite{dataset:irkis} consists of soil moisture measurements from stations installed along the Dischma valley, in the municipality of Davos, Switzerland, in the period between October 2010 and October 2013. This information is particularly useful to researchers who study the role of soil moisture in relation with the snowpack runoff and catchment discharge in high alpine terrain \cite{dataset:irkis2}. 
+
+
+The dataset corresponds to seven stations, labeled 1202, 1203, 1204, 1205, 222, 333, and SLF2, which can be located in the map presented in~\cite{dataset:irkis}. For each station, the dataset contains measures of soil moisture data at different depths below the surface, namely 10, 30, 50, 80 and 120 cm. For each depth, there are moisture measures coming from two sensors, labeled A and B in the dataset files. Thus, for each station, there are 10 different data samples stored for each timestamp. The sensors measure the \textit{Volumetric Water Content (VWC)}, which is equal to the ratio of water volume to soil volume. Therefore, higher VWC values indicate a more moist soil. 
+
+
+In Table~\ref{datasets:table:irkis} we present relevant statistics of dataset IRKIS. The data from each station is stored in a separate csv file, and every row in the table contains statistics of a different file. The first three columns show the total number of rows, columns and entries (i.e. number of rows times number of columns), respectively. The fourth column specifies the number of gaps, and the percentage over the number of entries. The last five columns show the minimum, maximum, median, mean, and standard deviation, of the sample values.
+
+
+\input{chapters/Datasets/stats-tables/1-IRKIS-stats}
+

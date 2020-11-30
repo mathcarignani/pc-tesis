@@ -1,0 +1,134 @@
+
+\clearpage
+
+\section{Algorithm CA}
+\label{algo:ca}
+
+
+Algorithm CA \cite{coder:ca}, also known as Critical Aperture, is a Linear model algorithm that
+supports lossless and near-lossless compression. It has a window size parameter ($w$) that establishes a maximum block size for the algorithm. CA supports both variants, \maskalgo\ and \NOmaskalgo.
+
+
+% Since CA is a Linear model algorithm, from Section~\ref{algo:decolinear} we recall that its encoding process involves encoding a sequence of line segments. 
+In Figure~\ref{pseudoCoderCAM} we show the coding routine for variant \maskalgo, in which all the column entries are integer values (the gaps are encoded separately). It consists of a loop that iterates over all column entries. The routine maintains a window of consecutive points, $\window$, which is initially empty (line 1). The algorithm is based upon three points: archived (\archived) is the point most recently encoded (lines 6 and 15); snapshot (\snapshot) is the point most recently added to $\window$ (lines 8 and 17); incoming (\incoming) is the point associated to the column entry for the current iteration (lines 3-4). The determination of whether a point must be encoded or not is based upon calculating slopes using parameter \maxerror\ and these three points.
+
+
+\input{chapters/Algorithms/pseudo/09-CA/CA-M-C}
+
+
+\clearpage
+
+
+The condition in line 5 is only satisfied in the first iteration. In that case, point \incoming\ is saved as \archived, and encoded via the EncodePoint routine, which is shown in Figure~\ref{caPointM}. The condition in line 7 is satisfied when $\window$ is empty. This only occurs if point \archived\ was encoded in the previous iteration. In that case, point \incoming\ is saved as \snapshot, and added to the window, and two rays, \smin\ and \smax, are defined from parameter \maxerror, and points \archived\ and \snapshot.
+
+
+If both conditions (in lines 5 and 7) evaluate to false, then, another ray, \EseE, is defined from points \archived\ and \incoming\ (line 11). If \EseE\ is not between \smin\ and \smax, then point \incoming\ must not be added to $\window$, because doing so would violate the error threshold constraint. It also must not be added if the window has reached the maximum size allowed ($w$). In any of those cases, the window is encoded via the EncodeWindow routine, which is shown in Figure~\ref{caWindowM}, a new one is created, and point \incoming\ is saved as \archived, and encoded (lines 13-15). On the other hand, if the condition in line 12 is not satisfied, then point \incoming\ is saved as \snapshot, and added to the window (line 17), and \smin\ and \smax\ are updated considering the new point \snapshot\ (lines 18-20).
+
+
+\input{chapters/Algorithms/pseudo/09-CA/CA-Point-M-C}
+
+
+\input{chapters/Algorithms/pseudo/09-CA/CA-Win-M-C}
+
+
+\vspace{+10pt}
+The decoding routine for variant \maskalgo\ is shown in Figure~\ref{pseudoDecoderCA}. It consists of a loop that keeps running until every entry in the column has been decoded, which occurs when condition in line 2 becomes false. In each iteration, two values, \sizee\ and \valuev, are decoded from the binary file. \valuev\ corresponds to the y-coordinate of a point, whose x-coordinate is obtained from the timestamps column (line 5). If \sizee\ is equal to 1, \valuev\ was encoded by the EncodePoint routine (recall Figure~\ref{caPointM}), so it corresponds to the y-coordinate of an archived point (\archived). In this case, \valuev\ is written to the decoded csv data file and point \archived\ is saved (lines 7-8). On the other hand, if \sizee\ is greater than one, \valuev\ was encoded by the EncodeWindow routine (recall Figure~\ref{caWindowM}), so it corresponds to the y-coordinate of the last snapshot point (\snapshot) added to the window. In this case, the points in the window are modeled by a line segment, whose endpoints are \archived\ and \snapshot, so the DecodeSegment routine is called with their coordinates as inputs (line 11). The \decodeSegment\ routine (recall Figure~\ref{pseudoDecoLinear}) returns a list consisting of the sample values that are decoded from the segment, which are then written in the decoded csv data file (lines 12-14).
+
+
+\clearpage
+
+
+\input{chapters/Algorithms/pseudo/09-CA/CA-M-D}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsection{Example}
+\label{algo:ca:example}
+
+
+Next we present an example of the encoding of 12 samples illustrated in Figure~\ref{example:pca:1}. Recall from Example~\ref{algo:pwlh:example}, that since CA is a Linear model algorithm, the specific timestamp values are required in the encoding routine, and we consider that the distance between any pair of adjacent timestamps is equal to 60. In this example we use algorithm CA with an error threshold parameter ($\maxerror$) equal to 1, and a maximum window size ($\win$) equal to 256.
+
+
+This example involves encoding 12 samples, so no window can reach the maximum size (256). Therefore, a window is only encoded when an incoming point (\incoming) violates the error threshold constraint in line 12 of the coding routine.
+
+
+\clearpage
+
+
+In the first iteration, the condition in line 5 is satisfied, so the first incoming point is saved as the archived point (\archived), and it is encoded via the EncodePoint routine, using $\logWinSize = \logWinSizeOpt{256}=8$ bits for encoding a 1, and $\colTotBits$ bits for encoding its y-coordinate, also 1. In the second iteration, $\window$ is empty, so the condition in line 7 is satisfied. Therefore, the second incoming point is saved as the snapshot point (\snapshot), it is added to $\window$, and two rays, \smin\ and \smax, are defined. Figure~\ref{example:ca:1} shows both saved points, \archived\ and \snapshot, as well as both rays, \smin\ and \smax, after the second iteration is completed.
+
+
+\exampleStep{ca}{1}{\label{example:ca:1}}{Algorithm CA example. Step 1.}
+
+
+In the third iteration, another sample value equal to 1 is processed. In Figure~\ref{example:ca:2}, both \incomingP{3}, the incoming point, and \EseEP{3}, which is the ray with initial point \archived\ that passes through \incomingP{3}, are shown. 
+
+
+\exampleStep{ca}{2}{\label{example:ca:2}}{Algorithm CA example. Step 2.}
+
+
+\clearpage
+
+
+\EseEP{3}\ is between \smin\ and \smax, so the threshold constraint is not violated, and the condition in line 12 evaluates to false. Therefore, \incomingP{3} is saved as \snapshot, and added to $\window$, and \smin\ and \smax\ are updated. Figure~\ref{example:ca:3} shows the information after the third iteration is completed.
+
+
+\exampleStep{ca}{3}{\label{example:ca:3}}{Algorithm CA example. Step 3.}
+
+The following two iterations are similar to the last one. In each iteration, the incoming points are added to the window, and both rays, \smin\ and \smax, are updated. Figure~\ref{example:ca:4} shows the information after the 5th iteration is completed.
+
+\exampleStep{ca}{4}{\label{example:ca:4}}{Algorithm CA example. Step 7.}
+
+
+\clearpage
+
+
+In the 6th iteration, sample value 2 is processed. In Figure~\ref{example:ca:5}, both incoming point \incomingP{6}, and ray \EseEP{6} are shown. 
+
+
+\exampleStep{ca}{5}{\label{example:ca:5}}{Algorithm CA example. Step 8.}
+
+
+\EseEP{6}\ is between \smin\ and \smax, so the condition in line 12 evaluates to false. Therefore, \incomingP{6} is saved as \snapshot, and added to $\window$. In this case, \smin\ is updated, while \smax\ remains unchanged. Figure~\ref{example:ca:6} shows the information after the 6th iteration is completed.
+
+
+\exampleStep{ca}{6}{\label{example:ca:6}}{Algorithm CA example. Step 9.}
+
+
+\clearpage
+
+In the 7th iteration, sample value 3 is processed. In Figure~\ref{example:ca:7}, both incoming point \incomingP{7}, and ray \EseEP{7} are shown. 
+
+\exampleStep{ca}{7}{\label{example:ca:7}}{Algorithm CA example. Step 10.}
+
+
+For the first time, the threshold constraint is violated, since \EseEP{7}\ is greater than \smax, so the condition in line 12 becomes true. $\window$ is encoded via the EncodeWindow routine, using $\logWinSize = 8$ bits for encoding its size (i.e. 5), and $\colTotBits$ bits for encoding the y-coordinate of its last point (i.e. 2). Also, a new window is created, and \incomingP{7}\ is saved as \archived, and encoded via the EncodePoint routine, using $\logWinSize =8$ bits for encoding a 1, and $\colTotBits$ bits for encoding its y-coordinate, 3. In the following iteration, $\window$ is empty, so the condition in line 7 is satisfied. Therefore, incoming point \incomingP{8} is saved as \snapshot, it is added to $\window$, and \smin\ and \smax are defined once more. Figure~\ref{example:ca:8} shows the information after the 8th iteration is completed.
+
+
+\exampleStep{ca}{8}{\label{example:ca:8}}{Algorithm CA example. Step 11.}
+
+
+\clearpage
+
+
+In Figure~\ref{example:ca:9} we present the information after the coding routine has finished. After the last iteration in the loop is executed, the last window is not empty, so it is encoded calling the EncodeWindow routine in line 25. Besides showing the encoded points and their associated line segments, in Figure~\ref{example:ca:9} we also display the values of the decoded samples, which are the values that the decoding routine, shown in Figure~\ref{pseudoDecoderCA}, would write to the decoded csv data file. We point out that, since the algorithm must support the scenario in which more than one sample exists for a single timestamp, the archived point must be encoded independently from the window. Otherwise, the algorithm could consider that the archived value was the last point of the most recently encoded window.
+
+
+\exampleStep{ca}{9}{\label{example:ca:9}}{Algorithm CA example. Step 12.}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsection{Non-masking (\NOmaskalgo)\ variant}
+\label{algo:ca:nmvariant}
+
+
+The coding and decoding routines for variant \NOmaskalgo\ of algorithm CA are similar to their variant \maskalgo\ counterparts, the difference being that the former routines are able to handle both sample values and gaps. Recall that in the coding routine for variant \maskalgo, a window is encoded when adding a new point would make it violate the error threshold constraint or the window size restriction (line 12 in Figure~\ref{pseudoCoderCAM}). The coding routine for variant \NOmaskalgo\ must also encode a window if the newest column entry is character \noData\ (gap in the data) and the other entries in the window are sample points, or vice versa. We point out that, in the first scenario, line 15 is not executed, and neither is line 6 executed when \noData\ is the first column entry. A window that consists of gaps is encoded with the same number of bits as a window that consists of sample points, i.e. $\logWinSize\ +\ \colTotBits$, where $\logWinSize$ bits are used for encoding its size, and $\colTotBits$ bits are used for encoding the special integer \nodata. 
+

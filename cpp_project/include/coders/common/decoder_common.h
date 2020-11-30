@@ -45,6 +45,7 @@ public:
     bool decodeBool();
     int decodeInt(int bits);
     int decodeWindowLength(int window_size_bit_length);
+    int decodeWindowLength();
     int decodeUnary();
     std::string decodeValueRaw();
 

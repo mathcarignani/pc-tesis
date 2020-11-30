@@ -1,6 +1,9 @@
 import sys
 sys.path.append('.')
 
+import numpy as n
+import matplotlib.pyplot as plt
+import matplotlib.markers as mmarkers
 from scripts.informe.plot.plot_constants import PlotConstants
 
 
@@ -50,6 +53,7 @@ class CommonPlot(object):
         if title_options:
             fontsize = 15 if isinstance(title_options, bool) else title_options
             title = title.replace("Coder", "")  # "CoderABC" => "ABC"
+            title = title.replace("GAMPSLimit", "GAMPS")
             ax.set_title(title, fontsize=fontsize)
 
     @classmethod
@@ -72,47 +76,42 @@ class CommonPlot(object):
 
     ####################################################################################################################
 
+    #
+    # SOURCE: https://stackoverflow.com/a/52303895/4547232
+    #
     @classmethod
-    def add_min_max_circles(cls, algorithm, options, ax, x_axis, y_axis):
-        dataset_name, col_index = options['pdf_instance'].dataset_name, options['pdf_instance'].col_index
-
-        if dataset_name == "NOAA-SST" and col_index == 1 and algorithm == "CoderPCA":
-            # 2-NOAA-SST-1.pdf
-            color = PlotConstants.VALUE0_COLOR
-        elif dataset_name == "NOAA-SPC-tornado" and col_index == 2 and algorithm == "CoderAPCA":
-            # 7-NOAA-SPC-tornado-2.pdf
-            color = PlotConstants.VALUE3_COLOR
-        else:
-            return
-        new_x_axis, values = x_axis[-1:], y_axis[-1:]  # last value
-        ax.scatter(x=new_x_axis, y=values, zorder=2, facecolors='none', edgecolors=color, s=200)
-
-    @classmethod
-    def add_max_circle(cls, algorithm, options, ax, x_axis, y_axis):
-        dataset_name, col_index = options['pdf_instance'].dataset_name, options['pdf_instance'].col_index
-
-        if not(dataset_name == "IRKIS" and col_index == 1 and algorithm == "CoderPCA"):
-            return
-
-        maximum = max(y_axis) # 10.6830419509284
-        if not(10.68 < maximum < 10.69):
-            return
-
-        # 1-IRKIS-2-1.pdf
-        new_x_axis, values = [x_axis[5]], [y_axis[5]]
-        ax.scatter(x=new_x_axis, y=values, zorder=2, facecolors='none', edgecolors=PlotConstants.VALUE0_COLOR, s=200)
+    def change_scatter_markers(cls, sc, markers):
+        paths = []
+        for marker in markers:
+            if isinstance(marker, mmarkers.MarkerStyle):
+                marker_obj = marker
+            else:
+                marker_obj = mmarkers.MarkerStyle(marker)
+            path = marker_obj.get_path().transformed(marker_obj.get_transform())
+            paths.append(path)
+        sc.set_paths(paths)
 
     @classmethod
-    def circle_table_values(cls, algorithm, options, ax, x_axis, y_axis):
-        dataset_name, col_index = options['pdf_instance'].dataset_name, options['pdf_instance'].col_index
-        if not(dataset_name == "ElNino" and col_index == 7):
-            return
-        # 5-ElNino-7.pdf
-        new_x_axis, values = x_axis[:], y_axis[:]  # copy lists by value
-        if algorithm == "CoderPCA":
-            new_x_axis, values = [new_x_axis[0]], [values[0]]  # first value
-        elif algorithm == "CoderAPCA":
-            new_x_axis, values = new_x_axis[1:], values[1:]  # every value except the first
-        else:
-            return
-        ax.scatter(x=new_x_axis, y=values, zorder=2, facecolors='none', edgecolors='blue', s=200)
+    def scatter_plot(cls, ax, x_axis, y_axis, size, color, opt=None):
+        x_axis = list(x_axis)
+        y_axis = list(y_axis)
+        colors = [color] * size
+        facecolors, edgecolors = colors.copy(), colors.copy()
+        sizes = [plt.rcParams['lines.markersize'] ** 2] * size
+        markers = ['x'] * size
+
+        if opt and len(opt.keys()) > 0:
+            for idx, key in enumerate(opt['keys']):
+                # shift the index a number of times equal to the number of values previously inserted
+                index = opt['indexes'][idx] + idx
+                value_color = opt.get('color')
+                colors = colors[:index] + ['none'] + colors[index:]
+                facecolors.insert(index, 'none')
+                sizes = sizes[:index] + [200] + sizes[index:]
+                markers = markers[:index] + ['o'] + markers[index:]
+                edgecolors = edgecolors[:index] + [value_color] + edgecolors[index:]
+                x_axis = x_axis[:index] + [x_axis[index]] + x_axis[index:]
+                y_axis = y_axis[:index] + [y_axis[index]] + y_axis[index:]
+
+        sc = ax.scatter(x=x_axis, y=y_axis, c=colors, facecolors=facecolors, sizes=sizes, edgecolors=edgecolors)
+        CommonPlot.change_scatter_markers(sc, markers)

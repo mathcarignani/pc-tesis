@@ -8,9 +8,9 @@ from scripts.informe.plot.plot_utils import PlotUtils
 
 
 class PdfPage(object):
-    def __init__(self, panda_utils_0, panda_utils_3, filename, pdf_instance):
-        self.panda_utils_0 = panda_utils_0
-        self.panda_utils_3 = panda_utils_3
+    def __init__(self, panda_utils_NM, panda_utils_M, filename, pdf_instance):
+        self.panda_utils_NM = panda_utils_NM
+        self.panda_utils_M = panda_utils_M
         self.filename = filename
         self.pdf_instance = pdf_instance
         self.col_index = pdf_instance.col_index
@@ -24,7 +24,7 @@ class PdfPage(object):
             options = self.plots_options.get(plot_key) or {}
             options['pdf_instance'] = self.pdf_instance
             plot_klass = PlotMapper.map(plot_key)
-            plots = plot_klass.create_plots(coders_array, self.filename, self.panda_utils_0, self.panda_utils_3, self.col_index, options)
+            plots = plot_klass.create_plots(coders_array, self.filename, self.panda_utils_NM, self.panda_utils_M, self.col_index, options)
             plots_obj[plot_key] = plots
 
         self.__add_plots(plots_matrix, plots_obj)
@@ -38,18 +38,13 @@ class PdfPage(object):
                 continue
             for col_index, matrix_entry in enumerate(row):
                 ax = self.fig.add_subplot(spec[row_index, col_index])
-                self.__add_plot(matrix_entry, ax, plots_obj, row_index, col_index)
+                self.__add_plot(matrix_entry, ax, plots_obj, col_index)
 
-    def __add_plot(self, matrix_entry, ax, plots_obj, row_index, col_index):
+    def __add_plot(self, matrix_entry, ax, plots_obj, col_index):
         coder_name, plot_key = matrix_entry
         if coder_name is not None:
             plot_instance = plots_obj[plot_key][coder_name]
-            extra = {
-                # 'show_title': row_index in [0, 3],
-                # 'last_row': row_index == (self.total_rows - 1),
-                'show_ylabel': col_index == 0,
-                # 'last_column': col_index == (self.total_columns - 2)
-            }
+            extra = {'show_ylabel': col_index == 0}
             plot_instance.plot2(ax, extra)
         else:
             plot_instance = plots_obj[plot_key]

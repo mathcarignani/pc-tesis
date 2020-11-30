@@ -184,8 +184,9 @@ DynArray<GAMPSEntry>* GAMPS_Computation::computeRatioSignal(CDataStream* compute
 	{
 		DataItem baseEntry = baseSignal->getAt(0);
 		DataItem computeEntry = computeSignal->getAt(0);
-		if (baseEntry.value < 1 && baseEntry.value > -1)
-			baseEntry.value =1;
+//		if (baseEntry.value < 1 && baseEntry.value > -1)
+//			baseEntry.value =1;
+		assert(baseEntry.value > 0);
 
 		double ratioValue = computeEntry.value / baseEntry.value;
 		GAMPSEntry ratioEntry;
@@ -202,8 +203,9 @@ DynArray<GAMPSEntry>* GAMPS_Computation::computeRatioSignal(CDataStream* compute
 		DataItem computeEntry = computeSignal->getAt(i);
 
 		// in case of baseEntry.value == 0
-		if (baseEntry.value < 1 && baseEntry.value > -1)
-			baseEntry.value =1;
+//		if (baseEntry.value < 1 && baseEntry.value > -1)
+//			baseEntry.value =1;
+		assert(baseEntry.value > 0);
 
 		double ratioValue = computeEntry.value / baseEntry.value;
 

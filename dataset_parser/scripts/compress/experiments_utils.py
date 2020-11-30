@@ -28,7 +28,8 @@ class ExperimentsUtils(object):
         'NOAA-SST': ['SST'],
         'NOAA-ADCP': ['Vel'],
         'SolarAnywhere': ['GHI', 'DNI', 'DHI'],
-        'ElNino': ['Lat', 'Long', 'Z. Wind', 'M. Wind', 'Humidity', 'AirTemp', 'SST'],
+        # 'ElNino': ['Lat', 'Long', 'Z. Wind', 'M. Wind', 'Humidity', 'AirTemp', 'SST'],
+        'ElNino': ['Lat', 'Long', 'Zon.Wind', 'Mer.Wind', 'Humidity', 'Air Temp.', 'SST'],
         'NOAA-SPC-hail': ['Lat', 'Long', 'Size'],
         'NOAA-SPC-tornado': ['Lat', 'Long'],
         'NOAA-SPC-wind': ['Lat', 'Long', 'Speed']
@@ -52,10 +53,10 @@ class ExperimentsUtils(object):
 
     @staticmethod
     def coders_array(mask_mode):
-        coders = ExperimentsUtils.CODERS_ARRAY
+        if mask_mode == "NM":
+            return ExperimentsUtils.CODERS_ARRAY
         if mask_mode == "M":
-            coders += ExperimentsUtils.MASK_MODE_CODERS_ARRAY
-        return coders
+            return ExperimentsUtils.CODERS_ARRAY + ExperimentsUtils.MASK_MODE_CODERS_ARRAY
 
     @staticmethod
     def coders_names(mask_mode):
@@ -102,6 +103,15 @@ class ExperimentsUtils(object):
         dataset_info = ExperimentsUtils.get_dataset_info(dataset_name)
         return dataset_info.get('short_name') or dataset_info.get('name')
 
+    @staticmethod
+    def get_gaps_info(dataset_short_name):
+        if dataset_short_name in ["IRKIS", "SST", "ADCP", "ElNino"]:
+            return "Many gaps"
+        elif dataset_short_name in ["Solar"]:
+            return "Few gaps"
+        else:
+            return "No gaps"
+
     CSV_PATH = OSUtils.datasets_csv_path()
 
     CODERS_ARRAY = [
@@ -139,11 +149,11 @@ class ExperimentsUtils(object):
         #     'o_folder': 'gamps',
         #     'params': {'window_size': WINDOWS}
         # },
-        {
-            'name': 'CoderGAMPSLimit',
-            'o_folder': 'gamps-limit',
-            'params': {'window_size': WINDOWS}
-        },
+        # {
+        #     'name': 'CoderGAMPSLimit',
+        #     'o_folder': 'gamps-limit',
+        #     'params': {'window_size': WINDOWS}
+        # },
     ]
 
     MASK_MODE_CODERS_ARRAY = [
@@ -152,9 +162,9 @@ class ExperimentsUtils(object):
         #     'o_folder': 'fr',
         #     'params': {'window_size': WINDOWS}
         # },
-        # {
-        #     'name': 'CoderSF',
-        #     'o_folder': 'sf',
-        #     'params': {'window_size': [4]}  # window_size param doesn't matter
-        # }
+        {
+            'name': 'CoderSF',
+            'o_folder': 'sf',
+            'params': {'window_size': [4]}  # window_size param doesn't matter
+        }
     ]

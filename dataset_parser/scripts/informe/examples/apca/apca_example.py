@@ -21,7 +21,6 @@ class APCAExample(ExamplesBase):
         self.apca3("apca3.pdf", 3, 11)
 
     def apca1(self, filename, step, index):
-        self.encoded_points = [(7,2)]
         self.decoded = self.copy_decoded[0:8]
         self.plot_values = [{'x_values': [0,7], 'y_values': [2,2]}]
         self.arrows = [{'x': 7, 'y': 2, 'touch_below': True}]
@@ -29,7 +28,6 @@ class APCAExample(ExamplesBase):
         self.common(filename, step, index)
 
     def apca2(self, filename, step, index):
-        self.encoded_points.append((9,3))
         self.decoded = self.copy_decoded[0:10]
         self.plot_values.append({'x_values': [8,9], 'y_values': [3,3]})
         self.arrows = [{'x': 9, 'y': 3, 'touch_above': True}]
@@ -37,7 +35,6 @@ class APCAExample(ExamplesBase):
         self.common(filename, step, index)
 
     def apca3(self, filename, step, index):
-        self.encoded_points.append((11,1))
         self.decoded = self.copy_decoded[0:12]
         self.plot_values.append({'x_values': [10,11], 'y_values': [1,1]})
         self.arrows = [{'x': 11, 'y': 1, 'touch_above': True, 'touch_below': True}]

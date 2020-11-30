@@ -126,7 +126,7 @@ CDataStream* CoderGAMPS::getColumn(int column_index){
             current_value = previous_value; // same as the previous integer value
         }
         else {
-            current_value = CoderUtils::mapValueInt(csv_value, dataset->offset() + 1);
+            current_value = mapValue(csv_value);
             if (previous_value == -1 && timestamp > first_timestamp){
                 // the first rows of the column were nodata so we must fill them with current_value
                 for(int i = first_timestamp; i < timestamp; i++){ dataStream->add(DataItem(current_value, i)); }
@@ -183,7 +183,7 @@ void CoderGAMPS::codeGAMPSColumns(GAMPSOutput* gamps_output){
     #endif
         dataset->setColumn(column_index);
         column = base_signals[base_index++];
-        codeGAMPSColumn(column);
+        codeGAMPSColumn(column, true);
 
         std::vector<int> ratio_columns = mapping_table->ratioColumns(table_index);
         for (int j = 0; j < ratio_columns.size(); j++){
@@ -195,12 +195,12 @@ void CoderGAMPS::codeGAMPSColumns(GAMPSOutput* gamps_output){
             dataset->setColumn(column_index);
             int ratio_index = mapping_table->getRatioGampsColumnIndex(table_index);
             column = ratio_signals[ratio_index];
-            codeGAMPSColumn(column);
+            codeGAMPSColumn(column, false);
         }
     }
 }
 
-void CoderGAMPS::codeGAMPSColumn(DynArray<GAMPSEntry>* column){
+void CoderGAMPS::codeGAMPSColumn(DynArray<GAMPSEntry>* column, bool base_window){
 #if MASK_MODE
 #if MASK_MODE == 3
     total_data_rows_vector.at(column_index - 1);
@@ -237,7 +237,7 @@ void CoderGAMPS::codeGAMPSColumn(DynArray<GAMPSEntry>* column){
         csv_value = no_data ? csv_value : Conversor::doubleToString(current_entry.value);
 
         if (!window->conditionHolds(csv_value)) {
-            codeWindow(window);
+            codeWindow(window, base_window);
             window->addFirstValue(csv_value);
         }
         if (!no_data_row){
@@ -245,7 +245,7 @@ void CoderGAMPS::codeGAMPSColumn(DynArray<GAMPSEntry>* column){
         }
     }
     if (!window->isEmpty()) {
-        codeWindow(window);
+        codeWindow(window, base_window);
     }
 }
 
@@ -261,10 +261,30 @@ void CoderGAMPS::update(DynArray<GAMPSEntry>* column, int & entry_index, GAMPSEn
     remaining = current_entry.endingTimestamp - previous_last_timestamp;
 }
 
-void CoderGAMPS::codeWindow(APCAWindow* window){
+void CoderGAMPS::codeWindow(APCAWindow* window, bool base_window){
     codeWindowLength((Window*) window);
     std::string constant_value = window->constant_value;
-    double value = Constants::isNoData(constant_value) ? Constants::NO_DATA_DOUBLE : Conversor::stringToDouble(constant_value);
-    // TODO: move to an aux method... also create an analog decoding method
-    codeFloat((float) value);
+    if (base_window){
+        // Code the window exactly the same way as it is done in the APCA coder
+        // In order to call the codeValueRaw with the correct string, the mapValue mapping must be reverted
+        if (!Constants::isNoData(constant_value)){
+            constant_value = unmapValue(constant_value);
+        }
+        codeValueRaw(constant_value);
+    }
+    else {
+        double value = Constants::NO_DATA_DOUBLE;
+        if (!Constants::isNoData(constant_value)){
+            value = Conversor::stringToDouble(constant_value);
+        }
+        codeFloat((float) value);
+    }
+}
+
+int CoderGAMPS::mapValue(std::string csv_value){
+    return CoderUtils::mapValueInt(csv_value, dataset->offset() + 1);
+}
+
+std::string CoderGAMPS::unmapValue(std::string csv_value){
+    return CoderUtils::unmapValue(csv_value, dataset->offset() + 1);
 }

@@ -4,7 +4,7 @@ sys.path.append('.')
 from file_utils.csv_utils.csv_writer import CSVWriter
 from scripts.compress.experiments_utils import ExperimentsUtils
 from scripts.informe.math_utils import MathUtils
-from scripts.informe.data_analysis.process_results.writer_min_max import WriterMinMax
+from scripts.informe.latex_tables.table_min_max.table_min_max import TableMinMax
 
 class Writer1(object):
     def __init__(self, path, extra_str, mode):
@@ -12,7 +12,7 @@ class Writer1(object):
         self.write_first_row()
         self.data_rows = []
         self.data = {}
-        self.writer_min_max = WriterMinMax(path, mode)
+        self.writer_min_max = TableMinMax(path, mode)
 
     def write_first_row(self):
         row = ["Dataset", "Filename", "Column", "Coder"]

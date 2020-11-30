@@ -1,0 +1,102 @@
+
+\section{Algorithms Performance}
+\label{secX:codersmask}
+
+
+In this section, we compare the compression performance of the coding algorithms presented in Chapter~\ref{algo}, by encoding the various datasets introduced in Chapter~\ref{datasets}. We begin by comparing the algorithms among each other and later we compare them with gzip, a popular lossless compression algorithm. We analyze the performance of the algorithms on complete datasets (not individual files), so we always apply definitions~\ref{eq:coding-size-dataset}--\ref{def:relative-difference-dataset}. Following the results obtained in sections~\ref{secX:rendimiento-relativo} and~\ref{secX:windows}, we only consider the masking variants of the evaluated algorithms (i.e. set $V^{*}$), and we always set the window size parameter to the \owsns\ (recall Definition \ref{def:ows}).
+
+
+For each data type $z$ of each dataset $d$, and each coding algorithm variant $a_v \in V^{*}$ and threshold parameter $e \in E$, we calculate the CR of $c_{<a_v, w_{global}^{*}, e>}$, as defined in (\ref{eq:compression-rate-dataset}), where \WGlobal\~$=\owsns(a_v, e, z, d)$. The following definition is useful for analyzing which CAI obtains the best compression result for a specific data type.
+
+
+\begin{defcion}
+\label{def:bestcai}
+Let $z$ be a data type of a certain dataset $d$, and let $e \in E$ be a threshold parameter. We denote by $c^{b}(z, d, e)$ the \textit{best CAI} for $z, d, e$, and define it as the CAI that minimizes the CR among all the CAIs in CI, i.e.,
+\vspace{-3pt}
+\begin{equation}
+\label{eq:eqbestcai}
+c^{b}(z, d, e) = \argmin_{\algo \ \in \ca} \biggl\{ \tasacompresion(c_{<a_v, w_{global}^{*}, e>}, z, d) \biggr\}.
+\end{equation}
+When $c^{b}(z, d, e) = c_{<a^{b}_v, w_{global}^{b*}, e>}$, we refer to $a^{b}$ and $w_{global}^{b*}$ as the \textit{best coding algorithm} and the \textit{best window size} for $z, d, e$, respectively.
+\end{defcion}
+
+
+Our experiments include a total of 21 data types, in 8 datasets. As an example, in Figure~\ref{fig:algo-per-1} we show the CR and the window size parameter \WGlobal, as a function of the threshold parameter, obtained for each algorithm, for the data type ``SST" of the dataset \datasetelnino. For each threshold parameter $e \in E$, we use blue circles to highlight the markers for the minimum CR value and the best window parameter (in the respective plots corresponding to the best algorithm). For instance, for $e=0$, the best CAI achieves a CR equal to $0.33$ using algorithm PCA with a window size of 256. So in this case, algorithm PCA is the best coding algorithm, and 256 is the best window size. For the remaining seven values for the threshold parameter, the blue circles indicate that in every case the best algorithm is APCA, and the best window size ranges from 4 up to 32.
+
+
+\clearpage
+\threefoursingle{5-ElNino-7}{\datasetelnino}{SST}{\ For each threshold parameter $e \in E$, we use blue circles to highlight the markers for the minimum CR value and the best window size parameter (in the respective plots corresponding to the best algorithm)}{\label{fig:algo-per-1}}
+\clearpage
+
+
+Table~\ref{experiments:mask-results-overview1} summarizes the compression performance results obtained by the evaluated coding algorithms, for each data type of each dataset. Each row contains information relative to certain data type. For example, the 13th row shows summarized results for the data type ``SST" of the dataset \datasetelnino, which are presented in more detail in Figure~\ref{fig:algo-per-1}. For each threshold, the first column shows the CR obtained by the best CAI, the second column shows the base-2 logarithm of its window size parameter, and the cell color identifies the best algorithm.
+\vspace{+5pt}
+
+\input{chapters/Experiments/other/table-commands}
+\input{chapters/Experiments/python/table-results-1}
+
+
+We observe that there are only three algorithms (PCA, APCA, and FR) which are used by the best CAI for at least one of the 168 possible data type and threshold parameter combinations. Algorithm APCA is used in exactly 134 combinations ($80\%$), including every case in which $e \geq 10$, and most of the cases in which $e \in [1, 3, 5]$. PCA is used in 31 combinations ($18\%$), including most of the lossless cases, while FR is the best algorithm in only 3 combinations ($2\%$), all of them for data type ``Speed" of the dataset \datasetwind.
+
+
+Since there is not a single algorithm that obtains the best compression performance for every data type, it is useful to analyze how much is the RD between the best algorithm and the rest, for every experimental combination. With that in mind, next we define a pair of metrics.
+
+
+\clearpage
+
+
+\newcommand{\maxRD}{maxRD}
+\newcommand{\maxRDit}{\textit{maxRD}}
+\begin{defcion}
+\label{eq:maxRD}
+The \textit{maximum RD} (\maxRDit) of a coding algorithm $a\in A$ for certain threshold parameter $e\in E$ is given by
+\vspace{-4pt}
+\begin{equation}
+\maxRDit(a, e) = \maxi_{z, d} \ \biggl\{ \difrelativa(c^{b}(z,d,e), c_{<a_v, w_{global}^{*}, e>}) \biggr\},
+\end{equation}
+where the maximum is taken over all the combinations of data type $z$ and dataset $d$, and we recall that $c^{b}(z,d,e)$ is the best CAI for $z, d, e$.
+\end{defcion}
+
+
+The \maxRD\ metric is useful for assessing the compression performance of a coding algorithm $a$ on the set of data types as a whole. Notice that \maxRD\ is always non-negative. A satisfactory result (i.e. close to zero) can only be obtained when $a$ achieves a good compression performance \textit{for every data type}. In other words, bad compression performance \textit{on a single data type} yields a poor result for the \maxRD\ metric altogether. When \maxRD\ is equal to zero, $a$ achieves the best compression performance for every combination. Analyzing the results in Table~\ref{experiments:mask-results-overview1}, we observe that $\text{\maxRD}(\text{APCA}, e)=0$ for every $e \geq 10$. Since the best algorithm is unique for every combination (i.e. exactly one algorithm obtains the minimum CR in every case), it is also true that, when $a \neq \text{APCA}$, $\text{\maxRD}(a, e)>0$ for every $e \geq 10$.
+
+
+\vspace{+10pt}
+\newcommand{\minmaxRD}{minmaxRD}
+\newcommand{\minmaxRDit}{\textit{minmaxRD}}
+\newcommand{\minmaxca}{minmax coding algorithm}
+\begin{defcion}
+\label{eq:minmaxRD}
+The \textit{minmax RD} (\minmaxRDit) for certain threshold parameter $e\in E$ is given~by
+\vspace{-4pt}
+\begin{equation}
+\minmaxRDit(e) = \mini_{a \in A} \ \biggl\{ \maxRDit(a, e) \biggr\},
+\end{equation}
+and we refer to $\argmin_{a \in A}$ as the \textit{\minmaxca} for $e$.
+\end{defcion}
+
+
+\vspace{-3pt}
+Again, \minmaxRD\ is always always non-negative. Notice that $\text{\minmaxRD}(e)=0$ for certain $e$, if and only if there exists a \minmaxca\ $a$ such that $\text{\maxRD}(a, e)=0$. Continuing the analysis from the previous paragraph, it should be clear that APCA is the \minmaxca\ for every $e \geq 10$, since $\text{\maxRD}(\text{APCA}, e)=0$ for every $e \geq 10$.
+
+
+Table~\ref{experiments:minmaxone} shows the $\text{\maxRD}(a, e)$ obtained for every pair of coding algorithm variant $a_v \in V^*$ and threshold parameter $e \in E$. For each $e$, the cell corresponding to the $\text{\minmaxRD}(e)$ value (i.e. the minimum value in the column) is highlighted.
+\vspace{+3pt}
+
+
+\input{chapters/Experiments/python/table-minmax-1}
+
+
+% \vspace{+3pt}
+In the lossless case, PWLHInt is the minmax coding algorithm, with \minmaxRD \ being equal to $29.72\%$. This value is rather high, which means that none of the considered algorithms achieves a CR that is close to the minimum simultaneously \textit{for every data type}. 
+% Algorithms APCA ($33.25\%$) and CA ($38.28\%$) obtain the second and third best \maxRD\ values, respectively. 
+Recalling the results from Table~\ref{experiments:mask-results-overview1} we notice that $e=0$ is the only threshold parameter value for which the minmax coding algorithm doesn't obtain the minimum CR in any combination. In other words, when $e=0$, PWLHInt is the algorithm that minimizes the RD with the best algorithm among every data type, even though it itself is not the best algorithm for any data type.
+
+
+When $e \in [1, 3, 5]$, the minmax coding algorithm is always APCA, and the \minmaxRD \ values are $15.64\%$, $9.00\%$ and $29.96\%$, respectively. Again, these values are fairly high, so we would select the most convenient algorithm depending on the data type we want to compress. 
+%The second best \maxRD\ values are obtained by algorithms PWLHInt ($34.00\%$ and $49.94\%$) and FR ($52.70\%$), respectively. 
+Notice that in the closest case (algorithm FR for $e=5$), the second best \maxRD\ ($52.70\%$) is about $75\%$ larger than the \minmaxRD, which is a much bigger difference than in the lossless case.
+
+
+When $e \geq 10$, the minmax coding algorithm is also always APCA, but in these cases the \minmaxRD \ values are always 0. In the closest case (algorithm FR for $e=20$) the second best \maxRD\ is $54.48\%$. If we wanted to compress any data type with any of these threshold parameter values, we would pick algorithm APCA, since according to our experimental results, it always obtains the best compression results with a significant difference over the remaining algorithms.
+

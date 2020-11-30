@@ -1,0 +1,16 @@
+
+\vspace{-25pt}
+\section{Dataset Solar}
+\label{datasets:solar}
+
+Dataset Solar \cite{dataset:solar} consists of solar radiation measurements from sensors in the city of Miami, Florida, US. This dataset is collected by SolarAnywhere, an online tool used for monitoring solar radiation around the world.
+
+
+The dataset consists of readings from 12 sensors, where each sensor measures three different types of solar irradiance, namely, Global Horizontal Irradiance (GHI), Direct Normal Irradiance (DNI), and Diffuse Horizontal Irradiance (DHI). Thus, a total of 36 data samples are stored for each timestamp. The solar irradiance is measured in W/$\textnormal{m}^2$, with a precision of zero significant figures. Therefore, the sample values are in the integer domain and it is not necessary to transform them.
+
+
+In tables \ref{datasets:table:solar1}, \ref{datasets:table:solar2}, \ref{datasets:table:solar3}, and \ref{datasets:table:solar4}, we present relevant statistics of dataset Solar for years 2011, 2012, 2013, and 2014, respectively. The data for each year is stored in a different csv file. Each file has 8,759 rows, with a total of 105,108 ($12\times8,759$) entries of each data type. Each row in the tables contains statistics concerning a different data type. The first column specifies the number of gaps, and the percentage over the number of entries. The rest of the columns show the minimum, maximum, median, mean, and standard deviation, of the sample values.
+
+
+\input{chapters/Datasets/stats-tables/4-Solar-stats}
+

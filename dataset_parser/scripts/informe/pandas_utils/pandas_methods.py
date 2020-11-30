@@ -116,21 +116,21 @@ class PandasMethods(object):
     #
     @staticmethod
     def check_coder_base_matches(df0, df3):
-        base_df_0 = PandasMethods.coder_df(df0, 'CoderBase')
-        base_df_3 = PandasMethods.coder_df(df3, 'CoderBase')
+        base_df_NM = PandasMethods.coder_df(df0, 'CoderBase')
+        base_df_M = PandasMethods.coder_df(df3, 'CoderBase')
 
-        datasets_df_0 = PandasMethods.datasets(base_df_0)
-        datasets_df_3 = PandasMethods.datasets(base_df_3)
-        assert_equal_lists(datasets_df_0, datasets_df_3)
+        datasets_df_NM = PandasMethods.datasets(base_df_NM)
+        datasets_df_M = PandasMethods.datasets(base_df_M)
+        assert_equal_lists(datasets_df_NM, datasets_df_M)
 
-        for dataset in datasets_df_0:
-            filenames_df_0 = PandasMethods.filenames(base_df_0, dataset)
-            filenames_df_3 = PandasMethods.filenames(base_df_3, dataset)
-            assert_equal_lists(filenames_df_0, filenames_df_3)
+        for dataset in datasets_df_NM:
+            filenames_df_NM = PandasMethods.filenames(base_df_NM, dataset)
+            filenames_df_M = PandasMethods.filenames(base_df_M, dataset)
+            assert_equal_lists(filenames_df_NM, filenames_df_M)
 
-            for filename in filenames_df_0:
-                filename_rows_0 = PandasMethods.filename_df(base_df_0, filename, dataset)
-                filename_rows_3 = PandasMethods.filename_df(base_df_3, filename, dataset)
+            for filename in filenames_df_NM:
+                filename_rows_0 = PandasMethods.filename_df(base_df_NM, filename, dataset)
+                filename_rows_3 = PandasMethods.filename_df(base_df_M, filename, dataset)
                 assert(len(filename_rows_0.index) == 1 and len(filename_rows_3.index) == 1)
 
                 column_names_0 = PandasMethods.data_column_names(filename_rows_0)

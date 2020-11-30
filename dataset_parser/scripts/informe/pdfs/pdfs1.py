@@ -6,26 +6,16 @@ from scripts.informe.results_parsing.results_to_dataframe import ResultsToDatafr
 from scripts.informe.pandas_utils.pandas_utils import PandasUtils
 from scripts.informe.pdfs.pdf_page import PdfPage
 from scripts.informe.pdfs.pdfs_common import PDFSCommon
-
-
-# PLOTS_MATRIX = [
-#     [['CoderPCA', 'compression'],  ['CoderAPCA', 'compression'],    ['CoderCA', 'compression']],
-#     [['CoderPCA', 'relative'],     ['CoderAPCA', 'relative'],       ['CoderCA', 'relative']],
-#     # [['CoderPCA', 'window'],       ['CoderAPCA', 'window'],         ['CoderCA', 'window']],
-#
-#     [['CoderPWLH', 'compression'], ['CoderPWLHInt', 'compression'], ['CoderGAMPSLimit', 'compression']],
-#     [['CoderPWLH', 'relative'],    ['CoderPWLHInt', 'relative'],    ['CoderGAMPSLimit', 'relative']],
-#     # [['CoderPWLH', 'window'],      ['CoderPWLHInt', 'window'],      ['CoderGAMPSLimit', 'window']],
-#
-#     # [[None, 'relative_stats'],     [None, 'window_stats']]
-# ]
+from scripts.compress.experiments_utils import ExperimentsUtils
+from scripts.informe.latex_tables.table_relative.table_relative import TableRelative
+from scripts.informe.plot.plot_constants import PlotConstants
 
 
 class PDFS1(PDFSCommon):
     SUBPLOT_SPACING_W_H = (0.1, 0.05)
     FIG_SIZE_H_V = (10, 14)
     CODERS_ARRAY = ['CoderPCA', 'CoderAPCA', 'CoderCA', 'CoderPWLH', 'CoderPWLHInt', 'CoderGAMPSLimit']
-    PLOTS_ARRAY = ['compression', 'relative']  # , 'window', 'relative_stats']  # , 'window_stats']
+    PLOTS_ARRAY = ['compression', 'relative']
     PLOTS_MATRIX = [
         [['CoderPCA', 'compression'],  ['CoderAPCA', 'compression'],    ['CoderCA', 'compression']],
         None,
@@ -38,28 +28,29 @@ class PDFS1(PDFSCommon):
     HEIGHT_RATIOS = [30, 0, 30, 10, 30, 0, 30]
     PLOT_OPTIONS = {
         'compression': {'title': True, 'labels': [r'$a_{NM}$', r'$a_M$']},
-        'relative': {'add_min_max_circles': True, 'show_xlabel': True}
+        'relative': {'add_data': True, 'show_xlabel': True}
     }
 
     def __init__(self, path, mode='global', datasets_names=None):
         assert(len(self.HEIGHT_RATIOS) == len(self.PLOTS_MATRIX))
         PDFSCommon.check_valid_mode(mode)
 
-        self.df_0 = ResultsToDataframe(ResultsReader(mode, 0)).create_full_df()
-        self.df_3 = ResultsToDataframe(ResultsReader(mode, 3)).create_full_df()
+        self.df_NM = ResultsToDataframe(ResultsReader(mode, "NM")).create_full_df()
+        self.df_M = ResultsToDataframe(ResultsReader(mode, "M")).create_full_df()
 
         self.col_index = None  # iteration variable
+        self.latex_table_data = {}
         super(PDFS1, self).__init__(path + mode + "/", mode, datasets_names)
 
     def create_pdf_pages(self, pdf, dataset_name, filename):
-        panda_utils_0 = PandasUtils(dataset_name, filename, self.df_0, 0)
-        panda_utils_3 = PandasUtils(dataset_name, filename, self.df_3, 3)
+        panda_utils_NM = PandasUtils(dataset_name, filename, self.df_NM, "NM")
+        panda_utils_M = PandasUtils(dataset_name, filename, self.df_M, "M")
 
         for self.col_index in self.column_indexes(dataset_name):
-            self.create_pdf_page(pdf, filename, panda_utils_0, panda_utils_3)
+            self.create_pdf_page(pdf, filename, panda_utils_NM, panda_utils_M)
 
-    def create_pdf_page(self, pdf, filename, panda_utils_0, panda_utils_3):
-        pdf_page = PdfPage(panda_utils_0, panda_utils_3, filename, self)
+    def create_pdf_page(self, pdf, filename, panda_utils_NM, panda_utils_M):
+        pdf_page = PdfPage(panda_utils_NM, panda_utils_M, filename, self)
 
         # IMPORTANT: resize before setting the labels to avoid this issue: https://stackoverflow.com/q/50395392/4547232
         pdf_page.plt.subplots_adjust(wspace=PDFS1.SUBPLOT_SPACING_W_H[0], hspace=PDFS1.SUBPLOT_SPACING_W_H[1])
@@ -69,3 +60,73 @@ class PDFS1(PDFSCommon):
         if self.mode == 'global':
             plt.savefig(self.create_image_name(self.pdf_name, self.col_index), format='pdf')
         plt.close()
+
+    ####################################################################################################################
+    ####################################################################################################################
+    ####################################################################################################################
+
+    def add_data(self, plot_name, algorithm, values):
+        if not self.PLOT_OPTIONS[plot_name].get('add_data'):
+            return {}
+
+        minimum, maximum = min(values), max(values)
+
+        # (1) Check that the minimum and maximum do not change and occur in the expected dataset/coder
+        expected_maximum = 50.77815044407712
+        expected_minimum = -0.2898755656108619
+
+        result = {}
+        if self.dataset_name == "NOAA-SST" and algorithm == "CoderPCA":
+            assert(maximum == expected_maximum)
+            assert(str(round(maximum, 2)) == "50.78")
+            result = {'keys': ["PlotMax"], 'indexes': [values.index(maximum)], 'color': PlotConstants.VALUE0_COLOR}
+        else:
+            assert(maximum < expected_maximum)
+
+        if self.dataset_name == "NOAA-SPC-tornado" and algorithm == "CoderAPCA" and self.col_index == 2:
+            assert(minimum == expected_minimum)
+            assert(str(round(minimum, 2)) == "-0.29")
+            result = {'keys': ["PlotMin"], 'indexes': [values.index(minimum)], 'color': PlotConstants.VALUE3_COLOR}
+        else:
+            assert(minimum > expected_minimum)
+
+        # (2) Add information to the latex table structure
+        negative, zero, positive = PDFS1.get_stats(values)
+        data = {'negative': negative, 'zero': zero, 'positive': positive, 'min': minimum, 'max': maximum,
+                'info': result['keys'][0] if result.get('keys') else None}
+        if not self.latex_table_data.get(self.dataset_name):
+            self.latex_table_data[self.dataset_name] = []
+        self.latex_table_data[self.dataset_name].append(data)
+
+        return result
+
+    def create_latex_table(self, path):
+        datasets_data = {}
+        for dataset_name, plot_array in self.latex_table_data.items():
+            negative, zero, positive = 0, 0, 0
+            minimum, maximum = plot_array[0]['min'], plot_array[0]['max']
+            info = None
+
+            for plot_data in plot_array:
+                negative += plot_data['negative']
+                zero += plot_data['zero']
+                positive += plot_data['positive']
+                minimum = plot_data['min'] if plot_data['min'] < minimum else minimum
+                maximum = plot_data['max'] if plot_data['max'] > maximum else maximum
+                info = info or plot_data['info']
+
+            short_name = ExperimentsUtils.get_dataset_short_name(dataset_name)
+            datasets_data[short_name] = {
+                'negative': negative, 'zero': zero, 'positive': positive, 'min': minimum, 'max': maximum, 'info': info
+            }
+
+        TableRelative(datasets_data, path).create_table()
+
+    @staticmethod
+    def get_stats(values):
+        negative, zero, positive = 0, 0, 0
+        for value in values:
+            negative = negative + 1 if value < 0 else negative
+            zero = zero + 1 if value == 0 else zero
+            positive = positive + 1 if value > 0 else positive
+        return [negative, zero, positive]

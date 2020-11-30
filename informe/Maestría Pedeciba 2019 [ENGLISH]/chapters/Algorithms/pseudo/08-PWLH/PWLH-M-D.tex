@@ -1,0 +1,27 @@
+
+
+\newcommand{\forEachEntryDecoded}{\textnormal{sample in} \decodedSamplesTwo\commaa\ \valuev\commaa}
+
+\beginAlgorithm
+\onlyInput{\dinputfile{PWLH}\\\doutputfile\\\cInputWindowAPCA\\\cInputColSize\\\inputTSCol}
+\nEqZero\\
+\While{\whileColumnNotDecoded}{
+    \decodeWindowwSize\\
+    \uIf{$\sizee > 1$}{
+        \decodeFloat{\sO}\\
+        \decodeFloat{\sN}\\
+        Obtain timestamps for the endpoints of the segment, \tsO\ and \tsN, from \tscol\\
+        $\decodedSamplesTwo =  \decodeSegment$(\tscol, \tsO, \tsN, \sO, \sN) // routine in Figure~\ref{pseudoDecoLinear}\\
+        \ForEach{\forEachEntryDecoded}{
+            Output $\valuev$ to \out
+        }
+    }
+    \Else{
+        \decodeSpecific{\valuev}\\
+        Output $\valuev$ to \out
+    }
+    \addNToSize\\
+}
+\EndAlgorithmVariant{Decoding}{\coderPWLH}{\maskalgo}{\label{pseudoDecoderPWLHM}}
+
+

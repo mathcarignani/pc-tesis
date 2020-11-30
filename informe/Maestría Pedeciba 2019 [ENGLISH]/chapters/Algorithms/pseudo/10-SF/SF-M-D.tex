@@ -1,0 +1,31 @@
+
+
+\newcommand{\callDecoPoint}{\pointP, \connected\ = DecodePoint()}
+\newcommand{\callDecoPointTwo}{$\pointO$, \connected\ = DecodePoint()}
+
+\beginAlgorithm
+\onlyInput{\dinputfile{SF}\\\doutputfile\\\cInputColSize\\\inputTSCol}
+\nEqZero\\
+\While{\whileColumnNotDecoded}{
+    \callDecoPoint\ // routine shown in Figure~\ref{sfPointMD}\\
+    \If{$n == 0$}{
+        Let $\pointO$ =\ \pointP\\
+        \continueAlgo\\
+    }
+    Let $\pointF$ =\ \pointP\\
+    
+    $\decodedSamplesTwo =  \decodeSegment$(\tscol, $\pointO.\xx$, $\pointF.\xx$, $\pointO.\yy$, $\pointF.\yy$) // routine in Figure~\ref{pseudoDecoLinear}\\
+    \ForEach{\forEachEntryDecoded}{
+        Output $\valuev$ to \out\\
+    }
+    
+    \uIf{\connected}{
+        Let $\pointO$ = $\pointF$\\
+    }
+    \Else{
+        \callDecoPointTwo\ // routine shown in Figure~\ref{sfPointMD}\\
+    }
+    
+    $n \mathrel{+}= |\decodedSamplesTwo|$
+}
+\EndAlgorithmVariant{Decoding}{\coderSF}{\maskalgo}{\label{pseudoDecoderSF}}

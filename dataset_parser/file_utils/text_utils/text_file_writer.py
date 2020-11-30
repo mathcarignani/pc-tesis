@@ -10,3 +10,9 @@ class TextFileWriter:
 
     def close(self):
         self.file.close()
+
+    def append_file(self, text_file_reader):
+        while text_file_reader.continue_reading:
+            line = text_file_reader.read_line()
+            self.write_line(line)
+        text_file_reader.close()
