@@ -48,7 +48,7 @@ class PWLHExample(ExamplesBase):
         self.convex_hull_lines = [{'x_values': [0,1], 'y_values': [1,1]}]
         self.xs = [0]
         self.ys = [0.65]
-        self.words = [r"width$=0$"]
+        self.words = [r"distance$=0$"]
         self.common_pwlh(filename, step, index)
 
     def pwlh3(self, filename, step, index):
@@ -56,7 +56,7 @@ class PWLHExample(ExamplesBase):
         self.convex_hull_lines = [{'x_values': [0,4], 'y_values': [1,1]}]
         self.xs = [1.5]
         self.ys = [0.65]
-        self.words = [r"width$=0$"]
+        self.words = [r"distance$=0$"]
         self.common_pwlh(filename, step, index)
 
     def pwlh4(self, filename, step, index):
@@ -164,7 +164,7 @@ class PWLHExample(ExamplesBase):
         self.convex_hull_width.append({'x_values': [x,8], 'y_values': [y, 4]})
         self.xs.append(x - 0.6)
         self.ys.append(y - 0.35)
-        self.words.append(r"width$=3$")
+        self.words.append(r"dist.$=3$")
 
         self.common_pwlh(filename, step, index)
 
@@ -209,12 +209,12 @@ class PWLHExample(ExamplesBase):
 
     @staticmethod
     def width_text(string):
-        return r"width$\approx" + string + r"$"
+        return r"dist.$\approx" + string + r"$"
 
     def plot_texts(self, ax, x, y, s):
         color = 'black'
         fontsize = 13
-        if 'width' in s:
+        if 'dist' in s:
             fontsize = 10
             color = ExamplesBase.COLOR_LINE
         alpha = 1

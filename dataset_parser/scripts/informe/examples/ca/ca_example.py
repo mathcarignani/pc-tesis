@@ -2,9 +2,7 @@ import sys
 sys.path.append('.')
 
 # import matplotlib
-import numpy as np
 import matplotlib.pyplot as plt
-from scripts.informe.plot.plot_constants import PlotConstants
 from scripts.informe.examples.examples_base import ExamplesBase
 
 plt.rcParams["mathtext.fontset"] = "cm"
@@ -41,8 +39,8 @@ class CAExample(ExamplesBase):
         ]
         self.arrows = [{'x': 1, 'y': 1}]
         self.plot_values = self.plot_values1
-        self.xs = [0, 1, 1 + self.SMIN_MAR, 2 + self.SMAX_MAR]
-        self.ys = [1, 1, 0, 3]
+        self.xs = [0, 1.05, 1 + self.SMIN_MAR, 2 + self.SMAX_MAR]
+        self.ys = [1, 1.1, 0, 3]
         self.words = ['A', 'S', 'SMin', 'SMax']
         self.patches = [{'points': [(0,1), (2,3), (2,0), (1,0)], 'polygon': True}]
         self.common_ca(filename, step, index)
@@ -51,9 +49,9 @@ class CAExample(ExamplesBase):
         self.arrows = []
         self.plot_values = list.copy(self.plot_values1)
         self.plot_values.append({'x_values': [0,5], 'y_values': [1,1], 'color': self.COLOR_LINE, 'linestyle': '--'})
-        self.xs += [2, 5 + self.SMAX_MAR]
-        self.ys += [1, 1-0.1]
-        self.words += ['E3', 'SE3']
+        self.xs += [2.05, 5 + self.SMAX_MAR]
+        self.ys += [1.1, 1-0.1]
+        self.words += ['E3', '(A,E3)']
         self.common_ca(filename, step, index)
 
     def ca3(self, filename, step, index):
@@ -103,7 +101,7 @@ class CAExample(ExamplesBase):
         self.plot_values.append({'x_values': [0,7], 'y_values': [1,y_val5], 'color': self.COLOR_LINE, 'linestyle': '--'})
         self.xs = [0, 4, 4 + self.SMIN_MAR, 7 + self.SMAX_MAR, 5+0.1, 7 + self.SMAX_MAR]
         self.ys = [1, 1, 0,               y_val4-0.1,      2-0.3, y_val5-0.1]
-        self.words = ['A', 'S', 'SMin', 'SMax', 'E6', 'SE6']
+        self.words = ['A', 'S', 'SMin', 'SMax', 'E6', '(A,E6)']
         self.common_ca(filename, step, index)
 
     def ca6(self, filename, step, index):
@@ -132,7 +130,7 @@ class CAExample(ExamplesBase):
         self.plot_values.append({'x_values': [0,7], 'y_values': [1,yval], 'color': self.COLOR_LINE, 'linestyle': '--'})
         self.xs = [0, 7 + self.SMAX_MAR, 5, 7 + self.SMAX_MAR, 6, 7 + self.SMAX_MAR]
         self.ys = [1, y_val4-0.1, 2-0.1, 1-0.2, 3+0.1, yval-0.1]
-        self.words = ['A', 'SMax', 'S', 'SMin', 'E7', 'SE7']
+        self.words = ['A', 'SMax', 'S', 'SMin', 'E7', '(A,E7)']
         self.common_ca(filename, step, index)
 
     def ca8(self, filename, step, index):
@@ -174,8 +172,10 @@ class CAExample(ExamplesBase):
             y = self.ys[index]
             s = self.words[index]
             color = 'black'
-            if 'SM' in s or 'SE' in s:
+            if 'SM' in s or 'A,E' in s:
                 color = self.COLOR_LINE
+            if 'A,E' in s:
+                x -= 0.05
             if s in ['A', 'S']:
                 x -= 0.35
                 y -= 0.06
@@ -185,7 +185,7 @@ class CAExample(ExamplesBase):
             elif 'E' in s:
                 if len(s) == 2:  # 'E1', 'E2', etc.
                     x -= 0.5
-                    y -= 0.08
+                    y -= 0.06
                 else: # 'SE1', 'SE2', etc.
                     pass
             alpha = self.ALPHA_LOW if "Old" in s and "=" not in s else 1

@@ -165,6 +165,7 @@ class ExamplesBase(object):
 
     def title(self, step):
         epsilon = r"$\epsilon = {}$".format(self.epsilon)
-        window = r"$w = {}$".format(self.window)
-        text = "Algorithm " + self.algorithm + " with " + epsilon + " and " + window + " - STEP " + str(step)
+        window = " and " + r"$w = {}$".format(self.window) if self.window else ""
+
+        text = "Algorithm " + self.algorithm + " with " + epsilon + window + " - STEP " + str(step)
         return text
