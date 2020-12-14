@@ -1,0 +1,17 @@
+
+% \vspace{-15pt}
+\clearpage
+\section{Dataset ElNino}
+\label{datasets:elnino}
+
+Dataset ElNino \cite{dataset:elnino} consists of various oceanographic and surface meteorological measurements from buoys floating in the Pacific Ocean between 1980 and 1998. \TAODef
+
+
+The dataset consists of readings from 78 buoys, which move around in the Pacific Ocean, near the equator. For each timestamp, the position of each buoy is specified, in terms of its latitude and longitude (°), and in each buoy the following measurements are taken: speed of the zonal and meridional winds (m/s), relative humidity (\%), and air temperature and SST (°C). Therefore, a total of 546 ($78\times7$) data samples are stored for each timestamp.
+
+
+In Table~\ref{datasets:table:elnino} we present some statistics of dataset ElNino. The dataset consists of a single file, and each row in the table contains statistics concerning a different data type. The first column specifies the number of gaps, and the percentage of gaps over the total number of entries. The file has 6,371 rows, so there is a total of 496,938 ($78\times6,371$) entries of each data type. The rest of the columns show the minimum, maximum, median, mean, and standard deviation, of the sample values (in their respective units of measurement).
+
+
+\input{chapters/Datasets/stats-tables/4-ElNino-stats}
+

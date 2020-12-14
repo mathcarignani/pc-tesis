@@ -1,0 +1,37 @@
+
+
+
+\beginAlgorithm
+\onlyInput{\columnInput\\\cOutputFile{CA}\\\cInputThreshold\\\cInputWindowAPCA\\\inputTSCol}
+\createWindowOne\\
+\ForEach{\forEachEntryCoder}{
+    \obtainTS\\
+    \letPointCA\\
+    
+    \uIf{\firstIteratCA}{
+        \letArchived, then \encodeWinStaCA\\
+    }
+    \uElseIf{\windowEmpty}{
+        \letSnapshot, then \addSnapshot\\
+        \letSminSmax\\
+    }
+    \Else{
+        Let \EseE\ be the segment with initial point \archived\ that passes through point \incoming\\
+        \uIf{\nott\,\validCondCA \orr \windowFull\ }{
+            \encodeWinEndCA\\
+            \createWindowTwo\\
+            \letArchived, then \encodeWinStaCA\\
+        }
+        \Else{
+            \letSnapshot, then \addSnapshot\\
+            \letSminSmaxOld\\
+            \letSminSmax\\
+            \letSminSmaxUpdate\\
+        }
+    }
+}
+\If{\winNoEmpty}{
+  \encodeWinEndCA\\
+}
+\EndAlgorithmVariant{Coding}{\coderCA}{\maskalgo}{\label{pseudoCoderCAM}}
+

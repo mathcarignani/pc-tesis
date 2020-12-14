@@ -1,0 +1,13 @@
+
+
+\beginAlgorithm
+\inputAndOutput{\inputTSCol\\\inputTSO\\\inputTSN\\\inputSO\\\inputSN}{\outputDecoded}
+Let \segment\ be the line segment whose endpoints coordinates are (\tsO,\sO) and (\tsN,\sN)\\
+Create an empty list, \decodedSamples\\
+\ForEach{\forEachTS \textnormal{ such that} \ifDecoLinear \commaa}{
+    Let \sI\ be the sample value obtained when substituting the x-coordinate in the \segment\ equation by \tsI, and rounding the result to the nearest integer\\
+    \AddEntryLinear
+}
+% \returnn \decodedSamples
+\EndPseudo{Auxiliary routine \decodeSegment for linear model algorithms.}{\label{pseudoDecoLinear}}
+

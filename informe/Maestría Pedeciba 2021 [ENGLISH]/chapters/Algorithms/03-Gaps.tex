@@ -1,0 +1,49 @@
+
+% \vspace{-10pt}
+\section{Encoding of Gaps in the Masking Variants}
+\label{algo:maskmodes}
+
+
+\newcommand{\xOneN}{x_1...x_n}
+\newcommand{\StringSeq}{x_1...x_{i-1}}
+\newcommand{\xiiminus}{p(x_i|\StringSeq)}
+\newcommand{\xiiminustwo}{p(\cdot|\StringSeq)}
+\vspace{-5pt}
+We recall that the masking variant of an algorithm starts by losslessly encoding the position of all the gaps in the data, independently for each data column (\Line 7 in Figure \ref{pseudoCodeCommon}). We describe the position of the gaps in a column by encoding a sequence of binary symbols, $\xOneN$, each symbol $x_i$ indicating the presence ($0$) or absence ($1$) of a sample in the $i$-th timestamp of the column, in chronological order. To this end we use an arithmetic coder (AC) \cite{arcoding, ac2, Cover2005}, which, sequentially provided with a probability assignment, $\xiiminustwo$, for the symbol in position $i$ given the past symbols $x_1...x_{i-1}$, $1\leq i \leq n$, generates a lossless encoding bit stream for $\xOneN$, of length $-\log P(\xOneN) + O(1)$, where $P(\xOneN)=\prod_{i=1}^{n}\xiiminus$. This code length is optimal for this probability assignment, up to an additive constant.
+
+
+For a sequence $x$ of independent and identically distributed random binary symbols (with unknown probability distribution), the Krichevsky–Trofimov probability assignment \cite{ktestimator}, which we define next, yields an asymptotically optimal code length for the (unknown) probability distribution.
+
+
+\begin{defcion}
+\label{def:ktestimator}
+Given a string $x$ over an alphabet $A = \{0, 1\}$, the \textit{Krichevsky–Trofimov (KT) probability assignment} assigns the following probabilities for each symbol position $i, 1\leq i \leq n$
+\vspace{-2pt}
+\begin{equation}
+\label{eq:ktestimator}
+p(0|\StringSeq) = \frac{n_0 + 1/2}{i}, \hspace{+20pt} p(1|\StringSeq) = \frac{n_1 + 1/2}{i},
+\end{equation}
+\end{defcion}
+\vspace{-8pt}
+where $n_0$ and $n_1$ denote the number of occurrences of 0 and 1 in $\StringSeq$, respectively.
+
+
+\vspace{+5pt}
+\begin{table}[h]
+\begin{minipage}{0.62\textwidth}
+\setstretch{1.1}
+% \vspace{-35pt}
+A first-order Markov process has two states, $S_0$ and $S_1$, and we say that $x_i$ occurs in state $S_b$ iff the previous symbol, $x_{i-1}$, equals $b$. We arbitrary let $S_1$ be the initial state (i.e. the state in which $x_1$ occurs). In Figure~\ref{tikz:markov} we present a diagram for this Markov process. A KT probability assignment for a first order Markov process is obtained by applying (\ref{eq:ktestimator}) separately for the subsequence of symbols that occur in states $S_0$ and $S_1$. This is implemented by maintaining two pairs of symbol occurrence counters, $n_0$, $n_1$, one pair for each state.
+
+\end{minipage}%
+\hspace{0.02\textwidth}
+\begin{minipage}{0.32\textwidth}
+% \vspace{+5pt}
+\input{chapters/Algorithms/other/markov-states}
+\end{minipage}%
+\end{table}
+
+
+\vspace{-5pt}
+As we recall from Chapter~\ref{datasets}, the positions of the gaps may follow different patterns for different datasets, but, in general, the gaps occur in bursts, and the amount of gaps is considerably less than the amount of data values. With this in mind, we model the sequence of gaps as a first-order Markov process, and we use the KT probability assignment for the symbols that occur in each state.
+

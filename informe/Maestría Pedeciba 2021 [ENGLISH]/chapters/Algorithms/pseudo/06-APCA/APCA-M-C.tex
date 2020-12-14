@@ -1,0 +1,18 @@
+
+
+\beginAlgorithm
+\onlyInput{\columnInput\\\cOutputFile{APCA}\\\cInputThreshold\\\cInputWindowAPCA}
+\createWindowOne\\
+\ForEach{\forEachEntryCoder}{
+    \calculateMinMaxAPCA\\
+    \If{\NOTvalidThreThree\ \orr \windowFull}{
+        \encodeWindowAPCA\\
+        \createWindowTwo\\
+    }
+    \AddEntry\\
+}
+\If{\window \textnormal{ is not empty}}{
+  \encodeWindowAPCA\\
+}
+\EndAlgorithmVariant{Coding}{\coderAPCA}{\maskalgo}{\label{pseudoCoderAPCAM}}
+
