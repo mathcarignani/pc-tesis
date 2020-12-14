@@ -7,9 +7,9 @@ from scripts.informe.examples.examples_base import ExamplesBase
 
 plt.rcParams["mathtext.fontset"] = "cm"
 
-class CAExample(ExamplesBase):
+class CAIntro(ExamplesBase):
     def __init__(self):
-        super(CAExample, self).__init__()
+        super(CAIntro, self).__init__()
         self.path = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/informe/examples/ca_intro/"
         self.xlim_right = 5
         self.figsize = [4.1, 3.48]
@@ -77,4 +77,4 @@ class CAExample(ExamplesBase):
             alpha = self.ALPHA_LOW if "Old" in s and "=" not in s else 1
             ax.text(x, y, s, fontsize=13, alpha=alpha, c=color)
             
-CAExample()
+CAIntro()
