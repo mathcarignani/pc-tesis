@@ -18,7 +18,7 @@ class PdfPage(object):
         self.fig, self.plt = PlotUtils.create_figure(pdf_instance.FIG_SIZE_H_V, filename + ' - col = ' + str(self.col_index))
         self.height_ratios = pdf_instance.HEIGHT_RATIOS
 
-    def create(self, coders_array, plots_array, plots_matrix): #, subplot_spacing_w_h):
+    def create(self, coders_array, plots_array, plots_matrix):
         plots_obj = {}
         for plot_key in plots_array:
             options = self.plots_options.get(plot_key) or {}

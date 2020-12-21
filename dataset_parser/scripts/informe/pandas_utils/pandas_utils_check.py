@@ -35,7 +35,7 @@ class PandasUtilsCheck(object):
         rows_count = self.__coder_rows_count(coder_name)
         if coder_name == 'CoderBase':
             assert(rows_count == 1)
-        elif coder_name in ['CoderSF', 'CoderGZIP']:
+        elif coder_name in ['CoderGZIP']:
             assert(rows_count == len(ExperimentsUtils.THRESHOLDS))
         else:
             # the rest of the coders have the same number of rows

@@ -16,16 +16,16 @@ from scripts.informe.plot.plot_constants import PlotConstants
 class PDFS3(PDFSCommon):
     SUBPLOT_SPACING_W_H = (0.1, 0.05)
     FIG_SIZE_H_V = (10, 11)
-    CODERS_ARRAY = ['CoderPCA', 'CoderAPCA', 'CoderCA', 'CoderPWLH', 'CoderPWLHInt', 'CoderGAMPSLimit', 'CoderFR']
+    CODERS_ARRAY = ['CoderPCA', 'CoderAPCA', 'CoderCA', 'CoderPWLH', 'CoderPWLHInt', 'CoderGAMPSLimit', 'CoderFR', 'CoderSF']
     PLOTS_ARRAY = ['window', 'relative']
     PLOTS_MATRIX = [
         [['CoderPCA', 'window'],       ['CoderAPCA', 'window'],         ['CoderCA', 'window'],              ['CoderFR', 'window']],
         None,
         [['CoderPCA', 'relative'],  ['CoderAPCA', 'relative'],    ['CoderCA', 'relative'],         ['CoderFR', 'relative']],
         None,
-        [['CoderPWLH', 'window'],      ['CoderPWLHInt', 'window'],      ['CoderGAMPSLimit', 'window']],
+        [['CoderPWLH', 'window'],      ['CoderPWLHInt', 'window'],      ['CoderGAMPSLimit', 'window'], ['CoderSF', 'window']],
         None,
-        [['CoderPWLH', 'relative'], ['CoderPWLHInt', 'relative'], ['CoderGAMPSLimit', 'relative']],
+        [['CoderPWLH', 'relative'], ['CoderPWLHInt', 'relative'], ['CoderGAMPSLimit', 'relative'], ['CoderSF', 'relative']],
     ]
     HEIGHT_RATIOS = [30, 0, 30, 15, 30, 0, 30]
     PLOT_OPTIONS = {
