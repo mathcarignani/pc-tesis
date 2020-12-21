@@ -14,7 +14,7 @@ class SFExample(ExamplesBase):
         self.original = [1, 1, 1, 1, 1, 2, 3, 3, 4, 2, 1, 1]
         self.decoded =  []
         self.plot_values = []
-        self.common_sf("sf0.pdf", 0, 11)
+        SFExample.common_sf(self, "sf0.pdf", 0, 11)
         self.sf1("sf1.pdf", 1, 1)
         self.sf2("sf2.pdf", 2, 2)
         self.sf3("sf3.pdf", 3, 2)
@@ -40,7 +40,7 @@ class SFExample(ExamplesBase):
         self.xs = [1 + self.SMIN_MAR, 2 + self.SMAX_MAR, 0, 1.65]
         self.ys = [0, 4, 1, 1]
         self.words = ['SMin', 'SMax', 'S', 'E2']
-        self.common_sf(filename, step, index)
+        SFExample.common_sf(self, filename, step, index)
 
     def sf2(self, filename, step, index):
         self.plot_values.append({'x_values': [0.5,5], 'y_values': [1,1], 'color': self.COLOR_LINE, 'linestyle': '--'})
@@ -49,7 +49,7 @@ class SFExample(ExamplesBase):
         self.xs += [0.30, 2, 5 + self.SMAX_MAR]
         self.ys += [0.90, 1.15, 1-0.1]
         self.words += ['I', 'E3', '(I,E3)']
-        self.common_sf(filename, step, index)
+        SFExample.common_sf(self, filename, step, index)
 
     def sf3(self, filename, step, index):
         [a.update({'alpha': self.ALPHA_LOW}) for a in self.plot_values]
@@ -64,7 +64,7 @@ class SFExample(ExamplesBase):
         self.xs = [2, 2 + self.SMIN_MAR, 3 + self.SMAX_MAR, 0.28 + self.SMIN_MAR, 2 + self.SMAX_MAR]
         self.ys = [1.15, 0, 3, 0, 4]
         self.words = ['E3', 'SMin', 'SMax', 'SMinOld', 'SMaxOld']
-        self.common_sf(filename, step, index)
+        SFExample.common_sf(self, filename, step, index)
 
     def sf4(self, filename, step, index):
         self.plot_values = [
@@ -82,7 +82,7 @@ class SFExample(ExamplesBase):
         self.xs = [10 + self.SMAX_MAR, 10 + self.SMAX_MAR, 9, 7.95]
         self.ys = [3+0.5, 2-0.2, 4+0.2, 4.05]
         self.words = ['SMin', 'SMinOld', 'SMax=SMaxOld', 'E9']
-        self.common_sf(filename, step, index)
+        SFExample.common_sf(self, filename, step, index)
 
     def sf5(self, filename, step, index):
         self.plot_values.pop()
@@ -93,7 +93,7 @@ class SFExample(ExamplesBase):
         self.plot_values += [
             {'x_values': [4,10], 'y_values': [2,2], 'color': self.COLOR_LINE, 'linestyle': '--'}
         ]
-        self.common_sf(filename, step, index)
+        SFExample.common_sf(self, filename, step, index)
 
     def sf6(self, filename, step, index):
         [a.pop() for a in [self.xs, self.ys, self.words]]
@@ -104,7 +104,7 @@ class SFExample(ExamplesBase):
         self.plot_values += [
             {'x_values': [0,10], 'y_values': [0.27,4.59], 'alpha': self.ALPHA_LOW},
         ]
-        self.common_sf(filename, step, index)
+        SFExample.common_sf(self, filename, step, index)
 
     def sf7(self, filename, step, index):
         self.plot_values = [
@@ -122,7 +122,7 @@ class SFExample(ExamplesBase):
         self.ys = [0, 3, 2.5, 2, 0.9]
         self.words = ['SMin', 'SMax', r"$segment_{prev}$", 'S', 'E11']
         self.encoded_points = [(0,0.27)]
-        self.common_sf(filename, step, index)
+        SFExample.common_sf(self, filename, step, index)
 
     def sf8(self, filename, step, index):
         [a.pop() for a in [self.xs, self.ys, self.words]]
@@ -131,7 +131,7 @@ class SFExample(ExamplesBase):
         self.xs += [11.1, 10.76, 9.47]
         self.ys += [1.05, 0.5, 1.6]
         self.words += ['E12', '(I,E12)', 'I']
-        self.common_sf(filename, step, index)
+        SFExample.common_sf(self, filename, step, index)
 
     def sf9(self, filename, step, index):
         [a.update({'alpha': self.ALPHA_LOW}) for a in self.plot_values]
@@ -146,7 +146,7 @@ class SFExample(ExamplesBase):
         self.xs = [8.5 + self.SMIN_MAR, 10 + self.SMAX_MAR, 10.05, 10.5, 11.1, 4.1]
         self.ys = [0, 3, 0, 2.05, 1.05, 2.5]
         self.words = ['SMinOld', 'SMaxOld', 'SMin', 'SMax', 'E12', r"$segment_{prev}$"]
-        self.common_sf(filename, step, index)
+        SFExample.common_sf(self, filename, step, index)
 
     def sf10(self, filename, step, index):
         self.plot_values.pop(1)
@@ -159,7 +159,7 @@ class SFExample(ExamplesBase):
         self.ys += [3.2]
         self.words += [r"$segment_{conn}$"]
         self.encoded_points = [(0,0.27),(8,3.72),(11,0.386)]
-        self.common_sf(filename, step, index)
+        SFExample.common_sf(self, filename, step, index)
 
     def sf11(self, filename, step, index):
         self.decoded =  [0, 1, 1, 2, 2, 2, 3, 3, 4, 3, 2, 0]
@@ -168,21 +168,22 @@ class SFExample(ExamplesBase):
         self.arrows = []
         self.patches = []
         self.xs, self.yx, self.words = [], [], []
-        self.common_sf(filename, step, index)
+        SFExample.common_sf(self, filename, step, index)
 
-    def common_sf(self, filename, step, index):
+    @classmethod
+    def common_sf(cls, self, filename, step, index):
         ax, fig = self.common_1(index)
-        self.plot_texts(ax)
+        SFExample.plot_texts(self, ax)
         self.common_2(ax, fig, step, True, filename)
 
-    def plot_texts(self, ax):
+    @classmethod
+    def plot_texts(cls, self, ax):
         for index, x in enumerate(self.xs):
             y = self.ys[index]
             s = self.words[index]
             color = 'black'
             if 'segment' in s:
                 color = ExamplesBase.COLOR_ENCO
-                alpha = self.ALPHA_LOW
             if 'SM' in s or 'I,' in s:
                 color = self.COLOR_LINE
             if s in ['A', 'S']:
@@ -199,5 +200,3 @@ class SFExample(ExamplesBase):
                     pass
             alpha = self.ALPHA_LOW if "Old" in s and "=" not in s else 1
             ax.text(x, y, s, fontsize=13, alpha=alpha, c=color)
-
-SFExample()
