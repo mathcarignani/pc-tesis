@@ -69,6 +69,7 @@ class CompressCPP:
         stdout = result.stdout.decode('utf-8')
         stdout_list = stdout.split("\n")
         for line in stdout_list:
+            print(line)
             if "header_bits" in line:
                 header_bits = str_to_int(line)
             elif "total_mask_bits" in line:
