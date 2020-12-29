@@ -6,10 +6,10 @@
 #include "../../../DataManagementLayer/Data/DataStream.h"
 #include "GAMPS_Computation.h"
 
-GAMPS_Computation::GAMPS_Computation(GAMPSInput* gampsInput,std::vector<double> gamps_epsilons_vector_)
+GAMPS_Computation::GAMPS_Computation(GAMPSInput* gampsInput, double epsilon_)
 {
 	m_pInput = gampsInput;
-	gamps_epsilons_vector = gamps_epsilons_vector_;
+	epsilon = epsilon_;
 	m_pGampsOutput = new GAMPSOutput(gampsInput);
 }
 
@@ -252,7 +252,7 @@ int GAMPS_Computation::statGroup(GAMPSInput* gampsInputList)
 		// baseSignal->statistic();
 		// eps = m_dEps * (baseSignal->getMax() - baseSignal->getMin());
 		// eps1 = 0.4 * eps;
-		eps1 = gamps_epsilons_vector.at(j);
+		eps1 = epsilon; // TODO: change
 		std::cout << "  eps1 = " << eps1 << std::endl;
 
 		DynArray<GAMPSEntry>* listBaseSignalBucket = compress_APCA(baseSignal,eps1); // TODO: use my own script
@@ -270,7 +270,7 @@ int GAMPS_Computation::statGroup(GAMPSInput* gampsInputList)
 			double c1,c2;
 			DynArray<GAMPSEntry> *listComputeRatioSignal = this->computeRatioSignal(ratioSignal,baseSignal,c1,c2);
 
-			double eps = gamps_epsilons_vector.at(i);
+			double eps = epsilon; // TODO: change
 			eps2 = this->computeEps2(eps,eps1,c1,c2);
 			std::cout << "    eps2 = " << eps1 << std::endl;
 			DynArray<GAMPSEntry> *listRatioBucket = this->compress_APCA(*listComputeRatioSignal,eps2); // TODO: use my own script

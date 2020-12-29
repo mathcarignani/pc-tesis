@@ -16,6 +16,7 @@ private:
     int column_index;
     int row_index;
     std::vector<int> time_delta_vector;
+    std::vector<int> gamps_epsilons_vector;
     Mask* nodata_rows_mask;
 
 #if MASK_MODE == 3
@@ -25,6 +26,7 @@ private:
     void codeCoderParams() override;
     void codeDataRows() override;
 
+    std::vector<int> getGAMPSEpsilonsVector();
     void codeTimeDeltaColumn();
     void codeDataTypeColumns();
 

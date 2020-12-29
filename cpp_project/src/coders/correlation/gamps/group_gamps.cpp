@@ -2,13 +2,13 @@
 #include "group_gamps.h"
 #include "coder_utils.h"
 
-GroupGAMPS::GroupGAMPS(CoderGAMPS* coder_gamps_){
+GroupGAMPS::GroupGAMPS(CoderGAMPS* coder_gamps_, double epsilon_){
     coder_gamps = coder_gamps_;
+    epsilon = epsilon_;
+
     input_csv = coder_gamps->input_csv;
     mapping_table = coder_gamps->mapping_table;
     dataset = coder_gamps->dataset;
-    error_thresholds_vector = coder_gamps->error_thresholds_vector;
-
     total_data_types = coder_gamps->total_data_types;
     data_type_index = coder_gamps->data_type_index;
     total_data_type_columns = coder_gamps->total_data_type_columns;
@@ -26,7 +26,7 @@ GAMPSOutput* GroupGAMPS::getGAMPSOutput(int column_index){
 #if CHECKS
     assert(gamps_epsilons_vector.size() == gamps_input->getNumOfStream());
 #endif
-    gamps = new GAMPS(gamps_epsilons_vector, gamps_input);
+    gamps = new GAMPS(epsilon, gamps_input);
     gamps->compute();
     GAMPSOutput* gamps_output = gamps->getOutput();
     return gamps_output;
@@ -60,13 +60,11 @@ void GroupGAMPS::getNodataRowsMask(int column_index){
 }
 
 GAMPSInput* GroupGAMPS::getGAMPSInput(){
-    gamps_epsilons_vector.clear();
     int data_columns_count = total_data_type_columns - mapping_table->nodata_columns_indexes.size();
     CMultiDataStream* multiStream = new CMultiDataStream(data_columns_count);
     int j = 1;
     for(int i = data_type_index; i <= dataset->data_columns_count; i+=total_data_types){
         if (mapping_table->isNodataColumnIndex(j++)) { continue; } // skip nodata columns
-        gamps_epsilons_vector.push_back(error_thresholds_vector.at(i));
         dataset->setColumn(i);
         CDataStream* signal = getColumn(i);
         multiStream->addSingleStream(signal);
