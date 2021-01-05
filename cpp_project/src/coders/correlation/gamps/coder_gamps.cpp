@@ -33,10 +33,10 @@ void CoderGAMPS::codeDataRows(){
     total_data_type_columns = dataset->data_columns_count / total_data_types;
     gamps_epsilons_vector = getGAMPSEpsilonsVector();
 
-//    std::cout << "VectorUtils::printIntVector(error_thresholds_vector);" << std::endl;
-//    VectorUtils::printIntVector(error_thresholds_vector);
-//    std::cout << "VectorUtils::printIntVector(gamps_epsilons_vector);" << std::endl;
-//    VectorUtils::printIntVector(gamps_epsilons_vector);
+    // std::cout << "VectorUtils::printIntVector(error_thresholds_vector);" << std::endl;
+    // VectorUtils::printIntVector(error_thresholds_vector);
+    // std::cout << "VectorUtils::printIntVector(gamps_epsilons_vector);" << std::endl;
+    // VectorUtils::printIntVector(gamps_epsilons_vector);
 
     for(data_type_index = 1; data_type_index <= total_data_types; data_type_index++){
         codeDataTypeColumns();
@@ -73,7 +73,8 @@ void CoderGAMPS::codeDataTypeColumns(){
 #if COUT
     std::cout << "ccode group " << data_type_index << "/" << total_data_types << std::endl;
 #endif
-    double epsilon = (double) gamps_epsilons_vector.at(data_type_index);
+    double epsilon = (double) gamps_epsilons_vector.at(data_type_index - 1);
+    // std::cout << "epsilon = " << epsilon << std::endl;
     GroupGAMPS* group_gamps = new GroupGAMPS(this, epsilon);
     GAMPSOutput* gamps_output = group_gamps->getGAMPSOutput(column_index);
     nodata_rows_mask = group_gamps->getMask();

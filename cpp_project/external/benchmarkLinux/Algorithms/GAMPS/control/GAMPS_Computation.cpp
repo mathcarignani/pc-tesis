@@ -251,8 +251,9 @@ int GAMPS_Computation::statGroup(GAMPSInput* gampsInputList)
 		// calculate % eps
 		// baseSignal->statistic();
 		// eps = m_dEps * (baseSignal->getMax() - baseSignal->getMin());
-		// eps1 = 0.4 * eps;
-		eps1 = epsilon; // TODO: change
+		eps = epsilon;
+		eps1 = 0.4 * eps; // TODO: round down?
+		std::cout << "  eps = " << eps << std::endl;
 		std::cout << "  eps1 = " << eps1 << std::endl;
 
 		DynArray<GAMPSEntry>* listBaseSignalBucket = compress_APCA(baseSignal,eps1); // TODO: use my own script
@@ -270,9 +271,8 @@ int GAMPS_Computation::statGroup(GAMPSInput* gampsInputList)
 			double c1,c2;
 			DynArray<GAMPSEntry> *listComputeRatioSignal = this->computeRatioSignal(ratioSignal,baseSignal,c1,c2);
 
-			double eps = epsilon; // TODO: change
-			eps2 = this->computeEps2(eps,eps1,c1,c2);
-			std::cout << "    eps2 = " << eps1 << std::endl;
+			eps2 = this->computeEps2(eps,eps1,c1,c2); // TODO: round down if > 0 / make 0 if < 0 ?
+			std::cout << "    eps2 = " << eps2 << std::endl;
 			DynArray<GAMPSEntry> *listRatioBucket = this->compress_APCA(*listComputeRatioSignal,eps2); // TODO: use my own script
 			int pos = j* numOfStream + i;
 			listRatioSignalBucket[pos] = listRatioBucket;
