@@ -15,7 +15,7 @@ private:
     Mask* nodata_rows_mask;
     MappingTable* mapping_table;
     Dataset* dataset;
-    std::vector<int> error_thresholds_vector;
+    double epsilon;
     int total_data_types;
     int data_type_index;
     int total_data_type_columns;
@@ -30,7 +30,7 @@ private:
     CDataStream* getColumn(int column_index);
 
 public:
-    GroupGAMPS(CoderGAMPS* coder_gamps_);
+    GroupGAMPS(CoderGAMPS* coder_gamps_, double epsilon_);
     ~GroupGAMPS();
     GAMPSOutput* getGAMPSOutput(int column_index);
     Mask* getMask();

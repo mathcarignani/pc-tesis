@@ -31,9 +31,31 @@ void CoderGAMPS::codeDataRows(){
 
     total_data_types = limit_mode ? dataset->dataColumnsGroupCount() : 1;
     total_data_type_columns = dataset->data_columns_count / total_data_types;
+    gamps_epsilons_vector = getGAMPSEpsilonsVector();
+
+    // std::cout << "VectorUtils::printIntVector(error_thresholds_vector);" << std::endl;
+    // VectorUtils::printIntVector(error_thresholds_vector);
+    // std::cout << "VectorUtils::printIntVector(gamps_epsilons_vector);" << std::endl;
+    // VectorUtils::printIntVector(gamps_epsilons_vector);
+
     for(data_type_index = 1; data_type_index <= total_data_types; data_type_index++){
         codeDataTypeColumns();
     }
+}
+
+std::vector<int> CoderGAMPS::getGAMPSEpsilonsVector(){
+    std::vector<int> epsilons_vector(total_data_types, -1);
+
+//    std::cout << "total_data_types = " << total_data_types << std::endl;
+    for(int i=1; i < error_thresholds_vector.size(); i++){ // skip the first entry (time delta epsilon)
+        int data_type_index = (i - 1) % total_data_types; // -1 because the first entry is skipped
+        int current_epsilon = epsilons_vector.at(data_type_index);
+        int candidate_epsilon = error_thresholds_vector.at(i);
+        if (current_epsilon == -1 or candidate_epsilon < current_epsilon){
+            epsilons_vector.at(data_type_index) = candidate_epsilon;
+        }
+    }
+    return epsilons_vector;
 }
 
 void CoderGAMPS::codeTimeDeltaColumn(){
@@ -51,7 +73,9 @@ void CoderGAMPS::codeDataTypeColumns(){
 #if COUT
     std::cout << "ccode group " << data_type_index << "/" << total_data_types << std::endl;
 #endif
-    GroupGAMPS* group_gamps = new GroupGAMPS(this);
+    double epsilon = (double) gamps_epsilons_vector.at(data_type_index - 1);
+    // std::cout << "epsilon = " << epsilon << std::endl;
+    GroupGAMPS* group_gamps = new GroupGAMPS(this, epsilon);
     GAMPSOutput* gamps_output = group_gamps->getGAMPSOutput(column_index);
     nodata_rows_mask = group_gamps->getMask();
     codeMappingTable(gamps_output);
@@ -123,7 +147,7 @@ void CoderGAMPS::codeGAMPSColumn(DynArray<GAMPSEntry>* column, bool base_window)
     GAMPSEntry current_entry = column->getAt(entry_index);
     int remaining = current_entry.endingTimestamp;
 
-    APCAWindow* window = new APCAWindow(window_size, 0); // threshold will not be used
+    APCAWindow* window = new APCAWindow(window_size, 0); // threshold will not be used TODO: why?
     nodata_rows_mask->reset();
     row_index = 0;
     input_csv->goToFirstDataRow(column_index);
