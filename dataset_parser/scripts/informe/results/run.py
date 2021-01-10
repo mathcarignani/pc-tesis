@@ -18,7 +18,7 @@ from scripts.informe.gzip_compare.gzip_script import GZipScript
 
 ROOT_PATH = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis"
 INFORME_PATH = ROOT_PATH + "/dataset_parser/scripts/informe"
-RESULTS_PATH = INFORME_PATH + "/results/11.2020/"
+RESULTS_PATH = INFORME_PATH + "/results/01.2021/"
 
 #
 # (0) Run "sh make_mac.sh" / "sh make_ubuntu.sh" so that the following executables are created:
