@@ -82,9 +82,7 @@ class PandasMethods(object):
         min_value_rows_count = threshold_df[threshold_df[column_key] == min_value].count()[column_key]
 
         # cases in which for a single combination there are two combinations with minimum CR
-        if coder_name == "CoderGAMPSLimit" and column_key == "column_2" and threshold == 30 and dataset == "NOAA-SPC-tornado":
-            assert(min_value_rows_count == 2)
-        elif coder_name == "CoderSF" and column_key == "column_1" and threshold == 0 and dataset == "NOAA-SPC-hail":
+        if coder_name == "CoderSF" and column_key == "column_1" and threshold == 0 and dataset == "NOAA-SPC-hail":
             assert(min_value_rows_count == 2)
         elif coder_name == "CoderSF" and column_key == "column_2" and threshold == 0 and dataset == "NOAA-SPC-hail":
             assert(min_value_rows_count == 4)
