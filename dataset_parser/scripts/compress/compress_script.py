@@ -147,17 +147,13 @@ class CompressScript:
         csv_compare = CSVCompare(args.input_path, args.input_filename, args.output_path, args.deco_filename)
         # TODO: the csv comparison would be faster if implemented in C++
         same_file = csv_compare.compare(args.coder_params.get('error_threshold'), False)
-        if not same_file:
-            print("ERROR / ERROR / ERROR: DIFFERENT FILES!")
-        assert same_file
-
+        assert same_file # NEVER COMMENT THIS LINE
         return [coder_info, header_bits, columns_bits, column_mask_bits, same_file]
 
 
     @staticmethod
     def _compress_file(args):
         coder_info, header_bits, columns_bits, column_mask_bits, same_file = CompressScript._compress_decompress_compare(args)
-
         # print results
         input_file = args.input_path + "/" + args.input_filename
         compressed_file = args.output_path + "/" + args.compressed_filename
@@ -181,7 +177,6 @@ class CompressScript:
             logger.info("--------------------------(same file!)")
         else:
             logger.info("ERROR: DIFFERENT FILES!")
-            # raise StandardError("ERROR: DIFFERENT FILES!")
         logger.info(coder_info)
         logger.info("TIME: " + datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
         logger.info("ORIGINAL FILE:")
