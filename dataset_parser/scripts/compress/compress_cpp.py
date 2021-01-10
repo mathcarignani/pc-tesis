@@ -77,7 +77,7 @@ class CompressCPP:
             elif "total_bits" in line:
                 bits = str_to_int(line)
                 column_bits.append(bits)
-            # print(line)
+            print(line)
         cls._print_end()
         return header_bits, column_bits, column_mask_bits
 
