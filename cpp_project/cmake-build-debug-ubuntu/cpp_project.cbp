@@ -478,6 +478,10 @@
 			<Option target="run_variant_M"/>
 			<Option target="run_variant_NM"/>
 		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/correlation/gamps/group_gamps.h">
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
+		</Unit>
 		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/coders/correlation/gamps/map_entry.h">
 			<Option target="run_variant_M"/>
 			<Option target="run_variant_NM"/>
@@ -831,6 +835,10 @@
 			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/correlation/gamps/gamps_utils.cpp">
+			<Option target="run_variant_M"/>
+			<Option target="run_variant_NM"/>
+		</Unit>
+		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/coders/correlation/gamps/group_gamps.cpp">
 			<Option target="run_variant_M"/>
 			<Option target="run_variant_NM"/>
 		</Unit>

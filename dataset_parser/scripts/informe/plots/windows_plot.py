@@ -27,11 +27,6 @@ class WindowsPlot(CommonPlot):
         # self.print_values()
         extra_options.update(self.options); self.options = extra_options
 
-        if self.algorithm == 'CoderSF':
-            CommonPlot.label_title(ax, self.options, self.algorithm)
-            ax.axis("off")
-            return
-
         x_axis_0, y_axis_0, x_axis_3, y_axis_3 = [], [], [], []
         local_color, global_color = 'red', 'forestgreen'
 

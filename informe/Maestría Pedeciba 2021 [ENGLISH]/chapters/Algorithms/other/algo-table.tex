@@ -1,0 +1,28 @@
+
+\begin{table}[h]
+\vspace{+5pt}
+\begin{center}
+    \begin{tabular}{| C{2.2cm} || C{1.4cm} | C{1.4cm} |  C{2cm} |  C{0.9cm} | C{0.9cm} | C{0.7cm} |}
+    \hline
+      \multicolumn{1}{|>{\centering\arraybackslash}m{2.2cm}||}{\textbf{Algorithm}}
+    & \multicolumn{1}{>{\centering\arraybackslash}m{1.4cm}|}{\textbf{Lossless}} 
+    & \multicolumn{1}{>{\centering\arraybackslash}m{1.4cm}|}{\textbf{Near-lossless}}
+    & \multicolumn{1}{>{\centering\arraybackslash}m{2cm}|}{\textbf{Model}} 
+    & \multicolumn{1}{>{\centering\arraybackslash}m{0.9cm}|}{\textbf{\maskalgo}} 
+    & \multicolumn{1}{>{\centering\arraybackslash}m{0.9cm}|}{\textbf{\NOmaskalgo}}
+    & \multicolumn{1}{>{\centering\arraybackslash}m{0.7cm}|}{\textbf{$w$}}\\
+    \hline
+    Base                               & x  &   & constant     &    & x &   \\\hline
+    PCA \cite{coder:pca}               & x  & x & constant     & x  & x & x \\\hline
+    APCA \cite{coder:apca}             & x  & x & constant     & x  & x & x \\\hline
+    PWLH \cite{coder:pwlh}/ PWLHInt    & x  & x & linear       & x  & x & x \\\hline
+    CA \cite{coder:ca}                 & x  & x & linear       & x  & x & x \\\hline
+    SF \cite{coder:sf}                 & x  & x & linear       & x  &   &   \\\hline
+    FR \cite{coder:fr}                 & x  & x & linear       & x  &   & x \\\hline
+    GAMPS \cite{coder:gamps}           & x  & x & correlation  & x  & x & x \\\hline
+    \toprule[0.1mm]
+    \end{tabular}
+    \caption{Characteristics of the evaluated coding algorithms. For each algorithm, the table shows whether it supports lossless and near-lossless compression (second and third columns, respectively), its model type (fourth column), whether the masking (\maskalgo) and non-masking (\NOmaskalgo) variants apply (fifth and sixth columns, respectively), and whether the algorithm depends on a window size parameter ($w$) (last column).}
+    \label{algo:table:overview}
+\end{center}
+\end{table}

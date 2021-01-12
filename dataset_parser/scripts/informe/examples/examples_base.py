@@ -26,6 +26,7 @@ class ExamplesBase(object):
     SMIN_MAR = 0.1
 
     def __init__(self):
+        self.labels = None
         self.window = 256
         self.encoded_points = []
         self.patches = []
@@ -156,7 +157,7 @@ class ExamplesBase(object):
         ax.set_yticks(range(0,5))
 
         ft = self.first_timestamp
-        labels = ['t' + str(index) for index in range(ft, len(ax.get_xticklabels()) + ft - 1)]
+        labels = ['t' + str(index) for index in range(ft, len(ax.get_xticklabels()) + ft - 1)] if not self.labels else self.labels
         print(labels)
         ax.set_xticklabels(labels)
         ax.legend(loc='upper left')
@@ -165,6 +166,7 @@ class ExamplesBase(object):
 
     def title(self, step):
         epsilon = r"$\epsilon = {}$".format(self.epsilon)
-        window = r"$w = {}$".format(self.window)
-        text = "Algorithm " + self.algorithm + " with " + epsilon + " and " + window + " - STEP " + str(step)
+        window = " and " + r"$w = {}$".format(self.window) if self.window else ""
+
+        text = "Algorithm " + self.algorithm + " with " + epsilon + window + " - STEP " + str(step)
         return text

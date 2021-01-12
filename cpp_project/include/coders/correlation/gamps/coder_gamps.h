@@ -6,30 +6,17 @@
 #include "apca_window.h"
 #include "mapping_table.h"
 
-#include "DataStream.h"
 #include "GAMPSOutput.h"
-#include "GAMPS.h"
 #include "mask.h"
 
 class CoderGAMPS: public CoderCommon {
 
 private:
-    std::vector<int> error_thresholds_vector;
     bool limit_mode;
-
-    int total_groups;
-    int group_index;
-    int total_group_columns; // total number of columns in a group (same for every group)
-
     int column_index;
     int row_index;
     std::vector<int> time_delta_vector;
-
-    std::vector<double> gamps_epsilons_vector;
-    GAMPSInput* gamps_input;
-    GAMPS* gamps;
-
-    MappingTable* mapping_table;
+    std::vector<int> gamps_epsilons_vector;
     Mask* nodata_rows_mask;
 
 #if MASK_MODE == 3
@@ -39,26 +26,26 @@ private:
     void codeCoderParams() override;
     void codeDataRows() override;
 
+    std::vector<int> getGAMPSEpsilonsVector();
     void codeTimeDeltaColumn();
-    void codeGroup();
-    GAMPSOutput* processOtherColumns();
+    void codeDataTypeColumns();
+
     void codeMappingTable(GAMPSOutput* gamps_output);
     void codeGAMPSColumns(GAMPSOutput* gamps_output);
-
-
-    void getNodataRowsMask();
-    GAMPSInput* getGAMPSInput();
-    CDataStream* getColumn(int column_index);
-    GAMPSOutput* getGAMPSOutput();
 
     void codeGAMPSColumn(DynArray<GAMPSEntry>* column, bool base_window);
 
     void update(DynArray<GAMPSEntry>* column, int & entry_index, GAMPSEntry & current_entry, int & remaining);
     void codeWindow(APCAWindow* window, bool base_window);
-    int mapValue(std::string csv_value);
-    std::string unmapValue(std::string csv_value);
 
 public:
+    // These attributes are public because they are accessed by the GroupGAMPS class
+    std::vector<int> error_thresholds_vector;
+    int total_data_types;
+    int data_type_index;
+    int total_data_type_columns; // total number of columns for each data type (they are the same for every data type)
+    MappingTable* mapping_table;
+
     using CoderCommon::CoderCommon;
     void setCoderParams(int window_size_, std::vector<int> error_thresholds_vector_, bool limit_mode_);
 

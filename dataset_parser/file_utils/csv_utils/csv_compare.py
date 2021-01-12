@@ -17,7 +17,7 @@ class CSVCompare:
     #
     # if abort is True then the comparison stops as soon as an error is found.
     #
-    # Returns true iff there is no error.
+    # Returns True iff there is no error.
     #
     def compare(self, error_thresholds=None, abort=True):
         self.error_thresholds = self._check_error_thresholds(error_thresholds)
@@ -39,25 +39,26 @@ class CSVCompare:
         if self.error_thresholds is None:
            return 0
         error_thresholds_len = len(self.error_thresholds)
-        if col_index < error_thresholds_len:
-            return self.error_thresholds[col_index]
-        else:  # GAMPS coder
-            data_columns_group_count = len(self.error_thresholds) - 1
-            if data_columns_group_count == 1:
-                index = 1
-            else:
-                index = col_index % data_columns_group_count
-                index = data_columns_group_count if index == 0 else index
-            return self.error_thresholds[index]
+        assert(col_index < error_thresholds_len)
+        return self.error_thresholds[col_index]
+        # else:  # GAMPS coder
+        #     data_columns_group_count = len(self.error_thresholds) - 1
+        #     if data_columns_group_count == 1:
+        #         index = 1
+        #     else:
+        #         index = col_index % data_columns_group_count
+        #         index = data_columns_group_count if index == 0 else index
+        #     return self.error_thresholds[index]
 
     def _print_result(self, same_file):
         if same_file:
-            if self.error_thresholds is None:
-                print("SAME FILES! - compared with all thresholds = 0.")
-            else:
-                print("SAME FILES! - compared with thresholds = ", self.error_thresholds)
+            print("SAME FILES!")
         else:
-            pass
+            print("DIFFERENT FILES!")
+        if self.error_thresholds is None:
+            print("Compared with all thresholds = 0.")
+        else:
+            print("Compared with thresholds = ", self.error_thresholds)
 
     def _check_same_file(self):
         same_file = True

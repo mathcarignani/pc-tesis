@@ -14,7 +14,7 @@ from scripts.informe.results_parsing.results_paths import ResultsPaths
 #
 class GlobalizeResults(object):
     # NUMBER_OF_ROWS = {"NM": 393, "M": 457}
-    NUMBER_OF_ROWS = {"NM": 393 - 7*8, "M": 457 - 7*8}
+    NUMBER_OF_ROWS = {"NM": 393 - 7*8, "M": 7*8*8+1}
 
     def __init__(self, mask_mode):
         if mask_mode not in ["NM", "M"]:

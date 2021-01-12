@@ -50,6 +50,8 @@ class PandasMethods(object):
     #
     @staticmethod
     def get_min_row(coder_df, column_key, threshold, nth=None):
+        coder_name = coder_df.coder.values[0]
+        dataset = coder_df.dataset.values[0]
         if len(coder_df) == 1:  # and coder_df.loc[0].coder == 'CoderBase':
             assert(coder_df.coder.values[0] == 'CoderBase')
             min_value_index = coder_df.index.values[0]
@@ -78,7 +80,20 @@ class PandasMethods(object):
 
         min_value = min_value_row[column_key]
         min_value_rows_count = threshold_df[threshold_df[column_key] == min_value].count()[column_key]
-        assert(min_value_rows_count == 1)
+
+        # cases in which for a single combination there are two combinations with minimum CR
+        if coder_name == "CoderSF" and column_key == "column_1" and threshold == 0 and dataset == "NOAA-SPC-hail":
+            assert(min_value_rows_count == 2)
+        elif coder_name == "CoderSF" and column_key == "column_2" and threshold == 0 and dataset == "NOAA-SPC-hail":
+            assert(min_value_rows_count == 4)
+        elif coder_name == "CoderSF" and column_key == "column_2" and threshold == 0 and dataset == "NOAA-SPC-tornado":
+            assert(min_value_rows_count == 2)
+        else:
+            # print(coder_name)
+            # print(column_key)
+            # print(threshold)
+            # print(dataset)
+            assert(min_value_rows_count == 1)
         return min_value_row
 
     #

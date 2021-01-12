@@ -1,0 +1,92 @@
+
+\vspace{-15pt}
+\section{Algorithm PCA}
+\label{algo:pca}
+
+
+\vspace{-5pt}
+Algorithm \textit{Piecewise Constant Approximation (PCA)} \cite{coder:pca} is a constant model algorithm that supports lossless and near-lossless compression. It has a window size parameter ($w$) that establishes a fixed block size in which the data are separately encoded. For PCA we define both variants, \maskalgo\ and \NOmaskalgo.
+
+
+In Figure~\ref{pseudoCoderPCAM} we show the coding routine for variant \maskalgo, in which all the column entries are integer values (the gaps are encoded separately). The column entries are parsed into consecutive non-overlapping windows of size $\win$ (\Line 1), and each of these windows is encoded independently (\Lines 3-13). A window can be encoded in two different ways. If the absolute difference between its maximum and minimum values is less than or equal to $2\maxerror$ (i.e. the condition in \Line 4 is satisfied), then bit 0 is output, and the value of $\midrange$ for the window is encoded (\Lines 5-7). On the other hand, if the condition in \Line 4 evaluates to false, then bit 1 is output, and each of the window values is encoded separately (\Lines 9-12).  
+
+
+The decoding routine for variant \maskalgo\ is shown in Figure~\ref{pseudoDecoderPCAM}. It consists of a loop that repeats until every entry in the column has been decoded, which occurs when condition in \Line 2 becomes false. Recall that the coding algorithm encodes the number of rows (\Line 4 in Figure~\ref{pseudoCodeCommon}), so this information is known by the decoding routine (input \colSize). Each iteration of the loop starts with the reading of a single bit from the input binary file (\Line 4). If this bit is 0, then the mid-range of an encoded window is decoded, and it is written $\sizee$ times to the decoded csv data file (\Lines 6-7). On the other hand, if the read bit is 1, then the following process is repeated a total of $\sizee$ times: a fixed number of bits is read, from which a value is decoded and written to the decoded csv data file (\Lines 9-12).
+
+
+\clearpage
+
+
+\input{chapters/Algorithms/pseudo/05-PCA/PCA-M-C}
+
+
+\vspace{+20pt}
+\input{chapters/Algorithms/pseudo/05-PCA/PCA-M-D}
+
+
+\clearpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsection{Example}
+\label{algo:pca:example}
+\newcommand{\exampleRecallIrrelevant}[1]{Recall that the specific timestamp values are irrelevant for algorithm #1}
+
+
+Next we present an example of the encoding of the 12 samples illustrated in Figure~\ref{example:pca:1}. \exampleRecallIrrelevant{PCA}. For this example we let the error threshold parameter ($\maxerror$) be equal to 1, and the fixed window size ($\win$) equal to 4.
+
+
+\vspace{-10pt}
+\exampleStep{pca}{1}{\label{example:pca:1}}{Algorithm PCA example. Step 0.}
+
+
+Since there are 12 samples to encode and $\win=4$, three windows are encoded independently, each consisting of exactly four samples. The first window includes the first four samples, which are all equal to 1, so in this case the condition in \Line 4 of the coding routine is satisfied. Therefore, \Lines 5-7 are executed, which encode a single value, \midrange, as a representation of the four samples in the window. For this first window, \midrange\ equals 1. Figure~\ref{example:pca:2} shows this step in the graph. Notice that, since all the values in the window are equal, the condition in \Line 4 would be satisfied regardless of the value of parameter $\maxerror$.
+
+
+\exampleStep{pca}{2}{\label{example:pca:2}}{Algorithm PCA example. Step 1.}
+
+
+\clearpage
+
+
+The second window is comprised of the next four samples, i.e. $[1, 2, 3, 3]$. Again, the condition in \Line 4 is satisfied, because we have $|3 - 1| \leq 2*1$, but in this case \midrange\ equals 2, so these four samples are described through the encoding of a single value, 2. This step is shown in Figure~\ref{example:pca:3}.
+
+
+\exampleStep{pca}{3}{\label{example:pca:3}}{Algorithm PCA example. Step 2.}
+
+
+\vspace{-10pt}
+The third and last window consists of the last four samples, i.e. $[4, 2, 1, 1]$. In this case, the condition in \Line 4 evaluates to false, so \Lines 9-12 are executed, which encode each sample value separately. This last step is shown in Figure~\ref{example:pca:4}.
+
+
+\exampleStep{pca}{4}{\label{example:pca:4}}{Algorithm PCA example. Step 3.}
+
+
+\vspace{-10pt}
+This simple example fairly represents every scenario that might arise during the encoding process. Since the threshold condition holds for the first two windows, both are encoded with exactly the same number of bits, which is $1 + \totbit$, \wheretotbit. On the other hand, since the threshold condition does not hold for the last window, it is encoded with $1 + w*\totbit$ bits. This example illustrates why algorithm PCA is expected to achieve better compression performances on slowly varying signals rather than rough signals.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsection{Non-Masking (\NOmaskalgo)\ Variant}
+\label{algo:pca:nmvariant}
+
+
+In Figure~\ref{pseudoCoderPCANM} we show the coding routine for variant \NOmaskalgo\ of algorithm PCA. In this case, the column entries may be, not only an integer representing a sample value, but also the character \noData\ representing a gap in the data. As in variant \maskalgo, after parsing the column entries into consecutive non-overlapping windows of size $\win$ (\Line 1), each of these windows is encoded independently (\Lines 3-23). However, since not every entry in a window is guaranteed to be an integer, we consider additional scenarios when encoding a window.
+
+
+\input{chapters/Algorithms/pseudo/05-PCA/PCA-NM-C}
+
+
+A window can be encoded in three different ways. If every entry represents a gap in the data (i.e. the condition in \Line 3 is satisfied), then bit 0 is output, and the special integer \nodata\ is encoded (\Lines 4-5). If every entry in the window represents a sample value, and the absolute difference between its maximum and minimum values is less than or equal to $2\maxerror$ (i.e. the condition in \Line 8 is satisfied), then bit 0 is output, and the value of $\midrange$ for the window is encoded (\Lines 9-11). In every other case, bit 1 is output, and each of the window entries is encoded separately (\Lines 13-21), using \nodata\ for encoding gaps. Notice that in the first two cases the window is encoded with the same number of bits, i.e., $1 + \totbit$, \wheretotbit, while in the last case the window is encoded with $1 + w*\totbit$ bits.
+
+
+The decoding routine for variant \NOmaskalgo\ is quite similar to the decoding routine for variant \maskalgo, presented in Figure~\ref{pseudoDecoderPCAM}, the only difference being that, in \Lines 6-7 and 10-11, when \nodata\ is decoded, a character \noData\ is written to the decoded csv data file.
+
