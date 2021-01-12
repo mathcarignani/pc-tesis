@@ -31,7 +31,8 @@ private:
 	int statGroup(GAMPSInput* listInputList);
 
 	// compute output based on base signals and ratio signals
-	void computeOutput(DynArray<GAMPSEntry>** baseBucketList, DynArray<GAMPSEntry>** ratioBucketList);
+	void computeOutput(DynArray<GAMPSEntry>** baseBucketList, DynArray<GAMPSEntry>** ratioBucketList,
+					   std::vector<double> listBucketEpsilon, std::vector<double> listRatioSignalBucketEpsilon);
 
 	void print(DynArray<GAMPSEntry>* array, int spaces);
 public:

@@ -86,7 +86,6 @@ void CoderGAMPS::codeDataTypeColumns(){
 void CoderGAMPS::codeMappingTable(GAMPSOutput* gamps_output){
     mapping_table->calculate(gamps_output);
     // mapping_table->print(total_groups, group_index);
-
     std::vector<int> vector = mapping_table->baseColumnIndexVector();
     int vector_size = vector.size();
 #if CHECKS
@@ -101,37 +100,46 @@ void CoderGAMPS::codeMappingTable(GAMPSOutput* gamps_output){
 void CoderGAMPS::codeGAMPSColumns(GAMPSOutput* gamps_output){
     DynArray<GAMPSEntry>** base_signals = gamps_output->getResultBaseSignal();
     DynArray<GAMPSEntry>** ratio_signals = gamps_output->getResultRatioSignal();
+    DynArray<double>* base_signals_epsilons = gamps_output->getResultBaseSignalEpsilon();
+    DynArray<double>* ratio_signals_epsilons = gamps_output->getResultRatioSignalEpsilon();
 
     DynArray<GAMPSEntry>* column;
+    double base_threshold, ratio_threshold;
+
     int base_index = 0;
     for(int i = 0; i < mapping_table->gamps_columns_count; i++){
         int table_index = mapping_table->getColumnIndex(i);
         if (!mapping_table->isBaseColumn(table_index)){ continue; }
 
         column_index = MappingTable::mapIndex(table_index, total_data_types, data_type_index);
-    #if COUT
-        std::cout << "  code base  signal i = " << column_index << std::endl;
-    #endif
         dataset->setColumn(column_index);
-        column = base_signals[base_index++];
-        codeGAMPSColumn(column, true); // CODE BASE COLUMN
+        column = base_signals[base_index];
+        base_threshold = base_signals_epsilons->getAt(base_index);
+        base_index++;
+
+    #if COUT
+        std::cout << "  code base signal i = " << column_index << " with e = " << base_threshold << std::endl;
+    #endif
+        codeGAMPSColumn(column, true, base_threshold); // CODE BASE COLUMN
 
         std::vector<int> ratio_columns = mapping_table->ratioColumns(table_index);
         for (int j = 0; j < ratio_columns.size(); j++){
             table_index = ratio_columns.at(j);
             column_index = MappingTable::mapIndex(table_index, total_data_types, data_type_index);
-        #if COUT
-            std::cout << "    code ratio signal i = " << column_index << std::endl;
-        #endif
             dataset->setColumn(column_index);
             int ratio_index = mapping_table->getRatioGampsColumnIndex(table_index);
             column = ratio_signals[ratio_index];
-            codeGAMPSColumn(column, false); // CODE RATIO COLUMN
+            ratio_threshold = ratio_signals_epsilons->getAt(ratio_index);
+
+        #if COUT
+            std::cout << "    code ratio signal i = " << column_index << " with e = " << ratio_threshold << std::endl;
+        #endif
+            codeGAMPSColumn(column, false, ratio_threshold); // CODE RATIO COLUMN
         }
     }
 }
 
-void CoderGAMPS::codeGAMPSColumn(DynArray<GAMPSEntry>* column, bool base_window){
+void CoderGAMPS::codeGAMPSColumn(DynArray<GAMPSEntry>* column, bool is_base_window, double threshold){
 #if MASK_MODE
 #if MASK_MODE == 3
     total_data_rows_vector.at(column_index - 1);
@@ -147,15 +155,15 @@ void CoderGAMPS::codeGAMPSColumn(DynArray<GAMPSEntry>* column, bool base_window)
     GAMPSEntry current_entry = column->getAt(entry_index);
     int remaining = current_entry.endingTimestamp;
 
-    APCAWindow* window = new APCAWindow(window_size, 0); // threshold will not be used TODO: why?
+    APCAWindow* window = new APCAWindow(window_size, threshold); // threshold calculated by GAMPS_Computation
     nodata_rows_mask->reset();
     row_index = 0;
     input_csv->goToFirstDataRow(column_index);
     while (input_csv->continue_reading) {
         std::string csv_value = input_csv->readNextValue();
 
-        bool no_data_row = nodata_rows_mask->isNoData();
-        bool no_data = Constants::isNoData(csv_value);
+        bool no_data_row = nodata_rows_mask->isNoData(); // all the values in the row for the column group are "N"
+        bool no_data = Constants::isNoData(csv_value); // the value in the row is "N"
 
     #if MASK_MODE
         // skip no_data
@@ -165,10 +173,11 @@ void CoderGAMPS::codeGAMPSColumn(DynArray<GAMPSEntry>* column, bool base_window)
             continue;
         }
     #endif
-        csv_value = no_data ? csv_value : Conversor::doubleToString(current_entry.value);
+        // convert double to string
+        if (!no_data) { csv_value = Conversor::doubleToString(current_entry.value); }
 
         if (!window->conditionHolds(csv_value)) {
-            codeWindow(window, base_window);
+            codeWindow(window, is_base_window);
             window->addFirstValue(csv_value);
         }
         if (!no_data_row){
@@ -176,7 +185,7 @@ void CoderGAMPS::codeGAMPSColumn(DynArray<GAMPSEntry>* column, bool base_window)
         }
     }
     if (!window->isEmpty()) {
-        codeWindow(window, base_window);
+        codeWindow(window, is_base_window);
     }
 }
 
@@ -192,10 +201,10 @@ void CoderGAMPS::update(DynArray<GAMPSEntry>* column, int & entry_index, GAMPSEn
     remaining = current_entry.endingTimestamp - previous_last_timestamp;
 }
 
-void CoderGAMPS::codeWindow(APCAWindow* window, bool base_window){
+void CoderGAMPS::codeWindow(APCAWindow* window, bool is_base_window){
     codeWindowLength((Window*) window);
     std::string constant_value = window->constant_value;
-    if (base_window){
+    if (is_base_window){
         // Code the window exactly the same way as it is done in the APCA coder
         // In order to call the codeValueRaw with the correct string, the mapValue mapping must be reverted
         if (!Constants::isNoData(constant_value)){

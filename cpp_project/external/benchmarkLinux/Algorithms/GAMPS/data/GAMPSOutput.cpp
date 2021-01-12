@@ -62,6 +62,17 @@ DynArray<GAMPSEntry>** GAMPSOutput::getResultRatioSignal()
 	return this->listResultRatioSignal;
 }
 
+DynArray<double>* GAMPSOutput::getResultBaseSignalEpsilon()
+{
+	return this->listResultBaseSignalEpsilon;
+}
+
+// Get ratio signal result of GAMPS algorithm
+DynArray<double>*GAMPSOutput::getResultRatioSignalEpsilon()
+{
+	return this->listResultRatioSignalEpsilon;
+}
+
 // Set base signal result
 void GAMPSOutput::setResultBaseSignal(DynArray<GAMPSEntry>** resultBaseSignal)
 {
@@ -72,6 +83,16 @@ void GAMPSOutput::setResultBaseSignal(DynArray<GAMPSEntry>** resultBaseSignal)
 void GAMPSOutput::setResultRatioSignal(DynArray<GAMPSEntry> **_resultRatioSignal)
 {
 	this->listResultRatioSignal = _resultRatioSignal;
+}
+
+void GAMPSOutput::setResultBaseSignalEpsilon(DynArray<double>* resultBaseSignalEpsilon)
+{
+	this->listResultBaseSignalEpsilon = resultBaseSignalEpsilon;
+}
+
+void GAMPSOutput::setResultRatioSignalEpsilon(DynArray<double>* resultRatioSignalEpsilon)
+{
+	this->listResultRatioSignalEpsilon = resultRatioSignalEpsilon;
 }
 
 void GAMPSOutput::setInputFileNames(char **_fileNames)

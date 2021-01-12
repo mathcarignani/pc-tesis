@@ -6,7 +6,7 @@
 #include "math_utils.h"
 #include "iostream"
 
-APCAWindow::APCAWindow(int window_size_, int error_threshold_): Window(window_size_, error_threshold_){
+APCAWindow::APCAWindow(int window_size_, double error_threshold_): Window(window_size_, error_threshold_){
     length = 0;
     min = 0;
     max = 0;
@@ -31,15 +31,15 @@ bool APCAWindow::conditionHolds(std::string x){
     // x is a double
     if (nan_window) { return false; }
 #endif
-    double x_double = Conversor::stringToDouble(x);
-    if (x_double < min) { return updateConstantValue(x_double, max); }
-    if (x_double > max) { return updateConstantValue(min, x_double); }
+    int x_int = Conversor::stringToInt(x);
+    if (x_int < min) { return updateConstantValue(x_int, max); }
+    if (x_int > max) { return updateConstantValue(min, x_int); }
     // min <= x_double <= max
     length++;
     return true;
 }
 
-bool APCAWindow::updateConstantValue(double new_min, double new_max){
+bool APCAWindow::updateConstantValue(int new_min, int new_max){
     if (!ConstantCoderUtils::validThreshold(new_min, new_max, error_threshold)) { return false; }
 
     // condition holds, update min, max and constant
@@ -65,12 +65,12 @@ void APCAWindow::addFirstValue(std::string x){
         length = 1;
         return;
     }
-    // x is a double
+    // x is an int
     nan_window = false;
 #endif
-    double x_double = Conversor::stringToDouble(x);
-    min = x_double;
-    max = x_double;
+    int x_int = Conversor::stringToInt(x);
+    min = x_int;
+    max = x_int;
     constant_value = x;
     length = 1;
 }

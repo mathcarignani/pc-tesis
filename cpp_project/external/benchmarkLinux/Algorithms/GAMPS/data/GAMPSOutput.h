@@ -17,6 +17,10 @@ private:
 	DynArray<GAMPSEntry>** listResultBaseSignal;
 	DynArray<GAMPSEntry>** listResultRatioSignal;
 
+	// Arrays with the respective epsilons for the base and ratio signals
+	DynArray<double>* listResultBaseSignalEpsilon;
+	DynArray<double>* listResultRatioSignalEpsilon;
+
 	// Contains correspondence between base and ratio signals
 	int TgoodSize;
 	int* Tgood;
@@ -41,9 +45,15 @@ public:
 	DynArray<GAMPSEntry>** getResultBaseSignal();
 	DynArray<GAMPSEntry>** getResultRatioSignal();
 
+	DynArray<double>* getResultBaseSignalEpsilon();
+	DynArray<double>* getResultRatioSignalEpsilon();
+
 	void setResultBaseSignal(DynArray<GAMPSEntry>** resultBaseSignal);
 	void setResultRatioSignal(DynArray<GAMPSEntry>** resultRatioSignal);
 	void setInputFileNames(char** fileNames);
+
+	void setResultBaseSignalEpsilon(DynArray<double>* resultBaseSignalEpsilon);
+	void setResultRatioSignalEpsilon(DynArray<double>* resultRatioSignalEpsilon);
 
 	//Decompress approximate data and recover the real data
 	void decompressData();

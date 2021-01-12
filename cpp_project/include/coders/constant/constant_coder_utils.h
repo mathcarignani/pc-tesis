@@ -9,14 +9,14 @@ class ConstantCoderUtils {
 
 public:
 
-    static std::string calculateConstantValue(int min, int max){
+    static std::string calculateConstantValue(double min, double max){
         int constant = min + max;
         if (constant != 0) { constant /= 2; }
         return Conversor::intToString(constant);
     }
 
-    static bool validThreshold(double min, double max, int error_threshold){
-        double width = MathUtils::doubleAbsolute(max - min);
+    static bool validThreshold(int min, int max, double error_threshold){
+        double width = MathUtils::intAbsolute(max - min);
         return width <= 2*error_threshold;
     }
 

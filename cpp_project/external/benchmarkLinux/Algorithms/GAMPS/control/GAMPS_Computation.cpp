@@ -180,22 +180,22 @@ DynArray<GAMPSEntry>* GAMPS_Computation::computeRatioSignal(CDataStream* compute
 	DynArray<GAMPSEntry>* listRatioSignal = new DynArray<GAMPSEntry>();
 	int baseSignalSize = baseSignal->size();
 
-	if(baseSignalSize > 0)
-	{
-		DataItem baseEntry = baseSignal->getAt(0);
-		DataItem computeEntry = computeSignal->getAt(0);
-//		if (baseEntry.value < 1 && baseEntry.value > -1)
-//			baseEntry.value =1;
-		assert(baseEntry.value > 0);
+	assert(baseSignalSize > 0);
 
-		double ratioValue = computeEntry.value / baseEntry.value;
-		GAMPSEntry ratioEntry;
-		ratioEntry.value = ratioValue;
-		ratioEntry.endingTimestamp = baseEntry.timestamp;
-		listRatioSignal->add(ratioEntry);
-		maxC1 = ratioValue;
-		maxC2 = baseEntry.value;
-	}
+	DataItem baseEntry = baseSignal->getAt(0);
+	DataItem computeEntry = computeSignal->getAt(0);
+//	if (baseEntry.value < 1 && baseEntry.value > -1)
+//		baseEntry.value =1;
+	assert(baseEntry.value > 0);
+
+	double ratioValue = computeEntry.value / baseEntry.value;
+	GAMPSEntry ratioEntry;
+	ratioEntry.value = ratioValue;
+	ratioEntry.endingTimestamp = baseEntry.timestamp;
+	listRatioSignal->add(ratioEntry);
+	maxC1 = ratioValue;
+	maxC2 = baseEntry.value;
+
 
 	for(int i = 1; i < baseSignalSize; i++)
 	{
@@ -207,9 +207,8 @@ DynArray<GAMPSEntry>* GAMPS_Computation::computeRatioSignal(CDataStream* compute
 //			baseEntry.value =1;
 		assert(baseEntry.value > 0);
 
-		double ratioValue = computeEntry.value / baseEntry.value;
+		ratioValue = computeEntry.value / baseEntry.value;
 
-		GAMPSEntry ratioEntry;
 		ratioEntry.value = ratioValue;
 		ratioEntry.endingTimestamp = baseEntry.timestamp;
 		listRatioSignal->add(ratioEntry);
@@ -237,7 +236,11 @@ int GAMPS_Computation::statGroup(GAMPSInput* gampsInputList)
 	int numOfStream = gampsInputList->getNumOfStream();
 	DynArray<GAMPSEntry>** listBucket = new DynArray<GAMPSEntry>*[numOfStream];
 	DynArray<GAMPSEntry>** listRatioSignalBucket = new DynArray<GAMPSEntry>*[numOfStream*numOfStream];
-	double eps = 0;
+
+	std::vector<double> listBucketEpsilon (numOfStream);
+	std::vector<double> listRatioSignalBucketEpsilon (numOfStream*numOfStream);
+
+	double eps = epsilon;
 	double eps1 = 0;
 	double eps2 = 0;
 
@@ -251,13 +254,13 @@ int GAMPS_Computation::statGroup(GAMPSInput* gampsInputList)
 		// calculate % eps
 		// baseSignal->statistic();
 		// eps = m_dEps * (baseSignal->getMax() - baseSignal->getMin());
-		eps = epsilon;
 		eps1 = 0.4 * eps; // TODO: round down?
 		// std::cout << "  eps = " << eps << std::endl;
 		// std::cout << "  eps1 = " << eps1 << std::endl;
 
-		DynArray<GAMPSEntry>* listBaseSignalBucket = compress_APCA(baseSignal,eps1); // TODO: use my own script
+		DynArray<GAMPSEntry>* listBaseSignalBucket = compress_APCA(baseSignal,eps1);
 		listBucket[j] = listBaseSignalBucket;
+		listBucketEpsilon[j] = eps1;
 
 		for(int i = 0; i < numOfStream; i++)
 		{
@@ -271,19 +274,21 @@ int GAMPS_Computation::statGroup(GAMPSInput* gampsInputList)
 			double c1,c2;
 			DynArray<GAMPSEntry> *listComputeRatioSignal = this->computeRatioSignal(ratioSignal,baseSignal,c1,c2);
 
-			eps2 = this->computeEps2(eps,eps1,c1,c2); // TODO: round down if > 0 / make 0 if < 0 ?
+			eps2 = this->computeEps2(eps,eps1,c1,c2);
+			eps2 = (eps2 < 0) ? 0 : eps2; // make equal to 0 if < 0
 			// std::cout << "    eps2 = " << eps2 << std::endl;
-			DynArray<GAMPSEntry> *listRatioBucket = this->compress_APCA(*listComputeRatioSignal,eps2); // TODO: use my own script
+			DynArray<GAMPSEntry> *listRatioBucket = this->compress_APCA(*listComputeRatioSignal,eps2);
 			int pos = j* numOfStream + i;
 			listRatioSignalBucket[pos] = listRatioBucket;
+			listRatioSignalBucketEpsilon[pos] = eps2;
 			delete listComputeRatioSignal;
 		}
 	}
 
 	/*************** facility location *************/
 	int bSize = numOfStream;
-	int* baseBucketCost = new int[numOfStream];
-	DynArray<int>** ratioSignalCost= new DynArray<int>*[numOfStream];
+	int* baseBucketCost = new int[numOfStream]; // array with the cost of the base signals
+	DynArray<int>** ratioSignalCost= new DynArray<int>*[numOfStream]; // matrix with the cost of the ratio signals
 
 	// calculate each base signal bucket cost
 	for(int i = 0; i < bSize; i++)
@@ -300,7 +305,6 @@ int GAMPS_Computation::statGroup(GAMPSInput* gampsInputList)
 		{
 			if(i != j)
 			{
-				int temp = 0;
 				int pos = i * bSize + j;
 				int oneSSize = listRatioSignalBucket[pos]->size();
 				tempArray->add(oneSSize);
@@ -322,7 +326,7 @@ int GAMPS_Computation::statGroup(GAMPSInput* gampsInputList)
 	int totalCost = facilityPro->findOptimalSolution();
 	m_pGampsOutput->setTgood(facilityPro->getTgood());
 	m_pGampsOutput->setTgoodSize(numOfStream);
-	computeOutput(listBucket,listRatioSignalBucket);
+	computeOutput(listBucket,listRatioSignalBucket, listBucketEpsilon, listRatioSignalBucketEpsilon);
 	/************ end facility location ************/
 
 	// deallocate memory
@@ -342,11 +346,13 @@ int GAMPS_Computation::statGroup(GAMPSInput* gampsInputList)
 	delete[] listBucket;
 	delete[] listRatioSignalBucket;
 
+	std::cout << "totalCost = " << totalCost << std::endl;
 	return totalCost;
 }
 
 // compute output based on base signals and ratio signals
-void GAMPS_Computation:: computeOutput(DynArray<GAMPSEntry>** baseBucketList, DynArray<GAMPSEntry>** ratioBucketList)
+void GAMPS_Computation:: computeOutput(DynArray<GAMPSEntry>** baseBucketList, DynArray<GAMPSEntry>** ratioBucketList,
+									   std::vector<double> listBucketEpsilon, std::vector<double> listRatioSignalBucketEpsilon)
 {
 	int numOfStream = this->m_pInput->getNumOfStream();
 	int baseBucketCount = 0;
@@ -355,36 +361,44 @@ void GAMPS_Computation:: computeOutput(DynArray<GAMPSEntry>** baseBucketList, Dy
 
 	for(int i = 0; i < numOfStream; i++)
 	{
-		if(m_pGampsOutput->getTgood()[i] == i)
+		if(m_pGampsOutput->getTgood()[i] == i) // base signal
 			baseBucketCount++;
 	}
 
 	DynArray<GAMPSEntry>** resultBaseSignal =  new DynArray<GAMPSEntry>*[baseBucketCount];
 	DynArray<GAMPSEntry>** resultRatioSignal;
 
-	if(baseBucketCount < numOfStream)
+	DynArray<double>* resultBaseSignalEpsilon = new DynArray<double>[baseBucketCount];
+	DynArray<double>* resultRatioSignalEpsilon;
+
+	if(baseBucketCount < numOfStream){ // there is at least one ratio signal
 		resultRatioSignal = new DynArray<GAMPSEntry>*[numOfStream - baseBucketCount];
+		resultRatioSignalEpsilon = new DynArray<double>[numOfStream - baseBucketCount];
+	}
 
 	for(int i = 0; i < numOfStream; i++)
 	{
-		if(m_pGampsOutput->getTgood()[i] == i)
+		if(m_pGampsOutput->getTgood()[i] == i) // base signal
 		{
 			DynArray<GAMPSEntry>* temp = new DynArray<GAMPSEntry>(*baseBucketList[i]);
 			resultBaseSignal[baseCount++] = temp;
+			resultBaseSignalEpsilon->add(listBucketEpsilon[i]);
 		}
 		else
 		{
 			int pos = m_pGampsOutput->getTgood()[i] * numOfStream + i;
 			DynArray<GAMPSEntry>* temp = new DynArray<GAMPSEntry>(*ratioBucketList[pos]);
 			resultRatioSignal[ratioCount++] =  temp;
+			resultRatioSignalEpsilon->add(listRatioSignalBucketEpsilon[pos]);
 		}
 	}
 
 	// std::cout << "baseCount = " << baseCount << std::endl;
 	// std::cout << "ratioCount = " << ratioCount << std::endl;
-
 	m_pGampsOutput->setResultBaseSignal(resultBaseSignal);
+	m_pGampsOutput->setResultBaseSignalEpsilon(resultBaseSignalEpsilon);
 	m_pGampsOutput->setResultRatioSignal(resultRatioSignal);
+	m_pGampsOutput->setResultRatioSignalEpsilon(resultRatioSignalEpsilon);
 }
 
 void GAMPS_Computation::print(DynArray<GAMPSEntry>* array, int spaces){
