@@ -10,13 +10,13 @@ class ConstantCoderUtils {
 public:
 
     static std::string calculateConstantValue(double min, double max){
-        int constant = min + max;
+        double constant = min + max;
         if (constant != 0) { constant /= 2; }
-        return Conversor::intToString(constant);
+        return Conversor::doubleToString(constant);
     }
 
-    static bool validThreshold(int min, int max, double error_threshold){
-        double width = MathUtils::intAbsolute(max - min);
+    static bool validThreshold(double min, double max, double error_threshold){
+        double width = MathUtils::doubleAbsolute(max - min);
         return width <= 2*error_threshold;
     }
 

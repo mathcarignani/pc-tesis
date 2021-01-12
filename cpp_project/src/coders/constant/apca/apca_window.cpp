@@ -31,15 +31,15 @@ bool APCAWindow::conditionHolds(std::string x){
     // x is a double
     if (nan_window) { return false; }
 #endif
-    int x_int = Conversor::stringToInt(x);
-    if (x_int < min) { return updateConstantValue(x_int, max); }
-    if (x_int > max) { return updateConstantValue(min, x_int); }
+    double x_double = Conversor::stringToDouble(x);
+    if (x_double < min) { return updateConstantValue(x_double, max); }
+    if (x_double > max) { return updateConstantValue(min, x_double); }
     // min <= x_double <= max
     length++;
     return true;
 }
 
-bool APCAWindow::updateConstantValue(int new_min, int new_max){
+bool APCAWindow::updateConstantValue(double new_min, double new_max){
     if (!ConstantCoderUtils::validThreshold(new_min, new_max, error_threshold)) { return false; }
 
     // condition holds, update min, max and constant
@@ -68,9 +68,9 @@ void APCAWindow::addFirstValue(std::string x){
     // x is an int
     nan_window = false;
 #endif
-    int x_int = Conversor::stringToInt(x);
-    min = x_int;
-    max = x_int;
+    double x_double = Conversor::stringToDouble(x);
+    min = x_double;
+    max = x_double;
     constant_value = x;
     length = 1;
 }
