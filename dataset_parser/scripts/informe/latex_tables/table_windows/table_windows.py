@@ -35,14 +35,18 @@ class TableWindows(object):
         name = name.replace("Limit", "")
         total = sum(data)
         expected_total = 8*200 if name == "Total" else 200
+        # print(data)
+        # print(name)
+        # print(total)
+        # print(expected_total)
         assert(total == expected_total)
 
         line = [name]
         total_percentage = 0
         for value in data:
             percentage = MathUtils.calculate_percentage(total, value, 1)
-            if name == "Total" and round(percentage,1) == 2.8:
-                percentage = 2.7
+            if name == "Total" and round(percentage,1) == 88.8:
+                percentage = 88.7
             percentage = int(percentage) if int(percentage) == percentage else percentage
             total_percentage += percentage
             value_str = str(format(value,',d'))
@@ -52,5 +56,6 @@ class TableWindows(object):
         line = LatexUtils.format_line(line)
         if name == "SF":
             line += "\hline"
+        # print(round(total_percentage,1))
         assert(round(total_percentage,1) == 100.0)
         return line

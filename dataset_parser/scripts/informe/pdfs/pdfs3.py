@@ -125,14 +125,19 @@ class PDFS3(PDFSCommon):
         minimum, maximum = min(values), max(values)
         assert(minimum >= 0)
         # (1) Check that the maximum does not change and occurs in the expected dataset/coder
-        expected_maximum = 10.598254581045069
+        expected_maximum = 13.821023593245144
 
         result = {}
-        if self.dataset_name == "IRKIS" and algorithm == "CoderPCA" and self.filename == "vwc_1203.dat.csv":
+        if self.dataset_name == "IRKIS" and algorithm == "CoderGAMPSLimit" and self.filename == "vwc_1205.dat.csv":
             assert(maximum == expected_maximum)
-            assert(str(round(maximum, 2)) == "10.6")
+            assert(str(round(maximum, 2)) == "13.82")
             result = {'keys': ["PlotMax"], 'indexes': [values.index(maximum)], 'color': PlotConstants.VALUE0_COLOR}
         else:
+            # print(maximum)
+            # print(expected_maximum)
+            # print(self.dataset_name)
+            # print(algorithm)
+            # print(self.filename)
             assert(maximum < expected_maximum)
 
         # (2) Add information to the latex table structure
@@ -161,7 +166,7 @@ class PDFS3(PDFSCommon):
                     elif 2 < value <= 5:
                         range_4 += 1
                         total[3] += 1
-                    elif 5 < value <= 11:
+                    elif 5 < value <= 14:
                         range_5 += 1
                         total[4] += 1
                 algorithms_data[algorithm] = [range_1, range_2, range_3, range_4, range_5]

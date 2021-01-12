@@ -8,32 +8,32 @@
 #include "bit_stream_utils.h"
 
 void TestsExamples::runAll(){
-    std::vector<int> vector_pca{0, 1};
-    commonTest("example1.csv", "PCA", 4, vector_pca);
+//    std::vector<int> vector_pca{0, 1};
+//    commonTest("example1.csv", "PCA", 4, vector_pca);
+//
+//    std::vector<int> vector_apca{0, 1};
+//    commonTest("example1.csv", "APCA", 256, vector_apca);
+//
+//    std::vector<int> vector_ca{0, 1};
+//    commonTest("example1.csv", "CA", 256, vector_ca);
+//
+//    std::vector<int> vector_pwlh{0, 1};
+//    commonTest("example1.csv", "PWLH", 256, vector_pwlh);
+//
+//    std::vector<int> vector_pwlhint{0, 1};
+//    commonTest("example1.csv", "PWLHInt", 256, vector_pwlhint);
+//
+//    std::vector<int> vector_sf{0, 1};
+//    commonTest("example1.csv", "SF", 256, vector_sf);
+//
+//    std::vector<int> vector_fr{0, 1};
+//    commonTest("example1.csv", "FR", 256, vector_fr);
+//
+//    std::vector<int> vector_gamps{0, 1, 1, 1};
+//    commonTest("example2.csv", "GAMPS", 256, vector_gamps);
 
-    std::vector<int> vector_apca{0, 1};
-    commonTest("example1.csv", "APCA", 256, vector_apca);
-
-    std::vector<int> vector_ca{0, 1};
-    commonTest("example1.csv", "CA", 256, vector_ca);
-
-    std::vector<int> vector_pwlh{0, 1};
-    commonTest("example1.csv", "PWLH", 256, vector_pwlh);
-
-    std::vector<int> vector_pwlhint{0, 1};
-    commonTest("example1.csv", "PWLHInt", 256, vector_pwlhint);
-
-    std::vector<int> vector_sf{0, 1};
-    commonTest("example1.csv", "SF", 256, vector_sf);
-
-    std::vector<int> vector_fr{0, 1};
-    commonTest("example1.csv", "FR", 256, vector_fr);
-
-    std::vector<int> vector_gamps{0, 1, 1, 1};
-    commonTest("example2.csv", "GAMPS", 256, vector_gamps);
-
-    std::vector<int> vector_gampslimit{0, 1, 1, 1};
-    commonTest("example2.csv", "GAMPSLimit", 256, vector_gampslimit);
+    std::vector<int> vector_gampslimit{0, 10, 10, 10};
+    commonTest("example3.csv", "GAMPSLimit", 256, vector_gampslimit);
 }
 
 void TestsExamples::commonTest(std::string input_filename, std::string coder_name,

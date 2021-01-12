@@ -10,7 +10,7 @@ class GAMPS_Computation
 private:
 	GAMPSInput* m_pInput;
 	GAMPSOutput* m_pGampsOutput;
-	std::vector<double> gamps_epsilons_vector;
+	double epsilon;
 
 	// duplicate original data
 	CMultiDataStream* copyDataToTemp(CMultiDataStream* original);
@@ -35,7 +35,7 @@ private:
 
 	void print(DynArray<GAMPSEntry>* array, int spaces);
 public:
-	GAMPS_Computation(GAMPSInput* gampsInput,std::vector<double> gamps_epsilons_vector_);
+	GAMPS_Computation(GAMPSInput* gampsInput, double epsilon_);
 	~GAMPS_Computation(void);
 
 	// static group current input data

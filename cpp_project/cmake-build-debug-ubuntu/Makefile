@@ -976,6 +976,36 @@ src/coders/correlation/gamps/gamps_utils.cpp.s:
 	$(MAKE) -f CMakeFiles/run_variant_NM.dir/build.make CMakeFiles/run_variant_NM.dir/src/coders/correlation/gamps/gamps_utils.cpp.s
 .PHONY : src/coders/correlation/gamps/gamps_utils.cpp.s
 
+src/coders/correlation/gamps/group_gamps.o: src/coders/correlation/gamps/group_gamps.cpp.o
+
+.PHONY : src/coders/correlation/gamps/group_gamps.o
+
+# target to build an object file
+src/coders/correlation/gamps/group_gamps.cpp.o:
+	$(MAKE) -f CMakeFiles/run_variant_M.dir/build.make CMakeFiles/run_variant_M.dir/src/coders/correlation/gamps/group_gamps.cpp.o
+	$(MAKE) -f CMakeFiles/run_variant_NM.dir/build.make CMakeFiles/run_variant_NM.dir/src/coders/correlation/gamps/group_gamps.cpp.o
+.PHONY : src/coders/correlation/gamps/group_gamps.cpp.o
+
+src/coders/correlation/gamps/group_gamps.i: src/coders/correlation/gamps/group_gamps.cpp.i
+
+.PHONY : src/coders/correlation/gamps/group_gamps.i
+
+# target to preprocess a source file
+src/coders/correlation/gamps/group_gamps.cpp.i:
+	$(MAKE) -f CMakeFiles/run_variant_M.dir/build.make CMakeFiles/run_variant_M.dir/src/coders/correlation/gamps/group_gamps.cpp.i
+	$(MAKE) -f CMakeFiles/run_variant_NM.dir/build.make CMakeFiles/run_variant_NM.dir/src/coders/correlation/gamps/group_gamps.cpp.i
+.PHONY : src/coders/correlation/gamps/group_gamps.cpp.i
+
+src/coders/correlation/gamps/group_gamps.s: src/coders/correlation/gamps/group_gamps.cpp.s
+
+.PHONY : src/coders/correlation/gamps/group_gamps.s
+
+# target to generate assembly for a file
+src/coders/correlation/gamps/group_gamps.cpp.s:
+	$(MAKE) -f CMakeFiles/run_variant_M.dir/build.make CMakeFiles/run_variant_M.dir/src/coders/correlation/gamps/group_gamps.cpp.s
+	$(MAKE) -f CMakeFiles/run_variant_NM.dir/build.make CMakeFiles/run_variant_NM.dir/src/coders/correlation/gamps/group_gamps.cpp.s
+.PHONY : src/coders/correlation/gamps/group_gamps.cpp.s
+
 src/coders/correlation/gamps/map_entry.o: src/coders/correlation/gamps/map_entry.cpp.o
 
 .PHONY : src/coders/correlation/gamps/map_entry.o
@@ -3080,6 +3110,9 @@ help:
 	@echo "... src/coders/correlation/gamps/gamps_utils.o"
 	@echo "... src/coders/correlation/gamps/gamps_utils.i"
 	@echo "... src/coders/correlation/gamps/gamps_utils.s"
+	@echo "... src/coders/correlation/gamps/group_gamps.o"
+	@echo "... src/coders/correlation/gamps/group_gamps.i"
+	@echo "... src/coders/correlation/gamps/group_gamps.s"
 	@echo "... src/coders/correlation/gamps/map_entry.o"
 	@echo "... src/coders/correlation/gamps/map_entry.i"
 	@echo "... src/coders/correlation/gamps/map_entry.s"
