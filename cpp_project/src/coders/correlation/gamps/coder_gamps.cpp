@@ -33,10 +33,10 @@ void CoderGAMPS::codeDataRows(){
     total_data_type_columns = dataset->data_columns_count / total_data_types;
     gamps_epsilons_vector = getGAMPSEpsilonsVector();
 
-    // std::cout << "VectorUtils::printIntVector(error_thresholds_vector);" << std::endl;
-    // VectorUtils::printIntVector(error_thresholds_vector);
-    // std::cout << "VectorUtils::printIntVector(gamps_epsilons_vector);" << std::endl;
-    // VectorUtils::printIntVector(gamps_epsilons_vector);
+    std::cout << "VectorUtils::printIntVector(error_thresholds_vector);" << std::endl;
+    VectorUtils::printIntVector(error_thresholds_vector);
+    std::cout << "VectorUtils::printIntVector(gamps_epsilons_vector);" << std::endl;
+    VectorUtils::printIntVector(gamps_epsilons_vector);
 
     for(data_type_index = 1; data_type_index <= total_data_types; data_type_index++){
         codeDataTypeColumns();
@@ -155,12 +155,13 @@ void CoderGAMPS::codeGAMPSColumn(DynArray<GAMPSEntry>* column, bool is_base_wind
     GAMPSEntry current_entry = column->getAt(entry_index);
     int remaining = current_entry.endingTimestamp;
 
-    APCAWindow* window = new APCAWindow(window_size, threshold); // threshold calculated by GAMPS_Computation
+    APCAWindow* window = new APCAWindow(window_size, 0); // threshold calculated by GAMPS_Computation
     nodata_rows_mask->reset();
     row_index = 0;
     input_csv->goToFirstDataRow(column_index);
     while (input_csv->continue_reading) {
         std::string csv_value = input_csv->readNextValue();
+        row_index++;
 
         bool no_data_row = nodata_rows_mask->isNoData(); // all the values in the row for the column group are "N"
         bool no_data = Constants::isNoData(csv_value); // the value in the row is "N"
@@ -175,6 +176,10 @@ void CoderGAMPS::codeGAMPSColumn(DynArray<GAMPSEntry>* column, bool is_base_wind
     #endif
         // convert double to string
         if (!no_data) { csv_value = Conversor::doubleToString(current_entry.value); }
+
+        if (row_index < 100 and (column_index == 13 or column_index == 16)){
+            //std::cout << "[" << row_index << "] - " << csv_value << std::endl;
+        }
 
         if (!window->conditionHolds(csv_value)) {
             codeWindow(window, is_base_window);
@@ -204,19 +209,14 @@ void CoderGAMPS::update(DynArray<GAMPSEntry>* column, int & entry_index, GAMPSEn
 void CoderGAMPS::codeWindow(APCAWindow* window, bool is_base_window){
     codeWindowLength((Window*) window);
     std::string constant_value = window->constant_value;
-    if (is_base_window){
-        // Code the window exactly the same way as it is done in the APCA coder
-        // In order to call the codeValueRaw with the correct string, the mapValue mapping must be reverted
-        if (!Constants::isNoData(constant_value)){
-            constant_value = GroupGAMPS::unmapValue(constant_value, dataset->offset());
-        }
-        codeValueRaw(constant_value);
+
+    double value = Constants::NO_DATA_DOUBLE;
+    if (!Constants::isNoData(constant_value)){
+        value = Conversor::stringToDouble(constant_value);
     }
-    else {
-        double value = Constants::NO_DATA_DOUBLE;
-        if (!Constants::isNoData(constant_value)){
-            value = Conversor::stringToDouble(constant_value);
-        }
-        codeFloat((float) value);
+    codeFloat((float) value);
+
+    if (row_index < 100 and (column_index == 13 or column_index == 16)){
+        //std::cout << "window->length = " << window->length << " ///// codeFloat(" << (float) value << ")" << std::endl;
     }
 }

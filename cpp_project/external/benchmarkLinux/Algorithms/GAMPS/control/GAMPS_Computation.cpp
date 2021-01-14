@@ -275,7 +275,7 @@ int GAMPS_Computation::statGroup(GAMPSInput* gampsInputList)
 			DynArray<GAMPSEntry> *listComputeRatioSignal = this->computeRatioSignal(ratioSignal,baseSignal,c1,c2);
 
 			eps2 = this->computeEps2(eps,eps1,c1,c2);
-			eps2 = (eps2 < 0) ? 0 : round(eps2);
+			//eps2 = (eps2 < 0) ? 0 : round(eps2);
 			// std::cout << "    eps2 = " << eps2 << std::endl;
 			DynArray<GAMPSEntry> *listRatioBucket = this->compress_APCA(*listComputeRatioSignal,eps2);
 			int pos = j* numOfStream + i;
