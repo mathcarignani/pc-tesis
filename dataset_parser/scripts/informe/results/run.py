@@ -42,19 +42,19 @@ RESULTS_PATH = INFORME_PATH + "/results/01.2021/"
 #
 # (3.2) Relative Performance of the Coders
 #
-pdf1_path = RESULTS_PATH + '3.2/'
-pdf1 = PDFS1(pdf1_path, 'global')
-pdf1.create_pdfs()
-pdf1.create_latex_table(pdf1_path)
+# pdf1_path = RESULTS_PATH + '3.2/'
+# pdf1 = PDFS1(pdf1_path, 'global')
+# pdf1.create_pdfs()
+# pdf1.create_latex_table(pdf1_path)
 
 
 #
 # 3.3 Window Size Parameter
 #
-# pdf3_path = RESULTS_PATH + '3.3/'
-# pdf3 = PDFS3(pdf3_path + 'window/')
-# pdf3.create_pdfs()  # LOCAL (BEST LOCAL WINDOW VS. BEST GLOBAL WINDOW)
-# pdf3.create_latex_table(pdf3_path)
+pdf3_path = RESULTS_PATH + '3.3/'
+pdf3 = PDFS3(pdf3_path + 'window/')
+pdf3.create_pdfs()  # LOCAL (BEST LOCAL WINDOW VS. BEST GLOBAL WINDOW)
+pdf3.create_latex_table(pdf3_path)
 
 
 #

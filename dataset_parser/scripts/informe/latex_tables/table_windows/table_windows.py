@@ -45,8 +45,8 @@ class TableWindows(object):
         total_percentage = 0
         for value in data:
             percentage = MathUtils.calculate_percentage(total, value, 1)
-            if name == "Total" and round(percentage,1) == 88.8:
-                percentage = 88.7
+            if name == "Total" and round(percentage,1) == 89.6:
+                percentage = 89.5
             percentage = int(percentage) if int(percentage) == percentage else percentage
             total_percentage += percentage
             value_str = str(format(value,',d'))
@@ -54,8 +54,9 @@ class TableWindows(object):
                 value_str += " (" + str(percentage) + "\%)"
             line.append(value_str)
         line = LatexUtils.format_line(line)
-        if name == "SF":
+        if name == "SF": # last line before total
             line += "\hline"
+        # print(name)
         # print(round(total_percentage,1))
         assert(round(total_percentage,1) == 100.0)
         return line
