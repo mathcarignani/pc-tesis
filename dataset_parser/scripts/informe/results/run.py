@@ -35,17 +35,17 @@ RESULTS_PATH = INFORME_PATH + "/results/01.2021/"
 
 #
 # (2) Globalize the result files generated in step (1)
-GlobalizeResults("NM").run()
-GlobalizeResults("M").run()
+# GlobalizeResults("NM").run()
+# GlobalizeResults("M").run()
 
 
 #
 # (3.2) Relative Performance of the Coders
 #
-# pdf1_path = RESULTS_PATH + '3.2/'
-# pdf1 = PDFS1(pdf1_path, 'global')
-# pdf1.create_pdfs()
-# pdf1.create_latex_table(pdf1_path)
+pdf1_path = RESULTS_PATH + '3.2/'
+pdf1 = PDFS1(pdf1_path, 'global')
+pdf1.create_pdfs()
+pdf1.create_latex_table(pdf1_path)
 
 
 #
