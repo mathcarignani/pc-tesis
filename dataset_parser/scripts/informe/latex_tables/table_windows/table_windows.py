@@ -12,7 +12,6 @@ from file_utils.text_utils.text_file_writer import TextFileWriter
 
 class TableWindows(object):
     FILENAME = "table-windows.tex"
-    ORDER = ["CoderBase", "CoderPCA", "CoderAPCA", "CoderPWLH", "CoderPWLHInt", "CoderSF", "CoderFR", "CoderGAMPSLimit"]
 
     def __init__(self, algorithms_data, path):
         self.algorithms_data = algorithms_data

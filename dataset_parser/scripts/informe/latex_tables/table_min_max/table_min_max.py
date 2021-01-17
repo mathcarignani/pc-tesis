@@ -6,6 +6,8 @@ from scripts.compress.experiments_utils import ExperimentsUtils
 from scripts.informe.latex_tables.latex_utils import LatexUtils
 
 class TableMinMax(object):
+    ORDER = ['GZIP\cgzip', 'PCA\cpca', 'APCA\capca', 'PWLH', 'PWLHInt', 'CA', 'SF', 'FR\cfr', 'GAMPS']
+
     def __init__(self, path, mode):
         self.path = path
         self.mode = mode
@@ -110,5 +112,12 @@ class TableMinMax(object):
             r"\label{experiments:minmaxone}" if self.mode == 1 else r"\label{experiments:minmaxtwo}",
             r"\end{table}"
         ]
-        for line in first_lines + data_lines + last_lines:
+        ordered_data_lines = [data_lines[0]] # Column names
+        for algorithm in self.ORDER:
+            for line in data_lines:
+                first, last = line.find("{"), line.find("}")
+                if algorithm == line[first+1:last]:
+                    ordered_data_lines.append(line)
+
+        for line in first_lines + ordered_data_lines + last_lines:
             output.write_line(line)

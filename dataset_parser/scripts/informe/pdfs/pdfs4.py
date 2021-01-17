@@ -15,13 +15,13 @@ class PDFS4(PDFSCommon):
                     'CoderFR', 'CoderSF']
     PLOTS_ARRAY = ['window', 'compression']
     PLOTS_MATRIX = [
-        [['CoderPCA', 'compression'],  ['CoderAPCA', 'compression'],    ['CoderCA', 'compression'],          ['CoderFR', 'compression']],
+        [['CoderPCA', 'compression'],  ['CoderAPCA', 'compression'],    ['CoderPWLH', 'compression'],          ['CoderPWLHInt', 'compression']],
         None,
-        [['CoderPCA', 'window'],       ['CoderAPCA', 'window'],         ['CoderCA', 'window'],               ['CoderFR', 'window']],
+        [['CoderPCA', 'window'],       ['CoderAPCA', 'window'],         ['CoderPWLH', 'window'],               ['CoderPWLHInt', 'window']],
         None,
-        [['CoderPWLH', 'compression'], ['CoderPWLHInt', 'compression'], ['CoderGAMPSLimit', 'compression'],  ['CoderSF', 'compression']],
+        [['CoderCA', 'compression'], ['CoderSF', 'compression'], ['CoderFR', 'compression'],  ['CoderGAMPSLimit', 'compression']],
         None,
-        [['CoderPWLH', 'window'],      ['CoderPWLHInt', 'window'],      ['CoderGAMPSLimit', 'window'],       ['CoderSF', 'window']]
+        [['CoderCA', 'window'],      ['CoderSF', 'window'],      ['CoderFR', 'window'],       ['CoderGAMPSLimit', 'window']]
     ]
     HEIGHT_RATIOS = [30, 0, 30, 15, 30, 0, 30]
     PLOT_OPTIONS = {
