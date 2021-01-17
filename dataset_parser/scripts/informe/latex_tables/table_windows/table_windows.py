@@ -12,6 +12,7 @@ from file_utils.text_utils.text_file_writer import TextFileWriter
 
 class TableWindows(object):
     FILENAME = "table-windows.tex"
+    ORDER = ["CoderBase", "CoderPCA", "CoderAPCA", "CoderPWLH", "CoderPWLHInt", "CoderSF", "CoderFR", "CoderGAMPSLimit"]
 
     def __init__(self, algorithms_data, path):
         self.algorithms_data = algorithms_data
@@ -22,6 +23,8 @@ class TableWindows(object):
         self.writer.append_file(reader)
 
         for name in self.algorithms_data.keys():
+            print(name)
+            print("---")
             line = self.generate_algorithm_line(name)
             self.writer.write_line(line)
 
@@ -31,8 +34,8 @@ class TableWindows(object):
 
     def generate_algorithm_line(self, name):
         data = self.algorithms_data[name]
-        name = name.replace("Coder", "")
-        name = name.replace("Limit", "")
+        name = name.replace("Coder", "") # "CoderGAMPSLimit" => "CoderGAMPS"
+        name = name.replace("Limit", "") # "CoderGAMPS" => "GAMPS"
         total = sum(data)
         expected_total = 8*200 if name == "Total" else 200
         # print(data)
@@ -54,7 +57,7 @@ class TableWindows(object):
                 value_str += " (" + str(percentage) + "\%)"
             line.append(value_str)
         line = LatexUtils.format_line(line)
-        if name == "SF": # last line before total
+        if name == "GAMPS": # last line before total
             line += "\hline"
         # print(name)
         # print(round(total_percentage,1))

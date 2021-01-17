@@ -19,13 +19,13 @@ class PDFS3(PDFSCommon):
     CODERS_ARRAY = ['CoderPCA', 'CoderAPCA', 'CoderCA', 'CoderPWLH', 'CoderPWLHInt', 'CoderGAMPSLimit', 'CoderFR', 'CoderSF']
     PLOTS_ARRAY = ['window', 'relative']
     PLOTS_MATRIX = [
-        [['CoderPCA', 'window'],       ['CoderAPCA', 'window'],         ['CoderCA', 'window'],              ['CoderFR', 'window']],
+        [['CoderPCA', 'window'],       ['CoderAPCA', 'window'],         ['CoderPWLH', 'window'],              ['CoderPWLHInt', 'window']],
         None,
-        [['CoderPCA', 'relative'],  ['CoderAPCA', 'relative'],    ['CoderCA', 'relative'],         ['CoderFR', 'relative']],
+        [['CoderPCA', 'relative'],  ['CoderAPCA', 'relative'],    ['CoderPWLH', 'relative'],         ['CoderPWLHInt', 'relative']],
         None,
-        [['CoderPWLH', 'window'],      ['CoderPWLHInt', 'window'],      ['CoderGAMPSLimit', 'window'], ['CoderSF', 'window']],
+        [['CoderCA', 'window'],      ['CoderSF', 'window'],      ['CoderFR', 'window'], ['CoderGAMPSLimit', 'window']],
         None,
-        [['CoderPWLH', 'relative'], ['CoderPWLHInt', 'relative'], ['CoderGAMPSLimit', 'relative'], ['CoderSF', 'relative']],
+        [['CoderCA', 'relative'], ['CoderSF', 'relative'], ['CoderFR', 'relative'], ['CoderGAMPSLimit', 'relative']],
     ]
     HEIGHT_RATIOS = [30, 0, 30, 15, 30, 0, 30]
     PLOT_OPTIONS = {
