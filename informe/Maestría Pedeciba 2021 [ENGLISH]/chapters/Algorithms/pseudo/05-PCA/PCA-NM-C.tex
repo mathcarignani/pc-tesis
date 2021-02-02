@@ -9,10 +9,10 @@ Parse \column\ into consecutive non-overlapping windows of size $\win$, except p
         \encodeSpecific{$\nodata$}\\
     }
     \Else{
-        \calculateMinMax, resp.\\
+        \calculateMinMax, respectively\\
         \uIf{\textnormal{every entry in \window\ is different from \noData}\andd \validThreTwo}{
             \codeBit{0}\\
-            \calculateMidrangeTwo\\
+            \calculateMidrange\\
             \encodeSpecific{$\midrange$}
         }
         \Else{

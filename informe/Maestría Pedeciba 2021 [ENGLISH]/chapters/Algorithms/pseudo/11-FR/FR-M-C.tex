@@ -1,44 +1,38 @@
 
 
+
+
 \newcommand{\winEntries}[1]{\window.\textnormal{entries}[{{#1}}]}
 \newcommand{\winSetValue}[1]{\winEntries{{{#1}}}.\text{value}}
-\newcommand{\indexx}{\textit{index}}
 \newcommand{\forEachInRange}{\indexx \textnormal{ in} $[0..\winSize-1]$}
 \newcommand{\segmentEquation}{\text{segment\_equation}}
-
-
-
-\newcommand{\DPindex}{\textit{index}}
 \newcommand{\DPvalue}{\textnormal{value}}
 \newcommand{\DPpoint}{\textit{point}}
-\newcommand{\forEachDisplaced}{\DPindex \textnormal{ in} \disPoints}
-\newcommand{\getDisplacedPoints}[2]{$\getDisplacedPointsMethod(\window, \maxerror, \disPoints, {#1}, {#2})$}
+\newcommand{\forEachDisplaced}{\textnormal{entry in} \disPoints\commaa\ \indexx\commaa}
+\newcommand{\getDisplacedPoints}[2]{$\getDisplacedPointsMethod(\window, \tscol, \maxerror, \disPoints, {#1}, {#2})$}
 
 \newcommand{\winEntriesNO}{\window.\textnormal{entries}}
-\newcommand{\winEntriesValue}{\winSetValue{\DPindex}}
+\newcommand{\winEntriesValue}{\winSetValue{\indexx}}
 
-\newcommand{\encodeIndex}{Encode \DPindex\ using $\logWinSize$ bits}
+\newcommand{\encodeIndex}{Encode \indexx\ using $\logWinSize$ bits}
 
-\newcommand{\parseWindowsFR}{Add the points obtained from parsing the x-coordinates and y-coordinates from \tscol\ and \column, respectively, into consecutive non-overlapping windows of size~$\win$, except possibly for the last window that may consist of fewer points}
-
-\newcommand{\pointdp}{$P_{\DPindex}$}
+\newcommand{\pointdp}{$P_{\indexx}$}
 
 
 \beginAlgorithm
 \onlyInput{\columnInput\\\cOutputFile{FR}\\\cInputThreshold\\\cInputWindowAPCA\\\inputTSCol}
-\parseWindowsFR\\
+\parseWindowsPCA\\
 \ForEach{\forEachWindowPCA}{
     \If{$|\window| == 1$}{
-        Let \valuev\ be the y-coordinate of the single point in \window\\
+        Let \valuev\ be the single entry in \window\\
         \encodeSpecific{$\valuev$}\\
         \returnn\\
     }
-    Create an empty array, \disPoints\\
-    \getDisplacedPoints{0}{\windowSizeT-1} // routine in Figure~\ref{pseudoCoderFRM2} \\
+    Create an empty list, \disPoints\\
+    \getDisplacedPoints{0}{\windowSizeT-1} // routine in Fig.~\ref{pseudoCoderFRM2} \\
     \ForEach{\forEachDisplaced}{
         \encodeIndex\\
-        Let \valuev\ be the y-coordinate of point \pointdp$=\window[\DPindex]$\\
-        \encodeSpecific{$\valuev$}\\
+        \encodeSpecific{\winIndex}\\
     }
 }
 \EndAlgorithmVariant{Coding}{\coderFR}{\maskalgo}{\label{pseudoCoderFRM}}

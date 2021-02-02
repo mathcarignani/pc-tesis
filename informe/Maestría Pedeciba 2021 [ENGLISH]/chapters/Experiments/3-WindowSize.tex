@@ -4,35 +4,39 @@
 \label{secX:windows}
 
 
-In this section, we analyze the extent to which the window size parameter impacts on the performance of the coding algorithms. For these experiments we consider the set of algorithm variants $V^{*}_{W}$, which is obtained from $V^*$ by discarding algorithm SF, which doesn't have a window size parameter (recall this information from Table~\ref{algo:table:overview}). Also, we only consider the four datasets that consist of multiple files, i.e. \datasetirkis, \datasetsst, \datasetadcp \ and \datasetsolar\ (recall this information from Table~\ref{datasets:table:overview}). For each file, we compare the compression performance when using the \ows for the dataset, as defined in (\ref{eq:ows}), and the \lows for the file, defined next.
+In this section, we analyze the extent to which the window size parameter impacts on the performance of the coding algorithms. For these experiments we consider the set of algorithm variants $\vaster$, defined in \ref{defcion:vaster}, and we only consider the four datasets that consist of multiple files, i.e. \datasetirkis, \datasetsst, \datasetadcp \ and \datasetsolar\ (recall this information from Table~\ref{datasets:table:overview}). For each file, we compare the compression performance when using the \ows for the dataset, as defined in (\ref{eq:ows}), and the \lows for the file, defined next.
 
 
 \begin{defcion}
-The \textit{local optimal window size (\lowsit)} of a coding algorithm variant $a_v \in V^{*}_{W}$, and a threshold parameter $e \in E$, for the data type $z$ of a certain file $f$ is given by
+The \textit{local optimal window size (\lowsit)} of a coding algorithm variant $a_v \in \vaster$, and an error parameter $e \in E$, for the data type $z$ of a certain file $f$ is given by
 \begin{equation}
-\lowsit(a_v, e, z, f) = \argmin_{w\ \in \ W} \biggl\{ \tasacompresion(c_{<a_v, w, e>}, z, f) \biggr\},
+\lows(a_v, e, z, f) = \argmin_{w\ \in \ W} \biggl\{ \CR(c_{<a_v, w, e>}, z, f) \biggr\},
 \end{equation}
 where we break ties in favor of the smallest window size.
 \end{defcion}
 
 
-For each data type $z$ of each dataset $d$, and each file $f \in F(d, z)$, coding algorithm variant $a_v \in~V^{*}_{W}$, and threshold parameter $e \in E$, we calculate the RD between \globalCAI\ and \localCAI, as defined in~(\ref{eq:relative-difference}), where \WGlobal\ $=\owsns(a_v, e, z, d)$ and \WLocal\ $=\lowsns(a_v, e, z, f)$. In what follows, we denote the \ows and the \lows\ as \WGlobal\ and \WLocal, respectively.
+For each data type $z$ of each dataset $d$, and each file $f \in F(d, z)$, coding algorithm variant $a_v \in~\vaster$, and error parameter $e \in E$, we calculate the RD between \globalCAI\ and \localCAI, as defined in~(\ref{eq:relative-difference}), where \WGlobal\ $=\owsns(a_v, e, z, d)$ and \WLocal\ $=\lowsns(a_v, e, z, f)$. In what follows, we sometimes denote the \ows and the \lows\ as \WGlobal\ and \WLocal, respectively.
 
 
-As an example, in figures~\ref{fig:window-compare-1202} and~\ref{fig:window-compare-1203} we show \WGlobal, \WLocal, and the RD between \globalCAI\ and \localCAI, as a function of the threshold parameter $e$, obtained for the data type $z=$~``VWC", for two different files of the dataset $d=$ \datasetirkis. Figure~\ref{fig:window-compare-1202} shows the results for the file $f=$~``vwc\_1202.dat.csv", and Figure~\ref{fig:window-compare-1203} shows the results for $f=$ ``vwc\_1203.dat.csv". Observe that the values of \WGlobal\ are the same for both figures, which is expected, since both are obtained from the same data type of the same dataset.
+\newcommand{\fileIrkisOne}{irkis-1202.csv}
+\newcommand{\fileIrkisTwo}{irkis-1203.csv}
 
 
-In Figure~\ref{fig:window-compare-1202} we notice, for instance, that for algorithm APCA the \ows and \lows values match for every threshold parameter $e$, except 3 and 10. The \ows is larger than the \lows when $e=3$, but it is smaller when $e=10$. In these two cases, the RD values are $1.52\%$ and $1.76\%$, respectively. In Figure~\ref{fig:window-compare-1203} we observe that in every case the \ows is larger than or equal to the \lows. We highlight the marker for the maximum RD value ($10.68\%$) obtained for all the tested CAIs, and we further comment on this point in the remaining of the section. Notice that in both figures the RD is non-negative in every plot, which makes sense, since the CR obtained with the \ows can never be lower than the CR obtained with the \lows.
+As an example, in figures~\ref{fig:window-compare-1202} and~\ref{fig:window-compare-1203} we show \WGlobal, \WLocal, and the RD between \globalCAI\ and \localCAI, as a function of the error parameter $e$, obtained for the data type $z=$~``VWC", for two different files of the dataset $d=$ \datasetirkis, presented in Section~\ref{datasets:irkis}. Figure~\ref{fig:window-compare-1202} shows the results for the file $f=$~``\fileIrkisOne", and Figure~\ref{fig:window-compare-1203} shows the results for $f=$ ``\fileIrkisTwo". Observe that the values of \WGlobal\ are the same for both figures, which is expected, since both are obtained from the same data type of the same dataset.
+
+
+In Figure~\ref{fig:window-compare-1202} we notice, for instance, that for algorithm APCA the \ows and \lows values match for every error parameter $e$, except 3 and 10. The \ows is larger than the \lows when $e=3$, but it is smaller when $e=10$. In these two cases, the RD values are $1.52\%$ and $1.76\%$, respectively. In Figure~\ref{fig:window-compare-1203} we observe that in every case the \ows is larger than or equal to the \lows. We highlight the marker for the maximum RD value ($10.6\%$) obtained for all the tested CAIs, and we further comment on this point in the remaining of the section. Notice that in both figures the RD is non-negative in every plot, which makes sense, since the CR obtained with the \ows can never be lower than the CR obtained with the \lows.
 
 \clearpage
 
-\threethreesingle{1-IRKIS-1-1}{VWC}{vwc\_1202.dat.csv}{\datasetirkis}{\label{fig:window-compare-1202}}{}
-\threethreesingle{1-IRKIS-2-1}{VWC}{vwc\_1203.dat.csv}{\datasetirkis}{\label{fig:window-compare-1203}}{\threethreemost}
+\threethreesingle{1-IRKIS-1-1}{VWC}{\fileIrkisOne}{\datasetirkis}{\label{fig:window-compare-1202}}{}
+\threethreesingle{1-IRKIS-2-1}{VWC}{\fileIrkisTwo}{\datasetirkis}{\label{fig:window-compare-1203}}{\threethreemost}
 
 \clearpage
 
 
-We analyze the experimental results to evaluate the impact of using the \ows instead of the \lows on the compression performance of the tested coding algorithms. For each algorithm, we iterate through each threshold parameter, and each data type of each file, and we calculate the RD between the CAI with the \ows and the CAI with the \lows. Since we consider 8 threshold parameters and there are 13 files with a single data type and 4 files with 3 different data types each, for each algorithm we compare a total of $8 \times (13 + 4\times3) = 200$ pairs of CAIs. Table~\ref{tabla:windows-comparison} summarizes the results of these comparisons, aggregated by algorithm and the range to which the RD belongs. 
+We analyze the experimental results to evaluate the impact of using the \ows instead of the \lows on the compression performance of the tested coding algorithms. For each algorithm, we iterate through each error parameter, and each data type of each file, and we calculate the RD between the CAI with the \ows and the CAI with the \lows. Since we consider \errParVal\ and there are 13 files with a single data type and 4 files with 3 different data types each, for each algorithm we compare a total of $8 \times (13 + 4\times3) = 200$ pairs of CAIs. Table~\ref{tabla:windows-comparison} summarizes the results of these comparisons, aggregated by algorithm and the range to which the RD belongs. 
 
 
 \vspace{+5pt}
@@ -40,13 +44,13 @@ We analyze the experimental results to evaluate the impact of using the \ows ins
 \vspace{-5pt}
 
 
-For example, consider the results for algorithm CA, in the third row. The first column indicates that the RD is equal to 0 for exactly 172 (86\%) of the 200 evaluated pairs of CAIs for that algorithm. The second column reveals that for 16 pairs of CAIs (8\%), the RD takes values greater than 0 and less than or equal to 1\%. The remaining three columns cover other ranges of RD values. Notice that for every row (except the last one), the values add up to a total of 200, since we compare exactly 200 pairs of CAIs for each algorithm.
+For example, consider the results for algorithm CA, in the fifth row. The first column indicates that the RD is equal to 0 for exactly 172 (86\%) of the 200 evaluated pairs of CAIs for that algorithm. The second column reveals that for 16 pairs of CAIs (8\%), the RD takes values greater than 0 and less than or equal to 1\%. The remaining three columns cover other ranges of RD values. Notice that for every row (except the last one), the values add up to a total of 200, since we compare exactly 200 pairs of CAIs for each algorithm.
 
 
-The last row of Table~\ref{tabla:windows-comparison} is obtained by adding the values of the previous rows, which combines the results for all algorithms. We notice that in 88.7\% of the total number of evaluated pairs of CAIs, the RD is equal to 0. In these cases, in fact, the \ows and the \lows coincide. In 97.8\% of the cases, the RD is less than or equal to 2\%. This means that, for the vast majority of CAI pairs, either the \ows and the \lows match or they yield roughly the same compression performance. This result suggests that we could fix the window size parameter in advance, for example by optimizing over a training set, without compromising the performance of the coding algorithm. This is relevant, since calculating the LOWS for a file is, in general, computationally expensive.
+The last row of Table~\ref{tabla:windows-comparison} is obtained by adding the values of the previous rows, which combines the results for all algorithms. We notice that in 89.5\% of the total number of evaluated pairs of CAIs, the RD is equal to 0. In these cases, in fact, the \ows and the \lows coincide. Moreover, in 97.7\% of the cases, the RD is less than or equal to 2\%. This means that, for the vast majority of CAI pairs, either the \ows and the \lows match or they yield roughly the same compression performance. This result suggests that we could fix the window size parameter in advance, for example by optimizing over a training set, without compromising the performance of the coding algorithm. This is relevant, since calculating the LOWS for a file is, in general, computationally expensive.
 
 
-We notice that there are only 6 cases (0.4\%) in which the RD falls in the range (5, 11], most of which (5 cases) involve the algorithm PCA. The maximum value taken by RD (10.6\%) is obtained for the data type ``VWC" of the file ``vwc\_1203.dat.csv" of the dataset \datasetsst, with algorithm PCA, and error parameter $e=15$. In Figure~\ref{fig:window-compare-1203} we highlight this maximum value with a red circle. In this case, the \ows is 16 and the \lows is 8. According to these results, the performance of algorithm PCA seems to be more sensible to the window size parameter than the rest of the algorithms. Except for these few cases, we observe that, in general, the impact of using the \ows instead of the \lows on the compression performance of coding algorithms is rather small. Therefore, in the following section, in which we compare the algorithms performance, we always use the \owsns.
+We notice that there are only 9 cases (0.6\%) in which the RD falls in the range (5, 11]. This only occurs for algorithms PCA and GAMPS. The maximum value taken by RD (10.6\%) is obtained for the data type ``VWC" of the file ``\fileIrkisTwo" of the dataset \datasetsst, with algorithm PCA, and error parameter $e=15$. In Figure~\ref{fig:window-compare-1203} we highlight this maximum value with a red circle. In this case, the \ows is 16 and the \lows is 8. According to these results, the performance of algorithms PCA and GAMPS seems to be more sensible to the window size parameter than the rest of the algorithms. Except for these few cases, we observe that, in general, the impact of using the \ows instead of the \lows on the compression performance of coding algorithms is rather small. Therefore, in the following section, in which we compare the algorithms performance, we always use the \owsns.
 
 
 \clearpage

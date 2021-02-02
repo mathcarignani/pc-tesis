@@ -1,3 +1,6 @@
+\newcommand{\ignoredGaps}{The gaps are ignored when calculating the median, mean and standard deviation.}
+
+\newcommand{\tableExplain}[2]{Number of rows, columns, entries and gaps (total and percentual), and minimum, maximum, median, and standard deviation, of the sample values ({#1}), for each file of the dataset {#2}.}
 
 \begin{table}[h]
 \vspace{+5pt}
@@ -26,7 +29,7 @@ SLF2 & 26,305 & 10 & 263,050 & \ \ 43,049 (16.4) & 215 & 580 & 352 & 360.9 & \ \
 %% SCRIPT OUTPUT ABOVE HERE
     \toprule[0.1mm]
     \end{tabular}
-    \caption{Number of rows, columns, entries and gaps (total and percentual), and minimum, maximum, median, and standard deviation, of the sample values (dimensionless), for each file of the dataset IRKIS. The gaps are ignored when calculating the median, mean and standard deviation.}
+    \caption{\tableExplain{dimensionless}{IRKIS} \ignoredGaps}
     \label{datasets:table:irkis}
 \end{center}
 \end{table}

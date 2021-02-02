@@ -70,7 +70,7 @@
 \newcommand{\monthname}{\ifcase \month \or January\or February\or March\or %
 April\or May \or June\or July\or August\or September\or October\or November\or %
 December\fi} 
-\def\mydate{\leavevmode\hbox{\the\day\ \monthname\ \number \year}}
+\def\mydate{\leavevmode\hbox{\monthname\ \the\day, \number \year}}
 \def\twodigits#1{\ifnum#1<10 0\fi\the#1}
 
 

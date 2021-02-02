@@ -1,22 +1,5 @@
 
 
-\newcommand{\EncodeWindowCA}{EncodeWindow}
-\newcommand{\EncodeLastWindowCA}{EncodeLastWindow}
-\newcommand{\hull}{\textit{H}}
-
-\newcommand{\encodeWindowPWLH}{\EncodeWindowCA(\window, \out, \win, \tscol) // routine shown in Figure~\ref{pwlhWindowM}}
-
-\newcommand{\encodeLastWindowPWLH}{\EncodeLastWindowCA(\window, \out, \win, \tscol) // routine shown in Figure~\ref{pwlhLastWindowM}}
-
-\newcommand{\tentry}{$t_\entry$}
-
-\newcommand{\AddPoint}{Add \point\ to \window}
-\newcommand{\obtainTS}{Obtain timestamp for \entry, \tentry, from \tscol}
-
-\newcommand{\letPointCoor}[3]{Let {#1}\ be the point with coordinates ({#2}, {#3})}
-\newcommand{\letPoint}{\letPointCoor{\point}{\tentry}{\entry}}
-\newcommand{\winNoEmpty}{\window \textnormal{ is not empty}}
-
 \beginAlgorithm
 \onlyInput{\columnInput\\\cOutputFile{PWLH}\\\cInputThreshold\\\cInputWindowAPCA\\\inputTSCol}
 \createWindowOne\\
@@ -24,14 +7,14 @@
     \obtainTS\\
     \letPoint\\
     \If{\firstIteratPWHL}{
-        Let \PWLHSet\ be the set of points in \window, plus \point, and let \hull\ be the convex hull of \PWLHSet\\
+        Let \PWLHSet\ be the set of points representing the entries in \window, plus \point, and let \hull\ be the convex hull of \PWLHSet\\
         Let \validHull\ be true iff \hull\ satisfies the valid hull condition, defined in \ref{def:validHull}, for \maxerror\\
         \If{\nott\,\validHull \orr \windowFull\ }{
             \encodeWindowPWLH\\
             \createWindowTwo\\
         }
     }
-    \AddPoint\\
+    \AddSnapshot\\
 }
 \If{\winNoEmpty}{
     \encodeLastWindowPWLH\\

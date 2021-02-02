@@ -10,10 +10,8 @@
 \newcommand{\tobitexp}{a column-specific fixed number of bits\xspace}
 \newcommand{\wheretotbit}{where \totbit is \tobitexp}
 \newcommand{\valuev}{\textit{value}\xspace}
+\newcommand{\valuevP}{\textit{value}}
 
-\newcommand{\maxerror}{\textit{$\epsilon$}\xspace}
-\newcommand{\maskalgo}{\textit{M}\xspace}
-\newcommand{\NOmaskalgo}{\textit{NM}\xspace}
 \newcommand{\intCoder}{\textit{algo\_key}}
 \newcommand{\win}{\textit{w}}
 \newcommand{\nodata}{\textit{NO\_DATA}}
@@ -24,13 +22,17 @@
 \newcommand{\logWinSize}{\ceil{\log _{2} \win}}
 \newcommand{\logWinSizeOpt}[1]{\log _{2} {#1}}
 
+\newcommand{\tscol}{\textit{t\_col}}
+\newcommand{\out}{\textit{out}}
+
 % APCA
 \newcommand{\midrange}{\textit{mid\_range}\xspace}
 \newcommand{\incoming}{\textit{E}\xspace}
+\newcommand{\intersection}{\textit{I}\xspace}
 \newcommand{\point}{$\incoming$\xspace}
 % FR
 \newcommand{\disPoints}{\textit{displaced\_points}}
-\newcommand{\getDisplacedPointsMethod}{\textnormal{GetDisplacedPoints}}
+\newcommand{\getDisplacedPointsMethod}{\textnormal{GetDisPointsMDP}}
 \newcommand{\firstIndex}{\textit{i}_o}
 \newcommand{\lastIndex}{\textit{i}_f}
 \newcommand{\pointi}{$P_{i}$}
@@ -39,11 +41,14 @@
 \newcommand{\half}{\textit{half}}
 \newcommand{\decodeSegment}{\mbox{{\textnormal{FillSegment}}}\xspace}
 \newcommand{\segment}{\textit{segment}}
+\newcommand{\segmentS}{\segment\xspace}
 \newcommand{\validSegment}{\textit{valid\_segment}}
+\newcommand{\indexx}{\textit{index}}
+\newcommand{\winIndex}{$\window[\indexx]$}
 % PWLH
 \newcommand{\PWLHSet}{\textit{S}}
 \newcommand{\validHull}{\textit{valid\_hull}}
-
+\newcommand{\EncodeLastWindowPWLH}{EncodeLastWindow}
 % CA
 \newcommand{\CAWinStart}{EncodeWinStart\xspace}
 \newcommand{\CAWinEnd}{EncodeWinEnd\xspace}
@@ -58,17 +63,29 @@
 \newcommand{\smino}{\textit{SMinOld}\xspace}
 \newcommand{\EseE}{(\textit{A,E})\xspace}
 \newcommand{\EseEP}[1]{(\textit{A,E{#1}})\xspace}
-\newcommand{\EseSE}{(\textit{S,E})\xspace}
-
 % GAMPS
 \newcommand{\epsilonB}{\textit{$\epsilon_b$}}
 \newcommand{\epsilonR}{\textit{$\epsilon_r$}}
 \newcommand{\columns}{\textit{columns}}
-
 % SF
 \newcommand{\segmentSet}{\textit{LS}}
 \newcommand{\segmentLast}{\segment_{\textit{prev}}}
+\newcommand{\segmentConn}{\segment_{\textit{conn}}}
+\newcommand{\segmentLastT}{$\segmentLast$\xspace}
+\newcommand{\segmentConnT}{$\segmentConn$\xspace}
+\newcommand{\interSegmentSF}{(\textit{I,E})\xspace}
+\newcommand{\interSegmentSFE}[1]{(\textit{I,E{#1}})\xspace}
 \newcommand{\connected}{\textit{connected}}
+\newcommand{\connectedS}{\connected\xspace}
 \newcommand{\pointO}{\textit{P}_{\textit{o}}}
 \newcommand{\pointF}{\textit{P}_{\textit{f}}}
+\newcommand{\pointP}{\textit{P}}
+\newcommand{\interPoint}{\textit{I}}
+\newcommand{\SFEncodePoint}{EncodePoint\xspace}
+\newcommand{\SFEncodePointP}{EncodePoint}
+
+\newcommand{\SFEncodeWinEndStart}{EncodeWinEndStart\xspace}
+\newcommand{\SFEncodeWinEndStartP}{EncodeWinEndStart}
+
+
 

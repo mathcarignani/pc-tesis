@@ -155,17 +155,45 @@
 % \end{itemize}
 
 
+% \clearpage
+% \textbf{Cambios de la versión anterior (9/11/2020) a esta versión (14/12/2020) }
+
+% \begin{itemize}
+
+% \item Revisé los comentarios en todas las secciones del Chapter~\ref{datasets} (Datasets) y en el Chapter~\ref{algo} (Algorithms) hasta la Section~\ref{algo:ca} (Algorithm CA) inclusive. También apliqué los comentarios hechos en secciones anteriores a la Section~\ref{algo:gamps} (Algorithm GAMPS). O sea que lo que todavía me falta revisar de los dos primeros capítulos son estas dos secciones: Section~\ref{algo:sf} (Algorithm SF) y Section~\ref{algo:fr} (Algorithm FR).
+
+% \item En las secciones \ref{datasets:elnino}, \ref{datasets:hail}, \ref{datasets:tornado}, \ref{datasets:wind}, que corresponden a los datasets con más de una unidad de medida, en el texto especifiqué las unidades, pero en las tablas puse ``in their respective units of measurement''. En la sección \ref{datasets:irkis} pusimos ``dimensionless'', pero no estoy seguro si no sería \%.
+
+% \item Agregué una macro para cuando nos referimos a las líneas de código. Por ahora dejé Line/lines pero estoy de acuerdo en cambiarlo por Step/steps. Pero antes de hacer ese cambio, creo que debería cambiar la nomenclatura de las figuras de los ejemplos, donde siempre pongo STEP X en el título y al hacer referencia a la figura siempre estoy usando step. Pensé que para ser más claro podría poner ITERATION X y poner el número de la iteración en el loop principal del algoritmo. Además, creo que debería sacar los títulos de las gráficas de los ejemplos, y agregar esa información al lado del Figure XX, para que me queden consistentes con el resto de figuras.
+
+% \item Siguiendo tus comentarios para el algoritmo CA, mejoré las introducciones de PWLH y GAMPS, describiendo la idea general antes de explicar a más bajo nivel, y agregando gráficas en CA y PWLH. Esas tres secciones son de las que más me interesa tu feedback, porque son las que más cambiaron. 
+
+% \end{itemize}
+
+
 \clearpage
-\textbf{Cambios de la versión anterior (9/11/2020) a esta versión (14/12/2020) }
+\textbf{Cambios de la versión anterior (14/12/2020) a esta versión (2/2/2021) }
 
-\begin{itemize}
+\begin{enumerate}
 
-\item Revisé los comentarios en todas las secciones del Chapter~\ref{datasets} (Datasets) y en el Chapter~\ref{algo} (Algorithms) hasta la Section~\ref{algo:ca} (Algorithm CA) inclusive. También apliqué los comentarios hechos en secciones anteriores a la Section~\ref{algo:gamps} (Algorithm GAMPS). O sea que lo que todavía me falta revisar de los dos primeros capítulos son estas dos secciones: Section~\ref{algo:sf} (Algorithm SF) y Section~\ref{algo:fr} (Algorithm FR).
+\item En las secciones \ref{datasets:elnino}, \ref{datasets:hail}, y \ref{datasets:wind}, que corresponden a los datasets con más de una unidad de medida, en el texto especifiqué las unidades, pero en las tablas puse ``in their respective units of measurement''. Además, en la sección \ref{datasets:irkis} pusimos ``dimensionless'', pero me parece que debería ser ``\%''.
 
-\item En las secciones \ref{datasets:elnino}, \ref{datasets:hail}, \ref{datasets:tornado}, \ref{datasets:wind}, que corresponden a los datasets con más de una unidad de medida, en el texto especifiqué las unidades, pero en las tablas puse ``in their respective units of measurement''. En la sección \ref{datasets:irkis} pusimos ``dimensionless'', pero no estoy seguro si no sería \%.
+\item Agregué una macro para cuando nos referimos a las líneas de código de los pseudocódigos. Por ahora dejé Line/lines pero estoy de acuerdo con tu comentario de cambiarlo por Step/steps. Pero antes de hacer ese cambio, creo que debería cambiar la nomenclatura de las figuras de los ejemplos, donde siempre pongo STEP X en el título y al hacer referencia a la figura siempre estoy usando ``step''. Para ser más claro podría poner ITERATION X con el número de la iteración en el loop principal del algoritmo (al que además, ya estoy haciendo referencia en las explicaciones). Además, creo que debería sacar los títulos de las gráficas de los ejemplos, y agregar esa información al lado del Figure XX (o sea en código latex en vez de como parte de la imagen), para que me queden consistentes con el resto de figuras (ahora en la ``List of Figures'' esas figuras aparecen sin descripción y no queda bien).
 
-\item Agregué una macro para cuando nos referimos a las líneas de código. Por ahora dejé Line/lines pero estoy de acuerdo en cambiarlo por Step/steps. Pero antes de hacer ese cambio, creo que debería cambiar la nomenclatura de las figuras de los ejemplos, donde siempre pongo STEP X en el título y al hacer referencia a la figura siempre estoy usando step. Pensé que para ser más claro podría poner ITERATION X y poner el número de la iteración en el loop principal del algoritmo.
+\item Cambié todas las ocurrencias de ``irregular sampling'' por ``irregular sampling rate'' (incluido en el título de la tesis). De acuerdo a las búsquedas que hice en google, creo que queda más claro con el rate.
 
-\item Siguiendo tus comentarios para el algoritmo CA, mejoré las introducciones de PWLH y GAMPS, describiendo la idea general antes de explicar a más bajo nivel, y agregando gráficas en CA y PWLH. Esas tres secciones son de las que más me interesa tu feedback, porque son las que más cambiaron. 
+\item Debería agregar un glosario, cómo hicimos en el proyecto de grado?
 
-\end{itemize}
+\item Es correcto repetir algunas frases de la Introduction exactamente igual en otro capítulo?
+
+\item En la Introduction, debería agregar las referencias a los paper de los algoritmos cuando los listo? Eso lo hago en el capítulo de los Algoritmos, pero no estoy seguro si aporta hacerlo en la Introduction.
+
+\item En algunos casos no estoy seguro si debo usar números o palabras. Por ejemplo: ``we implemented 8 different compression algorithm'', ``This document is organized in four chapters'', etc.
+
+\item En el capítulo de Experimental Results (Section~\ref{experiments:experiments}) cambié la explicación del parámetro de error $e$. En vez de llamarle ``error threshold parameter'', ahora le llamo ``error parameter''. Eso es para que no se confunda con el parámetro $\epsilon$.
+
+\item Una cosa que quizás valdría la pena mencionar es que, aun para un ejemplo tan simple con 12 samples, para ningún algoritmo coinciden exactamente todos los ``decoded samples''. No estoy seguro si debería mencionarlo ni en que sección convendría hacerlo.
+
+
+
+\end{enumerate}

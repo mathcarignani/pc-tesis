@@ -1,19 +1,14 @@
 
 
-\newcommand{\whileNotWindow}{$\notCond\ \winEntries{\win-1}.\text{value}$}
-\newcommand{\forEachInWindow}{\entry \textnormal{ in} $\winEntriesNO$}
-\newcommand{\valll}{\textit{value}}
-\newcommand{\createEntry}{\textnormal{Entry}(\DPindex, \valll)}
-\newcommand{\decodeIndex}{Decode $\DPindex$ using $\logWinSize$ bits}
-
-\newcommand{\ifFRdeco}{$\valuev$\textnormal{ is not the last sample in }\decodedSamplesTwo \orr $\DPindex \eqqq |\sizee|$}
+\newcommand{\decodeIndex}{Decode $\indexx$ using $\logWinSize$ bits}
+\newcommand{\ifFRdeco}{$\valuev$\textnormal{ is not the last sample in }\decodedSamplesTwo \orr $\indexx \eqqq \sizee$}
 
 \beginAlgorithm
 \onlyInput{\dinputfile{FR}\\\doutputfile\\\cInputWindowAPCA\\\cInputColSize\\\inputTSCol}
 \nEqZero\\
 \While{\whileColumnNotDecoded}{
     \calculateSize\\
-    \If{$|\sizee| \eqqq 1$}{
+    \If{$\sizee \eqqq 1$}{
         \decodeSpecific{\valuev}\\
         Output $\valuev$ to \out\\
         \returnn\\
@@ -22,7 +17,7 @@
     \decodeSpecific{\valuev}\\
     Obtain timestamp for $\valuev$, \tvaluev, from \tscol\\
     \letPointCoor{\pointo}{\tvaluev}{\valuev}\\
-    \While{$\DPindex < |\sizee|$}{
+    \While{$\indexx < \sizee$}{
         \decodeIndex\\
         \decodeSpecific{\valuev}\\
         Obtain timestamp for $\valuev$, \tvaluev, from \tscol\\

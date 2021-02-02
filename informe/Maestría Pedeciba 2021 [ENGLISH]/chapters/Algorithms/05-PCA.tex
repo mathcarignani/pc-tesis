@@ -67,7 +67,7 @@ The third and last window consists of the last four samples, i.e. $[4, 2, 1, 1]$
 
 
 \vspace{-10pt}
-This simple example fairly represents every scenario that might arise during the encoding process. Since the threshold condition holds for the first two windows, both are encoded with exactly the same number of bits, which is $1 + \totbit$, \wheretotbit. On the other hand, since the threshold condition does not hold for the last window, it is encoded with $1 + w*\totbit$ bits. This example illustrates why algorithm PCA is expected to achieve better compression performances on slowly varying signals rather than rough signals.
+This simple example fairly represents every scenario that may arise during the encoding process. Since the threshold condition holds for the first two windows, both are encoded with exactly the same number of bits, which is $1 + \totbit$, \wheretotbit. On the other hand, since the threshold condition does not hold for the last window, it is encoded with $1 + w*\totbit$ bits. Thus, windows consisting of adjacent samples are encoded using less bits. This example illustrates why algorithm PCA is expected to achieve better compression performances on slowly varying signals rather than rough signals.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -79,13 +79,13 @@ This simple example fairly represents every scenario that might arise during the
 \label{algo:pca:nmvariant}
 
 
-In Figure~\ref{pseudoCoderPCANM} we show the coding routine for variant \NOmaskalgo\ of algorithm PCA. In this case, the column entries may be, not only an integer representing a sample value, but also the character \noData\ representing a gap in the data. As in variant \maskalgo, after parsing the column entries into consecutive non-overlapping windows of size $\win$ (\Line 1), each of these windows is encoded independently (\Lines 3-23). However, since not every entry in a window is guaranteed to be an integer, we consider additional scenarios when encoding a window.
+In Figure~\ref{pseudoCoderPCANM} we show the coding routine for variant \NOmaskalgo\ of algorithm PCA. In this case, the column entries may be not only integers representing sample values, but also the character \noData, which represents a gap in the data. As in variant \maskalgo, after parsing the column entries into consecutive non-overlapping windows of size $\win$ (\Line 1), each of these windows is encoded independently (\Lines 3-23). However, since not every entry in a window is guaranteed to be an integer, we consider additional scenarios when encoding a window.
 
 
 \input{chapters/Algorithms/pseudo/05-PCA/PCA-NM-C}
 
 
-A window can be encoded in three different ways. If every entry represents a gap in the data (i.e. the condition in \Line 3 is satisfied), then bit 0 is output, and the special integer \nodata\ is encoded (\Lines 4-5). If every entry in the window represents a sample value, and the absolute difference between its maximum and minimum values is less than or equal to $2\maxerror$ (i.e. the condition in \Line 8 is satisfied), then bit 0 is output, and the value of $\midrange$ for the window is encoded (\Lines 9-11). In every other case, bit 1 is output, and each of the window entries is encoded separately (\Lines 13-21), using \nodata\ for encoding gaps. Notice that in the first two cases the window is encoded with the same number of bits, i.e., $1 + \totbit$, \wheretotbit, while in the last case the window is encoded with $1 + w*\totbit$ bits.
+A window can be encoded in three different ways. If every entry represents a gap in the data (i.e. the condition in \Line 3 is satisfied), then bit 0 is output, and the special integer \nodata\ is encoded (\Lines 4-5). If every entry in the window represents a sample value, and the absolute difference between its maximum and minimum values is less than or equal to $2\maxerror$ (i.e. the condition in \Line 8 is satisfied), then bit 0 is output, and the value of $\midrange$ for the window is encoded (\Lines 9-11). In every other case, bit 1 is output, and each of the window entries is encoded separately (\Lines 13-21), using \nodata\ for encoding a gap. Notice that in the first two cases the window is encoded with the same number of bits, i.e., $1 + \totbit$, \wheretotbit, while in the last case the window is encoded with $1 + w*\totbit$ bits.
 
 
 The decoding routine for variant \NOmaskalgo\ is quite similar to the decoding routine for variant \maskalgo, presented in Figure~\ref{pseudoDecoderPCAM}, the only difference being that, in \Lines 6-7 and 10-11, when \nodata\ is decoded, a character \noData\ is written to the decoded csv data file.

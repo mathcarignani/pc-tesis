@@ -1,5 +1,5 @@
 
-\clearpage
+% \clearpage
 
 \section{Algorithm SF}
 \label{algo:sf}
@@ -7,45 +7,85 @@
 Algorithm \textit{Slide Filter (SF)} \cite{coder:sf} is a linear model algorithm that supports lossless and near-lossless compression. It has a window size parameter ($\win$) that establishes a maximum block size for the algorithm. For SF we define a single variant, \maskalgo.
 
 
-Since it is a linear model algorithm, the encoding process of algorithm SF involves encoding a sequence of line segments. In Figure~\ref{pseudoCoderSF} we show the coding routine, in which all the column entries are integer values (the gaps are encoded separately). It consists of a loop that iterates over all column entries, parsing them into consecutive windows of variable size (up to a maximum size $\win$), such that all the points representing entries in the same window lie within vertical distance $\maxerror$ from the encoded segment for the window. Unlike the rest of the presented algorithms, SF encodes a mixture of connected and disconnected line segments, which can reduce the number of encoded data points, leading to better compression results.
+Since SF is a linear model algorithm, its encoding process involves the encoding of a sequence of line segments. In Figure~\ref{pseudoCoderSF} we show the coding routine, in which all the column entries are integer values (the gaps are encoded separately). It consists of a loop that iterates over all column entries, parsing them into consecutive windows of variable size (up to a maximum size~$\win$), such that all the points representing entries in the same window lie within vertical distance $\maxerror$ from the segment used to approximate said points. An important feature of algorithm SF is that, given two subsequent windows, it allows for the two segments that approximate the points representing their respective entries, to be connected. In fact, this algorithm prioritizes finding such connected segments, 
+% which can lead to better compression results, 
+over finding disconnected segments that minimize the per-sample error between the original and the decoded samples in each window. 
 
 
-
-The algorithm maintains a window of consecutive points, $\window$, which is initially empty (\Line 1). In each iteration, the addition of an incoming point, \point, to the window is considered (\Lines 3-34). The y-coordinate of the point is equal to the value of the column entry, while its x-coordinate is equal to the timestamp for said entry (\Lines 3-4). $\window$ can only be empty in the first iteration, in which case \point\ is added to $\window$ (\Line 5). 
-
-
-The process to establish whether the incoming point must be added to the window or not, is similar to the process described in Section~\ref{algo:ca} for algorithm CA, and is based upon calculating slopes using parameter \maxerror\ and the points already added to the window. If $\window$ has a single point, $\pointP$, then two rays, $\smin$ and $\smax$, are defined from parameter \maxerror, and points $\pointP$ and \point\ (\Lines 8-10); next, \point\ is added to $\window$ (\Line 11). Segment \EseE\ (\Lines 13-14) being included in set \segmentSet\ (\Line 15) means that the threshold condition is valid for point \point. If that is the case, and the window has not reached the maximum size allowed ($\win$), then condition in \Line 16 is satisfied, so $\smin$ and $\smax$ are updated, and \point\ is added to $\window$ (\Lines 17-18). Like it occurs in algorithm CA, as new points are processed, the slope of $\smin$ increases, and the slope of $\smax$ decreases. However, the process for updating those rays is a bit more complex in algorithm SF, since the intersection of the rays is not fixed, and all the points in $\window$ must be considered each time \cite{coder:sf}. To carry out this process, we reuse part of the source code from the framework cited in~\cite{AnEva2013}.
-
-
-If the condition in \Line 16 of the coding routine evaluates to false, then, depending on the case, either auxiliary routine EncodePoint or auxiliary routine EncodeWindow is called. Routine EncodePoint, shown in Figure~\ref{sfPointM}, outputs a bit that indicates whether the encoded point belongs to a connected or disconnected line segment (\Line 1), and the x and y-coordinates of said point are encoded as floats, i.e. using 32 bits (\Lines 2-3). We point out that this is the only algorithm we implemented for which the x-coordinate of an encoded point might not coincide with a timestamp (integer) value. This is the reason why it must be always encoded as a float. Routine EncodeWindow, shown in Figure~\ref{sfUncoM}, obtains the segment (from the input set \segmentSet) which minimizes the MSE for the points in the input window (\Line 1), then encodes its first endpoint via the routine EncodePoint, passing the connected flag as true (\Lines 2-3). Finally, the segment is returned (\Line 4).
-
-
-Back to the coding routine, shown in Figure~\ref{pseudoCoderSF}, if no window has been encoded, then routine EncodeWindow is called (\Line 21), the generated segment is saved as $\segmentLast$ (\Line 33), and a new window that includes point \point\ is created (\Line 34). Otherwise, if a window has already been encoded in a previous iteration, that implies that a segment has already been generated and saved as $\segmentLast$, so the algorithm looks for a new segment that can approximate the data points in $\window$ without violating the threshold constraint, and which can be connected to $\segmentLast$ (\Line 23). If said segment is found, then the intersection point between the connected segments is encoded via routine EncodePoint, passing the connected flag as true (\Lines 25-26). Otherwise, the last point of $\segmentLast$ is encoded via routine EncodePoint, in this case passing the connected flag as false (\Lines 28-29), and routine EncodeWindow is called (\Line 30), which generates a new segment and encodes its first endpoint. Notice that, if the connected segment is found, only one point is encoded, while two points are encoded if that is not the case. The connected segment might not be the best fitted segment to encode the data points in the window, but, unlike algorithm PWLH, algorithm SF prioritizes reducing the number of encoded points, through the use of connected segments, over finding unconnected segments which minimize the MSE for the data points in each window. Depending on the case, in \Line 33 the segment defined in \Line 23 or in \Line 30 is saved, and a new window that includes point \point\ is created (\Line 34)
-
-
-\vspace{+5pt}
 \input{chapters/Algorithms/pseudo/10-SF/SF-M-C}
 
 
 \clearpage
 
 
-\input{chapters/Algorithms/pseudo/10-SF/SF-Point-C-M}
+Another key difference with the rest of the implemented linear algorithms, is that in SF the x-coordinate for the endpoint of an encoded line segment does not necessarily coincide with a timestamp (integer) value. This allows for a larger universe of segments in which to search for connected segments. Therefore, the x-coordinates of the endpoints of every line segment are encoded as floats. For the same reason, the y-coordinates are also encoded as floats (recall that this is also the case in algorithm PWLH, presented in Section~\ref{algo:pwlh}). An auxiliary method \SFEncodePoint, presented in Figure~\ref{sfPointM}, is used for encoding the endpoints of every segment. Observe that, besides the coordinates for both axis, a bit, labeled \connectedS, which indicates whether the endpoint belongs to a connected segment or not, is output.
+
+
+\vspace{-2pt}
+\input{chapters/Algorithms/pseudo/10-SF/SF-Point-C}
+
+
+\vspace{-3pt}
+The coding routine operates by successively growing the current window, $\window$, adding one entry at a time until it is complete. While $\window$ is being filled, the line segment that approximates the points representing the entries in the previous window, \segmentLastT, is not yet fully encoded: its slope is known, and its first endpoint is encoded, but its last endpoint is not. Since the algorithm prioritizes finding a segment that is connected to \segmentLastT, to approximate the points representing the entries in $\window$, the last endpoint of \segmentLastT is defined (and encoded) only after $\window$ is complete. If such connected segment, \segmentConnT, exists, i.e. the condition in \Line 22 is satisfied, then the intersection point is encoded (using an auxiliary routine \SFEncodeWinEndStart, shown in Figure~\ref{SFWinEndStart}). In this case, bit \connectedS is encoded as 1, so that the decoding routine knows that this point is both the last endpoint of the segment that approximates the points representing the entries in the previous window, as well as the first endpoint of the segment that approximates the points representing the entries in $\window$. On the other hand, if a connected segment cannot be found, then the last endpoint of \segmentLastT is encoded (using an auxiliary routine \CAWinEnd, shown in Figure~\ref{SFWinEnd}), and a new segment, \segmentS, which approximates the points representing the entries in $\window$, is computed, and its first endpoint is encoded (using an auxiliary routine \CAWinStart, shown in Figure~\ref{SFWinStart}). In this case, since \segmentLastT is not connected, its last endpoint is encoded with bit \connectedS as 0, while the first endpoint of \segmentS is encoded with bit \connectedS as 1. Whether a connected segment can be found or not, the segment that approximates the points representing the entries in $\window$, of which its slope is known and its first endpoint is encoded, is always saved as \segmentLastT (\Lines 24 and 28), so that it is available in the following iterations, when the process of filling $\window$, which is emptied and added the current sample in \Line~31, continues.
+
+
+\vspace{-2pt}
+\input{chapters/Algorithms/pseudo/10-SF/SF-WinStart-C}
+
+\clearpage
+
+
+\input{chapters/Algorithms/pseudo/10-SF/SF-WinEndStart-C}
 
 \vspace{-5pt}
-\input{chapters/Algorithms/pseudo/10-SF/SF-Unco-M}
+\input{chapters/Algorithms/pseudo/10-SF/SF-WinEnd-C}
 
-The decoding routine is shown in Figure~\ref{pseudoDecoderSF}. We point out that this is the only decoding routine for any of the implemented algorithms that doesn't have a window size parameter ($\win$) input, which is unnecessary since the x-coordinates of the encoded points are encoded as floats. The decoding routine consists of a loop that repeats until every entry in the column has been decoded, which occurs when condition in \Line 2 becomes false. 
+
+The algorithm determines when to stop growing the window, i.e. when the current window $\window$ is complete, based upon two points: \textit{incoming (\incoming)} is the point associated to the column entry for the current iteration, and \textit{intersection (\intersection)} is the point of intersection of \smin and \smax, which are two rays that define a cone maintained by the algorithm, such that the current column entry is added to the current window as long as point \incoming lies within the cone. This cone, in turn, is defined so that if the current column entry is indeed added to the window, all the points representing the entries in the window are at a vertical distance of at most $\maxerror$ from the segment \interSegmentSF.
+
+
+In figures \ref{example:sfIntro1} and \ref{example:sfIntro2} we present an example that illustrates the key steps of the coding algorithm. In Figure~\ref{example:sfIntro1} the two points, \incoming and \intersection, as well as the two rays, \smin and \smax, are shown. In the first iteration, the first sample is added to $\window$ (\Line 6), while in the second iteration the two rays are defined (\Lines 8-10), and the second sample is added to $\window$ (\Line 11). In the third iteration, \incoming lies within the cone determined by the two rays, so the condition in \Line 15 evaluates to false (we assume that $|\window|<\win$), i.e. $\window$ is not complete, and \Lines 33-34 are executed: the third sample is added to $\window$ (\Line 33), and \smin and \smax are updated (\Line 34). The updated information is shown in Figure~\ref{example:sfIntro2}.
+
+
+\vspace{+2pt}
+\exampleSF
+
+
+In the successive iterations, the cone keeps reducing its slope, until eventually either point \incoming lies outside of the cone, or $\window$ reaches its maximum size, making $\window$ complete. Recall that this process is similar in algorithm CA, presented in Section~\ref{algo:ca}. The differences are that, in algorithm SF, the intersection point of the two rays, \smin and \smax, is not fixed (it increases its x-coordinate in the successive iterations), and the procedure for updating the two rays is more complex, since it always considers all the points representing entries in $\window$ \cite{coder:sf}.
+
+
+Auxiliary routine \CAWinStart, shown in Figure~\ref{SFWinStart}, is invoked, after $\window$ is complete, in two scenarios. The first scenario is when $\window$ is the first completed window. In this case, no segment has yet been encoded, so the condition in \Line 17 is satisfied, and \CAWinStart is invoked in \Line 18. The second scenario is when a connected segment approximating the points representing the entries in $\window$ cannot be found. In this case, the condition in \Line 22 evaluates to false, and auxiliary routines \CAWinEnd and \CAWinStart are invoked (\Lines 26-27). In both scenarios, the inputs are the same: \segmentSet\ is the set of line segments defined in \Line 16, which consists of every segment with initial point \incoming that is within the cone; $\window$ is the current window; \tscol\ is the timestamp column; \out\ is the encoded binary file. Recall that routine \CAWinStart computes a new segment, \segmentS, which approximates the points representing the entries in $\window$, and then encodes its first endpoint. \segmentS is the line segment that minimizes the MSE for the points representing entries in $\window$, among the segments included in \segmentSet. \segmentS must belong to \segmentSet\ because this guarantees that every point representing an entry in $\window$ is at a vertical distance of at most $\maxerror$ from \segmentS. The x and y-coordinates for the points are obtained from inputs \tscol\ and $\window$, respectively.
+
+
+% Unlike the rest of linear model algorithms we implemented, SF encodes a mixture of connected and disconnected line segments, which can reduce the number of encoded data points, leading to better compression results.
+
+
+% The algorithm maintains a window of consecutive points, $\window$, which is initially empty (\Line 1). In each iteration, the addition of an incoming point, \point, to the window is considered (\Lines 3-34). The y-coordinate of the point is equal to the value of the column entry, while its x-coordinate is equal to the timestamp for said entry (\Lines 3-4). $\window$ can only be empty in the first iteration, in which case \point\ is added to $\window$ (\Line 5). 
+
+
+% The process to establish whether the incoming point must be added to the window or not, is similar to the process described in Section~\ref{algo:ca} for algorithm CA, and is based upon calculating slopes using parameter \maxerror\ and the points already added to the window. If $\window$ has a single point, $\pointP$, then two rays, $\smin$ and $\smax$, are defined from parameter \maxerror, and points $\pointP$ and \point\ (\Lines 8-10); next, \point\ is added to $\window$ (\Line 11). Segment \EseE\ (\Lines 13-14) being included in set \segmentSet\ (\Line 15) means that the threshold condition is valid for point \point. If that is the case, and the window has not reached the maximum size allowed ($\win$), then condition in \Line 16 is satisfied, so $\smin$ and $\smax$ are updated, and \point\ is added to $\window$ (\Lines 17-18). Like it occurs in algorithm CA, as new points are processed, the slope of $\smin$ increases, and the slope of $\smax$ decreases. However, the process for updating those rays is a bit more complex in algorithm SF, since the intersection of the rays is not fixed, and all the points in $\window$ must be considered each time \cite{coder:sf}. To carry out this process, we reuse part of the source code from the framework cited in~\cite{AnEva2013}.
+
+
+% If the condition in \Line 16 of the coding routine evaluates to false, then, depending on the case, either auxiliary routine EncodePoint or auxiliary routine EncodeWindow is called. Routine EncodePoint, shown in Figure~\ref{sfPointM}, outputs a bit that indicates whether the encoded point belongs to a connected or disconnected line segment (\Line 1), and the x and y-coordinates of said point are encoded as floats, i.e. using 32 bits (\Lines 2-3). We point out that this is the only algorithm we implemented for which the x-coordinate of an encoded point might not coincide with a timestamp (integer) value. This is the reason why it must be always encoded as a float. Routine EncodeWindow, shown in Figure~\ref{sfUncoM}, obtains the segment (from the input set \segmentSet) which minimizes the MSE for the points in the input window (\Line 1), then encodes its first endpoint via the routine EncodePoint, passing the connected flag as true (\Lines 2-3). Finally, the segment is returned (\Line 4).
+
+
+% Back to the coding routine, shown in Figure~\ref{pseudoCoderSF}, if no window has been encoded, then routine EncodeWindow is called (\Line 21), the generated segment is saved as $\segmentLast$ (\Line 33), and a new window that includes point \point\ is created (\Line 34). Otherwise, if a window has already been encoded in a previous iteration, that implies that a segment has already been generated and saved as $\segmentLast$, so the algorithm looks for a new segment that can approximate the data points in $\window$ without violating the threshold constraint, and which can be connected to $\segmentLast$ (\Line 23). If said segment is found, then the intersection point between the connected segments is encoded via routine EncodePoint, passing the connected flag as true (\Lines 25-26). Otherwise, the last point of $\segmentLast$ is encoded via routine EncodePoint, in this case passing the connected flag as false (\Lines 28-29), and routine EncodeWindow is called (\Line 30), which generates a new segment and encodes its first endpoint. Notice that, if the connected segment is found, only one point is encoded, while two points are encoded if that is not the case. The connected segment might not be the best fitted segment to encode the data points in the window, but, unlike algorithm PWLH, algorithm SF prioritizes reducing the number of encoded points, through the use of connected segments, over finding unconnected segments which minimize the MSE for the data points in each window. Depending on the case, in \Line 33 the segment defined in \Line 23 or in \Line 30 is saved, and a new window that includes point \point\ is created (\Line 34)
+
+\vspace{+10pt}
+The decoding routine is shown in Figure~\ref{pseudoDecoderSF}. We point out that this is the only decoding routine for any of the implemented algorithms that doesn't have a window size parameter ($\win$) input, which is unnecessary since the x-coordinates of the encoded points are encoded as floats (recall that the rest of the algorithms require parameter $\win$ in order to decode the variable size of each encoded window, reading $\logWinSize$ bits, or to know the fixed window size in the case of algorithm PCA). The decoding routine consists of a loop that repeats until every entry in the column has been decoded, which occurs when condition in \Line 2 becomes false. 
+
+
+Each iteration of the loop starts by calling the auxiliary routine DecodePoint (\Line 3), shown in Figure~\ref{sfPointMD}, which returns a decoded point, \pointP, and the \connected\ flag. This flag indicates whether the encoded segment to which the point belongs to is connected to the subsequent segment or not.  In the first iteration, \pointP\ is set to be the initial point of the segment, $\pointO$ (\Line 5). On the other hand, in the rest of iterations, \pointP\ is set to be the final point of the segment, $\pointF$ (\Line 8), and the auxiliary routine \decodeSegment is called, with the coordinates of both endpoints of the segment as inputs (\Line 9). As we recall from Figure~\ref{pseudoDecoLinear}, routine \decodeSegment returns a list consisting of the sample values that are decoded from the segment, which are then written in the decoded csv data file (\Lines 10-12). If the segment is connected, no additional point must be decoded, since in that case the first endpoint of the subsequent encoded segment is equal to the last endpoint of the last decoded segment (\Line 14). On the other hand, if the segment is not connected, the first endpoint of the subsequent encoded segment must be decoded (\Line 16).
+
+
+\clearpage
 
 
 \input{chapters/Algorithms/pseudo/10-SF/SF-M-D}
 
 
-Each iteration of the loop starts by calling the auxiliary routine DecodePoint (\Line 3), shown in Figure~\ref{sfPointMD}, which returns a decoded point, \pointP, and the \connected\ flag, that indicates whether the encoded segment to which the point belongs to is connected to the subsequent segment or not.  In the first iteration, \pointP\ is set to be the initial point of the segment, $\pointO$ (\Line 5). On the other hand, in the rest of iterations, \pointP\ is set to be the final point of the segment, $\pointF$ (\Line 8), and the auxiliary routine \decodeSegment is called with both endpoints of the segment as inputs (\Line 9). As we recall from Figure~\ref{pseudoDecoLinear}, routine \decodeSegment returns a list consisting of the sample values that are decoded from the segment, which are then written in the decoded csv data file (\Lines 10-12). If the segment is connected, no additional point must be decoded, since in that case the first endpoint of the subsequent encoded segment is equal to the last endpoint of the last decoded segment (\Line 14). However, if the segment is not connected, the first endpoint of the subsequent encoded segment must be decoded (\Line 16).
-
-
-\vspace{-3pt}
-\input{chapters/Algorithms/pseudo/10-SF/SF-Point-D-M}
+\vspace{-5pt}
+\input{chapters/Algorithms/pseudo/10-SF/SF-Point-D}
 
         
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -53,86 +93,99 @@ Each iteration of the loop starts by calling the auxiliary routine DecodePoint (
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\vspace{-17pt}
+\clearpage
 \subsection{Example}
 \label{algo:sf:example}
 
 
-\vspace{-3pt}
+\vspace{-5pt}
 \exampleIntro{\ref{example:sf:1}}
 
 
-Since there are only 12 samples to encode, no window in this example can reach the maximum size (256). Therefore, a window is only encoded when the incoming point, \point, violates the threshold condition. Recall from the coding routine, shown in Figure~\ref{pseudoCoderSF}, that this occurs occurs when segment \EseE\ is not included in set \segmentSet\ (\Lines 13-16). In the first iteration, the first sample point is added to $\window$ (\Line 6). In the second iteration, two rays, $\smin$ and $\smax$, are defined from parameter \maxerror, and the first two sample points (\Lines 8-10). Both rays are shown in Figure~\ref{example:sf:1}. The second sample point is also added to $\window$ (\Line 11). 
+Since there are only 12 samples to encode, no window in this example can reach the maximum size (256). Therefore, the current column entry is added to the current window, $\window$, as long as the incoming point (\incoming) lies within the cone determined by the two rays, \smin and \smax. In the first iteration, the condition in \Line 5 is satisfied, so the first sample (1) is added to $\window$ (\Line~6). In the second iteration, since $\window$ has a single element, the condition in \Line 7 is satisfied, so using points \snapshot and \incomingP{2}, and parameter \maxerror, rays $\smin$ and $\smax$ are defined (\Lines 8-10). Both rays are shown in Figure~\ref{example:sf:1}. The second sample (1) is also added to $\window$ (\Line~11). 
 
 
+\vspace{-5pt}
 \exampleStep{sf}{1}{\label{example:sf:1}}{Algorithm SF example. Step 1.}
+
+
+\vspace{-8pt}
+In the third iteration, another sample value equal to 1 is processed. In Figure~\ref{example:sf:2}, point \incomingP{3}, as well as segment \interSegmentSFE{3}, defined in \Lines 13-14, are shown.
+
+
+\vspace{-4pt}
+\exampleStep{sf}{2}{\label{example:sf:2}}{Algorithm SF example. Step 2.}
 
 
 \clearpage
 
 
-In the third iteration, sample point \incomingP{3} is processed. In Figure~\ref{example:sf:2}, both \incomingP{3} and segment \EseEP{3}, defined in \Lines 13-14, are shown. \EseEP{3} includes the point in which $\smin$ and $\smax$ intersect, and \incomingP{3}.
-
-
-\exampleStep{sf}{2}{\label{example:sf:2}}{Algorithm SF example. Step 2.}
-
-
-Since the slope of segment \EseEP{3} is between the slopes of rays $\smin$ and $\smax$, the condition in \Line 16 is satisfied. Therefore, $\smin$ and $\smax$ are updated, as shown in Figure~\ref{example:sf:3}, and \incomingP{3} is added to $\window$ (\Line~18). 
+Since \incomingP{3} lies within the cone determined by the two rays, the condition in \Line 15 evaluates to false. Therefore, the third sample is added to $\window$ (\Line 33), and $\smin$ and $\smax$ are updated (\Line 34). Figure~\ref{example:sf:3}  shows the information after the third iteration is completed. 
 
 
 \exampleStep{sf}{3}{\label{example:sf:3}}{Algorithm SF example. Step 3.}
 
 
-\clearpage
-
-
-In the following six iterations, the \Lines executed in the coding routine are the same as in the third one. In each iteration, the incoming point is added to the window, and both rays are updated, with the slope of $\smin$ increasing, and the slope of $\smax$ decreasing. Figure~\ref{example:sf:4} shows the information after the 9th iteration is completed. At this point, $\window$ includes the first 9 sample points, and nothing has yet been encoded in the binary file. 
+The following six iterations are similar to the last one. In each iteration, the sample values are added to the window, and both rays are updated, reducing the slope of the cone. Figure~\ref{example:sf:4} shows the information after the 9th iteration is completed. At this point, $\window$ includes the first 9 samples, and no bits have yet been written in the binary file. 
 
 
 \exampleStep{sf}{4}{\label{example:sf:4}}{Algorithm SF example. Step 4.}
 
 
-In the 10th iteration, sample point \incomingP{10} is processed. In Figure~\ref{example:sf:5}, both \incomingP{10} and segment \EseEP{10} are shown. This is the first iteration where the condition in \Line 16 is not satisfied, since the slope of segment \EseEP{10} is smaller than the slope of $\smin$. No window has yet been encoded, so the auxiliary routine EncodeWindow is called, with parameters $\window$ and \segmentSet\ (\Line 21). Routine EncodeWindow finds the segment included in \segmentSet\ which minimizes the MSE for the 9 sample points in $\window$ (among the segments included \segmentSet). Said segment, and its first endpoint, which is encoded via routine EncodePoint, are also shown in Figure~\ref{example:sf:5}. The next encoded point, which is determined in a future iteration, must also belong to that segment. Finally, \Lines 33 and 34 are executed, the segment is saved, and \incomingP{10} is added to a new window.
+\clearpage
+
+
+Eventually, in the 10th iteration, sample value 2 is processed. In Figure~\ref{example:sf:5}, point \incomingP{10} and segment \interSegmentSFE{10} are shown.
 
 
 \exampleStep{sf}{5}{\label{example:sf:5}}{Algorithm SF example. Step 5.}
 
 
-\clearpage
-
-
-In the 11th iteration, $\window$ has a single element, so the two rays are defined from parameter \maxerror, and the 10th and 11th sample points (\Lines 8-10). Both rays are shown in Figure~\ref{example:sf:6}. The 11th sample point is also added to $\window$ (\Line 11).
+\vspace{-5pt}
+For the first time, the incoming point, \incomingP{10}, lies outside of the cone, due to \interSegmentSFE{10} having a smaller slope than \smin. Since no segment has yet been encoded, the condition in \Line 17 is satisfied, and auxiliary routine \CAWinStart is invoked, with one of the arguments being \segmentSet, which is a set of line segments defined in \Line 16. Routine \CAWinStart finds the segment included in set \segmentSet\ that minimizes the MSE for the 9 points representing entries in $\window$ (among the segments included in \segmentSet), and encodes its first endpoint. In Figure~\ref{example:sf:6} the segment and its encoded endpoint are shown. Observe that, since this segment is included in set \segmentSet, it passes through point \interPoint, and its slope is between the slopes of rays \smin and \smax. The point encoded next, to be determined in a future iteration, must also belong to this segment, and it will also belong to the subsequent segment if an appropriate connected segment can be found. Finally, the segment is saved as \segmentLastT (\Line 19), and $\win$ is emptied and added the current sample (\Line~31).
 
 
 \exampleStep{sf}{6}{\label{example:sf:6}}{Algorithm SF example. Step 6.}
 
 
-In the 12th and last iteration, sample point \incomingP{12} is processed. In Figure~\ref{example:sf:7}, both \incomingP{12} and segment \EseEP{12}, defined in \Lines 13-14, are shown. \EseEP{12} includes the point in which $\smin$ and $\smax$ intersect, and \incomingP{12}.
+\clearpage
+
+
+In the 11th iteration, since $\window$ has a single element, the condition in \Line 7 is satisfied, so using points \snapshot and \incomingP{11}, and parameter \maxerror, rays $\smin$ and $\smax$ are defined (\Lines 8-10). Both rays are shown in Figure~\ref{example:sf:7}. The 11th sample (1) is also added to $\window$ (\Line 11). 
+
 
 \exampleStep{sf}{7}{\label{example:sf:7}}{Algorithm SF example. Step 7.}
 
 
-\clearpage
+In the 12th and last iteration, another sample value equal to 1 is processed. In Figure~\ref{example:sf:8}, point \incomingP{12}, as well as segment \interSegmentSFE{12}, defined in \Lines 13-14, are shown.
 
 
-Since the slope of segment \EseEP{12} is between the slopes of rays $\smin$ and $\smax$, the condition in \Line 16 is satisfied. Therefore, $\smin$ and $\smax$ are updated, as shown in Figure~\ref{example:sf:8}, and \incomingP{12} is added to $\window$ (\Line~18).
-
-
-\vspace{-5pt}
 \exampleStep{sf}{8}{\label{example:sf:8}}{Algorithm SF example. Step 8.}
 
 
-\vspace{-10pt}
-After the last iteration of the loop finishes, $\window$ is not empty, so its points are encoded executing the same code as in \Lines 23-31 (this was left out of the coding routine in Figure~\ref{pseudoCoderSF} for clarity). In this case, a connected segment that approximates the sample points in $\window$ exists, so the intersection point between said segment and the previous segment (the one that was saved, and whose first endpoint was encoded in the 10th iteration), is encoded via the routine EncodePoint (\Line 26). Since the last sample point has already been processed, the second endpoint of the current segment must also be encoded, through the routine EncodePoint (this was also left out of Figure~\ref{pseudoCoderSF} for clarity). In Figure~\ref{example:sf:9}, the three encoded points and the two associated segments are shown. Notice that the last segment passes through the point in which rays $\smin$ and $\smax$ intersect, and its slope is between the slopes of those two rays. We point out that, even though in this example the x-coordinate of the intersection point between the segments coincides with a timestamp (integer) value, this is not always necessary the case.
+\clearpage
 
 
+\vspace{-5pt}
+Since \incomingP{12} lies within the cone determined by the two rays, the condition in \Line 15 evaluates to false. Therefore, the 12th sample is added to $\window$ (\Line 33), and $\smin$ and $\smax$ are updated (\Line 34). Figure~\ref{example:sf:9}  shows the information after the 12th iteration is completed. At this point, $\window$ includes the last three samples.
+
+
+\vspace{-11.5pt}
 \exampleStep{sf}{9}{\label{example:sf:9}}{Algorithm SF example. Step 9.}
+
+
+\vspace{-16pt}
+After executing the last iteration of the loop, $\window$ is not empty, so a segment that approximates the three points representing entries in $\window$ must be encoded, executing the same code as in \Lines 16-30 (this was left out of the coding routine in Figure~\ref{pseudoCoderSF} for clarity). In this case, the algorithm finds a connected segment, \segmentConnT, included in set \segmentSet, so the condition in \Line 22 is satisfied, and the intersection point between \segmentLastT and \segmentConnT is encoded by the auxiliary routine \SFEncodeWinEndStart, shown in Figure~\ref{SFWinEndStart}. Since the last sample is already processed, the last endpoint of the connected segment must also be encoded, in this case by the auxiliary routine \CAWinEnd, shown in Figure~\ref{SFWinEnd} (this step was also left out of the coding routine for clarity). In Figure~\ref{example:sf:10}, the three encoded points and the two connected segments are shown. The three points are encoded with auxiliary method \SFEncodePoint, in the first two cases with bit \connectedS as 1, and in the last case with bit \connectedS as 0. We point out that, even though in this example the x-coordinate of the intersection endpoint coincides with a timestamp (integer) value, this is not necessarily always the case.
+
+
+\vspace{-11.5pt}
+\exampleStep{sf}{10}{\label{example:sf:10}}{Algorithm SF example. Step 10.}
 
 
 \clearpage
 
 
-Finally, in Figure~\ref{example:sf:10} we also display the values of the decoded samples, which are the values that the decoding routine, shown in Figure~\ref{pseudoDecoderSF}, writes to the decoded csv data file.
+Finally, in Figure~\ref{example:sf:11} we also display the values of the decoded samples, which are the values that the decoding routine, shown in Figure~\ref{pseudoDecoderSF}, writes to the decoded csv data file.
 
-\exampleStep{sf}{10}{\label{example:sf:10}}{Algorithm SF example. Step 10.}
+\exampleStep{sf}{11}{\label{example:sf:11}}{Algorithm SF example. Step 11.}
 

@@ -13,13 +13,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% CODER AND DECODER COMMANDS %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\minn}{\textit{min}}
-\newcommand{\maxx}{\textit{max}}
-\newcommand{\minntwo}{\textit{m}}
-\newcommand{\maxxtwo}{\textit{M}}
+\newcommand{\minn}{\textit{m}}
+\newcommand{\maxx}{\textit{M}}
 \newcommand{\error}{\textit{err}}
 \newcommand{\file}{\textit{in}}
-\newcommand{\out}{\textit{out}}
 \newcommand{\window}{\textit{win}}
 \newcommand{\arrayy}{\textit{array}}
 \newcommand{\windowVal}{\textit{win\_val}}
@@ -85,23 +82,16 @@
 \newcommand{\codeFloat}[1]{Encode {#1} as a float, using 32 bits}
 \newcommand{\decodeFloat}[1]{Decode {#1} as a float, using 32 bits}
 
-% TODO: borrar
-\newcommand{\calculateMinMax}{Let \minn\ and \maxx\ be the minimum and maximum sample values in \window}
-\newcommand{\recalculateMinMax}{recalculate \minn\ and \maxx}
-
 \newcommand{\encodeWindowSize}{Encode $\windowSize$ using $\logWinSize$ bits}
 \newcommand{\decodeWindowwSize}{Decode $\sizee$ using $\logWinSize$ bits}
-
 
 %% BASE - CODER
 \newcommand{\columnInput}{\column: column of the csv data file to be encoded}
 
 %% PCA - CODER
 \newcommand{\cInputWindowPCA}{\win: fixed window size}
-% TODO: remove
-\newcommand{\calculateMidrange}{$\midrange = (\windowMin + \windowMax)/2$}
-\newcommand{\calculateMidrangeTwo}{$\midrange = (\minn + \maxx)/2$}
-\newcommand{\calculateMidrangeThree}{$\midrange = (\minntwo + \maxxtwo)/2$}
+\newcommand{\calculateMinMax}{Let \minn\ and \maxx\ be the minimum and maximum sample values in \window}
+\newcommand{\calculateMidrange}{$\midrange = (\minn + \maxx)/2$}
 \newcommand{\codeMidrange}{\codeInt(\midrange, \colTotBits)}
 \newcommand{\eachValueInWindow}{\textnormal{sample in} \window\commaa\ \valuev,}
 \newcommand{\eachEntryInWindow}{\textnormal{entry in} \window\commaa\ \entry,}
@@ -117,12 +107,10 @@
 %% APCA - CODER
 \newcommand{\cInputWindowAPCA}{\win: maximum window size}
 \newcommand{\codeWindowValue}{\codeInt(\windowCodeValue, \colTotBits)}
-\newcommand{\calculateMMaux}[2]{Let \minntwo\ and \maxxtwo\ be the minimum and maximum sample values in #1, #2}
+\newcommand{\calculateMMaux}[2]{Let \minn\ and \maxx\ be the minimum and maximum sample values in #1, #2}
 \newcommand{\calculateMinMaxAPCA}{\calculateMMaux{\windowUnion}{resp.}}
-\newcommand{\calculateMinMaxAPCAWindow}{\calculateMMaux{\window}{respectively}}
 
 % TODO: borrar
-\newcommand{\updateMinMaxx}{Let $m  = \min \{\minn, \entry\}$ and $M  = \max \{\maxx, \entry\}$}
 \newcommand{\NOTvalidThreThree}{$(M - m) > 2\maxerror$}
 \newcommand{\encodeWindowAPCA}{EncodeWindow(\window, \out, \win) // routine shown in Figure~\ref{apcaWindowM}}
 \newcommand{\AddEntry}{Add \entry\ to \window}
@@ -133,13 +121,22 @@
 
 %% PWLH - CODER
 \newcommand{\firstIteratPWHL}{\textnormal{\entry\ is not the first entry in \column}}
+\newcommand{\EncodeWindowCA}{EncodeWindow}
+\newcommand{\hull}{\textit{H}}
+\newcommand{\encodeWindowPWLH}{\EncodeWindowCA(\window, \out, \win, \tscol) // routine shown in Figure~\ref{pwlhWindowM}}
+\newcommand{\encodeLastWindowPWLH}{\EncodeLastWindowPWLH(\window, \out, \win, \tscol) // routine shown in Figure~\ref{pwlhLastWindowM}}
+
+\newcommand{\tentry}{$t_\entry$}
+\newcommand{\obtainTS}{Obtain timestamp for \entry, \tentry, from \tscol}
+\newcommand{\letPointCoor}[3]{Let {#1}\ be the point with coordinates ({#2}, {#3})}
+\newcommand{\letPoint}{\letPointCoor{\point}{\tentry}{\entry}}
+\newcommand{\winNoEmpty}{\window \textnormal{ is not empty}}
 
 %% CA - CODER
 \newcommand{\windowEmpty}{\window\textnormal{ is empty}}
 \newcommand{\firstIteratCA}{\textnormal{\entry\ is the first entry in \column}}
 \newcommand{\letPointCA}{Let \incoming\ be the point with coordinates (\tentry, \entry)}
 
-\newcommand{\pointP}{\textit{P}}
 \newcommand{\pointInput}{\valuev: value to encode}
 
 \newcommand{\encodeWinStaCACommon}[1]{\CAWinStartP(\entry, \out, \win) // #1 in Figure~\ref{caWinStart}}
@@ -147,6 +144,7 @@
 \newcommand{\encodeWinEndCA}{\CAWinEndP(\window, \out, \win) // routine shown in Figure~\ref{caWinEnd}}
 
 \newcommand{\addSnapshot}{add \entry\ to \window}
+\newcommand{\AddSnapshot}{Add \entry\ to \window}
 \newcommand{\xx}{\textit{x}}
 \newcommand{\yy}{\textit{y}}
 
@@ -164,7 +162,6 @@
 %% DECO - LINEAR
 \newcommand{\tss}{\textit{t}}
 \newcommand{\sv}{\textit{s}}
-\newcommand{\tscol}{\textit{t\_col}}
 \newcommand{\tsO}{$\tss_o$}
 \newcommand{\tsN}{$\tss_f$}
 \newcommand{\tsI}{$\tss_i$}

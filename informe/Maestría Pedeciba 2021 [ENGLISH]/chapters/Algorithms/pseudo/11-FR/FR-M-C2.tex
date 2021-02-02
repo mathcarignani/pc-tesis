@@ -1,8 +1,7 @@
 
 
-\newcommand{\InputdisPoints}{\disPoints: array including the \window\ indexes of the displaced points}
-\newcommand{\InputWindow}{\window: window}
-\newcommand{\InputFirstIndex}{$\firstIndex$, $\lastIndex$: \window\ indexes of the candidate line segment's endpoints}
+\newcommand{\InputdisPoints}{\disPoints: list including the indexes (relative to \window, in ascending order) of the respective y-coordinates of the displaced points}
+\newcommand{\InputFirstIndex}{$\firstIndex$, $\lastIndex$: indexes (relative to \window) of the y-coordinates of the endpoints of the candidate line segment}
 
 \newcommand{\DPconditionTwoOne}{$\firstIndex + 1 < \lastIndex$}
 \newcommand{\DPconditionTwoTwo}{$\notCond\ \validSegment$}
@@ -11,18 +10,16 @@
 
 
 \beginAlgorithm
-\onlyInput{\InputWindow\\\cInputThreshold\\\InputdisPoints\\\InputFirstIndex}
-If they are not included, add $\firstIndex$ and $\lastIndex$ to \disPoints, in ascending order\\
-\If{\DPconditionTwoOne}{
-    \returnn
-}
-Let the following points be defined: \pointo$=\window[\firstIndex]$ and \pointf$=\window[\lastIndex]$\\
+\onlyInput{\windowInput\\\inputTSCol\\\cInputThreshold\\\InputdisPoints\\\InputFirstIndex}
+If they are not already included, add $\firstIndex$ and $\lastIndex$ to \disPoints, in ascending order\\
+If $\firstIndex + 1 \geq \lastIndex$ then \returnn // base case\\ 
+Let \pointo\ and \pointf\ be the points whose y-coordinates are $\window[\firstIndex]$ and $\window[\lastIndex]$, and whose x-coordinates are obtained from \tscol\\
 Let \segment\ be the line segment whose endpoints are \pointo\ and \pointf\\
 Let \validSegment\ be true iff for every point \pointi\ in \window, the vertical distance between \segment\ and \pointi\ is less than or equal to \maxerror\\
 \If{\DPconditionTwoTwo}{
     Let \half\ =\ $\floor{(\firstIndex +\lastIndex) / 2}$\\
-    \getDisplacedPoints{\firstIndex}{\half}\\
-    \getDisplacedPoints{\half}{\lastIndex}\\
+    Recursively call \getDisplacedPoints{\firstIndex}{\half}\\
+    Recursively call \getDisplacedPoints{\half}{\lastIndex}\\
 }
 \EndPseudo{Auxiliary routine \getDisplacedPointsMethod\ for algorithm \coderFR.}{\label{pseudoCoderFRM2}}
 

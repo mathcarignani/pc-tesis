@@ -23,20 +23,22 @@
 
 }
 
+\newcommand{\FirstSentence}{Compression performance of the best evaluated coding algorithm, for various error values on each data type of each dataset}
+\newcommand{\SecondSentence}{Each row contains information relative to certain data type. For each error parameter value, the first column shows the minimum CR, and the second column shows the base-2 logarithm of the best window size for the best algorithm (the one that achieves the minimum CR), which is identified by a certain cell color described in the legend above the table}
 
 \newcommand{\captionone}{
-Compression performance of the best evaluated coding algorithm, for various error thresholds on each data type of each dataset. Each row contains information relative to certain data type. For each threshold, the first column shows the minimum CR, and the second column shows the base-2 logarithm of the window size parameter for the best algorithm (the one that achieves the minimum CR), which is identified by a certain cell color described in the legend above the table.
+\FirstSentence. \SecondSentence.
 }
 
 \newcommand{\captiontwo}{
-Compression performance of the best evaluated coding algorithm, for various error thresholds on each data type of each dataset, including the results obtained by gzip. Each row contains information relative to certain data type. For each threshold, the first column shows the minimum CR, and the second column shows the base-2 logarithm of the window size parameter for the best algorithm (the one that achieves the minimum CR), which is identified by a certain cell color described in the legend above the table. Algorithm gzip doesn't have a window size parameter, so the cell is left blank in these cases.
+\FirstSentence, including the results obtained by gzip. Each row contains information relative to certain data type. \SecondSentence. Algorithm gzip doesn't have a window size parameter, so the cell is left blank in these cases.
 }
 
 \newcommand{\captionminmaxone}{
-$\text{\maxRD}(a, e)$ obtained for every pair of coding algorithm variant $a_v \in V^*$ and threshold parameter $e \in E$. For each $e$, the cell corresponding to the $\text{\minmaxRD}(a)$ value is highlighted.  
+$\text{\maxRD}(a, e)$ obtained for every pair of coding algorithm variant $a_v \in V^*$ and error parameter $e \in E$. For each $e$, the cell corresponding to the $\text{\minmaxRD}(a)$ value is highlighted.  
 }
 
 \newcommand{\captionminmaxtwo}{
-$\text{\maxRD}(a, e)$ obtained for every pair of coding algorithm variant $a_v \in V^* \cup \{\text{gzip}\}$ and threshold parameter $e \in E$. For each $e$, the cell corresponding to the $\text{\minmaxRD}(a)$ value is highlighted.  
+$\text{\maxRD}(a, e)$ obtained for every pair of coding algorithm variant $a_v \in V^* \cup \{\text{gzip}\}$ and error parameter $e \in E$. For each $e$, the cell corresponding to the $\text{\minmaxRD}(a)$ value is highlighted.  
 }
 

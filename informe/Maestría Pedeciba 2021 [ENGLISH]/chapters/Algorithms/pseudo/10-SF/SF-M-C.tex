@@ -1,19 +1,20 @@
 
 
-\newcommand{\pointNS}{\textit{E}}
-\newcommand{\prevPoint}{\incoming_{\textit{last}}}
-\newcommand{\firstPoint}{\incoming_{\textit{first}}}
-
-\newcommand{\newRayOne}{Let \smin\ be the ray with initial point $(\pointP.\xx, \pointP.\yy+\maxerror)$, through point $(\pointNS.\xx, \pointNS.\yy-\maxerror)$}
-\newcommand{\newRayTwo}{Let \smax\ be the ray with initial point $(\pointP.\xx, \pointP.\yy-\maxerror)$, through point $(\pointNS.\xx, \pointNS.\yy+\maxerror)$}
+\newcommand{\newRayOne}{Let \smin\ be the ray with initial point $(\snapshot.\xx, \snapshot.\yy+\maxerror)$, through point $(\incoming.\xx, \incoming.\yy-\maxerror)$}
+\newcommand{\newRayTwo}{Let \smax\ be the ray with initial point $(\snapshot.\xx, \snapshot.\yy-\maxerror)$, through point $(\incoming.\xx, \incoming.\yy+\maxerror)$}
 
 \newcommand{\slopeCond}{$\slope(\smin)\leq \slope(\lineSeg) \leq \slope(\smax)$}
+\newcommand{\slopeCondF}{$\slope(\smin)\leq \slope(\interSegmentSF) \leq \slope(\smax)$}
 
 \newcommand{\lineSeg}{\textit{s}}
-\newcommand{\validCondSF}{$\EseSE \in \segmentSet$}
-\newcommand{\AddPointSF}{\createWindowTwo, then add \pointNS\ to \window}
-% \newcommand{\notLastPoint}{\pointNS \textnormal{ is not the last point}}
-\newcommand{\interPoint}{\textit{I}}
+
+\newcommand{\encodeWinStartSF}{\segment\ = \CAWinStartP(\segmentSet, $\window$, \tsColumn, \out) // rout. in Fig.\hspace{1pt}\ref{SFWinStart}}
+\newcommand{\encodeWinEndSF}[1]{\SFEncodePointP(\pointP, \out, #1) // routine shown in Figure~\ref{sfPointM}}
+
+
+\newcommand{\inputSegmentPrev}{$\segmentLast$: line segment that approximates the points representing entries in the previous window}
+\newcommand{\inputSegment}{\segment: line segment that approximates the points representing entries in $\window$}
+
 
 \beginAlgorithm
 \onlyInput{\columnInput\\\cOutputFile{SF}\\\cInputThreshold\\\cInputWindowAPCA\\\inputTSCol}
@@ -22,48 +23,44 @@
     \obtainTS\\
     \letPoint\\
     \uIf{\firstIteratCA}{
-        \AddPoint, then \continueAlgo\\
+        \AddSnapshot, then \continueAlgo\\
     }
     \ElseIf{$|\window| == 1$}{
-        Let \pointP\ be the single point in $\window$\\
+        Let \snapshot be the point representing the single entry in $\window$\\
         \newRayOne\\
         \newRayTwo\\
-        \AddPoint, then \continueAlgo\\
+        \AddSnapshot, then \continueAlgo\\
     }
+    
     Let \interPoint\ be the point of intersection of \smin\ and \smax\\
-    Let \EseSE\ be a segment with endpoint \interPoint\ that passes through point \incoming\\
-    Let \segmentSet\ be the set that includes every line segment \lineSeg\ that passes through point \interPoint\ and satisfies the following condition: \slopeCond\\
-    
-    \If{\validCondSF \andd \windowNotFullOne\ }{
-        Update \smin\ and \smax\\
-        \AddPoint, then \continueAlgo\\
-    }
-    
-    \uIf{\textnormal{no window has been encoded}}{
-        \segment\ = EncodeWindow($\window$, \segmentSet) // routine shown in Figure~\ref{sfUncoM}\\
-    }
-    
-    \Else{
-        Let $\segment \in\segmentSet$ be the line segment that approximates the data points in $\window$, and can be connected to $\segmentLast$\\
-        \uIf{\segment \textnormal{ exists}}{
-            Let \pointNS\ be the point of intersection of $\segmentLast$ and \segment\\
-            EncodePoint(\pointNS, \out, true) // routine shown in Figure~\ref{sfPointM}\\
+    Let \interSegmentSF be the segment with initial point \interPoint\ that passes through point \incoming\\
+    \uIf{\nott\,\slopeCondF \orr \windowFull\ }{
+        Let \segmentSet\ be the set of line segments such that $\lineSeg \in \segmentSet$ iff \lineSeg\ has initial point \interPoint\ and \slopeCond\\
+        \uIf{\nott\,\textnormal{$\segmentLast$ exists}}{
+            \encodeWinStartSF\\
+            Make $\segmentLast = \segment$\\
         }
+        
         \Else{
-            Let \pointNS\ be the last endpoint of $\segmentLast$\\
-            EncodePoint(\pointNS, \out, false) // routine shown in Figure~\ref{sfPointM}\\
-            \segment\ = EncodeWindow($\window$, \segmentSet) // routine shown in Figure~\ref{sfUncoM}
+            Let $\segmentConn \in\segmentSet$ be a line segment connected to $\segmentLast$, which approximates the points representing entries in $\window$\\
+            \uIf{\textnormal{$\segmentConn$ exists}}{
+                \SFEncodeWinEndStartP($\segmentLast$, $\segmentConn$, \out) // rout. in Fig.~\ref{SFWinEndStart}\\
+                Make $\segmentLast = \segmentConn$\\
+            }
+            \Else{
+                \CAWinEndP($\segmentLast$, \out)// routine shown in Figure~\ref{SFWinEnd}\\
+                \encodeWinStartSF\\
+                Make $\segmentLast = \segment$\\
+            }
         }
+        \createWindowTwo, then \addSnapshot\\
     }
-    Save \segment\ as $\segmentLast$\\
-    \AddPointSF\\
+    \Else{
+        \AddSnapshot\\
+        Update \smin\ and \smax, considering the points representing entries in $\window$\\
+    }
+        
+    
 }
-% \uIf{$|\window| == 1$}{
-%     \encodeWindowSizee\\
-%     Let \valuev\ be the y-coordinate of the single point in \window\\
-%     \encodeSpecific{$\valuev$}\\
-% }
-% \ElseIf{$|\window| > 1$}{
-%     \encodeWindowPWLH\\
 \EndAlgorithmVariant{Coding}{\coderSF}{\maskalgo}{\label{pseudoCoderSF}}
 
