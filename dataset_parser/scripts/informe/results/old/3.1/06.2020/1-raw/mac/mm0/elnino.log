@@ -1,0 +1,741 @@
+
+RESULTS
+--------------------------(same file!)
+CoderBase
+TIME: 2020-05-31 03:30:23
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/base/el-nino.c.cpp.csv
+-> size (bytes): 4,926,796
+-> 50.17% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 03:44:21
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 12,061,248
+-> 122.82% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 03:58:55
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 9,604,541
+-> 97.8% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 04:13:29
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 8,444,251
+-> 85.99% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 04:30:39
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 7,923,088
+-> 80.68% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 04:47:38
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 7,713,916
+-> 78.55% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 05:02:08
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 7,661,715
+-> 78.02% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 05:16:07
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 7,687,721
+-> 78.29% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 05:31:12
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 11,804,120
+-> 120.2% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 05:45:15
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 9,337,521
+-> 95.09% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 05:59:16
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 8,171,614
+-> 83.21% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 06:13:21
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 7,645,527
+-> 77.86% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 06:28:27
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 7,431,851
+-> 75.68% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 06:43:31
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 7,375,425
+-> 75.1% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 06:57:42
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 7,397,336
+-> 75.33% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 07:11:52
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 11,070,035
+-> 112.73% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 07:26:01
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 8,541,108
+-> 86.98% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 07:40:05
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 7,342,524
+-> 74.77% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 07:54:17
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 6,792,902
+-> 69.17% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 08:08:22
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 6,561,602
+-> 66.82% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 08:22:32
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 6,490,756
+-> 66.1% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 08:36:39
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 6,499,613
+-> 66.19% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 08:50:50
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 10,642,033
+-> 108.37% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 09:04:54
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 8,061,455
+-> 82.09% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 09:19:06
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 6,841,559
+-> 69.67% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 09:33:10
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 6,279,266
+-> 63.94% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 09:47:17
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 6,038,116
+-> 61.49% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 10:01:28
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 5,958,443
+-> 60.68% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 10:15:32
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 5,959,352
+-> 60.68% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 10:29:42
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 9,820,110
+-> 100.0% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 10:43:49
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 7,113,757
+-> 72.44% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 10:57:58
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 5,833,094
+-> 59.4% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 11:12:02
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 5,237,064
+-> 53.33% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 11:26:11
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 4,972,287
+-> 50.63% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 11:40:18
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 4,873,137
+-> 49.62% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 11:54:28
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 4,856,861
+-> 49.46% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 12:08:31
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 9,251,867
+-> 94.21% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 12:22:39
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 6,445,876
+-> 65.64% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 12:36:41
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 5,112,880
+-> 52.07% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 12:50:51
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 4,488,423
+-> 45.71% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 13:04:54
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 4,205,866
+-> 42.83% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 13:19:01
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 4,093,078
+-> 41.68% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 13:33:03
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 4,064,627
+-> 41.39% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 13:47:07
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 8,846,619
+-> 90.09% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 14:01:13
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 5,957,664
+-> 60.67% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 14:15:15
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 4,584,384
+-> 46.68% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 14:29:22
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 3,936,828
+-> 40.09% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 14:43:27
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 3,640,800
+-> 37.07% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 14:57:33
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 3,517,765
+-> 35.82% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 15:11:33
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 3,480,230
+-> 35.44% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 15:25:38
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 8,277,905
+-> 84.3% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 15:39:38
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 5,237,665
+-> 53.34% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 15:53:43
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 3,796,392
+-> 38.66% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 16:07:43
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 3,110,821
+-> 31.68% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 16:21:48
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 2,791,778
+-> 28.43% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 16:35:47
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 2,652,967
+-> 27.02% of original
+
+
+RESULTS
+--------------------------(same file!)
+CoderGAMPS
+TIME: 2020-05-31 16:49:51
+ORIGINAL FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/datasets-csv/[5]el-nino/el-nino.csv
+-> size (bytes): 9,820,158
+COMPRESSED FILE:
+-> name: /Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/compress/output/[5]el-nino/gamps/el-nino.c.cpp.csv
+-> size (bytes): 2,601,902
+-> 26.5% of original
+
