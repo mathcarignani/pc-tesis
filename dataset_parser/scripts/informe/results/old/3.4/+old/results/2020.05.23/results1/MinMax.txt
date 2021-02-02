@@ -1,0 +1,37 @@
+MinMax
+===============================
+98.79 <= CoderBase
+80.28 <= CoderPCA
+33.25 <= CoderAPCA
+81.84 <= CoderCA
+91.19 <= CoderPWLH
+79.89 <= CoderPWLHInt
+64.72 <= CoderFR
+92.46 <= CoderSF
+85.84 <= CoderGAMPSLimit
+
+
+MinMax (ONLY LOSSLESS)
+===============================
+84.04 <= CoderBase
+40.52 <= CoderPCA
+33.25 <= CoderAPCA
+38.28 <= CoderCA
+73.46 <= CoderPWLH
+29.72 <= CoderPWLHInt
+48.75 <= CoderFR
+92.46 <= CoderSF
+85.84 <= CoderGAMPSLimit
+
+
+MinMax (ONLY LOSSY)
+===============================
+98.79 <= CoderBase
+80.28 <= CoderPCA
+29.96 <= CoderAPCA
+81.84 <= CoderCA
+91.19 <= CoderPWLH
+79.89 <= CoderPWLHInt
+64.72 <= CoderFR
+92.23 <= CoderSF
+85.73 <= CoderGAMPSLimit

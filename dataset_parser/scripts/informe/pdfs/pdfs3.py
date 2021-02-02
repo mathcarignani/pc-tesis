@@ -133,6 +133,13 @@ class PDFS3(PDFSCommon):
             assert(str(round(maximum, 1)) == "10.6")
             result = {'keys': ["PlotMax"], 'indexes': [values.index(maximum)], 'color': PlotConstants.VALUE0_COLOR}
         else:
+            if self.dataset_name == "IRKIS" and algorithm == "CoderAPCA" and self.filename == "vwc_1202.dat.csv":
+                # checks that the results specified in the report (Section 4.3) do not change...
+                value_for_e_3 = values[2]
+                value_for_e_10 = values[4]
+                assert(str(round(value_for_e_3, 2)) == "1.52")
+                assert(str(round(value_for_e_10, 2)) == "1.76")
+                assert(maximum < expected_maximum)
             # print("------")
             # print(maximum)
             # print(expected_maximum)

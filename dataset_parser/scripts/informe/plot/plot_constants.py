@@ -19,7 +19,7 @@ class PlotConstants(object):
 
     COMPRESSION_RATIO = r'CR'
     RELATIVE_DIFF = 'RD (%)'
-    ERROR_THRE = r'Threshold parameter $e$'
+    ERROR_THRE = r'Error parameter $e$'
     WINDOW_SIZE = r'Window parameter $w$'
 
     Y_DIFF = 0.05
