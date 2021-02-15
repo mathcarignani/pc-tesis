@@ -45,6 +45,10 @@ class TableDatasets(object):
 
     @staticmethod
     def generate_table_elnino():
+        units = {
+            "Lat": "°", "Long": "°", "Zon.Wind": "m/s", "Mer.Wind": "m/s", "Humidity": "\%",
+            "Air Temp.": "°C", "SST": "°C"
+        }
         filenames, path = TableDatasets.get_filenames_and_path('ElNino')
         assert(len(filenames) == 1)
         filename = filenames[0]
@@ -54,11 +58,13 @@ class TableDatasets(object):
         data_array = TableDatasets.get_data(path, filename, len(column_names))
         for idx, column in enumerate(column_names):
             data = data_array[idx]
-            data['name'] = column_names[idx]
+            name = column_names[idx]
+            data['name'] = name + " (" + units[name] + ")"
             table.add_data_elnino(data)
 
     @staticmethod
     def generate_table_hail():
+        units = {"Lat": "°", "Long": "°", "Size": "1/100 inch"}
         filenames, path = TableDatasets.get_filenames_and_path('NOAA-SPC-hail')
         assert(len(filenames) == 1)
         filename = filenames[0]
@@ -68,7 +74,8 @@ class TableDatasets(object):
         data_array = TableDatasets.get_data(path, filename, len(column_names))
         for idx, column in enumerate(column_names):
             data = data_array[idx]
-            data['name'] = column_names[idx]
+            name = column_names[idx]
+            data['name'] = name + " (" + units[name] + ")"
             table.add_data_hail(data)
 
     @staticmethod
@@ -87,6 +94,7 @@ class TableDatasets(object):
 
     @staticmethod
     def generate_table_wind():
+        units = {"Lat": "°", "Long": "°", "Speed": "mph"}
         filenames, path = TableDatasets.get_filenames_and_path('NOAA-SPC-wind')
         assert(len(filenames) == 1)
         filename = filenames[0]
@@ -96,7 +104,8 @@ class TableDatasets(object):
         data_array = TableDatasets.get_data(path, filename, len(column_names))
         for idx, column in enumerate(column_names):
             data = data_array[idx]
-            data['name'] = column_names[idx]
+            name = column_names[idx]
+            data['name'] = name + " (" + units[name] + ")"
             table.add_data_wind(data)
 
     @staticmethod
@@ -131,11 +140,11 @@ class TableDatasets(object):
 # TableDatasets.generate_table_irkis()
 # TableDatasets.generate_table_sst()
 # TableDatasets.generate_table_adcp()
-# TableDatasets.generate_table_elnino()
-# TableDatasets.generate_table_hail()
-# TableDatasets.generate_table_tornado()
-# TableDatasets.generate_table_wind()
-TableDatasets.generate_tables_solar()
+TableDatasets.generate_table_elnino()
+TableDatasets.generate_table_hail()
+TableDatasets.generate_table_tornado()
+TableDatasets.generate_table_wind()
+# TableDatasets.generate_tables_solar()
 
 
 
