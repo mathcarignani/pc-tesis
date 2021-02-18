@@ -1,0 +1,18 @@
+
+\clearpage
+\section{Data Format}
+\label{datasets:over}
+
+
+The data from every dataset \dataCite\ was transformed into a consistent format, which can be adapted to represent different types of datasets. In Table~\ref{datasets:table:csvexample} we present an example of a csv file with this format. Although a csv file is simply a delimited text file that uses commas to separate values, we display its contents in the form of a table for legibility. The first three rows have general data, namely a dataset unique name, in this example ElNino, the unit of measurement for signal timestamps, and the timestamp value for the first sample. The fourth row has the labels of the data columns, and the remaining rows consist of the actual signal data.
+
+
+\input{chapters/2-Datasets/other/table-csvexample}
+
+
+\vspace{-5pt}
+The values in the first data column, which we label ``Time Delta'', represent the timestamps associated with the data from the rest of the columns. We often refer to this column as the \textit{timestamp column}. It is always the first column, and it is present in every csv file. In practice, this timestamp may represent the time at which the data was read, transmitted, stored, etc. Each but the first timestamp is represented as an integer value, which is an increment with respect to the previous timestamp, measured in the unit specified in the second row. As mentioned, the value of the first timestamp is given in the third row. In the example presented in Table~\ref{datasets:table:csvexample}, the first four timestamps are ``1980-03-07 00:00:00'', ``1980-03-08 00:00:00'', ``1980-03-09 00:00:00'', and ``1980-03-11 00:00:00''. Notice that the difference between subsequent timestamps is not constant, varying between 24 and 48 hours, which means that the signals in this dataset have irregular sampling rate (recall that this is one of the characteristics we are interested in).
+
+
+Besides the timestamp column, the csv presented in Table~\ref{datasets:table:csvexample} consists of six additional data columns, each representing a different data type. The first two columns represent the latitude and longitude coordinates, respectively, of a buoy floating in the ocean, while the last four columns represent readings of various physical magnitudes (i.e. wind velocity, air temperature, and sea temperature), made by sensors set in the buoy. Additional information of dataset ElNino is presented in Section~\ref{datasets:elnino}. The timestamp column consists of integer values, but, in general, the rest of the columns may have both integer values and the character ``N". An integer value represents an actual data sample, whose range depends on the range and accuracy of the sampling instrument used for acquiring and storing the data, while character ``N" represents a gap in the data. In practice, this data gap may occur when there's an error acquiring, transmitting or storing the data. In the example in Table~\ref{datasets:table:csvexample}, there are some gaps in the last two data columns (recall that this is another of the characteristics we are interested in).
+
