@@ -3,29 +3,37 @@
 \begin{table}[h]
 \vspace{+5pt}
 \begin{center}
-    \begin{tabular}{| C{2.3cm} | C{1.65cm} | C{1.35cm} |  C{1.62cm} |  C{1.62cm} |  C{1.62cm} |  C{1.35cm} |}
+    \begin{tabular}{| C{2.3cm} | C{2.3cm} | C{1.63cm} |  C{2cm} |  C{2cm} |  C{1.62cm} |}
     \hline
       \multicolumn{1}{|>{\centering\arraybackslash}m{2.3cm}|}{DATASET:}
-    & \multicolumn{1}{>{\centering\arraybackslash}m{1.65cm}|}{ElNino} 
-    & \multicolumn{1}{>{\centering\arraybackslash}m{1.35cm}|}{} 
-    & \multicolumn{1}{>{\centering\arraybackslash}m{1.62cm}|}{}
-    & \multicolumn{1}{>{\centering\arraybackslash}m{1.62cm}|}{}
-    & \multicolumn{1}{>{\centering\arraybackslash}m{1.62cm}|}{}
-    & \multicolumn{1}{>{\centering\arraybackslash}m{1.35cm}|}{}\\
+    & \multicolumn{1}{>{\centering\arraybackslash}m{2.3cm}|}{ElNino} 
+    & \multicolumn{1}{>{\centering\arraybackslash}m{1.63cm}|}{} 
+    & \multicolumn{1}{>{\centering\arraybackslash}m{2cm}|}{}
+    & \multicolumn{1}{>{\centering\arraybackslash}m{2cm}|}{}
+    & \multicolumn{1}{>{\centering\arraybackslash}m{1.62cm}|}{}\\
     \hline
-TIME UNIT:       & hours               &         &             &             &            &         \\\hline
-FIRST TIMESTAMP: & 1980-03-07 00:00:00 &         &             &             &            &         \\\hline
-Time Delta       & Lat                 & Long & ZonWinds & MerWinds & AirTemp & SST  \\\hline
-\ 0               & -2                 & -10946  & -68         & \ 7         & 2614       & 2624    \\\hline
-24               & -2                  & -10946  & -49         & 11          & \ \ \ N    & \ \ \ N \\\hline
-24               & -2                  & -10946  & -45         & 22          & \ \ \ N    & \ \ \ N \\\hline
-48               & -1                  & -10946  & -38         & 19          & \ \ \ N    & 2431    \\\hline
-24               & -2                  & -10946  & -42         & 15          & 2557       & 2319    \\\hline
-48               & -2                  & -10946  & -44         & \ 3         & 2472       & 2364    \\\hline
-24               & -2                  & -10946  & -32         & \ 1         & \ \ \ N    & 2434    \\\hline
+DATA ROWS:       & 7                &         &             &                         &         \\\hline
+FIRST TIMESTAMP: & 1980-03-07 00:00:00 &         &             &                         &         \\\hline
+METADATA:       &                 &         &             &             &                     \\\hline
+COLUMNS   & UNIT             & SCALE & MINIMUM & MAXIMUM &                     \\\hline
+Time Delta & hours              & 1      & 0        & 131071   &                     \\\hline
+Lat        & coord. degrees & 100    & -1000    & 1000     &                     \\\hline
+Long       & coord. degrees & 100    & -18000   & 18000    &                     \\\hline
+Mer. Wind  & m/s               & 10     & -150     & 150      &                     \\\hline
+Air Temp.  & °C                 & 100    & 0        & 4000     &                     \\\hline
+Sea Temp.  & °C                 & 100    & 0        & 4000     &                     \\\hline
+DATA:       &                 &         &             &             &                     \\\hline
+Time Delta       & Lat                 & Long     & Mer. Wind     & Air Temp.  & Sea Temp.     \\\hline
+\ 0              & -2                  & -10946   & \ 7         & 2614       & 2624    \\\hline
+24               & -2                  & -10946   & 11          & \ \ \ N    & \ \ \ N \\\hline
+24               & -2                  & -10946   & 22          & \ \ \ N    & \ \ \ N \\\hline
+48               & -1                  & -10946   & 19          & \ \ \ N    & 2431    \\\hline
+24               & -2                  & -10946   & 15          & 2557       & 2319    \\\hline
+48               & -2                  & -10946   & \ 3         & 2472       & 2364    \\\hline
+24               & -2                  & -10946   & -1         & \ \ \ N    & 2434    \\\hline
     \toprule[0.1mm]
     \end{tabular}
-    \caption{Example of a dataset csv file with the format we defined.}
+    \caption{Example of a dataset CSV file with the format we defined.}
     \label{datasets:table:csvexample}
 \end{center}
 \end{table}

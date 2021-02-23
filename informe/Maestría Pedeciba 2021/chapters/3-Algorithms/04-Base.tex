@@ -7,7 +7,9 @@
 \newcommand{\decodeColumn}{$\text{decode\_column}$}
 
 \vspace{-10pt}
-Algorithm \textit{Base} is a trivial lossless coding algorithm that serves as a base ground for comparing the performance of the rest of the algorithms. It follows the general schema presented in Figure~\ref{pseudoCodeCommon}, with a specific coding routine shown in Figure~\ref{pseudoCoderBase}. This routine iterates through every entry of a column of a csv data file. Since algorithm Base only supports variant \NOmaskalgo, these entries can be either the character ``N", which represents a gap in the data, or an integer value representing an actual data sample. Every column entry is encoded independently and using a fixed number of bits, which depends on the data type and the dataset. In practice, the number of bits used for encoding a data value ultimately depends on the range and accuracy of the sampling instrument used for acquiring and storing the data. A special integer, \nodata, is reserved for encoding a gap. The decoding routine is symmetric to the coding routine.
+Algorithm \textit{Base} is a trivial lossless coding algorithm that serves as a base ground for comparing the performance of the rest of the algorithms. It follows the general schema presented in Figure~\ref{pseudoCodeCommon}, with a specific coding routine shown in Figure~\ref{pseudoCoderBase}. This routine iterates through every entry of a column of a CSV data file. Since algorithm Base only supports variant \NOmaskalgo, these entries can be either the character ``N", which represents a gap in the data, or an integer value representing an actual data sample. Every column entry is encoded independently using $\BeCe$ bits. A special integer, \nodata, is reserved for encoding a gap. The decoding routine is symmetric to the coding routine.
+
+% and using a fixed number of bits, which depends on the data type and the dataset. In practice, the number of bits used for encoding a data value ultimately depends on the range and accuracy of the sampling instrument used for acquiring and storing the data. 
 
 
 \input{chapters/3-Algorithms/pseudo/04-Base/Base-C}

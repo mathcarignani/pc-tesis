@@ -33,7 +33,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% CODER COMMANDS %%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\cInputFile}{\file: csv data file to be encoded}
+\newcommand{\cInputFile}{\file: CSV data file to be encoded}
 \newcommand{\cInputColSize}{\colSize: number of entries in the column}
 
 \newcommand{\cOutputFileA}{\out: \binFile \ with the encoding of \file}
@@ -46,7 +46,6 @@
 
 \newcommand{\windowNotFullOne}{$\windowSize\ < \win$}
 \newcommand{\windowFull}{$\windowSize \eqqq \win$}
-\newcommand{\validThreTwo}{$|\maxx - \minn| \leq 2\maxerror$}
 
 \newcommand{\ifNoDataCoder}[1]{${#1} \eqqq \noData$\xspace}
 
@@ -57,7 +56,7 @@
 \newcommand{\dinputCol}[1]{\column: column encoded with algorithm #1}
 \newcommand{\dinputfileA}{\file: coded \binFile}
 \newcommand{\dinputfile}[1]{\file: \binFile\ coded with algorithm #1}
-\newcommand{\doutputfile}{\out: decoded csv data file}
+\newcommand{\doutputfile}{\out: decoded column of CSV data file}
 
 \newcommand{\cInputVariant}{\variant: variant (\maskalgo\ or \NOmaskalgo)}
 \newcommand{\cInputThreshold}{\maxerror: maximum error threshold}
@@ -75,7 +74,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\commonSpecific}[2]{{#1} {#2} using a (column-specific) fixed number of bits}
+\newcommand{\commonSpecific}[2]{{#1} {#2} using $\BeCe$ bits}
 \newcommand{\encodeSpecific}[1]{\commonSpecific{Encode}{{#1}}}
 \newcommand{\decodeSpecific}[1]{\commonSpecific{Decode}{{#1}}}
 
@@ -86,12 +85,11 @@
 \newcommand{\decodeWindowwSize}{Decode $\sizee$ using $\logWinSize$ bits}
 
 %% BASE - CODER
-\newcommand{\columnInput}{\column: column of the csv data file to be encoded}
+\newcommand{\columnInput}{\column: column of the CSV data file to be encoded}
 
 %% PCA - CODER
 \newcommand{\cInputWindowPCA}{\win: fixed window size}
 \newcommand{\calculateMinMax}{Let \minn\ and \maxx\ be the minimum and maximum sample values in \window}
-\newcommand{\calculateMidrange}{$\midrange = (\minn + \maxx)/2$}
 \newcommand{\codeMidrange}{\codeInt(\midrange, \colTotBits)}
 \newcommand{\eachValueInWindow}{\textnormal{sample in} \window\commaa\ \valuev,}
 \newcommand{\eachEntryInWindow}{\textnormal{entry in} \window\commaa\ \entry,}

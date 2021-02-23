@@ -2,12 +2,15 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Commands used in the text %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\BeCe}{B_c}
+\newcommand{\EneCe}{N_c}
+
 \newcommand{\column}{\textit{column}}
 \newcommand{\Line}{Line\xspace}
 \newcommand{\Lines}{lines\xspace}
 \newcommand{\Liness}{Lines\xspace}
 \newcommand{\totbit}{\textit{C}\xspace}
-\newcommand{\tobitexp}{a column-specific fixed number of bits\xspace}
+\newcommand{\tobitexp}{$\BeCe$ bits\xspace}
 \newcommand{\wheretotbit}{where \totbit is \tobitexp}
 \newcommand{\valuev}{\textit{value}\xspace}
 \newcommand{\valuevP}{\textit{value}}
@@ -24,6 +27,12 @@
 
 \newcommand{\tscol}{\textit{t\_col}}
 \newcommand{\out}{\textit{out}}
+
+%PCA
+\newcommand{\midRangeAuxF}{\minn + \maxx}
+\newcommand{\midRangeAux}{(\midRangeAuxF)/2}
+\newcommand{\calculateMidrange}{$\midrange = \left \lfloor{\midRangeAux}\right \rfloor$}
+\newcommand{\validThreTwo}{$\maxx - \minn \leq 2\maxerror$}
 
 % APCA
 \newcommand{\midrange}{\textit{mid\_range}\xspace}

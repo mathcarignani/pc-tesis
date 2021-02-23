@@ -7,16 +7,16 @@
 Create output file \out\\
 Encode an algorithm identification key, and parameter \win\ (if applies)\\
 Encode the header of the input file\\
-Encode the number of rows and columns in the input file\\
+% Encode the number of rows and columns in the input file\\
 Encode the timestamp column using a lossless code\\
 \If{\maskMode}{
-Encode gap locations in each signal column of the input file (independently)\\
+Encode gap locations in each signal column of the input file (independently) into \out\\
 }
 \uIf{\textnormal{we are using a constant or linear model algorithm}}{
-    Encode each signal column of the input file (independently), using a coding routine for a specific algorithm (i.e. Base, PCA, APCA, PWLH, PWLHInt, CA, SF, FR)
+    Encode each signal column of the input file (independently) into \out, using a coding routine for a specific algorithm (i.e. Base, PCA, APCA, PWLH, PWLHInt, CA, SF, FR)
 }
 \ElseIf{\textnormal{we are using a correlation model algorithm}}{
-    Group the signal columns of the input file into disjoint subsets, then encode each subset independently, using a coding routine for a specific algorithm (i.e. GAMPS)
+    Group the signal columns of the input file into disjoint subsets, then encode each subset independently into \out, using a coding routine for a specific algorithm (i.e. GAMPS)
 }
 \returnn \out\\
 \EndPseudo{General encoding scheme for every evaluated algorithm.}{\label{pseudoCodeCommon}}

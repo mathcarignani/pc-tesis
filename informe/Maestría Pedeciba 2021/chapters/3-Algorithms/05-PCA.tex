@@ -5,13 +5,41 @@
 
 
 \vspace{-5pt}
-Algorithm \textit{\PCAfull} \cite{coder:pca} is a constant model algorithm that supports lossless and near-lossless compression. It has a window size parameter ($w$) that establishes a fixed block size in which the data are separately encoded. For PCA we define both variants, \maskalgo\ and \NOmaskalgo.
+Algorithm \textit{\PCAfull} \cite{coder:pca} is a constant model algorithm that supports lossless and near-lossless compression. It has a window size parameter, $w$, as defined in Section~\ref{algo:overview}, used as described below. For PCA we define both variants, \maskalgo\ and \NOmaskalgo.
 
 
-In Figure~\ref{pseudoCoderPCAM} we show the coding routine for variant \maskalgo, in which all the column entries are integer values (the gaps are encoded separately). The column entries are parsed into consecutive non-overlapping windows of size $\win$ (\Line 1), and each of these windows is encoded independently (\Lines 3-13). A window can be encoded in two different ways. If the absolute difference between its maximum and minimum values is less than or equal to $2\maxerror$ (i.e. the condition in \Line 4 is satisfied), then bit 0 is output, and the value of $\midrange$ for the window is encoded (\Lines 5-7). On the other hand, if the condition in \Line 4 evaluates to false, then bit 1 is output, and each of the window values is encoded separately (\Lines 9-12).  
+In Figure~\ref{pseudoCoderPCAM} we show the coding routine for variant \maskalgo, in which all the column entries are integer values (the gaps are encoded separately). The column entries are parsed into consecutive non-overlapping windows of size $\win$ (\Line 1), and each of these windows is encoded independently (\Lines 3-13). A window can be encoded in two different ways. If the difference between its maximum and minimum values is less than or equal to $2\maxerror$ (i.e. the condition in \Line 4 is satisfied), then bit 0 is output, and the value of $\midrange$ for the window is encoded (\Lines 5-7). On the other hand, if the condition in \Line 4 evaluates to false, then bit 1 is output, and each of the window values is encoded separately (\Lines 9-12). Notice that, in the former case, the absolute error between the encoded and the original values in $\win$ is guaranteed to be less than or equal to $\maxerror$, as proven by the following Lemma.
 
 
-The decoding routine for variant \maskalgo\ is shown in Figure~\ref{pseudoDecoderPCAM}. It consists of a loop that repeats until every entry in the column has been decoded, which occurs when condition in \Line 2 becomes false. Recall that the coding algorithm encodes the number of rows (\Line 4 in Figure~\ref{pseudoCodeCommon}), so this information is known by the decoding routine (input \colSize). Each iteration of the loop starts with the reading of a single bit from the input binary file (\Line 4). If this bit is 0, then the mid-range of an encoded window is decoded, and it is written $\sizee$ times to the decoded csv data file (\Lines 6-7). On the other hand, if the read bit is 1, then the following process is repeated a total of $\sizee$ times: a fixed number of bits is read, from which a value is decoded and written to the decoded csv data file (\Lines 9-12).
+\begin{lemma}
+\textnormal{
+Let $m, M\in \mathbb{Z}$, $\maxerror \in \mathbb{N}$, such that \validThreTwo, let \calculateMidrange, and let $x\in \mathbb{R}$, such that $m\leq x\leq M$. Then $|x-\midrange|\leq \maxerror$.
+}
+\end{lemma}
+
+\newcommand{\xOne}{x’}
+\begin{proof}
+Assume there exists a $\xOne \in \mathbb{R}$, $m\leq \xOne\leq M$, such that $|\xOne-\midrange|> \maxerror$.
+
+If $\xOne\geq\midrange$, then $ |\xOne-\midrange|> \maxerror \implies \xOne-\midrange> \maxerror $.
+
+If $m+M$ is even, then $ \xOne-\midrange > \maxerror \implies \xOne - \midRangeAux> \maxerror \implies 2\xOne - \minn - \maxx > 2\maxerror$.
+
+Since $M\geq \xOne$, then $2\xOne - \minn - \maxx > 2\maxerror \implies 2\maxx - \minn - \maxx = \maxx - \minn> 2\maxerror$, which contradicts one of the hypothesis.
+
+If $m+M$ is odd, then...
+
+If $\xOne<\midrange$, the proof is ... 
+
+To prove it by contradiction try and assume that the statemenet is false,
+proceed from there and at some point you will arrive to a contradiction.
+\end{proof}
+
+
+
+
+
+The decoding routine for variant \maskalgo\ is shown in Figure~\ref{pseudoDecoderPCAM}. It consists of a loop that repeats until every entry in the column has been decoded, which occurs when condition in \Line 2 becomes false. Recall that the coding algorithm encodes the number of rows (\Line 4 in Figure~\ref{pseudoCodeCommon}), so this information is known by the decoding routine (input \colSize). Each iteration of the loop starts with the reading of a single bit from the input binary file (\Line 4). If this bit is 0, then the mid-range of an encoded window is decoded, and it is written $\sizee$ times to the decoded CSV data file (\Lines 6-7). On the other hand, if the read bit is 1, then the following process is repeated a total of $\sizee$ times: a fixed number of bits is read, from which a value is decoded and written to the decoded CSV data file (\Lines 9-12).
 
 
 \clearpage
@@ -85,8 +113,8 @@ In Figure~\ref{pseudoCoderPCANM} we show the coding routine for variant \NOmaska
 \input{chapters/3-Algorithms/pseudo/05-PCA/PCA-NM-C}
 
 
-A window can be encoded in three different ways. If every entry represents a gap in the data (i.e. the condition in \Line 3 is satisfied), then bit 0 is output, and the special integer \nodata\ is encoded (\Lines 4-5). If every entry in the window represents a sample value, and the absolute difference between its maximum and minimum values is less than or equal to $2\maxerror$ (i.e. the condition in \Line 8 is satisfied), then bit 0 is output, and the value of $\midrange$ for the window is encoded (\Lines 9-11). In every other case, bit 1 is output, and each of the window entries is encoded separately (\Lines 13-21), using \nodata\ for encoding a gap. Notice that in the first two cases the window is encoded with the same number of bits, i.e., $1 + \totbit$, \wheretotbit, while in the last case the window is encoded with $1 + w*\totbit$ bits.
+A window can be encoded in three different ways. If every entry represents a gap in the data (i.e. the condition in \Line 3 is satisfied), then bit 0 is output, and the special integer \nodata\ is encoded (\Lines 4-5). If every entry in the window represents a sample value, and the difference between its maximum and minimum values is less than or equal to $2\maxerror$ (i.e. the condition in \Line 8 is satisfied), then bit 0 is output, and the value of $\midrange$ for the window is encoded (\Lines 9-11). In every other case, bit 1 is output, and each of the window entries is encoded separately (\Lines 13-21), using \nodata\ for encoding a gap. Notice that in the first two cases the window is encoded with the same number of bits, i.e., $1 + \totbit$, \wheretotbit, while in the last case the window is encoded with $1 + w*\totbit$ bits.
 
 
-The decoding routine for variant \NOmaskalgo\ is quite similar to the decoding routine for variant \maskalgo, presented in Figure~\ref{pseudoDecoderPCAM}, the only difference being that, in \Lines 6-7 and 10-11, when \nodata\ is decoded, a character \noData\ is written to the decoded csv data file.
+The decoding routine for variant \NOmaskalgo\ is quite similar to the decoding routine for variant \maskalgo, presented in Figure~\ref{pseudoDecoderPCAM}, the only difference being that, in \Lines 6-7 and 10-11, when \nodata\ is decoded, a character \noData\ is written to the decoded CSV data file.
 

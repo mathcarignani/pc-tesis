@@ -357,8 +357,8 @@
 }\end{spacing}
 }
 \renewcommand\listoffigures{
-\btypeout{Index of Figures}
-\addtotoc{Index of Figures}
+\btypeout{List of Figures}
+\addtotoc{List of Figures}
 \begin{spacing}{1}{
     \setlength{\parskip}{1pt}
     \if@twocolumn
@@ -375,8 +375,8 @@
 }\end{spacing}
 }
 \renewcommand\listoftables{
-\btypeout{Index of Tables}
-\addtotoc{Index of Tables}
+\btypeout{List of Tables}
+\addtotoc{List of Tables}
 \begin{spacing}{1}{
     \setlength{\parskip}{1pt}
     \if@twocolumn

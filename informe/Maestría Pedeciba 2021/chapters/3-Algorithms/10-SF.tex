@@ -10,7 +10,7 @@ Algorithm \textit{\SFfull} \cite{coder:sf} is a linear model algorithm that supp
 
 Since SF is a linear model algorithm, its encoding process involves the encoding of a sequence of line segments. In Figure~\ref{pseudoCoderSF} we show the coding routine, in which all the column entries are integer values (the gaps are encoded separately). It consists of a loop that iterates over all column entries, parsing them into consecutive windows of variable size (up to a maximum size~$\win$), such that all the points representing entries in the same window lie within vertical distance $\maxerror$ from the segment used to approximate said points. An important feature of algorithm SF is that, given two subsequent windows, it allows for the two segments that approximate the points representing their respective entries, to be connected. In fact, this algorithm prioritizes finding such connected segments, 
 % which can lead to better compression results, 
-over finding disconnected segments that minimize the per-sample error between the original and the decoded samples in each window. 
+over finding disconnected segments that minimize the per-sample absolute error between the original and the decoded samples in each window. 
 
 
 \vspace{+5pt}
@@ -80,7 +80,7 @@ Auxiliary routine \CAWinStart, shown in Figure~\ref{SFWinStart}, is invoked, aft
 The decoding routine is shown in Figure~\ref{pseudoDecoderSF}. We point out that this is the only decoding routine for any of the implemented algorithms that doesn't have a window size parameter ($\win$) input, which is unnecessary since the x-coordinates of the encoded points are encoded as floats (recall that the rest of the algorithms require parameter $\win$ in order to decode the variable size of each encoded window, reading $\logWinSize$ bits, or to know the fixed window size in the case of algorithm PCA). The decoding routine consists of a loop that repeats until every entry in the column has been decoded, which occurs when condition in \Line 2 becomes false. 
 
 
-Each iteration of the loop starts by calling the auxiliary routine DecodePoint (\Line 3), shown in Figure~\ref{sfPointMD}, which returns a decoded point, \pointP, and the \connected\ flag. This flag indicates whether the encoded segment to which the point belongs to is connected to the subsequent segment or not.  In the first iteration, \pointP\ is set to be the initial point of the segment, $\pointO$ (\Line 5). On the other hand, in the rest of iterations, \pointP\ is set to be the final point of the segment, $\pointF$ (\Line 8), and the auxiliary routine \decodeSegment is called, with the coordinates of both endpoints of the segment as inputs (\Line 9). As we recall from Figure~\ref{pseudoDecoLinear}, routine \decodeSegment returns a list consisting of the sample values that are decoded from the segment, which are then written in the decoded csv data file (\Lines 10-12). If the segment is connected, no additional point must be decoded, since in that case the first endpoint of the subsequent encoded segment is equal to the last endpoint of the last decoded segment (\Line 14). On the other hand, if the segment is not connected, the first endpoint of the subsequent encoded segment must be decoded (\Line 16).
+Each iteration of the loop starts by calling the auxiliary routine DecodePoint (\Line 3), shown in Figure~\ref{sfPointMD}, which returns a decoded point, \pointP, and the \connected\ flag. This flag indicates whether the encoded segment to which the point belongs to is connected to the subsequent segment or not.  In the first iteration, \pointP\ is set to be the initial point of the segment, $\pointO$ (\Line 5). On the other hand, in the rest of iterations, \pointP\ is set to be the final point of the segment, $\pointF$ (\Line 8), and the auxiliary routine \decodeSegment is called, with the coordinates of both endpoints of the segment as inputs (\Line 9). As we recall from Figure~\ref{pseudoDecoLinear}, routine \decodeSegment returns a list consisting of the sample values that are decoded from the segment, which are then written in the decoded CSV data file (\Lines 10-12). If the segment is connected, no additional point must be decoded, since in that case the first endpoint of the subsequent encoded segment is equal to the last endpoint of the last decoded segment (\Line 14). On the other hand, if the segment is not connected, the first endpoint of the subsequent encoded segment must be decoded (\Line 16).
 
 
 \clearpage
@@ -189,7 +189,7 @@ After executing the last iteration of the loop, $\window$ is not empty, so a seg
 \clearpage
 
 
-Finally, in Figure~\ref{example:sf:11} we also display the values of the decoded samples, which are the values that the decoding routine, shown in Figure~\ref{pseudoDecoderSF}, writes to the decoded csv data file.
+Finally, in Figure~\ref{example:sf:11} we also display the values of the decoded samples, which are the values that the decoding routine, shown in Figure~\ref{pseudoDecoderSF}, writes to the decoded CSV data file.
 
 
 \vspace{+5pt}
