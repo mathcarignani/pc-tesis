@@ -8,6 +8,7 @@ from scripts.informe.latex_tables.table_datasets.pandas_analysis import PandasAn
 
 
 class TableDatasets(object):
+    COORD_DEGREES = "coord. degrees"
     @staticmethod
     def generate_table_irkis():
         filenames, path = TableDatasets.get_filenames_and_path('IRKIS')
@@ -46,8 +47,9 @@ class TableDatasets(object):
     @staticmethod
     def generate_table_elnino():
         units = {
-            "Lat": "°", "Long": "°", "Zon.Wind": "m/s", "Mer.Wind": "m/s", "Humidity": "\%",
-            "Air Temp.": "°C", "SST": "°C"
+            "Lat": TableDatasets.COORD_DEGREES, "Long": TableDatasets.COORD_DEGREES,
+            "Zon. Wind": "m/s", "Mer. Wind": "m/s", "Humidity": "\%",
+            "Air Temp.": "°C", "Sea Temp.": "°C"
         }
         filenames, path = TableDatasets.get_filenames_and_path('ElNino')
         assert(len(filenames) == 1)
@@ -64,7 +66,7 @@ class TableDatasets(object):
 
     @staticmethod
     def generate_table_hail():
-        units = {"Lat": "°", "Long": "°", "Size": "1/100 inch"}
+        units = {"Lat": TableDatasets.COORD_DEGREES, "Long": TableDatasets.COORD_DEGREES, "Size": "1/100 inch"}
         filenames, path = TableDatasets.get_filenames_and_path('NOAA-SPC-hail')
         assert(len(filenames) == 1)
         filename = filenames[0]
@@ -94,7 +96,7 @@ class TableDatasets(object):
 
     @staticmethod
     def generate_table_wind():
-        units = {"Lat": "°", "Long": "°", "Speed": "mph"}
+        units = {"Lat": TableDatasets.COORD_DEGREES, "Long": TableDatasets.COORD_DEGREES, "Speed": "mph"}
         filenames, path = TableDatasets.get_filenames_and_path('NOAA-SPC-wind')
         assert(len(filenames) == 1)
         filename = filenames[0]
@@ -137,14 +139,14 @@ class TableDatasets(object):
         return filenames, path
 
 
-# TableDatasets.generate_table_irkis()
-# TableDatasets.generate_table_sst()
-# TableDatasets.generate_table_adcp()
+TableDatasets.generate_table_irkis()
+TableDatasets.generate_table_sst()
+TableDatasets.generate_table_adcp()
 TableDatasets.generate_table_elnino()
 TableDatasets.generate_table_hail()
 TableDatasets.generate_table_tornado()
 TableDatasets.generate_table_wind()
-# TableDatasets.generate_tables_solar()
+TableDatasets.generate_tables_solar()
 
 
 
