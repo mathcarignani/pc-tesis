@@ -28,6 +28,7 @@ class CAIntro(ExamplesBase):
     def ca1(self, filename, step, index):
         self.encoded_points = [] #[(0,1)]
         self.decoded = [] # self.copy_decoded[0:1]
+        self.arrows = [{'x': 1, 'y': 2}]
         self.plot_values1 = [
             {'x_values': [0,2], 'y_values': [2,4], 'color': self.COLOR_LINE, 'linestyle': ':'},
             {'x_values': [0,2], 'y_values': [2,0], 'color': self.COLOR_LINE, 'linestyle': ':'}
