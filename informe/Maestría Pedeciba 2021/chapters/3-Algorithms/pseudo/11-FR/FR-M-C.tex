@@ -1,6 +1,7 @@
 
 
 
+\newcommand{\parseWindowsFR}{Parse \column\ into consecutive non-overlapping windows of size $\win$, except possibly for the last window that may consist of fewer sample points}
 
 \newcommand{\winEntries}[1]{\window.\textnormal{entries}[{{#1}}]}
 \newcommand{\winSetValue}[1]{\winEntries{{{#1}}}.\text{value}}
@@ -9,7 +10,7 @@
 \newcommand{\DPvalue}{\textnormal{value}}
 \newcommand{\DPpoint}{\textit{point}}
 \newcommand{\forEachDisplaced}{\textnormal{entry in} \disPoints\commaa\ \indexx\commaa}
-\newcommand{\getDisplacedPoints}[2]{$\getDisplacedPointsMethod(\window, \tscol, \maxerror, \disPoints, {#1}, {#2})$}
+\newcommand{\getDisplacedPoints}[2]{$\getDisplacedPointsMethod(\window, \maxerror, \disPoints, {#1}, {#2})$}
 
 \newcommand{\winEntriesNO}{\window.\textnormal{entries}}
 \newcommand{\winEntriesValue}{\winSetValue{\indexx}}
@@ -20,20 +21,19 @@
 
 
 \beginAlgorithm
-\onlyInput{\columnInput\\\cOutputFile{FR}\\\cInputThreshold\\\cInputWindowAPCA\\\inputTSCol}
-\parseWindowsPCA\\
+\onlyInput{\columnInput\\\outVarM{FR}\\\cInputThreshold\\\cInputWindowAPCA\\\inputTSCol}
+\parseWindowsFR\\
 \ForEach{\forEachWindowPCA}{
     \If{$|\window| == 1$}{
-        Let \valuev\ be the single entry in \window\\
-        \encodeSpecific{$\valuev$}\\
+        \encodeSpecific{the y-coordinate of the single point in \window}\\
         \returnn\\
     }
     Create an empty list, \disPoints\\
     \getDisplacedPoints{0}{\windowSizeT-1} // routine in Fig.~\ref{pseudoCoderFRM2} \\
     \ForEach{\forEachDisplaced}{
         \encodeIndex\\
-        \encodeSpecific{\winIndex}\\
+        \encodeSpecific{the y-coordinate of point \winIndex }\\
     }
 }
-\EndAlgorithmVariant{Coding}{\coderFR}{\maskalgo}{\label{pseudoCoderFRM}}
+\EndAlgorithmVariantM{Coding}{\coderFR}{\label{pseudoCoderFRM}}
 

@@ -1,7 +1,7 @@
 
 
 \beginAlgorithm
-\onlyInput{\columnInput\\ \cOutputFile{Base}}
+\onlyInput{\columnInput\\ \outAlgo{Base}}
 \ForEach{\forEachEntryCoder}{
     \eIf{\ifNoDataCoder{\entry}}{
         $\valuev = \nodata$\\
@@ -11,4 +11,4 @@
     }
     \encodeSpecific{$\valuev$}\\
 }
-\EndAlgorithmTwo{Coding}{\coderBase}{\label{pseudoCoderBase}}
+\EndAlgorithm{Coding}{\coderBase}{\label{pseudoCoderBase}}

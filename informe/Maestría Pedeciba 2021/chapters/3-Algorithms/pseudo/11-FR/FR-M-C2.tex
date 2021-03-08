@@ -1,7 +1,7 @@
 
 
-\newcommand{\InputdisPoints}{\disPoints: list including the indexes (relative to \window, in ascending order) of the respective y-coordinates of the displaced points}
-\newcommand{\InputFirstIndex}{$\firstIndex$, $\lastIndex$: indexes (relative to \window) of the y-coordinates of the endpoints of the candidate line segment}
+\newcommand{\InputdisPoints}{\disPoints: list including the indexes (relative to \window, in ascending order) of the respective displaced points}
+\newcommand{\InputFirstIndex}{$\firstIndex$, $\lastIndex$: indexes (relative to \window) of the endpoints of the candidate line segment}
 
 \newcommand{\DPconditionTwoOne}{$\firstIndex + 1 < \lastIndex$}
 \newcommand{\DPconditionTwoTwo}{$\notCond\ \validSegment$}
@@ -10,10 +10,10 @@
 
 
 \beginAlgorithm
-\onlyInput{\windowInput\\\inputTSCol\\\cInputThreshold\\\InputdisPoints\\\InputFirstIndex}
+\onlyInput{\windowInput\\\cInputThreshold\\\InputdisPoints\\\InputFirstIndex}
 If they are not already included, add $\firstIndex$ and $\lastIndex$ to \disPoints, in ascending order\\
 If $\firstIndex + 1 \geq \lastIndex$ then \returnn // base case\\ 
-Let \pointo\ and \pointf\ be the points whose y-coordinates are $\window[\firstIndex]$ and $\window[\lastIndex]$, and whose x-coordinates are obtained from \tscol\\
+Let \pointo$=\window[\firstIndex]$, and let \pointf$=\window[\lastIndex]$\\
 Let \segment\ be the line segment whose endpoints are \pointo\ and \pointf\\
 Let \validSegment\ be true iff for every point \pointi\ in \window, the vertical distance between \segment\ and \pointi\ is less than or equal to \maxerror\\
 \If{\DPconditionTwoTwo}{
@@ -21,5 +21,5 @@ Let \validSegment\ be true iff for every point \pointi\ in \window, the vertical
     Recursively call \getDisplacedPoints{\firstIndex}{\half}\\
     Recursively call \getDisplacedPoints{\half}{\lastIndex}\\
 }
-\EndPseudo{Auxiliary routine \getDisplacedPointsMethod\ for algorithm \coderFR.}{\label{pseudoCoderFRM2}}
+\EndAuxVarM{\getDisplacedPointsMethod}{FR}{\label{pseudoCoderFRM2}}
 

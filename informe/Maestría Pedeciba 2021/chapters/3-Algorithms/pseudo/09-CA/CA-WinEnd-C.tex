@@ -1,8 +1,9 @@
 
 
 \beginAlgorithm
-\onlyInput{\windowInput\\\cOutputFile{CA}\\\cInputWindowAPCA}
+\onlyInput{\windowInput\\\outVarM{CA}\\\cInputWindowAPCA}
 \encodeWindowSizee\\
-Let \valuev\ be the last sample in \window\\
-\encodeSpecific{$\valuev$}\\
-\EndPseudo{Auxiliary routine \CAWinEnd for algorithm \coderCA.}{\label{caWinEnd}}
+% Let \valuev\ be the y-coordinate of the last point in \window\\
+\encodeSpecific{the y-coordinate of the last point in \window}\\
+\EndAuxVarM{\CAWinEnd}{CA}{\label{caWinEnd}}
+

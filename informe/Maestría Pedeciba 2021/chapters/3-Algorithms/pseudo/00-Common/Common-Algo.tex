@@ -41,18 +41,34 @@
     \end{figure}
 }
 
-% TODO: remove
-\newcommand{\EndAlgorithm}[2]{
-    \EndPseudo{{#1} pseudocode. TODO: remove}{{#2}}
-}
-
-\newcommand{\EndAlgorithmTwo}[3]{
+\newcommand{\EndAlgorithm}[3]{
     \EndPseudo{{#1} routine for algorithm {#2}.}{{#3}}
 }
 
-\newcommand{\EndAlgorithmVariant}[4]{
-    \EndPseudo{{#1} routine for variant {#3} of algorithm {#2}.}{{#4}}
+\newcommand{\EndAlgorithmVariantM}[3]{
+    \EndPseudo{{#1} routine for algorithm variant \MaskVar{#2}.}{{#3}}
 }
+
+\newcommand{\EndAlgorithmVariantNM}[3]{
+    \EndPseudo{{#1} routine for algorithm variant \NonMaskVar{#2}.}{{#3}}
+}
+
+\newcommand{\EndAuxVarM}[3]{
+    \EndPseudo{Auxiliary routine {#1} for algorithm variant \MaskVar{#2}.}{{#3}}
+}
+
+
+
+
+
+%%%%% INPUTS %%%%% 
+\newcommand{\outAlgo}[1]{\out: \binFile\ encoded with algorithm #1}
+\newcommand{\outVarM}[1]{\out: \binFile\ encoded with algorithm variant \MaskVar{#1}}
+\newcommand{\outVarNM}[1]{\out: \binFile\ encoded with algorithm variant \NonMaskVar{#1}}
+
+%%%%% OUTPUTS %%%%% 
+\newcommand{\inVarM}[1]{\file: \binFile\ encoded with algorithm variant \MaskVar{#1}}
+
 
 % https://tex.stackexchange.com/a/461831
 \SetKwFor{RepTimes}{repeat}{times}{end}

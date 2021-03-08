@@ -3,9 +3,9 @@
 \newcommand{\inputPoint}{\pointP: point to encode}
 
 \beginAlgorithm
-\onlyInput{\inputPoint\\\cOutputFile{SF}\\\inputConnected}
+\onlyInput{\inputPoint\\\outVarM{SF}\\\inputConnected}
 \codeBit{\connected}\\
 \codeFloat{$\pointP.\xx$}\\
 \codeFloat{$\pointP.\yy$}
-\EndPseudo{Auxiliary routine \SFEncodePoint for algorithm \coderSF.}{\label{sfPointM}}
+\EndAuxVarM{\SFEncodePoint}{SF}{\label{sfPointM}}
 

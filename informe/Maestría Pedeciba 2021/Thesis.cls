@@ -198,9 +198,9 @@
 %	defined as \examname above so you cite it as \examname
 %----------------------------------------------------------------------------------------
 
-\thesistitle{Coding of Multichannel Signals\\\vspace{20pt}with Irregular Sampling Rate} % Your thesis title - this is used in the title and abstract
+\thesistitle{Coding of Multichannel Signals\\\vspace{20pt}with Irregular Sampling Rates} % Your thesis title - this is used in the title and abstract
 %-------------------------------------------------  
-\supervisor{Álvaro \textsc{Martin}} % You supervisor's name - this is used in the title page
+% \supervisor{Álvaro \textsc{Martin}} % You supervisor's name - this is used in the title page
 %-------------------------------------------------   
 \examiner{} % Your examiner's name - this is not currently used anywhere in the template, cite it with \examname if you want it
 %-------------------------------------------------   

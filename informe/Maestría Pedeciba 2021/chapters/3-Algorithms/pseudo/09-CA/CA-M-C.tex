@@ -2,7 +2,7 @@
 
 
 \beginAlgorithm
-\onlyInput{\columnInput\\\cOutputFile{CA}\\\cInputThreshold\\\cInputWindowAPCA\\\inputTSCol}
+\onlyInput{\columnInput\\\outVarM{CA}\\\cInputThreshold\\\cInputWindowAPCA\\\inputTSCol}
 \createWindowOne\\
 \ForEach{\forEachEntryCoder}{
     \obtainTS\\
@@ -11,7 +11,7 @@
     \uIf{\firstIteratCA}{
         \letArchived, then \encodeWinStaCA\\
     }
-    \uElseIf{\windowEmpty}{
+    \uElseIf{\windowEmptyCA}{
         \letSnapshot, then \addSnapshot\\
         \letSminSmax\\
     }
@@ -33,5 +33,5 @@
 \If{\winNoEmpty}{
   \encodeWinEndCA\\
 }
-\EndAlgorithmVariant{Coding}{\coderCA}{\maskalgo}{\label{pseudoCoderCAM}}
+\EndAlgorithmVariantM{Coding}{\coderCA}{\label{pseudoCoderCAM}}
 

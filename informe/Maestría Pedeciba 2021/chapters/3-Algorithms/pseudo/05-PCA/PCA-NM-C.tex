@@ -1,7 +1,7 @@
 
 
 \beginAlgorithm
-\onlyInput{\columnInput\\\cOutputFile{PCA}\\\cInputThreshold\\\cInputWindowPCA}
+\onlyInput{\columnInput\\\outVarNM{PCA}\\\cInputThreshold\\\cInputWindowPCA}
 Parse \column\ into consecutive non-overlapping windows of size $\win$, except possibly for the last window that may consist of fewer samples\\
 \ForEach{\forEachWindowPCA}{
     \uIf{\textnormal{every entry in \window\ is equal to \noData}}{
@@ -29,4 +29,4 @@ Parse \column\ into consecutive non-overlapping windows of size $\win$, except p
         }
     }
 }
-\EndAlgorithmVariant{Coding}{\coderPCA}{\NOmaskalgo}{\label{pseudoCoderPCANM}}
+\EndAlgorithmVariantNM{Coding}{\coderPCA}{\label{pseudoCoderPCANM}}

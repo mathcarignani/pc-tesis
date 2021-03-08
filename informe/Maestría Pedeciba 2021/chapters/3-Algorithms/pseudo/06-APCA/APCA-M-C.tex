@@ -1,7 +1,7 @@
 
 
 \beginAlgorithm
-\onlyInput{\columnInput\\\cOutputFile{APCA}\\\cInputThreshold\\\cInputWindowAPCA}
+\onlyInput{\columnInput\\\outVarM{APCA}\\\cInputThreshold\\\cInputWindowAPCA}
 \createWindowOne\\
 \ForEach{\forEachEntryCoder}{
     \calculateMinMaxAPCA\\
@@ -14,5 +14,5 @@
 \If{\window \textnormal{ is not empty}}{
   \encodeWindowAPCA\\
 }
-\EndAlgorithmVariant{Coding}{\coderAPCA}{\maskalgo}{\label{pseudoCoderAPCAM}}
+\EndAlgorithmVariantM{Coding}{\coderAPCA}{\label{pseudoCoderAPCAM}}
 

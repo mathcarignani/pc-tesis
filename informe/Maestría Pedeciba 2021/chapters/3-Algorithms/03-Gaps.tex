@@ -1,6 +1,6 @@
 
 % \vspace{-10pt}
-\clearpage
+% \clearpage
 \section{Encoding of Gaps in the Masking Variants}
 \label{algo:maskmodes}
 
@@ -10,13 +10,11 @@
 \newcommand{\xiiminus}{p(x_i|\StringSeq)}
 \newcommand{\xiiminustwo}{p(\cdot|\StringSeq)}
 \vspace{-5pt}
+% variant \maskalgo of an algorithm
 We recall that the masking variant of an algorithm starts by losslessly encoding the position of all the gaps in the data, independently for each data column (\Line \gapLine\ in Figure \ref{pseudoCodeCommon}). We describe the position of the gaps in a column by encoding a sequence of binary symbols, $\xOneN$, each symbol $x_i$ indicating the presence ($0$) or absence ($1$) of a sample in the $i$-th timestamp of the column, in chronological order. To this end we use an arithmetic coder (AC) \cite{ac2, Cover2005}. Given a sequence of probability assignments, $\xiiminustwo$, for the symbol in position $i$ given the past symbols $x_1...x_{i-1}$, $1\leq i \leq n$, an AC generates a lossless encoding bit stream for $\xOneN$, of length $-\log P(\xOneN) + O(1)$, where $P(\xOneN)=\prod_{i=1}^{n}\xiiminus$. This code length is optimal for this probability assignment, up to an additive constant \cite{arcoding}.
 
 
-For a sequence $x$ of independent and identically distributed random binary symbols (with unknown probability distribution), the Krichevsky–Trofimov probability assignment \cite{ktestimator}, which we define next, yields an asymptotically optimal code length for the (unknown) probability distribution.
-
-
-TODO: explicar en qué sentido, y dar referencia.
+For a sequence $x$ of independent and identically distributed random binary symbols (with unknown probability distribution), the Krichevsky–Trofimov probability assignment \cite{ktestimator}, which we define next, yields an asymptotically optimal code length for the (unknown) probability distribution, in the sense that the worst case redundancy for such code is asymptotically minimized~\cite{unicodinginfo}.
 
 
 \begin{defcion}
@@ -32,12 +30,18 @@ p(0|\StringSeq) = \frac{n_0 + 1/2}{i}, \hspace{+20pt} p(1|\StringSeq) = \frac{n_
 where $n_0$ and $n_1$ denote the number of occurrences of 0 and 1 in $\StringSeq$, respectively.
 
 
-\vspace{+5pt}
+\clearpage
+
+
+% \vspace{+5pt}
+Analyzing the experimental datasets presented in Chapter~\ref{datasets}, we notice that the positions of the data gaps follow different patterns for different datasets, but, in general, the gaps occur in bursts. Thus, it makes sense to consider a simple Markov process, such as the one defined next, which captures the burstiness behavior of the data gap occurrences~\cite{markovBurst}.
+
+
 \begin{table}[h]
 \begin{minipage}{0.62\textwidth}
 \setstretch{1.1}
 % \vspace{-35pt}
-A first-order Markov process has two states, $S_0$ and $S_1$, and we say that $x_i$ occurs in state $S_b$ iff the previous symbol, $x_{i-1}$, equals $b$. We arbitrarily let $S_1$ be the initial state (i.e. the state in which $x_1$ occurs). In Figure~\ref{tikz:markov} we present a diagram for this Markov process. A KT probability assignment for a first-order Markov process is obtained by applying (\ref{eq:ktestimator}) separately for the subsequence of symbols that occur in states $S_0$ and $S_1$. This is implemented by maintaining two pairs of symbol occurrence counters, $n_0$, $n_1$, one pair for each state.
+The first-order Markov process has two states, $S_0$ and $S_1$, and we say that $x_i$ occurs in state $S_b$ iff the previous symbol, $x_{i-1}$, equals $b$. We arbitrarily let $S_1$ be the initial state (i.e. the state in which $x_1$ occurs). In Figure~\ref{tikz:markov} we present a diagram for this Markov process. A KT probability assignment for a first-order Markov process is obtained by applying (\ref{eq:ktestimator}) separately for the subsequence of symbols that occur in states $S_0$ and $S_1$. This is implemented by maintaining two pairs of symbol occurrence counters, $n_0$, $n_1$, one pair for each state.
 
 \end{minipage}
 \hspace{0.02\textwidth}
@@ -46,10 +50,4 @@ A first-order Markov process has two states, $S_0$ and $S_1$, and we say that $x
 \input{chapters/3-Algorithms/other/markov-states}
 \end{minipage}
 \end{table}
-
-
-% \vspace{-5pt}
-Analyzing the datasets presented in Chapter~\ref{datasets}, we notice that the positions of the data gaps may follow different patterns for different datasets, but, in general, the gaps occur in bursts and the number of gaps is smaller than the number of data values. With this in mind, we model the sequence of gaps as a first-order Markov process, and we use the KT probability assignment for the symbols that occur in each state.
-
-TODO: explicar por qué tiene sentido usar un modelo de Markov---puede capturar "burstiness". No queda claro por qué se menciona la otra condición (hay meos gaps que data). No parece relevante al desempeño de compresión.
 

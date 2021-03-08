@@ -3,7 +3,7 @@
 \newcommand{\forEachWindowPCA}{\textnormal{window in the parsing,} \window\commaa}
 
 \beginAlgorithm
-\onlyInput{\columnInput\\\cOutputFile{PCA}\\\cInputThreshold\\\cInputWindowPCA}
+\onlyInput{\columnInput\\\outVarM{PCA}\\\cInputThreshold\\\cInputWindowPCA}
 \parseWindowsPCA\\
 \ForEach{\forEachWindowPCA}{
     \calculateMinMax, respectively\\
@@ -19,4 +19,4 @@
         }
     }
 }
-\EndAlgorithmVariant{Coding}{\coderPCA}{\maskalgo}{\label{pseudoCoderPCAM}}
+\EndAlgorithmVariantM{Coding}{\coderPCA}{\label{pseudoCoderPCAM}}

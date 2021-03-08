@@ -11,7 +11,6 @@
 \newcommand{\Liness}{Lines\xspace}
 \newcommand{\totbit}{\textit{C}\xspace}
 \newcommand{\tobitexp}{$\BeCe$ bits\xspace}
-\newcommand{\wheretotbit}{where \totbit is \tobitexp}
 \newcommand{\valuev}{\textit{value}\xspace}
 \newcommand{\valuevP}{\textit{value}}
 
@@ -36,6 +35,7 @@
 
 % APCA
 \newcommand{\midrange}{\textit{mid\_range}\xspace}
+\newcommand{\incomingNS}{\textit{E}}
 \newcommand{\incoming}{\textit{E}\xspace}
 \newcommand{\intersection}{\textit{I}\xspace}
 \newcommand{\point}{$\incoming$\xspace}
@@ -58,14 +58,18 @@
 \newcommand{\PWLHSet}{\textit{S}}
 \newcommand{\validHull}{\textit{valid\_hull}}
 \newcommand{\EncodeLastWindowPWLH}{EncodeLastWindow}
+\newcommand{\sO}{$\sv_o$}
+\newcommand{\sN}{$\sv_f$}
 % CA
-\newcommand{\CAWinStart}{EncodeWinStart\xspace}
-\newcommand{\CAWinEnd}{EncodeWinEnd\xspace}
-\newcommand{\CAWinStartP}{EncodeWinStart}
-\newcommand{\CAWinEndP}{EncodeWinEnd}
-\newcommand{\archived}{\textit{A}\xspace}
+\newcommand{\CAWinStart}{EncodeArchivedPoint\xspace}
+\newcommand{\CAWinEnd}{EncodeWindow\xspace}
+\newcommand{\CAWinStartP}{EncodeArchivedPoint}
+\newcommand{\CAWinEndP}{EncodeWindow}
+\newcommand{\archivedNS}{\textit{A}}
+\newcommand{\archived}{\archivedNS\xspace}
 \newcommand{\incomingP}[1]{\textit{E{#1}}\xspace}
-\newcommand{\snapshot}{\textit{S}\xspace}
+\newcommand{\snapshotNS}{\textit{S}}
+\newcommand{\snapshot}{\snapshotNS\xspace}
 \newcommand{\smax}{\textit{SMax}\xspace}
 \newcommand{\smaxo}{\textit{SMaxOld}\xspace}
 \newcommand{\smin}{\textit{SMin}\xspace}
@@ -77,6 +81,10 @@
 \newcommand{\epsilonR}{\textit{$\epsilon_r$}}
 \newcommand{\columns}{\textit{columns}}
 % SF
+\newcommand{\SFWinEnd}{EncodeWinEnd\xspace}
+\newcommand{\SFWinEndP}{EncodeWinEnd}
+\newcommand{\SFWinStart}{EncodeWinStart\xspace}
+\newcommand{\SFWinStartP}{EncodeWinStart}
 \newcommand{\segmentSet}{\textit{LS}}
 \newcommand{\segmentLast}{\segment_{\textit{prev}}}
 \newcommand{\segmentConn}{\segment_{\textit{conn}}}
@@ -90,11 +98,14 @@
 \newcommand{\pointF}{\textit{P}_{\textit{f}}}
 \newcommand{\pointP}{\textit{P}}
 \newcommand{\interPoint}{\textit{I}}
-\newcommand{\SFEncodePoint}{EncodePoint\xspace}
 \newcommand{\SFEncodePointP}{EncodePoint}
+\newcommand{\SFEncodePoint}{\SFEncodePointP\xspace}
+\newcommand{\SFDecodePointNS}{DecodePoint}
+\newcommand{\SFDecodePoint}{\SFDecodePointNS\xspace}
 
-\newcommand{\SFEncodeWinEndStart}{EncodeWinEndStart\xspace}
 \newcommand{\SFEncodeWinEndStartP}{EncodeWinEndStart}
+\newcommand{\SFEncodeWinEndStart}{\SFEncodeWinEndStartP\xspace}
+
 
 
 

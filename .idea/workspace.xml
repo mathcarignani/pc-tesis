@@ -13,9 +13,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/informe/Maestri_a_Pedeciba_2021.pdf" afterPath="$PROJECT_DIR$/informe/Maestri_a_Pedeciba_2021.pdf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021.zip" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021.zip" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataset_parser/src/bq-helper" afterPath="$PROJECT_DIR$/dataset_parser/src/bq-helper" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataset_parser/scripts/informe/examples/ca_intro/ca1.pdf" afterPath="$PROJECT_DIR$/dataset_parser/scripts/informe/examples/ca_intro/ca1.pdf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/ca_intro/ca1.pdf" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/ca_intro/ca1.pdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataset_parser/scripts/informe/examples/ca_intro/ca2.pdf" afterPath="$PROJECT_DIR$/dataset_parser/scripts/informe/examples/ca_intro/ca2.pdf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/ca_intro/ca2.pdf" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/ca_intro/ca2.pdf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/4-Experiments/0-Intro.tex" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/4-Experiments/0-Intro.tex" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/2-Datasets/00-Intro.tex" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/2-Datasets/00-Intro.tex" />
@@ -71,7 +69,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/02-General/Sub-C.tex" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/02-General/Sub-C.tex" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/Thesis.cls" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/Thesis.cls" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/other/algo-table.tex" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/other/algo-table.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataset_parser/scripts/informe/examples/ca_intro/ca_intro.py" afterPath="$PROJECT_DIR$/dataset_parser/scripts/informe/examples/ca_intro/ca_intro.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/examples.tex" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/examples.tex" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/bibliography/library2.bib" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/bibliography/library2.bib" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -372,7 +369,13 @@
       <option name="project" value="LOCAL" />
       <updated>1614111080995</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Improved ca_intro example">
+      <created>1615181037289</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1615181037289</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -420,7 +423,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="[latex] Updated PDF + PDF source files" />
     <MESSAGE value="Updated pdf + files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated pdf + files" />
+    <MESSAGE value="Improved ca_intro example" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved ca_intro example" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />

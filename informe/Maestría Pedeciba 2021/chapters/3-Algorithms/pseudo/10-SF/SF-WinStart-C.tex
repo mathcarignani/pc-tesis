@@ -1,13 +1,14 @@
 
 
-\newcommand{\outputDecodedSegment}{\segment: line segment that approximates the points representing entries in $\window$}
+\newcommand{\outputDecodedSegment}{\segment: line segment that approximates the points in $\window$}
 \newcommand{\inputSEG}{\segmentSet: set of line segments}
 
 \beginAlgorithm
-\inputAndOutput{\inputSEG\\\windowInput\\\inputTSCol\\\cOutputFile{SF}}{\outputDecodedSegment}
-Let $\segment \in\segmentSet$ be the line segment that minimizes the MSE for the points representing entries in $\window$ (among the segments included in \segmentSet)\\
+\inputAndOutput{\inputSEG\\\windowInput\\\inputTSCol\\\outVarM{SF}}{\outputDecodedSegment}
+Let $\segment \in\segmentSet$ be the line segment that minimizes the MSE for the points in $\window$ (among the segments included in \segmentSet)\\
 % \pointP has the same x-coord as the first point added to the window
 Let \pointP\ be the first endpoint of \segment\\
 EncodePoint(\pointP, \out, true) // routine shown in Figure~\ref{sfPointM}\\
 \returnn \segment\\
-\EndPseudo{Auxiliary routine \CAWinStart for algorithm \coderSF.}{\label{SFWinStart}}
+\EndAuxVarM{\SFWinStart}{SF}{\label{SFWinStart}}
+

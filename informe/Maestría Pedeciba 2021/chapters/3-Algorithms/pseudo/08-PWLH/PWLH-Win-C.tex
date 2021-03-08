@@ -2,10 +2,10 @@
 
 
 \beginAlgorithm
-\onlyInput{\windowInput\\\cOutputFile{PWLH}\\\cInputWindowAPCA\\\inputTSCol}
+\onlyInput{\windowInput\\\outVarM{PWLH}\\\cInputWindowAPCA\\\inputTSCol}
 \encodeWindowSizee\\
-Let \segment\ be the line segment that minimizes the MSE for the points representing the entries in $\window$\\
+Let \segment\ be the line segment that minimizes the MSE for the points in $\window$\\
 Let \sO\ and \sN\ be the y-coordinates of the endpoints of \segment\\
 \codeFloat{\sO}\\
 \codeFloat{\sN}
-\EndPseudo{Auxiliary routine \EncodeWindowCA\ for algorithm \coderPWLH.}{\label{pwlhWindowM}}
+\EndAuxVarM{\EncodeWindowCA}{PWLH}{\label{pwlhWindowM}}

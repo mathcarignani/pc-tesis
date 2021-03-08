@@ -1,20 +1,23 @@
 
 
-% \vspace{-25pt}
-\clearpage
+\vspace{-20pt}
 \section{General Encoding Scheme}
 \label{algo:details}
 
 
 \vspace{-5pt}
-Figure~\ref{pseudoCodeCommon} shows a general encoding scheme used for most of the evaluated algorithms. The decoding scheme is symmetric. Constant and linear model algorithms only exploit the temporal correlation in the data, thus they iterate through the data columns and encode each independently. Since correlation models also exploit the spatial correlation (i.e. the data columns are \textit{not} encoded independently), algorithm GAMPS follows a different scheme, which we present in Section~\ref{algo:gamps}.
+Figure~\ref{pseudoCodeCommon} shows a general encoding scheme used for the evaluated algorithm variants. The decoding scheme is symmetric. Constant and linear model algorithms only exploit the temporal correlation in the data, thus they iterate through the data columns and encode each independently. Since correlation models also exploit the spatial correlation (i.e. the data columns are \textit{not} encoded independently), algorithm GAMPS follows a different scheme, which we present in Section~\ref{algo:gamps}.
 
 
-In Figure~\ref{pseudoCodeCommon}, the inputs for the coding routine are a CSV data file in the format presented in Chapter~\ref{datasets}, a key ($v$) that describes the algorithm variant (either \maskalgo\ or \NOmaskalgo), and the maximum error threshold (\maxerror) and window size (\win) parameters. The output is a binary file, which represents the input file encoded with a compression algorithm using the specified variant and parameters.
-
-
-\vspace{+5pt}
+% \vspace{-5pt}
 \input{chapters/3-Algorithms/pseudo/02-General/Sub-C}
+
+
+% \vspace{-5pt}
+In Figure~\ref{pseudoCodeCommon}, the inputs for the coding routine are a CSV data file in the format presented in Section~\ref{datasets:over}, a key ($v$) that describes the algorithm variant (either \maskalgo\ or \NOmaskalgo), and the maximum error threshold (\maxerror) and window size (\win) parameters. The output is a binary file, which represents the input file encoded with a compression algorithm using the specified variant and parameters.
+
+
+\clearpage
 
 
 The timestamp column, which is comprised of integers, is the first column in every CSV data file, and it is also the first column to be encoded (\Line 4). This is done using a lossless code in which every integer is encoded independently, using a fixed number of bits, $\BeCe$, which we define next.
@@ -27,14 +30,14 @@ The number of bits $\BeCe$ required to encode a specific value of data type $z$ 
 \label{eq:bece}
 \BeCe(z, d) = \lceil{ \log_2 \big( \text{max}(z, d) - \text{min}(z, d) + \EneCe(z, d) \big) } \rceil,
 \end{equation}
+% \vspace{-3pt}
+where $\text{max}(z, d)$ and $\text{min}(z, d)$ are the maximum and minimum values allowed, respectively, for the data type, and $\EneCe(z, d)\in \{0,1\}$ is a constant that accounts for an extra symbol needed to encode a gap, whose value is 1 if the data type admits gaps, and 0 otherwise.
 \end{defcion}
-\vspace{-5pt}
-where $\text{max}(z, d)$ and $\text{min}(z, d)$ are the maximum and minimum values allowed, respectively, for the data type, and $\EneCe(z, d)$ is 1 if the data type admits gaps, and 0 otherwise.
 
 
-Recall, from Section~\ref{datasets:over}, that the maximum and minimum values allowed for each data type are specified in the header of the dataset CSV file, making this information known to the encoder. Also, recall that the timestamp column consists of integer values, but, in general, the rest of the columns admit both integer values and the character ``N", which represents a gap in the data. Thus, $\EneCe$ is 0 for the timestamp data type, and 1 for the rest of the data types in each dataset. Notice that $\EneCe$ is a constant that accounts for an extra symbol needed to encode a gap.
+We point out that the encoder is able to calculate $\BeCe(z, d)$ for each data type $z$ in each dataset $d$. Recall, from Section~\ref{datasets:over}, that the maximum and minimum values allowed for each data type are specified in the header of the dataset CSV file, making this information known to the encoder. Also, recall that the timestamp column consists of integer values, but, in general, the rest of the columns admit both integer values and the character ``N", which represents a gap in the data. Thus, $\EneCe$ is 0 for the timestamp data type, and 1 for the rest of the data types in each dataset.
 
 
 \newcommand{\gapLine}{6}
-We focus on the compression of the sample columns (i.e. the rest of the columns in the data file), and do not delve into the optimization of timestamp compression, which we leave for future work. When the masking variant of the algorithm is executed, the positions of the gaps in every data column are encoded, independently for each column, in \Line \gapLine; the details are explained in Section~\ref{algo:maskmodes}. 
+We focus on the compression of the sample columns (i.e. the rest of the columns in the data file), and do not delve into the optimization of timestamp compression, which we leave for future work. When variant \maskalgo of an algorithm is executed, the positions of the gaps in every data column are encoded, independently for each column, in \Line \gapLine; the details are explained in Section~\ref{algo:maskmodes}.
 

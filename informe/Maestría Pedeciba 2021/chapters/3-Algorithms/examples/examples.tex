@@ -15,13 +15,13 @@
 \exampleFigure{#1}{#2}{#3}{#4}{h}
 }
 
-\newcommand{\makeCaption}[4]{Example: Algorithm \uppercase{#1} with $\maxerror={#2}$ and $\win={#3}$. Step {#4}.}
+\newcommand{\makeCaption}[4]{Example: Algorithm variant \MaskVar{\uppercase{#1}} with $\maxerror={#2}$ and $\win={#3}$. Step {#4}.}
 
-\newcommand{\makeCaptionIntroPWLH}[3]{Example: checking the valid hull condition. Algorithm \uppercase{#1} with $\maxerror={#2}$. Step~{#3}.}
+\newcommand{\commonIntro}[4]{Example: {#4}. Variant \MaskVar{\uppercase{#1}} with $\maxerror={#2}$. Step~{#3}.}
+\newcommand{\makeCaptionIntroPWLH}[3]{\commonIntro{#1}{#2}{#3}{checking the valid hull condition}}
+\newcommand{\makeCaptionIntroCA}[3]{\commonIntro{#1}{#2}{#3}{key steps of the coding algorithm}}
+\newcommand{\makeCaptionIntroSF}[3]{\commonIntro{#1}{#2}{#3}{key steps of the coding algorithm}}
 
-\newcommand{\makeCaptionIntroCA}[3]{Example: key steps of the coding algorithm. Algorithm \uppercase{#1} with $\maxerror={#2}$. Step~{#3}.}
-
-\newcommand{\makeCaptionIntroSF}[3]{Example: key steps of the coding algorithm. Algorithm \uppercase{#1} with $\maxerror={#2}$. Step~{#3}.}
 
 \newcommand{\exampleStepPCA}[4]{
 \exampleStepCommon{#1}{#2}{#3}{\makeCaption{#1}{1}{4}{#4}}
@@ -40,8 +40,6 @@
 }
 
 
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -52,6 +50,7 @@
 \vspace{-5pt}
 \begin{minipage}{1.17\textwidth}
 \captionof{figure}{Example of the auxiliary routine \decodeSegment\ for linear model algorithms.}
+% \captionof{figure}{Example: auxiliary routine \decodeSegment\ for linear model algorithms.}
 \label{example:linear}
 \end{minipage}
 }

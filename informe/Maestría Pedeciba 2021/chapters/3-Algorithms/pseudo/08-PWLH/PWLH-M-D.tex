@@ -1,9 +1,9 @@
 
 
-\newcommand{\forEachEntryDecoded}{\textnormal{sample in} \decodedSamplesTwo\commaa\ \valuevP\commaa}
+\newcommand{\forEachEntryDecoded}{\textnormal{sample in \decodedSamplesTwo, \valuevP,}}
 
 \beginAlgorithm
-\onlyInput{\dinputfile{PWLH}\\\doutputfile\\\cInputWindowAPCA\\\cInputColSize\\\inputTSCol}
+\onlyInput{\inVarM{PWLH}\\\doutputfile\\\cInputWindowAPCA\\\cInputColSize\\\inputTSCol}
 \nEqZero\\
 \While{\whileColumnNotDecoded}{
     \decodeWindowwSize\\
@@ -22,6 +22,6 @@
     }
     \addNToSize\\
 }
-\EndAlgorithmVariant{Decoding}{\coderPWLH}{\maskalgo}{\label{pseudoDecoderPWLHM}}
+\EndAlgorithmVariantM{Decoding}{\coderPWLH}{\label{pseudoDecoderPWLHM}}
 
 

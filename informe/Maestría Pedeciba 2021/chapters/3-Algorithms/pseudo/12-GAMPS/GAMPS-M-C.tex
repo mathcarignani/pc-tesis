@@ -15,7 +15,7 @@
 \newcommand{\gampsSizeAux}[1]{\ceil{\log _{2}{#1}}}
 
 \beginAlgorithm
-\onlyInput{\columnsInput\\\cOutputFile{GAMPS}\\\cInputThreshold\\\cInputWindowAPCA}
+\onlyInput{\columnsInput\\\outVarM{GAMPS}\\\cInputThreshold\\\cInputWindowAPCA}
 Group \columns\ into disjoint subsets of spatially correlated columns, where in each subset, a single base column is defined, and the rest of its columns are considered ratio columns. Also define error threshold parameters \epsilonB\ and \epsilonR, for base and ratio columns, respectively.\\
 Encode the number of subsets using \gampsSize\ bits\\
 \ForEach{\forEachGroup}{
@@ -29,4 +29,4 @@ Encode the number of subsets using \gampsSize\ bits\\
         Encode \ratioColumnT\ by calling the coding routine for variant \maskalgo\ of algorithm \apcaF\ with parameters \ratioColumnT, \out, \epsilonR, \win\\
     }
 }
-\EndAlgorithmVariant{Coding}{\coderGAMPS}{\maskalgo}{\label{pseudoCoderGAMPS}}
+\EndAlgorithmVariantM{Coding}{\coderGAMPS}{\label{pseudoCoderGAMPS}}

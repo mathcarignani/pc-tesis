@@ -4,7 +4,7 @@
 \newcommand{\ifFRdeco}{$\valuev$\textnormal{ is not the last sample in }\decodedSamplesTwo \orr $\indexx \eqqq \sizee$}
 
 \beginAlgorithm
-\onlyInput{\dinputfile{FR}\\\doutputfile\\\cInputWindowAPCA\\\cInputColSize\\\inputTSCol}
+\onlyInput{\inVarM{FR}\\\doutputfile\\\cInputWindowAPCA\\\cInputColSize\\\inputTSCol}
 \nEqZero\\
 \While{\whileColumnNotDecoded}{
     \calculateSize\\
@@ -32,5 +32,5 @@
     }
     \addNToSize\\
 }
-\EndAlgorithmVariant{Decoding}{\coderFR}{\maskalgo}{\label{pseudoDecoderFRM}}
+\EndAlgorithmVariantM{Decoding}{\coderFR}{\label{pseudoDecoderFRM}}
 

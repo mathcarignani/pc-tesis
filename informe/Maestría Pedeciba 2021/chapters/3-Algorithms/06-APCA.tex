@@ -5,17 +5,17 @@
 \label{algo:apca}
 
 
-Algorithm \textit{\APCAfull} \cite{coder:apca} is a constant model algorithm that supports lossless and near-lossless compression. As its name suggests, it operates similarly to algorithm PCA, the difference being that in APCA the size of the blocks in which the data are separately encoded is not fixed, but variable. In this case, the window size parameter ($\win$) establishes a maximum block size for the algorithm. APCA supports both variants, \maskalgo\ and \NOmaskalgo.
+Algorithm \textit{\APCAfull} \cite{coder:apca} is a constant model algorithm that supports lossless and near-lossless compression. As its name suggests, it operates similarly to algorithm PCA, the difference being that in APCA the size of the blocks in which the data are separately encoded is not fixed, but variable. \WindowParam \BothVariantsTwo{APCA}.
 
 
-In Figure~\ref{pseudoCoderAPCAM} we show the coding routine for variant \maskalgo, in which all the column entries are integer values (the gaps are encoded separately). It consists of a loop that iterates over all column entries. The algorithm maintains a window of consecutive samples, $\window$, which is initially empty (\Line 1). In each iteration, the addition of an entry to the window is considered (\Lines 3-8). If the new entry makes the window violate the error threshold constraint (i.e. the difference between its maximum and minimum values is greater than $2\maxerror$), or the window size greater than $\win$, then the window is encoded, and emptied (\Lines 5-6). In any case, the current entry is added to $\window$ (\Line 8), and is eventually encoded. In particular, if the loop ends and $\window$ is not empty, it is encoded in \Line 11. 
+In Figure~\ref{pseudoCoderAPCAM} we show the coding routine for variant \maskalgo, in which all the column entries are integer values (the gaps are encoded separately). It consists of a loop that iterates over all column entries. The algorithm maintains a window of consecutive samples, $\window$, which is initially empty (\Line 1). In each iteration, the addition of an entry to the window is considered (\Lines 3-8). If the new entry makes the difference between the maximum and minimum values greater than $2\maxerror$, or the window size greater than $\win$, then the window is encoded, and emptied (\Lines 5-6). In any case, the current entry is added to $\window$ (\Line 8), and is eventually encoded. In particular, if the loop ends and $\window$ is not empty, it is encoded in \Line 11. We point out that Lemma~\ref{lemma:pca} guarantees that the absolute error between the encoded and the original values in a window is less than or equal to $\maxerror$.
 
 
 \input{chapters/3-Algorithms/pseudo/06-APCA/APCA-M-C}
 
 
 \vspace{+2pt}
-The auxiliary routine used for encoding a window (in \Lines 5 and 11), EncodeWindow, is shown in Figure~\ref{apcaWindowM}. Observe that every window is encoded with the same number of bits, i.e. $\logWinSize +\totbit$, where $\logWinSize$ bits are used for encoding its size, and $\totbit$ bits, \wheretotbit, are used for encoding its mid-range.
+The auxiliary routine used for encoding a window (in \Lines 5 and 11), EncodeWindow, is shown in Figure~\ref{apcaWindowM}. Observe that every window is encoded with the same number of bits, i.e. $\logWinSize +\BeCe$, where $\logWinSize$ bits are used for encoding its size, and $\BeCe$ bits are used for encoding its mid-range.
 \vspace{+3pt}
 
 
@@ -69,7 +69,7 @@ For the third window, the condition in \Line \APCACodeOne\ evaluates to false in
 \exampleStep{apca}{3}{\label{example:apca:3}}{3}
 
 
-We point out that each of the three windows in this example are encoded using exactly the same number of bits. However, the first window consists of eight samples, while the last two consist of only two samples. Therefore, the first window achieves a better compression ratio (more samples encoded per bit). This example illustrates why, similarly to PCA, algorithm APCA is expected to achieve better compression performances on slowly varying signals rather than rough signals.
+We point out that each of the three windows in this example is encoded using exactly the same number of bits. However, the first window consists of eight samples, while the last two consist of only two samples. Therefore, the first window achieves a better compression ratio (more samples encoded per bit). This example illustrates why, similarly to PCA, algorithm APCA is expected to achieve better compression performances on slowly varying signals rather than rough signals.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -82,5 +82,5 @@ We point out that each of the three windows in this example are encoded using ex
 \label{algo:apca:nmvariant}
 
 
-The coding and decoding routines for variant \NOmaskalgo\ of algorithm APCA are similar to their variant \maskalgo\ counterparts, the difference being that the former routines are able to handle both sample values and gaps. Recall that in the coding routine for variant \maskalgo, a window is encoded when adding a new entry makes it violate the error threshold constraint or the window size restriction (\Line 4 in Figure~\ref{pseudoCoderAPCAM}). In the coding routine for variant \NOmaskalgo, a window must also be encoded if the incoming entry is character \noData\ (gap in the data) and the other entries in the window are integers (sample values), or vice versa. A window that consists of gaps is encoded with the same number of bits as a window that consists of integers, i.e. $\logWinSize+\totbit$, where $\logWinSize$ bits are used for encoding its size, and $\totbit$ bits, \wheretotbit, are used for encoding the special integer \nodata.
+The coding and decoding routines for variant \NOmaskalgo\ of algorithm APCA are similar to their variant \maskalgo\ counterparts, the difference being that the former routines are able to handle both sample values and gaps. Recall that in the coding routine for variant \maskalgo, a window is encoded when adding a new entry makes it violate the error threshold constraint or the window size restriction (\Line 4 in Figure~\ref{pseudoCoderAPCAM}). In the coding routine for variant \NOmaskalgo, a window must also be encoded if the incoming entry is character \noData\ (gap in the data) and the other entries in the window are integers (sample values), or vice versa. A window that consists of gaps is encoded with the same number of bits as a window that consists of integers, i.e. $\logWinSize+\BeCe$, where $\logWinSize$ bits are used for encoding its size, and $\BeCe$ bits are used for encoding the special integer \nodata.
 

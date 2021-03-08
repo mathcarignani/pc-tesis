@@ -2,13 +2,14 @@
 
 
 \beginAlgorithm
-\onlyInput{\windowInput\\\cOutputFile{PWLH}\\\cInputWindowAPCA\\\inputTSCol}
+\onlyInput{\windowInput\\\outVarM{PWLH}\\\cInputWindowAPCA\\\inputTSCol}
 \uIf{$|\window| == 1$}{
 \encodeWindowSizeeOne\\
-Let \valuev\ be the single sample in \window\\
-\encodeSpecific{$\valuev$}\\
+% Let \valuev\ be the y-coordinate of the single point in \window\\
+\encodeSpecific{the y-coordinate of the single point in \window}\\
 }
 \Else{
 \encodeWindowPWLH
 }
-\EndPseudo{Auxiliary routine \EncodeLastWindowPWLH\ for algorithm \coderPWLH.}{\label{pwlhLastWindowM}}
+\EndAuxVarM{\EncodeLastWindowPWLH}{PWLH}{\label{pwlhLastWindowM}}
+

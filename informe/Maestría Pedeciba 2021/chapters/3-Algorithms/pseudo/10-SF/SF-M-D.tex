@@ -1,10 +1,10 @@
 
 
-\newcommand{\callDecoPoint}{\pointP, \connected\ = DecodePoint()}
-\newcommand{\callDecoPointTwo}{$\pointO$, \connected\ = DecodePoint()}
+\newcommand{\callDecoPoint}{\pointP, \connected\ = \SFDecodePointNS()}
+\newcommand{\callDecoPointTwo}{$\pointO$, \connected\ = \SFDecodePointNS()}
 
 \beginAlgorithm
-\onlyInput{\dinputfile{SF}\\\doutputfile\\\cInputColSize\\\inputTSCol}
+\onlyInput{\inVarM{SF}\\\doutputfile\\\cInputColSize\\\inputTSCol}
 \nEqZero\\
 \While{\whileColumnNotDecoded}{
     \callDecoPoint\ // routine shown in Figure~\ref{sfPointMD}\\
@@ -28,4 +28,4 @@
     
     $n \mathrel{+}= |\decodedSamplesTwo|$
 }
-\EndAlgorithmVariant{Decoding}{\coderSF}{\maskalgo}{\label{pseudoDecoderSF}}
+\EndAlgorithmVariantM{Decoding}{\coderSF}{\label{pseudoDecoderSF}}

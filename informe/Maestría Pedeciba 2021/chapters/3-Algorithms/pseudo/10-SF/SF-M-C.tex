@@ -8,28 +8,28 @@
 
 \newcommand{\lineSeg}{\textit{s}}
 
-\newcommand{\encodeWinStartSF}{\segment\ = \CAWinStartP(\segmentSet, $\window$, \tsColumn, \out) // rout. in Fig.\hspace{1pt}\ref{SFWinStart}}
+\newcommand{\encodeWinStartSF}{\segment\ = \SFWinStartP(\segmentSet, $\window$, \tscol, \out) // rout. in Fig.\hspace{1pt}\ref{SFWinStart}}
 \newcommand{\encodeWinEndSF}[1]{\SFEncodePointP(\pointP, \out, #1) // routine shown in Figure~\ref{sfPointM}}
 
 
-\newcommand{\inputSegmentPrev}{$\segmentLast$: line segment that approximates the points representing entries in the previous window}
-\newcommand{\inputSegment}{\segment: line segment that approximates the points representing entries in $\window$}
+\newcommand{\inputSegmentPrev}{$\segmentLast$: line segment that approximates the points in the previous window}
+\newcommand{\inputSegment}{\segment: line segment that approximates the points in $\window$}
 
 
 \beginAlgorithm
-\onlyInput{\columnInput\\\cOutputFile{SF}\\\cInputThreshold\\\cInputWindowAPCA\\\inputTSCol}
+\onlyInput{\columnInput\\\outVarM{SF}\\\cInputThreshold\\\cInputWindowAPCA\\\inputTSCol}
 \createWindowOne\\
 \ForEach{\forEachEntryCoder}{
     \obtainTS\\
     \letPoint\\
     \uIf{\firstIteratCA}{
-        \AddSnapshot, then \continueAlgo\\
+        \AddIncoming, then \continueAlgo\\
     }
     \ElseIf{$|\window| == 1$}{
-        Let \snapshot be the point representing the single entry in $\window$\\
+        Let \snapshot be the single point in $\window$\\
         \newRayOne\\
         \newRayTwo\\
-        \AddSnapshot, then \continueAlgo\\
+        \AddIncoming, then \continueAlgo\\
     }
     
     Let \interPoint\ be the point of intersection of \smin\ and \smax\\
@@ -48,19 +48,19 @@
                 Make $\segmentLast = \segmentConn$\\
             }
             \Else{
-                \CAWinEndP($\segmentLast$, \out)// routine shown in Figure~\ref{SFWinEnd}\\
+                \SFWinEndP($\segmentLast$, \out)// routine shown in Figure~\ref{SFWinEnd}\\
                 \encodeWinStartSF\\
                 Make $\segmentLast = \segment$\\
             }
         }
-        \createWindowTwo, then \addSnapshot\\
+        \createWindowTwo, then \addIncoming\\
     }
     \Else{
-        \AddSnapshot\\
-        Update \smin\ and \smax, considering the points representing entries in $\window$\\
+        \AddIncoming\\
+        Update \smin\ and \smax, considering the points in $\window$\\
     }
         
     
 }
-\EndAlgorithmVariant{Coding}{\coderSF}{\maskalgo}{\label{pseudoCoderSF}}
+\EndAlgorithmVariantM{Coding}{\coderSF}{\label{pseudoCoderSF}}
 

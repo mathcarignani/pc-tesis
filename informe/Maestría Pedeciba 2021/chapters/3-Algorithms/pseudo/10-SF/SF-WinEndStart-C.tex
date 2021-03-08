@@ -1,7 +1,8 @@
 
 
 \beginAlgorithm
-\onlyInput{\inputSegmentPrev\\\inputSegment\\\cOutputFile{SF}}
+\onlyInput{\inputSegmentPrev\\\inputSegment\\\outVarM{SF}}
 Let \pointP\ be the point of intersection of $\segmentLast$ and \segment\\
 \encodeWinEndSF{true}\\
-\EndPseudo{Auxiliary routine \SFEncodeWinEndStart for algorithm \coderSF.}{\label{SFWinEndStart}}
+\EndAuxVarM{\SFEncodeWinEndStart}{SF}{\label{SFWinEndStart}}
+

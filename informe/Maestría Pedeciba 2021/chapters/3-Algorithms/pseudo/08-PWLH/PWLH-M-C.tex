@@ -1,22 +1,25 @@
 
 
 \beginAlgorithm
-\onlyInput{\columnInput\\\cOutputFile{PWLH}\\\cInputThreshold\\\cInputWindowAPCA\\\inputTSCol}
+\onlyInput{\columnInput\\\outVarM{PWLH}\\\cInputThreshold\\\cInputWindowAPCA\\\inputTSCol}
 \createWindowOne\\
 \ForEach{\forEachEntryCoder}{
     \obtainTS\\
     \letPoint\\
-    \If{\firstIteratPWHL}{
-        Let \PWLHSet\ be the set of points representing the entries in \window, plus \point, and let \hull\ be the convex hull of \PWLHSet\\
-        Let \validHull\ be true iff \hull\ satisfies the valid hull condition, defined in \ref{def:validHull}, for \maxerror\\
-        \If{\nott\,\validHull \orr \windowFull\ }{
-            \encodeWindowPWLH\\
-            \createWindowTwo\\
-        }
+    \If{\firstIteratCA}{
+        \appendIncoming\\
+        \continueAlgo\\
     }
-    \AddSnapshot\\
+    Let \PWLHSet\ be the set of points in the \extendedWin\\
+    Let \hull\ be the convex hull of \PWLHSet\\
+    Let \validHull\ be true iff \hull\ satisfies the valid hull condition, defined in \ref{def:validHull}, for \maxerror\\
+    \If{\nott\,\validHull \orr \windowFull\ }{
+        \encodeWindowPWLH\\
+        \createWindowTwo\\
+    }
+    \appendIncoming\\
 }
 \If{\winNoEmpty}{
     \encodeLastWindowPWLH\\
 }
-\EndAlgorithmVariant{Coding}{\coderPWLH}{\maskalgo}{\label{pseudoCoderPWLHM}}
+\EndAlgorithmVariantM{Coding}{\coderPWLH}{\label{pseudoCoderPWLHM}}

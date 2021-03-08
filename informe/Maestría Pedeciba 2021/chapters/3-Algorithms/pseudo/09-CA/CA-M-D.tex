@@ -3,7 +3,7 @@
 \newcommand{\tvaluev}{$t_\valuev$}
 
 \beginAlgorithm
-\onlyInput{\dinputfile{CA}\\\doutputfile\\\cInputWindowAPCA\\\cInputColSize\\\inputTSCol}
+\onlyInput{\inVarM{CA}\\\doutputfile\\\cInputWindowAPCA\\\cInputColSize\\\inputTSCol}
 \nEqZero\\
 \While{\whileColumnNotDecoded}{
     \decodeWindowwSize\\
@@ -23,6 +23,6 @@
     }
     \addNToSize\\
 }
-\EndAlgorithmVariant{Decoding}{\coderCA}{\maskalgo}{\label{pseudoDecoderCA}}
+\EndAlgorithmVariantM{Decoding}{\coderCA}{\label{pseudoDecoderCA}}
 
 
