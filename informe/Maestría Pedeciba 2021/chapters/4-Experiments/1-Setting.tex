@@ -4,11 +4,10 @@
 \label{experiments:experiments}
 
 
-We denote by $A$ the set of all the coding algorithms presented in Chapter~\ref{algo}. For an algorithm $a \in A$, we denote by $a_v$ its variant $v$, where $v$ can be $\maskalgo$ (masking) or $\NOmaskalgo$ (non-masking). There exist some $a \in A$ for which either $a_\maskalgo$ or $a_\NOmaskalgo$ is invalid (recall this information from Table~\ref{algo:table:overview}). We denote by $V$ the set of variants composed of every valid variant $a_v$ for every algorithm $a \in A$. 
-Also, we denote by $A_M$ the subset of algorithms from $A$ composed of every algorithm for which both variants, $a_\maskalgo$ and $a_\NOmaskalgo$, are valid.
+We denote by $A$ the set of all the coding algorithms presented in Chapter~\ref{algo}. For an algorithm $a \in A$, we denote by $a_v$ its variant $v$, where $v$ can be $\maskalgo$ (masking) or $\NOmaskalgo$ (non-masking). Recall that there exist some $a \in A$ for which either $a_\maskalgo$ or $a_\NOmaskalgo$ is invalid (see Table~\ref{algo:table:overview}). We denote by $V$ the set of variants consisting of every \textit{valid} variant $a_v$ for every algorithm $a \in A$. Also, we denote by $A_M$ the subset of algorithms from $A$ consisting of every algorithm for which both variants, $a_\maskalgo$ and $a_\NOmaskalgo$, are valid.
 
 
-We evaluate the compression performance of every algorithm $a \in A$ on the datasets described in Chapter~\ref{datasets}. For each algorithm we test every valid variant $a_v$. We also test several combinations of algorithm parameters. Specifically, for the algorithms that admit a window size parameter $w$ (every algorithm except Base), we test all the values of $w$ in the set $W = \{4, 8, 16, 32, 64, 128, 256\}$. For the encoders that admit a near-lossless compression mode with an error threshold parameter~$\maxerror$ (every encoder except Base), the $\maxerror$ is calculated as a percentage fraction, given by parameter $e$, of the standard deviation of the data being encoded. For example, for certain data with a standard deviation of 20, if $e=10$, then $\maxerror=2$, since 2 is the $10$ percent of $20$, so in this case the near-lossless compression allows for a maximal per-sample distortion of 2 sampling units. We test all the values of the error parameter $e$ in the set $E= \{1, 3, 5, 10, 15, 20, 30\}$. 
+We evaluate the compression performance of every algorithm $a \in A$ on the datasets described in Chapter~\ref{datasets}. For each algorithm we test every valid variant $a_v$. We also test several combinations of algorithm parameters. Specifically, for the algorithms that admit a window size parameter $w$ (every algorithm except Base), we test all the values of $w$ in the set $W = \{4, 8, 16, 32, 64, 128, 256\}$. For the encoders that admit a near-lossless compression mode with an error threshold parameter~$\maxerror$ (every encoder except Base), the value of $\maxerror$ is calculated as a percentage fraction, denoted $e$, of the standard deviation of the data being encoded. For example, for certain data with a standard deviation of 20, if $e=10$, then $\maxerror=2$. We test all the values of the parameter $e$ in the set $E= \{1, 3, 5, 10, 15, 20, 30\}$. 
 
 
 \vspace{+5pt}
@@ -51,13 +50,13 @@ Notice that smaller values of \CR\ correspond to better performance. Our main go
 \clearpage
 
 
-To compare the compression performance between a pair of CAIs we calculate the relative difference, which we define next.
+To compare the compression performance between two CAIs we calculate the relative difference, which we define next.
 
 
 \vspace{+5pt}
 \begin{defcion}
 \label{relative-difference}
-The \textit{relative difference (\RDit)} between a pair of CAIs $\algo_1, \algo_2 \in {\ca}$ \ for the data type $z$ of a certain file $f$ is given by
+The \textit{relative difference (\RDit)} two CAIs $\algo_1, \algo_2 \in {\ca}$ \ for the data type $z$ of a certain file $f$ is given by
 \vspace{-5pt}
 \begin{equation}
 \label{eq:relative-difference}

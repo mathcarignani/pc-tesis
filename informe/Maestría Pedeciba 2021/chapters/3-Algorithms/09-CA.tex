@@ -28,7 +28,7 @@ In figures \ref{example:caIntro1} and \ref{example:caIntro2} we present an examp
 
 
 \vspace{+5pt}
-In the successive iterations, the cone keeps reducing its slope, until eventually either point \incoming lies outside of the cone, or $\window$ reaches its maximum size. When this occurs, $\window$ is complete, and the condition in \Line 12 becomes true, so the size and the last point of $\window$, i.e. point \snapshot, are encoded (\Line 13), $\window$ is emptied (\Line 14), and the process starts again, by defining and encoding a new point \archived (\Line 15).
+In the successive iterations, the angle of the cone keeps decreasing, until eventually either point \incoming lies outside of the cone, or $\window$ reaches its maximum size. When this occurs, $\window$ is complete, and the condition in \Line 12 becomes true, so the size and the last point of $\window$, i.e. point \snapshot, are encoded (\Line 13), $\window$ is emptied (\Line 14), and the process starts again, by defining and encoding a new point \archived (\Line 15).
 
 
 \vspace{+5pt}
@@ -92,7 +92,7 @@ Since \incomingP{3} lies within the cone determined by the two rays departing fr
 \exampleStep{ca}{3}{\label{example:ca:3}}{3}
 
 
-The following two iterations are similar to the previous one. In each iteration, the respective incoming point is added to the window, and both rays, \smin and \smax, are updated, reducing the slope of the cone. Figure~\ref{example:ca:4} shows the information after the 5th iteration is completed.
+The following two iterations are similar to the previous one. In each iteration, the respective incoming point is added to the window, and both rays, \smin and \smax, are updated, decreasing the angle of the cone. Figure~\ref{example:ca:4} shows the information after the 5th iteration is completed.
 
 
 \vspace{+5pt}

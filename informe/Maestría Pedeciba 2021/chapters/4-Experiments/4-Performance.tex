@@ -1,9 +1,9 @@
 
-\section{Algorithms Performance}
+\section{Algorithm Compression Performance}
 \label{secX:codersmask}
 
 
-In this section, we compare the compression performance of the coding algorithms presented in Chapter~\ref{algo}, by encoding the various datasets introduced in Chapter~\ref{datasets}. We begin by comparing the algorithms among each other and later we compare them with gzip, a popular general-purpose lossless compression algorithm. We analyze the performance of the algorithms on complete datasets (not individual files), so we always apply definitions~\ref{eq:coding-size-dataset}--\ref{def:relative-difference-dataset}. Following the results obtained in sections~\ref{secX:rendimiento-relativo} and~\ref{secX:windows}, we only consider the masking variants of the evaluated algorithms (i.e. set $V^{*}$), and we always set the window size parameter to the \owsns\ (recall Definition~\ref{def:ows}).
+In this section, we compare the compression performance of the coding algorithms presented in Chapter~\ref{algo}, by encoding the various datasets introduced in Chapter~\ref{datasets}. We begin by comparing the algorithms with each other and later we compare them with gzip, a popular general-purpose lossless compression algorithm. We analyze the performance of the algorithms on complete datasets (not individual files), so we always apply definitions~\ref{eq:coding-size-dataset}--\ref{def:relative-difference-dataset}. Following the results obtained in sections~\ref{secX:rendimiento-relativo} and~\ref{secX:windows}, we only consider the masking variants of the evaluated algorithms (i.e. set $V^{*}$), and we always set the window size parameter to the \owsns\ (recall Definition~\ref{def:ows}).
 
 
 For each data type $z$ of each dataset $d$, and each coding algorithm variant $a_v \in V^{*}$ and error parameter $e \in E$, we calculate the CR of $c_{<a_v, w_{global}^{*}, e>}$, as defined in (\ref{eq:compression-rate-dataset}), where \WGlobal\~$=\owsns(a_v, e, z, d)$. The following definition is useful for analyzing which CAI obtains the best compression result for a specific data type.

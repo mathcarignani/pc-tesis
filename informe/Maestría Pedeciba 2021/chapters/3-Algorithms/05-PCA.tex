@@ -40,10 +40,10 @@ Assume there exists a $\yOne \in \mathbb{R}$, $m\leq \yOne\leq M$, such that $|\
 We have $|\yOne-\midrange|> \maxerror \implies 2|\yOne-\midrange|> 2\maxerror \implies |2\yOne-(m+M)|> 2\maxerror$.
 
 If $2\yOne\geq m+M$, then $|2\yOne-(m+M)|> 2\maxerror \implies 2\yOne-(m+M)> 2\maxerror$.\\
-Since $M\geq \yOne$, then $2\yOne-(m+M)> 2\maxerror \implies 2M-(m+M) = M-m > 2\maxerror$, which contradicts one of the hypothesis.
+Since $M\geq \yOne$, then $2\yOne-(m+M)> 2\maxerror \implies 2M-(m+M) = M-m > 2\maxerror$, which contradicts the assumptions of the Lemma.
 
 Otherwise, if $2\yOne< m+M$, then $|2\yOne-(m+M)|> 2\maxerror \implies 2\yOne-(m+M)< -2\maxerror$.\\
-Since $m \leq \yOne$, then $2\yOne-(m+M)< -2\maxerror \implies 2m-(m+M)=m-M < -2\maxerror \implies M-m > 2\maxerror$, which, again, contradicts one of the hypothesis.
+Since $m \leq \yOne$, then $2\yOne-(m+M)< -2\maxerror \implies 2m-(m+M)=m-M < -2\maxerror \implies M-m > 2\maxerror$, which, again, contradicts the assumptions of the Lemma.
 \end{proof}
 
 
@@ -96,7 +96,7 @@ The third and last window consists of the last four samples, i.e. $[4, 2, 1, 1]$
 \exampleStepPCA{pca}{4}{\label{example:pca:4}}{3}
 
 
-This simple example fairly represents every scenario that may arise during the encoding process. Since the threshold condition holds for the first two windows, both are encoded with exactly the same number of bits, i.e. $1+\BeCe$. On the other hand, since the threshold condition does not hold for the last window, it is encoded with $1 + w*\BeCe$ bits. Thus, windows consisting of adjacent samples are encoded using less bits. This example illustrates why algorithm PCA is expected to achieve better compression performances on slowly varying signals rather than rough signals.
+This simple example fairly represents every scenario that may arise during the encoding process. Since the threshold condition holds for the first two windows, both are encoded with exactly the same number of bits, i.e. $1+\BeCe$. On the other hand, since the threshold condition does not hold for the last window, it is encoded with $1 + w*\BeCe$ bits. Thus, windows consisting of adjacent samples are encoded using fewer bits. This example illustrates why algorithm PCA is expected to achieve better compression performances on smooth (i.e. slowly varying) rather than rough (i.e. with abrupt changes) signals.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

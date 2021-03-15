@@ -6,8 +6,6 @@
 \newcommand{\slopeCond}{$\slope(\smin)\leq \slope(\lineSeg) \leq \slope(\smax)$}
 \newcommand{\slopeCondF}{$\slope(\smin)\leq \slope(\interSegmentSF) \leq \slope(\smax)$}
 
-\newcommand{\lineSeg}{\textit{s}}
-
 \newcommand{\encodeWinStartSF}{\segment\ = \SFWinStartP(\segmentSet, $\window$, \tscol, \out) // rout. in Fig.\hspace{1pt}\ref{SFWinStart}}
 \newcommand{\encodeWinEndSF}[1]{\SFEncodePointP(\pointP, \out, #1) // routine shown in Figure~\ref{sfPointM}}
 
@@ -42,7 +40,7 @@
         }
         
         \Else{
-            Let $\segmentConn \in\segmentSet$ be a line segment connected to $\segmentLast$, which approximates the points representing entries in $\window$\\
+            Let $\segmentConn \in\segmentSet$ be a line segment connected to $\segmentLast$, which approximates the points in $\window$\\
             \uIf{\textnormal{$\segmentConn$ exists}}{
                 \SFEncodeWinEndStartP($\segmentLast$, $\segmentConn$, \out) // rout. in Fig.~\ref{SFWinEndStart}\\
                 Make $\segmentLast = \segmentConn$\\

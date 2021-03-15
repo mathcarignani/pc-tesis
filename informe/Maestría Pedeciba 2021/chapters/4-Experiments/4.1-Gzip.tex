@@ -4,7 +4,7 @@
 
 
 \newcommand{\bestdash}{``\texttt{-{}-}best''}
-In this subsection we consider the results obtained by the general-purpose compression algorithm gzip \cite{gzip}. This algorithm only operates in lossless mode (i.e. the error parameter can only be $e=0$), and it doesn't have a window size parameter $w$. Therefore, for each data type $z$ of each dataset $d$, we have a unique CAI (and obtain a unique CR value) for gzip. 
+In this subsection we consider the results obtained by the general-purpose lossless compression algorithm gzip \cite{gzip}. This algorithm only operates in lossless mode (i.e. the error parameter can only be $e=0$), and it doesn't have a window size parameter $w$. Therefore, for each data type $z$ of each dataset $d$, we have a unique CAI (and obtain a unique CR value) for gzip. 
 
 In all our experiments with gzip we perform a column-wise compression of the dataset files, which, in general, yields a much better performance than a row-wise compression. This is due to the fact that in most of our datasets, there is a greater degree of temporal than spatial correlation between the signals. All the reported results are obtained with the \bestdash\ option of gzip, which targets compression performance optimization \cite{gzipman}. 
 

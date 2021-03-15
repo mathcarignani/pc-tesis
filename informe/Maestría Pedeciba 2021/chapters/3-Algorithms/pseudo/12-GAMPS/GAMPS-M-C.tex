@@ -16,7 +16,7 @@
 
 \beginAlgorithm
 \onlyInput{\columnsInput\\\outVarM{GAMPS}\\\cInputThreshold\\\cInputWindowAPCA}
-Group \columns\ into disjoint subsets of spatially correlated columns, where in each subset, a single base column is defined, and the rest of its columns are considered ratio columns. Also define error threshold parameters \epsilonB\ and \epsilonR, for base and ratio columns, respectively.\\
+Group \columns\ into disjoint subsets of spatially correlated columns, where in each subset, a single base column is defined, and the rest of its columns are considered ratio columns. Also define error threshold parameters \epsilonB\ and \epsilonR, for base and ratio columns, respectively. This is done solving the facility location problem defined in \cite{coder:gamps}.\\
 Encode the number of subsets using \gampsSize\ bits\\
 \ForEach{\forEachGroup}{
     Let \baseColumn\ be the base column in \colGroup\\
