@@ -1,0 +1,40 @@
+
+
+\vspace{-20pt}
+\section{General Encoding Scheme}
+\label{algo:details}
+
+
+\vspace{-5pt}
+Figure~\ref{pseudoCodeCommon} shows a general encoding scheme used for the evaluated algorithm variants. Its inputs are a CSV data file in the format presented in Section~\ref{datasets:over}, a key ($v$) that describes the algorithm variant (either \maskalgo\ or \NOmaskalgo), and the maximum error threshold (\maxerror) and window size (\win) parameters. The output is a binary file, which represents the input file encoded with a compression algorithm using the specified variant and parameters. Constant and linear model algorithms only exploit the temporal correlation in the data, thus they iterate through the data columns and encode each independently (\Line 9). On the other hand, correlation models also exploit the spatial correlation, so the data columns are jointly encoded (\Line 11). The decoding scheme is symmetric.
+
+
+\input{chapters/3-Algorithms/pseudo/02-General/Sub-C}
+
+
+\clearpage
+
+
+The timestamp column, which is comprised of integers, is the first column in every CSV data file, and it is also the first column to be encoded (\Line 4). This is done using a lossless code in which every integer is encoded independently, using a fixed number of bits, $\BeCe$. Such a number is, in fact, generally defined not just for the timestamp column, but for other data columns as well. The column-dependent value is defined as follows.
+
+
+\begin{defcion}
+The number of bits $\BeCe$ required to encode a specific value in the $i$-th data column of a dataset file $f$ is given by
+\vspace{-5pt}
+\begin{equation}
+\label{eq:bece}
+\BeCe(f, i) = \lceil{ \log_2 \big( \text{max}(f, i) - \text{min}(f, i) + \EneCe(f, i) \big) } \rceil,
+\end{equation}
+% \vspace{-3pt}
+where $\text{max}(f, i)$ and $\text{min}(f, i)$ are the maximum and minimum values allowed, respectively, for the $i$-th data column of $f$, and $\EneCe(z, d)\in \{0,1\}$ is a constant that accounts for an extra symbol needed to encode a gap, whose value is 1 if the data column admits gaps, and 0 otherwise.
+\end{defcion}
+
+
+Recall, from Section~\ref{datasets:over}, that the timestamp column consists of integer values, but, in general, the rest of the columns admit both integer values and the character ``N", which represents a gap in the data. Thus, $\EneCe$ is 0 for the timestamp column, and 1 for the rest of the data columns in each dataset. For the data columns in our experimental datasets, the minimum and maximum values obtained for $\BeCe$ are 9, for the zonal and meridional winds columns in dataset ElNino, and 17, for the timestamp columns in every dataset.
+
+We point out that the encoder is able to calculate $\BeCe$ for each data column in each dataset file: recall, from Section~\ref{datasets:over}, that the maximum and minimum values allowed for each column are specified in the header of the dataset CSV file, making this information known to the encoder. Since the header of the file is encoded (\Line 3 in Figure~\ref{pseudoCodeCommon}), the decoder can also calculate $\BeCe$ in each case. In the sequel, in all the algorithm descriptions, we will assume that the value of $\BeCe$ is known for the data column of interest in the algorithm.
+
+
+\newcommand{\gapLine}{6}
+We focus on the compression of the sample columns (i.e. the rest of the columns in the data file), and do not delve further into optimization of the timestamp compression, which we leave for future work. When variant \maskalgo of an algorithm is executed, the positions of the gaps in every data column are encoded, independently for each column, in \Line \gapLine; the details are explained in Section~\ref{algo:maskmodes}.
+

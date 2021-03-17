@@ -19,13 +19,13 @@ class PDFS3(PDFSCommon):
     CODERS_ARRAY = ['CoderPCA', 'CoderAPCA', 'CoderCA', 'CoderPWLH', 'CoderPWLHInt', 'CoderGAMPSLimit', 'CoderFR', 'CoderSF']
     PLOTS_ARRAY = ['window', 'relative']
     PLOTS_MATRIX = [
-        [['CoderPCA', 'window'],       ['CoderAPCA', 'window'],         ['CoderCA', 'window'],              ['CoderFR', 'window']],
+        [['CoderPCA', 'window'],       ['CoderAPCA', 'window'],         ['CoderPWLH', 'window'],              ['CoderPWLHInt', 'window']],
         None,
-        [['CoderPCA', 'relative'],  ['CoderAPCA', 'relative'],    ['CoderCA', 'relative'],         ['CoderFR', 'relative']],
+        [['CoderPCA', 'relative'],  ['CoderAPCA', 'relative'],    ['CoderPWLH', 'relative'],         ['CoderPWLHInt', 'relative']],
         None,
-        [['CoderPWLH', 'window'],      ['CoderPWLHInt', 'window'],      ['CoderGAMPSLimit', 'window'], ['CoderSF', 'window']],
+        [['CoderCA', 'window'],      ['CoderSF', 'window'],      ['CoderFR', 'window'], ['CoderGAMPSLimit', 'window']],
         None,
-        [['CoderPWLH', 'relative'], ['CoderPWLHInt', 'relative'], ['CoderGAMPSLimit', 'relative'], ['CoderSF', 'relative']],
+        [['CoderCA', 'relative'], ['CoderSF', 'relative'], ['CoderFR', 'relative'], ['CoderGAMPSLimit', 'relative']],
     ]
     HEIGHT_RATIOS = [30, 0, 30, 15, 30, 0, 30]
     PLOT_OPTIONS = {
@@ -125,14 +125,22 @@ class PDFS3(PDFSCommon):
         minimum, maximum = min(values), max(values)
         assert(minimum >= 0)
         # (1) Check that the maximum does not change and occurs in the expected dataset/coder
-        expected_maximum = 13.821023593245144
+        expected_maximum = 10.598254581045069
 
         result = {}
-        if self.dataset_name == "IRKIS" and algorithm == "CoderGAMPSLimit" and self.filename == "vwc_1205.dat.csv":
+        if self.dataset_name == "IRKIS" and algorithm == "CoderPCA" and self.filename == "vwc_1203.dat.csv":
             assert(maximum == expected_maximum)
-            assert(str(round(maximum, 2)) == "13.82")
+            assert(str(round(maximum, 1)) == "10.6")
             result = {'keys': ["PlotMax"], 'indexes': [values.index(maximum)], 'color': PlotConstants.VALUE0_COLOR}
         else:
+            if self.dataset_name == "IRKIS" and algorithm == "CoderAPCA" and self.filename == "vwc_1202.dat.csv":
+                # checks that the results specified in the report (Section 4.3) do not change...
+                value_for_e_3 = values[2]
+                value_for_e_10 = values[4]
+                assert(str(round(value_for_e_3, 2)) == "1.52")
+                assert(str(round(value_for_e_10, 2)) == "1.76")
+                assert(maximum < expected_maximum)
+            # print("------")
             # print(maximum)
             # print(expected_maximum)
             # print(self.dataset_name)
@@ -166,7 +174,7 @@ class PDFS3(PDFSCommon):
                     elif 2 < value <= 5:
                         range_4 += 1
                         total[3] += 1
-                    elif 5 < value <= 14:
+                    elif 5 < value <= 11:
                         range_5 += 1
                         total[4] += 1
                 algorithms_data[algorithm] = [range_1, range_2, range_3, range_4, range_5]

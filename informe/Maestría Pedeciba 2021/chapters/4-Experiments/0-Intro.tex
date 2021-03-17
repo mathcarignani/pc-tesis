@@ -1,0 +1,17 @@
+
+
+
+
+
+
+
+In this chapter we present our experimental results. The main goal of our experiments is to analyze the compression performance of each of the algorithm variants presented in Chapter~\ref{algo}, by encoding the various real-world datasets introduced in Chapter~\ref{datasets}, and comparing the results.
+
+In \textbf{Section~\ref{experiments:experiments}} we describe our experimental setting, and define the evaluated combinations of algorithms, their variants and parameter values, and the figures of merit used for comparison. 
+
+In \textbf{Section~\ref{secX:rendimiento-relativo}} we compare the compression performance of the masking and non-masking variants implemented for each coding algorithm. The results show that, on datasets with few or no gaps, the performance of both variants is roughly the same, while on datasets with many gaps the masking variant always performs better, in some cases with a significant difference. These results suggest that the masking variant is more robust and performs better in general. 
+
+In \textbf{Section~\ref{secX:windows}} we analyze the extent to which the window size parameter impacts the compression performance of the coding algorithm variants. We compress each dataset file, and compare the results obtained when using the optimal window size (i.e. the one that achieves the best compression) for the specific file, with the results obtained when using the optimal window size for the whole dataset, when all the files in the dataset are compressed using the same window size. The results indicate that the effect of using the optimal window size for the whole dataset, instead of the optimal window size for each file, is rather small. 
+
+Finally, in \textbf{Section~\ref{secX:codersmask}} we compare the compression performance of our adapted algorithm variants, with each other, and with the general-purpose lossless compression algorithm gzip. The experimental results indicate that none of the algorithm variants obtains the best performance in every scenario. For larger error thresholds, variant \MaskVar{APCA} achieves the best compression rates in most cases, while for lower thresholds, the same is true for algorithm gzip and variant \MaskVar{PCA}.
+

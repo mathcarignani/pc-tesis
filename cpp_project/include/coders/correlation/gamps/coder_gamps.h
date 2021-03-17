@@ -33,10 +33,10 @@ private:
     void codeMappingTable(GAMPSOutput* gamps_output);
     void codeGAMPSColumns(GAMPSOutput* gamps_output);
 
-    void codeGAMPSColumn(DynArray<GAMPSEntry>* column, bool base_window);
+    void codeGAMPSColumn(DynArray<GAMPSEntry>* column, bool is_base_window, double threshold);
 
     void update(DynArray<GAMPSEntry>* column, int & entry_index, GAMPSEntry & current_entry, int & remaining);
-    void codeWindow(APCAWindow* window, bool base_window);
+    void codeWindow(APCAWindow* window, bool is_base_window);
 
 public:
     // These attributes are public because they are accessed by the GroupGAMPS class

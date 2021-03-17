@@ -1,0 +1,177 @@
+
+
+\section{Algorithms PWLH and PWLHInt}
+\label{algo:pwlh}
+\newcommand{\EncodeWindow}{EncodeWindow}
+
+
+Algorithm \textit{\PWLHfull} \cite{coder:pwlh} is a linear model algorithm that supports lossless and near-lossless compression. \WindowParam \BothVariantsOne{PWLH}. We also define algorithm \textit{PWLHInt} by introducing minor design changes to algorithm PWLH. The description in the current section applies to both PWLH and PWLHInt, except for the specific differences that are pointed out in Subsection~\ref{algo:pwhl:int}.
+
+
+PWLH is a linear model algorithm, so its encoding process involves the encoding of a sequence of line segments. In Figure~\ref{pseudoCoderPWLHM} we present the coding routine for variant \maskalgo. It consists of a loop that iterates over all column entries, which are always integer values (the gaps are encoded separately). The algorithm maintains a window of consecutive sample points, $\window$, which is initially empty (\Line~1). In each iteration, the addition of a new incoming point, \incoming, to the window is considered (\Lines~3-16). Notice that \incoming, defined in \Lines~3-4, is a sample point (recall definition in Section~\ref{algo:decolinear}): its y-coordinate is an integer sample value, and its x-coordinate is the timestamp (obtained from the timestamp column) for said sample. We point out that in algorithm PWLH, as well as in every evaluated linear model algorithm, windows consist of sample points, while in the constant and correlation model algorithms, windows consist of integer values corresponding to column entries.
+
+
+\clearpage
+
+
+\input{chapters/3-Algorithms/pseudo/08-PWLH/PWLH-M-C}
+
+
+The incoming points obtained in the subsequent iterations are parsed into consecutive windows of variable size (up to a maximum size $\win$), such that the set of points in a certain window satisfy the \textit{valid hull condition}, defined in the next paragraph. If the set of points in a window satisfies the valid hull condition, the absolute error between the encoded and the original samples is guaranteed to be less than or equal to \maxerror. To compute the convex hull we apply Graham's Scan algorithm \cite{GrahamAlgo}. Since the points are already sorted by their respective x-coordinates, the sorting step in the algorithm is eliminated, and the time complexity to build and update the convex hull is $O(n)$ instead of $O(n \log n)$ \cite{AnEva2013}.
+
+
+\vspace{+5pt}
+\begin{defcion}
+\label{def:validHull}
+Let \PWLHSet\ be a set of points, with $|\PWLHSet|>1$, and let \hull\ be the convex hull of \PWLHSet. \hull\ satisfies the \textit{valid hull condition} for a maximum error threshold \maxerror, iff there exists an edge line in the boundary of \hull, for which the maximum Euclidean distance from any of the points in \hull\ to said edge line is less than or equal to $2\maxerror$.
+\end{defcion}
+
+\newcommand{\condLinePWLH}{\Line 12}
+In figures \ref{example:pwlhIntro1} and \ref{example:pwlhIntro2} we present an example that illustrates how the valid hull condition is checked in the coding routine of Figure~\ref{pseudoCoderPWLHM}. In Figure~\ref{example:pwlhIntro1}, set \PWLHSet, which is defined in \Line 9, contains the three points in $\window$, plus the incoming point, \incomingP{4}. In this case, the convex hull of \PWLHSet, \hull, satisfies the valid hull condition for $\maxerror = 1$, since the maximum distance from any of its points to the upper edge line of its boundary is approximately 1.1, which is less than $2\maxerror = 2$. Therefore, the condition in \condLinePWLH\ evaluates to false (we assume that $|\window|<\win$), and \incomingP{4} is added to $\window$ (\Line 16). In the next step, presented in Figure~\ref{example:pwlhIntro2}, set \PWLHSet\ contains the four points in $\window$, plus \incomingP{5}. In this case, \hull\ does not satisfy the valid hull condition, since for each of the three edge lines in its boundary, there exists a point in \hull\ such that its distance to the edge line is greater than~$2\maxerror$. Therefore, the condition in \condLinePWLH\ is satisfied, so $\window$ is encoded (\Line 13), emptied (\Line 14) and added \incomingP{5} (\Line 16).
+
+
+\vspace{+5pt}
+\examplePWLH
+
+
+\vspace{+5pt}
+A window is encoded via the auxiliary routine \EncodeWindow, shown in Figure~\ref{pwlhWindowM}. This method first encodes the window size using $\logWinSize$ bits (\Line 1), then selects the segment that minimizes the \textit{mean square error (MSE)} for the points in the window, taken among all the segments for which the x-coordinates of the first and last endpoints match the x-coordinates of the first and last points in the window, respectively (\Lines 2-3). Notice that the y-coordinates of the two endpoints of this segment are float values, which may not match the value of any column entry, and might even be out of the range specified in the dataset CSV file for the corresponding data type. Finally, in \Lines 5-6, both y-coordinates are encoded as floats, using 32 bits. Recall that the coding algorithm encodes the timestamp column, with the respective x-coordinates, first. Thus, the decoding routine is able to decode both coordinates of each endpoint.
+
+
+\input{chapters/3-Algorithms/pseudo/08-PWLH/PWLH-Win-C}
+
+
+We point out that calculating the segment that minimizes the MSE for a set of points is computationally more expensive than checking the valid hull condition \cite{AnEva2013}. This is the reason why the valid hull condition is checked in every iteration, when deciding whether or not a point should be added to the window, while the segment that minimizes the MSE is only computed for the points in a complete window.
+
+
+In the coding routine presented in Figure~\ref{pseudoCoderPWLHM}, if $\window$ is not empty after executing the last iteration of the loop, it is encoded in \Line 19, via the auxiliary routine \EncodeLastWindowPWLH, shown in Figure~\ref{pwlhLastWindowM}. If $\window$ consists of a single point, its size is encoded using $\logWinSize$ bits, and the y-coordinate of the point is encoded using \tobitexp. On the other hand, if $\window$ consists of multiple points, it is encoded in the same way as the previous windows, i.e. via the auxiliary routine \EncodeWindow, shown in Figure~\ref{pwlhWindowM}.
+
+
+\input{chapters/3-Algorithms/pseudo/08-PWLH/PWLH-WinLast-C}
+
+
+\vspace{+5pt}
+The decoding routine for variant \maskalgo\ is shown in Figure~\ref{pseudoDecoderPWLHM}. It consists of a loop that repeats until every entry in the column has been decoded, which occurs when condition in \Line 2 becomes false. Recall that the coding algorithm encodes the timestamp column first (\Line \gapLine\ in Figure~\ref{pseudoCodeCommon}), so the timestamps are known to the decoding routine (input \tscol). Each iteration of the loop starts with the decoding of the window size (\Line 3). If the window size is greater than 1, then the points in the window are modeled by a line segment. In this case, the decoding routine decodes the float representation of the y-coordinates of the segment endpoints (\Lines 5-6), obtains the timestamps corresponding to their x-coordinates (\Line 7), and calls the auxiliary routine \decodeSegment with those inputs (\Line 8). As we recall from Figure~\ref{pseudoDecoLinear}, routine \decodeSegment returns a list consisting of the sample values that are decoded from the segment, which are then written in the decoded CSV data file (\Lines 9-11). Notice that, even though inputs \sO\ and \sN\ are floats, \decodeSegment returns a list of integers. When the window size is equal to 1, a value is decoded (using $\BeCe$ bits) and written to the decoded file (\Lines 13-14).
+
+
+\input{chapters/3-Algorithms/pseudo/08-PWLH/PWLH-M-D}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\clearpage
+
+
+\subsection{Example}
+\label{algo:pwlh:example}
+\newcommand{\exampleIntro}[1]{\exampleIntroFirst{#1}. For this example we let the interval between consecutive timestamps be equal to 60, the error threshold parameter ($\maxerror$) equal to 1, and the maximum window size ($\win$) equal to 256.}
+
+
+\exampleIntro{\ref{example:pwlh:1}}
+
+
+Since there are only 12 samples to encode, no window in this example can reach the maximum size (256). Therefore, a window is only encoded when the convex hull, defined in \Line 10 of the coding routine, violates the valid hull condition defined in \Line 11. The first iteration is the only one in which the condition in \Line 5 is satisfied, so the algorithm just adds the first incoming point, \incomingP{1}, to the window (\Line 6). Figure~\ref{example:pwlh:1} shows this step in the graph. Observe that, besides the sample points, the convex hull for the current window is also shown.
+
+
+\vspace{+5pt}
+\exampleStep{pwlh}{1}{\label{example:pwlh:1}}{1}
+
+
+\newcommand{\widthh}{\textit{distance}}
+In the second iteration, the boundary of the convex hull that includes incoming point \incomingP{2} consists of a single line segment, where the maximum distance from either point to the line is zero, so the valid hull condition is satisfied, and \incomingP{2} is added to the window. This step is shown in Figure~\ref{example:pwlh:2}.
+
+
+\exampleStep{pwlh}{2}{\label{example:pwlh:2}}{2}
+
+
+\clearpage
+
+
+The following three sample values are also equal to 1. The convex hull that includes the respective incoming points still consists of a single line segment, so these points are also added to the window. This step is shown in Figure~\ref{example:pwlh:3}.
+
+
+\exampleStep{pwlh}{3}{\label{example:pwlh:3}}{3}
+
+
+In the 6th iteration, sample value 2 is considered. The updated convex hull, whose boundary now consists of three edges, is shown in Figure~\ref{example:pwlh:4}. In this case, the maximum distance between the upper edge in its boundary and any of its points is approximately $0.8$, which is less than $2\maxerror=2$. Therefore, the valid hull condition is still satisfied, and \incomingP{6} is added to the window.
+
+
+\vspace{+5pt}
+\exampleStep{pwlh}{4}{\label{example:pwlh:4}}{4}
+
+
+\clearpage
+
+
+The following three iterations are similar to the previous one. In every case, the convex hull is updated, and, even though the maximum distance between the upper edge in its boundary and any of its points increases, it is never greater than $2\maxerror$, so the three incoming points are added to the window. These steps are shown in figures~\ref{example:pwlh:5}, \ref{example:pwlh:6} and \ref{example:pwlh:7}. 
+
+\vspace{+5pt}
+\exampleStepMany{pwlh}{5}{\label{example:pwlh:5}}{5}
+
+\vspace{-15pt}
+\exampleStepMany{pwlh}{6}{\label{example:pwlh:6}}{6}
+
+\vspace{-15pt}
+\exampleStepMany{pwlh}{7}{\label{example:pwlh:7}}{7}
+
+\clearpage
+
+
+Eventually, in the 10th iteration, sample value 2 is considered. In the updated convex hull, which is shown in Figure~\ref{example:pwlh:8}, for the first time the valid hull condition is not satisfied, i.e. \validHull\ in \Line 11 becomes false. Observe that, for each of the four edges in the boundary of the convex hull, there exists a point in the hull such that its distance to the edge line is greater than $2\maxerror$. 
+
+
+\vspace{+5pt}
+\exampleStep{pwlh}{8}{\label{example:pwlh:8}}{8}
+
+
+Since the condition in \condLinePWLH\ becomes true, the window is encoded via the auxiliary routine \EncodeWindow\ (\Line 13), and the window is emptied and added \incomingP{10} (\Lines 14 and 16). Routine \EncodeWindow\ models the points in the window through the line segment that minimizes the MSE for said points (recall Figure~\ref{pwlhWindowM}). This segment and its two encoded endpoints are shown in Figure~\ref{example:pwlh:9}. Encoding the window requires $\logWinSize = \logWinSizeOpt{256}=8$ bits for encoding its size (i.e. 9), and 32 bits for encoding each of the float values corresponding to the y-coordinates of the segment endpoints.
+
+
+\vspace{+5pt}
+\exampleStep{pwlh}{9}{\label{example:pwlh:9}}{9}
+
+
+\clearpage
+
+
+In the last two iterations of the coding routine, which correspond to the last two samples, the valid hull condition is not violated. Therefore, after executing the last iteration, $\window$ includes three points, which are encoded via the auxiliary routine \EncodeLastWindowPWLH\ (\Line 19). The associated segment, with its two encoded endpoints, is shown in Figure~\ref{example:pwlh:10}. In this figure, we also display the values of the decoded samples, which are the values that the decoding routine, shown in Figure~\ref{pseudoDecoderPWLHM}, writes to the decoded CSV data file. 
+
+
+\exampleStep{pwlh}{10}{\label{example:pwlh:10}}{10}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsection{Differences Between Algorithms PWLH and PWLHInt}
+\label{algo:pwhl:int}
+
+
+Recall, from Section~\ref{datasets:over}, that, in the signals we are interested in compressing, the data samples are always represented as integers. However, algorithm PWLH \cite{coder:pwlh} encodes the y-coordinates of both endpoints of a line segment as floats, using 32 bits (\Lines 4-5 in Figure~\ref{pwlhWindowM}). When $\BeCe < 32$ (recall, from Section~\ref{algo:details}, that this is the case in our experimental datasets, where the maximum $\BeCe$ is 17), the compression performance of the algorithm can be improved if we transform these y-coordinates into the (integer) domain for the associated data column, since this change allows us to encode a y-coordinate using $\BeCe$ bits. That is precisely the idea behind the design of algorithm PWLHInt.
+
+
+Algorithm PWLHInt is defined by applying three changes to algorithm PWLH. First, we change \Lines 5-6 in the auxiliary routine \EncodeWindow, shown in Figure~\ref{pwlhWindowM}, so that both y-coordinates are rounded to the nearest integer, and then encoded using $\BeCe$ bits. \Liness 5-6 are modified accordingly in the decoding routine, shown in Figure~\ref{pseudoDecoderPWLHM}, this being the only change in the decoding routine. Secondly, we add a new constraint to the condition in \condLinePWLH\ of the coding routine, shown in Figure~\ref{pseudoCoderPWLHM}, to make sure that the (rounded) y-coordinates of both endpoints of the approximation segment belong to the range defined for the data column being encoded (in this case, the approximation segment obtained in \EncodeWindow\ must be computed before checking the condition). These first two changes guarantee that $\BeCe$ bits are enough to encode the y-coordinate of an endpoint. Lastly, rounding a coordinate value to the nearest integer, before encoding it, could represent a deviation of as much as 0.5 from its original value, which may cause a decoding error greater than the threshold \maxerror. Therefore, the coding routine of algorithm PWLHInt operates with an adjusted maximum error threshold, $\maxerror' = \maxerror - 0.5$, to make sure that the per-sample absolute error between the decoded and the original signals is less than or equal to \maxerror. 
+
+
+\clearpage
+
+
+Notice that changes made to transform algorithm PWLH into PWLHInt result in a trade-off between factors that affect the compression performance in opposite ways. Rounding and reducing the range of the y-coordinates of the segment endpoints, as well as adjusting the threshold, are factors which are likely to worsen the performance, since, in general, they lead to algorithm PWLHInt encoding more segments than algorithm PWLH. On the other hand, encoding the y-coordinates using $\BeCe$ instead of 32 bits, is expected to improve the performance of PWLHInt when $\BeCe < 32$, which is the case in our experimental datasets. In Section~\ref{secX:codersmask} we evaluate the coding algorithms, and the experimental results suggest that the compression performance of algorithm PWLHInt is superior to that of the original algorithm PWLH \cite{coder:pwlh}. Therefore, the effect of the factors which improve the compression performance of the algorithm outweighs that of those which worsen it, making the trade-off justified by our empirical results
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsection{Non-Masking (\NOmaskalgo)\ Variant}
+\label{algo:pwhl:nmvariant}
+
+
+The coding and decoding routines for variant \NOmaskalgo\ of algorithms PWLH and PWLHInt are similar to their respective variant \maskalgo\ counterparts, the difference being that the former routines are able to handle both sample values and gaps. In the coding routine for variant \NOmaskalgo, a window may consist either of sample points or gaps, but it cannot include both. Therefore, a new constraint is added to the condition in \condLinePWLH\ of the coding routine, shown in Figure~\ref{pseudoCoderPWLHM}, so that a window is also encoded if the new entry is character \noData\ (gap in the data) and the other window entries are sample points, or vice versa. To encode a window that consists of gaps, algorithm PWLH uses $\logWinSize$ bits for encoding its size, and 32 bits for encoding the special float \nodatafloat, while algorithm PWLHInt also uses $\logWinSize$ bits for encoding its size, but it uses \tobitexp\ for encoding the special integer \nodata.
+

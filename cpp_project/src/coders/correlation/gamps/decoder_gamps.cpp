@@ -85,15 +85,8 @@ void DecoderGAMPS::decodeGAMPSColumns(){
         dataset->setColumn(column_index);
 
         std::vector<int> ratio_columns = mapping_table->ratioColumns(table_index);
-        int ratio_columns_size = ratio_columns.size();
 
-        if (ratio_columns_size == 0){
-            std::vector<std::string> base_column = decodeGAMPSBaseColumn();
-            columns.at(column_index) = base_column;
-            continue;
-        }
-
-        std::vector<double> base_column_double;
+        std::vector<double> base_column_double; // used to decode the ratio columns
         std::vector<std::string> base_column = decodeBaseColumn(base_column_double);
         columns.at(column_index) = base_column;
 
@@ -113,22 +106,22 @@ void DecoderGAMPS::decodeGAMPSColumns(){
 }
 
 std::vector<std::string> DecoderGAMPS::decodeBaseColumn(std::vector<double> & base_column_double){
-    std::vector<std::string> read_column = decodeGAMPSBaseColumn();
+    std::vector<double> read_column = decodeGAMPSRatioColumn();
     assert(read_column.size() == data_rows_count);
 
     double previous_value = -1;
     std::vector<std::string> base_column;
     for(int i = 0; i < read_column.size(); i++){
-        std::string csv_value = read_column.at(i);
+        double value = read_column.at(i);
+
+        std::string csv_value = CoderUtils::unmapValueInt(value, dataset->offset() + 1);
         base_column.push_back(csv_value);
 
-        double value;
-        if (Constants::isNoData(csv_value)){
+        if (Constants::isNoData(value)){
             if (previous_value == -1) { continue; } // up to this point no integer has been read
             value = previous_value; // same as the previous integer value
         }
         else {
-            value = (double) CoderUtils::mapValueInt(csv_value, dataset->offset() + 1);
             if (previous_value == -1){ for(int j = 0; j < i; j++) { base_column_double.push_back(value); } }
             previous_value = value;
         }
@@ -141,6 +134,8 @@ std::vector<std::string> DecoderGAMPS::decodeBaseColumn(std::vector<double> & ba
 
 std::vector<std::string> DecoderGAMPS::decodeRatioColumn(std::vector<double> base_column_double){
     std::vector<double> read_column = decodeGAMPSRatioColumn();
+    //std::cout << "read_column.size() = " << read_column.size() << std::endl;
+    //std::cout << "data_rows_count = " << data_rows_count << std::endl;
     assert(read_column.size() == data_rows_count);
 
     std::vector<std::string> ratio_column;
@@ -162,9 +157,7 @@ std::vector<std::string> DecoderGAMPS::decodeRatioColumn(std::vector<double> bas
         // - calculates ratio(i) = value * base(i)
         //
         double ratio_i = value * base_column_double.at(i);
-//        std::cout << "ratio_i = value * base_column_double.at(i) = " << value << " * " << base_column_double.at(i) << " = " << ratio_i << std::endl;
         csv_value = CoderUtils::unmapValueInt(ratio_i, dataset->offset() + 1);
-//        std::cout << "csv_value = " << csv_value << std::endl;
         ratio_column.push_back(csv_value);
     }
     assert(ratio_column.size() == data_rows_count);
@@ -174,7 +167,7 @@ std::vector<std::string> DecoderGAMPS::decodeRatioColumn(std::vector<double> bas
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-std::vector<std::string> DecoderGAMPS::decodeGAMPSBaseColumn(){
+/*std::vector<std::string> DecoderGAMPS::decodeGAMPSBaseColumn(){
 #if MASK_MODE
 #if MASK_MODE == 3
     mask = masks_vector.at(column_index - 1);
@@ -184,7 +177,7 @@ std::vector<std::string> DecoderGAMPS::decodeGAMPSBaseColumn(){
 #endif // MASK_MODE
 
     return DecoderAPCA::decodeDataColumn(this);
-}
+}*/
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -218,6 +211,8 @@ std::vector<double> DecoderGAMPS::decodeGAMPSRatioColumn(){
 
 void DecoderGAMPS::decodeWindowRatioColumn(std::vector<double> & column){
     int window_size = decodeWindowLength();
+    //std::cout << "codeInt(" << window_size - 1 << ");" << std::endl;
+
     decodeConstantWindowRatioColumn(column, window_size);
 #if MASK_MODE
     mask->total_data -= window_size;
@@ -226,15 +221,22 @@ void DecoderGAMPS::decodeWindowRatioColumn(std::vector<double> & column){
 
 void DecoderGAMPS::decodeConstantWindowRatioColumn(std::vector<double> & column, int window_size){
     double constant = (double) decodeFloat();
+    //std::cout << "codeFloat " << ((float) constant) << std::endl;
     int i = 0;
     while (i < window_size){
     #if MASK_MODE
         if (i > 0 && mask->isNoData()) { // always false in the first iteration
+            /*if (column_index == 25){
+                std::cout << "[" << row_index << "] - column.push_back(NO_DATA)" << std::endl;
+            }*/
             column.push_back(Constants::NO_DATA_DOUBLE);
             row_index++;
             continue;
         }
     #endif
+        /*if (column_index == 25){
+            std::cout << "[" << row_index << "] - column.push_back(" << constant << ")" << std::endl;
+        }*/
         column.push_back(constant);
         i++;
         row_index++;

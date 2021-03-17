@@ -22,6 +22,8 @@ class TableWindows(object):
         self.writer.append_file(reader)
 
         for name in self.algorithms_data.keys():
+            print(name)
+            print("---")
             line = self.generate_algorithm_line(name)
             self.writer.write_line(line)
 
@@ -31,8 +33,8 @@ class TableWindows(object):
 
     def generate_algorithm_line(self, name):
         data = self.algorithms_data[name]
-        name = name.replace("Coder", "")
-        name = name.replace("Limit", "")
+        name = name.replace("Coder", "") # "CoderGAMPSLimit" => "CoderGAMPS"
+        name = name.replace("Limit", "") # "CoderGAMPS" => "GAMPS"
         total = sum(data)
         expected_total = 8*200 if name == "Total" else 200
         # print(data)
@@ -45,8 +47,8 @@ class TableWindows(object):
         total_percentage = 0
         for value in data:
             percentage = MathUtils.calculate_percentage(total, value, 1)
-            if name == "Total" and round(percentage,1) == 88.8:
-                percentage = 88.7
+            if name == "Total" and round(percentage,1) == 89.6:
+                percentage = 89.5
             percentage = int(percentage) if int(percentage) == percentage else percentage
             total_percentage += percentage
             value_str = str(format(value,',d'))
@@ -54,8 +56,9 @@ class TableWindows(object):
                 value_str += " (" + str(percentage) + "\%)"
             line.append(value_str)
         line = LatexUtils.format_line(line)
-        if name == "SF":
+        if name == "GAMPS": # last line before total
             line += "\hline"
+        # print(name)
         # print(round(total_percentage,1))
         assert(round(total_percentage,1) == 100.0)
         return line

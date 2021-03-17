@@ -1,0 +1,64 @@
+
+
+\newcommand{\newRayOne}{Let \smin\ be the ray with initial point $(\snapshot.\xx, \snapshot.\yy+\maxerror)$, through point $(\incoming.\xx, \incoming.\yy-\maxerror)$}
+\newcommand{\newRayTwo}{Let \smax\ be the ray with initial point $(\snapshot.\xx, \snapshot.\yy-\maxerror)$, through point $(\incoming.\xx, \incoming.\yy+\maxerror)$}
+
+\newcommand{\slopeCond}{$\slope(\smin)\leq \slope(\lineSeg) \leq \slope(\smax)$}
+\newcommand{\slopeCondF}{$\slope(\smin)\leq \slope(\interSegmentSF) \leq \slope(\smax)$}
+
+\newcommand{\encodeWinStartSF}{\segment\ = \SFWinStartP(\segmentSet, $\window$, \tscol, \out) // rout. in Fig.\hspace{1pt}\ref{SFWinStart}}
+\newcommand{\encodeWinEndSF}[1]{\SFEncodePointP(\pointP, \out, #1) // routine shown in Figure~\ref{sfPointM}}
+
+
+\newcommand{\inputSegmentPrev}{$\segmentLast$: line segment that approximates the points in the previous window}
+\newcommand{\inputSegment}{\segment: line segment that approximates the points in $\window$}
+
+
+\beginAlgorithm
+\onlyInput{\columnInput\\\outVarM{SF}\\\cInputThreshold\\\cInputWindowAPCA\\\inputTSCol}
+\createWindowOne\\
+\ForEach{\forEachEntryCoder}{
+    \obtainTS\\
+    \letPoint\\
+    \uIf{\firstIteratCA}{
+        \AddIncoming, then \continueAlgo\\
+    }
+    \ElseIf{$|\window| == 1$}{
+        Let \snapshot be the single point in $\window$\\
+        \newRayOne\\
+        \newRayTwo\\
+        \AddIncoming, then \continueAlgo\\
+    }
+    
+    Let \interPoint\ be the point of intersection of \smin\ and \smax\\
+    Let \interSegmentSF be the segment with initial point \interPoint\ that passes through point \incoming\\
+    \uIf{\nott\,\slopeCondF \orr \windowFull\ }{
+        Let \segmentSet\ be the set of line segments such that $\lineSeg \in \segmentSet$ iff \lineSeg\ has initial point \interPoint\ and \slopeCond\\
+        \uIf{\nott\,\textnormal{$\segmentLast$ exists}}{
+            \encodeWinStartSF\\
+            Make $\segmentLast = \segment$\\
+        }
+        
+        \Else{
+            Let $\segmentConn \in\segmentSet$ be a line segment connected to $\segmentLast$, which approximates the points in $\window$\\
+            \uIf{\textnormal{$\segmentConn$ exists}}{
+                \SFEncodeWinEndStartP($\segmentLast$, $\segmentConn$, \out) // rout. in Fig.~\ref{SFWinEndStart}\\
+                Make $\segmentLast = \segmentConn$\\
+            }
+            \Else{
+                \SFWinEndP($\segmentLast$, \out)// routine shown in Figure~\ref{SFWinEnd}\\
+                \encodeWinStartSF\\
+                Make $\segmentLast = \segment$\\
+            }
+        }
+        \createWindowTwo, then \addIncoming\\
+    }
+    \Else{
+        \AddIncoming\\
+        Update \smin\ and \smax, considering the points in $\window$\\
+    }
+        
+    
+}
+\EndAlgorithmVariantM{Coding}{\coderSF}{\label{pseudoCoderSF}}
+

@@ -15,13 +15,13 @@ class PDFS4(PDFSCommon):
                     'CoderFR', 'CoderSF']
     PLOTS_ARRAY = ['window', 'compression']
     PLOTS_MATRIX = [
-        [['CoderPCA', 'compression'],  ['CoderAPCA', 'compression'],    ['CoderCA', 'compression'],          ['CoderFR', 'compression']],
+        [['CoderPCA', 'compression'],  ['CoderAPCA', 'compression'],    ['CoderPWLH', 'compression'],          ['CoderPWLHInt', 'compression']],
         None,
-        [['CoderPCA', 'window'],       ['CoderAPCA', 'window'],         ['CoderCA', 'window'],               ['CoderFR', 'window']],
+        [['CoderPCA', 'window'],       ['CoderAPCA', 'window'],         ['CoderPWLH', 'window'],               ['CoderPWLHInt', 'window']],
         None,
-        [['CoderPWLH', 'compression'], ['CoderPWLHInt', 'compression'], ['CoderGAMPSLimit', 'compression'],  ['CoderSF', 'compression']],
+        [['CoderCA', 'compression'], ['CoderSF', 'compression'], ['CoderFR', 'compression'],  ['CoderGAMPSLimit', 'compression']],
         None,
-        [['CoderPWLH', 'window'],      ['CoderPWLHInt', 'window'],      ['CoderGAMPSLimit', 'window'],       ['CoderSF', 'window']]
+        [['CoderCA', 'window'],      ['CoderSF', 'window'],      ['CoderFR', 'window'],       ['CoderGAMPSLimit', 'window']]
     ]
     HEIGHT_RATIOS = [30, 0, 30, 15, 30, 0, 30]
     PLOT_OPTIONS = {
@@ -70,8 +70,19 @@ class PDFS4(PDFSCommon):
             return {}
 
         if algorithm == "CoderPCA":
+            # checks that the results specified in the report (Section 4.4) do not change...
+            value_for_e_0 = values[0]
+            if plot_name == 'compression':
+                assert(str(round(value_for_e_0/100.0, 2)) == "0.33")
+            else: # plot_name == window
+                assert(values == [6, 6, 0, 0, 0, 0, 0, 0])
+
             return {'keys': ["PlotMax"], 'indexes': [0], 'color': 'blue'}
         elif algorithm == "CoderAPCA":
+            # checks that the results specified in the report (Section 4.4) do not change...
+            if plot_name == 'window':
+                assert(values == [0, 0, 0, 0, 1, 2, 2, 3])
+
             size = len(values)
             array = list(range(1, size)) # [1, 2, ..., size-1]
             result = {'keys': ["PlotMax"]*(size-1), 'indexes': array, 'color': 'blue'}

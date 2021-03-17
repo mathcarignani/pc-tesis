@@ -6,7 +6,7 @@
 #include "math_utils.h"
 #include "iostream"
 
-APCAWindow::APCAWindow(int window_size_, int error_threshold_): Window(window_size_, error_threshold_){
+APCAWindow::APCAWindow(int window_size_, double error_threshold_): Window(window_size_, error_threshold_){
     length = 0;
     min = 0;
     max = 0;
@@ -65,7 +65,7 @@ void APCAWindow::addFirstValue(std::string x){
         length = 1;
         return;
     }
-    // x is a double
+    // x is an int
     nan_window = false;
 #endif
     double x_double = Conversor::stringToDouble(x);

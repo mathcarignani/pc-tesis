@@ -16,7 +16,7 @@ private:
 #endif
 
 public:
-    APCAWindow(int window_size_, int error_threshold_);
+    APCAWindow(int window_size_, double error_threshold_);
     bool conditionHolds(std::string x);
     bool isFull();
     bool isEmpty();
