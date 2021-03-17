@@ -29,7 +29,7 @@ int main(int argc, char *argv[]){
     Constants::checkMaskMode(mask_mode);
 
     std::string action = argv[2];
-    assert(action == "c" or action == "d");
+    assert(action == "c" || action == "d");
 
     Path input_path = Path(argv[3]);
     Path output_path = Path(argv[4]);

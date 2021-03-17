@@ -51,7 +51,7 @@ std::vector<int> CoderGAMPS::getGAMPSEpsilonsVector(){
         int data_type_index = (i - 1) % total_data_types; // -1 because the first entry is skipped
         int current_epsilon = epsilons_vector.at(data_type_index);
         int candidate_epsilon = error_thresholds_vector.at(i);
-        if (current_epsilon == -1 or candidate_epsilon < current_epsilon){
+        if (current_epsilon == -1 || candidate_epsilon < current_epsilon){
             epsilons_vector.at(data_type_index) = candidate_epsilon;
         }
     }
@@ -177,10 +177,6 @@ void CoderGAMPS::codeGAMPSColumn(DynArray<GAMPSEntry>* column, bool is_base_wind
         // convert double to string
         if (!no_data) { csv_value = Conversor::doubleToString(current_entry.value); }
 
-        if (row_index < 100 and (column_index == 13 or column_index == 16)){
-            //std::cout << "[" << row_index << "] - " << csv_value << std::endl;
-        }
-
         if (!window->conditionHolds(csv_value)) {
             codeWindow(window, is_base_window);
             window->addFirstValue(csv_value);
@@ -215,8 +211,4 @@ void CoderGAMPS::codeWindow(APCAWindow* window, bool is_base_window){
         value = Conversor::stringToDouble(constant_value);
     }
     codeFloat((float) value);
-
-    if (row_index < 100 and (column_index == 13 or column_index == 16)){
-        //std::cout << "window->length = " << window->length << " ///// codeFloat(" << (float) value << ")" << std::endl;
-    }
 }

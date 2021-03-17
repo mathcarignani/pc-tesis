@@ -158,10 +158,6 @@ std::vector<std::string> DecoderGAMPS::decodeRatioColumn(std::vector<double> bas
         //
         double ratio_i = value * base_column_double.at(i);
         csv_value = CoderUtils::unmapValueInt(ratio_i, dataset->offset() + 1);
-        if (column_index == 16 and i < 100){
-            //std::cout << "ratio_i = value * base_column_double.at(i) = " << value << " * " << base_column_double.at(i) << " = " << ratio_i << std::endl;
-            //std::cout << "[" << i << "] - csv_value = " << csv_value << std::endl;
-        }
         ratio_column.push_back(csv_value);
     }
     assert(ratio_column.size() == data_rows_count);
