@@ -17,10 +17,9 @@ private:
     void codeColumnWhile(std::string csv_value) override;
     void codeColumnAfter() override;
 
-    CAWindow* createWindow();
     void processValue(std::string x);
 
-    void codeValueAndCreateNonNanWindow(std::string x, int x_int);
+    void codeArchivedValueAndCreateNonNanWindow(std::string archived_value, int archived_value_int);
     void codeWindow();
     void codeWindow(int window_length, std::string window_value);
 
