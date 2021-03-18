@@ -8,7 +8,7 @@ class DecoderCA: public DecoderCols {
 
 private:
     std::string archived_value;
-    bool decode_archived_value_next;
+    bool decode_archived_value;
 
     std::vector<std::string> decodeDataColumn() override;
     void decode(int nodata_sum, int current_time_delta);

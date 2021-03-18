@@ -10,7 +10,7 @@
 #include "linear_coder_utils.h"
 
 std::vector<std::string> DecoderCA::decodeDataColumn(){
-    decode_archived_value_next = true;
+    decode_archived_value = true; // always decode an archived value before decoding a window
 #if MASK_MODE
     column = new Column(data_rows_count, mask->total_data, mask->total_no_data);
 #else
@@ -36,19 +36,17 @@ std::vector<std::string> DecoderCA::decodeDataColumn(){
 }
 
 void DecoderCA::decode(int nodata_sum, int current_time_delta) {
-    if (decode_archived_value_next || (nodata_sum + current_time_delta == 0)) {
+    if (decode_archived_value || (nodata_sum + current_time_delta == 0)) {
         decodeArchivedValue();
-        decode_archived_value_next = false;
+        decode_archived_value = false;
     } else {
         decodeWindow(nodata_sum);
-        decode_archived_value_next = true;
+        decode_archived_value = true;
     }
 }
 
 void DecoderCA::decodeArchivedValue() {
     std::string value = decodeValueRaw();
-    if (column_index == 1)
-        std::cout << "ArchivedValue = " << value << std::endl;
     column->addData(value);
     archived_value = value;
 }
@@ -56,8 +54,6 @@ void DecoderCA::decodeArchivedValue() {
 void DecoderCA::decodeWindow(int nodata_sum){
     int window_size = decodeWindowLength();
     std::string value = decodeValueRaw();
-    if (column_index == 1)
-        std::cout << window_size << " - " << value << std::endl;
 
 #if !MASK_MODE
     if (value == Constants::NO_DATA){

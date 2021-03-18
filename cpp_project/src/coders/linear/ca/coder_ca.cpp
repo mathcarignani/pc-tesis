@@ -58,29 +58,21 @@ void CoderCA::processValue(std::string x){
     int x_int = Conversor::stringToInt(x);
 
     if (window->isEmpty()){
-//        if (column_index == 1)
-//            std::cout << "window->isEmpty()" << std::endl;
         if (window->nan_window){ // this condition can only be true on the first iteration
             codeArchivedValueAndCreateNonNanWindow(x, x_int);
             return;
         }
 
         if (delta_sum == 0) {
-//            if (column_index == 1)
-//                std::cout << "delta_sum == 0" << std::endl;
             codeArchivedValueAndCreateNonNanWindow(x, x_int);
         }
         else {
-//            if (column_index == 1)
-//                std::cout << "window->setWindow" << std::endl;
             window->setWindow(delta_sum, x_int, x);
         }
         return;
     }
 
     if (window->isFull()){
-//        if (column_index == 1)
-//            std::cout << "window->isFull()" << std::endl;
         codeWindow();
         codeArchivedValueAndCreateNonNanWindow(x, x_int);
         return;
@@ -101,10 +93,7 @@ void CoderCA::processValue(std::string x){
 }
 
 void CoderCA::codeArchivedValueAndCreateNonNanWindow(std::string archived_value, int archived_value_int){
-    //codeWindow(1, archived_value);
     codeValueRaw(archived_value);
-    if (column_index == 1)
-        std::cout << "ArchivedValue = " << archived_value_int << std::endl;
     window->createNonNanWindow(archived_value, archived_value_int);
 }
 
@@ -115,6 +104,4 @@ void CoderCA::codeWindow(){
 void CoderCA::codeWindow(int window_length, std::string window_value){
     codeInt(window_length - 1, window->window_size_bit_length);
     codeValueRaw(window_value);
-    if (column_index == 1)
-        std::cout << window_length << " - " << window_value << std::endl;
 }
