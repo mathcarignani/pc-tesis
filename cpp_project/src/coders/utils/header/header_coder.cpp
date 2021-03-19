@@ -116,13 +116,10 @@ void HeaderCoder::codeMetadata(std::vector<std::string> & column_names, std::vec
     int i = 0;
     std::string current_line = input_csv->readLine();
     while(StringUtils::removeLastChar(current_line) != DatasetUtils::DATA_HEADER) {
-        std::cout << "1" << std::endl;
         codeMetadataRow(i, current_line, column_names, ranges);
-        i++;
         current_line = input_csv->readLine();
-        std::cout << "2 " << current_line << std::endl;
+        i++;
     }
-    std::cout << "A" << std::endl;
     codeLine(current_line);
 }
 
@@ -188,7 +185,6 @@ int HeaderCoder::codeColumnNames(std::vector<std::string> column_names){
 }
 
 void HeaderCoder::codeLine(std::string line){
-    std::cout << "codeLine = " << line << std::endl;
     int number_of_chars = (int) line.size() - 1;
     int zeros_count = number_of_chars % 8 + 8;
 

@@ -35,7 +35,6 @@ void DecoderCommon::decodeWindowParameter(){
 
 void DecoderCommon::decode(){
     dataset = HeaderDecoder(input_file, output_csv).decodeHeader(data_rows_count);
-    std::cout << "data_rows_count = " << data_rows_count << std::endl;
     decodeDataRows();
     closeFiles();
 }
@@ -80,7 +79,6 @@ std::string DecoderCommon::decodeValueRaw(){
     std::string coded_value;
     try {
         coded_value = decodeValue(value);
-//         std::cout << "decodeValue(" << value << ") = " << coded_value << std::endl;
     }
     catch( const std::invalid_argument& e ){
         std::cout << "DecoderCommon::decodeValueRaw: " << e.what() << std::endl;

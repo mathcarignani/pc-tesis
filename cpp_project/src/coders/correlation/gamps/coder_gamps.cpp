@@ -11,7 +11,6 @@
 #include "group_gamps.h"
 
 void CoderGAMPS::setCoderParams(int window_size_, std::vector<int> error_thresholds_vector_){
-    std::cout << "coder_name = " << coder_name << std::endl;
     limit_mode = coder_name == "CoderGAMPSLimit";
     window_size = window_size_;
     error_thresholds_vector = error_thresholds_vector_;

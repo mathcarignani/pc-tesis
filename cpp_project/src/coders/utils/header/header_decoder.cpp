@@ -30,9 +30,7 @@ HeaderDecoder::HeaderDecoder(BitStreamReader* input_file_, CSVWriter* output_csv
 Dataset* HeaderDecoder::decodeHeader(int & data_rows_count){
     DatasetUtils* dataset_utils = new DatasetUtils("decode");
     std::string dataset_name = decodeDatasetName(*dataset_utils); // TODO: remove dataset_name after refactor
-    std::cout << "dataset_name = " << dataset_name << std::endl;
     data_rows_count = decodeDataRowsCount();
-    std::cout << "data_rows_count = " << data_rows_count << std::endl;
     decodeFirstTimestamp();
     std::vector<std::string> row;
 
@@ -79,7 +77,6 @@ void HeaderDecoder::decodeFirstTimestamp(){
     long int seconds = input_file->getInt(32); // 32 bits for the timestamp
     std::string timestamp_str = HeaderTsUtils::getTimestampFromSeconds(seconds);
     std::vector<std::string> row = {"FIRST TIMESTAMP:", timestamp_str};
-    std::cout << timestamp_str << std::endl;
     output_csv->writeRowDecoder(row);
 }
 
@@ -125,6 +122,5 @@ std::string HeaderDecoder::decodeLine(){
         char character = Conversor::intToChar(char_as_int);
         line += character;
     }
-    std::cout << "decodeLine = " << line << std::endl;
     return line;
 }

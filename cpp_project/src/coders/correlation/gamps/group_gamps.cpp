@@ -104,10 +104,6 @@ CDataStream* GroupGAMPS::getColumn(int column_index){
     assert(timestamp > 0);
     assert(previous_value > -1);
     assert(timestamp == dataStream->size());
-    std::cout << "coder_gamps->data_rows_count = " << coder_gamps->data_rows_count << std::endl;
-    std::cout << "nodata_rows_mask->total_no_data = " << nodata_rows_mask->total_no_data << std::endl;
-    std::cout << "timestamp = " << timestamp << std::endl;
-
     assert(timestamp == coder_gamps->data_rows_count - nodata_rows_mask->total_no_data);
     return dataStream;
 }
