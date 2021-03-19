@@ -23,7 +23,7 @@ private:
 
 public:
     using CoderCols::CoderCols;
-    void setCoderParams(int window_size_, std::vector<int> error_thresholds_vector_, bool integer_mode_);
+    void setCoderParams(int window_size_, std::vector<int> error_thresholds_vector_);
 };
 
 #endif //CPP_PROJECT_CODER_PWLH_H

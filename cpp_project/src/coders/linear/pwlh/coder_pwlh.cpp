@@ -4,9 +4,10 @@
 #include <cfloat>
 
 
-void CoderPWLH::setCoderParams(int window_size_, std::vector<int> error_thresholds_vector_, bool integer_mode_){
+void CoderPWLH::setCoderParams(int window_size_, std::vector<int> error_thresholds_vector_){
+    integer_mode = coder_name == "CoderPWLHInt";
+    std::cout << "ABABA" << std::endl;
     window_size = window_size_;
-    integer_mode = integer_mode_;
     error_thresholds_vector = error_thresholds_vector_;
 }
 

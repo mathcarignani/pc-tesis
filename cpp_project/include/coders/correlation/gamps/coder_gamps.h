@@ -16,7 +16,6 @@ private:
     int column_index;
     int row_index;
     std::vector<int> time_delta_vector;
-    std::vector<int> gamps_epsilons_vector;
     Mask* nodata_rows_mask;
 
 #if MASK_MODE == 3
@@ -44,9 +43,10 @@ public:
     int data_type_index;
     int total_data_type_columns; // total number of columns for each data type (they are the same for every data type)
     MappingTable* mapping_table;
+    std::vector<int> gamps_epsilons_vector;
 
     using CoderCommon::CoderCommon;
-    void setCoderParams(int window_size_, std::vector<int> error_thresholds_vector_, bool limit_mode_);
+    void setCoderParams(int window_size_, std::vector<int> error_thresholds_vector_);
 
 };
 

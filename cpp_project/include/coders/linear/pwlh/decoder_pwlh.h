@@ -16,7 +16,7 @@ private:
 
 public:
     using DecoderCols::DecoderCols;
-    void setIntegerMode(bool integer_mode_);
+    void setIntegerMode();
 };
 
 #endif //CPP_PROJECT_DECODER_PWLH_H

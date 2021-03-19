@@ -11,8 +11,8 @@
 #include "line_utils.h"
 #include "linear_coder_utils.h"
 
-void DecoderPWLH::setIntegerMode(bool integer_mode_){
-    integer_mode = integer_mode_;
+void DecoderPWLH::setIntegerMode(){
+    integer_mode = coder_name == "CoderPWLHInt";
 }
 
 std::vector<std::string> DecoderPWLH::decodeDataColumn(){

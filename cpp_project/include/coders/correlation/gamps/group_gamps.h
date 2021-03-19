@@ -22,7 +22,6 @@ private:
 
     CoderGAMPS* coder_gamps;
     GAMPSInput* gamps_input;
-    std::vector<double> gamps_epsilons_vector;
     GAMPS* gamps;
 
     void getNodataRowsMask(int column_index);

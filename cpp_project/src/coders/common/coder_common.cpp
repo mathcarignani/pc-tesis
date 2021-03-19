@@ -15,7 +15,9 @@ CoderCommon::CoderCommon(std::string coder_name_, CSVReader* input_csv_, BitStre
 }
 
 Dataset* CoderCommon::code(){
+    std::cout << "codeFile();" << std::endl;
     codeFile();
+    std::cout << "dataset->printBits();" << std::endl;
     dataset->printBits();
     closeFiles();
     return dataset;

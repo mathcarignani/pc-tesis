@@ -23,6 +23,7 @@ protected:
     CSVWriter* output_csv;
     Dataset* dataset;
     int window_size;
+    std::string coder_name;
 
     void transposeMatrix(int data_rows_count_, std::vector<std::vector<std::string>> columns, int total_columns);
 
@@ -41,7 +42,7 @@ public:
 
     static DecoderCommon* getDecoder(BitStreamReader* input_file, CSVWriter* output_csv);
 
-    DecoderCommon(BitStreamReader* input_file_, CSVWriter* output_csv_);
+    DecoderCommon(std::string coder_name_, BitStreamReader* input_file_, CSVWriter* output_csv_);
     void decodeFile();
     void close();
 

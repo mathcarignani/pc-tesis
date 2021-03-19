@@ -27,38 +27,36 @@ DecoderCommon* DecoderCommon::getDecoder(BitStreamReader* input_file, CSVWriter*
     DecoderCommon* decoder;
 
     if (coder_name == "CoderBase") {
-        decoder = new DecoderBase(input_file, output_csv);
+        decoder = new DecoderBase(coder_name, input_file, output_csv);
         return decoder;
     }
 
     int window_parameter = decodeWindowParameter(input_file);
 
     if (coder_name == "CoderPCA"){
-        decoder = new DecoderPCA(input_file, output_csv);
+        decoder = new DecoderPCA(coder_name, input_file, output_csv);
     }
     else if (coder_name == "CoderAPCA"){
-        decoder = new DecoderAPCA(input_file, output_csv);
+        decoder = new DecoderAPCA(coder_name, input_file, output_csv);
     }
     else if (coder_name == "CoderPWLH" || coder_name == "CoderPWLHInt"){
-        decoder = new DecoderPWLH(input_file, output_csv);
-        bool integer_mode = coder_name == "CoderPWLHInt";
-        ((DecoderPWLH*) decoder)->setIntegerMode(integer_mode);
+        decoder = new DecoderPWLH(coder_name, input_file, output_csv);
+        ((DecoderPWLH*) decoder)->setIntegerMode();
     }
     else if (coder_name == "CoderCA"){
-        decoder = new DecoderCA(input_file, output_csv);
+        decoder = new DecoderCA(coder_name, input_file, output_csv);
     }
 #if MASK_MODE
     else if (coder_name == "CoderFR"){
-        decoder = new DecoderFR(input_file, output_csv);
+        decoder = new DecoderFR(coder_name, input_file, output_csv);
     }
     else if (coder_name == "CoderSF"){
-        decoder = new DecoderSlideFilter(input_file, output_csv);
+        decoder = new DecoderSlideFilter(coder_name, input_file, output_csv);
     }
 #endif
     else { // if (coder_name == "CoderGAMPS" || coder_name == "CoderGAMPSLimit"){
-        decoder = new DecoderGAMPS(input_file, output_csv);
-        bool limit_mode = coder_name == "CoderGAMPSLimit";
-        ((DecoderGAMPS*) decoder)->setLimitMode(limit_mode);
+        decoder = new DecoderGAMPS(coder_name, input_file, output_csv);
+        ((DecoderGAMPS*) decoder)->setLimitMode();
     }
     decoder->setWindowSize(window_parameter);
     return decoder;
@@ -77,7 +75,8 @@ int DecoderCommon::decodeWindowParameter(BitStreamReader* input_file){
     return window_parameter;
 }
 
-DecoderCommon::DecoderCommon(BitStreamReader* input_file_, CSVWriter* output_csv_){
+DecoderCommon::DecoderCommon(std::string coder_name_, BitStreamReader* input_file_, CSVWriter* output_csv_){
+    coder_name = coder_name_;
     input_file = input_file_;
     output_csv = output_csv_;
 }

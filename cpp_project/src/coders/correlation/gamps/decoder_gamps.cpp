@@ -10,8 +10,8 @@
 #include "mask_decoder.h"
 #include "decoder_apca.h"
 
-void DecoderGAMPS::setLimitMode(bool limit_mode_){
-    limit_mode = limit_mode_;
+void DecoderGAMPS::setLimitMode(){
+    limit_mode = coder_name == "CoderGAMPSLimit";
 }
 
 void DecoderGAMPS::decodeDataRows(){

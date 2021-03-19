@@ -10,10 +10,11 @@
 #include "GAMPSInput.h"
 #include "group_gamps.h"
 
-void CoderGAMPS::setCoderParams(int window_size_, std::vector<int> error_thresholds_vector_, bool limit_mode_){
+void CoderGAMPS::setCoderParams(int window_size_, std::vector<int> error_thresholds_vector_){
+    std::cout << "coder_name = " << coder_name << std::endl;
+    limit_mode = coder_name == "CoderGAMPSLimit";
     window_size = window_size_;
     error_thresholds_vector = error_thresholds_vector_;
-    limit_mode = limit_mode_;
 }
 
 void CoderGAMPS::codeDataRows(){
@@ -26,12 +27,12 @@ void CoderGAMPS::codeDataRows(){
 
     total_data_types = limit_mode ? dataset->dataColumnsGroupCount() : 1;
     total_data_type_columns = dataset->data_columns_count / total_data_types;
-    gamps_epsilons_vector = getGAMPSEpsilonsVector();
 
-    std::cout << "VectorUtils::printIntVector(error_thresholds_vector);" << std::endl;
-    VectorUtils::printIntVector(error_thresholds_vector);
-    std::cout << "VectorUtils::printIntVector(gamps_epsilons_vector);" << std::endl;
-    VectorUtils::printIntVector(gamps_epsilons_vector);
+    gamps_epsilons_vector = getGAMPSEpsilonsVector();
+    std::cout << "getGAMPSEpsilonsVector();" << std::endl;
+    assert(gamps_epsilons_vector.size() == total_data_types);
+    std::cout << "gamps_epsilons_vector.size()" << std::endl;
+    std::cout << gamps_epsilons_vector.size() << std::endl;
 
     for(data_type_index = 1; data_type_index <= total_data_types; data_type_index++){
         codeDataTypeColumns();
@@ -40,8 +41,6 @@ void CoderGAMPS::codeDataRows(){
 
 std::vector<int> CoderGAMPS::getGAMPSEpsilonsVector(){
     std::vector<int> epsilons_vector(total_data_types, -1);
-
-//    std::cout << "total_data_types = " << total_data_types << std::endl;
     for(int i=1; i < error_thresholds_vector.size(); i++){ // skip the first entry (time delta epsilon)
         int data_type_index = (i - 1) % total_data_types; // -1 because the first entry is skipped
         int current_epsilon = epsilons_vector.at(data_type_index);
@@ -83,9 +82,6 @@ void CoderGAMPS::codeMappingTable(GAMPSOutput* gamps_output){
     // mapping_table->print(total_groups, group_index);
     std::vector<int> vector = mapping_table->baseColumnIndexVector();
     int vector_size = vector.size();
-#if CHECKS
-    assert(vector_size == total_data_types);
-#endif
     int column_index_bit_length = MathUtils::bitLength(vector_size);
     for (int i = 0; i < vector_size; i++){
         codeInt(vector.at(i), column_index_bit_length);

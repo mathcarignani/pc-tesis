@@ -23,9 +23,6 @@ GroupGAMPS::~GroupGAMPS(){
 GAMPSOutput* GroupGAMPS::getGAMPSOutput(int column_index){
     getNodataRowsMask(column_index);
     gamps_input = getGAMPSInput();
-#if CHECKS
-    assert(gamps_epsilons_vector.size() == gamps_input->getNumOfStream());
-#endif
     gamps = new GAMPS(epsilon, gamps_input);
     gamps->compute();
     GAMPSOutput* gamps_output = gamps->getOutput();
