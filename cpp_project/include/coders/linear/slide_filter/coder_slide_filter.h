@@ -24,8 +24,6 @@ private:
     Line m_curG;// Current segment
     Line m_prevG;// Previous segment
 
-    void codeCoderParams() override;
-
     void codeColumnBefore() override;
     void codeColumnWhile(std::string csv_value) override;
     void codeColumnAfter() override;

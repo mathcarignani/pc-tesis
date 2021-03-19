@@ -22,45 +22,59 @@ void DecoderCommon::setWindowSize(int window_size_){
 }
 
 DecoderCommon* DecoderCommon::getDecoder(BitStreamReader* input_file, CSVWriter* output_csv){
-    int coder_code = input_file->getInt(8); // 8 bits for the coder_code
-    int window_size = input_file->getInt(8) + 1; // 8 bits for the window_size
+    std::string coder_name = decodeCoderName(input_file);
 
     DecoderCommon* decoder;
 
-    if (coder_code == Constants::CODER_BASE) {
+    if (coder_name == "CoderBase") {
         decoder = new DecoderBase(input_file, output_csv);
         return decoder;
     }
 
-    if (coder_code == Constants::CODER_PCA){
+    int window_parameter = decodeWindowParameter(input_file);
+
+    if (coder_name == "CoderPCA"){
         decoder = new DecoderPCA(input_file, output_csv);
     }
-    else if (coder_code == Constants::CODER_APCA){
+    else if (coder_name == "CoderAPCA"){
         decoder = new DecoderAPCA(input_file, output_csv);
     }
-    else if (coder_code == Constants::CODER_PWLH || coder_code == Constants::CODER_PWLH_INT){
+    else if (coder_name == "CoderPWLH" || coder_name == "CoderPWLHInt"){
         decoder = new DecoderPWLH(input_file, output_csv);
-        bool integer_mode = coder_code == Constants::CODER_PWLH_INT;
+        bool integer_mode = coder_name == "CoderPWLHInt";
         ((DecoderPWLH*) decoder)->setIntegerMode(integer_mode);
     }
-    else if (coder_code == Constants::CODER_CA){
+    else if (coder_name == "CoderCA"){
         decoder = new DecoderCA(input_file, output_csv);
     }
 #if MASK_MODE
-    else if (coder_code == Constants::CODER_FR){
+    else if (coder_name == "CoderFR"){
         decoder = new DecoderFR(input_file, output_csv);
     }
-    else if (coder_code == Constants::CODER_SF){
+    else if (coder_name == "CoderSF"){
         decoder = new DecoderSlideFilter(input_file, output_csv);
     }
 #endif
-    else if (coder_code == Constants::CODER_GAMPS || coder_code == Constants::CODER_GAMPS_LIMIT){
+    else { // if (coder_name == "CoderGAMPS" || coder_name == "CoderGAMPSLimit"){
         decoder = new DecoderGAMPS(input_file, output_csv);
-        bool limit_mode = coder_code == Constants::CODER_GAMPS_LIMIT;
+        bool limit_mode = coder_name == "CoderGAMPSLimit";
         ((DecoderGAMPS*) decoder)->setLimitMode(limit_mode);
     }
-    decoder->setWindowSize(window_size);
+    decoder->setWindowSize(window_parameter);
     return decoder;
+}
+
+std::string DecoderCommon::decodeCoderName(BitStreamReader* input_file){
+    int coder_value = input_file->getInt(8); // 8 bits for the coder_value
+    std::string coder_name = Constants::getCoderName(coder_value);
+    std::cout << "DecoderCommon::decodeCoderName() = " << coder_name << std::endl;
+    return coder_name;
+}
+
+int DecoderCommon::decodeWindowParameter(BitStreamReader* input_file){
+    int window_parameter = input_file->getInt(8) + 1; // 8 bits for the window_size
+    std::cout << "DecoderCommon::decodeWindowParameter() = " << window_parameter << std::endl;
+    return window_parameter;
 }
 
 DecoderCommon::DecoderCommon(BitStreamReader* input_file_, CSVWriter* output_csv_){
@@ -125,10 +139,6 @@ std::string DecoderCommon::decodeValueRaw(){
 
 float DecoderCommon::decodeFloat(){
     return input_file->getFloat();
-}
-
-double DecoderCommon::decodeDouble(){
-    return input_file->getDouble();
 }
 
 void DecoderCommon::flushByte(){

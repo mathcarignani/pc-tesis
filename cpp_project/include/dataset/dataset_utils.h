@@ -11,7 +11,7 @@ class DatasetUtils {
 
 private:
     const std::string PATH = OSUtils::GIT_PATH + "/constants";
-    const std::string FILENAME = "CONSTANTS"; // "PAPER_CONSTANTS"
+    const std::string FILENAME = "CONSTANTS"; // "PAPER_CONSTANTS" // TODO: remove
     const std::string SEPARATOR = "=";
     const std::string DATASET_KEY = "#DATASET";
     const std::string TIME_UNIT_KEY = "#TIME_UNIT";

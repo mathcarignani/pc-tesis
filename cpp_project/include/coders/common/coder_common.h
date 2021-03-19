@@ -13,17 +13,18 @@ class CoderCommon {
 
 private:
     void codeDataRowsCount();
-    virtual void codeCoderParams() = 0;
     virtual void codeDataRows() = 0;
     //
     // This method maps a value read in the csv file into an integer to be written in the output file.
-    // It also checks the minimum and maximum constraints.
     //
     int codeValue(std::string x);
     void codeRaw(int value);
+    void codeCoderName();
+    void codeWindowParameter();
 
 protected:
     int window_size;
+    std::string coder_name;
 
 public:
     CSVReader* input_csv;
@@ -31,11 +32,11 @@ public:
     Dataset* dataset;
     int data_rows_count;
 
-    CoderCommon(CSVReader* input_csv_, BitStreamWriter* output_file_);
+    CoderCommon(std::string coder_name_, CSVReader* input_csv_, BitStreamWriter* output_file_);
+    Dataset* code();
+
     void codeFile();
-    void codeCoderParameters(int coder_code, int window_size);
-    void printBits();
-    void close();
+    void closeFiles();
 
     void codeBit(int bit);
     void codeBits(int bit, int times);
@@ -45,7 +46,6 @@ public:
     void codeUnary(int value);
     void codeValueRaw(std::string x);
     void codeFloat(float x);
-    void codeDouble(double x);
     void flushByte();
 };
 

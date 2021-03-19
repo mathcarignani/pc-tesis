@@ -23,7 +23,6 @@ private:
     std::vector<int> total_data_rows_vector;
 #endif // MASK_MODE == 3
 
-    void codeCoderParams() override;
     void codeDataRows() override;
 
     std::vector<int> getGAMPSEpsilonsVector();

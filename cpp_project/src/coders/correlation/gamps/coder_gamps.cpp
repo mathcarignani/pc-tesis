@@ -16,11 +16,6 @@ void CoderGAMPS::setCoderParams(int window_size_, std::vector<int> error_thresho
     limit_mode = limit_mode_;
 }
 
-void CoderGAMPS::codeCoderParams(){
-    int coder_code = limit_mode ? Constants::CODER_GAMPS_LIMIT : Constants::CODER_GAMPS;
-    codeCoderParameters(coder_code, window_size);
-}
-
 void CoderGAMPS::codeDataRows(){
     codeTimeDeltaColumn();
 
@@ -89,7 +84,7 @@ void CoderGAMPS::codeMappingTable(GAMPSOutput* gamps_output){
     std::vector<int> vector = mapping_table->baseColumnIndexVector();
     int vector_size = vector.size();
 #if CHECKS
-    assert(vector_size == total_group_columns);
+    assert(vector_size == total_data_types);
 #endif
     int column_index_bit_length = MathUtils::bitLength(vector_size);
     for (int i = 0; i < vector_size; i++){

@@ -10,11 +10,6 @@ void CoderPWLH::setCoderParams(int window_size_, std::vector<int> error_threshol
     error_thresholds_vector = error_thresholds_vector_;
 }
 
-void CoderPWLH::codeCoderParams(){
-    int coder_code = integer_mode ? Constants::CODER_PWLH_INT : Constants::CODER_PWLH;
-    codeCoderParameters(coder_code, window_size);
-}
-
 void CoderPWLH::codeColumnBefore(){
     delta_sum = 0;
     window = createWindow();

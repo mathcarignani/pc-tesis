@@ -16,7 +16,7 @@ std::vector<std::string> DecoderAPCA::decodeDataColumn(DecoderCommon* decoder){
 
 #if MASK_MODE
 #if CHECKS
-    assert(decoder->mask->total_no_data + decoder->mask->total_data == data_rows_count);
+    assert(decoder->mask->total_no_data + decoder->mask->total_data == decoder->data_rows_count);
 #endif // END CHECKS
 #endif // END MASK_MODE
 

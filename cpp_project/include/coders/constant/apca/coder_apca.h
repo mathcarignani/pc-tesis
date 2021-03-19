@@ -11,8 +11,6 @@ private:
     std::vector<int> error_thresholds_vector;
     APCAWindow* window;
 
-    void codeCoderParams() override;
-
     void codeColumnBefore() override;
     void codeColumnWhile(std::string csv_value) override;
     void codeColumnAfter() override;

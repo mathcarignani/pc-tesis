@@ -12,8 +12,6 @@ private:
     bool integer_mode;
     PWLHWindow* window;
 
-    void codeCoderParams() override;
-
     void codeColumnBefore() override;
     void codeColumnWhile(std::string csv_value) override;
     void codeColumnAfter() override;

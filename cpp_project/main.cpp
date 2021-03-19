@@ -42,7 +42,7 @@ int main(int argc, char *argv[]){
 
     // action == "c"
     std::string coder_name = argv[5];
-    Constants::checkCoderName(coder_name);
+    Constants::getCoderValue(coder_name); // check if coder_name is valid
 
     if (coder_name == "CoderBase"){
         assert(argc == 6);

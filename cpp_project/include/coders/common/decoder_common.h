@@ -16,6 +16,9 @@ private:
     std::string decodeValue(int y);
     int decodeRaw();
 
+    static std::string decodeCoderName(BitStreamReader* input_file);
+    static int decodeWindowParameter(BitStreamReader* input_file);
+
 protected:
     CSVWriter* output_csv;
     Dataset* dataset;
@@ -50,7 +53,6 @@ public:
     std::string decodeValueRaw();
 
     float decodeFloat();
-    double decodeDouble();
     void flushByte();
 
     void setWindowSize(int window_size_);
