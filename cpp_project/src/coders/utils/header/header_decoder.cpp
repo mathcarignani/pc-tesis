@@ -4,7 +4,7 @@
 #include "assert.h"
 #include "string_utils.h"
 #include "dataset_utils.h"
-#include "header_utils.h"
+#include "header_ts_utils.h"
 #include "conversor.h"
 #include <vector>
 
@@ -48,12 +48,12 @@ void HeaderDecoder::decodeFirstTimestamp(){
 }
 
 std::string HeaderDecoder::decodeTimestamp(long int seconds){
-    std::tm timestamp_tm = DatetimeUtils::mapSecondsToDatetime(HeaderUtils::start_date(), seconds);
+    std::tm timestamp_tm = DatetimeUtils::mapSecondsToDatetime(HeaderTsUtils::startDate(), seconds);
 
-    assert(DatetimeUtils::compareDates(HeaderUtils::start_date(), timestamp_tm) == 1);
-    assert(DatetimeUtils::compareDates(timestamp_tm, HeaderUtils::end_date()) == 1);
+    assert(DatetimeUtils::compareDates(HeaderTsUtils::startDate(), timestamp_tm) == 1);
+    assert(DatetimeUtils::compareDates(timestamp_tm, HeaderTsUtils::endDate()) == 1);
 
-    std::string timestamp_str = DatetimeUtils::datetimeToString(timestamp_tm, HeaderUtils::date_format());
+    std::string timestamp_str = DatetimeUtils::datetimeToString(timestamp_tm, HeaderTsUtils::dateFormat());
     return timestamp_str;
 }
 

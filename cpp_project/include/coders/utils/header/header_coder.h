@@ -15,7 +15,6 @@ public:
     HeaderCoder(CSVReader* input_csv_, BitStreamWriter* output_file_); // test_mode = true
     HeaderCoder(CSVReader* input_csv_, CoderCommon* coder_common_); // test_mode = false
     void codeHeader(Dataset* dataset);
-    static const int HEADER_LINES; // number of lines used for the header in the .csv
 
 private:
     CSVReader* input_csv;
@@ -24,10 +23,17 @@ private:
     bool test_mode;
 
     std::string codeDatasetName(DatasetUtils & dataset_utils);
-    void codeTimeUnit(DatasetUtils & dataset_utils);
+    void codeDataRowsCount();
     void codeFirstTimestamp();
-    static long int codeTimestamp(std::string timestamp_str);
-    int codeColumnNames();
+
+    void codeMetadata(std::vector<std::string> & column_names, std::vector<Range*> & ranges);
+    void codeMetadataRow(int i,
+                         std::string line,
+                         std::vector<std::string> & column_names,
+                         std::vector<Range*> & ranges);
+    int codeColumnNames(std::vector<std::string> column_names);
+    void codeLine(std::string line);
+    void checkSizeAndKey(std::vector<std::string> line_vector, int expected_size, std::string expected_key);
 };
 
 #endif //CPP_PROJECT_HEADER_CODER_H

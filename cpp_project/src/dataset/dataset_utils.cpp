@@ -4,8 +4,36 @@
 #include "assert.h"
 #include "string_utils.h"
 #include "conversor.h"
+#include <math.h>
+#include "vector_utils.h"
 
+const std::vector<std::string> DatasetUtils::DATASET_NAMES = {"IRKIS"};
 
+const int DatasetUtils::MAX_DATA_ROWS_BITS = 24;
+
+const std::vector<std::string> DatasetUtils::UNITS = {"minutes", "dimensionless"};
+
+const std::vector<int> DatasetUtils::SCALES = {1, 10, 100, 1000};
+
+bool DatasetUtils::validDatasetName(std::string dataset_name){
+    return VectorUtils::vectorIncludesString(DATASET_NAMES, dataset_name);
+}
+
+bool DatasetUtils::validDataRowsCount(int data_rows_count){
+    int max_data_rows = pow(2, MAX_DATA_ROWS_BITS);
+    return (0 < data_rows_count && data_rows_count < max_data_rows);
+}
+
+bool DatasetUtils::validUnit(std::string unit){
+    return VectorUtils::vectorIncludesString(UNITS, unit);
+}
+
+bool DatasetUtils::validScale(std::string scale){
+    int scale_int = Conversor::stringToInt(scale);
+    return VectorUtils::vectorIncludesInt(SCALES, scale_int);
+}
+
+// TODO: remove
 DatasetUtils::DatasetUtils(std::string action_){
     assert(action_ == "code" || action_ == "decode");
     action = action_;

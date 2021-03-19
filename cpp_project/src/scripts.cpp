@@ -65,12 +65,8 @@ Dataset* Scripts::code(std::string coder_name, Path input_path, Path output_path
     }
 #endif
     else { // (coder_name == "CoderGAMPS" || coder_name == "CoderGAMPSLimit") {
-        std::cout << "A1" << std::endl;
         coder = new CoderGAMPS(coder_name, csv_reader, bit_stream_writer);
-        std::cout << "A2" << std::endl;
         ((CoderGAMPS*) coder)->setCoderParams(window_size, error_thresholds_vector);
-        std::cout << "A3" << std::endl;
     }
-    std::cout << "return coder->code();" << std::endl;
     return coder->code();
 }

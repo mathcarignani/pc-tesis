@@ -23,6 +23,7 @@ public:
     TextReader();
     TextReader(std::string path, std::string filename);
     std::string readLine(); // PRE: continue_reading
+    std::string readLineNoLastChar(); // PRE: continue_reading
     void goToLine(int line_number); // PRE: line_number <= total_lines
     bool findLine(std::string string_to_find);
     void close();

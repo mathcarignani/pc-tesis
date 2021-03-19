@@ -17,6 +17,8 @@ private:
 
 public:
     CSVReader(Path path);
+    
+    static std::vector<std::string> split(std::string line);
 
     // PRE: continue_reading
     std::vector<std::string> readLineCSV();

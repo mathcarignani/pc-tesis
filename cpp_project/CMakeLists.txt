@@ -174,7 +174,7 @@ set(DATASET_SRC_FILES ${DATASET_SRC_DIR}/column_code.cpp ${DATASET_SRC_DIR}/data
 ### DATASET END ########################################################################################################
 
 ### CODERS BEGIN #######################################################################################################
-set(CODER_HER_H_FILES ${CODER_HER_H_DIR}/header_utils.h ${CODER_HER_H_DIR}/header_coder.h ${CODER_HER_H_DIR}/header_decoder.h)
+set(CODER_HER_H_FILES ${CODER_HER_H_DIR}/header_ts_utils.h ${CODER_HER_H_DIR}/header_coder.h ${CODER_HER_H_DIR}/header_decoder.h)
 set(CODER_HER_SRC_FILES ${CODER_HER_SRC_DIR}/header_coder.cpp ${CODER_HER_SRC_DIR}/header_decoder.cpp)
 
 set(CODER_MASK_H_FILES ${CODER_MASK_H_DIR}/burst.h ${CODER_MASK_H_DIR}/mask.h ${CODER_MASK_H_DIR}/mask_coder.h ${CODER_MASK_H_DIR}/mask_decoder.h)

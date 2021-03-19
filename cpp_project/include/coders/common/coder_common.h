@@ -12,7 +12,6 @@
 class CoderCommon {
 
 private:
-    void codeDataRowsCount();
     virtual void codeDataRows() = 0;
     //
     // This method maps a value read in the csv file into an integer to be written in the output file.
@@ -34,10 +33,7 @@ public:
 
     CoderCommon(std::string coder_name_, CSVReader* input_csv_, BitStreamWriter* output_file_);
     Dataset* code();
-
-    void codeFile();
     void closeFiles();
-
     void codeBit(int bit);
     void codeBits(int bit, int times);
     void codeBool(bool bit);

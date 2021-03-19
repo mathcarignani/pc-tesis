@@ -15,20 +15,13 @@ CoderCommon::CoderCommon(std::string coder_name_, CSVReader* input_csv_, BitStre
 }
 
 Dataset* CoderCommon::code(){
-    std::cout << "codeFile();" << std::endl;
-    codeFile();
-    std::cout << "dataset->printBits();" << std::endl;
+    codeCoderName();
+    if (coder_name != "CoderBase"){ codeWindowParameter(); }
+    HeaderCoder(input_csv, this).codeHeader(dataset);
+    codeDataRows();
     dataset->printBits();
     closeFiles();
     return dataset;
-}
-
-void CoderCommon::codeDataRowsCount(){
-    data_rows_count = input_csv->total_lines - HeaderCoder::HEADER_LINES;
-#if CHECKS
-    assert(0 < data_rows_count && data_rows_count < pow(2, 24));
-#endif
-    codeInt(data_rows_count, 24); // 24 bits for the data rows count
 }
 
 //
@@ -104,16 +97,6 @@ void CoderCommon::codeFloat(float x){
 void CoderCommon::flushByte(){
     int remaining = output_file->flushByte();
     dataset->addBits(remaining);
-}
-
-void CoderCommon::codeFile(){
-    codeCoderName();
-    if (coder_name != "CoderBase"){
-        codeWindowParameter();
-    }
-    HeaderCoder(input_csv, this).codeHeader(dataset);
-    codeDataRowsCount();
-    codeDataRows();
 }
 
 void CoderCommon::codeCoderName() {

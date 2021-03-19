@@ -23,9 +23,13 @@ CSVReader::CSVReader(Path path){
     constructor(path.file_path, path.file_filename);
 }
 
+std::vector<std::string> CSVReader::split(std::string line){
+    return StringUtils::splitByChar(line, ','); // split by the comma
+}
+
 std::vector<std::string> CSVReader::readLineCSV(){
     std::string current_line = readLine();
-    std::vector<std::string> current_line_vector = StringUtils::splitByChar(current_line, ','); // split by the comma
+    std::vector<std::string> current_line_vector = split(current_line);
     return current_line_vector;
 }
 

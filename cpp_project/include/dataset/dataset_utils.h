@@ -10,8 +10,9 @@
 class DatasetUtils {
 
 private:
+    // TODO: remove
     const std::string PATH = OSUtils::GIT_PATH + "/constants";
-    const std::string FILENAME = "CONSTANTS"; // "PAPER_CONSTANTS" // TODO: remove
+    const std::string FILENAME = "CONSTANTS"; // "PAPER_CONSTANTS"
     const std::string SEPARATOR = "=";
     const std::string DATASET_KEY = "#DATASET";
     const std::string TIME_UNIT_KEY = "#TIME_UNIT";
@@ -23,6 +24,17 @@ private:
     std::string findLine(std::string string_group, std::string string_to_find);
 
 public:
+    static const std::vector<std::string> DATASET_NAMES;
+    static const int MAX_DATA_ROWS_BITS;
+    static const std::vector<std::string> UNITS;
+    static const std::vector<int> SCALES;
+
+    static bool validDatasetName(std::string dataset_name);
+    static bool validDataRowsCount(int data_rows_count);
+    static bool validUnit(std::string unit);
+    static bool validScale(std::string scale);
+
+    // TODO: remove
     DatasetUtils(std::string action_);
 
     int codeDatasetName(std::string dataset_name);

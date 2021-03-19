@@ -24,6 +24,15 @@ struct Range {
     void print(){
         std::cout << "Range = [" << begin << "," << end << "]" << std::endl;
     }
+
+    // TODO: remove after transition
+    bool compareRange(Range* range){
+        this->print();
+        range->print();
+        assert(begin == range->begin);
+        assert(end == range->end);
+        return true;
+    }
 };
 
 #endif //CPP_PROJECT_RANGE_H
