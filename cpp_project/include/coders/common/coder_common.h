@@ -18,8 +18,7 @@ private:
     //
     int codeValue(std::string x);
     void codeRaw(int value);
-    void codeCoderName();
-    void codeWindowParameter();
+    void closeFiles();
 
 protected:
     int window_size;
@@ -31,9 +30,17 @@ public:
     Dataset* dataset;
     int data_rows_count;
 
+    //
+    // main methods
+    //
     CoderCommon(std::string coder_name_, CSVReader* input_csv_, BitStreamWriter* output_file_);
+    void codeCoderName();
+    void codeWindowParameter();
     Dataset* code();
-    void closeFiles();
+
+    //
+    // auxiliary methods
+    //
     void codeBit(int bit);
     void codeBits(int bit, int times);
     void codeBool(bool bit);

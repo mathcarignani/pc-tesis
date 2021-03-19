@@ -13,16 +13,21 @@ class HeaderDecoder {
 
 public:
     HeaderDecoder(BitStreamReader* input_file_, CSVWriter* output_csv_);
-    Dataset* decodeHeader();
+    Dataset* decodeHeader(int & data_rows_count);
 
 private:
     BitStreamReader* input_file;
     CSVWriter* output_csv;
+
     std::string decodeDatasetName(DatasetUtils & dataset_utils);
-    void decodeTimeUnit(DatasetUtils & dataset_utils);
+    int decodeDataRowsCount();
     void decodeFirstTimestamp();
-    static std::string decodeTimestamp(long int seconds);
+
+    std::vector<Range*> decodeMetadata();
+    void decodeMetadataRow(std::string line, std::vector<Range*> & ranges);
+
     int decodeColumnNames();
+    std::string decodeLine();
 };
 
 #endif //CPP_PROJECT_HEADER_DECODER_H

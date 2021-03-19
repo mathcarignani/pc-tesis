@@ -14,10 +14,23 @@ CoderCommon::CoderCommon(std::string coder_name_, CSVReader* input_csv_, BitStre
    dataset = new Dataset();
 }
 
+void CoderCommon::codeCoderName() {
+    int coder_value = Constants::getCoderValue(coder_name);
+#if CHECKS
+    assert(0 <= coder_value && coder_value < pow(2, 8));
+#endif
+    codeInt(coder_value, 8); // 8 bits for the coder_code
+}
+
+void CoderCommon::codeWindowParameter() {
+#if CHECKS
+    assert(1 <= window_size && window_size <= pow(2, 8));
+#endif
+    codeInt(window_size - 1, 8); // 8 bits for the window_size
+}
+
 Dataset* CoderCommon::code(){
-    codeCoderName();
-    if (coder_name != "CoderBase"){ codeWindowParameter(); }
-    HeaderCoder(input_csv, this).codeHeader(dataset);
+    data_rows_count = HeaderCoder(input_csv, this).codeHeader(dataset);
     codeDataRows();
     dataset->printBits();
     closeFiles();
@@ -97,23 +110,6 @@ void CoderCommon::codeFloat(float x){
 void CoderCommon::flushByte(){
     int remaining = output_file->flushByte();
     dataset->addBits(remaining);
-}
-
-void CoderCommon::codeCoderName() {
-    int coder_value = Constants::getCoderValue(coder_name);
-    std::cout << "CoderCommon::codeCoderName() = " << coder_value << std::endl;
-#if CHECKS
-    assert(0 <= coder_value && coder_value < pow(2, 8));
-#endif
-    codeInt(coder_value, 8); // 8 bits for the coder_code
-}
-
-void CoderCommon::codeWindowParameter() {
-#if CHECKS
-    assert(1 <= window_size && window_size <= pow(2, 8));
-#endif
-    std::cout << "CoderCommon::codeWindowParameter() = " << window_size << std::endl;
-    codeInt(window_size - 1, 8); // 8 bits for the window_size
 }
 
 void CoderCommon::closeFiles(){

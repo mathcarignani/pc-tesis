@@ -11,13 +11,10 @@
 class DecoderCommon {
 
 private:
-    void decodeDataRowsCount();
     virtual void decodeDataRows() = 0;
     std::string decodeValue(int y);
     int decodeRaw();
-
-    static std::string decodeCoderName(BitStreamReader* input_file);
-    static int decodeWindowParameter(BitStreamReader* input_file);
+    void closeFiles();
 
 protected:
     CSVWriter* output_csv;
@@ -40,23 +37,25 @@ public:
 #endif // MASK_MODE == 3
 #endif // MASK_MODE
 
-    static DecoderCommon* getDecoder(BitStreamReader* input_file, CSVWriter* output_csv);
-
+    //
+    // main methods
+    //
+    static std::string decodeCoderName(BitStreamReader* input_file);
     DecoderCommon(std::string coder_name_, BitStreamReader* input_file_, CSVWriter* output_csv_);
-    void decodeFile();
-    void close();
+    void decodeWindowParameter();
+    void decode();
 
+    //
+    // auxiliary methods
+    //
     bool decodeBool();
     int decodeInt(int bits);
     int decodeWindowLength(int window_size_bit_length);
     int decodeWindowLength();
     int decodeUnary();
     std::string decodeValueRaw();
-
     float decodeFloat();
     void flushByte();
-
-    void setWindowSize(int window_size_);
 };
 
 #endif //CPP_PROJECT_DECODER_COMMON_H

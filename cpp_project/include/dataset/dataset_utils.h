@@ -26,8 +26,13 @@ private:
 public:
     static const std::vector<std::string> DATASET_NAMES;
     static const int MAX_DATA_ROWS_BITS;
+    static const int MAX_COLUMN_BITS;
     static const std::vector<std::string> UNITS;
     static const std::vector<int> SCALES;
+
+    static const std::string METADATA_HEADER;
+    static const std::string METADATA_COLUMNS;
+    static const std::string DATA_HEADER;
 
     static bool validDatasetName(std::string dataset_name);
     static bool validDataRowsCount(int data_rows_count);

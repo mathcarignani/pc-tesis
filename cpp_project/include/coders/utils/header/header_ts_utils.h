@@ -23,6 +23,16 @@ public:
         long int seconds = DatetimeUtils::mapDatetimeToSeconds(startDate(), timestamp_tm);
         return seconds;
     }
+
+    static std::string getTimestampFromSeconds(long int seconds){
+        std::tm timestamp_tm = DatetimeUtils::mapSecondsToDatetime(HeaderTsUtils::startDate(), seconds);
+
+        assert(DatetimeUtils::compareDates(HeaderTsUtils::startDate(), timestamp_tm) == 1);
+        assert(DatetimeUtils::compareDates(timestamp_tm, HeaderTsUtils::endDate()) == 1);
+
+        std::string timestamp_str = DatetimeUtils::datetimeToString(timestamp_tm, HeaderTsUtils::dateFormat());
+        return timestamp_str;
+    }
 };
 
 #endif //CPP_PROJECT_HEADER_UTILS_H

@@ -10,10 +10,15 @@
 const std::vector<std::string> DatasetUtils::DATASET_NAMES = {"IRKIS"};
 
 const int DatasetUtils::MAX_DATA_ROWS_BITS = 24;
+const int DatasetUtils::MAX_COLUMN_BITS = 10;
 
 const std::vector<std::string> DatasetUtils::UNITS = {"minutes", "dimensionless"};
 
 const std::vector<int> DatasetUtils::SCALES = {1, 10, 100, 1000};
+
+const std::string DatasetUtils::METADATA_HEADER = "METADATA:";
+const std::string DatasetUtils::METADATA_COLUMNS = "COLUMNS,UNIT,SCALE,MINIMUM,MAXIMUM";
+const std::string DatasetUtils::DATA_HEADER = "DATA:";
 
 bool DatasetUtils::validDatasetName(std::string dataset_name){
     return VectorUtils::vectorIncludesString(DATASET_NAMES, dataset_name);

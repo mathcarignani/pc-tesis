@@ -35,21 +35,20 @@ HeaderCoder::HeaderCoder(CSVReader* input_csv_, CoderCommon* coder_common_){
     60,N,N,N,N,N,N,N,N,N,N
      . . .
 */
-void HeaderCoder::codeHeader(Dataset* dataset){
+int HeaderCoder::codeHeader(Dataset* dataset){
     DatasetUtils dataset_utils = DatasetUtils("code");
     std::string dataset_name = codeDatasetName(dataset_utils); // TODO: remove dataset_name after refactor
-    codeDataRowsCount();
+    int data_rows_count = codeDataRowsCount();
     codeFirstTimestamp();
     std::string line;
-
     line = input_csv->readLineNoLastChar();
 #if CHECKS
-    assert(line == "METADATA:");
+    assert(line == DatasetUtils::METADATA_HEADER);
 #endif
 
     line = input_csv->readLineNoLastChar();
 #if CHECKS
-    assert(line == "COLUMNS,UNIT,SCALE,MINIMUM,MAXIMUM");
+    assert(line == DatasetUtils::METADATA_COLUMNS);
 #endif
 
     std::vector<Range*> ranges;
@@ -66,6 +65,7 @@ void HeaderCoder::codeHeader(Dataset* dataset){
 
     int data_columns_count = codeColumnNames(column_names);
     dataset->setHeaderValues(ranges, data_columns_count);
+    return data_rows_count;
 }
 
 std::string HeaderCoder::codeDatasetName(DatasetUtils & dataset_utils){
@@ -77,13 +77,14 @@ std::string HeaderCoder::codeDatasetName(DatasetUtils & dataset_utils){
 #endif
     std::string dataset_name = line_vector[1];
 #if CHECKS
+    dataset_name = StringUtils::removeLastChar(dataset_name);
     assert(DatasetUtils::validDatasetName(dataset_name));
 #endif
     codeLine(line);
     return dataset_name;
 }
 
-void HeaderCoder::codeDataRowsCount(){
+int HeaderCoder::codeDataRowsCount(){
     // DATA ROWS:,26305
     std::vector<std::string> line_vector = input_csv->readLineCSV();
 #if CHECKS
@@ -96,6 +97,7 @@ void HeaderCoder::codeDataRowsCount(){
 #endif
     int bits = DatasetUtils::MAX_DATA_ROWS_BITS;
     test_mode ? output_file->pushInt(data_rows_count, bits) : coder_common->codeInt(data_rows_count, bits);
+    return data_rows_count;
 }
 
 void HeaderCoder::codeFirstTimestamp(){
@@ -112,12 +114,16 @@ void HeaderCoder::codeFirstTimestamp(){
 
 void HeaderCoder::codeMetadata(std::vector<std::string> & column_names, std::vector<Range*> & ranges){
     int i = 0;
-    std::string current_line = input_csv->readLineNoLastChar();
-    while(current_line != "DATA:") {
+    std::string current_line = input_csv->readLine();
+    while(StringUtils::removeLastChar(current_line) != DatasetUtils::DATA_HEADER) {
+        std::cout << "1" << std::endl;
         codeMetadataRow(i, current_line, column_names, ranges);
         i++;
-        current_line = input_csv->readLineNoLastChar();
+        current_line = input_csv->readLine();
+        std::cout << "2 " << current_line << std::endl;
     }
+    std::cout << "A" << std::endl;
+    codeLine(current_line);
 }
 
 void HeaderCoder::codeMetadataRow(int i,
@@ -157,9 +163,10 @@ int HeaderCoder::codeColumnNames(std::vector<std::string> column_names){
     60,N,N,N,N,N,N,N,N,N,N
      . . .
     */
-    std::vector<std::string> current_line = input_csv->readLineCSV();
+    std::string line = input_csv->readLine();
+    std::vector<std::string> line_vector = CSVReader::split(line);
 #if CHECKS
-    int total_columns = current_line.size();
+    int total_columns = line.size();
     int total_metadata_columns = column_names.size();
 
     // VectorUtils::printStringVector(current_line);
@@ -168,21 +175,20 @@ int HeaderCoder::codeColumnNames(std::vector<std::string> column_names){
     // The names must match
     for(int i=0; i < column_names.size(); i++){
         std::string column_name_1 = column_names.at(i);
-        std::string column_name_2 = current_line.at(i);
+        std::string column_name_2 = line_vector.at(i);
         assert(column_name_1 == column_name_2);
     }
+    // the -1 is due to the Time Delta column
     assert((total_columns - 1) % (total_metadata_columns - 1) == 0);
 #endif
+    int data_columns_count = (int) line_vector.size() - 1;
 
-    current_line.erase(current_line.begin()); // remove "Time Delta"
-    int data_columns_count = (int) current_line.size();
-    std::string column_names_line = StringUtils::join(current_line, ",");
-
-    codeLine(column_names_line);
+    codeLine(line);
     return data_columns_count;
 }
 
 void HeaderCoder::codeLine(std::string line){
+    std::cout << "codeLine = " << line << std::endl;
     int number_of_chars = (int) line.size() - 1;
     int zeros_count = number_of_chars % 8 + 8;
 

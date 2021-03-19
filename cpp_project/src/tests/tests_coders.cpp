@@ -132,12 +132,7 @@ void TestsCoders::runAll(){
 
 void TestsCoders::testCoder(std::string coder_name){
     setCoderPaths(coder_name);
-    if (coder_name == "CoderBase"){
-        ds = Scripts::codeBase(file_path, output_code_path);
-    }
-    else {
-        ds = Scripts::code(coder_name, file_path, output_code_path, win_size, errors_vector);
-    }
+    ds = Scripts::code(coder_name, file_path, output_code_path, win_size, errors_vector);
     checkSize();
     TestsCodersUtils::writeBitsCSV(bits_csv, ds);
     TestsCodersUtils::compareFiles(output_code_path, expected_code_path);

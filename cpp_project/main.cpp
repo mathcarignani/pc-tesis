@@ -42,21 +42,19 @@ int main(int argc, char *argv[]){
 
     // action == "c"
     std::string coder_name = argv[5];
-    std::cout << coder_name << std::endl;
     Constants::getCoderValue(coder_name); // check if coder_name is valid
+
+    int window_size = 1; // default
+    std::vector<int> error_thresholds_vector;
 
     if (coder_name == "CoderBase"){
         assert(argc == 6);
-        Scripts::codeBase(input_path, output_path);
-        return 0;
     }
-
-    assert(argc >= 8);
-    int window_size = atoi(argv[6]);
-
-    std::vector<int> error_thresholds_vector;
-    for(int i=7; i < argc; i++){ error_thresholds_vector.push_back(atoi(argv[i])); }
-
+    else {
+        assert(argc >= 8);
+        window_size = atoi(argv[6]);
+        for(int i=7; i < argc; i++){ error_thresholds_vector.push_back(atoi(argv[i])); }
+    }
     Scripts::code(coder_name, input_path, output_path, window_size, error_thresholds_vector);
     return 0;
 }
