@@ -13,16 +13,16 @@ from pandas_tools.pandas_tools import PandasTools
 
 class CalculateSTDManual:
     @classmethod
-    def calculate_stds(cls, input_path, input_filename):
+    def calculate_stds(cls, input_path, input_filename, first_data_row):
         csv_reader = CSVReader(input_path, input_filename)
-        counts, means = cls._calculate_means(csv_reader)
+        counts, means = cls._calculate_means(csv_reader, first_data_row)
         stds = cls._calculate_stds(csv_reader, counts, means)
         csv_reader.close()
         return stds
 
     @classmethod
-    def _calculate_means(cls, csv_reader):
-        csv_reader.goto_row(3)  # columns
+    def _calculate_means(cls, csv_reader, first_data_row):
+        csv_reader.goto_row(first_data_row)  # columns
         columns_count = len(csv_reader.read_line())
         totals, counts, mins, maxs = cls._calculate_stats(csv_reader, columns_count)
 

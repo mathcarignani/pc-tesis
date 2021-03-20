@@ -31,7 +31,7 @@ RESULTS_PATH = INFORME_PATH + "/results/01.2021/"
 #
 # (1) Run the compress script for each mode, each execution creates a different results csv file
 # CompressScript("results_NM.csv", "NM").run()
-# CompressScript("results_M.csv", "M").run()
+CompressScript("results_M.csv", "M").run()
 
 #
 # (2) Globalize the result files generated in step (1)
@@ -60,9 +60,9 @@ RESULTS_PATH = INFORME_PATH + "/results/01.2021/"
 #
 # 3.4 Mask Coders Performance
 #
-pdf4_path = RESULTS_PATH + '3.4/'
-PDFS4(pdf4_path + 'pdf/', 'global').create_pdfs()  # GLOBAL
-ProcessResults(True, pdf4_path + 'results1', 1).run()
+# pdf4_path = RESULTS_PATH + '3.4/'
+# PDFS4(pdf4_path + 'pdf/', 'global').create_pdfs()  # GLOBAL
+# ProcessResults(True, pdf4_path + 'results1', 1).run()
 
 # gzip_path = pdf4_path + 'gzip/'
 # GZipScript(gzip_path, 'results.csv', False).run()

@@ -24,7 +24,8 @@ class CalculateBc:
             bc = math.log2(bc)
             bc = math.ceil(bc)
             # print(min_number, max_number, bc)
-            if max_number != 131071:
-                print(bc)
+            # if max_number != 131071:
+            #     print(bc)
+            print(bc)
 
 CalculateBc.run()

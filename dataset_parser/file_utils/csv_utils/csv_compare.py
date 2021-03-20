@@ -10,6 +10,11 @@ class CSVCompare:
         self.file1 = CSVReader(file1_path, file1_filename)
         self.file2 = CSVReader(file2_path, file2_filename)
 
+        self.file1_first_data_row = CSVReader.first_data_row(file1_path, file1_filename)
+        self.file2_first_data_row = CSVReader.first_data_row(file2_path, file2_filename)
+
+        assert(self.file1_first_data_row == self.file2_first_data_row)
+
     #
     # error_thresholds is an array with the the maximum difference between the original and the compressed values
     # in a near-lossless compression schema.
@@ -67,7 +72,7 @@ class CSVCompare:
 
         while continue_while and self.file1.continue_reading and self.file2.continue_reading:
             row1, row2 = self.file1.read_line(), self.file2.read_line()
-            if self.row_count < CSVReader.FIRST_DATA_ROW:
+            if self.row_count < self.file1_first_data_row + 1:
                 same_file = self._compare_header_rows(row1, row2)
                 continue_while = same_file  # if there is a mismatch in the header rows, exit the while
             else:
@@ -126,6 +131,7 @@ class CSVCompare:
 
         else:
             error = self._get_threshold(col_index)
+            # print(value1, value2)
             assert(isinstance(error, int) and error >= 0)
 
             if error == 0:  # compare strings instead of int
