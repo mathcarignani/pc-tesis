@@ -30,8 +30,8 @@ RESULTS_PATH = INFORME_PATH + "/results/01.2021/"
 # (3.1) Experimental Setting
 #
 # (1) Run the compress script for each mode, each execution creates a different results csv file
-# CompressScript("results_NM.csv", "NM").run()
-CompressScript("results_M.csv", "M").run()
+CompressScript("results_NM.csv", "NM").run()
+# CompressScript("results_M.csv", "M").run()
 
 #
 # (2) Globalize the result files generated in step (1)
