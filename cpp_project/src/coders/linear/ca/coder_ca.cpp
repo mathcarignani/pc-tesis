@@ -1,3 +1,4 @@
+#include "assert.h"
 
 #include "coder_ca.h"
 #include "conversor.h"
