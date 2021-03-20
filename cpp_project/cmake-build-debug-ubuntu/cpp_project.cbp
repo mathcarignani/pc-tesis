@@ -702,10 +702,6 @@
 			<Option target="run_variant_M"/>
 			<Option target="run_variant_NM"/>
 		</Unit>
-		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/tests/tests_dataset_utils.h">
-			<Option target="run_variant_M"/>
-			<Option target="run_variant_NM"/>
-		</Unit>
 		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/include/tests/tests_examples.h">
 			<Option target="run_variant_M"/>
 			<Option target="run_variant_NM"/>
@@ -1043,10 +1039,6 @@
 			<Option target="run_variant_NM"/>
 		</Unit>
 		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/tests/tests_coders_utils.cpp">
-			<Option target="run_variant_M"/>
-			<Option target="run_variant_NM"/>
-		</Unit>
-		<Unit filename="/home/pablo/Documents/FING/Proyecto/pc-tesis/cpp_project/src/tests/tests_dataset_utils.cpp">
 			<Option target="run_variant_M"/>
 			<Option target="run_variant_NM"/>
 		</Unit>
