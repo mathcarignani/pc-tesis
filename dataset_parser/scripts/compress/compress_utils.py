@@ -114,7 +114,7 @@ class CompressUtils:
         print(read_struct)
         print("calculated_struct")
         print(calculated_struct)
-        # assert(read_struct == calculated_struct)
+        assert(read_struct == calculated_struct)
 
 
 
