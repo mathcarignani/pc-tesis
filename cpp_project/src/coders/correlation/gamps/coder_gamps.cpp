@@ -28,9 +28,7 @@ void CoderGAMPS::codeDataRows(){
     total_data_type_columns = dataset->data_columns_count / total_data_types;
 
     gamps_epsilons_vector = getGAMPSEpsilonsVector();
-    std::cout << "getGAMPSEpsilonsVector();" << std::endl;
     assert(gamps_epsilons_vector.size() == total_data_types);
-    std::cout << "gamps_epsilons_vector.size()" << std::endl;
     std::cout << gamps_epsilons_vector.size() << std::endl;
 
     for(data_type_index = 1; data_type_index <= total_data_types; data_type_index++){

@@ -27,8 +27,8 @@ struct Range {
 
     // TODO: remove after transition
     bool compareRange(Range* range){
-        // this->print();
-        // range->print();
+//         this->print();
+//         range->print();
         assert(begin == range->begin);
         assert(end == range->end);
         return true;

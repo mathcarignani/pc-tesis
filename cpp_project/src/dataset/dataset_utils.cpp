@@ -7,12 +7,15 @@
 #include <math.h>
 #include "vector_utils.h"
 
-const std::vector<std::string> DatasetUtils::DATASET_NAMES = {"IRKIS"};
+const std::vector<std::string>
+        DatasetUtils::DATASET_NAMES = {"IRKIS", "NOAA-SST", "NOAA-ADCP", "ElNino", "SolarAnywhere",
+                                       "NOAA-SPC-hail", "NOAA-SPC-tornado", "NOAA-SPC-wind"};
 
 const int DatasetUtils::MAX_DATA_ROWS_BITS = 24;
-const int DatasetUtils::MAX_COLUMN_BITS = 10;
 
-const std::vector<std::string> DatasetUtils::UNITS = {"minutes", "dimensionless"};
+const std::vector<std::string>
+        DatasetUtils::UNITS = {"seconds", "minutes", "hours", "dimensionless", "degrees Celsius", "m/s",
+                               "coord. degrees", "percentage", "W/m2", "1/100 inch", "mph"};
 
 const std::vector<int> DatasetUtils::SCALES = {1, 10, 100, 1000};
 

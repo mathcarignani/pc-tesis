@@ -15,6 +15,7 @@ void CSVReader::constructor(std::string path, std::string filename){
         exit(-1);
     }
     current_line_count = 0;
+    // TODO: total_lines is an input in the header, no need to calculate it
     total_lines = TextUtils::lineCount(path, filename);
     continue_reading = total_lines > 0;
     first_data_row = 0;

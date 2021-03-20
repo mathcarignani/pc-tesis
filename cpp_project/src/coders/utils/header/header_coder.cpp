@@ -163,7 +163,7 @@ int HeaderCoder::codeColumnNames(std::vector<std::string> column_names){
     std::string line = input_csv->readLine();
     std::vector<std::string> line_vector = CSVReader::split(line);
 #if CHECKS
-    int total_columns = line.size();
+    int total_columns = line_vector.size();
     int total_metadata_columns = column_names.size();
 
     // VectorUtils::printStringVector(current_line);
@@ -173,6 +173,9 @@ int HeaderCoder::codeColumnNames(std::vector<std::string> column_names){
     for(int i=0; i < column_names.size(); i++){
         std::string column_name_1 = column_names.at(i);
         std::string column_name_2 = line_vector.at(i);
+        if (i == line_vector.size() - 1){
+            column_name_2 = StringUtils::removeLastChar(column_name_2);
+        }
         assert(column_name_1 == column_name_2);
     }
     // the -1 is due to the Time Delta column

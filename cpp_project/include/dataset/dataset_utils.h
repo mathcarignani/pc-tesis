@@ -26,7 +26,6 @@ private:
 public:
     static const std::vector<std::string> DATASET_NAMES;
     static const int MAX_DATA_ROWS_BITS;
-    static const int MAX_COLUMN_BITS;
     static const std::vector<std::string> UNITS;
     static const std::vector<int> SCALES;
 
