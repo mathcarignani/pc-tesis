@@ -28,8 +28,7 @@ HeaderDecoder::HeaderDecoder(BitStreamReader* input_file_, CSVWriter* output_csv
      . . .
 */
 Dataset* HeaderDecoder::decodeHeader(int & data_rows_count){
-    DatasetUtils* dataset_utils = new DatasetUtils("decode");
-    std::string dataset_name = decodeDatasetName(*dataset_utils); // TODO: remove dataset_name after refactor
+    decodeDatasetName();
     data_rows_count = decodeDataRowsCount();
     decodeFirstTimestamp();
     std::vector<std::string> row;
@@ -44,25 +43,17 @@ Dataset* HeaderDecoder::decodeHeader(int & data_rows_count){
 
     int data_columns_count = decodeColumnNames();
 
-    // TODO: remove after refactor
-    std::vector<Range*> ranges_old = dataset_utils->getRangeVector(dataset_name);
-    for(int i=0; i < ranges.size(); i++){
-        Range* range = ranges.at(i);
-        Range* range_old = ranges_old.at(i);
-        range->compareRange(range_old);
-    }
     Dataset* dataset = new Dataset();
     dataset->setHeaderValues(ranges, data_columns_count);
     return dataset;
 }
 
-std::string HeaderDecoder::decodeDatasetName(DatasetUtils & dataset_utils){
+void HeaderDecoder::decodeDatasetName(){
     std::string line = decodeLine();
     std::vector<std::string> line_vector = StringUtils::splitByString(line, ",");
     std::string dataset_name = line_vector.at(1);
     std::vector<std::string> row = {"DATASET:", dataset_name};
     output_csv->writeRowDecoder(row);
-    return dataset_name;
 }
 
 int HeaderDecoder::decodeDataRowsCount(){

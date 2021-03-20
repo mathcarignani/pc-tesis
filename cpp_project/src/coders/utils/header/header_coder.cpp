@@ -36,8 +36,7 @@ HeaderCoder::HeaderCoder(CSVReader* input_csv_, CoderCommon* coder_common_){
      . . .
 */
 int HeaderCoder::codeHeader(Dataset* dataset){
-    DatasetUtils dataset_utils = DatasetUtils("code");
-    std::string dataset_name = codeDatasetName(dataset_utils); // TODO: remove dataset_name after refactor
+    codeDatasetName();
     int data_rows_count = codeDataRowsCount();
     codeFirstTimestamp();
     std::string line;
@@ -55,20 +54,12 @@ int HeaderCoder::codeHeader(Dataset* dataset){
     std::vector<std::string> column_names;
     codeMetadata(column_names, ranges);
 
-    // TODO: remove after refactor
-    std::vector<Range*> ranges_old = dataset_utils.getRangeVector(dataset_name);
-    for(int i=0; i < ranges.size(); i++){
-        Range* range = ranges.at(i);
-        Range* range_old = ranges_old.at(i);
-        range->compareRange(range_old);
-    }
-
     int data_columns_count = codeColumnNames(column_names);
     dataset->setHeaderValues(ranges, data_columns_count);
     return data_rows_count;
 }
 
-std::string HeaderCoder::codeDatasetName(DatasetUtils & dataset_utils){
+void HeaderCoder::codeDatasetName(){
     // DATASET:,IRKIS
     std::string line = input_csv->readLine();
     std::vector<std::string> line_vector = CSVReader::split(line);
@@ -81,7 +72,6 @@ std::string HeaderCoder::codeDatasetName(DatasetUtils & dataset_utils){
     assert(DatasetUtils::validDatasetName(dataset_name));
 #endif
     codeLine(line);
-    return dataset_name;
 }
 
 int HeaderCoder::codeDataRowsCount(){

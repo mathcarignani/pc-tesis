@@ -19,7 +19,7 @@ private:
     BitStreamReader* input_file;
     CSVWriter* output_csv;
 
-    std::string decodeDatasetName(DatasetUtils & dataset_utils);
+    void decodeDatasetName();
     int decodeDataRowsCount();
     void decodeFirstTimestamp();
 
