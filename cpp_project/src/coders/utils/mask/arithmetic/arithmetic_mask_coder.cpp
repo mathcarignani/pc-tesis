@@ -1,7 +1,7 @@
 
 #include "arithmetic_mask_coder.h"
 
-#if MASK_MODE == 3
+#if MASK_MODE
 
 #include "compressor.h"
 #include "coder_input.h"
@@ -39,4 +39,4 @@ std::vector<int> ArithmeticMaskCoder::callCompress(){
     return input.total_data_rows_vector;
 }
 
-#endif // MASK_MODE == 3
+#endif // MASK_MODE

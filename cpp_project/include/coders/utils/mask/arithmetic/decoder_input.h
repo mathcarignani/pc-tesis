@@ -4,7 +4,7 @@
 
 #include "constants.h"
 
-#if MASK_MODE == 3
+#if MASK_MODE
 
 #include "bit_stream_reader.h"
 
@@ -22,5 +22,5 @@ public:
     void finishDecoding();
 };
 
-#endif // MASK_MODE == 3
+#endif // MASK_MODE
 #endif //CPP_PROJECT_DECODER_INPUT_H

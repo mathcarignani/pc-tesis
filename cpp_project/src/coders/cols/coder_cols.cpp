@@ -3,7 +3,7 @@
 
 #include "assert.h"
 #include "string_utils.h"
-#include "mask_coder.h"
+#include "arithmetic_mask_coder.h"
 #include "time_delta_coder.h"
 #include "coder_utils.h"
 
@@ -13,10 +13,10 @@ void CoderCols::codeDataRows(){
     column_index = 0;
     codeColumn();
 
-#if MASK_MODE == 3
+#if MASK_MODE
     ArithmeticMaskCoder* amc = new ArithmeticMaskCoder(this, dataset->data_columns_count);
     total_data_rows_vector = amc->code();
-#endif // MASK_MODE == 3
+#endif // MASK_MODE
 
     for(column_index = 1; column_index < total_columns; column_index++) {
         codeColumn();
@@ -30,16 +30,15 @@ void CoderCols::codeColumn() {
     dataset->setColumn(column_index);
     if (column_index == 0) {
         dataset->setMode("DATA");
+    #if MASK_MODE
+        time_delta_vector = TimeDeltaCoder::read(this);
+    #else
         time_delta_vector = TimeDeltaCoder::code(this);
+    #endif
         return;
     }
 #if MASK_MODE
-#if MASK_MODE == 3
     total_data_rows = total_data_rows_vector.at(column_index - 1);
-#else
-    dataset->setMode("MASK");
-    total_data_rows = MaskCoder::code(this, column_index);
-#endif // MASK_MODE == 3
 #endif // MASK_MODE
     dataset->setMode("DATA");
     codeDataColumn();

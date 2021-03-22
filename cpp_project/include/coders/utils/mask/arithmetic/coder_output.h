@@ -4,7 +4,7 @@
 
 #include "constants.h"
 
-#if MASK_MODE == 3
+#if MASK_MODE
 #include "coder_common.h"
 
 class CoderOutput {
@@ -17,6 +17,6 @@ public:
     void put_bit(bool bit);
     void finishCoding(bool bit);
 };
-#endif // MASK_MODE == 3
+#endif // MASK_MODE
 
 #endif //CPP_PROJECT_OUTPUT_H

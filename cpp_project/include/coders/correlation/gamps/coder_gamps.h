@@ -18,9 +18,9 @@ private:
     std::vector<int> time_delta_vector;
     Mask* nodata_rows_mask;
 
-#if MASK_MODE == 3
+#if MASK_MODE
     std::vector<int> total_data_rows_vector;
-#endif // MASK_MODE == 3
+#endif // MASK_MODE
 
     void codeDataRows() override;
 

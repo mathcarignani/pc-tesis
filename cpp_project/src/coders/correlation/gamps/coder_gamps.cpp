@@ -1,7 +1,7 @@
 
 #include "coder_gamps.h"
-#include "mask_coder.h"
 #include "time_delta_coder.h"
+#include "arithmetic_mask_coder.h"
 #include "conversor.h"
 #include "assert.h"
 #include "vector_utils.h"
@@ -19,10 +19,10 @@ void CoderGAMPS::setCoderParams(int window_size_, std::vector<int> error_thresho
 void CoderGAMPS::codeDataRows(){
     codeTimeDeltaColumn();
 
-#if MASK_MODE == 3
+#if MASK_MODE
     ArithmeticMaskCoder* amc = new ArithmeticMaskCoder(this, dataset->data_columns_count);
     total_data_rows_vector = amc->code();
-#endif // MASK_MODE == 3
+#endif // MASK_MODE
 
     total_data_types = limit_mode ? dataset->dataColumnsGroupCount() : 1;
     total_data_type_columns = dataset->data_columns_count / total_data_types;
@@ -129,12 +129,7 @@ void CoderGAMPS::codeGAMPSColumns(GAMPSOutput* gamps_output){
 
 void CoderGAMPS::codeGAMPSColumn(DynArray<GAMPSEntry>* column, bool is_base_window, double threshold){
 #if MASK_MODE
-#if MASK_MODE == 3
     total_data_rows_vector.at(column_index - 1);
-#else
-    dataset->setMode("MASK");
-    MaskCoder::code(this, column_index);
-#endif // MASK_MODE == 3
 #endif // MASK_MODE
 
     dataset->setMode("DATA");

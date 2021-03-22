@@ -1,7 +1,7 @@
 
 #include "arithmetic_mask_decoder.h"
 
-#if MASK_MODE == 3
+#if MASK_MODE
 
 #include "decompressor.h"
 #include "decoder_input.h"
@@ -34,4 +34,4 @@ std::vector<Mask*> ArithmeticMaskDecoder::callDecompress(){
     return output.masks_vector;
 }
 
-#endif // MASK_MODE == 3
+#endif // MASK_MODE

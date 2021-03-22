@@ -32,9 +32,7 @@ public:
     int row_index;
 #if MASK_MODE
     Mask* mask;
-#if MASK_MODE == 3
     std::vector<Mask*> masks_vector;
-#endif // MASK_MODE == 3
 #endif // MASK_MODE
 
     //
