@@ -2,7 +2,7 @@ import sys
 sys.path.append('.')
 
 from scripts.informe.pdfs.pdfs1 import PDFS1
-from scripts.informe.pdfs.pdfs2 import PDFS2
+# from scripts.informe.pdfs.pdfs2 import PDFS2
 from scripts.informe.pdfs.pdfs3 import PDFS3
 from scripts.informe.pdfs.pdfs4 import PDFS4
 from scripts.informe.data_analysis.process_results.process_results import ProcessResults
@@ -54,15 +54,14 @@ class Run:
     def mask_coders_and_gzip(cls):
         pdf4_path = Run.RESULTS_PATH + '3.4/'
         gzip_path = pdf4_path + 'gzip/'
-        GZipScript(gzip_path, 'results.csv', False).run()
-        GZipScript(gzip_path, 'results-t.csv', True).run()
+        # GZipScript(gzip_path, 'results.csv', False).run()
+        # GZipScript(gzip_path, 'results-t.csv', True).run()
         ProcessResults(True, pdf4_path + 'results2', 2, gzip_path, 'results-t.csv').run()
 
 # (0) Run "sh make_mac.sh" / "sh make_ubuntu.sh" so that the following executables are created:
 # run_variant_NM
 # run_variant_M
 
-#
 # (3.1) Experimental Setting
 #
 # (1) Run the compress script for each mode, each execution creates a different results csv file
@@ -72,7 +71,7 @@ class Run:
 # Run.globalize_results()
 
 # (3.2) Relative Performance of the Coders
-Run.relative_performance()
+# Run.relative_performance()
 
 # (3.3) Window Size Parameter
 # Run.window_parameter()
@@ -80,7 +79,7 @@ Run.relative_performance()
 
 # (3.4) Mask Coders Performance
 # Run.mask_coders()
-# Run.mask_coders_and_gzip()
+Run.mask_coders_and_gzip()
 
 
 

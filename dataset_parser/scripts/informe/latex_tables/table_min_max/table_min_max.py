@@ -6,7 +6,7 @@ from scripts.compress.experiments_utils import ExperimentsUtils
 from scripts.informe.latex_tables.latex_utils import LatexUtils
 
 class TableMinMax(object):
-    ORDER = ['GZIP\cgzip', 'PCA\cpca', 'APCA\capca', 'PWLH', 'PWLHInt', 'CA', 'SF', 'FR\cfr', 'GAMPS']
+    ORDER = ['GZIP\cgzip', 'PCA\cpca', 'APCA\capca', 'PWLH', 'PWLHInt', 'CA\cca', 'SF', 'FR\cfr', 'GAMPS']
 
     def __init__(self, path, mode):
         self.path = path

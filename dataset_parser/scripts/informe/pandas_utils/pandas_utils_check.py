@@ -25,6 +25,7 @@ class PandasUtilsCheck(object):
         expected_coders = ExperimentsUtils.coders_names(self.mask_mode)
         if self.with_gzip and 'CoderGZIP' not in expected_coders:
             expected_coders.append('CoderGZIP')
+        # IMPORTANT: this can fail if ExperimentUtils was changed after running the compress script
         np.testing.assert_array_equal(coders, expected_coders)
 
         # check that the rows count for each coder match

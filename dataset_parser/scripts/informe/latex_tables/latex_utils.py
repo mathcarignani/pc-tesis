@@ -11,9 +11,9 @@ class LatexUtils:
         'APCA': "green!20",
         'FR': "yellow!25",
         'GZIP': "orange!20",
-        # 'PWLHInt': 'violet!25',
+        'CA': 'violet!20'
+        # 'PWLHInt': 'violet!20',
         # 'PWLH': 'violet!50',
-        # 'CA': 'brown!20'
     }
 
     DATASET_MAP = {
