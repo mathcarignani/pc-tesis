@@ -29,12 +29,10 @@ void CoderCols::codeColumn() {
 #endif
     dataset->setColumn(column_index);
     if (column_index == 0) {
+//    #if !MASK_MODE
         dataset->setMode("DATA");
-    #if MASK_MODE
-        time_delta_vector = TimeDeltaCoder::read(this);
-    #else
         time_delta_vector = TimeDeltaCoder::code(this);
-    #endif
+//    #endif
         return;
     }
 #if MASK_MODE
