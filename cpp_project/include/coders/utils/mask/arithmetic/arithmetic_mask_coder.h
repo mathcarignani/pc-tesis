@@ -15,13 +15,15 @@ class ArithmeticMaskCoder {
 
 private:
     CoderCommon* coder;
-    int data_columns_count;
+    int first_column_index = 0; // index of the first masked column
+    int last_column_index = 0; // index of the last masked column
+
 
     void flush();
     std::vector<int> callCompress();
 
 public:
-    ArithmeticMaskCoder(CoderCommon* coder_, int data_columns_count_);
+    ArithmeticMaskCoder(CoderCommon* coder_, int first_column_index_, int last_column_index_);
     std::vector<int> code();
 
 };

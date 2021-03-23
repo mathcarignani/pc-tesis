@@ -8,9 +8,10 @@
 #include "decoder_output.h"
 #include "modelKT.h"
 
-ArithmeticMaskDecoder::ArithmeticMaskDecoder(DecoderCommon* decoder_, int data_columns_count_){
+ArithmeticMaskDecoder::ArithmeticMaskDecoder(DecoderCommon* decoder_, int first_column_index_, int last_column_index_){
     decoder = decoder_;
-    data_columns_count = data_columns_count_;
+    first_column_index = first_column_index_;
+    last_column_index = last_column_index_;
 }
 
 std::vector<Mask*> ArithmeticMaskDecoder::decode(){
@@ -21,14 +22,12 @@ std::vector<Mask*> ArithmeticMaskDecoder::decode(){
 }
 
 void ArithmeticMaskDecoder::flush(){
-    // std::cout << "D1 >> decoder->flushByte();" << std::endl;
     decoder->flushByte();
-    // std::cout << "D1 >> decoder->flushByte();" << std::endl;
 }
 
 std::vector<Mask*> ArithmeticMaskDecoder::callDecompress(){
     DecoderInput input(decoder->input_file);
-    DecoderOutput output(data_columns_count, decoder->data_rows_count);
+    DecoderOutput output(decoder->data_rows_count, first_column_index, last_column_index);
     modelKT<int, 16, 14> model;
     decompress(input, output, model);
     return output.masks_vector;

@@ -13,14 +13,15 @@ class ArithmeticMaskDecoder {
 
 private:
     DecoderCommon* decoder;
-    int data_columns_count;
+    int first_column_index = 0; // index of the first masked column
+    int last_column_index = 0; // index of the last masked column
     Mask* mask;
 
     void flush();
     std::vector<Mask*> callDecompress();
 
 public:
-    ArithmeticMaskDecoder(DecoderCommon* decoder_, int data_columns_count_);
+    ArithmeticMaskDecoder(DecoderCommon* decoder_, int first_column_index_, int last_column_index_);
     std::vector<Mask*> decode();
 
 };

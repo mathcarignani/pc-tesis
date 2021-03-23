@@ -35,7 +35,7 @@ public:
     void add(bool no_data);
     void close();
 
-    void print();
+    void print(bool show_bursts);
 
     void reset();
     bool isNoData();

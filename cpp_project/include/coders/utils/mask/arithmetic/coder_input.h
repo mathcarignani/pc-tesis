@@ -11,7 +11,7 @@ private:
     CoderCommon* coder;
     CSVReader* input_csv;
     Dataset* dataset;
-    int data_columns_count;
+    int last_column_index; // index of the last masked column
     int column_index;
 
     void setNextColumn(int col_index);
@@ -26,7 +26,7 @@ public:
     bool reset_model;
     bool eof;
 
-    CoderInput(CoderCommon* coder_, int data_columns_count_);
+    CoderInput(CoderCommon* coder_, int first_column_index_, int last_column_index_);
     int getByte(); // PRE: !eof()
 
 };

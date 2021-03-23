@@ -24,6 +24,7 @@ protected:
 #if MASK_MODE
     int total_data_rows;
     std::vector<int> total_data_rows_vector;
+    int first_column_index = 0; // index of the first masked column
 #endif // MASK_MODE
 
     void codeDataColumn();
