@@ -23,11 +23,11 @@ class Run:
     @classmethod
     def compress_script(cls):
         CompressScript("results_NM.csv", "NM").run()
-        # CompressScript("results_M.csv", "M").run()
+        CompressScript("results_M.csv", "M").run()
 
     @classmethod
     def globalize_results(cls):
-        GlobalizeResults("NM").run()
+        # GlobalizeResults("NM").run()
         GlobalizeResults("M").run()
 
     @classmethod
@@ -68,7 +68,7 @@ class Run:
 # Run.compress_script()
 
 # (2) Globalize the result files generated in step (1)
-# Run.globalize_results()
+Run.globalize_results()
 
 # (3.2) Relative Performance of the Coders
 # Run.relative_performance()
@@ -79,7 +79,7 @@ class Run:
 
 # (3.4) Mask Coders Performance
 # Run.mask_coders()
-Run.mask_coders_and_gzip()
+# Run.mask_coders_and_gzip()
 
 
 

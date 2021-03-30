@@ -3,7 +3,9 @@ sys.path.append('.')
 
 
 class ResultsPaths(object):
-    PATH = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis/dataset_parser/scripts/informe/results/03.2021/3.1/"
+    ROOT_PATH = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis"
+    INFORME_PATH = ROOT_PATH + "/dataset_parser/scripts/informe"
+    PATH = INFORME_PATH + "/results/03.2021/time-delta/3.1/"
     #
     # These 2 csv files contain all the results returned by the compress_script.py script
     #
