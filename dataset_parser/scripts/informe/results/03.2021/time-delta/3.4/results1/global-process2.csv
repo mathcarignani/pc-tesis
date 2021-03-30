@@ -1,0 +1,47 @@
+Dataset,Filename,Column,,0 (%),
+,,,Coder,Win,CR (%)
+IRKIS
+,Global
+,,Time Delta,APCA,256,0.01
+,,VWC,APCA,16,0.2
+NOAA-SST
+,Global
+,,Time Delta,APCA,256,0.01
+,,SST,PCA,256,0.61
+NOAA-ADCP
+,Global
+,,Time Delta,APCA,256,0.01
+,,Vel,PCA,256,0.68
+SolarAnywhere
+,Global
+,,Time Delta,APCA,256,0.01
+,,GHI,PCA,4,0.78
+,,DNI,PCA,4,0.76
+,,DHI,PCA,4,0.78
+ElNino
+,el-nino.csv
+,,Time Delta,APCA,256,0.01
+,,Lat,APCA,16,0.16
+,,Long,APCA,8,0.17
+,,Zon. Wind,PCA,256,0.31
+,,Mer. Wind,PCA,256,0.31
+,,Humidity,PCA,256,0.23
+,,Air Temp.,PCA,256,0.33
+,,Sea Temp.,PCA,256,0.33
+NOAA-SPC-hail
+,noaa_spc-hail.csv
+,,Time Delta,Base,256,1.0
+,,Lat,Base,256,1.0
+,,Long,Base,256,1.0
+,,Size,APCA,4,0.81
+NOAA-SPC-tornado
+,noaa_spc-tornado.csv
+,,Time Delta,Base,256,1.0
+,,Lat,Base,256,1.0
+,,Long,Base,256,1.0
+NOAA-SPC-wind
+,noaa_spc-wind.csv
+,,Time Delta,Base,256,1.0
+,,Lat,Base,256,1.0
+,,Long,Base,256,1.0
+,,Speed,APCA,4,0.98

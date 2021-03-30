@@ -12,7 +12,7 @@ class CSVConstants(object):
     INDEX_WINDOW = 6
     INDEX_TOTAL_SIZE = 7
     INDEX_CR_PERCENTAGE = 8
-    INDEX_DELTA_PERCENTAGE = 12
+    INDEX_DELTA_PERCENTAGE = 8
 
     @staticmethod
     def check_lines(line1, line2):

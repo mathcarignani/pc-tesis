@@ -14,6 +14,8 @@ class PandasMethods(object):
         df = df.loc[df['filename'] == filename]
         df = PandasMethods.dataset_df(df, dataset)
         df = df.dropna(axis=1, how='all')  # drop the columns where all elements are NaN
+        # print(df)
+        # exit(1)
         return df
 
     #
@@ -59,12 +61,11 @@ class PandasMethods(object):
             return min_value_row
 
         thresholds = coder_df.threshold.unique()
-        check_same = set([0, 1, 3, 5, 10, 15, 20, 30]).issubset(set(thresholds))
+        check_same = set([0]).issubset(set(thresholds)) # , 1, 3, 5, 10, 15, 20, 30]).issubset(set(thresholds))
         if not check_same:
             print(thresholds)
             assert(check_same)
         threshold_df = PandasMethods.threshold_df(coder_df, threshold)
-
         min_value_index = threshold_df[column_key].idxmin()
         min_value_row = threshold_df.loc[min_value_index]
 

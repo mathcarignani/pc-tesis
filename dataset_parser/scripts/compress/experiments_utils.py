@@ -7,20 +7,20 @@ from scripts.utils import csv_files_filenames
 
 class ExperimentsUtils(object):
     CODERS_ONLY_MASK_MODE = ['CoderFR', 'CoderSF']
-    THRESHOLDS = [0, 1, 3, 5, 10, 15, 20, 30]
+    THRESHOLDS = [0] # , 1, 3, 5, 10, 15, 20, 30]
     WINDOWS = [4, 8, 16, 32, 64, 128, 256]
 
     MAX_COLUMN_TYPES = 7  # ElNino
 
     DATASETS_ARRAY = [
-        {'name': 'IRKIS', 'folder': "[1]irkis", 'o_folder': "[1]irkis", 'cols': 1},
-        {'name': 'NOAA-SST', 'short_name': 'SST', 'folder': "[2]noaa-sst/months/2017", 'o_folder': "[2]noaa-sst", 'cols': 1},
-        {'name': 'NOAA-ADCP', 'short_name': 'ADCP', 'folder': "[3]noaa-adcp/2015", 'o_folder': "[3]noaa-adcp", 'cols': 1},
-        {'name': 'SolarAnywhere', 'short_name': 'Solar', 'folder': "[4]solar-anywhere/all", 'o_folder': "[4]solar-anywhere", 'cols': 3},
-        {'name': 'ElNino', 'folder': "[5]el-nino", 'o_folder': "[5]el-nino", 'cols': 7},
-        {'name': 'NOAA-SPC-hail', 'short_name': 'Hail', 'folder': "[6]noaa-spc-reports/hail", 'o_folder': "[6]noaa-spc-reports", 'cols': 3},
-        {'name': 'NOAA-SPC-tornado',  'short_name': 'Tornado', 'folder': "[6]noaa-spc-reports/tornado", 'o_folder': "[6]noaa-spc-reports", 'cols': 2},
-        {'name': 'NOAA-SPC-wind',  'short_name': 'Wind', 'folder': "[6]noaa-spc-reports/wind", 'o_folder': "[6]noaa-spc-reports", 'cols': 3}
+        {'name': 'IRKIS', 'folder': "[1]irkis", 'o_folder': "[1]irkis", 'cols': 2},
+        {'name': 'NOAA-SST', 'short_name': 'SST', 'folder': "[2]noaa-sst/months/2017", 'o_folder': "[2]noaa-sst", 'cols': 2},
+        {'name': 'NOAA-ADCP', 'short_name': 'ADCP', 'folder': "[3]noaa-adcp/2015", 'o_folder': "[3]noaa-adcp", 'cols': 2},
+        {'name': 'SolarAnywhere', 'short_name': 'Solar', 'folder': "[4]solar-anywhere/all", 'o_folder': "[4]solar-anywhere", 'cols': 4},
+        {'name': 'ElNino', 'folder': "[5]el-nino", 'o_folder': "[5]el-nino", 'cols': 8},
+        {'name': 'NOAA-SPC-hail', 'short_name': 'Hail', 'folder': "[6]noaa-spc-reports/hail", 'o_folder': "[6]noaa-spc-reports", 'cols': 4},
+        {'name': 'NOAA-SPC-tornado',  'short_name': 'Tornado', 'folder': "[6]noaa-spc-reports/tornado", 'o_folder': "[6]noaa-spc-reports", 'cols': 3},
+        {'name': 'NOAA-SPC-wind',  'short_name': 'Wind', 'folder': "[6]noaa-spc-reports/wind", 'o_folder': "[6]noaa-spc-reports", 'cols': 4}
     ]
 
     CODERS_ARRAY = [
@@ -42,14 +42,14 @@ class ExperimentsUtils(object):
     ####################################################################################################################
 
     COLUMN_INDEXES = {
-        'IRKIS': ['VWC'],
-        'NOAA-SST': ['SST'],
-        'NOAA-ADCP': ['Vel'],
-        'SolarAnywhere': ['GHI', 'DNI', 'DHI'],
-        'ElNino': ['Lat', 'Long', 'Zon. Wind', 'Mer. Wind', 'Humidity', 'Air Temp.', 'Sea Temp.'],
-        'NOAA-SPC-hail': ['Lat', 'Long', 'Size'],
-        'NOAA-SPC-tornado': ['Lat', 'Long'],
-        'NOAA-SPC-wind': ['Lat', 'Long', 'Speed']
+        'IRKIS': ['Time Delta', 'VWC'],
+        'NOAA-SST': ['Time Delta', 'SST'],
+        'NOAA-ADCP': ['Time Delta', 'Vel'],
+        'SolarAnywhere': ['Time Delta', 'GHI', 'DNI', 'DHI'],
+        'ElNino': ['Time Delta', 'Lat', 'Long', 'Zon. Wind', 'Mer. Wind', 'Humidity', 'Air Temp.', 'Sea Temp.'],
+        'NOAA-SPC-hail': ['Time Delta', 'Lat', 'Long', 'Size'],
+        'NOAA-SPC-tornado': ['Time Delta', 'Lat', 'Long'],
+        'NOAA-SPC-wind': ['Time Delta', 'Lat', 'Long', 'Speed']
     }
 
     DATASET_NAMES = [obj['name'] for obj in DATASETS_ARRAY]

@@ -44,7 +44,7 @@ class PDFSCommon(object):
 
     @staticmethod
     def column_indexes(dataset_name):
-        return range(1, ExperimentsUtils.get_dataset_data_columns_count(dataset_name) + 1)
+        return range(0, ExperimentsUtils.get_dataset_data_columns_count(dataset_name) + 1)
 
     @staticmethod
     def create_pdf_name(path, dataset_id, dataset_name):

@@ -15,9 +15,9 @@ from scripts.informe.gzip_compare.gzip_results_reader import GzipResultsReader
 
 
 class ProcessResults(object):
-    CODERS = ['CoderBase', 'CoderPCA', 'CoderAPCA', 'CoderCA', 'CoderPWLH', 'CoderPWLHInt', 'CoderFR', 'CoderSF',
+    CODERS = ['CoderBase', 'CoderPCA', 'CoderAPCA'] #, 'CoderCA', 'CoderPWLH', 'CoderPWLHInt', 'CoderFR', 'CoderSF',
               # 'CoderGAMPS', => ignore this coder
-              'CoderGAMPSLimit']
+              # 'CoderGAMPSLimit']
     CODERS_WITHOUT_WINDOW = ['CoderBase', 'CoderSF', 'CoderGZIP']
     MM = "M"  # MASK MODE
     DEBUG_MODE = False
@@ -37,7 +37,7 @@ class ProcessResults(object):
         self.key = 'global' if self.global_mode else 'local'
         self.results_reader = ResultsReader(self.key, ProcessResults.MM)
         self.df = self.__set_df(gzip_path, gzip_filename)
-        self.threshold_compare = ThresholdCompare(ResultsReader('local', ProcessResults.MM))
+        # self.threshold_compare = ThresholdCompare(ResultsReader('local', ProcessResults.MM))
 
     def run(self):
         self.__write_headers()
@@ -81,8 +81,8 @@ class ProcessResults(object):
             # TODO: uncomment to IGNORE SPEED
             # if self.dataset_name == 'NOAA-SPC-wind' and self.col_index == 3:
             #     continue
-            if self.__local_or_single_file():
-                self.threshold_compare.calculate_matching_thresholds(self.dataset_name, self.filename, self.col_index)
+            # if self.__local_or_single_file():
+            #     self.threshold_compare.calculate_matching_thresholds(self.dataset_name, self.filename, self.col_index)
             self.col_name = ExperimentsUtils.COLUMN_INDEXES[self.dataset_name][self.col_index - 1]
             self._print(self.col_name)
             self.__column_results_writer_1()
@@ -111,13 +111,13 @@ class ProcessResults(object):
             window, percentage, _, total_bits = ProcessResults.get_values(row_df, self.col_index)
             new_window, new_percentage, new_total_bits = window, percentage, total_bits
 
-            if self.__same_result(threshold):
-                assert(threshold > 0); assert(window == previous_window)
-                assert(percentage == previous_percentage); assert(total_bits == previous_total_bits)
-                # TODO: uncomment to show blank cells for a repeated experiment
-                # new_window, new_percentage, new_total_bits = '=', '=', '=
-            elif self.coder_name in self.CODERS_WITHOUT_WINDOW:
-                new_window = ''  # these coders don't have a window param
+            # if self.__same_result(threshold):
+            #     assert(threshold > 0); assert(window == previous_window)
+            #     assert(percentage == previous_percentage); assert(total_bits == previous_total_bits)
+            #     # TODO: uncomment to show blank cells for a repeated experiment
+            #     # new_window, new_percentage, new_total_bits = '=', '=', '=
+            # elif self.coder_name in self.CODERS_WITHOUT_WINDOW:
+            #     new_window = ''  # these coders don't have a window param
 
             windows.append(new_window); percentages.append(new_percentage); total_bits_list.append(new_total_bits)
             previous_window, previous_percentage, previous_total_bits = window, percentage, total_bits
@@ -156,7 +156,7 @@ class ProcessResults(object):
         return condition1 or condition2
 
     def __same_result(self, threshold):
-        return self.__local_or_single_file() and self.threshold_compare.matching_threshold(threshold)
+        return self.__local_or_single_file() # and self.threshold_compare.matching_threshold(threshold)
 
     def __single_file_dataset(self):
         return ExperimentsUtils.dataset_csv_files_count(self.dataset_name) == 1

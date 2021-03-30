@@ -27,7 +27,7 @@ class TableMinMax(object):
         self.data_rows_array.append(data_rows)
 
     def show_data(self):
-        assert(len(self.data_rows_array) == 21)
+        # assert(len(self.data_rows_array) == 21)
         first_data_rows = self.data_rows_array[0]  # array of objects corresponding to first data type
         for data_row in first_data_rows:
             coder_name = data_row['coder_name']

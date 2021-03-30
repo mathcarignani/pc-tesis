@@ -52,13 +52,20 @@ class ThresholdCompare(object):
     def __parse_threshold_list(self, threshold, col_index, columns_count):
         thresholds_list = self.__read_threshold_list(threshold, columns_count)
 
+        print(col_index)
+        print(thresholds_list)
+        print(columns_count)
+
         # only consider the thresholds which are associated to the column with col_index, ignore the rest
         column_thresholds_list = []
-        current_index = col_index - 1  # col_index >= 1, so current_index >= 0
+        current_index = col_index #- 1  # col_index >= 1, so current_index >= 0
         while current_index < len(thresholds_list):
             current_threshold = thresholds_list[current_index]
             column_thresholds_list.append(current_threshold)
             current_index += columns_count
+        print(len(column_thresholds_list))
+        print(len(thresholds_list))
+        print(columns_count)
         assert(len(column_thresholds_list) == len(thresholds_list) / columns_count)
         return column_thresholds_list
 
@@ -72,9 +79,9 @@ class ThresholdCompare(object):
         threshold_list_str = self.results_reader.line[CSVConstants.INDEX_THRESHOLD_LIST]  # '[0, N, 291, 263]'
         thresholds_list = threshold_list_str[1:-1].split(', ')  # ['0', 'N', '291', '263']
         assert(thresholds_list[0] == '0')  # threshold for time column must be 0
-        thresholds_list = thresholds_list[1:]  # ['N', '291', '263'] - remove first '0'
+        # thresholds_list = thresholds_list[1:]  # ['N', '291', '263'] - remove first '0'
         thresholds_list = [ThresholdCompare.map_value(val) for val in thresholds_list]  # [None, 291, 263]
-        assert(len(thresholds_list) % columns_count == 0)
+        assert((len(thresholds_list)-1) % (columns_count-1) == 0)
         return thresholds_list
 
     @staticmethod
