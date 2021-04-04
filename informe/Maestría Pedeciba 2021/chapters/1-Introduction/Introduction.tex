@@ -75,6 +75,8 @@ In \textbf{Chapter~\ref{experiments}} we present and analyze a series of experim
 \clearpage
 
 
+\newcommand{\footCRRD}{\footnote{More formal definitions of the compression performance metrics CR and RD will be given in Section~\ref{experiments:experiments}.}}
+
 Thus, smaller values of CR correspond to a better performance. To compare the compression performance between two algorithm variants $\alOne$ and $\alTwo$, we consider the \textit{relative difference (RD)} metric, which is calculated by the formula
 \vspace{-2pt}
 \newcommand{\sizeofd}{\textnormal{size of data compressed with }}
@@ -83,7 +85,7 @@ Thus, smaller values of CR correspond to a better performance. To compare the co
 \end{equation}
 
 \vspace{-2pt}
-Therefore, $\alOne$ has a better performance than $\alTwo$ iff $\RD(\alOne, \alTwo)$ is positive.
+Therefore, $\alOne$ has a better performance than $\alTwo$ iff $\RD(\alOne, \alTwo)$ is positive\footCRRD.
 
 
 \newcommand{\footSupportBoth}{\footnote{Algorithms SF and FR only support variant \maskalgo, while the rest of the algorithms support variants \maskalgo and \NOmaskalgo.}}
@@ -95,7 +97,7 @@ In Section~\ref{secX:rendimiento-relativo}, for each algorithm $a$ that supports
 \newcommand{\footSupportFocus}{\footnote{\label{note1}Due to the results obtained in Section~\ref{secX:rendimiento-relativo}, our experiments in the subsequent sections in Chapter~\ref{experiments} focus on studying the compression performance of variant \maskalgo of the algorithms.}}
 
 
-Every original algorithm (and its respective variants) depends on a window size parameter, denoted $\win$, which defines the size of the windows into which the data are partitioned for encoding. In algorithm PCA, it defines a \textit{fixed window size}, while in the rest of the algorithms it defines a \textit{maximum window size}. In Section~\ref{secX:windows} we analyze the sensitivity of variant \maskalgo of each algorithm\footSupportFocus\ to this parameter. For each dataset, we compress each data file, and compare the results obtained when using a window size optimized for said specific file, against the results obtained when using a window size optimized for the whole dataset. The results indicate that the difference in compression performance is generally rather small, with the RD being less than or equal to $2\%$ in $97.7\%$ of the experimental cases. Therefore, we could fix the window size parameter in advance, for example by optimizing over a training set, without significantly compromising the overall performance of the compression algorithm variant. This is relevant, since obtaining the optimal window size for a specific data file is, in general, computationally expensive.
+Every original algorithm (and its respective variants) depends on a window size parameter, denoted $\win$, which defines the size of the windows into which the data are partitioned for encoding. In algorithm PCA, it defines a \textit{fixed window size}, while in the rest of the algorithms it defines a \textit{maximum window size}. In Section~\ref{secX:windows} we analyze the sensitivity of variant \maskalgo of each algorithm\footSupportFocus\ to this parameter. For each dataset, we compress each data file, and compare the results obtained when using a window size optimized for said specific file, against the results obtained when using a window size optimized for the whole dataset. The results indicate that the difference in compression performance is generally rather small, with the RD being less than or equal to $2\%$ in $97.8\%$ of the experimental cases. Therefore, we could fix the window size parameter in advance, for example by optimizing over a training set, without significantly compromising the overall performance of the compression algorithm variant. This is relevant, since obtaining the optimal window size for a specific data file is, in general, computationally expensive.
 
 
 The last part of our experimental analysis, which is presented in Section~\ref{secX:codersmask}, consists in comparing the compression performance of our adapted algorithm variants, with each other, and with the general-purpose lossless compression algorithm gzip \cite{gzip}. Taking into account the discussion in the previous two paragraphs, for this analysis we only consider variant \maskalgo of each algorithm, and in every case we use the optimal window size for each whole dataset. Our experimental results indicate that none of the algorithm variants obtains the best compression performance in every scenario. This means that the optimal selection of a variant depends on the characteristics of the data to be compressed, and the error threshold ($\maxerror$) that is allowed. In some circumstances, even a general-purpose compression algorithm such as gzip outperforms the specific variants. Nevertheless, we extract some general conclusions from our analysis. For large error thresholds, variant \MaskVar{APCA} achieves the best compression results, obtaining the minimum CR in 76 out of 84 experimental cases ($90.5\%$). On the other hand, algorithm gzip and variant \MaskVar{PCA} are preferred for lower thresholds scenarios, since they obtain the minimum CR in 18 and 17 out of 42 experimental cases ($42.9\%$ and $40.5\%$), respectively.

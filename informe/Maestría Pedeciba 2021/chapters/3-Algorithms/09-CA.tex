@@ -20,7 +20,7 @@ Since CA is a linear model algorithm, its encoding process involves the encoding
 The algorithm determines when to stop growing the window, i.e., when the current window $\window$ is complete, based upon three sample points: \textit{incoming (\incoming)} is the point corresponding to the column entry for the current iteration; \textit{archived (\archived)} is the point most recently encoded, and it corresponds to a single sample that precedes a window; \textit{snapshot (\snapshot)} is the point most recently added to $\window$. The algorithm maintains a cone, determined by two rays departing from \archived, \smin and \smax, such that \incoming is added to $\window$ as long as it lies within the cone. This cone, in turn, is defined so that if \incoming is indeed added to $\window$ (thus becoming point \snapshot), all the points in $\window$ are at a vertical distance at most \maxerror from the line segment $(\archived, \snapshot)$. Since the encoding process involves the encoding of a sequence of these segments $(\archived, \snapshot)$, the absolute error between the encoded and the original samples is guaranteed to be at most \maxerror.
 
 
-In figures \ref{example:caIntro1} and \ref{example:caIntro2} we present an example that illustrates the key steps of the coding algorithm. In Figure~\ref{example:caIntro1}, the three points, \incoming, \archived, and \snapshot, as well as the two rays departing from \archived, \smin and \smax, are shown. \archived is defined (and encoded) in the first iteration (\Line 6), while \snapshot and the two rays are defined in the second iteration (\Lines 8-9). \incoming is the incoming point in the third iteration, where line segment $(\archived, \incoming)$ is defined in \Line 11. The slope of this segment is between the slopes of \smin and \smax, i.e. \incoming lies within the cone determined by the two rays, so the condition in \Line 12 evaluates to false (we assume that $|\window|<\win$), i.e. $\window$ is not complete. Thus, \Lines 17-20 are executed: \snapshot is made equal to \incoming, it is added to $\window$ (\Line 17), and \smin and \smax are updated (\Lines 18-20). The updated information is shown in Figure~\ref{example:caIntro2}. 
+In figures \ref{example:caIntro1} and \ref{example:caIntro2} we present an example that illustrates the key steps of the coding algorithm. In Figure~\ref{example:caIntro1}, the three points, \incoming, \archived, and \snapshot, as well as the two rays departing from \archived, \smin and \smax, are shown. \archived is defined (and encoded) in the first iteration (\Line 7), while \snapshot and the two rays are defined in the second iteration (\Lines 9-10). \incoming is the incoming point in the third iteration, where line segment $(\archived, \incoming)$ is defined in \Line 12. The slope of this segment is between the slopes of \smin and \smax, i.e. \incoming lies within the cone determined by the two rays, so the condition in \Line 13 evaluates to false (we assume that $|\window|<\win$), i.e. $\window$ is not complete. Thus, \Lines 18-21 are executed: \snapshot is made equal to \incoming, and it is added to $\window$ (\Line 18), and \smin and \smax are updated (\Lines 19-21). The updated information is shown in Figure~\ref{example:caIntro2}. 
 
 
 \vspace{+5pt}
@@ -28,7 +28,7 @@ In figures \ref{example:caIntro1} and \ref{example:caIntro2} we present an examp
 
 
 \vspace{+5pt}
-In the successive iterations, the angle of the cone keeps decreasing, until eventually either point \incoming lies outside of the cone, or $\window$ reaches its maximum size. When this occurs, $\window$ is complete, and the condition in \Line 12 becomes true, so the size and the last point of $\window$, i.e. point \snapshot, are encoded (\Line 13), $\window$ is emptied (\Line 14), and the process starts again, by defining and encoding a new point \archived (\Line 15).
+In the successive iterations, the angle of the cone keeps decreasing, until eventually either point \incoming lies outside of the cone, or $\window$ reaches its maximum size. When this occurs, $\window$ is complete, and the condition in \Line 13 becomes true, so the size and the last point of $\window$, i.e. point \snapshot, are encoded (\Line 14), $\window$ is emptied (\Line 15), and the process starts again, by defining and encoding a new point \archived (\Line 16). We point out that an iteration in which point \archived is updated is always followed by an iteration in which \smin and \smax are updated. Also, notice that point \archived, and rays \smin and \smax, are always initialized in the first two iterations, respectively, so the cone is properly defined every time the condition in \Line 13 is checked.
 
 
 \vspace{+5pt}
@@ -40,15 +40,16 @@ The coding routine for variant \maskalgo invokes two auxiliary routines, \CAWinS
 
 \input{chapters/3-Algorithms/pseudo/09-CA/CA-WinStart-C}
 
-\vspace{-8pt}
+\vspace{-9pt}
 \input{chapters/3-Algorithms/pseudo/09-CA/CA-WinEnd-C}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\vspace{-5pt}
-The decoding routine for variant \maskalgo is shown in Figure~\ref{pseudoDecoderCA}. It consists of a loop that keeps running until every entry in the column has been decoded, which occurs when condition in \Line~2 becomes false. In each iteration, two values, \sizee and \valuev, are decoded from the binary file. \valuev corresponds to the y-coordinate of a point, whose x-coordinate is obtained from the timestamp column (\Line 5). If \sizee is equal to 1, \valuev is the result of an encoding produced by routine \CAWinStart, so it corresponds to the y-coordinate of an archived point (\archived). In this case, point \archived is saved and \valuev is written to the decoded CSV data file (\Lines 7-8). On the other hand, if \sizee is greater than one, \valuev comes from an encoding produced by routine \CAWinEnd, so it corresponds to the y-coordinate of a snapshot point (\snapshot). In this case, the points in the window are modeled by a line segment, whose endpoints are \archived and \snapshot, so the auxiliary routine \decodeSegment is called with their respective coordinates as inputs (\Line 11). Routine \decodeSegment (recall Figure~\ref{pseudoDecoLinear}) returns a list consisting of the (integer) sample values that are decoded from the segment, which are then written in the decoded CSV data file (\Lines 12-14).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace{-7pt}
+The decoding routine for variant \maskalgo is shown in Figure~\ref{pseudoDecoderCA}. It consists of a loop that keeps running until every entry in the column has been decoded, which occurs when condition in \Line~2 becomes false. In each iteration, a point is obtained, decoding its y-coordinate, \valuev, from the binary file, and reading its x-coordinate from the timestamp column (\Lines 3-4). If $\decoAP$ is true, \valuev is the result of an encoding produced by routine \CAWinStart, so it corresponds to the y-coordinate of an archived point (\archived). In this case, point \archived is saved and \valuev is written to the decoded CSV data file (\Lines 6-7). On the other hand, if $\decoAP$ is false, \valuev comes from an encoding produced by routine \CAWinEnd, so it corresponds to the y-coordinate of a snapshot point (\snapshot), whose x-coordinate is obtained from the timestamp column given the decoded window $\sizee$ (\Lines 11-12). In this case, the points in the window are modeled by a line segment, whose endpoints are \archived and \snapshot, so the auxiliary routine \decodeSegment is called with their respective coordinates as inputs (\Line 13). Routine \decodeSegment (recall Figure~\ref{pseudoDecoLinear}) returns a list consisting of the (integer) sample values that are decoded from the segment, which are then written in the decoded CSV data file (\Lines 14-16).
 
 
-% \vspace{-5pt}
+\vspace{-8pt}
 \input{chapters/3-Algorithms/pseudo/09-CA/CA-M-D}
 
 
@@ -68,7 +69,7 @@ The decoding routine for variant \maskalgo is shown in Figure~\ref{pseudoDecoder
 This example involves encoding 12 samples, so no window can reach the maximum size (256). Therefore, an incoming point (\incoming) is added to the current window, $\window$, as long as it lies within the cone determined by the two rays departing from the archived point (\archived).
 
 
-In the first iteration, the condition in \Line 5 is satisfied, so \archived is made equal to \incomingP{1}, and it is encoded via the auxiliary routine \CAWinStart, using $\logWinSize = \logWinSizeOpt{256}=8$ bits for encoding a 1, and \tobitexp for encoding its y-coordinate, also 1. In the second iteration, $\window$ is empty, so the condition in \Line 7 is satisfied. Therefore, the snapshot point (\snapshot) is made equal to \incomingP{2}, it is added to $\window$, and two rays, \smin and \smax, are defined. Figure~\ref{example:ca:1} shows both saved points, \archived and \snapshot, as well as both rays, \smin and \smax, after the second iteration is completed.
+In the first iteration, the condition in \Line 6 is satisfied, so \archived is made equal to \incomingP{1}, and it is encoded via the auxiliary routine \CAWinStart, using $\logWinSize = \logWinSizeOpt{256}=8$ bits for encoding a 1, and \tobitexp for encoding its y-coordinate, also 1. In the second iteration, $\window$ is empty, so the condition in \Line 8 is satisfied. Therefore, the snapshot point (\snapshot) is made equal to \incomingP{2}, it is added to $\window$, and two rays, \smin and \smax, are defined. Figure~\ref{example:ca:1} shows both saved points, \archived and \snapshot, as well as both rays, \smin and \smax, after the second iteration is completed.
 
 
 \vspace{+3pt}
@@ -85,7 +86,7 @@ In the third iteration, another sample value equal to 1 is processed, but in thi
 \clearpage
 
 
-Since \incomingP{3} lies within the cone determined by the two rays departing from \archived, the condition in \Line 12 evaluates to false. Therefore, \snapshot is made equal to \incomingP{3}, it is added to $\window$, and \smin and \smax are updated (\Lines 17-20). Figure~\ref{example:ca:3} shows the information after the third iteration is completed.
+Since \incomingP{3} lies within the cone determined by the two rays departing from \archived, the condition in \Line 12 evaluates to false. Therefore, \snapshot is made equal to \incomingP{3}, it is added to $\window$, and \smin and \smax are updated (\Lines 18-21). Figure~\ref{example:ca:3} shows the information after the third iteration is completed.
 
 
 \vspace{+5pt}
@@ -108,7 +109,7 @@ In the 6th iteration, sample value 2 is processed. In Figure~\ref{example:ca:5},
 \exampleStep{ca}{5}{\label{example:ca:5}}{5}
 
 
-\incomingP{6} lies within the cone, so the condition in \Line 12 evaluates to false. Therefore, \snapshot is made equal to \incomingP{6}, and it is added to $\window$. In this case, \smin is updated, but \smax remains unchanged. Figure~\ref{example:ca:6} shows the information after the 6th iteration is completed.
+\incomingP{6} lies within the cone, so the condition in \Line 13 evaluates to false. Therefore, \snapshot is made equal to \incomingP{6}, and it is added to $\window$. In this case, \smin is updated, but \smax remains unchanged. Figure~\ref{example:ca:6} shows the information after the 6th iteration is completed.
 
 
 \vspace{+5pt}
@@ -123,7 +124,7 @@ In the 7th iteration, sample value 3 is processed. In Figure~\ref{example:ca:7},
 \exampleStep{ca}{7}{\label{example:ca:7}}{7}
 
 
-For the first time, an incoming point, \incomingP{7}, lies outside of the cone. In this case, \EseEP{7} has a greater slope than \smax, so the condition in \Line 12 becomes true. Therefore, auxiliary routine \CAWinEnd is invoked, which uses $\logWinSize = 8$ bits for encoding the size (5) of $\window$, and \tobitexp for encoding the y-coordinate (2) of \snapshot, its last point. Next, $\window$ is emptied, \archived is made equal to \incomingP{7}, and it is encoded via the routine \CAWinStart, using $\logWinSize =8$ bits for encoding a 1, and \tobitexp for encoding its y-coordinate (3). In the 8th iteration, $\window$ is empty, so the condition in \Line 7 is satisfied. Thus, \snapshot is made equal to \incomingP{8}, it is added to $\window$, and \smin and \smax are defined once more. Figure~\ref{example:ca:8} shows the information after the 8th iteration is completed.
+For the first time, an incoming point, \incomingP{7}, lies outside of the cone. In this case, \EseEP{7} has a greater slope than \smax, so the condition in \Line 13 becomes true. Therefore, auxiliary routine \CAWinEnd is invoked, which uses $\logWinSize = 8$ bits for encoding the size (5) of $\window$, and \tobitexp for encoding the y-coordinate (2) of \snapshot, its last point. Next, $\window$ is emptied, \archived is made equal to \incomingP{7}, and it is encoded via the routine \CAWinStart, using $\logWinSize =8$ bits for encoding a 1, and \tobitexp for encoding its y-coordinate (3). In the 8th iteration, $\window$ is empty, so the condition in \Line 7 is satisfied. Thus, \snapshot is made equal to \incomingP{8}, it is added to $\window$, and \smin and \smax are defined once more. Figure~\ref{example:ca:8} shows the information after the 8th iteration is completed.
 
 
 \vspace{+5pt}
@@ -133,11 +134,10 @@ For the first time, an incoming point, \incomingP{7}, lies outside of the cone. 
 \clearpage
 
 
-In Figure~\ref{example:ca:9} we present the information after the coding routine has finished. After the last iteration of the loop is executed, $\window$ is not empty, so routine \CAWinEnd is invoked in \Line 25. Besides showing the encoded points and their associated line segments, in Figure~\ref{example:ca:9} we also display the values of the decoded samples, which are the values that the decoding routine, shown in Figure~\ref{pseudoDecoderCA}, writes to the decoded CSV data file. 
-% We point out that, since the algorithm must support the scenario in which more than one sample exists for a single timestamp, the archived point must be encoded separately from the rest of the window. Otherwise, the decoding routine may consider that the archived value was the last point of the most recently encoded window.
+In Figure~\ref{example:ca:9} we present the information after the coding routine has finished. After the last iteration of the loop is executed, $\window$ is not empty, so routine \CAWinEnd is invoked in \Line 26. Besides showing the encoded points and their associated line segments, in Figure~\ref{example:ca:9} we also display the values of the decoded samples, which are the values that the decoding routine, shown in Figure~\ref{pseudoDecoderCA}, writes to the decoded CSV data file. 
 
 
-\vspace{+5pt}
+\vspace{-5pt}
 \exampleStep{ca}{9}{\label{example:ca:9}}{9}
 
 
@@ -146,10 +146,11 @@ In Figure~\ref{example:ca:9} we present the information after the coding routine
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\vspace{-10pt}
+\vspace{-22pt}
 \subsection{Non-Masking (\NOmaskalgo)\ Variant}
 \label{algo:ca:nmvariant}
 
 
-The coding and decoding routines for variant \NOmaskalgo of algorithm CA are similar to their variant \maskalgo counterparts, the difference being that the former routines are able to handle both sample values and gaps. Recall that, in the coding routine for variant \maskalgo, a window is encoded when point \incoming lies outside of the cone determined by the two rays departing from point \archived, or when the maximum window size is reached (\Line 12 in Figure~\ref{pseudoCoderCAM}). The coding routine for variant \NOmaskalgo must also encode a window if the incoming column entry is character \noData\ (gap in the data) and the other entries in the window are sample points, or vice versa. We point out that, in the former case, it doesn't make sense defining point \archived, so \Line 15 is not executed in this scenario. For the same reason, \Line 6 should not be executed if the first column entry is character \noData. Auxiliary routine \CAWinEnd uses the same number of bits for encoding a window that consists of gaps and for encoding a window that consists of sample points, i.e. $\logWinSize+\BeCe$, where $\logWinSize$ bits are used for encoding its size, and $\BeCe$ bits are used for encoding the special integer \nodata. 
+\vspace{-6pt}
+The coding and decoding routines for variant \NOmaskalgo of algorithm CA are similar to their variant \maskalgo counterparts, the difference being that the former routines are able to handle both sample values and gaps. Recall that, in the coding routine for variant \maskalgo, a window is encoded when point \incoming lies outside of the cone determined by the two rays departing from point \archived, or when the maximum window size is reached (\Line 13 in Figure~\ref{pseudoCoderCAM}). The coding routine for variant \NOmaskalgo must also encode a window if the incoming column entry is character \noData\ (gap in the data) and the other entries in the window are sample points, or vice versa. We point out that, in the former case, it doesn't make sense defining point \archived, so \Line 16 is not executed in this scenario. For the same reason, \Line 7 should not be executed if the first column entry is character \noData. Auxiliary routine \CAWinEnd uses the same number of bits for encoding a window that consists of gaps than for encoding a window that consists of sample points, i.e. $\logWinSize+\BeCe$, where $\logWinSize$ bits are used for encoding its size, and $\BeCe$ bits are used for encoding the special integer \nodata. We point out that, in variant \NOmaskalgo, every gap is encoded via auxiliary routine \CAWinEnd; this is true even for a single gap burst appearing between two sample values, in which case the corresponding encoded window size is one.
 
