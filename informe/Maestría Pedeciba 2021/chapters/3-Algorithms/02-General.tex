@@ -15,7 +15,10 @@ Figure~\ref{pseudoCodeCommon} shows a general encoding scheme used for the evalu
 \clearpage
 
 
-The timestamp column, which is comprised of integers, is the first column in every CSV data file, and it is also the first column to be encoded (\Line 4). This is done using a lossless code in which every integer is encoded independently, using a fixed number of bits, $\BeCe$. Such a number is, in fact, generally defined not just for the timestamp column, but for other data columns as well. The column-dependent value is defined as follows.
+The timestamp column, which is comprised of integers, is the first column in every CSV data file, and it is also the first column to be encoded (\Line 4). It is always encoded using algorithm variant \MaskVar{APCA}. We delve further into the topic of timestamp compression in Subsection~\ref{secX:timestampComp}. 
+
+
+Next, we define a column-dependent parameter, $\BeCe$, which is used by the evaluated algorithms when encoding the timestamp, as well as the rest of the data columns.
 
 
 \begin{defcion}
@@ -30,11 +33,11 @@ where $\text{max}(f, i)$ and $\text{min}(f, i)$ are the maximum and minimum valu
 \end{defcion}
 
 
-Recall, from Section~\ref{datasets:over}, that the timestamp column consists of integer values, but, in general, the rest of the columns admit both integer values and the character ``N", which represents a gap in the data. Thus, $\EneCe$ is 0 for the timestamp column, and 1 for the rest of the data columns in each dataset. For the data columns in our experimental datasets, the minimum and maximum values obtained for $\BeCe$ are 9, for the zonal and meridional winds columns in dataset ElNino, and 17, for the timestamp columns in every dataset.
+Recall, from Section~\ref{datasets:over}, that the timestamp column consists of integer values, but, in general, the rest of the columns admit both integer values and the character ``N", which represents a gap in the data. Thus, $\EneCe$ is 0 for the timestamp column, and 1 for the rest of the data columns in each dataset. For the data columns in our experimental datasets, the minimum and maximum values obtained for parameter $\BeCe$ are 9, for the zonal and meridional winds columns in dataset ElNino, and 17, for the timestamp columns in every dataset (recall this information from Table~\ref{datasets:table:scale}).
 
 We point out that the encoder is able to calculate $\BeCe$ for each data column in each dataset file: recall, from Section~\ref{datasets:over}, that the maximum and minimum values allowed for each column are specified in the header of the dataset CSV file, making this information known to the encoder. Since the header of the file is encoded (\Line 3 in Figure~\ref{pseudoCodeCommon}), the decoder can also calculate $\BeCe$ in each case. In the sequel, in all the algorithm descriptions, we will assume that the value of $\BeCe$ is known for the data column of interest in the algorithm.
 
 
 \newcommand{\gapLine}{6}
-We focus on the compression of the sample columns (i.e. the rest of the columns in the data file), and do not delve further into optimization of the timestamp compression, which we leave for future work. When variant \maskalgo of an algorithm is executed, the positions of the gaps in every data column are encoded, independently for each column, in \Line \gapLine; the details are explained in Section~\ref{algo:maskmodes}.
+In Figure~\ref{pseudoCodeCommon}, notice that when variant \maskalgo of an algorithm is executed, the positions of the gaps in every data column are encoded, independently for each column, in \Line \gapLine; the details are explained in Section~\ref{algo:maskmodes}.
 

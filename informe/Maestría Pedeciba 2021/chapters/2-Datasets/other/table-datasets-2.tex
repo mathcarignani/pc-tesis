@@ -3,44 +3,45 @@
 \begin{table}[h]
 \vspace{+5pt}
 \begin{center}
-    \begin{tabular}{| L{2cm} || L{2cm} | C{2.5cm} |  C{1.5cm} |  C{1.8cm} |  C{1.8cm} |}
+    \begin{tabular}{| L{1.4cm} || L{2cm} | C{2.4cm} |  C{1.1cm} |  C{1.7cm} |  C{1.7cm} | C{1.2cm} |}
     \hline
-      \multicolumn{1}{|>{\centering\arraybackslash}m{2cm}||}{\textbf{Dataset}}
+      \multicolumn{1}{|>{\centering\arraybackslash}m{1.4cm}||}{\textbf{Dataset}}
     & \multicolumn{1}{>{\centering\arraybackslash}m{2cm}|}{\textbf{Data Type}} 
-    & \multicolumn{1}{>{\centering\arraybackslash}m{2.5cm}|}{\textbf{Unit}} 
-    & \multicolumn{1}{>{\centering\arraybackslash}m{1.5cm}|}{\textbf{Scale}}
-    & \multicolumn{1}{>{\centering\arraybackslash}m{1.8cm}|}{\textbf{Minimum}}
-    & \multicolumn{1}{>{\centering\arraybackslash}m{1.8cm}|}{\textbf{Maximum}}\\
+    & \multicolumn{1}{>{\centering\arraybackslash}m{2.4cm}|}{\textbf{Unit}} 
+    & \multicolumn{1}{>{\centering\arraybackslash}m{1.1cm}|}{\textbf{Scale}}
+    & \multicolumn{1}{>{\centering\arraybackslash}m{1.7cm}|}{\textbf{Minimum}}
+    & \multicolumn{1}{>{\centering\arraybackslash}m{1.7cm}|}{\textbf{Maximum}}
+    & \multicolumn{1}{>{\centering\arraybackslash}m{1.2cm}|}{\textbf{$\BeCe$ (bits)}}\\
     \hline
-    \datasetirkis    & Time Delta  & minutes         & 1     & 0       & 13,1071 \\\hline
-                     & VWC         & dimensionless   & 1,000 & 0       & 600     \\\hline
-    \datasetsst      & Time Delta  & seconds         & 1     & 0       & 13,1071 \\\hline
-                     & SST         & °C              & 1,000 & 0       & 40,000  \\\hline
-    \datasetadcp     & Time Delta  & minutes         & 1     & 0       & 13,1071 \\\hline
-                     & Vel         & m/s             & 1,000 & -1,100  & 2,700   \\\hline
-    \datasetelnino   & Time Delta  & hours           & 1     & 0       & 13,1071 \\\hline
-                     & Lat         & coord. degrees  & 100   & -1,000  & 1,000   \\\hline
-                     & Long        & coord. degrees  & 100   & -18,000 & 18,000  \\\hline
-                     & Zon. Wind   & m/s             & 10    & -150    & 150     \\\hline
-                     & Mer. Wind   & m/s             & 10    & -150    & 150     \\\hline
-                     & Humidity    & \%              & 10    & 0       & 1,000   \\\hline
-                     & Air Temp.   & °C              & 100   & 0       & 4,000   \\\hline
-                     & Sea Temp.   & °C              & 100   & 0       & 4,000   \\\hline
-    \datasetsolar    & Time Delta  & minutes         & 1     & 0       & 13,1071 \\\hline
-                     & GHI         & \unitSolar      & 1     & 0       & 1,020   \\\hline
-                     & DNI         & \unitSolar      & 1     & 0       & 970     \\\hline
-                     & DHI         & \unitSolar      & 1     & 0       & 800     \\\hline
-    \datasethail     & Time Delta  & minutes         & 1     & 0       & 13,1071 \\\hline
-                     & Lat         & coord. degrees  & 100   & 2,500   & 5,000   \\\hline
-                     & Long        & coord. degrees  & 100   & -12,500 & 6,700   \\\hline
-                     & Size        & 1/100 inch      & 1     & 0       & 700     \\\hline
-    \datasettornado  & Time Delta  & minutes         & 1     & 0       & 13,1071 \\\hline
-                     & Lat         & coord. degrees  & 100   & 2,400   & 5,000   \\\hline
-                     & Long        & coord. degrees  & 100   & -12,500 & -6,800  \\\hline
-    \datasetwind     & Time Delta  & minutes         & 1     & 0       & 13,1071 \\\hline
-                     & Lat         & coord. degrees  & 100   & 0       & 5,000   \\\hline
-                     & Long        & coord. degrees  & 100   & -12,500 & 0       \\\hline
-                     & Speed       & mph             & 10    & 0       & 2,400   \\\hline
+    \datasetirkis    & Time Delta  & minutes         & 1     & 0       & 131,071 & 17 \\\hline
+                     & VWC         & dimensionless   & 1,000 & 0       & 600     & 10 \\\hline
+    \datasetsst      & Time Delta  & seconds         & 1     & 0       & 131,071 & 17 \\\hline
+                     & SST         & °C              & 1,000 & 0       & 40,000  & 16 \\\hline
+    \datasetadcp     & Time Delta  & minutes         & 1     & 0       & 131,071 & 17 \\\hline
+                     & Vel         & m/s             & 1,000 & -1,100  & 2,700   & 12 \\\hline
+    \datasetelnino   & Time Delta  & hours           & 1     & 0       & 131,071 & 17 \\\hline
+                     & Lat         & coord. degrees  & 100   & -1,000  & 1,000   & 11 \\\hline
+                     & Long        & coord. degrees  & 100   & -18,000 & 18,000  & 16 \\\hline
+                     & Zon. Wind   & m/s             & 10    & -150    & 150     &  9 \\\hline
+                     & Mer. Wind   & m/s             & 10    & -150    & 150     &  9 \\\hline
+                     & Humidity    & \%              & 10    & 0       & 1,000   & 10 \\\hline
+                     & Air Temp.   & °C              & 100   & 0       & 4,000   & 12 \\\hline
+                     & Sea Temp.   & °C              & 100   & 0       & 4,000   & 12 \\\hline
+    \datasetsolar    & Time Delta  & minutes         & 1     & 0       & 131,071 & 17 \\\hline
+                     & GHI         & \unitSolar      & 1     & 0       & 1,020   & 10 \\\hline
+                     & DNI         & \unitSolar      & 1     & 0       & 970     & 10 \\\hline
+                     & DHI         & \unitSolar      & 1     & 0       & 800     & 10 \\\hline
+    \datasethail     & Time Delta  & minutes         & 1     & 0       & 131,071 & 17 \\\hline
+                     & Lat         & coord. degrees  & 100   & 2,500   & 5,000   & 12 \\\hline
+                     & Long        & coord. degrees  & 100   & -12,500 & -6,700  & 13 \\\hline
+                     & Size        & 1/100 inch      & 1     & 0       & 700     & 10 \\\hline
+    \datasettornado  & Time Delta  & minutes         & 1     & 0       & 131,071 & 17 \\\hline
+                     & Lat         & coord. degrees  & 100   & 2,400   & 5,000   & 12 \\\hline
+                     & Long        & coord. degrees  & 100   & -12,500 & -6,800  & 13 \\\hline
+    \datasetwind     & Time Delta  & minutes         & 1     & 0       & 131,071 & 17 \\\hline
+                     & Lat         & coord. degrees  & 100   & 0       & 5,000   & 13 \\\hline
+                     & Long        & coord. degrees  & 100   & -12,500 & 0       & 14 \\\hline
+                     & Speed       & mph             & 10    & 0       & 2,400   & 12 \\\hline
     \toprule[0.1mm]
     \end{tabular}
     \caption{Data types overview.}
