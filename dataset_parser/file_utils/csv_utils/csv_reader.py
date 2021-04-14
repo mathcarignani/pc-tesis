@@ -5,8 +5,6 @@ from file_utils.auxi import full_path
 
 
 class CSVReader:
-    FIRST_DATA_ROW = 4
-
     def __init__(self, path, filename, progress=False, delimiter=','):
         self.path, self.filename = path, filename
         self.full_path = full_path(path, filename)
@@ -17,6 +15,18 @@ class CSVReader:
         self.current_line_count = 0
         self.progress_bar = None if not progress else self.new_progress_bar()
         self.previous_row = next(self.csv_reader, None)
+
+    @classmethod
+    def first_data_row(cls, path, filename):
+        csv_reader = CSVReader(path, filename)
+        last_header_row = 1
+        while csv_reader.continue_reading:
+            line = csv_reader.read_line()
+            if line[0] == "DATA:":
+                break
+            last_header_row += 1
+        csv_reader.close()
+        return last_header_row
 
     def goto_row(self, row_number):
         if row_number >= self.total_lines:
@@ -30,7 +40,8 @@ class CSVReader:
             self.read_line()
 
     def goto_first_data_row(self):
-        self.goto_row(self.FIRST_DATA_ROW)
+        first_data_row = self.first_data_row(self.path, self.filename)
+        self.goto_row(first_data_row + 1)
 
     # PRE: self.continue_reading
     def read_line(self):

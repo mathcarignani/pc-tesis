@@ -2,7 +2,14 @@
 #include "scripts.h"
 
 #include <iostream>
-#include "decoder_common.h"
+#include "decoder_base.h"
+#include "decoder_pca.h"
+#include "decoder_apca.h"
+#include "decoder_pwlh.h"
+#include "decoder_ca.h"
+#include "decoder_slide_filter.h"
+#include "decoder_fr.h"
+#include "decoder_gamps.h"
 #include "coder_base.h"
 #include "coder_pca.h"
 #include "coder_apca.h"
@@ -16,123 +23,91 @@
 #include "assert.h"
 #include "string_utils.h"
 
+Dataset* Scripts::code(std::string coder_name, Path input_path, Path output_path,
+                       int window_size, std::vector<int> error_thresholds_vector){
+    CSVReader* csv_reader = new CSVReader(input_path);
+    BitStreamWriter* bit_stream_writer = new BitStreamWriter(output_path);
+
+    CoderCommon* coder;
+
+    if (coder_name == "CoderBase"){
+        coder = new CoderBase(coder_name, csv_reader, bit_stream_writer);
+    }
+    else if (coder_name == "CoderPCA"){
+        coder = new CoderPCA(coder_name, csv_reader, bit_stream_writer);
+        ((CoderPCA*) coder)->setCoderParams(window_size, error_thresholds_vector);
+    }
+    else if (coder_name == "CoderAPCA"){
+        coder = new CoderAPCA(coder_name, csv_reader, bit_stream_writer);
+        ((CoderAPCA*) coder)->setCoderParams(window_size, error_thresholds_vector);
+    }
+    else if (coder_name == "CoderCA"){
+        coder = new CoderCA(coder_name, csv_reader, bit_stream_writer);
+        ((CoderCA*) coder)->setCoderParams(window_size, error_thresholds_vector);
+    }
+    else if (coder_name == "CoderPWLH" || coder_name == "CoderPWLHInt"){
+        coder = new CoderPWLH(coder_name, csv_reader, bit_stream_writer);
+        ((CoderPWLH*) coder)->setCoderParams(window_size, error_thresholds_vector);
+    }
+#if MASK_MODE
+    else if (coder_name == "CoderSF"){
+        coder = new CoderSlideFilter(coder_name, csv_reader, bit_stream_writer);
+        ((CoderSlideFilter*) coder)->setCoderParams(window_size, error_thresholds_vector);
+    }
+    else if (coder_name == "CoderFR"){
+        coder = new CoderFR(coder_name, csv_reader, bit_stream_writer);
+        ((CoderFR*) coder)->setCoderParams(window_size, error_thresholds_vector);
+    }
+#endif
+    else { // (coder_name == "CoderGAMPS" || coder_name == "CoderGAMPSLimit") {
+        coder = new CoderGAMPS(coder_name, csv_reader, bit_stream_writer);
+        ((CoderGAMPS*) coder)->setCoderParams(window_size, error_thresholds_vector);
+    }
+
+    coder->codeCoderName();
+    if (coder_name != "CoderBase") {
+        coder->codeWindowParameter();
+    }
+    return coder->code();
+}
+
 void Scripts::decode(Path input_path, Path output_path){
     BitStreamReader* bit_stream_reader = new BitStreamReader(input_path);
     CSVWriter* csv_writer = new CSVWriter(output_path);
-    DecoderCommon* decoder = DecoderCommon::getDecoder(bit_stream_reader, csv_writer);
-    decoder->decodeFile();
-    decoder->close();
-}
+    DecoderCommon* decoder;
 
-Dataset* Scripts::codeBase(Path input_path, Path output_path){
-    CSVReader* csv_reader = new CSVReader(input_path);
-    BitStreamWriter* bit_stream_writer = new BitStreamWriter(output_path);
-    CoderBase* coder = new CoderBase(csv_reader, bit_stream_writer);
-    coder->codeFile();
-    coder->printBits();
-    coder->close();
-    return coder->dataset;
-}
+    std::string coder_name = DecoderCommon::decodeCoderName(bit_stream_reader);
 
-Dataset* Scripts::code(std::string coder_name, Path input_path, Path output_path,
-                            int window_size, std::vector<int> error_thresholds_vector){
-    if (!StringUtils::find(coder_name, "Coder")){
-        coder_name = "Coder" + coder_name;
+    if (coder_name == "CoderBase") {
+        decoder = new DecoderBase(coder_name, bit_stream_reader, csv_writer);
     }
-    if (coder_name == "CoderPCA")   return Scripts::codePCA(input_path, output_path, window_size, error_thresholds_vector);
-    if (coder_name == "CoderAPCA")  return Scripts::codeAPCA(input_path, output_path, window_size, error_thresholds_vector);
-    if (coder_name == "CoderCA")    return Scripts::codeCA(input_path, output_path, window_size, error_thresholds_vector);
-    if (coder_name == "CoderGAMPS" || coder_name == "CoderGAMPSLimit"){
-        bool limit_mode = coder_name == "CoderGAMPSLimit";
-        return Scripts::codeGAMPS(input_path, output_path, window_size, error_thresholds_vector, limit_mode);
-    }
-    if (coder_name == "CoderPWLH" || coder_name == "CoderPWLHInt"){
-        bool integer_mode = coder_name == "CoderPWLHInt";
-        return Scripts::codePWLH(input_path, output_path, window_size, error_thresholds_vector, integer_mode);
-    }
+    else {
+        if (coder_name == "CoderPCA") {
+            decoder = new DecoderPCA(coder_name, bit_stream_reader, csv_writer);
+        }
+        else if (coder_name == "CoderAPCA") {
+            decoder = new DecoderAPCA(coder_name, bit_stream_reader, csv_writer);
+        }
+        else if (coder_name == "CoderPWLH" || coder_name == "CoderPWLHInt") {
+            decoder = new DecoderPWLH(coder_name, bit_stream_reader, csv_writer);
+            ((DecoderPWLH *) decoder)->setIntegerMode();
+        }
+        else if (coder_name == "CoderCA") {
+            decoder = new DecoderCA(coder_name, bit_stream_reader, csv_writer);
+        }
 #if MASK_MODE
-    if (coder_name == "CoderSF") return Scripts::codeSF(input_path, output_path, window_size, error_thresholds_vector);
-    if (coder_name == "CoderFR") return Scripts::codeFR(input_path, output_path, window_size, error_thresholds_vector);
+        else if (coder_name == "CoderFR") {
+            decoder = new DecoderFR(coder_name, bit_stream_reader, csv_writer);
+        }
+        else if (coder_name == "CoderSF") {
+            decoder = new DecoderSlideFilter(coder_name, bit_stream_reader, csv_writer);
+        }
 #endif
-    throw std::invalid_argument(coder_name);
-}
-
-Dataset* Scripts::codePCA(Path input_path, Path output_path, int window_size, std::vector<int> error_thresholds_vector){
-    CSVReader* csv_reader = new CSVReader(input_path);
-    BitStreamWriter* bit_stream_writer = new BitStreamWriter(output_path);
-    CoderPCA* coder = new CoderPCA(csv_reader, bit_stream_writer);
-    coder->setCoderParams(window_size, error_thresholds_vector);
-    coder->codeFile();
-    coder->printBits();
-    coder->close();
-    return coder->dataset;
-}
-
-Dataset* Scripts::codeAPCA(Path input_path, Path output_path, int window_size, std::vector<int> error_thresholds_vector){
-    CSVReader* csv_reader = new CSVReader(input_path);
-    BitStreamWriter* bit_stream_writer = new BitStreamWriter(output_path);
-    CoderAPCA* coder = new CoderAPCA(csv_reader, bit_stream_writer);
-    coder->setCoderParams(window_size, error_thresholds_vector);
-    coder->codeFile();
-    coder->printBits();
-    coder->close();
-    return coder->dataset;
-}
-
-Dataset* Scripts::codePWLH(Path input_path, Path output_path, int window_size, std::vector<int> error_thresholds_vector, bool integer_mode){
-    CSVReader* csv_reader = new CSVReader(input_path);
-    BitStreamWriter* bit_stream_writer = new BitStreamWriter(output_path);
-    CoderPWLH* coder = new CoderPWLH(csv_reader, bit_stream_writer);
-    coder->setCoderParams(window_size, error_thresholds_vector, integer_mode);
-    coder->codeFile();
-    coder->printBits();
-    coder->close();
-    return coder->dataset;
-}
-
-Dataset* Scripts::codeCA(Path input_path, Path output_path, int window_size, std::vector<int> error_thresholds_vector){
-    CSVReader* csv_reader = new CSVReader(input_path);
-    BitStreamWriter* bit_stream_writer = new BitStreamWriter(output_path);
-    CoderCA* coder = new CoderCA(csv_reader, bit_stream_writer);
-    coder->setCoderParams(window_size, error_thresholds_vector);
-    coder->codeFile();
-    coder->printBits();
-    coder->close();
-    return coder->dataset;
-}
-
-#if MASK_MODE
-Dataset* Scripts::codeSF(Path input_path, Path output_path, int window_size, std::vector<int> error_thresholds_vector){
-    CSVReader* csv_reader = new CSVReader(input_path);
-    BitStreamWriter* bit_stream_writer = new BitStreamWriter(output_path);
-    CoderSlideFilter* coder = new CoderSlideFilter(csv_reader, bit_stream_writer);
-    coder->setCoderParams(window_size, error_thresholds_vector);
-    coder->codeFile();
-    coder->printBits();
-    coder->close();
-    return coder->dataset;
-}
-
-Dataset* Scripts::codeFR(Path input_path, Path output_path, int window_size, std::vector<int> error_thresholds_vector){
-    CSVReader* csv_reader = new CSVReader(input_path);
-    BitStreamWriter* bit_stream_writer = new BitStreamWriter(output_path);
-    CoderFR* coder = new CoderFR(csv_reader, bit_stream_writer);
-    coder->setCoderParams(window_size, error_thresholds_vector);
-    coder->codeFile();
-    coder->printBits();
-    coder->close();
-    return coder->dataset;
-}
-#endif
-
-Dataset* Scripts::codeGAMPS(Path input_path, Path output_path, int window_size,
-                            std::vector<int> error_thresholds_vector, bool limit_mode){
-    CSVReader* csv_reader = new CSVReader(input_path);
-    BitStreamWriter* bit_stream_writer = new BitStreamWriter(output_path);
-    CoderGAMPS* coder = new CoderGAMPS(csv_reader, bit_stream_writer);
-    coder->setCoderParams(window_size, error_thresholds_vector, limit_mode);
-    coder->codeFile();
-    coder->printBits();
-    coder->close();
-    return coder->dataset;
+        else { // if (coder_name == "CoderGAMPS" || coder_name == "CoderGAMPSLimit"){
+            decoder = new DecoderGAMPS(coder_name, bit_stream_reader, csv_writer);
+            ((DecoderGAMPS *) decoder)->setLimitMode();
+        }
+        decoder->decodeWindowParameter();
+    }
+    decoder->decode();
 }

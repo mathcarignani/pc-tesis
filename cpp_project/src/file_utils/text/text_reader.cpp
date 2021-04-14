@@ -24,6 +24,11 @@ std::string TextReader::readLine(){
     return current_line;
 }
 
+std::string TextReader::readLineNoLastChar(){
+    readLine();
+    return StringUtils::removeLastChar(current_line);
+}
+
 void TextReader::goToStart(){
     file.clear();
     file.seekg(0, std::ios::beg);

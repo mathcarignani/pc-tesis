@@ -3,7 +3,6 @@ import subprocess
 from auxi.os_utils import OSUtils
 from auxi.time_track import TimeTrack
 from scripts.utils import str_to_int
-from scripts.compress.experiments_utils import ExperimentsUtils
 
 class CompressCPP:
     PRINT_MODE = False

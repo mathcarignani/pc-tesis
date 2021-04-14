@@ -10,21 +10,6 @@ const double Constants::NO_DATA_DOUBLE = 0;
 const int Constants::MASK_BITS = 8;
 const int Constants::MASK_MAX_SIZE = 256;
 
-const int Constants::CODER_BASE = 0;
-const int Constants::CODER_PCA = 10;
-const int Constants::CODER_APCA = 11;
-const int Constants::CODER_PWLH = 20;
-const int Constants::CODER_PWLH_INT = 21;
-const int Constants::CODER_CA = 22;
-const int Constants::CODER_FR = 23;
-const int Constants::CODER_SF = 24;
-const int Constants::CODER_GAMPS = 30;
-const int Constants::CODER_GAMPS_LIMIT = 31;
-
-const std::vector<std::string> Constants::CODERS_VECTOR = {"CoderBase", "CoderPCA", "CoderAPCA", "CoderPWLH",
-                                                           "CoderPWLHInt", "CoderCA", "CoderSF", "CoderFR",
-                                                           "CoderGAMPS", "CoderGAMPSLimit"};
-
 bool Constants::isNoData(std::string csv_value) {
     return csv_value[0] == NO_DATA_CHAR;
 }
@@ -56,8 +41,34 @@ bool Constants::checkMaskMode(std::string mask_mode) {
     exit(1);
 }
 
-bool Constants::checkCoderName(std::string coder_name) {
-    if (StringUtils::stringInList(coder_name, CODERS_VECTOR)) { return true; }
+int Constants::getCoderValue(std::string coder_name) {
+    if      (coder_name == "CoderBase")         { return 0; }
+    else if (coder_name == "CoderPCA")          { return 10; }
+    else if (coder_name == "CoderAPCA")         { return 11; }
+    else if (coder_name == "CoderPWLH")         { return 20; }
+    else if (coder_name == "CoderPWLHInt")      { return 21; }
+    else if (coder_name == "CoderCA")           { return 22; }
+    else if (coder_name == "CoderSF")           { return 23; }
+    else if (coder_name == "CoderFR")           { return 24; }
+    else if (coder_name == "CoderGAMPS")        { return 30; }
+    else if (coder_name == "CoderGAMPSLimit")   { return 31; }
+
     std::cout << "ERROR: invalid coder_name: " << coder_name << std::endl;
+    exit(1);
+}
+
+std::string Constants::getCoderName(int coder_value) {
+    if      (coder_value == 0)  { return "CoderBase"; }
+    else if (coder_value == 10) { return "CoderPCA"; }
+    else if (coder_value == 11) { return "CoderAPCA"; }
+    else if (coder_value == 20) { return "CoderPWLH"; }
+    else if (coder_value == 21) { return "CoderPWLHInt"; }
+    else if (coder_value == 22) { return "CoderCA"; }
+    else if (coder_value == 23) { return "CoderSF"; }
+    else if (coder_value == 24) { return "CoderFR"; }
+    else if (coder_value == 30) { return "CoderGAMPS"; }
+    else if (coder_value == 31) { return "CoderGAMPSLimit"; }
+
+    std::cout << "ERROR: invalid coder_value: " << coder_value << std::endl;
     exit(1);
 }

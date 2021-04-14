@@ -11,8 +11,13 @@ std::vector<int> TimeDeltaCoder::code(CoderCommon* coder){
 
     std::vector<int> time_delta_vector{};
     input_csv->goToFirstDataRow(0);
+    bool first_value = true;
     while (input_csv->continue_reading){
         std::string csv_value = input_csv->readNextValue();
+        if (first_value){
+            assert(csv_value == "0");
+            first_value = false;
+        }
         coder->codeValueRaw(csv_value); // same as CoderBase
 
         // add int value to the time_delta_vector

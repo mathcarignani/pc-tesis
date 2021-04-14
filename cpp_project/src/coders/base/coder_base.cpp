@@ -1,11 +1,6 @@
 
 #include "coder_base.h"
 
-
-void CoderBase::codeCoderParams(){
-    codeCoderParameters(Constants::CODER_BASE, 1);
-}
-
 void CoderBase::codeColumnBefore() {}
 
 void CoderBase::codeColumnWhile(std::string csv_value){

@@ -12,4 +12,5 @@ class CSVUtils:
     def csv_row_count(cls, input_path, input_filename):
         csv = CSVReader(input_path, input_filename)
         csv.close()
-        return csv.total_lines - 4
+        header_rows = CSVReader.first_data_row(input_path, input_filename) + 1
+        return csv.total_lines - header_rows

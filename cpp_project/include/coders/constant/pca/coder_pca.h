@@ -10,8 +10,6 @@ class CoderPCA: public CoderCols {
 private:
     std::vector<int> error_thresholds_vector;
     PCAWindow* window;
-
-    void codeCoderParams() override;
     
     void codeColumnBefore() override;
     void codeColumnWhile(std::string csv_value) override;

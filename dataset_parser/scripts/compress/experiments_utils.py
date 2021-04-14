@@ -114,56 +114,17 @@ class ExperimentsUtils(object):
     CSV_PATH = OSUtils.datasets_csv_path()
 
     CODERS_ARRAY = [
-        {
-            'name': 'CoderBase',
-            'o_folder': 'base'
-        },
-        {
-            'name': 'CoderPCA',
-            'o_folder': 'pca',
-            'params': {'window_size': WINDOWS}
-        },
-        {
-            'name': 'CoderAPCA',
-            'o_folder': 'apca',
-            'params': {'window_size': WINDOWS}
-        },
-        {
-            'name': 'CoderCA',
-            'o_folder': 'ca',
-            'params': {'window_size': WINDOWS}
-        },
-        {
-            'name': 'CoderPWLH',
-            'o_folder': 'pwlh',
-            'params': {'window_size': WINDOWS}
-        },
-        {
-            'name': 'CoderPWLHInt',
-            'o_folder': 'pwlh-int',
-            'params': {'window_size': WINDOWS}
-        },
-        # {
-        #     'name': 'CoderGAMPS',
-        #     'o_folder': 'gamps',
-        #     'params': {'window_size': WINDOWS}
-        # },
-        {
-            'name': 'CoderGAMPSLimit',
-            'o_folder': 'gamps-limit',
-            'params': {'window_size': WINDOWS}
-        },
+        {   'name': 'CoderBase',       'o_folder': 'base' },
+        {   'name': 'CoderPCA',        'o_folder': 'pca',         'params': {'window_size': WINDOWS} },
+        {   'name': 'CoderAPCA',       'o_folder': 'apca',        'params': {'window_size': WINDOWS} },
+        {   'name': 'CoderCA',         'o_folder': 'ca',          'params': {'window_size': WINDOWS} },
+        {   'name': 'CoderPWLH',       'o_folder': 'pwlh',        'params': {'window_size': WINDOWS} },
+        {   'name': 'CoderPWLHInt',    'o_folder': 'pwlh-int',    'params': {'window_size': WINDOWS} },
+        # # {   'name': 'CoderGAMPS',      'o_folder': 'gamps',       'params': {'window_size': WINDOWS} },
+        {   'name': 'CoderGAMPSLimit', 'o_folder': 'gamps-limit', 'params': {'window_size': WINDOWS} },
     ]
 
     MASK_MODE_CODERS_ARRAY = [
-        {
-            'name': 'CoderFR',
-            'o_folder': 'fr',
-            'params': {'window_size': WINDOWS}
-        },
-        {
-            'name': 'CoderSF',
-            'o_folder': 'sf',
-            'params': {'window_size': WINDOWS}
-        }
+        {   'name': 'CoderFR',         'o_folder': 'fr',          'params': {'window_size': WINDOWS} },
+        {   'name': 'CoderSF',         'o_folder': 'sf',          'params': {'window_size': WINDOWS} }
     ]

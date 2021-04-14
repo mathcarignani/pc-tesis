@@ -1,6 +1,7 @@
 
 #include <coders/utils/coder_utils.h>
 #include "decoder_gamps.h"
+#include "arithmetic_mask_decoder.h"
 #include "string_utils.h"
 #include "math_utils.h"
 #include "time_delta_decoder.h"
@@ -10,8 +11,8 @@
 #include "mask_decoder.h"
 #include "decoder_apca.h"
 
-void DecoderGAMPS::setLimitMode(bool limit_mode_){
-    limit_mode = limit_mode_;
+void DecoderGAMPS::setLimitMode(){
+    limit_mode = coder_name == "CoderGAMPSLimit";
 }
 
 void DecoderGAMPS::decodeDataRows(){
@@ -20,10 +21,10 @@ void DecoderGAMPS::decodeDataRows(){
 
     decodeTimeDeltaColumn();
 
-#if MASK_MODE == 3
+#if MASK_MODE
     ArithmeticMaskDecoder* amd = new ArithmeticMaskDecoder(this, dataset->data_columns_count);
     masks_vector = amd->decode();
-#endif // MASK_MODE == 3
+#endif // MASK_MODE
 
     total_groups = limit_mode ? dataset->dataColumnsGroupCount() : 1;
     total_group_columns = dataset->data_columns_count / total_groups;
@@ -188,11 +189,7 @@ std::vector<double> DecoderGAMPS::decodeGAMPSRatioColumn(){
     int unprocessed_rows = data_rows_count;
 
 #if MASK_MODE
-#if MASK_MODE == 3
     mask = masks_vector.at(column_index - 1);
-#else
-    mask = MaskDecoder::decode(this);
-#endif // MASK_MODE == 3
 #endif // MASK_MODE
 
     while (unprocessed_rows > 0) {

@@ -14,10 +14,6 @@ void CoderSlideFilter::setCoderParams(int window_size_, std::vector<int> error_t
     error_thresholds_vector = error_thresholds_vector_;
 }
 
-void CoderSlideFilter::codeCoderParams(){
-    codeCoderParameters(Constants::CODER_SF, window_size);
-}
-
 void CoderSlideFilter::codeColumnBefore(){
     delta_sum = 0;
     int error_threshold = error_thresholds_vector.at(column_index);

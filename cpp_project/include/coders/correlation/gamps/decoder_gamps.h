@@ -41,7 +41,7 @@ private:
 
 public:
     using DecoderCommon::DecoderCommon;
-    void setLimitMode(bool integer_mode_);
+    void setLimitMode();
 
 };
 

@@ -10,6 +10,7 @@ from scripts.compress.experiments_utils import ExperimentsUtils
 from scripts.compress.calculate_std_manual import CalculateSTDManual
 from file_utils.text_utils.text_file_reader import TextFileReader
 from file_utils.text_utils.text_file_writer import TextFileWriter
+from file_utils.csv_utils.csv_reader import CSVReader
 
 class CompressUtils:
     COMPARE = True
@@ -21,7 +22,7 @@ class CompressUtils:
         self.input_path = input_path
         self.input_filename = input_filename
         self.filename_path = input_path + "/" + input_filename
-
+        self.first_data_row = CSVReader.first_data_row(input_path, input_filename)
 
     def get_thresholds_array(self):
         stds = self._calculate_stds_pandas()
@@ -39,7 +40,7 @@ class CompressUtils:
     # Compare the stds obtained by pandas against the stds calculated manually.
     #
     def _compare_with_manual_std(self, stds):
-        manual_stds = CalculateSTDManual.calculate_stds(self.input_path, self.input_filename)
+        manual_stds = CalculateSTDManual.calculate_stds(self.input_path, self.input_filename, self.first_data_row)
         assert(len(stds) == len(manual_stds))
 
         diff = []
@@ -56,7 +57,8 @@ class CompressUtils:
 
 
     def _calculate_stds_pandas(self):
-        df = pd.read_csv(self.filename_path, skiprows=3, na_values=PandasTools.NO_DATA)  # skip first 3 rows (header)
+        # print(self.first_data_row)
+        df = pd.read_csv(self.filename_path, skiprows=self.first_data_row, na_values=PandasTools.NO_DATA)
         #
         # About STDEVP:
         # https://stackoverflow.com/a/14894143/4547232

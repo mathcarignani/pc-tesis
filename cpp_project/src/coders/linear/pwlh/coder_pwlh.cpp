@@ -4,15 +4,10 @@
 #include <cfloat>
 
 
-void CoderPWLH::setCoderParams(int window_size_, std::vector<int> error_thresholds_vector_, bool integer_mode_){
+void CoderPWLH::setCoderParams(int window_size_, std::vector<int> error_thresholds_vector_){
+    integer_mode = coder_name == "CoderPWLHInt";
     window_size = window_size_;
-    integer_mode = integer_mode_;
     error_thresholds_vector = error_thresholds_vector_;
-}
-
-void CoderPWLH::codeCoderParams(){
-    int coder_code = integer_mode ? Constants::CODER_PWLH_INT : Constants::CODER_PWLH;
-    codeCoderParameters(coder_code, window_size);
 }
 
 void CoderPWLH::codeColumnBefore(){

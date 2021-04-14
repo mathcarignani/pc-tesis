@@ -56,9 +56,9 @@ bool PWLHWindow::conditionHolds(std::string x, int x_delta){
 }
 
 bool PWLHWindow::checkIntegerModeConstraint(int new_x_coord){
-    if (!integer_mode){ return true; }
-
     bucket->getAproximatedLineMOD(p1, p2, new_x_coord);
+
+    if (!integer_mode){ return true; }
 
     // this constraint is only checked when running in integer mode
     return range->insideRange(Conversor::doubleToInt(p1.y)) && range->insideRange(Conversor::doubleToInt(p2.y));

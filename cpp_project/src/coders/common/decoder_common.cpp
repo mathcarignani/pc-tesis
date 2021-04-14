@@ -15,61 +15,28 @@
 #include "decoder_gamps.h"
 #include "math_utils.h"
 
-
-void DecoderCommon::setWindowSize(int window_size_){
-    window_size = window_size_;
-    window_size_bit_length = MathUtils::windowSizeBitLength(window_size);
-}
-
-DecoderCommon* DecoderCommon::getDecoder(BitStreamReader* input_file, CSVWriter* output_csv){
-    int coder_code = input_file->getInt(8); // 8 bits for the coder_code
-    int window_size = input_file->getInt(8) + 1; // 8 bits for the window_size
-
-    DecoderCommon* decoder;
-
-    if (coder_code == Constants::CODER_BASE) {
-        decoder = new DecoderBase(input_file, output_csv);
-        return decoder;
-    }
-
-    if (coder_code == Constants::CODER_PCA){
-        decoder = new DecoderPCA(input_file, output_csv);
-    }
-    else if (coder_code == Constants::CODER_APCA){
-        decoder = new DecoderAPCA(input_file, output_csv);
-    }
-    else if (coder_code == Constants::CODER_PWLH || coder_code == Constants::CODER_PWLH_INT){
-        decoder = new DecoderPWLH(input_file, output_csv);
-        bool integer_mode = coder_code == Constants::CODER_PWLH_INT;
-        ((DecoderPWLH*) decoder)->setIntegerMode(integer_mode);
-    }
-    else if (coder_code == Constants::CODER_CA){
-        decoder = new DecoderCA(input_file, output_csv);
-    }
-#if MASK_MODE
-    else if (coder_code == Constants::CODER_FR){
-        decoder = new DecoderFR(input_file, output_csv);
-    }
-    else if (coder_code == Constants::CODER_SF){
-        decoder = new DecoderSlideFilter(input_file, output_csv);
-    }
-#endif
-    else if (coder_code == Constants::CODER_GAMPS || coder_code == Constants::CODER_GAMPS_LIMIT){
-        decoder = new DecoderGAMPS(input_file, output_csv);
-        bool limit_mode = coder_code == Constants::CODER_GAMPS_LIMIT;
-        ((DecoderGAMPS*) decoder)->setLimitMode(limit_mode);
-    }
-    decoder->setWindowSize(window_size);
-    return decoder;
-}
-
-DecoderCommon::DecoderCommon(BitStreamReader* input_file_, CSVWriter* output_csv_){
+DecoderCommon::DecoderCommon(std::string coder_name_, BitStreamReader* input_file_, CSVWriter* output_csv_){
+    coder_name = coder_name_;
     input_file = input_file_;
     output_csv = output_csv_;
 }
 
-void DecoderCommon::decodeDataRowsCount(){
-    data_rows_count = input_file->getInt(24); // 24 bits for the data rows count
+std::string DecoderCommon::decodeCoderName(BitStreamReader* input_file){
+    int coder_value = input_file->getInt(8); // 8 bits for the coder_value
+    std::string coder_name = Constants::getCoderName(coder_value);
+    return coder_name;
+}
+
+void DecoderCommon::decodeWindowParameter(){
+    int window_parameter = input_file->getInt(8) + 1; // 8 bits for the window_size
+    window_size = window_parameter;
+    window_size_bit_length = MathUtils::windowSizeBitLength(window_size);
+}
+
+void DecoderCommon::decode(){
+    dataset = HeaderDecoder(input_file, output_csv).decodeHeader(data_rows_count);
+    decodeDataRows();
+    closeFiles();
 }
 
 std::string DecoderCommon::decodeValue(int y){
@@ -112,7 +79,6 @@ std::string DecoderCommon::decodeValueRaw(){
     std::string coded_value;
     try {
         coded_value = decodeValue(value);
-        // std::cout << "decodeValue(" << value << ") = " << coded_value << std::endl;
     }
     catch( const std::invalid_argument& e ){
         std::cout << "DecoderCommon::decodeValueRaw: " << e.what() << std::endl;
@@ -127,23 +93,8 @@ float DecoderCommon::decodeFloat(){
     return input_file->getFloat();
 }
 
-double DecoderCommon::decodeDouble(){
-    return input_file->getDouble();
-}
-
 void DecoderCommon::flushByte(){
     input_file->flushByte();
-}
-
-void DecoderCommon::decodeFile(){
-    dataset = HeaderDecoder(input_file, output_csv).decodeHeader();
-    decodeDataRowsCount();
-    decodeDataRows();
-}
-
-void DecoderCommon::close(){
-    delete input_file;
-    delete output_csv;
 }
 
 void DecoderCommon::transposeMatrix(int data_rows_count_, std::vector<std::vector<std::string>> columns, int total_columns){
@@ -154,4 +105,9 @@ void DecoderCommon::transposeMatrix(int data_rows_count_, std::vector<std::vecto
         }
         output_csv->writeRowDecoder(row);
     }
+}
+
+void DecoderCommon::closeFiles(){
+    delete input_file;
+    delete output_csv;
 }

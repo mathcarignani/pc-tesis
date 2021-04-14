@@ -7,23 +7,38 @@
 #include <math.h>
 #include "coder_utils.h"
 
-CoderCommon::CoderCommon(CSVReader* input_csv_, BitStreamWriter* output_file_){
+CoderCommon::CoderCommon(std::string coder_name_, CSVReader* input_csv_, BitStreamWriter* output_file_){
+   coder_name = coder_name_;
    input_csv = input_csv_;
    output_file = output_file_;
    dataset = new Dataset();
 }
 
-void CoderCommon::codeDataRowsCount(){
-    data_rows_count = input_csv->total_lines - HeaderCoder::HEADER_LINES;
+void CoderCommon::codeCoderName() {
+    int coder_value = Constants::getCoderValue(coder_name);
 #if CHECKS
-    assert(0 < data_rows_count && data_rows_count < pow(2, 24));
+    assert(0 <= coder_value && coder_value < pow(2, 8));
 #endif
-    codeInt(data_rows_count, 24); // 24 bits for the data rows count
+    codeInt(coder_value, 8); // 8 bits for the coder_code
+}
+
+void CoderCommon::codeWindowParameter() {
+#if CHECKS
+    assert(1 <= window_size && window_size <= pow(2, 8));
+#endif
+    codeInt(window_size - 1, 8); // 8 bits for the window_size
+}
+
+Dataset* CoderCommon::code(){
+    data_rows_count = HeaderCoder(input_csv, this).codeHeader(dataset);
+    codeDataRows();
+    dataset->printBits();
+    closeFiles();
+    return dataset;
 }
 
 //
 // This method maps a value read in the csv file into an integer to be written in the output file.
-// It also checks the minimum and maximum constraints.
 //
 int CoderCommon::codeValue(std::string x){
     std::string unmapped_x = CoderUtils::unmapValue(x, 0);
@@ -31,9 +46,11 @@ int CoderCommon::codeValue(std::string x){
     if (Constants::isNoData(x)){ return dataset->nan(); }
 
     int x_int = Conversor::stringToInt(x);
-    if (dataset->insideRange(x_int)) { return x_int + dataset->offset(); }
-
-    throw std::invalid_argument(Conversor::intToString(x_int));
+#if CHECKS
+    // check that the value is within the range
+    if (!dataset->insideRange(x_int)) { throw std::invalid_argument(Conversor::intToString(x_int)); }
+#endif
+    return x_int + dataset->offset();
 }
 
 void CoderCommon::codeRaw(int value){
@@ -90,36 +107,12 @@ void CoderCommon::codeFloat(float x){
     output_file->pushFloat(x);
 }
 
-void CoderCommon::codeDouble(double x){
-    dataset->addBits(sizeof(double)*8);
-    output_file->pushDouble(x);
-}
-
 void CoderCommon::flushByte(){
     int remaining = output_file->flushByte();
     dataset->addBits(remaining);
 }
 
-void CoderCommon::codeFile(){
-    codeCoderParams();
-    HeaderCoder(input_csv, this).codeHeader(dataset);
-    codeDataRowsCount();
-    codeDataRows();
-}
-
-void CoderCommon::codeCoderParameters(int coder_code, int window_size){
-    assert(0 <= coder_code && coder_code < pow(2, 8));
-    codeInt(coder_code, 8); // 8 bits for the coder_code
-
-    assert(1 <= window_size && window_size <= pow(2, 8));
-    codeInt(window_size - 1, 8); // 8 bits for the window_size
-}
-
-void CoderCommon::printBits(){
-    dataset->printBits();
-}
-
-void CoderCommon::close(){
+void CoderCommon::closeFiles(){
     delete input_csv;
     delete output_file;
 }

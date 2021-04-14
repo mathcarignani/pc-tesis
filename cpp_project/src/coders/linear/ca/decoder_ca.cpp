@@ -10,6 +10,7 @@
 #include "linear_coder_utils.h"
 
 std::vector<std::string> DecoderCA::decodeDataColumn(){
+    decode_archived_value = true; // always decode an archived value before decoding a window
 #if MASK_MODE
     column = new Column(data_rows_count, mask->total_data, mask->total_no_data);
 #else
@@ -17,14 +18,15 @@ std::vector<std::string> DecoderCA::decodeDataColumn(){
 #endif
     int nodata_sum = 0;
     while (column->notFinished()){
+        int current_time_delta = time_delta_vector.at(column->row_index);
     #if MASK_MODE
         if (mask->isNoData()) {
-            nodata_sum += time_delta_vector.at(column->row_index);
+            nodata_sum += current_time_delta;
             column->addNoData();
             continue;
         }
     #endif
-        decodeWindow(nodata_sum);
+        decode(nodata_sum, current_time_delta);
         nodata_sum = 0;
     }
 #if CHECKS
@@ -33,9 +35,51 @@ std::vector<std::string> DecoderCA::decodeDataColumn(){
     return column->column_vector;
 }
 
-void DecoderCA::decodeWindow(int nodata_sum){
-    int window_size = decodeWindowLength();
+void DecoderCA::decode(int nodata_sum, int current_time_delta) {
+    if (decode_archived_value || (nodata_sum + current_time_delta == 0)) {
+    #if MASK_MODE
+        decodeArchivedValue();
+        decode_archived_value = false;
+    #else
+        decode_archived_value = decodeArchivedValue();
+    #endif
+    } else {
+        decodeWindow(nodata_sum);
+        decode_archived_value = true;
+    }
+}
+
+bool DecoderCA::decodeArchivedValue() {
     std::string value = decodeValueRaw();
+    if (column_index == 1){
+        std::cout << "codeValueRaw(" << value << ")" << std::endl;
+    }
+
+#if !MASK_MODE
+    if (value == Constants::NO_DATA){
+        int window_size = decodeWindowLength();
+//        if (column_index == 1){
+//            std::cout << "codeInt(" << window_size << ", " << window_size_bit_length << ")" << std::endl;
+//        }
+        column->addDataXTimes(value, window_size);
+        return true;
+    }
+#endif
+    column->addData(value);
+    archived_value = value;
+    return false;
+}
+
+void DecoderCA::decodeWindow(int nodata_sum){
+    std::string value = decodeValueRaw();
+//    if (column_index == 1){
+//        std::cout << "codeValueRaw(" << value << ")" << std::endl;
+//    }
+
+    int window_size = decodeWindowLength();
+//    if (column_index == 1){
+//        std::cout << "codeInt(" << window_size << ", " << window_size_bit_length << ")" << std::endl;
+//    }
 
 #if !MASK_MODE
     if (value == Constants::NO_DATA){
@@ -43,19 +87,13 @@ void DecoderCA::decodeWindow(int nodata_sum){
         return;
     }
 #endif
-    if (window_size > 1){
-    #if MASK_MODE
-        decodeValues(window_size, value, nodata_sum);
-    #else
-        decodeValues(window_size, value);
-    #endif
 
-    }
-    else {
-        // window_size == 1
-        column->addData(value);
-    }
-    archived_value = value;
+#if MASK_MODE
+    decodeValues(window_size, value, nodata_sum);
+#else
+    decodeValues(window_size, value);
+#endif
+
 }
 
 #if MASK_MODE

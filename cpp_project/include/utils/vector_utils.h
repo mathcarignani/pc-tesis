@@ -66,6 +66,10 @@ public:
         return (std::find(int_vector.begin(), int_vector.end(), element) != int_vector.end());
     }
 
+    static bool vectorIncludesString(std::vector<std::string> string_vector, std::string element){
+        return (std::find(string_vector.begin(), string_vector.end(), element) != string_vector.end());
+    }
+
     static std::vector<int> removeOccurrences(std::vector<int> int_vector, int integer){
         std::vector<int> new_vector;
         for(int i=0; i < int_vector.size(); i++){

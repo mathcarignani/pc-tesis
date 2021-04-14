@@ -4,7 +4,7 @@
 
 #include "constants.h"
 
-#if MASK_MODE == 3
+#if MASK_MODE
 
 #define EOS_LENGTH 16 // used to mark the end of the stream
 
@@ -26,6 +26,6 @@ public:
 
 };
 
-#endif // MASK_MODE == 3
+#endif // MASK_MODE
 
 #endif //CPP_PROJECT_ARITHMETIC_MASK_CODER_H
