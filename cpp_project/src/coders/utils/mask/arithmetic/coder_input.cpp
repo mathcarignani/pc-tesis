@@ -3,14 +3,15 @@
 #include "constants.h"
 #include <iostream>
 
-CoderInput::CoderInput(CoderCommon* coder_, int data_columns_count_){
+CoderInput::CoderInput(CoderCommon* coder_, int first_column_index_, int last_column_index_){
     coder = coder_;
+    last_column_index = last_column_index_;
+
     input_csv = coder->input_csv;
     dataset = coder->dataset;
-    data_columns_count = data_columns_count_;
     reset_model = false;
     eof = false;
-    setNextColumn(1);
+    setNextColumn(first_column_index_);
 }
 
 void CoderInput::setNextColumn(int col_index){
@@ -27,7 +28,7 @@ void CoderInput::setNextColumn(int col_index){
 
 void CoderInput::endCurrentColumn(){
     total_data_rows_vector.push_back(total_data_rows);
-    if (column_index < data_columns_count){
+    if (column_index < last_column_index){
         setNextColumn(column_index + 1);
         reset_model = true;
     }

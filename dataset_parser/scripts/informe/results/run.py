@@ -18,16 +18,16 @@ from scripts.informe.gzip_compare.gzip_script import GZipScript
 class Run:
     ROOT_PATH = "/Users/pablocerve/Documents/FING/Proyecto/pc-tesis"
     INFORME_PATH = ROOT_PATH + "/dataset_parser/scripts/informe"
-    RESULTS_PATH = INFORME_PATH + "/results/03.2021/"
+    RESULTS_PATH = INFORME_PATH + "/results/03.2021/time-delta/"
 
     @classmethod
     def compress_script(cls):
         CompressScript("results_NM.csv", "NM").run()
-        # CompressScript("results_M.csv", "M").run()
+        CompressScript("results_M.csv", "M").run()
 
     @classmethod
     def globalize_results(cls):
-        GlobalizeResults("NM").run()
+        # GlobalizeResults("NM").run()
         GlobalizeResults("M").run()
 
     @classmethod
@@ -47,7 +47,7 @@ class Run:
     @classmethod
     def mask_coders(cls):
         pdf4_path = Run.RESULTS_PATH + '3.4/'
-        PDFS4(pdf4_path + 'pdf/', 'global').create_pdfs()  # GLOBAL
+        # PDFS4(pdf4_path + 'pdf/', 'global').create_pdfs()  # GLOBAL
         ProcessResults(True, pdf4_path + 'results1', 1).run()
 
     @classmethod
@@ -78,8 +78,8 @@ class Run:
 
 
 # (3.4) Mask Coders Performance
-# Run.mask_coders()
-Run.mask_coders_and_gzip()
+Run.mask_coders()
+# Run.mask_coders_and_gzip()
 
 
 

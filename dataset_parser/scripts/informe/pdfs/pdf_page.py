@@ -24,7 +24,7 @@ class PdfPage(object):
             options = self.plots_options.get(plot_key) or {}
             options['pdf_instance'] = self.pdf_instance
             plot_klass = PlotMapper.map(plot_key)
-            plots = plot_klass.create_plots(coders_array, self.filename, self.panda_utils_NM, self.panda_utils_M, self.col_index, options)
+            plots = plot_klass.create_plots(coders_array, self.filename, self.panda_utils_NM, self.panda_utils_M, self.col_index + 1, options)
             plots_obj[plot_key] = plots
 
         self.__add_plots(plots_matrix, plots_obj)

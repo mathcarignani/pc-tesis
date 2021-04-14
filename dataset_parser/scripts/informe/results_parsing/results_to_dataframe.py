@@ -87,12 +87,19 @@ class ResultsToDataframe(object):
     @staticmethod
     def __create_df(lines):
         converted_lines = ResultsReader.convert_lines(lines)
+        # print(converted_lines)
         df = ResultsToDataframe.__create_df_aux(converted_lines)
+        # print(df)
+        # print("AAA")
+        # exit(1)
         return df
 
     @staticmethod
     def __create_df_aux(converted_lines):
         data = ResultsToDataframe.__create_data(converted_lines)
+        # print(data)
+        # print("BBB")
+        # exit(1)
         df = pd.DataFrame(data)
         return df
 

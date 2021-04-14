@@ -46,6 +46,8 @@ std::string CSVReader::readNextValue(int col_index){
 };
 
 void CSVReader::goToFirstDataRow(int column_index_){
+    // TODO: this method is not necessary, this information is known after the header is encoded
+    // it should be saved into a global variable
     column_index = column_index_;
     if (first_data_row == 0) {
         int current_line_count = 7;

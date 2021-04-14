@@ -64,8 +64,12 @@ class PandasUtils(object):
         return new_df
 
     def min_value_for_each_threshold(self, coder_name, column_index):
+        print(coder_name)
+        print(column_index)
         data_column_key = ResultsToDataframe.data_column_key(column_index)
         coder_df = PandasMethods.coder_df(self.df, coder_name)
+        print(self.df)
+        print(coder_df)
         new_df = pd.DataFrame(columns=self.df.columns)
         for index, threshold in enumerate(ExperimentsUtils.THRESHOLDS):
             new_df.loc[index] = PandasMethods.get_min_row(coder_df, data_column_key, threshold).values
@@ -75,6 +79,11 @@ class PandasUtils(object):
         assert(threshold in ExperimentsUtils.THRESHOLDS)
         data_column_key = ResultsToDataframe.data_column_key(column_index)
         coder_df = PandasMethods.coder_df(self.df, coder_name) if coder_name is not None else self.df
+        # print(coder_name)
+        # print(column_index)
+        # print(threshold)
+        # print(self.df)
+        # print(coder_df)
         min_row = PandasMethods.get_min_row(coder_df, data_column_key, threshold, nth)
         return min_row
 

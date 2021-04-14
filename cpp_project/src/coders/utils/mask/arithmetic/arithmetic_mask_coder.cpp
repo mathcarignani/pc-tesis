@@ -13,9 +13,10 @@
 #include "decoder_output.h"
 #include "decompressor.h"
 
-ArithmeticMaskCoder::ArithmeticMaskCoder(CoderCommon* coder_, int data_columns_count_){
+ArithmeticMaskCoder::ArithmeticMaskCoder(CoderCommon* coder_, int first_column_index_, int last_column_index_){
     coder = coder_;
-    data_columns_count = data_columns_count_;
+    first_column_index = first_column_index_;
+    last_column_index = last_column_index_;
 }
 
 std::vector<int> ArithmeticMaskCoder::code(){
@@ -26,13 +27,11 @@ std::vector<int> ArithmeticMaskCoder::code(){
 }
 
 void ArithmeticMaskCoder::flush(){
-    // std::cout << "C1 >> coder->flushByte();" << std::endl;
     coder->flushByte();
-    // std::cout << "C1 >> coder->flushByte();" << std::endl;
 }
 
 std::vector<int> ArithmeticMaskCoder::callCompress(){
-    CoderInput input(coder, data_columns_count);
+    CoderInput input(coder, first_column_index, last_column_index);
     CoderOutput output(coder);
     modelKT<int, 16, 14> model;
     compress(input, output, model);

@@ -9,7 +9,7 @@ class DecoderOutput {
 private:
     Mask* mask;
     Burst* burst;
-    int data_columns_count;
+    int last_column_index; // index of the last masked column
     int data_rows_count;
     int column_index;
     int row_index;
@@ -24,7 +24,7 @@ public:
     bool reset_model;
     bool eof;
 
-    DecoderOutput(int data_columns_count_, int data_rows_count_);
+    DecoderOutput(int data_rows_count_, int first_column_index_, int last_column_index_);
     void putByte(int c);
 };
 

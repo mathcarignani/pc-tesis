@@ -47,12 +47,15 @@ void Mask::close(){
     add(current_burst);
 }
 
-void Mask::print(){
+void Mask::print(bool show_bursts){
     std::cout << "Mask::print()" << std::endl;
     std::cout << "total_data = " << total_data << std::endl;
     std::cout << "total_no_data = " << total_no_data << std::endl;
     std::cout << "total rows = " << total_data + total_no_data << std::endl;
     int current_index = 0;
+    if (!show_bursts){
+        return;
+    }
     for(int i=0; i < bursts.size(); i++){
         Burst* burst = bursts.at(i);
         std::string str = burst->no_data ? "N" : "1";

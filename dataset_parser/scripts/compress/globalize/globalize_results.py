@@ -62,8 +62,8 @@ class GlobalizeResults(object):
 
     def __get_other_coders_lines(self, dataset_name, filenames):
         results_array = self.__results_array(dataset_name, filenames)
-        for entry in results_array:
-            assert(len(entry) == self.number_of_rows)
+        # for entry in results_array:
+        #     assert(len(entry) == self.number_of_rows)
         return self.__mask_results_lines(results_array)
 
     def __mask_results_lines(self, results_array):

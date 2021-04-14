@@ -22,7 +22,7 @@ void DecoderGAMPS::decodeDataRows(){
     decodeTimeDeltaColumn();
 
 #if MASK_MODE
-    ArithmeticMaskDecoder* amd = new ArithmeticMaskDecoder(this, dataset->data_columns_count);
+    ArithmeticMaskDecoder* amd = new ArithmeticMaskDecoder(this, 1, dataset->data_columns_count);
     masks_vector = amd->decode();
 #endif // MASK_MODE
 

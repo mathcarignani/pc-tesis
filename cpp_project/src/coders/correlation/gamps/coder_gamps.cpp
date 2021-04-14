@@ -20,7 +20,7 @@ void CoderGAMPS::codeDataRows(){
     codeTimeDeltaColumn();
 
 #if MASK_MODE
-    ArithmeticMaskCoder* amc = new ArithmeticMaskCoder(this, dataset->data_columns_count);
+    ArithmeticMaskCoder* amc = new ArithmeticMaskCoder(this, 1, dataset->data_columns_count);
     total_data_rows_vector = amc->code();
 #endif // MASK_MODE
 
