@@ -17,7 +17,7 @@ protected:
     int column_index;
     Column* column;
 #if MASK_MODE
-    int first_column_index = 0; // index of the first masked column
+    int first_column_index = 1; // index of the first masked column
 #endif // MASK_MODE
 
 public:

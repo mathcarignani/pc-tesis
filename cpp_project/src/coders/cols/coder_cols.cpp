@@ -10,17 +10,15 @@
 void CoderCols::codeDataRows(){
     int total_columns = dataset->data_columns_count + 1;
     column_index = 0;
-
-#if !MASK_MODE
     codeColumn();
-    column_index = 1;
-#else
-    // mask all the columns (including the timestamps column)
+
+#if MASK_MODE
+    // mask all the columns (except the timestamps column)
     ArithmeticMaskCoder* amc = new ArithmeticMaskCoder(this, first_column_index, dataset->data_columns_count);
     total_data_rows_vector = amc->code();
 #endif // !MASK_MODE
 
-    for(column_index; column_index < total_columns; column_index++) {
+    for(column_index = 1; column_index < total_columns; column_index++) {
         codeColumn();
     }
 }
@@ -31,14 +29,9 @@ void CoderCols::codeColumn() {
 #endif
     dataset->setColumn(column_index);
     dataset->setMode("DATA");
-#if !MASK_MODE
-    if (column_index == 0) {
-        time_delta_vector = TimeDeltaCoder::code(this);
-        return;
-    }
-#else
+#if MASK_MODE
     total_data_rows = total_data_rows_vector.at(column_index - first_column_index);
-#endif // !MASK_MODE
+#endif // MASK_MODE
     codeDataColumn();
 }
 

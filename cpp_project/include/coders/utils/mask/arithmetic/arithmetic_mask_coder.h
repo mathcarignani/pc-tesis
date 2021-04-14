@@ -15,7 +15,7 @@ class ArithmeticMaskCoder {
 
 private:
     CoderCommon* coder;
-    int first_column_index = 0; // index of the first masked column
+    int first_column_index = 1; // index of the first masked column
     int last_column_index = 0; // index of the last masked column
 
 
