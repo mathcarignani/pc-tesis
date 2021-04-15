@@ -3,31 +3,31 @@ Dataset,Filename,Column,,0 (%),
 IRKIS
 ,Global
 ,,Time Delta,APCA,256,0.01
-,,VWC,APCA,16,0.2
+,,VWC,APCA,32,0.23
 NOAA-SST
 ,Global
 ,,Time Delta,APCA,256,0.01
-,,SST,PCA,256,0.61
+,,SST,PCA,128,0.63
 NOAA-ADCP
 ,Global
 ,,Time Delta,APCA,256,0.01
-,,Vel,PCA,256,0.68
+,,Vel,PCA,64,0.71
 SolarAnywhere
 ,Global
 ,,Time Delta,APCA,256,0.01
-,,GHI,PCA,4,0.78
+,,GHI,PCA,4,0.77
 ,,DNI,PCA,4,0.76
-,,DHI,PCA,4,0.78
+,,DHI,PCA,4,0.77
 ElNino
 ,el-nino.csv
 ,,Time Delta,APCA,256,0.01
-,,Lat,APCA,16,0.16
-,,Long,APCA,8,0.17
-,,Zon. Wind,PCA,256,0.31
-,,Mer. Wind,PCA,256,0.31
-,,Humidity,PCA,256,0.23
-,,Air Temp.,PCA,256,0.33
-,,Sea Temp.,PCA,256,0.33
+,,Lat,APCA,64,0.19
+,,Long,APCA,64,0.2
+,,Zon. Wind,PCA,32,0.36
+,,Mer. Wind,PCA,32,0.36
+,,Humidity,PCA,32,0.27
+,,Air Temp.,PCA,32,0.37
+,,Sea Temp.,PCA,32,0.37
 NOAA-SPC-hail
 ,noaa_spc-hail.csv
 ,,Time Delta,Base,256,1.0
