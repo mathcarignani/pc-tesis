@@ -15,7 +15,7 @@ Figure~\ref{pseudoCodeCommon} shows a general encoding scheme used for the evalu
 \clearpage
 
 
-The timestamp column, which is comprised of integers, is the first column in every CSV data file, and it is also the first column to be encoded (\Line 4). It is always encoded using algorithm variant \MaskVar{APCA}. We delve further into the topic of timestamp compression in Subsection~\ref{secX:timestampComp}. 
+The timestamp column, which is comprised of integers, is the first column in every CSV data file, and it is also the first column to be encoded (\Line 4). It is always encoded using algorithm variant \NonMaskVar{APCA}. We delve further into the topic of timestamp compression in Subsection~\ref{secX:timestampComp}. 
 
 
 Next, we define a column-dependent parameter, $\BeCe$, which is used by the evaluated algorithms when encoding the timestamp, as well as the rest of the data columns.

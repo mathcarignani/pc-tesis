@@ -1,6 +1,4 @@
 
-\clearpage
-
 \section{Algorithm GAMPS}
 \label{algo:gamps}
 \newcommand{\apcaF}{$\textnormal{APCA}_\textnormal{F}$}
@@ -19,9 +17,6 @@ Before encoding the data columns, algorithm GAMPS groups them into disjoint subs
 
 \vspace{-5pt}
 \input{chapters/3-Algorithms/pseudo/12-GAMPS/GAMPS-M-C}
-
-
-\clearpage
 
 
 The initial step in the coding routine, which gives the first part of its name to the algorithm, consists of grouping the data columns into disjoint subsets of spatially correlated columns (\Line~1). A \textit{facility location problem}, whose goal is to find a grouping that reduces the number of bits required for encoding the columns, is solved \cite{coder:gamps}. Its inputs are the set of columns, \columns, and the maximum error threshold, \maxerror, and the output is the grouping and two maximum error threshold parameters, \epsilonB\ and \epsilonR, used for encoding the base and ratio columns, respectively. We point out that we narrow the universe of solutions by only allowing columns corresponding to signals of the same data type to be grouped together. We find out that this not only reduces the size of the facility location problem, which is computationally expensive to solve, but in our case it also lead to better compression results. 
@@ -49,23 +44,23 @@ Next we present an example of the encoding of three signals with 12 samples each
 \exampleStepCommon{gamps}{1}{\label{example:gamps:1}}{Example: Three signals consisting of 12 samples each.}
 
 
-\clearpage
-
-
 There is a high degree of spatial correlation between the three signals, with the sample values matching for 10 of the 12 timestamps. Thus, in \Line 1, a single subset including the three columns with the samples of each signal is obtained. The first column is defined as the base column, making the remaining two, ratio columns. Since \maxerror\ is equal to 0, both \epsilonB\ and \epsilonR\ must also be 0. In \Line 2, the number of subsets (i.e. 1) is encoded using $\gampsSizeAux{|\columns|}=\gampsSizeAux{3}=2$ bits. Since there is a single subset, there is a single iteration. In \Line 6, the information used by the decoding routine to recreate the subset is encoded, using $\gampsSizeAux{|\columns|}=2$ bits for encoding each of the following values: the index of the base column (i.e. 0), the number of ratio columns (i.e. 2), and the index of each ratio column (i.e. 1 and 2). Therefore, a total of 10 bits are required for encoding the grouping of the columns in this example.
 
 
 Next, in \Line 7, the base column is encoded by calling the coding routine for algorithm \apcaF. Since \epsilonB\ is equal to 0, the encoded samples match the original samples (i.e. [1, 1, 2, 2, 3, 3, 3, 3, 4, 4, 3, 3]), and 5 windows are encoded. The loop in \Lines 8 through 11 repeats for each of the two ratio columns. In both cases, the ratio column is first transformed (\Line 9), and then encoded by calling the \apcaF\ coding routine (\Line 10). Since parameter \epsilonR\ is equal to 0, the encoded samples match the transformed samples, which are equal to $[1, 1, 1, 1, 1, 4/3, 4/3, 1, 1, 1, 1, 1]$ and $[1, 1, 1, 1, 1, 2/3, 2/3, 1, 1, 1, 1, 1]$, respectively, for each transformed ratio column, and 3 windows are encoded in each case. In Figure~\ref{example:gamps:2}, the encoded samples of the three signals are shown. 
 
 
-\vspace{+5pt}
+\clearpage
+
+
+% \vspace{+5pt}
 \exampleStepGAMPS{gamps}{2}{\label{example:gamps:2}}{1}
 
 
 We recall that the coding routine for algorithm APCA always uses the same number of bits for encoding any window. Namely, $\logWinSize$ bits are used for encoding its size, and $\BeCe$ bits are used for encoding its mid-range. Instead, the coding routine for algorithm \apcaF\ encodes the mid-range as a float (i.e. using 32 bits), so every window is encoded using exactly $\logWinSize + 32$ bits. If the three original signals were independently encoded with \apcaF, encoding the first one would involve encoding 5 windows, while encoding the second and third signals would involve encoding 7 windows in each case. However, in this example, even though encoding the base signal also involves encoding 5 windows, encoding the transformed ratio signals involves encoding only 3 windows in each case. Therefore, grouping and encoding the transformed signals allows the algorithm to reduce the total number of encoded windows by 8 (from 19 to 11), which reduces the number of encoded bits by exactly $8*(\logWinSize + 32) - 10$ bits (the 10 bits that are subtracted are used to encode the grouping of the columns). This is expected because, since there is a high degree of spatial correlation between the signals, the transformed ratio signals are smooth, compared to the original ratio signals, which are rough.
 
 
-\clearpage
+% \clearpage
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
