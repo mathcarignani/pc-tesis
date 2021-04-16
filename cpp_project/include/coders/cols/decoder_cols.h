@@ -11,7 +11,7 @@ private:
     void decodeDataRows() override;
 
     std::vector<std::string> decodeColumn();
-    virtual std::vector<std::string> decodeDataColumn() = 0;
+    virtual std::vector<std::string> decodeDataColumn(bool mask_mode) = 0;
 
 protected:
     int column_index;

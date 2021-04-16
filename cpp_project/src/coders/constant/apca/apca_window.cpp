@@ -6,13 +6,12 @@
 #include "math_utils.h"
 #include "iostream"
 
-APCAWindow::APCAWindow(int window_size_, double error_threshold_): Window(window_size_, error_threshold_){
+APCAWindow::APCAWindow(int window_size_, double error_threshold_, bool mask_mode_): Window(window_size_, error_threshold_){
+    mask_mode = mask_mode_;
     length = 0;
     min = 0;
     max = 0;
-#if !MASK_MODE
-    nan_window = false;
-#endif
+    nan_window = false; // this argument is only used if mask_mode is false
 }
 
 bool APCAWindow::conditionHolds(std::string x){
@@ -23,14 +22,14 @@ bool APCAWindow::conditionHolds(std::string x){
     else if (isFull()){
         return false;
     }
-#if !MASK_MODE
+if (!mask_mode){
     if (Constants::isNoData(x)){
         if (nan_window){ length++; return true;  }
         else {                     return false; }
     }
     // x is a double
     if (nan_window) { return false; }
-#endif
+}
     double x_double = Conversor::stringToDouble(x);
     if (x_double < min) { return updateConstantValue(x_double, max); }
     if (x_double > max) { return updateConstantValue(min, x_double); }
@@ -58,7 +57,7 @@ bool APCAWindow::isEmpty(){
 }
 
 void APCAWindow::addFirstValue(std::string x){
-#if !MASK_MODE
+if (!mask_mode){
     if (Constants::isNoData(x)){
         nan_window = true;
         constant_value = Constants::NO_DATA;
@@ -67,7 +66,7 @@ void APCAWindow::addFirstValue(std::string x){
     }
     // x is an int
     nan_window = false;
-#endif
+}
     double x_double = Conversor::stringToDouble(x);
     min = x_double;
     max = x_double;

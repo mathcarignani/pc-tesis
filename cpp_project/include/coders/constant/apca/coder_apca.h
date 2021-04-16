@@ -10,6 +10,7 @@ class CoderAPCA: public CoderCols {
 private:
     std::vector<int> error_thresholds_vector;
     APCAWindow* window;
+    bool mask_mode;
 
     void codeColumnBefore() override;
     void codeColumnWhile(std::string csv_value) override;
@@ -17,7 +18,7 @@ private:
 
 public:
     using CoderCols::CoderCols;
-    void setCoderParams(int window_size_, std::vector<int> error_thresholds_vector_);
+    void setCoderParams(int window_size_, std::vector<int> error_thresholds_vector_, bool mask_mode_);
     void codeWindow(APCAWindow* window);
 };
 

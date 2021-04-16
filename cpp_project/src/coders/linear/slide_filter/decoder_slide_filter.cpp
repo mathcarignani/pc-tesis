@@ -10,7 +10,7 @@
 #include "coder_utils.h"
 #include "line_utils.h"
 
-std::vector<std::string> DecoderSlideFilter::decodeDataColumn(){
+std::vector<std::string> DecoderSlideFilter::decodeDataColumn(bool mask_mode){
     column = new Column(data_rows_count, mask->total_data, mask->total_no_data);
 
     if (mask->total_data > 0){

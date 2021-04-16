@@ -41,7 +41,10 @@ std::vector<std::string> DecoderCols::decodeColumn(){
     }
 #if MASK_MODE
     mask = masks_vector.at(column_index - 1);
+    bool mask_mode = true;
+#else
+    bool mask_mode = false;
 #endif // MASK_MODE
-    std::vector<std::string> col = decodeDataColumn();
+    std::vector<std::string> col = decodeDataColumn(mask_mode);
     return col;
 }

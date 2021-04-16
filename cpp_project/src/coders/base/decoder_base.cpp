@@ -3,7 +3,7 @@
 #include "assert.h"
 #include "vector_utils.h"
 
-std::vector<std::string> DecoderBase::decodeDataColumn(){
+std::vector<std::string> DecoderBase::decodeDataColumn(bool mask_mode){
     std::vector<std::string> column;
     row_index = 0;
 

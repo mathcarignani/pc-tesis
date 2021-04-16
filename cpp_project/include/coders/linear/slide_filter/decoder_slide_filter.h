@@ -18,7 +18,7 @@ private:
     int current_position;
     SlideFiltersEntry* lastDecodedEntry;
 
-    std::vector<std::string> decodeDataColumn() override;
+    std::vector<std::string> decodeDataColumn(bool mask_mode) override;
     SlideFiltersEntry* decodeEntry();
     SlideFiltersEntry* getAt(int position);
     void addValue(DataItem data_item);

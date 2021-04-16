@@ -30,10 +30,10 @@ public:
     std::vector<int> time_delta_vector;
     int window_size_bit_length;
     int row_index;
-#if MASK_MODE
+
+    // The following two attributes are only used in mask mode
     Mask* mask;
     std::vector<Mask*> masks_vector;
-#endif // MASK_MODE
 
     //
     // main methods
