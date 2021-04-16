@@ -9,7 +9,7 @@
 #include "line_utils.h"
 #include "linear_coder_utils.h"
 
-std::vector<std::string> DecoderCA::decodeDataColumn(){
+std::vector<std::string> DecoderCA::decodeDataColumn(bool mask_mode){
     decode_archived_value = true; // always decode an archived value before decoding a window
 #if MASK_MODE
     column = new Column(data_rows_count, mask->total_data, mask->total_no_data);
@@ -51,9 +51,6 @@ void DecoderCA::decode(int nodata_sum, int current_time_delta) {
 
 bool DecoderCA::decodeArchivedValue() {
     std::string value = decodeValueRaw();
-    if (column_index == 1){
-        std::cout << "codeValueRaw(" << value << ")" << std::endl;
-    }
 
 #if !MASK_MODE
     if (value == Constants::NO_DATA){

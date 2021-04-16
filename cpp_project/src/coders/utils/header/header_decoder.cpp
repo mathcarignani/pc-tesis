@@ -28,7 +28,7 @@ HeaderDecoder::HeaderDecoder(BitStreamReader* input_file_, CSVWriter* output_csv
      . . .
 */
 Dataset* HeaderDecoder::decodeHeader(int & data_rows_count){
-    decodeDatasetName();
+    std::string dataset_name = decodeDatasetName();
     data_rows_count = decodeDataRowsCount();
     decodeFirstTimestamp();
     std::vector<std::string> row;
@@ -45,15 +45,17 @@ Dataset* HeaderDecoder::decodeHeader(int & data_rows_count){
 
     Dataset* dataset = new Dataset();
     dataset->setHeaderValues(ranges, data_columns_count);
+    dataset->setDatasetName(dataset_name);
     return dataset;
 }
 
-void HeaderDecoder::decodeDatasetName(){
+std::string HeaderDecoder::decodeDatasetName(){
     std::string line = decodeLine();
     std::vector<std::string> line_vector = StringUtils::splitByString(line, ",");
     std::string dataset_name = line_vector.at(1);
     std::vector<std::string> row = {"DATASET:", dataset_name};
     output_csv->writeRowDecoder(row);
+    return dataset_name;
 }
 
 int HeaderDecoder::decodeDataRowsCount(){

@@ -1,15 +1,22 @@
 
 #include "time_delta_decoder.h"
 #include "conversor.h"
+#include "decoder_apca.h"
+#include "time_delta_coder.h"
 
 std::vector<std::string> TimeDeltaDecoder::decode(DecoderCommon* decoder){
-    std::vector<std::string> column;
+    int window_size_bit_length = decoder->window_size_bit_length;
 
-    for(int row_index = 0; row_index < decoder->data_rows_count; row_index++){
-        std::string value = decoder->decodeValueRaw();
-        column.push_back(value);
-//        std::cout << "decoder->decodeValueRaw() = " << value << std::endl;
-        // add int value to the time_delta_vector
+    int window_size_for_dataset = TimeDeltaCoder::getWindowSize(decoder->getDatasetName());
+    int window_size_bit_length_for_dataset = MathUtils::windowSizeBitLength(window_size_for_dataset);
+    decoder->setWindowSizeBitLength(window_size_bit_length_for_dataset);
+    bool mask_mode = false;
+    std::vector<std::string> column = DecoderAPCA::decodeDataColumn(decoder, mask_mode);
+
+    decoder->setWindowSizeBitLength(window_size_bit_length);
+
+    for (int i=0; i < column.size(); i++){
+        std::string value = column.at(i);
         int value_int = Conversor::stringToInt(value);
         decoder->time_delta_vector.push_back(value_int);
     }

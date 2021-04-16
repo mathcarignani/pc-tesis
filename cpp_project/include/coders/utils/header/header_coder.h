@@ -22,7 +22,7 @@ private:
     CoderCommon* coder_common;
     bool test_mode;
 
-    void codeDatasetName();
+    std::string codeDatasetName();
     int codeDataRowsCount();
     void codeFirstTimestamp();
 

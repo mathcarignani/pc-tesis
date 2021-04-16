@@ -15,7 +15,7 @@ void DecoderPWLH::setIntegerMode(){
     integer_mode = coder_name == "CoderPWLHInt";
 }
 
-std::vector<std::string> DecoderPWLH::decodeDataColumn(){
+std::vector<std::string> DecoderPWLH::decodeDataColumn(bool mask_mode){
 #if MASK_MODE
     column = new Column(data_rows_count, mask->total_data, mask->total_no_data);
 #else

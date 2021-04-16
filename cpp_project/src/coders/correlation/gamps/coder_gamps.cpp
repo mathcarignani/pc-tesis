@@ -130,6 +130,9 @@ void CoderGAMPS::codeGAMPSColumns(GAMPSOutput* gamps_output){
 void CoderGAMPS::codeGAMPSColumn(DynArray<GAMPSEntry>* column, bool is_base_window, double threshold){
 #if MASK_MODE
     total_data_rows_vector.at(column_index - 1);
+    bool mask_mode = true;
+#else
+    bool mask_mode = false;
 #endif // MASK_MODE
 
     dataset->setMode("DATA");
@@ -138,7 +141,8 @@ void CoderGAMPS::codeGAMPSColumn(DynArray<GAMPSEntry>* column, bool is_base_wind
     GAMPSEntry current_entry = column->getAt(entry_index);
     int remaining = current_entry.endingTimestamp;
 
-    APCAWindow* window = new APCAWindow(window_size, 0); // threshold calculated by GAMPS_Computation
+
+    APCAWindow* window = new APCAWindow(window_size, 0, mask_mode); // threshold calculated by GAMPS_Computation
     nodata_rows_mask->reset();
     row_index = 0;
     input_csv->goToFirstDataRow(column_index);

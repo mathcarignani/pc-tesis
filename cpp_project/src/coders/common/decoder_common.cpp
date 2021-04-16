@@ -3,16 +3,6 @@
 
 #include "header_decoder.h"
 #include "conversor.h"
-
-// TODO: move this logic to a separate file
-#include "decoder_base.h"
-#include "decoder_pca.h"
-#include "decoder_apca.h"
-#include "decoder_pwlh.h"
-#include "decoder_ca.h"
-#include "decoder_fr.h"
-#include "decoder_slide_filter.h"
-#include "decoder_gamps.h"
 #include "math_utils.h"
 
 DecoderCommon::DecoderCommon(std::string coder_name_, BitStreamReader* input_file_, CSVWriter* output_csv_){
@@ -50,6 +40,10 @@ std::string DecoderCommon::decodeValue(int y){
 
 int DecoderCommon::decodeRaw(){
     return input_file->getInt(dataset->bits());
+}
+
+void DecoderCommon::setWindowSizeBitLength(int window_size_bit_length_){
+    window_size_bit_length = window_size_bit_length_;
 }
 
 bool DecoderCommon::decodeBool(){
@@ -110,4 +104,8 @@ void DecoderCommon::transposeMatrix(int data_rows_count_, std::vector<std::vecto
 void DecoderCommon::closeFiles(){
     delete input_file;
     delete output_csv;
+}
+
+std::string DecoderCommon::getDatasetName(){
+    return dataset->dataset_name;
 }

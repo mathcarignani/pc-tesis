@@ -38,8 +38,13 @@ Dataset* Scripts::code(std::string coder_name, Path input_path, Path output_path
         ((CoderPCA*) coder)->setCoderParams(window_size, error_thresholds_vector);
     }
     else if (coder_name == "CoderAPCA"){
+    #if MASK_MODE
+        bool mask_mode = true;
+    #else
+        bool mask_mode = false;
+    #endif
         coder = new CoderAPCA(coder_name, csv_reader, bit_stream_writer);
-        ((CoderAPCA*) coder)->setCoderParams(window_size, error_thresholds_vector);
+        ((CoderAPCA*) coder)->setCoderParams(window_size, error_thresholds_vector, mask_mode);
     }
     else if (coder_name == "CoderCA"){
         coder = new CoderCA(coder_name, csv_reader, bit_stream_writer);

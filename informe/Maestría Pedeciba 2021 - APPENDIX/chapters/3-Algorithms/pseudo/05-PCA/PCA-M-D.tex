@@ -1,0 +1,21 @@
+
+
+\beginAlgorithm
+\onlyInput{\inVarM{PCA}\\\doutputfile\\\cInputWindowPCA\\\cInputColSize}
+\nEqZero\\
+\While{\whileColumnNotDecoded}{
+    \calculateSize\\
+    \decodeBit\\
+    \uIf{$\bit == 0$}{
+        \decodeSpecific{\midrange}\\
+        Output \sizee\ copies of \midrange\ to \out
+    }
+    \Else{
+        \RepTimes{\sizee}{
+            \decodeSpecific{\valuev}\\
+            Output $\valuev$ to \out
+        }
+    }
+    \addNToSize\\
+}
+\EndAlgorithmVariantM{Decoding}{\coderPCA}{\label{pseudoDecoderPCAM}}

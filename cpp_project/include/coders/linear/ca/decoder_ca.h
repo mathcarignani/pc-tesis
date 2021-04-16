@@ -10,7 +10,7 @@ private:
     std::string archived_value;
     bool decode_archived_value;
 
-    std::vector<std::string> decodeDataColumn() override;
+    std::vector<std::string> decodeDataColumn(bool mask_mode) override;
     void decode(int nodata_sum, int current_time_delta);
     bool decodeArchivedValue();
     void decodeWindow(int nodata_sum);

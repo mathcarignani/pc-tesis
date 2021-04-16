@@ -2,7 +2,7 @@
 #include "decoder_pca.h"
 #include "assert.h"
 
-std::vector<std::string> DecoderPCA::decodeDataColumn(){
+std::vector<std::string> DecoderPCA::decodeDataColumn(bool mask_mode){
     std::vector<std::string> column;
     row_index = 0;
     int unprocessed_rows = data_rows_count;
@@ -34,23 +34,30 @@ std::vector<std::string> DecoderPCA::decodeDataColumn(){
 void DecoderPCA::decodeWindow(std::vector<std::string> & column, int window_size){
     int fi = input_file->getBit();
     if (fi){ decodeNonConstantWindow(column, window_size); }
-    else {   decodeConstantWindow(this, column, window_size); }
+    else {
+    #if MASK_MODE
+        bool mask_mode = true;
+    #else
+        bool mask_mode = false;
+    #endif
+        decodeConstantWindow(this, column, window_size, mask_mode);
+    }
 #if MASK_MODE
     mask->total_data -= window_size;
 #endif
 }
 
-void DecoderPCA::decodeConstantWindow(DecoderCommon* decoder, std::vector<std::string> & column, int window_size){
+void DecoderPCA::decodeConstantWindow(DecoderCommon* decoder, std::vector<std::string> & column, int window_size, bool mask_mode){
     std::string constant = decoder->decodeValueRaw();
     int i = 0;
     while (i < window_size){
-    #if MASK_MODE
+    if (mask_mode) {
         if (i > 0 && decoder->mask->isNoData()) { // always false in the first iteration
             column.push_back(Constants::NO_DATA);
             decoder->row_index++;
             continue;
         }
-    #endif
+    }
         column.push_back(constant);
         i++;
         decoder->row_index++;

@@ -36,7 +36,9 @@ HeaderCoder::HeaderCoder(CSVReader* input_csv_, CoderCommon* coder_common_){
      . . .
 */
 int HeaderCoder::codeHeader(Dataset* dataset){
-    codeDatasetName();
+    std::string dataset_name = codeDatasetName();
+    dataset->setDatasetName(dataset_name);
+
     int data_rows_count = codeDataRowsCount();
     codeFirstTimestamp();
     std::string line;
@@ -59,7 +61,7 @@ int HeaderCoder::codeHeader(Dataset* dataset){
     return data_rows_count;
 }
 
-void HeaderCoder::codeDatasetName(){
+std::string HeaderCoder::codeDatasetName(){
     // DATASET:,IRKIS
     std::string line = input_csv->readLine();
     std::vector<std::string> line_vector = CSVReader::split(line);
@@ -67,11 +69,12 @@ void HeaderCoder::codeDatasetName(){
     checkSizeAndKey(line_vector, 2, "DATASET:");
 #endif
     std::string dataset_name = line_vector[1];
-#if CHECKS
     dataset_name = StringUtils::removeLastChar(dataset_name);
+#if CHECKS
     assert(DatasetUtils::validDatasetName(dataset_name));
 #endif
     codeLine(line);
+    return dataset_name;
 }
 
 int HeaderCoder::codeDataRowsCount(){

@@ -1,5 +1,5 @@
 
-#include <utils/vector_utils.h>
+#include "vector_utils.h"
 #include "decoder_cols.h"
 #include "assert.h"
 #include "string_utils.h"
@@ -13,10 +13,8 @@ void DecoderCols::decodeDataRows(){
     std::vector<std::string> column;
 
     column_index = 0;
-//#if !MASK_MODE
     column = decodeColumn();
     columns.push_back(column);
-//#endif
 
 #if MASK_MODE
     ArithmeticMaskDecoder* amd = new ArithmeticMaskDecoder(this, dataset->data_columns_count);
@@ -25,7 +23,6 @@ void DecoderCols::decodeDataRows(){
 
     for(column_index = 1; column_index < total_columns; column_index++) {
         std::vector<std::string> column = decodeColumn();
-        VectorUtils::printStringVector(column);
         columns.push_back(column);
     }
     transposeMatrix(data_rows_count, columns, total_columns);
@@ -42,7 +39,10 @@ std::vector<std::string> DecoderCols::decodeColumn(){
     }
 #if MASK_MODE
     mask = masks_vector.at(column_index - 1);
+    bool mask_mode = true;
+#else
+    bool mask_mode = false;
 #endif // MASK_MODE
-    std::vector<std::string> col = decodeDataColumn();
+    std::vector<std::string> col = decodeDataColumn(mask_mode);
     return col;
 }

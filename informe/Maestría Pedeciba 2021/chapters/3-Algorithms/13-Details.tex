@@ -1,8 +1,8 @@
 
-% \clearpage
+\clearpage
 
 
-\vspace{+10pt}
+% \vspace{+10pt}
 \section{Implementation Details}
 \label{algo:adddetails}
 
@@ -10,7 +10,7 @@
 All the algorithm variants presented in this chapter are implemented in C++. The implementation of the variants for algorithms PCA, APCA, CA and FR is completely ours, while the variants for algorithms PWLH, SF and GAMPS reuse part of the source code from the framework cited in \cite{AnEva2013}\footnote{The framework is available for download in the following website: http://lsirwww.epfl.ch/benchmark/}. We implemented algorithm PWLHInt by introducing the changes described in Subsection~\ref{algo:pwhl:int} to algorithm PWLH. 
 
 
-In algorithms PWLH and SF, presented in sections~\ref{algo:pwlh} and \ref{algo:sf}, respectively, we reuse the framework source code for carrying out operations in the two-dimensional Euclidean space. In algorithm PWLH these operations consist of computing the convex hull of the data points by applying Graham's Scan algorithm~\cite{GrahamAlgo} (\Line~6 in Figure~\ref{pseudoCoderPWLHM}), and calculating the segment that minimizes the MSE for all the points in a window (\Line~2 in Figure~\ref{pwlhWindowM}). In algorithm SF the reused operations consist of finding connected line segments (\Line~21 in Figure~\ref{pseudoCoderSF}), and calculating the segment that minimizes the MSE for all the points in a window (\Line~1 in Figure~\ref{SFWinStart}). In algorithm GAMPS, presented in Section~\ref{algo:gamps}, we reuse the framework source code for grouping the data columns into disjoint subsets of spatially correlated columns, which involves solving a facility location problem (\Line~1 in Figure~\ref{pseudoCoderGAMPS}).
+In algorithms PWLH and SF, presented in sections~\ref{algo:pwlh} and \ref{algo:sf}, respectively, we reuse the framework source code for carrying out operations in the two-dimensional Euclidean space. In algorithm PWLH these operations include computing the convex hull of the data points by applying Graham's Scan algorithm~\cite{GrahamAlgo} (\Line~6 in Figure~\ref{pseudoCoderPWLHM}), and calculating the segment that minimizes the MSE for all the points in a window (\Line~2 in Figure~\ref{pwlhWindowM}). In algorithm SF the reused operations include finding connected line segments (\Line~21 in Figure~\ref{pseudoCoderSF}), and calculating the segment that minimizes the MSE for all the points in a window (\Line~1 in Figure~\ref{SFWinStart}). In algorithm GAMPS, presented in Section~\ref{algo:gamps}, we reuse the framework source code for grouping the data columns into disjoint subsets of spatially correlated columns, which involves solving a facility location problem (\Line~1 in Figure~\ref{pseudoCoderGAMPS}).
 
 
 Recall that in Section~\ref{algo:maskmodes} we introduce the arithmetic coder (AC), which is employed for encoding the gaps in the masking variants. In our code we use the CACM87 implementation \cite{arcodingcomp, ac1} of the AC, which is written in C.

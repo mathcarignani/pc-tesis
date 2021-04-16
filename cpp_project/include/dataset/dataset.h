@@ -17,9 +17,11 @@ public:
     std::vector<ColumnCode*> column_code_vector;
     int total_bits;
     int header_bits;
+    std::string dataset_name; // included in DatasetUtils::DATASET_NAMES
 
     Dataset();
     void setHeaderValues(std::vector<Range*> ranges, int data_columns_count_);
+    void setDatasetName(std::string dataset_name_);
     void updateRangesGAMPS(int column_index);
     void setColumn(int column_index);
     void setMode(std::string mode);
