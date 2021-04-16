@@ -1,4 +1,5 @@
 
+#include <utils/vector_utils.h>
 #include "time_delta_coder.h"
 #include "conversor.h"
 #include "coder_utils.h"
@@ -6,7 +7,7 @@
 
 std::vector<int> TimeDeltaCoder::code(CoderCommon* coder){
     // CoderAPCA::codeColumnBefore begin
-    int window_size = 256; // TODO: change window_size depending on the dataset
+    int window_size = getWindowSize(coder->dataset->dataset_name);
     int error_threshold = 0;
     bool mask_mode = false;
     APCAWindow* window = new APCAWindow(window_size, error_threshold, mask_mode);
@@ -46,4 +47,19 @@ std::vector<int> TimeDeltaCoder::code(CoderCommon* coder){
     }
     // CoderAPCA::codeColumnAfter begin
     return time_delta_vector;
+}
+
+int TimeDeltaCoder::getWindowSize(std::string dataset_name){
+    std::vector<std::string> window256 = {"IRKIS", "NOAA-SST", "NOAA-ADCP", "ElNino", "SolarAnywhere"};
+    std::vector<std::string> window4 = {"NOAA-SPC-hail", "NOAA-SPC-tornado", "NOAA-SPC-wind"};
+
+    int window_size = 32;
+    if (VectorUtils::vectorIncludesString(window256, dataset_name)){
+        window_size = 256;
+    }
+    else if (VectorUtils::vectorIncludesString(window4, dataset_name)){
+        window_size = 4;
+    }
+    assert(window_size != 32); // TODO: remove
+    return window_size;
 }

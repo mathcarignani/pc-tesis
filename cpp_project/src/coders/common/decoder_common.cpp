@@ -105,3 +105,7 @@ void DecoderCommon::closeFiles(){
     delete input_file;
     delete output_csv;
 }
+
+std::string DecoderCommon::getDatasetName(){
+    return dataset->dataset_name;
+}

@@ -22,6 +22,10 @@ void Dataset::setHeaderValues(std::vector<Range*> ranges, int data_columns_count
     column_code = column_code_vector[array_index];
 }
 
+void Dataset::setDatasetName(std::string dataset_name_){
+    dataset_name = dataset_name_;
+}
+
 void Dataset::updateRangesGAMPS(int base_column_index){
 #if CHECKS
     assert(base_column_index > 0); // cannot be the delta time column
