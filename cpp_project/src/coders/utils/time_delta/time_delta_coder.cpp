@@ -1,17 +1,16 @@
 
 #include <utils/vector_utils.h>
+#include <utils/string_utils.h>
 #include "time_delta_coder.h"
 #include "conversor.h"
 #include "coder_utils.h"
 #include "apca_window.h"
 
 std::vector<int> TimeDeltaCoder::code(CoderCommon* coder){
-    // CoderAPCA::codeColumnBefore begin
     int window_size = getWindowSize(coder->dataset->dataset_name);
     int error_threshold = 0;
     bool mask_mode = false;
     APCAWindow* window = new APCAWindow(window_size, error_threshold, mask_mode);
-    // CoderAPCA::codeColumnBefore end
 
     CSVReader* input_csv = coder->input_csv;
 
@@ -28,24 +27,16 @@ std::vector<int> TimeDeltaCoder::code(CoderCommon* coder){
         int csv_value_int = Conversor::stringToInt(csv_value);
         time_delta_vector.push_back(csv_value_int);
 
-        // CoderAPCA::codeColumnWhile begin
         if (!window->conditionHolds(csv_value)){
-            // CoderAPCA::codeWindow begin
             coder->codeWindowLength((Window*) window);
             coder->codeValueRaw(window->constant_value);
-            // CoderAPCA::codeWindow end
             window->addFirstValue(csv_value);
         }
-        // CoderAPCA::codeColumnWhile end
     }
-    // CoderAPCA::codeColumnAfter begin
     if (!window->isEmpty()){
-        // CoderAPCA::codeWindow begin
         coder->codeWindowLength((Window*) window);
         coder->codeValueRaw(window->constant_value);
-        // CoderAPCA::codeWindow end
     }
-    // CoderAPCA::codeColumnAfter begin
     return time_delta_vector;
 }
 
@@ -60,6 +51,5 @@ int TimeDeltaCoder::getWindowSize(std::string dataset_name){
     else if (VectorUtils::vectorIncludesString(window4, dataset_name)){
         window_size = 4;
     }
-    assert(window_size != 32); // TODO: remove
     return window_size;
 }

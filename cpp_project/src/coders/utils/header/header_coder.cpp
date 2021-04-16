@@ -69,8 +69,8 @@ std::string HeaderCoder::codeDatasetName(){
     checkSizeAndKey(line_vector, 2, "DATASET:");
 #endif
     std::string dataset_name = line_vector[1];
-#if CHECKS
     dataset_name = StringUtils::removeLastChar(dataset_name);
+#if CHECKS
     assert(DatasetUtils::validDatasetName(dataset_name));
 #endif
     codeLine(line);
