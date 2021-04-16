@@ -46,6 +46,7 @@ public:
     //
     // auxiliary methods
     //
+    void setWindowSizeBitLength(int window_size_bit_length_); // used by TimeDeltaDecoder::decode
     bool decodeBool();
     int decodeInt(int bits);
     int decodeWindowLength(int window_size_bit_length);

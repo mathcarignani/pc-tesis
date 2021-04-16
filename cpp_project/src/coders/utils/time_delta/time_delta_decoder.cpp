@@ -5,7 +5,11 @@
 
 std::vector<std::string> TimeDeltaDecoder::decode(DecoderCommon* decoder){
     bool mask_mode = false;
+
+    int window_size_bit_length = decoder->window_size_bit_length;
+    decoder->setWindowSizeBitLength(8);
     std::vector<std::string> column = DecoderAPCA::decodeDataColumn(decoder, mask_mode);
+    decoder->setWindowSizeBitLength(window_size_bit_length);
 
     for (int i=0; i < column.size(); i++){
         std::string value = column.at(i);
