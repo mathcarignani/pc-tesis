@@ -198,7 +198,7 @@
 %	defined as \examname above so you cite it as \examname
 %----------------------------------------------------------------------------------------
 
-\thesistitle{Coding of Multichannel Signals with\\\vspace{15pt}Irregular Sampling Rates and Data Gaps} % Your thesis title - this is used in the title and abstract
+\thesistitle{Coding of Multichannel Signals with\\\vspace{2pt}Irregular Sampling Rates and Data Gaps\\\vspace{10pt}(Appendix)} % Your thesis title - this is used in the title and abstract
 %-------------------------------------------------  
 % \supervisor{Álvaro \textsc{Martin}} % You supervisor's name - this is used in the title page
 %-------------------------------------------------   
@@ -314,7 +314,7 @@
     \setlength{\parskip}{0pt}
 %    {\normalsize \UNIVNAME \par} % University name in capitals
 %    \bigskip
-    {\huge{\textit{Abstract}} \par}
+    {\huge{\textit{Introduction}} \par}
     \bigskip
 %    {\normalsize \facname \par} % Faculty name
 %    \bigskip

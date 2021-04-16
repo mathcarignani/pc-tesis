@@ -1,8 +1,8 @@
 % Chapter ?
-\chapter{Plots: Window Size Parameter} % Main chapter title
+\chapter{Figures: Window Size Parameter} % Main chapter title
 \label{plots33} % For referencing the chapter elsewhere, use \ref{Chapter1} 
 
-\lhead{Appendix ?. \emph{Plots 3.3}} % This is for the header on each page - perhaps a shortened title
+\lhead{Appendix B. \emph{Figures: Window Size Parameter}} % This is for the header on each page - perhaps a shortened title
 
 \newcommand{\threethreelist}[4]{%
     \foreach \x [count=\xi] in {#4} {
@@ -16,7 +16,10 @@
     }%
 }
 
-\threethreelistaux{1-IRKIS}{1}{\datasetirkis}{VWC}{\fileIrkisOne, \fileIrkisTwo, irkis-1204.csv, irkis-1205.csv, irkis-222.csv, irkis-333.csv, irkis-SLF2.csv}
+\threethreesingle{1-IRKIS-1-1}{VWC}{\fileIrkisOne}{\datasetirkis}{\label{fig:window-compare-1202}}{}
+\threethreesingle{1-IRKIS-2-1}{VWC}{\fileIrkisTwo}{\datasetirkis}{\label{fig:window-compare-1203}}{\threethreemost}
+
+\threethreelistaux{1-IRKIS}{1}{\datasetirkis}{VWC}{irkis-1204.csv, irkis-1205.csv, irkis-222.csv, irkis-333.csv, irkis-SLF2.csv}
 
 \threethreelistaux{2-NOAA-SST}{1}{\datasetsst}{SST}{sst-01-2017.csv, sst-02-2017.csv, sst-03-2017.csv}
 

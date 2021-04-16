@@ -1,0 +1,14 @@
+
+
+\beginAlgorithm
+\onlyInput{\columnInput\\ \outAlgo{Base}}
+\ForEach{\forEachEntryCoder}{
+    \eIf{\ifNoDataCoder{\entry}}{
+        $\valuev = \nodata$\\
+    }
+    {
+        $\valuev = \entry$\\
+    }
+    \encodeSpecific{$\valuev$}\\
+}
+\EndAlgorithm{Coding}{\coderBase}{\label{pseudoCoderBase}}
