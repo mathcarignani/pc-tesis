@@ -214,7 +214,10 @@
 %-------------------------------------------------   
 \keywords{} % Keywords for your thesis - this is not currently used anywhere in the template, cite it with \keywordnames if you want it
 %-------------------------------------------------   
-\university{\texorpdfstring{\href{http://www.udelar.edu.uy} % Your university's URL
+\university{\texorpdfstring{\href{http://www.pedeciba.edu.uy/indice.php} % Your university's URL
+                {Pedeciba}} % Your university's name - this is currently used in the title page
+                {Pedeciba} - 
+\texorpdfstring{\href{http://www.udelar.edu.uy} % Your university's URL
                 {Universidad de la República}} % Your university's name - this is currently used in the title page
                 {Universidad de la República}}
 %-------------------------------------------------   
@@ -230,11 +233,11 @@
                 {FACULTAD DE INGENIERIA}}
                 {FACULTAD DE INGENIERIA}}
 %-------------------------------------------------                
-\group{\texorpdfstring{\href{http://www.fing.edu.uy/categoria/grupo/nucleo-de-teor\%C3\%ADa-de-la-informaci\%C3\%B3n} % Your research group's URL
+\group{\texorpdfstring{\href{https://www.fing.edu.uy/es/nti} % Your research group's URL
                 {Núcleo de Teoría de la Información}} % Your research group's name - this is currently used in the title page 
                 {Núcleo de Teoría de la Información}}
 %-------------------------------------------------                
-\GROUP{\texorpdfstring{\href{http://www.fing.edu.uy/categoria/grupo/nucleo-de-teor\%C3\%ADa-de-la-informaci\%C3\%B3n} % Your research group's URL
+\GROUP{\texorpdfstring{\href{https://www.fing.edu.uy/es/nti} % Your research group's URL
                 {NÚCLEO DE TEORÍA DE LA INFORMACIÓN}} % Your research group's name in capitals - this is not currently used anywhere in the template, cite it with \GROUPNAME if you want it
                 {NÚCLEO DE TEORÍA DE LA INFORMACIÓN}}
 %-------------------------------------------------                
