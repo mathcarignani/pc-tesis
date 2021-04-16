@@ -42,6 +42,10 @@ int DecoderCommon::decodeRaw(){
     return input_file->getInt(dataset->bits());
 }
 
+void DecoderCommon::setWindowSizeBitLength(int window_size_bit_length_){
+    window_size_bit_length = window_size_bit_length_;
+}
+
 bool DecoderCommon::decodeBool(){
     if (input_file->getBit()) { return true; } else { return false; }
 }
