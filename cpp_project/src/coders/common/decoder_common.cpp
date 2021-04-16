@@ -3,16 +3,6 @@
 
 #include "header_decoder.h"
 #include "conversor.h"
-
-// TODO: move this logic to a separate file
-#include "decoder_base.h"
-#include "decoder_pca.h"
-#include "decoder_apca.h"
-#include "decoder_pwlh.h"
-#include "decoder_ca.h"
-#include "decoder_fr.h"
-#include "decoder_slide_filter.h"
-#include "decoder_gamps.h"
 #include "math_utils.h"
 
 DecoderCommon::DecoderCommon(std::string coder_name_, BitStreamReader* input_file_, CSVWriter* output_csv_){

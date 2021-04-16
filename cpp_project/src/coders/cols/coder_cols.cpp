@@ -29,10 +29,8 @@ void CoderCols::codeColumn() {
 #endif
     dataset->setColumn(column_index);
     if (column_index == 0) {
-//    #if !MASK_MODE
         dataset->setMode("DATA");
         time_delta_vector = TimeDeltaCoder::code(this);
-//    #endif
         return;
     }
 #if MASK_MODE
