@@ -51,9 +51,6 @@ void DecoderCA::decode(int nodata_sum, int current_time_delta) {
 
 bool DecoderCA::decodeArchivedValue() {
     std::string value = decodeValueRaw();
-    if (column_index == 1){
-        std::cout << "codeValueRaw(" << value << ")" << std::endl;
-    }
 
 #if !MASK_MODE
     if (value == Constants::NO_DATA){

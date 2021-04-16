@@ -25,7 +25,6 @@ void DecoderCols::decodeDataRows(){
 
     for(column_index = 1; column_index < total_columns; column_index++) {
         std::vector<std::string> column = decodeColumn();
-        VectorUtils::printStringVector(column);
         columns.push_back(column);
     }
     transposeMatrix(data_rows_count, columns, total_columns);
