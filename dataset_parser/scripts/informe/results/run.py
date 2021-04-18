@@ -71,10 +71,10 @@ class Run:
 # Run.globalize_results()
 
 # (3.2) Relative Performance of the Coders
-Run.relative_performance()
+# Run.relative_performance()
 
 # (3.3) Window Size Parameter
-# Run.window_parameter()
+Run.window_parameter()
 
 
 # (3.4) Mask Coders Performance
