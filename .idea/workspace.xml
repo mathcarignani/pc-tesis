@@ -9,14 +9,692 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a3b265d-435b-4566-92e3-11fcb581ca6c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/informe/Maestri_a_Pedeciba_2021.pdf" afterPath="$PROJECT_DIR$/informe/Maestri_a_Pedeciba_2021.pdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/informe/Maestri_a_Pedeciba_2021___APPENDIX.pdf" afterPath="$PROJECT_DIR$/informe/Maestri_a_Pedeciba_2021___APPENDIX.pdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX.zip" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX.zip" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021.zip" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021.zip" />
+    <list default="true" id="0a3b265d-435b-4566-92e3-11fcb581ca6c" name="Default" comment="Updated pdf and pdf files">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/INSTRUCCIONES" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/Makefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/elnino-clean.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/elnino-clean.csv.coded" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/elnino-clean.csv.decoded.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/APCA/Control/APCA.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/APCA/Control/APCA.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/APCA/Data/APCAEntry.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/APCA/Data/APCAInput.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/APCA/Data/APCAOutput.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/APCA/Data/APCAOutput.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/Algo.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/CHEB/Control/CHEB.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/CHEB/Control/CHEB.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/CHEB/Control/CHEBTranform.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/CHEB/Control/CHEBTranform.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/CHEB/Data/ApproxPolynomial.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/CHEB/Data/ApproxPolynomial.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/CHEB/Data/CHEBInput.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/CHEB/Data/CHEBInput.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/CHEB/Data/CHEBOutput.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/CHEB/Data/CHEBOutput.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/CHEB/Transform/eval.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/CHEB/Transform/gsl_chebyshev.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/CHEB/Transform/gsl_errno.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/CHEB/Transform/gsl_machine.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/CHEB/Transform/gsl_math.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/CHEB/Transform/gsl_mode.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/CHEB/Transform/gsl_pow_int.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/CHEB/Transform/gsl_types.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/CHEB/Transform/init.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/GAMPS/control/FacilityLocProb.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/GAMPS/control/FacilityLocProb.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/GAMPS/control/GAMPS.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/GAMPS/control/GAMPS.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/GAMPS/control/GAMPS_Computation.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/GAMPS/control/GAMPS_Computation.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/GAMPS/data/GAMPSEntry.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/GAMPS/data/GAMPSInput.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/GAMPS/data/GAMPSInput.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/GAMPS/data/GAMPSOutput.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/GAMPS/data/GAMPSOutput.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/GAMPS/data/GampsOutput.rar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/PCA/Control/PCA.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/PCA/Control/PCA.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/PCA/Data/PCAEntry.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/PCA/Data/PCAInput.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/PCA/Data/PCAInput.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/PCA/Data/PCAOutput.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/PCA/Data/PCAOutput.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/PWLH/Control/LinearBucket.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/PWLH/Control/LinearBucket.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/PWLH/Control/PWLH.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/PWLH/Control/PWLH.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/PWLH/Data/PWLHInput.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/PWLH/Data/PWLHOutput.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/PWLH/Data/PWLHOutput.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/SlideFilter/Control/SlideFilters.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/SlideFilter/Control/SlideFilters.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/SlideFilter/Data/SlideFiltersEntry.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/SlideFilter/Data/SlideFiltersInput.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/SlideFilter/Data/SlideFiltersInput.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/SlideFilter/Data/SlideFiltersOutPut.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Algorithms/SlideFilter/Data/SlideFiltersOutPut.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Config/Config.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Config/Config.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Config/Config_Reader.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/DataManagementLayer/Data/DataItem.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/DataManagementLayer/Data/DataStream.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/DataManagementLayer/Data/DataStream.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/DataManagementLayer/Data/Input_SingleStreamAlg.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/DataManagementLayer/Data/Input_SingleStreamAlg.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/DataManagementLayer/Data/MultiDataStream.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/DataManagementLayer/Data/MultiDataStream.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/DataManagementLayer/Data/Output.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/DataManagementLayer/Dataloader/DataLoader.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/DataManagementLayer/Dataloader/DataLoader.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/DataStructures/DynArray/DynArray.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/DataStructures/DynArray/DynArray.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/DataStructures/Line/Line.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/DataStructures/Line/Line.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/DataStructures/Polygon/CPolygon.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/DataStructures/Polygon/CPolygon.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Experiments/Experiment_Multi_Stream.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Experiments/Experiment_Single_Stream.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Main.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/README" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Utils/KPI_statistics.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Utils/dirent.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Utils/file_operation.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/Utils/old_dirent.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/clean.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/compile.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/config.ini" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/export.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/iniparser/Makefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/iniparser/dictionary.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/iniparser/dictionary.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/iniparser/iniparser.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/iniparser/iniparser.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/redef.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/redef.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/run.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/statistic_KPI.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/stdafx.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/stdafx.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/benchmarkLinux/testingData/_DATA_/test.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/external/minicsv.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/include/bit_stream.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/include/csv_utils.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/include/file_utils.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/include/operation_utils.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/include/print_utils.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/minicsv-master.tar.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/sh.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/src/bit_stream.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/src/csv_utils.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/src/file_utils.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/src/main.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/src/operation_utils.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/cpp/src/print_utils.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/clean/vwc_1202.clean.smet" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/clean/vwc_1203.clean.smet" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/clean/vwc_1204.clean.smet" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/clean/vwc_1205.clean.smet" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/clean/vwc_222.clean.smet" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/clean/vwc_333.clean.smet" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/clean/vwc_SLF2.clean.smet" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/cleaner_vwc.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/cleaner_vwc_headers.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/entrega/Data-Quality-2017-Pablo-Cervenansky.zip" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/entrega/Data-Quality-2017.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/entrega/code/cleaner_vwc.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/entrega/code/cleaner_vwc_headers.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/entrega/code/file_reader.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/entrega/code/file_writer.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/entrega/code/parser.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/entrega/code/parser_smet.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/entrega/code/parser_vwc.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/entrega/code/progress_bar.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/entrega/code/script.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/entrega/code/script_methods.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/entrega/code/script_outputs/interpolatedmeteo_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/entrega/code/script_outputs/station_output-1202.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/entrega/code/script_outputs/station_output-1203.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/entrega/code/script_outputs/station_output-1204.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/entrega/code/script_outputs/station_output-1205.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/entrega/code/script_outputs/station_output-222,333,SLF2.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/entrega/code/script_outputs/vwc_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/file_reader.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/file_writer.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/output/interpolatedmeteo_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/output/station/station_output-1202.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/output/station/station_output-1203.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/output/station/station_output-1204.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/output/station/station_output-1205.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/output/station/station_output-222,333,SLF2.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/output/vwc_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/parser.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/parser_smet.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/parser_vwc.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/plots/AA.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/plots/BB.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/plots/crop.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/plots/crop/vwc_2102.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/plots/crop/vwc_2103.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/plots/crop/vwc_2104.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/plots/crop/vwc_2105.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/plots/crop/vwc_222.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/plots/crop/vwc_333.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/plots/crop/vwc_SLF2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/plots/vwc_1202.dat_A.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/plots/vwc_1202.dat_B.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/plots/vwc_1203.dat_A.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/plots/vwc_1203.dat_B.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/plots/vwc_1204.dat_A.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/plots/vwc_1204.dat_B.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/plots/vwc_1205.dat_A.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/plots/vwc_1205.dat_B.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/plots/vwc_222.smet_A.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/plots/vwc_222.smet_B.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/plots/vwc_333.smet_A.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/plots/vwc_333.smet_B.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/plots/vwc_SLF2.smet_A.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/plots/vwc_SLF2.smet_B.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/progress_bar.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/script.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/code/data-quality/script_methods.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/.idea/codeStyles/Project.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/.idea/codigo_grado.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/.idea/workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/INSTRUCCIONES" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/Makefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/include/ArbolCodigo.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/include/Archivo.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/include/BitStream.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/include/PalabraDeCodigo.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/include/Perfil.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/include/clase_codigo_distribucion.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/include/codigo.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/include/codigo_golomb.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/include/codigo_golomb_bn.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/include/codigo_huffman.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/include/codigo_t.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/include/cuentas_codigo.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/include/distribucion.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/include/distribucion_bn.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/include/distribucion_geo.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/include/experimentos.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/include/impresion.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/include/procedimientos.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/include/test.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/include/test_aux.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/include/test_codigo_golomb.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/include/test_codigo_golomb_bn.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/include/test_codigo_huffman.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/include/test_codigo_t.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/src/ArbolCodigo.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/src/Archivo.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/src/BitStream.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/src/PalabraDeCodigo.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/src/Perfil.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/src/clase_codigo_distribucion.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/src/codigo.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/src/codigo_golomb.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/src/codigo_golomb_bn.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/src/codigo_huffman.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/src/codigo_t.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/src/cuentas_codigo.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/src/distribucion.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/src/distribucion_bn.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/src/distribucion_geo.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/src/experimentos.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/src/impresion.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/src/main.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/src/procedimientos.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/src/test.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/src/test_aux.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/src/test_codigo_golomb.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/src/test_codigo_golomb_bn.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/src/test_codigo_huffman.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/codigo_grado/src/test_codigo_t.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/constants/CONSTANTS" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/constants/PAPER_CONSTANTS" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/.idea/benchmarkLinux.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/.idea/codeStyles/Project.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/.idea/workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/APCA/Control/APCA.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/APCA/Control/APCA.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/APCA/Data/APCAEntry.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/APCA/Data/APCAInput.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/APCA/Data/APCAOutput.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/APCA/Data/APCAOutput.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/Algo.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/CHEB/Control/CHEB.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/CHEB/Control/CHEB.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/CHEB/Control/CHEBTranform.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/CHEB/Control/CHEBTranform.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/CHEB/Data/ApproxPolynomial.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/CHEB/Data/ApproxPolynomial.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/CHEB/Data/CHEBInput.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/CHEB/Data/CHEBInput.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/CHEB/Data/CHEBOutput.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/CHEB/Data/CHEBOutput.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/CHEB/Transform/eval.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/CHEB/Transform/gsl_chebyshev.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/CHEB/Transform/gsl_errno.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/CHEB/Transform/gsl_machine.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/CHEB/Transform/gsl_math.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/CHEB/Transform/gsl_mode.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/CHEB/Transform/gsl_pow_int.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/CHEB/Transform/gsl_types.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/CHEB/Transform/init.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/GAMPS/control/FacilityLocProb.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/GAMPS/control/FacilityLocProb.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/GAMPS/control/GAMPS.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/GAMPS/control/GAMPS.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/GAMPS/control/GAMPS_Computation.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/GAMPS/control/GAMPS_Computation.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/GAMPS/data/GAMPSEntry.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/GAMPS/data/GAMPSInput.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/GAMPS/data/GAMPSInput.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/GAMPS/data/GAMPSOutput.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/GAMPS/data/GAMPSOutput.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/GAMPS/data/GampsOutput.rar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/PCA/Control/PCA.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/PCA/Control/PCA.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/PCA/Data/PCAEntry.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/PCA/Data/PCAInput.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/PCA/Data/PCAInput.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/PCA/Data/PCAOutput.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/PCA/Data/PCAOutput.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/PWLH/Control/LinearBucket.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/PWLH/Control/LinearBucket.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/PWLH/Control/PWLH.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/PWLH/Control/PWLH.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/PWLH/Data/PWLHInput.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/PWLH/Data/PWLHOutput.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/PWLH/Data/PWLHOutput.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/SlideFilter/Control/SlideFilters.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/SlideFilter/Control/SlideFilters.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/SlideFilter/Data/SlideFiltersEntry.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/SlideFilter/Data/SlideFiltersInput.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/SlideFilter/Data/SlideFiltersInput.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/SlideFilter/Data/SlideFiltersOutPut.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Algorithms/SlideFilter/Data/SlideFiltersOutPut.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/CMakeLists.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Config/Config.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Config/Config.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Config/Config_Reader.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/DataManagementLayer/Data/DataItem.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/DataManagementLayer/Data/DataStream.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/DataManagementLayer/Data/DataStream.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/DataManagementLayer/Data/Input_SingleStreamAlg.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/DataManagementLayer/Data/Input_SingleStreamAlg.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/DataManagementLayer/Data/MultiDataStream.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/DataManagementLayer/Data/MultiDataStream.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/DataManagementLayer/Data/Output.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/DataManagementLayer/Dataloader/DataLoader.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/DataManagementLayer/Dataloader/DataLoader.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/DataStructures/DynArray/DynArray.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/DataStructures/DynArray/DynArray.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/DataStructures/Line/Line.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/DataStructures/Line/Line.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/DataStructures/Polygon/CPolygon.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/DataStructures/Polygon/CPolygon.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Experiments/Experiment_Multi_Stream.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Experiments/Experiment_Single_Stream.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Main.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/README" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Utils/KPI_statistics.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Utils/dirent.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Utils/file_operation.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/Utils/old_dirent.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/clean.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/cmake-build-debug/CMakeCache.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/cmake-build-debug/CMakeFiles/3.9.6/CMakeCCompiler.cmake" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/cmake-build-debug/CMakeFiles/3.9.6/CMakeCXXCompiler.cmake" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/cmake-build-debug/CMakeFiles/3.9.6/CMakeDetermineCompilerABI_C.bin" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/cmake-build-debug/CMakeFiles/3.9.6/CMakeDetermineCompilerABI_CXX.bin" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/cmake-build-debug/CMakeFiles/3.9.6/CMakeSystem.cmake" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/cmake-build-debug/CMakeFiles/3.9.6/CompilerIdC/CMakeCCompilerId.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/cmake-build-debug/CMakeFiles/3.9.6/CompilerIdC/a.out" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/cmake-build-debug/CMakeFiles/3.9.6/CompilerIdCXX/CMakeCXXCompilerId.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/cmake-build-debug/CMakeFiles/3.9.6/CompilerIdCXX/a.out" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/cmake-build-debug/CMakeFiles/Makefile.cmake" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/cmake-build-debug/CMakeFiles/Makefile2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/cmake-build-debug/CMakeFiles/benchmarkLinux.dir/DependInfo.cmake" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/cmake-build-debug/CMakeFiles/benchmarkLinux.dir/build.make" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/cmake-build-debug/CMakeFiles/benchmarkLinux.dir/cmake_clean.cmake" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/cmake-build-debug/CMakeFiles/benchmarkLinux.dir/depend.make" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/cmake-build-debug/CMakeFiles/benchmarkLinux.dir/flags.make" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/cmake-build-debug/CMakeFiles/benchmarkLinux.dir/link.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/cmake-build-debug/CMakeFiles/benchmarkLinux.dir/progress.make" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/cmake-build-debug/CMakeFiles/clion-environment.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/cmake-build-debug/CMakeFiles/clion-log.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/cmake-build-debug/CMakeFiles/cmake.check_cache" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/cmake-build-debug/CMakeFiles/feature_tests.bin" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/cmake-build-debug/CMakeFiles/feature_tests.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/cmake-build-debug/CMakeFiles/feature_tests.cxx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/cmake-build-debug/CMakeFiles/progress.marks" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/cmake-build-debug/Makefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/cmake-build-debug/benchmarkLinux.cbp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/cmake-build-debug/cmake_install.cmake" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/compile.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/config.ini" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/export.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/iniparser/Makefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/iniparser/dictionary.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/iniparser/dictionary.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/iniparser/iniparser.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/iniparser/iniparser.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/redef.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/redef.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/run.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/statistic_KPI.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/stdafx.cpp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/stdafx.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cpp_paper/benchmarkLinux/testingData/_DATA_/test.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dataset_parser/auxi/dataset_utils.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestri_a_Pedeciba_2021.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestri_a_Pedeciba_2021___APPENDIX.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX.zip" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/Thesis.cls" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/1-Plots3.2.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/2-Plots3.3.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3-Plots3.4.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.2/1-IRKIS-1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.2/2-NOAA-SST-1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.2/3-NOAA-ADCP-1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.2/4-SolarAnywhere-1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.2/4-SolarAnywhere-2.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.2/4-SolarAnywhere-3.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.2/5-ElNino-1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.2/5-ElNino-2.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.2/5-ElNino-3.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.2/5-ElNino-4.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.2/5-ElNino-5.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.2/5-ElNino-6.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.2/5-ElNino-7.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.2/6-NOAA-SPC-hail-1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.2/6-NOAA-SPC-hail-2.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.2/6-NOAA-SPC-hail-3.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.2/7-NOAA-SPC-tornado-1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.2/7-NOAA-SPC-tornado-2.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.2/8-NOAA-SPC-wind-1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.2/8-NOAA-SPC-wind-2.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.2/8-NOAA-SPC-wind-3.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.3/1-IRKIS-1-1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.3/1-IRKIS-2-1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.3/1-IRKIS-3-1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.3/1-IRKIS-4-1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.3/1-IRKIS-5-1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.3/1-IRKIS-6-1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.3/1-IRKIS-7-1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.3/2-NOAA-SST-1-1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.3/2-NOAA-SST-2-1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.3/2-NOAA-SST-3-1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.3/3-NOAA-ADCP-1-1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.3/3-NOAA-ADCP-2-1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.3/3-NOAA-ADCP-3-1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.3/4-SolarAnywhere-1-1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.3/4-SolarAnywhere-1-2.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.3/4-SolarAnywhere-1-3.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.3/4-SolarAnywhere-2-1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.3/4-SolarAnywhere-2-2.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.3/4-SolarAnywhere-2-3.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.3/4-SolarAnywhere-3-1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.3/4-SolarAnywhere-3-2.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.3/4-SolarAnywhere-3-3.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.3/4-SolarAnywhere-4-1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.3/4-SolarAnywhere-4-2.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.3/4-SolarAnywhere-4-3.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.4/1-IRKIS-1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.4/2-NOAA-SST-1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.4/3-NOAA-ADCP-1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.4/4-SolarAnywhere-1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.4/4-SolarAnywhere-2.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.4/4-SolarAnywhere-3.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.4/5-ElNino-1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.4/5-ElNino-2.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.4/5-ElNino-3.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.4/5-ElNino-4.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.4/5-ElNino-5.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.4/5-ElNino-6.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.4/5-ElNino-7.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.4/6-NOAA-SPC-hail-1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.4/6-NOAA-SPC-hail-2.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.4/6-NOAA-SPC-hail-3.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.4/7-NOAA-SPC-tornado-1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.4/7-NOAA-SPC-tornado-2.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.4/8-NOAA-SPC-wind-1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.4/8-NOAA-SPC-wind-2.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.4/8-NOAA-SPC-wind-3.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/commands.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/bibliography/IEEEabrv.bib" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/bibliography/IEEEexample.bib" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/bibliography/IEEEfull.bib" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/bibliography/library1.bib" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/bibliography/library2.bib" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/bibliography/trash.bib" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/Algorithms.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/00-Common/Common-Algo.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/00-Common/Common-Text.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/00-Common/Common.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/02-General/Sub-C.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/04-Base/Base-C.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/05-PCA/PCA-M-C.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/05-PCA/PCA-M-D.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/05-PCA/PCA-NM-C.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/06-APCA/APCA-M-C.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/06-APCA/APCA-M-D.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/06-APCA/APCA-Win-M-C.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/07-DecoLinear/DecoLinear.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/08-PWLH/PWLH-M-C.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/08-PWLH/PWLH-M-D.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/08-PWLH/PWLH-Win-C.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/08-PWLH/PWLH-WinLast-C.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/09-CA/CA-M-C.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/09-CA/CA-M-D.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/09-CA/CA-WinEnd-C.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/09-CA/CA-WinStart-C.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/10-SF/SF-M-C.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/10-SF/SF-M-D.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/10-SF/SF-Point-C.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/10-SF/SF-Point-D.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/10-SF/SF-WinEnd-C.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/10-SF/SF-WinEndStart-C.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/10-SF/SF-WinStart-C.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/11-FR/FR-M-C.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/11-FR/FR-M-C2.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/11-FR/FR-M-D.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/12-GAMPS/GAMPS-M-C.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/4-Experiments/Experiments.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/main.loa" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/main.lof" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/main.lot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/main.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/main.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/main/0_config.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/main/1_config_extra.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/main/2_title_page.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/main/3_abstract_page.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/main/4_contents.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/main/5_chapters.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/main/6_appendices.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021.zip" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/Thesis.cls" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/appendices/3.2/2-NOAA-SST-1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/appendices/3.2/7-NOAA-SPC-tornado-2.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/appendices/3.3/1-IRKIS-1-1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/appendices/3.3/1-IRKIS-2-1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/appendices/3.4/5-ElNino-7.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/appendices/commands.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/bibliography/IEEEabrv.bib" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/bibliography/IEEEexample.bib" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/bibliography/IEEEfull.bib" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/bibliography/library1.bib" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/bibliography/library2.bib" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/bibliography/trash.bib" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/0-Abstract/Abstract.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/1-Introduction/Introduction.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/2-Datasets/00-Intro.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/2-Datasets/01-DataFormat.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/2-Datasets/02-IRKIS.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/2-Datasets/03-SST.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/2-Datasets/04-ADCP.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/2-Datasets/05-ElNino.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/2-Datasets/06-Solar.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/2-Datasets/07-Hail.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/2-Datasets/08-Tornado.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/2-Datasets/09-Wind.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/2-Datasets/10-Summary.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/2-Datasets/Datasets.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/2-Datasets/other/dataset-commands.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/2-Datasets/other/table-csvexample.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/2-Datasets/other/table-datasets-1.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/2-Datasets/other/table-datasets-2.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/2-Datasets/stats-tables/1-IRKIS-stats.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/2-Datasets/stats-tables/2-SST-stats.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/2-Datasets/stats-tables/3-ADCP-stats.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/2-Datasets/stats-tables/4-ElNino-stats.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/2-Datasets/stats-tables/5-Solar-stats.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/2-Datasets/stats-tables/6-Hail-stats.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/2-Datasets/stats-tables/7-Tornado-stats.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/2-Datasets/stats-tables/8-Wind-stats.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/00-Intro.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/01-Introduction.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/02-General.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/03-Gaps.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/04-Base.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/05-PCA.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/06-APCA.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/07-DecoLinear.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/08-PWLH.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/09-CA.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/10-SF.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/11-FR.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/12-GAMPS.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/13-Details.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/Algorithms.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/apca/apca1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/apca/apca2.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/apca/apca3.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/ca/ca1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/ca/ca2.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/ca/ca3.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/ca/ca4.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/ca/ca5.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/ca/ca6.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/ca/ca7.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/ca/ca8.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/ca/ca9.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/ca_intro/ca1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/ca_intro/ca2.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/examples.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/fr/fr1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/fr/fr2.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/fr/fr3.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/fr/fr4.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/gamps/gamps1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/gamps/gamps2.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/linear.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/pca/pca1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/pca/pca2.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/pca/pca3.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/pca/pca4.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/pwlh/pwlh1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/pwlh/pwlh10.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/pwlh/pwlh2.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/pwlh/pwlh3.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/pwlh/pwlh4.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/pwlh/pwlh5.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/pwlh/pwlh6.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/pwlh/pwlh7.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/pwlh/pwlh8.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/pwlh/pwlh9.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/pwlh_intro/pwlh1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/pwlh_intro/pwlh2.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/sf/sf1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/sf/sf10.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/sf/sf11.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/sf/sf2.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/sf/sf3.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/sf/sf4.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/sf/sf5.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/sf/sf6.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/sf/sf7.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/sf/sf8.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/sf/sf9.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/sf_intro/sf1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/sf_intro/sf2.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/other/algo-table.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/other/markov-states.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/00-Common/Common-Algo.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/00-Common/Common-Text.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/00-Common/Common.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/02-General/Sub-C.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/04-Base/Base-C.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/05-PCA/PCA-M-C.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/05-PCA/PCA-M-D.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/05-PCA/PCA-NM-C.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/06-APCA/APCA-M-C.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/06-APCA/APCA-M-D.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/06-APCA/APCA-Win-M-C.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/07-DecoLinear/DecoLinear.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/08-PWLH/PWLH-M-C.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/08-PWLH/PWLH-M-D.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/08-PWLH/PWLH-Win-C.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/08-PWLH/PWLH-WinLast-C.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/09-CA/CA-M-C.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/09-CA/CA-M-D.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/09-CA/CA-WinEnd-C.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/09-CA/CA-WinStart-C.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/10-SF/SF-M-C.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/10-SF/SF-M-D.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/10-SF/SF-Point-C.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/10-SF/SF-Point-D.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/10-SF/SF-WinEnd-C.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/10-SF/SF-WinEndStart-C.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/10-SF/SF-WinStart-C.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/11-FR/FR-M-C.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/11-FR/FR-M-C2.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/11-FR/FR-M-D.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/12-GAMPS/GAMPS-M-C.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/4-Experiments/0-Intro.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/4-Experiments/1-Setting.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/4-Experiments/2-Comparison.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/4-Experiments/3-WindowSize.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/4-Experiments/4-Performance.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/4-Experiments/4.1-Gzip.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/4-Experiments/4.2-Timestamp.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/4-Experiments/Experiments.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/4-Experiments/other/table-commands.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/4-Experiments/other/table-results-timestamp.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/4-Experiments/python/table-minmax-1.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/4-Experiments/python/table-minmax-2.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/4-Experiments/python/table-relative.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/4-Experiments/python/table-results-1.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/4-Experiments/python/table-results-2.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/4-Experiments/python/table-windows.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/5-Conclusions/Conclusions.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/main.loa" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/main.lof" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/main.lot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/main.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/main.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/main/0_config.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/main/1_config_extra.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/main/2_title_page.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/main/3_abstract_page.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/main/4_contents.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/main/5_chapters.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/main/6_appendices.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/main/7_bibliography.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/main/8_glossary.tex" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataset_parser/src/bq-helper" afterPath="$PROJECT_DIR$/dataset_parser/src/bq-helper" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/Thesis.cls" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/Thesis.cls" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/Thesis.cls" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/Thesis.cls" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cpp_project/external/ari/modelA.h" afterPath="$PROJECT_DIR$/cpp_project/external/ari/modelA.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="pc-tesis.iws" />
@@ -110,24 +788,10 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pc-tesis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pc-tesis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="informe" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -357,15 +1021,15 @@
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2494043" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34597877" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34493193" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
