@@ -74,11 +74,11 @@ class Run:
 # Run.relative_performance()
 
 # (3.3) Window Size Parameter
-Run.window_parameter()
+# Run.window_parameter()
 
 
 # (3.4) Mask Coders Performance
-# Run.mask_coders()
+Run.mask_coders()
 # Run.mask_coders_and_gzip()
 
 
