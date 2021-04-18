@@ -78,8 +78,8 @@ class Run:
 
 
 # (3.4) Mask Coders Performance
-Run.mask_coders()
-# Run.mask_coders_and_gzip()
+# Run.mask_coders()
+Run.mask_coders_and_gzip()
 
 
 
