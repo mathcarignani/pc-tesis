@@ -68,10 +68,10 @@ class Run:
 # Run.compress_script()
 
 # (2) Globalize the result files generated in step (1)
-Run.globalize_results()
+# Run.globalize_results()
 
 # (3.2) Relative Performance of the Coders
-# Run.relative_performance()
+Run.relative_performance()
 
 # (3.3) Window Size Parameter
 # Run.window_parameter()
