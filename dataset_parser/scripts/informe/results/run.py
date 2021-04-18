@@ -23,7 +23,7 @@ class Run:
     @classmethod
     def compress_script(cls):
         CompressScript("results_NM.csv", "NM").run()
-        # CompressScript("results_M.csv", "M").run()
+        CompressScript("results_M.csv", "M").run()
 
     @classmethod
     def globalize_results(cls):

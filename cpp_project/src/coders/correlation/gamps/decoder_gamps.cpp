@@ -62,7 +62,9 @@ void DecoderGAMPS::decodeMappingTable(){
         vector.push_back(base_column_index);
     }
     mapping_table = new MappingTable(vector);
+#if COUT
     mapping_table->print(total_groups, group_index);
+#endif
 }
 
 void DecoderGAMPS::decodeNoDataColumns(){

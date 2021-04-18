@@ -36,19 +36,20 @@ class ExperimentsUtils(object):
 
     DATASET_NAMES = [obj['name'] for obj in DATASETS_ARRAY]
 
-    # DATASET_ARRAY = [
-    #     {'name': 'CO2', 'folder': "CO2", 'logger': "CO2.log", 'o_folder': "CO2"},
-    #     {'name': 'Humidity', 'folder': "Humidity", 'logger': "Humidity.log", 'o_folder': "Humidity"},
-    #     {'name': 'Lysimeter', 'folder': "Lysimeter", 'logger': "Lysimeter.log", 'o_folder': "Lysimeter"},
-    #     {'name': 'Moisture', 'folder': "Moisture", 'logger': "Moisture.log", 'o_folder': "Moisture"},
-    #     {'name': 'Pressure', 'folder': "Pressure", 'logger': "Pressure.log", 'o_folder': "Pressure"},
-    #     {'name': 'Radiation', 'folder': "Radiation", 'logger': "Radiation.log", 'o_folder': "Radiation"},
-    #     {'name': 'Snow_height', 'folder': "Snow_height", 'logger': "Snow_height.log", 'o_folder': "Snow_height"},
-    #     {'name': 'Temperature', 'folder': "Temperature", 'logger': "Temperature.log", 'o_folder': "Temperature"},
-    #     {'name': 'Voltage', 'folder': "Voltage", 'logger': "Voltage.log", 'o_folder': "Voltage"},
-    #     {'name': 'Wind_direction', 'folder': "Wind_direction", 'logger': "Wind_direction.log", 'o_folder': "Wind_direction"},
-    #     {'name': 'Wind_speed', 'folder': "Wind_speed", 'logger': "Wind_speed.log", 'o_folder': "Wind_speed"},
-    # ]
+    CODERS_ARRAY = [
+        {   'name': 'CoderBase',       'o_folder': 'base' },
+        {   'name': 'CoderPCA',        'o_folder': 'pca',         'params': {'window_size': WINDOWS} },
+        {   'name': 'CoderAPCA',       'o_folder': 'apca',        'params': {'window_size': WINDOWS} },
+        {   'name': 'CoderCA',         'o_folder': 'ca',          'params': {'window_size': WINDOWS} },
+        {   'name': 'CoderPWLH',       'o_folder': 'pwlh',        'params': {'window_size': WINDOWS} },
+        {   'name': 'CoderPWLHInt',    'o_folder': 'pwlh-int',    'params': {'window_size': WINDOWS} },
+        {   'name': 'CoderGAMPSLimit', 'o_folder': 'gamps-limit', 'params': {'window_size': WINDOWS} },
+    ]
+
+    MASK_MODE_CODERS_ARRAY = [
+        {   'name': 'CoderFR',         'o_folder': 'fr',          'params': {'window_size': WINDOWS} },
+        {   'name': 'CoderSF',         'o_folder': 'sf',          'params': {'window_size': WINDOWS} }
+    ]
 
     @staticmethod
     def coders_array(mask_mode):
@@ -112,19 +113,3 @@ class ExperimentsUtils(object):
             return "No gaps"
 
     CSV_PATH = OSUtils.datasets_csv_path()
-
-    CODERS_ARRAY = [
-        {   'name': 'CoderBase',       'o_folder': 'base' },
-        {   'name': 'CoderPCA',        'o_folder': 'pca',         'params': {'window_size': WINDOWS} },
-        {   'name': 'CoderAPCA',       'o_folder': 'apca',        'params': {'window_size': WINDOWS} },
-        {   'name': 'CoderCA',         'o_folder': 'ca',          'params': {'window_size': WINDOWS} },
-        {   'name': 'CoderPWLH',       'o_folder': 'pwlh',        'params': {'window_size': WINDOWS} },
-        {   'name': 'CoderPWLHInt',    'o_folder': 'pwlh-int',    'params': {'window_size': WINDOWS} },
-        # # {   'name': 'CoderGAMPS',      'o_folder': 'gamps',       'params': {'window_size': WINDOWS} },
-        {   'name': 'CoderGAMPSLimit', 'o_folder': 'gamps-limit', 'params': {'window_size': WINDOWS} },
-    ]
-
-    MASK_MODE_CODERS_ARRAY = [
-        {   'name': 'CoderFR',         'o_folder': 'fr',          'params': {'window_size': WINDOWS} },
-        {   'name': 'CoderSF',         'o_folder': 'sf',          'params': {'window_size': WINDOWS} }
-    ]
