@@ -1,0 +1,29 @@
+
+
+\section{Introduction}
+\label{algo:overview}
+
+\vspace{-1pt}
+We focus on compression algorithms for multichannel signals with irregular sampling rates and with data gaps. Signals with these characteristics are often observed in datasets gathered by WSNs, where different groups of sensors may be out of sync, some might malfunction, and errors may arise when acquiring, transmitting or storing the data. For example, this occurs in the experimental datasets presented in Chapter~\ref{datasets}. However, state-of-the-art algorithms designed for sensor data compression reported in the literature \cite{AnEva2013, Signal2016} assume, in general, that the signals have regular sampling rate and that there are no gaps in the data. Therefore, in this chapter we introduce a number of variants of state-of-the-art algorithms that we design and implement, which are adapted so they are able to encode multichannel signals with irregular sampling rates and data gaps. In Chapter~\ref{experiments} we evaluate their compression performance experimentally.
+
+
+\newcommand{\spaceForThisSection}{\vspace{+1.5pt}}
+\spaceForThisSection
+The original state-of-the-art algorithms, as well as our adapted variants, support \textit{near-lossless} compression: they guarantee a bounded per-sample absolute error,  specified through parameter \maxerror, between the decompressed and the original signals. When \maxerror is zero, the compression is \textit{lossless}: the decompressed and the original signals are identical. For most algorithms we implement two variants: a \textit{masking (\maskalgo)} variant, which first encodes the position of all the data gaps, and then proceeds to encode the data values separately, and a \textit{non-masking (\NOmaskalgo)} variant, which encodes the gaps and the data values together. In both variants, regardless of the value of parameter \maxerror, the gaps in a decompressed signal match the gaps in the original signal exactly. In Section~\ref{secX:rendimiento-relativo}, we compare the compression performance of both variants, \maskalgo\ and \NOmaskalgo, for every evaluated algorithm that supports both.
+
+
+\spaceForThisSection
+Except from algorithm Base (a trivial lossless algorithm described in Section \ref{algo:base}), all our algorithm variants parse the input data into windows, which are encoded in sequence (and, in most cases, independently). The size of these windows depends on a parameter denoted $\win$. In both variants of algorithm PCA (presented in Section~\ref{algo:pca}), parameter $w$ defines a \textit{fixed window size}, while for the rest of the algorithm variants it defines a \textit{maximum window size}. More details are presented with the specific description of each algorithm, later in this chapter. In Section~\ref{secX:windows} we analyze the sensitivity of the algorithm variants to parameter $w$, in terms of their compression performance.
+% Algorithm GAMPS, to be presented in Section~\ref{algo:gamps}, is an \textit{offline algorithm}: it is given all of the data to be compressed as one of its inputs. On the other hand, the rest of the algorithms are \textit{online algorithms}, since they receive the data to be compressed sequentially. 
+
+
+\spaceForThisSection
+The original algorithms and our proposed variants follow a model-based compression approach: they compress signals by exploiting \textit{temporal correlation} (i.e. correlation between signal samples taken at close times), and, in some cases, \textit{spatial correlation} (i.e. correlation between samples from different channels). They offer an efficient compression performance, as well as some data processing features, such as inferring uncertain sensor readings, detecting outliers, indexing, etc. \cite{AnEva2013}. The model-based techniques are classified into different categories, depending on the type of model: \textit{constant models} approximate signals by piecewise constant functions, \textit{linear models} use linear functions, and \textit{correlation models} simultaneously encode multiple signals exploiting temporal and spatial correlation. In this chapter, we propose variants for eight different compression algorithms: PCA \cite{coder:pca} and APCA \cite{coder:apca} (constant model algorithms); PWLH \cite{coder:pwlh}, PWLHInt (see Subsection~\ref{algo:pwhl:int}), CA \cite{coder:ca}, SF \cite{coder:sf}, and FR \cite{coder:fr} (linear model algorithms); and GAMPS \cite{coder:gamps} (correlation model algorithm). In Section~\ref{secX:codersmask} we compare the compression performance of our adapted algorithm variants, with each other, and with the general-purpose lossless compression algorithm gzip \cite{gzip}.
+
+
+\spaceForThisSection
+In Table~\ref{algo:table:overview} we outline some characteristics of the evaluated algorithm variants. For each algorithm, the second and third columns indicate whether it supports lossless and near-lossless compression, respectively, the fourth column shows its compression model, the fifth and sixth columns indicate if the masking (\maskalgo) and non-masking (\NOmaskalgo) variants apply, respectively, and the last column specifies if the algorithm depends on a window size parameter ($w$). Algorithm Base is a trivial lossless algorithm that is used as a base ground for comparing the performance of the remaining algorithms, all of which support both lossless and near-lossless encoding.
+
+
+\input{chapters/3-Algorithms/other/algo-table}
+

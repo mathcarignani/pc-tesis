@@ -1,0 +1,22 @@
+
+\newcommand{\parseWindowsPCA}{Parse \column\ into consecutive non-overlapping windows of size $\win$, except possibly for the last window that may consist of fewer samples}
+\newcommand{\forEachWindowPCA}{\textnormal{window in the parsing,} \window\commaa}
+
+\beginAlgorithm
+\onlyInput{\columnInput\\\outVarM{PCA}\\\cInputThreshold\\\cInputWindowPCA}
+\parseWindowsPCA\\
+\ForEach{\forEachWindowPCA}{
+    \calculateMinMax, respectively\\
+    \uIf{\validThreTwo}{
+        \codeBit{0}\\
+        \calculateMidrange\\
+        \encodeSpecific{$\midrange$}
+    }
+    \Else{
+        \codeBit{1}\\
+        \ForEach{\eachValueInWindow}{
+            \encodeSpecific{$\valuev$}
+        }
+    }
+}
+\EndAlgorithmVariantM{Coding}{\coderPCA}{\label{pseudoCoderPCAM}}

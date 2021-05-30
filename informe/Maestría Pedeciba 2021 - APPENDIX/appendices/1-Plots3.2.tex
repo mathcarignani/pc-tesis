@@ -1,0 +1,26 @@
+% Chapter ?
+\chapter{Figures: Comparison of Masking and Non-Masking Variants} % Main chapter title
+\label{plots32} % For referencing the chapter elsewhere, use \ref{Chapter1} 
+
+\lhead{Appendix A. \emph{Figures: Comparison of Masking and Non-Masking Variants}} % This is for the header on each page - perhaps a shortened title
+
+\newcommand{\threetwolist}[3]{%
+    \foreach \x [count=\xi] in {#3} {
+        \threetwosingle{#1-\xi}{{#2}}{\x}{}{}
+    }%
+}
+
+\threetwosingle{1-IRKIS-1}{\datasetirkis}{VWC}{}{}
+\threetwosingle{2-NOAA-SST-1}{\datasetsst}{SST}{\threetwomost}{}
+\threetwosingle{3-NOAA-ADCP-1}{\datasetadcp}{Velocity}{}{}
+
+\threetwolist{4-SolarAnywhere}{\datasetsolar}{GHI, DNI, DHI}
+\threetwolist{5-ElNino}{\datasetelnino}{Latitude, Longitude, Zon. Wind, Mer. Wind, Humidity, Air Temp., Sea Temp.}
+\threetwolist{6-NOAA-SPC-hail}{\datasethail}{Latitude, Longitude, Size}
+
+% cannot use the list command because of the \threetwoleast command
+% \threetwolist{7-NOAA-SPC-tornado}{\datasettornado}{Latitude, Longitude}
+\threetwosingle{7-NOAA-SPC-tornado-1}{\datasettornado}{Latitude}{}{}
+\threetwosingle{7-NOAA-SPC-tornado-2}{\datasettornado}{Longitude}{\threetwoleast}{}
+
+\threetwolist{8-NOAA-SPC-wind}{\datasetwind}{Latitude, Longitude, Speed}

@@ -1,0 +1,88 @@
+
+\section{Algorithm FR}
+\label{algo:fr}
+
+
+Algorithm \textit{\FRfull} \cite{coder:fr} is a linear model algorithm that supports lossless and near-lossless compression. Its computational complexity is fairly low, since it was designed by the European Space Association (ESA) to be run on spacecraft and planetary probes. \WindowParam \SingleVariant{FR}.
+
+FR is a linear model algorithm, so its encoding process involves encoding a sequence of line segments. In Figure~\ref{pseudoCoderFRM} we show the coding routine for variant \maskalgo, in which all the column entries are integer values (the gaps are encoded separately). The column entries are parsed into consecutive non-overlapping windows of size $\win$ (\Line 1). The sample points in each window are modeled by a total of between one and $w-1$ connected line segments, whose respective endpoints, called the \textit{displaced points}, are obtained using a simple recursive technique called \textit{mid-point displacement (MPD)}. In each iteration, the set of displaced points obtained for the window, $\window$, is a subset of the sample points in $\window$.
+
+
+Since parameter \win\ is always greater than 1, the condition in \Line 3 might only be satisfied in the last iteration, which corresponds to the last window. In the rest of the cases, an empty list, \disPoints, is created (\Line 7), and passed to a recursive auxiliary routine \getDisplacedPointsMethod\ (\Line 8). This routine fills the list with the indexes (relative to \window, in ascending order) corresponding to the displaced points obtained for $\window$. The first and last entries in \disPoints\ are always 0 and $\win-1$, respectively, since the first endpoint of the first segment is always the first point in $\window$, and the last endpoint of the last segment is always the last point in $\window$. In \Lines 9-12, each of the displaced points obtained for $\window$ is encoded, using $\logWinSize$ bits for encoding its index (relative to \window), \indexx, and \tobitexp for encoding its y-coordinate.
+
+
+\clearpage
+
+
+\input{chapters/3-Algorithms/pseudo/11-FR/FR-M-C}
+
+
+\vspace{-4pt}
+In Figure~\ref{pseudoCoderFRM2} we present the recursive routine \getDisplacedPointsMethod. In each execution, a line segment, with endpoints \pointo\ and \pointf, defined in \Lines 3-4, is evaluated as a candidate to model all the points in $\window$ whose index is between $\firstIndex$ and $\lastIndex$. If the segment satisfies the \textit{valid segment condition}, defined in \Line 5, the absolute error between the encoded and the original samples corresponding to that segment is guaranteed to be less than or equal to \maxerror, so no further steps are required. If that is not the case, two recursive calls are made to the routine (\Lines 8-9). In each call, a line segment is evaluated as a candidate to model a certain set of points in $\window$. Notice that the segments evaluated in the first and in the second call are connected by the middle point (see \half\ definition in \Line 7). This is what gives the MPD technique its name.
+
+
+% \vspace{-2pt}
+\input{chapters/3-Algorithms/pseudo/11-FR/FR-M-C2}
+
+
+\clearpage
+
+
+The decoding routine for variant \maskalgo is shown in Figure~\ref{pseudoDecoderFRM}. It consists of a loop that keeps running until every entry in the column has been decoded, which occurs when condition in \Line 2 becomes false. In each iteration of the loop, a window is decoded (\Lines 3-26). Since \win\ is always greater than 1, the condition in \Line 4 may only be satisfied in the last iteration (notice that \Lines 4-8 are correlated with \Lines 3-6 in the coding routine). In the rest of the cases, the size of the encoded window is always equal or greater than 2, so the data samples are decoded by means of obtaining the endpoints of the one or more line segments that model the points in a window. The first endpoint of the first segment is decoded in \Lines 9-12, while the last endpoint of each segment, which later becomes the first endpoint of each respective subsequent segment (\Line 24), is decoded in \Lines 14-17. Next, auxiliary routine \decodeSegment is called, with the coordinates of both endpoints of the segment as inputs (\Line 18). Routine \decodeSegment (recall Figure~\ref{pseudoDecoLinear}) returns a list consisting of the (integer) sample values that are decoded from the segment, which are then written in the decoded CSV data file (\Lines 19-23). The conditional statement in \Line 20 is meant to avoid writing the sample value associated to the last endpoint of a segment, for every segment that models the points in the window, except in the case of the last segment. Otherwise, those sample values would be written in the decoded data file twice, since in each window, the last endpoint of a segment always coincides with the first endpoint of the subsequent segment.
+
+
+\vspace{+10pt}
+\input{chapters/3-Algorithms/pseudo/11-FR/FR-M-D}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\clearpage
+\subsection{Example}
+\label{algo:fr:example}
+
+
+\exampleIntro{\ref{example:fr:1}}
+
+
+Since there are only 12 samples to encode, a single window, $\window$, including the 12 sample points, is created in \Line 1 of the coding routine. In this case, since $|\window|$ is greater than 1, the window is encoded in \Lines 7-12. 
+
+
+In \Line 8, the auxiliary routine \getDisplacedPointsMethod, presented in Figure~\ref{pseudoCoderFRM2}, is invoked with the following inputs: $\window$, $\maxerror=1$, $\disPoints=[]$, $\firstIndex = 0$, and $\lastIndex = 11$. Figure~\ref{example:fr:1} shows the information after \Lines 1-5 in said routine are executed. $\disPoints$ is equal to $[(t_1,1), (t_{12},1)]$, and \segment\ is the line segment whose endpoints are $(t_1,1)$ and $(t_{12},1)$. In this case, the valid segment condition is not satisfied, i.e. \validSegment\ is false, since there are three points in $\window$, for which the vertical distance to \segment\ is greater than~\maxerror. These points are $(t_7,3)$, $(t_8,3)$, and $(t_9,4)$. Since \validSegment\ is false, $\half=\floor{11/2}=5$ is obtained (\Line 7), and two recursive calls to routine \getDisplacedPointsMethod\ are made (\Lines 8-9).
+
+
+\exampleStep{fr}{1}{\label{example:fr:1}}{1}
+
+
+The first recursive call has inputs $\disPoints=[(t_1,1), (t_{12},1)]$, $\firstIndex = 0$ and $\lastIndex = 5$, and it adds a single point to $\disPoints$, making it equal to $[(t_1,1), (t_{6},2), (t_{12},1)]$. In this case, \segment\ is the line segment whose endpoints are $(t_1,1)$ and $(t_{6},2)$, and the valid segment condition is satisfied, since there are no points in $\window$, with indexes between $0$ and $5$, for which the vertical distance to \segment\ is greater than~\maxerror. This is shown in Figure~\ref{example:fr:2}. Since the valid segment condition is satisfied in the execution of the first recursive call, no further calls are made to the recursive routine.
+
+
+\clearpage
+
+
+% \vspace{-5pt}
+\exampleStep{fr}{2}{\label{example:fr:2}}{2}
+
+
+However, this is not the case in the execution of the second recursive call, which has inputs $\disPoints=[(t_1,1), (t_{6},2), (t_{12},1)]$, $\firstIndex = 5$ and $\lastIndex = 11$. Here, Figure~\ref{example:fr:2} shows that the valid segment condition is violated by three points in the window (the same three points as before). Once again, \validSegment\ is false, $\half=\floor{(5 + 11) / 2}=8$ is obtained, and two recursive calls to the routine \getDisplacedPointsMethod\ are made. In the first execution, point $(t_9,4)$ is added to $\disPoints$. The valid segment condition is satisfied in both executions, so in both cases no further calls are made to the recursive routine. 
+
+
+After the original invocation of the routine \getDisplacedPointsMethod\ is completed (\Line 8 in the coding routine, shown in Figure~\ref{pseudoCoderFRM}), list $\disPoints$ is equal to $[(t_1,1), (t_{6},2), (t_9,4), (t_{12},1)]$. This information is shown in Figure~\ref{example:fr:3}. Observe that, for every point in $\window$, its vertical distance to the corresponding segment is at most~\maxerror.
+
+
+\vspace{+5pt}
+\exampleStep{fr}{3}{\label{example:fr:3}}{3}
+
+
+\clearpage
+
+
+In this example, the sample points in $\window$ are modeled by three connected line segments. Their respective endpoints are the four displaced points obtained with the recursive MPD technique, i.e. $(t_1,1)$, $(t_6,2)$, $(t_9,4)$, and $(t_{12},1)$, which are encoded in \Lines 9-12 of the coding routine. Encoding an endpoint requires $\logWinSize = \logWinSizeOpt{256}=8$ bits for encoding its \window\ index, and \tobitexp for encoding its y-coordinate. The four encoded endpoints and the associated segments are shown in Figure~\ref{example:fr:4}. In this figure we also display the values of the decoded samples, which are the values that the decoding routine, shown in Figure~\ref{pseudoDecoderFRM}, writes to the decoded CSV data file. 
+
+
+\vspace{+5pt}
+\exampleStep{fr}{4}{\label{example:fr:4}}{4}
+

@@ -1,0 +1,36 @@
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - CHAPTERS
+%----------------------------------------------------------------------------------------
+
+\mainmatter % Begin numeric (1,2,3...) page numbering
+
+\pagestyle{fancy} % Return the page headers back to the "fancy" style
+
+% Include the chapters of the thesis as separate files from the Chapters folder
+% Uncomment the lines as you write the chapters
+
+
+
+\newcommand{\wglobal}{\textit{global}}
+\newcommand{\wlocal}{\textit{local}}
+\newcommand{\WGlobal}{$w_{\wglobal}^{*}$}
+\newcommand{\WLocal}{$w_{\wlocal}^{*}$}
+
+\newcommand{\PCAfull}{Piecewise Constant Approximation (PCA)}
+\newcommand{\APCAfull}{Adaptive Piecewise Constant Approximation (APCA)}
+\newcommand{\PWLHfull}{PieceWise Linear Histogram (PWLH)}
+\newcommand{\CAfull}{Critical Aperture (CA)}
+\newcommand{\SFfull}{Slide Filter (SF)}
+\newcommand{\FRfull}{Fractal Resampling (FR)}
+\newcommand{\GAMPSfull}{Grouping and AMPlitude Scaling (GAMPS)}
+
+\newcommand{\dataCite}{\cite{dataset:irkis, dataset:sst1, dataset:elnino, dataset:solar, dataset:spc}}
+
+
+
+\setstretch{1.1}
+\input{chapters/1-Introduction/Introduction}
+\input{chapters/2-Datasets/Datasets}
+\input{chapters/3-Algorithms/Algorithms}
+\input{chapters/4-Experiments/Experiments}
+\input{chapters/5-Conclusions/Conclusions}

@@ -1,0 +1,28 @@
+
+
+\newcommand{\forEachColumnCoder}{\column \textnormal{ in \file.\dataColumns}}
+
+\beginAlgorithm
+\inputAndOutput{\cInputFile\\ \cInputVariant\\ \cInputThresholdOpt\\ \cInputWindowOpt}{\cOutputFileA}
+Create output file \out\\
+Encode an algorithm identification key, variant key \variant, and parameter \win\ (if applicable)\\
+Encode the header of the input file\\
+Encode the timestamp column using algorithm variant \NonMaskVar{APCA}\\
+\If{\maskMode}{
+Encode gap locations in each signal column of the input file (independently) into \out\\
+}
+\uIf{\textnormal{we are using a constant or linear model algorithm}}{
+    Encode each signal column of the input file (independently) into \out, using the coding routine for variant \variant\ of a specific algorithm (i.e. Base, PCA, APCA, PWLH, PWLHInt, CA, SF, FR)
+}
+\ElseIf{\textnormal{we are using a correlation model algorithm}}{
+    Encode all the signal columns of the input file into \out, using the coding routine for variant \variant\ of a specific algorithm (i.e. GAMPS)
+}
+\returnn \out\\
+\EndPseudo{General encoding scheme for the evaluated algorithm variants.}{\label{pseudoCodeCommon}}
+
+
+\newcommand{\encodedColumns}{\text{encoded\_columns}}
+\newcommand{\forEachColumnDecoder}{\encodedColumn \textnormal{ in \file.\encodedColumns}}
+\newcommand{\whileFileLeftToDecode}{$\notCond\ \file.\textnormal{reached\_eof?}$}
+
+\newcommand{\decodeColParams}{\file, \out, \win, \textit{\tsColumn}}

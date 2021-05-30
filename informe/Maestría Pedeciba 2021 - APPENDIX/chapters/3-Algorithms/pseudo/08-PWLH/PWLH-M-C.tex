@@ -1,0 +1,25 @@
+
+
+\beginAlgorithm
+\onlyInput{\columnInput\\\outVarM{PWLH}\\\cInputThreshold\\\cInputWindowAPCA\\\inputTSCol}
+\createWindowOne\\
+\ForEach{\forEachEntryCoder}{
+    \obtainTS\\
+    \letPoint\\
+    \If{\firstIteratCA}{
+        \appendIncoming\\
+        \continueAlgo\\
+    }
+    Let \PWLHSet\ be the set of points in the \extendedWin\\
+    Let \hull\ be the convex hull of \PWLHSet\\
+    Let \validHull\ be true iff \hull\ satisfies the valid hull condition, defined in \ref{def:validHull}, for \maxerror\\
+    \If{\nott\,\validHull \orr \windowFull\ }{
+        \encodeWindowPWLH\\
+        \createWindowTwo\\
+    }
+    \appendIncoming\\
+}
+\If{\winNoEmpty}{
+    \encodeLastWindowPWLH\\
+}
+\EndAlgorithmVariantM{Coding}{\coderPWLH}{\label{pseudoCoderPWLHM}}

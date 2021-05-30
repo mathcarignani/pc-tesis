@@ -1,0 +1,12 @@
+
+
+
+\beginAlgorithm
+\onlyInput{\windowInput\\\outVarM{PWLH}\\\cInputWindowAPCA\\\inputTSCol}
+\encodeWindowSizee\\
+Let \segmentSet\ be the set of line segments such that $\lineSeg \in \segmentSet$ iff the x-coordinates of the first and last endpoints of $\lineSeg$ match the x-coordinates of the first and last points in $\window$, resp.\\
+Let $\segment \in \segmentSet$ be the line segment that minimizes the MSE for the points in $\window$ (among the segments included in $\segmentSet$)\\
+Let \sO\ and \sN\ be the y-coordinates of the endpoints of \segment\\
+\codeFloat{\sO}\\
+\codeFloat{\sN}
+\EndAuxVarM{\EncodeWindowCA}{PWLH}{\label{pwlhWindowM}}
