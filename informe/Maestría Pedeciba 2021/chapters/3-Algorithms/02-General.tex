@@ -1,18 +1,21 @@
 
 
-\vspace{-20pt}
+\vspace{-15pt}
 \section{General Encoding Scheme}
 \label{algo:details}
 
 
-\vspace{-5pt}
-Figure~\ref{pseudoCodeCommon} shows a general encoding scheme used for the evaluated algorithm variants. Its inputs are a CSV data file in the format presented in Section~\ref{datasets:over}, a key ($v$) that describes the algorithm variant (either \maskalgo\ or \NOmaskalgo), and the maximum error threshold (\maxerror) and window size (\win) parameters. The output is a binary file, which represents the input file encoded with a compression algorithm using the specified variant and parameters. Constant and linear model algorithms only exploit the temporal correlation in the data, thus they iterate through the data columns and encode each independently (\Line 9). On the other hand, correlation models also exploit the spatial correlation, so the data columns are jointly encoded (\Line 11). The decoding scheme is symmetric.
+Figure~\ref{pseudoCodeCommon} shows a general encoding scheme used for the evaluated algorithm variants. 
 
 
+% \vspace{-3pt}
 \input{chapters/3-Algorithms/pseudo/02-General/Sub-C}
 
 
 \clearpage
+
+
+Its inputs are a CSV data file in the format presented in Section~\ref{datasets:over}, a key ($v$) that describes the algorithm variant (either \maskalgo\ or \NOmaskalgo), and the maximum error threshold (\maxerror) and window size (\win) parameters. The output is a binary file, which represents the input file encoded with a compression algorithm using the specified variant and parameters. Constant and linear model algorithms only exploit the temporal correlation in the data, thus they iterate through the data columns and encode each independently (\Line 9). On the other hand, correlation models also exploit the spatial correlation, so the data columns are jointly encoded (\Line 11). The decoding scheme is symmetric.
 
 
 The timestamp column, which is comprised of integers, is the first column in every CSV data file, and it is also the first column to be encoded (\Line 4). It is always encoded using algorithm variant \NonMaskVar{APCA}. We delve further into the topic of timestamp compression in Subsection~\ref{secX:timestampComp}. 

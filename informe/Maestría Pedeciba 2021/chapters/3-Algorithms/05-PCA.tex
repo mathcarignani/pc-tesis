@@ -14,7 +14,7 @@
 
 
 \vspace{-5pt}
-Algorithm \textit{\PCAfull} \cite{coder:pca} is a constant model algorithm that supports lossless and near-lossless compression. \WindowParam \BothVariantsOne{PCA}.
+Algorithm \textit{\PCAfull} \cite{coder:pca} is a constant model algorithm that supports lossless and near-lossless compression. \Revisor{As its name suggests, it approximates a signal with a piecewise constant function.} \WindowParam \BothVariantsOne{PCA}.
 
 
 In Figure~\ref{pseudoCoderPCAM} we show the coding routine for variant \maskalgo, in which all the column entries are integer values (the gaps are encoded separately). The column entries are parsed into consecutive non-overlapping windows of size $\win$ (\Line 1), and each of these windows is encoded independently (\Lines 3-13). 

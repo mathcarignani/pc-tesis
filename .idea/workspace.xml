@@ -9,303 +9,24 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a3b265d-435b-4566-92e3-11fcb581ca6c" name="Default" comment="Updated pdf and pdf files">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.3/1-IRKIS-1-1.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/appendices/3.3/1-IRKIS-1-1.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.2/1-IRKIS-1.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.4/1-IRKIS-1.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.3/1-IRKIS-2-1.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/appendices/3.3/1-IRKIS-2-1.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.3/1-IRKIS-3-1.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.3/1-IRKIS-4-1.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.3/1-IRKIS-5-1.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.3/1-IRKIS-6-1.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.3/1-IRKIS-7-1.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.3/2-NOAA-SST-1-1.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.2/2-NOAA-SST-1.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.4/2-NOAA-SST-1.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/appendices/3.2/2-NOAA-SST-1.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.3/2-NOAA-SST-2-1.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.3/2-NOAA-SST-3-1.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.3/3-NOAA-ADCP-1-1.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.2/3-NOAA-ADCP-1.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.4/3-NOAA-ADCP-1.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.3/3-NOAA-ADCP-2-1.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.3/3-NOAA-ADCP-3-1.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.3/4-SolarAnywhere-1-1.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.3/4-SolarAnywhere-1-2.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.3/4-SolarAnywhere-1-3.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.2/4-SolarAnywhere-1.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.4/4-SolarAnywhere-1.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.3/4-SolarAnywhere-2-1.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.3/4-SolarAnywhere-2-2.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.3/4-SolarAnywhere-2-3.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.2/4-SolarAnywhere-2.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.4/4-SolarAnywhere-2.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.3/4-SolarAnywhere-3-1.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.3/4-SolarAnywhere-3-2.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.3/4-SolarAnywhere-3-3.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.2/4-SolarAnywhere-3.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.4/4-SolarAnywhere-3.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.3/4-SolarAnywhere-4-1.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.3/4-SolarAnywhere-4-2.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.3/4-SolarAnywhere-4-3.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.2/5-ElNino-1.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.4/5-ElNino-1.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.2/5-ElNino-2.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.4/5-ElNino-2.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.2/5-ElNino-3.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.4/5-ElNino-3.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.2/5-ElNino-4.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.4/5-ElNino-4.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.2/5-ElNino-5.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.4/5-ElNino-5.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.2/5-ElNino-6.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.4/5-ElNino-6.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.2/5-ElNino-7.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.4/5-ElNino-7.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/appendices/3.4/5-ElNino-7.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.2/6-NOAA-SPC-hail-1.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.4/6-NOAA-SPC-hail-1.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.2/6-NOAA-SPC-hail-2.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.4/6-NOAA-SPC-hail-2.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.2/6-NOAA-SPC-hail-3.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.4/6-NOAA-SPC-hail-3.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.2/7-NOAA-SPC-tornado-1.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.4/7-NOAA-SPC-tornado-1.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.2/7-NOAA-SPC-tornado-2.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.4/7-NOAA-SPC-tornado-2.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/appendices/3.2/7-NOAA-SPC-tornado-2.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.2/8-NOAA-SPC-wind-1.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.4/8-NOAA-SPC-wind-1.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.2/8-NOAA-SPC-wind-2.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.4/8-NOAA-SPC-wind-2.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.2/8-NOAA-SPC-wind-3.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3.4/8-NOAA-SPC-wind-3.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX.zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021.zip" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/apca/apca1.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/apca/apca2.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/apca/apca3.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/ca/ca1.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/ca_intro/ca1.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/ca/ca2.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/ca_intro/ca2.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/ca/ca3.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/ca/ca4.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/ca/ca5.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/ca/ca6.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/ca/ca7.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/ca/ca8.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/ca/ca9.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/fr/fr1.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/fr/fr2.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/fr/fr3.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/fr/fr4.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/gamps/gamps1.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/gamps/gamps2.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/linear.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/main.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/main.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/pca/pca1.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/pca/pca2.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/pca/pca3.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/pca/pca4.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/pwlh/pwlh1.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/pwlh_intro/pwlh1.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/pwlh/pwlh10.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/pwlh/pwlh2.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/pwlh_intro/pwlh2.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/pwlh/pwlh3.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/pwlh/pwlh4.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/pwlh/pwlh5.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/pwlh/pwlh6.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/pwlh/pwlh7.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/pwlh/pwlh8.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/pwlh/pwlh9.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/sf/sf1.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/sf_intro/sf1.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/sf/sf10.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/sf/sf11.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/sf/sf2.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/sf_intro/sf2.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/sf/sf3.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/sf/sf4.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/sf/sf5.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/sf/sf6.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/sf/sf7.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/sf/sf8.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/sf/sf9.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/4-Experiments/0-Intro.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/2-Datasets/00-Intro.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/00-Intro.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/2-Datasets/01-DataFormat.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/01-Introduction.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/02-General.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/2-Datasets/02-IRKIS.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/03-Gaps.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/2-Datasets/03-SST.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/2-Datasets/04-ADCP.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/04-Base.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/2-Datasets/05-ElNino.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/05-PCA.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/06-APCA.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/2-Datasets/06-Solar.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/07-DecoLinear.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/2-Datasets/07-Hail.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/08-PWLH.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/2-Datasets/08-Tornado.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/09-CA.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/2-Datasets/09-Wind.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/main/0_config.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/main/0_config.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/2-Datasets/stats-tables/1-IRKIS-stats.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/1-Plots3.2.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/4-Experiments/1-Setting.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/10-SF.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/2-Datasets/10-Summary.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/11-FR.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/12-GAMPS.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/13-Details.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/main/1_config_extra.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/main/1_config_extra.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/4-Experiments/2-Comparison.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/2-Plots3.3.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/2-Datasets/stats-tables/2-SST-stats.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/main/2_title_page.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/main/2_title_page.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/2-Datasets/stats-tables/3-ADCP-stats.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/3-Plots3.4.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/4-Experiments/3-WindowSize.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/main/3_abstract_page.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/main/3_abstract_page.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/2-Datasets/stats-tables/4-ElNino-stats.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/4-Experiments/4-Performance.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/4-Experiments/4.1-Gzip.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/4-Experiments/4.2-Timestamp.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/main/4_contents.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/main/4_contents.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/2-Datasets/stats-tables/5-Solar-stats.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/main/5_chapters.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/main/5_chapters.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/2-Datasets/stats-tables/6-Hail-stats.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/main/6_appendices.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/main/6_appendices.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/2-Datasets/stats-tables/7-Tornado-stats.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/main/7_bibliography.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/2-Datasets/stats-tables/8-Wind-stats.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/main/8_glossary.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/06-APCA/APCA-M-C.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/06-APCA/APCA-M-C.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/06-APCA/APCA-M-D.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/06-APCA/APCA-M-D.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/06-APCA/APCA-Win-M-C.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/06-APCA/APCA-Win-M-C.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/0-Abstract/Abstract.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/Algorithms.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/Algorithms.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/04-Base/Base-C.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/04-Base/Base-C.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/09-CA/CA-M-C.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/09-CA/CA-M-C.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/09-CA/CA-M-D.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/09-CA/CA-M-D.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/09-CA/CA-WinEnd-C.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/09-CA/CA-WinEnd-C.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/09-CA/CA-WinStart-C.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/09-CA/CA-WinStart-C.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/00-Common/Common-Algo.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/00-Common/Common-Algo.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/00-Common/Common-Text.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/00-Common/Common-Text.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/00-Common/Common.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/00-Common/Common.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/5-Conclusions/Conclusions.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/2-Datasets/Datasets.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/07-DecoLinear/DecoLinear.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/07-DecoLinear/DecoLinear.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/4-Experiments/Experiments.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/4-Experiments/Experiments.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/11-FR/FR-M-C.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/11-FR/FR-M-C.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/11-FR/FR-M-C2.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/11-FR/FR-M-C2.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/11-FR/FR-M-D.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/11-FR/FR-M-D.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/12-GAMPS/GAMPS-M-C.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/12-GAMPS/GAMPS-M-C.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/bibliography/IEEEabrv.bib" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/bibliography/IEEEabrv.bib" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/bibliography/IEEEexample.bib" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/bibliography/IEEEexample.bib" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/bibliography/IEEEfull.bib" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/bibliography/IEEEfull.bib" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/1-Introduction/Introduction.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/05-PCA/PCA-M-C.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/05-PCA/PCA-M-C.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/05-PCA/PCA-M-D.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/05-PCA/PCA-M-D.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/05-PCA/PCA-NM-C.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/05-PCA/PCA-NM-C.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/08-PWLH/PWLH-M-C.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/08-PWLH/PWLH-M-C.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/08-PWLH/PWLH-M-D.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/08-PWLH/PWLH-M-D.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/08-PWLH/PWLH-Win-C.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/08-PWLH/PWLH-Win-C.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/08-PWLH/PWLH-WinLast-C.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/08-PWLH/PWLH-WinLast-C.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/10-SF/SF-M-C.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/10-SF/SF-M-C.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/10-SF/SF-M-D.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/10-SF/SF-M-D.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/10-SF/SF-Point-C.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/10-SF/SF-Point-C.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/10-SF/SF-Point-D.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/10-SF/SF-Point-D.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/10-SF/SF-WinEnd-C.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/10-SF/SF-WinEnd-C.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/10-SF/SF-WinEndStart-C.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/10-SF/SF-WinEndStart-C.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/10-SF/SF-WinStart-C.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/10-SF/SF-WinStart-C.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/chapters/3-Algorithms/pseudo/02-General/Sub-C.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/pseudo/02-General/Sub-C.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/Thesis.cls" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/Thesis.cls" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/other/algo-table.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/appendices/commands.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/appendices/commands.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/2-Datasets/other/dataset-commands.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/examples/examples.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/bibliography/library1.bib" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/bibliography/library1.bib" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/bibliography/library2.bib" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/bibliography/library2.bib" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/main.loa" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/main.loa" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/main.lof" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/main.lof" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/main.lot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/main.lot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/main.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/main.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/other/markov-states.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/4-Experiments/other/table-commands.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/2-Datasets/other/table-csvexample.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/2-Datasets/other/table-datasets-1.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/2-Datasets/other/table-datasets-2.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/4-Experiments/python/table-minmax-1.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/4-Experiments/python/table-minmax-2.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/4-Experiments/python/table-relative.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/4-Experiments/python/table-results-1.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/4-Experiments/python/table-results-2.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/4-Experiments/other/table-results-timestamp.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/4-Experiments/python/table-windows.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021 - APPENDIX/bibliography/trash.bib" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/bibliography/trash.bib" />
+    <list default="true" id="0a3b265d-435b-4566-92e3-11fcb581ca6c" name="Default" comment="Informe entregado al revisor de la tesis">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/informe/Maestri_a_Pedeciba_2021.pdf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021.zip" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021.zip" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dataset_parser/src/bq-helper" afterPath="$PROJECT_DIR$/dataset_parser/src/bq-helper" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cpp_project/external/ari/modelA.h" afterPath="$PROJECT_DIR$/cpp_project/external/ari/modelA.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/01-Introduction.tex" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/01-Introduction.tex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/02-General.tex" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/02-General.tex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/03-Gaps.tex" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/03-Gaps.tex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/04-Base.tex" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/04-Base.tex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/05-PCA.tex" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/05-PCA.tex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/06-APCA.tex" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/06-APCA.tex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/12-GAMPS.tex" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/3-Algorithms/12-GAMPS.tex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/main/2_title_page.tex" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/main/2_title_page.tex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/4-Experiments/4.1-Gzip.tex" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/4-Experiments/4.1-Gzip.tex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/5-Conclusions/Conclusions.tex" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/5-Conclusions/Conclusions.tex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/1-Introduction/Introduction.tex" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/chapters/1-Introduction/Introduction.tex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/Thesis.cls" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/Thesis.cls" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/bibliography/library2.bib" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/bibliography/library2.bib" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/main.tex" afterPath="$PROJECT_DIR$/informe/Maestría Pedeciba 2021/main.tex" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="pc-tesis.iws" />
@@ -640,7 +361,13 @@
       <option name="project" value="LOCAL" />
       <updated>1618718679564</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Informe entregado al revisor de la tesis">
+      <created>1622340173005</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1622340173005</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -652,6 +379,7 @@
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2494043" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -660,7 +388,6 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34597877" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -691,7 +418,8 @@
     <MESSAGE value="Improved ca_intro example" />
     <MESSAGE value="Updated pdf and pdf files" />
     <MESSAGE value="Removed legacy folders" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed legacy folders" />
+    <MESSAGE value="Informe entregado al revisor de la tesis" />
+    <option name="LAST_COMMIT_MESSAGE" value="Informe entregado al revisor de la tesis" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />

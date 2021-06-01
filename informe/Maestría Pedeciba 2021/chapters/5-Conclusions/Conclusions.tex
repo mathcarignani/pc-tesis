@@ -6,7 +6,7 @@
 \lhead{Chapter 5. \emph{Conclusions and Future Work}} % This is for the header on each page - perhaps a shortened title
 
 
-\vspace{-20pt}
+% \vspace{-10pt}
 In this work, we study the compression of multichannel signals with irregular sampling rates and with data gaps. Our experiments consider different real-word datasets consisting of signals with these characteristics, which are often gathered by WSNs. In such case, the irregular sampling rates can be caused by different groups of sensors being out of sync or malfunctioning. Besides, errors might arise when acquiring, transmitting or storing the data, causing gaps in the data. Nevertheless, state-of-the-art algorithms designed for sensor data compression reported in the literature \cite{AnEva2013, Signal2016} assume, in general, that the signals gave regular sampling rate and that there are no data gaps. Thus, our main contributions are introducing and analyzing the compression performance of a number of variants of state-of-the-art algorithms, which we design and implement so that they are able to encode multichannel signals with irregular sampling rates and data gaps.
 
 
@@ -40,11 +40,21 @@ We conclude this chapter suggesting a couple of ideas to develop as future work:
 
 \vspace{-5pt}
 
-\begin{itemize}
+\begin{itemize} 
+%[leftmargin=*]
 
 \item In our experimental analysis, which is presented in Chapter~\ref{experiments}, we asses the compression performance of the implemented algorithm variants through the CR metric (recall Definition~\ref{def:compression-rate}). It would be interesting to consider additional metrics, such as the computational time and the sensitivity to outliers \cite{AnEva2013}. We could also consider additional datasets, which would increase the running time of our experiments, but may provide new insights regarding the compression performance of the implemented algorithms.
 
-\item The results presented in Section~\ref{secX:codersmask} reveal \textit{which} of the implemented algorithm variants obtains better compression results for each data type in the experimental datasets. It would be useful to analyze \textit{why} it is the case that a certain variant achieves better results for a certain data type over other variants. In order to do this, we would need to examine the signals for each data type, analyze their characteristics (e.g. whether they are smooth or rough signals, the number of outliers, periodicity), and observe if there exists a relation between these characteristics and the algorithm variant that obtains the best compression performance. This would be useful for predicting which variant is the best for compressing certain signal, only by analyzing the signal characteristics. If, given certain statistics of a signal, we could programmatically select a good compression algorithm variant for the signal, this could prove to be beneficial for online compression, as it would allow us to select a different variant as the trends in the signal vary over time.
-
+\item The results presented in Section~\ref{secX:codersmask} reveal \textit{which} of the implemented algorithm variants obtains better compression results for each data type in the experimental datasets. \Revisor{This information should be taken into account as part of a strategy to implement a universal coder (i.e. a coder that compresses signals from which no information is known a priori). For this purpose, it would be useful to analyze \textit{why} it is the case that a certain variant achieves better compression results for a certain data type over other variants.} In order to do this, we would need to examine the signals for each data type, analyze their characteristics (e.g. whether they are smooth or rough signals, the number of outliers, periodicity), and observe if there exists a relation between these characteristics and the algorithm variant that obtains the best compression performance. This would be useful for predicting which variant is the best for compressing certain signal, only by analyzing the signal characteristics. If, given certain statistics of a signal, we could programmatically select a good compression algorithm variant for the signal, this could prove to be beneficial for online compression, \Revisor{as it would allow a universal coder to select a different variant as the trends in the signal vary over time.}
 \end{itemize}
 
+
+\clearpage
+
+
+\chapter*{Acknowledgements}
+% \thispagestyle{empty}
+
+I would like to express my sincere gratitude to my supervisors, Álvaro Martín and Gadiel Seroussi. I thank \textit{Programa de Desarrollo de las Ciencias Básicas (PEDECIBA)} and \textit{Agencia Nacional de Investigación e Innovación (ANII)} for their financial support.
+
+\clearpage

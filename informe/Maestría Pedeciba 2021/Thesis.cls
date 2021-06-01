@@ -206,7 +206,7 @@
 %-------------------------------------------------   
 %\degree{Ingeniero en Computación} % Your degree name - this is currently used in the title page and abstract
 %-------------------------------------------------   
-\authors{Pablo \textsc{Cerveñansky}} % Your name - this is used in the title page and abstract
+\authors{Pablo \textsc{Cerveñansky Fierro}} % Your name - this is used in the title page and abstract
 %-------------------------------------------------   
 \addresses{} % Your address - this is not currently used anywhere in the template, cite it with \addressnames if you want it
 %-------------------------------------------------   
