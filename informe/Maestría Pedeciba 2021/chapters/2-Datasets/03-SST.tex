@@ -1,0 +1,22 @@
+
+\newcommand{\TAODef}{This dataset is collected by the Tropical Atmosphere Ocean (TAO) project, which was established in 1985 to study annual climate variations near the equator \cite{dataset:tao}.}
+
+
+\vspace{-25pt}
+\section{Dataset SST}
+\label{datasets:sst}
+
+
+\vspace{-5pt}
+Dataset SST \cite{dataset:sst1} consists of \textit{Sea Surface Temperature (SST)} measurements from buoys floating in the Pacific Ocean. \TAODef
+
+
+The dataset consists of readings from 55 buoys, which can be located in the map presented in \cite{dataset:sst1}. For each timestamp, the dataset contains the SST measurement taken in each buoy. Thus, a total of 55 data samples are stored for each timestamp. The temperature is measured in degrees Celsius (°C), and its scale is $10^3$.
+
+
+In Table~\ref{datasets:table:sst} we present some statistics of dataset SST. The data for each month is stored in a separate CSV file, and every row in the table contains statistics for one such file. \commonTable (in °C).
+
+
+% \vspace{-10pt}
+\input{chapters/2-Datasets/stats-tables/2-SST-stats}
+

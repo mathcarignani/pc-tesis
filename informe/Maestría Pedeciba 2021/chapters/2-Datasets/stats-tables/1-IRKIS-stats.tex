@@ -1,0 +1,36 @@
+\newcommand{\ignoredGaps}{The gaps are ignored when calculating the median, mean and standard deviation.}
+
+\newcommand{\tableExplain}[2]{Number of rows, columns, entries and gaps (total and percentual), and minimum, maximum, median, and standard deviation, of the sample values ({#1}), for each file of the dataset {#2}.}
+
+\begin{table}[h]
+\vspace{+5pt}
+\begin{center}
+    \begin{tabular}{| C{1.19cm} || C{1cm} | C{0.665cm} |  C{1.26cm} |  C{2.19cm} | C{0.7cm} | C{0.7cm} | C{0.7cm} | C{0.9cm} | C{0.86cm} |}
+    \hline
+      \multicolumn{1}{|>{\centering\arraybackslash}m{1.19cm}||}{\textbf{Station}}
+    & \multicolumn{1}{>{\centering\arraybackslash}m{1cm}|}{\textbf{Rows}} 
+    & \multicolumn{1}{>{\centering\arraybackslash}m{0.665cm}|}{\textbf{Cols}} 
+    & \multicolumn{1}{>{\centering\arraybackslash}m{1.26cm}|}{\textbf{Entries}}
+    & \multicolumn{1}{>{\centering\arraybackslash}m{2.19cm}|}{\textbf{Gaps (\%)}}
+    & \multicolumn{1}{>{\centering\arraybackslash}m{0.7cm}|}{\textbf{Min}}
+    & \multicolumn{1}{>{\centering\arraybackslash}m{0.7cm}|}{\textbf{Max}}
+    & \multicolumn{1}{>{\centering\arraybackslash}m{0.7cm}|}{\textbf{Mdn}}
+    & \multicolumn{1}{>{\centering\arraybackslash}m{0.9cm}|}{\textbf{Mean}}
+    & \multicolumn{1}{>{\centering\arraybackslash}m{0.86cm}|}{\textbf{SD}}\\
+    \hline
+%% SCRIPT OUTPUT BELOW HERE
+1202 & 26,305 & 10 & 263,050 & 125,190 (47.6) & 240 & 541 & 428 & 417.1 & \ \ 48.8 \\\hline
+1203 & 26,305 & 10 & 263,050 & 200,051 (76.1) & 165 & 385 & 249 & 257.7 & \ \ 40.1 \\\hline
+1204 & 26,305 & 10 & 263,050 & 178,657 (67.9) & 218 & 464 & 298 & 313.3 & \ \ 70.0 \\\hline
+1205 & 26,305 & 10 & 263,050 & 224,287 (85.3) & 272 & 600 & 315 & 342.1 & \ \ 63.9 \\\hline
+222 & 26,304 & 10 & 263,040 & \ \ 56,007 (21.3) & 128 & 562 & 426 & 384.2 & 119.7 \\\hline
+333 & 26,088 & 10 & 260,880 & \ \ 37,520 (14.4) & \ \ 38 & 451 & 327 & 291.5 & \ \ 81.1 \\\hline
+SLF2 & 26,305 & 10 & 263,050 & \ \ 43,049 (16.4) & 215 & 580 & 352 & 360.9 & \ \ 65.1 \\\hline
+%% SCRIPT OUTPUT ABOVE HERE
+    \toprule[0.1mm]
+    \end{tabular}
+    \caption{\tableExplain{dimensionless}{IRKIS} \ignoredGaps}
+    \label{datasets:table:irkis}
+\end{center}
+\end{table}
+

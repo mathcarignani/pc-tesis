@@ -1,0 +1,107 @@
+
+\chapter{Introduction} % Main chapter title
+\label{intro:intro} % For referencing the chapter elsewhere, use \ref{Chapter1} 
+
+\lhead{Chapter 1. \emph{Introduction}} % This is for the header on each page - perhaps a shortened title
+
+\newcommand{\maxerror}{\textit{$\epsilon$}\xspace}
+\newcommand{\alOne}{a_1}
+\newcommand{\alTwo}{a_2}
+\newcommand{\MaskVar}[1]{$\text{{#1}}_\textit{M}$}
+\newcommand{\NonMaskVar}[1]{$\text{{#1}}_\textit{NM}$}
+\newcommand{\win}{\textit{w}}
+
+\newcommand{\RD}{\textnormal{RD}}
+\newcommand{\RDit}{\textit{RD}}
+\newcommand{\CRit}{\textit{CR}}
+\newcommand{\CR}{\textnormal{CR}}
+
+\newcommand{\zetafoot}{\footnote{A \textit{zettabyte (ZB)} is a unit of measurement of the size of digital information on a computer or other electronic device, which is equivalent to $10^{12}$ GB.} }
+
+
+In the last 20 years, we have witnessed a staggering development of mobile communications and the Internet. Both factors have contributed to an accelerated expansion of the digital universe. Researchers estimate that the amount of digital data, created and replicated worldwide, more than doubles every three years: it went from 4.4 ZB\zetafoot in 2013, to 33 ZB in 2018, and it is expected to reach 175 ZB by the year 2025 \cite{Digitalization1, Digitalization2}. In this context, research on data compression has become more relevant than ever.
+
+
+Data compression techniques allow for the reduction of the number of bits needed to represent digital data. There are two types of compression algorithms: \textit{lossless} and \textit{lossy}. Lossless compression algorithms allow the original data to be perfectly reconstructed from the compressed data. On the other hand, lossy compression algorithms only allow to reconstruct an approximation of the original data, though they usually obtain better compression rates (i.e. the compressed data is represented using even a smaller number of bits).
+
+
+Data compression is ubiquitous, with applications in industry as well as various branches of scientific research. It is worth mentioning a few examples, just to paint a picture of its broad scope:
+\vspace{-5pt}
+\begin{itemize}
+\item All the multimedia data that is sent, from the servers of both music (e.g. Spotify, Apple Music) and video (e.g. Youtube, Netflix) streaming services, to an end user device, is compressed to optimize the bandwidth usage \cite{SpotifyApple, HEVC}. Something similar occurs with digital television, where signals are encoded in the source, and decoded in the receiver \cite{DTV}.
+
+\item Voice and video calls made on \textit{VoIP (Voice over IP)} software, such as Zoom \cite{Zoom} or Skype \cite{Skype}, always require the implementation of compression techniques on every end user device, without which it would not be possible to maintain a real-time conversation with proper sound and video quality.
+
+\item Digital cameras use different compression algorithms to reduce the size of the image files, which allows to decrease the storage and transmission costs. In general, the end user is able to select between a lossy compression algorithm (JPEG being the most popular one), and a lossless one (TIFF is one of the industry standards, but leading brands have their own algorithms) \cite{Nikon, Canon}. 
+
+\item There is a great variety of general-purpose compression tools, which allow to losslessly compress any type of file. Among the most popular ones are gzip \cite{gzip} and WinRAR \cite{WinRAR}, which also allow to encrypt and split the compressed files. 
+
+\item In the medicine field, some tests (e.g. EEG, ECG) require for a patient to wear a monitoring device that measures clinical diagnosis data and wirelessly broadcasts it to a remote storage device, for an extended period of time. In such cases, compression algorithms are used to compress the transmitted data, which reduces the amount of energy consumed by the monitoring device, thus extending battery life \cite{EEG, ECG}.
+
+\item NASA's space missions involve transmitting information back to Earth from space probes in far away places, which requires a great amount of energy. In past missions to Mars and Pluto, using onboard compression algorithms allowed to save resources, such as energy, space, and money, which is crucial for making space exploration viable \cite{HPMars, Pluto}.
+
+\item A \textit{Wireless Sensor Network (WSN)} consists of spatially distributed sensors that communicate wirelessly to collect data about the surrounding environment. They are used in a wide variety of environmental, health, industrial, and military applications \cite{WSNWiley, WSNList}. Since the sensors are often placed in remote locations, it is important that they use energy-efficient compression algorithms and communication protocols, so that their power consumption is optimized.
+% They have gain new interest with the internet of things. \cite{WSNIoT}
+\end{itemize}
+
+
+\newcommand{\footExampleOne}{\footnote{In general, lossless compression is recommended for archival purposes, while lossy compression is suggested to optimize the bandwidth usage when transmitting data.}}
+\newcommand{\footExampleTwo}{\footnote{In general, compression algorithms executed in a battery-run device tend to have low computational complexity, so that a small amount of energy is consumed during the compression process.}}
+\newcommand{\footSampling}{\footnote{In the context of WSNs, we consider that each sensor, which records data corresponding to a single signal, represents a different channel.}}
+
+
+Even though some kind of data compression technique is involved in each one of the examples presented above, which specific compression algorithm is used in each case depends on a variety of factors \cite{DCTSurvey}, such as the characteristics of the data, the desired compression rate, whether the data is going to be archived or transmitted\footExampleOne, and whether the energy resources are critical or not\footExampleTwo.
+
+
+In this work, we focus on the compression of multichannel signals with irregular sampling rates and with data gaps. There is a wide range of research on compression algorithms for multichannel signals with \textit{regular sampling rates} (see, for example, \cite{ImageOne, ImageTwo} for images, \cite{AudioOne, AudioTwo} for audio, \cite{VideoOne, VideoTwo} for video, and \cite{MedicalOne, MedicalTwo} for biomedical signals). However, real-world datasets sometimes consist of multichannel signals with \textit{irregular sampling rates}. This occurs frequently in datasets gathered by WSNs\footSampling, since different groups of sensors may be out of sync, and some might even malfunction. It is also common that errors arise when acquiring, transmitting or storing the data, causing a \textit{data gap}. Nevertheless, state-of-the-art algorithms designed for sensor data compression reported in the literature \cite{AnEva2013, Signal2016} assume, in general, that the signals have regular sampling rates and that there are no gaps in the data. Thus, in this thesis we design and implement a number of variants of state-of-the-art algorithms, adapt them so they are able to encode multichannel signals with irregular sampling rates and data gaps, and then evaluate their compression performance experimentally.
+
+
+To assess the performance of our implemented algorithm variants, we consider eight different real-world datasets: dataset IRKIS \cite{dataset:irkis} is gathered by multiple soil moisture measuring sensors installed along the Dischma valley, in the municipality of Davos, Switzerland; datasets ElNino \cite{dataset:elnino}, SST and ADCP \cite{dataset:sst1} consist of various oceanographic and surface meteorological readings, obtained by sensors placed in buoys and moorings in the Pacific Ocean; dataset Solar \cite{dataset:solar} consists of solar radiation measurements in the city of Miami, Florida, US; and datasets Hail, Tornado and Wind \cite{dataset:spc} consist of data related to thunderstorms and tornadoes along US territory. Each experimental dataset consists of multichannel signals with one or both of the characteristics we are interested in, namely, irregular sampling rate and data gaps. The number of gaps, as well as other characteristics (e.g. whether they are smooth or rough signals, the number of outliers, periodicity), varies among different signals, which allows us to analyze the performance of the evaluated algorithms under different circumstances. The datasets come from multiple sources \dataCite, each using a different data representation format. Thus, as a first step, we transformed the data into a uniform format, which we define ourselves, and can be easily adapted to represent different kinds of datasets. The details of this data format, as well as the description of the experimental datasets, laying out the source, characteristics and relevant statistics of every signal involved, are presented in \textbf{Chapter~\ref{datasets}}.
+
+
+Both the original and our implemented variants are \textit{near-lossless} compression algorithms. This type of algorithms guarantee a bounded per-sample absolute error between the decompressed and the original signals. The error threshold can be specified via a parameter, denoted~$\maxerror$. When $\maxerror$ is equal to zero, the compression is lossless, i.e., the decompressed and the original signals are identical. Additionally, the original algorithms and our proposed variants follow a model-based compression approach that compresses signals by exploiting correlation between signal samples taken at close times (\textit{temporal correlation}) and, in some cases, between samples from different channels (\textit{spatial correlation}). In addition to efficient compression performance, they offer some data processing features, like inferring uncertain sensor readings, detecting outliers, indexing, etc. \cite{AnEva2013}. The model-based techniques are classified into different categories, depending on the type of model: \textit{constant models} approximate signals by piecewise constant functions, \textit{linear models} use linear functions, and \textit{correlation models} simultaneously encode multiple signals exploiting temporal and spatial correlation. There also exist \textit{nonlinear models}, which approximate signals by nonlinear functions, but known algorithms that follow this technique do not support near-lossless compression, and generally do not yield the best compression results on WSN data~\cite{AnEva2013, Signal2016}. In total, we implement variants for eight different compression algorithms: \textit{\PCAfull} \cite{coder:pca} and \textit{\APCAfull} \cite{coder:apca}, which are constant model algorithms; \textit{\PWLHfull} \cite{coder:pwlh}, \textit{PWLHInt} (see Subsection~\ref{algo:pwhl:int}), \textit{\CAfull} \cite{coder:ca}, \textit{\SFfull} \cite{coder:sf}, and \textit{\FRfull} \cite{coder:fr}, which are linear model algorithms; and \textit{\GAMPSfull} \cite{coder:gamps}, which is a correlation model algorithm. The variants implemented for our evaluation are presented in \textbf{Chapter~\ref{algo}}, including a description of their parameters, details of their coding and decoding routines, and examples that show the encoding process step by step.
+
+
+For most algorithms we design and implement two variants, \textit{masking (\maskalgo)} and \textit{non-masking (\NOmaskalgo)}, which differ in the encoding of the gaps in the data. Variant \maskalgo of an algorithm first encodes the position of all the gaps, and then proceeds to encode the data values separately, while variant \NOmaskalgo encodes the gaps and the data values together. The proposed strategy to compress the gaps in variant \maskalgo, which is presented in Section~\ref{algo:maskmodes}, uses arithmetic coding \cite{ac2, Cover2005} combined with a Krichevsky-Trofimov probability assignment \cite{ktestimator} over a Markov model. We point out that, with both variants, the gaps in a decompressed signal match the gaps in the original signal exactly, regardless of the value of the error threshold parameter (\maxerror). Efficient compression of gap information, especially in variant \maskalgo, is an original contribution of this thesis.
+
+
+In \textbf{Chapter~\ref{experiments}} we present and analyze a series of experimental results, with the aim of evaluating and comparing the various tested algorithm variants in practical scenarios. All of our experiments involve the compression of data obtained from the real-world datasets presented in Chapter~\ref{datasets}. We assess the compression performance of an algorithm variant through the \textit{compression ratio (CR)}, which is calculated by the formula
+\vspace{-2pt}
+\begin{equation}
+\CR = \frac{\textnormal{size of compressed data}}{\textnormal{size of original data}}.
+\end{equation}
+
+
+\clearpage
+
+
+\newcommand{\footCRRD}{\footnote{More formal definitions of the compression performance metrics CR and RD will be given in Section~\ref{experiments:experiments}.}}
+
+Thus, smaller values of CR correspond to a better performance. To compare the compression performance between two algorithm variants $\alOne$ and $\alTwo$, we consider the \textit{relative difference (RD)} metric, which is calculated by the formula
+\vspace{-2pt}
+\newcommand{\sizeofd}{\textnormal{size of data compressed with }}
+\begin{equation}
+\RD(\alOne, \alTwo) = 100\times\frac{\sizeofd \alTwo - \sizeofd \alOne}{\sizeofd \alTwo}.
+\end{equation}
+
+\vspace{-2pt}
+Therefore, $\alOne$ has a better performance than $\alTwo$ if $\RD(\alOne, \alTwo)$ is positive\footCRRD.
+
+
+\newcommand{\footSupportBoth}{\footnote{Algorithms SF and FR only support variant \maskalgo, while the rest of the algorithms support variants \maskalgo and \NOmaskalgo.}}
+
+
+In Section~\ref{secX:rendimiento-relativo}, for each algorithm $a$ that supports variants \maskalgo and \NOmaskalgo\footSupportBoth, we compare the respective compression performance of both, $a_\maskalgo$ and $a_\NOmaskalgo$. The results show that on datasets with few or no gaps the performance of both variants is roughly the same, i.e. $\RD(a_\maskalgo, a_\NOmaskalgo)$ is always close to zero, ranging between $-0.29$ and $1.76\%$. On the other hand, on datasets with many gaps variant \maskalgo always performs better, in some cases with a significant difference, with $\RD(a_\maskalgo, a_\NOmaskalgo)$ ranging between $2.44$ and $50.78\%$. These experimental results suggest that variant \maskalgo is more robust and performs better in general.
+
+
+\newcommand{\footSupportFocus}{\footnote{\label{note1}Due to the results obtained in Section~\ref{secX:rendimiento-relativo}, our experiments in the subsequent sections in Chapter~\ref{experiments} focus on studying the compression performance of variant \maskalgo of the algorithms.}}
+
+
+Every original algorithm (and its respective variants) depends on a window size parameter, denoted $\win$, which defines the size of the windows into which the data are partitioned for encoding. In algorithm PCA, it defines a \textit{fixed window size}, while in the rest of the algorithms it defines a \textit{maximum window size}. In Section~\ref{secX:windows} we analyze the sensitivity of variant \maskalgo of each algorithm\footSupportFocus\ to this parameter. For each dataset, we compress each data file, and compare the results obtained when using a window size optimized for said specific file, against the results obtained when using a window size optimized for the whole dataset. The results indicate that the difference in compression performance is generally rather small, with the RD being less than or equal to $2\%$ in $97.8\%$ of the experimental cases. Therefore, we could fix the window size parameter in advance, for example by optimizing over a training set, without significantly compromising the overall performance of the compression algorithm variant. This is relevant, since obtaining the optimal window size for a specific data file is, in general, computationally expensive.
+
+
+The last part of our experimental analysis, which is presented in Section~\ref{secX:codersmask}, consists of comparing the compression performance of our adapted algorithm variants, with each other, and with the general-purpose lossless compression algorithm gzip \cite{gzip}. Taking into account the discussion in the previous two paragraphs, for this analysis we only consider variant \maskalgo of each algorithm, and in every case we use the optimal window size for each whole dataset. Our experimental results indicate that none of the algorithm variants obtains the best compression performance in every scenario. This means that the optimal selection of a variant depends on the characteristics of the data to be compressed, and the error threshold ($\maxerror$) that is allowed. In some circumstances, even a general-purpose compression algorithm such as gzip outperforms the specific variants. Nevertheless, we extract some general conclusions from our analysis. For large error thresholds, variant \MaskVar{APCA} achieves the best compression results, obtaining the minimum CR in 76 out of 84 experimental cases ($90.5\%$). On the other hand, algorithm gzip and variant \MaskVar{PCA} are preferred for lower thresholds scenarios, since they obtain the minimum CR in 18 and 17 out of 42 experimental cases ($42.9\%$ and $40.5\%$), respectively.
+
+
+Finally, in \textbf{Chapter~\ref{conclusions}} we sum up the conclusions of our thesis, and we propose some ideas to carry out as future work.
+

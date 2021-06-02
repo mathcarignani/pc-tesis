@@ -1,0 +1,19 @@
+
+\clearpage
+
+
+% \vspace{+10pt}
+\section{Implementation Details}
+\label{algo:adddetails}
+
+
+All the algorithm variants presented in this chapter are implemented in C++. The implementation of the variants for algorithms PCA, APCA, CA and FR is completely ours, while the variants for algorithms PWLH, SF and GAMPS reuse part of the source code from the framework cited in \cite{AnEva2013}\footnote{The framework is available for download in the following website: http://lsirwww.epfl.ch/benchmark/}. We implemented algorithm PWLHInt by introducing the changes described in Subsection~\ref{algo:pwhl:int} to algorithm PWLH. 
+
+
+In algorithms PWLH and SF, presented in sections~\ref{algo:pwlh} and \ref{algo:sf}, respectively, we reuse the framework source code for carrying out operations in the two-dimensional Euclidean space. In algorithm PWLH these operations include computing the convex hull of the data points by applying Graham's Scan algorithm~\cite{GrahamAlgo} (\Line~6 in Figure~\ref{pseudoCoderPWLHM}), and calculating the segment that minimizes the MSE for all the points in a window (\Line~2 in Figure~\ref{pwlhWindowM}). In algorithm SF the reused operations include finding connected line segments (\Line~21 in Figure~\ref{pseudoCoderSF}), and calculating the segment that minimizes the MSE for all the points in a window (\Line~1 in Figure~\ref{SFWinStart}). In algorithm GAMPS, presented in Section~\ref{algo:gamps}, we reuse the framework source code for grouping the data columns into disjoint subsets of spatially correlated columns, which involves solving a facility location problem (\Line~1 in Figure~\ref{pseudoCoderGAMPS}).
+
+
+Recall that in Section~\ref{algo:maskmodes} we introduce the arithmetic coder (AC), which is employed for encoding the gaps in the masking variants. In our code we use the CACM87 implementation \cite{arcodingcomp, ac1} of the AC, which is written in C.
+
+% It is written in C and it is one of the most standard implementations. One of its advantages is that it allows to effortlessly set a custom model for the source. However, we had to overcome a minor obstacle to make it work within our scheme. In the CACM87 implementation, the coder closes the encoded file after it has encoded the last symbol. This implies that the decoder recognizes that there are no more symbols left to decode once it reads the last byte of the encoded file. But this is not the case in our masking variant scheme, since after the AC coder has encoded the position of all the gaps in the data, our coding algorithm still has to encode all the data values before closing the encoded file (recall \Lines 9-13 in Figure~\ref{pseudoCodeCommon}). The problem materialized in the decoding process, because after the AC decoder had decoded the last byte corresponding to the position of the gaps (i.e. the last byte encoded by the AC coder), it would occasionally continue processing bytes corresponding to the encoded data values, which naturally resulted in an error. The solution we found was to flush the current byte in the stream, before and after executing the AC algorithm, both in the coding and the decoding routines.
+

@@ -1,0 +1,22 @@
+\begin{table}[h]
+\newcommand{\cpca}{\cellcolor{cyan!20}}
+\newcommand{\capca}{\cellcolor{green!20}}
+\centering
+\hspace*{-2.1cm}\begin{tabular}{| l | c | c || c | c | c |}
+% \cline{2-5}
+\hhline{~|--|--|}
+\multicolumn{1}{c}{} & \multicolumn{2}{|c||}{\cpca \NonMaskVar{PCA}} & \multicolumn{2}{c|}{\capca \NonMaskVar{APCA}}\\\hline
+{Dataset} & {\footnotesize CR} & {\footnotesize w} & {\footnotesize CR} & {\footnotesize w} & {RD(\NonMaskVar{PCA}, \NonMaskVar{APCA}) (\%)}\\\hline\hline
+{\datasetirkis} & {0.01} & {7} & {\capca0.01} & {\capca8} & {-125.77}\\\hline
+{\datasetsst} & {0.11} & {4} & {\capca0.01} & {\capca8} & {-791.41}\\\hline
+{\datasetadcp} & {0.08} & {5} & {\capca0.01} & {\capca8} & {-841 \,\,\,\,\,}\\\hline
+{\datasetsolar} & {0.03} & {6} & {\capca0.01} & {\capca8} & {-319.83}\\\hline
+{\datasetelnino} & {0.04} & {6} & {\capca0.01} & {\capca8} & {-443.72}\\\hline
+{\datasethail} & {\cpca1.00} & {\cpca8} & {1.06} & {2} & {\hspace{+10pt} 5.74}\\\hline
+{\datasettornado} & {\cpca1.00} & {\cpca8} & {1.09} & {2} & {\hspace{+10pt} 8.06}\\\hline
+{\datasetwind} & {\cpca1.00} & {\cpca8} & {1.01} & {2} & {\hspace{+10pt} 1.05}\\\hline
+\end{tabular}
+\caption{\captionzero}
+\label{experiments:results-time-delta}
+\end{table}
+
